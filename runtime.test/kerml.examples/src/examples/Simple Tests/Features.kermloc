@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Features">
+    <elements xsi:type="kerMLOC:Classifier" declaredName="A"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="B"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="f" isFeature="true" isSemicolon="true"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="g" isFeature="true" isSemicolon="true"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="x" isFeature="true" isSemicolon="true">
+      <typings>A</typings>
+      <typings>B</typings>
+      <subsetting>g</subsetting>
+      <references>f</references>
+    </elements>
+    <elements xsi:type="kerMLOC:CodeAnnotation" body="// Equivalent declaration:&#xA;"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="x1" isFeature="true" isSemicolon="true">
+      <typings>A</typings>
+      <typings>B</typings>
+      <subsetting>g</subsetting>
+      <subsetting>f</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="C"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="y" isFeature="true" isSemicolon="true"/>
+    <elements xsi:type="kerMLOC:TypeFeaturing" declaredName="F" isOf="true" featureOfType="y" featuringType="C"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="y1" isFeature="true" isSemicolon="true">
+      <typings>A</typings>
+      <subsetting>x</subsetting>
+      <featuringType>C</featuringType>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="z" isFeature="true" isSemicolon="true">
+      <disjoining>y</disjoining>
+      <unioning>f</unioning>
+      <unioning>g</unioning>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="z1" isFeature="true" isSemicolon="true">
+      <intersecting>f</intersecting>
+      <intersecting>g</intersecting>
+      <differencing>y</differencing>
+      <differencing>y1</differencing>
+      <differencing>z</differencing>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Person"/>
+    <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="person" isFeature="true" isSemicolon="true">
+      <typings>Person</typings>
+    </elements>
+    <elements xsi:type="kerMLOC:CodeAnnotation" body="// Default subsets Base::things.&#xA;"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="child" isFeature="true" isSemicolon="true">
+      <subsetting>person</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="adult" isFeature="true" isSemicolon="true">
+      <differencing>person</differencing>
+      <differencing>child</differencing>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Fuel"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Tanks">
+      <elements xsi:type="kerMLOC:Feature" declaredName="fuelInPort" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="fuelFlow" isFeature="true" isSemicolon="true">
+          <typings>Fuel</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="fuelOutPort" originalType="fuelInPort" isFeature="true" isSemicolon="true"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="parent" MultiLow="1" MultiHigh="2" isFeature="true" isSemicolon="true">
+      <typings>Person</typings>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="mother" MultiLow="1" isFeature="true" isSemicolon="true">
+      <typings>Person</typings>
+      <subsetting>parent</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:FeatureTyping" declaredName="t1" isSpecialization="true" typedFeature="f" typeName="B"/>
+    <elements xsi:type="kerMLOC:FeatureTyping" declaredName="t2" isSpecialization="true" typedFeature="g" typeName="A"/>
+    <elements xsi:type="kerMLOC:Subsetting" declaredName="Sub" isSpecialization="true" subsettingFeature="parent" subsettedFeature="person"/>
+    <elements xsi:type="kerMLOC:Subsetting" isSpecialization="true" subsettingFeature="mother" subsettedFeature="parent"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="LegalRecord">
+      <elements xsi:type="kerMLOC:Feature" declaredName="guardian" MultiLow="1" isFeature="true" isSemicolon="true"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="RegisteredAsset">
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" isVariable="true" declaredName="identifier" MultiLow="0" MultiHigh="1" isFeature="true" isSemicolon="true"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Vehicle">
+      <subsetting>RegisteredAsset</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="vin" MultiLow="1" valuePart="identifier" isFeature="true" isSemicolon="true"/>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="v" isFeature="true" isSemicolon="true">
+        <typings>Vehicle</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector">
+        <connectorPart refElement="vin"/>
+        <connectorPart refElement="v.vin"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="w" valuePart="v.vin" isFeature="true" isSemicolon="true"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="x" valuePart="vin" isFeature="true" isSemicolon="true"/>
+      <elements xsi:type="kerMLOC:BindingConnector">
+        <connectorPart refElement="x"/>
+        <connectorPart refElement="vin"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="legalIdentification" isFeature="true" isSemicolon="true"/>
+    <elements xsi:type="kerMLOC:Redefinition" declaredName="Redef" isSpecialization="true" redefiningFeature="LegalRecord::guardian" redefinedFeature="parent"/>
+    <elements xsi:type="kerMLOC:Redefinition" isSpecialization="true" redefiningFeature="Vehicle::vin" redefinedFeature="RegisteredAsset::identifier"/>
+    <elements xsi:type="kerMLOC:Redefinition" redefiningFeature="Vehicle::vin" redefinedFeature="legalIdentification"/>
+  </elements>
+</kerMLOC:RootNamespace>

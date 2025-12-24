@@ -414,29 +414,40 @@ TypeFeaturing:
 	( ';' | '{' (elements+=RelationshipBodyElement)* '}')
 ;
 
+	//DefaultFeature:
+	//	MemberPrefix
+	//	ExtendedPrefix
+	//	((EndFeaturePrefix (crossingFeature+=CrossingFeature)? | BasicFeaturePrefix)
+	//	 PrefixMetadata+ FeatureDeclaration? 
+	//	| ( EndFeaturePrefix | BasicFeaturePrefix )
+	//	  FeatureDeclaration
+	//	)
+	//	ValuePart?
+	//	( ';' | '{' (elements+=TypeBodyElement)* '}')
+	//;
+	//
+	//Feature:
+	//	MemberPrefix
+	//	ExtendedPrefix
+	//	FeaturePrefix
+	//	'feature'
+	//	FeatureDeclaration?
+	//	ValuePart?
+	//	( ';' | '{' (elements+=TypeBodyElement)* '}')
+	//;
+
 Feature:
+	// [Ordered False]
 	MemberPrefix
 	ExtendedPrefix
-//	(
-////	 FeaturePrefix
-//	 ( EndFeaturePrefix (crossingFeature+=CrossingFeature)?
-//	 | BasicFeaturePrefix
-//	 )
-//	 ( PrefixMetadata* isFeature?='feature' | PrefixMetadata+ )
-////	 ( isFeature?='feature')?
-//	 FeatureDeclaration?
-//	|( EndFeaturePrefix | BasicFeaturePrefix )
-//	 FeatureDeclaration
-//	)
 	( FeaturePrefix
 	  ( isFeature?='feature' | PrefixMetadata )
-//	   ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
 	  FeatureDeclaration?
 	| ( EndFeaturePrefix | BasicFeaturePrefix )
 	  FeatureDeclaration
 	)
 	ValuePart?
-	( ';' | '{' (elements+=TypeBodyElement)* '}')
+	( isSemicolon?=';' | '{' (elements+=TypeBodyElement)* '}')
 ;
 
 Step:
@@ -583,7 +594,7 @@ fragment MultiplicityRange:
 
 fragment FeatureSpecialization:
 	(':'|'typed' 'by') TypingFeatureTyping
-	| (':>'|'specializes'|'subsets') SubsettingFeatureChain
+	| (':>'|'subsets') SubsettingFeatureChain
 	| ('::>'|'references')  ReferenceFeatureChain
 	| ('=>'|'crosses') CrossFeatureChain
 	| (':>>'|'redefines') RedefinitionFeatureChain
@@ -713,11 +724,6 @@ fragment MultiplicityModifiers:
       isOrdered?='ordered' (isNonunique?='nonunique')?
     | isNonunique?='nonunique' (isOrdered?='ordered')?
 ;
-
-//fragment MultiplicityRange:
-//	//	'[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
-//	'[' MultiLow = MultiplicityExpression ( '..' MultiHigh = MultiplicityExpression )? ']'
-//;
 
 fragment FeatureConjugationPart:
 	( '~' | 'conjugates' ) originalType=QualifiedName

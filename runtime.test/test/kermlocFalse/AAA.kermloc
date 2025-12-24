@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Feature" declaredName="AA" MultiLow="1" MultiHigh="5" isOrdered="true" isSemicolon="true">
+    <typings>BB</typings>
+    <subsetting>CC</subsetting>
+    <references>DD</references>
+  </elements>
+</kerMLOC:RootNamespace>

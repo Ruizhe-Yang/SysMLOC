@@ -3317,8 +3317,8 @@ public class InternalKerMLOCLexer extends Lexer {
         try {
             int _type = RULE_PREFIXNAME_TEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKerMLOC.g:12473:22: ( '#' ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalKerMLOC.g:12473:24: '#' ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalKerMLOC.g:12468:22: ( '#' ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalKerMLOC.g:12468:24: '#' ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             match('#'); 
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
@@ -3330,7 +3330,7 @@ public class InternalKerMLOCLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalKerMLOC.g:12473:52: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalKerMLOC.g:12468:52: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -3379,11 +3379,11 @@ public class InternalKerMLOCLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKerMLOC.g:12475:20: ( '0' .. '9' ( '0' .. '9' )* )
-            // InternalKerMLOC.g:12475:22: '0' .. '9' ( '0' .. '9' )*
+            // InternalKerMLOC.g:12470:20: ( '0' .. '9' ( '0' .. '9' )* )
+            // InternalKerMLOC.g:12470:22: '0' .. '9' ( '0' .. '9' )*
             {
             matchRange('0','9'); 
-            // InternalKerMLOC.g:12475:31: ( '0' .. '9' )*
+            // InternalKerMLOC.g:12470:31: ( '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -3396,7 +3396,7 @@ public class InternalKerMLOCLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalKerMLOC.g:12475:32: '0' .. '9'
+            	    // InternalKerMLOC.g:12470:32: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -3424,11 +3424,11 @@ public class InternalKerMLOCLexer extends Lexer {
         try {
             int _type = RULE_EXP_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKerMLOC.g:12477:16: ( RULE_DECIMAL_VALUE ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE )? )
-            // InternalKerMLOC.g:12477:18: RULE_DECIMAL_VALUE ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE )?
+            // InternalKerMLOC.g:12472:16: ( RULE_DECIMAL_VALUE ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE )? )
+            // InternalKerMLOC.g:12472:18: RULE_DECIMAL_VALUE ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE )?
             {
             mRULE_DECIMAL_VALUE(); 
-            // InternalKerMLOC.g:12477:37: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE )?
+            // InternalKerMLOC.g:12472:37: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -3437,7 +3437,7 @@ public class InternalKerMLOCLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalKerMLOC.g:12477:38: ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE
+                    // InternalKerMLOC.g:12472:38: ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -3448,7 +3448,7 @@ public class InternalKerMLOCLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalKerMLOC.g:12477:48: ( '+' | '-' )?
+                    // InternalKerMLOC.g:12472:48: ( '+' | '-' )?
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -3497,8 +3497,8 @@ public class InternalKerMLOCLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKerMLOC.g:12479:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalKerMLOC.g:12479:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalKerMLOC.g:12474:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalKerMLOC.g:12474:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -3509,7 +3509,7 @@ public class InternalKerMLOCLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalKerMLOC.g:12479:35: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalKerMLOC.g:12474:35: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop5:
             do {
                 int alt5=2;
@@ -3558,11 +3558,11 @@ public class InternalKerMLOCLexer extends Lexer {
         try {
             int _type = RULE_UNRESTRICTED_NAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKerMLOC.g:12481:24: ( '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
-            // InternalKerMLOC.g:12481:26: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+            // InternalKerMLOC.g:12476:24: ( '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalKerMLOC.g:12476:26: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
             {
             match('\''); 
-            // InternalKerMLOC.g:12481:31: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+            // InternalKerMLOC.g:12476:31: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
             loop6:
             do {
                 int alt6=3;
@@ -3578,7 +3578,7 @@ public class InternalKerMLOCLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalKerMLOC.g:12481:32: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+            	    // InternalKerMLOC.g:12476:32: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
             	    {
             	    match('\\'); 
             	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -3594,7 +3594,7 @@ public class InternalKerMLOCLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // InternalKerMLOC.g:12481:73: ~ ( ( '\\\\' | '\\'' ) )
+            	    // InternalKerMLOC.g:12476:73: ~ ( ( '\\\\' | '\\'' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3631,11 +3631,11 @@ public class InternalKerMLOCLexer extends Lexer {
         try {
             int _type = RULE_STRING_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKerMLOC.g:12483:19: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
-            // InternalKerMLOC.g:12483:21: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+            // InternalKerMLOC.g:12478:19: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
+            // InternalKerMLOC.g:12478:21: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
             {
             match('\"'); 
-            // InternalKerMLOC.g:12483:25: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+            // InternalKerMLOC.g:12478:25: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
             loop7:
             do {
                 int alt7=3;
@@ -3651,7 +3651,7 @@ public class InternalKerMLOCLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalKerMLOC.g:12483:26: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+            	    // InternalKerMLOC.g:12478:26: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
             	    {
             	    match('\\'); 
             	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -3667,7 +3667,7 @@ public class InternalKerMLOCLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // InternalKerMLOC.g:12483:67: ~ ( ( '\\\\' | '\"' ) )
+            	    // InternalKerMLOC.g:12478:67: ~ ( ( '\\\\' | '\"' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3704,12 +3704,12 @@ public class InternalKerMLOCLexer extends Lexer {
         try {
             int _type = RULE_REGULAR_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKerMLOC.g:12485:22: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalKerMLOC.g:12485:24: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalKerMLOC.g:12480:22: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalKerMLOC.g:12480:24: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalKerMLOC.g:12485:29: ( options {greedy=false; } : . )*
+            // InternalKerMLOC.g:12480:29: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -3734,7 +3734,7 @@ public class InternalKerMLOCLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalKerMLOC.g:12485:57: .
+            	    // InternalKerMLOC.g:12480:57: .
             	    {
             	    matchAny(); 
 
@@ -3764,12 +3764,12 @@ public class InternalKerMLOCLexer extends Lexer {
         try {
             int _type = RULE_ML_NOTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKerMLOC.g:12487:14: ( '//*' ( options {greedy=false; } : . )* '*/' )
-            // InternalKerMLOC.g:12487:16: '//*' ( options {greedy=false; } : . )* '*/'
+            // InternalKerMLOC.g:12482:14: ( '//*' ( options {greedy=false; } : . )* '*/' )
+            // InternalKerMLOC.g:12482:16: '//*' ( options {greedy=false; } : . )* '*/'
             {
             match("//*"); 
 
-            // InternalKerMLOC.g:12487:22: ( options {greedy=false; } : . )*
+            // InternalKerMLOC.g:12482:22: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -3794,7 +3794,7 @@ public class InternalKerMLOCLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalKerMLOC.g:12487:50: .
+            	    // InternalKerMLOC.g:12482:50: .
             	    {
             	    matchAny(); 
 
@@ -3824,12 +3824,12 @@ public class InternalKerMLOCLexer extends Lexer {
         try {
             int _type = RULE_SL_NOTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKerMLOC.g:12489:14: ( '//' (~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )* )? ( ( '\\r' )? '\\n' )? )
-            // InternalKerMLOC.g:12489:16: '//' (~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )* )? ( ( '\\r' )? '\\n' )?
+            // InternalKerMLOC.g:12484:14: ( '//' (~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )* )? ( ( '\\r' )? '\\n' )? )
+            // InternalKerMLOC.g:12484:16: '//' (~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )* )? ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalKerMLOC.g:12489:21: (~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )* )?
+            // InternalKerMLOC.g:12484:21: (~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )* )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -3838,7 +3838,7 @@ public class InternalKerMLOCLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalKerMLOC.g:12489:22: ~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )*
+                    // InternalKerMLOC.g:12484:22: ~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )*
                     {
                     if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
                         input.consume();
@@ -3849,7 +3849,7 @@ public class InternalKerMLOCLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalKerMLOC.g:12489:37: (~ ( ( '\\n' | '\\r' ) ) )*
+                    // InternalKerMLOC.g:12484:37: (~ ( ( '\\n' | '\\r' ) ) )*
                     loop10:
                     do {
                         int alt10=2;
@@ -3862,7 +3862,7 @@ public class InternalKerMLOCLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // InternalKerMLOC.g:12489:37: ~ ( ( '\\n' | '\\r' ) )
+                    	    // InternalKerMLOC.g:12484:37: ~ ( ( '\\n' | '\\r' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -3888,7 +3888,7 @@ public class InternalKerMLOCLexer extends Lexer {
 
             }
 
-            // InternalKerMLOC.g:12489:55: ( ( '\\r' )? '\\n' )?
+            // InternalKerMLOC.g:12484:55: ( ( '\\r' )? '\\n' )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -3897,9 +3897,9 @@ public class InternalKerMLOCLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalKerMLOC.g:12489:56: ( '\\r' )? '\\n'
+                    // InternalKerMLOC.g:12484:56: ( '\\r' )? '\\n'
                     {
-                    // InternalKerMLOC.g:12489:56: ( '\\r' )?
+                    // InternalKerMLOC.g:12484:56: ( '\\r' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -3908,7 +3908,7 @@ public class InternalKerMLOCLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // InternalKerMLOC.g:12489:56: '\\r'
+                            // InternalKerMLOC.g:12484:56: '\\r'
                             {
                             match('\r'); 
 
@@ -3940,10 +3940,10 @@ public class InternalKerMLOCLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKerMLOC.g:12491:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalKerMLOC.g:12491:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalKerMLOC.g:12486:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalKerMLOC.g:12486:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalKerMLOC.g:12491:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalKerMLOC.g:12486:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt14=0;
             loop14:
             do {

@@ -8,152 +8,152 @@
     <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="KerML::Metaclass"/>
     <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'=='">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="'!='">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="not (x == y)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="not (x == y)" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'==='">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="'!=='">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="not (x === y)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="not (x === y)" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="ToString">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" isSemicolon="true">
         <typings>String</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'['">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="*" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="*" isNonunique="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="*" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="*" isNonunique="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isNonunique="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'#'">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" MultiLow="1" MultiHigh="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" MultiLow="1" MultiHigh="*" isOrdered="true" isNonunique="true" isSemicolon="true">
         <typings>Positive</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="','">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq1" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq1" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq2" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq2" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'all'">
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isSemicolon="true">
         <typings>Object</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'istype'">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="'type'">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="'type'" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'hastype'">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="'type'">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="'type'" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'@'">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="'type'">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="'type'" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'@@'">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isSemicolon="true">
         <typings>Metaobject</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="'type'">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="'type'" isSemicolon="true">
         <typings>Metaobject</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'as'">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'meta'">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isSemicolon="true">
         <typings>Metaobject</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isSemicolon="true">
         <typings>Metaobject</typings>
       </elements>
     </elements>

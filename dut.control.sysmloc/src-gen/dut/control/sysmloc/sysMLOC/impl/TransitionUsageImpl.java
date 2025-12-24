@@ -78,6 +78,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getPerformedActionParameterPart <em>Performed Action Parameter Part</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getTransitionSuccessionElement <em>Transition Succession Element</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getTransitionSourceElement <em>Transition Source Element</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getEffectElements <em>Effect Elements</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -444,6 +445,16 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
    * @ordered
    */
   protected String transitionSourceElement = TRANSITION_SOURCE_ELEMENT_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getEffectElements() <em>Effect Elements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEffectElements()
+   * @generated
+   * @ordered
+   */
+  protected EList<ActionBodyElement> effectElements;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -987,6 +998,21 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
    * @generated
    */
   @Override
+  public EList<ActionBodyElement> getEffectElements()
+  {
+    if (effectElements == null)
+    {
+      effectElements = new EObjectContainmentEList<ActionBodyElement>(ActionBodyElement.class, this, SysMLOCPackage.TRANSITION_USAGE__EFFECT_ELEMENTS);
+    }
+    return effectElements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<ActionBodyElement> getElements()
   {
     if (elements == null)
@@ -1012,6 +1038,8 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
         return ((InternalEList<?>)getPerformedActionParameterPart()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.TRANSITION_USAGE__TRANSITION_SUCCESSION_ELEMENT:
         return ((InternalEList<?>)getTransitionSuccessionElement()).basicRemove(otherEnd, msgs);
+      case SysMLOCPackage.TRANSITION_USAGE__EFFECT_ELEMENTS:
+        return ((InternalEList<?>)getEffectElements()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.TRANSITION_USAGE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -1072,6 +1100,8 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
         return getTransitionSuccessionElement();
       case SysMLOCPackage.TRANSITION_USAGE__TRANSITION_SOURCE_ELEMENT:
         return getTransitionSourceElement();
+      case SysMLOCPackage.TRANSITION_USAGE__EFFECT_ELEMENTS:
+        return getEffectElements();
       case SysMLOCPackage.TRANSITION_USAGE__ELEMENTS:
         return getElements();
     }
@@ -1162,6 +1192,10 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
       case SysMLOCPackage.TRANSITION_USAGE__TRANSITION_SOURCE_ELEMENT:
         setTransitionSourceElement((String)newValue);
         return;
+      case SysMLOCPackage.TRANSITION_USAGE__EFFECT_ELEMENTS:
+        getEffectElements().clear();
+        getEffectElements().addAll((Collection<? extends ActionBodyElement>)newValue);
+        return;
       case SysMLOCPackage.TRANSITION_USAGE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends ActionBodyElement>)newValue);
@@ -1246,6 +1280,9 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
       case SysMLOCPackage.TRANSITION_USAGE__TRANSITION_SOURCE_ELEMENT:
         setTransitionSourceElement(TRANSITION_SOURCE_ELEMENT_EDEFAULT);
         return;
+      case SysMLOCPackage.TRANSITION_USAGE__EFFECT_ELEMENTS:
+        getEffectElements().clear();
+        return;
       case SysMLOCPackage.TRANSITION_USAGE__ELEMENTS:
         getElements().clear();
         return;
@@ -1307,6 +1344,8 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
         return transitionSuccessionElement != null && !transitionSuccessionElement.isEmpty();
       case SysMLOCPackage.TRANSITION_USAGE__TRANSITION_SOURCE_ELEMENT:
         return TRANSITION_SOURCE_ELEMENT_EDEFAULT == null ? transitionSourceElement != null : !TRANSITION_SOURCE_ELEMENT_EDEFAULT.equals(transitionSourceElement);
+      case SysMLOCPackage.TRANSITION_USAGE__EFFECT_ELEMENTS:
+        return effectElements != null && !effectElements.isEmpty();
       case SysMLOCPackage.TRANSITION_USAGE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }

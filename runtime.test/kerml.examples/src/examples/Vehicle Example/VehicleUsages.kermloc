@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="VehicleUsages">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * Example usages of elements from the vehicle definitions model.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="VehicleDefinitions" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Comment" body="/* VALUES */"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="T1" valuePart="10.0" isFeature="true" isSemicolon="true"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="T2" valuePart="20.0" isFeature="true" isSemicolon="true"/>
+    <elements xsi:type="kerMLOC:Comment" body="/* PARTS */"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="narrowRimWheel" isFeature="true">
+      <typings>Wheel</typings>
+      <elements xsi:type="kerMLOC:Documentation" body="/* Narrow-rim wheel configuration with 4 to 5 lugbolts. */"/>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="lugbolt" MultiLow="4" MultiHigh="5" isSemicolon="true">
+        <typings>Lugbolt</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="wideRimWheel" isFeature="true">
+      <typings>Wheel</typings>
+      <elements xsi:type="kerMLOC:Documentation" body="/* Wide-rim wheel configuration with 4 to 6 lugbolts. */"/>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="lugbolt" MultiLow="4" MultiHigh="6" isSemicolon="true">
+        <typings>Lugbolt</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="vehicle_C1" isFeature="true">
+      <typings>Vehicle</typings>
+      <elements xsi:type="kerMLOC:Documentation" body="/* Basic Vehicle configuration showing a part hierarchy. */"/>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="frontAxleAssembly">
+        <typings>AxleAssembly</typings>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="frontWheel" MultiLow="2">
+          <redefinitions>narrowRimWheel</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="lugbolt" MultiLow="4">
+            <redefinitions>narrowRimWheel::lugbolt</redefinitions>
+            <elements xsi:type="kerMLOC:Feature" declaredName="tighteningTorque" valuePart="T1" isFeature="true" isSemicolon="true">
+              <redefinitions>Lugbolt::tighteningTorque</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="frontAxle" isSemicolon="true">
+          <typings>Axle</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="rearAxleAssembly">
+        <typings>VehicleDefinitions::AxleAssembly</typings>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="rearWheel" MultiLow="2">
+          <redefinitions>wideRimWheel</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="lugbolt" MultiLow="6">
+            <redefinitions>wideRimWheel::lugbolt</redefinitions>
+            <elements xsi:type="kerMLOC:Feature" declaredName="tighteningTorque" valuePart="T2" isFeature="true" isSemicolon="true">
+              <redefinitions>Lugbolt::tighteningTorque</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="rearAxle" isSemicolon="true">
+          <typings>Axle</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="vehicle_C2" isFeature="true">
+      <subsetting>vehicle_C1</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/* Specialized configuration with part-specific ports. */"/>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="frontAxleAssembly">
+        <redefinitions>vehicle_C1::frontAxleAssembly</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="leftFrontWheel" valuePart="vehicle_C1::frontAxleAssembly::frontWheel#(1)">
+          <subsetting>vehicle_C1::frontAxleAssembly::frontWheel</subsetting>
+          <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="hub" isSemicolon="true">
+            <typings>VehicleDefinitions::WheelHubIF</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="rightFrontWheel" valuePart="vehicle_C1::frontAxleAssembly::frontWheel#(2)">
+          <subsetting>vehicle_C1::frontAxleAssembly::frontWheel</subsetting>
+          <elements xsi:type="kerMLOC:Feature" declaredName="hub" isFeature="true" isSemicolon="true">
+            <typings>VehicleDefinitions::WheelHubIF</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="frontAxle">
+          <redefinitions>vehicle_C1::frontAxleAssembly::frontAxle</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="leftMountingPoint" isSemicolon="true">
+            <typings>AxleMountIF</typings>
+          </elements>
+          <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="rightMountingPoint" isSemicolon="true">
+            <typings>AxleMountIF</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" declaredName="leftFrontMount" isFrom="true">
+          <typings>Mounting</typings>
+          <connectorPart refElement="frontAxle.leftMountingPoint"/>
+          <connectorPart refElement="leftFrontWheel.hub"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" declaredName="rightFrontMount" isFrom="true">
+          <typings>Mounting</typings>
+          <connectorPart refElement="frontAxle.rightMountingPoint"/>
+          <connectorPart refElement="rightFrontWheel.hub"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="rearAxleAssembly">
+        <redefinitions>vehicle_C1::rearAxleAssembly</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="leftRearWheel" valuePart="vehicle_C1::rearAxleAssembly::rearWheel#(1)">
+          <subsetting>vehicle_C1::rearAxleAssembly::rearWheel</subsetting>
+          <elements xsi:type="kerMLOC:Feature" declaredName="hub" isFeature="true" isSemicolon="true">
+            <typings>WheelHubIF</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="rightRearWheel" valuePart="vehicle_C1::rearAxleAssembly::rearWheel#(2)">
+          <subsetting>vehicle_C1::rearAxleAssembly::rearWheel</subsetting>
+          <elements xsi:type="kerMLOC:Feature" declaredName="hub" isFeature="true" isSemicolon="true">
+            <typings>WheelHubIF</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="rearAxle">
+          <redefinitions>vehicle_C1::rearAxleAssembly::rearAxle</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" declaredName="leftMountingPoint" isFeature="true" isSemicolon="true">
+            <typings>AxleMountIF</typings>
+          </elements>
+          <elements xsi:type="kerMLOC:Feature" declaredName="rightMountingPoint" isFeature="true" isSemicolon="true">
+            <typings>AxleMountIF</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" declaredName="leftRearMount" isFrom="true">
+          <typings>Mounting</typings>
+          <connectorPart refElement="rearAxle.leftMountingPoint"/>
+          <connectorPart refElement="leftRearWheel.hub"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" declaredName="rightRearMount" isFrom="true">
+          <typings>Mounting</typings>
+          <connectorPart refElement="rearAxle.rightMountingPoint"/>
+          <connectorPart refElement="rightRearWheel.hub"/>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="vehicle_C3" isFeature="true">
+      <subsetting>vehicle_C2</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/* Further specialized configuration with a connector to a deeply-nested feature. */"/>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="transmission">
+        <typings>Transmission</typings>
+        <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="drive" isFeature="true" isSemicolon="true">
+          <typings>DriveIF</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="rearAxleAssembly">
+        <redefinitions>vehicle_C2::rearAxleAssembly</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="rearAxle">
+          <redefinitions>vehicle_C2::rearAxleAssembly::rearAxle</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="drive" isFeature="true" isSemicolon="true">
+            <typings>DriveIF</typings>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" declaredName="driveShaft" isFrom="true">
+        <connectorPart refElement="transmission.drive"/>
+        <connectorPart refElement="rearAxleAssembly.rearAxle.drive"/>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

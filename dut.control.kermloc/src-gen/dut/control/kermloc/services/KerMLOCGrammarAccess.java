@@ -462,6 +462,8 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cSuccessionFlowParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		//FeatureElement:
+		////    DefaultFeature
+		////    | Feature
 		//    Feature
 		//    | Step
 		//    | ExpressionClass
@@ -475,19 +477,23 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Feature
-		//| Step
-		//| ExpressionClass
-		//| BooleanExpression
-		//| Invariant
-		//| Connector
-		//| BindingConnector
-		//| Succession
-		//| Flow
-		//| SuccessionFlow
+		////    DefaultFeature
+		////    | Feature
+		//    Feature
+		//    | Step
+		//    | ExpressionClass
+		//    | BooleanExpression
+		//    | Invariant
+		//    | Connector
+		//    | BindingConnector
+		//    | Succession
+		//    | Flow
+		//    | SuccessionFlow
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Feature
+		////    DefaultFeature
+		////    | Feature
+		//    Feature
 		public RuleCall getFeatureParserRuleCall_0() { return cFeatureParserRuleCall_0; }
 		
 		//Step
@@ -3429,54 +3435,51 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cElementsTypeBodyElementParserRuleCall_4_1_1_0 = (RuleCall)cElementsAssignment_4_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_1_2 = (Keyword)cGroup_4_1.eContents().get(2);
 		
+		//    //DefaultFeature:
+		//    //    MemberPrefix
+		//    //    ExtendedPrefix
+		//    //    ((EndFeaturePrefix (crossingFeature+=CrossingFeature)? | BasicFeaturePrefix)
+		//    //     PrefixMetadata+ FeatureDeclaration?
+		//    //    | ( EndFeaturePrefix | BasicFeaturePrefix )
+		//    //      FeatureDeclaration
+		//    //    )
+		//    //    ValuePart?
+		//    //    ( ';' | '{' (elements+=TypeBodyElement)* '}')
+		//    //;
+		//    //
+		//    //Feature:
+		//    //    MemberPrefix
+		//    //    ExtendedPrefix
+		//    //    FeaturePrefix
+		//    //    'feature'
+		//    //    FeatureDeclaration?
+		//    //    ValuePart?
+		//    //    ( ';' | '{' (elements+=TypeBodyElement)* '}')
+		//    //;
 		//Feature:
 		//    MemberPrefix
 		//    ExtendedPrefix
-		////    (
-		//////     FeaturePrefix
-		////     ( EndFeaturePrefix (crossingFeature+=CrossingFeature)?
-		////     | BasicFeaturePrefix
-		////     )
-		////     ( PrefixMetadata* isFeature?='feature' | PrefixMetadata+ )
-		//////     ( isFeature?='feature')?
-		////     FeatureDeclaration?
-		////    |( EndFeaturePrefix | BasicFeaturePrefix )
-		////     FeatureDeclaration
-		////    )
 		//    ( FeaturePrefix
 		//      ( isFeature?='feature' | PrefixMetadata )
-		////       ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
 		//      FeatureDeclaration?
 		//    | ( EndFeaturePrefix | BasicFeaturePrefix )
 		//      FeatureDeclaration
 		//    )
 		//    ValuePart?
-		//    ( isSemicolon ?= ';' | '{' (elements+=TypeBodyElement)* '}')
+		//    ( isSemicolon?=';' | '{' (elements+=TypeBodyElement)* '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//    MemberPrefix
-		//    ExtendedPrefix
-		////    (
-		//////     FeaturePrefix
-		////     ( EndFeaturePrefix (crossingFeature+=CrossingFeature)?
-		////     | BasicFeaturePrefix
-		////     )
-		////     ( PrefixMetadata* isFeature?='feature' | PrefixMetadata+ )
-		//////     ( isFeature?='feature')?
-		////     FeatureDeclaration?
-		////    |( EndFeaturePrefix | BasicFeaturePrefix )
-		////     FeatureDeclaration
-		////    )
-		//    ( FeaturePrefix
-		//      ( isFeature?='feature' | PrefixMetadata )
-		////       ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
-		//      FeatureDeclaration?
-		//    | ( EndFeaturePrefix | BasicFeaturePrefix )
-		//      FeatureDeclaration
-		//    )
-		//    ValuePart?
-		//    ( isSemicolon ?= ';' | '{' (elements+=TypeBodyElement)* '}')
+		//MemberPrefix
+		//ExtendedPrefix
+		//( FeaturePrefix
+		//  ( isFeature?='feature' | PrefixMetadata )
+		//  FeatureDeclaration?
+		//| ( EndFeaturePrefix | BasicFeaturePrefix )
+		//  FeatureDeclaration
+		//)
+		//ValuePart?
+		//( isSemicolon?=';' | '{' (elements+=TypeBodyElement)* '}')
 		public Group getGroup() { return cGroup; }
 		
 		//MemberPrefix
@@ -3485,30 +3488,17 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ExtendedPrefix
 		public RuleCall getExtendedPrefixParserRuleCall_1() { return cExtendedPrefixParserRuleCall_1; }
 		
-		////    (
-		//////     FeaturePrefix
-		////     ( EndFeaturePrefix (crossingFeature+=CrossingFeature)?
-		////     | BasicFeaturePrefix
-		////     )
-		////     ( PrefixMetadata* isFeature?='feature' | PrefixMetadata+ )
-		//////     ( isFeature?='feature')?
-		////     FeatureDeclaration?
-		////    |( EndFeaturePrefix | BasicFeaturePrefix )
-		////     FeatureDeclaration
-		////    )
-		//    ( FeaturePrefix
-		//      ( isFeature?='feature' | PrefixMetadata )
-		////       ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
-		//      FeatureDeclaration?
-		//    | ( EndFeaturePrefix | BasicFeaturePrefix )
-		//      FeatureDeclaration
-		//    )
+		//( FeaturePrefix
+		//  ( isFeature?='feature' | PrefixMetadata )
+		//  FeatureDeclaration?
+		//| ( EndFeaturePrefix | BasicFeaturePrefix )
+		//  FeatureDeclaration
+		//)
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
-		// FeaturePrefix
-		//      ( isFeature?='feature' | PrefixMetadata )
-		////       ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
-		//      FeatureDeclaration?
+		//FeaturePrefix
+		//     ( isFeature?='feature' | PrefixMetadata )
+		//     FeatureDeclaration?
 		public Group getGroup_2_0() { return cGroup_2_0; }
 		
 		//FeaturePrefix
@@ -3526,8 +3516,7 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//PrefixMetadata
 		public RuleCall getPrefixMetadataParserRuleCall_2_0_1_1() { return cPrefixMetadataParserRuleCall_2_0_1_1; }
 		
-		////       ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
-		//      FeatureDeclaration?
+		//FeatureDeclaration?
 		public RuleCall getFeatureDeclarationParserRuleCall_2_0_2() { return cFeatureDeclarationParserRuleCall_2_0_2; }
 		
 		//( EndFeaturePrefix | BasicFeaturePrefix )
@@ -3549,10 +3538,10 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ValuePart?
 		public RuleCall getValuePartParserRuleCall_3() { return cValuePartParserRuleCall_3; }
 		
-		//( isSemicolon ?= ';' | '{' (elements+=TypeBodyElement)* '}')
+		//( isSemicolon?=';' | '{' (elements+=TypeBodyElement)* '}')
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 		
-		//isSemicolon ?= ';'
+		//isSemicolon?=';'
 		public Assignment getIsSemicolonAssignment_4_0() { return cIsSemicolonAssignment_4_0; }
 		
 		//';'
@@ -4900,8 +4889,7 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
 		private final Keyword cColonGreaterThanSignKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
-		private final Keyword cSpecializesKeyword_1_0_1 = (Keyword)cAlternatives_1_0.eContents().get(1);
-		private final Keyword cSubsetsKeyword_1_0_2 = (Keyword)cAlternatives_1_0.eContents().get(2);
+		private final Keyword cSubsetsKeyword_1_0_1 = (Keyword)cAlternatives_1_0.eContents().get(1);
 		private final RuleCall cSubsettingFeatureChainParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Alternatives cAlternatives_2_0 = (Alternatives)cGroup_2.eContents().get(0);
@@ -4921,7 +4909,7 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//fragment FeatureSpecialization:
 		//    (':'|'typed' 'by') TypingFeatureTyping
-		//    | (':>'|'specializes'|'subsets') SubsettingFeatureChain
+		//    | (':>'|'subsets') SubsettingFeatureChain
 		//    | ('::>'|'references')  ReferenceFeatureChain
 		//    | ('=>'|'crosses') CrossFeatureChain
 		//    | (':>>'|'redefines') RedefinitionFeatureChain
@@ -4929,7 +4917,7 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		@Override public ParserRule getRule() { return rule; }
 		
 		//(':'|'typed' 'by') TypingFeatureTyping
-		//| (':>'|'specializes'|'subsets') SubsettingFeatureChain
+		//| (':>'|'subsets') SubsettingFeatureChain
 		//| ('::>'|'references')  ReferenceFeatureChain
 		//| ('=>'|'crosses') CrossFeatureChain
 		//| (':>>'|'redefines') RedefinitionFeatureChain
@@ -4956,20 +4944,17 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//TypingFeatureTyping
 		public RuleCall getTypingFeatureTypingParserRuleCall_0_1() { return cTypingFeatureTypingParserRuleCall_0_1; }
 		
-		//(':>'|'specializes'|'subsets') SubsettingFeatureChain
+		//(':>'|'subsets') SubsettingFeatureChain
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//(':>'|'specializes'|'subsets')
+		//(':>'|'subsets')
 		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
 		
 		//':>'
 		public Keyword getColonGreaterThanSignKeyword_1_0_0() { return cColonGreaterThanSignKeyword_1_0_0; }
 		
-		//'specializes'
-		public Keyword getSpecializesKeyword_1_0_1() { return cSpecializesKeyword_1_0_1; }
-		
 		//'subsets'
-		public Keyword getSubsetsKeyword_1_0_2() { return cSubsetsKeyword_1_0_2; }
+		public Keyword getSubsetsKeyword_1_0_1() { return cSubsetsKeyword_1_0_1; }
 		
 		//SubsettingFeatureChain
 		public RuleCall getSubsettingFeatureChainParserRuleCall_1_1() { return cSubsettingFeatureChainParserRuleCall_1_1; }
@@ -5969,10 +5954,6 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cOriginalTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cOriginalTypeQualifiedNameParserRuleCall_1_0 = (RuleCall)cOriginalTypeAssignment_1.eContents().get(0);
 		
-		////fragment MultiplicityRange:
-		////    //    '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
-		////    '[' MultiLow = MultiplicityExpression ( '..' MultiHigh = MultiplicityExpression )? ']'
-		////;
 		//fragment FeatureConjugationPart:
 		//    ( '~' | 'conjugates' ) originalType=QualifiedName
 		//;
@@ -9032,6 +9013,8 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//FeatureElement:
+	////    DefaultFeature
+	////    | Feature
 	//    Feature
 	//    | Step
 	//    | ExpressionClass
@@ -9600,29 +9583,38 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getTypeFeaturingAccess().getRule();
 	}
 	
+	//    //DefaultFeature:
+	//    //    MemberPrefix
+	//    //    ExtendedPrefix
+	//    //    ((EndFeaturePrefix (crossingFeature+=CrossingFeature)? | BasicFeaturePrefix)
+	//    //     PrefixMetadata+ FeatureDeclaration?
+	//    //    | ( EndFeaturePrefix | BasicFeaturePrefix )
+	//    //      FeatureDeclaration
+	//    //    )
+	//    //    ValuePart?
+	//    //    ( ';' | '{' (elements+=TypeBodyElement)* '}')
+	//    //;
+	//    //
+	//    //Feature:
+	//    //    MemberPrefix
+	//    //    ExtendedPrefix
+	//    //    FeaturePrefix
+	//    //    'feature'
+	//    //    FeatureDeclaration?
+	//    //    ValuePart?
+	//    //    ( ';' | '{' (elements+=TypeBodyElement)* '}')
+	//    //;
 	//Feature:
 	//    MemberPrefix
 	//    ExtendedPrefix
-	////    (
-	//////     FeaturePrefix
-	////     ( EndFeaturePrefix (crossingFeature+=CrossingFeature)?
-	////     | BasicFeaturePrefix
-	////     )
-	////     ( PrefixMetadata* isFeature?='feature' | PrefixMetadata+ )
-	//////     ( isFeature?='feature')?
-	////     FeatureDeclaration?
-	////    |( EndFeaturePrefix | BasicFeaturePrefix )
-	////     FeatureDeclaration
-	////    )
 	//    ( FeaturePrefix
 	//      ( isFeature?='feature' | PrefixMetadata )
-	////       ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
 	//      FeatureDeclaration?
 	//    | ( EndFeaturePrefix | BasicFeaturePrefix )
 	//      FeatureDeclaration
 	//    )
 	//    ValuePart?
-	//    ( isSemicolon ?= ';' | '{' (elements+=TypeBodyElement)* '}')
+	//    ( isSemicolon?=';' | '{' (elements+=TypeBodyElement)* '}')
 	//;
 	public FeatureElements getFeatureAccess() {
 		return pFeature;
@@ -9895,7 +9887,7 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//fragment FeatureSpecialization:
 	//    (':'|'typed' 'by') TypingFeatureTyping
-	//    | (':>'|'specializes'|'subsets') SubsettingFeatureChain
+	//    | (':>'|'subsets') SubsettingFeatureChain
 	//    | ('::>'|'references')  ReferenceFeatureChain
 	//    | ('=>'|'crosses') CrossFeatureChain
 	//    | (':>>'|'redefines') RedefinitionFeatureChain
@@ -10208,10 +10200,6 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getMultiplicityModifiersAccess().getRule();
 	}
 	
-	////fragment MultiplicityRange:
-	////    //    '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
-	////    '[' MultiLow = MultiplicityExpression ( '..' MultiHigh = MultiplicityExpression )? ']'
-	////;
 	//fragment FeatureConjugationPart:
 	//    ( '~' | 'conjugates' ) originalType=QualifiedName
 	//;

@@ -7987,17 +7987,17 @@ ruleTransitionUsage returns [EObject current=null]
 						(
 							(
 								{
-									newCompositeNode(grammarAccess.getTransitionUsageAccess().getElementsActionBodyElementParserRuleCall_1_0_5_2_1_0());
+									newCompositeNode(grammarAccess.getTransitionUsageAccess().getEffectElementsActionBodyElementParserRuleCall_1_0_5_2_1_0());
 								}
-								lv_elements_11_0=ruleActionBodyElement
+								lv_effectElements_11_0=ruleActionBodyElement
 								{
 									if ($current==null) {
 										$current = createModelElementForParent(grammarAccess.getTransitionUsageRule());
 									}
 									add(
 										$current,
-										"elements",
-										lv_elements_11_0,
+										"effectElements",
+										lv_effectElements_11_0,
 										"dut.control.sysmloc.SysMLOC.ActionBodyElement");
 									afterParserOrEnumRuleCall();
 								}
@@ -8064,17 +8064,17 @@ ruleTransitionUsage returns [EObject current=null]
 						(
 							(
 								{
-									newCompositeNode(grammarAccess.getTransitionUsageAccess().getElementsActionBodyElementParserRuleCall_1_1_3_2_1_0());
+									newCompositeNode(grammarAccess.getTransitionUsageAccess().getEffectElementsActionBodyElementParserRuleCall_1_1_3_2_1_0());
 								}
-								lv_elements_19_0=ruleActionBodyElement
+								lv_effectElements_19_0=ruleActionBodyElement
 								{
 									if ($current==null) {
 										$current = createModelElementForParent(grammarAccess.getTransitionUsageRule());
 									}
 									add(
 										$current,
-										"elements",
-										lv_elements_19_0,
+										"effectElements",
+										lv_effectElements_19_0,
 										"dut.control.sysmloc.SysMLOC.ActionBodyElement");
 									afterParserOrEnumRuleCall();
 								}
@@ -8124,17 +8124,17 @@ ruleTransitionUsage returns [EObject current=null]
 						(
 							(
 								{
-									newCompositeNode(grammarAccess.getTransitionUsageAccess().getElementsActionBodyElementParserRuleCall_1_2_1_2_1_0());
+									newCompositeNode(grammarAccess.getTransitionUsageAccess().getEffectElementsActionBodyElementParserRuleCall_1_2_1_2_1_0());
 								}
-								lv_elements_25_0=ruleActionBodyElement
+								lv_effectElements_25_0=ruleActionBodyElement
 								{
 									if ($current==null) {
 										$current = createModelElementForParent(grammarAccess.getTransitionUsageRule());
 									}
 									add(
 										$current,
-										"elements",
-										lv_elements_25_0,
+										"effectElements",
+										lv_effectElements_25_0,
 										"dut.control.sysmloc.SysMLOC.ActionBodyElement");
 									afterParserOrEnumRuleCall();
 								}

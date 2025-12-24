@@ -694,12 +694,12 @@ TransitionUsage:
 		('accept' AcceptParameterPart)?
 	//		('if' conditionalExpression=Expression)?
 		TransitionUsageIfPart?
-		('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
+		('do' PerformedActionParameterPart ( '{' effectElements+=ActionBodyElement* '}' )?)?
 	|	'accept' AcceptParameterPart
 		TransitionUsageIfPart?
-		('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
+		('do' PerformedActionParameterPart ( '{' effectElements+=ActionBodyElement* '}' )?)?
 	| 	TransitionUsageIfPart
-		('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
+		('do' PerformedActionParameterPart ( '{' effectElements+=ActionBodyElement* '}' )?)?
 	)?
 	'then' TransitionSuccession
 	( ';' | '{' (elements+=ActionBodyElement)* '}' )

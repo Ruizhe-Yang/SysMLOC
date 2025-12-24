@@ -10,124 +10,124 @@
     <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="Collections" isNamespace="true"/>
     <elements xsi:type="kerMLOC:Function" declaredName="'=='">
       <subsetting>BaseFunctions::'=='</subsetting>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col1" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col1" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Collection</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col2" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col2" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Collection</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="col1.elements->equals(col2.elements)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="col1.elements->equals(col2.elements)" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="size">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1" isSemicolon="true">
         <typings>Collection</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="SequenceFunctions::size(col.elements)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="SequenceFunctions::size(col.elements)" isSemicolon="true">
         <typings>Natural</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="isEmpty">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1" isSemicolon="true">
         <typings>Collection</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="SequenceFunctions::isEmpty(col.elements)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="SequenceFunctions::isEmpty(col.elements)" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="notEmpty">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1" isSemicolon="true">
         <typings>Collection</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="SequenceFunctions::notEmpty(col.elements)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="SequenceFunctions::notEmpty(col.elements)" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="contains">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1" isSemicolon="true">
         <typings>Collection</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="values" MultiLow="*">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="values" MultiLow="*" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="col.elements->includes(values)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="col.elements->includes(values)" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="containsAll">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col1" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col1" MultiLow="1" isSemicolon="true">
         <typings>Collection</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col2" MultiLow="2">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col2" MultiLow="2" isSemicolon="true">
         <typings>Collection</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="contains(col1, col2.elements)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="contains(col1, col2.elements)" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="head">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1" isSemicolon="true">
         <typings>OrderedCollection</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="SequenceFunctions::head(col.elements)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="SequenceFunctions::head(col.elements)" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="tail">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1" isSemicolon="true">
         <typings>OrderedCollection</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" valuePart="SequenceFunctions::tail(col.elements)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" valuePart="SequenceFunctions::tail(col.elements)" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="last">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1" isSemicolon="true">
         <typings>OrderedCollection</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="SequenceFunctions::last(col.elements)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="SequenceFunctions::last(col.elements)" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="'#'">
       <subsetting>BaseFunctions::'#'</subsetting>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="col" MultiLow="1" isSemicolon="true">
         <typings>OrderedCollection</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" MultiLow="1" isSemicolon="true">
         <typings>Positive</typings>
       </elements>
       <elements xsi:type="kerMLOC:CodeAnnotation" body="// Cast ensures this function is not called recursively if the elements of col are OrderedCollections.&#xA;"/>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="(col.elements as Anything)#(index)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="(col.elements as Anything)#(index)" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="'array#'">
       <subsetting>BaseFunctions::'#'</subsetting>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="arr" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="arr" MultiLow="1" isSemicolon="true">
         <typings>Array</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="indexes" MultiLow="n" isOrdered="true" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="indexes" MultiLow="n" isOrdered="true" isNonunique="true" isSemicolon="true">
         <typings>Positive</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="n" MultiLow="1" valuePart="arr.rank" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="n" MultiLow="1" valuePart="arr.rank" isFeature="true" isSemicolon="true">
         <typings>Natural</typings>
       </elements>
       <elements xsi:type="kerMLOC:CodeAnnotation" body="// Assumes row-major ordering for elements.&#xA;"/>
       <elements xsi:type="kerMLOC:Function" visibility="private" declaredName="index">
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="arr" MultiLow="1">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="arr" MultiLow="1" isSemicolon="true">
           <typings>Array</typings>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="i">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="i" isSemicolon="true">
           <typings>Natural</typings>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="indexes" MultiLow="1" MultiHigh="*">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="indexes" MultiLow="1" MultiHigh="*" isSemicolon="true">
           <typings>Positive</typings>
         </elements>
         <resultExpressionParameter resultExpression="if i &lt;= 1? indexes#(1) else arr.dimensions#(i) * (index(arr, i-1, indexes) - 1) + indexes#(i)"/>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="if n == 0 or (1..n)->exists {in i; indexes#(i) > arr.dimensions#(i)}? null else arr.elements#(index(arr, n, indexes))">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="if n == 0 or (1..n)->exists {in i; indexes#(i) > arr.dimensions#(i)}? null else arr.elements#(index(arr, n, indexes))" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>

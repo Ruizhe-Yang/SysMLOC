@@ -26,6 +26,7 @@ public class SysMLOC2SysML {
         } else {
 //            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\training2\\17. Control\\Control Structures Example.sysmloc";
         	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\sysml.library";
+//        	modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\sysml-modified";
         }
 //        Path out = convertModelToSysml(modelPath);
 //        System.out.println("Done. Written to: " + out.toAbsolutePath());

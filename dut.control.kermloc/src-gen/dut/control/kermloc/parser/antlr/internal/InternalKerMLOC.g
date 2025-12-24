@@ -7316,14 +7316,9 @@ ruleFeatureSpecialization[EObject in_current]  returns [EObject current=in_curre
 					newLeafNode(otherlv_4, grammarAccess.getFeatureSpecializationAccess().getColonGreaterThanSignKeyword_1_0_0());
 				}
 				    |
-				otherlv_5='specializes'
+				otherlv_5='subsets'
 				{
-					newLeafNode(otherlv_5, grammarAccess.getFeatureSpecializationAccess().getSpecializesKeyword_1_0_1());
-				}
-				    |
-				otherlv_6='subsets'
-				{
-					newLeafNode(otherlv_6, grammarAccess.getFeatureSpecializationAccess().getSubsetsKeyword_1_0_2());
+					newLeafNode(otherlv_5, grammarAccess.getFeatureSpecializationAccess().getSubsetsKeyword_1_0_1());
 				}
 			)
 			{
@@ -7332,23 +7327,23 @@ ruleFeatureSpecialization[EObject in_current]  returns [EObject current=in_curre
 				}
 				newCompositeNode(grammarAccess.getFeatureSpecializationAccess().getSubsettingFeatureChainParserRuleCall_1_1());
 			}
-			this_SubsettingFeatureChain_7=ruleSubsettingFeatureChain[$current]
+			this_SubsettingFeatureChain_6=ruleSubsettingFeatureChain[$current]
 			{
-				$current = $this_SubsettingFeatureChain_7.current;
+				$current = $this_SubsettingFeatureChain_6.current;
 				afterParserOrEnumRuleCall();
 			}
 		)
 		    |
 		(
 			(
-				otherlv_8='::>'
+				otherlv_7='::>'
 				{
-					newLeafNode(otherlv_8, grammarAccess.getFeatureSpecializationAccess().getColonColonGreaterThanSignKeyword_2_0_0());
+					newLeafNode(otherlv_7, grammarAccess.getFeatureSpecializationAccess().getColonColonGreaterThanSignKeyword_2_0_0());
 				}
 				    |
-				otherlv_9='references'
+				otherlv_8='references'
 				{
-					newLeafNode(otherlv_9, grammarAccess.getFeatureSpecializationAccess().getReferencesKeyword_2_0_1());
+					newLeafNode(otherlv_8, grammarAccess.getFeatureSpecializationAccess().getReferencesKeyword_2_0_1());
 				}
 			)
 			{
@@ -7357,23 +7352,23 @@ ruleFeatureSpecialization[EObject in_current]  returns [EObject current=in_curre
 				}
 				newCompositeNode(grammarAccess.getFeatureSpecializationAccess().getReferenceFeatureChainParserRuleCall_2_1());
 			}
-			this_ReferenceFeatureChain_10=ruleReferenceFeatureChain[$current]
+			this_ReferenceFeatureChain_9=ruleReferenceFeatureChain[$current]
 			{
-				$current = $this_ReferenceFeatureChain_10.current;
+				$current = $this_ReferenceFeatureChain_9.current;
 				afterParserOrEnumRuleCall();
 			}
 		)
 		    |
 		(
 			(
-				otherlv_11='=>'
+				otherlv_10='=>'
 				{
-					newLeafNode(otherlv_11, grammarAccess.getFeatureSpecializationAccess().getEqualsSignGreaterThanSignKeyword_3_0_0());
+					newLeafNode(otherlv_10, grammarAccess.getFeatureSpecializationAccess().getEqualsSignGreaterThanSignKeyword_3_0_0());
 				}
 				    |
-				otherlv_12='crosses'
+				otherlv_11='crosses'
 				{
-					newLeafNode(otherlv_12, grammarAccess.getFeatureSpecializationAccess().getCrossesKeyword_3_0_1());
+					newLeafNode(otherlv_11, grammarAccess.getFeatureSpecializationAccess().getCrossesKeyword_3_0_1());
 				}
 			)
 			{
@@ -7382,23 +7377,23 @@ ruleFeatureSpecialization[EObject in_current]  returns [EObject current=in_curre
 				}
 				newCompositeNode(grammarAccess.getFeatureSpecializationAccess().getCrossFeatureChainParserRuleCall_3_1());
 			}
-			this_CrossFeatureChain_13=ruleCrossFeatureChain[$current]
+			this_CrossFeatureChain_12=ruleCrossFeatureChain[$current]
 			{
-				$current = $this_CrossFeatureChain_13.current;
+				$current = $this_CrossFeatureChain_12.current;
 				afterParserOrEnumRuleCall();
 			}
 		)
 		    |
 		(
 			(
-				otherlv_14=':>>'
+				otherlv_13=':>>'
 				{
-					newLeafNode(otherlv_14, grammarAccess.getFeatureSpecializationAccess().getColonGreaterThanSignGreaterThanSignKeyword_4_0_0());
+					newLeafNode(otherlv_13, grammarAccess.getFeatureSpecializationAccess().getColonGreaterThanSignGreaterThanSignKeyword_4_0_0());
 				}
 				    |
-				otherlv_15='redefines'
+				otherlv_14='redefines'
 				{
-					newLeafNode(otherlv_15, grammarAccess.getFeatureSpecializationAccess().getRedefinesKeyword_4_0_1());
+					newLeafNode(otherlv_14, grammarAccess.getFeatureSpecializationAccess().getRedefinesKeyword_4_0_1());
 				}
 			)
 			{
@@ -7407,9 +7402,9 @@ ruleFeatureSpecialization[EObject in_current]  returns [EObject current=in_curre
 				}
 				newCompositeNode(grammarAccess.getFeatureSpecializationAccess().getRedefinitionFeatureChainParserRuleCall_4_1());
 			}
-			this_RedefinitionFeatureChain_16=ruleRedefinitionFeatureChain[$current]
+			this_RedefinitionFeatureChain_15=ruleRedefinitionFeatureChain[$current]
 			{
-				$current = $this_RedefinitionFeatureChain_16.current;
+				$current = $this_RedefinitionFeatureChain_15.current;
 				afterParserOrEnumRuleCall();
 			}
 		)
@@ -8648,7 +8643,7 @@ ruleFeatureSpecializationPart[EObject in_current]  returns [EObject current=in_c
 	(
 		(
 			(
-				(':' | 'typed' | ':>' | 'specializes' | 'subsets' | '::>' | 'references' | '=>' | 'crosses' | ':>>' | 'redefines')=>
+				(':' | 'typed' | ':>' | 'subsets' | '::>' | 'references' | '=>' | 'crosses' | ':>>' | 'redefines')=>
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getFeatureSpecializationPartRule());
@@ -9566,7 +9561,7 @@ rulePayloadFeatureSpecializationPart[EObject in_current]  returns [EObject curre
 	(
 		(
 			(
-				(':' | 'typed' | ':>' | 'specializes' | 'subsets' | '::>' | 'references' | '=>' | 'crosses' | ':>>' | 'redefines')=>
+				(':' | 'typed' | ':>' | 'subsets' | '::>' | 'references' | '=>' | 'crosses' | ':>>' | 'redefines')=>
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getPayloadFeatureSpecializationPartRule());

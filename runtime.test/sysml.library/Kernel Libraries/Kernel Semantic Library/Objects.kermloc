@@ -21,7 +21,7 @@
     <elements xsi:type="kerMLOC:Structure" isAbstract="true" declaredName="Object">
       <subsetting>Occurrence</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Object is the most general class of structural occurrences that may change over time.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" declaredName="self" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="self" isFeature="true" isSemicolon="true">
         <typings>Object</typings>
         <redefinitions>Occurrence::self</redefinitions>
       </elements>
@@ -104,18 +104,18 @@
     <elements xsi:type="kerMLOC:Structure" declaredName="Body" isSufficient="true">
       <subsetting>Object</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A Body is an Object of inner space dimension 3.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" valuePart="3" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" valuePart="3" isFeature="true" isSemicolon="true">
         <redefinitions>innerSpaceDimension</redefinitions>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Structure" declaredName="Surface" isSufficient="true">
       <subsetting>Object</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A Surface is an Object of inner space dimension 2.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" valuePart="2" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" valuePart="2" isFeature="true" isSemicolon="true">
         <redefinitions>innerSpaceDimension</redefinitions>
       </elements>
       <elements xsi:type="kerMLOC:Comment" body="/* The number of  &quot;holes&quot; in this Surface, assuming it isClosed. */"/>
-      <elements xsi:type="kerMLOC:Feature" declaredName="genus" MultiLow="0" MultiHigh="1" isDefault="true" valuePart="0" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="genus" MultiLow="0" MultiHigh="1" isDefault="true" valuePart="0" isFeature="true" isSemicolon="true">
         <typings>Natural</typings>
       </elements>
       <elements xsi:type="kerMLOC:Invariant">
@@ -125,14 +125,14 @@
     <elements xsi:type="kerMLOC:Structure" declaredName="Curve" isSufficient="true">
       <subsetting>Object</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A Curve is an Object of inner space dimension 1.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" valuePart="1" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" valuePart="1" isFeature="true" isSemicolon="true">
         <redefinitions>innerSpaceDimension</redefinitions>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Structure" declaredName="Point" isSufficient="true">
       <subsetting>Object</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A Point is an Object of inner space dimension 0.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" valuePart="0" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" valuePart="0" isFeature="true" isSemicolon="true">
         <redefinitions>innerSpaceDimension</redefinitions>
       </elements>
     </elements>
@@ -142,7 +142,7 @@
       <elements xsi:type="kerMLOC:Feature" isAbstract="true" isPortion="true" declaredName="structuredSpaceObjectCells" MultiLow="1" MultiHigh="*" isFeature="true">
         <typings>StructuredSpaceObject</typings>
         <subsetting>Occurrence::spaceSlices</subsetting>
-        <elements xsi:type="kerMLOC:Feature" declaredName="cellOrientation" MultiLow="0" MultiHigh="1" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" declaredName="cellOrientation" MultiLow="0" MultiHigh="1" isFeature="true" isSemicolon="true">
           <typings>Integer</typings>
         </elements>
         <elements xsi:type="kerMLOC:Invariant">
@@ -157,7 +157,7 @@
       <elements xsi:type="kerMLOC:Structure" declaredName="StructuredSurface">
         <subsetting>StructuredSpaceObject</subsetting>
         <subsetting>Surface</subsetting>
-        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
           <redefinitions>StructuredSpaceObject::innerSpaceDimension</redefinitions>
           <redefinitions>Surface::innerSpaceDimension</redefinitions>
         </elements>
@@ -165,7 +165,7 @@
       <elements xsi:type="kerMLOC:Structure" declaredName="StructuredCurve">
         <subsetting>StructuredSpaceObject</subsetting>
         <subsetting>Curve</subsetting>
-        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
           <redefinitions>StructuredSpaceObject::innerSpaceDimension</redefinitions>
           <redefinitions>Curve::innerSpaceDimension</redefinitions>
         </elements>
@@ -173,7 +173,7 @@
       <elements xsi:type="kerMLOC:Structure" declaredName="StructuredPoint">
         <subsetting>StructuredSpaceObject</subsetting>
         <subsetting>Point</subsetting>
-        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
           <redefinitions>StructuredSpaceObject::innerSpaceDimension</redefinitions>
           <redefinitions>Point::innerSpaceDimension</redefinitions>
         </elements>
@@ -181,19 +181,19 @@
       <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="faces" MultiLow="0" MultiHigh="*" isOrdered="true" isFeature="true">
         <typings>StructuredSurface</typings>
         <subsetting>structuredSpaceObjectCells</subsetting>
-        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
           <typings>StructuredSpaceObject</typings>
           <redefinitions>that</redefinitions>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
           <subsetting>that.edges</subsetting>
           <redefinitions>edges</redefinitions>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
           <subsetting>that.vertices</subsetting>
           <redefinitions>vertices</redefinitions>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" isDerived="true" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isFeature="true" isSemicolon="true">
           <redefinitions>spaceBoundary</redefinitions>
         </elements>
         <elements xsi:type="kerMLOC:Invariant">
@@ -206,15 +206,15 @@
       <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="edges" MultiLow="0" MultiHigh="*" isOrdered="true" isFeature="true">
         <typings>StructuredCurve</typings>
         <subsetting>structuredSpaceObjectCells</subsetting>
-        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
           <typings>StructuredSpaceObject</typings>
           <redefinitions>that</redefinitions>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
           <subsetting>that.vertices</subsetting>
           <redefinitions>vertices</redefinitions>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" isDerived="true" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isFeature="true" isSemicolon="true">
           <redefinitions>spaceBoundary</redefinitions>
         </elements>
         <elements xsi:type="kerMLOC:Invariant">
@@ -224,11 +224,11 @@
           <resultExpressionParameter resultExpression="notEmpty(spaceBoundary) implies contains(spaceBoundary.unionsOf, vertices)"/>
         </elements>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="vertices" MultiLow="0" MultiHigh="*" isOrdered="true" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="vertices" MultiLow="0" MultiHigh="*" isOrdered="true" isFeature="true" isSemicolon="true">
         <typings>StructuredPoint</typings>
         <subsetting>structuredSpaceObjectCells</subsetting>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isDerived="true" valuePart="if notEmpty(faces) ? 2 else if notEmpty(edges) ? 1 else 0" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isDerived="true" valuePart="if notEmpty(faces) ? 2 else if notEmpty(edges) ? 1 else 0" isFeature="true" isSemicolon="true">
         <redefinitions>innerSpaceDimension</redefinitions>
       </elements>
     </elements>

@@ -16,7 +16,7 @@
       <elements xsi:type="kerMLOC:Feature" declaredName="outgoingHBLink" MultiLow="1" isFeature="true">
         <typings>HappensBefore</typings>
         <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Specializations subset this by all&#xA;&#x9;&#x9;&#x9; * successions going out of a decision step.&#xA;&#x9;&#x9;&#x9; */"/>
-        <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true" isSemicolon="true">
           <subsetting>that</subsetting>
           <redefinitions>earlierOccurrence</redefinitions>
         </elements>
@@ -28,7 +28,7 @@
       <elements xsi:type="kerMLOC:Feature" declaredName="incomingHBLink" MultiLow="1" isFeature="true">
         <typings>HappensBefore</typings>
         <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Specializations subset this by all&#xA;&#x9;&#x9;&#x9; * successions coming into a merge step.&#xA;&#x9;&#x9;&#x9; */"/>
-        <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true" isSemicolon="true">
           <subsetting>that</subsetting>
           <redefinitions>laterOccurrence</redefinitions>
         </elements>
@@ -37,17 +37,17 @@
     <elements xsi:type="kerMLOC:Behavior" isAbstract="true" declaredName="IfPerformance">
       <subsetting>Performance</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An IfPerformance is a Performance that determines whether the ifTest evaluation result is true &#xA;&#x9;&#x9; * (by whether ifTrue has a value).&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="ifTest" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="ifTest" MultiLow="1" isSemicolon="true">
         <typings>BooleanEvaluation</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Behavior" declaredName="IfThenPerformance">
       <subsetting>IfPerformance</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An IfThenPerformance is an IfPerformance where the thenClause occurs after and only after the &#xA;&#x9;&#x9; * ifTest evaluation result is true.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in">
+      <elements xsi:type="kerMLOC:Feature" direction="in" isSemicolon="true">
         <redefinitions>ifTest</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="thenClause" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="thenClause" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
       <elements xsi:type="kerMLOC:Succession">
@@ -61,10 +61,10 @@
     <elements xsi:type="kerMLOC:Behavior" declaredName="IfElsePerformance">
       <subsetting>IfPerformance</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An IfElsePerformance is an IfPerformance where the elseClause occurs after and only &#xA;&#x9;&#x9; * after the ifTest evaluation result is not true.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in">
+      <elements xsi:type="kerMLOC:Feature" direction="in" isSemicolon="true">
         <redefinitions>ifTest</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="elseClause" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="elseClause" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
       <elements xsi:type="kerMLOC:Succession">
@@ -78,13 +78,13 @@
     <elements xsi:type="kerMLOC:Behavior" declaredName="IfThenElsePerformance">
       <subsetting>IfThenPerformance</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An IfThenElsePerformance is an IfThenPerformance with an additional elseClause that&#xA;&#x9;&#x9; * occurs after and only after the ifTest evaluation is false.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in">
+      <elements xsi:type="kerMLOC:Feature" direction="in" isSemicolon="true">
         <redefinitions>ifTest</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in">
+      <elements xsi:type="kerMLOC:Feature" direction="in" isSemicolon="true">
         <redefinitions>thenClause</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="elseClause" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="elseClause" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
       <elements xsi:type="kerMLOC:Succession">
@@ -98,13 +98,13 @@
     <elements xsi:type="kerMLOC:Behavior" declaredName="LoopPerformance">
       <subsetting>Performance</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A LoopPerformance is a Performance where the body occurs repeatedly in sequence (iterates) &#xA;&#x9;&#x9; * as long as the whileTest evaluation result is true before each iteration (and after the &#xA;&#x9;&#x9; * previous one, except the first time) and the untilTest evaluation result is not true after &#xA;&#x9;&#x9; * each iteration and before the next one (except the last one).&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="whileTest" MultiLow="1" MultiHigh="*">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="whileTest" MultiLow="1" MultiHigh="*" isSemicolon="true">
         <typings>BooleanEvaluation</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="body" MultiLow="0" MultiHigh="*">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="body" MultiLow="0" MultiHigh="*" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="untilTest" MultiLow="0" MultiHigh="*">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="untilTest" MultiLow="0" MultiHigh="*" isSemicolon="true">
         <typings>BooleanEvaluation</typings>
       </elements>
       <elements xsi:type="kerMLOC:Step" declaredName="whileDecision" MultiLow="1" MultiHigh="*">

@@ -19,7 +19,7 @@
         <typings>Occurrence</typings>
         <redefinitions>BinaryLink::source</redefinitions>
         <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;             * The entity whose output is the source of the payload to be transferred.&#xA;             */"/>
-        <elements xsi:type="kerMLOC:Feature" declaredName="sourceOutput" MultiLow="0" MultiHigh="*" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" declaredName="sourceOutput" MultiLow="0" MultiHigh="*" isFeature="true" isSemicolon="true">
           <typings>Anything</typings>
         </elements>
       </elements>
@@ -27,7 +27,7 @@
         <typings>Occurrence</typings>
         <redefinitions>BinaryLink::target</redefinitions>
         <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;             * The entity whose input is the target of the payload to be transferred.&#xA;             */"/>
-        <elements xsi:type="kerMLOC:Feature" declaredName="targetInput" MultiLow="0" MultiHigh="*" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" declaredName="targetInput" MultiLow="0" MultiHigh="*" isFeature="true" isSemicolon="true">
           <typings>Anything</typings>
         </elements>
       </elements>
@@ -39,10 +39,10 @@
         <typings>Anything</typings>
         <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;             * The things that are to be transferred.&#xA;             */"/>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" declaredName="payloadNum" MultiLow="1" valuePart="size(payload)" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="payloadNum" MultiLow="1" valuePart="size(payload)" isFeature="true" isSemicolon="true">
         <typings>Natural</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="instantNum" MultiLow="1" valuePart="if isInstant? 1 else 0">
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="instantNum" MultiLow="1" valuePart="if isInstant? 1 else 0" isSemicolon="true">
         <typings>Natural</typings>
       </elements>
       <elements xsi:type="kerMLOC:BindingConnector" visibility="private" declaredName="instant" MultiLow="instantNum" isOf="true">
@@ -70,11 +70,11 @@
       <elements xsi:type="kerMLOC:Connector" declaredName="sourceOutputLink" MultiLow="payloadNum">
         <typings>BinaryLinkObject</typings>
         <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;             * The output of the payloads from the sourceOutput.&#xA;             */"/>
-        <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="transferSource" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="transferSource" isFeature="true" isSemicolon="true">
           <crossingFeature MultiLow="1"/>
           <references>source</references>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="transferPayload" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="transferPayload" isFeature="true" isSemicolon="true">
           <crossingFeature MultiLow="payloadNum"/>
           <subsetting>transferSource.sourceOutput</subsetting>
           <references>payload</references>
@@ -83,11 +83,11 @@
       <elements xsi:type="kerMLOC:Connector" declaredName="targetInputLink" MultiLow="payloadNum">
         <typings>BinaryLinkObject</typings>
         <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;             * The input of the payload to the targetInput.&#xA;             */"/>
-        <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="transferTarget" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="transferTarget" isFeature="true" isSemicolon="true">
           <crossingFeature MultiLow="1"/>
           <references>target</references>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="transferPayload" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="transferPayload" isFeature="true" isSemicolon="true">
           <crossingFeature MultiLow="payloadNum"/>
           <subsetting>transferTarget.targetInput</subsetting>
           <references>payload</references>
@@ -130,17 +130,17 @@
       <intersecting>Transfer</intersecting>
       <intersecting>HappensBefore</intersecting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * TransferBefore is a specialization of Transfer in which the source happens before&#xA;         * the transfer, which happens before the target.&#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>Transfer::source</redefinitions>
         <redefinitions>HappensBefore::earlierOccurrence</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>Transfer::target</redefinitions>
         <redefinitions>HappensBefore::laterOccurrence</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" declaredName="self" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="self" isFeature="true" isSemicolon="true">
         <typings>TransferBefore</typings>
         <redefinitions>Performance::self</redefinitions>
       </elements>
@@ -159,12 +159,12 @@
       <intersecting>FlowTransfer</intersecting>
       <intersecting>TransferBefore</intersecting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * FlowTransferBefore is a FlowTransfer that is also a TransferBefore. &#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>Transfer::source</redefinitions>
         <redefinitions>TransferBefore::source</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>Transfer::target</redefinitions>
         <redefinitions>TransferBefore::target</redefinitions>
@@ -175,12 +175,12 @@
       <subsetting>performances</subsetting>
       <subsetting>binaryLinks</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * transfers is a specialization of performances and binaryLinks restricted to type &#xA;         * Transfer.&#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>Transfer::source</redefinitions>
         <redefinitions>binaryLinks::source</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>Transfer::target</redefinitions>
         <redefinitions>binaryLinks::target</redefinitions>
@@ -190,12 +190,12 @@
       <typings>MessageTransfer</typings>
       <subsetting>transfers</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * messageTransfers is a specialization of transfers restricted to type MessageTransfers.&#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>MessageTransfer::source</redefinitions>
         <redefinitions>transfers::source</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>MessageTransfer::target</redefinitions>
         <redefinitions>transfers::target</redefinitions>
@@ -205,12 +205,12 @@
       <typings>FlowTransfer</typings>
       <subsetting>transfers</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * flowTransfers is a specialization of transfers restricted to type FlowTransfers.&#xA;         * It is the default subsetting for non-succession flows.&#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>FlowTransfer::source</redefinitions>
         <redefinitions>transfers::source</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>FlowTransfer::target</redefinitions>
         <redefinitions>transfers::target</redefinitions>
@@ -223,13 +223,13 @@
       <intersecting>transfers</intersecting>
       <intersecting>happensBeforeLinks</intersecting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * transfersBefore is a specialization of transfers and happensBeforeLinks restricted to&#xA;         * type TransferBefore.&#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>TransferBefore::source</redefinitions>
         <redefinitions>transfers::source</redefinitions>
         <redefinitions>happensBeforeLinks::earlierOccurrence</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>TransferBefore::target</redefinitions>
         <redefinitions>transfers::target</redefinitions>
@@ -243,13 +243,13 @@
       <intersecting>flowTransfers</intersecting>
       <intersecting>transfersBefore</intersecting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * flowTransfersBefore is a specialization of flowTransfers and transfersBefore that is restricted&#xA;         * to type FlowTransferBefore. IT is the default subsetting for succession flows.&#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>FlowTransferBefore::source</redefinitions>
         <redefinitions>flowTransfers::source</redefinitions>
         <redefinitions>transfersBefore::source</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>FlowTransferBefore::target</redefinitions>
         <redefinitions>flowTransfers::target</redefinitions>
@@ -259,17 +259,17 @@
     <elements xsi:type="kerMLOC:Behavior" declaredName="SendPerformance">
       <subsetting>Performance</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * SendPerformances are Performance that require an outgoingTransferFromSelf &#xA;         * from a designated sender Occurrence carrying a given payload, optionally to a designated receiver.&#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="payload" MultiLow="0" MultiHigh="*" isFeature="true"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="sender" MultiLow="1" isDefault="true" valuePart="this" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="payload" MultiLow="0" MultiHigh="*" isFeature="true" isSemicolon="true"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="sender" MultiLow="1" isDefault="true" valuePart="this" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="receiver" MultiLow="0" MultiHigh="1" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="receiver" MultiLow="0" MultiHigh="1" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
       <elements xsi:type="kerMLOC:Feature" declaredName="sentTransfer" MultiLow="1" isFeature="true">
         <typings>MessageTransfer</typings>
         <subsetting>sender.outgoingTransfersFromSelf</subsetting>
-        <elements xsi:type="kerMLOC:Feature" valuePart="SendPerformance::payload" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" valuePart="SendPerformance::payload" isFeature="true" isSemicolon="true">
           <redefinitions>payload</redefinitions>
         </elements>
       </elements>
@@ -285,11 +285,11 @@
     <elements xsi:type="kerMLOC:Behavior" declaredName="AcceptPerformance">
       <subsetting>Performance</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * AcceptPerformance is a performance that requires an incomingTransferToSelf&#xA;         * of a desigated receiver Occurrence, providing its payload as output.&#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="payload" MultiLow="0" MultiHigh="*" isFeature="true"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="receiver" MultiLow="1" isDefault="true" valuePart="this" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="payload" MultiLow="0" MultiHigh="*" isFeature="true" isSemicolon="true"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="receiver" MultiLow="1" isDefault="true" valuePart="this" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" declaredName="acceptedTransfer" MultiLow="1" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="acceptedTransfer" MultiLow="1" isFeature="true" isSemicolon="true">
         <typings>MessageTransfer</typings>
         <subsetting>receiver.incomingTransfersToSelf</subsetting>
       </elements>

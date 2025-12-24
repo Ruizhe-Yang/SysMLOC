@@ -17,7 +17,7 @@
     <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions" isNamespace="true"/>
     <elements xsi:type="kerMLOC:Behavior" declaredName="StatePerformance">
       <subsetting>DecisionPerformance</subsetting>
-      <elements xsi:type="kerMLOC:Feature" declaredName="isTriggerDuring" isDefault="true" valuePart="true" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="isTriggerDuring" isDefault="true" valuePart="true" isFeature="true" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
       <elements xsi:type="kerMLOC:Step" isAbstract="true" declaredName="middle" MultiLow="1" MultiHigh="*">
@@ -64,14 +64,14 @@
       <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="acceptable" MultiLow="*" isFeature="true">
         <typings>Transfer</typings>
         <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Transfers that might be accepted. &#xA;&#x9;&#x9;&#x9; */"/>
-        <elements xsi:type="kerMLOC:Feature" declaredName="thatSP" MultiLow="1" valuePart="that as StatePerformance" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" declaredName="thatSP" MultiLow="1" valuePart="that as StatePerformance" isFeature="true" isSemicolon="true">
           <typings>StatePerformance</typings>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" declaredName="accableT" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" declaredName="accableT" isFeature="true" isSemicolon="true">
           <typings>Transfer</typings>
           <redefinitions>self</redefinitions>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" declaredName="accT" valuePart="thatSP.accepted" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" declaredName="accT" valuePart="thatSP.accepted" isFeature="true" isSemicolon="true">
           <typings>Transfer</typings>
         </elements>
         <elements xsi:type="kerMLOC:Invariant">
@@ -82,13 +82,13 @@
         </elements>
       </elements>
       <elements xsi:type="kerMLOC:Function" declaredName="allSubstatePerformances">
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="p" MultiLow="1">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="p" MultiLow="1" isSemicolon="true">
           <typings>Performance</typings>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" declaredName="substatePerformances" MultiLow="*" valuePart="p.subperformances->select{in subp:Performance; subp istype StatePerformance}" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" declaredName="substatePerformances" MultiLow="*" valuePart="p.subperformances->select{in subp:Performance; subp istype StatePerformance}" isFeature="true" isSemicolon="true">
           <typings>StatePerformance</typings>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="*" valuePart="union(substatePerformances, substatePerformances->collect{in sp:StatePerformance; allSubstatePerformances(sp) } )">
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="*" valuePart="union(substatePerformances, substatePerformances->collect{in sp:StatePerformance; allSubstatePerformances(sp) } )" isSemicolon="true">
           <typings>StatePerformance</typings>
         </elements>
       </elements>
@@ -96,30 +96,30 @@
         <connectorPart MultiLow="*" refElement="acceptable"/>
         <connectorPart MultiLow="1" refElement="exit"/>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="this.isRunToCompletion" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="this.isRunToCompletion" isFeature="true" isSemicolon="true">
         <redefinitions>isRunToCompletion</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="this.runToCompletionScope" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="this.runToCompletionScope" isFeature="true" isSemicolon="true">
         <redefinitions>runToCompletionScope</redefinitions>
       </elements>
       <elements xsi:type="kerMLOC:Invariant">
         <resultExpressionParameter resultExpression="isRunToCompletion implies allSubtransitionPerformances(runToCompletionScope)->forAll{in tp : TransitionPerformance; includes(tp.successors, entry) | includes(tp.predecessors, entry) }"/>
       </elements>
       <elements xsi:type="kerMLOC:Function" declaredName="allSubtransitionPerformances">
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="p" MultiLow="1">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="p" MultiLow="1" isSemicolon="true">
           <typings>Performance</typings>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" declaredName="subtransitionPerformances" MultiLow="*" valuePart="p.subperformances->select{in subp:Performance; subp istype StateTransitionPerformance }" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" declaredName="subtransitionPerformances" MultiLow="*" valuePart="p.subperformances->select{in subp:Performance; subp istype StateTransitionPerformance }" isFeature="true" isSemicolon="true">
           <typings>TransitionPerformance</typings>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="*" valuePart="union(subtransitionPerformances, subtransitionPerformances->collect{in sp:TransitionPerformance; allSubtransitionPerformances(sp) } )">
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="*" valuePart="union(subtransitionPerformances, subtransitionPerformances->collect{in sp:TransitionPerformance; allSubtransitionPerformances(sp) } )" isSemicolon="true">
           <typings>TransitionPerformance</typings>
         </elements>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Behavior" declaredName="StateTransitionPerformance">
       <subsetting>TransitionPerformance</subsetting>
-      <elements xsi:type="kerMLOC:Feature" declaredName="isTriggerDuring" MultiLow="1" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="isTriggerDuring" MultiLow="1" isFeature="true" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
       <elements xsi:type="kerMLOC:Invariant">
@@ -128,10 +128,10 @@
       <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="transitionLinkSource" isFeature="true">
         <typings>StatePerformance</typings>
         <redefinitions>TransitionPerformance::transitionLinkSource</redefinitions>
-        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
           <redefinitions>accepted</redefinitions>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
           <redefinitions>StatePerformance::acceptable</redefinitions>
         </elements>
       </elements>
@@ -145,7 +145,7 @@
           <resultExpressionParameter resultExpression="(that istype StatePerformance) implies (that as StatePerformance).incomingTransitionTrigger == trigger"/>
         </elements>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" declaredName="acceptable" MultiLow="*" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="acceptable" MultiLow="*" isFeature="true" isSemicolon="true">
         <typings>Transfer</typings>
         <subsetting>transitionLinkSource.acceptable</subsetting>
         <subsetting>triggerTarget.incomingTransfersToSelf</subsetting>
@@ -154,11 +154,11 @@
         <subsetting>acceptable</subsetting>
         <subsetting>transitionLinkSource.accepted</subsetting>
         <redefinitions>TransitionPerformance::trigger</redefinitions>
-        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
           <redefinitions>endShot</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="tdNum" MultiLow="1" valuePart="if not isTriggerDuring ? 0 else size(trigger)" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="tdNum" MultiLow="1" valuePart="if not isTriggerDuring ? 0 else size(trigger)" isFeature="true" isSemicolon="true">
         <typings>Natural</typings>
       </elements>
       <elements xsi:type="kerMLOC:Connector" visibility="private" declaredName="linkTriggerDuring" MultiLow="tdNum" isFrom="true">

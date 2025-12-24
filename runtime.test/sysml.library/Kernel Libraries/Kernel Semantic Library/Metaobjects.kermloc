@@ -9,7 +9,7 @@
     <elements xsi:type="kerMLOC:Metaclass" isAbstract="true" declaredName="Metaobject">
       <subsetting>Object</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A Metaobject contains syntactic or semantic information about one or more annotatedElements. &#xA;&#x9;&#x9; * It is the most general Metaclass. All other Metaclasses must subclassify it directly or indirectly.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
         <typings>Metaobject</typings>
         <redefinitions>self</redefinitions>
       </elements>

@@ -16,19 +16,19 @@
     <elements xsi:type="kerMLOC:Function" declaredName="'==='">
       <subsetting>BaseFunctions::'==='</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Test whether two occurrences are portions of the same life. That is, whether they &#xA;&#x9;&#x9; * represent different portions of the same entity (colloquially, whether they have&#xA;&#x9;&#x9; * the same &quot;identity&quot;).&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="x.portionOfLife == y.portionOfLife">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="x.portionOfLife == y.portionOfLife" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="isDuring">
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Test whether a performance of this function happens during the input occurrence.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="occ" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="occ" MultiLow="1" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
       <elements xsi:type="kerMLOC:Connector" visibility="private" declaredName="during" MultiLow="0" MultiHigh="1" isSufficient="true" isFrom="true">
@@ -36,13 +36,13 @@
         <connectorPart refElement="self"/>
         <connectorPart refElement="occ"/>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="notEmpty(during)">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="notEmpty(during)" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="create">
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Ensure that the start of a given occurrence happens during a performance of this&#xA;&#x9;&#x9; * function. The occurrence is also returned from the function.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" MultiLow="1" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
       <elements xsi:type="kerMLOC:Connector" visibility="private" isFrom="true">
@@ -50,13 +50,13 @@
         <connectorPart refElement="occ.startShot"/>
         <connectorPart refElement="self"/>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="occ">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="occ" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="destroy">
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Ensure that the end of a given occurrence happens during a performance of this&#xA;&#x9;&#x9; * function. The occurrence is also returned from the function.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
       <elements xsi:type="kerMLOC:Connector" visibility="private" isFrom="true">
@@ -64,60 +64,60 @@
         <connectorPart MultiLow="0" MultiHigh="1" refElement="occ.endShot"/>
         <connectorPart refElement="self"/>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="occ">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="occ" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="addNew">
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Add a newly created occurrence to the given group of occurrences and return the&#xA;&#x9;&#x9; * new occurrence.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="group" MultiLow="0" MultiHigh="*" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="group" MultiLow="0" MultiHigh="*" isNonunique="true" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" MultiLow="1" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
       <elements xsi:type="kerMLOC:Step" visibility="private" isComposite="true">
         <typings>add</typings>
-        <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="seq1" valuePart="group"/>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq2" valuePart="create(occ)"/>
+        <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="seq1" valuePart="group" isSemicolon="true"/>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq2" valuePart="create(occ)" isSemicolon="true"/>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="occ">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="occ" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="addNewAt">
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Add a newly created occurrence to the given ordered group of occurrences at the given&#xA;&#x9;&#x9; * index and return the new occurrence.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="group" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="group" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" MultiLow="1" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" MultiLow="1" isSemicolon="true">
         <typings>Positive</typings>
       </elements>
       <elements xsi:type="kerMLOC:Step" visibility="private" isComposite="true">
         <typings>addAt</typings>
-        <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="seq" valuePart="group"/>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="values" valuePart="create(occ)"/>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="startIndex" valuePart="index"/>
+        <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="seq" valuePart="group" isSemicolon="true"/>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="values" valuePart="create(occ)" isSemicolon="true"/>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="startIndex" valuePart="index" isSemicolon="true"/>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="occ">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="occ" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Behavior" declaredName="removeOld">
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Remove a given occurrence from a group of occurrences and destroy it.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="group" MultiLow="0" MultiHigh="*" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="group" MultiLow="0" MultiHigh="*" isNonunique="true" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
       <elements xsi:type="kerMLOC:Step" visibility="private" isComposite="true" declaredName="removeStep">
         <typings>remove</typings>
-        <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="seq" valuePart="group"/>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="values" valuePart="occ"/>
+        <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="seq" valuePart="group" isSemicolon="true"/>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="values" valuePart="occ" isSemicolon="true"/>
       </elements>
       <elements xsi:type="kerMLOC:Succession" visibility="private">
         <connectorPart refElement="removeStep"/>
@@ -125,22 +125,22 @@
       </elements>
       <elements xsi:type="kerMLOC:Step" visibility="private" isComposite="true" declaredName="destroyStep">
         <typings>destroy</typings>
-        <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" valuePart="removeOld::occ"/>
+        <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" valuePart="removeOld::occ" isSemicolon="true"/>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Behavior" declaredName="removeOldAt">
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Removes the occurrence at a given index in an ordered group of occurrences &#xA;&#x9;&#x9; * and destroy it.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="group" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="group" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" MultiLow="1" isSemicolon="true">
         <typings>Positive</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="oldOcc" valuePart="group#(index)" isFeature="true"/>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="oldOcc" valuePart="group#(index)" isFeature="true" isSemicolon="true"/>
       <elements xsi:type="kerMLOC:Step" visibility="private" isComposite="true" declaredName="removeStep">
         <typings>remove</typings>
-        <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="seq" valuePart="group"/>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" valuePart="removeOldAt::index"/>
+        <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="seq" valuePart="group" isSemicolon="true"/>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" valuePart="removeOldAt::index" isSemicolon="true"/>
       </elements>
       <elements xsi:type="kerMLOC:Succession" visibility="private">
         <connectorPart refElement="removeStep"/>
@@ -148,7 +148,7 @@
       </elements>
       <elements xsi:type="kerMLOC:Step" visibility="private" isComposite="true" declaredName="destroyStep">
         <typings>destroy</typings>
-        <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" valuePart="oldOcc"/>
+        <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="occ" valuePart="oldOcc" isSemicolon="true"/>
       </elements>
     </elements>
   </elements>

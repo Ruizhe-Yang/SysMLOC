@@ -20,7 +20,8 @@ public class MergeKerML {
             modelPath = args[0];
         } else {
 //            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\training2\\17. Control\\Control Structures Example.model";
-        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\test\\Library\\Domain Libraries";
+//        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\sysml.library";
+        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\test\\Library\\Kernel Libraries";
         }
 //        Path out = convertModelToKerml(modelPath);
 //        System.out.println("Done. Written to: " + out.toAbsolutePath());

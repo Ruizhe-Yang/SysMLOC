@@ -34,10 +34,10 @@
     </elements>
     <elements xsi:type="kerMLOC:Behavior" visibility="private" declaredName="ObserveChange">
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Each Performance of ObserveChange waits for the result of the Boolean &#xA;&#x9;&#x9; * condition of a given ChangeSignal to change from false to true, and, when &#xA;&#x9;&#x9; * it does, sends the ChangeSignal to a given observer Occurrence.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="changeObserver" MultiLow="1" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="changeObserver" MultiLow="1" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="changeSignal" MultiLow="1" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="changeSignal" MultiLow="1" isFeature="true" isSemicolon="true">
         <typings>ChangeSignal</typings>
       </elements>
       <elements xsi:type="kerMLOC:Step" isComposite="true" declaredName="wait">
@@ -63,20 +63,20 @@
         <redefinitions>outgoingTransfersFromSelf</redefinitions>
         <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Then send changeSignal to changeObserver.&#xA;&#x9;&#x9;&#x9; */"/>
         <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" isFeature="true">
-          <elements xsi:type="kerMLOC:Feature" valuePart="changeSignal" isFeature="true">
+          <elements xsi:type="kerMLOC:Feature" valuePart="changeSignal" isFeature="true" isSemicolon="true">
             <redefinitions>sourceOutput</redefinitions>
           </elements>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true"/>
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" isFeature="true" isSemicolon="true"/>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Structure" declaredName="ChangeMonitor">
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A ChangeMonitor is a collection of ongoing ChangeSignal observations &#xA;&#x9;&#x9; * for various observer Occurrences. It provides convenient operations for &#xA;&#x9;&#x9; * starting and canceling the observations it manages.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="thisMonitor">
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="thisMonitor" isSemicolon="true">
         <typings>ChangeMonitor</typings>
         <redefinitions>self</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" visibility="private" isComposite="true" declaredName="observations" MultiLow="0" MultiHigh="*" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" visibility="private" isComposite="true" declaredName="observations" MultiLow="0" MultiHigh="*" isFeature="true" isSemicolon="true">
         <typings>ObserveChange</typings>
       </elements>
       <elements xsi:type="kerMLOC:Behavior" visibility="private" declaredName="AssignObservations">
@@ -87,51 +87,51 @@
           <redefinitions>onOccurrence</redefinitions>
           <elements xsi:type="kerMLOC:Feature" isFeature="true">
             <redefinitions>startingAt</redefinitions>
-            <elements xsi:type="kerMLOC:Feature" isFeature="true">
+            <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
               <redefinitions>accessedFeature</redefinitions>
               <redefinitions>observations</redefinitions>
             </elements>
           </elements>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" direction="inout" MultiLow="0" MultiHigh="*" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" direction="inout" MultiLow="0" MultiHigh="*" isFeature="true" isSemicolon="true">
           <typings>ObserveChange</typings>
           <redefinitions>replacementValues</redefinitions>
         </elements>
       </elements>
       <elements xsi:type="kerMLOC:Step" declaredName="startObservation">
         <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Start an observation of a given ChangeSignal for a given Occurrence.&#xA;&#x9;&#x9;&#x9; */"/>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="observer" MultiLow="1">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="observer" MultiLow="1" isSemicolon="true">
           <typings>Occurrence</typings>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="signal" MultiLow="1">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="signal" MultiLow="1" isSemicolon="true">
           <typings>ChangeSignal</typings>
         </elements>
         <elements xsi:type="kerMLOC:Step" visibility="private" isComposite="true" declaredName="observation">
           <typings>ObserveChange</typings>
-          <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="changeObserver" valuePart="observer"/>
-          <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="changeSignal" valuePart="signal"/>
+          <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="changeObserver" valuePart="observer" isSemicolon="true"/>
+          <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="changeSignal" valuePart="signal" isSemicolon="true"/>
         </elements>
         <elements xsi:type="kerMLOC:Step" visibility="private" isComposite="true" declaredName="addObservation" MultiLow="1">
           <typings>AssignObservations</typings>
-          <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="monitor" valuePart="thisMonitor"/>
-          <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="replacementValues" valuePart="observations->including(observation)"/>
+          <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="monitor" valuePart="thisMonitor" isSemicolon="true"/>
+          <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="replacementValues" valuePart="observations->including(observation)" isSemicolon="true"/>
         </elements>
       </elements>
       <elements xsi:type="kerMLOC:Step" declaredName="cancelObservation">
         <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Cancel all observations of a given ChangeSignal for a given Occurrence. &#xA;&#x9;&#x9;&#x9; */"/>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="observer" MultiLow="1">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="observer" MultiLow="1" isSemicolon="true">
           <typings>Occurrence</typings>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="signal" MultiLow="1">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="signal" MultiLow="1" isSemicolon="true">
           <typings>ChangeSignal</typings>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="observations" MultiLow="0" MultiHigh="*" valuePart="observations->select{in observation : ObserveChange; observation.changeObserver == observer and observation.changeSignal == signal }" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="observations" MultiLow="0" MultiHigh="*" valuePart="observations->select{in observation : ObserveChange; observation.changeObserver == observer and observation.changeSignal == signal }" isFeature="true" isSemicolon="true">
           <typings>ObserveChange</typings>
         </elements>
         <elements xsi:type="kerMLOC:Step" visibility="private" isComposite="true" declaredName="removeObservation" MultiLow="1">
           <typings>AssignObservations</typings>
-          <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="monitor" valuePart="thisMonitor"/>
-          <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="replacementValues" valuePart="observations->excluding(observations)"/>
+          <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="monitor" valuePart="thisMonitor" isSemicolon="true"/>
+          <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="replacementValues" valuePart="observations->excluding(observations)" isSemicolon="true"/>
         </elements>
       </elements>
     </elements>

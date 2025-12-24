@@ -14,10 +14,10 @@
       <intersecting>VectorValue</intersecting>
       <intersecting>Array</intersecting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A NumericalVectorValue is a kind of VectorValue that is specifically represented&#xA;&#x9;&#x9; * as a one-dimensional array of NumericalValues. The dimension is allowed to be empty,&#xA;&#x9;&#x9; * permitting a NumericalVectorValue of rank 0, which is essentially isomorphic to a&#xA;&#x9;&#x9; * scalar NumericalValue.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" declaredName="dimension" MultiLow="0" MultiHigh="1" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="dimension" MultiLow="0" MultiHigh="1" isFeature="true" isSemicolon="true">
         <redefinitions>dimensions</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
         <typings>NumericalValue</typings>
         <redefinitions>elements</redefinitions>
       </elements>
@@ -25,7 +25,7 @@
     <elements xsi:type="kerMLOC:DataType" declaredName="CartesianVectorValue">
       <subsetting>NumericalVectorValue</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * CartesianVectorValue is a specialization Numerical VectorValue for which there are &#xA;&#x9;&#x9; * specific implementations in VectorFunctions of the abstract vector-space functions.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Note: The restriction of the element type to Real is to facilitate&#xA;&#x9;&#x9; * the complete definition of these functions.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
         <typings>Real</typings>
         <redefinitions>elements</redefinitions>
       </elements>
@@ -33,7 +33,7 @@
     <elements xsi:type="kerMLOC:DataType" declaredName="ThreeVectorValue">
       <subsetting>NumericalVectorValue</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A ThreeVectorValue is a NumericalVectorValue that has dimension 3.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" valuePart="3" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" valuePart="3" isFeature="true" isSemicolon="true">
         <redefinitions>dimension</redefinitions>
       </elements>
     </elements>

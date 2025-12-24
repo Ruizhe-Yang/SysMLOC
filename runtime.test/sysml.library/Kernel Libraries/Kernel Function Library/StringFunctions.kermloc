@@ -5,104 +5,104 @@
     <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="ScalarValues" isNamespace="true"/>
     <elements xsi:type="kerMLOC:Function" declaredName="'+'">
       <subsetting>ScalarFunctions::'+'</subsetting>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="Length">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Natural</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="Substring">
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="lower" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="lower" MultiLow="1" isSemicolon="true">
         <typings>Integer</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="upper" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="upper" MultiLow="1" isSemicolon="true">
         <typings>Integer</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="'&lt;'">
       <subsetting>ScalarFunctions::'&lt;'</subsetting>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="'>'">
       <subsetting>ScalarFunctions::'>'</subsetting>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="'&lt;='">
       <subsetting>ScalarFunctions::'&lt;='</subsetting>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="'>='">
       <subsetting>ScalarFunctions::'>='</subsetting>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="'=='">
       <subsetting>DataFunctions::'=='</subsetting>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="ToString">
       <subsetting>BaseFunctions::ToString</subsetting>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="x">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="x" isSemicolon="true">
         <typings>String</typings>
       </elements>
     </elements>

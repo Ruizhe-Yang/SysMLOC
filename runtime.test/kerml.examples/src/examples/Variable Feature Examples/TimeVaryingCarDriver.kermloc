@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="TimeVaryingCarDriver">
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:CodeAnnotation" body="// Example model without variable features.&#xA;"/>
+    <elements xsi:type="kerMLOC:Structure" declaredName="Person0">
+      <elements xsi:type="kerMLOC:Feature" declaredName="isLicensed" MultiLow="0" MultiHigh="1" isFeature="true" isSemicolon="true">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Structure" declaredName="Car0">
+      <elements xsi:type="kerMLOC:Feature" declaredName="driver" MultiLow="0" MultiHigh="1" isFeature="true" isSemicolon="true">
+        <typings>Person0</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true">
+        <redefinitions>startShot</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" MultiLow="0" isFeature="true" isSemicolon="true">
+          <redefinitions>driver</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" isFirst="true">
+        <connectorPart refElement="startShot"/>
+        <connectorPart refElement="operated"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="operated" MultiLow="0" MultiHigh="*">
+        <subsetting>timeSlices</subsetting>
+        <elements xsi:type="kerMLOC:Feature" MultiLow="1" isFeature="true">
+          <redefinitions>driver</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" valuePart="true" isFeature="true" isSemicolon="true">
+            <redefinitions>isLicensed</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="carParts" MultiLow="0" MultiHigh="*" isFeature="true" isSemicolon="true"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="engine" MultiLow="1" isFeature="true" isSemicolon="true">
+        <subsetting>carParts</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="transmission" MultiLow="1" isFeature="true" isSemicolon="true">
+        <subsetting>carParts</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" declaredName="drive" isFrom="true">
+        <connectorPart refElement="engine"/>
+        <connectorPart refElement="transmission"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:CodeAnnotation" body="// Example model with &quot;variable features&quot; identified&#xA;"/>
+    <elements xsi:type="kerMLOC:Structure" declaredName="Person1">
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isLicensed" MultiLow="1" isFeature="true" isSemicolon="true">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Structure" declaredName="Car1">
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="driver" MultiLow="0" MultiHigh="1" isFeature="true" isSemicolon="true">
+        <typings>Person1</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true">
+        <redefinitions>startShot</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" MultiLow="0" isFeature="true" isSemicolon="true">
+          <redefinitions>driver</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" isFirst="true">
+        <connectorPart refElement="startShot"/>
+        <connectorPart refElement="operated"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="operated" MultiLow="0" MultiHigh="*">
+        <subsetting>timeSlices</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" MultiLow="1" isFeature="true">
+          <redefinitions>driver</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" isVariable="true" valuePart="true" isFeature="true" isSemicolon="true">
+            <redefinitions>isLicensed</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isAbstract="true" isVariable="true" declaredName="carParts" MultiLow="0" MultiHigh="*" isFeature="true" isSemicolon="true"/>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="engine" MultiLow="1" isFeature="true" isSemicolon="true">
+        <subsetting>carParts</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="transmission" MultiLow="1" isFeature="true" isSemicolon="true">
+        <subsetting>carParts</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" isVariable="true" declaredName="drive" isFrom="true">
+        <connectorPart refElement="engine"/>
+        <connectorPart refElement="transmission"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:CodeAnnotation" body="// Semantic equivalent of implied relationships for variable features in&#xA;"/>
+    <elements xsi:type="kerMLOC:CodeAnnotation" body="// the previous model&#xA;"/>
+    <elements xsi:type="kerMLOC:Structure" declaredName="Person1_">
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// var feature isLicensed : Boolean [1];&#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="isLicensed" MultiLow="1" isFeature="true">
+        <typings>Boolean</typings>
+        <featuringType>Person_snapshots</featuringType>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="Person_snapshots" isFeature="true" isSemicolon="true">
+          <redefinitions>Occurrences::Occurrence::snapshots</redefinitions>
+          <featuringType>Person1_</featuringType>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="name" MultiLow="1" isFeature="true">
+        <typings>String</typings>
+        <featuringType>Person_snapshots</featuringType>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="Person_snapshots" isFeature="true" isSemicolon="true">
+          <redefinitions>Occurrences::Occurrence::snapshots</redefinitions>
+          <featuringType>Person1_</featuringType>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Structure" declaredName="Car1_">
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// var feature driver : Person [0..1];&#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="driver" MultiLow="0" MultiHigh="1" isFeature="true">
+        <typings>Person1_</typings>
+        <featuringType>Car_snapshots</featuringType>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="Car_snapshots" isFeature="true" isSemicolon="true">
+          <redefinitions>Occurrences::Occurrence::snapshots</redefinitions>
+          <featuringType>Car1_</featuringType>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true">
+        <redefinitions>startShot</redefinitions>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="// var feature :>> driver [0];&#xA;"/>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" MultiLow="0" isFeature="true">
+          <redefinitions>Car1_::driver</redefinitions>
+          <featuringType>Car_startShot_snapshots</featuringType>
+          <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="Car_startShot_snapshots" isFeature="true" isSemicolon="true">
+            <redefinitions>Car_snapshots</redefinitions>
+            <featuringType>Car1_::startShot</featuringType>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" isFirst="true">
+        <connectorPart refElement="startShot"/>
+        <connectorPart refElement="operated"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="operated" MultiLow="0" MultiHigh="*">
+        <subsetting>timeSlices</subsetting>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="// var feature :>> driver [1]&#xA;"/>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" MultiLow="1" isFeature="true">
+          <redefinitions>Car1_::driver</redefinitions>
+          <featuringType>Car_operated_snapshots</featuringType>
+          <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="Car_operated_snapshots" isFeature="true" isSemicolon="true">
+            <redefinitions>Car_snapshots</redefinitions>
+            <featuringType>Car1_::operated</featuringType>
+          </elements>
+          <elements xsi:type="kerMLOC:CodeAnnotation" body="// var feature :>> isLicensed = true;&#xA;"/>
+          <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="isLicensed1" valuePart="true" isFeature="true">
+            <redefinitions>Person1_::isLicensed</redefinitions>
+            <featuringType>Car_operated_driver_snapshots</featuringType>
+            <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="Car_operated_driver_snapshots" isFeature="true" isSemicolon="true">
+              <redefinitions>Occurrences::Occurrence::snapshots</redefinitions>
+              <featuringType>Car1_::operated::driver</featuringType>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// var abstract feature carParts [0..*];&#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isMember="true" isAbstract="true" declaredName="carParts" MultiLow="0" MultiHigh="*" isFeature="true">
+        <featuringType>Car_snapshots</featuringType>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="Car_snapshots" isFeature="true" isSemicolon="true">
+          <redefinitions>Occurrences::Occurrence::snapshots</redefinitions>
+          <featuringType>Car1_</featuringType>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// var feature engine [1];&#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="engine" MultiLow="1" isFeature="true">
+        <subsetting>carParts</subsetting>
+        <featuringType>Car_snapshots1</featuringType>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="Car_snapshots1" isFeature="true" isSemicolon="true">
+          <redefinitions>Occurrences::Occurrence::snapshots</redefinitions>
+          <featuringType>Car1_</featuringType>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// var feature transmission [1];&#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="transmission" MultiLow="1" isFeature="true">
+        <subsetting>carParts</subsetting>
+        <featuringType>Car_snapshots1</featuringType>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="Car_snapshots1" isFeature="true" isSemicolon="true">
+          <redefinitions>Occurrences::Occurrence::snapshots</redefinitions>
+          <featuringType>Car1_</featuringType>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// var connector drive from engine to transmission;&#xA;"/>
+      <elements xsi:type="kerMLOC:Connector" isMember="true" declaredName="drive" isFrom="true">
+        <featuringType>Car_snapshots</featuringType>
+        <connectorPart refElement="engine"/>
+        <connectorPart refElement="transmission"/>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="Car_snapshots" isFeature="true" isSemicolon="true">
+          <redefinitions>Occurrences::Occurrence::snapshots</redefinitions>
+          <featuringType>Car1_</featuringType>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

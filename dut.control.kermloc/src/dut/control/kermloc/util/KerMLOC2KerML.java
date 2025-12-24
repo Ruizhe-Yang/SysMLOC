@@ -24,12 +24,14 @@ public class KerMLOC2KerML {
         if (args.length > 0) {
             modelPath = args[0];
         } else {
-            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\kerml";
+            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test";
 //        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\sysml.library";
+//        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\kerml\\src\\examples\\Named Collection Members Example\\VehicleTanks.kermloc";
         }
 //        Path out = convertModelToKerml(modelPath);
 //        System.out.println("Done. Written to: " + out.toAbsolutePath());
         convertAllModelsInFolder2(modelPath);
+//        convertModelToKerml(modelPath);
         
     }
     public static void convertAllModelsInFolder2(String folderPath) throws Exception {
@@ -101,6 +103,7 @@ public class KerMLOC2KerML {
         String rawText = serializer.serialize(root);
         String formatted = formatKerMLOC(rawText);
         Files.write(outPath, formatted.getBytes(StandardCharsets.UTF_8));
+//        Files.write(outPath, rawText.getBytes(StandardCharsets.UTF_8));
         return outPath;
     }
     

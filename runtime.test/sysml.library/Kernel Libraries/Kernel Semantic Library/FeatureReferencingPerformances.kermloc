@@ -34,7 +34,7 @@
         <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="startingAt" MultiLow="1" isFeature="true">
           <typings>Occurrence</typings>
           <subsetting>timeSlices</subsetting>
-          <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="accessedFeature" MultiLow="*" isNonunique="true" isFeature="true">
+          <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="accessedFeature" MultiLow="*" isNonunique="true" isFeature="true" isSemicolon="true">
             <typings>Anything</typings>
           </elements>
         </elements>
@@ -55,10 +55,10 @@
       <subsetting>FeatureAccessPerformance</subsetting>
       <subsetting>Evaluation</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A FeatureReadEvaluation is a FeatureAccessPerformance that is a function providing as&#xA;&#x9;&#x9; * its result the values of a feature on an occurrence at the time its evaluation ends.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="onOccurrence" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="onOccurrence" MultiLow="1" isSemicolon="true">
         <typings>Occurrence</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="resultValues" MultiLow="*" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="resultValues" MultiLow="*" isNonunique="true" isSemicolon="true">
         <typings>Anything</typings>
         <redefinitions>result</redefinitions>
         <redefinitions>values</redefinitions>
@@ -67,11 +67,11 @@
     <elements xsi:type="kerMLOC:Behavior" isAbstract="true" declaredName="FeatureWritePerformance">
       <subsetting>FeatureAccessPerformance</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A FeatureWritePerformance is a FeatureAccessPerformance that assigns the values of a &#xA;&#x9;&#x9; * feature on an occurrence to the given replacementValues at time its performance ends.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="onOccurrence" MultiLow="1" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="onOccurrence" MultiLow="1" isFeature="true" isSemicolon="true">
         <typings>Occurrence</typings>
         <redefinitions>onOccurrence</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="replacementValues" MultiLow="*" isNonunique="true" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="replacementValues" MultiLow="*" isNonunique="true" isFeature="true" isSemicolon="true">
         <typings>Anything</typings>
         <redefinitions>values</redefinitions>
       </elements>
@@ -84,20 +84,20 @@
         <elements xsi:type="kerMLOC:Feature" declaredName="monitoredOccurrence" MultiLow="1" isFeature="true">
           <typings>Occurrence</typings>
           <subsetting>timeSlices</subsetting>
-          <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="monitoredFeature" MultiLow="*" isNonunique="true" isFeature="true">
+          <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="monitoredFeature" MultiLow="*" isNonunique="true" isFeature="true" isSemicolon="true">
             <typings>Anything</typings>
           </elements>
           <elements xsi:type="kerMLOC:Feature" declaredName="beforeTimeSlice" MultiLow="1" isFeature="true">
             <typings>Occurrence</typings>
             <subsetting>timeSlices</subsetting>
-            <elements xsi:type="kerMLOC:Feature" isFeature="true">
+            <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
               <redefinitions>monitoredFeature</redefinitions>
             </elements>
           </elements>
           <elements xsi:type="kerMLOC:Feature" declaredName="afterSnapshot" MultiLow="1" isFeature="true">
             <typings>Occurrence</typings>
             <subsetting>snapshots</subsetting>
-            <elements xsi:type="kerMLOC:Feature" isFeature="true">
+            <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
               <redefinitions>monitoredFeature</redefinitions>
             </elements>
           </elements>
@@ -108,10 +108,10 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="afterValues" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="afterValues" isFeature="true" isSemicolon="true">
         <redefinitions>values</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="beforeValues" MultiLow="*" isNonunique="true" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="beforeValues" MultiLow="*" isNonunique="true" isFeature="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
       <elements xsi:type="kerMLOC:Invariant">
@@ -147,7 +147,7 @@
         <elements xsi:type="kerMLOC:ExpressionClass" visibility="protected" declaredName="monitoredOccurrence" MultiLow="1">
           <typings>Evaluation</typings>
           <redefinitions>monitoredOccurrence</redefinitions>
-          <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="result" MultiLow="*">
+          <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="result" MultiLow="*" isSemicolon="true">
             <typings>Anything</typings>
             <redefinitions>result</redefinitions>
             <redefinitions>monitoredFeature</redefinitions>
@@ -162,16 +162,16 @@
         <redefinitions>onOccurrence</redefinitions>
         <elements xsi:type="kerMLOC:BooleanExpression" visibility="protected" MultiLow="1">
           <redefinitions>monitoredOccurrence</redefinitions>
-          <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="result" MultiLow="1">
+          <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="result" MultiLow="1" isSemicolon="true">
             <typings>Boolean</typings>
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="out" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="out" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
         <redefinitions>afterValues</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="out" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" direction="out" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
         <redefinitions>beforeValues</redefinitions>
       </elements>
@@ -182,10 +182,10 @@
       <elements xsi:type="kerMLOC:BooleanExpression" direction="in">
         <redefinitions>onOccurrence</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" declaredName="isToTrue" MultiLow="1" isDefault="true" valuePart="true" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="isToTrue" MultiLow="1" isDefault="true" valuePart="true" isFeature="true" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="afterValues" MultiLow="1" valuePart="isToTrue">
+      <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="afterValues" MultiLow="1" valuePart="isToTrue" isSemicolon="true">
         <typings>Boolean</typings>
         <redefinitions>values</redefinitions>
       </elements>
@@ -194,8 +194,8 @@
         <elements xsi:type="kerMLOC:Feature" isFeature="true">
           <typings>HappensJustBefore</typings>
           <redefinitions>endWhen</redefinitions>
-          <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="earlierOccurrence" isFeature="true"/>
-          <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="laterOccurrence" isFeature="true"/>
+          <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="earlierOccurrence" isFeature="true" isSemicolon="true"/>
+          <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="laterOccurrence" isFeature="true" isSemicolon="true"/>
         </elements>
       </elements>
       <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="monitor2" MultiLow="1" isFeature="true">
@@ -203,8 +203,8 @@
         <elements xsi:type="kerMLOC:Feature" isFeature="true">
           <typings>HappensJustBefore</typings>
           <redefinitions>endWhen</redefinitions>
-          <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="earlierOccurrence" isFeature="true"/>
-          <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="laterOccurrence" isFeature="true"/>
+          <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="earlierOccurrence" isFeature="true" isSemicolon="true"/>
+          <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="laterOccurrence" isFeature="true" isSemicolon="true"/>
         </elements>
       </elements>
       <elements xsi:type="kerMLOC:Connector" visibility="private" isFrom="true">

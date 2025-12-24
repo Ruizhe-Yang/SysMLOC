@@ -20,8 +20,9 @@ public class MergeSysML {
             modelPath = args[0];
         } else {
 //            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\training2\\17. Control\\Control Structures Example.model";
+        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test"; 
 //        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\kerml";
-        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\sysml.library";
+//        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\sysml.library";
 //        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\sysml-modified";
         }
 //        Path out = convertModelToSysml(modelPath);

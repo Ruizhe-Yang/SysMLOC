@@ -9,12 +9,12 @@
     <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlFunctions" isNamespace="true"/>
     <elements xsi:type="kerMLOC:DataType" isAbstract="true" declaredName="Collection">
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Collection is the top level abstract supertype of all collection types.&#xA;&#x9;&#x9; * The name elements is used to denote the members or contents of the collection.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" declaredName="elements" MultiLow="0" MultiHigh="*" isNonunique="true" isFeature="true"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="elements" MultiLow="0" MultiHigh="*" isNonunique="true" isFeature="true" isSemicolon="true"/>
     </elements>
     <elements xsi:type="kerMLOC:DataType" isAbstract="true" declaredName="OrderedCollection">
       <subsetting>Collection</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * OrderedCollection is the abstract supertype for all ordered collection types.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" declaredName="elements" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="elements" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isFeature="true" isSemicolon="true">
         <redefinitions>Collection::elements</redefinitions>
       </elements>
     </elements>
@@ -33,10 +33,10 @@
         <typings>Positive</typings>
         <elements xsi:type="kerMLOC:Documentation" body="/* Feature `dimensions` defines the N-dimensional shape of the Array&#xA;             * The alternative name `shape` (as used in many programming languages) is not used as it would interfere with a geometric shape feature.&#xA; &#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" declaredName="rank" MultiLow="1" valuePart="size(dimensions)" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="rank" MultiLow="1" valuePart="size(dimensions)" isFeature="true" isSemicolon="true">
         <typings>Natural</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" declaredName="flattenedSize" MultiLow="1" valuePart="dimensions->reduce '*' ?? 1" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="flattenedSize" MultiLow="1" valuePart="dimensions->reduce '*' ?? 1" isFeature="true" isSemicolon="true">
         <typings>Positive</typings>
       </elements>
       <elements xsi:type="kerMLOC:Invariant">
@@ -69,10 +69,10 @@
     </elements>
     <elements xsi:type="kerMLOC:DataType" declaredName="KeyValuePair">
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * KeyValuePair is a tuple of a key and a value for use in Map collections.&#xA;&#x9;&#x9; * The key must be immutable.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" declaredName="key" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="key" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isFeature="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" declaredName="val" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="val" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isFeature="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>

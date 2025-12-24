@@ -43,8 +43,8 @@
       </elements>
       <elements xsi:type="kerMLOC:Step">
         <subsetting>monitor.startObservation</subsetting>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="observer" valuePart="receiver"/>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="signal" valuePart="changeSignal"/>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="observer" valuePart="receiver" isSemicolon="true"/>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="signal" valuePart="changeSignal" isSemicolon="true"/>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="TriggerAt">
@@ -71,8 +71,8 @@
       </elements>
       <elements xsi:type="kerMLOC:Step">
         <subsetting>monitor.startObservation</subsetting>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="observer" valuePart="receiver"/>
-        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="signal" valuePart="timeSignal"/>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="observer" valuePart="receiver" isSemicolon="true"/>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="signal" valuePart="timeSignal" isSemicolon="true"/>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="TriggerAfter">

@@ -3716,9 +3716,20 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EReference getTransitionUsage_Elements()
+  public EReference getTransitionUsage_EffectElements()
   {
         return (EReference)getTransitionUsage().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTransitionUsage_Elements()
+  {
+        return (EReference)getTransitionUsage().getEStructuralFeatures().get(2);
   }
 
   /**

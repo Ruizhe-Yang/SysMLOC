@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="VehicleTanks">
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="RealFunctions" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="V6Engine"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="Tank">
+      <elements xsi:type="kerMLOC:Feature" declaredName="capacity" isFeature="true" isSemicolon="true">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="Vehicle">
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="tanks" MultiLow="1" MultiHigh="*" isOrdered="true" isSemicolon="true">
+        <typings>Tank</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="fuelCapacity" valuePart="sum(tanks.capacity)" isFeature="true" isSemicolon="true">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="Vehicle1">
+      <subsetting>Vehicle</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="tanks" MultiLow="4" isOrdered="true">
+        <typings>Tank</typings>
+        <redefinitions>Vehicle::tanks</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" declaredName="main1" MultiLow="1" valuePart="tanks#(1)" isFeature="true" isSemicolon="true">
+          <subsetting>tanks</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="main2" MultiLow="1" valuePart="tanks#(2)" isFeature="true" isSemicolon="true">
+          <subsetting>tanks</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="aux1" MultiLow="1" valuePart="tanks#(3)" isFeature="true" isSemicolon="true">
+          <subsetting>tanks</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="aux2" MultiLow="1" valuePart="tanks#(4)" isFeature="true" isSemicolon="true">
+          <subsetting>tanks</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="eng" isSemicolon="true">
+        <typings>V6Engine</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector">
+        <connectorPart refElement="eng"/>
+        <connectorPart refElement="tanks.main1"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector">
+        <connectorPart refElement="tanks.main1"/>
+        <connectorPart refElement="tanks.aux1"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector">
+        <connectorPart refElement="eng"/>
+        <connectorPart refElement="tanks.main2"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector">
+        <connectorPart refElement="tanks.main2"/>
+        <connectorPart refElement="tanks.aux2"/>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

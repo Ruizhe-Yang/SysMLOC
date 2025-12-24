@@ -92729,22 +92729,22 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionUsage__Group_1_0_5_2__1__Impl"
-    // InternalSysMLOC.g:26302:1: rule__TransitionUsage__Group_1_0_5_2__1__Impl : ( ( rule__TransitionUsage__ElementsAssignment_1_0_5_2_1 )* ) ;
+    // InternalSysMLOC.g:26302:1: rule__TransitionUsage__Group_1_0_5_2__1__Impl : ( ( rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1 )* ) ;
     public final void rule__TransitionUsage__Group_1_0_5_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:26306:1: ( ( ( rule__TransitionUsage__ElementsAssignment_1_0_5_2_1 )* ) )
-            // InternalSysMLOC.g:26307:1: ( ( rule__TransitionUsage__ElementsAssignment_1_0_5_2_1 )* )
+            // InternalSysMLOC.g:26306:1: ( ( ( rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1 )* ) )
+            // InternalSysMLOC.g:26307:1: ( ( rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1 )* )
             {
-            // InternalSysMLOC.g:26307:1: ( ( rule__TransitionUsage__ElementsAssignment_1_0_5_2_1 )* )
-            // InternalSysMLOC.g:26308:2: ( rule__TransitionUsage__ElementsAssignment_1_0_5_2_1 )*
+            // InternalSysMLOC.g:26307:1: ( ( rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1 )* )
+            // InternalSysMLOC.g:26308:2: ( rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransitionUsageAccess().getElementsAssignment_1_0_5_2_1()); 
+               before(grammarAccess.getTransitionUsageAccess().getEffectElementsAssignment_1_0_5_2_1()); 
             }
-            // InternalSysMLOC.g:26309:2: ( rule__TransitionUsage__ElementsAssignment_1_0_5_2_1 )*
+            // InternalSysMLOC.g:26309:2: ( rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1 )*
             loop352:
             do {
                 int alt352=2;
@@ -92757,10 +92757,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
                 switch (alt352) {
             	case 1 :
-            	    // InternalSysMLOC.g:26309:3: rule__TransitionUsage__ElementsAssignment_1_0_5_2_1
+            	    // InternalSysMLOC.g:26309:3: rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1
             	    {
             	    pushFollow(FOLLOW_3);
-            	    rule__TransitionUsage__ElementsAssignment_1_0_5_2_1();
+            	    rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -92774,7 +92774,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransitionUsageAccess().getElementsAssignment_1_0_5_2_1()); 
+               after(grammarAccess.getTransitionUsageAccess().getEffectElementsAssignment_1_0_5_2_1()); 
             }
 
             }
@@ -93603,22 +93603,22 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionUsage__Group_1_1_3_2__1__Impl"
-    // InternalSysMLOC.g:26572:1: rule__TransitionUsage__Group_1_1_3_2__1__Impl : ( ( rule__TransitionUsage__ElementsAssignment_1_1_3_2_1 )* ) ;
+    // InternalSysMLOC.g:26572:1: rule__TransitionUsage__Group_1_1_3_2__1__Impl : ( ( rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1 )* ) ;
     public final void rule__TransitionUsage__Group_1_1_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:26576:1: ( ( ( rule__TransitionUsage__ElementsAssignment_1_1_3_2_1 )* ) )
-            // InternalSysMLOC.g:26577:1: ( ( rule__TransitionUsage__ElementsAssignment_1_1_3_2_1 )* )
+            // InternalSysMLOC.g:26576:1: ( ( ( rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1 )* ) )
+            // InternalSysMLOC.g:26577:1: ( ( rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1 )* )
             {
-            // InternalSysMLOC.g:26577:1: ( ( rule__TransitionUsage__ElementsAssignment_1_1_3_2_1 )* )
-            // InternalSysMLOC.g:26578:2: ( rule__TransitionUsage__ElementsAssignment_1_1_3_2_1 )*
+            // InternalSysMLOC.g:26577:1: ( ( rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1 )* )
+            // InternalSysMLOC.g:26578:2: ( rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransitionUsageAccess().getElementsAssignment_1_1_3_2_1()); 
+               before(grammarAccess.getTransitionUsageAccess().getEffectElementsAssignment_1_1_3_2_1()); 
             }
-            // InternalSysMLOC.g:26579:2: ( rule__TransitionUsage__ElementsAssignment_1_1_3_2_1 )*
+            // InternalSysMLOC.g:26579:2: ( rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1 )*
             loop356:
             do {
                 int alt356=2;
@@ -93631,10 +93631,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
                 switch (alt356) {
             	case 1 :
-            	    // InternalSysMLOC.g:26579:3: rule__TransitionUsage__ElementsAssignment_1_1_3_2_1
+            	    // InternalSysMLOC.g:26579:3: rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1
             	    {
             	    pushFollow(FOLLOW_3);
-            	    rule__TransitionUsage__ElementsAssignment_1_1_3_2_1();
+            	    rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -93648,7 +93648,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransitionUsageAccess().getElementsAssignment_1_1_3_2_1()); 
+               after(grammarAccess.getTransitionUsageAccess().getEffectElementsAssignment_1_1_3_2_1()); 
             }
 
             }
@@ -94298,22 +94298,22 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionUsage__Group_1_2_1_2__1__Impl"
-    // InternalSysMLOC.g:26788:1: rule__TransitionUsage__Group_1_2_1_2__1__Impl : ( ( rule__TransitionUsage__ElementsAssignment_1_2_1_2_1 )* ) ;
+    // InternalSysMLOC.g:26788:1: rule__TransitionUsage__Group_1_2_1_2__1__Impl : ( ( rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1 )* ) ;
     public final void rule__TransitionUsage__Group_1_2_1_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:26792:1: ( ( ( rule__TransitionUsage__ElementsAssignment_1_2_1_2_1 )* ) )
-            // InternalSysMLOC.g:26793:1: ( ( rule__TransitionUsage__ElementsAssignment_1_2_1_2_1 )* )
+            // InternalSysMLOC.g:26792:1: ( ( ( rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1 )* ) )
+            // InternalSysMLOC.g:26793:1: ( ( rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1 )* )
             {
-            // InternalSysMLOC.g:26793:1: ( ( rule__TransitionUsage__ElementsAssignment_1_2_1_2_1 )* )
-            // InternalSysMLOC.g:26794:2: ( rule__TransitionUsage__ElementsAssignment_1_2_1_2_1 )*
+            // InternalSysMLOC.g:26793:1: ( ( rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1 )* )
+            // InternalSysMLOC.g:26794:2: ( rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransitionUsageAccess().getElementsAssignment_1_2_1_2_1()); 
+               before(grammarAccess.getTransitionUsageAccess().getEffectElementsAssignment_1_2_1_2_1()); 
             }
-            // InternalSysMLOC.g:26795:2: ( rule__TransitionUsage__ElementsAssignment_1_2_1_2_1 )*
+            // InternalSysMLOC.g:26795:2: ( rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1 )*
             loop359:
             do {
                 int alt359=2;
@@ -94326,10 +94326,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
                 switch (alt359) {
             	case 1 :
-            	    // InternalSysMLOC.g:26795:3: rule__TransitionUsage__ElementsAssignment_1_2_1_2_1
+            	    // InternalSysMLOC.g:26795:3: rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1
             	    {
             	    pushFollow(FOLLOW_3);
-            	    rule__TransitionUsage__ElementsAssignment_1_2_1_2_1();
+            	    rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -94343,7 +94343,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransitionUsageAccess().getElementsAssignment_1_2_1_2_1()); 
+               after(grammarAccess.getTransitionUsageAccess().getEffectElementsAssignment_1_2_1_2_1()); 
             }
 
             }
@@ -182000,9 +182000,9 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__TransitionUsage__TransitionSourceElementAssignment_1_0_2"
 
 
-    // $ANTLR start "rule__TransitionUsage__ElementsAssignment_1_0_5_2_1"
-    // InternalSysMLOC.g:54409:1: rule__TransitionUsage__ElementsAssignment_1_0_5_2_1 : ( ruleActionBodyElement ) ;
-    public final void rule__TransitionUsage__ElementsAssignment_1_0_5_2_1() throws RecognitionException {
+    // $ANTLR start "rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1"
+    // InternalSysMLOC.g:54409:1: rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1 : ( ruleActionBodyElement ) ;
+    public final void rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -182014,7 +182014,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             // InternalSysMLOC.g:54415:3: ruleActionBodyElement
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransitionUsageAccess().getElementsActionBodyElementParserRuleCall_1_0_5_2_1_0()); 
+               before(grammarAccess.getTransitionUsageAccess().getEffectElementsActionBodyElementParserRuleCall_1_0_5_2_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleActionBodyElement();
@@ -182022,7 +182022,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransitionUsageAccess().getElementsActionBodyElementParserRuleCall_1_0_5_2_1_0()); 
+               after(grammarAccess.getTransitionUsageAccess().getEffectElementsActionBodyElementParserRuleCall_1_0_5_2_1_0()); 
             }
 
             }
@@ -182042,12 +182042,12 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransitionUsage__ElementsAssignment_1_0_5_2_1"
+    // $ANTLR end "rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1"
 
 
-    // $ANTLR start "rule__TransitionUsage__ElementsAssignment_1_1_3_2_1"
-    // InternalSysMLOC.g:54424:1: rule__TransitionUsage__ElementsAssignment_1_1_3_2_1 : ( ruleActionBodyElement ) ;
-    public final void rule__TransitionUsage__ElementsAssignment_1_1_3_2_1() throws RecognitionException {
+    // $ANTLR start "rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1"
+    // InternalSysMLOC.g:54424:1: rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1 : ( ruleActionBodyElement ) ;
+    public final void rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -182059,7 +182059,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             // InternalSysMLOC.g:54430:3: ruleActionBodyElement
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransitionUsageAccess().getElementsActionBodyElementParserRuleCall_1_1_3_2_1_0()); 
+               before(grammarAccess.getTransitionUsageAccess().getEffectElementsActionBodyElementParserRuleCall_1_1_3_2_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleActionBodyElement();
@@ -182067,7 +182067,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransitionUsageAccess().getElementsActionBodyElementParserRuleCall_1_1_3_2_1_0()); 
+               after(grammarAccess.getTransitionUsageAccess().getEffectElementsActionBodyElementParserRuleCall_1_1_3_2_1_0()); 
             }
 
             }
@@ -182087,12 +182087,12 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransitionUsage__ElementsAssignment_1_1_3_2_1"
+    // $ANTLR end "rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1"
 
 
-    // $ANTLR start "rule__TransitionUsage__ElementsAssignment_1_2_1_2_1"
-    // InternalSysMLOC.g:54439:1: rule__TransitionUsage__ElementsAssignment_1_2_1_2_1 : ( ruleActionBodyElement ) ;
-    public final void rule__TransitionUsage__ElementsAssignment_1_2_1_2_1() throws RecognitionException {
+    // $ANTLR start "rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1"
+    // InternalSysMLOC.g:54439:1: rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1 : ( ruleActionBodyElement ) ;
+    public final void rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -182104,7 +182104,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             // InternalSysMLOC.g:54445:3: ruleActionBodyElement
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTransitionUsageAccess().getElementsActionBodyElementParserRuleCall_1_2_1_2_1_0()); 
+               before(grammarAccess.getTransitionUsageAccess().getEffectElementsActionBodyElementParserRuleCall_1_2_1_2_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleActionBodyElement();
@@ -182112,7 +182112,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTransitionUsageAccess().getElementsActionBodyElementParserRuleCall_1_2_1_2_1_0()); 
+               after(grammarAccess.getTransitionUsageAccess().getEffectElementsActionBodyElementParserRuleCall_1_2_1_2_1_0()); 
             }
 
             }
@@ -182132,7 +182132,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TransitionUsage__ElementsAssignment_1_2_1_2_1"
+    // $ANTLR end "rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1"
 
 
     // $ANTLR start "rule__TransitionUsage__ElementsAssignment_4_1_1"

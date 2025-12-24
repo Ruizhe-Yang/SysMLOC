@@ -267,6 +267,7 @@
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//TransitionUsage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TransitionUsage/transitionSourceElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//TransitionUsage/effectElements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//TransitionUsage/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//RequirementDefinition">

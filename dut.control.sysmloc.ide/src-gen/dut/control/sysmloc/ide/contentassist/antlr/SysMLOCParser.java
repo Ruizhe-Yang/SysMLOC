@@ -816,9 +816,9 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConstraintUsageAccess().getElementsAssignment_4_1_1_0(), "rule__ConstraintUsage__ElementsAssignment_4_1_1_0");
 			builder.put(grammarAccess.getConstraintUsageAccess().getResultExpressionParameterAssignment_4_1_2(), "rule__ConstraintUsage__ResultExpressionParameterAssignment_4_1_2");
 			builder.put(grammarAccess.getTransitionUsageAccess().getTransitionSourceElementAssignment_1_0_2(), "rule__TransitionUsage__TransitionSourceElementAssignment_1_0_2");
-			builder.put(grammarAccess.getTransitionUsageAccess().getElementsAssignment_1_0_5_2_1(), "rule__TransitionUsage__ElementsAssignment_1_0_5_2_1");
-			builder.put(grammarAccess.getTransitionUsageAccess().getElementsAssignment_1_1_3_2_1(), "rule__TransitionUsage__ElementsAssignment_1_1_3_2_1");
-			builder.put(grammarAccess.getTransitionUsageAccess().getElementsAssignment_1_2_1_2_1(), "rule__TransitionUsage__ElementsAssignment_1_2_1_2_1");
+			builder.put(grammarAccess.getTransitionUsageAccess().getEffectElementsAssignment_1_0_5_2_1(), "rule__TransitionUsage__EffectElementsAssignment_1_0_5_2_1");
+			builder.put(grammarAccess.getTransitionUsageAccess().getEffectElementsAssignment_1_1_3_2_1(), "rule__TransitionUsage__EffectElementsAssignment_1_1_3_2_1");
+			builder.put(grammarAccess.getTransitionUsageAccess().getEffectElementsAssignment_1_2_1_2_1(), "rule__TransitionUsage__EffectElementsAssignment_1_2_1_2_1");
 			builder.put(grammarAccess.getTransitionUsageAccess().getElementsAssignment_4_1_1(), "rule__TransitionUsage__ElementsAssignment_4_1_1");
 			builder.put(grammarAccess.getRequirementDefinitionAccess().getElementsAssignment_5_1_1_0(), "rule__RequirementDefinition__ElementsAssignment_5_1_1_0");
 			builder.put(grammarAccess.getRequirementUsageAccess().getElementsAssignment_4_1_1_0(), "rule__RequirementUsage__ElementsAssignment_4_1_1_0");

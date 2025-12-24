@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.TransitionUsage#getTransitionSourceElement <em>Transition Source Element</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.TransitionUsage#getEffectElements <em>Effect Elements</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.TransitionUsage#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -45,6 +46,18 @@ public interface TransitionUsage extends StateNodeElements, GeneralUsagePrefix, 
    * @generated
    */
   void setTransitionSourceElement(String value);
+
+  /**
+   * Returns the value of the '<em><b>Effect Elements</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionBodyElement}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Effect Elements</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getTransitionUsage_EffectElements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ActionBodyElement> getEffectElements();
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

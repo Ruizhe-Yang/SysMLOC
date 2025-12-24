@@ -20,7 +20,7 @@
       <subsetting>Occurrence</subsetting>
       <disjoining>Object</disjoining>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Performance is the most general class of behavioral Occurrences that may be performed over time.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" declaredName="self" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="self" isFeature="true" isSemicolon="true">
         <typings>Performance</typings>
         <redefinitions>Occurrence::self</redefinitions>
       </elements>
@@ -33,10 +33,10 @@
         <subsetting>involvedObjects</subsetting>
         <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Objects that enact this Performance.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="true" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="true" isFeature="true" isSemicolon="true">
         <redefinitions>isDispatch</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="thisPerformance" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="thisPerformance" isFeature="true" isSemicolon="true">
         <redefinitions>dispatchScope</redefinitions>
       </elements>
       <elements xsi:type="kerMLOC:Step" declaredName="enclosedPerformances" MultiLow="0" MultiHigh="*">
@@ -67,7 +67,7 @@
           <redefinitions>this</redefinitions>
           <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * The default &quot;this&quot; context of a subperformance is the same as that of its owning Performance.&#xA;&#x9;&#x9;&#x9;&#x9; * This means that the context for any Performance that is in a composition tree rooted&#xA;&#x9;&#x9;&#x9;&#x9; * in a Performance that is not itself owned by an Object is the root Performance. If the&#xA;&#x9;&#x9;&#x9;&#x9; * root Performance is an ownedPerformance of an Object, then that Object is the context.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
         </elements>
-        <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="(that as Performance).thisPerformance" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="(that as Performance).thisPerformance" isFeature="true" isSemicolon="true">
           <redefinitions>thisPerformance</redefinitions>
         </elements>
       </elements>
@@ -75,28 +75,28 @@
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="Evaluation">
       <subsetting>Performance</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Evaluation is the most general class of functions that may be evaluated to compute&#xA;&#x9;&#x9; * a result.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="result" MultiLow="0" MultiHigh="*" isNonunique="true">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="result" MultiLow="0" MultiHigh="*" isNonunique="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Predicate" isAbstract="true" declaredName="BooleanEvaluation">
       <subsetting>Evaluation</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * BooleanEvaluation is a specialization of Evaluation that is the most general class of&#xA;&#x9;&#x9; * Predicates that may be evaluated to produce a Boolean truth value.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="MetadataAccessEvaluation">
       <subsetting>Evaluation</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * MetadataAccessEvaluation is a specialization of Evaluation for the case of MetadataAccessExpressions.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" MultiHigh="*">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" MultiHigh="*" isSemicolon="true">
         <typings>Metaobject</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="LiteralEvaluation">
       <subsetting>Evaluation</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * LiteralEvaluation is a specialization of Evaluation for the case of LiteralExpressions.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>ScalarValue</typings>
       </elements>
     </elements>
@@ -106,47 +106,47 @@
       <intersecting>LiteralEvaluation</intersecting>
       <intersecting>BooleanEvaluation</intersecting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * LiteralBooleanEvaluation is a specialization of LiteralEvaluation for the case of LiteralBooleans.&#xA;&#x9;&#x9; * It is also a predicate and thus a specialization of BooleanEvaluation. &#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="LiteralIntegerEvaluation">
       <subsetting>LiteralEvaluation</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * LiteralIntegerEvaluation is a specialization of LiteralEvaluation for the case of LiteralIntegers.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Integer</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="LiteralRationalEvaluation">
       <subsetting>LiteralEvaluation</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * LiteralRationalEvaluation is a specialization of LiteralEvaluation for the case of LiteralRationals.&#xA;&#x9;&#x9; * (Note: Return type is Real to allow easy type conformance of LiteralRationals when a Real result is expected.)&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>Real</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="LiteralStringEvaluation">
       <subsetting>LiteralEvaluation</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * LiteralStringEvaluation is a specialization of LiteralEvaluation for the case of LiteralStrings.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" isSemicolon="true">
         <typings>String</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Function" declaredName="NullEvaluation">
       <subsetting>Evaluation</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * NullEvaluation is a specialization of Evaluation for the case of NullExpressions.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="0">
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="0" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Association" declaredName="InvolvedIn" isSufficient="true">
       <subsetting>BinaryLink</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * InvolvedIn asserts that the involvedObject is involved in the Behavior carried out by the &#xA;&#x9;&#x9; * involvingPerformance.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="involvedObject" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="involvedObject" isFeature="true" isSemicolon="true">
         <typings>Object</typings>
         <crosses>involvingPerformance.involvedObjects</crosses>
         <redefinitions>source</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="involvingPerformance" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="involvingPerformance" isFeature="true" isSemicolon="true">
         <typings>Performance</typings>
         <crosses>involvedObject.involvingPerformances</crosses>
         <redefinitions>target</redefinitions>
@@ -155,12 +155,12 @@
     <elements xsi:type="kerMLOC:Association" declaredName="Performs" isSufficient="true">
       <subsetting>InvolvedIn</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Performs asserts that the performer enacts the Behavior carried out by the performance.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="performerObject" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="performerObject" isFeature="true" isSemicolon="true">
         <typings>Object</typings>
         <crosses>performance.performers</crosses>
         <redefinitions>involvedObject</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="performance" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="performance" isFeature="true" isSemicolon="true">
         <typings>Performance</typings>
         <crosses>performerObject.enactedPerformances</crosses>
         <redefinitions>involvingPerformance</redefinitions>
@@ -179,7 +179,7 @@
     <elements xsi:type="kerMLOC:ExpressionClass" isAbstract="true" declaredName="constructorEvaluations" MultiLow="0" MultiHigh="*" isNonunique="true">
       <subsetting>evaluations</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;     * constructorEvaluations is a specialization of evaluations that restricts the multiplicity &#xA;&#x9;     * of its result parameter to 1..1, requiring a constructorEvaluation to result in a single value.&#xA;&#x9;     */"/>
-      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="result" MultiLow="1" MultiHigh="1"/>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="result" MultiLow="1" MultiHigh="1" isSemicolon="true"/>
     </elements>
     <elements xsi:type="kerMLOC:ExpressionClass" isAbstract="true" declaredName="booleanEvaluations" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>BooleanEvaluation</typings>
@@ -189,7 +189,7 @@
     <elements xsi:type="kerMLOC:ExpressionClass" isAbstract="true" declaredName="trueEvaluations">
       <subsetting>booleanEvaluations</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * trueEvaluations is a subset of booleanEvaluations that result in true. It is the most general&#xA;&#x9;&#x9; * feature of invariants that are not negated. &#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="trueValue" valuePart="true" isFeature="true"/>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="trueValue" valuePart="true" isFeature="true" isSemicolon="true"/>
       <elements xsi:type="kerMLOC:BindingConnector">
         <connectorPart refElement="result"/>
         <connectorPart refElement="trueValue"/>
@@ -198,7 +198,7 @@
     <elements xsi:type="kerMLOC:ExpressionClass" isAbstract="true" declaredName="falseEvaluations">
       <subsetting>booleanEvaluations</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * falseEvaluations is a subset of booleanEvaluations that result in false. It is the most general&#xA;&#x9;&#x9; * feature of invariants that are negated.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="falseValue" valuePart="false" isFeature="true"/>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="falseValue" valuePart="false" isFeature="true" isSemicolon="true"/>
       <elements xsi:type="kerMLOC:BindingConnector">
         <connectorPart refElement="result"/>
         <connectorPart refElement="falseValue"/>

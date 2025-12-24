@@ -10452,13 +10452,22 @@ public interface SysMLOCPackage extends EPackage
   int TRANSITION_USAGE__TRANSITION_SOURCE_ELEMENT = STATE_NODE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
+   * The feature id for the '<em><b>Effect Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSITION_USAGE__EFFECT_ELEMENTS = STATE_NODE_ELEMENTS_FEATURE_COUNT + 22;
+
+  /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSITION_USAGE__ELEMENTS = STATE_NODE_ELEMENTS_FEATURE_COUNT + 22;
+  int TRANSITION_USAGE__ELEMENTS = STATE_NODE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The number of structural features of the '<em>Transition Usage</em>' class.
@@ -10467,7 +10476,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSITION_USAGE_FEATURE_COUNT = STATE_NODE_ELEMENTS_FEATURE_COUNT + 23;
+  int TRANSITION_USAGE_FEATURE_COUNT = STATE_NODE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.RequirementDefinitionImpl <em>Requirement Definition</em>}' class.
@@ -27929,6 +27938,17 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EAttribute getTransitionUsage_TransitionSourceElement();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.TransitionUsage#getEffectElements <em>Effect Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Effect Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.TransitionUsage#getEffectElements()
+   * @see #getTransitionUsage()
+   * @generated
+   */
+  EReference getTransitionUsage_EffectElements();
 
   /**
    * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.TransitionUsage#getElements <em>Elements</em>}'.

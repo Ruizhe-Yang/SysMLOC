@@ -46,7 +46,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_FeatureInverting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
 	protected AbstractElementAlias match_FeatureSpecialization_ColonColonGreaterThanSignKeyword_2_0_0_or_ReferencesKeyword_2_0_1;
 	protected AbstractElementAlias match_FeatureSpecialization_ColonGreaterThanSignGreaterThanSignKeyword_4_0_0_or_RedefinesKeyword_4_0_1;
-	protected AbstractElementAlias match_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SpecializesKeyword_1_0_1_or_SubsetsKeyword_1_0_2;
+	protected AbstractElementAlias match_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SubsetsKeyword_1_0_1;
 	protected AbstractElementAlias match_FeatureSpecialization_ColonKeyword_0_0_0_or___TypedKeyword_0_0_1_0_ByKeyword_0_0_1_1__;
 	protected AbstractElementAlias match_FeatureSpecialization_CrossesKeyword_3_0_1_or_EqualsSignGreaterThanSignKeyword_3_0_0;
 	protected AbstractElementAlias match_FeatureTyping_ColonKeyword_4_0_or___TypedKeyword_4_1_0_ByKeyword_4_1_1__;
@@ -122,7 +122,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_FeatureInverting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureInvertingAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getFeatureInvertingAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getFeatureInvertingAccess().getSemicolonKeyword_6_0()));
 		match_FeatureSpecialization_ColonColonGreaterThanSignKeyword_2_0_0_or_ReferencesKeyword_2_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonColonGreaterThanSignKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getReferencesKeyword_2_0_1()));
 		match_FeatureSpecialization_ColonGreaterThanSignGreaterThanSignKeyword_4_0_0_or_RedefinesKeyword_4_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonGreaterThanSignGreaterThanSignKeyword_4_0_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getRedefinesKeyword_4_0_1()));
-		match_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SpecializesKeyword_1_0_1_or_SubsetsKeyword_1_0_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonGreaterThanSignKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getSpecializesKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getSubsetsKeyword_1_0_2()));
+		match_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SubsetsKeyword_1_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonGreaterThanSignKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getSubsetsKeyword_1_0_1()));
 		match_FeatureSpecialization_ColonKeyword_0_0_0_or___TypedKeyword_0_0_1_0_ByKeyword_0_0_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getTypedKeyword_0_0_1_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getByKeyword_0_0_1_1())), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonKeyword_0_0_0()));
 		match_FeatureSpecialization_CrossesKeyword_3_0_1_or_EqualsSignGreaterThanSignKeyword_3_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getCrossesKeyword_3_0_1()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getEqualsSignGreaterThanSignKeyword_3_0_0()));
 		match_FeatureTyping_ColonKeyword_4_0_or___TypedKeyword_4_1_0_ByKeyword_4_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getTypedKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getByKeyword_4_1_1())), new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getColonKeyword_4_0()));
@@ -230,8 +230,8 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_FeatureSpecialization_ColonColonGreaterThanSignKeyword_2_0_0_or_ReferencesKeyword_2_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_FeatureSpecialization_ColonGreaterThanSignGreaterThanSignKeyword_4_0_0_or_RedefinesKeyword_4_0_1.equals(syntax))
 				emit_FeatureSpecialization_ColonGreaterThanSignGreaterThanSignKeyword_4_0_0_or_RedefinesKeyword_4_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SpecializesKeyword_1_0_1_or_SubsetsKeyword_1_0_2.equals(syntax))
-				emit_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SpecializesKeyword_1_0_1_or_SubsetsKeyword_1_0_2(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SubsetsKeyword_1_0_1.equals(syntax))
+				emit_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SubsetsKeyword_1_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_FeatureSpecialization_ColonKeyword_0_0_0_or___TypedKeyword_0_0_1_0_ByKeyword_0_0_1_1__.equals(syntax))
 				emit_FeatureSpecialization_ColonKeyword_0_0_0_or___TypedKeyword_0_0_1_0_ByKeyword_0_0_1_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_FeatureSpecialization_CrossesKeyword_3_0_1_or_EqualsSignGreaterThanSignKeyword_3_0_0.equals(syntax))
@@ -1443,7 +1443,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     ':&gt;' | 'specializes' | 'subsets'
+	 *     ':&gt;' | 'subsets'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'binding' (ambiguity) subsetting+=FeatureChainName
@@ -1613,7 +1613,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SpecializesKeyword_1_0_1_or_SubsetsKeyword_1_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SubsetsKeyword_1_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -2200,7 +2200,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     (rule start) 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     (rule start) 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     (rule start) 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     (rule start) 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     (rule start) 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     (rule start) 'inv' (ambiguity) (';' | ('{' '}')) (rule start)
 	 *     (rule start) 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2218,7 +2218,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2236,7 +2236,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     direction=FeatureDirection 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     direction=FeatureDirection 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     direction=FeatureDirection 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     direction=FeatureDirection 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     direction=FeatureDirection 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     direction=FeatureDirection 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     direction=FeatureDirection 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2254,7 +2254,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isAbstract?='abstract' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     isAbstract?='abstract' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     isAbstract?='abstract' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     isAbstract?='abstract' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     isAbstract?='abstract' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     isAbstract?='abstract' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     isAbstract?='abstract' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2272,7 +2272,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isComposite?='composite' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     isComposite?='composite' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     isComposite?='composite' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     isComposite?='composite' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isComposite?='composite' 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     isComposite?='composite' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     isComposite?='composite' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     isComposite?='composite' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2290,7 +2290,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isConstantBasic?='const' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     isConstantBasic?='const' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     isConstantBasic?='const' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     isConstantBasic?='const' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isConstantBasic?='const' 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     isConstantBasic?='const' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     isConstantBasic?='const' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     isConstantBasic?='const' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2308,7 +2308,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isDerived?='derived' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     isDerived?='derived' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     isDerived?='derived' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     isDerived?='derived' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     isDerived?='derived' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     isDerived?='derived' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     isDerived?='derived' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2326,7 +2326,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isEnd?='end' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     isEnd?='end' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     isEnd?='end' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     isEnd?='end' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isEnd?='end' 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     isEnd?='end' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     isEnd?='end' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     isEnd?='end' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2344,7 +2344,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isMember?='member' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     isMember?='member' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     isMember?='member' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     isMember?='member' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isMember?='member' 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     isMember?='member' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     isMember?='member' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     isMember?='member' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2362,7 +2362,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isPortion?='portion' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     isPortion?='portion' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     isPortion?='portion' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     isPortion?='portion' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isPortion?='portion' 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     isPortion?='portion' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     isPortion?='portion' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     isPortion?='portion' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2380,7 +2380,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReturn?='return' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     isReturn?='return' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     isReturn?='return' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     isReturn?='return' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isReturn?='return' 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     isReturn?='return' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     isReturn?='return' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     isReturn?='return' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2398,7 +2398,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariable?='var' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     isVariable?='var' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     isVariable?='var' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     isVariable?='var' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isVariable?='var' 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     isVariable?='var' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     isVariable?='var' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     isVariable?='var' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2416,7 +2416,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     isVariant?='variant' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     isVariant?='variant' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     isVariant?='variant' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     isVariant?='variant' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     isVariant?='variant' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     isVariant?='variant' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2434,7 +2434,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
@@ -2452,7 +2452,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     visibility=VisibilityIndicator 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
 	 *     visibility=VisibilityIndicator 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
 	 *     visibility=VisibilityIndicator 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     visibility=VisibilityIndicator 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) (':&gt;' | 'subsets') subsetting+=FeatureChainName
 	 *     visibility=VisibilityIndicator 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
 	 *     visibility=VisibilityIndicator 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
 	 *     visibility=VisibilityIndicator 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName

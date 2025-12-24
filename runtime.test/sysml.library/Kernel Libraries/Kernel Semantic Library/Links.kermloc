@@ -7,22 +7,22 @@
     <elements xsi:type="kerMLOC:Association" isAbstract="true" declaredName="Link">
       <subsetting>Anything</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * Link is the most general association between two or more things.&#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" declaredName="participant" MultiLow="2" MultiHigh="*" isOrdered="true" isNonunique="true" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="participant" MultiLow="2" MultiHigh="*" isOrdered="true" isNonunique="true" isFeature="true" isSemicolon="true">
         <typings>Anything</typings>
       </elements>
     </elements>
     <elements xsi:type="kerMLOC:Association" declaredName="BinaryLink" isSufficient="true">
       <subsetting>Link</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * BinaryLink is the most general binary association between exactly two things, &#xA;         * nominally directed from source to target.&#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" declaredName="participant" MultiLow="2" isOrdered="true" isNonunique="true" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="participant" MultiLow="2" isOrdered="true" isNonunique="true" isFeature="true" isSemicolon="true">
         <typings>Anything</typings>
         <redefinitions>Link::participant</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" MultiLow="1" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="source" MultiLow="1" isFeature="true" isSemicolon="true">
         <typings>Anything</typings>
         <subsetting>participant</subsetting>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" MultiLow="1" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="target" MultiLow="1" isFeature="true" isSemicolon="true">
         <typings>Anything</typings>
         <subsetting>participant</subsetting>
       </elements>
@@ -30,13 +30,13 @@
     <elements xsi:type="kerMLOC:Association" declaredName="SelfLink" isSufficient="true">
       <subsetting>BinaryLink</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * SelfLink is a binary association in which the things at the two ends are asserted&#xA;         * to be the same.&#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="thisThing" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="thisThing" isFeature="true" isSemicolon="true">
         <typings>Anything</typings>
         <subsetting>sameThing</subsetting>
         <crosses>sameThing.self</crosses>
         <redefinitions>source</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="sameThing" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="sameThing" isFeature="true" isSemicolon="true">
         <crossingFeature declaredName="self2" MultiLow="1"/>
         <typings>Anything</typings>
         <subsetting>thisThing</subsetting>
@@ -57,12 +57,12 @@
       <typings>SelfLink</typings>
       <subsetting>binaryLinks</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * selfLinks is a specialization of binaryLinks restricted to type SelfLink.&#xA;         */"/>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="thisThing" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="thisThing" isFeature="true" isSemicolon="true">
         <typings>Anything</typings>
         <redefinitions>SelfLink::thisThing</redefinitions>
         <redefinitions>binaryLinks::source</redefinitions>
       </elements>
-      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="sameThing" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="sameThing" isFeature="true" isSemicolon="true">
         <typings>Anything</typings>
         <redefinitions>SelfLink::sameThing</redefinitions>
         <redefinitions>binaryLinks::target</redefinitions>

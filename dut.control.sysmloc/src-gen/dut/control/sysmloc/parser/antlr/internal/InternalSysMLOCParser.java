@@ -25417,7 +25417,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransitionUsage"
-    // InternalSysMLOC.g:7873:1: ruleTransitionUsage returns [EObject current=null] : (this_GeneralUsagePrefix_0= ruleGeneralUsagePrefix[$current] ( (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? ) | (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? ) | (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? ) )? otherlv_27= 'then' this_TransitionSuccession_28= ruleTransitionSuccession[$current] (otherlv_29= ';' | (otherlv_30= '{' ( (lv_elements_31_0= ruleActionBodyElement ) )* otherlv_32= '}' ) ) ) ;
+    // InternalSysMLOC.g:7873:1: ruleTransitionUsage returns [EObject current=null] : (this_GeneralUsagePrefix_0= ruleGeneralUsagePrefix[$current] ( (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? ) | (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? ) | (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? ) )? otherlv_27= 'then' this_TransitionSuccession_28= ruleTransitionSuccession[$current] (otherlv_29= ';' | (otherlv_30= '{' ( (lv_elements_31_0= ruleActionBodyElement ) )* otherlv_32= '}' ) ) ) ;
     public final EObject ruleTransitionUsage() throws RecognitionException {
         EObject current = null;
 
@@ -25450,7 +25450,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
         EObject this_PerformedActionParameterPart_9 = null;
 
-        EObject lv_elements_11_0 = null;
+        EObject lv_effectElements_11_0 = null;
 
         EObject this_AcceptParameterPart_14 = null;
 
@@ -25458,13 +25458,13 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
         EObject this_PerformedActionParameterPart_17 = null;
 
-        EObject lv_elements_19_0 = null;
+        EObject lv_effectElements_19_0 = null;
 
         EObject this_TransitionUsageIfPart_21 = null;
 
         EObject this_PerformedActionParameterPart_23 = null;
 
-        EObject lv_elements_25_0 = null;
+        EObject lv_effectElements_25_0 = null;
 
         EObject this_TransitionSuccession_28 = null;
 
@@ -25475,11 +25475,11 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSysMLOC.g:7879:2: ( (this_GeneralUsagePrefix_0= ruleGeneralUsagePrefix[$current] ( (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? ) | (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? ) | (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? ) )? otherlv_27= 'then' this_TransitionSuccession_28= ruleTransitionSuccession[$current] (otherlv_29= ';' | (otherlv_30= '{' ( (lv_elements_31_0= ruleActionBodyElement ) )* otherlv_32= '}' ) ) ) )
-            // InternalSysMLOC.g:7880:2: (this_GeneralUsagePrefix_0= ruleGeneralUsagePrefix[$current] ( (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? ) | (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? ) | (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? ) )? otherlv_27= 'then' this_TransitionSuccession_28= ruleTransitionSuccession[$current] (otherlv_29= ';' | (otherlv_30= '{' ( (lv_elements_31_0= ruleActionBodyElement ) )* otherlv_32= '}' ) ) )
+            // InternalSysMLOC.g:7879:2: ( (this_GeneralUsagePrefix_0= ruleGeneralUsagePrefix[$current] ( (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? ) | (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? ) | (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? ) )? otherlv_27= 'then' this_TransitionSuccession_28= ruleTransitionSuccession[$current] (otherlv_29= ';' | (otherlv_30= '{' ( (lv_elements_31_0= ruleActionBodyElement ) )* otherlv_32= '}' ) ) ) )
+            // InternalSysMLOC.g:7880:2: (this_GeneralUsagePrefix_0= ruleGeneralUsagePrefix[$current] ( (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? ) | (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? ) | (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? ) )? otherlv_27= 'then' this_TransitionSuccession_28= ruleTransitionSuccession[$current] (otherlv_29= ';' | (otherlv_30= '{' ( (lv_elements_31_0= ruleActionBodyElement ) )* otherlv_32= '}' ) ) )
             {
-            // InternalSysMLOC.g:7880:2: (this_GeneralUsagePrefix_0= ruleGeneralUsagePrefix[$current] ( (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? ) | (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? ) | (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? ) )? otherlv_27= 'then' this_TransitionSuccession_28= ruleTransitionSuccession[$current] (otherlv_29= ';' | (otherlv_30= '{' ( (lv_elements_31_0= ruleActionBodyElement ) )* otherlv_32= '}' ) ) )
-            // InternalSysMLOC.g:7881:3: this_GeneralUsagePrefix_0= ruleGeneralUsagePrefix[$current] ( (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? ) | (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? ) | (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? ) )? otherlv_27= 'then' this_TransitionSuccession_28= ruleTransitionSuccession[$current] (otherlv_29= ';' | (otherlv_30= '{' ( (lv_elements_31_0= ruleActionBodyElement ) )* otherlv_32= '}' ) )
+            // InternalSysMLOC.g:7880:2: (this_GeneralUsagePrefix_0= ruleGeneralUsagePrefix[$current] ( (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? ) | (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? ) | (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? ) )? otherlv_27= 'then' this_TransitionSuccession_28= ruleTransitionSuccession[$current] (otherlv_29= ';' | (otherlv_30= '{' ( (lv_elements_31_0= ruleActionBodyElement ) )* otherlv_32= '}' ) ) )
+            // InternalSysMLOC.g:7881:3: this_GeneralUsagePrefix_0= ruleGeneralUsagePrefix[$current] ( (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? ) | (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? ) | (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? ) )? otherlv_27= 'then' this_TransitionSuccession_28= ruleTransitionSuccession[$current] (otherlv_29= ';' | (otherlv_30= '{' ( (lv_elements_31_0= ruleActionBodyElement ) )* otherlv_32= '}' ) )
             {
             if ( state.backtracking==0 ) {
 
@@ -25500,7 +25500,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalSysMLOC.g:7892:3: ( (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? ) | (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? ) | (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? ) )?
+            // InternalSysMLOC.g:7892:3: ( (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? ) | (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? ) | (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? ) )?
             int alt222=4;
             switch ( input.LA(1) ) {
                 case 76:
@@ -25522,10 +25522,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
             switch (alt222) {
                 case 1 :
-                    // InternalSysMLOC.g:7893:4: (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? )
+                    // InternalSysMLOC.g:7893:4: (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? )
                     {
-                    // InternalSysMLOC.g:7893:4: (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? )
-                    // InternalSysMLOC.g:7894:5: otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )?
+                    // InternalSysMLOC.g:7893:4: (otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )? )
+                    // InternalSysMLOC.g:7894:5: otherlv_1= 'transition' ( (this_UsageDeclaration_2= ruleUsageDeclaration[$current] )? otherlv_3= 'first' )? ( (lv_transitionSourceElement_4_0= ruleFeatureChainName ) )? (otherlv_5= 'accept' this_AcceptParameterPart_6= ruleAcceptParameterPart[$current] )? (this_TransitionUsageIfPart_7= ruleTransitionUsageIfPart[$current] )? (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )?
                     {
                     otherlv_1=(Token)match(input,76,FOLLOW_132); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -25752,7 +25752,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSysMLOC.g:7966:5: (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )?
+                    // InternalSysMLOC.g:7966:5: (otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )? )?
                     int alt214=2;
                     int LA214_0 = input.LA(1);
 
@@ -25761,7 +25761,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt214) {
                         case 1 :
-                            // InternalSysMLOC.g:7967:6: otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )?
+                            // InternalSysMLOC.g:7967:6: otherlv_8= 'do' this_PerformedActionParameterPart_9= rulePerformedActionParameterPart[$current] (otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )?
                             {
                             otherlv_8=(Token)match(input,78,FOLLOW_138); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
@@ -25788,7 +25788,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                               						afterParserOrEnumRuleCall();
                               					
                             }
-                            // InternalSysMLOC.g:7982:6: (otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )?
+                            // InternalSysMLOC.g:7982:6: (otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}' )?
                             int alt213=2;
                             int LA213_0 = input.LA(1);
 
@@ -25797,7 +25797,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                             }
                             switch (alt213) {
                                 case 1 :
-                                    // InternalSysMLOC.g:7983:7: otherlv_10= '{' ( (lv_elements_11_0= ruleActionBodyElement ) )* otherlv_12= '}'
+                                    // InternalSysMLOC.g:7983:7: otherlv_10= '{' ( (lv_effectElements_11_0= ruleActionBodyElement ) )* otherlv_12= '}'
                                     {
                                     otherlv_10=(Token)match(input,16,FOLLOW_117); if (state.failed) return current;
                                     if ( state.backtracking==0 ) {
@@ -25805,7 +25805,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                       							newLeafNode(otherlv_10, grammarAccess.getTransitionUsageAccess().getLeftCurlyBracketKeyword_1_0_5_2_0());
                                       						
                                     }
-                                    // InternalSysMLOC.g:7987:7: ( (lv_elements_11_0= ruleActionBodyElement ) )*
+                                    // InternalSysMLOC.g:7987:7: ( (lv_effectElements_11_0= ruleActionBodyElement ) )*
                                     loop212:
                                     do {
                                         int alt212=2;
@@ -25818,18 +25818,18 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                                         switch (alt212) {
                                     	case 1 :
-                                    	    // InternalSysMLOC.g:7988:8: (lv_elements_11_0= ruleActionBodyElement )
+                                    	    // InternalSysMLOC.g:7988:8: (lv_effectElements_11_0= ruleActionBodyElement )
                                     	    {
-                                    	    // InternalSysMLOC.g:7988:8: (lv_elements_11_0= ruleActionBodyElement )
-                                    	    // InternalSysMLOC.g:7989:9: lv_elements_11_0= ruleActionBodyElement
+                                    	    // InternalSysMLOC.g:7988:8: (lv_effectElements_11_0= ruleActionBodyElement )
+                                    	    // InternalSysMLOC.g:7989:9: lv_effectElements_11_0= ruleActionBodyElement
                                     	    {
                                     	    if ( state.backtracking==0 ) {
 
-                                    	      									newCompositeNode(grammarAccess.getTransitionUsageAccess().getElementsActionBodyElementParserRuleCall_1_0_5_2_1_0());
+                                    	      									newCompositeNode(grammarAccess.getTransitionUsageAccess().getEffectElementsActionBodyElementParserRuleCall_1_0_5_2_1_0());
                                     	      								
                                     	    }
                                     	    pushFollow(FOLLOW_117);
-                                    	    lv_elements_11_0=ruleActionBodyElement();
+                                    	    lv_effectElements_11_0=ruleActionBodyElement();
 
                                     	    state._fsp--;
                                     	    if (state.failed) return current;
@@ -25840,8 +25840,8 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                     	      									}
                                     	      									add(
                                     	      										current,
-                                    	      										"elements",
-                                    	      										lv_elements_11_0,
+                                    	      										"effectElements",
+                                    	      										lv_effectElements_11_0,
                                     	      										"dut.control.sysmloc.SysMLOC.ActionBodyElement");
                                     	      									afterParserOrEnumRuleCall();
                                     	      								
@@ -25883,10 +25883,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSysMLOC.g:8014:4: (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? )
+                    // InternalSysMLOC.g:8014:4: (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? )
                     {
-                    // InternalSysMLOC.g:8014:4: (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? )
-                    // InternalSysMLOC.g:8015:5: otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )?
+                    // InternalSysMLOC.g:8014:4: (otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )? )
+                    // InternalSysMLOC.g:8015:5: otherlv_13= 'accept' this_AcceptParameterPart_14= ruleAcceptParameterPart[$current] (this_TransitionUsageIfPart_15= ruleTransitionUsageIfPart[$current] )? (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )?
                     {
                     otherlv_13=(Token)match(input,77,FOLLOW_135); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -25949,7 +25949,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSysMLOC.g:8043:5: (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )?
+                    // InternalSysMLOC.g:8043:5: (otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )? )?
                     int alt218=2;
                     int LA218_0 = input.LA(1);
 
@@ -25958,7 +25958,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt218) {
                         case 1 :
-                            // InternalSysMLOC.g:8044:6: otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )?
+                            // InternalSysMLOC.g:8044:6: otherlv_16= 'do' this_PerformedActionParameterPart_17= rulePerformedActionParameterPart[$current] (otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )?
                             {
                             otherlv_16=(Token)match(input,78,FOLLOW_138); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
@@ -25985,7 +25985,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                               						afterParserOrEnumRuleCall();
                               					
                             }
-                            // InternalSysMLOC.g:8059:6: (otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )?
+                            // InternalSysMLOC.g:8059:6: (otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}' )?
                             int alt217=2;
                             int LA217_0 = input.LA(1);
 
@@ -25994,7 +25994,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                             }
                             switch (alt217) {
                                 case 1 :
-                                    // InternalSysMLOC.g:8060:7: otherlv_18= '{' ( (lv_elements_19_0= ruleActionBodyElement ) )* otherlv_20= '}'
+                                    // InternalSysMLOC.g:8060:7: otherlv_18= '{' ( (lv_effectElements_19_0= ruleActionBodyElement ) )* otherlv_20= '}'
                                     {
                                     otherlv_18=(Token)match(input,16,FOLLOW_117); if (state.failed) return current;
                                     if ( state.backtracking==0 ) {
@@ -26002,7 +26002,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                       							newLeafNode(otherlv_18, grammarAccess.getTransitionUsageAccess().getLeftCurlyBracketKeyword_1_1_3_2_0());
                                       						
                                     }
-                                    // InternalSysMLOC.g:8064:7: ( (lv_elements_19_0= ruleActionBodyElement ) )*
+                                    // InternalSysMLOC.g:8064:7: ( (lv_effectElements_19_0= ruleActionBodyElement ) )*
                                     loop216:
                                     do {
                                         int alt216=2;
@@ -26015,18 +26015,18 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                                         switch (alt216) {
                                     	case 1 :
-                                    	    // InternalSysMLOC.g:8065:8: (lv_elements_19_0= ruleActionBodyElement )
+                                    	    // InternalSysMLOC.g:8065:8: (lv_effectElements_19_0= ruleActionBodyElement )
                                     	    {
-                                    	    // InternalSysMLOC.g:8065:8: (lv_elements_19_0= ruleActionBodyElement )
-                                    	    // InternalSysMLOC.g:8066:9: lv_elements_19_0= ruleActionBodyElement
+                                    	    // InternalSysMLOC.g:8065:8: (lv_effectElements_19_0= ruleActionBodyElement )
+                                    	    // InternalSysMLOC.g:8066:9: lv_effectElements_19_0= ruleActionBodyElement
                                     	    {
                                     	    if ( state.backtracking==0 ) {
 
-                                    	      									newCompositeNode(grammarAccess.getTransitionUsageAccess().getElementsActionBodyElementParserRuleCall_1_1_3_2_1_0());
+                                    	      									newCompositeNode(grammarAccess.getTransitionUsageAccess().getEffectElementsActionBodyElementParserRuleCall_1_1_3_2_1_0());
                                     	      								
                                     	    }
                                     	    pushFollow(FOLLOW_117);
-                                    	    lv_elements_19_0=ruleActionBodyElement();
+                                    	    lv_effectElements_19_0=ruleActionBodyElement();
 
                                     	    state._fsp--;
                                     	    if (state.failed) return current;
@@ -26037,8 +26037,8 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                     	      									}
                                     	      									add(
                                     	      										current,
-                                    	      										"elements",
-                                    	      										lv_elements_19_0,
+                                    	      										"effectElements",
+                                    	      										lv_effectElements_19_0,
                                     	      										"dut.control.sysmloc.SysMLOC.ActionBodyElement");
                                     	      									afterParserOrEnumRuleCall();
                                     	      								
@@ -26080,10 +26080,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSysMLOC.g:8091:4: (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? )
+                    // InternalSysMLOC.g:8091:4: (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? )
                     {
-                    // InternalSysMLOC.g:8091:4: (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? )
-                    // InternalSysMLOC.g:8092:5: this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )?
+                    // InternalSysMLOC.g:8091:4: (this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )? )
+                    // InternalSysMLOC.g:8092:5: this_TransitionUsageIfPart_21= ruleTransitionUsageIfPart[$current] (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )?
                     {
                     if ( state.backtracking==0 ) {
 
@@ -26104,7 +26104,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       					afterParserOrEnumRuleCall();
                       				
                     }
-                    // InternalSysMLOC.g:8103:5: (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )?
+                    // InternalSysMLOC.g:8103:5: (otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )? )?
                     int alt221=2;
                     int LA221_0 = input.LA(1);
 
@@ -26113,7 +26113,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt221) {
                         case 1 :
-                            // InternalSysMLOC.g:8104:6: otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )?
+                            // InternalSysMLOC.g:8104:6: otherlv_22= 'do' this_PerformedActionParameterPart_23= rulePerformedActionParameterPart[$current] (otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )?
                             {
                             otherlv_22=(Token)match(input,78,FOLLOW_138); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
@@ -26140,7 +26140,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                               						afterParserOrEnumRuleCall();
                               					
                             }
-                            // InternalSysMLOC.g:8119:6: (otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )?
+                            // InternalSysMLOC.g:8119:6: (otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}' )?
                             int alt220=2;
                             int LA220_0 = input.LA(1);
 
@@ -26149,7 +26149,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                             }
                             switch (alt220) {
                                 case 1 :
-                                    // InternalSysMLOC.g:8120:7: otherlv_24= '{' ( (lv_elements_25_0= ruleActionBodyElement ) )* otherlv_26= '}'
+                                    // InternalSysMLOC.g:8120:7: otherlv_24= '{' ( (lv_effectElements_25_0= ruleActionBodyElement ) )* otherlv_26= '}'
                                     {
                                     otherlv_24=(Token)match(input,16,FOLLOW_117); if (state.failed) return current;
                                     if ( state.backtracking==0 ) {
@@ -26157,7 +26157,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                       							newLeafNode(otherlv_24, grammarAccess.getTransitionUsageAccess().getLeftCurlyBracketKeyword_1_2_1_2_0());
                                       						
                                     }
-                                    // InternalSysMLOC.g:8124:7: ( (lv_elements_25_0= ruleActionBodyElement ) )*
+                                    // InternalSysMLOC.g:8124:7: ( (lv_effectElements_25_0= ruleActionBodyElement ) )*
                                     loop219:
                                     do {
                                         int alt219=2;
@@ -26170,18 +26170,18 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                                         switch (alt219) {
                                     	case 1 :
-                                    	    // InternalSysMLOC.g:8125:8: (lv_elements_25_0= ruleActionBodyElement )
+                                    	    // InternalSysMLOC.g:8125:8: (lv_effectElements_25_0= ruleActionBodyElement )
                                     	    {
-                                    	    // InternalSysMLOC.g:8125:8: (lv_elements_25_0= ruleActionBodyElement )
-                                    	    // InternalSysMLOC.g:8126:9: lv_elements_25_0= ruleActionBodyElement
+                                    	    // InternalSysMLOC.g:8125:8: (lv_effectElements_25_0= ruleActionBodyElement )
+                                    	    // InternalSysMLOC.g:8126:9: lv_effectElements_25_0= ruleActionBodyElement
                                     	    {
                                     	    if ( state.backtracking==0 ) {
 
-                                    	      									newCompositeNode(grammarAccess.getTransitionUsageAccess().getElementsActionBodyElementParserRuleCall_1_2_1_2_1_0());
+                                    	      									newCompositeNode(grammarAccess.getTransitionUsageAccess().getEffectElementsActionBodyElementParserRuleCall_1_2_1_2_1_0());
                                     	      								
                                     	    }
                                     	    pushFollow(FOLLOW_117);
-                                    	    lv_elements_25_0=ruleActionBodyElement();
+                                    	    lv_effectElements_25_0=ruleActionBodyElement();
 
                                     	    state._fsp--;
                                     	    if (state.failed) return current;
@@ -26192,8 +26192,8 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                     	      									}
                                     	      									add(
                                     	      										current,
-                                    	      										"elements",
-                                    	      										lv_elements_25_0,
+                                    	      										"effectElements",
+                                    	      										lv_effectElements_25_0,
                                     	      										"dut.control.sysmloc.SysMLOC.ActionBodyElement");
                                     	      									afterParserOrEnumRuleCall();
                                     	      								

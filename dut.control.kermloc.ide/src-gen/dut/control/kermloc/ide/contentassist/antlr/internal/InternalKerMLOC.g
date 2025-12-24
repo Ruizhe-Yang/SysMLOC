@@ -5306,15 +5306,9 @@ rule__FeatureSpecialization__Alternatives_1_0
 	)
 	|
 	(
-		{ before(grammarAccess.getFeatureSpecializationAccess().getSpecializesKeyword_1_0_1()); }
-		'specializes'
-		{ after(grammarAccess.getFeatureSpecializationAccess().getSpecializesKeyword_1_0_1()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getFeatureSpecializationAccess().getSubsetsKeyword_1_0_2()); }
+		{ before(grammarAccess.getFeatureSpecializationAccess().getSubsetsKeyword_1_0_1()); }
 		'subsets'
-		{ after(grammarAccess.getFeatureSpecializationAccess().getSubsetsKeyword_1_0_2()); }
+		{ after(grammarAccess.getFeatureSpecializationAccess().getSubsetsKeyword_1_0_1()); }
 	)
 ;
 finally {

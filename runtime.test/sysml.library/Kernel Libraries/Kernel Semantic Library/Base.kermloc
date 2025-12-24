@@ -14,7 +14,7 @@
     <elements xsi:type="kerMLOC:DataType" isAbstract="true" declaredName="DataValue">
       <subsetting>Anything</subsetting>
       <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Value is the most general classifier of entities that are values that do not change&#xA;&#x9;&#x9; * over time.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="kerMLOC:Feature" declaredName="self" isFeature="true">
+      <elements xsi:type="kerMLOC:Feature" declaredName="self" isFeature="true" isSemicolon="true">
         <typings>DataValue</typings>
         <redefinitions>Anything::self</redefinitions>
       </elements>

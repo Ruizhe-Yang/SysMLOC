@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Class" declaredName="Camera">
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="focusedState" isSemicolon="true">
+      <typings>Camera</typings>
+      <subsetting>timeSlices</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="shotState" isSemicolon="true">
+      <typings>Camera</typings>
+      <subsetting>timeSlices</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Succession">
+      <connectorPart refElement="focusedState"/>
+      <connectorPart refElement="shotState"/>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

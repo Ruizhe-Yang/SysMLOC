@@ -1176,7 +1176,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         conditionalExpression=Expression? 
 	 *         (
 	 *             performedActionParameterPart+=PerformedActionUsage 
-	 *             (elements+=ActionBodyElement+ | elements+=ActionBodyElement+ | elements+=ActionBodyElement+)?
+	 *             (effectElements+=ActionBodyElement+ | effectElements+=ActionBodyElement+ | effectElements+=ActionBodyElement+)?
 	 *         )? 
 	 *         transitionSuccessionElement+=ConnectorEnd 
 	 *         elements+=ActionBodyElement*

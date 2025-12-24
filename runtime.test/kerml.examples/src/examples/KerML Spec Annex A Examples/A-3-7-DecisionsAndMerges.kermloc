@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="DecisionsAndMergesModelToBeExecuted">
+    <elements xsi:type="kerMLOC:Documentation" body="/* &#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlPerformances::DecisionPerformance"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlPerformances::MergePerformance"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::HappensBefore"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Links::SelfLink"/>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="Manufacture">
+      <elements xsi:type="kerMLOC:Comment" body="/* Before decision. */"/>
+      <elements xsi:type="kerMLOC:Step" declaredName="admit" MultiLow="1">
+        <typings>Admit</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" declaredName="a_before_i" isFirst="true">
+        <connectorPart MultiLow="1" refElement="admit"/>
+        <connectorPart MultiLow="1" refElement="inspect"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* Decision. */"/>
+      <elements xsi:type="kerMLOC:Step" declaredName="inspect" MultiLow="*">
+        <typings>DecisionPerformance</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* Two decision branches. */"/>
+      <elements xsi:type="kerMLOC:Succession" declaredName="i_before_f" isFirst="true">
+        <connectorPart MultiLow="1" refElement="inspect"/>
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="finish"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="finish" MultiLow="*">
+        <typings>Touchup</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" declaredName="i_before_r" isFirst="true">
+        <connectorPart MultiLow="1" refElement="inspect"/>
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="recycle"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="recycle" MultiLow="*">
+        <typings>MarkForRecycling</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* Two merge branches. */"/>
+      <elements xsi:type="kerMLOC:Succession" declaredName="f_before_ms" isFirst="true">
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="finish"/>
+        <connectorPart MultiLow="1" refElement="mShip"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" declaredName="r_before_ms" isFirst="true">
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="recycle"/>
+        <connectorPart MultiLow="1" refElement="mShip"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* Merge */"/>
+      <elements xsi:type="kerMLOC:Step" declaredName="mShip" MultiLow="*">
+        <typings>MergePerformance</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* After merge */"/>
+      <elements xsi:type="kerMLOC:Succession" declaredName="ms_before_s" isFirst="true">
+        <connectorPart MultiLow="1" refElement="mShip"/>
+        <connectorPart MultiLow="1" refElement="ship"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="ship" MultiLow="*">
+        <typings>Ship</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* Decision and merge timing constraints. */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="inspectOutgoingHBLinks" MultiLow="*" isFeature="true" isSemicolon="true">
+        <typings>HappensBefore</typings>
+        <unioning>i_before_f</unioning>
+        <unioning>i_before_r</unioning>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" declaredName="bindIOHBL" isFrom="true">
+        <typings>SelfLink</typings>
+        <connectorPart MultiLow="1" refElement="inspectOutgoingHBLinks"/>
+        <connectorPart MultiLow="1" refElement="inspect.outgoingHBLink"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="mShipIncomingHBLinks" MultiLow="*" isFeature="true" isSemicolon="true">
+        <typings>HappensBefore</typings>
+        <unioning>f_before_ms</unioning>
+        <unioning>r_before_ms</unioning>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" declaredName="bindmSIHBL" isFrom="true">
+        <typings>SelfLink</typings>
+        <connectorPart MultiLow="1" refElement="mShipIncomingHBLinks"/>
+        <connectorPart MultiLow="1" refElement="mShip.incomingHBLink"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="Admit"/>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="Touchup"/>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MarkForRecycling"/>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="Ship"/>
+  </elements>
+  <elements xsi:type="kerMLOC:Package" declaredName="DecisionsAndMergesExecution">
+    <elements xsi:type="kerMLOC:Documentation" body="/* &#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Atoms" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="DecisionsAndMergesModelToBeExecuted" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::Occurrence"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::HappensBefore"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlPerformances::DecisionPerformance"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlPerformances::MergePerformance"/>
+    <elements xsi:type="kerMLOC:Comment" body="/* Before decision. */"/>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MyAdmit">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Admit</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Comment" body="/* Decision. */"/>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MyInspect">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>DecisionPerformance</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="MyAdmit_Before_Inspect_Link">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>HappensBefore</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true" isSemicolon="true">
+        <typings>MyAdmit</typings>
+        <redefinitions>earlierOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true" isSemicolon="true">
+        <typings>MyInspect</typings>
+        <redefinitions>laterOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Comment" body="/* One decision branch taken. */"/>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MyTouchup">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Touchup</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="MyInspect_Before_Touchup_Link">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>HappensBefore</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true" isSemicolon="true">
+        <typings>MyInspect</typings>
+        <redefinitions>earlierOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true" isSemicolon="true">
+        <typings>MyTouchup</typings>
+        <redefinitions>laterOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Comment" body="/* One merge branch taken. Merge. */"/>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MyMergeToShip">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>MergePerformance</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="MyTouchup_Before_Merge_Link">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>HappensBefore</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true" isSemicolon="true">
+        <typings>MyTouchup</typings>
+        <redefinitions>earlierOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true" isSemicolon="true">
+        <typings>MyMergeToShip</typings>
+        <redefinitions>laterOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Comment" body="/* After merge. */"/>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MyShip">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Ship</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="MyMerge_Before_Ship_Link">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>HappensBefore</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true" isSemicolon="true">
+        <typings>MyMergeToShip</typings>
+        <redefinitions>earlierOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true" isSemicolon="true">
+        <typings>Ship</typings>
+        <redefinitions>laterOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MyManufactureSteps">
+      <unioning>MyAdmit</unioning>
+      <unioning>MyInspect</unioning>
+      <unioning>MyTouchup</unioning>
+      <unioning>MyMergeToShip</unioning>
+      <unioning>MyShip</unioning>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MyManufacture">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Manufacture</subsetting>
+      <elements xsi:type="kerMLOC:Feature" MultiLow="5" isFeature="true" isSemicolon="true">
+        <typings>MyManufactureSteps</typings>
+        <redefinitions>timeEnclosedOccurrences</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* Before decision. */"/>
+      <elements xsi:type="kerMLOC:Step" MultiLow="1">
+        <typings>MyAdmit</typings>
+        <redefinitions>admit</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* Decision. */"/>
+      <elements xsi:type="kerMLOC:Step" MultiLow="1">
+        <typings>MyInspect</typings>
+        <redefinitions>inspect</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" MultiLow="1" isFirst="true">
+        <typings>MyAdmit_Before_Inspect_Link</typings>
+        <redefinitions>a_before_i</redefinitions>
+        <connectorPart refElement="admit"/>
+        <connectorPart refElement="inspect"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* One decision branch taken. */"/>
+      <elements xsi:type="kerMLOC:Step" MultiLow="1">
+        <typings>MyTouchup</typings>
+        <redefinitions>finish</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" MultiLow="1" isFirst="true">
+        <typings>MyInspect_Before_Touchup_Link</typings>
+        <redefinitions>i_before_f</redefinitions>
+        <connectorPart refElement="inspect"/>
+        <connectorPart refElement="finish"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* One merge branch taken. */"/>
+      <elements xsi:type="kerMLOC:Succession" MultiLow="1" isFirst="true">
+        <typings>MyTouchup_Before_Merge_Link</typings>
+        <redefinitions>f_before_ms</redefinitions>
+        <connectorPart refElement="finish"/>
+        <connectorPart refElement="mShip"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* Merge. */"/>
+      <elements xsi:type="kerMLOC:Step" MultiLow="1">
+        <typings>MyMergeToShip</typings>
+        <redefinitions>mShip</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* After merge */"/>
+      <elements xsi:type="kerMLOC:Step" MultiLow="1">
+        <typings>MyShip</typings>
+        <redefinitions>ship</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" MultiLow="1" isFirst="true">
+        <typings>MyMerge_Before_Ship_Link</typings>
+        <redefinitions>ms_before_s</redefinitions>
+        <connectorPart refElement="mShip"/>
+        <connectorPart refElement="ship"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* Decision and merge timing constraints. */"/>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
+        <typings>MyInspect_Before_Touchup_Link</typings>
+        <redefinitions>inspectOutgoingHBLinks</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true" isSemicolon="true">
+        <typings>MyTouchup_Before_Merge_Link</typings>
+        <redefinitions>mShipIncomingHBLinks</redefinitions>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>
