@@ -22,9 +22,9 @@ class SysMLOCGenerator extends AbstractGenerator {
 //				.filter(Greeting)
 //				.map[name]
 //				.join(', '))
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("model", new XMIResourceFactoryImpl())
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("sysmloc", new XMIResourceFactoryImpl())
         val modelRoot = resource.contents.head
-        val xmiURI = resource.URI.trimFileExtension.appendFileExtension("model")
+        val xmiURI = resource.URI.trimFileExtension.appendFileExtension("sysmloc")
         val xmiRes = resource.resourceSet.createResource(xmiURI)
         xmiRes.contents.add(modelRoot)
         xmiRes.save(null)

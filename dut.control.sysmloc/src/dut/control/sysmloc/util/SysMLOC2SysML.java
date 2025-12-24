@@ -24,7 +24,7 @@ public class SysMLOC2SysML {
         if (args.length > 0) {
             modelPath = args[0];
         } else {
-//            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\training2\\17. Control\\Control Structures Example.model";
+//            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\training2\\17. Control\\Control Structures Example.sysmloc";
         	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\sysml.library";
         }
 //        Path out = convertModelToSysml(modelPath);
@@ -50,7 +50,7 @@ public class SysMLOC2SysML {
                 }
 
                 String fileName = p.getFileName().toString();
-                if (!fileName.endsWith(".model")) {
+                if (!fileName.endsWith(".sysmloc")) {
                     continue;
                 }
                 if (fileName.startsWith("gen-")) {
@@ -71,11 +71,11 @@ public class SysMLOC2SysML {
                 }
             }
         }
-        System.out.println("Done. Processed " + count + " .model files under " + dir);
+        System.out.println("Done. Processed " + count + " .sysmloc files under " + dir);
     }
 
     /**
-     * 把一个 .model 文件转换为排版好的 .sysml 文件：
+     * 把一个 .sysmloc 文件转换为排版好的 .sysml 文件：
      * - 输出路径 = 同目录 / "gen-" + 原文件名（去掉扩展名） + ".sysml"
      * - 返回生成的文件路径
      */
@@ -93,7 +93,7 @@ public class SysMLOC2SysML {
         ResourceSetImpl emfRs = new ResourceSetImpl();
         emfRs.getResourceFactoryRegistry()
              .getExtensionToFactoryMap()
-             .put("model", new XMIResourceFactoryImpl());
+             .put("sysmloc", new XMIResourceFactoryImpl());
         URI modelUri = URI.createFileURI(inPath.toString());
         Resource emfRes = emfRs.getResource(modelUri, true);
         EObject root = emfRes.getContents().get(0);

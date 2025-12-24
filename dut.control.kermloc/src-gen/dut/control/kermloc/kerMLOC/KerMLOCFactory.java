@@ -924,33 +924,6 @@ public interface KerMLOCFactory extends EFactory
   PayloadFeatureSpecializationPart createPayloadFeatureSpecializationPart();
 
   /**
-   * Returns a new object of class '<em>Connector Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Connector Declaration</em>'.
-   * @generated
-   */
-  ConnectorDeclaration createConnectorDeclaration();
-
-  /**
-   * Returns a new object of class '<em>Binary Connector Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Binary Connector Declaration</em>'.
-   * @generated
-   */
-  BinaryConnectorDeclaration createBinaryConnectorDeclaration();
-
-  /**
-   * Returns a new object of class '<em>Nary Connector Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Nary Connector Declaration</em>'.
-   * @generated
-   */
-  NaryConnectorDeclaration createNaryConnectorDeclaration();
-
-  /**
    * Returns a new object of class '<em>Extended Prefix</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -10,7 +10,6 @@ import dut.control.kermloc.kerMLOC.Association;
 import dut.control.kermloc.kerMLOC.AssociationStructure;
 import dut.control.kermloc.kerMLOC.BasicFeaturePrefix;
 import dut.control.kermloc.kerMLOC.Behavior;
-import dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.BindingConnector;
 import dut.control.kermloc.kerMLOC.BooleanExpression;
 import dut.control.kermloc.kerMLOC.ChainingPart;
@@ -22,7 +21,6 @@ import dut.control.kermloc.kerMLOC.Comment;
 import dut.control.kermloc.kerMLOC.Conjugation;
 import dut.control.kermloc.kerMLOC.ConjugationPart;
 import dut.control.kermloc.kerMLOC.Connector;
-import dut.control.kermloc.kerMLOC.ConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.ConnectorEnd;
 import dut.control.kermloc.kerMLOC.CrossFeatureChain;
 import dut.control.kermloc.kerMLOC.CrossingFeature;
@@ -73,7 +71,6 @@ import dut.control.kermloc.kerMLOC.MultiplicityPart;
 import dut.control.kermloc.kerMLOC.MultiplicityRange;
 import dut.control.kermloc.kerMLOC.Namespace;
 import dut.control.kermloc.kerMLOC.NamespaceBodyElement;
-import dut.control.kermloc.kerMLOC.NaryConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.NonFeatureElement;
 import dut.control.kermloc.kerMLOC.PackageBodyElement;
 import dut.control.kermloc.kerMLOC.PayloadFeature;
@@ -271,9 +268,6 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
       case KerMLOCPackage.FLOW_DECLARATION: return createFlowDeclaration();
       case KerMLOCPackage.PAYLOAD_FEATURE: return createPayloadFeature();
       case KerMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART: return createPayloadFeatureSpecializationPart();
-      case KerMLOCPackage.CONNECTOR_DECLARATION: return createConnectorDeclaration();
-      case KerMLOCPackage.BINARY_CONNECTOR_DECLARATION: return createBinaryConnectorDeclaration();
-      case KerMLOCPackage.NARY_CONNECTOR_DECLARATION: return createNaryConnectorDeclaration();
       case KerMLOCPackage.EXTENDED_PREFIX: return createExtendedPrefix();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -1516,42 +1510,6 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
   {
     PayloadFeatureSpecializationPartImpl payloadFeatureSpecializationPart = new PayloadFeatureSpecializationPartImpl();
     return payloadFeatureSpecializationPart;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ConnectorDeclaration createConnectorDeclaration()
-  {
-    ConnectorDeclarationImpl connectorDeclaration = new ConnectorDeclarationImpl();
-    return connectorDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public BinaryConnectorDeclaration createBinaryConnectorDeclaration()
-  {
-    BinaryConnectorDeclarationImpl binaryConnectorDeclaration = new BinaryConnectorDeclarationImpl();
-    return binaryConnectorDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NaryConnectorDeclaration createNaryConnectorDeclaration()
-  {
-    NaryConnectorDeclarationImpl naryConnectorDeclaration = new NaryConnectorDeclarationImpl();
-    return naryConnectorDeclaration;
   }
 
   /**

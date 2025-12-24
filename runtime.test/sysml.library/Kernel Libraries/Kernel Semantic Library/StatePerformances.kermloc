@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="StatePerformances" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package contains a library model of the semantics of state-based behavior,&#xA;&#x9; * including the performance of (behavioral) states and the transitions between them.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Boolean"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Natural"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="TransitionPerformances::TransitionPerformance"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::Occurrence"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::HappensDuring"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Transfers::Transfer"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Transfers::MessageTransfer"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Performances::Performance"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlPerformances::DecisionPerformance"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::forAll"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::select"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::collect"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="StatePerformance">
+      <subsetting>DecisionPerformance</subsetting>
+      <elements xsi:type="kerMLOC:Feature" declaredName="isTriggerDuring" isDefault="true" valuePart="true" isFeature="true">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" isAbstract="true" declaredName="middle" MultiLow="1" MultiHigh="*">
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * All modeler-defined steps must subset this.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* &#xA;&#x9;&#x9; * Note: All steps are implicitly considered to be enclosedPerformances,&#xA;&#x9;&#x9; * and hence happening during the state performance.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Step" declaredName="entry" MultiLow="1"/>
+      <elements xsi:type="kerMLOC:Step" declaredName="do" MultiLow="1">
+        <subsetting>middle</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="exit" MultiLow="1"/>
+      <elements xsi:type="kerMLOC:Step" declaredName="nonDoMiddle" MultiLow="*" valuePart="middle->excluding(do)">
+        <subsetting>middle</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private">
+        <connectorPart MultiLow="1" refElement="entry"/>
+        <connectorPart MultiLow="*" refElement="middle"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private">
+        <connectorPart MultiLow="1" refElement="do.startShot"/>
+        <connectorPart MultiLow="*" refElement="nonDoMiddle.startShot"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private">
+        <connectorPart MultiLow="*" refElement="middle"/>
+        <connectorPart MultiLow="1" refElement="exit"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="incomingTransitionTrigger" MultiLow="0" MultiHigh="1" isDefault="true" valuePart="null" isFeature="true">
+        <typings>MessageTransfer</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Transfer that triggered a transition into this state performance. &#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" visibility="private">
+        <resultExpressionParameter resultExpression="isEmpty(accepted) == isEmpty(acceptable)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="accepted" MultiLow="0" MultiHigh="1" isFeature="true">
+        <typings>Transfer</typings>
+        <subsetting>acceptable</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/* A transfer to the trigger target of an outgoing transition performance&#xA;&#x9;&#x9;&#x9; * for an outgoing successon that is taken for this state occurrence.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="deferrable" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Transfer</typings>
+        <subsetting>acceptable</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/* Transfers to trigger targets of outgoing transition performances can be&#xA;&#x9;&#x9;&#x9; * considered for acceptance more than once.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="acceptable" MultiLow="*" isFeature="true">
+        <typings>Transfer</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Transfers that might be accepted. &#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="thatSP" MultiLow="1" valuePart="that as StatePerformance" isFeature="true">
+          <typings>StatePerformance</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="accableT" isFeature="true">
+          <typings>Transfer</typings>
+          <redefinitions>self</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="accT" valuePart="thatSP.accepted" isFeature="true">
+          <typings>Transfer</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="accableT == accT | incomingTransferSort(accT, accableT)"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="isDispatch implies allSubstatePerformances(dispatchScope)->forAll{in oSP : StatePerformance; oSP == thatSP | isEmpty(oSP.accepted) | includes(thatSP.exit.startShot.successors, oSP.exit.startShot) | ( oSP.accepted != accableT &amp; ( incomingTransferSort(oSP.accepted, accableT) | includes(oSP.deferrable, accableT) ) ) }"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Function" declaredName="allSubstatePerformances">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="p" MultiLow="1">
+          <typings>Performance</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="substatePerformances" MultiLow="*" valuePart="p.subperformances->select{in subp:Performance; subp istype StatePerformance}" isFeature="true">
+          <typings>StatePerformance</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="*" valuePart="union(substatePerformances, substatePerformances->collect{in sp:StatePerformance; allSubstatePerformances(sp) } )">
+          <typings>StatePerformance</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private">
+        <connectorPart MultiLow="*" refElement="acceptable"/>
+        <connectorPart MultiLow="1" refElement="exit"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="this.isRunToCompletion" isFeature="true">
+        <redefinitions>isRunToCompletion</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="this.runToCompletionScope" isFeature="true">
+        <redefinitions>runToCompletionScope</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="isRunToCompletion implies allSubtransitionPerformances(runToCompletionScope)->forAll{in tp : TransitionPerformance; includes(tp.successors, entry) | includes(tp.predecessors, entry) }"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Function" declaredName="allSubtransitionPerformances">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="p" MultiLow="1">
+          <typings>Performance</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="subtransitionPerformances" MultiLow="*" valuePart="p.subperformances->select{in subp:Performance; subp istype StateTransitionPerformance }" isFeature="true">
+          <typings>TransitionPerformance</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="*" valuePart="union(subtransitionPerformances, subtransitionPerformances->collect{in sp:TransitionPerformance; allSubtransitionPerformances(sp) } )">
+          <typings>TransitionPerformance</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="StateTransitionPerformance">
+      <subsetting>TransitionPerformance</subsetting>
+      <elements xsi:type="kerMLOC:Feature" declaredName="isTriggerDuring" MultiLow="1" isFeature="true">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="not transitionLinkSource.isTriggerDuring | isTriggerDuring"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="transitionLinkSource" isFeature="true">
+        <typings>StatePerformance</typings>
+        <redefinitions>TransitionPerformance::transitionLinkSource</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+          <redefinitions>accepted</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+          <redefinitions>StatePerformance::acceptable</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private">
+        <connectorPart MultiLow="*" refElement="transitionLinkSource.nonDoMiddle"/>
+        <connectorPart MultiLow="1" refElement="Performance::self"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="transitionLinkTarget" MultiLow="0" MultiHigh="1" valuePart="transitionLink.laterOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="(that istype StatePerformance) implies (that as StatePerformance).incomingTransitionTrigger == trigger"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="acceptable" MultiLow="*" isFeature="true">
+        <typings>Transfer</typings>
+        <subsetting>transitionLinkSource.acceptable</subsetting>
+        <subsetting>triggerTarget.incomingTransfersToSelf</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="trigger" isFeature="true">
+        <subsetting>acceptable</subsetting>
+        <subsetting>transitionLinkSource.accepted</subsetting>
+        <redefinitions>TransitionPerformance::trigger</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+          <redefinitions>endShot</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="tdNum" MultiLow="1" valuePart="if not isTriggerDuring ? 0 else size(trigger)" isFeature="true">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" visibility="private" declaredName="linkTriggerDuring" MultiLow="tdNum" isFrom="true">
+        <typings>HappensDuring</typings>
+        <connectorPart MultiLow="*" refElement="trigger.endShot"/>
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="transitionLinkSource"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private" isSufficient="true">
+        <connectorPart MultiLow="*" refElement="acceptable"/>
+        <connectorPart MultiLow="*" refElement="guard"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private">
+        <connectorPart MultiLow="*" refElement="guard"/>
+        <connectorPart MultiLow="1" refElement="transitionLinkSource.exit"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private">
+        <connectorPart MultiLow="accNum" refElement="accept"/>
+        <connectorPart MultiLow="1" refElement="transitionLinkSource.exit"/>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

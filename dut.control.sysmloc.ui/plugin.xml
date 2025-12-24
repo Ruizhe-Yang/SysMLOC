@@ -438,13 +438,13 @@
     <objectContribution
           adaptable="true"
           id="dut.control.sysmloc.ui.generateSysMLAction"
-          nameFilter="*.model"
+          nameFilter="*.sysmloc"
           objectClass="org.eclipse.core.resources.IFile">
        <action
              class="dut.control.sysmloc.ui.actions.GenerateSysMLAction"
              enablesFor="1"
              id="dut.control.sysmloc.ui.generateSysMLAction"
-             label="Generate SysML v2"
+             label="Generate .sysml"
              menubarPath="additions">
        </action>
     </objectContribution>

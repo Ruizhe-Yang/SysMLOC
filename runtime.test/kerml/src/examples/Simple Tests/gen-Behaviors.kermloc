@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Behaviors">
+    <elements xsi:type="kerMLOC:Behavior" declaredName="A">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x"/>
+      <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="y" valuePart="b.y1"/>
+      <elements xsi:type="kerMLOC:Step" isComposite="true" declaredName="b">
+        <typings>B</typings>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x1" valuePart="A::x"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="B">
+      <subsetting>A</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x1"/>
+      <elements xsi:type="kerMLOC:Feature" direction="out" isVariable="true" declaredName="y1"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="C">
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="z" valuePart="A().y"/>
+      <elements xsi:type="kerMLOC:Step" declaredName="a">
+        <typings>A</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="b">
+        <typings>B</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector">
+        <connectorPart refElement="z"/>
+        <connectorPart refElement="a.y"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Flow">
+        <FlowEnd>a.y</FlowEnd>
+        <FlowEnd>b.x1</FlowEnd>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Flow" isAbstract="true" declaredName="msg">
+      <payload payloadFeatureElement="C"/>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

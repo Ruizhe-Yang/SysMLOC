@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="SpatialFrames" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;     * This package models spatial frames of reference for quantifying the position of points &#xA;     * in a three-dimensional space. &#xA;     */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Clocks" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::NumericalValue"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="VectorValues::ThreeVectorValue"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="VectorValues::CartesianThreeVectorValue"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="VectorFunctions::isZeroVector"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::Life"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Objects::Body"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Objects::Point"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::forAll"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::includes"/>
+    <elements xsi:type="kerMLOC:Structure" visibility="private" declaredName="DefaultFrameLife" MultiLow="1">
+      <subsetting>SpatialFrame</subsetting>
+      <subsetting>Life</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * DefaultFrameLife is the classifier of the singleton Life of the defaultFrame.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="defaultFrame" MultiLow="1" isFeature="true">
+      <typings>DefaultFrameLife</typings>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * defaultFrame is a fixed SpatialFrame used as a universal default.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Structure" isAbstract="true" declaredName="SpatialFrame">
+      <subsetting>Body</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * A SpatialFrame is a three-dimensional Body that provides a spatial extent that &#xA;         * acts as a frame of reference for defining the physical position and displacement &#xA;         * vectors of Points over time.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="PositionOf">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * The PositionOf a Point relative to a SpatialFrame, at a specific time relative to a given&#xA;         * Clock, as a positionVector that is a ThreeVectorValue.&#xA;         */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="point" MultiLow="1">
+        <typings>Point</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="time" MultiLow="1">
+        <typings>NumericalValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="frame" MultiLow="1" isDefault="true" valuePart="defaultFrame">
+        <typings>SpatialFrame</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="frame.localClock">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="positionVector" MultiLow="1">
+        <typings>ThreeVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="positionTimePrecondition">
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;             * The given point must exist at the given time.&#xA;             */"/>
+        <resultExpressionParameter resultExpression="TimeOf(point.startShot) &lt;= time and time &lt;= TimeOf(point.endShot)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="spacePositionConstraint">
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;             * The result positionVector is equal to the PositionOf the Point spaceShot of the&#xA;             * frame that encloses the given point, at the given time.&#xA;             */"/>
+        <resultExpressionParameter resultExpression="(frame.spaceShots as Point)->forAll{in p : Point; p.spaceTimeEnclosedOccurrences->includes(point) implies positionVector == PositionOf(p, time, frame) }"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="CurrentPositionOf">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * The CurrentPositionOf a Point relative to a SpatialFrame and a Clock is the PositionOf&#xA;         * the Point relative to the SpatialFrame at the currentTime of the Clock.&#xA;         */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="point" MultiLow="1">
+        <typings>Point</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="frame" MultiLow="1" isDefault="true" valuePart="defaultFrame">
+        <typings>SpatialFrame</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="frame.localClock">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="positionVector" MultiLow="1" valuePart="PositionOf(point, clock.currentTime, frame, clock)">
+        <typings>ThreeVectorValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="DisplacementOf">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * The DisplacementOf two Points relative to a SpatialFrame, at a specific time relative to a&#xA;         * given Clock, is the displacementVector computed as the difference between the PositionOf the &#xA;         * first Point and PositionOf the second Point, relative to that SpatialFrame, at that time.&#xA;         */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="point1" MultiLow="1">
+        <typings>Point</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="point2" MultiLow="1">
+        <typings>Point</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="time">
+        <typings>NumericalValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="frame" MultiLow="1" isDefault="true" valuePart="defaultFrame">
+        <typings>SpatialFrame</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="frame.localClock">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="displacementVector" MultiLow="1" valuePart="PositionOf(point2, time, frame, clock) - PositionOf(point1, time, frame, clock)">
+        <typings>ThreeVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="zeroDisplacementConstraint">
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * If either point1 or point2 occurs within the other, then the displacementVector is&#xA;         * the zero vector.&#xA;         */"/>
+        <resultExpressionParameter resultExpression="(point1.spaceTimeEnclosedOccurrences->includes(point2) or point2.spaceTimeEnclosedOccurrences->includes(point1) ) implies isZeroVector(displacementVector)"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="CurrentDisplacementOf">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * The CurrentDisplacementOf two Points relative to a SpatialFrame and Clock is the DisplacementOf&#xA;         * the Points relative to the SpatialFrame at the currentTime of the Clock.&#xA;         */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="point1" MultiLow="1">
+        <typings>Point</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="point2" MultiLow="1">
+        <typings>Point</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="frame" MultiLow="1" isDefault="true" valuePart="defaultFrame">
+        <typings>SpatialFrame</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="frame.localClock">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="displacementVector" MultiLow="1" valuePart="DisplacementOf(point1, point2, clock.currentTime, frame, clock)">
+        <typings>ThreeVectorValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Structure" isAbstract="true" declaredName="CartesianSpatialFrame">
+      <subsetting>SpatialFrame</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * A CartesianSpatialFrame is a SpatialFrame relative to which all position and displacement&#xA;         * vectors can be represented as CartesianThreeVectorValues.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="CartesianPositionOf">
+      <subsetting>PositionOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * The PositionOf a Point relative to a CartesianSpatialFrame is a CartesianThreeVectorValue.&#xA;         */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="point" MultiLow="1">
+        <typings>Point</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="time" MultiLow="1">
+        <typings>NumericalValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="frame" MultiLow="1">
+        <typings>CartesianSpatialFrame</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="frame.localClock">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="positionVector" MultiLow="1">
+        <typings>CartesianThreeVectorValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="CartesianCurrentPositionOf">
+      <subsetting>CurrentPositionOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * The CurrentPositionOf a Point relative to a CartesianSpatialFrame is a CartesianThreeVectorValue.&#xA;         */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="point" MultiLow="1">
+        <typings>Point</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="frame" MultiLow="1">
+        <typings>CartesianSpatialFrame</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="frame.localClock">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="positionVector" MultiLow="1">
+        <typings>CartesianThreeVectorValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="CartesianDisplacementOf">
+      <subsetting>DisplacementOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * The DisplacementOf two Points relative to a CartesianSpatialFrame is a CartesianThreeVectorValue.&#xA;         */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="point1" MultiLow="1">
+        <typings>Point</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="point2" MultiLow="1">
+        <typings>Point</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="time" MultiLow="1">
+        <typings>NumericalValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="frame" MultiLow="1">
+        <typings>CartesianSpatialFrame</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="frame.localClock">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="displacementVector" MultiLow="1">
+        <typings>CartesianThreeVectorValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="CartesianCurrentDisplacementOf">
+      <subsetting>CurrentDisplacementOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;         * The CurrentDisplacementOf two Points relative to a CartesianSpatialFrame is a CartesianThreeVectorValue.&#xA;         */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="point1" MultiLow="1">
+        <typings>Point</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="point2" MultiLow="1">
+        <typings>Point</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="frame" MultiLow="1">
+        <typings>CartesianSpatialFrame</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="frame.localClock">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="displacementVector" MultiLow="1">
+        <typings>CartesianThreeVectorValue</typings>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

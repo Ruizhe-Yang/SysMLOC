@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Classes">
+    <elements xsi:type="kerMLOC:Feature" declaredName="f" isFeature="true">
+      <typings>A</typings>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" visibility="public" declaredShortName="'1'" declaredName="A">
+      <elements xsi:type="kerMLOC:Feature" declaredName="b" isFeature="true">
+        <typings>B</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="protected" direction="in" declaredName="c">
+        <typings>C</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="p" isFeature="true">
+        <typings>A</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" isAbstract="true" declaredShortName="'2'" declaredName="B">
+      <elements xsi:type="kerMLOC:Feature" visibility="public" isAbstract="true" declaredName="a" isFeature="true">
+        <typings>A</typings>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="aa" isFeature="true">
+          <typings>A</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="public" isComposite="true" declaredName="a1" isFeature="true">
+        <typings>A</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="x" isFeature="true">
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="a" isFeature="true">
+          <typings>A</typings>
+          <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="q" isFeature="true">
+            <typings>A</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="q" isFeature="true">
+          <typings>A</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Package" declaredName="P"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Structure" visibility="private" declaredName="C">
+      <subsetting>Classes::'2'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="y" MultiLow="0" MultiHigh="*">
+        <typings>A</typings>
+        <typings>'2'</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:AliasElement" memberName="z" memberElement="y"/>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="c" isFeature="true">
+        <typings>C</typings>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="cc" isFeature="true">
+          <typings>C</typings>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

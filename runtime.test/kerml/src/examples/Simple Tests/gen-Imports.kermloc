@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Imports">
+    <elements xsi:type="kerMLOC:Package" declaredName="P">
+      <elements xsi:type="kerMLOC:Class" declaredName="A"/>
+      <elements xsi:type="kerMLOC:Class" declaredName="B"/>
+      <elements xsi:type="kerMLOC:Class" declaredName="C"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Package" declaredName="Q">
+      <elements xsi:type="kerMLOC:Class" declaredName="A"/>
+      <elements xsi:type="kerMLOC:Class" declaredName="D">
+        <elements xsi:type="kerMLOC:Class" declaredName="E"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Package" declaredName="Q1">
+        <elements xsi:type="kerMLOC:Class" declaredName="D"/>
+        <elements xsi:type="kerMLOC:Class" declaredName="E"/>
+        <elements xsi:type="kerMLOC:Package" visibility="private" declaredName="Q1a">
+          <elements xsi:type="kerMLOC:Class" declaredName="G"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Package" declaredName="Q2">
+        <elements xsi:type="kerMLOC:Class" declaredName="F"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Package" declaredName="R">
+      <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="Q" isNamespace="true"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Package" declaredName="S">
+      <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="P" isNamespace="true"/>
+      <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="Q" isRecursive="true"/>
+      <elements xsi:type="kerMLOC:Class" declaredName="X">
+        <subsetting>A</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Class" declaredName="Y">
+        <subsetting>D</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Class" declaredName="Z">
+        <subsetting>F</subsetting>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Package" declaredName="S1">
+      <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="P" isNamespace="true"/>
+      <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="R" isNamespace="true"/>
+      <elements xsi:type="kerMLOC:Class" declaredName="X">
+        <subsetting>A</subsetting>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

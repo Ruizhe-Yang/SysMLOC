@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="FeatureReferencingPerformances" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * This package defines Behaviors used to read, write and monitor values of a referenced Feature of an &#xD;&#xA;&#x9; * Occurrence.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Base::Anything"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Base::things"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::Occurrence"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::HappensWhile"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::HappensBefore"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::HappensJustBefore"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::SelfSameLifeLink"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Performances::Performance"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Performances::Evaluation"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Boolean"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::isEmpty"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::equals"/>
+    <elements xsi:type="kerMLOC:Behavior" isAbstract="true" declaredName="FeatureReferencingPerformance">
+      <subsetting>Performance</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A FeatureReferencingPerformance is the base Performance for specialized behaviors related &#xA;&#x9;&#x9; * to values of a referenced Feature of a given Occurrence, as identified in specializations &#xA;&#x9;&#x9; * of this Behavior.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" isAbstract="true" declaredName="onOccurrence" MultiLow="1" isFeature="true">
+        <typings>Occurrence</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Occurrence with values for the referenced feature in specializations of this behavior.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="values" MultiLow="*" isNonunique="true" isFeature="true">
+        <typings>Anything</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Values of the referenced feature, as specified in specializations of this behavior.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" isAbstract="true" declaredName="FeatureAccessPerformance">
+      <subsetting>FeatureReferencingPerformance</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A FeatureAccessPerformance is a FeatureReferencingPerformance where the result values&#xA;&#x9;&#x9; * are all the values of a feature of onOccurrence at the time the Performance ends. The&#xA;&#x9;&#x9; * feature is specified by restricting accessedFeature in specializations or usages.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" isAbstract="true" declaredName="onOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="startingAt" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>timeSlices</subsetting>
+          <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="accessedFeature" MultiLow="*" isNonunique="true" isFeature="true">
+            <typings>Anything</typings>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" isFrom="true">
+        <typings>HappensWhile</typings>
+        <connectorPart refElement="onOccurrence.startingAt.startShot"/>
+        <connectorPart refElement="endShot"/>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Requires some time slice of onOccurrence to start when this performance&#xA;&#x9;&#x9;&#x9; * ends (this connector), with particular feature values (following connector).&#xA;&#x9;&#x9;&#x9; * The feature is specified by restricting the onOccurrence::accessedFeature &#xA;&#x9;&#x9;&#x9; * on usages of this behavior.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" isFrom="true">
+        <typings>SelfSameLifeLink</typings>
+        <connectorPart refElement="onOccurrence.startingAt.accessedFeature"/>
+        <connectorPart refElement="values"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="FeatureReadEvaluation">
+      <subsetting>FeatureAccessPerformance</subsetting>
+      <subsetting>Evaluation</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A FeatureReadEvaluation is a FeatureAccessPerformance that is a function providing as&#xA;&#x9;&#x9; * its result the values of a feature on an occurrence at the time its evaluation ends.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="onOccurrence" MultiLow="1">
+        <typings>Occurrence</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="resultValues" MultiLow="*" isNonunique="true">
+        <typings>Anything</typings>
+        <redefinitions>result</redefinitions>
+        <redefinitions>values</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" isAbstract="true" declaredName="FeatureWritePerformance">
+      <subsetting>FeatureAccessPerformance</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A FeatureWritePerformance is a FeatureAccessPerformance that assigns the values of a &#xA;&#x9;&#x9; * feature on an occurrence to the given replacementValues at time its performance ends.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="onOccurrence" MultiLow="1" isFeature="true">
+        <typings>Occurrence</typings>
+        <redefinitions>onOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="replacementValues" MultiLow="*" isNonunique="true" isFeature="true">
+        <typings>Anything</typings>
+        <redefinitions>values</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" isAbstract="true" declaredName="FeatureMonitorPerformance">
+      <subsetting>FeatureReferencingPerformance</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A FeatureMonitorPerformance is a FeatureReferencingPerformance that waits for values&#xA;&#x9;&#x9; * of monitoredFeature to change on onOccurrence from what they were when the performance &#xA;&#x9;&#x9; * started. The values before and after the change are given by beforeValues and afterValues.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" isFeature="true">
+        <redefinitions>onOccurrence</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" declaredName="monitoredOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>timeSlices</subsetting>
+          <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="monitoredFeature" MultiLow="*" isNonunique="true" isFeature="true">
+            <typings>Anything</typings>
+          </elements>
+          <elements xsi:type="kerMLOC:Feature" declaredName="beforeTimeSlice" MultiLow="1" isFeature="true">
+            <typings>Occurrence</typings>
+            <subsetting>timeSlices</subsetting>
+            <elements xsi:type="kerMLOC:Feature" isFeature="true">
+              <redefinitions>monitoredFeature</redefinitions>
+            </elements>
+          </elements>
+          <elements xsi:type="kerMLOC:Feature" declaredName="afterSnapshot" MultiLow="1" isFeature="true">
+            <typings>Occurrence</typings>
+            <subsetting>snapshots</subsetting>
+            <elements xsi:type="kerMLOC:Feature" isFeature="true">
+              <redefinitions>monitoredFeature</redefinitions>
+            </elements>
+          </elements>
+          <elements xsi:type="kerMLOC:Connector" isFrom="true">
+            <typings>HappensJustBefore</typings>
+            <connectorPart refElement="beforeTimeSlice"/>
+            <connectorPart refElement="afterSnapshot"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="afterValues" isFeature="true">
+        <redefinitions>values</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="beforeValues" MultiLow="*" isNonunique="true" isFeature="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="not beforeValues->equals(afterValues)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" visibility="private" isFrom="true">
+        <typings>HappensWhile</typings>
+        <connectorPart MultiLow="1" refElement="onOccurrence.monitoredOccurrence.beforeTimeSlice.startShot"/>
+        <connectorPart MultiLow="1" refElement="startShot"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" visibility="private" isFrom="true">
+        <typings>SelfSameLifeLink</typings>
+        <connectorPart MultiLow="1" refElement="onOccurrence.monitoredOccurrence.beforeTimeSlice.monitoredFeature"/>
+        <connectorPart MultiLow="1" refElement="beforeValues"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" visibility="private" isFrom="true">
+        <typings>SelfSameLifeLink</typings>
+        <connectorPart MultiLow="1" refElement="onOccurrence.monitoredOccurrence.afterSnapshot.monitoredFeature"/>
+        <connectorPart MultiLow="1" refElement="afterValues"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" visibility="protected" declaredName="endWhen" isFrom="true">
+        <typings>HappensBefore</typings>
+        <connectorPart MultiLow="1" refElement="onOccurrence.monitoredOccurrence.afterSnapshot"/>
+        <connectorPart MultiLow="1" refElement="endShot"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="EvaluationResultMonitorPerformance">
+      <subsetting>FeatureMonitorPerformance</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An EvaluationResultMonitorPerformance is a FeatureMonitorPerformance that waits for changes &#xA;&#x9;&#x9; * in the result of an Evaluation identified by onOccurrence. The Predicate being evaluated must &#xA;&#x9;&#x9; * be able to produce multiple results over time, for example by only using BindingConnectors &#xA;&#x9;&#x9; * between Steps, rather than Successions or Flows, including in its Step behaviors.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="onOccurrence" isFeature="true">
+        <typings>Evaluation</typings>
+        <redefinitions>onOccurrence</redefinitions>
+        <elements xsi:type="kerMLOC:ExpressionClass" visibility="protected" declaredName="monitoredOccurrence" MultiLow="1">
+          <typings>Evaluation</typings>
+          <redefinitions>monitoredOccurrence</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="result" MultiLow="*">
+            <typings>Anything</typings>
+            <redefinitions>result</redefinitions>
+            <redefinitions>monitoredFeature</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="BooleanEvaluationResultMonitorPerformance">
+      <subsetting>EvaluationResultMonitorPerformance</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A BooleanEvaluationResultMonitorPerformance is a EvaluationResultMonitorPerformance&#xA;&#x9;&#x9; * that waits for changes in the result of a BooleanEvaluation identified by onOccurrence.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:BooleanExpression" direction="in">
+        <redefinitions>onOccurrence</redefinitions>
+        <elements xsi:type="kerMLOC:BooleanExpression" visibility="protected" MultiLow="1">
+          <redefinitions>monitoredOccurrence</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="result" MultiLow="1">
+            <typings>Boolean</typings>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="out" MultiLow="1">
+        <typings>Boolean</typings>
+        <redefinitions>afterValues</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="out" MultiLow="1">
+        <typings>Boolean</typings>
+        <redefinitions>beforeValues</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="BooleanEvaluationResultToMonitorPerformance">
+      <subsetting>FeatureReferencingPerformance</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A BooleanEvaluationResultToMonitorPerformance is a FeatureReferencingPerformance that waits &#xA;&#x9;&#x9; * for the result of a BooleanEvaluation (identified by onOccurrence) to change to either true &#xA;&#x9;&#x9; * or false, as indicated by isToTrue (defaulting to true). If the result is already true (or false), &#xA;&#x9;&#x9; * the performance waits for the result to become false (or true) before waiting again for it to &#xA;&#x9;&#x9; * change back.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:BooleanExpression" direction="in">
+        <redefinitions>onOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="isToTrue" MultiLow="1" isDefault="true" valuePart="true" isFeature="true">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="afterValues" MultiLow="1" valuePart="isToTrue">
+        <typings>Boolean</typings>
+        <redefinitions>values</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="monitor1" MultiLow="1" isFeature="true">
+        <typings>BooleanEvaluationResultMonitorPerformance</typings>
+        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+          <typings>HappensJustBefore</typings>
+          <redefinitions>endWhen</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="earlierOccurrence" isFeature="true"/>
+          <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="laterOccurrence" isFeature="true"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="monitor2" MultiLow="1" isFeature="true">
+        <typings>BooleanEvaluationResultMonitorPerformance</typings>
+        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+          <typings>HappensJustBefore</typings>
+          <redefinitions>endWhen</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="earlierOccurrence" isFeature="true"/>
+          <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="laterOccurrence" isFeature="true"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" visibility="private" isFrom="true">
+        <typings>HappensJustBefore</typings>
+        <connectorPart MultiLow="1" refElement="monitor1"/>
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="monitor2"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="isEmpty(monitor2) == (monitor1.afterValues == isToTrue)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector" visibility="private">
+        <connectorPart MultiLow="1" refElement="monitor1.onOccurrence"/>
+        <connectorPart MultiLow="1" refElement="onOccurrence"/>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector" visibility="private">
+        <connectorPart MultiLow="1" refElement="monitor2.onOccurrence"/>
+        <connectorPart MultiLow="1" refElement="onOccurrence"/>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

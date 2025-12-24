@@ -24,12 +24,12 @@ public class KerMLOC2KerML {
         if (args.length > 0) {
             modelPath = args[0];
         } else {
-            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\kerml\\src\\examples\\Address Book Example\\AddressBookModel.model";
-//        	 modelPath = "E:\\GitYang\\KerMLOC\\runtime.test\\sysml.library";
+            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\kerml";
+//        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\sysml.library";
         }
-        Path out = convertModelToKerml(modelPath);
-        System.out.println("Done. Written to: " + out.toAbsolutePath());
-//        convertAllModelsInFolder2(modelPath);
+//        Path out = convertModelToKerml(modelPath);
+//        System.out.println("Done. Written to: " + out.toAbsolutePath());
+        convertAllModelsInFolder2(modelPath);
         
     }
     public static void convertAllModelsInFolder2(String folderPath) throws Exception {
@@ -50,7 +50,7 @@ public class KerMLOC2KerML {
                 }
 
                 String fileName = p.getFileName().toString();
-                if (!fileName.endsWith(".model")) {
+                if (!fileName.endsWith(".kermloc")) {
                     continue;
                 }
                 if (fileName.startsWith("gen-")) {
@@ -71,11 +71,11 @@ public class KerMLOC2KerML {
                 }
             }
         }
-        System.out.println("Done. Processed " + count + " .model files under " + dir);
+        System.out.println("Done. Processed " + count + " .kermloc files under " + dir);
     }
 
     /**
-     * 把一个 .model 文件转换为排版好的 .kerml 文件：
+     * 把一个 .kermloc 文件转换为排版好的 .kerml 文件：
      * - 输出路径 = 同目录 / "gen-" + 原文件名（去掉扩展名） + ".kerml"
      * - 返回生成的文件路径
      */
@@ -93,7 +93,7 @@ public class KerMLOC2KerML {
         ResourceSetImpl emfRs = new ResourceSetImpl();
         emfRs.getResourceFactoryRegistry()
              .getExtensionToFactoryMap()
-             .put("model", new XMIResourceFactoryImpl());
+             .put("kermloc", new XMIResourceFactoryImpl());
         URI modelUri = URI.createFileURI(inPath.toString());
         Resource emfRes = emfRs.getResource(modelUri, true);
         EObject root = emfRes.getContents().get(0);

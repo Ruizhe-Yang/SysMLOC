@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="SequenceFunctions" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package defines functions that operate on general sequences of values. (For functions that&#xA;&#x9; * operate on Collection values, see CollectionFunctions.)&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Base::Anything"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::SelfSameLifeLink"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlFunctions" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Function" declaredName="'#'">
+      <subsetting>BaseFunctions::'#'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" MultiLow="1">
+        <typings>Positive</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="equals">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="size(x) == size(y) and (1..size(x))->forAll {in i; x#(i) == y#(i)}">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="same">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="size(x) == size(y) and (1..size(x))->forAll {in i; x#(i) === y#(i)}">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="size">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="if isEmpty(seq)? 0 else size(tail(seq)) + 1">
+        <typings>Natural</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="isEmpty">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="seq == null">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="notEmpty">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="not isEmpty(seq)">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="includes">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq1" MultiLow="0" MultiHigh="*" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq2" MultiLow="0" MultiHigh="*" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="seq2->forAll {in x; seq1->exists{in y; x == y}}">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="includesOnly">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq1" MultiLow="0" MultiHigh="*" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq2" MultiLow="0" MultiHigh="*" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="seq1->includes(seq2) and seq2->includes(seq1)">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="excludes">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq1" MultiLow="0" MultiHigh="*" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq2" MultiLow="0" MultiHigh="*" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="seq2->forAll {in x; seq1->excludes(x)}">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="union">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq1" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq2" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" valuePart="(seq1, seq2)">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="intersection">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq1" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq2" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" valuePart="seq1->select {in x; seq2->includes(x)}">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="including">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="values" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" valuePart="union(seq, values)">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="includingAt">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="values" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" MultiLow="1">
+        <typings>Positive</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" valuePart="(seq->subsequence(1, index - 1), values, seq->subsequence(index + 1))">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="excluding">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="values" MultiLow="0" MultiHigh="*">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" valuePart="seq->reject {in x; values->includes(x)}">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="excludingAt">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="startIndex" MultiLow="1">
+        <typings>Positive</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="endIndex" MultiLow="1" isDefault="true" valuePart="startIndex">
+        <typings>Positive</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" valuePart="(seq->subsequence(1, startIndex - 1), seq->subsequence(endIndex + 1))">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="subsequence">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="startIndex" MultiLow="1">
+        <typings>Positive</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="endIndex" MultiLow="1" isDefault="true" valuePart="size(seq)">
+        <typings>Positive</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" valuePart="(startIndex..endIndex)->collect {in i; seq#(i)}">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="head">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="seq#(1)">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="tail">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" valuePart="subsequence(seq, 2)">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="last">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="seq#(size(seq))">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="add">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="values" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="newSeq" valuePart="seq->including(values)" isFeature="true"/>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <typings>add</typings>
+        <redefinitions>endShot</redefinitions>
+        <elements xsi:type="kerMLOC:BindingConnector">
+          <connectorPart refElement="seq"/>
+          <connectorPart refElement="newSeq"/>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="addAt">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="values" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="index" MultiLow="1">
+        <typings>Positive</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="newSeq" valuePart="seq->includingAt(values, index)" isFeature="true"/>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <typings>addAt</typings>
+        <redefinitions>endShot</redefinitions>
+        <elements xsi:type="kerMLOC:BindingConnector">
+          <connectorPart refElement="seq"/>
+          <connectorPart refElement="newSeq"/>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="remove">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="values" MultiLow="0" MultiHigh="*">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="newSeq" valuePart="seq->excluding(values)" isFeature="true"/>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <typings>remove</typings>
+        <redefinitions>endShot</redefinitions>
+        <elements xsi:type="kerMLOC:BindingConnector">
+          <connectorPart refElement="seq"/>
+          <connectorPart refElement="newSeq"/>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="removeAt">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="seq" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="startIndex" MultiLow="1">
+        <typings>Positive</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="endIndex" MultiLow="1" isDefault="true" valuePart="startIndex">
+        <typings>Positive</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="newSeq" valuePart="seq->excludingAt(startIndex, endIndex)" isFeature="true"/>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <typings>removeAt</typings>
+        <redefinitions>endShot</redefinitions>
+        <elements xsi:type="kerMLOC:BindingConnector">
+          <connectorPart refElement="seq"/>
+          <connectorPart refElement="newSeq"/>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Filtering">
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Package" declaredName="Annotations">
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="ApprovalAnnotation">
+        <elements xsi:type="kerMLOC:Feature" declaredName="approved">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="approver">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="level">
+          <typings>Natural</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Package" declaredName="DesignModel">
+      <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Annotations" isNamespace="true"/>
+      <elements xsi:type="kerMLOC:Structure" declaredName="System">
+        <elements xsi:type="kerMLOC:MetadataFeature" metadataTyping="ApprovalAnnotation">
+          <elements xsi:type="kerMLOC:MetadataBodyFeature" valuePart="true">
+            <redefinedFeature>approved</redefinedFeature>
+          </elements>
+          <elements xsi:type="kerMLOC:MetadataBodyFeature" valuePart="&quot;John Smith&quot;">
+            <redefinedFeature>approver</redefinedFeature>
+          </elements>
+          <elements xsi:type="kerMLOC:MetadataBodyFeature" valuePart="2">
+            <redefinedFeature>level</redefinedFeature>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="system" isFeature="true">
+        <typings>System</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Package" declaredName="UpperLevelApprovals">
+      <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="DesignModel" isRecursive="true"/>
+      <elements xsi:type="kerMLOC:ElementFilterElement" filterExpression="Annotations::ApprovalAnnotation::approved and Annotations::ApprovalAnnotation::level > 1"/>
+      <elements xsi:type="kerMLOC:Structure" declaredName="Test">
+        <subsetting>System</subsetting>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Package" declaredName="UpperLevelApprovals1">
+      <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Annotations" isRecursive="true"/>
+      <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="DesignModel" isRecursive="true">
+        <filterPackageExpression>@Structure</filterPackageExpression>
+        <filterPackageExpression>approved and level > 1</filterPackageExpression>
+      </elements>
+      <elements xsi:type="kerMLOC:Structure" declaredName="Test">
+        <subsetting>System</subsetting>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="KerML" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Package" declaredName="Meta">
+      <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="DesignModel" isNamespace="true"/>
+      <elements xsi:type="kerMLOC:ElementFilterElement" filterExpression="(Element::name == &quot;System&quot; and not Type::isAbstract) or Feature::isComposite"/>
+      <elements xsi:type="kerMLOC:Structure" declaredName="Test">
+        <subsetting>System</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <subsetting>system</subsetting>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

@@ -4,10 +4,8 @@
 package dut.control.kermloc.kerMLOC.impl;
 
 import dut.control.kermloc.kerMLOC.BasicFeaturePrefix;
-import dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.ChainingPart;
 import dut.control.kermloc.kerMLOC.Connector;
-import dut.control.kermloc.kerMLOC.ConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.ConnectorEnd;
 import dut.control.kermloc.kerMLOC.CrossFeatureChain;
 import dut.control.kermloc.kerMLOC.CrossingFeature;
@@ -31,7 +29,6 @@ import dut.control.kermloc.kerMLOC.MemberPrefix;
 import dut.control.kermloc.kerMLOC.MultiplicityModifiers;
 import dut.control.kermloc.kerMLOC.MultiplicityPart;
 import dut.control.kermloc.kerMLOC.MultiplicityRange;
-import dut.control.kermloc.kerMLOC.NaryConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.PrefixMetadata;
 import dut.control.kermloc.kerMLOC.RedefinitionFeatureChain;
 import dut.control.kermloc.kerMLOC.ReferenceFeatureChain;
@@ -106,8 +103,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.kermloc.kerMLOC.impl.ConnectorImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.kermloc.kerMLOC.impl.ConnectorImpl#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link dut.control.kermloc.kerMLOC.impl.ConnectorImpl#getValuePart <em>Value Part</em>}</li>
- *   <li>{@link dut.control.kermloc.kerMLOC.impl.ConnectorImpl#getConnectorPartBinary <em>Connector Part Binary</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.impl.ConnectorImpl#isIsFrom <em>Is From</em>}</li>
  *   <li>{@link dut.control.kermloc.kerMLOC.impl.ConnectorImpl#getConnectorPart <em>Connector Part</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.impl.ConnectorImpl#isIsNary <em>Is Nary</em>}</li>
  *   <li>{@link dut.control.kermloc.kerMLOC.impl.ConnectorImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -736,14 +734,24 @@ public class ConnectorImpl extends FeatureElementImpl implements Connector
   protected String valuePart = VALUE_PART_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getConnectorPartBinary() <em>Connector Part Binary</em>}' containment reference list.
+   * The default value of the '{@link #isIsFrom() <em>Is From</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConnectorPartBinary()
+   * @see #isIsFrom()
    * @generated
    * @ordered
    */
-  protected EList<ConnectorEnd> connectorPartBinary;
+  protected static final boolean IS_FROM_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsFrom() <em>Is From</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsFrom()
+   * @generated
+   * @ordered
+   */
+  protected boolean isFrom = IS_FROM_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getConnectorPart() <em>Connector Part</em>}' containment reference list.
@@ -754,6 +762,26 @@ public class ConnectorImpl extends FeatureElementImpl implements Connector
    * @ordered
    */
   protected EList<ConnectorEnd> connectorPart;
+
+  /**
+   * The default value of the '{@link #isIsNary() <em>Is Nary</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsNary()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_NARY_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsNary() <em>Is Nary</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsNary()
+   * @generated
+   * @ordered
+   */
+  protected boolean isNary = IS_NARY_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -1602,13 +1630,23 @@ public class ConnectorImpl extends FeatureElementImpl implements Connector
    * @generated
    */
   @Override
-  public EList<ConnectorEnd> getConnectorPartBinary()
+  public boolean isIsFrom()
   {
-    if (connectorPartBinary == null)
-    {
-      connectorPartBinary = new EObjectContainmentEList<ConnectorEnd>(ConnectorEnd.class, this, KerMLOCPackage.CONNECTOR__CONNECTOR_PART_BINARY);
-    }
-    return connectorPartBinary;
+    return isFrom;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsFrom(boolean newIsFrom)
+  {
+    boolean oldIsFrom = isFrom;
+    isFrom = newIsFrom;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, KerMLOCPackage.CONNECTOR__IS_FROM, oldIsFrom, isFrom));
   }
 
   /**
@@ -1624,6 +1662,31 @@ public class ConnectorImpl extends FeatureElementImpl implements Connector
       connectorPart = new EObjectContainmentEList<ConnectorEnd>(ConnectorEnd.class, this, KerMLOCPackage.CONNECTOR__CONNECTOR_PART);
     }
     return connectorPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsNary()
+  {
+    return isNary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsNary(boolean newIsNary)
+  {
+    boolean oldIsNary = isNary;
+    isNary = newIsNary;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, KerMLOCPackage.CONNECTOR__IS_NARY, oldIsNary, isNary));
   }
 
   /**
@@ -1653,8 +1716,6 @@ public class ConnectorImpl extends FeatureElementImpl implements Connector
     {
       case KerMLOCPackage.CONNECTOR__CROSSING_FEATURE:
         return ((InternalEList<?>)getCrossingFeature()).basicRemove(otherEnd, msgs);
-      case KerMLOCPackage.CONNECTOR__CONNECTOR_PART_BINARY:
-        return ((InternalEList<?>)getConnectorPartBinary()).basicRemove(otherEnd, msgs);
       case KerMLOCPackage.CONNECTOR__CONNECTOR_PART:
         return ((InternalEList<?>)getConnectorPart()).basicRemove(otherEnd, msgs);
       case KerMLOCPackage.CONNECTOR__ELEMENTS:
@@ -1749,10 +1810,12 @@ public class ConnectorImpl extends FeatureElementImpl implements Connector
         return isIsDefault();
       case KerMLOCPackage.CONNECTOR__VALUE_PART:
         return getValuePart();
-      case KerMLOCPackage.CONNECTOR__CONNECTOR_PART_BINARY:
-        return getConnectorPartBinary();
+      case KerMLOCPackage.CONNECTOR__IS_FROM:
+        return isIsFrom();
       case KerMLOCPackage.CONNECTOR__CONNECTOR_PART:
         return getConnectorPart();
+      case KerMLOCPackage.CONNECTOR__IS_NARY:
+        return isIsNary();
       case KerMLOCPackage.CONNECTOR__ELEMENTS:
         return getElements();
     }
@@ -1898,13 +1961,15 @@ public class ConnectorImpl extends FeatureElementImpl implements Connector
       case KerMLOCPackage.CONNECTOR__VALUE_PART:
         setValuePart((String)newValue);
         return;
-      case KerMLOCPackage.CONNECTOR__CONNECTOR_PART_BINARY:
-        getConnectorPartBinary().clear();
-        getConnectorPartBinary().addAll((Collection<? extends ConnectorEnd>)newValue);
+      case KerMLOCPackage.CONNECTOR__IS_FROM:
+        setIsFrom((Boolean)newValue);
         return;
       case KerMLOCPackage.CONNECTOR__CONNECTOR_PART:
         getConnectorPart().clear();
         getConnectorPart().addAll((Collection<? extends ConnectorEnd>)newValue);
+        return;
+      case KerMLOCPackage.CONNECTOR__IS_NARY:
+        setIsNary((Boolean)newValue);
         return;
       case KerMLOCPackage.CONNECTOR__ELEMENTS:
         getElements().clear();
@@ -2038,11 +2103,14 @@ public class ConnectorImpl extends FeatureElementImpl implements Connector
       case KerMLOCPackage.CONNECTOR__VALUE_PART:
         setValuePart(VALUE_PART_EDEFAULT);
         return;
-      case KerMLOCPackage.CONNECTOR__CONNECTOR_PART_BINARY:
-        getConnectorPartBinary().clear();
+      case KerMLOCPackage.CONNECTOR__IS_FROM:
+        setIsFrom(IS_FROM_EDEFAULT);
         return;
       case KerMLOCPackage.CONNECTOR__CONNECTOR_PART:
         getConnectorPart().clear();
+        return;
+      case KerMLOCPackage.CONNECTOR__IS_NARY:
+        setIsNary(IS_NARY_EDEFAULT);
         return;
       case KerMLOCPackage.CONNECTOR__ELEMENTS:
         getElements().clear();
@@ -2137,10 +2205,12 @@ public class ConnectorImpl extends FeatureElementImpl implements Connector
         return isDefault != IS_DEFAULT_EDEFAULT;
       case KerMLOCPackage.CONNECTOR__VALUE_PART:
         return VALUE_PART_EDEFAULT == null ? valuePart != null : !VALUE_PART_EDEFAULT.equals(valuePart);
-      case KerMLOCPackage.CONNECTOR__CONNECTOR_PART_BINARY:
-        return connectorPartBinary != null && !connectorPartBinary.isEmpty();
+      case KerMLOCPackage.CONNECTOR__IS_FROM:
+        return isFrom != IS_FROM_EDEFAULT;
       case KerMLOCPackage.CONNECTOR__CONNECTOR_PART:
         return connectorPart != null && !connectorPart.isEmpty();
+      case KerMLOCPackage.CONNECTOR__IS_NARY:
+        return isNary != IS_NARY_EDEFAULT;
       case KerMLOCPackage.CONNECTOR__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -2397,29 +2467,6 @@ public class ConnectorImpl extends FeatureElementImpl implements Connector
       }
     }
     if (baseClass == ValuePart.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == BinaryConnectorDeclaration.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case KerMLOCPackage.CONNECTOR__CONNECTOR_PART_BINARY: return KerMLOCPackage.BINARY_CONNECTOR_DECLARATION__CONNECTOR_PART_BINARY;
-        default: return -1;
-      }
-    }
-    if (baseClass == NaryConnectorDeclaration.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case KerMLOCPackage.CONNECTOR__CONNECTOR_PART: return KerMLOCPackage.NARY_CONNECTOR_DECLARATION__CONNECTOR_PART;
-        default: return -1;
-      }
-    }
-    if (baseClass == ConnectorDeclaration.class)
     {
       switch (derivedFeatureID)
       {
@@ -2685,29 +2732,6 @@ public class ConnectorImpl extends FeatureElementImpl implements Connector
         default: return -1;
       }
     }
-    if (baseClass == BinaryConnectorDeclaration.class)
-    {
-      switch (baseFeatureID)
-      {
-        case KerMLOCPackage.BINARY_CONNECTOR_DECLARATION__CONNECTOR_PART_BINARY: return KerMLOCPackage.CONNECTOR__CONNECTOR_PART_BINARY;
-        default: return -1;
-      }
-    }
-    if (baseClass == NaryConnectorDeclaration.class)
-    {
-      switch (baseFeatureID)
-      {
-        case KerMLOCPackage.NARY_CONNECTOR_DECLARATION__CONNECTOR_PART: return KerMLOCPackage.CONNECTOR__CONNECTOR_PART;
-        default: return -1;
-      }
-    }
-    if (baseClass == ConnectorDeclaration.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
     return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
@@ -2796,6 +2820,10 @@ public class ConnectorImpl extends FeatureElementImpl implements Connector
     result.append(isDefault);
     result.append(", valuePart: ");
     result.append(valuePart);
+    result.append(", isFrom: ");
+    result.append(isFrom);
+    result.append(", isNary: ");
+    result.append(isNary);
     result.append(')');
     return result.toString();
   }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="TextualRepresentation">
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="C">
+      <elements xsi:type="kerMLOC:Feature" declaredName="x" isFeature="true">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="x_constraint">
+        <elements xsi:type="kerMLOC:TextualRepresentation" declaredName="inOCL" language="&quot;ocl&quot;" body="/* self.x > 0.0 */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="setX">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="c">
+        <typings>C</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="newX">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:TextualRepresentation" language="&quot;alf&quot;" body="/* c.x = newX;&#xA;&#x9;         * WriteLine(&quot;Set new x&quot;);&#xA;&#x9;         */"/>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

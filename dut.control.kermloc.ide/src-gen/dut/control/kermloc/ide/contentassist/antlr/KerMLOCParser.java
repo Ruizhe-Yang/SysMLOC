@@ -91,6 +91,7 @@ public class KerMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getInvariantAccess().getAlternatives_4(), "rule__Invariant__Alternatives_4");
 			builder.put(grammarAccess.getInvariantAccess().getAlternatives_7(), "rule__Invariant__Alternatives_7");
 			builder.put(grammarAccess.getConnectorAccess().getAlternatives_4(), "rule__Connector__Alternatives_4");
+			builder.put(grammarAccess.getConnectorAccess().getAlternatives_4_1_0(), "rule__Connector__Alternatives_4_1_0");
 			builder.put(grammarAccess.getConnectorAccess().getAlternatives_5(), "rule__Connector__Alternatives_5");
 			builder.put(grammarAccess.getBindingConnectorAccess().getAlternatives_4(), "rule__BindingConnector__Alternatives_4");
 			builder.put(grammarAccess.getBindingConnectorAccess().getAlternatives_5(), "rule__BindingConnector__Alternatives_5");
@@ -128,8 +129,6 @@ public class KerMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFlowDeclarationAccess().getAlternatives(), "rule__FlowDeclaration__Alternatives");
 			builder.put(grammarAccess.getPayloadFeatureAccess().getAlternatives(), "rule__PayloadFeature__Alternatives");
 			builder.put(grammarAccess.getPayloadFeatureSpecializationPartAccess().getAlternatives(), "rule__PayloadFeatureSpecializationPart__Alternatives");
-			builder.put(grammarAccess.getConnectorDeclarationAccess().getAlternatives(), "rule__ConnectorDeclaration__Alternatives");
-			builder.put(grammarAccess.getBinaryConnectorDeclarationAccess().getAlternatives_0(), "rule__BinaryConnectorDeclaration__Alternatives_0");
 			builder.put(grammarAccess.getNameAccess().getAlternatives(), "rule__Name__Alternatives");
 			builder.put(grammarAccess.getFeatureTypingNameAccess().getAlternatives(), "rule__FeatureTypingName__Alternatives");
 			builder.put(grammarAccess.getConditionalExpressionAccess().getAlternatives(), "rule__ConditionalExpression__Alternatives");
@@ -272,6 +271,11 @@ public class KerMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getInvariantAccess().getGroup_7_1(), "rule__Invariant__Group_7_1__0");
 			builder.put(grammarAccess.getConnectorAccess().getGroup(), "rule__Connector__Group__0");
 			builder.put(grammarAccess.getConnectorAccess().getGroup_4_0(), "rule__Connector__Group_4_0__0");
+			builder.put(grammarAccess.getConnectorAccess().getGroup_4_1(), "rule__Connector__Group_4_1__0");
+			builder.put(grammarAccess.getConnectorAccess().getGroup_4_1_0_0(), "rule__Connector__Group_4_1_0_0__0");
+			builder.put(grammarAccess.getConnectorAccess().getGroup_4_1_0_1(), "rule__Connector__Group_4_1_0_1__0");
+			builder.put(grammarAccess.getConnectorAccess().getGroup_4_2(), "rule__Connector__Group_4_2__0");
+			builder.put(grammarAccess.getConnectorAccess().getGroup_4_2_5(), "rule__Connector__Group_4_2_5__0");
 			builder.put(grammarAccess.getConnectorAccess().getGroup_5_1(), "rule__Connector__Group_5_1__0");
 			builder.put(grammarAccess.getBindingConnectorAccess().getGroup(), "rule__BindingConnector__Group__0");
 			builder.put(grammarAccess.getBindingConnectorAccess().getGroup_4_0(), "rule__BindingConnector__Group_4_0__0");
@@ -356,11 +360,6 @@ public class KerMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPayloadFeatureAccess().getGroup_3(), "rule__PayloadFeature__Group_3__0");
 			builder.put(grammarAccess.getPayloadFeatureSpecializationPartAccess().getGroup_0(), "rule__PayloadFeatureSpecializationPart__Group_0__0");
 			builder.put(grammarAccess.getPayloadFeatureSpecializationPartAccess().getGroup_1(), "rule__PayloadFeatureSpecializationPart__Group_1__0");
-			builder.put(grammarAccess.getBinaryConnectorDeclarationAccess().getGroup(), "rule__BinaryConnectorDeclaration__Group__0");
-			builder.put(grammarAccess.getBinaryConnectorDeclarationAccess().getGroup_0_0(), "rule__BinaryConnectorDeclaration__Group_0_0__0");
-			builder.put(grammarAccess.getBinaryConnectorDeclarationAccess().getGroup_0_1(), "rule__BinaryConnectorDeclaration__Group_0_1__0");
-			builder.put(grammarAccess.getNaryConnectorDeclarationAccess().getGroup(), "rule__NaryConnectorDeclaration__Group__0");
-			builder.put(grammarAccess.getNaryConnectorDeclarationAccess().getGroup_5(), "rule__NaryConnectorDeclaration__Group_5__0");
 			builder.put(grammarAccess.getExtendedPrefixAccess().getGroup(), "rule__ExtendedPrefix__Group__0");
 			builder.put(grammarAccess.getQualificationAccess().getGroup(), "rule__Qualification__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
@@ -536,6 +535,8 @@ public class KerMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTypeFeaturingAccess().getFeatureOfTypeAssignment_3(), "rule__TypeFeaturing__FeatureOfTypeAssignment_3");
 			builder.put(grammarAccess.getTypeFeaturingAccess().getFeaturingTypeAssignment_5(), "rule__TypeFeaturing__FeaturingTypeAssignment_5");
 			builder.put(grammarAccess.getTypeFeaturingAccess().getElementsAssignment_6_1_1(), "rule__TypeFeaturing__ElementsAssignment_6_1_1");
+			builder.put(grammarAccess.getFeatureAccess().getIsFeatureAssignment_2_0_1_0(), "rule__Feature__IsFeatureAssignment_2_0_1_0");
+			builder.put(grammarAccess.getFeatureAccess().getIsSemicolonAssignment_4_0(), "rule__Feature__IsSemicolonAssignment_4_0");
 			builder.put(grammarAccess.getFeatureAccess().getElementsAssignment_4_1_1(), "rule__Feature__ElementsAssignment_4_1_1");
 			builder.put(grammarAccess.getStepAccess().getElementsAssignment_6_1_1(), "rule__Step__ElementsAssignment_6_1_1");
 			builder.put(grammarAccess.getExpressionClassAccess().getElementsAssignment_6_1_1(), "rule__ExpressionClass__ElementsAssignment_6_1_1");
@@ -545,6 +546,15 @@ public class KerMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getInvariantAccess().getIsNegatedAssignment_4_1(), "rule__Invariant__IsNegatedAssignment_4_1");
 			builder.put(grammarAccess.getInvariantAccess().getElementsAssignment_7_1_1(), "rule__Invariant__ElementsAssignment_7_1_1");
 			builder.put(grammarAccess.getInvariantAccess().getResultExpressionParameterAssignment_7_1_2(), "rule__Invariant__ResultExpressionParameterAssignment_7_1_2");
+			builder.put(grammarAccess.getConnectorAccess().getIsFromAssignment_4_1_0_0_1(), "rule__Connector__IsFromAssignment_4_1_0_0_1");
+			builder.put(grammarAccess.getConnectorAccess().getIsSufficientAssignment_4_1_0_1_0(), "rule__Connector__IsSufficientAssignment_4_1_0_1_0");
+			builder.put(grammarAccess.getConnectorAccess().getIsFromAssignment_4_1_0_1_1(), "rule__Connector__IsFromAssignment_4_1_0_1_1");
+			builder.put(grammarAccess.getConnectorAccess().getConnectorPartAssignment_4_1_1(), "rule__Connector__ConnectorPartAssignment_4_1_1");
+			builder.put(grammarAccess.getConnectorAccess().getConnectorPartAssignment_4_1_3(), "rule__Connector__ConnectorPartAssignment_4_1_3");
+			builder.put(grammarAccess.getConnectorAccess().getIsNaryAssignment_4_2_1(), "rule__Connector__IsNaryAssignment_4_2_1");
+			builder.put(grammarAccess.getConnectorAccess().getConnectorPartAssignment_4_2_2(), "rule__Connector__ConnectorPartAssignment_4_2_2");
+			builder.put(grammarAccess.getConnectorAccess().getConnectorPartAssignment_4_2_4(), "rule__Connector__ConnectorPartAssignment_4_2_4");
+			builder.put(grammarAccess.getConnectorAccess().getConnectorPartAssignment_4_2_5_1(), "rule__Connector__ConnectorPartAssignment_4_2_5_1");
 			builder.put(grammarAccess.getConnectorAccess().getElementsAssignment_5_1_1(), "rule__Connector__ElementsAssignment_5_1_1");
 			builder.put(grammarAccess.getBindingConnectorAccess().getIsOfAssignment_4_0_1_0(), "rule__BindingConnector__IsOfAssignment_4_0_1_0");
 			builder.put(grammarAccess.getBindingConnectorAccess().getConnectorPartAssignment_4_0_1_1(), "rule__BindingConnector__ConnectorPartAssignment_4_0_1_1");
@@ -629,12 +639,6 @@ public class KerMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFlowDeclarationAccess().getFlowEndAssignment_1_3(), "rule__FlowDeclaration__FlowEndAssignment_1_3");
 			builder.put(grammarAccess.getPayloadFeatureAccess().getPayloadFeatureElementAssignment_2_0(), "rule__PayloadFeature__PayloadFeatureElementAssignment_2_0");
 			builder.put(grammarAccess.getPayloadFeatureAccess().getPayloadFeatureElementAssignment_3_1(), "rule__PayloadFeature__PayloadFeatureElementAssignment_3_1");
-			builder.put(grammarAccess.getBinaryConnectorDeclarationAccess().getIsSufficientAssignment_0_1_0(), "rule__BinaryConnectorDeclaration__IsSufficientAssignment_0_1_0");
-			builder.put(grammarAccess.getBinaryConnectorDeclarationAccess().getConnectorPartBinaryAssignment_1(), "rule__BinaryConnectorDeclaration__ConnectorPartBinaryAssignment_1");
-			builder.put(grammarAccess.getBinaryConnectorDeclarationAccess().getConnectorPartBinaryAssignment_3(), "rule__BinaryConnectorDeclaration__ConnectorPartBinaryAssignment_3");
-			builder.put(grammarAccess.getNaryConnectorDeclarationAccess().getConnectorPartAssignment_2(), "rule__NaryConnectorDeclaration__ConnectorPartAssignment_2");
-			builder.put(grammarAccess.getNaryConnectorDeclarationAccess().getConnectorPartAssignment_4(), "rule__NaryConnectorDeclaration__ConnectorPartAssignment_4");
-			builder.put(grammarAccess.getNaryConnectorDeclarationAccess().getConnectorPartAssignment_5_1(), "rule__NaryConnectorDeclaration__ConnectorPartAssignment_5_1");
 			builder.put(grammarAccess.getExtendedPrefixAccess().getIsReturnAssignment_0(), "rule__ExtendedPrefix__IsReturnAssignment_0");
 			builder.put(grammarAccess.getExtendedPrefixAccess().getIsMemberAssignment_1(), "rule__ExtendedPrefix__IsMemberAssignment_1");
 		}

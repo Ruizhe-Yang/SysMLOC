@@ -26,9 +26,9 @@ public class KerMLOCGenerator extends AbstractGenerator {
     try {
       Map<String, Object> _extensionToFactoryMap = Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap();
       XMIResourceFactoryImpl _xMIResourceFactoryImpl = new XMIResourceFactoryImpl();
-      _extensionToFactoryMap.put("model", _xMIResourceFactoryImpl);
+      _extensionToFactoryMap.put("kermloc", _xMIResourceFactoryImpl);
       final EObject modelRoot = IterableExtensions.<EObject>head(resource.getContents());
-      final URI xmiURI = resource.getURI().trimFileExtension().appendFileExtension("model");
+      final URI xmiURI = resource.getURI().trimFileExtension().appendFileExtension("kermloc");
       final Resource xmiRes = resource.getResourceSet().createResource(xmiURI);
       xmiRes.getContents().add(modelRoot);
       xmiRes.save(null);

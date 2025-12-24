@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="VectorValues" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package provides a basic model of abstract vectors as well as concrete vectors&#xA;&#x9; * whose components are numerical values. The package VectorFunctions defines the &#xA;&#x9; * corresponding vector-space functions.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::NumericalValue"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Collections::Array"/>
+    <elements xsi:type="kerMLOC:DataType" isAbstract="true" declaredName="VectorValue">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A VectorValue is an abstract data type whose values may be operated on using&#xA;&#x9;&#x9; * VectorFunctions.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="NumericalVectorValue">
+      <subsetting>VectorValue</subsetting>
+      <subsetting>Array</subsetting>
+      <intersecting>VectorValue</intersecting>
+      <intersecting>Array</intersecting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A NumericalVectorValue is a kind of VectorValue that is specifically represented&#xA;&#x9;&#x9; * as a one-dimensional array of NumericalValues. The dimension is allowed to be empty,&#xA;&#x9;&#x9; * permitting a NumericalVectorValue of rank 0, which is essentially isomorphic to a&#xA;&#x9;&#x9; * scalar NumericalValue.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="dimension" MultiLow="0" MultiHigh="1" isFeature="true">
+        <redefinitions>dimensions</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <typings>NumericalValue</typings>
+        <redefinitions>elements</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="CartesianVectorValue">
+      <subsetting>NumericalVectorValue</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * CartesianVectorValue is a specialization Numerical VectorValue for which there are &#xA;&#x9;&#x9; * specific implementations in VectorFunctions of the abstract vector-space functions.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Note: The restriction of the element type to Real is to facilitate&#xA;&#x9;&#x9; * the complete definition of these functions.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <typings>Real</typings>
+        <redefinitions>elements</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="ThreeVectorValue">
+      <subsetting>NumericalVectorValue</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A ThreeVectorValue is a NumericalVectorValue that has dimension 3.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" valuePart="3" isFeature="true">
+        <redefinitions>dimension</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="CartesianThreeVectorValue">
+      <subsetting>CartesianVectorValue</subsetting>
+      <subsetting>ThreeVectorValue</subsetting>
+      <intersecting>CartesianVectorValue</intersecting>
+      <intersecting>ThreeVectorValue</intersecting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A CartesianThreeVectorValue is a NumericalVectorValue that is both Cartesian and&#xA;&#x9;&#x9; * has dimension 3.&#xA;&#x9;&#x9; */"/>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

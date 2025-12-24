@@ -26,8 +26,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_AssociationStructure_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
 	protected AbstractElementAlias match_Association_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
 	protected AbstractElementAlias match_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
-	protected AbstractElementAlias match_BinaryConnectorDeclaration_FromKeyword_0_0_1_q;
-	protected AbstractElementAlias match_BinaryConnectorDeclaration_FromKeyword_0_1_1_q;
 	protected AbstractElementAlias match_BindingConnector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
 	protected AbstractElementAlias match_BooleanExpression_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__;
 	protected AbstractElementAlias match_Class_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
@@ -54,7 +52,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_FeatureTyping_ColonKeyword_4_0_or___TypedKeyword_4_1_0_ByKeyword_4_1_1__;
 	protected AbstractElementAlias match_FeatureTyping_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
 	protected AbstractElementAlias match_FeatureValue_EqualsSignKeyword_0_2_1_0_q;
-	protected AbstractElementAlias match_Feature_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
 	protected AbstractElementAlias match_Flow_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
 	protected AbstractElementAlias match_Function_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__;
 	protected AbstractElementAlias match_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__;
@@ -105,8 +102,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_AssociationStructure_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAssociationStructureAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getAssociationStructureAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getAssociationStructureAccess().getSemicolonKeyword_5_0()));
 		match_Association_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAssociationAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getAssociationAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getAssociationAccess().getSemicolonKeyword_4_0()));
 		match_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBehaviorAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getBehaviorAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getBehaviorAccess().getSemicolonKeyword_4_0()));
-		match_BinaryConnectorDeclaration_FromKeyword_0_0_1_q = new TokenAlias(false, true, grammarAccess.getBinaryConnectorDeclarationAccess().getFromKeyword_0_0_1());
-		match_BinaryConnectorDeclaration_FromKeyword_0_1_1_q = new TokenAlias(false, true, grammarAccess.getBinaryConnectorDeclarationAccess().getFromKeyword_0_1_1());
 		match_BindingConnector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingConnectorAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getBindingConnectorAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getBindingConnectorAccess().getSemicolonKeyword_5_0()));
 		match_BooleanExpression_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBooleanExpressionAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getBooleanExpressionAccess().getRightCurlyBracketKeyword_6_1_3())), new TokenAlias(false, false, grammarAccess.getBooleanExpressionAccess().getSemicolonKeyword_6_0()));
 		match_Class_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getClassAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getClassAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getClassAccess().getSemicolonKeyword_4_0()));
@@ -133,7 +128,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_FeatureTyping_ColonKeyword_4_0_or___TypedKeyword_4_1_0_ByKeyword_4_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getTypedKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getByKeyword_4_1_1())), new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getColonKeyword_4_0()));
 		match_FeatureTyping_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getSemicolonKeyword_6_0()));
 		match_FeatureValue_EqualsSignKeyword_0_2_1_0_q = new TokenAlias(false, true, grammarAccess.getFeatureValueAccess().getEqualsSignKeyword_0_2_1_0());
-		match_Feature_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getFeatureAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getFeatureAccess().getSemicolonKeyword_4_0()));
 		match_Flow_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFlowAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getFlowAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getFlowAccess().getSemicolonKeyword_5_0()));
 		match_Function_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFunctionAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getFunctionAccess().getRightCurlyBracketKeyword_4_1_3())), new TokenAlias(false, false, grammarAccess.getFunctionAccess().getSemicolonKeyword_4_0()));
 		match_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportElementAccess().getLeftCurlyBracketKeyword_7_1_0()), new TokenAlias(false, false, grammarAccess.getImportElementAccess().getRightCurlyBracketKeyword_7_1_2())), new TokenAlias(false, false, grammarAccess.getImportElementAccess().getSemicolonKeyword_7_0()));
@@ -161,12 +155,12 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Step_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStepAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getStepAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getStepAccess().getSemicolonKeyword_6_0()));
 		match_Structure_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStructureAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getStructureAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getStructureAccess().getSemicolonKeyword_4_0()));
 		match_Subclassification_ColonGreaterThanSignKeyword_4_0_or_SpecializesKeyword_4_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSubclassificationAccess().getColonGreaterThanSignKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getSubclassificationAccess().getSpecializesKeyword_4_1()));
-	}
-	
-	private void init1() {
 		match_Subclassification_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSubclassificationAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getSubclassificationAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getSubclassificationAccess().getSemicolonKeyword_6_0()));
 		match_Subsets_ColonGreaterThanSignKeyword_0_0_or_SubsetsKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSubsetsAccess().getColonGreaterThanSignKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getSubsetsAccess().getSubsetsKeyword_0_1()));
 		match_Subsetting_ColonGreaterThanSignKeyword_4_0_or_SubsetsKeyword_4_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSubsettingAccess().getColonGreaterThanSignKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getSubsettingAccess().getSubsetsKeyword_4_1()));
+	}
+	
+	private void init1() {
 		match_Subsetting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSubsettingAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getSubsettingAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getSubsettingAccess().getSemicolonKeyword_6_0()));
 		match_SuccessionFlow_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSuccessionFlowAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getSuccessionFlowAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getSuccessionFlowAccess().getSemicolonKeyword_6_0()));
 		match_Succession_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSuccessionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getSuccessionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getSuccessionAccess().getSemicolonKeyword_5_0()));
@@ -196,10 +190,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Association_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
 				emit_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_BinaryConnectorDeclaration_FromKeyword_0_0_1_q.equals(syntax))
-				emit_BinaryConnectorDeclaration_FromKeyword_0_0_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_BinaryConnectorDeclaration_FromKeyword_0_1_1_q.equals(syntax))
-				emit_BinaryConnectorDeclaration_FromKeyword_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_BindingConnector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
 				emit_BindingConnector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_BooleanExpression_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__.equals(syntax))
@@ -252,8 +242,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_FeatureTyping_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_FeatureValue_EqualsSignKeyword_0_2_1_0_q.equals(syntax))
 				emit_FeatureValue_EqualsSignKeyword_0_2_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Feature_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
-				emit_Feature_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Flow_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
 				emit_Flow_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Function_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__.equals(syntax))
@@ -430,48 +418,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     'from'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     direction=FeatureDirection 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     isAbstract?='abstract' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     isComposite?='composite' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     isConstantBasic?='const' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     isDerived?='derived' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     isEnd?='end' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     isMember?='member' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     isPortion?='portion' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     isReturn?='return' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     isVariable?='var' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     isVariant?='variant' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 *     visibility=VisibilityIndicator 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 
-	 * </pre>
-	 */
-	protected void emit_BinaryConnectorDeclaration_FromKeyword_0_0_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     'from'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     isSufficient?='all' (ambiguity) connectorPartBinary+=ConnectorEnd
-	 
-	 * </pre>
-	 */
-	protected void emit_BinaryConnectorDeclaration_FromKeyword_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -798,7 +744,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     chainingFeature+=FeatureChainName (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd ')' (ambiguity) (rule end)
-	 *     connectorPartBinary+=ConnectorEnd (ambiguity) (rule end)
+	 *     connectorPart+=ConnectorEnd (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
@@ -979,7 +925,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) originalType=QualifiedName
 	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) originalType=QualifiedName
 	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) originalType=QualifiedName
-	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) originalType=QualifiedName
 	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) originalType=QualifiedName
 	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) originalType=QualifiedName
 	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) originalType=QualifiedName
@@ -1047,6 +992,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isEnd?='end' 'succession' 'flow' (ambiguity) originalType=QualifiedName
 	 *     isEnd?='end' 'succession' (ambiguity) originalType=QualifiedName
 	 *     isEnd?='end' (ambiguity) originalType=QualifiedName
+	 *     isFeature?='feature' (ambiguity) originalType=QualifiedName
 	 *     isMember?='member' 'binding' (ambiguity) originalType=QualifiedName
 	 *     isMember?='member' 'bool' (ambiguity) originalType=QualifiedName
 	 *     isMember?='member' 'connector' (ambiguity) originalType=QualifiedName
@@ -1163,7 +1109,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) references+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) references+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) references+=FeatureChainName
-	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) references+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) references+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) references+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) references+=FeatureChainName
@@ -1231,6 +1176,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isEnd?='end' 'succession' 'flow' (ambiguity) references+=FeatureChainName
 	 *     isEnd?='end' 'succession' (ambiguity) references+=FeatureChainName
 	 *     isEnd?='end' (ambiguity) references+=FeatureChainName
+	 *     isFeature?='feature' (ambiguity) references+=FeatureChainName
 	 *     isMember?='member' 'binding' (ambiguity) references+=FeatureChainName
 	 *     isMember?='member' 'bool' (ambiguity) references+=FeatureChainName
 	 *     isMember?='member' 'connector' (ambiguity) references+=FeatureChainName
@@ -1340,7 +1286,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) redefinitions+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) redefinitions+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) redefinitions+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) redefinitions+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) redefinitions+=FeatureChainName
@@ -1408,6 +1353,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isEnd?='end' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
 	 *     isEnd?='end' 'succession' (ambiguity) redefinitions+=FeatureChainName
 	 *     isEnd?='end' (ambiguity) redefinitions+=FeatureChainName
+	 *     isFeature?='feature' (ambiguity) redefinitions+=FeatureChainName
 	 *     isMember?='member' 'binding' (ambiguity) redefinitions+=FeatureChainName
 	 *     isMember?='member' 'bool' (ambiguity) redefinitions+=FeatureChainName
 	 *     isMember?='member' 'connector' (ambiguity) redefinitions+=FeatureChainName
@@ -1517,7 +1463,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) subsetting+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) subsetting+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) subsetting+=FeatureChainName
-	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) subsetting+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) subsetting+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) subsetting+=FeatureChainName
@@ -1585,6 +1530,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isEnd?='end' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
 	 *     isEnd?='end' 'succession' (ambiguity) subsetting+=FeatureChainName
 	 *     isEnd?='end' (ambiguity) subsetting+=FeatureChainName
+	 *     isFeature?='feature' (ambiguity) subsetting+=FeatureChainName
 	 *     isMember?='member' 'binding' (ambiguity) subsetting+=FeatureChainName
 	 *     isMember?='member' 'bool' (ambiguity) subsetting+=FeatureChainName
 	 *     isMember?='member' 'connector' (ambiguity) subsetting+=FeatureChainName
@@ -1694,7 +1640,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) typings+=FeatureTypingName
 	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) typings+=FeatureTypingName
 	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) typings+=FeatureTypingName
-	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) typings+=FeatureTypingName
 	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) typings+=FeatureTypingName
 	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
 	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) typings+=FeatureTypingName
@@ -1762,6 +1707,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isEnd?='end' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
 	 *     isEnd?='end' 'succession' (ambiguity) typings+=FeatureTypingName
 	 *     isEnd?='end' (ambiguity) typings+=FeatureTypingName
+	 *     isFeature?='feature' (ambiguity) typings+=FeatureTypingName
 	 *     isMember?='member' 'binding' (ambiguity) typings+=FeatureTypingName
 	 *     isMember?='member' 'bool' (ambiguity) typings+=FeatureTypingName
 	 *     isMember?='member' 'connector' (ambiguity) typings+=FeatureTypingName
@@ -1871,7 +1817,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) crosses+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) crosses+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) crosses+=FeatureChainName
-	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) crosses+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) crosses+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
 	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) crosses+=FeatureChainName
@@ -1939,6 +1884,7 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isEnd?='end' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
 	 *     isEnd?='end' 'succession' (ambiguity) crosses+=FeatureChainName
 	 *     isEnd?='end' (ambiguity) crosses+=FeatureChainName
+	 *     isFeature?='feature' (ambiguity) crosses+=FeatureChainName
 	 *     isMember?='member' 'binding' (ambiguity) crosses+=FeatureChainName
 	 *     isMember?='member' 'bool' (ambiguity) crosses+=FeatureChainName
 	 *     isMember?='member' 'connector' (ambiguity) crosses+=FeatureChainName
@@ -2064,54 +2010,6 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_FeatureValue_EqualsSignKeyword_0_2_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     ';' | ('{' '}')
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'feature' (ambiguity) (rule start)
-	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     chainingFeature+=FeatureChainName (ambiguity) (rule end)
-	 *     crosses+=FeatureChainName (ambiguity) (rule end)
-	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) (rule end)
-	 *     declaredName=Name (ambiguity) (rule end)
-	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
-	 *     differencing+=FeatureChainName (ambiguity) (rule end)
-	 *     direction=FeatureDirection 'feature' (ambiguity) (rule end)
-	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
-	 *     featuringType+=FeatureChainName (ambiguity) (rule end)
-	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
-	 *     invertingFeature+=FeatureChainName (ambiguity) (rule end)
-	 *     isAbstract?='abstract' 'feature' (ambiguity) (rule end)
-	 *     isComposite?='composite' 'feature' (ambiguity) (rule end)
-	 *     isConstantBasic?='const' 'feature' (ambiguity) (rule end)
-	 *     isDerived?='derived' 'feature' (ambiguity) (rule end)
-	 *     isEnd?='end' 'feature' (ambiguity) (rule end)
-	 *     isMember?='member' 'feature' (ambiguity) (rule end)
-	 *     isNonunique?='nonunique' (ambiguity) (rule end)
-	 *     isOrdered?='ordered' (ambiguity) (rule end)
-	 *     isPortion?='portion' 'feature' (ambiguity) (rule end)
-	 *     isReturn?='return' 'feature' (ambiguity) (rule end)
-	 *     isVariable?='var' 'feature' (ambiguity) (rule end)
-	 *     isVariant?='variant' 'feature' (ambiguity) (rule end)
-	 *     originalType=QualifiedName (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
-	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
-	 *     references+=FeatureChainName (ambiguity) (rule end)
-	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
-	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     unioning+=FeatureChainName (ambiguity) (rule end)
-	 *     valuePart=Expression (ambiguity) (rule end)
-	 *     visibility=VisibilityIndicator 'feature' (ambiguity) (rule end)
-	 
-	 * </pre>
-	 */
-	protected void emit_Feature_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

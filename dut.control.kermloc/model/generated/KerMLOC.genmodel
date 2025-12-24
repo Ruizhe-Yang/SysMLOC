@@ -190,6 +190,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//TypeFeaturing/elements"/>
     </genClasses>
     <genClasses ecoreClass="KerMLOC.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Feature/isFeature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Feature/isSemicolon"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Feature/elements"/>
     </genClasses>
     <genClasses ecoreClass="KerMLOC.ecore#//Step">
@@ -209,6 +211,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Invariant/resultExpressionParameter"/>
     </genClasses>
     <genClasses ecoreClass="KerMLOC.ecore#//Connector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Connector/isFrom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Connector/connectorPart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Connector/isNary"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Connector/elements"/>
     </genClasses>
     <genClasses ecoreClass="KerMLOC.ecore#//BindingConnector">
@@ -347,13 +352,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//PayloadFeature/payloadFeatureElement"/>
     </genClasses>
     <genClasses ecoreClass="KerMLOC.ecore#//PayloadFeatureSpecializationPart"/>
-    <genClasses ecoreClass="KerMLOC.ecore#//ConnectorDeclaration"/>
-    <genClasses ecoreClass="KerMLOC.ecore#//BinaryConnectorDeclaration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//BinaryConnectorDeclaration/connectorPartBinary"/>
-    </genClasses>
-    <genClasses ecoreClass="KerMLOC.ecore#//NaryConnectorDeclaration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//NaryConnectorDeclaration/connectorPart"/>
-    </genClasses>
     <genClasses ecoreClass="KerMLOC.ecore#//ExtendedPrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//ExtendedPrefix/isReturn"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//ExtendedPrefix/isMember"/>

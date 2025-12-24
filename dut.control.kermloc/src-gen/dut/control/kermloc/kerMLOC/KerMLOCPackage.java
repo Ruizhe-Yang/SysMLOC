@@ -4553,13 +4553,31 @@ public interface KerMLOCPackage extends EPackage
   int FEATURE__VALUE_PART = FEATURE_ELEMENT_FEATURE_COUNT + 37;
 
   /**
+   * The feature id for the '<em><b>Is Feature</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE__IS_FEATURE = FEATURE_ELEMENT_FEATURE_COUNT + 38;
+
+  /**
+   * The feature id for the '<em><b>Is Semicolon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE__IS_SEMICOLON = FEATURE_ELEMENT_FEATURE_COUNT + 39;
+
+  /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE__ELEMENTS = FEATURE_ELEMENT_FEATURE_COUNT + 38;
+  int FEATURE__ELEMENTS = FEATURE_ELEMENT_FEATURE_COUNT + 40;
 
   /**
    * The number of structural features of the '<em>Feature</em>' class.
@@ -4568,7 +4586,7 @@ public interface KerMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE_FEATURE_COUNT = FEATURE_ELEMENT_FEATURE_COUNT + 39;
+  int FEATURE_FEATURE_COUNT = FEATURE_ELEMENT_FEATURE_COUNT + 41;
 
   /**
    * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.StepImpl <em>Step</em>}' class.
@@ -6439,13 +6457,13 @@ public interface KerMLOCPackage extends EPackage
   int CONNECTOR__VALUE_PART = FEATURE_ELEMENT_FEATURE_COUNT + 37;
 
   /**
-   * The feature id for the '<em><b>Connector Part Binary</b></em>' containment reference list.
+   * The feature id for the '<em><b>Is From</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONNECTOR__CONNECTOR_PART_BINARY = FEATURE_ELEMENT_FEATURE_COUNT + 38;
+  int CONNECTOR__IS_FROM = FEATURE_ELEMENT_FEATURE_COUNT + 38;
 
   /**
    * The feature id for the '<em><b>Connector Part</b></em>' containment reference list.
@@ -6457,13 +6475,22 @@ public interface KerMLOCPackage extends EPackage
   int CONNECTOR__CONNECTOR_PART = FEATURE_ELEMENT_FEATURE_COUNT + 39;
 
   /**
+   * The feature id for the '<em><b>Is Nary</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECTOR__IS_NARY = FEATURE_ELEMENT_FEATURE_COUNT + 40;
+
+  /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONNECTOR__ELEMENTS = FEATURE_ELEMENT_FEATURE_COUNT + 40;
+  int CONNECTOR__ELEMENTS = FEATURE_ELEMENT_FEATURE_COUNT + 41;
 
   /**
    * The number of structural features of the '<em>Connector</em>' class.
@@ -6472,7 +6499,7 @@ public interface KerMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTOR_FEATURE_COUNT = FEATURE_ELEMENT_FEATURE_COUNT + 41;
+  int CONNECTOR_FEATURE_COUNT = FEATURE_ELEMENT_FEATURE_COUNT + 42;
 
   /**
    * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.BindingConnectorImpl <em>Binding Connector</em>}' class.
@@ -10707,639 +10734,6 @@ public interface KerMLOCPackage extends EPackage
   int PAYLOAD_FEATURE_SPECIALIZATION_PART_FEATURE_COUNT = FEATURE_SPECIALIZATION_FEATURE_COUNT + 4;
 
   /**
-   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.BinaryConnectorDeclarationImpl <em>Binary Connector Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.kermloc.kerMLOC.impl.BinaryConnectorDeclarationImpl
-   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getBinaryConnectorDeclaration()
-   * @generated
-   */
-  int BINARY_CONNECTOR_DECLARATION = 101;
-
-  /**
-   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__DECLARED_SHORT_NAME = FEATURE_DECLARATION__DECLARED_SHORT_NAME;
-
-  /**
-   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__DECLARED_NAME = FEATURE_DECLARATION__DECLARED_NAME;
-
-  /**
-   * The feature id for the '<em><b>Typings</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__TYPINGS = FEATURE_DECLARATION__TYPINGS;
-
-  /**
-   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__SUBSETTING = FEATURE_DECLARATION__SUBSETTING;
-
-  /**
-   * The feature id for the '<em><b>References</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__REFERENCES = FEATURE_DECLARATION__REFERENCES;
-
-  /**
-   * The feature id for the '<em><b>Crosses</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__CROSSES = FEATURE_DECLARATION__CROSSES;
-
-  /**
-   * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__REDEFINITIONS = FEATURE_DECLARATION__REDEFINITIONS;
-
-  /**
-   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__MULTI_LOW = FEATURE_DECLARATION__MULTI_LOW;
-
-  /**
-   * The feature id for the '<em><b>Multi High</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__MULTI_HIGH = FEATURE_DECLARATION__MULTI_HIGH;
-
-  /**
-   * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__IS_ORDERED = FEATURE_DECLARATION__IS_ORDERED;
-
-  /**
-   * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__IS_NONUNIQUE = FEATURE_DECLARATION__IS_NONUNIQUE;
-
-  /**
-   * The feature id for the '<em><b>Original Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__ORIGINAL_TYPE = FEATURE_DECLARATION__ORIGINAL_TYPE;
-
-  /**
-   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__DISJOINING = FEATURE_DECLARATION__DISJOINING;
-
-  /**
-   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__UNIONING = FEATURE_DECLARATION__UNIONING;
-
-  /**
-   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__INTERSECTING = FEATURE_DECLARATION__INTERSECTING;
-
-  /**
-   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__DIFFERENCING = FEATURE_DECLARATION__DIFFERENCING;
-
-  /**
-   * The feature id for the '<em><b>Chaining Feature</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__CHAINING_FEATURE = FEATURE_DECLARATION__CHAINING_FEATURE;
-
-  /**
-   * The feature id for the '<em><b>Inverting Feature</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__INVERTING_FEATURE = FEATURE_DECLARATION__INVERTING_FEATURE;
-
-  /**
-   * The feature id for the '<em><b>Featuring Type</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__FEATURING_TYPE = FEATURE_DECLARATION__FEATURING_TYPE;
-
-  /**
-   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__IS_SUFFICIENT = FEATURE_DECLARATION__IS_SUFFICIENT;
-
-  /**
-   * The feature id for the '<em><b>Connector Part Binary</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION__CONNECTOR_PART_BINARY = FEATURE_DECLARATION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Binary Connector Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY_CONNECTOR_DECLARATION_FEATURE_COUNT = FEATURE_DECLARATION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.ConnectorDeclarationImpl <em>Connector Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.kermloc.kerMLOC.impl.ConnectorDeclarationImpl
-   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getConnectorDeclaration()
-   * @generated
-   */
-  int CONNECTOR_DECLARATION = 100;
-
-  /**
-   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__DECLARED_SHORT_NAME = BINARY_CONNECTOR_DECLARATION__DECLARED_SHORT_NAME;
-
-  /**
-   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__DECLARED_NAME = BINARY_CONNECTOR_DECLARATION__DECLARED_NAME;
-
-  /**
-   * The feature id for the '<em><b>Typings</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__TYPINGS = BINARY_CONNECTOR_DECLARATION__TYPINGS;
-
-  /**
-   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__SUBSETTING = BINARY_CONNECTOR_DECLARATION__SUBSETTING;
-
-  /**
-   * The feature id for the '<em><b>References</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__REFERENCES = BINARY_CONNECTOR_DECLARATION__REFERENCES;
-
-  /**
-   * The feature id for the '<em><b>Crosses</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__CROSSES = BINARY_CONNECTOR_DECLARATION__CROSSES;
-
-  /**
-   * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__REDEFINITIONS = BINARY_CONNECTOR_DECLARATION__REDEFINITIONS;
-
-  /**
-   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__MULTI_LOW = BINARY_CONNECTOR_DECLARATION__MULTI_LOW;
-
-  /**
-   * The feature id for the '<em><b>Multi High</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__MULTI_HIGH = BINARY_CONNECTOR_DECLARATION__MULTI_HIGH;
-
-  /**
-   * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__IS_ORDERED = BINARY_CONNECTOR_DECLARATION__IS_ORDERED;
-
-  /**
-   * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__IS_NONUNIQUE = BINARY_CONNECTOR_DECLARATION__IS_NONUNIQUE;
-
-  /**
-   * The feature id for the '<em><b>Original Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__ORIGINAL_TYPE = BINARY_CONNECTOR_DECLARATION__ORIGINAL_TYPE;
-
-  /**
-   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__DISJOINING = BINARY_CONNECTOR_DECLARATION__DISJOINING;
-
-  /**
-   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__UNIONING = BINARY_CONNECTOR_DECLARATION__UNIONING;
-
-  /**
-   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__INTERSECTING = BINARY_CONNECTOR_DECLARATION__INTERSECTING;
-
-  /**
-   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__DIFFERENCING = BINARY_CONNECTOR_DECLARATION__DIFFERENCING;
-
-  /**
-   * The feature id for the '<em><b>Chaining Feature</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__CHAINING_FEATURE = BINARY_CONNECTOR_DECLARATION__CHAINING_FEATURE;
-
-  /**
-   * The feature id for the '<em><b>Inverting Feature</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__INVERTING_FEATURE = BINARY_CONNECTOR_DECLARATION__INVERTING_FEATURE;
-
-  /**
-   * The feature id for the '<em><b>Featuring Type</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__FEATURING_TYPE = BINARY_CONNECTOR_DECLARATION__FEATURING_TYPE;
-
-  /**
-   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__IS_SUFFICIENT = BINARY_CONNECTOR_DECLARATION__IS_SUFFICIENT;
-
-  /**
-   * The feature id for the '<em><b>Connector Part Binary</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__CONNECTOR_PART_BINARY = BINARY_CONNECTOR_DECLARATION__CONNECTOR_PART_BINARY;
-
-  /**
-   * The feature id for the '<em><b>Connector Part</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION__CONNECTOR_PART = BINARY_CONNECTOR_DECLARATION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Connector Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_DECLARATION_FEATURE_COUNT = BINARY_CONNECTOR_DECLARATION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.NaryConnectorDeclarationImpl <em>Nary Connector Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.kermloc.kerMLOC.impl.NaryConnectorDeclarationImpl
-   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getNaryConnectorDeclaration()
-   * @generated
-   */
-  int NARY_CONNECTOR_DECLARATION = 102;
-
-  /**
-   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__DECLARED_SHORT_NAME = FEATURE_DECLARATION__DECLARED_SHORT_NAME;
-
-  /**
-   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__DECLARED_NAME = FEATURE_DECLARATION__DECLARED_NAME;
-
-  /**
-   * The feature id for the '<em><b>Typings</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__TYPINGS = FEATURE_DECLARATION__TYPINGS;
-
-  /**
-   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__SUBSETTING = FEATURE_DECLARATION__SUBSETTING;
-
-  /**
-   * The feature id for the '<em><b>References</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__REFERENCES = FEATURE_DECLARATION__REFERENCES;
-
-  /**
-   * The feature id for the '<em><b>Crosses</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__CROSSES = FEATURE_DECLARATION__CROSSES;
-
-  /**
-   * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__REDEFINITIONS = FEATURE_DECLARATION__REDEFINITIONS;
-
-  /**
-   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__MULTI_LOW = FEATURE_DECLARATION__MULTI_LOW;
-
-  /**
-   * The feature id for the '<em><b>Multi High</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__MULTI_HIGH = FEATURE_DECLARATION__MULTI_HIGH;
-
-  /**
-   * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__IS_ORDERED = FEATURE_DECLARATION__IS_ORDERED;
-
-  /**
-   * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__IS_NONUNIQUE = FEATURE_DECLARATION__IS_NONUNIQUE;
-
-  /**
-   * The feature id for the '<em><b>Original Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__ORIGINAL_TYPE = FEATURE_DECLARATION__ORIGINAL_TYPE;
-
-  /**
-   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__DISJOINING = FEATURE_DECLARATION__DISJOINING;
-
-  /**
-   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__UNIONING = FEATURE_DECLARATION__UNIONING;
-
-  /**
-   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__INTERSECTING = FEATURE_DECLARATION__INTERSECTING;
-
-  /**
-   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__DIFFERENCING = FEATURE_DECLARATION__DIFFERENCING;
-
-  /**
-   * The feature id for the '<em><b>Chaining Feature</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__CHAINING_FEATURE = FEATURE_DECLARATION__CHAINING_FEATURE;
-
-  /**
-   * The feature id for the '<em><b>Inverting Feature</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__INVERTING_FEATURE = FEATURE_DECLARATION__INVERTING_FEATURE;
-
-  /**
-   * The feature id for the '<em><b>Featuring Type</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__FEATURING_TYPE = FEATURE_DECLARATION__FEATURING_TYPE;
-
-  /**
-   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__IS_SUFFICIENT = FEATURE_DECLARATION__IS_SUFFICIENT;
-
-  /**
-   * The feature id for the '<em><b>Connector Part</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION__CONNECTOR_PART = FEATURE_DECLARATION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Nary Connector Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NARY_CONNECTOR_DECLARATION_FEATURE_COUNT = FEATURE_DECLARATION_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.ExtendedPrefixImpl <em>Extended Prefix</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -11347,7 +10741,7 @@ public interface KerMLOCPackage extends EPackage
    * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getExtendedPrefix()
    * @generated
    */
-  int EXTENDED_PREFIX = 103;
+  int EXTENDED_PREFIX = 100;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -11384,7 +10778,7 @@ public interface KerMLOCPackage extends EPackage
    * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getVisibilityIndicator()
    * @generated
    */
-  int VISIBILITY_INDICATOR = 104;
+  int VISIBILITY_INDICATOR = 101;
 
   /**
    * The meta object id for the '{@link dut.control.kermloc.kerMLOC.FeatureDirection <em>Feature Direction</em>}' enum.
@@ -11394,7 +10788,7 @@ public interface KerMLOCPackage extends EPackage
    * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getFeatureDirection()
    * @generated
    */
-  int FEATURE_DIRECTION = 105;
+  int FEATURE_DIRECTION = 102;
 
 
   /**
@@ -12846,6 +12240,28 @@ public interface KerMLOCPackage extends EPackage
   EClass getFeature();
 
   /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Feature#isIsFeature <em>Is Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Feature</em>'.
+   * @see dut.control.kermloc.kerMLOC.Feature#isIsFeature()
+   * @see #getFeature()
+   * @generated
+   */
+  EAttribute getFeature_IsFeature();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Feature#isIsSemicolon <em>Is Semicolon</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Semicolon</em>'.
+   * @see dut.control.kermloc.kerMLOC.Feature#isIsSemicolon()
+   * @see #getFeature()
+   * @generated
+   */
+  EAttribute getFeature_IsSemicolon();
+
+  /**
    * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Feature#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -12993,6 +12409,39 @@ public interface KerMLOCPackage extends EPackage
    * @generated
    */
   EClass getConnector();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Connector#isIsFrom <em>Is From</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is From</em>'.
+   * @see dut.control.kermloc.kerMLOC.Connector#isIsFrom()
+   * @see #getConnector()
+   * @generated
+   */
+  EAttribute getConnector_IsFrom();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Connector#getConnectorPart <em>Connector Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Connector Part</em>'.
+   * @see dut.control.kermloc.kerMLOC.Connector#getConnectorPart()
+   * @see #getConnector()
+   * @generated
+   */
+  EReference getConnector_ConnectorPart();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Connector#isIsNary <em>Is Nary</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Nary</em>'.
+   * @see dut.control.kermloc.kerMLOC.Connector#isIsNary()
+   * @see #getConnector()
+   * @generated
+   */
+  EAttribute getConnector_IsNary();
 
   /**
    * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Connector#getElements <em>Elements</em>}'.
@@ -14068,58 +13517,6 @@ public interface KerMLOCPackage extends EPackage
    * @generated
    */
   EClass getPayloadFeatureSpecializationPart();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.ConnectorDeclaration <em>Connector Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Connector Declaration</em>'.
-   * @see dut.control.kermloc.kerMLOC.ConnectorDeclaration
-   * @generated
-   */
-  EClass getConnectorDeclaration();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration <em>Binary Connector Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Binary Connector Declaration</em>'.
-   * @see dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration
-   * @generated
-   */
-  EClass getBinaryConnectorDeclaration();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration#getConnectorPartBinary <em>Connector Part Binary</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Connector Part Binary</em>'.
-   * @see dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration#getConnectorPartBinary()
-   * @see #getBinaryConnectorDeclaration()
-   * @generated
-   */
-  EReference getBinaryConnectorDeclaration_ConnectorPartBinary();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.NaryConnectorDeclaration <em>Nary Connector Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Nary Connector Declaration</em>'.
-   * @see dut.control.kermloc.kerMLOC.NaryConnectorDeclaration
-   * @generated
-   */
-  EClass getNaryConnectorDeclaration();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.NaryConnectorDeclaration#getConnectorPart <em>Connector Part</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Connector Part</em>'.
-   * @see dut.control.kermloc.kerMLOC.NaryConnectorDeclaration#getConnectorPart()
-   * @see #getNaryConnectorDeclaration()
-   * @generated
-   */
-  EReference getNaryConnectorDeclaration_ConnectorPart();
 
   /**
    * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.ExtendedPrefix <em>Extended Prefix</em>}'.

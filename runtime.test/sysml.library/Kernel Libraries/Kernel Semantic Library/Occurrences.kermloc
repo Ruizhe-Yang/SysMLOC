@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="Occurrences" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * This package defines modeling constructs for anything existing or occurring in time and space, with&#xD;&#xA;&#x9; * associations between them that assert temporal and spatial relationships.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Base::Anything"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Base::things"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Base::DataValue"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Natural"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Boolean"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Links" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Clocks" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Collections::Set"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Collections::OrderedSet"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="CollectionFunctions::contains"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::isEmpty"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::notEmpty"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::includes"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::union"/>
+    <elements xsi:type="kerMLOC:Class" isAbstract="true" declaredName="Occurrence">
+      <subsetting>Anything</subsetting>
+      <disjoining>DataValue</disjoining>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;         * Occurrence is the most general classifier of entities that have identity and&#xD;&#xA;         * occur over time and space.&#xD;&#xA;         *&#xD;&#xA;         * The features of Occurrence specify the semantics of associations between occurrences that&#xD;&#xA;         * assert complete inclusion and exclusion in time or space, or both, which includes&#xD;&#xA;         * portions of an occurrence (having the same identity).  Portions include slices and shots&#xD;&#xA;         * over time and space.&#xD;&#xA;         */"/>
+      <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions" isNamespace="true"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="portionOfLife" MultiLow="1" isDefault="true" valuePart="self" isFeature="true">
+        <typings>Life</typings>
+        <subsetting>portionOf</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="self" MultiLow="1" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>timeSlices</subsetting>
+        <subsetting>spaceSlices</subsetting>
+        <subsetting>spaceTimeCoincidentOccurrences</subsetting>
+        <subsetting>sameLifeOccurrences</subsetting>
+        <redefinitions>Anything::self</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="sameLifeOccurrences" MultiLow="1" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>things</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="this" MultiLow="1" isDefault="true" valuePart="self" isFeature="true">
+        <typings>Occurrence</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The &quot;context&quot; Occurrence within which this Occurrence takes place. By default, it is this&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrence itself. However, this is overridden for ownedPerformances of Objects and&#xD;&#xA;&#x9;&#x9;&#x9; * subperformances of Performances.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" isFrom="true">
+        <typings>HappensDuring</typings>
+        <connectorPart MultiLow="1" refElement="self"/>
+        <connectorPart MultiLow="1" refElement="this"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="localClock" MultiLow="1" isDefault="true" valuePart="universalClock" isFeature="true">
+        <typings>Clock</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * A local Clock to be used as the corresponding time reference for this Occurrence&#xD;&#xA;&#x9;&#x9;&#x9; * and, by default, all ownedOccurrences. By default this is the singleton universalClock.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="suboccurrences" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>occurrences</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Composite suboccurrences of this Occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="(that as Occurrence).localClock" isFeature="true">
+          <redefinitions>localClock</redefinitions>
+          <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; &#x9; * The localClock of a suboccurrence defaults to the localClock of its containing&#xD;&#xA;&#x9;&#x9;&#x9; &#x9; * Occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; &#x9; */"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDefault="true" valuePart="(that as Occurrence).incomingTransferSort" isFeature="true">
+          <redefinitions>incomingTransferSort</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Comment" body="/* Occurrences may be suboccurrences of no more than one other occurrence. */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="superoccurrence" MultiLow="0" MultiHigh="1" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>occurrences</subsetting>
+        <invertingFeature>suboccurrences</invertingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="withoutOccurrences" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <unioning>successors</unioning>
+        <unioning>predecessors</unioning>
+        <unioning>outsideOfOccurrences</unioning>
+        <invertingFeature>withoutOccurrences</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that are completely separate either in time or space or both.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Comment" body="/* withoutOccurrences is irreflexive. */"/>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="(that as Occurrence) != (that.that as Occurrence)"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="predecessors" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>withoutOccurrences</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that end before this occurrence starts.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="successors" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>withoutOccurrences</subsetting>
+        <invertingFeature>predecessors</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that start after this occurrence ends.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Comment" body="/* successors is transitive. */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="earlierOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>that</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="laterOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>self</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="laterOccurrence.successors" subsettedFeature="earlierOccurrence.successors"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="immediatePredecessors" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>predecessors</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that end just before this occurrence starts, with no&#xD;&#xA;&#x9;&#x9;&#x9; * possibility of other occurrences happening in the time between them.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="immediateSuccessors" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>successors</subsetting>
+        <invertingFeature>immediatePredecessors</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that start just after this occurrence ends, with no&#xD;&#xA;&#x9;&#x9;&#x9; * possibility of other occurrences happening in the time between them.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Disjoining" typeDisjoined="earlierOccurrence.successors" disjoiningType="laterOccurrence.predecessors"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="timeEnclosedOccurrences" MultiLow="1" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>occurrences</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that start no earlier than and end no later than&#xD;&#xA;&#x9;&#x9;&#x9; * this occurrence, including at least this occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Comment" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * timeEnclosedOccurrences and successors constrain each other. All successors of&#xD;&#xA;&#x9;&#x9;&#x9; * (occurrences happening after) time enclosing occurrences (inverse of&#xD;&#xA;&#x9;&#x9;&#x9; * timeEnclosedOccurrences) are also successors of their timeEnclosedOccurrences.&#xD;&#xA;&#x9;&#x9;&#x9; * And predecessors of (occurrences happening before) time enclosing occurrences&#xD;&#xA;&#x9;&#x9;&#x9; * are predecessors of their timeEnclosedOccurrences.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="longerOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>that</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="shorterOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>self</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="longerOccurrence.predecessors" subsettedFeature="shorterOccurrence.predecessors"/>
+        <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="longerOccurrence.successors" subsettedFeature="shorterOccurrence.successors"/>
+        <elements xsi:type="kerMLOC:Comment" body="/* timeEnclosedOccurrences is transitive. */"/>
+        <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="shorterOccurrence.timeEnclosedOccurrences" subsettedFeature="longerOccurrence.timeEnclosedOccurrences"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="timeCoincidentOccurrences" MultiLow="1" MultiHigh="*" isSufficient="true" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>timeEnclosedOccurrences</subsetting>
+        <invertingFeature>timeCoincidentOccurrences</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that start at the same time and end at the same time as this occurrence,&#xD;&#xA;&#x9;&#x9;&#x9; * including at least this occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="thatOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>longerOccurrence</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="thisOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>shorterOccurrence</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Comment" body="/* timeCoincidentOccurrences occurrences happen during each other. */"/>
+        <elements xsi:type="kerMLOC:Connector" isFrom="true">
+          <typings>HappensDuring</typings>
+          <connectorPart MultiLow="1" delcaredName="shorterOccurrence" refElement="thisOccurrence"/>
+          <connectorPart MultiLow="1" delcaredName="longerOccurrence" refElement="thatOccurrence"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Comment" body="/* timeCoincidentOccurrences is transitive */"/>
+        <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="thatOccurrence.timeCoincidentOccurrences" subsettedFeature="thisOccurrence.timeCoincidentOccurrences"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="spaceEnclosedOccurrences" MultiLow="1" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>occurrences</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that this one completely includes in space (not necessarily in time),&#xD;&#xA;&#x9;&#x9;&#x9; * including this one.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="largerSpace" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>that</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="smallerSpace" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>self</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Comment" body="/* spaceEnclosedOccurrences is transitive. */"/>
+        <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="smallerSpace.spaceEnclosedOccurrences" subsettedFeature="largerSpace.spaceEnclosedOccurrences"/>
+        <elements xsi:type="kerMLOC:Comment" body="/* smallerSpace are outside occurrences that are outside their largerSpace */"/>
+        <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="smallerSpace.outsideOfOccurrences" subsettedFeature="largerSpace.outsideOfOccurrences"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="spaceTimeEnclosedOccurrences" MultiLow="1" MultiHigh="*" isSufficient="true" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>timeEnclosedOccurrences</subsetting>
+        <subsetting>spaceEnclosedOccurrences</subsetting>
+        <intersecting>timeEnclosedOccurrences</intersecting>
+        <intersecting>spaceEnclosedOccurrences</intersecting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that this one completely includes in both space and time,&#xD;&#xA;&#x9;&#x9;&#x9; * including this one.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Comment" body="/* spaceTimeEnclosedOccurrences is transitive */"/>
+        <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="largerSpace.spaceTimeEnclosedOccurrences" subsettedFeature="smallerSpace.spaceTimeEnclosedOccurrences"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="spaceTimeEnclosedPoints" MultiLow="1" MultiHigh="*" isSufficient="true" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>spaceTimeEnclosedOccurrences</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * All space time enclosed occurrences that take up zero time and space.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" valuePart="0">
+          <redefinitions>innerSpaceDimension</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:BindingConnector">
+          <connectorPart MultiLow="1" refElement="startShot"/>
+          <connectorPart MultiLow="1" refElement="endShot"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="spaceTimeCoincidentOccurrences" MultiLow="1" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>timeCoincidentOccurrences</subsetting>
+        <subsetting>spaceEnclosedOccurrences</subsetting>
+        <subsetting>spaceTimeEnclosedOccurrences</subsetting>
+        <intersecting>timeCoincidentOccurrences</intersecting>
+        <intersecting>spaceEnclosedOccurrences</intersecting>
+        <invertingFeature>spaceTimeCoincidentOccurrences</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that this one completely includes in both space and time,&#xD;&#xA;&#x9;&#x9;&#x9; * and vice-versa, including this one.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+          <subsetting>largerSpace</subsetting>
+          <redefinitions>thatOccurrence</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+          <subsetting>smallerSpace</subsetting>
+          <redefinitions>thisOccurrence</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Comment" body="/* spaceTimeCoincidentOccurrences occurrences are inside of each other. */"/>
+        <elements xsi:type="kerMLOC:Connector" isFrom="true">
+          <typings>InsideOf</typings>
+          <connectorPart MultiLow="1" delcaredName="largerSpace" refElement="thatOccurrence"/>
+          <connectorPart MultiLow="1" delcaredName="smallerSpace" refElement="thisOccurrence"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Comment" body="/* spaceTimeCoincidentOccurrences is transitive */"/>
+        <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="thatOccurrence.spaceTimeCoincidentOccurrences" subsettedFeature="thisOccurrence.spaceTimeCoincidentOccurrences"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="outsideOfOccurrences" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>withoutOccurrences</subsetting>
+        <invertingFeature>outsideOfOccurrences</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that do not overlap in space (not necessarily in time, see successors).&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="justOutsideOfOccurrences" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>outsideOfOccurrences</subsetting>
+        <invertingFeature>justOutsideOfOccurrences</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that have no space between some of their space slices and some space slices of this occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="separateSpaceToo" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>that</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="separateSpace" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>self</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" MultiLow="1" MultiHigh="*" isFrom="true">
+          <typings>MatesWith</typings>
+          <connectorPart MultiLow="0" MultiHigh="*" delcaredName="separateSpaceToo" refElement="separateSpaceToo.spaceSlices"/>
+          <connectorPart MultiLow="0" MultiHigh="*" delcaredName="separateSpace" refElement="separateSpace.spaceSlices"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="matingOccurrences" MultiLow="1" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>justOutsideOfOccurrences</subsetting>
+        <invertingFeature>matingOccurrences</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that have no space between them and this one.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="matingSpaceToo" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>that</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="matingSpace" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>self</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="matingOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <elements xsi:type="kerMLOC:Feature" isPortion="true" MultiLow="1" isFeature="true">
+            <redefinitions>spaceBoundary</redefinitions>
+          </elements>
+          <elements xsi:type="kerMLOC:Invariant">
+            <resultExpressionParameter resultExpression="contains(unionsOf, union(matingSpaceToo, matingSpace))"/>
+          </elements>
+          <elements xsi:type="kerMLOC:Feature" isPortion="true" MultiLow="0" isFeature="true">
+            <redefinitions>spaceInterior</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="innerSpaceDimension" MultiLow="1" isFeature="true">
+        <typings>Natural</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The number of variables needed to identify space points in this occurrence, from 0&#xD;&#xA;&#x9;&#x9;&#x9; * to 3, without regard to higher dimensional spaces it might be embedded in.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="innerSpaceDimension &lt;= 3"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="outerSpaceDimension" MultiLow="0" MultiHigh="1" isFeature="true">
+        <typings>Natural</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * For occurrences of innerSpaceDimension 1 or 2, the number of variables needed to&#xD;&#xA;&#x9;&#x9;&#x9; * identify their space points in higher dimensions they might be embedded in, from&#xD;&#xA;&#x9;&#x9;&#x9; * the innerSpaceDimension to 3. An outerSpaceDimension equal to innerSpaceDimension&#xD;&#xA;&#x9;&#x9;&#x9; * indicates the occurrence is spatially straight (innerSpaceDimension 1 embedded in&#xD;&#xA;&#x9;&#x9;&#x9; * 2 or 3 dimensions) or flat (innerSpaceDimension 2 embedded in 3 dimensions).&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="notEmpty(outerSpaceDimension) implies (outerSpaceDimension >= innerSpaceDimension &amp; outerSpaceDimension &lt;= 3)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="portions" MultiLow="1" MultiHigh="*" isSufficient="true" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>spaceTimeEnclosedOccurrences</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * All spaceTimeEnclosedOccurrences that have the same portionOfLife (considered the same&#xD;&#xA;&#x9;&#x9;&#x9; * thing occurring).&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" isPortion="true" valuePart="(that as Occurrence).portionOfLife">
+          <redefinitions>portionOfLife</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="portionOf" MultiLow="1" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <invertingFeature>portions</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences of which this occurrence is a portion, including at&#xD;&#xA;&#x9;&#x9;&#x9; * least this occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="timeSlices" MultiLow="1" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>portions</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Portions of an occurrence taking up all of its space over some period of time,&#xD;&#xA;&#x9;&#x9;&#x9; * including at least this occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="timeSliceOf" MultiLow="1" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>portionOf</subsetting>
+        <invertingFeature>timeSlices</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences of which this occurrence is a time slice, including at least this&#xD;&#xA;&#x9;&#x9;&#x9; * occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="timeSliceOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>that</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="timeSlicedOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>self</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Comment" body="/* timeSliceOf is transitive */"/>
+        <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="timeSlicedOccurrence.timeSliceOf" subsettedFeature="timeSliceOccurrence.timeSliceOf"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="snapshots" MultiLow="1" MultiHigh="*" isSufficient="true" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>timeSlices</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Time slices of an occurrence that happen at a single instant of time&#xD;&#xA;&#x9;&#x9;&#x9; * (i.e., have no duration).&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:BindingConnector">
+          <connectorPart MultiLow="1" refElement="startShot"/>
+          <connectorPart MultiLow="1" refElement="endShot"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="snapshots == union(startShot, union(middleTimeSlice.snapshots, endShot))"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="snapshotOf" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>timeSliceOf</subsetting>
+        <invertingFeature>snapshots</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences of which this occurrence is a snapshot.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="startShot" MultiLow="1" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>snapshots</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The snapshot representing the start of the occurrence in time.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="middleTimeSlice" MultiLow="0" MultiHigh="1" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>timeSlices</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * A time slice that takes all the time between the start shot and end shot. There&#xD;&#xA;&#x9;&#x9;&#x9; * is none when the startShot and endShot are the same.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="isEmpty((that as Occurrence).middleTimeSlice) == ((that as Occurrence).startShot == (that as Occurrence).endShot)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" isFrom="true">
+        <typings>HappensJustBefore</typings>
+        <connectorPart MultiLow="1" delcaredName="earlierOccurrence" refElement="startShot"/>
+        <connectorPart MultiLow="0" MultiHigh="1" delcaredName="laterOccurrence" refElement="middleTimeSlice"/>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The startShot happens immediately before the middle time slice.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="endShot" MultiLow="1" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>snapshots</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The snapshot at the end of the occurrence in time.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Comment" body="/* suboccurrences at the end of an Occurrence must also end. */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="subendshot" MultiLow="0" MultiHigh="*" isFeature="true">
+          <typings>Occurrence</typings>
+          <chainingFeature>self.suboccurrences.endShot</chainingFeature>
+          <elements xsi:type="kerMLOC:Feature" declaredName="superendshot" MultiLow="1" isFeature="true">
+            <typings>Occurrence</typings>
+            <subsetting>that</subsetting>
+          </elements>
+          <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="superendshot" subsettedFeature="self.timeCoincidentOccurrences"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" isFrom="true">
+        <typings>HappensJustBefore</typings>
+        <connectorPart MultiLow="0" MultiHigh="1" delcaredName="earlierOccurrence" refElement="middleTimeSlice"/>
+        <connectorPart MultiLow="1" delcaredName="laterOccurrence" refElement="endShot"/>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The endShot happens after the middle time slice.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="spaceSlices" MultiLow="1" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>portions</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Portions of this occurrence that extend for exactly the same time and some or all&#xD;&#xA;&#x9;&#x9;&#x9; * the space, relative to spatial location of this occurrence, including at least&#xD;&#xA;&#x9;&#x9;&#x9; * this occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="spaceSliceOf" MultiLow="1" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>portionOf</subsetting>
+        <invertingFeature>spaceSlices</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences of which this occurrence is a space slice, including at least this&#xD;&#xA;&#x9;&#x9;&#x9; * occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="spaceSliceOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>that</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="spaceSlicedOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>self</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="spaceSliceOccurrence.innerSpaceDimension &lt;= spaceSlicedOccurrence.innerSpaceDimension"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Comment" body="/* spaceSliceOf is transitive */"/>
+        <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="spaceSlicedOccurrence.spaceSliceOf" subsettedFeature="spaceSliceOccurrence.spaceSliceOf"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="spaceShots" MultiLow="1" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>spaceSlices</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * All spaceSlices of this occurrence that are of a lower inner space dimension than it.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="spaceShotOf" MultiLow="0" MultiHigh="*" isSufficient="true" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>spaceSliceOf</subsetting>
+        <invertingFeature>spaceShots</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * All occurrences of which this occurrence is a space shot.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="spaceShotOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>that</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="spaceShottedOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>self</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="spaceShotOccurrence.innerSpaceDimension &lt; spaceShottedOccurrence.innerSpaceDimension"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Comment" body="/* spaceShotOf is transitive */"/>
+        <elements xsi:type="kerMLOC:Subsetting" subsettingFeature="spaceShottedOccurrence.spaceShotOf" subsettedFeature="spaceShotOccurrence.spaceShotOf"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="unionsOf" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Set</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Sets of occurrences, where the time and space taken by all the occurrences in each&#xD;&#xA;&#x9;&#x9;&#x9; * set together is the same as taken by this occurrence (all four dimensional points in&#xD;&#xA;&#x9;&#x9;&#x9; * the occurrences of each set are at the same time and space as those of this&#xD;&#xA;&#x9;&#x9;&#x9; * occurrence).&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" MultiLow="0" MultiHigh="*" isFeature="true">
+          <typings>Occurrence</typings>
+          <redefinitions>elements</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="union" MultiLow="0" MultiHigh="1" isFeature="true">
+          <typings>Occurrence</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" isFrom="true">
+          <typings>Within</typings>
+          <connectorPart MultiLow="0" MultiHigh="*" delcaredName="smallerOccurrence" refElement="elements"/>
+          <connectorPart MultiLow="1" delcaredName="largerOccurrence" refElement="union"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" isFrom="true">
+          <typings>Within</typings>
+          <connectorPart MultiLow="0" MultiHigh="*" delcaredName="smallerOccurrence" refElement="union.spaceTimeEnclosedPoints"/>
+          <connectorPart MultiLow="1" MultiHigh="*" delcaredName="largerOccurrence" refElement="elements"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector">
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="unionsOf.union"/>
+        <connectorPart MultiLow="1" refElement="self"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="intersectionsOf" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Set</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Sets of occurrences, where the time and space taken in common between the occurrences&#xD;&#xA;&#x9;&#x9;&#x9; * in each set is at the same as taken by this occurrence (all four dimensional points&#xD;&#xA;&#x9;&#x9;&#x9; * common to the occurrences in each set are at the same time and space as those in this&#xD;&#xA;&#x9;&#x9;&#x9; * occurrence).&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" MultiLow="0" MultiHigh="*" isFeature="true">
+          <typings>Occurrence</typings>
+          <redefinitions>elements</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" declaredName="notIntersection" MultiLow="0" MultiHigh="*" isSufficient="true" isFeature="true">
+            <typings>Occurrence</typings>
+            <subsetting>spaceTimeEnclosedPoints</subsetting>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="intersection" MultiLow="0" MultiHigh="1" isFeature="true">
+          <typings>Occurrence</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" isFrom="true">
+          <typings>Within</typings>
+          <connectorPart MultiLow="1" delcaredName="smallerOccurrence" refElement="intersection"/>
+          <connectorPart MultiLow="0" MultiHigh="*" delcaredName="largerOccurrence" refElement="elements"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" isFrom="true">
+          <typings>Without</typings>
+          <connectorPart MultiLow="0" MultiHigh="*" delcaredName="separateOccurrenceToo" refElement="elements.notIntersection"/>
+          <connectorPart MultiLow="1" delcaredName="separateOccurrence" refElement="intersection"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" isFrom="true">
+          <typings>Without</typings>
+          <connectorPart MultiLow="0" MultiHigh="*" delcaredName="separateOccurrenceToo" refElement="elements.notIntersection"/>
+          <connectorPart MultiLow="1" MultiHigh="*" delcaredName="separateOccurrence" refElement="elements"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector">
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="intersectionsOf.intersection"/>
+        <connectorPart MultiLow="1" refElement="self"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="differencesOf" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>OrderedSet</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Ordered sets of occurrences, where the time and space taken by first occurrence in&#xD;&#xA;&#x9;&#x9;&#x9; * each set that is not in the time and space taken by the remaining occurrences is the&#xD;&#xA;&#x9;&#x9;&#x9; * same as taken by this occurrence (all four dimensional points in the minuend that are&#xD;&#xA;&#x9;&#x9;&#x9; * not in any subtrahend are at the same time and space as those in this occurrence).&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" MultiLow="0" MultiHigh="*" isFeature="true">
+          <typings>Occurrence</typings>
+          <redefinitions>elements</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="difference" MultiLow="0" MultiHigh="1" isFeature="true">
+          <typings>Occurrence</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="minuend" MultiLow="0" MultiHigh="1" valuePart="head(elements)" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>elements</subsetting>
+          <subsetting>interdiff.elements</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="subtrahend" MultiLow="*" valuePart="tail(elements)" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>elements</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="interdiff" MultiLow="0" MultiHigh="1" isFeature="true">
+          <typings>Set</typings>
+          <elements xsi:type="kerMLOC:Feature" MultiLow="1" MultiHigh="*" isFeature="true">
+            <typings>Occurrence</typings>
+            <redefinitions>elements</redefinitions>
+          </elements>
+          <elements xsi:type="kerMLOC:Feature" declaredName="notSubtrahend" MultiLow="0" MultiHigh="*" isSufficient="true" isFeature="true">
+            <typings>Occurrence</typings>
+            <subsetting>elements</subsetting>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" isFrom="true">
+          <typings>Without</typings>
+          <connectorPart MultiLow="0" MultiHigh="*" delcaredName="separateOccurrenceToo" refElement="interdiff.notSubtrahend"/>
+          <connectorPart MultiLow="1" MultiHigh="*" delcaredName="separateOccurrence" refElement="subtrahend"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="isEmpty(difference) == isEmpty(interdiff)"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="notEmpty(difference) implies (difference.intersectionsOf == interdiff)"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector">
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="differencesOf.difference"/>
+        <connectorPart MultiLow="1" refElement="self"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="spaceInterior" MultiLow="0" MultiHigh="1" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>spaceSlices</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * A space slice of this occurrence that includes all its space shots except the&#xD;&#xA;&#x9;&#x9;&#x9; * space boundary, which must exist and be outsideOf it.  The space interior must be&#xD;&#xA;&#x9;&#x9;&#x9; * of the same inner space dimension as this occurrence, except if it is zero,&#xD;&#xA;&#x9;&#x9;&#x9; * whereupon there is no space interior.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="spaceInteriorOf" MultiLow="0" MultiHigh="1" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>spaceSliceOf</subsetting>
+        <invertingFeature>spaceInterior</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * An Occurrence of which this one is the space interior.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="notEmpty(spaceInterior) implies spaceInterior.innerSpaceDimension == innerSpaceDimension"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="spaceBoundary" MultiLow="0" MultiHigh="1" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>spaceShots</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The space shot of this Occurrence that is not among those of its space interior,&#xD;&#xA;&#x9;&#x9;&#x9; * which must be outside it. It must not have a spaceBoundary.&#x9;It can be divided&#xD;&#xA;&#x9;&#x9;&#x9; * into space slices that also have no spaceBoundary, where the outer one surrounds&#xD;&#xA;&#x9;&#x9;&#x9; * the inner ones.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="isClosed == true"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="spaceBounder" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>self</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="outer" MultiLow="0" MultiHigh="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>spaceSlices</subsetting>
+          <elements xsi:type="kerMLOC:Feature" valuePart="true" isFeature="true">
+            <redefinitions>isClosed</redefinitions>
+          </elements>
+          <elements xsi:type="kerMLOC:Feature" valuePart="spaceBounder.innerSpaceDimension" isFeature="true">
+            <redefinitions>innerSpaceDimension</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="inner" MultiLow="0" MultiHigh="*" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>spaceSlices</subsetting>
+          <elements xsi:type="kerMLOC:Feature" valuePart="true" isFeature="true">
+            <redefinitions>isClosed</redefinitions>
+          </elements>
+          <elements xsi:type="kerMLOC:Feature" valuePart="spaceBounder.innerSpaceDimension" isFeature="true">
+            <redefinitions>innerSpaceDimension</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="notEmpty(inner) implies notEmpty(outer)"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="notEmpty(outer) implies contains(unionsOf, union(outer, inner))"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="spaceBoundaryOf" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>spaceShotOf</subsetting>
+        <invertingFeature>spaceBoundary</invertingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * An Occurrence of which this one is the space boundary.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="spaceBounderOf" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>self</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="spaceBounderOf.spaceBoundary == that.that"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="not isClosed implies contains((that as Occurrence).unionsOf, union(spaceBoundary, spaceInterior))"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="innerSpaceDimension == 0 implies isEmpty(spaceBoundary)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" isFrom="true">
+        <typings>SurroundedBy</typings>
+        <connectorPart MultiLow="0" MultiHigh="*" delcaredName="surroundedSpace" refElement="spaceInterior"/>
+        <connectorPart MultiLow="1" delcaredName="surroundingSpace" refElement="spaceBoundary.outer"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" isFrom="true">
+        <typings>SurroundedBy</typings>
+        <connectorPart MultiLow="0" MultiHigh="*" delcaredName="surroundedSpace" refElement="spaceBoundary.inner"/>
+        <connectorPart MultiLow="1" delcaredName="surroundingSpace" refElement="spaceInterior"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="innerSpaceOccurrences" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>outsideOfOccurrences</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that completely occupy the space surrounded by an inner space boundary of this occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" MultiLow="0" isFeature="true">
+          <redefinitions>innerSpaceOccurrences</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Comment" body="/* innerSpace is the spaceInterior of hOccurrence, which is formed from an inner space boundary of outerSpace. */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="outerSpace" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>that</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="innerSpace" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>self</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="hOccurrence" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" declaredName="hbi" MultiLow="0" MultiHigh="1" isFrom="true">
+          <typings>WithinBoth</typings>
+          <connectorPart MultiLow="0" MultiHigh="1" refElement="hOccurrence.spaceBoundary"/>
+          <connectorPart MultiLow="0" MultiHigh="1" refElement="outerSpace.spaceBoundary.inner"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" declaredName="hbo" MultiLow="0" MultiHigh="1" isFrom="true">
+          <typings>WithinBoth</typings>
+          <connectorPart MultiLow="0" MultiHigh="1" refElement="hOccurrence.spaceBoundary"/>
+          <connectorPart MultiLow="0" MultiHigh="1" refElement="outerSpace"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" isFrom="true">
+          <typings>WithinBoth</typings>
+          <connectorPart MultiLow="1" refElement="hOccurrence.spaceInterior"/>
+          <connectorPart MultiLow="1" refElement="innerSpace"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Invariant">
+          <resultExpressionParameter resultExpression="(isEmpty(hbi) == notEmpty(hbo)) &amp; (notEmpty(hbo) == outerSpace.isClosed)"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="surroundedByOccurrences" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>outsideOfOccurrences</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Occurrences that have inner spaces that completely include this occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" declaredName="surroundedSpace" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>that</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="surroundingSpace" MultiLow="1" isFeature="true">
+          <typings>Occurrence</typings>
+          <subsetting>self</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Connector" isFrom="true">
+          <typings>InsideOf</typings>
+          <connectorPart MultiLow="0" MultiHigh="1" delcaredName="smallerOccurrence" refElement="surroundedSpace"/>
+          <connectorPart MultiLow="1" MultiHigh="*" delcaredName="largerOccurrence" refElement="surroundingSpace.innerSpaceOccurrences"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="isClosed" MultiLow="1" isFeature="true">
+        <typings>Boolean</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Tells whether an occurrence has a spaceBoundary, true if it does, false otherwise.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="isClosed == isEmpty((that as Occurrence).spaceBoundary)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="incomingTransfers" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Transfers::Transfer</typings>
+        <subsetting>Transfers::transfers</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The incoming transfers received by this occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+          <redefinitions>target</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="isDispatch" MultiLow="1" isDefault="true" valuePart="false" isFeature="true">
+        <typings>Boolean</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Determines whether transfers to the dispatch scope might be accepted more than once.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="dispatchScope" MultiLow="1" isDefault="true" valuePart="self" isFeature="true">
+        <typings>Occurrence</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" isFrom="true">
+        <typings>HappensDuring</typings>
+        <connectorPart MultiLow="1" refElement="self"/>
+        <connectorPart MultiLow="1" refElement="dispatchScope"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="isRunToCompletion" MultiLow="1" isDefault="true" valuePart="true" isFeature="true">
+        <typings>Boolean</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Determines whether transition performances might happen during state entry performances&#xD;&#xA;&#x9;&#x9;&#x9; * within the run to completion scope.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="runToCompletionScope" MultiLow="1" isDefault="true" valuePart="self" isFeature="true">
+        <typings>Occurrence</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" isFrom="true">
+        <typings>HappensDuring</typings>
+        <connectorPart MultiLow="1" refElement="self"/>
+        <connectorPart MultiLow="1" refElement="runToCompletionScope"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="incomingTransferSort" MultiLow="0" MultiHigh="*" isDefault="true" valuePart="earlierFirstIncomingTransferSort" isFeature="true">
+        <typings>IncomingTransferSort</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Determines which transfer to accept when multiple are available and which of the unaccepted &#xD;&#xA;&#x9;&#x9;&#x9; * transfers are never to be accepted (dispatched).&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="incomingTransfersToSelf" isSufficient="true" isFeature="true">
+        <subsetting>incomingTransfers</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The incoming transfers with this occurrence as the target.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" valuePart="that" isFeature="true">
+          <redefinitions>target</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="outgoingTransfers" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>Transfers::Transfer</typings>
+        <subsetting>Transfers::transfers</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The outgoing transfers sent from this occurrence.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+          <redefinitions>target</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="outgoingTransfersFromSelf" isSufficient="true" isFeature="true">
+        <subsetting>outgoingTransfers</subsetting>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The outgoing transfers with this occurrence as the source.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" valuePart="that" isFeature="true">
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+          <redefinitions>target</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" isAbstract="true" declaredName="Life" isSufficient="true">
+      <subsetting>Occurrence</subsetting>
+      <elements xsi:type="kerMLOC:BindingConnector">
+        <connectorPart refElement="portionOf"/>
+        <connectorPart refElement="self"/>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Lives are only portions of themselves.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="occurrences" MultiLow="0" MultiHigh="*" isNonunique="true" isFeature="true">
+      <typings>Occurrence</typings>
+      <subsetting>things</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Predicate" declaredName="IncomingTransferSort">
+      <subsetting>Performances::BooleanEvaluation</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="t1" MultiLow="1">
+        <typings>Transfers::Transfer</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="t2" MultiLow="1">
+        <typings>Transfers::Transfer</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="t1First" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:BooleanExpression" declaredName="earlierFirstIncomingTransferSort">
+      <typings>IncomingTransferSort</typings>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="t1First" valuePart="includes(t1.endShot.successors, t2.endShot)"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="SelfSameLifeLink" isSufficient="true">
+      <subsetting>BinaryLink</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * SelfSameLifeLink is a binary association that is equivalent to SelfLink if the&#xD;&#xA;&#x9;&#x9; * linked things are DataValues, but asserts that the linked things are portions of&#xD;&#xA;&#x9;&#x9; * the same Life if they are Occurrences. &#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="myselfSameLife" isFeature="true">
+        <crossingFeature declaredName="myselfSameLives" MultiLow="1" MultiHigh="*"/>
+        <typings>Anything</typings>
+        <redefinitions>source</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="selfSameLife" isFeature="true">
+        <crossingFeature declaredName="selfSameLives" MultiLow="1" MultiHigh="*"/>
+        <typings>Anything</typings>
+        <redefinitions>target</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="sourceOccurrence" MultiLow="0" MultiHigh="1" isSufficient="true" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>myselfSameLife</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="targetOccurrence" MultiLow="0" MultiHigh="1" isSufficient="true" isFeature="true">
+        <typings>Occurrence</typings>
+        <subsetting>selfSameLife</subsetting>
+        <subsetting>sourceOccurrence.sameLifeOccurrences</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector" declaredName="oSelf" isOf="true">
+        <connectorPart refElement="sourceOccurrence.portionOfLife"/>
+        <connectorPart refElement="targetOccurrence.portionOfLife"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="sourceDataValue" MultiLow="0" MultiHigh="1" isSufficient="true" isFeature="true">
+        <typings>DataValue</typings>
+        <subsetting>myselfSameLife</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="targetDataValue" MultiLow="0" MultiHigh="1" isSufficient="true" isFeature="true">
+        <typings>DataValue</typings>
+        <subsetting>selfSameLife</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector" declaredName="dSelf" isOf="true">
+        <connectorPart refElement="sourceDataValue"/>
+        <connectorPart refElement="targetDataValue"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Subclassification" subclassifier="SelfLink" superclassifier="SelfSameLifeLink"/>
+    <elements xsi:type="kerMLOC:Association" declaredName="HappensLink">
+      <subsetting>BinaryLink</subsetting>
+      <disjoining>Occurrence</disjoining>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * HappensLink is the most general associations that assert temporal relationships between a&#xD;&#xA;&#x9;&#x9; * sourceOccurrence and a targetOccurrence. Because HappensLinks assert temporal&#xD;&#xA;&#x9;&#x9; * relationships, they cannot also be Occurrences that happen in time.  Therefore&#xD;&#xA;&#x9;&#x9; * HappensLink is disjoint with LinkObject, that is, no HappensLink can also be a&#xD;&#xA;&#x9;&#x9; * LinkObject.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="sourceOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <redefinitions>BinaryLink::source</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="targetOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <redefinitions>BinaryLink::target</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="HappensDuring" isSufficient="true">
+      <subsetting>HappensLink</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * HappensDuring asserts that the shorterOccurrence happens during the longerOccurrence.&#xD;&#xA;&#x9;&#x9; * That is, the time interval of the shorterOccurrence is completely within that of the&#xD;&#xA;&#x9;&#x9; * longerOccurrence, or every snapshot of the shorterOccurrence happens while (at the&#xD;&#xA;&#x9;&#x9; * same time as) some snapshot of the longerOccurrence. Note that this means every&#xD;&#xA;&#x9;&#x9; * Occurrence HappensDuring itself and that HappensDuring is transitive.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="shorterOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>longerOccurrence.timeEnclosedOccurrences</crosses>
+        <redefinitions>sourceOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="longerOccurrence" isFeature="true">
+        <crossingFeature declaredName="happensDuring" MultiLow="1" MultiHigh="*"/>
+        <typings>Occurrence</typings>
+        <redefinitions>targetOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="HappensWhile" isSufficient="true">
+      <subsetting>HappensDuring</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * HappensWhile asserts that two occurrences happen during each other, that is, they&#xD;&#xA;&#x9;&#x9; * each start at the same time and end at the same time.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="thisOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>thatOccurrence.timeCoincidentOccurrences</crosses>
+        <redefinitions>shorterOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="thatOccurrence" isFeature="true">
+        <crossingFeature declaredName="happensWhile" MultiLow="1" MultiHigh="*">
+          <subsetting>timeCoincidentOccurrences</subsetting>
+        </crossingFeature>
+        <typings>Occurrence</typings>
+        <redefinitions>longerOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="SpaceLink">
+      <subsetting>BinaryLink</subsetting>
+      <disjoining>Occurrence</disjoining>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;         * SpaceLink is the most general association that asserts spatial relationships between a&#xD;&#xA;         * sourceOccurrence and a targetOccurrence. Because SpaceLinks assert spatial&#xD;&#xA;         * relationships, they cannot also be Occurrences that happen in space.  Therefore&#xD;&#xA;         * SpaceLink is disjoint with LinkObject, that is, no SpaceLink can also be a&#xD;&#xA;         * LinkObject.&#xD;&#xA;         */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="sourceOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <redefinitions>BinaryLink::source</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="targetOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <redefinitions>BinaryLink::target</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="InsideOf" isSufficient="true">
+      <subsetting>SpaceLink</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * InsideOf asserts that its largerSpace completely overlaps its smallerSpace in space (not&#xD;&#xA;&#x9;&#x9; * necessarily in time, see HappensDuring). That is, all four dimensional points of the&#xD;&#xA;&#x9;&#x9; * smallerSpace are in the spatial extent of the largerSpace. Note that this means every&#xD;&#xA;&#x9;&#x9; * Occurrence is InsideOf itself and that InsideOf is transitive.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="smallerSpace" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>largerSpace.spaceEnclosedOccurrences</crosses>
+        <redefinitions>source</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="largerSpace" isFeature="true">
+        <crossingFeature declaredName="insideOf" MultiLow="1" MultiHigh="*"/>
+        <typings>Occurrence</typings>
+        <redefinitions>target</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="Within" isSufficient="true">
+      <subsetting>HappensDuring</subsetting>
+      <subsetting>InsideOf</subsetting>
+      <intersecting>HappensDuring</intersecting>
+      <intersecting>InsideOf</intersecting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * Within asserts that its largerOccurrence completely overlaps its smallerOccurrence in&#xD;&#xA;&#x9;&#x9; * time and space. That is, all four dimensional points of the smallerOccurrence happen&#xD;&#xA;&#x9;&#x9; * during and are included in the space of the largerOccurrence. This means every occurrence&#xD;&#xA;&#x9;&#x9; * is Within itself and Within is transitive.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="smallerOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>largerOccurrence.spaceTimeEnclosedOccurrences</crosses>
+        <redefinitions>shorterOccurrence</redefinitions>
+        <redefinitions>smallerSpace</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="largerOccurrence" isFeature="true">
+        <crossingFeature declaredName="within" MultiLow="1" MultiHigh="*"/>
+        <typings>Occurrence</typings>
+        <redefinitions>longerOccurrence</redefinitions>
+        <redefinitions>largerSpace</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="WithinBoth" isSufficient="true">
+      <subsetting>Within</subsetting>
+      <subsetting>HappensWhile</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * WithinBoth asserts that two occurrences are Within each other, that is, they occupy the&#xD;&#xA;&#x9;&#x9; * same four dimensional region.  Note that this means every Occurrence is WithinBoth with&#xD;&#xA;&#x9;&#x9; * itself and transitive.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="thisOccurrence" isFeature="true">
+        <crosses>thatOccurrence.spaceTimeCoincidentOccurrences</crosses>
+        <redefinitions>smallerOccurrence</redefinitions>
+        <redefinitions>HappensWhile::thisOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="thatOccurrence" isFeature="true">
+        <crossingFeature declaredName="withinBoth">
+          <subsetting>spaceTimeCoincidentOccurrences</subsetting>
+        </crossingFeature>
+        <redefinitions>largerOccurrence</redefinitions>
+        <redefinitions>HappensWhile::thatOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="PortionOf" isSufficient="true">
+      <subsetting>Within</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * PortionOf asserts one occurrence is a portion of another, including at least itself.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="portionOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>portionedOccurrence.portions</crosses>
+        <redefinitions>smallerOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="portionedOccurrence" isFeature="true">
+        <crossingFeature declaredName="portionWithin">
+          <subsetting>portionOf</subsetting>
+        </crossingFeature>
+        <typings>Occurrence</typings>
+        <redefinitions>largerOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="TimeSliceOf" isSufficient="true">
+      <subsetting>PortionOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * TimeSliceOf asserts one occurrence is a time slice of another, including at least itself.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="timeSliceOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>timeSlicedOccurrence.timeSlices</crosses>
+        <redefinitions>portionOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="timeSlicedOccurrence" isFeature="true">
+        <crossingFeature declaredName="timeSliceWithin">
+          <subsetting>timeSliceOf</subsetting>
+        </crossingFeature>
+        <typings>Occurrence</typings>
+        <redefinitions>portionedOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="SnapshotOf" isSufficient="true">
+      <subsetting>TimeSliceOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * SnapshotsOf asserts one occurrence is a snapshot of another.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="snapshotOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>snapshottedOccurrence.snapshots</crosses>
+        <redefinitions>timeSliceOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="snapshottedOccurrence" isFeature="true">
+        <crossingFeature declaredName="snapshotWithin">
+          <subsetting>snapshotOf</subsetting>
+        </crossingFeature>
+        <typings>Occurrence</typings>
+        <redefinitions>timeSlicedOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="SpaceSliceOf" isSufficient="true">
+      <subsetting>PortionOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * SpaceSliceOf asserts that its spaceSliceOccurrence extends for exactly the same time and&#xD;&#xA;&#x9;&#x9; * some or all the space of the spaceSlicedOccurrence and that the spaceSliceOccurrence is&#xD;&#xA;&#x9;&#x9; * of the same of lower innerSpaceDimension than the spaceSliceOccurrence.  Note that this&#xD;&#xA;&#x9;&#x9; * means every occurrence is a SpaceSliceOf itself and SpaceSliceOf is transitive.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="spaceSliceOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>spaceSlicedOccurrence.spaceSlices</crosses>
+        <redefinitions>portionOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="spaceSlicedOccurrence" isFeature="true">
+        <crossingFeature declaredName="spaceSliceWithin">
+          <subsetting>spaceSliceOf</subsetting>
+        </crossingFeature>
+        <typings>Occurrence</typings>
+        <redefinitions>portionedOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="SpaceShotOf" isSufficient="true">
+      <subsetting>SpaceSliceOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * SpaceShotOf asserts that its spaceShotOccurrence is of a lower inner space dimension than&#xD;&#xA;&#x9;&#x9; * it spaceShottedOccurrence.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="spaceShotOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>spaceShottedOccurrence.spaceShots</crosses>
+        <redefinitions>spaceSliceOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="spaceShottedOccurrence" isFeature="true">
+        <crossingFeature declaredName="spaceShotWithin">
+          <subsetting>spaceSliceOf</subsetting>
+        </crossingFeature>
+        <typings>Occurrence</typings>
+        <redefinitions>spaceSlicedOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="Without" isSufficient="true">
+      <subsetting>BinaryLink</subsetting>
+      <unioning>HappensBefore</unioning>
+      <unioning>OutsideOf</unioning>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * Without is the most general association that asserts complete separation (no overlap) in&#xD;&#xA;&#x9;&#x9; * either space or time, or both, between two occurrences.  That is, no four dimensional&#xD;&#xA;&#x9;&#x9; * points are in both occurrences. Note that this means no Occurrence is Without itself.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="separateOccurrenceToo" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>separateOccurrence.withoutOccurrences</crosses>
+        <redefinitions>BinaryLink::source</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="separateOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>separateOccurrenceToo.withoutOccurrences</crosses>
+        <redefinitions>BinaryLink::target</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="HappensBefore" isSufficient="true">
+      <subsetting>HappensLink</subsetting>
+      <subsetting>Without</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * HappensBefore asserts that the earlierOccurrence is completely separated in time (not&#xD;&#xA;&#x9;&#x9; * necessarily in space, see OutsideOf), with the earlierOccurrence happening completely&#xD;&#xA;&#x9;&#x9; * before the laterOccurrence.&#x9;That is, no snapshot of the earlierOccurrence happens at the&#xD;&#xA;&#x9;&#x9; * same time as any snapshot of the laterOccurrence, with all snapshots of earlierOccurrence&#xD;&#xA;&#x9;&#x9; * happening before those the laterOccurrence, including the endShot of the earlierOccurrence&#xD;&#xA;&#x9;&#x9; * and startShot of the laterOccurrence. Note that this means no Occurrence HappensBefore&#xD;&#xA;&#x9;&#x9; * itself.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="earlierOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>laterOccurrence.predecessors</crosses>
+        <redefinitions>sourceOccurrence</redefinitions>
+        <redefinitions>separateOccurrenceToo</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="laterOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>earlierOccurrence.successors</crosses>
+        <redefinitions>targetOccurrence</redefinitions>
+        <redefinitions>separateOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="HappensJustBefore" isSufficient="true">
+      <subsetting>HappensBefore</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * HappensJustBefore is HappensBefore asserting that there is no possibility of another&#xD;&#xA;&#x9;&#x9; * occurrences happening in the time between the earlierOccurrence and laterOccurrence.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>laterOccurrence.immediatePredecessors</crosses>
+        <redefinitions>earlierOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>earlierOccurrence.immediateSuccessors</crosses>
+        <redefinitions>laterOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="happensBeforeLinks" MultiLow="0" MultiHigh="*" isNonunique="true" isSufficient="true" isFeature="true">
+      <typings>HappensBefore</typings>
+      <subsetting>binaryLinks</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * happensBeforeLinks is a specialization of binaryLinks restricted to type HappensBefore.&#xD;&#xA;&#x9;&#x9; * It is the default subsetting for succession connectors.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="earlierOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <redefinitions>HappensBefore::earlierOccurrence</redefinitions>
+        <redefinitions>binaryLinks::source</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="laterOccurrence" isFeature="true">
+        <typings>Occurrence</typings>
+        <redefinitions>HappensBefore::laterOccurrence</redefinitions>
+        <redefinitions>binaryLinks::target</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="OutsideOf" isSufficient="true">
+      <subsetting>SpaceLink</subsetting>
+      <subsetting>Without</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * OutsideOf asserts that two occurrences do not overlap in space (not necessarily in time,&#xD;&#xA;&#x9;&#x9; * see HappensBefore).&#x9;That is, no four dimensional points of the occurrences are in the&#xD;&#xA;&#x9;&#x9; * spatial extent of both of them. This means no Occurrence is OutsideOf itself.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="separateSpaceToo" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>separateSpace.outsideOfOccurrences</crosses>
+        <redefinitions>sourceOccurrence</redefinitions>
+        <redefinitions>separateOccurrenceToo</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="separateSpace" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>separateSpaceToo.outsideOfOccurrences</crosses>
+        <redefinitions>targetOccurrence</redefinitions>
+        <redefinitions>separateOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="JustOutsideOf" isSufficient="true">
+      <subsetting>OutsideOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * JustOutsideOf is an OutsideOf asserting that two occurrences have some space slices with&#xD;&#xA;&#x9;&#x9; * no space between them.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>separateSpace.justOutsideOfOccurrences</crosses>
+        <redefinitions>separateSpaceToo</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>separateSpaceToo.justOutsideOfOccurrences</crosses>
+        <redefinitions>separateSpace</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="MatesWith" isSufficient="true">
+      <subsetting>JustOutsideOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * MatesWith is an OutsideOf asserting that two occurrences have no space between them.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="matingSpaceToo" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>matingSpace.matingOccurrences</crosses>
+        <redefinitions>separateSpaceToo</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="matingSpace" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>matingSpaceToo.matingOccurrences</crosses>
+        <redefinitions>separateSpace</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="InnerSpaceOf" isSufficient="true">
+      <subsetting>OutsideOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * InnerSpaceOf is an OutsideOf asserting that the space surrounded by an inner space boundary&#xD;&#xA;&#x9;&#x9; * of one occurrence (outer space) is completely occupied by another occurrence (inner space).&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="outerSpace" isFeature="true">
+        <typings>Occurrence</typings>
+        <redefinitions>separateSpaceToo</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="innerSpace" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>outerSpace.innerSpaceOccurrences</crosses>
+        <redefinitions>separateSpace</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="SurroundedBy" isSufficient="true">
+      <subsetting>OutsideOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * SurroundedBy is an OutsideOf asserting that one occurrence (surrounded space) is included&#xD;&#xA;&#x9;&#x9; * in space by an inner space occurrence of another (surrounding space).&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="surroundedSpace" isFeature="true">
+        <typings>Occurrence</typings>
+        <redefinitions>separateSpaceToo</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="surroundingSpace" isFeature="true">
+        <typings>Occurrence</typings>
+        <crosses>surroundedSpace.surroundedByOccurrences</crosses>
+        <redefinitions>separateSpace</redefinitions>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

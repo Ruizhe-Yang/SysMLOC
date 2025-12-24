@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Vehicles_1">
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::String"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="MassRollup_1" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="Vehicle">
+      <subsetting>MassedThing</subsetting>
+      <elements xsi:type="kerMLOC:Feature" declaredName="vin" isFeature="true">
+        <typings>String</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="m" isFeature="true">
+        <redefinitions>mass</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="engine">
+        <typings>Engine</typings>
+        <subsetting>subcomponents</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="transmission">
+        <typings>Transmission</typings>
+        <subsetting>subcomponents</subsetting>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="Engine">
+      <subsetting>MassedThing</subsetting>
+      <elements xsi:type="kerMLOC:Feature" declaredName="serialNumber" isFeature="true">
+        <typings>String</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="m" isFeature="true">
+        <redefinitions>mass</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// ...&#xA;"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="Transmission">
+      <subsetting>MassedThing</subsetting>
+      <elements xsi:type="kerMLOC:Feature" declaredName="serialNumber" isFeature="true">
+        <typings>String</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="m" isFeature="true">
+        <redefinitions>mass</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// ...&#xA;"/>
+    </elements>
+    <elements xsi:type="kerMLOC:CodeAnnotation" body="// Example usage&#xA;"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="v" isFeature="true">
+      <typings>Vehicle</typings>
+      <elements xsi:type="kerMLOC:Feature" declaredName="m" valuePart="1000" isFeature="true">
+        <redefinitions>Vehicle::m</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="engine">
+        <redefinitions>Vehicle::engine</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" declaredName="m" valuePart="100" isFeature="true">
+          <redefinitions>Engine::m</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isComposite="true" declaredName="transmission">
+        <redefinitions>Vehicle::transmission</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" declaredName="m" valuePart="50" isFeature="true">
+          <redefinitions>Transmission::m</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:CodeAnnotation" body="// v.totalMass evaluates to 1150.0&#xA;"/>
+  </elements>
+</kerMLOC:RootNamespace>

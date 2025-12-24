@@ -3410,7 +3410,8 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
 		private final RuleCall cFeaturePrefixParserRuleCall_2_0_0 = (RuleCall)cGroup_2_0.eContents().get(0);
 		private final Alternatives cAlternatives_2_0_1 = (Alternatives)cGroup_2_0.eContents().get(1);
-		private final Keyword cFeatureKeyword_2_0_1_0 = (Keyword)cAlternatives_2_0_1.eContents().get(0);
+		private final Assignment cIsFeatureAssignment_2_0_1_0 = (Assignment)cAlternatives_2_0_1.eContents().get(0);
+		private final Keyword cIsFeatureFeatureKeyword_2_0_1_0_0 = (Keyword)cIsFeatureAssignment_2_0_1_0.eContents().get(0);
 		private final RuleCall cPrefixMetadataParserRuleCall_2_0_1_1 = (RuleCall)cAlternatives_2_0_1.eContents().get(1);
 		private final RuleCall cFeatureDeclarationParserRuleCall_2_0_2 = (RuleCall)cGroup_2_0.eContents().get(2);
 		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
@@ -3420,7 +3421,8 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cFeatureDeclarationParserRuleCall_2_1_1 = (RuleCall)cGroup_2_1.eContents().get(1);
 		private final RuleCall cValuePartParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
-		private final Keyword cSemicolonKeyword_4_0 = (Keyword)cAlternatives_4.eContents().get(0);
+		private final Assignment cIsSemicolonAssignment_4_0 = (Assignment)cAlternatives_4.eContents().get(0);
+		private final Keyword cIsSemicolonSemicolonKeyword_4_0_0 = (Keyword)cIsSemicolonAssignment_4_0.eContents().get(0);
 		private final Group cGroup_4_1 = (Group)cAlternatives_4.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
 		private final Assignment cElementsAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
@@ -3430,27 +3432,51 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//Feature:
 		//    MemberPrefix
 		//    ExtendedPrefix
-		//    (FeaturePrefix
-		//     ('feature' | PrefixMetadata)
-		//     FeatureDeclaration?
-		//    |( EndFeaturePrefix | BasicFeaturePrefix )
-		//     FeatureDeclaration
+		////    (
+		//////     FeaturePrefix
+		////     ( EndFeaturePrefix (crossingFeature+=CrossingFeature)?
+		////     | BasicFeaturePrefix
+		////     )
+		////     ( PrefixMetadata* isFeature?='feature' | PrefixMetadata+ )
+		//////     ( isFeature?='feature')?
+		////     FeatureDeclaration?
+		////    |( EndFeaturePrefix | BasicFeaturePrefix )
+		////     FeatureDeclaration
+		////    )
+		//    ( FeaturePrefix
+		//      ( isFeature?='feature' | PrefixMetadata )
+		////       ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
+		//      FeatureDeclaration?
+		//    | ( EndFeaturePrefix | BasicFeaturePrefix )
+		//      FeatureDeclaration
 		//    )
 		//    ValuePart?
-		//    ( ';' | '{' (elements+=TypeBodyElement)* '}')
+		//    ( isSemicolon ?= ';' | '{' (elements+=TypeBodyElement)* '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix
-		//ExtendedPrefix
-		//(FeaturePrefix
-		// ('feature' | PrefixMetadata)
-		// FeatureDeclaration?
-		//|( EndFeaturePrefix | BasicFeaturePrefix )
-		// FeatureDeclaration
-		//)
-		//ValuePart?
-		//( ';' | '{' (elements+=TypeBodyElement)* '}')
+		//    MemberPrefix
+		//    ExtendedPrefix
+		////    (
+		//////     FeaturePrefix
+		////     ( EndFeaturePrefix (crossingFeature+=CrossingFeature)?
+		////     | BasicFeaturePrefix
+		////     )
+		////     ( PrefixMetadata* isFeature?='feature' | PrefixMetadata+ )
+		//////     ( isFeature?='feature')?
+		////     FeatureDeclaration?
+		////    |( EndFeaturePrefix | BasicFeaturePrefix )
+		////     FeatureDeclaration
+		////    )
+		//    ( FeaturePrefix
+		//      ( isFeature?='feature' | PrefixMetadata )
+		////       ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
+		//      FeatureDeclaration?
+		//    | ( EndFeaturePrefix | BasicFeaturePrefix )
+		//      FeatureDeclaration
+		//    )
+		//    ValuePart?
+		//    ( isSemicolon ?= ';' | '{' (elements+=TypeBodyElement)* '}')
 		public Group getGroup() { return cGroup; }
 		
 		//MemberPrefix
@@ -3459,32 +3485,49 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ExtendedPrefix
 		public RuleCall getExtendedPrefixParserRuleCall_1() { return cExtendedPrefixParserRuleCall_1; }
 		
-		//(FeaturePrefix
-		// ('feature' | PrefixMetadata)
-		// FeatureDeclaration?
-		//|( EndFeaturePrefix | BasicFeaturePrefix )
-		// FeatureDeclaration
-		//)
+		////    (
+		//////     FeaturePrefix
+		////     ( EndFeaturePrefix (crossingFeature+=CrossingFeature)?
+		////     | BasicFeaturePrefix
+		////     )
+		////     ( PrefixMetadata* isFeature?='feature' | PrefixMetadata+ )
+		//////     ( isFeature?='feature')?
+		////     FeatureDeclaration?
+		////    |( EndFeaturePrefix | BasicFeaturePrefix )
+		////     FeatureDeclaration
+		////    )
+		//    ( FeaturePrefix
+		//      ( isFeature?='feature' | PrefixMetadata )
+		////       ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
+		//      FeatureDeclaration?
+		//    | ( EndFeaturePrefix | BasicFeaturePrefix )
+		//      FeatureDeclaration
+		//    )
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
-		//FeaturePrefix
-		//     ('feature' | PrefixMetadata)
-		//     FeatureDeclaration?
+		// FeaturePrefix
+		//      ( isFeature?='feature' | PrefixMetadata )
+		////       ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
+		//      FeatureDeclaration?
 		public Group getGroup_2_0() { return cGroup_2_0; }
 		
 		//FeaturePrefix
 		public RuleCall getFeaturePrefixParserRuleCall_2_0_0() { return cFeaturePrefixParserRuleCall_2_0_0; }
 		
-		//('feature' | PrefixMetadata)
+		//( isFeature?='feature' | PrefixMetadata )
 		public Alternatives getAlternatives_2_0_1() { return cAlternatives_2_0_1; }
 		
+		//isFeature?='feature'
+		public Assignment getIsFeatureAssignment_2_0_1_0() { return cIsFeatureAssignment_2_0_1_0; }
+		
 		//'feature'
-		public Keyword getFeatureKeyword_2_0_1_0() { return cFeatureKeyword_2_0_1_0; }
+		public Keyword getIsFeatureFeatureKeyword_2_0_1_0_0() { return cIsFeatureFeatureKeyword_2_0_1_0_0; }
 		
 		//PrefixMetadata
 		public RuleCall getPrefixMetadataParserRuleCall_2_0_1_1() { return cPrefixMetadataParserRuleCall_2_0_1_1; }
 		
-		//FeatureDeclaration?
+		////       ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
+		//      FeatureDeclaration?
 		public RuleCall getFeatureDeclarationParserRuleCall_2_0_2() { return cFeatureDeclarationParserRuleCall_2_0_2; }
 		
 		//( EndFeaturePrefix | BasicFeaturePrefix )
@@ -3506,11 +3549,14 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ValuePart?
 		public RuleCall getValuePartParserRuleCall_3() { return cValuePartParserRuleCall_3; }
 		
-		//( ';' | '{' (elements+=TypeBodyElement)* '}')
+		//( isSemicolon ?= ';' | '{' (elements+=TypeBodyElement)* '}')
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 		
+		//isSemicolon ?= ';'
+		public Assignment getIsSemicolonAssignment_4_0() { return cIsSemicolonAssignment_4_0; }
+		
 		//';'
-		public Keyword getSemicolonKeyword_4_0() { return cSemicolonKeyword_4_0; }
+		public Keyword getIsSemicolonSemicolonKeyword_4_0_0() { return cIsSemicolonSemicolonKeyword_4_0_0; }
 		
 		//'{' (elements+=TypeBodyElement)* '}'
 		public Group getGroup_4_1() { return cGroup_4_1; }
@@ -3884,7 +3930,36 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup_4_0 = (Group)cAlternatives_4.eContents().get(0);
 		private final RuleCall cFeatureDeclarationParserRuleCall_4_0_0 = (RuleCall)cGroup_4_0.eContents().get(0);
 		private final RuleCall cValuePartParserRuleCall_4_0_1 = (RuleCall)cGroup_4_0.eContents().get(1);
-		private final RuleCall cConnectorDeclarationParserRuleCall_4_1 = (RuleCall)cAlternatives_4.eContents().get(1);
+		private final Group cGroup_4_1 = (Group)cAlternatives_4.eContents().get(1);
+		private final Alternatives cAlternatives_4_1_0 = (Alternatives)cGroup_4_1.eContents().get(0);
+		private final Group cGroup_4_1_0_0 = (Group)cAlternatives_4_1_0.eContents().get(0);
+		private final RuleCall cFeatureDeclarationParserRuleCall_4_1_0_0_0 = (RuleCall)cGroup_4_1_0_0.eContents().get(0);
+		private final Assignment cIsFromAssignment_4_1_0_0_1 = (Assignment)cGroup_4_1_0_0.eContents().get(1);
+		private final Keyword cIsFromFromKeyword_4_1_0_0_1_0 = (Keyword)cIsFromAssignment_4_1_0_0_1.eContents().get(0);
+		private final Group cGroup_4_1_0_1 = (Group)cAlternatives_4_1_0.eContents().get(1);
+		private final Assignment cIsSufficientAssignment_4_1_0_1_0 = (Assignment)cGroup_4_1_0_1.eContents().get(0);
+		private final Keyword cIsSufficientAllKeyword_4_1_0_1_0_0 = (Keyword)cIsSufficientAssignment_4_1_0_1_0.eContents().get(0);
+		private final Assignment cIsFromAssignment_4_1_0_1_1 = (Assignment)cGroup_4_1_0_1.eContents().get(1);
+		private final Keyword cIsFromFromKeyword_4_1_0_1_1_0 = (Keyword)cIsFromAssignment_4_1_0_1_1.eContents().get(0);
+		private final Assignment cConnectorPartAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
+		private final RuleCall cConnectorPartConnectorEndParserRuleCall_4_1_1_0 = (RuleCall)cConnectorPartAssignment_4_1_1.eContents().get(0);
+		private final Keyword cToKeyword_4_1_2 = (Keyword)cGroup_4_1.eContents().get(2);
+		private final Assignment cConnectorPartAssignment_4_1_3 = (Assignment)cGroup_4_1.eContents().get(3);
+		private final RuleCall cConnectorPartConnectorEndParserRuleCall_4_1_3_0 = (RuleCall)cConnectorPartAssignment_4_1_3.eContents().get(0);
+		private final Group cGroup_4_2 = (Group)cAlternatives_4.eContents().get(2);
+		private final RuleCall cFeatureDeclarationParserRuleCall_4_2_0 = (RuleCall)cGroup_4_2.eContents().get(0);
+		private final Assignment cIsNaryAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
+		private final Keyword cIsNaryLeftParenthesisKeyword_4_2_1_0 = (Keyword)cIsNaryAssignment_4_2_1.eContents().get(0);
+		private final Assignment cConnectorPartAssignment_4_2_2 = (Assignment)cGroup_4_2.eContents().get(2);
+		private final RuleCall cConnectorPartConnectorEndParserRuleCall_4_2_2_0 = (RuleCall)cConnectorPartAssignment_4_2_2.eContents().get(0);
+		private final Keyword cCommaKeyword_4_2_3 = (Keyword)cGroup_4_2.eContents().get(3);
+		private final Assignment cConnectorPartAssignment_4_2_4 = (Assignment)cGroup_4_2.eContents().get(4);
+		private final RuleCall cConnectorPartConnectorEndParserRuleCall_4_2_4_0 = (RuleCall)cConnectorPartAssignment_4_2_4.eContents().get(0);
+		private final Group cGroup_4_2_5 = (Group)cGroup_4_2.eContents().get(5);
+		private final Keyword cCommaKeyword_4_2_5_0 = (Keyword)cGroup_4_2_5.eContents().get(0);
+		private final Assignment cConnectorPartAssignment_4_2_5_1 = (Assignment)cGroup_4_2_5.eContents().get(1);
+		private final RuleCall cConnectorPartConnectorEndParserRuleCall_4_2_5_1_0 = (RuleCall)cConnectorPartAssignment_4_2_5_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4_2_6 = (Keyword)cGroup_4_2.eContents().get(6);
 		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
 		private final Keyword cSemicolonKeyword_5_0 = (Keyword)cAlternatives_5.eContents().get(0);
 		private final Group cGroup_5_1 = (Group)cAlternatives_5.eContents().get(1);
@@ -3899,7 +3974,8 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    FeaturePrefix
 		//    'connector'
 		//    ( FeatureDeclaration? ValuePart?
-		//    | ConnectorDeclaration
+		//    | ( FeatureDeclaration? isFrom?='from' | isSufficient ?= 'all' (isFrom?='from')? )? connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd
+		//    | FeatureDeclaration? isNary?='(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
 		//    )
 		//    ( ';' | '{' (elements+=TypeBodyElement)* '}')
 		//;
@@ -3910,7 +3986,8 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//FeaturePrefix
 		//'connector'
 		//( FeatureDeclaration? ValuePart?
-		//| ConnectorDeclaration
+		//| ( FeatureDeclaration? isFrom?='from' | isSufficient ?= 'all' (isFrom?='from')? )? connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd
+		//| FeatureDeclaration? isNary?='(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
 		//)
 		//( ';' | '{' (elements+=TypeBodyElement)* '}')
 		public Group getGroup() { return cGroup; }
@@ -3928,7 +4005,8 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		public Keyword getConnectorKeyword_3() { return cConnectorKeyword_3; }
 		
 		//( FeatureDeclaration? ValuePart?
-		//| ConnectorDeclaration
+		//| ( FeatureDeclaration? isFrom?='from' | isSufficient ?= 'all' (isFrom?='from')? )? connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd
+		//| FeatureDeclaration? isNary?='(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
 		//)
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 		
@@ -3941,8 +4019,95 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ValuePart?
 		public RuleCall getValuePartParserRuleCall_4_0_1() { return cValuePartParserRuleCall_4_0_1; }
 		
-		//ConnectorDeclaration
-		public RuleCall getConnectorDeclarationParserRuleCall_4_1() { return cConnectorDeclarationParserRuleCall_4_1; }
+		//( FeatureDeclaration? isFrom?='from' | isSufficient ?= 'all' (isFrom?='from')? )? connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd
+		public Group getGroup_4_1() { return cGroup_4_1; }
+		
+		//( FeatureDeclaration? isFrom?='from' | isSufficient ?= 'all' (isFrom?='from')? )?
+		public Alternatives getAlternatives_4_1_0() { return cAlternatives_4_1_0; }
+		
+		//FeatureDeclaration? isFrom?='from'
+		public Group getGroup_4_1_0_0() { return cGroup_4_1_0_0; }
+		
+		//FeatureDeclaration?
+		public RuleCall getFeatureDeclarationParserRuleCall_4_1_0_0_0() { return cFeatureDeclarationParserRuleCall_4_1_0_0_0; }
+		
+		//isFrom?='from'
+		public Assignment getIsFromAssignment_4_1_0_0_1() { return cIsFromAssignment_4_1_0_0_1; }
+		
+		//'from'
+		public Keyword getIsFromFromKeyword_4_1_0_0_1_0() { return cIsFromFromKeyword_4_1_0_0_1_0; }
+		
+		//isSufficient ?= 'all' (isFrom?='from')?
+		public Group getGroup_4_1_0_1() { return cGroup_4_1_0_1; }
+		
+		//isSufficient ?= 'all'
+		public Assignment getIsSufficientAssignment_4_1_0_1_0() { return cIsSufficientAssignment_4_1_0_1_0; }
+		
+		//'all'
+		public Keyword getIsSufficientAllKeyword_4_1_0_1_0_0() { return cIsSufficientAllKeyword_4_1_0_1_0_0; }
+		
+		//(isFrom?='from')?
+		public Assignment getIsFromAssignment_4_1_0_1_1() { return cIsFromAssignment_4_1_0_1_1; }
+		
+		//'from'
+		public Keyword getIsFromFromKeyword_4_1_0_1_1_0() { return cIsFromFromKeyword_4_1_0_1_1_0; }
+		
+		//connectorPart += ConnectorEnd
+		public Assignment getConnectorPartAssignment_4_1_1() { return cConnectorPartAssignment_4_1_1; }
+		
+		//ConnectorEnd
+		public RuleCall getConnectorPartConnectorEndParserRuleCall_4_1_1_0() { return cConnectorPartConnectorEndParserRuleCall_4_1_1_0; }
+		
+		//'to'
+		public Keyword getToKeyword_4_1_2() { return cToKeyword_4_1_2; }
+		
+		//connectorPart += ConnectorEnd
+		public Assignment getConnectorPartAssignment_4_1_3() { return cConnectorPartAssignment_4_1_3; }
+		
+		//ConnectorEnd
+		public RuleCall getConnectorPartConnectorEndParserRuleCall_4_1_3_0() { return cConnectorPartConnectorEndParserRuleCall_4_1_3_0; }
+		
+		//FeatureDeclaration? isNary?='(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
+		public Group getGroup_4_2() { return cGroup_4_2; }
+		
+		//FeatureDeclaration?
+		public RuleCall getFeatureDeclarationParserRuleCall_4_2_0() { return cFeatureDeclarationParserRuleCall_4_2_0; }
+		
+		//isNary?='('
+		public Assignment getIsNaryAssignment_4_2_1() { return cIsNaryAssignment_4_2_1; }
+		
+		//'('
+		public Keyword getIsNaryLeftParenthesisKeyword_4_2_1_0() { return cIsNaryLeftParenthesisKeyword_4_2_1_0; }
+		
+		//connectorPart += ConnectorEnd
+		public Assignment getConnectorPartAssignment_4_2_2() { return cConnectorPartAssignment_4_2_2; }
+		
+		//ConnectorEnd
+		public RuleCall getConnectorPartConnectorEndParserRuleCall_4_2_2_0() { return cConnectorPartConnectorEndParserRuleCall_4_2_2_0; }
+		
+		//','
+		public Keyword getCommaKeyword_4_2_3() { return cCommaKeyword_4_2_3; }
+		
+		//connectorPart += ConnectorEnd
+		public Assignment getConnectorPartAssignment_4_2_4() { return cConnectorPartAssignment_4_2_4; }
+		
+		//ConnectorEnd
+		public RuleCall getConnectorPartConnectorEndParserRuleCall_4_2_4_0() { return cConnectorPartConnectorEndParserRuleCall_4_2_4_0; }
+		
+		//(',' connectorPart += ConnectorEnd)*
+		public Group getGroup_4_2_5() { return cGroup_4_2_5; }
+		
+		//','
+		public Keyword getCommaKeyword_4_2_5_0() { return cCommaKeyword_4_2_5_0; }
+		
+		//connectorPart += ConnectorEnd
+		public Assignment getConnectorPartAssignment_4_2_5_1() { return cConnectorPartAssignment_4_2_5_1; }
+		
+		//ConnectorEnd
+		public RuleCall getConnectorPartConnectorEndParserRuleCall_4_2_5_1_0() { return cConnectorPartConnectorEndParserRuleCall_4_2_5_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_4_2_6() { return cRightParenthesisKeyword_4_2_6; }
 		
 		//( ';' | '{' (elements+=TypeBodyElement)* '}')
 		public Alternatives getAlternatives_5() { return cAlternatives_5; }
@@ -6324,162 +6489,6 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//FeatureSpecialization+
 		public RuleCall getFeatureSpecializationParserRuleCall_1_1() { return cFeatureSpecializationParserRuleCall_1_1; }
 	}
-	public class ConnectorDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.kermloc.KerMLOC.ConnectorDeclaration");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cBinaryConnectorDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cNaryConnectorDeclarationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//fragment ConnectorDeclaration:
-		//    BinaryConnectorDeclaration | NaryConnectorDeclaration
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//BinaryConnectorDeclaration | NaryConnectorDeclaration
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//BinaryConnectorDeclaration
-		public RuleCall getBinaryConnectorDeclarationParserRuleCall_0() { return cBinaryConnectorDeclarationParserRuleCall_0; }
-		
-		//NaryConnectorDeclaration
-		public RuleCall getNaryConnectorDeclarationParserRuleCall_1() { return cNaryConnectorDeclarationParserRuleCall_1; }
-	}
-	public class BinaryConnectorDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.kermloc.KerMLOC.BinaryConnectorDeclaration");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
-		private final RuleCall cFeatureDeclarationParserRuleCall_0_0_0 = (RuleCall)cGroup_0_0.eContents().get(0);
-		private final Keyword cFromKeyword_0_0_1 = (Keyword)cGroup_0_0.eContents().get(1);
-		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
-		private final Assignment cIsSufficientAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
-		private final Keyword cIsSufficientAllKeyword_0_1_0_0 = (Keyword)cIsSufficientAssignment_0_1_0.eContents().get(0);
-		private final Keyword cFromKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
-		private final Assignment cConnectorPartBinaryAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cConnectorPartBinaryConnectorEndParserRuleCall_1_0 = (RuleCall)cConnectorPartBinaryAssignment_1.eContents().get(0);
-		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cConnectorPartBinaryAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cConnectorPartBinaryConnectorEndParserRuleCall_3_0 = (RuleCall)cConnectorPartBinaryAssignment_3.eContents().get(0);
-		
-		//fragment BinaryConnectorDeclaration:
-		//    ( FeatureDeclaration? 'from' | isSufficient ?= 'all' 'from'? )?
-		//    connectorPartBinary += ConnectorEnd 'to'
-		//    connectorPartBinary += ConnectorEnd
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//( FeatureDeclaration? 'from' | isSufficient ?= 'all' 'from'? )?
-		//connectorPartBinary += ConnectorEnd 'to'
-		//connectorPartBinary += ConnectorEnd
-		public Group getGroup() { return cGroup; }
-		
-		//( FeatureDeclaration? 'from' | isSufficient ?= 'all' 'from'? )?
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-		
-		//FeatureDeclaration? 'from'
-		public Group getGroup_0_0() { return cGroup_0_0; }
-		
-		//FeatureDeclaration?
-		public RuleCall getFeatureDeclarationParserRuleCall_0_0_0() { return cFeatureDeclarationParserRuleCall_0_0_0; }
-		
-		//'from'
-		public Keyword getFromKeyword_0_0_1() { return cFromKeyword_0_0_1; }
-		
-		//isSufficient ?= 'all' 'from'?
-		public Group getGroup_0_1() { return cGroup_0_1; }
-		
-		//isSufficient ?= 'all'
-		public Assignment getIsSufficientAssignment_0_1_0() { return cIsSufficientAssignment_0_1_0; }
-		
-		//'all'
-		public Keyword getIsSufficientAllKeyword_0_1_0_0() { return cIsSufficientAllKeyword_0_1_0_0; }
-		
-		//'from'?
-		public Keyword getFromKeyword_0_1_1() { return cFromKeyword_0_1_1; }
-		
-		//connectorPartBinary += ConnectorEnd
-		public Assignment getConnectorPartBinaryAssignment_1() { return cConnectorPartBinaryAssignment_1; }
-		
-		//ConnectorEnd
-		public RuleCall getConnectorPartBinaryConnectorEndParserRuleCall_1_0() { return cConnectorPartBinaryConnectorEndParserRuleCall_1_0; }
-		
-		//'to'
-		public Keyword getToKeyword_2() { return cToKeyword_2; }
-		
-		//connectorPartBinary += ConnectorEnd
-		public Assignment getConnectorPartBinaryAssignment_3() { return cConnectorPartBinaryAssignment_3; }
-		
-		//ConnectorEnd
-		public RuleCall getConnectorPartBinaryConnectorEndParserRuleCall_3_0() { return cConnectorPartBinaryConnectorEndParserRuleCall_3_0; }
-	}
-	public class NaryConnectorDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.kermloc.KerMLOC.NaryConnectorDeclaration");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cFeatureDeclarationParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cConnectorPartAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cConnectorPartConnectorEndParserRuleCall_2_0 = (RuleCall)cConnectorPartAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cConnectorPartAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cConnectorPartConnectorEndParserRuleCall_4_0 = (RuleCall)cConnectorPartAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cConnectorPartAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cConnectorPartConnectorEndParserRuleCall_5_1_0 = (RuleCall)cConnectorPartAssignment_5_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		
-		//fragment NaryConnectorDeclaration:
-		//    FeatureDeclaration?
-		//    '(' connectorPart += ConnectorEnd ','
-		//        connectorPart += ConnectorEnd
-		//        ( ',' connectorPart += ConnectorEnd )*
-		//    ')'
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//FeatureDeclaration?
-		//'(' connectorPart += ConnectorEnd ','
-		//    connectorPart += ConnectorEnd
-		//    ( ',' connectorPart += ConnectorEnd )*
-		//')'
-		public Group getGroup() { return cGroup; }
-		
-		//FeatureDeclaration?
-		public RuleCall getFeatureDeclarationParserRuleCall_0() { return cFeatureDeclarationParserRuleCall_0; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
-		//connectorPart += ConnectorEnd
-		public Assignment getConnectorPartAssignment_2() { return cConnectorPartAssignment_2; }
-		
-		//ConnectorEnd
-		public RuleCall getConnectorPartConnectorEndParserRuleCall_2_0() { return cConnectorPartConnectorEndParserRuleCall_2_0; }
-		
-		//','
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-		
-		//connectorPart += ConnectorEnd
-		public Assignment getConnectorPartAssignment_4() { return cConnectorPartAssignment_4; }
-		
-		//ConnectorEnd
-		public RuleCall getConnectorPartConnectorEndParserRuleCall_4_0() { return cConnectorPartConnectorEndParserRuleCall_4_0; }
-		
-		//( ',' connectorPart += ConnectorEnd )*
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//','
-		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
-		
-		//connectorPart += ConnectorEnd
-		public Assignment getConnectorPartAssignment_5_1() { return cConnectorPartAssignment_5_1; }
-		
-		//ConnectorEnd
-		public RuleCall getConnectorPartConnectorEndParserRuleCall_5_1_0() { return cConnectorPartConnectorEndParserRuleCall_5_1_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
-	}
 	public class ExtendedPrefixElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.kermloc.KerMLOC.ExtendedPrefix");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -8601,9 +8610,6 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final FlowDeclarationElements pFlowDeclaration;
 	private final PayloadFeatureElements pPayloadFeature;
 	private final PayloadFeatureSpecializationPartElements pPayloadFeatureSpecializationPart;
-	private final ConnectorDeclarationElements pConnectorDeclaration;
-	private final BinaryConnectorDeclarationElements pBinaryConnectorDeclaration;
-	private final NaryConnectorDeclarationElements pNaryConnectorDeclaration;
 	private final ExtendedPrefixElements pExtendedPrefix;
 	private final VisibilityIndicatorElements eVisibilityIndicator;
 	private final FeatureDirectionElements eFeatureDirection;
@@ -8772,9 +8778,6 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pFlowDeclaration = new FlowDeclarationElements();
 		this.pPayloadFeature = new PayloadFeatureElements();
 		this.pPayloadFeatureSpecializationPart = new PayloadFeatureSpecializationPartElements();
-		this.pConnectorDeclaration = new ConnectorDeclarationElements();
-		this.pBinaryConnectorDeclaration = new BinaryConnectorDeclarationElements();
-		this.pNaryConnectorDeclaration = new NaryConnectorDeclarationElements();
 		this.pExtendedPrefix = new ExtendedPrefixElements();
 		this.eVisibilityIndicator = new VisibilityIndicatorElements();
 		this.eFeatureDirection = new FeatureDirectionElements();
@@ -9600,14 +9603,26 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//Feature:
 	//    MemberPrefix
 	//    ExtendedPrefix
-	//    (FeaturePrefix
-	//     ('feature' | PrefixMetadata)
-	//     FeatureDeclaration?
-	//    |( EndFeaturePrefix | BasicFeaturePrefix )
-	//     FeatureDeclaration
+	////    (
+	//////     FeaturePrefix
+	////     ( EndFeaturePrefix (crossingFeature+=CrossingFeature)?
+	////     | BasicFeaturePrefix
+	////     )
+	////     ( PrefixMetadata* isFeature?='feature' | PrefixMetadata+ )
+	//////     ( isFeature?='feature')?
+	////     FeatureDeclaration?
+	////    |( EndFeaturePrefix | BasicFeaturePrefix )
+	////     FeatureDeclaration
+	////    )
+	//    ( FeaturePrefix
+	//      ( isFeature?='feature' | PrefixMetadata )
+	////       ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
+	//      FeatureDeclaration?
+	//    | ( EndFeaturePrefix | BasicFeaturePrefix )
+	//      FeatureDeclaration
 	//    )
 	//    ValuePart?
-	//    ( ';' | '{' (elements+=TypeBodyElement)* '}')
+	//    ( isSemicolon ?= ';' | '{' (elements+=TypeBodyElement)* '}')
 	//;
 	public FeatureElements getFeatureAccess() {
 		return pFeature;
@@ -9692,7 +9707,8 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    FeaturePrefix
 	//    'connector'
 	//    ( FeatureDeclaration? ValuePart?
-	//    | ConnectorDeclaration
+	//    | ( FeatureDeclaration? isFrom?='from' | isSufficient ?= 'all' (isFrom?='from')? )? connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd
+	//    | FeatureDeclaration? isNary?='(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
 	//    )
 	//    ( ';' | '{' (elements+=TypeBodyElement)* '}')
 	//;
@@ -10317,45 +10333,6 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getPayloadFeatureSpecializationPartRule() {
 		return getPayloadFeatureSpecializationPartAccess().getRule();
-	}
-	
-	//fragment ConnectorDeclaration:
-	//    BinaryConnectorDeclaration | NaryConnectorDeclaration
-	//;
-	public ConnectorDeclarationElements getConnectorDeclarationAccess() {
-		return pConnectorDeclaration;
-	}
-	
-	public ParserRule getConnectorDeclarationRule() {
-		return getConnectorDeclarationAccess().getRule();
-	}
-	
-	//fragment BinaryConnectorDeclaration:
-	//    ( FeatureDeclaration? 'from' | isSufficient ?= 'all' 'from'? )?
-	//    connectorPartBinary += ConnectorEnd 'to'
-	//    connectorPartBinary += ConnectorEnd
-	//;
-	public BinaryConnectorDeclarationElements getBinaryConnectorDeclarationAccess() {
-		return pBinaryConnectorDeclaration;
-	}
-	
-	public ParserRule getBinaryConnectorDeclarationRule() {
-		return getBinaryConnectorDeclarationAccess().getRule();
-	}
-	
-	//fragment NaryConnectorDeclaration:
-	//    FeatureDeclaration?
-	//    '(' connectorPart += ConnectorEnd ','
-	//        connectorPart += ConnectorEnd
-	//        ( ',' connectorPart += ConnectorEnd )*
-	//    ')'
-	//;
-	public NaryConnectorDeclarationElements getNaryConnectorDeclarationAccess() {
-		return pNaryConnectorDeclaration;
-	}
-	
-	public ParserRule getNaryConnectorDeclarationRule() {
-		return getNaryConnectorDeclarationAccess().getRule();
 	}
 	
 	//fragment ExtendedPrefix:

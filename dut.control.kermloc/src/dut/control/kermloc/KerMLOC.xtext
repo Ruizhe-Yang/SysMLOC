@@ -417,11 +417,23 @@ TypeFeaturing:
 Feature:
 	MemberPrefix
 	ExtendedPrefix
-	(FeaturePrefix
-	 ('feature' | PrefixMetadata)
-	 FeatureDeclaration?
-	|( EndFeaturePrefix | BasicFeaturePrefix )
-	 FeatureDeclaration
+//	(
+////	 FeaturePrefix
+//	 ( EndFeaturePrefix (crossingFeature+=CrossingFeature)?
+//	 | BasicFeaturePrefix
+//	 )
+//	 ( PrefixMetadata* isFeature?='feature' | PrefixMetadata+ )
+////	 ( isFeature?='feature')?
+//	 FeatureDeclaration?
+//	|( EndFeaturePrefix | BasicFeaturePrefix )
+//	 FeatureDeclaration
+//	)
+	( FeaturePrefix
+	  ( isFeature?='feature' | PrefixMetadata )
+//	   ( isFeature?='feature' | (NULLFeature?='NULLfeature')? PrefixMetadata )
+	  FeatureDeclaration?
+	| ( EndFeaturePrefix | BasicFeaturePrefix )
+	  FeatureDeclaration
 	)
 	ValuePart?
 	( ';' | '{' (elements+=TypeBodyElement)* '}')
@@ -474,8 +486,9 @@ Connector:
 	FeaturePrefix
 	'connector'
 	( FeatureDeclaration? ValuePart?
-	| ConnectorDeclaration
-	) 
+	| ( FeatureDeclaration? isFrom?='from' | isSufficient ?= 'all' (isFrom?='from')? )? connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd
+	| FeatureDeclaration? isNary?='(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
+	)
 	( ';' | '{' (elements+=TypeBodyElement)* '}')
 ;
 
@@ -764,24 +777,6 @@ fragment PayloadFeature:
 fragment PayloadFeatureSpecializationPart:
 	( -> FeatureSpecialization )+ MultiplicityPart? FeatureSpecialization*
 	| MultiplicityPart FeatureSpecialization+
-;
-
-fragment ConnectorDeclaration:
-	BinaryConnectorDeclaration | NaryConnectorDeclaration
-;
-
-fragment BinaryConnectorDeclaration:
-	( FeatureDeclaration? 'from' | isSufficient ?= 'all' 'from'? )?
-	connectorPartBinary += ConnectorEnd 'to' 
-	connectorPartBinary += ConnectorEnd
-;
-
-fragment NaryConnectorDeclaration:
-	FeatureDeclaration? 
-	'(' connectorPart += ConnectorEnd ',' 
-	    connectorPart += ConnectorEnd
-	    ( ',' connectorPart += ConnectorEnd )* 
-	')'
 ;
 
 fragment ExtendedPrefix:

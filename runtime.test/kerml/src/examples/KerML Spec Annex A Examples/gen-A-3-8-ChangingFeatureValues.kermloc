@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="ChangingFeatureValuesModelToBeExecuted">
+    <elements xsi:type="kerMLOC:Documentation" body="/* &#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Boolean"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="FeatureReferencingPerformances::FeatureWritePerformance"/>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="Manufacture">
+      <elements xsi:type="kerMLOC:Feature" declaredName="objectToFinish" MultiLow="1" isFeature="true">
+        <typings>Product</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="paint" MultiLow="1">
+        <typings>Paint</typings>
+        <elements xsi:type="kerMLOC:Feature" valuePart="objectToFinish">
+          <redefinitions>objectToPaint</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="dry" MultiLow="*">
+        <typings>Dry</typings>
+        <elements xsi:type="kerMLOC:Feature" valuePart="objectToFinish">
+          <redefinitions>objectToDry</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" declaredName="p_before_d" isFirst="true">
+        <connectorPart MultiLow="1" refElement="paint"/>
+        <connectorPart MultiLow="1" refElement="dry"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="ship" MultiLow="*">
+        <typings>Ship</typings>
+        <elements xsi:type="kerMLOC:Feature" valuePart="objectToFinish">
+          <redefinitions>objectToShip</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" declaredName="d_before_s" isFirst="true">
+        <connectorPart MultiLow="1" refElement="dry"/>
+        <connectorPart MultiLow="1" refElement="ship"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Structure" declaredName="Product">
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isPainted" MultiLow="1" isInitial="true" valuePart="false" isFeature="true">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isDry" MultiLow="1" isInitial="true" valuePart="true" isFeature="true">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isShipped" MultiLow="1" isInitial="true" valuePart="false" isFeature="true">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="Paint">
+      <elements xsi:type="kerMLOC:Feature" declaredName="objectToPaint" MultiLow="1" isFeature="true">
+        <typings>Product</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="painting" MultiLow="1">
+        <typings>FeatureWritePerformance</typings>
+        <elements xsi:type="kerMLOC:Feature" direction="in" valuePart="objectToPaint">
+          <typings>Product</typings>
+          <redefinitions>onOccurrence</redefinitions>
+          <elements xsi:type="kerMLOC:Feature">
+            <typings>Product</typings>
+            <redefinitions>startingAt</redefinitions>
+            <elements xsi:type="kerMLOC:Feature" MultiLow="1">
+              <typings>Boolean</typings>
+              <subsetting>isDry</subsetting>
+              <redefinitions>accessedFeature</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" direction="in" valuePart="false">
+          <redefinitions>replacementValues</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" declaredName="p_before_p" isFirst="true">
+        <connectorPart MultiLow="1" refElement="painting"/>
+        <connectorPart MultiLow="1" refElement="painted"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="painted" MultiLow="*">
+        <typings>FeatureWritePerformance</typings>
+        <elements xsi:type="kerMLOC:Feature" direction="in" valuePart="objectToPaint">
+          <typings>Product</typings>
+          <redefinitions>onOccurrence</redefinitions>
+          <elements xsi:type="kerMLOC:Feature">
+            <typings>Product</typings>
+            <redefinitions>startingAt</redefinitions>
+            <elements xsi:type="kerMLOC:Feature" MultiLow="1">
+              <typings>Boolean</typings>
+              <subsetting>isPainted</subsetting>
+              <redefinitions>accessedFeature</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" direction="in" valuePart="true">
+          <redefinitions>replacementValues</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="Dry">
+      <elements xsi:type="kerMLOC:Feature" declaredName="objectToDry" MultiLow="1" isFeature="true">
+        <typings>Product</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="dried" MultiLow="1">
+        <typings>FeatureWritePerformance</typings>
+        <elements xsi:type="kerMLOC:Feature" direction="in" valuePart="objectToDry">
+          <typings>Product</typings>
+          <redefinitions>onOccurrence</redefinitions>
+          <elements xsi:type="kerMLOC:Feature">
+            <typings>Product</typings>
+            <redefinitions>startingAt</redefinitions>
+            <elements xsi:type="kerMLOC:Feature" MultiLow="1">
+              <typings>Boolean</typings>
+              <subsetting>isDry</subsetting>
+              <redefinitions>accessedFeature</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" direction="in" valuePart="true">
+          <redefinitions>replacementValues</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="Ship">
+      <elements xsi:type="kerMLOC:Feature" declaredName="objectToShip" MultiLow="1" isFeature="true">
+        <typings>Product</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="shipped" MultiLow="1">
+        <typings>FeatureWritePerformance</typings>
+        <elements xsi:type="kerMLOC:Feature" direction="in" valuePart="objectToShip">
+          <typings>Product</typings>
+          <redefinitions>onOccurrence</redefinitions>
+          <elements xsi:type="kerMLOC:Feature">
+            <typings>Product</typings>
+            <redefinitions>startingAt</redefinitions>
+            <elements xsi:type="kerMLOC:Feature" MultiLow="1">
+              <typings>Boolean</typings>
+              <subsetting>isShipped</subsetting>
+              <redefinitions>accessedFeature</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" direction="in" valuePart="true">
+          <redefinitions>replacementValues</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+  <elements xsi:type="kerMLOC:Package" declaredName="ChangingFeatureValuesExecution">
+    <elements xsi:type="kerMLOC:Documentation" body="/* &#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Atoms" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ChangingFeatureValuesModelToBeExecuted" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::Occurrence"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::HappensBefore"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="FeatureReferencingPerformances::FeatureWritePerformance"/>
+    <elements xsi:type="kerMLOC:Structure" declaredName="ProductTimeSlice">
+      <subsetting>Product</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <redefinitions>isPainted</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <redefinitions>isDry</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <redefinitions>isShipped</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Structure" declaredName="MyProduct">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Product</subsetting>
+      <elements xsi:type="kerMLOC:Feature" declaredName="beforePaint" MultiLow="1" isFeature="true">
+        <typings>ProductTimeSlice</typings>
+        <subsetting>timeSlices</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="whilePainting" MultiLow="1" isFeature="true">
+        <typings>ProductTimeSlice</typings>
+        <subsetting>timeSlices</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="afterPaint" MultiLow="1" isFeature="true">
+        <typings>ProductTimeSlice</typings>
+        <subsetting>timeSlices</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="afterDry" MultiLow="1" isFeature="true">
+        <typings>ProductTimeSlice</typings>
+        <subsetting>timeSlices</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="afterShip" MultiLow="1" isFeature="true">
+        <typings>ProductTimeSlice</typings>
+        <subsetting>timeSlices</subsetting>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MyProductFeatureWrite">
+      <subsetting>FeatureWritePerformance</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in">
+        <typings>MyProduct</typings>
+        <redefinitions>onOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="PaintingMyProductFeatureWrite">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>MyProductFeatureWrite</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="PaintedMyProductFeatureWrite">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>MyProductFeatureWrite</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="MyPaintingFW_Before_PaintFW_Link">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>HappensBefore</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+        <typings>PaintingMyProductFeatureWrite</typings>
+        <redefinitions>earlierOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+        <typings>PaintedMyProductFeatureWrite</typings>
+        <redefinitions>laterOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MyPaint">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Paint</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <typings>MyProduct</typings>
+        <redefinitions>objectToPaint</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Step">
+        <typings>PaintingMyProductFeatureWrite</typings>
+        <redefinitions>painting</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="onOccurrence"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Step">
+        <typings>PaintedMyProductFeatureWrite</typings>
+        <redefinitions>painted</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="onOccurrence"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" isFirst="true">
+        <typings>MyPaintingFW_Before_PaintFW_Link</typings>
+        <redefinitions>p_before_p</redefinitions>
+        <connectorPart refElement="painting"/>
+        <connectorPart refElement="painted"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MyDry">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Dry</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <typings>MyProduct</typings>
+        <redefinitions>objectToDry</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Step">
+        <typings>MyProductFeatureWrite</typings>
+        <redefinitions>dried</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="onOccurrence"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="MyPaint_Before_Dry_Link">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>HappensBefore</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+        <typings>MyPaint</typings>
+        <redefinitions>earlierOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+        <typings>MyDry</typings>
+        <redefinitions>laterOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MyShip">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Ship</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <typings>MyProduct</typings>
+        <redefinitions>objectToShip</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Step">
+        <typings>MyProductFeatureWrite</typings>
+        <redefinitions>shipped</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="onOccurrence"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="MyDry_Before_Ship_Link">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>HappensBefore</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+        <typings>MyDry</typings>
+        <redefinitions>earlierOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" isFeature="true">
+        <typings>MyShip</typings>
+        <redefinitions>laterOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="MyManufacture">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Manufacture</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <typings>MyProduct</typings>
+        <redefinitions>objectToFinish</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <subsetting>objectToFinish.beforePaint.startShot.timeCoincidentOccurrences</subsetting>
+        <redefinitions>startShot</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="obPiP" valuePart="false" isFeature="true">
+        <chainingFeature>objectToFinish.beforePaint.isPainted</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="obPiD" valuePart="true" isFeature="true">
+        <chainingFeature>objectToFinish.beforePaint.isDry</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="obPiS" valuePart="false" isFeature="true">
+        <chainingFeature>objectToFinish.beforePaint.isShipped</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Step">
+        <typings>MyPaint</typings>
+        <redefinitions>paint</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+          <redefinitions>paint::objectToPaint</redefinitions>
+          <redefinitions>MyPaint::objectToPaint</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <subsetting>objectToFinish.beforePaint.immediateSuccessors</subsetting>
+        <subsetting>objectToFinish.whilePainting.startShot.timeCoincidentOccurrences</subsetting>
+        <chainingFeature>paint.painting.endShot</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="owPiP" valuePart="false" isFeature="true">
+        <chainingFeature>objectToFinish.whilePainting.isPainted</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="owPiD" valuePart="false" isFeature="true">
+        <chainingFeature>objectToFinish.whilePainting.isDry</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="owPiS" valuePart="false" isFeature="true">
+        <chainingFeature>objectToFinish.whilePainting.isShipped</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <subsetting>objectToFinish.whilePainting.immediateSuccessors</subsetting>
+        <subsetting>objectToFinish.afterPaint.startShot.timeCoincidentOccurrences</subsetting>
+        <chainingFeature>paint.painted.endShot</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="oaPiP" valuePart="true" isFeature="true">
+        <chainingFeature>objectToFinish.afterPaint.isPainted</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="oaPiD" valuePart="false" isFeature="true">
+        <chainingFeature>objectToFinish.afterPaint.isDry</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="oaPiS" valuePart="false" isFeature="true">
+        <chainingFeature>objectToFinish.afterPaint.isShipped</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Step">
+        <typings>MyDry</typings>
+        <redefinitions>dry</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+          <redefinitions>dry::objectToDry</redefinitions>
+          <redefinitions>MyDry::objectToDry</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" MultiLow="1" isFirst="true">
+        <typings>MyPaint_Before_Dry_Link</typings>
+        <redefinitions>p_before_d</redefinitions>
+        <connectorPart refElement="paint"/>
+        <connectorPart refElement="dry"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <subsetting>objectToFinish.afterPaint.immediateSuccessors</subsetting>
+        <subsetting>objectToFinish.afterDry.startShot.timeCoincidentOccurrences</subsetting>
+        <chainingFeature>dry.dried.endShot</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="oaDiP" valuePart="true" isFeature="true">
+        <chainingFeature>objectToFinish.afterDry.isPainted</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="oaDiD" valuePart="true" isFeature="true">
+        <chainingFeature>objectToFinish.afterDry.isDry</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="oaDiS" valuePart="false" isFeature="true">
+        <chainingFeature>objectToFinish.afterDry.isShipped</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Step">
+        <typings>MyShip</typings>
+        <redefinitions>ship</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" isFeature="true">
+          <redefinitions>ship::objectToShip</redefinitions>
+          <redefinitions>MyShip::objectToShip</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" MultiLow="1" isFirst="true">
+        <typings>MyDry_Before_Ship_Link</typings>
+        <redefinitions>d_before_s</redefinitions>
+        <connectorPart refElement="dry"/>
+        <connectorPart refElement="ship"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <subsetting>objectToFinish.afterDry.immediateSuccessors</subsetting>
+        <subsetting>objectToFinish.afterShip.startShot.timeCoincidentOccurrences</subsetting>
+        <chainingFeature>ship.shipped.endShot</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isFeature="true">
+        <subsetting>objectToFinish.afterShip.timeCoincidentOccurrences</subsetting>
+        <redefinitions>endShot</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="oaSiP" valuePart="true" isFeature="true">
+        <chainingFeature>objectToFinish.afterShip.isPainted</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="oaSiD" valuePart="true" isFeature="true">
+        <chainingFeature>objectToFinish.afterShip.isDry</chainingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="oaSiS" valuePart="true" isFeature="true">
+        <chainingFeature>objectToFinish.afterShip.isShipped</chainingFeature>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

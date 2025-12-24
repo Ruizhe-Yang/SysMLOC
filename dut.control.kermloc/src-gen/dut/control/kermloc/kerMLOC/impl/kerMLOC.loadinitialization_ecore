@@ -212,6 +212,8 @@
         eType="#//RelationshipBodyElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature" eSuperTypes="#//FeatureElement #//MemberPrefix #//ExtendedPrefix #//FeaturePrefix #//EndFeaturePrefix #//BasicFeaturePrefix #//PrefixMetadata #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//MultiplicityModifiers #//FeatureConjugationPart #//FeatureRelationshipPart #//TypeRelationshipPart #//DisjoiningPart #//UnioningPart #//IntersectingPart #//DifferencingPart #//ChainingPart #//InvertingPart #//TypeFeaturingPart #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFeature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSemicolon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//TypeBodyElement" containment="true"/>
   </eClassifiers>
@@ -238,7 +240,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
         upperBound="-1" eType="#//ResultExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//FeatureElement #//MemberPrefix #//ExtendedPrefix #//FeaturePrefix #//EndFeaturePrefix #//BasicFeaturePrefix #//PrefixMetadata #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//MultiplicityModifiers #//FeatureConjugationPart #//FeatureRelationshipPart #//TypeRelationshipPart #//DisjoiningPart #//UnioningPart #//IntersectingPart #//DifferencingPart #//ChainingPart #//InvertingPart #//TypeFeaturingPart #//ValuePart #//FeatureValue #//ConnectorDeclaration #//BinaryConnectorDeclaration #//NaryConnectorDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//FeatureElement #//MemberPrefix #//ExtendedPrefix #//FeaturePrefix #//EndFeaturePrefix #//BasicFeaturePrefix #//PrefixMetadata #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//MultiplicityModifiers #//FeatureConjugationPart #//FeatureRelationshipPart #//TypeRelationshipPart #//DisjoiningPart #//UnioningPart #//IntersectingPart #//DifferencingPart #//ChainingPart #//InvertingPart #//TypeFeaturingPart #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFrom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectorPart" upperBound="-1"
+        eType="#//ConnectorEnd" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//TypeBodyElement" containment="true"/>
   </eClassifiers>
@@ -401,15 +407,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PayloadFeatureSpecializationPart" eSuperTypes="#//FeatureSpecialization #//MultiplicityPart"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ConnectorDeclaration" eSuperTypes="#//BinaryConnectorDeclaration #//FeatureDeclaration #//NaryConnectorDeclaration"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BinaryConnectorDeclaration" eSuperTypes="#//FeatureDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="connectorPartBinary" upperBound="-1"
-        eType="#//ConnectorEnd" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NaryConnectorDeclaration" eSuperTypes="#//FeatureDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="connectorPart" upperBound="-1"
-        eType="#//ConnectorEnd" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExtendedPrefix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReturn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMember" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

@@ -10,7 +10,6 @@ import dut.control.kermloc.kerMLOC.Association;
 import dut.control.kermloc.kerMLOC.AssociationStructure;
 import dut.control.kermloc.kerMLOC.BasicFeaturePrefix;
 import dut.control.kermloc.kerMLOC.Behavior;
-import dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.BindingConnector;
 import dut.control.kermloc.kerMLOC.BooleanExpression;
 import dut.control.kermloc.kerMLOC.ChainingPart;
@@ -22,7 +21,6 @@ import dut.control.kermloc.kerMLOC.Comment;
 import dut.control.kermloc.kerMLOC.Conjugation;
 import dut.control.kermloc.kerMLOC.ConjugationPart;
 import dut.control.kermloc.kerMLOC.Connector;
-import dut.control.kermloc.kerMLOC.ConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.ConnectorEnd;
 import dut.control.kermloc.kerMLOC.CrossFeatureChain;
 import dut.control.kermloc.kerMLOC.CrossingFeature;
@@ -71,7 +69,6 @@ import dut.control.kermloc.kerMLOC.MultiplicityPart;
 import dut.control.kermloc.kerMLOC.MultiplicityRange;
 import dut.control.kermloc.kerMLOC.Namespace;
 import dut.control.kermloc.kerMLOC.NamespaceBodyElement;
-import dut.control.kermloc.kerMLOC.NaryConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.NonFeatureElement;
 import dut.control.kermloc.kerMLOC.PackageBodyElement;
 import dut.control.kermloc.kerMLOC.PayloadFeature;
@@ -1247,8 +1244,8 @@ public class KerMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseMemberPrefix(connector);
         if (result == null) result = caseExtendedPrefix(connector);
         if (result == null) result = caseFeaturePrefix(connector);
+        if (result == null) result = caseFeatureDeclaration(connector);
         if (result == null) result = caseValuePart(connector);
-        if (result == null) result = caseConnectorDeclaration(connector);
         if (result == null) result = caseGeneralBodyElements(connector);
         if (result == null) result = caseRelationshipBodyElement(connector);
         if (result == null) result = caseEndFeaturePrefix(connector);
@@ -1259,13 +1256,10 @@ public class KerMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureConjugationPart(connector);
         if (result == null) result = caseFeatureRelationshipPart(connector);
         if (result == null) result = caseFeatureValue(connector);
-        if (result == null) result = caseBinaryConnectorDeclaration(connector);
-        if (result == null) result = caseNaryConnectorDeclaration(connector);
         if (result == null) result = casePackageBodyElement(connector);
         if (result == null) result = caseTypeBodyElement(connector);
         if (result == null) result = caseNamespaceBodyElement(connector);
         if (result == null) result = caseFunctionBodyElement(connector);
-        if (result == null) result = caseFeatureDeclaration(connector);
         if (result == null) result = caseFeatureSpecialization(connector);
         if (result == null) result = caseMultiplicityPart(connector);
         if (result == null) result = caseTypeRelationshipPart(connector);
@@ -1910,95 +1904,6 @@ public class KerMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseRedefinitionFeatureChain(payloadFeatureSpecializationPart);
         if (result == null) result = caseMultiplicityRange(payloadFeatureSpecializationPart);
         if (result == null) result = caseMultiplicityModifiers(payloadFeatureSpecializationPart);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case KerMLOCPackage.CONNECTOR_DECLARATION:
-      {
-        ConnectorDeclaration connectorDeclaration = (ConnectorDeclaration)theEObject;
-        T result = caseConnectorDeclaration(connectorDeclaration);
-        if (result == null) result = caseBinaryConnectorDeclaration(connectorDeclaration);
-        if (result == null) result = caseNaryConnectorDeclaration(connectorDeclaration);
-        if (result == null) result = caseFeatureDeclaration(connectorDeclaration);
-        if (result == null) result = caseIdentification(connectorDeclaration);
-        if (result == null) result = caseFeatureSpecializationPart(connectorDeclaration);
-        if (result == null) result = caseFeatureConjugationPart(connectorDeclaration);
-        if (result == null) result = caseFeatureRelationshipPart(connectorDeclaration);
-        if (result == null) result = caseFeatureSpecialization(connectorDeclaration);
-        if (result == null) result = caseMultiplicityPart(connectorDeclaration);
-        if (result == null) result = caseTypeRelationshipPart(connectorDeclaration);
-        if (result == null) result = caseChainingPart(connectorDeclaration);
-        if (result == null) result = caseInvertingPart(connectorDeclaration);
-        if (result == null) result = caseTypeFeaturingPart(connectorDeclaration);
-        if (result == null) result = caseTypingFeatureTyping(connectorDeclaration);
-        if (result == null) result = caseSubsettingFeatureChain(connectorDeclaration);
-        if (result == null) result = caseReferenceFeatureChain(connectorDeclaration);
-        if (result == null) result = caseCrossFeatureChain(connectorDeclaration);
-        if (result == null) result = caseRedefinitionFeatureChain(connectorDeclaration);
-        if (result == null) result = caseMultiplicityRange(connectorDeclaration);
-        if (result == null) result = caseMultiplicityModifiers(connectorDeclaration);
-        if (result == null) result = caseDisjoiningPart(connectorDeclaration);
-        if (result == null) result = caseUnioningPart(connectorDeclaration);
-        if (result == null) result = caseIntersectingPart(connectorDeclaration);
-        if (result == null) result = caseDifferencingPart(connectorDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case KerMLOCPackage.BINARY_CONNECTOR_DECLARATION:
-      {
-        BinaryConnectorDeclaration binaryConnectorDeclaration = (BinaryConnectorDeclaration)theEObject;
-        T result = caseBinaryConnectorDeclaration(binaryConnectorDeclaration);
-        if (result == null) result = caseFeatureDeclaration(binaryConnectorDeclaration);
-        if (result == null) result = caseIdentification(binaryConnectorDeclaration);
-        if (result == null) result = caseFeatureSpecializationPart(binaryConnectorDeclaration);
-        if (result == null) result = caseFeatureConjugationPart(binaryConnectorDeclaration);
-        if (result == null) result = caseFeatureRelationshipPart(binaryConnectorDeclaration);
-        if (result == null) result = caseFeatureSpecialization(binaryConnectorDeclaration);
-        if (result == null) result = caseMultiplicityPart(binaryConnectorDeclaration);
-        if (result == null) result = caseTypeRelationshipPart(binaryConnectorDeclaration);
-        if (result == null) result = caseChainingPart(binaryConnectorDeclaration);
-        if (result == null) result = caseInvertingPart(binaryConnectorDeclaration);
-        if (result == null) result = caseTypeFeaturingPart(binaryConnectorDeclaration);
-        if (result == null) result = caseTypingFeatureTyping(binaryConnectorDeclaration);
-        if (result == null) result = caseSubsettingFeatureChain(binaryConnectorDeclaration);
-        if (result == null) result = caseReferenceFeatureChain(binaryConnectorDeclaration);
-        if (result == null) result = caseCrossFeatureChain(binaryConnectorDeclaration);
-        if (result == null) result = caseRedefinitionFeatureChain(binaryConnectorDeclaration);
-        if (result == null) result = caseMultiplicityRange(binaryConnectorDeclaration);
-        if (result == null) result = caseMultiplicityModifiers(binaryConnectorDeclaration);
-        if (result == null) result = caseDisjoiningPart(binaryConnectorDeclaration);
-        if (result == null) result = caseUnioningPart(binaryConnectorDeclaration);
-        if (result == null) result = caseIntersectingPart(binaryConnectorDeclaration);
-        if (result == null) result = caseDifferencingPart(binaryConnectorDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case KerMLOCPackage.NARY_CONNECTOR_DECLARATION:
-      {
-        NaryConnectorDeclaration naryConnectorDeclaration = (NaryConnectorDeclaration)theEObject;
-        T result = caseNaryConnectorDeclaration(naryConnectorDeclaration);
-        if (result == null) result = caseFeatureDeclaration(naryConnectorDeclaration);
-        if (result == null) result = caseIdentification(naryConnectorDeclaration);
-        if (result == null) result = caseFeatureSpecializationPart(naryConnectorDeclaration);
-        if (result == null) result = caseFeatureConjugationPart(naryConnectorDeclaration);
-        if (result == null) result = caseFeatureRelationshipPart(naryConnectorDeclaration);
-        if (result == null) result = caseFeatureSpecialization(naryConnectorDeclaration);
-        if (result == null) result = caseMultiplicityPart(naryConnectorDeclaration);
-        if (result == null) result = caseTypeRelationshipPart(naryConnectorDeclaration);
-        if (result == null) result = caseChainingPart(naryConnectorDeclaration);
-        if (result == null) result = caseInvertingPart(naryConnectorDeclaration);
-        if (result == null) result = caseTypeFeaturingPart(naryConnectorDeclaration);
-        if (result == null) result = caseTypingFeatureTyping(naryConnectorDeclaration);
-        if (result == null) result = caseSubsettingFeatureChain(naryConnectorDeclaration);
-        if (result == null) result = caseReferenceFeatureChain(naryConnectorDeclaration);
-        if (result == null) result = caseCrossFeatureChain(naryConnectorDeclaration);
-        if (result == null) result = caseRedefinitionFeatureChain(naryConnectorDeclaration);
-        if (result == null) result = caseMultiplicityRange(naryConnectorDeclaration);
-        if (result == null) result = caseMultiplicityModifiers(naryConnectorDeclaration);
-        if (result == null) result = caseDisjoiningPart(naryConnectorDeclaration);
-        if (result == null) result = caseUnioningPart(naryConnectorDeclaration);
-        if (result == null) result = caseIntersectingPart(naryConnectorDeclaration);
-        if (result == null) result = caseDifferencingPart(naryConnectorDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -3609,54 +3514,6 @@ public class KerMLOCSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePayloadFeatureSpecializationPart(PayloadFeatureSpecializationPart object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Connector Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Connector Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseConnectorDeclaration(ConnectorDeclaration object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Binary Connector Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Binary Connector Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBinaryConnectorDeclaration(BinaryConnectorDeclaration object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Nary Connector Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Nary Connector Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNaryConnectorDeclaration(NaryConnectorDeclaration object)
   {
     return null;
   }

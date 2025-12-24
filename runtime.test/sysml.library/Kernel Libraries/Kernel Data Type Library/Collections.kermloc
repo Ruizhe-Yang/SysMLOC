@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="Collections" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package defines a standard set of Collection data types. Unlike sequences of values &#xA;&#x9; * defined directly using multiplicity, these data types allow for the possibility of collections &#xA;&#x9; * as elements of collections.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Base" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::size"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="IntegerFunctions" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlFunctions" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:DataType" isAbstract="true" declaredName="Collection">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Collection is the top level abstract supertype of all collection types.&#xA;&#x9;&#x9; * The name elements is used to denote the members or contents of the collection.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="elements" MultiLow="0" MultiHigh="*" isNonunique="true" isFeature="true"/>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" isAbstract="true" declaredName="OrderedCollection">
+      <subsetting>Collection</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * OrderedCollection is the abstract supertype for all ordered collection types.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="elements" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isFeature="true">
+        <redefinitions>Collection::elements</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" isAbstract="true" declaredName="UniqueCollection">
+      <subsetting>Collection</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * UniqueCollection is the abstract supertype for all collection types with unique elements.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="elements" MultiLow="0" MultiHigh="*" isFeature="true">
+        <redefinitions>Collection::elements</redefinitions>
+        <elements xsi:type="kerMLOC:Comment" body="/* Note: Redefinition of 'elements' is unique by default. */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="Array">
+      <subsetting>OrderedCollection</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;     * An Array is a fixed size, multi-dimensional Collection of which the elements are nonunique and ordered. &#xA;&#x9;     * Its dimensions specify how many dimensions the array has, and how many elements there are in each dimension. &#xA;&#x9;     * The rank is equal to the number of dimensions. The flattenedSize is equal to the total number of elements &#xA;&#x9;     * in the array.&#xA;&#x9;     * &#xA;&#x9;     * Feature elements is a flattened sequence of all elements of an Array and can be accessed by a tuple of indices. &#xA;&#x9;     * The number of indices is equal to rank. The elements are packed according to row-major convention, as in the C programming language.&#xA;&#x9;     * &#xA;&#x9;     * The elements of an Array can be assessed by a tuple of indices. The number of indices in such tuple is equal to rank. &#xA;&#x9;&#x9; * The packing of the elements, i.e. the flattened representation, follows the row-major convention, &#xA;&#x9;&#x9; * as in the C programming language.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Note 1. Feature dimensions may be empty, which denotes a zero dimensional array, allowing an Array to collapse to a single element. &#xA;&#x9;&#x9; * This is useful to allow for specialization of an Array into a type restricted to represent a scalar. &#xA;&#x9;&#x9; * The flattenedSize of a zero dimensional array is 1.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Note 2: An Array can represent the generalized mathematical concept of an infinite matrix of any rank, i.e. not limited to rank two.&#xA;&#x9;     */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="dimensions" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isFeature="true">
+        <typings>Positive</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/* Feature `dimensions` defines the N-dimensional shape of the Array&#xA;             * The alternative name `shape` (as used in many programming languages) is not used as it would interfere with a geometric shape feature.&#xA; &#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="rank" MultiLow="1" valuePart="size(dimensions)" isFeature="true">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="flattenedSize" MultiLow="1" valuePart="dimensions->reduce '*' ?? 1" isFeature="true">
+        <typings>Positive</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant">
+        <resultExpressionParameter resultExpression="flattenedSize == size(elements)"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="Bag">
+      <subsetting>Collection</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Bag is a variable-size, unordered collection of nonunique elements.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="Set">
+      <subsetting>UniqueCollection</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Set is a variable-size, unordered collection of unique elements.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="OrderedSet">
+      <subsetting>OrderedCollection</subsetting>
+      <subsetting>UniqueCollection</subsetting>
+      <intersecting>OrderedCollection</intersecting>
+      <intersecting>UniqueCollection</intersecting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * OrderedSet is a variable-size, ordered collection of unique elements.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="elements" MultiLow="0" MultiHigh="*" isOrdered="true" isFeature="true">
+        <redefinitions>OrderedCollection::elements</redefinitions>
+        <redefinitions>UniqueCollection::elements</redefinitions>
+        <elements xsi:type="kerMLOC:Comment" body="/* Note: Redefinition of `elements` is unique by default. */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="List">
+      <subsetting>OrderedCollection</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * List is a variable-size, ordered collection of nonunique elements.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="KeyValuePair">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * KeyValuePair is a tuple of a key and a value for use in Map collections.&#xA;&#x9;&#x9; * The key must be immutable.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="key" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isFeature="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="val" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true" isFeature="true">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="Map">
+      <subsetting>Collection</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Map is a variable-size, unordered collection of elements that are key-value pairs.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="elements" MultiLow="0" MultiHigh="*" isFeature="true">
+        <typings>KeyValuePair</typings>
+        <redefinitions>Collection::elements</redefinitions>
+        <elements xsi:type="kerMLOC:Comment" body="/* Note: Redefinition of `elements` is unique by default. &#xA;&#x9;&#x9;&#x9; * The `key` of any `KeyValuePair` must be unique over the collection of `KeyValuePair`. &#xA;&#x9;&#x9;&#x9; * The `val` does not need to be unique. &#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="OrderedMap">
+      <subsetting>Map</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * OrderedMap is a variable-size, ordered collection of elements that are key-value pairs. &#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="elements" MultiLow="0" MultiHigh="*" isOrdered="true" isFeature="true">
+        <typings>KeyValuePair</typings>
+        <redefinitions>Map::elements</redefinitions>
+        <elements xsi:type="kerMLOC:Comment" body="/* Note: Redefinition of `elements` is unique by default. */"/>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

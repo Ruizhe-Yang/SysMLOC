@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Scoping">
+    <elements xsi:type="kerMLOC:Package" declaredName="P1">
+      <elements xsi:type="kerMLOC:Class" declaredName="A">
+        <elements xsi:type="kerMLOC:Feature" declaredName="f" isFeature="true"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Package" declaredName="P2">
+        <elements xsi:type="kerMLOC:Class" declaredName="A">
+          <elements xsi:type="kerMLOC:Feature" declaredName="g" isFeature="true"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Package" declaredName="P3">
+          <elements xsi:type="kerMLOC:Class" declaredName="B">
+            <subsetting>A</subsetting>
+            <elements xsi:type="kerMLOC:Feature" isFeature="true">
+              <redefinitions>g</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Package" declaredName="Objects">
+        <elements xsi:type="kerMLOC:Class" declaredName="Object">
+          <elements xsi:type="kerMLOC:Feature" declaredName="test1" isFeature="true"/>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Package" declaredName="'$'">
+        <elements xsi:type="kerMLOC:Class" declaredName="Objects">
+          <elements xsi:type="kerMLOC:Class" declaredName="Object">
+            <elements xsi:type="kerMLOC:Feature" declaredName="test2" isFeature="true"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Package" declaredName="P4">
+        <elements xsi:type="kerMLOC:Class" declaredName="C">
+          <subsetting>Objects::Object</subsetting>
+          <elements xsi:type="kerMLOC:Feature" isFeature="true">
+            <redefinitions>test1</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Class" declaredName="D">
+          <subsetting>'$'::Objects::Object</subsetting>
+          <elements xsi:type="kerMLOC:Feature" isFeature="true">
+            <redefinitions>test2</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Class" declaredName="E">
+          <subsetting>'$'::Objects::Object</subsetting>
+          <elements xsi:type="kerMLOC:Feature" isFeature="true">
+            <redefinitions>subobjects</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

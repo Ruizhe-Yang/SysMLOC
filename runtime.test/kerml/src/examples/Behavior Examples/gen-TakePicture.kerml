@@ -1,12 +1,15 @@
 behavior TakePicture{
 	private import Camera;
-	camera [ 1 ] : Camera :> involvedObjects;
+	feature camera [ 1 ] : Camera :> involvedObjects{
+	}
 	class Exposure;
 	behavior Focus{
-		out xrsl : Exposure;
+		out xrsl : Exposure{
+		}
 	}
 	behavior Shoot{
-		in xsf : Exposure;
+		in xsf : Exposure{
+		}
 	}
 	step step1 [ 1 ] : Focus;
 	step step2 [ 1 ] : Shoot;

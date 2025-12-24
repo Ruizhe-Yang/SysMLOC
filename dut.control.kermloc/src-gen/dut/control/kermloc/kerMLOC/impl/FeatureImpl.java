@@ -102,6 +102,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.kermloc.kerMLOC.impl.FeatureImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.kermloc.kerMLOC.impl.FeatureImpl#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link dut.control.kermloc.kerMLOC.impl.FeatureImpl#getValuePart <em>Value Part</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.impl.FeatureImpl#isIsFeature <em>Is Feature</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.impl.FeatureImpl#isIsSemicolon <em>Is Semicolon</em>}</li>
  *   <li>{@link dut.control.kermloc.kerMLOC.impl.FeatureImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -728,6 +730,46 @@ public class FeatureImpl extends FeatureElementImpl implements Feature
    * @ordered
    */
   protected String valuePart = VALUE_PART_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsFeature() <em>Is Feature</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsFeature()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_FEATURE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsFeature() <em>Is Feature</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsFeature()
+   * @generated
+   * @ordered
+   */
+  protected boolean isFeature = IS_FEATURE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsSemicolon() <em>Is Semicolon</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsSemicolon()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_SEMICOLON_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsSemicolon() <em>Is Semicolon</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsSemicolon()
+   * @generated
+   * @ordered
+   */
+  protected boolean isSemicolon = IS_SEMICOLON_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -1576,6 +1618,56 @@ public class FeatureImpl extends FeatureElementImpl implements Feature
    * @generated
    */
   @Override
+  public boolean isIsFeature()
+  {
+    return isFeature;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsFeature(boolean newIsFeature)
+  {
+    boolean oldIsFeature = isFeature;
+    isFeature = newIsFeature;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, KerMLOCPackage.FEATURE__IS_FEATURE, oldIsFeature, isFeature));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsSemicolon()
+  {
+    return isSemicolon;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsSemicolon(boolean newIsSemicolon)
+  {
+    boolean oldIsSemicolon = isSemicolon;
+    isSemicolon = newIsSemicolon;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, KerMLOCPackage.FEATURE__IS_SEMICOLON, oldIsSemicolon, isSemicolon));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<TypeBodyElement> getElements()
   {
     if (elements == null)
@@ -1689,6 +1781,10 @@ public class FeatureImpl extends FeatureElementImpl implements Feature
         return isIsDefault();
       case KerMLOCPackage.FEATURE__VALUE_PART:
         return getValuePart();
+      case KerMLOCPackage.FEATURE__IS_FEATURE:
+        return isIsFeature();
+      case KerMLOCPackage.FEATURE__IS_SEMICOLON:
+        return isIsSemicolon();
       case KerMLOCPackage.FEATURE__ELEMENTS:
         return getElements();
     }
@@ -1834,6 +1930,12 @@ public class FeatureImpl extends FeatureElementImpl implements Feature
       case KerMLOCPackage.FEATURE__VALUE_PART:
         setValuePart((String)newValue);
         return;
+      case KerMLOCPackage.FEATURE__IS_FEATURE:
+        setIsFeature((Boolean)newValue);
+        return;
+      case KerMLOCPackage.FEATURE__IS_SEMICOLON:
+        setIsSemicolon((Boolean)newValue);
+        return;
       case KerMLOCPackage.FEATURE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends TypeBodyElement>)newValue);
@@ -1966,6 +2068,12 @@ public class FeatureImpl extends FeatureElementImpl implements Feature
       case KerMLOCPackage.FEATURE__VALUE_PART:
         setValuePart(VALUE_PART_EDEFAULT);
         return;
+      case KerMLOCPackage.FEATURE__IS_FEATURE:
+        setIsFeature(IS_FEATURE_EDEFAULT);
+        return;
+      case KerMLOCPackage.FEATURE__IS_SEMICOLON:
+        setIsSemicolon(IS_SEMICOLON_EDEFAULT);
+        return;
       case KerMLOCPackage.FEATURE__ELEMENTS:
         getElements().clear();
         return;
@@ -2059,6 +2167,10 @@ public class FeatureImpl extends FeatureElementImpl implements Feature
         return isDefault != IS_DEFAULT_EDEFAULT;
       case KerMLOCPackage.FEATURE__VALUE_PART:
         return VALUE_PART_EDEFAULT == null ? valuePart != null : !VALUE_PART_EDEFAULT.equals(valuePart);
+      case KerMLOCPackage.FEATURE__IS_FEATURE:
+        return isFeature != IS_FEATURE_EDEFAULT;
+      case KerMLOCPackage.FEATURE__IS_SEMICOLON:
+        return isSemicolon != IS_SEMICOLON_EDEFAULT;
       case KerMLOCPackage.FEATURE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -2668,6 +2780,10 @@ public class FeatureImpl extends FeatureElementImpl implements Feature
     result.append(isDefault);
     result.append(", valuePart: ");
     result.append(valuePart);
+    result.append(", isFeature: ");
+    result.append(isFeature);
+    result.append(", isSemicolon: ");
+    result.append(isSemicolon);
     result.append(')');
     return result.toString();
   }

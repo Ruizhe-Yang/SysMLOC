@@ -1281,8 +1281,8 @@ fragment BasicUsagePrefix:
 ;
 
 fragment ConnectorPart:
-	(connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd)
-	| ('(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')')
+	connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd
+	| '(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
 ;
 
 fragment DefinitionDeclaration:

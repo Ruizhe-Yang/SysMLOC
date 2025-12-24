@@ -746,27 +746,6 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass connectorDeclarationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass binaryConnectorDeclarationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass naryConnectorDeclarationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass extendedPrefixEClass = null;
 
   /**
@@ -2537,9 +2516,31 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * @generated
    */
   @Override
+  public EAttribute getFeature_IsFeature()
+  {
+        return (EAttribute)getFeature().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFeature_IsSemicolon()
+  {
+        return (EAttribute)getFeature().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getFeature_Elements()
   {
-        return (EReference)getFeature().getEStructuralFeatures().get(0);
+        return (EReference)getFeature().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2711,9 +2712,42 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * @generated
    */
   @Override
+  public EAttribute getConnector_IsFrom()
+  {
+        return (EAttribute)getConnector().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConnector_ConnectorPart()
+  {
+        return (EReference)getConnector().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConnector_IsNary()
+  {
+        return (EAttribute)getConnector().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getConnector_Elements()
   {
-        return (EReference)getConnector().getEStructuralFeatures().get(0);
+        return (EReference)getConnector().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -4021,78 +4055,11 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * @generated
    */
   @Override
-  public EClass getConnectorDeclaration()
-  {
-    if (connectorDeclarationEClass == null)
-    {
-      connectorDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(100);
-    }
-    return connectorDeclarationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getBinaryConnectorDeclaration()
-  {
-    if (binaryConnectorDeclarationEClass == null)
-    {
-      binaryConnectorDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(101);
-    }
-    return binaryConnectorDeclarationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getBinaryConnectorDeclaration_ConnectorPartBinary()
-  {
-        return (EReference)getBinaryConnectorDeclaration().getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getNaryConnectorDeclaration()
-  {
-    if (naryConnectorDeclarationEClass == null)
-    {
-      naryConnectorDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(102);
-    }
-    return naryConnectorDeclarationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getNaryConnectorDeclaration_ConnectorPart()
-  {
-        return (EReference)getNaryConnectorDeclaration().getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getExtendedPrefix()
   {
     if (extendedPrefixEClass == null)
     {
-      extendedPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(103);
+      extendedPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(100);
     }
     return extendedPrefixEClass;
   }
@@ -4129,7 +4096,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   {
     if (visibilityIndicatorEEnum == null)
     {
-      visibilityIndicatorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(104);
+      visibilityIndicatorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(101);
     }
     return visibilityIndicatorEEnum;
   }
@@ -4144,7 +4111,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   {
     if (featureDirectionEEnum == null)
     {
-      featureDirectionEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(105);
+      featureDirectionEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(102);
     }
     return featureDirectionEEnum;
   }

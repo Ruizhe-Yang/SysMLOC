@@ -20,12 +20,49 @@ public class MergeSysML {
             modelPath = args[0];
         } else {
 //            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\training2\\17. Control\\Control Structures Example.model";
-        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\test\\Library\\Domain Libraries";
+//        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\kerml";
+        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\sysml.library";
+//        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\sysml-modified";
         }
 //        Path out = convertModelToSysml(modelPath);
 //        System.out.println("Done. Written to: " + out.toAbsolutePath());
-        mergeSysmlFilesRecursively(modelPath);
-//        deleteGeneratedSysmlFiles(modelPath);
+//        mergeSysmlFilesRecursively(modelPath);
+        deleteGeneratedSysmlFiles(modelPath);
+//        deleteAllModelFilesRecursively(modelPath);
+    }
+    
+    public static int deleteAllModelFilesRecursively(String folderPath) throws IOException {
+        if (folderPath == null || folderPath.isBlank()) {
+            throw new IllegalArgumentException("folderPath is null/blank");
+        }
+
+        Path root = Paths.get(folderPath).toAbsolutePath().normalize();
+        if (!Files.isDirectory(root)) {
+            throw new IllegalArgumentException("Not a directory: " + root);
+        }
+
+        int[] deleted = {0};
+
+        // Files.walk 会递归遍历（包含子目录）
+        try (Stream<Path> stream = Files.walk(root)) {
+            stream.filter(Files::isRegularFile)
+                  .filter(p -> p.getFileName().toString().endsWith(".model"))
+                  .forEach(p -> {
+                      try {
+                          if (Files.deleteIfExists(p)) {
+                              deleted[0]++;
+                          }
+                      } catch (IOException e) {
+                          // 如需“遇到错误继续删其他文件”，可改为打印日志后 continue
+                          throw new RuntimeException("Failed to delete: " + p, e);
+                      }
+                  });
+        } catch (RuntimeException e) {
+            if (e.getCause() instanceof IOException io) throw io;
+            throw e;
+        }
+
+        return deleted[0];
     }
     
     public static void deleteGeneratedSysmlFiles(String folderPath) throws IOException {

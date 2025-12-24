@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="TimeVaryingFeaturesEnhanced">
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ExtendedOccurrences" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="CC1">
+      <subsetting>ExtendedOccurrence</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="x" isFeature="true"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature x featured by CC1_snapshots {&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature CC1_snapshots :>> ExtendedOccurrences::ExtendedOccurrence::snapshots featured by CC1;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// portions are not variable&#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true">
+        <redefinitions>startShot</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" valuePart="0" isFeature="true">
+          <redefinitions>x</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature :>> CC1::x featured by CC1_startShot_snapshots = 0 {&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature CC1_startShot_snapshots :>> CC1_snapshots featured by CC1::startShot;&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="t">
+        <subsetting>timeSlices</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="y" isFeature="true"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature y featured by CC1_t_snapshots {&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature CC1_t_snapshots :>> ExtendedOccurrences::ExtendedOccurrence::snapshots featured by CC1::t;&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+        <elements xsi:type="kerMLOC:Feature" isPortion="true">
+          <redefinitions>startShot</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" isVariable="true" valuePart="0" isFeature="true">
+            <redefinitions>x</redefinitions>
+          </elements>
+          <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature :>> CC1::x featured by CC1_t_startShot_snapshots = 0 {&#xA;"/>
+          <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature CC1_t_startShot_snapshots :>> CC1_snapshots featured by CC1::t::startShot;&#xA;"/>
+          <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+          <elements xsi:type="kerMLOC:Feature" isVariable="true" valuePart="1" isFeature="true">
+            <redefinitions>y</redefinitions>
+          </elements>
+          <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature :>> CC1::t::y featured by CC1_t_startShot_snapshots = 1 {&#xA;"/>
+          <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature CC1_t_startShot_snapshots :>> CC1_t_snapshots featured by CC1::t::startShot;&#xA;"/>
+          <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="t1">
+          <subsetting>timeSlices</subsetting>
+          <elements xsi:type="kerMLOC:Feature" isPortion="true">
+            <redefinitions>startShot</redefinitions>
+            <elements xsi:type="kerMLOC:Feature" isVariable="true" valuePart="2" isFeature="true">
+              <redefinitions>x</redefinitions>
+            </elements>
+            <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature :>> CC1::x featured by CC1_t_t1_startShot_snapshots = 2 {&#xA;"/>
+            <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature CC1_t_t1_startShot_snapshots :>> CC1_snapshots featured by CC1::t::t1::startShot;&#xA;"/>
+            <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+            <elements xsi:type="kerMLOC:Feature" isVariable="true" valuePart="3" isFeature="true">
+              <redefinitions>y</redefinitions>
+            </elements>
+            <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature :>> CC1::t::y featured by CC1_t_t1_startShot_snapshots = 3 {&#xA;"/>
+            <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature CC1_t_t1_startShot_snapshots :>> CC1_t_snapshots featured by CC1::t::t1::startShot;&#xA;"/>
+            <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Boolean"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="Car">
+      <subsetting>ExtendedOccurrence</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="driver" MultiLow="0" MultiHigh="1" isFeature="true">
+        <typings>Person</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature driver : Person [0..1] featured by Car_snapshots {&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature Car_snapshots :>> ExtendedOccurrences::ExtendedOccurrence::snapshots featured by Car;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="speed" MultiLow="1" isFeature="true">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature speed : Real [1] featured by Car_snapshots {&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature Car_snapshots :>> ExtendedOccurrences::ExtendedOccurrence::snapshots featured by Car;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// bind the current speed to the current speed of the current driver&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// var binding driver.speed = speed;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//member connector : Links::SelfLink featured by Car_snapshots {&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//&#x9;:>> that : Car_snapshots;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//&#x9;end feature :>> thisThing references that.driver.while{interval = Car_snapshots::self}.speed;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//&#x9;end feature :>> thisThing references that.driver.at{timeslices = Car_snapshots::self.moment}.speed;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//&#x9;end feature :>> sameThing references that.speed;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature Car_snapshots :>> ExtendedOccurrences::ExtendedOccurrence::snapshots featured by Car;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="operated" MultiLow="0" MultiHigh="*">
+        <subsetting>timeSlices</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" MultiLow="1" isFeature="true">
+          <redefinitions>driver</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature :>> Car::driver [1] featured by Car_operated_snapshots {&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature Car_operated_snapshots :>> Car_snapshots featured by Car::operated;&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="// var feature :>> isLicensed = true;&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature isLicensed1 :>> Person::isLicensed featured by Car_operated_driver_snapshots = true {&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//        member feature Car_operated_driver_snapshots :>> Person_snapshots featured by Car::operated::driver;&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//    }&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//portion :>> snapshots {&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//    public import operated;&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="engine" MultiLow="1" isFeature="true"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature engine [1] featured by Car_snapshots {&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature Car_snapshots :>> ExtendedOccurrences::ExtendedOccurrence::snapshots featured by Car;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//}       &#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="transmission" MultiLow="1" isFeature="true"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature transmission [1] featured by Car_snapshots {&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature Car_snapshots :>> ExtendedOccurrences::ExtendedOccurrence::snapshots featured by Car;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//}       &#xA;"/>
+      <elements xsi:type="kerMLOC:Connector" isVariable="true" declaredName="drive" isFrom="true">
+        <connectorPart refElement="engine"/>
+        <connectorPart refElement="transmission"/>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//member connector drive featured by Car_snapshots from engine to transmission {&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature Car_snapshots :>> ExtendedOccurrences::ExtendedOccurrence::snapshots :> engine::Car_snapshots, transmission::Car_snapshots featured by Car;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="inOperable" MultiLow="0" MultiHigh="1">
+        <subsetting>timeSlices</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// successions are not variable&#xA;"/>
+      <elements xsi:type="kerMLOC:Succession" isFirst="true">
+        <connectorPart refElement="operated"/>
+        <connectorPart refElement="inOperable"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="Person">
+      <subsetting>ExtendedOccurrence</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isLicensed" MultiLow="0" MultiHigh="1" isFeature="true">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature isLicensed : Boolean[0..1] featured by Person_snapshots {&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature Person_snapshots :>> ExtendedOccurrences::ExtendedOccurrence::snapshots featured by Person;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="speed" MultiLow="1" isFeature="true">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature speed : Real[1] featured by Person_snapshots {&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature Person_snapshots :>> ExtendedOccurrences::ExtendedOccurrence::snapshots featured by Person;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Structure" declaredName="Car1">
+      <subsetting>ExtendedObject</subsetting>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// May or may not be a life&#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="driver" MultiLow="0" MultiHigh="1" isFeature="true">
+        <typings>Person</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature driver : Person [0..1] featured by Car_snapshots {&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature Car_snapshots :>> ExtendedOccurrences::ExtendedOccurrence::snapshots featured by Car1;&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+      <elements xsi:type="kerMLOC:CodeAnnotation" body="// :>> timeSlices : Car;  &lt;-- Don't do this!&#xA;"/>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true">
+        <redefinitions>startShot</redefinitions>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="// Not a kind of Car!&#xA;"/>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" MultiLow="0" isFeature="true">
+          <redefinitions>driver</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature :>> driver : Person [0] featured by Car_startShot_snapshots {&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature Car_startShot_snapshots :>> Car_snapshots featured by Car1::startShot;&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" isFirst="true">
+        <connectorPart refElement="startShot"/>
+        <connectorPart refElement="driven"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isPortion="true" declaredName="driven">
+        <subsetting>timeSlices</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" MultiLow="1" isFeature="true">
+          <redefinitions>driver</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="// No conflict with multiplicity! (driven just can't be startshot)&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//member feature :>> driver : Person [1] featured by Car_driven_snapshots {&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//    member feature Car_driven_snapshots :>> Car_snapshots featured by Car1::driven;&#xA;"/>
+        <elements xsi:type="kerMLOC:CodeAnnotation" body="//}&#xA;"/>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

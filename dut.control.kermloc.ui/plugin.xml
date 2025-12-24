@@ -438,13 +438,13 @@
     <objectContribution
           adaptable="true"
           id="dut.control.kermloc.ui.generateKerMLAction"
-          nameFilter="*.model"
+          nameFilter="*.kermloc"
           objectClass="org.eclipse.core.resources.IFile">
        <action
              class="dut.control.kermloc.ui.actions.GenerateKerMLAction"
              enablesFor="1"
              id="dut.control.kermloc.ui.generateKerMLAction"
-             label="Generate KerML"
+             label="Generate .kerml"
              menubarPath="additions">
        </action>
     </objectContribution>

@@ -10,7 +10,6 @@ import dut.control.kermloc.kerMLOC.Association;
 import dut.control.kermloc.kerMLOC.AssociationStructure;
 import dut.control.kermloc.kerMLOC.BasicFeaturePrefix;
 import dut.control.kermloc.kerMLOC.Behavior;
-import dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.BindingConnector;
 import dut.control.kermloc.kerMLOC.BooleanExpression;
 import dut.control.kermloc.kerMLOC.ChainingPart;
@@ -22,7 +21,6 @@ import dut.control.kermloc.kerMLOC.Comment;
 import dut.control.kermloc.kerMLOC.Conjugation;
 import dut.control.kermloc.kerMLOC.ConjugationPart;
 import dut.control.kermloc.kerMLOC.Connector;
-import dut.control.kermloc.kerMLOC.ConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.ConnectorEnd;
 import dut.control.kermloc.kerMLOC.CrossFeatureChain;
 import dut.control.kermloc.kerMLOC.CrossingFeature;
@@ -71,7 +69,6 @@ import dut.control.kermloc.kerMLOC.MultiplicityPart;
 import dut.control.kermloc.kerMLOC.MultiplicityRange;
 import dut.control.kermloc.kerMLOC.Namespace;
 import dut.control.kermloc.kerMLOC.NamespaceBodyElement;
-import dut.control.kermloc.kerMLOC.NaryConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.NonFeatureElement;
 import dut.control.kermloc.kerMLOC.PackageBodyElement;
 import dut.control.kermloc.kerMLOC.PayloadFeature;
@@ -676,21 +673,6 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter casePayloadFeatureSpecializationPart(PayloadFeatureSpecializationPart object)
       {
         return createPayloadFeatureSpecializationPartAdapter();
-      }
-      @Override
-      public Adapter caseConnectorDeclaration(ConnectorDeclaration object)
-      {
-        return createConnectorDeclarationAdapter();
-      }
-      @Override
-      public Adapter caseBinaryConnectorDeclaration(BinaryConnectorDeclaration object)
-      {
-        return createBinaryConnectorDeclarationAdapter();
-      }
-      @Override
-      public Adapter caseNaryConnectorDeclaration(NaryConnectorDeclaration object)
-      {
-        return createNaryConnectorDeclarationAdapter();
       }
       @Override
       public Adapter caseExtendedPrefix(ExtendedPrefix object)
@@ -2215,51 +2197,6 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPayloadFeatureSpecializationPartAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.ConnectorDeclaration <em>Connector Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.kermloc.kerMLOC.ConnectorDeclaration
-   * @generated
-   */
-  public Adapter createConnectorDeclarationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration <em>Binary Connector Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration
-   * @generated
-   */
-  public Adapter createBinaryConnectorDeclarationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.NaryConnectorDeclaration <em>Nary Connector Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.kermloc.kerMLOC.NaryConnectorDeclaration
-   * @generated
-   */
-  public Adapter createNaryConnectorDeclarationAdapter()
   {
     return null;
   }

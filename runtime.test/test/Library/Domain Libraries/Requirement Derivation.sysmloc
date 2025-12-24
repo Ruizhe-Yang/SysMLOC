@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== BEGIN: DerivationConnections.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="DerivationConnections" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * This package provides a library model for derivation connections between requirements.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::excludes"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::allTrue"/>
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="originalRequirements" MultiLow="*">
+      <elements xsi:type="sysMLOC:Documentation" body="/* originalRequirements are the original requirements in Derivation connections. */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="derivedRequirements" MultiLow="*">
+      <elements xsi:type="sysMLOC:Documentation" body="/* derivedRequirements are the derived requirments in Derivation connections. */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionDefinition" isAbstract="true" declaredName="Derivation">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * A Derivation connection asserts that one or more derivedRequirements are derived from&#xD;&#xA;&#x9;&#x9; * a single originalRequirement. This means that any subject that satisfies the&#xD;&#xA;&#x9;&#x9; * originalRequirement should, in itself or though other things related to it, satisfy&#xD;&#xA;&#x9;&#x9; * each of the derivedRequirements.&#xD;&#xA;&#x9;&#x9; * &#xD;&#xA;&#x9;&#x9; * A connection usage typed by Derivation must have requirement usages for all its ends.&#xD;&#xA;&#x9;&#x9; * The single end for the originalRequirement should subset originalRequirement, while&#xD;&#xA;&#x9;&#x9; * the rest of the ends should subset derivedRequirements.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// Note: This redefinition causes a distinguishibility problem for binary connections, becuse&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// participant is already redefined for them to limit the multiplicity to 2.&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// ref requirement :>> participant {&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//&#x9;doc /* All the participants in a Derivation must be requirements. */&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// }&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" isReference="true" declaredName="originalRequirement" MultiLow="1">
+        <subsetting>participant</subsetting>
+        <redefinitions>originalRequirements</redefinitions>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The single original requirement. */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" isReference="true" MultiLow="1" MultiHigh="*">
+        <subsetting>participant</subsetting>
+        <redefinitions>derivedRequirements</redefinitions>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The one or more requirements that are derived from the original requirement. */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage" visibility="private" declaredName="originalNotDerived">
+        <elements xsi:type="sysMLOC:Documentation" body="/* The original requirement must not be a derived requirement. */"/>
+        <resultExpressionParameter resultExpression="derivedRequirements->excludes(originalRequirement)"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage" visibility="private" declaredName="originalImpliesDerived">
+        <elements xsi:type="sysMLOC:Documentation" body="/* &#xD;&#xA;&#x9;&#x9;&#x9; * Whenever the originalRequirement is satisfied, all of the derivedRequirements must also&#xD;&#xA;&#x9;&#x9;&#x9; * be satisfied.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <resultExpressionParameter resultExpression="originalRequirement.result implies allTrue(derivedRequirements.result)"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="derivations" MultiLow="*">
+      <typings>Derivation</typings>
+      <elements xsi:type="sysMLOC:Documentation" body="/* derivations is the base feature for Derivation connection usages. */"/>
+    </elements>
+  </elements>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== END: DerivationConnections.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== BEGIN: RequirementDerivation.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="RequirementDerivation" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/* This package provides language-extension metadata for modeling requirement derivation. */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="DerivationConnections" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Metaobjects::SemanticMetadata"/>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="original" declaredName="OriginalRequirementMetadata">
+      <superclassifiers>SemanticMetadata</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * OriginalRequirementMetadata identifies a usage as an original requirement.&#xD;&#xA;&#x9;&#x9; * It is intended to be used to tag the original requirement end of a Derivation.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>SysML::Usage</typings>
+        <subsetting>annotatedElement</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="originalRequirements meta SysML::Usage">
+        <redefinitions>baseType</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="derive" declaredName="DerivedRequirementMetadata">
+      <superclassifiers>SemanticMetadata</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * DerivedRequirementMetadata identifies a usage as a derived requirement.&#xD;&#xA;&#x9;&#x9; * It is intended to be used to tag the derived requirement ends of a Derivation.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>SysML::Usage</typings>
+        <subsetting>annotatedElement</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="derivedRequirements meta SysML::Usage">
+        <redefinitions>baseType</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="derivation" declaredName="DerivationMetadata">
+      <superclassifiers>SemanticMetadata</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * DerivationMetadata is SemanticMetadata for a Derivation connection.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>SysML::ConnectionDefinition</typings>
+        <subsetting>annotatedElement</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>SysML::ConnectionUsage</typings>
+        <subsetting>annotatedElement</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="derivations meta SysML::Usage">
+        <redefinitions>baseType</redefinitions>
+      </elements>
+    </elements>
+  </elements>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== END: RequirementDerivation.sysml =====&#xD;&#xA;"/>
+</sysMLOC:RootNamespace>

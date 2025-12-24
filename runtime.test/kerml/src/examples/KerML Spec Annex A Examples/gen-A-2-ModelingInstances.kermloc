@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="ModelingInstances">
+    <elements xsi:type="kerMLOC:Documentation" body="/* &#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Vehicle"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Bicycle">
+      <subsetting>Vehicle</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="MyBike" MultiLow="1">
+      <subsetting>Bicycle</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="YourBike" MultiLow="1">
+      <subsetting>Bicycle</subsetting>
+      <disjoining>MyBike</disjoining>
+    </elements>
+  </elements>
+  <elements xsi:type="kerMLOC:Package" declaredName="ModelingInstancesWithAtoms">
+    <elements xsi:type="kerMLOC:Documentation" body="/* &#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Atoms::atom"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Vehicle"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Bicycle">
+      <subsetting>Vehicle</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="MyBike">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Bicycle</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="YourBike">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Bicycle</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Comment" body="/* Assigning feature values. */"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Garage">
+      <elements xsi:type="kerMLOC:Feature" declaredName="stores" MultiLow="*" isFeature="true">
+        <typings>Bicycle</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="OurBicycle">
+      <unioning>MyBike</unioning>
+      <unioning>YourBike</unioning>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="OurGarage">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Garage</subsetting>
+      <elements xsi:type="kerMLOC:Feature" MultiLow="2" isFeature="true">
+        <typings>OurBicycle</typings>
+        <redefinitions>stores</redefinitions>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

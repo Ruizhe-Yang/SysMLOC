@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="Traffic_light">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQ" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQBase" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="Time" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="StringFunctions" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="NumericalFunctions" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="SI" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PortDefinition" declaredName="Can_bus"/>
+    <elements xsi:type="sysMLOC:PortDefinition" declaredName="Clock"/>
+    <elements xsi:type="sysMLOC:PortDefinition" declaredName="Vehicle_sensor_port"/>
+    <elements xsi:type="sysMLOC:PortDefinition" declaredName="Comm"/>
+    <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="Light_state">
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="lit"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="off"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="blinking"/>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Light_power">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="light_state">
+        <typings>Light_state</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="if light_state == Light_state::off ? 0 [W] else if light_state == Light_state::lit ? 12 [W] else if light_state == Light_state::blinking ? 8 [W] else 0 [W]">
+        <typings>PowerValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Radio_power">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="radio_on">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="if radio_on ? 4 [W] else 0 [W]">
+        <typings>PowerValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationUsage" declaredName="light_power">
+      <typings>Light_power</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationUsage" declaredName="radio_power">
+      <typings>Radio_power</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="MassConstraint">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses" MultiLow="0" MultiHigh="*">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="massLimit">
+        <typings>MassValue</typings>
+      </elements>
+      <resultExpressionParameter resultExpression="sum(partMasses) &lt;= massLimit"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="massConstraint">
+      <typings>MassConstraint</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses" valuePart="(light_housing.mass, traffic_light_controller.mass, traffic_light_counter.mass, traffic_light_radio.mass)"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="massLimit" valuePart="25.0 [kg]"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="PowerConstraint">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partPowers" MultiLow="0" MultiHigh="*">
+        <typings>PowerValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="powerLimit">
+        <typings>PowerValue</typings>
+      </elements>
+      <resultExpressionParameter resultExpression="sum(partPowers) &lt;= powerLimit"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="powerConstraint">
+      <typings>PowerConstraint</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partPower" valuePart="(light_housing.light_inserts.green_light.power_usage, light_housing.light_inserts.yellow_light.power_usage, light_housing.light_inserts.red_light.power_usage, light_housing.light_electronic_housing.power_usage, traffic_light_controller.power_usage, traffic_light_counter.power_usage, traffic_light_radio.power_usage )"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="powerLimit" valuePart="19.0 [W]"/>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="vehicle_sensor_signal">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="vehicle_sensor_out" isEnd="true">
+        <typings>Vehicle_sensor_port</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="vehicile_sensor_in" isEnd="true">
+        <typings>~Vehicle_sensor_port</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="clock_bus">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="clock_out" isEnd="true">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="clock_in" isEnd="true">
+        <typings>~Clock</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="comm_bus">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="communications_out" isEnd="true">
+        <typings>Comm</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="communications_in" isEnd="true">
+        <typings>~Comm</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="light_control_bus">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="light_control_out" isEnd="true">
+        <typings>Can_bus</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="light_control_in" isEnd="true">
+        <typings>~Can_bus</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Power"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="state_message_item">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="state_message">
+        <typings>String</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PortUsage" declaredName="power_on"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Light_housing">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="light_inserts" MultiLow="3">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+          <typings>MassValue</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Light_electronics_housing">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power_usage">
+        <typings>PowerValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="light">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="color"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="light_state">
+        <typings>Light_state</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="location">
+        <typings>Integer</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power_usage">
+        <typings>PowerValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="light_control_in">
+        <typings>Can_bus</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="light_housing">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="3.0 [kg]">
+        <redefinitions>mass</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="light_electronic_housing">
+        <typings>Light_electronics_housing</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="3.0 [kg]">
+          <redefinitions>mass</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power_usage" valuePart="0.2 [W]">
+          <redefinitions>power_usage</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="light_insert">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+          <typings>MassValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="red_light">
+          <typings>light</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="yellow_light">
+          <typings>light</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="green_light">
+          <typings>light</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="light_inserts" MultiLow="3">
+        <typings>light_insert</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="3.0 [kg]">
+          <redefinitions>mass</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="red_light">
+          <redefinitions>red_light</redefinitions>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="red">
+            <redefinitions>color</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="location" valuePart="0">
+            <redefinitions>location</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" valuePart="Light_state::off">
+            <redefinitions>light_state</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="4.0 [kg]">
+            <redefinitions>mass</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power_usage" valuePart="light_power(light_housing.light_inserts.red_light.light_state)">
+            <redefinitions>power_usage</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="yellow_light">
+          <redefinitions>yellow_light</redefinitions>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="yellow">
+            <subsetting>color</subsetting>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="location" valuePart="1">
+            <redefinitions>location</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" valuePart="Light_state::off">
+            <redefinitions>light_state</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="4.0 [kg]">
+            <redefinitions>mass</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power_usage" valuePart="light_power(light_housing.light_inserts.yellow_light.light_state)">
+            <redefinitions>power_usage</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="green_light">
+          <redefinitions>green_light</redefinitions>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="green">
+            <subsetting>color</subsetting>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="location" valuePart="2">
+            <redefinitions>location</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" valuePart="Light_state::off">
+            <redefinitions>light_state</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="4.0 [kg]">
+            <redefinitions>mass</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power_usage" valuePart="light_power(light_housing.light_inserts.green_light.light_state)">
+            <redefinitions>power_usage</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Controller">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="error">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="error_code">
+        <typings>Integer</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="message_queue">
+        <typings>String</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="counter">
+        <typings>Integer</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="current_time">
+        <typings>TimeInstantValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="state_duration">
+        <typings>DurationValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="wait_duration">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="yellow_on_time">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="green_on_time">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="red_on_time">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="yellow_light_state">
+        <typings>Light_state</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="red_light_state">
+        <typings>Light_state</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="green_light_state">
+        <typings>Light_state</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="light_control_out">
+        <typings>Can_bus</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="communications_in">
+        <typings>Comm</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power_usage">
+        <typings>PowerValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle_sensor">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="vehicle_at_light">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Counter">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="register">
+        <typings>Integer</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power_usage">
+        <typings>PowerValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Radio">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="register">
+        <typings>Integer</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="communications_out">
+        <typings>Comm</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="trans">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power_usage">
+        <typings>PowerValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_sensor">
+      <typings>Vehicle_sensor</typings>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="vehicle_sensor_out">
+        <typings>Vehicle_sensor_port</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="traffic_light_controller">
+      <typings>Controller</typings>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="yellow_on_time" valuePart="2 [s]">
+        <redefinitions>yellow_on_time</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="green_on_time" valuePart="30 [s]">
+        <redefinitions>green_on_time</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="red_on_time" valuePart="90 [s]">
+        <redefinitions>red_on_time</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="0.8 [kg]">
+        <redefinitions>mass</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power" valuePart="2.0 [W]">
+        <redefinitions>power</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="power_up_test"/>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="reset_wait_clk">
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="wait_duration" NodeParameter="0 [s]"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="turn_lights_off">
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="traffic_light_controller.green_light_state" NodeParameter="Light_state::off"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="light_housing.light_inserts.green_light.light_state" NodeParameter="Light_state::off"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="traffic_light_controller.yellow_light_state" NodeParameter="Light_state::off"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="light_housing.light_inserts.yellow_light.light_state" NodeParameter="Light_state::off"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="traffic_light_controller.red_light_state" NodeParameter="Light_state::off"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="light_housing.light_inserts.red_light.light_state" NodeParameter="Light_state::off"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="traffic_light_radio.trans" NodeParameter="false"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="turn_yellow_on">
+        <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="turn_lights_off"/>
+        <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="reset_wait_clock"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="traffic_light_controller.yellow_light_state" NodeParameter="Light_state::lit"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="light_housing.light_inserts.yellow_light.light_state" NodeParameter="Light_state::lit"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="turn_green_on">
+        <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="turn_lights_off"/>
+        <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="reset_wait_clock"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="traffic_light_controller.green_light_state" NodeParameter="Light_state::lit"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="light_housing.light_inserts.green_light.light_state" NodeParameter="Light_state::lit"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="turn_red_on">
+        <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="turn_lights_off"/>
+        <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="reset_wait_clock"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="traffic_light_controller.red_light_state" NodeParameter="Light_state::lit"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="light_housing.light_inserts.red_light.light_state" NodeParameter="Light_state::lit"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="reset_error"/>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="reset_wait_clock"/>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="run_diagnostic">
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="update_error_code"/>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="update_error"/>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="send_error_sms">
+          <elements xsi:type="sysMLOC:AssignmentNode" featureChain="traffic_light_radio.trans" NodeParameter="true"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="check_status">
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="check_error"/>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="read_message_queue">
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="message_from_queue">
+            <typings>String</typings>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="blink_red_light">
+        <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="turn_lights_off"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="traffic_light_controller.red_light_state" NodeParameter="Light_state::blinking"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="light_housing.light_inserts.red_light.light_state" NodeParameter="Light_state::blinking"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="blink_yellow_light">
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="traffic_light_controller.yellow_light_state" NodeParameter="Light_state::blinking"/>
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="light_housing.light_inserts.yellow_light.light_state" NodeParameter="Light_state::blinking"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="clock_in">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="vehicle_sensor_in">
+        <typings>Vehicle_sensor_port</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="traffic_light_counter">
+      <typings>Counter</typings>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="clock_out">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="0.4 [kg]">
+        <redefinitions>mass</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power_usage" valuePart="0.4 [W]">
+        <redefinitions>power_usage</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="traffic_light_radio">
+      <typings>Radio</typings>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="0.6 [kg]">
+        <redefinitions>mass</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="trans" valuePart="false">
+        <redefinitions>trans</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power_usage" valuePart="radio_power(traffic_light_radio.trans)">
+        <redefinitions>power_usage</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="traffic_light">
+      <elements xsi:type="sysMLOC:EntryActionNode"/>
+      <elements xsi:type="sysMLOC:SuccessionAsUsage" declaredName="begin">
+        <connectorPart refElement="start"/>
+        <connectorPart refElement="off"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="off_to_init" transitionSourceElement="off">
+        <acceptParameter payloadFeatureElement="Power" isVia="true" viaNodeParameter="power_on"/>
+        <transitionSuccessionElement refElement="init"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="init_to_diagnostic" transitionSourceElement="init">
+        <acceptParameter triggerkind="when" triggerExpression="(traffic_light_controller.error == true)"/>
+        <transitionSuccessionElement refElement="diagnostic"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="diagnostic_to_red_blinking" transitionSourceElement="diagnostic">
+        <transitionSuccessionElement refElement="red_blinking"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="operation_selection_to_init" transitionSourceElement="operation_selection">
+        <acceptParameter triggerkind="when" triggerExpression="(traffic_light_controller.error == true)"/>
+        <transitionSuccessionElement refElement="init"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="init_to_operation_selection" transitionSourceElement="init">
+        <acceptParameter triggerkind="when" triggerExpression="(traffic_light_controller.error == false)"/>
+        <transitionSuccessionElement refElement="operation_selection"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="operation_selection_to_stop_sign" transitionSourceElement="operation_selection">
+        <acceptParameter triggerkind="when" triggerExpression="((traffic_light_controller.message_queue == &quot;operating_mode.stop_sign&quot;) and (traffic_light_controller.error == false) )"/>
+        <transitionSuccessionElement refElement="stop_sign"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="operation_selection_to_caution" transitionSourceElement="operation_selection">
+        <acceptParameter triggerkind="when" triggerExpression="((traffic_light_controller.message_queue == &quot;operating_mode.caution&quot;) and (traffic_light_controller.error == false) )"/>
+        <transitionSuccessionElement refElement="caution"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="operation_selection_to_traffic_flow" transitionSourceElement="operation_selection">
+        <acceptParameter triggerkind="when" triggerExpression="((traffic_light_controller.message_queue == &quot;operating_mode.traffic_flow&quot;) and (traffic_light_controller.error == false) )"/>
+        <transitionSuccessionElement refElement="traffic_flow"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="caution_to_yellow_blinking" transitionSourceElement="caution">
+        <transitionSuccessionElement refElement="yellow_blinking"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="stop_sign_to_red_blinking" transitionSourceElement="stop_sign">
+        <transitionSuccessionElement refElement="red_blinking"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="traffic_flow_to_red_on" transitionSourceElement="traffic_flow">
+        <acceptParameter triggerkind="when" triggerExpression="(traffic_light_controller.error == false)"/>
+        <transitionSuccessionElement refElement="red_on"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="red_on_to_green_on" transitionSourceElement="red_on">
+        <acceptParameter triggerkind="when" triggerExpression="(traffic_light_controller.wait_duration > traffic_light_controller.red_on_time) and (vehicle_sensor.vehicle_at_light == true) and (traffic_light_controller.message_queue == &quot;Safe_all_red&quot;) and (traffic_light_controller.error == false)"/>
+        <transitionSuccessionElement refElement="green_on"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="red_on_to_traffic_flow" transitionSourceElement="red_on">
+        <acceptParameter triggerkind="when" triggerExpression="((((traffic_light_controller.message_queue != &quot;&quot;) and (traffic_light_controller.message_queue != &quot;Safe_all_red&quot;) ) or (traffic_light_controller.error == true) ) )"/>
+        <transitionSuccessionElement refElement="traffic_flow"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="green_on_to_yellow_on" transitionSourceElement="green_on">
+        <acceptParameter triggerkind="when" triggerExpression="(traffic_light_controller.wait_duration > traffic_light_controller.green_on_time or (traffic_light_controller.error == true) )"/>
+        <transitionSuccessionElement refElement="yellow_on"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="yellow_on_to_red_on" transitionSourceElement="yellow_on">
+        <acceptParameter triggerkind="when" triggerExpression="(traffic_light_controller.wait_duration > traffic_light_controller.yellow_on_time)"/>
+        <transitionSuccessionElement refElement="red_on"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="traffic_flow_to_operation_selection" transitionSourceElement="traffic_flow">
+        <acceptParameter triggerkind="when" triggerExpression="((traffic_light_controller.message_queue != &quot;&quot;) or (traffic_light_controller.error == true) )"/>
+        <transitionSuccessionElement refElement="operation_selection"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="red_blinking_to_operation_selection" transitionSourceElement="red_blinking">
+        <acceptParameter triggerkind="when" triggerExpression="((traffic_light_controller.message_queue != &quot;&quot;) or (traffic_light_controller.error == true) )"/>
+        <transitionSuccessionElement refElement="operation_selection"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage" declaredName="yellow_blinking_to_operation_selection" transitionSourceElement="yellow_blinking">
+        <acceptParameter triggerkind="when" triggerExpression="((traffic_light_controller.message_queue != &quot;&quot;) or (traffic_light_controller.error == true) )"/>
+        <transitionSuccessionElement refElement="operation_selection"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="off"/>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="init">
+      <elements xsi:type="sysMLOC:EntryActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.power_up_test"/>
+      </elements>
+      <elements xsi:type="sysMLOC:DoActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.check_status.check_error"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ExitActionNode"/>
+    </elements>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="diagnostic">
+      <elements xsi:type="sysMLOC:EntryActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.run_diagnostic"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ExitActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.reset_error"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="operation_selection">
+      <elements xsi:type="sysMLOC:EntryActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.check_status.check_error"/>
+      </elements>
+      <elements xsi:type="sysMLOC:DoActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.check_status"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ExitActionNode"/>
+    </elements>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="stop_sign"/>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="red_blinking">
+      <elements xsi:type="sysMLOC:EntryActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.blink_red_light"/>
+      </elements>
+      <elements xsi:type="sysMLOC:DoActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.check_status.check_error"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ExitActionNode"/>
+    </elements>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="caution"/>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="yellow_blinking">
+      <elements xsi:type="sysMLOC:EntryActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.blink_yellow_light"/>
+      </elements>
+      <elements xsi:type="sysMLOC:DoActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.check_status"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ExitActionNode"/>
+    </elements>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="traffic_flow">
+      <elements xsi:type="sysMLOC:EntryActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.check_status"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ExitActionNode"/>
+    </elements>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="green_on">
+      <elements xsi:type="sysMLOC:EntryActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.turn_green_on"/>
+      </elements>
+      <elements xsi:type="sysMLOC:DoActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.check_status"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ExitActionNode"/>
+    </elements>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="yellow_on">
+      <elements xsi:type="sysMLOC:EntryActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.turn_yellow_on"/>
+      </elements>
+      <elements xsi:type="sysMLOC:DoActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.check_status.check_error"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ExitActionNode"/>
+    </elements>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="red_on">
+      <elements xsi:type="sysMLOC:EntryActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.turn_red_on"/>
+      </elements>
+      <elements xsi:type="sysMLOC:DoActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="traffic_light_controller.check_status"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ExitActionNode"/>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceUsage">
+      <typings>clock_bus</typings>
+      <connectorPart refElement="traffic_light_counter.clock_out"/>
+      <connectorPart refElement="traffic_light_controller.clock_in"/>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceUsage">
+      <typings>vehicle_sensor_signal</typings>
+      <connectorPart refElement="vehicle_sensor.vehicle_sensor_out"/>
+      <connectorPart refElement="traffic_light_controller.vehicle_sensor_in"/>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceUsage">
+      <typings>light_control_bus</typings>
+      <connectorPart refElement="traffic_light_controller.light_control_out"/>
+      <connectorPart refElement="light_housing.light_inserts.red_light.light_control_in"/>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceUsage">
+      <typings>light_control_bus</typings>
+      <connectorPart refElement="traffic_light_controller.light_control_out"/>
+      <connectorPart refElement="light_housing.light_inserts.yellow_light.light_control_in"/>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceUsage">
+      <typings>light_control_bus</typings>
+      <connectorPart refElement="traffic_light_controller.light_control_out"/>
+      <connectorPart refElement="light_housing.light_inserts.green_light.light_control_in"/>
+    </elements>
+  </elements>
+</sysMLOC:RootNamespace>

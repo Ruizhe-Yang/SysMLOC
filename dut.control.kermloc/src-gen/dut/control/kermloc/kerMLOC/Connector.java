@@ -14,6 +14,9 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.kermloc.kerMLOC.Connector#isIsFrom <em>Is From</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.Connector#getConnectorPart <em>Connector Part</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.Connector#isIsNary <em>Is Nary</em>}</li>
  *   <li>{@link dut.control.kermloc.kerMLOC.Connector#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -21,8 +24,64 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Connector extends FeatureElement, MemberPrefix, ExtendedPrefix, FeaturePrefix, EndFeaturePrefix, BasicFeaturePrefix, PrefixMetadata, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, FeatureConjugationPart, FeatureRelationshipPart, TypeRelationshipPart, DisjoiningPart, UnioningPart, IntersectingPart, DifferencingPart, ChainingPart, InvertingPart, TypeFeaturingPart, ValuePart, FeatureValue, ConnectorDeclaration, BinaryConnectorDeclaration, NaryConnectorDeclaration
+public interface Connector extends FeatureElement, MemberPrefix, ExtendedPrefix, FeaturePrefix, EndFeaturePrefix, BasicFeaturePrefix, PrefixMetadata, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, FeatureConjugationPart, FeatureRelationshipPart, TypeRelationshipPart, DisjoiningPart, UnioningPart, IntersectingPart, DifferencingPart, ChainingPart, InvertingPart, TypeFeaturingPart, ValuePart, FeatureValue
 {
+  /**
+   * Returns the value of the '<em><b>Is From</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is From</em>' attribute.
+   * @see #setIsFrom(boolean)
+   * @see dut.control.kermloc.kerMLOC.KerMLOCPackage#getConnector_IsFrom()
+   * @model
+   * @generated
+   */
+  boolean isIsFrom();
+
+  /**
+   * Sets the value of the '{@link dut.control.kermloc.kerMLOC.Connector#isIsFrom <em>Is From</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is From</em>' attribute.
+   * @see #isIsFrom()
+   * @generated
+   */
+  void setIsFrom(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Connector Part</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.kermloc.kerMLOC.ConnectorEnd}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Connector Part</em>' containment reference list.
+   * @see dut.control.kermloc.kerMLOC.KerMLOCPackage#getConnector_ConnectorPart()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ConnectorEnd> getConnectorPart();
+
+  /**
+   * Returns the value of the '<em><b>Is Nary</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Nary</em>' attribute.
+   * @see #setIsNary(boolean)
+   * @see dut.control.kermloc.kerMLOC.KerMLOCPackage#getConnector_IsNary()
+   * @model
+   * @generated
+   */
+  boolean isIsNary();
+
+  /**
+   * Sets the value of the '{@link dut.control.kermloc.kerMLOC.Connector#isIsNary <em>Is Nary</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Nary</em>' attribute.
+   * @see #isIsNary()
+   * @generated
+   */
+  void setIsNary(boolean value);
+
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
    * The list contents are of type {@link dut.control.kermloc.kerMLOC.TypeBodyElement}.
