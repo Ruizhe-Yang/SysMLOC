@@ -462,8 +462,6 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cSuccessionFlowParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		//FeatureElement:
-		////    DefaultFeature
-		////    | Feature
 		//    Feature
 		//    | Step
 		//    | ExpressionClass
@@ -477,23 +475,19 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		////    DefaultFeature
-		////    | Feature
-		//    Feature
-		//    | Step
-		//    | ExpressionClass
-		//    | BooleanExpression
-		//    | Invariant
-		//    | Connector
-		//    | BindingConnector
-		//    | Succession
-		//    | Flow
-		//    | SuccessionFlow
+		//Feature
+		//| Step
+		//| ExpressionClass
+		//| BooleanExpression
+		//| Invariant
+		//| Connector
+		//| BindingConnector
+		//| Succession
+		//| Flow
+		//| SuccessionFlow
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		////    DefaultFeature
-		////    | Feature
-		//    Feature
+		//Feature
 		public RuleCall getFeatureParserRuleCall_0() { return cFeatureParserRuleCall_0; }
 		
 		//Step
@@ -3457,6 +3451,7 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    //    ( ';' | '{' (elements+=TypeBodyElement)* '}')
 		//    //;
 		//Feature:
+		//    // [Ordered False]
 		//    MemberPrefix
 		//    ExtendedPrefix
 		//    ( FeaturePrefix
@@ -3470,6 +3465,7 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//// [Ordered False]
 		//MemberPrefix
 		//ExtendedPrefix
 		//( FeaturePrefix
@@ -3482,6 +3478,7 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//( isSemicolon?=';' | '{' (elements+=TypeBodyElement)* '}')
 		public Group getGroup() { return cGroup; }
 		
+		//// [Ordered False]
 		//MemberPrefix
 		public RuleCall getMemberPrefixParserRuleCall_0() { return cMemberPrefixParserRuleCall_0; }
 		
@@ -9013,8 +9010,6 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//FeatureElement:
-	////    DefaultFeature
-	////    | Feature
 	//    Feature
 	//    | Step
 	//    | ExpressionClass
@@ -9605,6 +9600,7 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    //    ( ';' | '{' (elements+=TypeBodyElement)* '}')
 	//    //;
 	//Feature:
+	//    // [Ordered False]
 	//    MemberPrefix
 	//    ExtendedPrefix
 	//    ( FeaturePrefix

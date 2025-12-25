@@ -107,22 +107,22 @@ operation getElement( name : String ){
 }
 
 operation getLibrary( name : String ){
-	var e = Library!Package.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
-	if (e.size() == 1){
-		return e.first();
+	var sysmlpackage = SysmlLibrary!Package.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	var kermlpackage = KermlLibrary!Package.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	var sysmllibrarypackage = SysmlLibrary!LibraryPackage.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	var kermllibrarypackage = KermlLibrary!LibraryPackage.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	
+	if (sysmlpackage.size() == 1){
+		return sysmlpackage.first();
 	}
-	else if (e.size() == 0){
-		var ee = Library!LibraryPackage.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
-		if (ee.size() == 1){
-			return ee.first();
-		}
-		else if (ee.size() == 0){
-			return null;
-		}
-		else{
-			"Modeling Error.".println();
-			return null;
-		}
+	else if (kermlpackage.size() == 1){
+		return kermlpackage.first();
+	}
+	else if (sysmllibrarypackage.size() == 1){
+		return sysmllibrarypackage.first();
+	}
+	else if (kermllibrarypackage.size() == 1){
+		return kermllibrarypackage.first();
 	}
 	else{
 		"Modeling Error.".println();

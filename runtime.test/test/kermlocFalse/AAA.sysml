@@ -1,1 +1,3 @@
-AA [1..5] ordered :BB :> CC ::> DD ;
+ref AA [1..5] ordered :BB :> CC ::> DD ;
+end AA [1..5] ordered :BB :> CC ::> DD ;
+#end AA [1..5] ordered :BB :> CC ::> DD ;

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="AA" MultiLow="1" MultiHigh="5" isOrdered="true">
+  <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="AA" MultiLow="1" MultiHigh="5" isOrdered="true">
+    <typings>BB</typings>
+    <subsetting>CC</subsetting>
+    <references>DD</references>
+  </elements>
+  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="AA" MultiLow="1" MultiHigh="5" isOrdered="true" isEnd="true">
+    <typings>BB</typings>
+    <subsetting>CC</subsetting>
+    <references>DD</references>
+  </elements>
+  <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="AA" MultiLow="1" MultiHigh="5" isOrdered="true">
+    <prefixMetadataExtension>#end</prefixMetadataExtension>
     <typings>BB</typings>
     <subsetting>CC</subsetting>
     <references>DD</references>
