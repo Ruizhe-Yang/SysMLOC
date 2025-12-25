@@ -25,7 +25,7 @@ package VehicleDefinitions {
 		port hub: WheelHubIF;
 	}
 	part def Lugbolt {
-		attribute tighteningTorque :> ISQ::torque;
+		attribute tighteningTorque :> torque;
 	}
 	
 	/* PORT DEFINITIONS */
