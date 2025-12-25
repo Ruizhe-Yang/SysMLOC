@@ -127,15 +127,6 @@ operation Any isTypeOfImport(){
 	return self.isTypeOf(SysMLOC!ImportElement) or self.isTypeOf(SysmlLibrary!ImportElement) or self.isTypeOf(KermlLibrary!ImportElement);
 }
 
-operation SysMLOC!DefinitionDeclaration checkSuperclassifier(){
-	for (t in self.superclassifiers){
-		if (getElement(t) == null){
-			return false;
-		}
-	}
-	return true;
-}
-
 operation SysMLOC!FeatureSpecialization checkFeatureSpecialization(){
 	for (t in self.typings){
 		if (self.getObject(t) == null){
@@ -173,29 +164,6 @@ operation SysMLOC!FeatureSpecialization checkFeatureSpecialization(){
 operation splitByDoubleColonOrDot(s : String) : Sequence(String) {
   if (s.isUndefined() or s = "") return Sequence{};
   return s.split("(::|\\.)");
-}
-
-operation getDefaultLibrary( name : String ){
-	var sysmlpackage = SysmlLibrary!Package.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
-	var kermlpackage = KermlLibrary!Package.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
-	var sysmllibrarypackage = SysmlLibrary!LibraryPackage.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
-	var kermllibrarypackage = KermlLibrary!LibraryPackage.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
-	if (sysmlpackage.size() == 1){
-		return sysmlpackage.first();
-	}
-	else if (kermlpackage.size() == 1){
-		return kermlpackage.first();
-	}
-	else if (sysmllibrarypackage.size() == 1){
-		return sysmllibrarypackage.first();
-	}
-	else if (kermllibrarypackage.size() == 1){
-		return kermllibrarypackage.first();
-	}
-	else{
-		"Modeling Error.".println();
-		return null;
-	}
 }
 
 operation getEObject(typeName:String, name:String){
@@ -258,5 +226,37 @@ operation SysMLOC!EObject checkElement(){
 	}
 	else{
 		return result;
+	}
+}
+
+operation SysMLOC!DefinitionDeclaration checkSuperclassifier(){
+	for (t in self.superclassifiers){
+		if (getElement(t) == null){
+			return false;
+		}
+	}
+	return true;
+}
+
+operation getDefaultLibrary( name : String ){
+	var sysmlpackage = SysmlLibrary!Package.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	var kermlpackage = KermlLibrary!Package.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	var sysmllibrarypackage = SysmlLibrary!LibraryPackage.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	var kermllibrarypackage = KermlLibrary!LibraryPackage.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	if (sysmlpackage.size() == 1){
+		return sysmlpackage.first();
+	}
+	else if (kermlpackage.size() == 1){
+		return kermlpackage.first();
+	}
+	else if (sysmllibrarypackage.size() == 1){
+		return sysmllibrarypackage.first();
+	}
+	else if (kermllibrarypackage.size() == 1){
+		return kermllibrarypackage.first();
+	}
+	else{
+		"Modeling Error.".println();
+		return null;
 	}
 }
