@@ -162,8 +162,9 @@ operation SysMLOC!FeatureSpecialization checkFeatureSpecialization(){
 }
 
 operation splitByDoubleColonOrDot(s : String) : Sequence(String) {
-  if (s.isUndefined() or s = "") return Sequence{};
-  return s.split("(::|\\.)");
+	if (s.isUndefined() or s = "") return Sequence{};
+//  return s.split("(::|\\.)");
+	return s.split("::");
 }
 
 operation getEObject(typeName:String, name:String){

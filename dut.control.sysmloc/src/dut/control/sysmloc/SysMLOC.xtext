@@ -249,8 +249,8 @@ ImportElement:
 
 ExposeElement:
 	'expose'
-	declaredName=QualifiedName (isNamespace?='::' '*')? ( '::' isRecursive ?= '**' )?  
-	//	 declaredName=QualifiedName (isNamespace?='::' )? ( '*' | isRecursive ?= '**' )?  
+	declaredName=QualifiedName (isNamespace?='::' '*')? ( '::' isRecursive ?= '**' )?
+	//	 declaredName=QualifiedName (isNamespace?='::' )? ( '*' | isRecursive ?= '**' )?
 	( '[' filterPackageExpression+=Expression ']')*
 	(';' | '{' ( elements+=AnnotatingBodyElement )* '}')
 ;

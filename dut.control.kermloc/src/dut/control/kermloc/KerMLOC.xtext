@@ -71,14 +71,14 @@ NonFeatureElement:
 	Dependency
 	| Namespace
 	| Package
-	| LibraryPackage 
+	| LibraryPackage
 	| Multiplicity
 	| Type
-	| Classifier 
+	| Classifier
 	| Class
 	| Structure
 	| Metaclass
-	| DataType 
+	| DataType
 	| Association
 	| AssociationStructure
 	| Interaction
