@@ -414,28 +414,6 @@ TypeFeaturing:
 	( ';' | '{' (elements+=RelationshipBodyElement)* '}')
 ;
 
-	//DefaultFeature:
-	//	MemberPrefix
-	//	ExtendedPrefix
-	//	((EndFeaturePrefix (crossingFeature+=CrossingFeature)? | BasicFeaturePrefix)
-	//	 PrefixMetadata+ FeatureDeclaration? 
-	//	| ( EndFeaturePrefix | BasicFeaturePrefix )
-	//	  FeatureDeclaration
-	//	)
-	//	ValuePart?
-	//	( ';' | '{' (elements+=TypeBodyElement)* '}')
-	//;
-	//
-	//Feature:
-	//	MemberPrefix
-	//	ExtendedPrefix
-	//	FeaturePrefix
-	//	'feature'
-	//	FeatureDeclaration?
-	//	ValuePart?
-	//	( ';' | '{' (elements+=TypeBodyElement)* '}')
-	//;
-
 Feature:
 	// [Ordered False]
 	MemberPrefix

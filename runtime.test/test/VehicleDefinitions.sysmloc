@@ -10,7 +10,7 @@
     <elements xsi:type="sysMLOC:Comment" body="/* PART DEFINITIONS */"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
-        <subsetting>ISQ::mass</subsetting>
+        <subsetting>ISQ::mass1</subsetting>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Transmission"/>
