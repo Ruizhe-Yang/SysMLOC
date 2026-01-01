@@ -1395,14 +1395,14 @@ fragment MultiplicityModifiers:
 ;
 
 fragment FeatureSpecialization:
-	(':'|'defined' 'by') TypingFeatureTyping
+	(':'|'defined' 'by') TypingFeatureChain
 	| (':>'|'specializes'|'subsets') SubsettingFeatureChain
 	| ('::>'|'references')  ReferenceFeatureChain
 	| ('=>'|'crosses') CrossFeatureChain
 	| (':>>'|'redefines') RedefinitionFeatureChain
 ;
 
-fragment TypingFeatureTyping:
+fragment TypingFeatureChain:
 	typings+=FeatureTypingName (',' typings+=FeatureTypingName)*
 ;
 
