@@ -1285,7 +1285,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass typingFeatureTypingEClass = null;
+  private EClass typingFeatureChainEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -6748,13 +6748,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EClass getTypingFeatureTyping()
+  public EClass getTypingFeatureChain()
   {
-    if (typingFeatureTypingEClass == null)
+    if (typingFeatureChainEClass == null)
     {
-      typingFeatureTypingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(177);
+      typingFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(177);
     }
-    return typingFeatureTypingEClass;
+    return typingFeatureChainEClass;
   }
 
   /**
@@ -6763,9 +6763,9 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getTypingFeatureTyping_Typings()
+  public EAttribute getTypingFeatureChain_Typings()
   {
-        return (EAttribute)getTypingFeatureTyping().getEStructuralFeatures().get(0);
+        return (EAttribute)getTypingFeatureChain().getEStructuralFeatures().get(0);
   }
 
   /**

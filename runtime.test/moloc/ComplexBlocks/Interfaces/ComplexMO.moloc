@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:StoredDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" within="Modelica.ComplexBlocks.Interfaces">
+  <classes name="ComplexMO" str_comment="&quot;Multiple Output continuous control block&quot;" name_end="ComplexMO">
+    <composition>
+      <priv_elist>
+        <elem xsi:type="mOloc:ExtendsClause" name="Modelica.ComplexBlocks.Icons.ComplexBlock"/>
+        <elem xsi:type="mOloc:ComponentClause" prefix="parameter">
+          <type name="Integer"/>
+          <comps>
+            <comps>
+              <decl name="nout">
+                <mod dh="true">
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="min">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                  <expr xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                </mod>
+              </decl>
+              <comment comment="&quot;Number of outputs&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause">
+          <type name="ComplexOutput"/>
+          <comps>
+            <comps>
+              <decl name="y">
+                <subscripts>
+                  <subscripts>
+                    <expr xsi:type="mOloc:ComponentReference">
+                      <idents>nout</idents>
+                    </expr>
+                  </subscripts>
+                </subscripts>
+              </decl>
+              <comment comment="&quot;Connector of Complex output signals&quot;">
+                <annotation isannotation="true">
+                  <cm>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="Placement">
+                          <mod>
+                            <mod>
+                              <args>
+                                <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                  <element xsi:type="mOloc:ElementModification" name="transformation">
+                                    <mod>
+                                      <mod>
+                                        <args>
+                                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                            <element xsi:type="mOloc:ElementModification" name="extent">
+                                              <mod dh="true">
+                                                <expr xsi:type="mOloc:Primary">
+                                                  <fa>
+                                                    <args xsi:type="mOloc:Primary">
+                                                      <fa>
+                                                        <args xsi:type="mOloc:FloatPrimary" val="100.0"/>
+                                                        <args xsi:type="mOloc:FunctionArguments">
+                                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                                            <term xsi:type="mOloc:FloatPrimary" val="10.0"/>
+                                                          </args>
+                                                        </args>
+                                                      </fa>
+                                                    </args>
+                                                    <args xsi:type="mOloc:FunctionArguments">
+                                                      <args xsi:type="mOloc:Primary">
+                                                        <fa>
+                                                          <args xsi:type="mOloc:FloatPrimary" val="120.0"/>
+                                                          <args xsi:type="mOloc:FunctionArguments">
+                                                            <args xsi:type="mOloc:FloatPrimary" val="10.0"/>
+                                                          </args>
+                                                        </fa>
+                                                      </args>
+                                                    </args>
+                                                  </fa>
+                                                </expr>
+                                              </mod>
+                                            </element>
+                                          </args>
+                                        </args>
+                                      </mod>
+                                    </mod>
+                                  </element>
+                                </args>
+                              </args>
+                            </mod>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </cm>
+                </annotation>
+              </comment>
+            </comps>
+          </comps>
+        </elem>
+      </priv_elist>
+      <anno isannotation="true">
+        <cm>
+          <args>
+            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+              <element xsi:type="mOloc:ElementModification" name="Documentation">
+                <mod>
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="info">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:StringPrimary" val="&lt;html>&#xA;&lt;p>&#xA;Block has one continuous Complex output signal vector.&#xA;&lt;/p>&#xA;&lt;/html>"/>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                </mod>
+              </element>
+            </args>
+          </args>
+        </cm>
+      </anno>
+    </composition>
+    <cp isPartial="true" kind="block"/>
+  </classes>
+</mOloc:StoredDefinition>

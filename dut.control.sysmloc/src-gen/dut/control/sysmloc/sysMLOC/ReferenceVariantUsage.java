@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ReferenceVariantUsage extends GeneralBodyElements, ReferenceSubsetting, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain
+public interface ReferenceVariantUsage extends GeneralBodyElements, ReferenceSubsetting, FeatureSpecialization, TypingFeatureChain, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain
 {
   /**
    * Returns the value of the '<em><b>Visibility</b></em>' attribute.

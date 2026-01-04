@@ -1,0 +1,623 @@
+//grammar dut.control.moloc.MOloc with org.eclipse.xtext.common.Terminals
+grammar dut.control.moloc.MOloc hidden(WS, ML_COMMENT, SL_COMMENT)
+
+generate mOloc "http://www.control.dut/moloc/MOloc"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+//-----------------------------------------------
+// B.2.1 Stored Definition
+//-----------------------------------------------
+
+StoredDefinition:
+	('within' within=Name ';')?
+	(classes+=ClassDefinition ';' )*
+;
+
+//-----------------------------------------------
+// B.2.2 Class Definition
+//-----------------------------------------------
+
+ClassDefinition:
+	(final?='final')?
+	(encapsulated?='encapsulated')?
+	cp = ClassPrefix
+	ClassSpecifier
+;
+
+ClassPrefix :
+	isPartial?='partial'? 
+	kind=ClassPrefixes
+;
+
+ClassPrefixes:
+	'partial'?
+	('class'
+		| 'model'
+		| 'operator'? 'record'
+		| 'block'
+		| 'expandable'? 'connector'
+		| 'type'
+		| 'package'
+		| ('pure' | 'impure')? 'operator'? 'function'
+		| 'operator'
+	)
+;
+
+fragment ClassSpecifier:
+	name=IDENT str_comment=StringComment composition=Composition 'end' name_end=IDENT
+	| name=IDENT '=' prefix=BasePrefix name2=Name subs=ArraySubscripts? mod=ClassModification? comment=Comment
+	| name=IDENT '=' elementnum = Elementenumeratioan //enumeration ?= 'enumeration' '(' ( list=EnumList? | ':') ')' comment=Comment
+	| name=IDENT '=' 'der' '(' Name ',' IDENT (',' IDENT)* ')' comment=Comment
+	| 'extends' type=[ClassDefinition|Name] mod=ClassModification? str_comment=StringComment composition=Composition 'end' name_end=IDENT
+	| 'type' name=IDENT '=' baseType=BuiltInType mod=ClassModification? str_comment=StringComment? composition=Composition 'end' name_end=IDENT
+;
+
+BasePrefix:
+	TypePrefix
+;
+
+EnumList:
+	enums+=EnumerationLiteral (',' enums+=EnumerationLiteral)*
+;
+
+EnumerationLiteral:
+	id=IDENT comment=Comment?
+;
+
+Composition:
+	priv_elist=ElementList
+	(
+	 'public' pub_elist+=PubElementList
+		| 'protected' protected_elist+=ProElementList
+		| eq_secs+=EquationSection
+		| alg_secs+=AlgorithmSection
+	)*
+	('external'
+		ext_elist+=ExtElementList
+	)?
+	(anno=Annotation ';')?
+;
+
+PubElementList:
+	 ele+=ElementList
+;
+
+ProElementList:
+	 ele+=ElementList
+;
+
+ExtElementList:
+		{ExtElementList} ext_lang_spec=LanguageSpecification?
+		ext_func_call=ExternalFunctionCall?
+		ext_anno=Annotation? ';'
+;
+
+LanguageSpecification:
+	STRING
+;
+
+ExternalFunctionCall:
+	(lhs=ComponentReference '=')?
+	name=IDENT '(' args=ExpressionList? ')'
+;
+
+ElementList:
+	{ElementList}
+	(elem+=Element ';')*
+;
+
+Element:
+	ImportClause
+	| ExtendsClause
+	|typeClause
+	| 'redeclare'? 'final'? 'inner'? 'outer'?
+		( (ClassDefinition | ComponentClause)
+			| 'replaceable' (ClassDefinition | ComponentClause)
+			(constraining=ConstrainingClause comment=Comment)?
+		)
+;
+
+//ImportClause:
+//	'import' (id=IDENT '=' name=Name
+//		| Name (','? ('*' | '(' list=ImportList ')' ) )?) comment=Comment
+//;
+//
+//ImportList:
+//	id=IDENT (',' list=ImportList)?
+//;
+
+ImportClause:
+    'import' (
+        id=IDENT '=' name=QualifiedName
+      | name=QualifiedName
+        (','? ('*' | '(' list=ImportList ')'))?
+    ) comment=Comment?
+;
+
+ImportList:
+    names+=QualifiedName (',' names+=QualifiedName)*;
+
+QualifiedName:
+    IDENT ('.' IDENT)*;
+
+
+
+//TypeDefinition:
+//   'type' name=IDENT '=' baseType=TypeSpecifier ('(' attributes=Modification ')')? ';'
+//;
+
+//-----------------------------------------------
+// B.2.3 Extends
+//-----------------------------------------------
+ExtendsClause:
+	'extends' name=Name mod=ClassModification? anno=Annotation?
+;
+
+typeClause:
+	'type' name=IDENT '=' baseType=BuiltInType mod=ClassModification? anno=Annotation?
+;
+
+ConstrainingClause:
+	'constrainedby' name=Name mod=ClassModification?
+;
+
+//-----------------------------------------------
+// B.2.4 Component Clause
+//-----------------------------------------------
+
+ComponentClause:
+	prefix=TypePrefix type=TypeSpecifier subs=ArraySubscripts? comps=ComponentList
+;
+
+TypePrefix:
+	('flow' | 'stream')?
+	('discrete' | 'parameter' | 'constant')?
+	('input' | 'output')?
+;
+
+BuiltInType:
+    'Integer' | 'Real' | 'Boolean' | 'String' 
+ ;
+
+TypeSpecifier:
+	name=BuiltInType | name=Name | name1= [ClassDefinition|IDENT] 
+;
+
+ComponentList:
+	comps+=ComponentDeclaration (',' comps+=ComponentDeclaration)*
+;
+   
+ComponentDeclaration:
+	decl=Declaration cond=ConditionAttribute? comment=Comment
+;
+
+ConditionAttribute:
+	'if' Expression
+;
+
+Declaration:
+	(name=IDENT | type=TypeSpecifier)  subscripts=ArraySubscripts? mod=Modification? //('=' value=Expression)?
+;
+
+
+//-----------------------------------------------
+// B.2.5 Modification
+//-----------------------------------------------
+
+Modification:
+	mod=  ClassModification (dh ?= '=' expr=Expression)?
+	| dh ?= '=' expr=Expression
+	| mh ?= ':=' expr=Expression
+;
+
+ClassModification:
+	{ClassModification}
+	"(" args+=ArgumentList? ")"
+;
+
+//ClassModification1:
+//	{ClassModification}
+//	"{" args+=ArgumentList? "}"
+//;
+
+ArgumentList:
+	args+=Argument ("," args+=Argument)*
+;
+
+Argument:
+	ElementModicationOrReplaceable
+	| ElementRedeclaration
+;
+
+ElementModicationOrReplaceable:
+	each ?= 'each'? final ?= 'final'? element = (ElementModification | ElementReplaceable)
+;
+
+ElementModification:
+	name=Name mod=Modification? comment=StringComment
+;
+
+ElementRedeclaration:
+	redeclare ?= 'redeclare' each ?= 'each'? final ?= 'final'?
+	(
+		element = ((ShortClassDefinition | ComponentClause1) | ElementReplaceable)
+	)
+;
+
+ElementReplaceable:
+	replaceable ?= 'replaceable' element = (ShortClassDefinition | ComponentClause1) const=ConstrainingClause?
+;
+
+ComponentClause1:
+	 (prefix=TypePrefix)? (type=TypeSpecifier?) subs=ArraySubscripts? comp=ComponentDeclaration1
+;
+
+ComponentDeclaration1:
+	Declaration comment=Comment
+;
+
+//ShortClassDefinition:
+//	ClassPrefixes IDENT '='
+//	(BasePrefix Name asts=ArraySubscripts? mode=ClassModification? comment=Comment |
+//		'enumeration' '(' ( list=EnumList? | ':') ')' comment=Comment 
+//	)
+//;
+
+ShortClassDefinition:
+    {ShortClassDefinition} ClassPrefixes|'type' name=IDENT '=' (
+        BasePrefix type=[ClassDefinition|Name] asts=ArraySubscripts? mode=ClassModification? comment=Comment
+        | elementnum = Elementenumeratioan
+    );
+
+Elementenumeratioan:
+	enumeratioan ?= 'enumeration' '(' (list=EnumList? | ':') ')' comment=Comment
+;
+//-----------------------------------------------
+// B.2.6 Equations
+//-----------------------------------------------
+EquationSection:
+	(initial?='initial')? 'equation' (equations+=Equation ';')+
+;
+
+AlgorithmSection:
+	(initial?='initial')? 'algorithm' (statements+=Statement ';')+
+;
+
+Equation://name可能会有问题
+	(LREquation
+		| IfEquation
+		| ForEquation
+		| ConnectClause
+		| WhenEquation
+		|Name FunctionCallArgs
+	)
+	commment=Comment
+;
+
+LREquation:
+	left=SimpleExpression '=' right=Expression
+;
+
+Statement:
+	(LRStatement
+	| Break
+	| Return
+	| IfStatement
+	| ForStatement
+	| WhileStatement
+	| WhenStatement)
+	comment=Comment
+;
+
+LRStatement:
+	(left=ComponentReference
+	(':=' right= (Expression | FunctionCallArgs))
+	)
+	| LRKStatement
+;
+
+LRKStatement:
+	'(' left=OutputExpressionList ')' ':='
+		ref=ComponentReference ref_call=FunctionCallArgs
+;
+
+Break:
+	val = 'break'
+;
+
+Return:
+	val = 'return'
+;
+
+IfEquation:
+	'if' if_expr=Expression 'then'
+		(if_eqs+=Equation ';')*
+	(
+		'elseif' elsif_exprs+=Expression 'then'
+			(elseif_eqs+=Equation ';')*
+	)*
+	(
+		'else'
+			(else_eqs+=Equation ';')*
+	)?
+	'end' 'if'
+;
+
+IfStatement:
+	'if' if_expr=Expression 'then'
+		(if_stmts+=Statement ';')*
+	(
+		'elseif' elseif_exprs+=Expression 'then'
+			(elseif_stmts+=Statement ';')*
+	)*
+	(
+		'else'
+			(else_stmts+=Statement ';')*
+	)?
+	'end' 'if'
+;
+
+ForEquation:
+	'for' indices=ForIndices 'loop'
+		(eqs+=Equation ';')*
+	'end' 'for'
+;
+
+ForStatement:
+	'for' indices=ForIndices 'loop'
+		(stmts+=Statement ';')*
+	'end' 'for'
+;
+
+ForIndices:
+	indices+=ForIndex (',' indices+=ForIndex)*
+;
+
+ForIndex:
+	id=IDENT ('in' expr=Expression)
+;
+
+WhileStatement:
+	'while' cond=Expression 'loop'
+		(stmts+=Statement ';')*
+	'end' 'while'
+;
+
+WhenEquation:
+	'when' when=Expression 'then'
+		(when_eqs+=Equation ';')*
+	( 'elsewhen' elsehwhen+=Expression 'then'
+		(elsewhen_eqs+=Equation ';')
+	)*
+	'end' 'when'
+;
+
+WhenStatement:
+	'when' when=Expression 'then'
+		(when_stmts+=Statement ';')*
+	( 'elsewhen' elsehwhen+=Expression 'then'
+		(elsewhen_stmts+=Statement ';')
+	)*
+	'end' 'when'
+;
+
+ConnectClause:
+	'connect' '(' left=ComponentReference ','
+		right=ComponentReference ')'
+;
+
+//-----------------------------------------------
+// B.2.7 Expressions
+//-----------------------------------------------
+
+Expression:
+	SimpleExpression
+	| IfExpression
+;
+
+IfExpression:
+	'if' if=Expression 'then' then=Expression
+	( 'elseif' elseif+=Expression
+			'then' elseifthen+=Expression)*
+		'else' else+=Expression
+;
+
+SimpleExpression:
+	LogicalExpression
+	(':' {SimpleExpression.exprs += current} exprs+=LogicalExpression 
+		(':' exprs+=LogicalExpression)?
+	)?
+;
+
+LogicalExpression:
+	LogicalTerm ({LogicalExpression.terms+=current} ro ?= 'or' terms+=LogicalTerm)*
+	
+;
+
+LogicalTerm:
+	LogicalFactor ({LogicalFactor.factors+=current} dna ?= 'and' factors+=LogicalFactor)*
+;
+
+
+LogicalFactor:
+	Relation
+	| noot?='not' rel=Relation
+;
+
+Relation:
+	ArithmeticExpression ({Relation.left=current} rel_op=RelOp right=ArithmeticExpression)?
+;
+
+RelOp:
+	"<" | "<=" | ">" | ">=" | "==" | "<>"
+;
+
+
+ArithmeticExpression:
+	Negation ( {ArithmeticExpression.terms+=current} add_op+=AddOp terms+=Negation)*
+;
+
+Negation:
+	Term
+	| neg_op=AddOp term=Term
+;
+
+AddOp:
+	"+" | "-" | ".+" | ".-"
+;
+
+Term :
+	Factor ({Term.factors+=current} mul_op+=MulOp factors+=Factor )*
+;
+
+MulOp :
+	"*" | "/" | ".*" | "./"
+;
+
+Factor :
+	Primary ({Factor.base=current} (cf ?= "^" | dcf ?= ".^") exp=Primary )?
+;
+
+FloatPrimary:
+	val=UNSIGNED_NUMBER
+;
+
+StringPrimary:
+	val=STRING
+;
+
+LogicalPrimary:
+	val=TRUE_FALSE
+;
+
+End:
+	val='end'
+;
+
+Primary:
+	FloatPrimary
+	| StringPrimary
+	| LogicalPrimary
+	| FunctionCall
+	| ComponentReference
+	| "(" oe = OutputExpressionList ")"
+	| "[" res+=ExpressionList ( ";" res+=ExpressionList )* "]"
+	| "{" fa += FunctionArguments "}"
+	| End
+;
+
+FunctionCall:
+	comp_ref=( QualifiedName | 'der' | 'initial' ) args=FunctionCallArgs
+;
+
+Name:
+	"."? IDENT ("." IDENT)*
+;
+
+ComponentReference:
+	( '.'? idents+=IDENT subscripts += (ArraySubscripts)?)+
+;
+
+FunctionCallArgs:
+	{FunctionCallArgs}
+	'(' res=FunctionArguments? ')'
+;
+
+FunctionArguments:
+	args+=FunctionArgument
+	( ',' args+=FunctionArguments | 'for' indices=ForIndices
+	)?
+	| NamedArgument
+;
+
+
+NamedArguments:
+	args+=NamedArgument ("," args+=NamedArguments)
+;
+
+NamedArgument:
+	id=IDENT '=' func=FunctionArgument
+;
+
+//FunctionArgument:
+//	Expression
+//	| 'function' name=Name '(' args=NamedArguments? ')'
+//;
+
+FunctionArgument:
+	FunctionDefinition | Expression
+;
+
+FunctionDefinition:
+	'function' name=Name '(' args=NamedArguments? ')'
+;
+
+
+OutputExpressionList:
+	{OutputExpressionList}
+	exprs+=Modification? (',' exprs+=Modification?)*
+;
+
+ExpressionList:
+	exprs+=Expression (',' exprs+=Expression)*
+;
+
+ArraySubscripts:
+	'[' subscripts+=Subscript
+		(',' subscripts+=Subscript)*
+	']'
+;
+
+//ArraySubscripts1:
+//	'(' Modification?
+//		(',' subscripts+=Modification)*
+//	')'
+//;
+
+Subscript:
+	all?=':' | expr = Expression
+;
+
+Comment:
+	comment=StringComment annotation=Annotation?
+;
+
+StringComment:
+	(STRING ('+' STRING)*)?
+;
+
+Annotation:
+	isannotation?='annotation'? cm=ClassModification
+;
+
+
+// terminals
+terminal TRUE_FALSE returns ecore::EBoolean:
+	('true' | 'false')
+;
+terminal IDENT returns ecore::EString:
+	NONDIGIT ( DIGIT | NONDIGIT )* | Q_IDENT
+;
+terminal UNSIGNED_NUMBER returns ecore::EFloat:
+	UNSIGNED_INTEGER ( "." ( UNSIGNED_INTEGER )? )?
+	( ( "e" | "E" ) ( "+" | "-" )? UNSIGNED_INTEGER )?
+;
+terminal STRING returns ecore::EString:
+	"\"" ( S_CHAR | S_ESCAPE )* "\""
+;
+terminal ML_COMMENT: '/*'->'*/';
+terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
+terminal WS: (' ' | '\t' | '\r' | '\n')+;
+//terminal ANY_OTHER: .;
+
+// terminal fragments
+terminal fragment DIGIT: "0".."9";
+terminal fragment UNSIGNED_INTEGER: DIGIT+;
+terminal fragment S_ESCAPE: "\\" ("'" | "\"" | "?" | "\\" | "a" | "b" | "f" | "n" | "r" | "t" | "v");
+terminal fragment Q_IDENT: "’" ( Q_CHAR | S_ESCAPE )* "’";
+terminal fragment NONDIGIT: "_" | "a".."z" | "A".."Z";
+terminal fragment S_CHAR: !( "\"" | "\\");
+terminal fragment Q_CHAR: NONDIGIT | DIGIT | "!" | "#" | "$" | "%" | "&" | "(" | ")" | "*" | "+" | "," |
+	"-" | "." | "/" | ":" | ";" | "<" | ">" | "=" | "?" | "@" | "[" | "]" | "^" |
+	"{" | "}" | "|" | "~" | " ";

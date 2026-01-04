@@ -1,0 +1,249 @@
+operation Any getObject(inputName: String){
+	var nameSequence = splitByDoubleColonOrDot(inputName);
+	var s = self.getSingleObject(nameSequence.first());
+	if(nameSequence.size() == 1){
+		if (ShowSearchProcess){
+			if (self.hasProperty("declaredName")){
+				("-- in "+self.declaredName+" found "+inputName).println();
+			}
+			else{
+				("-- in Libraries found "+inputName).println();
+			}
+		}
+		return s;
+	}
+	var c;
+	for (i in 1.to(nameSequence.size()-1)){
+		c = s.getSingleObject(nameSequence.at(i));
+		if (c != null){
+			s = c;
+		}
+		else{
+			return null;
+		}
+	}
+	if (c == null){
+		if (ShowSearchProcess){
+			(">> "+inputName+" can not be found.").println();
+		}
+		return null;
+	}
+	return c;
+}
+
+operation Any getSingleObject(inputName: String){
+	/*--------0--------*/
+	LOOPPROTECT++;
+	if (LOOPPROTECT > 1000){
+		return null;
+	}
+	
+	if (ShowSearchProcess){
+		if (self.hasProperty("declaredName")){
+			(">> in "+self.declaredName+" finding "+inputName).println();
+		}
+		else{
+			(">> in Libraries finding "+inputName).println();
+		}	
+	}
+
+	/*--------1--------*/
+	var res = self.elements.select(s|s.hasProperty("declaredName") and (not s.isTypeOfImport()) and s.declaredName==inputName).first();
+	if (res != null){
+		return res;
+	}
+	/*--------2--------*/
+	if (self.eContainer()!=null and not self.eContainer().isTypeOf(SysMLOC!RootNamespace)){
+		var res = self.eContainer().getObject(inputName);
+		if (res != null){
+			return res;
+		}
+	}
+	else if(self.type.name!="RootNamespace"){
+		var res = SysmlLibrary!RootNamespace.all.first().getObject(inputName);
+		if (res != null){
+			return res;
+		}
+		var resk = KermlLibrary!RootNamespace.all.first().getObject(inputName);
+		if (resk != null){
+			return resk;
+		}
+	}
+	/*--------3--------*/
+	var importLibraries = self.elements.select(s|s.isTypeOfImport());
+	for (importLibrary in importLibraries){
+		if (importLibrary.declaredName != inputName){
+			var importObject = self.getObject(importLibrary.declaredName);
+			if (importLibrary.isNamespace){
+				var res = importObject.elements.select(s|s.hasProperty("declaredName") and s.declaredName==inputName).first();
+				if (res != null){
+					return res;
+				}
+			}
+			else{
+				if (splitByDoubleColonOrDot(importLibrary.declaredName).last()==inputName){
+					return importObject;
+				}
+			}
+			var importExtendedLibraries = importObject.elements.select(s|s.isTypeOfImport() and s.visibility.name=="public");
+			for (importExtendedLibrary in importExtendedLibraries){
+				if (importExtendedLibrary.declaredName != inputName){
+					var importExtendedObject = self.getObject(importExtendedLibrary.declaredName);
+					var res = importExtendedObject.elements.select(s|s.hasProperty("declaredName") and s.declaredName==inputName).first();
+					if (res != null){
+						return res;
+					}
+				}
+			}
+		}
+	}
+	if (ShowSearchProcess){
+		if (self.hasProperty("declaredName")){
+			("-- in "+self.declaredName+" didn't find "+inputName).println();
+		}
+		else{
+			("-- in Libraries didn't find "+inputName).println();
+		}
+	}
+	
+	return null;
+}
+
+operation Any isTypeOfImport(){
+	return self.isTypeOf(SysMLOC!ImportElement) or self.isTypeOf(SysmlLibrary!ImportElement) or self.isTypeOf(KermlLibrary!ImportElement);
+}
+
+operation SysMLOC!FeatureSpecialization checkFeatureSpecialization(){
+	for (t in self.typings){
+		if (self.getObject(t) == null){
+			("[Flase] : "+self.type.name+" "+self.declaredName+"'s typings can't indexed correctly.").println();
+			return false;
+		}
+	}
+	for (t in self.subsetting){
+		if (self.getObject(t) == null){
+			("[Flase] : "+self.type.name+" "+self.declaredName+"'s subsetting can't indexed correctly.").println();
+			return false;
+		}
+	}
+	for (t in self.references){
+		if (self.getObject(t) == null){
+			("[Flase] : "+self.type.name+" "+self.declaredName+"'s references can't be indexed correctly.").println();
+			return false;
+		}
+	}
+	for (t in self.crosses){
+		if (self.getObject(t) == null){
+			("[Flase] : "+self.type.name+" "+self.declaredName+"'s crosses can't be indexed correctly.").println();
+			return false;
+		}
+	}
+	for (t in self.redefinitions){
+		if (self.getObject(t) == null){
+			("[Flase] : "+self.type.name+" "+self.declaredName+"'s redefinitions can't be indexed correctly.").println();
+			return false;
+		}
+	}
+	return true;
+}
+
+operation splitByDoubleColonOrDot(s : String) : Sequence(String) {
+	if (s.isUndefined() or s = "") return Sequence{};
+//  return s.split("(::|\\.)");
+	return s.split("::");
+}
+
+operation getEObject(typeName:String, name:String){
+	return SysMLOC!EObject.all.select(s|s.type.name==typeName).select(e|e.declaredName == name).first();
+}
+
+// ------------------------ Temporarily unused functions ------------------------ //
+
+//var root = SysMLOC!Package.all.first();
+
+//root.checkElement();
+//root.run();
+
+operation SysMLOC!EObject run(){
+	if (self.hasProperty("elements")){
+		for (e in self.elements){
+			e.operate();
+			e.run();
+		}
+	}
+}
+
+operation SysMLOC!EObject operate(){
+//	self.println();
+	if (self.isTypeOf(SysMLOC!ImportElement)){
+		getLibrary(self.declaredName).println();
+		
+	}
+}
+
+operation SysMLOC!EObject checkElement(){
+	var result = true;
+	if (self.hasProperty("elements")){
+		for (e in self.elements){
+			if (e.isKindOf(SysMLOC!DefinitionDeclaration)){
+				if (not e.checkSuperclassifier()){
+					result = false;
+					("[Error]" + e.declaredName + " : SuperClassifier error." ).println();
+					return result;
+				}
+				else{
+	//				("[Check]" + e.declaredName + " : " + result.asString()).println();
+				}
+			}
+			if (e.isKindOf(SysMLOC!FeatureSpecialization)){
+				if (not e.checkFeatureSpecialization()){
+					result = false;
+					("[Error]" + e.declaredName + " : FeatureSpecialization error.").println();
+					return result;
+				}
+				else{
+	//				("[Check]" + e.declaredName + " : " + result.asString()).println();
+				}
+			}
+			if (result and e.elements.size() >= 0){
+				result = e.checkElement();
+			}
+		}
+		return result;
+	}
+	else{
+		return result;
+	}
+}
+
+operation SysMLOC!DefinitionDeclaration checkSuperclassifier(){
+	for (t in self.superclassifiers){
+		if (getElement(t) == null){
+			return false;
+		}
+	}
+	return true;
+}
+
+operation getDefaultLibrary( name : String ){
+	var sysmlpackage = SysmlLibrary!Package.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	var kermlpackage = KermlLibrary!Package.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	var sysmllibrarypackage = SysmlLibrary!LibraryPackage.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	var kermllibrarypackage = KermlLibrary!LibraryPackage.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	if (sysmlpackage.size() == 1){
+		return sysmlpackage.first();
+	}
+	else if (kermlpackage.size() == 1){
+		return kermlpackage.first();
+	}
+	else if (sysmllibrarypackage.size() == 1){
+		return sysmllibrarypackage.first();
+	}
+	else if (kermllibrarypackage.size() == 1){
+		return kermllibrarypackage.first();
+	}
+	else{
+		"Modeling Error.".println();
+		return null;
+	}
+}

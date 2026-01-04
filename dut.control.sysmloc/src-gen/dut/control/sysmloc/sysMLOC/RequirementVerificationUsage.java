@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface RequirementVerificationUsage extends RequirementNodeElements, MemberPrefix, ReferenceSubsetting, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, UsageExtensionKeyword, PrefixMetadata, ConstraintUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, ValuePart, FeatureValue
+public interface RequirementVerificationUsage extends RequirementNodeElements, MemberPrefix, ReferenceSubsetting, FeatureSpecialization, TypingFeatureChain, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, UsageExtensionKeyword, PrefixMetadata, ConstraintUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, ValuePart, FeatureValue
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

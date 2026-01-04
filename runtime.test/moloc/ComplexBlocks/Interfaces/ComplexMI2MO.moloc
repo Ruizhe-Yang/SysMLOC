@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:StoredDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" within="Modelica.ComplexBlocks.Interfaces">
+  <classes name="ComplexMI2MO" str_comment="&quot;2 Multiple Input / Multiple Output continuous control block&quot;" name_end="ComplexMI2MO">
+    <composition>
+      <priv_elist>
+        <elem xsi:type="mOloc:ExtendsClause" name="Modelica.ComplexBlocks.Icons.ComplexBlock"/>
+        <elem xsi:type="mOloc:ComponentClause" prefix="parameter">
+          <type name="Integer"/>
+          <comps>
+            <comps>
+              <decl name="n">
+                <mod dh="true">
+                  <expr xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                </mod>
+              </decl>
+              <comment comment="&quot;Dimension of input and output vectors.&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause">
+          <type name="ComplexInput"/>
+          <comps>
+            <comps>
+              <decl name="u1">
+                <subscripts>
+                  <subscripts>
+                    <expr xsi:type="mOloc:ComponentReference">
+                      <idents>n</idents>
+                    </expr>
+                  </subscripts>
+                </subscripts>
+              </decl>
+              <comment comment="&quot;Connector 1 of Complex input signals&quot;">
+                <annotation isannotation="true">
+                  <cm>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="Placement">
+                          <mod>
+                            <mod>
+                              <args>
+                                <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                  <element xsi:type="mOloc:ElementModification" name="transformation">
+                                    <mod>
+                                      <mod>
+                                        <args>
+                                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                            <element xsi:type="mOloc:ElementModification" name="extent">
+                                              <mod dh="true">
+                                                <expr xsi:type="mOloc:Primary">
+                                                  <fa>
+                                                    <args xsi:type="mOloc:Primary">
+                                                      <fa>
+                                                        <args xsi:type="mOloc:Negation" neg_op="-">
+                                                          <term xsi:type="mOloc:FloatPrimary" val="140.0"/>
+                                                        </args>
+                                                        <args xsi:type="mOloc:FunctionArguments">
+                                                          <args xsi:type="mOloc:FloatPrimary" val="40.0"/>
+                                                        </args>
+                                                      </fa>
+                                                    </args>
+                                                    <args xsi:type="mOloc:FunctionArguments">
+                                                      <args xsi:type="mOloc:Primary">
+                                                        <fa>
+                                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                                            <term xsi:type="mOloc:FloatPrimary" val="100.0"/>
+                                                          </args>
+                                                          <args xsi:type="mOloc:FunctionArguments">
+                                                            <args xsi:type="mOloc:FloatPrimary" val="80.0"/>
+                                                          </args>
+                                                        </fa>
+                                                      </args>
+                                                    </args>
+                                                  </fa>
+                                                </expr>
+                                              </mod>
+                                            </element>
+                                          </args>
+                                        </args>
+                                      </mod>
+                                    </mod>
+                                  </element>
+                                </args>
+                              </args>
+                            </mod>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </cm>
+                </annotation>
+              </comment>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause">
+          <type name="ComplexInput"/>
+          <comps>
+            <comps>
+              <decl name="u2">
+                <subscripts>
+                  <subscripts>
+                    <expr xsi:type="mOloc:ComponentReference">
+                      <idents>n</idents>
+                    </expr>
+                  </subscripts>
+                </subscripts>
+              </decl>
+              <comment comment="&quot;Connector 2 of Complex input signals&quot;">
+                <annotation isannotation="true">
+                  <cm>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="Placement">
+                          <mod>
+                            <mod>
+                              <args>
+                                <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                  <element xsi:type="mOloc:ElementModification" name="transformation">
+                                    <mod>
+                                      <mod>
+                                        <args>
+                                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                            <element xsi:type="mOloc:ElementModification" name="extent">
+                                              <mod dh="true">
+                                                <expr xsi:type="mOloc:Primary">
+                                                  <fa>
+                                                    <args xsi:type="mOloc:Primary">
+                                                      <fa>
+                                                        <args xsi:type="mOloc:Negation" neg_op="-">
+                                                          <term xsi:type="mOloc:FloatPrimary" val="140.0"/>
+                                                        </args>
+                                                        <args xsi:type="mOloc:FunctionArguments">
+                                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                                            <term xsi:type="mOloc:FloatPrimary" val="80.0"/>
+                                                          </args>
+                                                        </args>
+                                                      </fa>
+                                                    </args>
+                                                    <args xsi:type="mOloc:FunctionArguments">
+                                                      <args xsi:type="mOloc:Primary">
+                                                        <fa>
+                                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                                            <term xsi:type="mOloc:FloatPrimary" val="100.0"/>
+                                                          </args>
+                                                          <args xsi:type="mOloc:FunctionArguments">
+                                                            <args xsi:type="mOloc:Negation" neg_op="-">
+                                                              <term xsi:type="mOloc:FloatPrimary" val="40.0"/>
+                                                            </args>
+                                                          </args>
+                                                        </fa>
+                                                      </args>
+                                                    </args>
+                                                  </fa>
+                                                </expr>
+                                              </mod>
+                                            </element>
+                                          </args>
+                                        </args>
+                                      </mod>
+                                    </mod>
+                                  </element>
+                                </args>
+                              </args>
+                            </mod>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </cm>
+                </annotation>
+              </comment>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause">
+          <type name="ComplexOutput"/>
+          <comps>
+            <comps>
+              <decl name="y">
+                <subscripts>
+                  <subscripts>
+                    <expr xsi:type="mOloc:ComponentReference">
+                      <idents>n</idents>
+                    </expr>
+                  </subscripts>
+                </subscripts>
+              </decl>
+              <comment comment="&quot;Connector of Complex output signals&quot;">
+                <annotation isannotation="true">
+                  <cm>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="Placement">
+                          <mod>
+                            <mod>
+                              <args>
+                                <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                  <element xsi:type="mOloc:ElementModification" name="transformation">
+                                    <mod>
+                                      <mod>
+                                        <args>
+                                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                            <element xsi:type="mOloc:ElementModification" name="extent">
+                                              <mod dh="true">
+                                                <expr xsi:type="mOloc:Primary">
+                                                  <fa>
+                                                    <args xsi:type="mOloc:Primary">
+                                                      <fa>
+                                                        <args xsi:type="mOloc:FloatPrimary" val="100.0"/>
+                                                        <args xsi:type="mOloc:FunctionArguments">
+                                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                                            <term xsi:type="mOloc:FloatPrimary" val="10.0"/>
+                                                          </args>
+                                                        </args>
+                                                      </fa>
+                                                    </args>
+                                                    <args xsi:type="mOloc:FunctionArguments">
+                                                      <args xsi:type="mOloc:Primary">
+                                                        <fa>
+                                                          <args xsi:type="mOloc:FloatPrimary" val="120.0"/>
+                                                          <args xsi:type="mOloc:FunctionArguments">
+                                                            <args xsi:type="mOloc:FloatPrimary" val="10.0"/>
+                                                          </args>
+                                                        </fa>
+                                                      </args>
+                                                    </args>
+                                                  </fa>
+                                                </expr>
+                                              </mod>
+                                            </element>
+                                          </args>
+                                        </args>
+                                      </mod>
+                                    </mod>
+                                  </element>
+                                </args>
+                              </args>
+                            </mod>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </cm>
+                </annotation>
+              </comment>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause" prefix="parameter">
+          <type name="Boolean"/>
+          <comps>
+            <comps>
+              <decl name="useConjugateInput1">
+                <subscripts>
+                  <subscripts>
+                    <expr xsi:type="mOloc:ComponentReference">
+                      <idents>n</idents>
+                    </expr>
+                  </subscripts>
+                </subscripts>
+                <mod dh="true">
+                  <expr xsi:type="mOloc:FunctionCall" comp_ref="fill">
+                    <args>
+                      <res>
+                        <args xsi:type="mOloc:LogicalPrimary"/>
+                        <args xsi:type="mOloc:FunctionArguments">
+                          <args xsi:type="mOloc:ComponentReference">
+                            <idents>n</idents>
+                          </args>
+                        </args>
+                      </res>
+                    </args>
+                  </expr>
+                </mod>
+              </decl>
+              <comment comment="&quot;If true, inputs 1 are processed conjugate complex&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause" prefix="parameter">
+          <type name="Boolean"/>
+          <comps>
+            <comps>
+              <decl name="useConjugateInput2">
+                <subscripts>
+                  <subscripts>
+                    <expr xsi:type="mOloc:ComponentReference">
+                      <idents>n</idents>
+                    </expr>
+                  </subscripts>
+                </subscripts>
+                <mod dh="true">
+                  <expr xsi:type="mOloc:FunctionCall" comp_ref="fill">
+                    <args>
+                      <res>
+                        <args xsi:type="mOloc:LogicalPrimary"/>
+                        <args xsi:type="mOloc:FunctionArguments">
+                          <args xsi:type="mOloc:ComponentReference">
+                            <idents>n</idents>
+                          </args>
+                        </args>
+                      </res>
+                    </args>
+                  </expr>
+                </mod>
+              </decl>
+              <comment comment="&quot;If true, inputs 2 are processed conjugate complex&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+      </priv_elist>
+      <protected_elist>
+        <ele>
+          <elem xsi:type="mOloc:ComponentClause">
+            <type name="Complex"/>
+            <comps>
+              <comps>
+                <decl name="u1Internal">
+                  <subscripts>
+                    <subscripts>
+                      <expr xsi:type="mOloc:ComponentReference">
+                        <idents>n</idents>
+                      </expr>
+                    </subscripts>
+                  </subscripts>
+                  <mod dh="true">
+                    <expr xsi:type="mOloc:Primary">
+                      <fa>
+                        <args xsi:type="mOloc:IfExpression">
+                          <if xsi:type="mOloc:ComponentReference">
+                            <idents>useConjugateInput1</idents>
+                            <subscripts>
+                              <subscripts>
+                                <expr xsi:type="mOloc:ComponentReference">
+                                  <idents>k</idents>
+                                </expr>
+                              </subscripts>
+                            </subscripts>
+                          </if>
+                          <then xsi:type="mOloc:FunctionCall" comp_ref="Modelica.ComplexMath.conj">
+                            <args>
+                              <res>
+                                <args xsi:type="mOloc:ComponentReference">
+                                  <idents>u1</idents>
+                                  <subscripts>
+                                    <subscripts>
+                                      <expr xsi:type="mOloc:ComponentReference">
+                                        <idents>k</idents>
+                                      </expr>
+                                    </subscripts>
+                                  </subscripts>
+                                </args>
+                              </res>
+                            </args>
+                          </then>
+                          <else xsi:type="mOloc:ComponentReference">
+                            <idents>u1</idents>
+                            <subscripts>
+                              <subscripts>
+                                <expr xsi:type="mOloc:ComponentReference">
+                                  <idents>k</idents>
+                                </expr>
+                              </subscripts>
+                            </subscripts>
+                          </else>
+                        </args>
+                        <indices>
+                          <indices id="k">
+                            <expr xsi:type="mOloc:SimpleExpression">
+                              <exprs xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                              <exprs xsi:type="mOloc:ComponentReference">
+                                <idents>n</idents>
+                              </exprs>
+                            </expr>
+                          </indices>
+                        </indices>
+                      </fa>
+                    </expr>
+                  </mod>
+                </decl>
+                <comment comment="&quot;Equals either u1 or conjugate complex input u1 if useComplexInput = true&quot;"/>
+              </comps>
+            </comps>
+          </elem>
+          <elem xsi:type="mOloc:ComponentClause">
+            <type name="Complex"/>
+            <comps>
+              <comps>
+                <decl name="u2Internal">
+                  <subscripts>
+                    <subscripts>
+                      <expr xsi:type="mOloc:ComponentReference">
+                        <idents>n</idents>
+                      </expr>
+                    </subscripts>
+                  </subscripts>
+                  <mod dh="true">
+                    <expr xsi:type="mOloc:Primary">
+                      <fa>
+                        <args xsi:type="mOloc:IfExpression">
+                          <if xsi:type="mOloc:ComponentReference">
+                            <idents>useConjugateInput2</idents>
+                            <subscripts>
+                              <subscripts>
+                                <expr xsi:type="mOloc:ComponentReference">
+                                  <idents>k</idents>
+                                </expr>
+                              </subscripts>
+                            </subscripts>
+                          </if>
+                          <then xsi:type="mOloc:FunctionCall" comp_ref="Modelica.ComplexMath.conj">
+                            <args>
+                              <res>
+                                <args xsi:type="mOloc:ComponentReference">
+                                  <idents>u2</idents>
+                                  <subscripts>
+                                    <subscripts>
+                                      <expr xsi:type="mOloc:ComponentReference">
+                                        <idents>k</idents>
+                                      </expr>
+                                    </subscripts>
+                                  </subscripts>
+                                </args>
+                              </res>
+                            </args>
+                          </then>
+                          <else xsi:type="mOloc:ComponentReference">
+                            <idents>u2</idents>
+                            <subscripts>
+                              <subscripts>
+                                <expr xsi:type="mOloc:ComponentReference">
+                                  <idents>k</idents>
+                                </expr>
+                              </subscripts>
+                            </subscripts>
+                          </else>
+                        </args>
+                        <indices>
+                          <indices id="k">
+                            <expr xsi:type="mOloc:SimpleExpression">
+                              <exprs xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                              <exprs xsi:type="mOloc:ComponentReference">
+                                <idents>n</idents>
+                              </exprs>
+                            </expr>
+                          </indices>
+                        </indices>
+                      </fa>
+                    </expr>
+                  </mod>
+                </decl>
+                <comment comment="&quot;Equals either u1 or conjugate complex input u1 if useComplexInput = true&quot;"/>
+              </comps>
+            </comps>
+          </elem>
+        </ele>
+      </protected_elist>
+      <anno isannotation="true">
+        <cm>
+          <args>
+            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+              <element xsi:type="mOloc:ElementModification" name="Documentation">
+                <mod>
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="info">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:StringPrimary" val="&lt;html>&#xA;&lt;p>&#xA;Block has two continuous Complex input vectors u1 and u2 and one&#xA;continuous Complex output vector y.&#xA;All vectors have the same number of elements.&#xA;&lt;/p>&#xA;&lt;/html>"/>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                </mod>
+              </element>
+            </args>
+          </args>
+        </cm>
+      </anno>
+    </composition>
+    <cp isPartial="true" kind="block"/>
+  </classes>
+</mOloc:StoredDefinition>

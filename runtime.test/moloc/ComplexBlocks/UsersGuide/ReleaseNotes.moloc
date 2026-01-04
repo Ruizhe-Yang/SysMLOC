@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:StoredDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" within="Modelica.ComplexBlocks.UsersGuide">
+  <classes name="ReleaseNotes" str_comment="&quot;Release Notes&quot;" name_end="ReleaseNotes">
+    <composition>
+      <priv_elist>
+        <elem xsi:type="mOloc:ExtendsClause" name="Modelica.Icons.ReleaseNotes"/>
+      </priv_elist>
+      <anno isannotation="true">
+        <cm>
+          <args>
+            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+              <element xsi:type="mOloc:ElementModification" name="Documentation">
+                <mod>
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="info">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:StringPrimary" val="&lt;html>&#xA;&#xA;&lt;h5>Version 4.0.0&lt;/h5>&#xA;&lt;ul>&#xA;&lt;li>Unify color scheme of icons, see&#xA;    &lt;a href=&quot;https://github.com/modelica/ModelicaStandardLibrary/issues/2833&quot;>#2833&lt;/a>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;h5>Version 3.2.2&lt;/h5>&#xA;&#xA;&lt;ul>&#xA;&lt;li>Added block&#xA;    &lt;a href=&quot;modelica://Modelica.ComplexBlocks.ComplexMath.Conj&quot;>Conj&lt;/a> for conjugate complex signal processing&#xA;    &lt;/li>&#xA;&lt;li>Added optional conjugate complex input processing to all partial interfaces and complex blocks&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;h5>Version 3.2&lt;/h5>&#xA;&#xA;&lt;ul>&#xA;&lt;li>Introduction of first version&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;/html>"/>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                </mod>
+              </element>
+            </args>
+          </args>
+        </cm>
+      </anno>
+    </composition>
+    <cp kind="class"/>
+  </classes>
+</mOloc:StoredDefinition>

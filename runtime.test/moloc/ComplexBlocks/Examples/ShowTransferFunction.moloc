@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:StoredDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" within="Modelica.ComplexBlocks.Examples">
+  <classes name="ShowTransferFunction" str_comment="&quot;Test Complex Transfer Function Block&quot;" name_end="ShowTransferFunction">
+    <composition>
+      <priv_elist>
+        <elem xsi:type="mOloc:ExtendsClause" name="Modelica.Icons.Example"/>
+        <elem xsi:type="mOloc:ComponentClause" prefix="parameter">
+          <type name="Real"/>
+          <comps>
+            <comps>
+              <decl name="d">
+                <mod dh="true">
+                  <expr xsi:type="mOloc:Term">
+                    <factors xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                    <factors xsi:type="mOloc:FunctionCall" comp_ref="sqrt">
+                      <args>
+                        <res>
+                          <args xsi:type="mOloc:FloatPrimary" val="2.0"/>
+                        </res>
+                      </args>
+                    </factors>
+                    <mul_op>/</mul_op>
+                  </expr>
+                </mod>
+              </decl>
+              <comment comment="&quot;Damping coefficient&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause" prefix="parameter">
+          <type name="Real"/>
+          <comps>
+            <comps>
+              <decl name="b">
+                <subscripts>
+                  <subscripts all="true"/>
+                </subscripts>
+                <mod dh="true">
+                  <expr xsi:type="mOloc:Primary">
+                    <fa>
+                      <args xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                    </fa>
+                  </expr>
+                </mod>
+              </decl>
+              <comment comment="&quot;Numerator polynomial coefficients of the transfer function&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause" prefix="parameter">
+          <type name="Real"/>
+          <comps>
+            <comps>
+              <decl name="a">
+                <subscripts>
+                  <subscripts all="true"/>
+                </subscripts>
+                <mod dh="true">
+                  <expr xsi:type="mOloc:Primary">
+                    <fa>
+                      <args xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                      <args xsi:type="mOloc:FunctionArguments">
+                        <args xsi:type="mOloc:Term">
+                          <factors xsi:type="mOloc:FloatPrimary" val="2.0"/>
+                          <factors xsi:type="mOloc:ComponentReference">
+                            <idents>d</idents>
+                          </factors>
+                          <mul_op>*</mul_op>
+                        </args>
+                        <args xsi:type="mOloc:FunctionArguments">
+                          <args xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                        </args>
+                      </args>
+                    </fa>
+                  </expr>
+                </mod>
+              </decl>
+              <comment comment="&quot;Denominator polynomial coefficients of the transfer function&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause" prefix="parameter">
+          <type name="Real"/>
+          <comps>
+            <comps>
+              <decl name="wMin">
+                <mod dh="true">
+                  <expr xsi:type="mOloc:FloatPrimary" val="0.01"/>
+                </mod>
+              </decl>
+              <comment comment="&quot;Lower bound for frequency sweep&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause" prefix="parameter">
+          <type name="Real"/>
+          <comps>
+            <comps>
+              <decl name="wMax">
+                <mod dh="true">
+                  <expr xsi:type="mOloc:FloatPrimary" val="100.0"/>
+                </mod>
+              </decl>
+              <comment comment="&quot;Upper bound for frequency sweep&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause">
+          <type name="Real"/>
+          <comps>
+            <comps>
+              <decl name="lg_w">
+                <mod dh="true">
+                  <expr xsi:type="mOloc:FunctionCall" comp_ref="log10">
+                    <args>
+                      <res>
+                        <args xsi:type="mOloc:ComponentReference">
+                          <idents>logFrequencySweep</idents>
+                          <idents>y</idents>
+                        </args>
+                      </res>
+                    </args>
+                  </expr>
+                </mod>
+              </decl>
+              <comment comment="&quot;Logarithm of frequency&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause">
+          <type name="Real"/>
+          <comps>
+            <comps>
+              <decl name="dB">
+                <mod dh="true">
+                  <expr xsi:type="mOloc:Term">
+                    <factors xsi:type="mOloc:FloatPrimary" val="20.0"/>
+                    <factors xsi:type="mOloc:FunctionCall" comp_ref="log10">
+                      <args>
+                        <res>
+                          <args xsi:type="mOloc:ComponentReference">
+                            <idents>complexToPolar</idents>
+                            <idents>len</idents>
+                          </args>
+                        </res>
+                      </args>
+                    </factors>
+                    <mul_op>*</mul_op>
+                  </expr>
+                </mod>
+              </decl>
+              <comment comment="&quot;Magnitude of the transfer function in decibel&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause">
+          <type name="Modelica.Units.SI.Angle"/>
+          <comps>
+            <comps>
+              <decl name="phi">
+                <mod dh="true">
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="displayUnit">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:StringPrimary" val="deg"/>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                  <expr xsi:type="mOloc:ComponentReference">
+                    <idents>complexToPolar</idents>
+                    <idents>phi</idents>
+                  </expr>
+                </mod>
+              </decl>
+              <comment comment="&quot;Argument of the transfer function&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause">
+          <type name="Modelica.Blocks.Sources.LogFrequencySweep"/>
+          <comps>
+            <comps>
+              <decl name="logFrequencySweep">
+                <mod>
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="duration">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                          </mod>
+                        </element>
+                      </args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="wMin">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:ComponentReference">
+                              <idents>wMin</idents>
+                            </expr>
+                          </mod>
+                        </element>
+                      </args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="wMax">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:ComponentReference">
+                              <idents>wMax</idents>
+                            </expr>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                </mod>
+              </decl>
+              <comment>
+                <annotation isannotation="true">
+                  <cm>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="Placement">
+                          <mod>
+                            <mod>
+                              <args>
+                                <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                  <element xsi:type="mOloc:ElementModification" name="transformation">
+                                    <mod>
+                                      <mod>
+                                        <args>
+                                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                            <element xsi:type="mOloc:ElementModification" name="extent">
+                                              <mod dh="true">
+                                                <expr xsi:type="mOloc:Primary">
+                                                  <fa>
+                                                    <args xsi:type="mOloc:Primary">
+                                                      <fa>
+                                                        <args xsi:type="mOloc:Negation" neg_op="-">
+                                                          <term xsi:type="mOloc:FloatPrimary" val="80.0"/>
+                                                        </args>
+                                                        <args xsi:type="mOloc:FunctionArguments">
+                                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                                            <term xsi:type="mOloc:FloatPrimary" val="40.0"/>
+                                                          </args>
+                                                        </args>
+                                                      </fa>
+                                                    </args>
+                                                    <args xsi:type="mOloc:FunctionArguments">
+                                                      <args xsi:type="mOloc:Primary">
+                                                        <fa>
+                                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                                            <term xsi:type="mOloc:FloatPrimary" val="60.0"/>
+                                                          </args>
+                                                          <args xsi:type="mOloc:FunctionArguments">
+                                                            <args xsi:type="mOloc:Negation" neg_op="-">
+                                                              <term xsi:type="mOloc:FloatPrimary" val="20.0"/>
+                                                            </args>
+                                                          </args>
+                                                        </fa>
+                                                      </args>
+                                                    </args>
+                                                  </fa>
+                                                </expr>
+                                              </mod>
+                                            </element>
+                                          </args>
+                                        </args>
+                                      </mod>
+                                    </mod>
+                                  </element>
+                                </args>
+                              </args>
+                            </mod>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </cm>
+                </annotation>
+              </comment>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause">
+          <type name="Modelica.ComplexBlocks.Sources.ComplexConstant"/>
+          <comps>
+            <comps>
+              <decl name="const">
+                <mod>
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="k">
+                          <mod>
+                            <mod>
+                              <args>
+                                <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                  <element xsi:type="mOloc:ElementModification" name="re">
+                                    <mod dh="true">
+                                      <expr xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                                    </mod>
+                                  </element>
+                                </args>
+                                <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                  <element xsi:type="mOloc:ElementModification" name="im">
+                                    <mod dh="true">
+                                      <expr xsi:type="mOloc:FloatPrimary"/>
+                                    </mod>
+                                  </element>
+                                </args>
+                              </args>
+                            </mod>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                </mod>
+              </decl>
+              <comment>
+                <annotation isannotation="true">
+                  <cm>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="Placement">
+                          <mod>
+                            <mod>
+                              <args>
+                                <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                  <element xsi:type="mOloc:ElementModification" name="transformation">
+                                    <mod>
+                                      <mod>
+                                        <args>
+                                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                            <element xsi:type="mOloc:ElementModification" name="extent">
+                                              <mod dh="true">
+                                                <expr xsi:type="mOloc:Primary">
+                                                  <fa>
+                                                    <args xsi:type="mOloc:Primary">
+                                                      <fa>
+                                                        <args xsi:type="mOloc:Negation" neg_op="-">
+                                                          <term xsi:type="mOloc:FloatPrimary" val="80.0"/>
+                                                        </args>
+                                                        <args xsi:type="mOloc:FunctionArguments">
+                                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                                            <term xsi:type="mOloc:FloatPrimary" val="10.0"/>
+                                                          </args>
+                                                        </args>
+                                                      </fa>
+                                                    </args>
+                                                    <args xsi:type="mOloc:FunctionArguments">
+                                                      <args xsi:type="mOloc:Primary">
+                                                        <fa>
+                                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                                            <term xsi:type="mOloc:FloatPrimary" val="60.0"/>
+                                                          </args>
+                                                          <args xsi:type="mOloc:FunctionArguments">
+                                                            <args xsi:type="mOloc:FloatPrimary" val="10.0"/>
+                                                          </args>
+                                                        </fa>
+                                                      </args>
+                                                    </args>
+                                                  </fa>
+                                                </expr>
+                                              </mod>
+                                            </element>
+                                          </args>
+                                        </args>
+                                      </mod>
+                                    </mod>
+                                  </element>
+                                </args>
+                              </args>
+                            </mod>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </cm>
+                </annotation>
+              </comment>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause">
+          <type name="Modelica.ComplexBlocks.ComplexMath.TransferFunction"/>
+          <comps>
+            <comps>
+              <decl name="transferFunction">
+                <mod>
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="b">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:ComponentReference">
+                              <idents>b</idents>
+                            </expr>
+                          </mod>
+                        </element>
+                      </args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="a">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:ComponentReference">
+                              <idents>a</idents>
+                            </expr>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                </mod>
+              </decl>
+              <comment>
+                <annotation isannotation="true">
+                  <cm>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="Placement">
+                          <mod>
+                            <mod>
+                              <args>
+                                <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                  <element xsi:type="mOloc:ElementModification" name="transformation">
+                                    <mod>
+                                      <mod>
+                                        <args>
+                                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                            <element xsi:type="mOloc:ElementModification" name="extent">
+                                              <mod dh="true">
+                                                <expr xsi:type="mOloc:Primary">
+                                                  <fa>
+                                                    <args xsi:type="mOloc:Primary">
+                                                      <fa>
+                                                        <args xsi:type="mOloc:Negation" neg_op="-">
+                                                          <term xsi:type="mOloc:FloatPrimary" val="40.0"/>
+                                                        </args>
+                                                        <args xsi:type="mOloc:FunctionArguments">
+                                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                                            <term xsi:type="mOloc:FloatPrimary" val="10.0"/>
+                                                          </args>
+                                                        </args>
+                                                      </fa>
+                                                    </args>
+                                                    <args xsi:type="mOloc:FunctionArguments">
+                                                      <args xsi:type="mOloc:Primary">
+                                                        <fa>
+                                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                                            <term xsi:type="mOloc:FloatPrimary" val="20.0"/>
+                                                          </args>
+                                                          <args xsi:type="mOloc:FunctionArguments">
+                                                            <args xsi:type="mOloc:FloatPrimary" val="10.0"/>
+                                                          </args>
+                                                        </fa>
+                                                      </args>
+                                                    </args>
+                                                  </fa>
+                                                </expr>
+                                              </mod>
+                                            </element>
+                                          </args>
+                                        </args>
+                                      </mod>
+                                    </mod>
+                                  </element>
+                                </args>
+                              </args>
+                            </mod>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </cm>
+                </annotation>
+              </comment>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause">
+          <type name="Modelica.ComplexBlocks.ComplexMath.ComplexToPolar"/>
+          <comps>
+            <comps>
+              <decl name="complexToPolar"/>
+              <comment>
+                <annotation isannotation="true">
+                  <cm>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="Placement">
+                          <mod>
+                            <mod>
+                              <args>
+                                <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                  <element xsi:type="mOloc:ElementModification" name="transformation">
+                                    <mod>
+                                      <mod>
+                                        <args>
+                                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                            <element xsi:type="mOloc:ElementModification" name="extent">
+                                              <mod dh="true">
+                                                <expr xsi:type="mOloc:Primary">
+                                                  <fa>
+                                                    <args xsi:type="mOloc:Primary">
+                                                      <fa>
+                                                        <args xsi:type="mOloc:FloatPrimary"/>
+                                                        <args xsi:type="mOloc:FunctionArguments">
+                                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                                            <term xsi:type="mOloc:FloatPrimary" val="10.0"/>
+                                                          </args>
+                                                        </args>
+                                                      </fa>
+                                                    </args>
+                                                    <args xsi:type="mOloc:FunctionArguments">
+                                                      <args xsi:type="mOloc:Primary">
+                                                        <fa>
+                                                          <args xsi:type="mOloc:FloatPrimary" val="20.0"/>
+                                                          <args xsi:type="mOloc:FunctionArguments">
+                                                            <args xsi:type="mOloc:FloatPrimary" val="10.0"/>
+                                                          </args>
+                                                        </fa>
+                                                      </args>
+                                                    </args>
+                                                  </fa>
+                                                </expr>
+                                              </mod>
+                                            </element>
+                                          </args>
+                                        </args>
+                                      </mod>
+                                    </mod>
+                                  </element>
+                                </args>
+                              </args>
+                            </mod>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </cm>
+                </annotation>
+              </comment>
+            </comps>
+          </comps>
+        </elem>
+      </priv_elist>
+      <eq_secs>
+        <equations xsi:type="mOloc:ConnectClause">
+          <commment>
+            <annotation isannotation="true">
+              <cm>
+                <args>
+                  <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                    <element xsi:type="mOloc:ElementModification" name="Line">
+                      <mod>
+                        <mod>
+                          <args>
+                            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                              <element xsi:type="mOloc:ElementModification" name="points">
+                                <mod dh="true">
+                                  <expr xsi:type="mOloc:Primary">
+                                    <fa>
+                                      <args xsi:type="mOloc:Primary">
+                                        <fa>
+                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                            <term xsi:type="mOloc:FloatPrimary" val="59.0"/>
+                                          </args>
+                                          <args xsi:type="mOloc:FunctionArguments">
+                                            <args xsi:type="mOloc:FloatPrimary"/>
+                                          </args>
+                                        </fa>
+                                      </args>
+                                      <args xsi:type="mOloc:FunctionArguments">
+                                        <args xsi:type="mOloc:Primary">
+                                          <fa>
+                                            <args xsi:type="mOloc:Negation" neg_op="-">
+                                              <term xsi:type="mOloc:FloatPrimary" val="50.5"/>
+                                            </args>
+                                            <args xsi:type="mOloc:FunctionArguments">
+                                              <args xsi:type="mOloc:FloatPrimary"/>
+                                            </args>
+                                          </fa>
+                                        </args>
+                                        <args xsi:type="mOloc:FunctionArguments">
+                                          <args xsi:type="mOloc:Primary">
+                                            <fa>
+                                              <args xsi:type="mOloc:Negation" neg_op="-">
+                                                <term xsi:type="mOloc:FloatPrimary" val="42.0"/>
+                                              </args>
+                                              <args xsi:type="mOloc:FunctionArguments">
+                                                <args xsi:type="mOloc:FloatPrimary"/>
+                                              </args>
+                                            </fa>
+                                          </args>
+                                        </args>
+                                      </args>
+                                    </fa>
+                                  </expr>
+                                </mod>
+                              </element>
+                            </args>
+                            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                              <element xsi:type="mOloc:ElementModification" name="color">
+                                <mod dh="true">
+                                  <expr xsi:type="mOloc:Primary">
+                                    <fa>
+                                      <args xsi:type="mOloc:FloatPrimary" val="85.0"/>
+                                      <args xsi:type="mOloc:FunctionArguments">
+                                        <args xsi:type="mOloc:FloatPrimary" val="170.0"/>
+                                        <args xsi:type="mOloc:FunctionArguments">
+                                          <args xsi:type="mOloc:FloatPrimary" val="255.0"/>
+                                        </args>
+                                      </args>
+                                    </fa>
+                                  </expr>
+                                </mod>
+                              </element>
+                            </args>
+                          </args>
+                        </mod>
+                      </mod>
+                    </element>
+                  </args>
+                </args>
+              </cm>
+            </annotation>
+          </commment>
+          <left>
+            <idents>const</idents>
+            <idents>y</idents>
+          </left>
+          <right>
+            <idents>transferFunction</idents>
+            <idents>u</idents>
+          </right>
+        </equations>
+        <equations xsi:type="mOloc:ConnectClause">
+          <commment>
+            <annotation isannotation="true">
+              <cm>
+                <args>
+                  <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                    <element xsi:type="mOloc:ElementModification" name="Line">
+                      <mod>
+                        <mod>
+                          <args>
+                            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                              <element xsi:type="mOloc:ElementModification" name="points">
+                                <mod dh="true">
+                                  <expr xsi:type="mOloc:Primary">
+                                    <fa>
+                                      <args xsi:type="mOloc:Primary">
+                                        <fa>
+                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                            <term xsi:type="mOloc:FloatPrimary" val="59.0"/>
+                                          </args>
+                                          <args xsi:type="mOloc:FunctionArguments">
+                                            <args xsi:type="mOloc:Negation" neg_op="-">
+                                              <term xsi:type="mOloc:FloatPrimary" val="30.0"/>
+                                            </args>
+                                          </args>
+                                        </fa>
+                                      </args>
+                                      <args xsi:type="mOloc:FunctionArguments">
+                                        <args xsi:type="mOloc:Primary">
+                                          <fa>
+                                            <args xsi:type="mOloc:Negation" neg_op="-">
+                                              <term xsi:type="mOloc:FloatPrimary" val="30.0"/>
+                                            </args>
+                                            <args xsi:type="mOloc:FunctionArguments">
+                                              <args xsi:type="mOloc:Negation" neg_op="-">
+                                                <term xsi:type="mOloc:FloatPrimary" val="30.0"/>
+                                              </args>
+                                            </args>
+                                          </fa>
+                                        </args>
+                                        <args xsi:type="mOloc:FunctionArguments">
+                                          <args xsi:type="mOloc:Primary">
+                                            <fa>
+                                              <args xsi:type="mOloc:Negation" neg_op="-">
+                                                <term xsi:type="mOloc:FloatPrimary" val="30.0"/>
+                                              </args>
+                                              <args xsi:type="mOloc:FunctionArguments">
+                                                <args xsi:type="mOloc:Negation" neg_op="-">
+                                                  <term xsi:type="mOloc:FloatPrimary" val="12.0"/>
+                                                </args>
+                                              </args>
+                                            </fa>
+                                          </args>
+                                        </args>
+                                      </args>
+                                    </fa>
+                                  </expr>
+                                </mod>
+                              </element>
+                            </args>
+                            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                              <element xsi:type="mOloc:ElementModification" name="color">
+                                <mod dh="true">
+                                  <expr xsi:type="mOloc:Primary">
+                                    <fa>
+                                      <args xsi:type="mOloc:FloatPrimary"/>
+                                      <args xsi:type="mOloc:FunctionArguments">
+                                        <args xsi:type="mOloc:FloatPrimary"/>
+                                        <args xsi:type="mOloc:FunctionArguments">
+                                          <args xsi:type="mOloc:FloatPrimary" val="127.0"/>
+                                        </args>
+                                      </args>
+                                    </fa>
+                                  </expr>
+                                </mod>
+                              </element>
+                            </args>
+                          </args>
+                        </mod>
+                      </mod>
+                    </element>
+                  </args>
+                </args>
+              </cm>
+            </annotation>
+          </commment>
+          <left>
+            <idents>logFrequencySweep</idents>
+            <idents>y</idents>
+          </left>
+          <right>
+            <idents>transferFunction</idents>
+            <idents>w</idents>
+          </right>
+        </equations>
+        <equations xsi:type="mOloc:ConnectClause">
+          <commment>
+            <annotation isannotation="true">
+              <cm>
+                <args>
+                  <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                    <element xsi:type="mOloc:ElementModification" name="Line">
+                      <mod>
+                        <mod>
+                          <args>
+                            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                              <element xsi:type="mOloc:ElementModification" name="points">
+                                <mod dh="true">
+                                  <expr xsi:type="mOloc:Primary">
+                                    <fa>
+                                      <args xsi:type="mOloc:Primary">
+                                        <fa>
+                                          <args xsi:type="mOloc:Negation" neg_op="-">
+                                            <term xsi:type="mOloc:FloatPrimary" val="19.0"/>
+                                          </args>
+                                          <args xsi:type="mOloc:FunctionArguments">
+                                            <args xsi:type="mOloc:FloatPrimary"/>
+                                          </args>
+                                        </fa>
+                                      </args>
+                                      <args xsi:type="mOloc:FunctionArguments">
+                                        <args xsi:type="mOloc:Primary">
+                                          <fa>
+                                            <args xsi:type="mOloc:Negation" neg_op="-">
+                                              <term xsi:type="mOloc:FloatPrimary" val="2.0"/>
+                                            </args>
+                                            <args xsi:type="mOloc:FunctionArguments">
+                                              <args xsi:type="mOloc:FloatPrimary"/>
+                                            </args>
+                                          </fa>
+                                        </args>
+                                      </args>
+                                    </fa>
+                                  </expr>
+                                </mod>
+                              </element>
+                            </args>
+                            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                              <element xsi:type="mOloc:ElementModification" name="color">
+                                <mod dh="true">
+                                  <expr xsi:type="mOloc:Primary">
+                                    <fa>
+                                      <args xsi:type="mOloc:FloatPrimary" val="85.0"/>
+                                      <args xsi:type="mOloc:FunctionArguments">
+                                        <args xsi:type="mOloc:FloatPrimary" val="170.0"/>
+                                        <args xsi:type="mOloc:FunctionArguments">
+                                          <args xsi:type="mOloc:FloatPrimary" val="255.0"/>
+                                        </args>
+                                      </args>
+                                    </fa>
+                                  </expr>
+                                </mod>
+                              </element>
+                            </args>
+                          </args>
+                        </mod>
+                      </mod>
+                    </element>
+                  </args>
+                </args>
+              </cm>
+            </annotation>
+          </commment>
+          <left>
+            <idents>transferFunction</idents>
+            <idents>y</idents>
+          </left>
+          <right>
+            <idents>complexToPolar</idents>
+            <idents>u</idents>
+          </right>
+        </equations>
+      </eq_secs>
+      <anno isannotation="true">
+        <cm>
+          <args>
+            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+              <element xsi:type="mOloc:ElementModification" name="experiment">
+                <mod>
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="StopTime">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                          </mod>
+                        </element>
+                      </args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="Interval">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:FloatPrimary" val="0.001"/>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                </mod>
+              </element>
+            </args>
+            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+              <element xsi:type="mOloc:ElementModification" name="Documentation">
+                <mod>
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="info">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:StringPrimary" val="&lt;html>&#xA;&lt;p>This example shows the response of a PT2 defined by its transfer function&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;            1&#xA;H(jw)=-------------------&#xA;      1 + 2 d jw + (jw)^2&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>Frequency performs a logarithmic ramp from 0.01 to 100 s^-1.&lt;/p>&#xA;&lt;p>&#xA;Plot the magnitude locus (in dB) dB versus lg_w and the phase locus versus lg_w.&#xA;&lt;/p>&#xA;&lt;/html>"/>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                </mod>
+              </element>
+            </args>
+          </args>
+        </cm>
+      </anno>
+    </composition>
+    <cp kind="model"/>
+  </classes>
+</mOloc:StoredDefinition>

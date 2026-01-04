@@ -27,7 +27,7 @@ import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
 import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SuccessionAsUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
+import dut.control.sysmloc.sysMLOC.TypingFeatureChain;
 import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
@@ -1532,11 +1532,11 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
         default: return -1;
       }
     }
-    if (baseClass == TypingFeatureTyping.class)
+    if (baseClass == TypingFeatureChain.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_AS_USAGE__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS;
+        case SysMLOCPackage.SUCCESSION_AS_USAGE__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_CHAIN__TYPINGS;
         default: return -1;
       }
     }
@@ -1734,11 +1734,11 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
         default: return -1;
       }
     }
-    if (baseClass == TypingFeatureTyping.class)
+    if (baseClass == TypingFeatureChain.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS: return SysMLOCPackage.SUCCESSION_AS_USAGE__TYPINGS;
+        case SysMLOCPackage.TYPING_FEATURE_CHAIN__TYPINGS: return SysMLOCPackage.SUCCESSION_AS_USAGE__TYPINGS;
         default: return -1;
       }
     }

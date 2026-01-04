@@ -612,8 +612,8 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFeatureSpecializationAccess().getGroup_2(), "rule__FeatureSpecialization__Group_2__0");
 			builder.put(grammarAccess.getFeatureSpecializationAccess().getGroup_3(), "rule__FeatureSpecialization__Group_3__0");
 			builder.put(grammarAccess.getFeatureSpecializationAccess().getGroup_4(), "rule__FeatureSpecialization__Group_4__0");
-			builder.put(grammarAccess.getTypingFeatureTypingAccess().getGroup(), "rule__TypingFeatureTyping__Group__0");
-			builder.put(grammarAccess.getTypingFeatureTypingAccess().getGroup_1(), "rule__TypingFeatureTyping__Group_1__0");
+			builder.put(grammarAccess.getTypingFeatureChainAccess().getGroup(), "rule__TypingFeatureChain__Group__0");
+			builder.put(grammarAccess.getTypingFeatureChainAccess().getGroup_1(), "rule__TypingFeatureChain__Group_1__0");
 			builder.put(grammarAccess.getSubsettingFeatureChainAccess().getGroup(), "rule__SubsettingFeatureChain__Group__0");
 			builder.put(grammarAccess.getSubsettingFeatureChainAccess().getGroup_1(), "rule__SubsettingFeatureChain__Group_1__0");
 			builder.put(grammarAccess.getReferenceFeatureChainAccess().getGroup(), "rule__ReferenceFeatureChain__Group__0");
@@ -974,8 +974,8 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMultiplicityModifiersAccess().getIsNonuniqueAssignment_0_1(), "rule__MultiplicityModifiers__IsNonuniqueAssignment_0_1");
 			builder.put(grammarAccess.getMultiplicityModifiersAccess().getIsNonuniqueAssignment_1_0(), "rule__MultiplicityModifiers__IsNonuniqueAssignment_1_0");
 			builder.put(grammarAccess.getMultiplicityModifiersAccess().getIsOrderedAssignment_1_1(), "rule__MultiplicityModifiers__IsOrderedAssignment_1_1");
-			builder.put(grammarAccess.getTypingFeatureTypingAccess().getTypingsAssignment_0(), "rule__TypingFeatureTyping__TypingsAssignment_0");
-			builder.put(grammarAccess.getTypingFeatureTypingAccess().getTypingsAssignment_1_1(), "rule__TypingFeatureTyping__TypingsAssignment_1_1");
+			builder.put(grammarAccess.getTypingFeatureChainAccess().getTypingsAssignment_0(), "rule__TypingFeatureChain__TypingsAssignment_0");
+			builder.put(grammarAccess.getTypingFeatureChainAccess().getTypingsAssignment_1_1(), "rule__TypingFeatureChain__TypingsAssignment_1_1");
 			builder.put(grammarAccess.getSubsettingFeatureChainAccess().getSubsettingAssignment_0(), "rule__SubsettingFeatureChain__SubsettingAssignment_0");
 			builder.put(grammarAccess.getSubsettingFeatureChainAccess().getSubsettingAssignment_1_1(), "rule__SubsettingFeatureChain__SubsettingAssignment_1_1");
 			builder.put(grammarAccess.getReferenceFeatureChainAccess().getReferencesAssignment_0(), "rule__ReferenceFeatureChain__ReferencesAssignment_0");

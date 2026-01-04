@@ -17144,11 +17144,11 @@ ruleFeatureSpecialization[EObject in_current]  returns [EObject current=in_curre
 				if ($current==null) {
 					$current = createModelElement(grammarAccess.getFeatureSpecializationRule());
 				}
-				newCompositeNode(grammarAccess.getFeatureSpecializationAccess().getTypingFeatureTypingParserRuleCall_0_1());
+				newCompositeNode(grammarAccess.getFeatureSpecializationAccess().getTypingFeatureChainParserRuleCall_0_1());
 			}
-			this_TypingFeatureTyping_3=ruleTypingFeatureTyping[$current]
+			this_TypingFeatureChain_3=ruleTypingFeatureChain[$current]
 			{
-				$current = $this_TypingFeatureTyping_3.current;
+				$current = $this_TypingFeatureChain_3.current;
 				afterParserOrEnumRuleCall();
 			}
 		)
@@ -17261,8 +17261,8 @@ ruleFeatureSpecialization[EObject in_current]  returns [EObject current=in_curre
 ;
 
 
-// Rule TypingFeatureTyping
-ruleTypingFeatureTyping[EObject in_current]  returns [EObject current=in_current]
+// Rule TypingFeatureChain
+ruleTypingFeatureChain[EObject in_current]  returns [EObject current=in_current]
 @init {
 	enterRule();
 }
@@ -17273,12 +17273,12 @@ ruleTypingFeatureTyping[EObject in_current]  returns [EObject current=in_current
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTypingFeatureTypingAccess().getTypingsFeatureTypingNameParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getTypingFeatureChainAccess().getTypingsFeatureTypingNameParserRuleCall_0_0());
 				}
 				lv_typings_0_0=ruleFeatureTypingName
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTypingFeatureTypingRule());
+						$current = createModelElementForParent(grammarAccess.getTypingFeatureChainRule());
 					}
 					add(
 						$current,
@@ -17292,17 +17292,17 @@ ruleTypingFeatureTyping[EObject in_current]  returns [EObject current=in_current
 		(
 			otherlv_1=','
 			{
-				newLeafNode(otherlv_1, grammarAccess.getTypingFeatureTypingAccess().getCommaKeyword_1_0());
+				newLeafNode(otherlv_1, grammarAccess.getTypingFeatureChainAccess().getCommaKeyword_1_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTypingFeatureTypingAccess().getTypingsFeatureTypingNameParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getTypingFeatureChainAccess().getTypingsFeatureTypingNameParserRuleCall_1_1_0());
 					}
 					lv_typings_2_0=ruleFeatureTypingName
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTypingFeatureTypingRule());
+							$current = createModelElementForParent(grammarAccess.getTypingFeatureChainRule());
 						}
 						add(
 							$current,

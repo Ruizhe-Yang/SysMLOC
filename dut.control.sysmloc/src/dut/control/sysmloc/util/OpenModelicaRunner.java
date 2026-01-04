@@ -29,7 +29,7 @@ public class OpenModelicaRunner {
     public static void main(String[] args) throws Exception {
         var res = OpenModelicaRunner.runSimulation(
                 "F:\\OpenModelica1.25.5-64bit\\bin\\omc.exe",
-                Path.of("E:\\GitYang\\SysMLOC\\runtime.test\\BouncingBall.mo"),
+                Path.of("E:\\GitYang\\SysMLOC\\runtime.test\\modelica\\BouncingBall.mo"),
                 "BouncingBall",
                 10.0,
                 0.01,

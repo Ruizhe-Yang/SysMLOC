@@ -11360,7 +11360,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup_0_0_1 = (Group)cAlternatives_0_0.eContents().get(1);
 		private final Keyword cDefinedKeyword_0_0_1_0 = (Keyword)cGroup_0_0_1.eContents().get(0);
 		private final Keyword cByKeyword_0_0_1_1 = (Keyword)cGroup_0_0_1.eContents().get(1);
-		private final RuleCall cTypingFeatureTypingParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final RuleCall cTypingFeatureChainParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
 		private final Keyword cColonGreaterThanSignKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
@@ -11384,7 +11384,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cRedefinitionFeatureChainParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
 		
 		//fragment FeatureSpecialization:
-		//    (':'|'defined' 'by') TypingFeatureTyping
+		//    (':'|'defined' 'by') TypingFeatureChain
 		//    | (':>'|'specializes'|'subsets') SubsettingFeatureChain
 		//    | ('::>'|'references')  ReferenceFeatureChain
 		//    | ('=>'|'crosses') CrossFeatureChain
@@ -11392,14 +11392,14 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(':'|'defined' 'by') TypingFeatureTyping
+		//(':'|'defined' 'by') TypingFeatureChain
 		//| (':>'|'specializes'|'subsets') SubsettingFeatureChain
 		//| ('::>'|'references')  ReferenceFeatureChain
 		//| ('=>'|'crosses') CrossFeatureChain
 		//| (':>>'|'redefines') RedefinitionFeatureChain
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//(':'|'defined' 'by') TypingFeatureTyping
+		//(':'|'defined' 'by') TypingFeatureChain
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//(':'|'defined' 'by')
@@ -11417,8 +11417,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'by'
 		public Keyword getByKeyword_0_0_1_1() { return cByKeyword_0_0_1_1; }
 		
-		//TypingFeatureTyping
-		public RuleCall getTypingFeatureTypingParserRuleCall_0_1() { return cTypingFeatureTypingParserRuleCall_0_1; }
+		//TypingFeatureChain
+		public RuleCall getTypingFeatureChainParserRuleCall_0_1() { return cTypingFeatureChainParserRuleCall_0_1; }
 		
 		//(':>'|'specializes'|'subsets') SubsettingFeatureChain
 		public Group getGroup_1() { return cGroup_1; }
@@ -11483,8 +11483,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//RedefinitionFeatureChain
 		public RuleCall getRedefinitionFeatureChainParserRuleCall_4_1() { return cRedefinitionFeatureChainParserRuleCall_4_1; }
 	}
-	public class TypingFeatureTypingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.TypingFeatureTyping");
+	public class TypingFeatureChainElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.TypingFeatureChain");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypingsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cTypingsFeatureTypingNameParserRuleCall_0_0 = (RuleCall)cTypingsAssignment_0.eContents().get(0);
@@ -11493,7 +11493,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cTypingsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cTypingsFeatureTypingNameParserRuleCall_1_1_0 = (RuleCall)cTypingsAssignment_1_1.eContents().get(0);
 		
-		//fragment TypingFeatureTyping:
+		//fragment TypingFeatureChain:
 		//    typings+=FeatureTypingName (',' typings+=FeatureTypingName)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -14269,7 +14269,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final MultiplicityPartElements pMultiplicityPart;
 	private final MultiplicityModifiersElements pMultiplicityModifiers;
 	private final FeatureSpecializationElements pFeatureSpecialization;
-	private final TypingFeatureTypingElements pTypingFeatureTyping;
+	private final TypingFeatureChainElements pTypingFeatureChain;
 	private final SubsettingFeatureChainElements pSubsettingFeatureChain;
 	private final ReferenceFeatureChainElements pReferenceFeatureChain;
 	private final CrossFeatureChainElements pCrossFeatureChain;
@@ -14528,7 +14528,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pMultiplicityPart = new MultiplicityPartElements();
 		this.pMultiplicityModifiers = new MultiplicityModifiersElements();
 		this.pFeatureSpecialization = new FeatureSpecializationElements();
-		this.pTypingFeatureTyping = new TypingFeatureTypingElements();
+		this.pTypingFeatureChain = new TypingFeatureChainElements();
 		this.pSubsettingFeatureChain = new SubsettingFeatureChainElements();
 		this.pReferenceFeatureChain = new ReferenceFeatureChainElements();
 		this.pCrossFeatureChain = new CrossFeatureChainElements();
@@ -17242,7 +17242,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//fragment FeatureSpecialization:
-	//    (':'|'defined' 'by') TypingFeatureTyping
+	//    (':'|'defined' 'by') TypingFeatureChain
 	//    | (':>'|'specializes'|'subsets') SubsettingFeatureChain
 	//    | ('::>'|'references')  ReferenceFeatureChain
 	//    | ('=>'|'crosses') CrossFeatureChain
@@ -17256,15 +17256,15 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getFeatureSpecializationAccess().getRule();
 	}
 	
-	//fragment TypingFeatureTyping:
+	//fragment TypingFeatureChain:
 	//    typings+=FeatureTypingName (',' typings+=FeatureTypingName)*
 	//;
-	public TypingFeatureTypingElements getTypingFeatureTypingAccess() {
-		return pTypingFeatureTyping;
+	public TypingFeatureChainElements getTypingFeatureChainAccess() {
+		return pTypingFeatureChain;
 	}
 	
-	public ParserRule getTypingFeatureTypingRule() {
-		return getTypingFeatureTypingAccess().getRule();
+	public ParserRule getTypingFeatureChainRule() {
+		return getTypingFeatureChainAccess().getRule();
 	}
 	
 	//fragment SubsettingFeatureChain:

@@ -15,10 +15,8 @@
     <elements xsi:type="sysMLOC:PartUsage" declaredName="a">
       <elements xsi:type="sysMLOC:PartUsage" declaredName="c">
         <elements xsi:type="sysMLOC:PartDefinition" declaredName="eee"/>
-        <elements xsi:type="sysMLOC:Package" declaredName="ee">
-          <elements xsi:type="sysMLOC:PartDefinition" declaredName="bbbb">
-            <superclassifiers>AAA</superclassifiers>
-          </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="ggg">
+          <elements xsi:type="sysMLOC:PortDefinition" declaredName="bbbb"/>
         </elements>
       </elements>
     </elements>
@@ -26,24 +24,48 @@
       <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="d">
         <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
-        <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="a::c::ee::bbbb"/>
-        <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
-        <elements xsi:type="sysMLOC:PartDefinition" declaredName="ff">
-          <superclassifiers>bbbb</superclassifiers>
+        <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="a::c::ggg" isNamespace="true"/>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="ff">
+          <typings>bbbb</typings>
         </elements>
+        <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ScalarValues" isNamespace="true"/>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="ee">
-          <elements xsi:type="sysMLOC:PartDefinition" declaredName="h"/>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="hh">
+          <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="h"/>
+          <elements xsi:type="sysMLOC:RequirementUsage" declaredName="hh">
             <typings>h</typings>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="aa">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="aa" isEnd="true">
             <typings>bbbb</typings>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="gg">
-            <typings>ff</typings>
+          <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="no1">
+            <superclassifiers>String</superclassifiers>
           </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="noo1" valuePart="&quot;00&quot;">
+            <typings>no1</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="no2" valuePart="NaturalFunctions::ToNatural(noo1)"/>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="no3" valuePart="IntegerFunctions::sum(1)"/>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="no4" valuePart="1.0[SI::s]"/>
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="//part gg : ff;&#xD;&#xA;"/>
         </elements>
       </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="SysML" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="Apartusage">
+      <typings>Parts::Part</typings>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="port1">
+        <subsetting>ownedPorts</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="action1">
+        <subsetting>ownedActions</subsetting>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="aaa" valuePart="Apartusage.done"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="aaaq" valuePart="Apartusage.spaceTimeEnclosedOccurrences"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="aaaa" valuePart="Apartusage.sameLifeOccurrences"/>
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="ARequirementUsage">
+      <typings>Requirements::PerformanceRequirementCheck</typings>
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="Apartusage"/>
     </elements>
   </elements>
 </sysMLOC:RootNamespace>

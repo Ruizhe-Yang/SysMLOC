@@ -13823,27 +13823,27 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleFeatureSpecialization"
 
 
-    // $ANTLR start "ruleTypingFeatureTyping"
-    // InternalSysMLOC.g:4144:1: ruleTypingFeatureTyping : ( ( rule__TypingFeatureTyping__Group__0 ) ) ;
-    public final void ruleTypingFeatureTyping() throws RecognitionException {
+    // $ANTLR start "ruleTypingFeatureChain"
+    // InternalSysMLOC.g:4144:1: ruleTypingFeatureChain : ( ( rule__TypingFeatureChain__Group__0 ) ) ;
+    public final void ruleTypingFeatureChain() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:4148:2: ( ( ( rule__TypingFeatureTyping__Group__0 ) ) )
-            // InternalSysMLOC.g:4149:2: ( ( rule__TypingFeatureTyping__Group__0 ) )
+            // InternalSysMLOC.g:4148:2: ( ( ( rule__TypingFeatureChain__Group__0 ) ) )
+            // InternalSysMLOC.g:4149:2: ( ( rule__TypingFeatureChain__Group__0 ) )
             {
-            // InternalSysMLOC.g:4149:2: ( ( rule__TypingFeatureTyping__Group__0 ) )
-            // InternalSysMLOC.g:4150:3: ( rule__TypingFeatureTyping__Group__0 )
+            // InternalSysMLOC.g:4149:2: ( ( rule__TypingFeatureChain__Group__0 ) )
+            // InternalSysMLOC.g:4150:3: ( rule__TypingFeatureChain__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTypingFeatureTypingAccess().getGroup()); 
+               before(grammarAccess.getTypingFeatureChainAccess().getGroup()); 
             }
-            // InternalSysMLOC.g:4151:3: ( rule__TypingFeatureTyping__Group__0 )
-            // InternalSysMLOC.g:4151:4: rule__TypingFeatureTyping__Group__0
+            // InternalSysMLOC.g:4151:3: ( rule__TypingFeatureChain__Group__0 )
+            // InternalSysMLOC.g:4151:4: rule__TypingFeatureChain__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__TypingFeatureTyping__Group__0();
+            rule__TypingFeatureChain__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -13851,7 +13851,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTypingFeatureTypingAccess().getGroup()); 
+               after(grammarAccess.getTypingFeatureChainAccess().getGroup()); 
             }
 
             }
@@ -13871,7 +13871,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleTypingFeatureTyping"
+    // $ANTLR end "ruleTypingFeatureChain"
 
 
     // $ANTLR start "ruleSubsettingFeatureChain"
@@ -154608,28 +154608,28 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FeatureSpecialization__Group_0__1__Impl"
-    // InternalSysMLOC.g:45553:1: rule__FeatureSpecialization__Group_0__1__Impl : ( ruleTypingFeatureTyping ) ;
+    // InternalSysMLOC.g:45553:1: rule__FeatureSpecialization__Group_0__1__Impl : ( ruleTypingFeatureChain ) ;
     public final void rule__FeatureSpecialization__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:45557:1: ( ( ruleTypingFeatureTyping ) )
-            // InternalSysMLOC.g:45558:1: ( ruleTypingFeatureTyping )
+            // InternalSysMLOC.g:45557:1: ( ( ruleTypingFeatureChain ) )
+            // InternalSysMLOC.g:45558:1: ( ruleTypingFeatureChain )
             {
-            // InternalSysMLOC.g:45558:1: ( ruleTypingFeatureTyping )
-            // InternalSysMLOC.g:45559:2: ruleTypingFeatureTyping
+            // InternalSysMLOC.g:45558:1: ( ruleTypingFeatureChain )
+            // InternalSysMLOC.g:45559:2: ruleTypingFeatureChain
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFeatureSpecializationAccess().getTypingFeatureTypingParserRuleCall_0_1()); 
+               before(grammarAccess.getFeatureSpecializationAccess().getTypingFeatureChainParserRuleCall_0_1()); 
             }
             pushFollow(FOLLOW_2);
-            ruleTypingFeatureTyping();
+            ruleTypingFeatureChain();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFeatureSpecializationAccess().getTypingFeatureTypingParserRuleCall_0_1()); 
+               after(grammarAccess.getFeatureSpecializationAccess().getTypingFeatureChainParserRuleCall_0_1()); 
             }
 
             }
@@ -155473,23 +155473,23 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__FeatureSpecialization__Group_4__1__Impl"
 
 
-    // $ANTLR start "rule__TypingFeatureTyping__Group__0"
-    // InternalSysMLOC.g:45839:1: rule__TypingFeatureTyping__Group__0 : rule__TypingFeatureTyping__Group__0__Impl rule__TypingFeatureTyping__Group__1 ;
-    public final void rule__TypingFeatureTyping__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__TypingFeatureChain__Group__0"
+    // InternalSysMLOC.g:45839:1: rule__TypingFeatureChain__Group__0 : rule__TypingFeatureChain__Group__0__Impl rule__TypingFeatureChain__Group__1 ;
+    public final void rule__TypingFeatureChain__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:45843:1: ( rule__TypingFeatureTyping__Group__0__Impl rule__TypingFeatureTyping__Group__1 )
-            // InternalSysMLOC.g:45844:2: rule__TypingFeatureTyping__Group__0__Impl rule__TypingFeatureTyping__Group__1
+            // InternalSysMLOC.g:45843:1: ( rule__TypingFeatureChain__Group__0__Impl rule__TypingFeatureChain__Group__1 )
+            // InternalSysMLOC.g:45844:2: rule__TypingFeatureChain__Group__0__Impl rule__TypingFeatureChain__Group__1
             {
             pushFollow(FOLLOW_22);
-            rule__TypingFeatureTyping__Group__0__Impl();
+            rule__TypingFeatureChain__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__TypingFeatureTyping__Group__1();
+            rule__TypingFeatureChain__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -155508,30 +155508,30 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TypingFeatureTyping__Group__0"
+    // $ANTLR end "rule__TypingFeatureChain__Group__0"
 
 
-    // $ANTLR start "rule__TypingFeatureTyping__Group__0__Impl"
-    // InternalSysMLOC.g:45851:1: rule__TypingFeatureTyping__Group__0__Impl : ( ( rule__TypingFeatureTyping__TypingsAssignment_0 ) ) ;
-    public final void rule__TypingFeatureTyping__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TypingFeatureChain__Group__0__Impl"
+    // InternalSysMLOC.g:45851:1: rule__TypingFeatureChain__Group__0__Impl : ( ( rule__TypingFeatureChain__TypingsAssignment_0 ) ) ;
+    public final void rule__TypingFeatureChain__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:45855:1: ( ( ( rule__TypingFeatureTyping__TypingsAssignment_0 ) ) )
-            // InternalSysMLOC.g:45856:1: ( ( rule__TypingFeatureTyping__TypingsAssignment_0 ) )
+            // InternalSysMLOC.g:45855:1: ( ( ( rule__TypingFeatureChain__TypingsAssignment_0 ) ) )
+            // InternalSysMLOC.g:45856:1: ( ( rule__TypingFeatureChain__TypingsAssignment_0 ) )
             {
-            // InternalSysMLOC.g:45856:1: ( ( rule__TypingFeatureTyping__TypingsAssignment_0 ) )
-            // InternalSysMLOC.g:45857:2: ( rule__TypingFeatureTyping__TypingsAssignment_0 )
+            // InternalSysMLOC.g:45856:1: ( ( rule__TypingFeatureChain__TypingsAssignment_0 ) )
+            // InternalSysMLOC.g:45857:2: ( rule__TypingFeatureChain__TypingsAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTypingFeatureTypingAccess().getTypingsAssignment_0()); 
+               before(grammarAccess.getTypingFeatureChainAccess().getTypingsAssignment_0()); 
             }
-            // InternalSysMLOC.g:45858:2: ( rule__TypingFeatureTyping__TypingsAssignment_0 )
-            // InternalSysMLOC.g:45858:3: rule__TypingFeatureTyping__TypingsAssignment_0
+            // InternalSysMLOC.g:45858:2: ( rule__TypingFeatureChain__TypingsAssignment_0 )
+            // InternalSysMLOC.g:45858:3: rule__TypingFeatureChain__TypingsAssignment_0
             {
             pushFollow(FOLLOW_2);
-            rule__TypingFeatureTyping__TypingsAssignment_0();
+            rule__TypingFeatureChain__TypingsAssignment_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -155539,7 +155539,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTypingFeatureTypingAccess().getTypingsAssignment_0()); 
+               after(grammarAccess.getTypingFeatureChainAccess().getTypingsAssignment_0()); 
             }
 
             }
@@ -155559,21 +155559,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TypingFeatureTyping__Group__0__Impl"
+    // $ANTLR end "rule__TypingFeatureChain__Group__0__Impl"
 
 
-    // $ANTLR start "rule__TypingFeatureTyping__Group__1"
-    // InternalSysMLOC.g:45866:1: rule__TypingFeatureTyping__Group__1 : rule__TypingFeatureTyping__Group__1__Impl ;
-    public final void rule__TypingFeatureTyping__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__TypingFeatureChain__Group__1"
+    // InternalSysMLOC.g:45866:1: rule__TypingFeatureChain__Group__1 : rule__TypingFeatureChain__Group__1__Impl ;
+    public final void rule__TypingFeatureChain__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:45870:1: ( rule__TypingFeatureTyping__Group__1__Impl )
-            // InternalSysMLOC.g:45871:2: rule__TypingFeatureTyping__Group__1__Impl
+            // InternalSysMLOC.g:45870:1: ( rule__TypingFeatureChain__Group__1__Impl )
+            // InternalSysMLOC.g:45871:2: rule__TypingFeatureChain__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__TypingFeatureTyping__Group__1__Impl();
+            rule__TypingFeatureChain__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -155592,26 +155592,26 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TypingFeatureTyping__Group__1"
+    // $ANTLR end "rule__TypingFeatureChain__Group__1"
 
 
-    // $ANTLR start "rule__TypingFeatureTyping__Group__1__Impl"
-    // InternalSysMLOC.g:45877:1: rule__TypingFeatureTyping__Group__1__Impl : ( ( rule__TypingFeatureTyping__Group_1__0 )* ) ;
-    public final void rule__TypingFeatureTyping__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TypingFeatureChain__Group__1__Impl"
+    // InternalSysMLOC.g:45877:1: rule__TypingFeatureChain__Group__1__Impl : ( ( rule__TypingFeatureChain__Group_1__0 )* ) ;
+    public final void rule__TypingFeatureChain__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:45881:1: ( ( ( rule__TypingFeatureTyping__Group_1__0 )* ) )
-            // InternalSysMLOC.g:45882:1: ( ( rule__TypingFeatureTyping__Group_1__0 )* )
+            // InternalSysMLOC.g:45881:1: ( ( ( rule__TypingFeatureChain__Group_1__0 )* ) )
+            // InternalSysMLOC.g:45882:1: ( ( rule__TypingFeatureChain__Group_1__0 )* )
             {
-            // InternalSysMLOC.g:45882:1: ( ( rule__TypingFeatureTyping__Group_1__0 )* )
-            // InternalSysMLOC.g:45883:2: ( rule__TypingFeatureTyping__Group_1__0 )*
+            // InternalSysMLOC.g:45882:1: ( ( rule__TypingFeatureChain__Group_1__0 )* )
+            // InternalSysMLOC.g:45883:2: ( rule__TypingFeatureChain__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTypingFeatureTypingAccess().getGroup_1()); 
+               before(grammarAccess.getTypingFeatureChainAccess().getGroup_1()); 
             }
-            // InternalSysMLOC.g:45884:2: ( rule__TypingFeatureTyping__Group_1__0 )*
+            // InternalSysMLOC.g:45884:2: ( rule__TypingFeatureChain__Group_1__0 )*
             loop545:
             do {
                 int alt545=2;
@@ -155624,10 +155624,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
                 switch (alt545) {
             	case 1 :
-            	    // InternalSysMLOC.g:45884:3: rule__TypingFeatureTyping__Group_1__0
+            	    // InternalSysMLOC.g:45884:3: rule__TypingFeatureChain__Group_1__0
             	    {
             	    pushFollow(FOLLOW_23);
-            	    rule__TypingFeatureTyping__Group_1__0();
+            	    rule__TypingFeatureChain__Group_1__0();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -155641,7 +155641,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTypingFeatureTypingAccess().getGroup_1()); 
+               after(grammarAccess.getTypingFeatureChainAccess().getGroup_1()); 
             }
 
             }
@@ -155661,26 +155661,26 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TypingFeatureTyping__Group__1__Impl"
+    // $ANTLR end "rule__TypingFeatureChain__Group__1__Impl"
 
 
-    // $ANTLR start "rule__TypingFeatureTyping__Group_1__0"
-    // InternalSysMLOC.g:45893:1: rule__TypingFeatureTyping__Group_1__0 : rule__TypingFeatureTyping__Group_1__0__Impl rule__TypingFeatureTyping__Group_1__1 ;
-    public final void rule__TypingFeatureTyping__Group_1__0() throws RecognitionException {
+    // $ANTLR start "rule__TypingFeatureChain__Group_1__0"
+    // InternalSysMLOC.g:45893:1: rule__TypingFeatureChain__Group_1__0 : rule__TypingFeatureChain__Group_1__0__Impl rule__TypingFeatureChain__Group_1__1 ;
+    public final void rule__TypingFeatureChain__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:45897:1: ( rule__TypingFeatureTyping__Group_1__0__Impl rule__TypingFeatureTyping__Group_1__1 )
-            // InternalSysMLOC.g:45898:2: rule__TypingFeatureTyping__Group_1__0__Impl rule__TypingFeatureTyping__Group_1__1
+            // InternalSysMLOC.g:45897:1: ( rule__TypingFeatureChain__Group_1__0__Impl rule__TypingFeatureChain__Group_1__1 )
+            // InternalSysMLOC.g:45898:2: rule__TypingFeatureChain__Group_1__0__Impl rule__TypingFeatureChain__Group_1__1
             {
             pushFollow(FOLLOW_193);
-            rule__TypingFeatureTyping__Group_1__0__Impl();
+            rule__TypingFeatureChain__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__TypingFeatureTyping__Group_1__1();
+            rule__TypingFeatureChain__Group_1__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -155699,12 +155699,12 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TypingFeatureTyping__Group_1__0"
+    // $ANTLR end "rule__TypingFeatureChain__Group_1__0"
 
 
-    // $ANTLR start "rule__TypingFeatureTyping__Group_1__0__Impl"
-    // InternalSysMLOC.g:45905:1: rule__TypingFeatureTyping__Group_1__0__Impl : ( ',' ) ;
-    public final void rule__TypingFeatureTyping__Group_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TypingFeatureChain__Group_1__0__Impl"
+    // InternalSysMLOC.g:45905:1: rule__TypingFeatureChain__Group_1__0__Impl : ( ',' ) ;
+    public final void rule__TypingFeatureChain__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -155716,11 +155716,11 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             // InternalSysMLOC.g:45911:2: ','
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTypingFeatureTypingAccess().getCommaKeyword_1_0()); 
+               before(grammarAccess.getTypingFeatureChainAccess().getCommaKeyword_1_0()); 
             }
             match(input,82,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTypingFeatureTypingAccess().getCommaKeyword_1_0()); 
+               after(grammarAccess.getTypingFeatureChainAccess().getCommaKeyword_1_0()); 
             }
 
             }
@@ -155740,21 +155740,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TypingFeatureTyping__Group_1__0__Impl"
+    // $ANTLR end "rule__TypingFeatureChain__Group_1__0__Impl"
 
 
-    // $ANTLR start "rule__TypingFeatureTyping__Group_1__1"
-    // InternalSysMLOC.g:45920:1: rule__TypingFeatureTyping__Group_1__1 : rule__TypingFeatureTyping__Group_1__1__Impl ;
-    public final void rule__TypingFeatureTyping__Group_1__1() throws RecognitionException {
+    // $ANTLR start "rule__TypingFeatureChain__Group_1__1"
+    // InternalSysMLOC.g:45920:1: rule__TypingFeatureChain__Group_1__1 : rule__TypingFeatureChain__Group_1__1__Impl ;
+    public final void rule__TypingFeatureChain__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:45924:1: ( rule__TypingFeatureTyping__Group_1__1__Impl )
-            // InternalSysMLOC.g:45925:2: rule__TypingFeatureTyping__Group_1__1__Impl
+            // InternalSysMLOC.g:45924:1: ( rule__TypingFeatureChain__Group_1__1__Impl )
+            // InternalSysMLOC.g:45925:2: rule__TypingFeatureChain__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__TypingFeatureTyping__Group_1__1__Impl();
+            rule__TypingFeatureChain__Group_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -155773,30 +155773,30 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TypingFeatureTyping__Group_1__1"
+    // $ANTLR end "rule__TypingFeatureChain__Group_1__1"
 
 
-    // $ANTLR start "rule__TypingFeatureTyping__Group_1__1__Impl"
-    // InternalSysMLOC.g:45931:1: rule__TypingFeatureTyping__Group_1__1__Impl : ( ( rule__TypingFeatureTyping__TypingsAssignment_1_1 ) ) ;
-    public final void rule__TypingFeatureTyping__Group_1__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__TypingFeatureChain__Group_1__1__Impl"
+    // InternalSysMLOC.g:45931:1: rule__TypingFeatureChain__Group_1__1__Impl : ( ( rule__TypingFeatureChain__TypingsAssignment_1_1 ) ) ;
+    public final void rule__TypingFeatureChain__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:45935:1: ( ( ( rule__TypingFeatureTyping__TypingsAssignment_1_1 ) ) )
-            // InternalSysMLOC.g:45936:1: ( ( rule__TypingFeatureTyping__TypingsAssignment_1_1 ) )
+            // InternalSysMLOC.g:45935:1: ( ( ( rule__TypingFeatureChain__TypingsAssignment_1_1 ) ) )
+            // InternalSysMLOC.g:45936:1: ( ( rule__TypingFeatureChain__TypingsAssignment_1_1 ) )
             {
-            // InternalSysMLOC.g:45936:1: ( ( rule__TypingFeatureTyping__TypingsAssignment_1_1 ) )
-            // InternalSysMLOC.g:45937:2: ( rule__TypingFeatureTyping__TypingsAssignment_1_1 )
+            // InternalSysMLOC.g:45936:1: ( ( rule__TypingFeatureChain__TypingsAssignment_1_1 ) )
+            // InternalSysMLOC.g:45937:2: ( rule__TypingFeatureChain__TypingsAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTypingFeatureTypingAccess().getTypingsAssignment_1_1()); 
+               before(grammarAccess.getTypingFeatureChainAccess().getTypingsAssignment_1_1()); 
             }
-            // InternalSysMLOC.g:45938:2: ( rule__TypingFeatureTyping__TypingsAssignment_1_1 )
-            // InternalSysMLOC.g:45938:3: rule__TypingFeatureTyping__TypingsAssignment_1_1
+            // InternalSysMLOC.g:45938:2: ( rule__TypingFeatureChain__TypingsAssignment_1_1 )
+            // InternalSysMLOC.g:45938:3: rule__TypingFeatureChain__TypingsAssignment_1_1
             {
             pushFollow(FOLLOW_2);
-            rule__TypingFeatureTyping__TypingsAssignment_1_1();
+            rule__TypingFeatureChain__TypingsAssignment_1_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -155804,7 +155804,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTypingFeatureTypingAccess().getTypingsAssignment_1_1()); 
+               after(grammarAccess.getTypingFeatureChainAccess().getTypingsAssignment_1_1()); 
             }
 
             }
@@ -155824,7 +155824,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TypingFeatureTyping__Group_1__1__Impl"
+    // $ANTLR end "rule__TypingFeatureChain__Group_1__1__Impl"
 
 
     // $ANTLR start "rule__SubsettingFeatureChain__Group__0"
@@ -189322,9 +189322,9 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__MultiplicityModifiers__IsOrderedAssignment_1_1"
 
 
-    // $ANTLR start "rule__TypingFeatureTyping__TypingsAssignment_0"
-    // InternalSysMLOC.g:56887:1: rule__TypingFeatureTyping__TypingsAssignment_0 : ( ruleFeatureTypingName ) ;
-    public final void rule__TypingFeatureTyping__TypingsAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__TypingFeatureChain__TypingsAssignment_0"
+    // InternalSysMLOC.g:56887:1: rule__TypingFeatureChain__TypingsAssignment_0 : ( ruleFeatureTypingName ) ;
+    public final void rule__TypingFeatureChain__TypingsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -189336,7 +189336,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             // InternalSysMLOC.g:56893:3: ruleFeatureTypingName
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTypingFeatureTypingAccess().getTypingsFeatureTypingNameParserRuleCall_0_0()); 
+               before(grammarAccess.getTypingFeatureChainAccess().getTypingsFeatureTypingNameParserRuleCall_0_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleFeatureTypingName();
@@ -189344,7 +189344,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTypingFeatureTypingAccess().getTypingsFeatureTypingNameParserRuleCall_0_0()); 
+               after(grammarAccess.getTypingFeatureChainAccess().getTypingsFeatureTypingNameParserRuleCall_0_0()); 
             }
 
             }
@@ -189364,12 +189364,12 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TypingFeatureTyping__TypingsAssignment_0"
+    // $ANTLR end "rule__TypingFeatureChain__TypingsAssignment_0"
 
 
-    // $ANTLR start "rule__TypingFeatureTyping__TypingsAssignment_1_1"
-    // InternalSysMLOC.g:56902:1: rule__TypingFeatureTyping__TypingsAssignment_1_1 : ( ruleFeatureTypingName ) ;
-    public final void rule__TypingFeatureTyping__TypingsAssignment_1_1() throws RecognitionException {
+    // $ANTLR start "rule__TypingFeatureChain__TypingsAssignment_1_1"
+    // InternalSysMLOC.g:56902:1: rule__TypingFeatureChain__TypingsAssignment_1_1 : ( ruleFeatureTypingName ) ;
+    public final void rule__TypingFeatureChain__TypingsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -189381,7 +189381,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             // InternalSysMLOC.g:56908:3: ruleFeatureTypingName
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTypingFeatureTypingAccess().getTypingsFeatureTypingNameParserRuleCall_1_1_0()); 
+               before(grammarAccess.getTypingFeatureChainAccess().getTypingsFeatureTypingNameParserRuleCall_1_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleFeatureTypingName();
@@ -189389,7 +189389,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTypingFeatureTypingAccess().getTypingsFeatureTypingNameParserRuleCall_1_1_0()); 
+               after(grammarAccess.getTypingFeatureChainAccess().getTypingsFeatureTypingNameParserRuleCall_1_1_0()); 
             }
 
             }
@@ -189409,7 +189409,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TypingFeatureTyping__TypingsAssignment_1_1"
+    // $ANTLR end "rule__TypingFeatureChain__TypingsAssignment_1_1"
 
 
     // $ANTLR start "rule__SubsettingFeatureChain__SubsettingAssignment_0"

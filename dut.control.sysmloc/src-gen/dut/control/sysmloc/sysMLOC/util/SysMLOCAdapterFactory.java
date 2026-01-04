@@ -172,7 +172,7 @@ import dut.control.sysmloc.sysMLOC.TransitionSuccession;
 import dut.control.sysmloc.sysMLOC.TransitionUsage;
 import dut.control.sysmloc.sysMLOC.TransitionUsageIfPart;
 import dut.control.sysmloc.sysMLOC.TriggerValuePart;
-import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
+import dut.control.sysmloc.sysMLOC.TypingFeatureChain;
 import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
@@ -1151,9 +1151,9 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createFeatureSpecializationAdapter();
       }
       @Override
-      public Adapter caseTypingFeatureTyping(TypingFeatureTyping object)
+      public Adapter caseTypingFeatureChain(TypingFeatureChain object)
       {
-        return createTypingFeatureTypingAdapter();
+        return createTypingFeatureChainAdapter();
       }
       @Override
       public Adapter caseSubsettingFeatureChain(SubsettingFeatureChain object)
@@ -3898,16 +3898,16 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.TypingFeatureTyping <em>Typing Feature Typing</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.TypingFeatureChain <em>Typing Feature Chain</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.TypingFeatureTyping
+   * @see dut.control.sysmloc.sysMLOC.TypingFeatureChain
    * @generated
    */
-  public Adapter createTypingFeatureTypingAdapter()
+  public Adapter createTypingFeatureChainAdapter()
   {
     return null;
   }

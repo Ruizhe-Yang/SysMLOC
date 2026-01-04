@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:StoredDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" within="Modelica.Blocks">
+  <classes name="Types" str_comment="&quot;Library of constants, external objects and types with choices, especially to build menus&quot;" name_end="Types">
+    <composition>
+      <priv_elist>
+        <elem xsi:type="mOloc:ExtendsClause" name="Modelica.Icons.TypesPackage"/>
+        <elem xsi:type="mOloc:ClassDefinition" name="Smoothness">
+          <elementnum enumeratioan="true">
+            <list>
+              <enums id="LinearSegments">
+                <comment comment="&quot;Linear interpolation of table points&quot;"/>
+              </enums>
+              <enums id="ContinuousDerivative">
+                <comment comment="&quot;Akima spline interpolation of table points (such that the first derivative is continuous)&quot;"/>
+              </enums>
+              <enums id="ConstantSegments">
+                <comment comment="&quot;Piecewise constant interpolation of table points (the value from the previous abscissa point is returned)&quot;"/>
+              </enums>
+              <enums id="MonotoneContinuousDerivative1">
+                <comment comment="&quot;Fritsch-Butland spline interpolation (such that the monotonicity is preserved and the first derivative is continuous)&quot;"/>
+              </enums>
+              <enums id="MonotoneContinuousDerivative2">
+                <comment comment="&quot;Steffen spline interpolation of table points (such that the monotonicity is preserved and the first derivative is continuous)&quot;"/>
+              </enums>
+              <enums id="ModifiedContinuousDerivative">
+                <comment comment="&quot;Modified Akima spline interpolation of table points (such that the first derivative is continuous and shortcomings of the original Akima method are avoided)&quot;"/>
+              </enums>
+            </list>
+            <comment comment="&quot;Enumeration defining the smoothness of table interpolation&quot;"/>
+          </elementnum>
+          <cp kind="type"/>
+        </elem>
+        <elem xsi:type="mOloc:ClassDefinition" name="Extrapolation">
+          <elementnum enumeratioan="true">
+            <list>
+              <enums id="HoldLastPoint">
+                <comment comment="&quot;Hold the first/last table point outside of the table scope&quot;"/>
+              </enums>
+              <enums id="LastTwoPoints">
+                <comment comment="&quot;Extrapolate by using the derivative at the first/last table points outside of the table scope&quot;"/>
+              </enums>
+              <enums id="Periodic">
+                <comment comment="&quot;Repeat the table scope periodically&quot;"/>
+              </enums>
+              <enums id="NoExtrapolation">
+                <comment comment="&quot;Extrapolation triggers an error&quot;"/>
+              </enums>
+            </list>
+            <comment comment="&quot;Enumeration defining the extrapolation of table interpolation&quot;"/>
+          </elementnum>
+          <cp kind="type"/>
+        </elem>
+        <elem xsi:type="mOloc:ClassDefinition" name="TimeEvents">
+          <elementnum enumeratioan="true">
+            <list>
+              <enums id="Always">
+                <comment comment="&quot;Always generate time events at interval boundaries&quot;"/>
+              </enums>
+              <enums id="AtDiscontinuities">
+                <comment comment="&quot;Generate time events at discontinuities (defined by duplicated sample points)&quot;"/>
+              </enums>
+              <enums id="NoTimeEvents">
+                <comment comment="&quot;No time events at interval boundaries&quot;"/>
+              </enums>
+            </list>
+            <comment comment="&quot;Enumeration defining the time event handling of time table interpolation&quot;"/>
+          </elementnum>
+          <cp kind="type"/>
+        </elem>
+        <elem xsi:type="mOloc:ClassDefinition" name="Init">
+          <elementnum enumeratioan="true">
+            <list>
+              <enums id="NoInit">
+                <comment comment="&quot;No initialization (start values are used as guess values with fixed=false)&quot;"/>
+              </enums>
+              <enums id="SteadyState">
+                <comment comment="&quot;Steady state initialization (derivatives of states are zero)&quot;"/>
+              </enums>
+              <enums id="InitialState">
+                <comment comment="&quot;Initialization with initial states&quot;"/>
+              </enums>
+              <enums id="InitialOutput">
+                <comment comment="&quot;Initialization with initial outputs (and steady state of the states if possible)&quot;"/>
+              </enums>
+            </list>
+            <comment comment="&quot;Enumeration defining initialization of a block&quot;">
+              <annotation isannotation="true">
+                <cm>
+                  <args>
+                    <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                      <element xsi:type="mOloc:ElementModification" name="Evaluate">
+                        <mod dh="true">
+                          <expr xsi:type="mOloc:LogicalPrimary" val="true"/>
+                        </mod>
+                      </element>
+                    </args>
+                    <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                      <element xsi:type="mOloc:ElementModification" name="Documentation">
+                        <mod>
+                          <mod>
+                            <args>
+                              <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                                <element xsi:type="mOloc:ElementModification" name="info">
+                                  <mod dh="true">
+                                    <expr xsi:type="mOloc:StringPrimary" val="&lt;html>&#xA;  &lt;p>The following initialization alternatives are available:&lt;/p>&#xA;  &lt;dl>&#xA;    &lt;dt>&lt;code>&lt;strong>NoInit&lt;/strong>&lt;/code>&lt;/dt>&#xA;      &lt;dd>No initialization (start values are used as guess values with &lt;code>fixed=false&lt;/code>)&lt;/dd>&#xA;    &lt;dt>&lt;code>&lt;strong>SteadyState&lt;/strong>&lt;/code>&lt;/dt>&#xA;      &lt;dd>Steady state initialization (derivatives of states are zero)&lt;/dd>&#xA;    &lt;dt>&lt;code>&lt;strong>InitialState&lt;/strong>&lt;/code>&lt;/dt>&#xA;      &lt;dd>Initialization with initial states&lt;/dd>&#xA;    &lt;dt>&lt;code>&lt;strong>InitialOutput&lt;/strong>&lt;/code>&lt;/dt>&#xA;      &lt;dd>Initialization with initial outputs (and steady state of the states if possible)&lt;/dd>&#xA;  &lt;/dl>&#xA;&lt;/html>"/>
+                                  </mod>
+                                </element>
+                              </args>
+                            </args>
+                          </mod>
+                        </mod>
+                      </element>
+                    </args>
+                  </args>
+                </cm>
+              </annotation>
+            </comment>
+          </elementnum>
+          <cp kind="type"/>
+        </elem>
+        <elem xsi:type="mOloc:ClassDefinition" name="SimpleController">
+          <elementnum enumeratioan="true">
+            <list>
+              <enums id="P">
+                <comment comment="&quot;P controller&quot;"/>
+              </enums>
+              <enums id="PI">
+                <comment comment="&quot;PI controller&quot;"/>
+              </enums>
+              <enums id="PD">
+                <comment comment="&quot;PD controller&quot;"/>
+              </enums>
+              <enums id="PID">
+                <comment comment="&quot;PID controller&quot;"/>
+              </enums>
+            </list>
+            <comment comment="&quot;Enumeration defining P, PI, PD, or PID simple controller type&quot;">
+              <annotation isannotation="true">
+                <cm>
+                  <args>
+                    <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                      <element xsi:type="mOloc:ElementModification" name="Evaluate">
+                        <mod dh="true">
+                          <expr xsi:type="mOloc:LogicalPrimary" val="true"/>
+                        </mod>
+                      </element>
+                    </args>
+                  </args>
+                </cm>
+              </annotation>
+            </comment>
+          </elementnum>
+          <cp kind="type"/>
+        </elem>
+        <elem xsi:type="mOloc:ClassDefinition" name="AnalogFilter">
+          <elementnum enumeratioan="true">
+            <list>
+              <enums id="CriticalDamping">
+                <comment comment="&quot;Filter with critical damping&quot;"/>
+              </enums>
+              <enums id="Bessel">
+                <comment comment="&quot;Bessel filter&quot;"/>
+              </enums>
+              <enums id="Butterworth">
+                <comment comment="&quot;Butterworth filter&quot;"/>
+              </enums>
+              <enums id="ChebyshevI">
+                <comment comment="&quot;Chebyshev I filter&quot;"/>
+              </enums>
+            </list>
+            <comment comment="&quot;Enumeration defining the method of filtering&quot;">
+              <annotation isannotation="true">
+                <cm>
+                  <args>
+                    <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                      <element xsi:type="mOloc:ElementModification" name="Evaluate">
+                        <mod dh="true">
+                          <expr xsi:type="mOloc:LogicalPrimary" val="true"/>
+                        </mod>
+                      </element>
+                    </args>
+                  </args>
+                </cm>
+              </annotation>
+            </comment>
+          </elementnum>
+          <cp kind="type"/>
+        </elem>
+        <elem xsi:type="mOloc:ClassDefinition" name="FilterType">
+          <elementnum enumeratioan="true">
+            <list>
+              <enums id="LowPass">
+                <comment comment="&quot;Low pass filter&quot;"/>
+              </enums>
+              <enums id="HighPass">
+                <comment comment="&quot;High pass filter&quot;"/>
+              </enums>
+              <enums id="BandPass">
+                <comment comment="&quot;Band pass filter&quot;"/>
+              </enums>
+              <enums id="BandStop">
+                <comment comment="&quot;Band stop / notch filter&quot;"/>
+              </enums>
+            </list>
+            <comment comment="&quot;Enumeration of analog filter types (low, high, band pass or band stop filter)&quot;">
+              <annotation isannotation="true">
+                <cm>
+                  <args>
+                    <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                      <element xsi:type="mOloc:ElementModification" name="Evaluate">
+                        <mod dh="true">
+                          <expr xsi:type="mOloc:LogicalPrimary" val="true"/>
+                        </mod>
+                      </element>
+                    </args>
+                  </args>
+                </cm>
+              </annotation>
+            </comment>
+          </elementnum>
+          <cp kind="type"/>
+        </elem>
+        <elem xsi:type="mOloc:ClassDefinition" name="Regularization">
+          <elementnum enumeratioan="true">
+            <list>
+              <enums id="Exp">
+                <comment comment="&quot;Exponential regularization (smooth)&quot;"/>
+              </enums>
+              <enums id="Sine">
+                <comment comment="&quot;Sinusoidal regularization (smooth 1st derivative)&quot;"/>
+              </enums>
+              <enums id="Linear">
+                <comment comment="&quot;Linear regularization&quot;"/>
+              </enums>
+              <enums id="Cosine">
+                <comment comment="&quot;Cosine regularization&quot;"/>
+              </enums>
+            </list>
+            <comment comment="&quot;Enumeration defining the regularization around zero&quot;"/>
+          </elementnum>
+          <cp kind="type"/>
+        </elem>
+        <elem xsi:type="mOloc:ClassDefinition" name="LimiterHomotopy">
+          <elementnum enumeratioan="true">
+            <list>
+              <enums id="NoHomotopy">
+                <comment comment="&quot;Homotopy is not used&quot;"/>
+              </enums>
+              <enums id="Linear">
+                <comment comment="&quot;Simplified model without limits&quot;"/>
+              </enums>
+              <enums id="UpperLimit">
+                <comment comment="&quot;Simplified model fixed at upper limit&quot;"/>
+              </enums>
+              <enums id="LowerLimit">
+                <comment comment="&quot;Simplified model fixed at lower limit&quot;"/>
+              </enums>
+            </list>
+            <comment comment="&quot;Enumeration defining use of homotopy in limiter components&quot;">
+              <annotation isannotation="true">
+                <cm>
+                  <args>
+                    <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                      <element xsi:type="mOloc:ElementModification" name="Evaluate">
+                        <mod dh="true">
+                          <expr xsi:type="mOloc:LogicalPrimary" val="true"/>
+                        </mod>
+                      </element>
+                    </args>
+                  </args>
+                </cm>
+              </annotation>
+            </comment>
+          </elementnum>
+          <cp kind="type"/>
+        </elem>
+        <elem xsi:type="mOloc:ClassDefinition" name="VariableLimiterHomotopy">
+          <elementnum enumeratioan="true">
+            <list>
+              <enums id="NoHomotopy">
+                <comment comment="&quot;Simplified model = actual model&quot;"/>
+              </enums>
+              <enums id="Linear">
+                <comment comment="&quot;Simplified model: y = u&quot;"/>
+              </enums>
+              <enums id="Fixed">
+                <comment comment="&quot;Simplified model: y = ySimplified&quot;"/>
+              </enums>
+            </list>
+            <comment comment="&quot;Enumeration defining use of homotopy in variable limiter components&quot;">
+              <annotation isannotation="true">
+                <cm>
+                  <args>
+                    <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                      <element xsi:type="mOloc:ElementModification" name="Evaluate">
+                        <mod dh="true">
+                          <expr xsi:type="mOloc:LogicalPrimary" val="true"/>
+                        </mod>
+                      </element>
+                    </args>
+                  </args>
+                </cm>
+              </annotation>
+            </comment>
+          </elementnum>
+          <cp kind="type"/>
+        </elem>
+        <elem xsi:type="mOloc:ClassDefinition" name="ExternalCombiTimeTable" str_comment="&quot;External object of 1-dim. table where first column is time&quot;" name_end="ExternalCombiTimeTable">
+          <composition>
+            <priv_elist>
+              <elem xsi:type="mOloc:ExtendsClause" name="ExternalObject"/>
+              <elem xsi:type="mOloc:ClassDefinition" name="constructor" str_comment="&quot;Initialize 1-dim. table where first column is time&quot;" name_end="constructor">
+                <composition>
+                  <priv_elist>
+                    <elem xsi:type="mOloc:ExtendsClause" name="Modelica.Icons.Function"/>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="String"/>
+                      <comps>
+                        <comps>
+                          <decl name="tableName"/>
+                          <comment comment="&quot;Table name&quot;"/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="String"/>
+                      <comps>
+                        <comps>
+                          <decl name="fileName"/>
+                          <comment comment="&quot;File name&quot;"/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Real"/>
+                      <comps>
+                        <comps>
+                          <decl name="table">
+                            <subscripts>
+                              <subscripts all="true"/>
+                              <subscripts all="true"/>
+                            </subscripts>
+                          </decl>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="SI.Time"/>
+                      <comps>
+                        <comps>
+                          <decl name="startTime"/>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Integer"/>
+                      <comps>
+                        <comps>
+                          <decl name="columns">
+                            <subscripts>
+                              <subscripts all="true"/>
+                            </subscripts>
+                          </decl>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Modelica.Blocks.Types.Smoothness"/>
+                      <comps>
+                        <comps>
+                          <decl name="smoothness"/>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Modelica.Blocks.Types.Extrapolation"/>
+                      <comps>
+                        <comps>
+                          <decl name="extrapolation"/>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="SI.Time"/>
+                      <comps>
+                        <comps>
+                          <decl name="shiftTime">
+                            <mod dh="true">
+                              <expr xsi:type="mOloc:FloatPrimary"/>
+                            </mod>
+                          </decl>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Modelica.Blocks.Types.TimeEvents"/>
+                      <comps>
+                        <comps>
+                          <decl name="timeEvents">
+                            <mod dh="true">
+                              <expr xsi:type="mOloc:ComponentReference">
+                                <idents>Modelica</idents>
+                                <idents>Blocks</idents>
+                                <idents>Types</idents>
+                                <idents>TimeEvents</idents>
+                                <idents>Always</idents>
+                              </expr>
+                            </mod>
+                          </decl>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Boolean"/>
+                      <comps>
+                        <comps>
+                          <decl name="verboseRead">
+                            <mod dh="true">
+                              <expr xsi:type="mOloc:LogicalPrimary" val="true"/>
+                            </mod>
+                          </decl>
+                          <comment comment="&quot;= true: Print info message; = false: No info message&quot;"/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="output">
+                      <type name="ExternalCombiTimeTable"/>
+                      <comps>
+                        <comps>
+                          <decl name="externalCombiTimeTable"/>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                  </priv_elist>
+                  <ext_elist ext_lang_spec="&quot;C&quot;">
+                    <ext_func_call name="ModelicaStandardTables_CombiTimeTable_init2">
+                      <lhs>
+                        <idents>externalCombiTimeTable</idents>
+                      </lhs>
+                      <args>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>fileName</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>tableName</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>table</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:FunctionCall" comp_ref="size">
+                          <args>
+                            <res>
+                              <args xsi:type="mOloc:ComponentReference">
+                                <idents>table</idents>
+                              </args>
+                              <args xsi:type="mOloc:FunctionArguments">
+                                <args xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                              </args>
+                            </res>
+                          </args>
+                        </exprs>
+                        <exprs xsi:type="mOloc:FunctionCall" comp_ref="size">
+                          <args>
+                            <res>
+                              <args xsi:type="mOloc:ComponentReference">
+                                <idents>table</idents>
+                              </args>
+                              <args xsi:type="mOloc:FunctionArguments">
+                                <args xsi:type="mOloc:FloatPrimary" val="2.0"/>
+                              </args>
+                            </res>
+                          </args>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>startTime</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>columns</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:FunctionCall" comp_ref="size">
+                          <args>
+                            <res>
+                              <args xsi:type="mOloc:ComponentReference">
+                                <idents>columns</idents>
+                              </args>
+                              <args xsi:type="mOloc:FunctionArguments">
+                                <args xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                              </args>
+                            </res>
+                          </args>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>smoothness</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>extrapolation</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>shiftTime</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>timeEvents</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>verboseRead</idents>
+                        </exprs>
+                      </args>
+                    </ext_func_call>
+                    <ext_anno isannotation="true">
+                      <cm>
+                        <args>
+                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                            <element xsi:type="mOloc:ElementModification" name="IncludeDirectory">
+                              <mod dh="true">
+                                <expr xsi:type="mOloc:StringPrimary" val="modelica://Modelica/Resources/C-Sources"/>
+                              </mod>
+                            </element>
+                          </args>
+                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                            <element xsi:type="mOloc:ElementModification" name="Library">
+                              <mod dh="true">
+                                <expr xsi:type="mOloc:Primary">
+                                  <fa>
+                                    <args xsi:type="mOloc:StringPrimary" val="ModelicaStandardTables"/>
+                                    <args xsi:type="mOloc:FunctionArguments">
+                                      <args xsi:type="mOloc:StringPrimary" val="ModelicaIO"/>
+                                      <args xsi:type="mOloc:FunctionArguments">
+                                        <args xsi:type="mOloc:StringPrimary" val="ModelicaMatIO"/>
+                                        <args xsi:type="mOloc:FunctionArguments">
+                                          <args xsi:type="mOloc:StringPrimary" val="zlib"/>
+                                        </args>
+                                      </args>
+                                    </args>
+                                  </fa>
+                                </expr>
+                              </mod>
+                            </element>
+                          </args>
+                        </args>
+                      </cm>
+                    </ext_anno>
+                  </ext_elist>
+                </composition>
+                <cp kind="function"/>
+              </elem>
+              <elem xsi:type="mOloc:ClassDefinition" name="destructor" str_comment="&quot;Terminate 1-dim. table where first column is time&quot;" name_end="destructor">
+                <composition>
+                  <priv_elist>
+                    <elem xsi:type="mOloc:ExtendsClause" name="Modelica.Icons.Function"/>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="ExternalCombiTimeTable"/>
+                      <comps>
+                        <comps>
+                          <decl name="externalCombiTimeTable"/>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                  </priv_elist>
+                  <ext_elist ext_lang_spec="&quot;C&quot;">
+                    <ext_func_call name="ModelicaStandardTables_CombiTimeTable_close">
+                      <args>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>externalCombiTimeTable</idents>
+                        </exprs>
+                      </args>
+                    </ext_func_call>
+                    <ext_anno isannotation="true">
+                      <cm>
+                        <args>
+                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                            <element xsi:type="mOloc:ElementModification" name="IncludeDirectory">
+                              <mod dh="true">
+                                <expr xsi:type="mOloc:StringPrimary" val="modelica://Modelica/Resources/C-Sources"/>
+                              </mod>
+                            </element>
+                          </args>
+                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                            <element xsi:type="mOloc:ElementModification" name="Library">
+                              <mod dh="true">
+                                <expr xsi:type="mOloc:Primary">
+                                  <fa>
+                                    <args xsi:type="mOloc:StringPrimary" val="ModelicaStandardTables"/>
+                                    <args xsi:type="mOloc:FunctionArguments">
+                                      <args xsi:type="mOloc:StringPrimary" val="ModelicaIO"/>
+                                      <args xsi:type="mOloc:FunctionArguments">
+                                        <args xsi:type="mOloc:StringPrimary" val="ModelicaMatIO"/>
+                                        <args xsi:type="mOloc:FunctionArguments">
+                                          <args xsi:type="mOloc:StringPrimary" val="zlib"/>
+                                        </args>
+                                      </args>
+                                    </args>
+                                  </fa>
+                                </expr>
+                              </mod>
+                            </element>
+                          </args>
+                        </args>
+                      </cm>
+                    </ext_anno>
+                  </ext_elist>
+                </composition>
+                <cp kind="function"/>
+              </elem>
+            </priv_elist>
+          </composition>
+          <cp kind="class"/>
+        </elem>
+        <elem xsi:type="mOloc:ClassDefinition" name="ExternalCombiTable1D" str_comment="&quot;External object of 1-dim. table defined by matrix&quot;" name_end="ExternalCombiTable1D">
+          <composition>
+            <priv_elist>
+              <elem xsi:type="mOloc:ExtendsClause" name="ExternalObject"/>
+              <elem xsi:type="mOloc:ClassDefinition" name="constructor" str_comment="&quot;Initialize 1-dim. table defined by matrix&quot;" name_end="constructor">
+                <composition>
+                  <priv_elist>
+                    <elem xsi:type="mOloc:ExtendsClause" name="Modelica.Icons.Function"/>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="String"/>
+                      <comps>
+                        <comps>
+                          <decl name="tableName"/>
+                          <comment comment="&quot;Table name&quot;"/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="String"/>
+                      <comps>
+                        <comps>
+                          <decl name="fileName"/>
+                          <comment comment="&quot;File name&quot;"/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Real"/>
+                      <comps>
+                        <comps>
+                          <decl name="table">
+                            <subscripts>
+                              <subscripts all="true"/>
+                              <subscripts all="true"/>
+                            </subscripts>
+                          </decl>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Integer"/>
+                      <comps>
+                        <comps>
+                          <decl name="columns">
+                            <subscripts>
+                              <subscripts all="true"/>
+                            </subscripts>
+                          </decl>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Modelica.Blocks.Types.Smoothness"/>
+                      <comps>
+                        <comps>
+                          <decl name="smoothness"/>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Modelica.Blocks.Types.Extrapolation"/>
+                      <comps>
+                        <comps>
+                          <decl name="extrapolation">
+                            <mod dh="true">
+                              <expr xsi:type="mOloc:ComponentReference">
+                                <idents>Modelica</idents>
+                                <idents>Blocks</idents>
+                                <idents>Types</idents>
+                                <idents>Extrapolation</idents>
+                                <idents>LastTwoPoints</idents>
+                              </expr>
+                            </mod>
+                          </decl>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Boolean"/>
+                      <comps>
+                        <comps>
+                          <decl name="verboseRead">
+                            <mod dh="true">
+                              <expr xsi:type="mOloc:LogicalPrimary" val="true"/>
+                            </mod>
+                          </decl>
+                          <comment comment="&quot;= true: Print info message; = false: No info message&quot;"/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="output">
+                      <type name="ExternalCombiTable1D"/>
+                      <comps>
+                        <comps>
+                          <decl name="externalCombiTable1D"/>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                  </priv_elist>
+                  <ext_elist ext_lang_spec="&quot;C&quot;">
+                    <ext_func_call name="ModelicaStandardTables_CombiTable1D_init2">
+                      <lhs>
+                        <idents>externalCombiTable1D</idents>
+                      </lhs>
+                      <args>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>fileName</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>tableName</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>table</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:FunctionCall" comp_ref="size">
+                          <args>
+                            <res>
+                              <args xsi:type="mOloc:ComponentReference">
+                                <idents>table</idents>
+                              </args>
+                              <args xsi:type="mOloc:FunctionArguments">
+                                <args xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                              </args>
+                            </res>
+                          </args>
+                        </exprs>
+                        <exprs xsi:type="mOloc:FunctionCall" comp_ref="size">
+                          <args>
+                            <res>
+                              <args xsi:type="mOloc:ComponentReference">
+                                <idents>table</idents>
+                              </args>
+                              <args xsi:type="mOloc:FunctionArguments">
+                                <args xsi:type="mOloc:FloatPrimary" val="2.0"/>
+                              </args>
+                            </res>
+                          </args>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>columns</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:FunctionCall" comp_ref="size">
+                          <args>
+                            <res>
+                              <args xsi:type="mOloc:ComponentReference">
+                                <idents>columns</idents>
+                              </args>
+                              <args xsi:type="mOloc:FunctionArguments">
+                                <args xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                              </args>
+                            </res>
+                          </args>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>smoothness</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>extrapolation</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>verboseRead</idents>
+                        </exprs>
+                      </args>
+                    </ext_func_call>
+                    <ext_anno isannotation="true">
+                      <cm>
+                        <args>
+                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                            <element xsi:type="mOloc:ElementModification" name="IncludeDirectory">
+                              <mod dh="true">
+                                <expr xsi:type="mOloc:StringPrimary" val="modelica://Modelica/Resources/C-Sources"/>
+                              </mod>
+                            </element>
+                          </args>
+                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                            <element xsi:type="mOloc:ElementModification" name="Library">
+                              <mod dh="true">
+                                <expr xsi:type="mOloc:Primary">
+                                  <fa>
+                                    <args xsi:type="mOloc:StringPrimary" val="ModelicaStandardTables"/>
+                                    <args xsi:type="mOloc:FunctionArguments">
+                                      <args xsi:type="mOloc:StringPrimary" val="ModelicaIO"/>
+                                      <args xsi:type="mOloc:FunctionArguments">
+                                        <args xsi:type="mOloc:StringPrimary" val="ModelicaMatIO"/>
+                                        <args xsi:type="mOloc:FunctionArguments">
+                                          <args xsi:type="mOloc:StringPrimary" val="zlib"/>
+                                        </args>
+                                      </args>
+                                    </args>
+                                  </fa>
+                                </expr>
+                              </mod>
+                            </element>
+                          </args>
+                        </args>
+                      </cm>
+                    </ext_anno>
+                  </ext_elist>
+                </composition>
+                <cp kind="function"/>
+              </elem>
+              <elem xsi:type="mOloc:ClassDefinition" name="destructor" str_comment="&quot;Terminate 1-dim. table defined by matrix&quot;" name_end="destructor">
+                <composition>
+                  <priv_elist>
+                    <elem xsi:type="mOloc:ExtendsClause" name="Modelica.Icons.Function"/>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="ExternalCombiTable1D"/>
+                      <comps>
+                        <comps>
+                          <decl name="externalCombiTable1D"/>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                  </priv_elist>
+                  <ext_elist ext_lang_spec="&quot;C&quot;">
+                    <ext_func_call name="ModelicaStandardTables_CombiTable1D_close">
+                      <args>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>externalCombiTable1D</idents>
+                        </exprs>
+                      </args>
+                    </ext_func_call>
+                    <ext_anno isannotation="true">
+                      <cm>
+                        <args>
+                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                            <element xsi:type="mOloc:ElementModification" name="IncludeDirectory">
+                              <mod dh="true">
+                                <expr xsi:type="mOloc:StringPrimary" val="modelica://Modelica/Resources/C-Sources"/>
+                              </mod>
+                            </element>
+                          </args>
+                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                            <element xsi:type="mOloc:ElementModification" name="Library">
+                              <mod dh="true">
+                                <expr xsi:type="mOloc:Primary">
+                                  <fa>
+                                    <args xsi:type="mOloc:StringPrimary" val="ModelicaStandardTables"/>
+                                    <args xsi:type="mOloc:FunctionArguments">
+                                      <args xsi:type="mOloc:StringPrimary" val="ModelicaIO"/>
+                                      <args xsi:type="mOloc:FunctionArguments">
+                                        <args xsi:type="mOloc:StringPrimary" val="ModelicaMatIO"/>
+                                        <args xsi:type="mOloc:FunctionArguments">
+                                          <args xsi:type="mOloc:StringPrimary" val="zlib"/>
+                                        </args>
+                                      </args>
+                                    </args>
+                                  </fa>
+                                </expr>
+                              </mod>
+                            </element>
+                          </args>
+                        </args>
+                      </cm>
+                    </ext_anno>
+                  </ext_elist>
+                </composition>
+                <cp kind="function"/>
+              </elem>
+            </priv_elist>
+          </composition>
+          <cp kind="class"/>
+        </elem>
+        <elem xsi:type="mOloc:ClassDefinition" name="ExternalCombiTable2D" str_comment="&quot;External object of 2-dim. table defined by matrix&quot;" name_end="ExternalCombiTable2D">
+          <composition>
+            <priv_elist>
+              <elem xsi:type="mOloc:ExtendsClause" name="ExternalObject"/>
+              <elem xsi:type="mOloc:ClassDefinition" name="constructor" str_comment="&quot;Initialize 2-dim. table defined by matrix&quot;" name_end="constructor">
+                <composition>
+                  <priv_elist>
+                    <elem xsi:type="mOloc:ExtendsClause" name="Modelica.Icons.Function"/>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="String"/>
+                      <comps>
+                        <comps>
+                          <decl name="tableName"/>
+                          <comment comment="&quot;Table name&quot;"/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="String"/>
+                      <comps>
+                        <comps>
+                          <decl name="fileName"/>
+                          <comment comment="&quot;File name&quot;"/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Real"/>
+                      <comps>
+                        <comps>
+                          <decl name="table">
+                            <subscripts>
+                              <subscripts all="true"/>
+                              <subscripts all="true"/>
+                            </subscripts>
+                          </decl>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Modelica.Blocks.Types.Smoothness"/>
+                      <comps>
+                        <comps>
+                          <decl name="smoothness"/>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Modelica.Blocks.Types.Extrapolation"/>
+                      <comps>
+                        <comps>
+                          <decl name="extrapolation">
+                            <mod dh="true">
+                              <expr xsi:type="mOloc:ComponentReference">
+                                <idents>Modelica</idents>
+                                <idents>Blocks</idents>
+                                <idents>Types</idents>
+                                <idents>Extrapolation</idents>
+                                <idents>LastTwoPoints</idents>
+                              </expr>
+                            </mod>
+                          </decl>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="Boolean"/>
+                      <comps>
+                        <comps>
+                          <decl name="verboseRead">
+                            <mod dh="true">
+                              <expr xsi:type="mOloc:LogicalPrimary" val="true"/>
+                            </mod>
+                          </decl>
+                          <comment comment="&quot;= true: Print info message; = false: No info message&quot;"/>
+                        </comps>
+                      </comps>
+                    </elem>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="output">
+                      <type name="ExternalCombiTable2D"/>
+                      <comps>
+                        <comps>
+                          <decl name="externalCombiTable2D"/>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                  </priv_elist>
+                  <ext_elist ext_lang_spec="&quot;C&quot;">
+                    <ext_func_call name="ModelicaStandardTables_CombiTable2D_init2">
+                      <lhs>
+                        <idents>externalCombiTable2D</idents>
+                      </lhs>
+                      <args>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>fileName</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>tableName</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>table</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:FunctionCall" comp_ref="size">
+                          <args>
+                            <res>
+                              <args xsi:type="mOloc:ComponentReference">
+                                <idents>table</idents>
+                              </args>
+                              <args xsi:type="mOloc:FunctionArguments">
+                                <args xsi:type="mOloc:FloatPrimary" val="1.0"/>
+                              </args>
+                            </res>
+                          </args>
+                        </exprs>
+                        <exprs xsi:type="mOloc:FunctionCall" comp_ref="size">
+                          <args>
+                            <res>
+                              <args xsi:type="mOloc:ComponentReference">
+                                <idents>table</idents>
+                              </args>
+                              <args xsi:type="mOloc:FunctionArguments">
+                                <args xsi:type="mOloc:FloatPrimary" val="2.0"/>
+                              </args>
+                            </res>
+                          </args>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>smoothness</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>extrapolation</idents>
+                        </exprs>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>verboseRead</idents>
+                        </exprs>
+                      </args>
+                    </ext_func_call>
+                    <ext_anno isannotation="true">
+                      <cm>
+                        <args>
+                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                            <element xsi:type="mOloc:ElementModification" name="IncludeDirectory">
+                              <mod dh="true">
+                                <expr xsi:type="mOloc:StringPrimary" val="modelica://Modelica/Resources/C-Sources"/>
+                              </mod>
+                            </element>
+                          </args>
+                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                            <element xsi:type="mOloc:ElementModification" name="Library">
+                              <mod dh="true">
+                                <expr xsi:type="mOloc:Primary">
+                                  <fa>
+                                    <args xsi:type="mOloc:StringPrimary" val="ModelicaStandardTables"/>
+                                    <args xsi:type="mOloc:FunctionArguments">
+                                      <args xsi:type="mOloc:StringPrimary" val="ModelicaIO"/>
+                                      <args xsi:type="mOloc:FunctionArguments">
+                                        <args xsi:type="mOloc:StringPrimary" val="ModelicaMatIO"/>
+                                        <args xsi:type="mOloc:FunctionArguments">
+                                          <args xsi:type="mOloc:StringPrimary" val="zlib"/>
+                                        </args>
+                                      </args>
+                                    </args>
+                                  </fa>
+                                </expr>
+                              </mod>
+                            </element>
+                          </args>
+                        </args>
+                      </cm>
+                    </ext_anno>
+                  </ext_elist>
+                </composition>
+                <cp kind="function"/>
+              </elem>
+              <elem xsi:type="mOloc:ClassDefinition" name="destructor" str_comment="&quot;Terminate 2-dim. table defined by matrix&quot;" name_end="destructor">
+                <composition>
+                  <priv_elist>
+                    <elem xsi:type="mOloc:ExtendsClause" name="Modelica.Icons.Function"/>
+                    <elem xsi:type="mOloc:ComponentClause" prefix="input">
+                      <type name="ExternalCombiTable2D"/>
+                      <comps>
+                        <comps>
+                          <decl name="externalCombiTable2D"/>
+                          <comment/>
+                        </comps>
+                      </comps>
+                    </elem>
+                  </priv_elist>
+                  <ext_elist ext_lang_spec="&quot;C&quot;">
+                    <ext_func_call name="ModelicaStandardTables_CombiTable2D_close">
+                      <args>
+                        <exprs xsi:type="mOloc:ComponentReference">
+                          <idents>externalCombiTable2D</idents>
+                        </exprs>
+                      </args>
+                    </ext_func_call>
+                    <ext_anno isannotation="true">
+                      <cm>
+                        <args>
+                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                            <element xsi:type="mOloc:ElementModification" name="IncludeDirectory">
+                              <mod dh="true">
+                                <expr xsi:type="mOloc:StringPrimary" val="modelica://Modelica/Resources/C-Sources"/>
+                              </mod>
+                            </element>
+                          </args>
+                          <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                            <element xsi:type="mOloc:ElementModification" name="Library">
+                              <mod dh="true">
+                                <expr xsi:type="mOloc:Primary">
+                                  <fa>
+                                    <args xsi:type="mOloc:StringPrimary" val="ModelicaStandardTables"/>
+                                    <args xsi:type="mOloc:FunctionArguments">
+                                      <args xsi:type="mOloc:StringPrimary" val="ModelicaIO"/>
+                                      <args xsi:type="mOloc:FunctionArguments">
+                                        <args xsi:type="mOloc:StringPrimary" val="ModelicaMatIO"/>
+                                        <args xsi:type="mOloc:FunctionArguments">
+                                          <args xsi:type="mOloc:StringPrimary" val="zlib"/>
+                                        </args>
+                                      </args>
+                                    </args>
+                                  </fa>
+                                </expr>
+                              </mod>
+                            </element>
+                          </args>
+                        </args>
+                      </cm>
+                    </ext_anno>
+                  </ext_elist>
+                </composition>
+                <cp kind="function"/>
+              </elem>
+            </priv_elist>
+          </composition>
+          <cp kind="class"/>
+        </elem>
+      </priv_elist>
+      <anno isannotation="true">
+        <cm>
+          <args>
+            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+              <element xsi:type="mOloc:ElementModification" name="Documentation">
+                <mod>
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="info">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:StringPrimary" val="&lt;html>&#xA;&lt;p>&#xA;In this package &lt;strong>types&lt;/strong>, &lt;strong>constants&lt;/strong> and &lt;strong>external objects&lt;/strong> are defined that are used&#xA;in library Modelica.Blocks. The types have additional annotation choices&#xA;definitions that define the menus to be built up in the graphical&#xA;user interface when the type is used as parameter in a declaration.&#xA;&lt;/p>&#xA;&lt;/html>"/>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                </mod>
+              </element>
+            </args>
+          </args>
+        </cm>
+      </anno>
+    </composition>
+    <cp kind="package"/>
+  </classes>
+</mOloc:StoredDefinition>

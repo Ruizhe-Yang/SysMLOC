@@ -178,7 +178,7 @@ import dut.control.sysmloc.sysMLOC.TransitionUsage;
 import dut.control.sysmloc.sysMLOC.TransitionUsageIfPart;
 import dut.control.sysmloc.sysMLOC.TriggerKind;
 import dut.control.sysmloc.sysMLOC.TriggerValuePart;
-import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
+import dut.control.sysmloc.sysMLOC.TypingFeatureChain;
 import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
@@ -440,7 +440,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.MULTIPLICITY_PART: return createMultiplicityPart();
       case SysMLOCPackage.MULTIPLICITY_MODIFIERS: return createMultiplicityModifiers();
       case SysMLOCPackage.FEATURE_SPECIALIZATION: return createFeatureSpecialization();
-      case SysMLOCPackage.TYPING_FEATURE_TYPING: return createTypingFeatureTyping();
+      case SysMLOCPackage.TYPING_FEATURE_CHAIN: return createTypingFeatureChain();
       case SysMLOCPackage.SUBSETTING_FEATURE_CHAIN: return createSubsettingFeatureChain();
       case SysMLOCPackage.REFERENCE_FEATURE_CHAIN: return createReferenceFeatureChain();
       case SysMLOCPackage.CROSS_FEATURE_CHAIN: return createCrossFeatureChain();
@@ -2643,10 +2643,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public TypingFeatureTyping createTypingFeatureTyping()
+  public TypingFeatureChain createTypingFeatureChain()
   {
-    TypingFeatureTypingImpl typingFeatureTyping = new TypingFeatureTypingImpl();
-    return typingFeatureTyping;
+    TypingFeatureChainImpl typingFeatureChain = new TypingFeatureChainImpl();
+    return typingFeatureChain;
   }
 
   /**

@@ -19,7 +19,7 @@ import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
 import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
 import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
+import dut.control.sysmloc.sysMLOC.TypingFeatureChain;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
@@ -1066,11 +1066,11 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
         default: return -1;
       }
     }
-    if (baseClass == TypingFeatureTyping.class)
+    if (baseClass == TypingFeatureChain.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ENUMERATED_VALUE__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS;
+        case SysMLOCPackage.ENUMERATED_VALUE__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_CHAIN__TYPINGS;
         default: return -1;
       }
     }
@@ -1220,11 +1220,11 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
         default: return -1;
       }
     }
-    if (baseClass == TypingFeatureTyping.class)
+    if (baseClass == TypingFeatureChain.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS: return SysMLOCPackage.ENUMERATED_VALUE__TYPINGS;
+        case SysMLOCPackage.TYPING_FEATURE_CHAIN__TYPINGS: return SysMLOCPackage.ENUMERATED_VALUE__TYPINGS;
         default: return -1;
       }
     }

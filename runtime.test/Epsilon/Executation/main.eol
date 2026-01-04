@@ -1,0 +1,16 @@
+import 'Utils.eol';
+// --------------- Global Variable --------------- //
+var LOOPPROTECT = 0;
+var ShowSearchProcess = false;
+
+//var testpart = getEObject("PartUsage", "ee");
+//testpart.println();
+//var part = testpart.getObject("bbbb");
+//if (part != null){
+//	("OUTPUT "+part.declaredName+" : "+part).println(); 
+//}
+
+// Example 01 : Check if all Usage feature specializations match properly.
+for (e in SysMLOC!FeatureSpecialization){
+	e.checkFeatureSpecialization();
+}

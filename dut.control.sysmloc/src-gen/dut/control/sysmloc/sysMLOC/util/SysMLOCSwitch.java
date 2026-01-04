@@ -172,7 +172,7 @@ import dut.control.sysmloc.sysMLOC.TransitionSuccession;
 import dut.control.sysmloc.sysMLOC.TransitionUsage;
 import dut.control.sysmloc.sysMLOC.TransitionUsageIfPart;
 import dut.control.sysmloc.sysMLOC.TriggerValuePart;
-import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
+import dut.control.sysmloc.sysMLOC.TypingFeatureChain;
 import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
@@ -756,7 +756,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(defaultReferenceUsage);
         if (result == null) result = caseViewBodyElement(defaultReferenceUsage);
         if (result == null) result = caseCalculationBodyElement(defaultReferenceUsage);
-        if (result == null) result = caseTypingFeatureTyping(defaultReferenceUsage);
+        if (result == null) result = caseTypingFeatureChain(defaultReferenceUsage);
         if (result == null) result = caseSubsettingFeatureChain(defaultReferenceUsage);
         if (result == null) result = caseReferenceFeatureChain(defaultReferenceUsage);
         if (result == null) result = caseCrossFeatureChain(defaultReferenceUsage);
@@ -805,7 +805,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecialization(extendedUsage);
         if (result == null) result = caseMultiplicityPart(extendedUsage);
         if (result == null) result = caseCaseBodyElement(extendedUsage);
-        if (result == null) result = caseTypingFeatureTyping(extendedUsage);
+        if (result == null) result = caseTypingFeatureChain(extendedUsage);
         if (result == null) result = caseSubsettingFeatureChain(extendedUsage);
         if (result == null) result = caseReferenceFeatureChain(extendedUsage);
         if (result == null) result = caseCrossFeatureChain(extendedUsage);
@@ -829,7 +829,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseActionBodyElement(referenceVariantUsage);
         if (result == null) result = caseStateBodyElement(referenceVariantUsage);
         if (result == null) result = caseRequirementBodyElement(referenceVariantUsage);
-        if (result == null) result = caseTypingFeatureTyping(referenceVariantUsage);
+        if (result == null) result = caseTypingFeatureChain(referenceVariantUsage);
         if (result == null) result = caseSubsettingFeatureChain(referenceVariantUsage);
         if (result == null) result = caseReferenceFeatureChain(referenceVariantUsage);
         if (result == null) result = caseCrossFeatureChain(referenceVariantUsage);
@@ -873,7 +873,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecialization(referenceUsage);
         if (result == null) result = caseMultiplicityPart(referenceUsage);
         if (result == null) result = caseCaseBodyElement(referenceUsage);
-        if (result == null) result = caseTypingFeatureTyping(referenceUsage);
+        if (result == null) result = caseTypingFeatureChain(referenceUsage);
         if (result == null) result = caseSubsettingFeatureChain(referenceUsage);
         if (result == null) result = caseReferenceFeatureChain(referenceUsage);
         if (result == null) result = caseCrossFeatureChain(referenceUsage);
@@ -991,7 +991,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecialization(attributeUsage);
         if (result == null) result = caseMultiplicityPart(attributeUsage);
         if (result == null) result = caseCaseBodyElement(attributeUsage);
-        if (result == null) result = caseTypingFeatureTyping(attributeUsage);
+        if (result == null) result = caseTypingFeatureChain(attributeUsage);
         if (result == null) result = caseSubsettingFeatureChain(attributeUsage);
         if (result == null) result = caseReferenceFeatureChain(attributeUsage);
         if (result == null) result = caseCrossFeatureChain(attributeUsage);
@@ -1042,7 +1042,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(enumeratedValue);
         if (result == null) result = caseFeatureSpecialization(enumeratedValue);
         if (result == null) result = caseMultiplicityPart(enumeratedValue);
-        if (result == null) result = caseTypingFeatureTyping(enumeratedValue);
+        if (result == null) result = caseTypingFeatureChain(enumeratedValue);
         if (result == null) result = caseSubsettingFeatureChain(enumeratedValue);
         if (result == null) result = caseReferenceFeatureChain(enumeratedValue);
         if (result == null) result = caseCrossFeatureChain(enumeratedValue);
@@ -1089,7 +1089,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecialization(enumerationUsage);
         if (result == null) result = caseMultiplicityPart(enumerationUsage);
         if (result == null) result = caseCaseBodyElement(enumerationUsage);
-        if (result == null) result = caseTypingFeatureTyping(enumerationUsage);
+        if (result == null) result = caseTypingFeatureChain(enumerationUsage);
         if (result == null) result = caseSubsettingFeatureChain(enumerationUsage);
         if (result == null) result = caseReferenceFeatureChain(enumerationUsage);
         if (result == null) result = caseCrossFeatureChain(enumerationUsage);
@@ -1133,7 +1133,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewBodyElement(bindingConnectorAsUsage);
         if (result == null) result = caseCalculationBodyElement(bindingConnectorAsUsage);
         if (result == null) result = caseBasicDefinitionPrefix(bindingConnectorAsUsage);
-        if (result == null) result = caseTypingFeatureTyping(bindingConnectorAsUsage);
+        if (result == null) result = caseTypingFeatureChain(bindingConnectorAsUsage);
         if (result == null) result = caseSubsettingFeatureChain(bindingConnectorAsUsage);
         if (result == null) result = caseReferenceFeatureChain(bindingConnectorAsUsage);
         if (result == null) result = caseCrossFeatureChain(bindingConnectorAsUsage);
@@ -1178,7 +1178,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewBodyElement(successionAsUsage);
         if (result == null) result = caseCalculationBodyElement(successionAsUsage);
         if (result == null) result = caseBasicDefinitionPrefix(successionAsUsage);
-        if (result == null) result = caseTypingFeatureTyping(successionAsUsage);
+        if (result == null) result = caseTypingFeatureChain(successionAsUsage);
         if (result == null) result = caseSubsettingFeatureChain(successionAsUsage);
         if (result == null) result = caseReferenceFeatureChain(successionAsUsage);
         if (result == null) result = caseCrossFeatureChain(successionAsUsage);
@@ -1254,7 +1254,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(occurrenceUsage);
         if (result == null) result = caseViewBodyElement(occurrenceUsage);
         if (result == null) result = caseCalculationBodyElement(occurrenceUsage);
-        if (result == null) result = caseTypingFeatureTyping(occurrenceUsage);
+        if (result == null) result = caseTypingFeatureChain(occurrenceUsage);
         if (result == null) result = caseSubsettingFeatureChain(occurrenceUsage);
         if (result == null) result = caseReferenceFeatureChain(occurrenceUsage);
         if (result == null) result = caseCrossFeatureChain(occurrenceUsage);
@@ -1300,7 +1300,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(portionUsage);
         if (result == null) result = caseViewBodyElement(portionUsage);
         if (result == null) result = caseCalculationBodyElement(portionUsage);
-        if (result == null) result = caseTypingFeatureTyping(portionUsage);
+        if (result == null) result = caseTypingFeatureChain(portionUsage);
         if (result == null) result = caseSubsettingFeatureChain(portionUsage);
         if (result == null) result = caseReferenceFeatureChain(portionUsage);
         if (result == null) result = caseCrossFeatureChain(portionUsage);
@@ -1336,7 +1336,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePrefixMetadata(eventOccurrenceUsage);
         if (result == null) result = caseFeatureSpecializationPart(eventOccurrenceUsage);
         if (result == null) result = caseFeatureSpecialization(eventOccurrenceUsage);
-        if (result == null) result = caseTypingFeatureTyping(eventOccurrenceUsage);
+        if (result == null) result = caseTypingFeatureChain(eventOccurrenceUsage);
         if (result == null) result = caseSubsettingFeatureChain(eventOccurrenceUsage);
         if (result == null) result = caseReferenceFeatureChain(eventOccurrenceUsage);
         if (result == null) result = caseCrossFeatureChain(eventOccurrenceUsage);
@@ -1422,7 +1422,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(individualUsage);
         if (result == null) result = caseViewBodyElement(individualUsage);
         if (result == null) result = caseCalculationBodyElement(individualUsage);
-        if (result == null) result = caseTypingFeatureTyping(individualUsage);
+        if (result == null) result = caseTypingFeatureChain(individualUsage);
         if (result == null) result = caseSubsettingFeatureChain(individualUsage);
         if (result == null) result = caseReferenceFeatureChain(individualUsage);
         if (result == null) result = caseCrossFeatureChain(individualUsage);
@@ -1498,7 +1498,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(itemUsage);
         if (result == null) result = caseViewBodyElement(itemUsage);
         if (result == null) result = caseCalculationBodyElement(itemUsage);
-        if (result == null) result = caseTypingFeatureTyping(itemUsage);
+        if (result == null) result = caseTypingFeatureChain(itemUsage);
         if (result == null) result = caseSubsettingFeatureChain(itemUsage);
         if (result == null) result = caseReferenceFeatureChain(itemUsage);
         if (result == null) result = caseCrossFeatureChain(itemUsage);
@@ -1599,7 +1599,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(partUsage);
         if (result == null) result = caseViewBodyElement(partUsage);
         if (result == null) result = caseCalculationBodyElement(partUsage);
-        if (result == null) result = caseTypingFeatureTyping(partUsage);
+        if (result == null) result = caseTypingFeatureChain(partUsage);
         if (result == null) result = caseSubsettingFeatureChain(partUsage);
         if (result == null) result = caseReferenceFeatureChain(partUsage);
         if (result == null) result = caseCrossFeatureChain(partUsage);
@@ -1675,7 +1675,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(portUsage);
         if (result == null) result = caseViewBodyElement(portUsage);
         if (result == null) result = caseCalculationBodyElement(portUsage);
-        if (result == null) result = caseTypingFeatureTyping(portUsage);
+        if (result == null) result = caseTypingFeatureChain(portUsage);
         if (result == null) result = caseSubsettingFeatureChain(portUsage);
         if (result == null) result = caseReferenceFeatureChain(portUsage);
         if (result == null) result = caseCrossFeatureChain(portUsage);
@@ -1748,7 +1748,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseActionBodyElement(connectionUsage);
         if (result == null) result = caseStateBodyElement(connectionUsage);
         if (result == null) result = caseRequirementBodyElement(connectionUsage);
-        if (result == null) result = caseTypingFeatureTyping(connectionUsage);
+        if (result == null) result = caseTypingFeatureChain(connectionUsage);
         if (result == null) result = caseSubsettingFeatureChain(connectionUsage);
         if (result == null) result = caseReferenceFeatureChain(connectionUsage);
         if (result == null) result = caseCrossFeatureChain(connectionUsage);
@@ -1823,7 +1823,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseActionBodyElement(interfaceUsage);
         if (result == null) result = caseStateBodyElement(interfaceUsage);
         if (result == null) result = caseRequirementBodyElement(interfaceUsage);
-        if (result == null) result = caseTypingFeatureTyping(interfaceUsage);
+        if (result == null) result = caseTypingFeatureChain(interfaceUsage);
         if (result == null) result = caseSubsettingFeatureChain(interfaceUsage);
         if (result == null) result = caseReferenceFeatureChain(interfaceUsage);
         if (result == null) result = caseCrossFeatureChain(interfaceUsage);
@@ -1873,7 +1873,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseActionBodyElement(message);
         if (result == null) result = caseStateBodyElement(message);
         if (result == null) result = caseRequirementBodyElement(message);
-        if (result == null) result = caseTypingFeatureTyping(message);
+        if (result == null) result = caseTypingFeatureChain(message);
         if (result == null) result = caseSubsettingFeatureChain(message);
         if (result == null) result = caseReferenceFeatureChain(message);
         if (result == null) result = caseCrossFeatureChain(message);
@@ -1949,7 +1949,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseActionBodyElement(flowUsage);
         if (result == null) result = caseStateBodyElement(flowUsage);
         if (result == null) result = caseRequirementBodyElement(flowUsage);
-        if (result == null) result = caseTypingFeatureTyping(flowUsage);
+        if (result == null) result = caseTypingFeatureChain(flowUsage);
         if (result == null) result = caseSubsettingFeatureChain(flowUsage);
         if (result == null) result = caseReferenceFeatureChain(flowUsage);
         if (result == null) result = caseCrossFeatureChain(flowUsage);
@@ -1998,7 +1998,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseActionBodyElement(successionFlowUsage);
         if (result == null) result = caseStateBodyElement(successionFlowUsage);
         if (result == null) result = caseRequirementBodyElement(successionFlowUsage);
-        if (result == null) result = caseTypingFeatureTyping(successionFlowUsage);
+        if (result == null) result = caseTypingFeatureChain(successionFlowUsage);
         if (result == null) result = caseSubsettingFeatureChain(successionFlowUsage);
         if (result == null) result = caseReferenceFeatureChain(successionFlowUsage);
         if (result == null) result = caseCrossFeatureChain(successionFlowUsage);
@@ -2073,7 +2073,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseActionBodyElement(allocationUsage);
         if (result == null) result = caseStateBodyElement(allocationUsage);
         if (result == null) result = caseRequirementBodyElement(allocationUsage);
-        if (result == null) result = caseTypingFeatureTyping(allocationUsage);
+        if (result == null) result = caseTypingFeatureChain(allocationUsage);
         if (result == null) result = caseSubsettingFeatureChain(allocationUsage);
         if (result == null) result = caseReferenceFeatureChain(allocationUsage);
         if (result == null) result = caseCrossFeatureChain(allocationUsage);
@@ -2152,7 +2152,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(actionUsage);
         if (result == null) result = caseViewBodyElement(actionUsage);
         if (result == null) result = caseCalculationBodyElement(actionUsage);
-        if (result == null) result = caseTypingFeatureTyping(actionUsage);
+        if (result == null) result = caseTypingFeatureChain(actionUsage);
         if (result == null) result = caseSubsettingFeatureChain(actionUsage);
         if (result == null) result = caseReferenceFeatureChain(actionUsage);
         if (result == null) result = caseCrossFeatureChain(actionUsage);
@@ -2228,7 +2228,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(calculationUsage);
         if (result == null) result = caseViewBodyElement(calculationUsage);
         if (result == null) result = caseCalculationBodyElement(calculationUsage);
-        if (result == null) result = caseTypingFeatureTyping(calculationUsage);
+        if (result == null) result = caseTypingFeatureChain(calculationUsage);
         if (result == null) result = caseSubsettingFeatureChain(calculationUsage);
         if (result == null) result = caseReferenceFeatureChain(calculationUsage);
         if (result == null) result = caseCrossFeatureChain(calculationUsage);
@@ -2304,7 +2304,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(stateUsage);
         if (result == null) result = caseViewBodyElement(stateUsage);
         if (result == null) result = caseCalculationBodyElement(stateUsage);
-        if (result == null) result = caseTypingFeatureTyping(stateUsage);
+        if (result == null) result = caseTypingFeatureChain(stateUsage);
         if (result == null) result = caseSubsettingFeatureChain(stateUsage);
         if (result == null) result = caseReferenceFeatureChain(stateUsage);
         if (result == null) result = caseCrossFeatureChain(stateUsage);
@@ -2381,7 +2381,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(constraintUsage);
         if (result == null) result = caseViewBodyElement(constraintUsage);
         if (result == null) result = caseCalculationBodyElement(constraintUsage);
-        if (result == null) result = caseTypingFeatureTyping(constraintUsage);
+        if (result == null) result = caseTypingFeatureChain(constraintUsage);
         if (result == null) result = caseSubsettingFeatureChain(constraintUsage);
         if (result == null) result = caseReferenceFeatureChain(constraintUsage);
         if (result == null) result = caseCrossFeatureChain(constraintUsage);
@@ -2412,7 +2412,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(transitionUsage);
         if (result == null) result = caseFeatureSpecialization(transitionUsage);
         if (result == null) result = caseMultiplicityPart(transitionUsage);
-        if (result == null) result = caseTypingFeatureTyping(transitionUsage);
+        if (result == null) result = caseTypingFeatureChain(transitionUsage);
         if (result == null) result = caseSubsettingFeatureChain(transitionUsage);
         if (result == null) result = caseReferenceFeatureChain(transitionUsage);
         if (result == null) result = caseCrossFeatureChain(transitionUsage);
@@ -2488,7 +2488,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(requirementUsage);
         if (result == null) result = caseViewBodyElement(requirementUsage);
         if (result == null) result = caseCalculationBodyElement(requirementUsage);
-        if (result == null) result = caseTypingFeatureTyping(requirementUsage);
+        if (result == null) result = caseTypingFeatureChain(requirementUsage);
         if (result == null) result = caseSubsettingFeatureChain(requirementUsage);
         if (result == null) result = caseReferenceFeatureChain(requirementUsage);
         if (result == null) result = caseCrossFeatureChain(requirementUsage);
@@ -2565,7 +2565,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(concernUsage);
         if (result == null) result = caseViewBodyElement(concernUsage);
         if (result == null) result = caseCalculationBodyElement(concernUsage);
-        if (result == null) result = caseTypingFeatureTyping(concernUsage);
+        if (result == null) result = caseTypingFeatureChain(concernUsage);
         if (result == null) result = caseSubsettingFeatureChain(concernUsage);
         if (result == null) result = caseReferenceFeatureChain(concernUsage);
         if (result == null) result = caseCrossFeatureChain(concernUsage);
@@ -2641,7 +2641,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(caseUsage);
         if (result == null) result = caseViewBodyElement(caseUsage);
         if (result == null) result = caseCalculationBodyElement(caseUsage);
-        if (result == null) result = caseTypingFeatureTyping(caseUsage);
+        if (result == null) result = caseTypingFeatureChain(caseUsage);
         if (result == null) result = caseSubsettingFeatureChain(caseUsage);
         if (result == null) result = caseReferenceFeatureChain(caseUsage);
         if (result == null) result = caseCrossFeatureChain(caseUsage);
@@ -2717,7 +2717,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(analysisCaseUsage);
         if (result == null) result = caseViewBodyElement(analysisCaseUsage);
         if (result == null) result = caseCalculationBodyElement(analysisCaseUsage);
-        if (result == null) result = caseTypingFeatureTyping(analysisCaseUsage);
+        if (result == null) result = caseTypingFeatureChain(analysisCaseUsage);
         if (result == null) result = caseSubsettingFeatureChain(analysisCaseUsage);
         if (result == null) result = caseReferenceFeatureChain(analysisCaseUsage);
         if (result == null) result = caseCrossFeatureChain(analysisCaseUsage);
@@ -2793,7 +2793,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(verificationCaseUsage);
         if (result == null) result = caseViewBodyElement(verificationCaseUsage);
         if (result == null) result = caseCalculationBodyElement(verificationCaseUsage);
-        if (result == null) result = caseTypingFeatureTyping(verificationCaseUsage);
+        if (result == null) result = caseTypingFeatureChain(verificationCaseUsage);
         if (result == null) result = caseSubsettingFeatureChain(verificationCaseUsage);
         if (result == null) result = caseReferenceFeatureChain(verificationCaseUsage);
         if (result == null) result = caseCrossFeatureChain(verificationCaseUsage);
@@ -2869,7 +2869,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(useCaseUsage);
         if (result == null) result = caseViewBodyElement(useCaseUsage);
         if (result == null) result = caseCalculationBodyElement(useCaseUsage);
-        if (result == null) result = caseTypingFeatureTyping(useCaseUsage);
+        if (result == null) result = caseTypingFeatureChain(useCaseUsage);
         if (result == null) result = caseSubsettingFeatureChain(useCaseUsage);
         if (result == null) result = caseReferenceFeatureChain(useCaseUsage);
         if (result == null) result = caseCrossFeatureChain(useCaseUsage);
@@ -2942,7 +2942,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseActionBodyElement(viewUsage);
         if (result == null) result = caseStateBodyElement(viewUsage);
         if (result == null) result = caseRequirementBodyElement(viewUsage);
-        if (result == null) result = caseTypingFeatureTyping(viewUsage);
+        if (result == null) result = caseTypingFeatureChain(viewUsage);
         if (result == null) result = caseSubsettingFeatureChain(viewUsage);
         if (result == null) result = caseReferenceFeatureChain(viewUsage);
         if (result == null) result = caseCrossFeatureChain(viewUsage);
@@ -3022,7 +3022,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(viewpointUsage);
         if (result == null) result = caseViewBodyElement(viewpointUsage);
         if (result == null) result = caseCalculationBodyElement(viewpointUsage);
-        if (result == null) result = caseTypingFeatureTyping(viewpointUsage);
+        if (result == null) result = caseTypingFeatureChain(viewpointUsage);
         if (result == null) result = caseSubsettingFeatureChain(viewpointUsage);
         if (result == null) result = caseReferenceFeatureChain(viewpointUsage);
         if (result == null) result = caseCrossFeatureChain(viewpointUsage);
@@ -3098,7 +3098,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseViewDefinitionBodyElement(renderingUsage);
         if (result == null) result = caseViewBodyElement(renderingUsage);
         if (result == null) result = caseCalculationBodyElement(renderingUsage);
-        if (result == null) result = caseTypingFeatureTyping(renderingUsage);
+        if (result == null) result = caseTypingFeatureChain(renderingUsage);
         if (result == null) result = caseSubsettingFeatureChain(renderingUsage);
         if (result == null) result = caseReferenceFeatureChain(renderingUsage);
         if (result == null) result = caseCrossFeatureChain(renderingUsage);
@@ -3166,7 +3166,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseBasicDefinitionPrefix(performActionUsage);
         if (result == null) result = caseFeatureSpecializationPart(performActionUsage);
         if (result == null) result = caseFeatureSpecialization(performActionUsage);
-        if (result == null) result = caseTypingFeatureTyping(performActionUsage);
+        if (result == null) result = caseTypingFeatureChain(performActionUsage);
         if (result == null) result = caseSubsettingFeatureChain(performActionUsage);
         if (result == null) result = caseReferenceFeatureChain(performActionUsage);
         if (result == null) result = caseCrossFeatureChain(performActionUsage);
@@ -3216,7 +3216,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePrefixMetadata(exhibitStateUsage);
         if (result == null) result = caseFeatureSpecializationPart(exhibitStateUsage);
         if (result == null) result = caseFeatureSpecialization(exhibitStateUsage);
-        if (result == null) result = caseTypingFeatureTyping(exhibitStateUsage);
+        if (result == null) result = caseTypingFeatureChain(exhibitStateUsage);
         if (result == null) result = caseSubsettingFeatureChain(exhibitStateUsage);
         if (result == null) result = caseReferenceFeatureChain(exhibitStateUsage);
         if (result == null) result = caseCrossFeatureChain(exhibitStateUsage);
@@ -3266,7 +3266,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePrefixMetadata(includeUseCaseUsage);
         if (result == null) result = caseFeatureSpecializationPart(includeUseCaseUsage);
         if (result == null) result = caseFeatureSpecialization(includeUseCaseUsage);
-        if (result == null) result = caseTypingFeatureTyping(includeUseCaseUsage);
+        if (result == null) result = caseTypingFeatureChain(includeUseCaseUsage);
         if (result == null) result = caseSubsettingFeatureChain(includeUseCaseUsage);
         if (result == null) result = caseReferenceFeatureChain(includeUseCaseUsage);
         if (result == null) result = caseCrossFeatureChain(includeUseCaseUsage);
@@ -3319,7 +3319,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseBasicDefinitionPrefix(assertConstraintUsage);
         if (result == null) result = caseFeatureSpecializationPart(assertConstraintUsage);
         if (result == null) result = caseFeatureSpecialization(assertConstraintUsage);
-        if (result == null) result = caseTypingFeatureTyping(assertConstraintUsage);
+        if (result == null) result = caseTypingFeatureChain(assertConstraintUsage);
         if (result == null) result = caseSubsettingFeatureChain(assertConstraintUsage);
         if (result == null) result = caseReferenceFeatureChain(assertConstraintUsage);
         if (result == null) result = caseCrossFeatureChain(assertConstraintUsage);
@@ -3367,7 +3367,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePrefixMetadata(satisfyRequirementUsage);
         if (result == null) result = caseFeatureSpecializationPart(satisfyRequirementUsage);
         if (result == null) result = caseFeatureSpecialization(satisfyRequirementUsage);
-        if (result == null) result = caseTypingFeatureTyping(satisfyRequirementUsage);
+        if (result == null) result = caseTypingFeatureChain(satisfyRequirementUsage);
         if (result == null) result = caseSubsettingFeatureChain(satisfyRequirementUsage);
         if (result == null) result = caseReferenceFeatureChain(satisfyRequirementUsage);
         if (result == null) result = caseCrossFeatureChain(satisfyRequirementUsage);
@@ -3449,7 +3449,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(sendNode);
         if (result == null) result = caseFeatureSpecialization(sendNode);
         if (result == null) result = caseMultiplicityPart(sendNode);
-        if (result == null) result = caseTypingFeatureTyping(sendNode);
+        if (result == null) result = caseTypingFeatureChain(sendNode);
         if (result == null) result = caseSubsettingFeatureChain(sendNode);
         if (result == null) result = caseReferenceFeatureChain(sendNode);
         if (result == null) result = caseCrossFeatureChain(sendNode);
@@ -3485,7 +3485,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(acceptNode);
         if (result == null) result = caseFeatureSpecialization(acceptNode);
         if (result == null) result = caseMultiplicityPart(acceptNode);
-        if (result == null) result = caseTypingFeatureTyping(acceptNode);
+        if (result == null) result = caseTypingFeatureChain(acceptNode);
         if (result == null) result = caseSubsettingFeatureChain(acceptNode);
         if (result == null) result = caseReferenceFeatureChain(acceptNode);
         if (result == null) result = caseCrossFeatureChain(acceptNode);
@@ -3520,7 +3520,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(assignmentNode);
         if (result == null) result = caseFeatureSpecialization(assignmentNode);
         if (result == null) result = caseMultiplicityPart(assignmentNode);
-        if (result == null) result = caseTypingFeatureTyping(assignmentNode);
+        if (result == null) result = caseTypingFeatureChain(assignmentNode);
         if (result == null) result = caseSubsettingFeatureChain(assignmentNode);
         if (result == null) result = caseReferenceFeatureChain(assignmentNode);
         if (result == null) result = caseCrossFeatureChain(assignmentNode);
@@ -3557,7 +3557,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(ifNode);
         if (result == null) result = caseFeatureSpecialization(ifNode);
         if (result == null) result = caseMultiplicityPart(ifNode);
-        if (result == null) result = caseTypingFeatureTyping(ifNode);
+        if (result == null) result = caseTypingFeatureChain(ifNode);
         if (result == null) result = caseSubsettingFeatureChain(ifNode);
         if (result == null) result = caseReferenceFeatureChain(ifNode);
         if (result == null) result = caseCrossFeatureChain(ifNode);
@@ -3593,7 +3593,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(whileLoopNode);
         if (result == null) result = caseFeatureSpecialization(whileLoopNode);
         if (result == null) result = caseMultiplicityPart(whileLoopNode);
-        if (result == null) result = caseTypingFeatureTyping(whileLoopNode);
+        if (result == null) result = caseTypingFeatureChain(whileLoopNode);
         if (result == null) result = caseSubsettingFeatureChain(whileLoopNode);
         if (result == null) result = caseReferenceFeatureChain(whileLoopNode);
         if (result == null) result = caseCrossFeatureChain(whileLoopNode);
@@ -3629,7 +3629,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(forLoopNode);
         if (result == null) result = caseFeatureSpecialization(forLoopNode);
         if (result == null) result = caseMultiplicityPart(forLoopNode);
-        if (result == null) result = caseTypingFeatureTyping(forLoopNode);
+        if (result == null) result = caseTypingFeatureChain(forLoopNode);
         if (result == null) result = caseSubsettingFeatureChain(forLoopNode);
         if (result == null) result = caseReferenceFeatureChain(forLoopNode);
         if (result == null) result = caseCrossFeatureChain(forLoopNode);
@@ -3664,7 +3664,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(terminateNode);
         if (result == null) result = caseFeatureSpecialization(terminateNode);
         if (result == null) result = caseMultiplicityPart(terminateNode);
-        if (result == null) result = caseTypingFeatureTyping(terminateNode);
+        if (result == null) result = caseTypingFeatureChain(terminateNode);
         if (result == null) result = caseSubsettingFeatureChain(terminateNode);
         if (result == null) result = caseReferenceFeatureChain(terminateNode);
         if (result == null) result = caseCrossFeatureChain(terminateNode);
@@ -3695,7 +3695,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseCaseBodyElement(commonNode);
         if (result == null) result = caseFeatureSpecialization(commonNode);
         if (result == null) result = caseMultiplicityPart(commonNode);
-        if (result == null) result = caseTypingFeatureTyping(commonNode);
+        if (result == null) result = caseTypingFeatureChain(commonNode);
         if (result == null) result = caseSubsettingFeatureChain(commonNode);
         if (result == null) result = caseReferenceFeatureChain(commonNode);
         if (result == null) result = caseCrossFeatureChain(commonNode);
@@ -3744,7 +3744,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(elseNode);
         if (result == null) result = caseFeatureSpecialization(elseNode);
         if (result == null) result = caseMultiplicityPart(elseNode);
-        if (result == null) result = caseTypingFeatureTyping(elseNode);
+        if (result == null) result = caseTypingFeatureChain(elseNode);
         if (result == null) result = caseSubsettingFeatureChain(elseNode);
         if (result == null) result = caseReferenceFeatureChain(elseNode);
         if (result == null) result = caseCrossFeatureChain(elseNode);
@@ -3805,7 +3805,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(subjectUsage);
         if (result == null) result = caseFeatureSpecialization(subjectUsage);
         if (result == null) result = caseMultiplicityPart(subjectUsage);
-        if (result == null) result = caseTypingFeatureTyping(subjectUsage);
+        if (result == null) result = caseTypingFeatureChain(subjectUsage);
         if (result == null) result = caseSubsettingFeatureChain(subjectUsage);
         if (result == null) result = caseReferenceFeatureChain(subjectUsage);
         if (result == null) result = caseCrossFeatureChain(subjectUsage);
@@ -3833,7 +3833,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseIdentification(requirementConstraintUsage);
         if (result == null) result = caseFeatureSpecializationPart(requirementConstraintUsage);
         if (result == null) result = caseFeatureSpecialization(requirementConstraintUsage);
-        if (result == null) result = caseTypingFeatureTyping(requirementConstraintUsage);
+        if (result == null) result = caseTypingFeatureChain(requirementConstraintUsage);
         if (result == null) result = caseSubsettingFeatureChain(requirementConstraintUsage);
         if (result == null) result = caseReferenceFeatureChain(requirementConstraintUsage);
         if (result == null) result = caseCrossFeatureChain(requirementConstraintUsage);
@@ -3862,7 +3862,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseIdentification(framedConcernUsage);
         if (result == null) result = caseFeatureSpecializationPart(framedConcernUsage);
         if (result == null) result = caseFeatureSpecialization(framedConcernUsage);
-        if (result == null) result = caseTypingFeatureTyping(framedConcernUsage);
+        if (result == null) result = caseTypingFeatureChain(framedConcernUsage);
         if (result == null) result = caseSubsettingFeatureChain(framedConcernUsage);
         if (result == null) result = caseReferenceFeatureChain(framedConcernUsage);
         if (result == null) result = caseCrossFeatureChain(framedConcernUsage);
@@ -3891,7 +3891,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseIdentification(requirementVerificationUsage);
         if (result == null) result = caseFeatureSpecializationPart(requirementVerificationUsage);
         if (result == null) result = caseFeatureSpecialization(requirementVerificationUsage);
-        if (result == null) result = caseTypingFeatureTyping(requirementVerificationUsage);
+        if (result == null) result = caseTypingFeatureChain(requirementVerificationUsage);
         if (result == null) result = caseSubsettingFeatureChain(requirementVerificationUsage);
         if (result == null) result = caseReferenceFeatureChain(requirementVerificationUsage);
         if (result == null) result = caseCrossFeatureChain(requirementVerificationUsage);
@@ -3920,7 +3920,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(actorUsage);
         if (result == null) result = caseFeatureSpecialization(actorUsage);
         if (result == null) result = caseMultiplicityPart(actorUsage);
-        if (result == null) result = caseTypingFeatureTyping(actorUsage);
+        if (result == null) result = caseTypingFeatureChain(actorUsage);
         if (result == null) result = caseSubsettingFeatureChain(actorUsage);
         if (result == null) result = caseReferenceFeatureChain(actorUsage);
         if (result == null) result = caseCrossFeatureChain(actorUsage);
@@ -3947,7 +3947,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(stakeholderUsage);
         if (result == null) result = caseFeatureSpecialization(stakeholderUsage);
         if (result == null) result = caseMultiplicityPart(stakeholderUsage);
-        if (result == null) result = caseTypingFeatureTyping(stakeholderUsage);
+        if (result == null) result = caseTypingFeatureChain(stakeholderUsage);
         if (result == null) result = caseSubsettingFeatureChain(stakeholderUsage);
         if (result == null) result = caseReferenceFeatureChain(stakeholderUsage);
         if (result == null) result = caseCrossFeatureChain(stakeholderUsage);
@@ -3974,7 +3974,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(objectiveRequirementUsage);
         if (result == null) result = caseFeatureSpecialization(objectiveRequirementUsage);
         if (result == null) result = caseMultiplicityPart(objectiveRequirementUsage);
-        if (result == null) result = caseTypingFeatureTyping(objectiveRequirementUsage);
+        if (result == null) result = caseTypingFeatureChain(objectiveRequirementUsage);
         if (result == null) result = caseSubsettingFeatureChain(objectiveRequirementUsage);
         if (result == null) result = caseReferenceFeatureChain(objectiveRequirementUsage);
         if (result == null) result = caseCrossFeatureChain(objectiveRequirementUsage);
@@ -4001,7 +4001,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseIdentification(viewRenderingUsage);
         if (result == null) result = caseFeatureSpecializationPart(viewRenderingUsage);
         if (result == null) result = caseFeatureSpecialization(viewRenderingUsage);
-        if (result == null) result = caseTypingFeatureTyping(viewRenderingUsage);
+        if (result == null) result = caseTypingFeatureChain(viewRenderingUsage);
         if (result == null) result = caseSubsettingFeatureChain(viewRenderingUsage);
         if (result == null) result = caseReferenceFeatureChain(viewRenderingUsage);
         if (result == null) result = caseCrossFeatureChain(viewRenderingUsage);
@@ -4030,7 +4030,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(actionParameterEnd);
         if (result == null) result = caseFeatureSpecialization(actionParameterEnd);
         if (result == null) result = caseMultiplicityPart(actionParameterEnd);
-        if (result == null) result = caseTypingFeatureTyping(actionParameterEnd);
+        if (result == null) result = caseTypingFeatureChain(actionParameterEnd);
         if (result == null) result = caseSubsettingFeatureChain(actionParameterEnd);
         if (result == null) result = caseReferenceFeatureChain(actionParameterEnd);
         if (result == null) result = caseCrossFeatureChain(actionParameterEnd);
@@ -4050,7 +4050,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(forVariableParameter);
         if (result == null) result = caseFeatureSpecialization(forVariableParameter);
         if (result == null) result = caseMultiplicityPart(forVariableParameter);
-        if (result == null) result = caseTypingFeatureTyping(forVariableParameter);
+        if (result == null) result = caseTypingFeatureChain(forVariableParameter);
         if (result == null) result = caseSubsettingFeatureChain(forVariableParameter);
         if (result == null) result = caseReferenceFeatureChain(forVariableParameter);
         if (result == null) result = caseCrossFeatureChain(forVariableParameter);
@@ -4072,7 +4072,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecialization(payloadParameter);
         if (result == null) result = caseMultiplicityPart(payloadParameter);
         if (result == null) result = caseFeatureValue(payloadParameter);
-        if (result == null) result = caseTypingFeatureTyping(payloadParameter);
+        if (result == null) result = caseTypingFeatureChain(payloadParameter);
         if (result == null) result = caseSubsettingFeatureChain(payloadParameter);
         if (result == null) result = caseReferenceFeatureChain(payloadParameter);
         if (result == null) result = caseCrossFeatureChain(payloadParameter);
@@ -4107,7 +4107,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureValue(performedActionUsage);
         if (result == null) result = caseFeatureSpecializationPart(performedActionUsage);
         if (result == null) result = caseFeatureSpecialization(performedActionUsage);
-        if (result == null) result = caseTypingFeatureTyping(performedActionUsage);
+        if (result == null) result = caseTypingFeatureChain(performedActionUsage);
         if (result == null) result = caseSubsettingFeatureChain(performedActionUsage);
         if (result == null) result = caseReferenceFeatureChain(performedActionUsage);
         if (result == null) result = caseCrossFeatureChain(performedActionUsage);
@@ -4130,7 +4130,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecialization(itemFeatureParameter);
         if (result == null) result = caseMultiplicityPart(itemFeatureParameter);
         if (result == null) result = caseFeatureValue(itemFeatureParameter);
-        if (result == null) result = caseTypingFeatureTyping(itemFeatureParameter);
+        if (result == null) result = caseTypingFeatureChain(itemFeatureParameter);
         if (result == null) result = caseSubsettingFeatureChain(itemFeatureParameter);
         if (result == null) result = caseReferenceFeatureChain(itemFeatureParameter);
         if (result == null) result = caseCrossFeatureChain(itemFeatureParameter);
@@ -4150,7 +4150,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(ifSuccessionAsUsage);
         if (result == null) result = caseFeatureSpecialization(ifSuccessionAsUsage);
         if (result == null) result = caseMultiplicityPart(ifSuccessionAsUsage);
-        if (result == null) result = caseTypingFeatureTyping(ifSuccessionAsUsage);
+        if (result == null) result = caseTypingFeatureChain(ifSuccessionAsUsage);
         if (result == null) result = caseSubsettingFeatureChain(ifSuccessionAsUsage);
         if (result == null) result = caseReferenceFeatureChain(ifSuccessionAsUsage);
         if (result == null) result = caseCrossFeatureChain(ifSuccessionAsUsage);
@@ -4365,7 +4365,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(actionUsageDeclaration);
         if (result == null) result = caseFeatureSpecialization(actionUsageDeclaration);
         if (result == null) result = caseMultiplicityPart(actionUsageDeclaration);
-        if (result == null) result = caseTypingFeatureTyping(actionUsageDeclaration);
+        if (result == null) result = caseTypingFeatureChain(actionUsageDeclaration);
         if (result == null) result = caseSubsettingFeatureChain(actionUsageDeclaration);
         if (result == null) result = caseReferenceFeatureChain(actionUsageDeclaration);
         if (result == null) result = caseCrossFeatureChain(actionUsageDeclaration);
@@ -4387,7 +4387,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(constraintUsageDeclaration);
         if (result == null) result = caseFeatureSpecialization(constraintUsageDeclaration);
         if (result == null) result = caseMultiplicityPart(constraintUsageDeclaration);
-        if (result == null) result = caseTypingFeatureTyping(constraintUsageDeclaration);
+        if (result == null) result = caseTypingFeatureChain(constraintUsageDeclaration);
         if (result == null) result = caseSubsettingFeatureChain(constraintUsageDeclaration);
         if (result == null) result = caseReferenceFeatureChain(constraintUsageDeclaration);
         if (result == null) result = caseCrossFeatureChain(constraintUsageDeclaration);
@@ -4407,7 +4407,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(actionNodeUsageDeclaration);
         if (result == null) result = caseFeatureSpecialization(actionNodeUsageDeclaration);
         if (result == null) result = caseMultiplicityPart(actionNodeUsageDeclaration);
-        if (result == null) result = caseTypingFeatureTyping(actionNodeUsageDeclaration);
+        if (result == null) result = caseTypingFeatureChain(actionNodeUsageDeclaration);
         if (result == null) result = caseSubsettingFeatureChain(actionNodeUsageDeclaration);
         if (result == null) result = caseReferenceFeatureChain(actionNodeUsageDeclaration);
         if (result == null) result = caseCrossFeatureChain(actionNodeUsageDeclaration);
@@ -4428,7 +4428,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(usage);
         if (result == null) result = caseFeatureSpecialization(usage);
         if (result == null) result = caseMultiplicityPart(usage);
-        if (result == null) result = caseTypingFeatureTyping(usage);
+        if (result == null) result = caseTypingFeatureChain(usage);
         if (result == null) result = caseSubsettingFeatureChain(usage);
         if (result == null) result = caseReferenceFeatureChain(usage);
         if (result == null) result = caseCrossFeatureChain(usage);
@@ -4447,7 +4447,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(usageDeclaration);
         if (result == null) result = caseFeatureSpecialization(usageDeclaration);
         if (result == null) result = caseMultiplicityPart(usageDeclaration);
-        if (result == null) result = caseTypingFeatureTyping(usageDeclaration);
+        if (result == null) result = caseTypingFeatureChain(usageDeclaration);
         if (result == null) result = caseSubsettingFeatureChain(usageDeclaration);
         if (result == null) result = caseReferenceFeatureChain(usageDeclaration);
         if (result == null) result = caseCrossFeatureChain(usageDeclaration);
@@ -4472,7 +4472,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(featureDeclaration);
         if (result == null) result = caseFeatureSpecialization(featureDeclaration);
         if (result == null) result = caseMultiplicityPart(featureDeclaration);
-        if (result == null) result = caseTypingFeatureTyping(featureDeclaration);
+        if (result == null) result = caseTypingFeatureChain(featureDeclaration);
         if (result == null) result = caseSubsettingFeatureChain(featureDeclaration);
         if (result == null) result = caseReferenceFeatureChain(featureDeclaration);
         if (result == null) result = caseCrossFeatureChain(featureDeclaration);
@@ -4488,7 +4488,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         T result = caseFeatureSpecializationPart(featureSpecializationPart);
         if (result == null) result = caseFeatureSpecialization(featureSpecializationPart);
         if (result == null) result = caseMultiplicityPart(featureSpecializationPart);
-        if (result == null) result = caseTypingFeatureTyping(featureSpecializationPart);
+        if (result == null) result = caseTypingFeatureChain(featureSpecializationPart);
         if (result == null) result = caseSubsettingFeatureChain(featureSpecializationPart);
         if (result == null) result = caseReferenceFeatureChain(featureSpecializationPart);
         if (result == null) result = caseCrossFeatureChain(featureSpecializationPart);
@@ -4508,7 +4508,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureValue(performActionUsageDeclaration);
         if (result == null) result = caseFeatureSpecializationPart(performActionUsageDeclaration);
         if (result == null) result = caseFeatureSpecialization(performActionUsageDeclaration);
-        if (result == null) result = caseTypingFeatureTyping(performActionUsageDeclaration);
+        if (result == null) result = caseTypingFeatureChain(performActionUsageDeclaration);
         if (result == null) result = caseSubsettingFeatureChain(performActionUsageDeclaration);
         if (result == null) result = caseReferenceFeatureChain(performActionUsageDeclaration);
         if (result == null) result = caseCrossFeatureChain(performActionUsageDeclaration);
@@ -4532,7 +4532,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(acceptNodeDeclaration);
         if (result == null) result = caseFeatureSpecialization(acceptNodeDeclaration);
         if (result == null) result = caseMultiplicityPart(acceptNodeDeclaration);
-        if (result == null) result = caseTypingFeatureTyping(acceptNodeDeclaration);
+        if (result == null) result = caseTypingFeatureChain(acceptNodeDeclaration);
         if (result == null) result = caseSubsettingFeatureChain(acceptNodeDeclaration);
         if (result == null) result = caseReferenceFeatureChain(acceptNodeDeclaration);
         if (result == null) result = caseCrossFeatureChain(acceptNodeDeclaration);
@@ -4566,7 +4566,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecialization(payloadFeature);
         if (result == null) result = caseMultiplicityPart(payloadFeature);
         if (result == null) result = caseFeatureValue(payloadFeature);
-        if (result == null) result = caseTypingFeatureTyping(payloadFeature);
+        if (result == null) result = caseTypingFeatureChain(payloadFeature);
         if (result == null) result = caseSubsettingFeatureChain(payloadFeature);
         if (result == null) result = caseReferenceFeatureChain(payloadFeature);
         if (result == null) result = caseCrossFeatureChain(payloadFeature);
@@ -4582,7 +4582,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         T result = casePayloadFeatureSpecializationPart(payloadFeatureSpecializationPart);
         if (result == null) result = caseFeatureSpecialization(payloadFeatureSpecializationPart);
         if (result == null) result = caseMultiplicityPart(payloadFeatureSpecializationPart);
-        if (result == null) result = caseTypingFeatureTyping(payloadFeatureSpecializationPart);
+        if (result == null) result = caseTypingFeatureChain(payloadFeatureSpecializationPart);
         if (result == null) result = caseSubsettingFeatureChain(payloadFeatureSpecializationPart);
         if (result == null) result = caseReferenceFeatureChain(payloadFeatureSpecializationPart);
         if (result == null) result = caseCrossFeatureChain(payloadFeatureSpecializationPart);
@@ -4610,7 +4610,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(sendNodeDeclaration);
         if (result == null) result = caseFeatureSpecialization(sendNodeDeclaration);
         if (result == null) result = caseMultiplicityPart(sendNodeDeclaration);
-        if (result == null) result = caseTypingFeatureTyping(sendNodeDeclaration);
+        if (result == null) result = caseTypingFeatureChain(sendNodeDeclaration);
         if (result == null) result = caseSubsettingFeatureChain(sendNodeDeclaration);
         if (result == null) result = caseReferenceFeatureChain(sendNodeDeclaration);
         if (result == null) result = caseCrossFeatureChain(sendNodeDeclaration);
@@ -4631,7 +4631,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(assignmentNodeDeclaration);
         if (result == null) result = caseFeatureSpecialization(assignmentNodeDeclaration);
         if (result == null) result = caseMultiplicityPart(assignmentNodeDeclaration);
-        if (result == null) result = caseTypingFeatureTyping(assignmentNodeDeclaration);
+        if (result == null) result = caseTypingFeatureChain(assignmentNodeDeclaration);
         if (result == null) result = caseSubsettingFeatureChain(assignmentNodeDeclaration);
         if (result == null) result = caseReferenceFeatureChain(assignmentNodeDeclaration);
         if (result == null) result = caseCrossFeatureChain(assignmentNodeDeclaration);
@@ -4668,7 +4668,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         FeatureSpecialization featureSpecialization = (FeatureSpecialization)theEObject;
         T result = caseFeatureSpecialization(featureSpecialization);
-        if (result == null) result = caseTypingFeatureTyping(featureSpecialization);
+        if (result == null) result = caseTypingFeatureChain(featureSpecialization);
         if (result == null) result = caseSubsettingFeatureChain(featureSpecialization);
         if (result == null) result = caseReferenceFeatureChain(featureSpecialization);
         if (result == null) result = caseCrossFeatureChain(featureSpecialization);
@@ -4676,10 +4676,10 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SysMLOCPackage.TYPING_FEATURE_TYPING:
+      case SysMLOCPackage.TYPING_FEATURE_CHAIN:
       {
-        TypingFeatureTyping typingFeatureTyping = (TypingFeatureTyping)theEObject;
-        T result = caseTypingFeatureTyping(typingFeatureTyping);
+        TypingFeatureChain typingFeatureChain = (TypingFeatureChain)theEObject;
+        T result = caseTypingFeatureChain(typingFeatureChain);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -4744,7 +4744,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecializationPart(actionNodePrefix);
         if (result == null) result = caseFeatureSpecialization(actionNodePrefix);
         if (result == null) result = caseMultiplicityPart(actionNodePrefix);
-        if (result == null) result = caseTypingFeatureTyping(actionNodePrefix);
+        if (result == null) result = caseTypingFeatureChain(actionNodePrefix);
         if (result == null) result = caseSubsettingFeatureChain(actionNodePrefix);
         if (result == null) result = caseReferenceFeatureChain(actionNodePrefix);
         if (result == null) result = caseCrossFeatureChain(actionNodePrefix);
@@ -4796,7 +4796,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureValue(acceptActionUsage);
         if (result == null) result = caseFeatureSpecializationPart(acceptActionUsage);
         if (result == null) result = caseFeatureSpecialization(acceptActionUsage);
-        if (result == null) result = caseTypingFeatureTyping(acceptActionUsage);
+        if (result == null) result = caseTypingFeatureChain(acceptActionUsage);
         if (result == null) result = caseSubsettingFeatureChain(acceptActionUsage);
         if (result == null) result = caseReferenceFeatureChain(acceptActionUsage);
         if (result == null) result = caseCrossFeatureChain(acceptActionUsage);
@@ -4825,7 +4825,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureValue(sendActionUsage);
         if (result == null) result = caseFeatureSpecializationPart(sendActionUsage);
         if (result == null) result = caseFeatureSpecialization(sendActionUsage);
-        if (result == null) result = caseTypingFeatureTyping(sendActionUsage);
+        if (result == null) result = caseTypingFeatureChain(sendActionUsage);
         if (result == null) result = caseSubsettingFeatureChain(sendActionUsage);
         if (result == null) result = caseReferenceFeatureChain(sendActionUsage);
         if (result == null) result = caseCrossFeatureChain(sendActionUsage);
@@ -4854,7 +4854,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureValue(assignmentActionUsage);
         if (result == null) result = caseFeatureSpecializationPart(assignmentActionUsage);
         if (result == null) result = caseFeatureSpecialization(assignmentActionUsage);
-        if (result == null) result = caseTypingFeatureTyping(assignmentActionUsage);
+        if (result == null) result = caseTypingFeatureChain(assignmentActionUsage);
         if (result == null) result = caseSubsettingFeatureChain(assignmentActionUsage);
         if (result == null) result = caseReferenceFeatureChain(assignmentActionUsage);
         if (result == null) result = caseCrossFeatureChain(assignmentActionUsage);
@@ -7703,17 +7703,17 @@ public class SysMLOCSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Typing Feature Typing</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Typing Feature Chain</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Typing Feature Typing</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Typing Feature Chain</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTypingFeatureTyping(TypingFeatureTyping object)
+  public T caseTypingFeatureChain(TypingFeatureChain object)
   {
     return null;
   }

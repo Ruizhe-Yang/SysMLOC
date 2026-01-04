@@ -12,7 +12,7 @@ package VehicleDefinitions {
 	/* PART DEFINITIONS */
 	
 	part def Vehicle {
-		attribute mass :> ISQ::mass1;
+		attribute mass :> ISQ::mass;
 	}
 	part def Transmission;	
 	part def AxleAssembly;

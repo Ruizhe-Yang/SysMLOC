@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class FeatureSpecializationImpl extends TypingFeatureTypingImpl implements FeatureSpecialization
+public class FeatureSpecializationImpl extends TypingFeatureChainImpl implements FeatureSpecialization
 {
   /**
    * The cached value of the '{@link #getSubsetting() <em>Subsetting</em>}' attribute list.

@@ -583,8 +583,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityModifiers/isNonunique"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//FeatureSpecialization"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//TypingFeatureTyping">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TypingFeatureTyping/typings"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//TypingFeatureChain">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TypingFeatureChain/typings"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//SubsettingFeatureChain">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//SubsettingFeatureChain/subsetting"/>

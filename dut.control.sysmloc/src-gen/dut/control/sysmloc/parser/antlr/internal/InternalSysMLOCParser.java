@@ -51260,7 +51260,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFeatureSpecialization"
-    // InternalSysMLOC.g:17117:1: ruleFeatureSpecialization[EObject in_current] returns [EObject current=in_current] : ( ( (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureTyping_3= ruleTypingFeatureTyping[$current] ) | ( (otherlv_4= ':>' | otherlv_5= 'specializes' | otherlv_6= 'subsets' ) this_SubsettingFeatureChain_7= ruleSubsettingFeatureChain[$current] ) | ( (otherlv_8= '::>' | otherlv_9= 'references' ) this_ReferenceFeatureChain_10= ruleReferenceFeatureChain[$current] ) | ( (otherlv_11= '=>' | otherlv_12= 'crosses' ) this_CrossFeatureChain_13= ruleCrossFeatureChain[$current] ) | ( (otherlv_14= ':>>' | otherlv_15= 'redefines' ) this_RedefinitionFeatureChain_16= ruleRedefinitionFeatureChain[$current] ) ) ;
+    // InternalSysMLOC.g:17117:1: ruleFeatureSpecialization[EObject in_current] returns [EObject current=in_current] : ( ( (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureChain_3= ruleTypingFeatureChain[$current] ) | ( (otherlv_4= ':>' | otherlv_5= 'specializes' | otherlv_6= 'subsets' ) this_SubsettingFeatureChain_7= ruleSubsettingFeatureChain[$current] ) | ( (otherlv_8= '::>' | otherlv_9= 'references' ) this_ReferenceFeatureChain_10= ruleReferenceFeatureChain[$current] ) | ( (otherlv_11= '=>' | otherlv_12= 'crosses' ) this_CrossFeatureChain_13= ruleCrossFeatureChain[$current] ) | ( (otherlv_14= ':>>' | otherlv_15= 'redefines' ) this_RedefinitionFeatureChain_16= ruleRedefinitionFeatureChain[$current] ) ) ;
     public final EObject ruleFeatureSpecialization(EObject in_current) throws RecognitionException {
         EObject current = in_current;
 
@@ -51276,7 +51276,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         Token otherlv_12=null;
         Token otherlv_14=null;
         Token otherlv_15=null;
-        EObject this_TypingFeatureTyping_3 = null;
+        EObject this_TypingFeatureChain_3 = null;
 
         EObject this_SubsettingFeatureChain_7 = null;
 
@@ -51291,10 +51291,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSysMLOC.g:17123:2: ( ( ( (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureTyping_3= ruleTypingFeatureTyping[$current] ) | ( (otherlv_4= ':>' | otherlv_5= 'specializes' | otherlv_6= 'subsets' ) this_SubsettingFeatureChain_7= ruleSubsettingFeatureChain[$current] ) | ( (otherlv_8= '::>' | otherlv_9= 'references' ) this_ReferenceFeatureChain_10= ruleReferenceFeatureChain[$current] ) | ( (otherlv_11= '=>' | otherlv_12= 'crosses' ) this_CrossFeatureChain_13= ruleCrossFeatureChain[$current] ) | ( (otherlv_14= ':>>' | otherlv_15= 'redefines' ) this_RedefinitionFeatureChain_16= ruleRedefinitionFeatureChain[$current] ) ) )
-            // InternalSysMLOC.g:17124:2: ( ( (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureTyping_3= ruleTypingFeatureTyping[$current] ) | ( (otherlv_4= ':>' | otherlv_5= 'specializes' | otherlv_6= 'subsets' ) this_SubsettingFeatureChain_7= ruleSubsettingFeatureChain[$current] ) | ( (otherlv_8= '::>' | otherlv_9= 'references' ) this_ReferenceFeatureChain_10= ruleReferenceFeatureChain[$current] ) | ( (otherlv_11= '=>' | otherlv_12= 'crosses' ) this_CrossFeatureChain_13= ruleCrossFeatureChain[$current] ) | ( (otherlv_14= ':>>' | otherlv_15= 'redefines' ) this_RedefinitionFeatureChain_16= ruleRedefinitionFeatureChain[$current] ) )
+            // InternalSysMLOC.g:17123:2: ( ( ( (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureChain_3= ruleTypingFeatureChain[$current] ) | ( (otherlv_4= ':>' | otherlv_5= 'specializes' | otherlv_6= 'subsets' ) this_SubsettingFeatureChain_7= ruleSubsettingFeatureChain[$current] ) | ( (otherlv_8= '::>' | otherlv_9= 'references' ) this_ReferenceFeatureChain_10= ruleReferenceFeatureChain[$current] ) | ( (otherlv_11= '=>' | otherlv_12= 'crosses' ) this_CrossFeatureChain_13= ruleCrossFeatureChain[$current] ) | ( (otherlv_14= ':>>' | otherlv_15= 'redefines' ) this_RedefinitionFeatureChain_16= ruleRedefinitionFeatureChain[$current] ) ) )
+            // InternalSysMLOC.g:17124:2: ( ( (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureChain_3= ruleTypingFeatureChain[$current] ) | ( (otherlv_4= ':>' | otherlv_5= 'specializes' | otherlv_6= 'subsets' ) this_SubsettingFeatureChain_7= ruleSubsettingFeatureChain[$current] ) | ( (otherlv_8= '::>' | otherlv_9= 'references' ) this_ReferenceFeatureChain_10= ruleReferenceFeatureChain[$current] ) | ( (otherlv_11= '=>' | otherlv_12= 'crosses' ) this_CrossFeatureChain_13= ruleCrossFeatureChain[$current] ) | ( (otherlv_14= ':>>' | otherlv_15= 'redefines' ) this_RedefinitionFeatureChain_16= ruleRedefinitionFeatureChain[$current] ) )
             {
-            // InternalSysMLOC.g:17124:2: ( ( (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureTyping_3= ruleTypingFeatureTyping[$current] ) | ( (otherlv_4= ':>' | otherlv_5= 'specializes' | otherlv_6= 'subsets' ) this_SubsettingFeatureChain_7= ruleSubsettingFeatureChain[$current] ) | ( (otherlv_8= '::>' | otherlv_9= 'references' ) this_ReferenceFeatureChain_10= ruleReferenceFeatureChain[$current] ) | ( (otherlv_11= '=>' | otherlv_12= 'crosses' ) this_CrossFeatureChain_13= ruleCrossFeatureChain[$current] ) | ( (otherlv_14= ':>>' | otherlv_15= 'redefines' ) this_RedefinitionFeatureChain_16= ruleRedefinitionFeatureChain[$current] ) )
+            // InternalSysMLOC.g:17124:2: ( ( (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureChain_3= ruleTypingFeatureChain[$current] ) | ( (otherlv_4= ':>' | otherlv_5= 'specializes' | otherlv_6= 'subsets' ) this_SubsettingFeatureChain_7= ruleSubsettingFeatureChain[$current] ) | ( (otherlv_8= '::>' | otherlv_9= 'references' ) this_ReferenceFeatureChain_10= ruleReferenceFeatureChain[$current] ) | ( (otherlv_11= '=>' | otherlv_12= 'crosses' ) this_CrossFeatureChain_13= ruleCrossFeatureChain[$current] ) | ( (otherlv_14= ':>>' | otherlv_15= 'redefines' ) this_RedefinitionFeatureChain_16= ruleRedefinitionFeatureChain[$current] ) )
             int alt499=5;
             switch ( input.LA(1) ) {
             case 35:
@@ -51338,10 +51338,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
             switch (alt499) {
                 case 1 :
-                    // InternalSysMLOC.g:17125:3: ( (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureTyping_3= ruleTypingFeatureTyping[$current] )
+                    // InternalSysMLOC.g:17125:3: ( (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureChain_3= ruleTypingFeatureChain[$current] )
                     {
-                    // InternalSysMLOC.g:17125:3: ( (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureTyping_3= ruleTypingFeatureTyping[$current] )
-                    // InternalSysMLOC.g:17126:4: (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureTyping_3= ruleTypingFeatureTyping[$current]
+                    // InternalSysMLOC.g:17125:3: ( (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureChain_3= ruleTypingFeatureChain[$current] )
+                    // InternalSysMLOC.g:17126:4: (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) ) this_TypingFeatureChain_3= ruleTypingFeatureChain[$current]
                     {
                     // InternalSysMLOC.g:17126:4: (otherlv_0= ':' | (otherlv_1= 'defined' otherlv_2= 'by' ) )
                     int alt494=2;
@@ -51405,17 +51405,17 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       				if (current==null) {
                       					current = createModelElement(grammarAccess.getFeatureSpecializationRule());
                       				}
-                      				newCompositeNode(grammarAccess.getFeatureSpecializationAccess().getTypingFeatureTypingParserRuleCall_0_1());
+                      				newCompositeNode(grammarAccess.getFeatureSpecializationAccess().getTypingFeatureChainParserRuleCall_0_1());
                       			
                     }
                     pushFollow(FOLLOW_2);
-                    this_TypingFeatureTyping_3=ruleTypingFeatureTyping(current);
+                    this_TypingFeatureChain_3=ruleTypingFeatureChain(current);
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				current = this_TypingFeatureTyping_3;
+                      				current = this_TypingFeatureChain_3;
                       				afterParserOrEnumRuleCall();
                       			
                     }
@@ -51774,9 +51774,9 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleFeatureSpecialization"
 
 
-    // $ANTLR start "ruleTypingFeatureTyping"
-    // InternalSysMLOC.g:17265:1: ruleTypingFeatureTyping[EObject in_current] returns [EObject current=in_current] : ( ( (lv_typings_0_0= ruleFeatureTypingName ) ) (otherlv_1= ',' ( (lv_typings_2_0= ruleFeatureTypingName ) ) )* ) ;
-    public final EObject ruleTypingFeatureTyping(EObject in_current) throws RecognitionException {
+    // $ANTLR start "ruleTypingFeatureChain"
+    // InternalSysMLOC.g:17265:1: ruleTypingFeatureChain[EObject in_current] returns [EObject current=in_current] : ( ( (lv_typings_0_0= ruleFeatureTypingName ) ) (otherlv_1= ',' ( (lv_typings_2_0= ruleFeatureTypingName ) ) )* ) ;
+    public final EObject ruleTypingFeatureChain(EObject in_current) throws RecognitionException {
         EObject current = in_current;
 
         Token otherlv_1=null;
@@ -51803,7 +51803,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             {
             if ( state.backtracking==0 ) {
 
-              					newCompositeNode(grammarAccess.getTypingFeatureTypingAccess().getTypingsFeatureTypingNameParserRuleCall_0_0());
+              					newCompositeNode(grammarAccess.getTypingFeatureChainAccess().getTypingsFeatureTypingNameParserRuleCall_0_0());
               				
             }
             pushFollow(FOLLOW_252);
@@ -51814,7 +51814,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               					if (current==null) {
-              						current = createModelElementForParent(grammarAccess.getTypingFeatureTypingRule());
+              						current = createModelElementForParent(grammarAccess.getTypingFeatureChainRule());
               					}
               					add(
               						current,
@@ -51848,7 +51848,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             	    otherlv_1=(Token)match(input,28,FOLLOW_264); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      				newLeafNode(otherlv_1, grammarAccess.getTypingFeatureTypingAccess().getCommaKeyword_1_0());
+            	      				newLeafNode(otherlv_1, grammarAccess.getTypingFeatureChainAccess().getCommaKeyword_1_0());
             	      			
             	    }
             	    // InternalSysMLOC.g:17297:4: ( (lv_typings_2_0= ruleFeatureTypingName ) )
@@ -51859,7 +51859,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	      						newCompositeNode(grammarAccess.getTypingFeatureTypingAccess().getTypingsFeatureTypingNameParserRuleCall_1_1_0());
+            	      						newCompositeNode(grammarAccess.getTypingFeatureChainAccess().getTypingsFeatureTypingNameParserRuleCall_1_1_0());
             	      					
             	    }
             	    pushFollow(FOLLOW_252);
@@ -51870,7 +51870,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             	    if ( state.backtracking==0 ) {
 
             	      						if (current==null) {
-            	      							current = createModelElementForParent(grammarAccess.getTypingFeatureTypingRule());
+            	      							current = createModelElementForParent(grammarAccess.getTypingFeatureChainRule());
             	      						}
             	      						add(
             	      							current,
@@ -51916,7 +51916,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleTypingFeatureTyping"
+    // $ANTLR end "ruleTypingFeatureChain"
 
 
     // $ANTLR start "ruleSubsettingFeatureChain"

@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DefaultReferenceUsage extends NonOccurrenceUsageElement, isReturnPrefix, RefPrefix, BasicDefinitionPrefix, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, ValuePart, FeatureValue
+public interface DefaultReferenceUsage extends NonOccurrenceUsageElement, isReturnPrefix, RefPrefix, BasicDefinitionPrefix, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureChain, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, ValuePart, FeatureValue
 {
   /**
    * Returns the value of the '<em><b>Visibility</b></em>' attribute.

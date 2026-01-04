@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:StoredDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" within="Modelica.ComplexBlocks.Interfaces">
+  <classes name="ComplexSignalSource" str_comment="&quot;Base class for continuous signal source&quot;" name_end="ComplexSignalSource">
+    <composition>
+      <priv_elist>
+        <elem xsi:type="mOloc:ExtendsClause" name="ComplexBlocks.Interfaces.ComplexSO"/>
+        <elem xsi:type="mOloc:ComponentClause" prefix="parameter">
+          <type name="Complex"/>
+          <comps>
+            <comps>
+              <decl name="offset">
+                <mod dh="true">
+                  <expr xsi:type="mOloc:FunctionCall" comp_ref="Complex">
+                    <args>
+                      <res>
+                        <args xsi:type="mOloc:FloatPrimary"/>
+                      </res>
+                    </args>
+                  </expr>
+                </mod>
+              </decl>
+              <comment comment="&quot;Offset of output signal y&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+        <elem xsi:type="mOloc:ComponentClause" prefix="parameter">
+          <type name="Modelica.Units.SI.Time"/>
+          <comps>
+            <comps>
+              <decl name="startTime">
+                <mod dh="true">
+                  <expr xsi:type="mOloc:FloatPrimary"/>
+                </mod>
+              </decl>
+              <comment comment="&quot;Output y = offset for time &lt; startTime&quot;"/>
+            </comps>
+          </comps>
+        </elem>
+      </priv_elist>
+      <anno isannotation="true">
+        <cm>
+          <args>
+            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+              <element xsi:type="mOloc:ElementModification" name="Documentation">
+                <mod>
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="info">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:StringPrimary" val="&lt;html>&#xA;&lt;p>&#xA;Basic block for Complex sources.&#xA;This component has one continuous Complex output signal y&#xA;and two parameters (offset, startTime) to shift the&#xA;generated signal.&#xA;&lt;/p>&#xA;&lt;/html>"/>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                </mod>
+              </element>
+            </args>
+          </args>
+        </cm>
+      </anno>
+    </composition>
+    <cp isPartial="true" kind="block"/>
+  </classes>
+</mOloc:StoredDefinition>

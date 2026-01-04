@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:StoredDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" within="Modelica.ComplexBlocks.UsersGuide">
+  <classes name="Contact" str_comment="&quot;Contact&quot;" name_end="Contact">
+    <composition>
+      <priv_elist>
+        <elem xsi:type="mOloc:ExtendsClause" name="Modelica.Icons.Contact"/>
+      </priv_elist>
+      <anno isannotation="true">
+        <cm>
+          <args>
+            <args xsi:type="mOloc:ElementModicationOrReplaceable">
+              <element xsi:type="mOloc:ElementModification" name="Documentation">
+                <mod>
+                  <mod>
+                    <args>
+                      <args xsi:type="mOloc:ElementModicationOrReplaceable">
+                        <element xsi:type="mOloc:ElementModification" name="info">
+                          <mod dh="true">
+                            <expr xsi:type="mOloc:StringPrimary" val="&lt;html>&#xA;&lt;h4>Main authors&lt;/h4>&#xA;&#xA;&lt;p>&#xA;&lt;strong>Anton Haumer&lt;/strong>&lt;br>&#xA;&lt;a href=&quot;https://www.haumer.at&quot;>Technical Consulting &amp;amp; Electrical Engineering&lt;/a>&lt;br>&#xA;D-93049 Regensburg, Germany&lt;br>&#xA;email: &lt;a href=&quot;mailto:a.haumer@haumer.at&quot;>a.haumer@haumer.at&lt;/a>&lt;br>&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;strong>Dr. Christian Kral&lt;/strong>&lt;br>&#xA;  &lt;a href=&quot;https://christiankral.net/&quot;>Electric Machines, Drives and Systems&lt;/a>&lt;br>&#xA;  A-1060 Vienna, Austria&lt;br>&#xA;  email: &lt;a href=&quot;mailto:dr.christian.kral@gmail.com&quot;>dr.christian.kral@gmail.com&lt;/a>&#xA;&lt;/p>&#xA;&#xA;&lt;h4>Acknowledgements&lt;/h4>&#xA;&#xA;&lt;p>&#xA;Copyright &amp;copy; 1998-2020, Modelica Association and contributors&#xA;&lt;/p>&#xA;&lt;/html>"/>
+                          </mod>
+                        </element>
+                      </args>
+                    </args>
+                  </mod>
+                </mod>
+              </element>
+            </args>
+          </args>
+        </cm>
+      </anno>
+    </composition>
+    <cp kind="class"/>
+  </classes>
+</mOloc:StoredDefinition>

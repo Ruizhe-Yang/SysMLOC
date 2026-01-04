@@ -14,7 +14,7 @@ import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
 import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
 import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
+import dut.control.sysmloc.sysMLOC.TypingFeatureChain;
 
 import java.util.Collection;
 
@@ -537,11 +537,11 @@ public class FeatureDeclarationImpl extends IdentificationImpl implements Featur
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
-    if (baseClass == TypingFeatureTyping.class)
+    if (baseClass == TypingFeatureChain.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.FEATURE_DECLARATION__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS;
+        case SysMLOCPackage.FEATURE_DECLARATION__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_CHAIN__TYPINGS;
         default: return -1;
       }
     }
@@ -627,11 +627,11 @@ public class FeatureDeclarationImpl extends IdentificationImpl implements Featur
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
-    if (baseClass == TypingFeatureTyping.class)
+    if (baseClass == TypingFeatureChain.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS: return SysMLOCPackage.FEATURE_DECLARATION__TYPINGS;
+        case SysMLOCPackage.TYPING_FEATURE_CHAIN__TYPINGS: return SysMLOCPackage.FEATURE_DECLARATION__TYPINGS;
         default: return -1;
       }
     }

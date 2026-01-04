@@ -1617,13 +1617,13 @@ public interface SysMLOCFactory extends EFactory
   FeatureSpecialization createFeatureSpecialization();
 
   /**
-   * Returns a new object of class '<em>Typing Feature Typing</em>'.
+   * Returns a new object of class '<em>Typing Feature Chain</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Typing Feature Typing</em>'.
+   * @return a new object of class '<em>Typing Feature Chain</em>'.
    * @generated
    */
-  TypingFeatureTyping createTypingFeatureTyping();
+  TypingFeatureChain createTypingFeatureChain();
 
   /**
    * Returns a new object of class '<em>Subsetting Feature Chain</em>'.

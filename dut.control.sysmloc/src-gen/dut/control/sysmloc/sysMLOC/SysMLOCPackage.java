@@ -21661,14 +21661,14 @@ public interface SysMLOCPackage extends EPackage
   int CONNECTOR_END_FEATURE_COUNT = MULTIPLICITY_RANGE_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.TypingFeatureTypingImpl <em>Typing Feature Typing</em>}' class.
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.TypingFeatureChainImpl <em>Typing Feature Chain</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.TypingFeatureTypingImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getTypingFeatureTyping()
+   * @see dut.control.sysmloc.sysMLOC.impl.TypingFeatureChainImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getTypingFeatureChain()
    * @generated
    */
-  int TYPING_FEATURE_TYPING = 177;
+  int TYPING_FEATURE_CHAIN = 177;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -21677,16 +21677,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPING_FEATURE_TYPING__TYPINGS = 0;
+  int TYPING_FEATURE_CHAIN__TYPINGS = 0;
 
   /**
-   * The number of structural features of the '<em>Typing Feature Typing</em>' class.
+   * The number of structural features of the '<em>Typing Feature Chain</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPING_FEATURE_TYPING_FEATURE_COUNT = 1;
+  int TYPING_FEATURE_CHAIN_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationImpl <em>Feature Specialization</em>}' class.
@@ -21705,7 +21705,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE_SPECIALIZATION__TYPINGS = TYPING_FEATURE_TYPING__TYPINGS;
+  int FEATURE_SPECIALIZATION__TYPINGS = TYPING_FEATURE_CHAIN__TYPINGS;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -21714,7 +21714,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE_SPECIALIZATION__SUBSETTING = TYPING_FEATURE_TYPING_FEATURE_COUNT + 0;
+  int FEATURE_SPECIALIZATION__SUBSETTING = TYPING_FEATURE_CHAIN_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -21723,7 +21723,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE_SPECIALIZATION__REFERENCES = TYPING_FEATURE_TYPING_FEATURE_COUNT + 1;
+  int FEATURE_SPECIALIZATION__REFERENCES = TYPING_FEATURE_CHAIN_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -21732,7 +21732,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE_SPECIALIZATION__CROSSES = TYPING_FEATURE_TYPING_FEATURE_COUNT + 2;
+  int FEATURE_SPECIALIZATION__CROSSES = TYPING_FEATURE_CHAIN_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -21741,7 +21741,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE_SPECIALIZATION__REDEFINITIONS = TYPING_FEATURE_TYPING_FEATURE_COUNT + 3;
+  int FEATURE_SPECIALIZATION__REDEFINITIONS = TYPING_FEATURE_CHAIN_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Feature Specialization</em>' class.
@@ -21750,7 +21750,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEATURE_SPECIALIZATION_FEATURE_COUNT = TYPING_FEATURE_TYPING_FEATURE_COUNT + 4;
+  int FEATURE_SPECIALIZATION_FEATURE_COUNT = TYPING_FEATURE_CHAIN_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationPartImpl <em>Feature Specialization Part</em>}' class.
@@ -30482,25 +30482,25 @@ public interface SysMLOCPackage extends EPackage
   EClass getFeatureSpecialization();
 
   /**
-   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.TypingFeatureTyping <em>Typing Feature Typing</em>}'.
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.TypingFeatureChain <em>Typing Feature Chain</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Typing Feature Typing</em>'.
-   * @see dut.control.sysmloc.sysMLOC.TypingFeatureTyping
+   * @return the meta object for class '<em>Typing Feature Chain</em>'.
+   * @see dut.control.sysmloc.sysMLOC.TypingFeatureChain
    * @generated
    */
-  EClass getTypingFeatureTyping();
+  EClass getTypingFeatureChain();
 
   /**
-   * Returns the meta object for the attribute list '{@link dut.control.sysmloc.sysMLOC.TypingFeatureTyping#getTypings <em>Typings</em>}'.
+   * Returns the meta object for the attribute list '{@link dut.control.sysmloc.sysMLOC.TypingFeatureChain#getTypings <em>Typings</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute list '<em>Typings</em>'.
-   * @see dut.control.sysmloc.sysMLOC.TypingFeatureTyping#getTypings()
-   * @see #getTypingFeatureTyping()
+   * @see dut.control.sysmloc.sysMLOC.TypingFeatureChain#getTypings()
+   * @see #getTypingFeatureChain()
    * @generated
    */
-  EAttribute getTypingFeatureTyping_Typings();
+  EAttribute getTypingFeatureChain_Typings();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.SubsettingFeatureChain <em>Subsetting Feature Chain</em>}'.

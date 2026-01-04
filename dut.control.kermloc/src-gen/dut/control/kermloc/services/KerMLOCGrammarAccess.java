@@ -3429,27 +3429,6 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cElementsTypeBodyElementParserRuleCall_4_1_1_0 = (RuleCall)cElementsAssignment_4_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_1_2 = (Keyword)cGroup_4_1.eContents().get(2);
 		
-		//    //DefaultFeature:
-		//    //    MemberPrefix
-		//    //    ExtendedPrefix
-		//    //    ((EndFeaturePrefix (crossingFeature+=CrossingFeature)? | BasicFeaturePrefix)
-		//    //     PrefixMetadata+ FeatureDeclaration?
-		//    //    | ( EndFeaturePrefix | BasicFeaturePrefix )
-		//    //      FeatureDeclaration
-		//    //    )
-		//    //    ValuePart?
-		//    //    ( ';' | '{' (elements+=TypeBodyElement)* '}')
-		//    //;
-		//    //
-		//    //Feature:
-		//    //    MemberPrefix
-		//    //    ExtendedPrefix
-		//    //    FeaturePrefix
-		//    //    'feature'
-		//    //    FeatureDeclaration?
-		//    //    ValuePart?
-		//    //    ( ';' | '{' (elements+=TypeBodyElement)* '}')
-		//    //;
 		//Feature:
 		//    // [Ordered False]
 		//    MemberPrefix
@@ -9578,27 +9557,6 @@ public class KerMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getTypeFeaturingAccess().getRule();
 	}
 	
-	//    //DefaultFeature:
-	//    //    MemberPrefix
-	//    //    ExtendedPrefix
-	//    //    ((EndFeaturePrefix (crossingFeature+=CrossingFeature)? | BasicFeaturePrefix)
-	//    //     PrefixMetadata+ FeatureDeclaration?
-	//    //    | ( EndFeaturePrefix | BasicFeaturePrefix )
-	//    //      FeatureDeclaration
-	//    //    )
-	//    //    ValuePart?
-	//    //    ( ';' | '{' (elements+=TypeBodyElement)* '}')
-	//    //;
-	//    //
-	//    //Feature:
-	//    //    MemberPrefix
-	//    //    ExtendedPrefix
-	//    //    FeaturePrefix
-	//    //    'feature'
-	//    //    FeatureDeclaration?
-	//    //    ValuePart?
-	//    //    ( ';' | '{' (elements+=TypeBodyElement)* '}')
-	//    //;
 	//Feature:
 	//    // [Ordered False]
 	//    MemberPrefix

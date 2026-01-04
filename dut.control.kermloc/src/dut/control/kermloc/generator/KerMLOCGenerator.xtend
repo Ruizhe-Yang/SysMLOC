@@ -22,7 +22,7 @@ class KerMLOCGenerator extends AbstractGenerator {
 //				.filter(Greeting)
 //				.map[name]
 //				.join(', '))
-	Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("kermloc", new XMIResourceFactoryImpl())
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("kermloc", new XMIResourceFactoryImpl())
         val modelRoot = resource.contents.head
         val xmiURI = resource.URI.trimFileExtension.appendFileExtension("kermloc")
         val xmiRes = resource.resourceSet.createResource(xmiURI)
