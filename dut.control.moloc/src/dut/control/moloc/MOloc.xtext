@@ -9,48 +9,99 @@ import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
 // B.2.1 Stored Definition
 //-----------------------------------------------
 
-StoredDefinition:
-	('within' within=Name ';')?
-	(classes+=ClassDefinition ';' )*
+Stored_definition:
+	( isWithin?='within' within=Name ';')?
+	( classes += Class_definition )*
 ;
 
 //-----------------------------------------------
 // B.2.2 Class Definition
 //-----------------------------------------------
 
-ClassDefinition:
-	(final?='final')?
-	(encapsulated?='encapsulated')?
-	cp = ClassPrefix
-	ClassSpecifier
+Class_definition:
+	( isfinal ?= 'final' )?
+	( isEncapsulated ?= 'encapsulated' )?
+	class_prefix
+	class_specifier
+	';'
 ;
 
-ClassPrefix :
-	isPartial?='partial'? 
-	kind=ClassPrefixes
+fragment class_prefix :
+	( isPartial ?= 'partial')? 
+	( isExpandable ?= 'expandable' )?
+	( isPure ?= 'pure' | isPure ?= 'impure' )?
+	( isOperator ?= 'operator' )?
+	classType=ClassType
 ;
 
-ClassPrefixes:
-	'partial'?
-	('class'
-		| 'model'
-		| 'operator'? 'record'
-		| 'block'
-		| 'expandable'? 'connector'
-		| 'type'
-		| 'package'
-		| ('pure' | 'impure')? 'operator'? 'function'
-		| 'operator'
+enum ClassType:
+	null="NULL" | Class='class' | Model='model' | Record='record' | Block='block' | Connector='connector' | Type='type' 
+	| Package='package' | Function='function'
+;
+
+fragment class_specifier:
+	long_class_specifier | short_class_specifier | der_class_specifier
+//	name=IDENT str_comment=StringComment composition=Composition 'end' name_end=IDENT
+//	| name=IDENT '=' prefix=BasePrefix name2=Name subs=ArraySubscripts? mod=ClassModification? comment=Comment
+//	| name=IDENT '=' elementnum = Elementenumeratioan //enumeration ?= 'enumeration' '(' ( list=EnumList? | ':') ')' comment=Comment
+//	| name=IDENT '=' 'der' '(' Name ',' IDENT (',' IDENT)* ')' comment=Comment
+//	| 'extends' type=[ClassDefinition|Name] mod=ClassModification? str_comment=StringComment composition=Composition 'end' name_end=IDENT
+//	| 'type' name=IDENT '=' baseType=BuiltInType mod=ClassModification? str_comment=StringComment? composition=Composition 'end' name_end=IDENT
+;
+
+fragment long_class_specifier:
+	( isExtends ?= 'extends' )? 
+	name=IDENT 
+	class_modification? 
+	description_string 
+	composition 
+	'end' IDENT
+;
+
+fragment short_class_specifier:
+	name=IDENT 
+	'=' 
+	( direction=Direction type_specifier class_modification? 
+	 | (isEnumeration ?= 'enumeration')? '(' ( enum_list? | isColon ?= ':') ')'
 	)
+	description
+	class_modification? description_string composition 'end' IDENT
 ;
 
-fragment ClassSpecifier:
-	name=IDENT str_comment=StringComment composition=Composition 'end' name_end=IDENT
-	| name=IDENT '=' prefix=BasePrefix name2=Name subs=ArraySubscripts? mod=ClassModification? comment=Comment
-	| name=IDENT '=' elementnum = Elementenumeratioan //enumeration ?= 'enumeration' '(' ( list=EnumList? | ':') ')' comment=Comment
-	| name=IDENT '=' 'der' '(' Name ',' IDENT (',' IDENT)* ')' comment=Comment
-	| 'extends' type=[ClassDefinition|Name] mod=ClassModification? str_comment=StringComment composition=Composition 'end' name_end=IDENT
-	| 'type' name=IDENT '=' baseType=BuiltInType mod=ClassModification? str_comment=StringComment? composition=Composition 'end' name_end=IDENT
+fragment der_class_specifier:
+	name=IDENT 
+	'='
+	isDer?='def'
+	'(' type_specifier ',' derName+=IDENT (',' derName+=IDENT)* ')'
+	description
+;
+
+fragment class_modification:
+	
+;
+
+fragment description_string:
+	
+;
+
+fragment composition:
+	
+;
+
+enum Direction:
+	input='input' | output='output'
+;
+
+fragment type_specifier:
+	
+;
+
+fragment enum_list:
+	
+;
+
+fragment description:
+	
 ;
 
 BasePrefix:
@@ -112,8 +163,8 @@ Element:
 	| ExtendsClause
 	|typeClause
 	| 'redeclare'? 'final'? 'inner'? 'outer'?
-		( (ClassDefinition | ComponentClause)
-			| 'replaceable' (ClassDefinition | ComponentClause)
+		( (Class_definition | ComponentClause)
+			| 'replaceable' (Class_definition | ComponentClause)
 			(constraining=ConstrainingClause comment=Comment)?
 		)
 ;
