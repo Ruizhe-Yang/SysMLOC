@@ -101,8 +101,8 @@ public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * terminal IDENT returns ecore::EString:
-	 * 	NONDIGIT ( DIGIT | NONDIGIT )* | Q_IDENT
+	 * terminal IDENT returns Ecore::EString:
+	 * 	NON_DIGIT ( DIGIT | NON_DIGIT )* | Q_IDENT
 	 * ;
 	 */
 	protected String getIDENTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
@@ -368,7 +368,7 @@ public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
-	 *     exprs+=Modification (ambiguity) (rule end)
+	 *     exprs+=Expression (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -382,8 +382,8 @@ public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) exprs+=Modification
-	 *     exprs+=Modification (ambiguity) exprs+=Modification
+	 *     (rule start) (ambiguity) exprs+=Expression
+	 *     exprs+=Expression (ambiguity) exprs+=Expression
 	 
 	 * </pre>
 	 */

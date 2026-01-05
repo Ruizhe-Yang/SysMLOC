@@ -9,6 +9,8 @@ import dut.control.moloc.mOloc.Annotation;
 import dut.control.moloc.mOloc.ArgumentList;
 import dut.control.moloc.mOloc.ArithmeticExpression;
 import dut.control.moloc.mOloc.ArraySubscripts;
+import dut.control.moloc.mOloc.Array_arguments;
+import dut.control.moloc.mOloc.Array_arguments_non_first;
 import dut.control.moloc.mOloc.Break;
 import dut.control.moloc.mOloc.ClassDefinition;
 import dut.control.moloc.mOloc.ClassModification;
@@ -120,6 +122,12 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case MOlocPackage.ARRAY_SUBSCRIPTS:
 				sequence_ArraySubscripts(context, (ArraySubscripts) semanticObject); 
+				return; 
+			case MOlocPackage.ARRAY_ARGUMENTS:
+				sequence_Array_arguments(context, (Array_arguments) semanticObject); 
+				return; 
+			case MOlocPackage.ARRAY_ARGUMENTS_NON_FIRST:
+				sequence_Array_arguments_non_first(context, (Array_arguments_non_first) semanticObject); 
 				return; 
 			case MOlocPackage.BREAK:
 				if (rule == grammarAccess.getBreakRule()) {
@@ -550,6 +558,34 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * </pre>
 	 */
 	protected void sequence_ArraySubscripts(ISerializationContext context, ArraySubscripts semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Array_arguments returns Array_arguments
+	 *
+	 * Constraint:
+	 *     (express=Expression (argu+=Array_arguments_non_first | fori=ForIndices)?)
+	 * </pre>
+	 */
+	protected void sequence_Array_arguments(ISerializationContext context, Array_arguments semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Array_arguments_non_first returns Array_arguments_non_first
+	 *
+	 * Constraint:
+	 *     (express=Expression argu+=Array_arguments_non_first*)
+	 * </pre>
+	 */
+	protected void sequence_Array_arguments_non_first(ISerializationContext context, Array_arguments_non_first semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1863,7 +1899,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     OutputExpressionList returns OutputExpressionList
 	 *
 	 * Constraint:
-	 *     (exprs+=Modification? exprs+=Modification*)
+	 *     (exprs+=Expression? exprs+=Expression*)
 	 * </pre>
 	 */
 	protected void sequence_OutputExpressionList(ISerializationContext context, OutputExpressionList semanticObject) {
@@ -1896,7 +1932,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     FunctionArgument returns Primary
 	 *
 	 * Constraint:
-	 *     (oe=OutputExpressionList | (res+=ExpressionList res+=ExpressionList*) | fa+=FunctionArguments)
+	 *     (oe=OutputExpressionList | (res+=ExpressionList res+=ExpressionList*) | fa+=Array_arguments)
 	 * </pre>
 	 */
 	protected void sequence_Primary(ISerializationContext context, Primary semanticObject) {

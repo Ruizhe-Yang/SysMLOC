@@ -91,7 +91,6 @@ public class InternalMOlocLexer extends Lexer {
     public static final int T__71=71;
     public static final int T__72=72;
     public static final int RULE_STRING=4;
-    public static final int RULE_NONDIGIT=8;
     public static final int RULE_SL_COMMENT=15;
     public static final int T__77=77;
     public static final int T__78=78;
@@ -101,6 +100,7 @@ public class InternalMOlocLexer extends Lexer {
     public static final int T__74=74;
     public static final int T__75=75;
     public static final int T__76=76;
+    public static final int RULE_NON_DIGIT=8;
     public static final int T__80=80;
     public static final int T__81=81;
     public static final int T__82=82;
@@ -1986,10 +1986,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_TRUE_FALSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:19811:17: ( ( 'true' | 'false' ) )
-            // InternalMOloc.g:19811:19: ( 'true' | 'false' )
+            // InternalMOloc.g:20227:17: ( ( 'true' | 'false' ) )
+            // InternalMOloc.g:20227:19: ( 'true' | 'false' )
             {
-            // InternalMOloc.g:19811:19: ( 'true' | 'false' )
+            // InternalMOloc.g:20227:19: ( 'true' | 'false' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -2007,7 +2007,7 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalMOloc.g:19811:20: 'true'
+                    // InternalMOloc.g:20227:20: 'true'
                     {
                     match("true"); 
 
@@ -2015,7 +2015,7 @@ public class InternalMOlocLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMOloc.g:19811:27: 'false'
+                    // InternalMOloc.g:20227:27: 'false'
                     {
                     match("false"); 
 
@@ -2041,17 +2041,17 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:19813:12: ( ( RULE_NONDIGIT ( RULE_DIGIT | RULE_NONDIGIT )* | RULE_Q_IDENT ) )
-            // InternalMOloc.g:19813:14: ( RULE_NONDIGIT ( RULE_DIGIT | RULE_NONDIGIT )* | RULE_Q_IDENT )
+            // InternalMOloc.g:20229:12: ( ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT ) )
+            // InternalMOloc.g:20229:14: ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT )
             {
-            // InternalMOloc.g:19813:14: ( RULE_NONDIGIT ( RULE_DIGIT | RULE_NONDIGIT )* | RULE_Q_IDENT )
+            // InternalMOloc.g:20229:14: ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
             if ( ((LA3_0>='A' && LA3_0<='Z')||LA3_0=='_'||(LA3_0>='a' && LA3_0<='z')) ) {
                 alt3=1;
             }
-            else if ( (LA3_0=='\u2019') ) {
+            else if ( (LA3_0=='\'') ) {
                 alt3=2;
             }
             else {
@@ -2062,10 +2062,10 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalMOloc.g:19813:15: RULE_NONDIGIT ( RULE_DIGIT | RULE_NONDIGIT )*
+                    // InternalMOloc.g:20229:15: RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )*
                     {
-                    mRULE_NONDIGIT(); 
-                    // InternalMOloc.g:19813:29: ( RULE_DIGIT | RULE_NONDIGIT )*
+                    mRULE_NON_DIGIT(); 
+                    // InternalMOloc.g:20229:30: ( RULE_DIGIT | RULE_NON_DIGIT )*
                     loop2:
                     do {
                         int alt2=2;
@@ -2102,7 +2102,7 @@ public class InternalMOlocLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMOloc.g:19813:57: RULE_Q_IDENT
+                    // InternalMOloc.g:20229:59: RULE_Q_IDENT
                     {
                     mRULE_Q_IDENT(); 
 
@@ -2127,11 +2127,11 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_UNSIGNED_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:19815:22: ( RULE_UNSIGNED_INTEGER ( '.' ( RULE_UNSIGNED_INTEGER )? )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )? )
-            // InternalMOloc.g:19815:24: RULE_UNSIGNED_INTEGER ( '.' ( RULE_UNSIGNED_INTEGER )? )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )?
+            // InternalMOloc.g:20231:22: ( RULE_UNSIGNED_INTEGER ( '.' ( RULE_UNSIGNED_INTEGER )? )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )? )
+            // InternalMOloc.g:20231:24: RULE_UNSIGNED_INTEGER ( '.' ( RULE_UNSIGNED_INTEGER )? )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )?
             {
             mRULE_UNSIGNED_INTEGER(); 
-            // InternalMOloc.g:19815:46: ( '.' ( RULE_UNSIGNED_INTEGER )? )?
+            // InternalMOloc.g:20231:46: ( '.' ( RULE_UNSIGNED_INTEGER )? )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2140,10 +2140,10 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalMOloc.g:19815:47: '.' ( RULE_UNSIGNED_INTEGER )?
+                    // InternalMOloc.g:20231:47: '.' ( RULE_UNSIGNED_INTEGER )?
                     {
                     match('.'); 
-                    // InternalMOloc.g:19815:51: ( RULE_UNSIGNED_INTEGER )?
+                    // InternalMOloc.g:20231:51: ( RULE_UNSIGNED_INTEGER )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -2152,7 +2152,7 @@ public class InternalMOlocLexer extends Lexer {
                     }
                     switch (alt4) {
                         case 1 :
-                            // InternalMOloc.g:19815:51: RULE_UNSIGNED_INTEGER
+                            // InternalMOloc.g:20231:51: RULE_UNSIGNED_INTEGER
                             {
                             mRULE_UNSIGNED_INTEGER(); 
 
@@ -2167,7 +2167,7 @@ public class InternalMOlocLexer extends Lexer {
 
             }
 
-            // InternalMOloc.g:19815:76: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )?
+            // InternalMOloc.g:20231:76: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2176,7 +2176,7 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalMOloc.g:19815:77: ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER
+                    // InternalMOloc.g:20231:77: ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2187,7 +2187,7 @@ public class InternalMOlocLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalMOloc.g:19815:87: ( '+' | '-' )?
+                    // InternalMOloc.g:20231:87: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2236,11 +2236,11 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:19817:13: ( '\"' ( RULE_S_CHAR | RULE_S_ESCAPE )* '\"' )
-            // InternalMOloc.g:19817:15: '\"' ( RULE_S_CHAR | RULE_S_ESCAPE )* '\"'
+            // InternalMOloc.g:20233:13: ( '\"' ( RULE_S_CHAR | RULE_S_ESCAPE )* '\"' )
+            // InternalMOloc.g:20233:15: '\"' ( RULE_S_CHAR | RULE_S_ESCAPE )* '\"'
             {
             match('\"'); 
-            // InternalMOloc.g:19817:19: ( RULE_S_CHAR | RULE_S_ESCAPE )*
+            // InternalMOloc.g:20233:19: ( RULE_S_CHAR | RULE_S_ESCAPE )*
             loop8:
             do {
                 int alt8=3;
@@ -2256,14 +2256,14 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalMOloc.g:19817:20: RULE_S_CHAR
+            	    // InternalMOloc.g:20233:20: RULE_S_CHAR
             	    {
             	    mRULE_S_CHAR(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // InternalMOloc.g:19817:32: RULE_S_ESCAPE
+            	    // InternalMOloc.g:20233:32: RULE_S_ESCAPE
             	    {
             	    mRULE_S_ESCAPE(); 
 
@@ -2292,12 +2292,12 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:19819:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalMOloc.g:19819:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalMOloc.g:20235:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalMOloc.g:20235:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalMOloc.g:19819:24: ( options {greedy=false; } : . )*
+            // InternalMOloc.g:20235:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -2322,7 +2322,7 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalMOloc.g:19819:52: .
+            	    // InternalMOloc.g:20235:52: .
             	    {
             	    matchAny(); 
 
@@ -2352,12 +2352,12 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:19821:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalMOloc.g:19821:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalMOloc.g:20237:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalMOloc.g:20237:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalMOloc.g:19821:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalMOloc.g:20237:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -2370,7 +2370,7 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalMOloc.g:19821:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalMOloc.g:20237:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2390,7 +2390,7 @@ public class InternalMOlocLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalMOloc.g:19821:40: ( ( '\\r' )? '\\n' )?
+            // InternalMOloc.g:20237:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2399,9 +2399,9 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalMOloc.g:19821:41: ( '\\r' )? '\\n'
+                    // InternalMOloc.g:20237:41: ( '\\r' )? '\\n'
                     {
-                    // InternalMOloc.g:19821:41: ( '\\r' )?
+                    // InternalMOloc.g:20237:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -2410,7 +2410,7 @@ public class InternalMOlocLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // InternalMOloc.g:19821:41: '\\r'
+                            // InternalMOloc.g:20237:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2442,10 +2442,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:19823:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalMOloc.g:19823:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMOloc.g:20239:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalMOloc.g:20239:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalMOloc.g:19823:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMOloc.g:20239:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -2497,8 +2497,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_DIGIT"
     public final void mRULE_DIGIT() throws RecognitionException {
         try {
-            // InternalMOloc.g:19825:21: ( '0' .. '9' )
-            // InternalMOloc.g:19825:23: '0' .. '9'
+            // InternalMOloc.g:20241:21: ( '0' .. '9' )
+            // InternalMOloc.g:20241:23: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -2513,10 +2513,10 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_UNSIGNED_INTEGER"
     public final void mRULE_UNSIGNED_INTEGER() throws RecognitionException {
         try {
-            // InternalMOloc.g:19827:32: ( ( RULE_DIGIT )+ )
-            // InternalMOloc.g:19827:34: ( RULE_DIGIT )+
+            // InternalMOloc.g:20243:32: ( ( RULE_DIGIT )+ )
+            // InternalMOloc.g:20243:34: ( RULE_DIGIT )+
             {
-            // InternalMOloc.g:19827:34: ( RULE_DIGIT )+
+            // InternalMOloc.g:20243:34: ( RULE_DIGIT )+
             int cnt14=0;
             loop14:
             do {
@@ -2530,7 +2530,7 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalMOloc.g:19827:34: RULE_DIGIT
+            	    // InternalMOloc.g:20243:34: RULE_DIGIT
             	    {
             	    mRULE_DIGIT(); 
 
@@ -2558,8 +2558,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_S_ESCAPE"
     public final void mRULE_S_ESCAPE() throws RecognitionException {
         try {
-            // InternalMOloc.g:19829:24: ( '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' ) )
-            // InternalMOloc.g:19829:26: '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' )
+            // InternalMOloc.g:20245:24: ( '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' ) )
+            // InternalMOloc.g:20245:26: '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' )
             {
             match('\\'); 
             if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='?'||input.LA(1)=='\\'||(input.LA(1)>='a' && input.LA(1)<='b')||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t'||input.LA(1)=='v' ) {
@@ -2583,11 +2583,11 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_Q_IDENT"
     public final void mRULE_Q_IDENT() throws RecognitionException {
         try {
-            // InternalMOloc.g:19831:23: ( '\\u2019' ( RULE_Q_CHAR | RULE_S_ESCAPE )* '\\u2019' )
-            // InternalMOloc.g:19831:25: '\\u2019' ( RULE_Q_CHAR | RULE_S_ESCAPE )* '\\u2019'
+            // InternalMOloc.g:20247:23: ( '\\'' ( RULE_Q_CHAR | RULE_S_ESCAPE )* '\\'' )
+            // InternalMOloc.g:20247:25: '\\'' ( RULE_Q_CHAR | RULE_S_ESCAPE )* '\\''
             {
-            match('\u2019'); 
-            // InternalMOloc.g:19831:34: ( RULE_Q_CHAR | RULE_S_ESCAPE )*
+            match('\''); 
+            // InternalMOloc.g:20247:30: ( RULE_Q_CHAR | RULE_S_ESCAPE )*
             loop15:
             do {
                 int alt15=3;
@@ -2603,14 +2603,14 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalMOloc.g:19831:35: RULE_Q_CHAR
+            	    // InternalMOloc.g:20247:31: RULE_Q_CHAR
             	    {
             	    mRULE_Q_CHAR(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // InternalMOloc.g:19831:47: RULE_S_ESCAPE
+            	    // InternalMOloc.g:20247:43: RULE_S_ESCAPE
             	    {
             	    mRULE_S_ESCAPE(); 
 
@@ -2622,7 +2622,7 @@ public class InternalMOlocLexer extends Lexer {
                 }
             } while (true);
 
-            match('\u2019'); 
+            match('\''); 
 
             }
 
@@ -2632,11 +2632,11 @@ public class InternalMOlocLexer extends Lexer {
     }
     // $ANTLR end "RULE_Q_IDENT"
 
-    // $ANTLR start "RULE_NONDIGIT"
-    public final void mRULE_NONDIGIT() throws RecognitionException {
+    // $ANTLR start "RULE_NON_DIGIT"
+    public final void mRULE_NON_DIGIT() throws RecognitionException {
         try {
-            // InternalMOloc.g:19833:24: ( ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) )
-            // InternalMOloc.g:19833:26: ( '_' | 'a' .. 'z' | 'A' .. 'Z' )
+            // InternalMOloc.g:20249:25: ( ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) )
+            // InternalMOloc.g:20249:27: ( '_' | 'a' .. 'z' | 'A' .. 'Z' )
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -2654,13 +2654,13 @@ public class InternalMOlocLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "RULE_NONDIGIT"
+    // $ANTLR end "RULE_NON_DIGIT"
 
     // $ANTLR start "RULE_S_CHAR"
     public final void mRULE_S_CHAR() throws RecognitionException {
         try {
-            // InternalMOloc.g:19835:22: (~ ( ( '\"' | '\\\\' ) ) )
-            // InternalMOloc.g:19835:24: ~ ( ( '\"' | '\\\\' ) )
+            // InternalMOloc.g:20251:22: (~ ( ( '\"' | '\\\\' ) ) )
+            // InternalMOloc.g:20251:24: ~ ( ( '\"' | '\\\\' ) )
             {
             if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                 input.consume();
@@ -2683,8 +2683,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_Q_CHAR"
     public final void mRULE_Q_CHAR() throws RecognitionException {
         try {
-            // InternalMOloc.g:19837:22: ( ( RULE_NONDIGIT | RULE_DIGIT | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '>' | '=' | '?' | '@' | '[' | ']' | '^' | '{' | '}' | '|' | '~' | ' ' ) )
-            // InternalMOloc.g:19837:24: ( RULE_NONDIGIT | RULE_DIGIT | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '>' | '=' | '?' | '@' | '[' | ']' | '^' | '{' | '}' | '|' | '~' | ' ' )
+            // InternalMOloc.g:20253:22: ( ( RULE_NON_DIGIT | RULE_DIGIT | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '>' | '=' | '?' | '@' | '[' | ']' | '^' | '{' | '}' | '|' | '~' | ' ' ) )
+            // InternalMOloc.g:20253:24: ( RULE_NON_DIGIT | RULE_DIGIT | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '>' | '=' | '?' | '@' | '[' | ']' | '^' | '{' | '}' | '|' | '~' | ' ' )
             {
             if ( (input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='_')||(input.LA(1)>='a' && input.LA(1)<='~') ) {
                 input.consume();
@@ -3395,13 +3395,13 @@ public class InternalMOlocLexer extends Lexer {
     static final String DFA16_minS =
         "\1\11\1\154\1\157\1\154\1\150\1\141\1\160\1\146\1\uffff\1\141\1\164\1\145\1\156\1\145\1\157\1\164\4\75\2\uffff\2\52\1\150\1\uffff\1\145\1\141\3\uffff\1\154\1\157\4\uffff\1\157\5\uffff\1\141\1\156\1\144\1\157\1\145\1\160\1\145\1\165\1\143\1\142\1\157\1\145\1\164\1\60\1\160\2\60\1\157\2\156\1\162\1\154\1\162\1\163\1\162\1\164\1\141\1\157\1\162\22\uffff\1\164\1\145\1\143\1\160\1\143\1\165\1\163\1\143\1\147\1\144\1\157\1\164\1\163\1\156\1\145\1\143\1\141\1\145\1\156\1\145\1\153\1\141\1\145\1\154\1\164\1\162\1\145\1\uffff\1\157\1\165\1\164\1\145\2\uffff\1\167\1\143\1\141\1\60\1\163\1\145\1\143\1\60\1\145\2\154\1\151\1\150\1\154\1\156\1\157\1\145\1\154\1\165\1\141\1\145\1\60\1\141\1\155\1\141\1\145\1\150\1\157\1\60\1\157\1\160\1\60\1\163\1\164\1\145\1\154\2\153\3\60\1\141\1\155\1\151\1\60\1\151\1\145\1\141\1\165\3\162\1\164\1\151\1\162\1\60\1\164\1\154\1\uffff\1\145\1\141\1\162\1\uffff\1\147\1\60\1\145\1\156\1\151\1\145\1\60\1\162\1\143\1\141\1\162\2\156\1\uffff\1\160\1\145\1\164\2\60\1\162\1\uffff\1\164\1\60\1\uffff\1\60\1\141\1\143\3\60\3\uffff\1\147\1\145\1\141\1\uffff\2\143\2\164\1\60\1\145\1\164\1\60\1\141\1\60\1\uffff\1\151\2\60\1\155\2\145\1\uffff\1\141\1\147\1\156\1\60\1\uffff\1\144\1\154\1\143\1\156\2\144\1\156\1\163\1\162\1\151\1\146\1\150\2\uffff\1\151\1\141\2\uffff\1\156\1\141\1\164\3\uffff\1\145\1\164\1\154\1\60\1\164\1\157\1\60\1\uffff\2\60\1\uffff\1\154\1\uffff\1\157\1\uffff\1\60\1\164\1\162\1\156\2\60\1\uffff\1\60\1\141\1\145\1\60\1\141\1\163\1\141\1\165\1\141\1\157\1\60\1\145\3\164\1\151\2\60\1\145\1\60\1\uffff\1\145\1\162\3\uffff\1\60\1\156\1\uffff\1\145\2\60\3\uffff\1\162\1\141\1\uffff\1\142\1\60\2\154\1\164\1\156\1\uffff\1\156\1\150\1\151\1\60\1\156\1\162\2\uffff\1\162\1\uffff\1\144\1\60\1\uffff\2\60\2\uffff\1\145\1\142\1\154\1\uffff\1\60\1\141\1\151\2\60\1\155\1\157\1\uffff\1\145\3\60\3\uffff\1\60\1\154\1\145\1\uffff\1\164\1\157\2\uffff\1\60\1\156\1\144\4\uffff\1\145\1\60\1\145\1\156\1\uffff\1\60\1\142\1\60\1\uffff\1\144\1\60\1\uffff\1\171\1\uffff\1\60\1\uffff\1\60\2\uffff";
     static final String DFA16_maxS =
-        "\1\u2019\2\157\1\162\1\171\2\165\1\156\1\uffff\1\165\1\164\1\151\1\156\1\145\1\157\1\164\1\75\1\76\2\75\2\uffff\1\136\1\57\1\151\1\uffff\1\145\1\170\3\uffff\1\156\1\157\4\uffff\1\157\5\uffff\1\141\1\156\1\144\1\157\1\145\1\160\1\145\1\165\2\162\1\157\1\145\1\164\1\172\1\160\2\172\1\157\2\156\1\162\1\154\1\162\1\163\1\162\1\164\1\141\1\157\1\162\22\uffff\1\164\1\151\2\164\2\165\1\163\1\143\1\147\1\156\1\157\1\164\2\163\1\145\1\143\1\141\1\145\1\156\1\145\1\153\1\164\1\145\1\154\1\164\1\162\1\160\1\uffff\2\165\1\164\1\145\2\uffff\1\167\1\143\1\141\1\172\1\163\1\145\1\143\1\172\1\145\2\154\1\151\1\150\1\154\1\156\1\157\1\145\1\154\1\165\1\141\1\145\1\172\1\141\1\155\1\141\1\145\1\150\1\157\1\172\1\157\1\160\1\172\1\163\1\164\1\145\1\154\2\153\3\172\1\141\1\155\1\151\1\172\1\151\1\145\1\141\1\165\3\162\1\164\1\151\1\162\1\172\1\164\1\154\1\uffff\1\145\1\141\1\162\1\uffff\1\147\1\172\1\145\1\156\1\151\1\145\1\172\1\162\1\143\1\141\1\162\1\156\1\162\1\uffff\1\160\1\145\1\164\2\172\1\162\1\uffff\1\164\1\172\1\uffff\1\172\1\162\1\143\3\172\3\uffff\1\147\1\145\1\141\1\uffff\2\143\2\164\1\172\1\145\1\164\1\172\1\141\1\172\1\uffff\1\151\2\172\1\155\2\145\1\uffff\1\141\1\147\1\156\1\172\1\uffff\1\144\1\154\1\143\1\156\2\144\1\156\1\163\1\162\1\151\1\146\1\150\2\uffff\1\151\1\141\2\uffff\1\156\1\141\1\164\3\uffff\1\145\1\164\1\154\1\172\1\164\1\157\1\172\1\uffff\2\172\1\uffff\1\154\1\uffff\1\157\1\uffff\1\172\1\164\1\162\1\156\2\172\1\uffff\1\172\1\141\1\145\1\172\1\141\1\163\1\141\1\165\1\141\1\157\1\172\1\145\3\164\1\151\2\172\1\145\1\172\1\uffff\1\145\1\162\3\uffff\1\172\1\156\1\uffff\1\145\2\172\3\uffff\1\162\1\141\1\uffff\1\142\1\172\2\154\1\164\1\156\1\uffff\1\156\1\150\1\151\1\172\1\156\1\162\2\uffff\1\162\1\uffff\1\144\1\172\1\uffff\2\172\2\uffff\1\145\1\142\1\154\1\uffff\1\172\1\141\1\151\2\172\1\155\1\157\1\uffff\1\145\3\172\3\uffff\1\172\1\154\1\145\1\uffff\1\164\1\157\2\uffff\1\172\1\156\1\144\4\uffff\1\145\1\172\1\145\1\156\1\uffff\1\172\1\142\1\172\1\uffff\1\144\1\172\1\uffff\1\171\1\uffff\1\172\1\uffff\1\172\2\uffff";
+        "\1\175\2\157\1\162\1\171\2\165\1\156\1\uffff\1\165\1\164\1\151\1\156\1\145\1\157\1\164\1\75\1\76\2\75\2\uffff\1\136\1\57\1\151\1\uffff\1\145\1\170\3\uffff\1\156\1\157\4\uffff\1\157\5\uffff\1\141\1\156\1\144\1\157\1\145\1\160\1\145\1\165\2\162\1\157\1\145\1\164\1\172\1\160\2\172\1\157\2\156\1\162\1\154\1\162\1\163\1\162\1\164\1\141\1\157\1\162\22\uffff\1\164\1\151\2\164\2\165\1\163\1\143\1\147\1\156\1\157\1\164\2\163\1\145\1\143\1\141\1\145\1\156\1\145\1\153\1\164\1\145\1\154\1\164\1\162\1\160\1\uffff\2\165\1\164\1\145\2\uffff\1\167\1\143\1\141\1\172\1\163\1\145\1\143\1\172\1\145\2\154\1\151\1\150\1\154\1\156\1\157\1\145\1\154\1\165\1\141\1\145\1\172\1\141\1\155\1\141\1\145\1\150\1\157\1\172\1\157\1\160\1\172\1\163\1\164\1\145\1\154\2\153\3\172\1\141\1\155\1\151\1\172\1\151\1\145\1\141\1\165\3\162\1\164\1\151\1\162\1\172\1\164\1\154\1\uffff\1\145\1\141\1\162\1\uffff\1\147\1\172\1\145\1\156\1\151\1\145\1\172\1\162\1\143\1\141\1\162\1\156\1\162\1\uffff\1\160\1\145\1\164\2\172\1\162\1\uffff\1\164\1\172\1\uffff\1\172\1\162\1\143\3\172\3\uffff\1\147\1\145\1\141\1\uffff\2\143\2\164\1\172\1\145\1\164\1\172\1\141\1\172\1\uffff\1\151\2\172\1\155\2\145\1\uffff\1\141\1\147\1\156\1\172\1\uffff\1\144\1\154\1\143\1\156\2\144\1\156\1\163\1\162\1\151\1\146\1\150\2\uffff\1\151\1\141\2\uffff\1\156\1\141\1\164\3\uffff\1\145\1\164\1\154\1\172\1\164\1\157\1\172\1\uffff\2\172\1\uffff\1\154\1\uffff\1\157\1\uffff\1\172\1\164\1\162\1\156\2\172\1\uffff\1\172\1\141\1\145\1\172\1\141\1\163\1\141\1\165\1\141\1\157\1\172\1\145\3\164\1\151\2\172\1\145\1\172\1\uffff\1\145\1\162\3\uffff\1\172\1\156\1\uffff\1\145\2\172\3\uffff\1\162\1\141\1\uffff\1\142\1\172\2\154\1\164\1\156\1\uffff\1\156\1\150\1\151\1\172\1\156\1\162\2\uffff\1\162\1\uffff\1\144\1\172\1\uffff\2\172\2\uffff\1\145\1\142\1\154\1\uffff\1\172\1\141\1\151\2\172\1\155\1\157\1\uffff\1\145\3\172\3\uffff\1\172\1\154\1\145\1\uffff\1\164\1\157\2\uffff\1\172\1\156\1\144\4\uffff\1\145\1\172\1\145\1\156\1\uffff\1\172\1\142\1\172\1\uffff\1\144\1\172\1\uffff\1\171\1\uffff\1\172\1\uffff\1\172\2\uffff";
     static final String DFA16_acceptS =
         "\10\uffff\1\11\13\uffff\1\34\1\35\3\uffff\1\46\2\uffff\1\56\1\57\1\60\2\uffff\1\113\1\114\1\115\1\116\1\uffff\1\127\1\133\1\134\1\135\1\140\35\uffff\1\100\1\25\1\27\1\33\1\26\1\31\1\30\1\32\1\55\1\36\1\37\1\41\1\42\1\130\1\73\1\136\1\137\1\40\33\uffff\1\124\4\uffff\1\106\1\75\72\uffff\1\104\3\uffff\1\43\15\uffff\1\54\6\uffff\1\125\2\uffff\1\126\6\uffff\1\4\1\101\1\132\3\uffff\1\7\12\uffff\1\12\6\uffff\1\22\4\uffff\1\110\14\uffff\1\103\1\120\2\uffff\1\105\1\1\3\uffff\1\2\1\3\1\122\7\uffff\1\70\2\uffff\1\17\1\uffff\1\67\1\uffff\1\66\6\uffff\1\107\24\uffff\1\62\2\uffff\1\20\1\10\1\72\2\uffff\1\13\3\uffff\1\24\1\45\1\50\2\uffff\1\123\6\uffff\1\102\6\uffff\1\112\1\5\1\uffff\1\47\2\uffff\1\44\2\uffff\1\21\1\23\3\uffff\1\61\7\uffff\1\16\4\uffff\1\6\1\53\1\14\3\uffff\1\64\2\uffff\1\76\1\111\3\uffff\1\52\1\15\1\63\1\65\4\uffff\1\77\3\uffff\1\51\2\uffff\1\131\1\uffff\1\71\1\uffff\1\121\1\uffff\1\117\1\74";
     static final String DFA16_specialS =
         "\u0198\uffff}>";
     static final String[] DFA16_transitionS = {
-            "\2\52\2\uffff\1\52\22\uffff\1\52\1\uffff\1\51\5\uffff\1\34\1\36\1\10\1\24\1\35\1\25\1\26\1\27\12\50\1\20\1\31\1\21\1\23\1\22\2\uffff\1\47\1\16\6\47\1\14\10\47\1\15\1\17\7\47\1\41\1\uffff\1\42\1\46\1\47\1\uffff\1\37\1\3\1\1\1\13\1\33\1\11\2\47\1\7\2\47\1\40\1\2\1\45\1\6\1\5\1\47\1\32\1\12\1\4\2\47\1\30\3\47\1\43\1\uffff\1\44\u1f9b\uffff\1\47",
+            "\2\52\2\uffff\1\52\22\uffff\1\52\1\uffff\1\51\4\uffff\1\47\1\34\1\36\1\10\1\24\1\35\1\25\1\26\1\27\12\50\1\20\1\31\1\21\1\23\1\22\2\uffff\1\47\1\16\6\47\1\14\10\47\1\15\1\17\7\47\1\41\1\uffff\1\42\1\46\1\47\1\uffff\1\37\1\3\1\1\1\13\1\33\1\11\2\47\1\7\2\47\1\40\1\2\1\45\1\6\1\5\1\47\1\32\1\12\1\4\2\47\1\30\3\47\1\43\1\uffff\1\44",
             "\1\53\2\uffff\1\54",
             "\1\55",
             "\1\56\5\uffff\1\57",

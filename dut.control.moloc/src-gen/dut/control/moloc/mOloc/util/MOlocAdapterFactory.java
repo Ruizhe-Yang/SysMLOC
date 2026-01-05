@@ -431,6 +431,16 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
         return createPrimaryAdapter();
       }
       @Override
+      public Adapter caseArray_arguments(Array_arguments object)
+      {
+        return createArray_argumentsAdapter();
+      }
+      @Override
+      public Adapter caseArray_arguments_non_first(Array_arguments_non_first object)
+      {
+        return createArray_arguments_non_firstAdapter();
+      }
+      @Override
       public Adapter caseFunctionCall(FunctionCall object)
       {
         return createFunctionCallAdapter();
@@ -1583,6 +1593,36 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPrimaryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.Array_arguments <em>Array arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.Array_arguments
+   * @generated
+   */
+  public Adapter createArray_argumentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.Array_arguments_non_first <em>Array arguments non first</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.Array_arguments_non_first
+   * @generated
+   */
+  public Adapter createArray_arguments_non_firstAdapter()
   {
     return null;
   }

@@ -4728,6 +4728,89 @@ public interface MOlocPackage extends EPackage
   int END_FEATURE_COUNT = PRIMARY_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Array_argumentsImpl <em>Array arguments</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.Array_argumentsImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArray_arguments()
+   * @generated
+   */
+  int ARRAY_ARGUMENTS = 71;
+
+  /**
+   * The feature id for the '<em><b>Express</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_ARGUMENTS__EXPRESS = 0;
+
+  /**
+   * The feature id for the '<em><b>Argu</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_ARGUMENTS__ARGU = 1;
+
+  /**
+   * The feature id for the '<em><b>Fori</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_ARGUMENTS__FORI = 2;
+
+  /**
+   * The number of structural features of the '<em>Array arguments</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_ARGUMENTS_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Array_arguments_non_firstImpl <em>Array arguments non first</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.Array_arguments_non_firstImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArray_arguments_non_first()
+   * @generated
+   */
+  int ARRAY_ARGUMENTS_NON_FIRST = 72;
+
+  /**
+   * The feature id for the '<em><b>Express</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_ARGUMENTS_NON_FIRST__EXPRESS = 0;
+
+  /**
+   * The feature id for the '<em><b>Argu</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_ARGUMENTS_NON_FIRST__ARGU = 1;
+
+  /**
+   * The number of structural features of the '<em>Array arguments non first</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_ARGUMENTS_NON_FIRST_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.FunctionCallImpl <em>Function Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4735,7 +4818,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionCall()
    * @generated
    */
-  int FUNCTION_CALL = 71;
+  int FUNCTION_CALL = 73;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -4961,7 +5044,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentReference()
    * @generated
    */
-  int COMPONENT_REFERENCE = 72;
+  int COMPONENT_REFERENCE = 74;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -5187,7 +5270,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionCallArgs()
    * @generated
    */
-  int FUNCTION_CALL_ARGS = 73;
+  int FUNCTION_CALL_ARGS = 75;
 
   /**
    * The feature id for the '<em><b>Commment</b></em>' containment reference.
@@ -5224,7 +5307,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionArguments()
    * @generated
    */
-  int FUNCTION_ARGUMENTS = 74;
+  int FUNCTION_ARGUMENTS = 76;
 
   /**
    * The feature id for the '<em><b>Args</b></em>' containment reference list.
@@ -5261,7 +5344,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getNamedArguments()
    * @generated
    */
-  int NAMED_ARGUMENTS = 75;
+  int NAMED_ARGUMENTS = 77;
 
   /**
    * The feature id for the '<em><b>Args</b></em>' containment reference list.
@@ -5289,7 +5372,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getNamedArgument()
    * @generated
    */
-  int NAMED_ARGUMENT = 76;
+  int NAMED_ARGUMENT = 78;
 
   /**
    * The feature id for the '<em><b>Args</b></em>' containment reference list.
@@ -5344,7 +5427,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionArgument()
    * @generated
    */
-  int FUNCTION_ARGUMENT = 77;
+  int FUNCTION_ARGUMENT = 79;
 
   /**
    * The number of structural features of the '<em>Function Argument</em>' class.
@@ -5363,7 +5446,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionDefinition()
    * @generated
    */
-  int FUNCTION_DEFINITION = 78;
+  int FUNCTION_DEFINITION = 80;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5400,7 +5483,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getOutputExpressionList()
    * @generated
    */
-  int OUTPUT_EXPRESSION_LIST = 79;
+  int OUTPUT_EXPRESSION_LIST = 81;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -5428,7 +5511,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExpressionList()
    * @generated
    */
-  int EXPRESSION_LIST = 80;
+  int EXPRESSION_LIST = 82;
 
   /**
    * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
@@ -5456,7 +5539,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArraySubscripts()
    * @generated
    */
-  int ARRAY_SUBSCRIPTS = 81;
+  int ARRAY_SUBSCRIPTS = 83;
 
   /**
    * The feature id for the '<em><b>Subscripts</b></em>' containment reference list.
@@ -5484,7 +5567,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getSubscript()
    * @generated
    */
-  int SUBSCRIPT = 82;
+  int SUBSCRIPT = 84;
 
   /**
    * The feature id for the '<em><b>All</b></em>' attribute.
@@ -5521,7 +5604,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComment()
    * @generated
    */
-  int COMMENT = 83;
+  int COMMENT = 85;
 
   /**
    * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -5558,7 +5641,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAnnotation()
    * @generated
    */
-  int ANNOTATION = 84;
+  int ANNOTATION = 86;
 
   /**
    * The feature id for the '<em><b>Isannotation</b></em>' attribute.
@@ -8191,6 +8274,81 @@ public interface MOlocPackage extends EPackage
   EReference getPrimary_Fa();
 
   /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Array_arguments <em>Array arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Array arguments</em>'.
+   * @see dut.control.moloc.mOloc.Array_arguments
+   * @generated
+   */
+  EClass getArray_arguments();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Array_arguments#getExpress <em>Express</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Express</em>'.
+   * @see dut.control.moloc.mOloc.Array_arguments#getExpress()
+   * @see #getArray_arguments()
+   * @generated
+   */
+  EReference getArray_arguments_Express();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.Array_arguments#getArgu <em>Argu</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Argu</em>'.
+   * @see dut.control.moloc.mOloc.Array_arguments#getArgu()
+   * @see #getArray_arguments()
+   * @generated
+   */
+  EReference getArray_arguments_Argu();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Array_arguments#getFori <em>Fori</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fori</em>'.
+   * @see dut.control.moloc.mOloc.Array_arguments#getFori()
+   * @see #getArray_arguments()
+   * @generated
+   */
+  EReference getArray_arguments_Fori();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Array_arguments_non_first <em>Array arguments non first</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Array arguments non first</em>'.
+   * @see dut.control.moloc.mOloc.Array_arguments_non_first
+   * @generated
+   */
+  EClass getArray_arguments_non_first();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Array_arguments_non_first#getExpress <em>Express</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Express</em>'.
+   * @see dut.control.moloc.mOloc.Array_arguments_non_first#getExpress()
+   * @see #getArray_arguments_non_first()
+   * @generated
+   */
+  EReference getArray_arguments_non_first_Express();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.Array_arguments_non_first#getArgu <em>Argu</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Argu</em>'.
+   * @see dut.control.moloc.mOloc.Array_arguments_non_first#getArgu()
+   * @see #getArray_arguments_non_first()
+   * @generated
+   */
+  EReference getArray_arguments_non_first_Argu();
+
+  /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.FunctionCall <em>Function Call</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -10669,6 +10827,66 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EReference PRIMARY__FA = eINSTANCE.getPrimary_Fa();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.Array_argumentsImpl <em>Array arguments</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.Array_argumentsImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArray_arguments()
+     * @generated
+     */
+    EClass ARRAY_ARGUMENTS = eINSTANCE.getArray_arguments();
+
+    /**
+     * The meta object literal for the '<em><b>Express</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_ARGUMENTS__EXPRESS = eINSTANCE.getArray_arguments_Express();
+
+    /**
+     * The meta object literal for the '<em><b>Argu</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_ARGUMENTS__ARGU = eINSTANCE.getArray_arguments_Argu();
+
+    /**
+     * The meta object literal for the '<em><b>Fori</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_ARGUMENTS__FORI = eINSTANCE.getArray_arguments_Fori();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.Array_arguments_non_firstImpl <em>Array arguments non first</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.Array_arguments_non_firstImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArray_arguments_non_first()
+     * @generated
+     */
+    EClass ARRAY_ARGUMENTS_NON_FIRST = eINSTANCE.getArray_arguments_non_first();
+
+    /**
+     * The meta object literal for the '<em><b>Express</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_ARGUMENTS_NON_FIRST__EXPRESS = eINSTANCE.getArray_arguments_non_first_Express();
+
+    /**
+     * The meta object literal for the '<em><b>Argu</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARRAY_ARGUMENTS_NON_FIRST__ARGU = eINSTANCE.getArray_arguments_non_first_Argu();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.FunctionCallImpl <em>Function Call</em>}' class.

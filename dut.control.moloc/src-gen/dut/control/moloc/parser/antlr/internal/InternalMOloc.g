@@ -6965,9 +6965,9 @@ rulePrimary returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPrimaryAccess().getFaFunctionArgumentsParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getPrimaryAccess().getFaArray_argumentsParserRuleCall_7_1_0());
 					}
-					lv_fa_14_0=ruleFunctionArguments
+					lv_fa_14_0=ruleArray_arguments
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPrimaryRule());
@@ -6976,7 +6976,7 @@ rulePrimary returns [EObject current=null]
 							$current,
 							"fa",
 							lv_fa_14_0,
-							"dut.control.moloc.MOloc.FunctionArguments");
+							"dut.control.moloc.MOloc.Array_arguments");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -6998,6 +6998,160 @@ rulePrimary returns [EObject current=null]
 			$current = $this_End_16.current;
 			afterParserOrEnumRuleCall();
 		}
+	)
+;
+
+// Entry rule entryRuleArray_arguments
+entryRuleArray_arguments returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getArray_argumentsRule()); }
+	iv_ruleArray_arguments=ruleArray_arguments
+	{ $current=$iv_ruleArray_arguments.current; }
+	EOF;
+
+// Rule Array_arguments
+ruleArray_arguments returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getArray_argumentsAccess().getExpressExpressionParserRuleCall_0_0());
+				}
+				lv_express_0_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getArray_argumentsRule());
+					}
+					set(
+						$current,
+						"express",
+						lv_express_0_0,
+						"dut.control.moloc.MOloc.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				otherlv_1=','
+				{
+					newLeafNode(otherlv_1, grammarAccess.getArray_argumentsAccess().getCommaKeyword_1_0_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getArray_argumentsAccess().getArguArray_arguments_non_firstParserRuleCall_1_0_1_0());
+						}
+						lv_argu_2_0=ruleArray_arguments_non_first
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getArray_argumentsRule());
+							}
+							add(
+								$current,
+								"argu",
+								lv_argu_2_0,
+								"dut.control.moloc.MOloc.Array_arguments_non_first");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)
+			    |
+			(
+				otherlv_3='for'
+				{
+					newLeafNode(otherlv_3, grammarAccess.getArray_argumentsAccess().getForKeyword_1_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getArray_argumentsAccess().getForiForIndicesParserRuleCall_1_1_1_0());
+						}
+						lv_fori_4_0=ruleForIndices
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getArray_argumentsRule());
+							}
+							set(
+								$current,
+								"fori",
+								lv_fori_4_0,
+								"dut.control.moloc.MOloc.ForIndices");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleArray_arguments_non_first
+entryRuleArray_arguments_non_first returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getArray_arguments_non_firstRule()); }
+	iv_ruleArray_arguments_non_first=ruleArray_arguments_non_first
+	{ $current=$iv_ruleArray_arguments_non_first.current; }
+	EOF;
+
+// Rule Array_arguments_non_first
+ruleArray_arguments_non_first returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getArray_arguments_non_firstAccess().getExpressExpressionParserRuleCall_0_0());
+				}
+				lv_express_0_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getArray_arguments_non_firstRule());
+					}
+					set(
+						$current,
+						"express",
+						lv_express_0_0,
+						"dut.control.moloc.MOloc.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_1=','
+			{
+				newLeafNode(otherlv_1, grammarAccess.getArray_arguments_non_firstAccess().getCommaKeyword_1_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getArray_arguments_non_firstAccess().getArguArray_arguments_non_firstParserRuleCall_1_1_0());
+					}
+					lv_argu_2_0=ruleArray_arguments_non_first
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getArray_arguments_non_firstRule());
+						}
+						add(
+							$current,
+							"argu",
+							lv_argu_2_0,
+							"dut.control.moloc.MOloc.Array_arguments_non_first");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
 	)
 ;
 
@@ -7615,9 +7769,9 @@ ruleOutputExpressionList returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getOutputExpressionListAccess().getExprsModificationParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getOutputExpressionListAccess().getExprsExpressionParserRuleCall_1_0());
 				}
-				lv_exprs_1_0=ruleModification
+				lv_exprs_1_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getOutputExpressionListRule());
@@ -7626,7 +7780,7 @@ ruleOutputExpressionList returns [EObject current=null]
 						$current,
 						"exprs",
 						lv_exprs_1_0,
-						"dut.control.moloc.MOloc.Modification");
+						"dut.control.moloc.MOloc.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -7639,9 +7793,9 @@ ruleOutputExpressionList returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getOutputExpressionListAccess().getExprsModificationParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getOutputExpressionListAccess().getExprsExpressionParserRuleCall_2_1_0());
 					}
-					lv_exprs_3_0=ruleModification
+					lv_exprs_3_0=ruleExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getOutputExpressionListRule());
@@ -7650,7 +7804,7 @@ ruleOutputExpressionList returns [EObject current=null]
 							$current,
 							"exprs",
 							lv_exprs_3_0,
-							"dut.control.moloc.MOloc.Modification");
+							"dut.control.moloc.MOloc.Expression");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -7997,7 +8151,7 @@ ruleAnnotation returns [EObject current=null]
 
 RULE_TRUE_FALSE : ('true'|'false');
 
-RULE_IDENT : (RULE_NONDIGIT (RULE_DIGIT|RULE_NONDIGIT)*|RULE_Q_IDENT);
+RULE_IDENT : (RULE_NON_DIGIT (RULE_DIGIT|RULE_NON_DIGIT)*|RULE_Q_IDENT);
 
 RULE_UNSIGNED_NUMBER : RULE_UNSIGNED_INTEGER ('.' RULE_UNSIGNED_INTEGER?)? (('e'|'E') ('+'|'-')? RULE_UNSIGNED_INTEGER)?;
 
@@ -8015,10 +8169,10 @@ fragment RULE_UNSIGNED_INTEGER : RULE_DIGIT+;
 
 fragment RULE_S_ESCAPE : '\\' ('\''|'"'|'?'|'\\'|'a'|'b'|'f'|'n'|'r'|'t'|'v');
 
-fragment RULE_Q_IDENT : '\u2019' (RULE_Q_CHAR|RULE_S_ESCAPE)* '\u2019';
+fragment RULE_Q_IDENT : '\'' (RULE_Q_CHAR|RULE_S_ESCAPE)* '\'';
 
-fragment RULE_NONDIGIT : ('_'|'a'..'z'|'A'..'Z');
+fragment RULE_NON_DIGIT : ('_'|'a'..'z'|'A'..'Z');
 
 fragment RULE_S_CHAR : ~(('"'|'\\'));
 
-fragment RULE_Q_CHAR : (RULE_NONDIGIT|RULE_DIGIT|'!'|'#'|'$'|'%'|'&'|'('|')'|'*'|'+'|','|'-'|'.'|'/'|':'|';'|'<'|'>'|'='|'?'|'@'|'['|']'|'^'|'{'|'}'|'|'|'~'|' ');
+fragment RULE_Q_CHAR : (RULE_NON_DIGIT|RULE_DIGIT|'!'|'#'|'$'|'%'|'&'|'('|')'|'*'|'+'|','|'-'|'.'|'/'|':'|';'|'<'|'>'|'='|'?'|'@'|'['|']'|'^'|'{'|'}'|'|'|'~'|' ');

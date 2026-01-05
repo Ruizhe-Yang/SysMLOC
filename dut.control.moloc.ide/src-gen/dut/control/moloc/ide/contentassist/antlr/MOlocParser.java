@@ -68,6 +68,7 @@ public class MOlocParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMulOpAccess().getAlternatives(), "rule__MulOp__Alternatives");
 			builder.put(grammarAccess.getFactorAccess().getAlternatives_1_1(), "rule__Factor__Alternatives_1_1");
 			builder.put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
+			builder.put(grammarAccess.getArray_argumentsAccess().getAlternatives_1(), "rule__Array_arguments__Alternatives_1");
 			builder.put(grammarAccess.getFunctionCallAccess().getComp_refAlternatives_0_0(), "rule__FunctionCall__Comp_refAlternatives_0_0");
 			builder.put(grammarAccess.getFunctionArgumentsAccess().getAlternatives(), "rule__FunctionArguments__Alternatives");
 			builder.put(grammarAccess.getFunctionArgumentsAccess().getAlternatives_0_1(), "rule__FunctionArguments__Alternatives_0_1");
@@ -206,6 +207,11 @@ public class MOlocParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPrimaryAccess().getGroup_6(), "rule__Primary__Group_6__0");
 			builder.put(grammarAccess.getPrimaryAccess().getGroup_6_2(), "rule__Primary__Group_6_2__0");
 			builder.put(grammarAccess.getPrimaryAccess().getGroup_7(), "rule__Primary__Group_7__0");
+			builder.put(grammarAccess.getArray_argumentsAccess().getGroup(), "rule__Array_arguments__Group__0");
+			builder.put(grammarAccess.getArray_argumentsAccess().getGroup_1_0(), "rule__Array_arguments__Group_1_0__0");
+			builder.put(grammarAccess.getArray_argumentsAccess().getGroup_1_1(), "rule__Array_arguments__Group_1_1__0");
+			builder.put(grammarAccess.getArray_arguments_non_firstAccess().getGroup(), "rule__Array_arguments_non_first__Group__0");
+			builder.put(grammarAccess.getArray_arguments_non_firstAccess().getGroup_1(), "rule__Array_arguments_non_first__Group_1__0");
 			builder.put(grammarAccess.getFunctionCallAccess().getGroup(), "rule__FunctionCall__Group__0");
 			builder.put(grammarAccess.getNameAccess().getGroup(), "rule__Name__Group__0");
 			builder.put(grammarAccess.getNameAccess().getGroup_2(), "rule__Name__Group_2__0");
@@ -428,6 +434,11 @@ public class MOlocParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPrimaryAccess().getResAssignment_6_1(), "rule__Primary__ResAssignment_6_1");
 			builder.put(grammarAccess.getPrimaryAccess().getResAssignment_6_2_1(), "rule__Primary__ResAssignment_6_2_1");
 			builder.put(grammarAccess.getPrimaryAccess().getFaAssignment_7_1(), "rule__Primary__FaAssignment_7_1");
+			builder.put(grammarAccess.getArray_argumentsAccess().getExpressAssignment_0(), "rule__Array_arguments__ExpressAssignment_0");
+			builder.put(grammarAccess.getArray_argumentsAccess().getArguAssignment_1_0_1(), "rule__Array_arguments__ArguAssignment_1_0_1");
+			builder.put(grammarAccess.getArray_argumentsAccess().getForiAssignment_1_1_1(), "rule__Array_arguments__ForiAssignment_1_1_1");
+			builder.put(grammarAccess.getArray_arguments_non_firstAccess().getExpressAssignment_0(), "rule__Array_arguments_non_first__ExpressAssignment_0");
+			builder.put(grammarAccess.getArray_arguments_non_firstAccess().getArguAssignment_1_1(), "rule__Array_arguments_non_first__ArguAssignment_1_1");
 			builder.put(grammarAccess.getFunctionCallAccess().getComp_refAssignment_0(), "rule__FunctionCall__Comp_refAssignment_0");
 			builder.put(grammarAccess.getFunctionCallAccess().getArgsAssignment_1(), "rule__FunctionCall__ArgsAssignment_1");
 			builder.put(grammarAccess.getComponentReferenceAccess().getIdentsAssignment_1(), "rule__ComponentReference__IdentsAssignment_1");

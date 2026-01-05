@@ -4193,7 +4193,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
 		private final Keyword cLeftCurlyBracketKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Assignment cFaAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cFaFunctionArgumentsParserRuleCall_7_1_0 = (RuleCall)cFaAssignment_7_1.eContents().get(0);
+		private final RuleCall cFaArray_argumentsParserRuleCall_7_1_0 = (RuleCall)cFaAssignment_7_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
 		private final RuleCall cEndParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		
@@ -4205,7 +4205,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    | ComponentReference
 		//    | "(" oe = OutputExpressionList ")"
 		//    | "[" res+=ExpressionList ( ";" res+=ExpressionList )* "]"
-		//    | "{" fa += FunctionArguments "}"
+		//    | "{" fa += Array_arguments "}"
 		//    | End
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -4217,7 +4217,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//| ComponentReference
 		//| "(" oe = OutputExpressionList ")"
 		//| "[" res+=ExpressionList ( ";" res+=ExpressionList )* "]"
-		//| "{" fa += FunctionArguments "}"
+		//| "{" fa += Array_arguments "}"
 		//| End
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
@@ -4278,23 +4278,115 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//"]"
 		public Keyword getRightSquareBracketKeyword_6_3() { return cRightSquareBracketKeyword_6_3; }
 		
-		//"{" fa += FunctionArguments "}"
+		//"{" fa += Array_arguments "}"
 		public Group getGroup_7() { return cGroup_7; }
 		
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_7_0() { return cLeftCurlyBracketKeyword_7_0; }
 		
-		//fa += FunctionArguments
+		//fa += Array_arguments
 		public Assignment getFaAssignment_7_1() { return cFaAssignment_7_1; }
 		
-		//FunctionArguments
-		public RuleCall getFaFunctionArgumentsParserRuleCall_7_1_0() { return cFaFunctionArgumentsParserRuleCall_7_1_0; }
+		//Array_arguments
+		public RuleCall getFaArray_argumentsParserRuleCall_7_1_0() { return cFaArray_argumentsParserRuleCall_7_1_0; }
 		
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_7_2() { return cRightCurlyBracketKeyword_7_2; }
 		
 		//End
 		public RuleCall getEndParserRuleCall_8() { return cEndParserRuleCall_8; }
+	}
+	public class Array_argumentsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.Array_arguments");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cExpressAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cExpressExpressionParserRuleCall_0_0 = (RuleCall)cExpressAssignment_0.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
+		private final Keyword cCommaKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
+		private final Assignment cArguAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
+		private final RuleCall cArguArray_arguments_non_firstParserRuleCall_1_0_1_0 = (RuleCall)cArguAssignment_1_0_1.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
+		private final Keyword cForKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
+		private final Assignment cForiAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cForiForIndicesParserRuleCall_1_1_1_0 = (RuleCall)cForiAssignment_1_1_1.eContents().get(0);
+		
+		//Array_arguments:
+		//    express=Expression ( "," argu+=Array_arguments_non_first | 'for' fori=ForIndices)?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//express=Expression ( "," argu+=Array_arguments_non_first | 'for' fori=ForIndices)?
+		public Group getGroup() { return cGroup; }
+		
+		//express=Expression
+		public Assignment getExpressAssignment_0() { return cExpressAssignment_0; }
+		
+		//Expression
+		public RuleCall getExpressExpressionParserRuleCall_0_0() { return cExpressExpressionParserRuleCall_0_0; }
+		
+		//( "," argu+=Array_arguments_non_first | 'for' fori=ForIndices)?
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
+		//"," argu+=Array_arguments_non_first
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//","
+		public Keyword getCommaKeyword_1_0_0() { return cCommaKeyword_1_0_0; }
+		
+		//argu+=Array_arguments_non_first
+		public Assignment getArguAssignment_1_0_1() { return cArguAssignment_1_0_1; }
+		
+		//Array_arguments_non_first
+		public RuleCall getArguArray_arguments_non_firstParserRuleCall_1_0_1_0() { return cArguArray_arguments_non_firstParserRuleCall_1_0_1_0; }
+		
+		//'for' fori=ForIndices
+		public Group getGroup_1_1() { return cGroup_1_1; }
+		
+		//'for'
+		public Keyword getForKeyword_1_1_0() { return cForKeyword_1_1_0; }
+		
+		//fori=ForIndices
+		public Assignment getForiAssignment_1_1_1() { return cForiAssignment_1_1_1; }
+		
+		//ForIndices
+		public RuleCall getForiForIndicesParserRuleCall_1_1_1_0() { return cForiForIndicesParserRuleCall_1_1_1_0; }
+	}
+	public class Array_arguments_non_firstElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.Array_arguments_non_first");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cExpressAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cExpressExpressionParserRuleCall_0_0 = (RuleCall)cExpressAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cArguAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cArguArray_arguments_non_firstParserRuleCall_1_1_0 = (RuleCall)cArguAssignment_1_1.eContents().get(0);
+		
+		//Array_arguments_non_first:
+		//    express=Expression ( "," argu+=Array_arguments_non_first)*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//express=Expression ( "," argu+=Array_arguments_non_first)*
+		public Group getGroup() { return cGroup; }
+		
+		//express=Expression
+		public Assignment getExpressAssignment_0() { return cExpressAssignment_0; }
+		
+		//Expression
+		public RuleCall getExpressExpressionParserRuleCall_0_0() { return cExpressExpressionParserRuleCall_0_0; }
+		
+		//( "," argu+=Array_arguments_non_first)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//","
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+		
+		//argu+=Array_arguments_non_first
+		public Assignment getArguAssignment_1_1() { return cArguAssignment_1_1; }
+		
+		//Array_arguments_non_first
+		public RuleCall getArguArray_arguments_non_firstParserRuleCall_1_1_0() { return cArguArray_arguments_non_firstParserRuleCall_1_1_0; }
 	}
 	public class FunctionCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.FunctionCall");
@@ -4644,42 +4736,45 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cOutputExpressionListAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cExprsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cExprsModificationParserRuleCall_1_0 = (RuleCall)cExprsAssignment_1.eContents().get(0);
+		private final RuleCall cExprsExpressionParserRuleCall_1_0 = (RuleCall)cExprsAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cExprsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cExprsModificationParserRuleCall_2_1_0 = (RuleCall)cExprsAssignment_2_1.eContents().get(0);
+		private final RuleCall cExprsExpressionParserRuleCall_2_1_0 = (RuleCall)cExprsAssignment_2_1.eContents().get(0);
 		
 		//OutputExpressionList:
 		//    {OutputExpressionList}
-		//    exprs+=Modification? (',' exprs+=Modification?)*
+		////    exprs+=Modification? (',' exprs+=Modification?)*
+		//    exprs+=Expression? (',' exprs+=Expression?)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{OutputExpressionList}
-		//exprs+=Modification? (',' exprs+=Modification?)*
+		//    {OutputExpressionList}
+		////    exprs+=Modification? (',' exprs+=Modification?)*
+		//    exprs+=Expression? (',' exprs+=Expression?)*
 		public Group getGroup() { return cGroup; }
 		
 		//{OutputExpressionList}
 		public Action getOutputExpressionListAction_0() { return cOutputExpressionListAction_0; }
 		
-		//exprs+=Modification?
+		////    exprs+=Modification? (',' exprs+=Modification?)*
+		//    exprs+=Expression?
 		public Assignment getExprsAssignment_1() { return cExprsAssignment_1; }
 		
-		//Modification
-		public RuleCall getExprsModificationParserRuleCall_1_0() { return cExprsModificationParserRuleCall_1_0; }
+		//Expression
+		public RuleCall getExprsExpressionParserRuleCall_1_0() { return cExprsExpressionParserRuleCall_1_0; }
 		
-		//(',' exprs+=Modification?)*
+		//(',' exprs+=Expression?)*
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//','
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 		
-		//exprs+=Modification?
+		//exprs+=Expression?
 		public Assignment getExprsAssignment_2_1() { return cExprsAssignment_2_1; }
 		
-		//Modification
-		public RuleCall getExprsModificationParserRuleCall_2_1_0() { return cExprsModificationParserRuleCall_2_1_0; }
+		//Expression
+		public RuleCall getExprsExpressionParserRuleCall_2_1_0() { return cExprsExpressionParserRuleCall_2_1_0; }
 	}
 	public class ExpressionListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.ExpressionList");
@@ -4964,6 +5059,8 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final LogicalPrimaryElements pLogicalPrimary;
 	private final EndElements pEnd;
 	private final PrimaryElements pPrimary;
+	private final Array_argumentsElements pArray_arguments;
+	private final Array_arguments_non_firstElements pArray_arguments_non_first;
 	private final FunctionCallElements pFunctionCall;
 	private final NameElements pName;
 	private final ComponentReferenceElements pComponentReference;
@@ -4991,7 +5088,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final TerminalRule tUNSIGNED_INTEGER;
 	private final TerminalRule tS_ESCAPE;
 	private final TerminalRule tQ_IDENT;
-	private final TerminalRule tNONDIGIT;
+	private final TerminalRule tNON_DIGIT;
 	private final TerminalRule tS_CHAR;
 	private final TerminalRule tQ_CHAR;
 	
@@ -5080,6 +5177,8 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pLogicalPrimary = new LogicalPrimaryElements();
 		this.pEnd = new EndElements();
 		this.pPrimary = new PrimaryElements();
+		this.pArray_arguments = new Array_argumentsElements();
+		this.pArray_arguments_non_first = new Array_arguments_non_firstElements();
 		this.pFunctionCall = new FunctionCallElements();
 		this.pName = new NameElements();
 		this.pComponentReference = new ComponentReferenceElements();
@@ -5107,7 +5206,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.tUNSIGNED_INTEGER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.UNSIGNED_INTEGER");
 		this.tS_ESCAPE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.S_ESCAPE");
 		this.tQ_IDENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.Q_IDENT");
-		this.tNONDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.NONDIGIT");
+		this.tNON_DIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.NON_DIGIT");
 		this.tS_CHAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.S_CHAR");
 		this.tQ_CHAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.Q_CHAR");
 	}
@@ -6172,7 +6271,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    | ComponentReference
 	//    | "(" oe = OutputExpressionList ")"
 	//    | "[" res+=ExpressionList ( ";" res+=ExpressionList )* "]"
-	//    | "{" fa += FunctionArguments "}"
+	//    | "{" fa += Array_arguments "}"
 	//    | End
 	//;
 	public PrimaryElements getPrimaryAccess() {
@@ -6181,6 +6280,28 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getPrimaryRule() {
 		return getPrimaryAccess().getRule();
+	}
+	
+	//Array_arguments:
+	//    express=Expression ( "," argu+=Array_arguments_non_first | 'for' fori=ForIndices)?
+	//;
+	public Array_argumentsElements getArray_argumentsAccess() {
+		return pArray_arguments;
+	}
+	
+	public ParserRule getArray_argumentsRule() {
+		return getArray_argumentsAccess().getRule();
+	}
+	
+	//Array_arguments_non_first:
+	//    express=Expression ( "," argu+=Array_arguments_non_first)*
+	//;
+	public Array_arguments_non_firstElements getArray_arguments_non_firstAccess() {
+		return pArray_arguments_non_first;
+	}
+	
+	public ParserRule getArray_arguments_non_firstRule() {
+		return getArray_arguments_non_firstAccess().getRule();
 	}
 	
 	//FunctionCall:
@@ -6292,7 +6413,8 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//OutputExpressionList:
 	//    {OutputExpressionList}
-	//    exprs+=Modification? (',' exprs+=Modification?)*
+	////    exprs+=Modification? (',' exprs+=Modification?)*
+	//    exprs+=Expression? (',' exprs+=Expression?)*
 	//;
 	public OutputExpressionListElements getOutputExpressionListAccess() {
 		return pOutputExpressionList;
@@ -6376,21 +6498,21 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//// terminals
-	//terminal TRUE_FALSE returns ecore::EBoolean:
-	//    ('true' | 'false')
+	//terminal TRUE_FALSE returns Ecore::EBoolean:
+	//    'true' | 'false'
 	//;
 	public TerminalRule getTRUE_FALSERule() {
 		return tTRUE_FALSE;
 	}
 	
-	//terminal IDENT returns ecore::EString:
-	//    NONDIGIT ( DIGIT | NONDIGIT )* | Q_IDENT
+	//terminal IDENT returns Ecore::EString:
+	//    NON_DIGIT ( DIGIT | NON_DIGIT )* | Q_IDENT
 	//;
 	public TerminalRule getIDENTRule() {
 		return tIDENT;
 	}
 	
-	//terminal UNSIGNED_NUMBER returns ecore::EFloat:
+	//terminal UNSIGNED_NUMBER returns Ecore::EFloat:
 	//    UNSIGNED_INTEGER ( "." ( UNSIGNED_INTEGER )? )?
 	//    ( ( "e" | "E" ) ( "+" | "-" )? UNSIGNED_INTEGER )?
 	//;
@@ -6398,7 +6520,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return tUNSIGNED_NUMBER;
 	}
 	
-	//terminal STRING returns ecore::EString:
+	//terminal STRING returns Ecore::EString:
 	//    "\"" ( S_CHAR | S_ESCAPE )* "\""
 	//;
 	public TerminalRule getSTRINGRule() {
@@ -6410,7 +6532,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return tML_COMMENT;
 	}
 	
-	//terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
+	//terminal SL_COMMENT: '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return tSL_COMMENT;
 	}
@@ -6422,37 +6544,37 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	////terminal ANY_OTHER: .;
 	//// terminal fragments
-	//terminal fragment DIGIT: "0".."9";
+	//terminal DIGIT: "0".."9";
 	public TerminalRule getDIGITRule() {
 		return tDIGIT;
 	}
 	
-	//terminal fragment UNSIGNED_INTEGER: DIGIT+;
+	//terminal UNSIGNED_INTEGER: DIGIT+;
 	public TerminalRule getUNSIGNED_INTEGERRule() {
 		return tUNSIGNED_INTEGER;
 	}
 	
-	//terminal fragment S_ESCAPE: "\\" ("'" | "\"" | "?" | "\\" | "a" | "b" | "f" | "n" | "r" | "t" | "v");
+	//terminal S_ESCAPE: "\\" ("'" | "\"" | "?" | "\\" | "a" | "b" | "f" | "n" | "r" | "t" | "v");
 	public TerminalRule getS_ESCAPERule() {
 		return tS_ESCAPE;
 	}
 	
-	//terminal fragment Q_IDENT: "’" ( Q_CHAR | S_ESCAPE )* "’";
+	//terminal Q_IDENT: "'" ( Q_CHAR | S_ESCAPE )* "'";
 	public TerminalRule getQ_IDENTRule() {
 		return tQ_IDENT;
 	}
 	
-	//terminal fragment NONDIGIT: "_" | "a".."z" | "A".."Z";
-	public TerminalRule getNONDIGITRule() {
-		return tNONDIGIT;
+	//terminal NON_DIGIT: "_" | "a".."z" | "A".."Z";
+	public TerminalRule getNON_DIGITRule() {
+		return tNON_DIGIT;
 	}
 	
-	//terminal fragment S_CHAR: !( "\"" | "\\");
+	//terminal S_CHAR: !( "\"" | "\\");
 	public TerminalRule getS_CHARRule() {
 		return tS_CHAR;
 	}
 	
-	//terminal fragment Q_CHAR: NONDIGIT | DIGIT | "!" | "#" | "$" | "%" | "&" | "(" | ")" | "*" | "+" | "," |
+	//terminal Q_CHAR: NON_DIGIT | DIGIT | "!" | "#" | "$" | "%" | "&" | "(" | ")" | "*" | "+" | "," |
 	//    "-" | "." | "/" | ":" | ";" | "<" | ">" | "=" | "?" | "@" | "[" | "]" | "^" |
 	//    "{" | "}" | "|" | "~" | " ";
 	public TerminalRule getQ_CHARRule() {

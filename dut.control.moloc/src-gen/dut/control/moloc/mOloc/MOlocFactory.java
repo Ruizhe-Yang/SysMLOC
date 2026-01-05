@@ -663,6 +663,24 @@ public interface MOlocFactory extends EFactory
   Primary createPrimary();
 
   /**
+   * Returns a new object of class '<em>Array arguments</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Array arguments</em>'.
+   * @generated
+   */
+  Array_arguments createArray_arguments();
+
+  /**
+   * Returns a new object of class '<em>Array arguments non first</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Array arguments non first</em>'.
+   * @generated
+   */
+  Array_arguments_non_first createArray_arguments_non_first();
+
+  /**
    * Returns a new object of class '<em>Function Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

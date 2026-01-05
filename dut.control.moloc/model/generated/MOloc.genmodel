@@ -314,6 +314,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//Primary/res"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//Primary/fa"/>
     </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//Array_arguments">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//Array_arguments/express"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//Array_arguments/argu"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//Array_arguments/fori"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//Array_arguments_non_first">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//Array_arguments_non_first/express"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//Array_arguments_non_first/argu"/>
+    </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//FunctionCall">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionCall/comp_ref"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//FunctionCall/args"/>

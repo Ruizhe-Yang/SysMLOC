@@ -725,6 +725,20 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MOlocPackage.ARRAY_ARGUMENTS:
+      {
+        Array_arguments array_arguments = (Array_arguments)theEObject;
+        T result = caseArray_arguments(array_arguments);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.ARRAY_ARGUMENTS_NON_FIRST:
+      {
+        Array_arguments_non_first array_arguments_non_first = (Array_arguments_non_first)theEObject;
+        T result = caseArray_arguments_non_first(array_arguments_non_first);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MOlocPackage.FUNCTION_CALL:
       {
         FunctionCall functionCall = (FunctionCall)theEObject;
@@ -1988,6 +2002,38 @@ public class MOlocSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePrimary(Primary object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Array arguments</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Array arguments</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArray_arguments(Array_arguments object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Array arguments non first</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Array arguments non first</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArray_arguments_non_first(Array_arguments_non_first object)
   {
     return null;
   }

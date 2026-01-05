@@ -424,7 +424,21 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="res" upperBound="-1" eType="#//ExpressionList"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fa" upperBound="-1" eType="#//FunctionArguments"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fa" upperBound="-1" eType="#//Array_arguments"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Array_arguments">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="express" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argu" upperBound="-1" eType="#//Array_arguments_non_first"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fori" eType="#//ForIndices"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Array_arguments_non_first">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="express" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argu" upperBound="-1" eType="#//Array_arguments_non_first"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionCall" eSuperTypes="#//Primary">
@@ -465,7 +479,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OutputExpressionList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exprs" upperBound="-1"
-        eType="#//Modification" containment="true"/>
+        eType="#//Expression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExpressionList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exprs" upperBound="-1"

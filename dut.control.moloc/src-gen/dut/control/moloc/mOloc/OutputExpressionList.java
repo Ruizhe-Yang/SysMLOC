@@ -27,7 +27,7 @@ public interface OutputExpressionList extends EObject
 {
   /**
    * Returns the value of the '<em><b>Exprs</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.moloc.mOloc.Modification}.
+   * The list contents are of type {@link dut.control.moloc.mOloc.Expression}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Exprs</em>' containment reference list.
@@ -35,6 +35,6 @@ public interface OutputExpressionList extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Modification> getExprs();
+  EList<Expression> getExprs();
 
 } // OutputExpressionList

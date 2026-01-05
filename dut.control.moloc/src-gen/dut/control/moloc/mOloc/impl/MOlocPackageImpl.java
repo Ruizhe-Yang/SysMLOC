@@ -9,6 +9,8 @@ import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.ArgumentList;
 import dut.control.moloc.mOloc.ArithmeticExpression;
 import dut.control.moloc.mOloc.ArraySubscripts;
+import dut.control.moloc.mOloc.Array_arguments;
+import dut.control.moloc.mOloc.Array_arguments_non_first;
 import dut.control.moloc.mOloc.Break;
 import dut.control.moloc.mOloc.ClassDefinition;
 import dut.control.moloc.mOloc.ClassModification;
@@ -602,6 +604,20 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   private EClass primaryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass array_argumentsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass array_arguments_non_firstEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -3442,6 +3458,83 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
+  public EClass getArray_arguments()
+  {
+    return array_argumentsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getArray_arguments_Express()
+  {
+    return (EReference)array_argumentsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getArray_arguments_Argu()
+  {
+    return (EReference)array_argumentsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getArray_arguments_Fori()
+  {
+    return (EReference)array_argumentsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getArray_arguments_non_first()
+  {
+    return array_arguments_non_firstEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getArray_arguments_non_first_Express()
+  {
+    return (EReference)array_arguments_non_firstEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getArray_arguments_non_first_Argu()
+  {
+    return (EReference)array_arguments_non_firstEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getFunctionCall()
   {
     return functionCallEClass;
@@ -4166,6 +4259,15 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     createEReference(primaryEClass, PRIMARY__RES);
     createEReference(primaryEClass, PRIMARY__FA);
 
+    array_argumentsEClass = createEClass(ARRAY_ARGUMENTS);
+    createEReference(array_argumentsEClass, ARRAY_ARGUMENTS__EXPRESS);
+    createEReference(array_argumentsEClass, ARRAY_ARGUMENTS__ARGU);
+    createEReference(array_argumentsEClass, ARRAY_ARGUMENTS__FORI);
+
+    array_arguments_non_firstEClass = createEClass(ARRAY_ARGUMENTS_NON_FIRST);
+    createEReference(array_arguments_non_firstEClass, ARRAY_ARGUMENTS_NON_FIRST__EXPRESS);
+    createEReference(array_arguments_non_firstEClass, ARRAY_ARGUMENTS_NON_FIRST__ARGU);
+
     functionCallEClass = createEClass(FUNCTION_CALL);
     createEAttribute(functionCallEClass, FUNCTION_CALL__COMP_REF);
     createEReference(functionCallEClass, FUNCTION_CALL__ARGS);
@@ -4603,7 +4705,16 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     initEClass(primaryEClass, Primary.class, "Primary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPrimary_Oe(), this.getOutputExpressionList(), null, "oe", null, 0, 1, Primary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPrimary_Res(), this.getExpressionList(), null, "res", null, 0, -1, Primary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPrimary_Fa(), this.getFunctionArguments(), null, "fa", null, 0, -1, Primary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPrimary_Fa(), this.getArray_arguments(), null, "fa", null, 0, -1, Primary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(array_argumentsEClass, Array_arguments.class, "Array_arguments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getArray_arguments_Express(), this.getExpression(), null, "express", null, 0, 1, Array_arguments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArray_arguments_Argu(), this.getArray_arguments_non_first(), null, "argu", null, 0, -1, Array_arguments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArray_arguments_Fori(), this.getForIndices(), null, "fori", null, 0, 1, Array_arguments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(array_arguments_non_firstEClass, Array_arguments_non_first.class, "Array_arguments_non_first", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getArray_arguments_non_first_Express(), this.getExpression(), null, "express", null, 0, 1, Array_arguments_non_first.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArray_arguments_non_first_Argu(), this.getArray_arguments_non_first(), null, "argu", null, 0, -1, Array_arguments_non_first.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionCall_Comp_ref(), ecorePackage.getEString(), "comp_ref", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4634,7 +4745,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     initEReference(getFunctionDefinition_Args(), this.getNamedArguments(), null, "args", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(outputExpressionListEClass, OutputExpressionList.class, "OutputExpressionList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOutputExpressionList_Exprs(), this.getModification(), null, "exprs", null, 0, -1, OutputExpressionList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOutputExpressionList_Exprs(), this.getExpression(), null, "exprs", null, 0, -1, OutputExpressionList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionListEClass, ExpressionList.class, "ExpressionList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpressionList_Exprs(), this.getExpression(), null, "exprs", null, 0, -1, ExpressionList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

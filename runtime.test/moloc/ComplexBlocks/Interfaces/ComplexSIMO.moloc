@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:StoredDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" within="Modelica.ComplexBlocks.Interfaces">
-  <classes name="ComplexMISO" str_comment="&quot;Multiple Input Single Output continuous control block&quot;" name_end="ComplexMISO">
+  <classes name="ComplexSIMO" str_comment="&quot;Single Input Multiple Output continuous control block&quot;" name_end="ComplexSIMO">
     <composition>
       <priv_elist>
         <elem xsi:type="mOloc:ExtendsClause" name="Modelica.ComplexBlocks.Icons.ComplexBlock"/>
@@ -8,12 +8,12 @@
           <type name="Integer"/>
           <comps>
             <comps>
-              <decl name="nin">
+              <decl name="nout">
                 <mod dh="true">
                   <expr xsi:type="mOloc:FloatPrimary" val="1.0"/>
                 </mod>
               </decl>
-              <comment comment="&quot;Number of inputs&quot;"/>
+              <comment comment="&quot;Number of outputs&quot;"/>
             </comps>
           </comps>
         </elem>
@@ -21,16 +21,8 @@
           <type name="ComplexInput"/>
           <comps>
             <comps>
-              <decl name="u">
-                <subscripts>
-                  <subscripts>
-                    <expr xsi:type="mOloc:ComponentReference">
-                      <idents>nin</idents>
-                    </expr>
-                  </subscripts>
-                </subscripts>
-              </decl>
-              <comment comment="&quot;Connector of Complex input signals&quot;">
+              <decl name="u"/>
+              <comment comment="&quot;Connector of Complex input signal&quot;">
                 <annotation isannotation="true">
                   <cm>
                     <args>
@@ -99,8 +91,16 @@
           <type name="ComplexOutput"/>
           <comps>
             <comps>
-              <decl name="y"/>
-              <comment comment="&quot;Connector of Complex output signal&quot;">
+              <decl name="y">
+                <subscripts>
+                  <subscripts>
+                    <expr xsi:type="mOloc:ComponentReference">
+                      <idents>nout</idents>
+                    </expr>
+                  </subscripts>
+                </subscripts>
+              </decl>
+              <comment comment="&quot;Connector of Complex output signals&quot;">
                 <annotation isannotation="true">
                   <cm>
                     <args>
@@ -166,29 +166,11 @@
           <comps>
             <comps>
               <decl name="useConjugateInput">
-                <subscripts>
-                  <subscripts>
-                    <expr xsi:type="mOloc:ComponentReference">
-                      <idents>nin</idents>
-                    </expr>
-                  </subscripts>
-                </subscripts>
                 <mod dh="true">
-                  <expr xsi:type="mOloc:FunctionCall" comp_ref="fill">
-                    <args>
-                      <res>
-                        <args xsi:type="mOloc:LogicalPrimary"/>
-                        <args xsi:type="mOloc:FunctionArguments">
-                          <args xsi:type="mOloc:ComponentReference">
-                            <idents>nin</idents>
-                          </args>
-                        </args>
-                      </res>
-                    </args>
-                  </expr>
+                  <expr xsi:type="mOloc:LogicalPrimary"/>
                 </mod>
               </decl>
-              <comment comment="&quot;If true, inputs are processed conjugate complex&quot;"/>
+              <comment comment="&quot;If true, input is processed conjugate complex&quot;"/>
             </comps>
           </comps>
         </elem>
@@ -200,65 +182,27 @@
             <comps>
               <comps>
                 <decl name="uInternal">
-                  <subscripts>
-                    <subscripts>
-                      <expr xsi:type="mOloc:ComponentReference">
-                        <idents>nin</idents>
-                      </expr>
-                    </subscripts>
-                  </subscripts>
                   <mod dh="true">
                     <expr xsi:type="mOloc:Primary">
-                      <fa>
-                        <express xsi:type="mOloc:IfExpression">
+                      <oe>
+                        <exprs xsi:type="mOloc:IfExpression">
                           <if xsi:type="mOloc:ComponentReference">
                             <idents>useConjugateInput</idents>
-                            <subscripts>
-                              <subscripts>
-                                <expr xsi:type="mOloc:ComponentReference">
-                                  <idents>k</idents>
-                                </expr>
-                              </subscripts>
-                            </subscripts>
                           </if>
                           <then xsi:type="mOloc:FunctionCall" comp_ref="Modelica.ComplexMath.conj">
                             <args>
                               <res>
                                 <args xsi:type="mOloc:ComponentReference">
                                   <idents>u</idents>
-                                  <subscripts>
-                                    <subscripts>
-                                      <expr xsi:type="mOloc:ComponentReference">
-                                        <idents>k</idents>
-                                      </expr>
-                                    </subscripts>
-                                  </subscripts>
                                 </args>
                               </res>
                             </args>
                           </then>
                           <else xsi:type="mOloc:ComponentReference">
                             <idents>u</idents>
-                            <subscripts>
-                              <subscripts>
-                                <expr xsi:type="mOloc:ComponentReference">
-                                  <idents>k</idents>
-                                </expr>
-                              </subscripts>
-                            </subscripts>
                           </else>
-                        </express>
-                        <fori>
-                          <indices id="k">
-                            <expr xsi:type="mOloc:SimpleExpression">
-                              <exprs xsi:type="mOloc:FloatPrimary" val="1.0"/>
-                              <exprs xsi:type="mOloc:ComponentReference">
-                                <idents>nin</idents>
-                              </exprs>
-                            </expr>
-                          </indices>
-                        </fori>
-                      </fa>
+                        </exprs>
+                      </oe>
                     </expr>
                   </mod>
                 </decl>
@@ -279,7 +223,7 @@
                       <args xsi:type="mOloc:ElementModicationOrReplaceable">
                         <element xsi:type="mOloc:ElementModification" name="info">
                           <mod dh="true">
-                            <expr xsi:type="mOloc:StringPrimary" val="&lt;html>&#xA;&lt;p>&#xA;Block has a vector of continuous Complex input signals and&#xA;one continuous Complex output signal.&#xA;&lt;/p>&#xA;&lt;/html>"/>
+                            <expr xsi:type="mOloc:StringPrimary" val="&lt;html>&#xA;&lt;p>&#xA; Block has one continuous Complex input signal and a&#xA;vector of continuous Complex output signals.&#xA;&lt;/p>&#xA;&lt;/html>"/>
                           </mod>
                         </element>
                       </args>

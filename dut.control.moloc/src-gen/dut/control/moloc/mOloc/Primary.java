@@ -61,7 +61,7 @@ public interface Primary extends Factor
 
   /**
    * Returns the value of the '<em><b>Fa</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.moloc.mOloc.FunctionArguments}.
+   * The list contents are of type {@link dut.control.moloc.mOloc.Array_arguments}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Fa</em>' containment reference list.
@@ -69,6 +69,6 @@ public interface Primary extends Factor
    * @model containment="true"
    * @generated
    */
-  EList<FunctionArguments> getFa();
+  EList<Array_arguments> getFa();
 
 } // Primary

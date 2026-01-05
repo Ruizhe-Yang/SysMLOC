@@ -3,8 +3,8 @@
  */
 package dut.control.moloc.mOloc.impl;
 
+import dut.control.moloc.mOloc.Expression;
 import dut.control.moloc.mOloc.MOlocPackage;
-import dut.control.moloc.mOloc.Modification;
 import dut.control.moloc.mOloc.OutputExpressionList;
 
 import java.util.Collection;
@@ -44,7 +44,7 @@ public class OutputExpressionListImpl extends MinimalEObjectImpl.Container imple
    * @generated
    * @ordered
    */
-  protected EList<Modification> exprs;
+  protected EList<Expression> exprs;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,11 +73,11 @@ public class OutputExpressionListImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
-  public EList<Modification> getExprs()
+  public EList<Expression> getExprs()
   {
     if (exprs == null)
     {
-      exprs = new EObjectContainmentEList<Modification>(Modification.class, this, MOlocPackage.OUTPUT_EXPRESSION_LIST__EXPRS);
+      exprs = new EObjectContainmentEList<Expression>(Expression.class, this, MOlocPackage.OUTPUT_EXPRESSION_LIST__EXPRS);
     }
     return exprs;
   }
@@ -127,7 +127,7 @@ public class OutputExpressionListImpl extends MinimalEObjectImpl.Container imple
     {
       case MOlocPackage.OUTPUT_EXPRESSION_LIST__EXPRS:
         getExprs().clear();
-        getExprs().addAll((Collection<? extends Modification>)newValue);
+        getExprs().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

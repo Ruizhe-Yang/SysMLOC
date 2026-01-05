@@ -3,8 +3,8 @@
  */
 package dut.control.moloc.mOloc.impl;
 
+import dut.control.moloc.mOloc.Array_arguments;
 import dut.control.moloc.mOloc.ExpressionList;
-import dut.control.moloc.mOloc.FunctionArguments;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.OutputExpressionList;
 import dut.control.moloc.mOloc.Primary;
@@ -69,7 +69,7 @@ public class PrimaryImpl extends FactorImpl implements Primary
    * @generated
    * @ordered
    */
-  protected EList<FunctionArguments> fa;
+  protected EList<Array_arguments> fa;
 
   /**
    * <!-- begin-user-doc -->
@@ -163,11 +163,11 @@ public class PrimaryImpl extends FactorImpl implements Primary
    * @generated
    */
   @Override
-  public EList<FunctionArguments> getFa()
+  public EList<Array_arguments> getFa()
   {
     if (fa == null)
     {
-      fa = new EObjectContainmentEList<FunctionArguments>(FunctionArguments.class, this, MOlocPackage.PRIMARY__FA);
+      fa = new EObjectContainmentEList<Array_arguments>(Array_arguments.class, this, MOlocPackage.PRIMARY__FA);
     }
     return fa;
   }
@@ -232,7 +232,7 @@ public class PrimaryImpl extends FactorImpl implements Primary
         return;
       case MOlocPackage.PRIMARY__FA:
         getFa().clear();
-        getFa().addAll((Collection<? extends FunctionArguments>)newValue);
+        getFa().addAll((Collection<? extends Array_arguments>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

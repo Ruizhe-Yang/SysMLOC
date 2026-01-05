@@ -136,6 +136,8 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
       case MOlocPackage.LOGICAL_PRIMARY: return createLogicalPrimary();
       case MOlocPackage.END: return createEnd();
       case MOlocPackage.PRIMARY: return createPrimary();
+      case MOlocPackage.ARRAY_ARGUMENTS: return createArray_arguments();
+      case MOlocPackage.ARRAY_ARGUMENTS_NON_FIRST: return createArray_arguments_non_first();
       case MOlocPackage.FUNCTION_CALL: return createFunctionCall();
       case MOlocPackage.COMPONENT_REFERENCE: return createComponentReference();
       case MOlocPackage.FUNCTION_CALL_ARGS: return createFunctionCallArgs();
@@ -1005,6 +1007,30 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
   {
     PrimaryImpl primary = new PrimaryImpl();
     return primary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Array_arguments createArray_arguments()
+  {
+    Array_argumentsImpl array_arguments = new Array_argumentsImpl();
+    return array_arguments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Array_arguments_non_first createArray_arguments_non_first()
+  {
+    Array_arguments_non_firstImpl array_arguments_non_first = new Array_arguments_non_firstImpl();
+    return array_arguments_non_first;
   }
 
   /**
