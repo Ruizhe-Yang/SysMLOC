@@ -3,6 +3,7 @@
  */
 package dut.control.moloc.mOloc;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,81 +14,48 @@ package dut.control.moloc.mOloc;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#getName <em>Name</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#getMod <em>Mod</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#getAnno <em>Anno</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#getBreaks <em>Breaks</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#isIsAnnotation <em>Is Annotation</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getExtendsClause()
  * @model
  * @generated
  */
-public interface ExtendsClause extends Element
+public interface ExtendsClause extends Element, type_specifier, class_modification
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Breaks</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.moloc.mOloc.Break}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getExtendsClause_Name()
+   * @return the value of the '<em>Breaks</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getExtendsClause_Breaks()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Break> getBreaks();
+
+  /**
+   * Returns the value of the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Annotation</em>' attribute.
+   * @see #setIsAnnotation(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getExtendsClause_IsAnnotation()
    * @model
    * @generated
    */
-  String getName();
+  boolean isIsAnnotation();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.ExtendsClause#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ExtendsClause#isIsAnnotation <em>Is Annotation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Is Annotation</em>' attribute.
+   * @see #isIsAnnotation()
    * @generated
    */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Mod</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Mod</em>' containment reference.
-   * @see #setMod(ClassModification)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getExtendsClause_Mod()
-   * @model containment="true"
-   * @generated
-   */
-  ClassModification getMod();
-
-  /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.ExtendsClause#getMod <em>Mod</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Mod</em>' containment reference.
-   * @see #getMod()
-   * @generated
-   */
-  void setMod(ClassModification value);
-
-  /**
-   * Returns the value of the '<em><b>Anno</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Anno</em>' containment reference.
-   * @see #setAnno(Annotation)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getExtendsClause_Anno()
-   * @model containment="true"
-   * @generated
-   */
-  Annotation getAnno();
-
-  /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.ExtendsClause#getAnno <em>Anno</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Anno</em>' containment reference.
-   * @see #getAnno()
-   * @generated
-   */
-  void setAnno(Annotation value);
+  void setIsAnnotation(boolean value);
 
 } // ExtendsClause

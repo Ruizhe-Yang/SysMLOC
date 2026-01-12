@@ -4,84 +4,19 @@
 package dut.control.moloc.serializer;
 
 import com.google.inject.Inject;
-import dut.control.moloc.mOloc.AlgorithmSection;
-import dut.control.moloc.mOloc.Annotation;
-import dut.control.moloc.mOloc.ArgumentList;
-import dut.control.moloc.mOloc.ArithmeticExpression;
-import dut.control.moloc.mOloc.ArraySubscripts;
-import dut.control.moloc.mOloc.Array_arguments;
-import dut.control.moloc.mOloc.Array_arguments_non_first;
+import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.Break;
-import dut.control.moloc.mOloc.ClassDefinition;
-import dut.control.moloc.mOloc.ClassModification;
-import dut.control.moloc.mOloc.ClassPrefix;
-import dut.control.moloc.mOloc.Comment;
-import dut.control.moloc.mOloc.ComponentClause;
-import dut.control.moloc.mOloc.ComponentClause1;
-import dut.control.moloc.mOloc.ComponentDeclaration;
-import dut.control.moloc.mOloc.ComponentList;
-import dut.control.moloc.mOloc.ComponentReference;
-import dut.control.moloc.mOloc.Composition;
-import dut.control.moloc.mOloc.ConnectClause;
-import dut.control.moloc.mOloc.ConstrainingClause;
-import dut.control.moloc.mOloc.Declaration;
-import dut.control.moloc.mOloc.ElementList;
-import dut.control.moloc.mOloc.ElementModicationOrReplaceable;
-import dut.control.moloc.mOloc.ElementModification;
-import dut.control.moloc.mOloc.ElementRedeclaration;
-import dut.control.moloc.mOloc.ElementReplaceable;
-import dut.control.moloc.mOloc.Elementenumeratioan;
-import dut.control.moloc.mOloc.End;
-import dut.control.moloc.mOloc.EnumList;
+import dut.control.moloc.mOloc.Class_definition;
+import dut.control.moloc.mOloc.Component_declaration;
 import dut.control.moloc.mOloc.EnumerationLiteral;
-import dut.control.moloc.mOloc.EquationSection;
-import dut.control.moloc.mOloc.ExpressionList;
-import dut.control.moloc.mOloc.ExtElementList;
 import dut.control.moloc.mOloc.ExtendsClause;
-import dut.control.moloc.mOloc.ExternalFunctionCall;
-import dut.control.moloc.mOloc.Factor;
-import dut.control.moloc.mOloc.FloatPrimary;
-import dut.control.moloc.mOloc.ForEquation;
-import dut.control.moloc.mOloc.ForIndex;
-import dut.control.moloc.mOloc.ForIndices;
-import dut.control.moloc.mOloc.ForStatement;
-import dut.control.moloc.mOloc.FunctionArguments;
-import dut.control.moloc.mOloc.FunctionCall;
-import dut.control.moloc.mOloc.FunctionCallArgs;
-import dut.control.moloc.mOloc.FunctionDefinition;
-import dut.control.moloc.mOloc.IfEquation;
-import dut.control.moloc.mOloc.IfExpression;
-import dut.control.moloc.mOloc.IfStatement;
+import dut.control.moloc.mOloc.ExternalElement;
+import dut.control.moloc.mOloc.GeneralClause;
 import dut.control.moloc.mOloc.ImportClause;
-import dut.control.moloc.mOloc.ImportList;
-import dut.control.moloc.mOloc.LREquation;
-import dut.control.moloc.mOloc.LRKStatement;
-import dut.control.moloc.mOloc.LRStatement;
-import dut.control.moloc.mOloc.LogicalExpression;
-import dut.control.moloc.mOloc.LogicalFactor;
-import dut.control.moloc.mOloc.LogicalPrimary;
 import dut.control.moloc.mOloc.MOlocPackage;
-import dut.control.moloc.mOloc.Modification;
-import dut.control.moloc.mOloc.NamedArgument;
-import dut.control.moloc.mOloc.NamedArguments;
-import dut.control.moloc.mOloc.Negation;
-import dut.control.moloc.mOloc.OutputExpressionList;
-import dut.control.moloc.mOloc.Primary;
-import dut.control.moloc.mOloc.ProElementList;
-import dut.control.moloc.mOloc.PubElementList;
-import dut.control.moloc.mOloc.Relation;
-import dut.control.moloc.mOloc.Return;
-import dut.control.moloc.mOloc.ShortClassDefinition;
-import dut.control.moloc.mOloc.SimpleExpression;
-import dut.control.moloc.mOloc.StoredDefinition;
-import dut.control.moloc.mOloc.StringPrimary;
-import dut.control.moloc.mOloc.Subscript;
-import dut.control.moloc.mOloc.Term;
-import dut.control.moloc.mOloc.TypeSpecifier;
-import dut.control.moloc.mOloc.WhenEquation;
-import dut.control.moloc.mOloc.WhenStatement;
-import dut.control.moloc.mOloc.WhileStatement;
-import dut.control.moloc.mOloc.typeClause;
+import dut.control.moloc.mOloc.NULLElement;
+import dut.control.moloc.mOloc.Stored_definition;
+import dut.control.moloc.mOloc.Unfinished2;
 import dut.control.moloc.services.MOlocGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -108,371 +43,41 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == MOlocPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case MOlocPackage.ALGORITHM_SECTION:
-				sequence_AlgorithmSection(context, (AlgorithmSection) semanticObject); 
-				return; 
-			case MOlocPackage.ANNOTATION:
-				sequence_Annotation(context, (Annotation) semanticObject); 
-				return; 
-			case MOlocPackage.ARGUMENT_LIST:
-				sequence_ArgumentList(context, (ArgumentList) semanticObject); 
-				return; 
-			case MOlocPackage.ARITHMETIC_EXPRESSION:
-				sequence_ArithmeticExpression(context, (ArithmeticExpression) semanticObject); 
-				return; 
-			case MOlocPackage.ARRAY_SUBSCRIPTS:
-				sequence_ArraySubscripts(context, (ArraySubscripts) semanticObject); 
-				return; 
-			case MOlocPackage.ARRAY_ARGUMENTS:
-				sequence_Array_arguments(context, (Array_arguments) semanticObject); 
-				return; 
-			case MOlocPackage.ARRAY_ARGUMENTS_NON_FIRST:
-				sequence_Array_arguments_non_first(context, (Array_arguments_non_first) semanticObject); 
+			case MOlocPackage.ARGUMENT:
+				sequence_Argument_class_modification_class_name_class_prefixes_description_description_string_enum_list_short_class_specifier_type_specifier(context, (Argument) semanticObject); 
 				return; 
 			case MOlocPackage.BREAK:
-				if (rule == grammarAccess.getBreakRule()) {
-					sequence_Break(context, (Break) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getStatementRule()) {
-					sequence_Break_Statement(context, (Break) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Break(context, (Break) semanticObject); 
+				return; 
 			case MOlocPackage.CLASS_DEFINITION:
-				if (rule == grammarAccess.getClassDefinitionRule()) {
-					sequence_ClassDefinition_ClassSpecifier(context, (ClassDefinition) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getElementRule()) {
-					sequence_ClassDefinition_ClassSpecifier_Element(context, (ClassDefinition) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.CLASS_MODIFICATION:
-				sequence_ClassModification(context, (ClassModification) semanticObject); 
-				return; 
-			case MOlocPackage.CLASS_PREFIX:
-				sequence_ClassPrefix(context, (ClassPrefix) semanticObject); 
-				return; 
-			case MOlocPackage.COMMENT:
-				sequence_Comment(context, (Comment) semanticObject); 
-				return; 
-			case MOlocPackage.COMPONENT_CLAUSE:
-				if (rule == grammarAccess.getComponentClauseRule()) {
-					sequence_ComponentClause(context, (ComponentClause) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getElementRule()) {
-					sequence_ComponentClause_Element(context, (ComponentClause) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.COMPONENT_CLAUSE1:
-				sequence_ComponentClause1(context, (ComponentClause1) semanticObject); 
+				sequence_Class_definition_class_modification_class_name_class_prefixes_composition_der_class_specifier_description_description_string_enum_list_long_class_specifier_short_class_specifier_type_specifier(context, (Class_definition) semanticObject); 
 				return; 
 			case MOlocPackage.COMPONENT_DECLARATION:
-				sequence_ComponentDeclaration(context, (ComponentDeclaration) semanticObject); 
-				return; 
-			case MOlocPackage.COMPONENT_LIST:
-				sequence_ComponentList(context, (ComponentList) semanticObject); 
-				return; 
-			case MOlocPackage.COMPONENT_REFERENCE:
-				sequence_ComponentReference(context, (ComponentReference) semanticObject); 
-				return; 
-			case MOlocPackage.COMPOSITION:
-				sequence_Composition(context, (Composition) semanticObject); 
-				return; 
-			case MOlocPackage.CONNECT_CLAUSE:
-				if (rule == grammarAccess.getConnectClauseRule()) {
-					sequence_ConnectClause(context, (ConnectClause) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getEquationRule()) {
-					sequence_ConnectClause_Equation(context, (ConnectClause) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.CONSTRAINING_CLAUSE:
-				sequence_ConstrainingClause(context, (ConstrainingClause) semanticObject); 
-				return; 
-			case MOlocPackage.DECLARATION:
-				if (rule == grammarAccess.getComponentDeclaration1Rule()) {
-					sequence_ComponentDeclaration1_Declaration(context, (Declaration) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getDeclarationRule()) {
-					sequence_Declaration(context, (Declaration) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.ELEMENT_LIST:
-				sequence_ElementList(context, (ElementList) semanticObject); 
-				return; 
-			case MOlocPackage.ELEMENT_MODICATION_OR_REPLACEABLE:
-				sequence_ElementModicationOrReplaceable(context, (ElementModicationOrReplaceable) semanticObject); 
-				return; 
-			case MOlocPackage.ELEMENT_MODIFICATION:
-				sequence_ElementModification(context, (ElementModification) semanticObject); 
-				return; 
-			case MOlocPackage.ELEMENT_REDECLARATION:
-				sequence_ElementRedeclaration(context, (ElementRedeclaration) semanticObject); 
-				return; 
-			case MOlocPackage.ELEMENT_REPLACEABLE:
-				sequence_ElementReplaceable(context, (ElementReplaceable) semanticObject); 
-				return; 
-			case MOlocPackage.ELEMENTENUMERATIOAN:
-				sequence_Elementenumeratioan(context, (Elementenumeratioan) semanticObject); 
-				return; 
-			case MOlocPackage.END:
-				sequence_End(context, (End) semanticObject); 
-				return; 
-			case MOlocPackage.ENUM_LIST:
-				sequence_EnumList(context, (EnumList) semanticObject); 
+				sequence_Component_declaration_array_subscripts_class_modification_declaration_description_description_string_modification(context, (Component_declaration) semanticObject); 
 				return; 
 			case MOlocPackage.ENUMERATION_LITERAL:
-				sequence_EnumerationLiteral(context, (EnumerationLiteral) semanticObject); 
-				return; 
-			case MOlocPackage.EQUATION_SECTION:
-				sequence_EquationSection(context, (EquationSection) semanticObject); 
-				return; 
-			case MOlocPackage.EXPRESSION_LIST:
-				sequence_ExpressionList(context, (ExpressionList) semanticObject); 
-				return; 
-			case MOlocPackage.EXT_ELEMENT_LIST:
-				sequence_ExtElementList(context, (ExtElementList) semanticObject); 
+				sequence_EnumerationLiteral_class_modification_description_description_string(context, (EnumerationLiteral) semanticObject); 
 				return; 
 			case MOlocPackage.EXTENDS_CLAUSE:
-				sequence_ExtendsClause(context, (ExtendsClause) semanticObject); 
+				sequence_ExtendsClause_class_modification_type_specifier(context, (ExtendsClause) semanticObject); 
 				return; 
-			case MOlocPackage.EXTERNAL_FUNCTION_CALL:
-				sequence_ExternalFunctionCall(context, (ExternalFunctionCall) semanticObject); 
+			case MOlocPackage.EXTERNAL_ELEMENT:
+				sequence_ExternalElement_class_modification(context, (ExternalElement) semanticObject); 
 				return; 
-			case MOlocPackage.FACTOR:
-				sequence_Factor(context, (Factor) semanticObject); 
+			case MOlocPackage.GENERAL_CLAUSE:
+				sequence_GeneralClause_array_subscripts_type_prefix_type_specifier(context, (GeneralClause) semanticObject); 
 				return; 
-			case MOlocPackage.FLOAT_PRIMARY:
-				sequence_FloatPrimary(context, (FloatPrimary) semanticObject); 
-				return; 
-			case MOlocPackage.FOR_EQUATION:
-				if (rule == grammarAccess.getEquationRule()) {
-					sequence_Equation_ForEquation(context, (ForEquation) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getForEquationRule()) {
-					sequence_ForEquation(context, (ForEquation) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.FOR_INDEX:
-				sequence_ForIndex(context, (ForIndex) semanticObject); 
-				return; 
-			case MOlocPackage.FOR_INDICES:
-				sequence_ForIndices(context, (ForIndices) semanticObject); 
-				return; 
-			case MOlocPackage.FOR_STATEMENT:
-				if (rule == grammarAccess.getForStatementRule()) {
-					sequence_ForStatement(context, (ForStatement) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getStatementRule()) {
-					sequence_ForStatement_Statement(context, (ForStatement) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.FUNCTION_ARGUMENTS:
-				sequence_FunctionArguments(context, (FunctionArguments) semanticObject); 
-				return; 
-			case MOlocPackage.FUNCTION_CALL:
-				sequence_FunctionCall(context, (FunctionCall) semanticObject); 
-				return; 
-			case MOlocPackage.FUNCTION_CALL_ARGS:
-				if (rule == grammarAccess.getEquationRule()) {
-					sequence_Equation_FunctionCallArgs(context, (FunctionCallArgs) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getFunctionCallArgsRule()) {
-					sequence_FunctionCallArgs(context, (FunctionCallArgs) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.FUNCTION_DEFINITION:
-				sequence_FunctionDefinition(context, (FunctionDefinition) semanticObject); 
-				return; 
-			case MOlocPackage.IF_EQUATION:
-				if (rule == grammarAccess.getEquationRule()) {
-					sequence_Equation_IfEquation(context, (IfEquation) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getIfEquationRule()) {
-					sequence_IfEquation(context, (IfEquation) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.IF_EXPRESSION:
-				sequence_IfExpression(context, (IfExpression) semanticObject); 
-				return; 
-			case MOlocPackage.IF_STATEMENT:
-				if (rule == grammarAccess.getIfStatementRule()) {
-					sequence_IfStatement(context, (IfStatement) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getStatementRule()) {
-					sequence_IfStatement_Statement(context, (IfStatement) semanticObject); 
-					return; 
-				}
-				else break;
 			case MOlocPackage.IMPORT_CLAUSE:
-				sequence_ImportClause(context, (ImportClause) semanticObject); 
+				sequence_ImportClause_class_modification_description_description_string(context, (ImportClause) semanticObject); 
 				return; 
-			case MOlocPackage.IMPORT_LIST:
-				sequence_ImportList(context, (ImportList) semanticObject); 
-				return; 
-			case MOlocPackage.LR_EQUATION:
-				if (rule == grammarAccess.getEquationRule()) {
-					sequence_Equation_LREquation(context, (LREquation) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getLREquationRule()) {
-					sequence_LREquation(context, (LREquation) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.LRK_STATEMENT:
-				if (rule == grammarAccess.getLRStatementRule()
-						|| rule == grammarAccess.getLRKStatementRule()) {
-					sequence_LRKStatement(context, (LRKStatement) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getStatementRule()) {
-					sequence_LRKStatement_Statement(context, (LRKStatement) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.LR_STATEMENT:
-				if (rule == grammarAccess.getLRStatementRule()) {
-					sequence_LRStatement(context, (LRStatement) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getStatementRule()) {
-					sequence_LRStatement_Statement(context, (LRStatement) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.LOGICAL_EXPRESSION:
-				sequence_LogicalExpression(context, (LogicalExpression) semanticObject); 
-				return; 
-			case MOlocPackage.LOGICAL_FACTOR:
-				if (rule == grammarAccess.getLogicalFactorRule()) {
-					sequence_LogicalFactor(context, (LogicalFactor) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getConditionAttributeRule()
-						|| rule == grammarAccess.getExpressionRule()
-						|| rule == grammarAccess.getSimpleExpressionRule()
-						|| action == grammarAccess.getSimpleExpressionAccess().getSimpleExpressionExprsAction_1_1()
-						|| rule == grammarAccess.getLogicalExpressionRule()
-						|| action == grammarAccess.getLogicalExpressionAccess().getLogicalExpressionTermsAction_1_0()
-						|| rule == grammarAccess.getLogicalTermRule()
-						|| action == grammarAccess.getLogicalTermAccess().getLogicalFactorFactorsAction_1_0()
-						|| rule == grammarAccess.getFunctionArgumentRule()) {
-					sequence_LogicalFactor_LogicalTerm(context, (LogicalFactor) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.LOGICAL_PRIMARY:
-				sequence_LogicalPrimary(context, (LogicalPrimary) semanticObject); 
-				return; 
-			case MOlocPackage.MODIFICATION:
-				sequence_Modification(context, (Modification) semanticObject); 
-				return; 
-			case MOlocPackage.NAMED_ARGUMENT:
-				sequence_NamedArgument(context, (NamedArgument) semanticObject); 
-				return; 
-			case MOlocPackage.NAMED_ARGUMENTS:
-				sequence_NamedArguments(context, (NamedArguments) semanticObject); 
-				return; 
-			case MOlocPackage.NEGATION:
-				sequence_Negation(context, (Negation) semanticObject); 
-				return; 
-			case MOlocPackage.OUTPUT_EXPRESSION_LIST:
-				sequence_OutputExpressionList(context, (OutputExpressionList) semanticObject); 
-				return; 
-			case MOlocPackage.PRIMARY:
-				sequence_Primary(context, (Primary) semanticObject); 
-				return; 
-			case MOlocPackage.PRO_ELEMENT_LIST:
-				sequence_ProElementList(context, (ProElementList) semanticObject); 
-				return; 
-			case MOlocPackage.PUB_ELEMENT_LIST:
-				sequence_PubElementList(context, (PubElementList) semanticObject); 
-				return; 
-			case MOlocPackage.RELATION:
-				sequence_Relation(context, (Relation) semanticObject); 
-				return; 
-			case MOlocPackage.RETURN:
-				if (rule == grammarAccess.getReturnRule()) {
-					sequence_Return(context, (Return) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getStatementRule()) {
-					sequence_Return_Statement(context, (Return) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.SHORT_CLASS_DEFINITION:
-				sequence_ShortClassDefinition(context, (ShortClassDefinition) semanticObject); 
-				return; 
-			case MOlocPackage.SIMPLE_EXPRESSION:
-				sequence_SimpleExpression(context, (SimpleExpression) semanticObject); 
+			case MOlocPackage.NULL_ELEMENT:
+				sequence_NULLElement(context, (NULLElement) semanticObject); 
 				return; 
 			case MOlocPackage.STORED_DEFINITION:
-				sequence_StoredDefinition(context, (StoredDefinition) semanticObject); 
+				sequence_Stored_definition(context, (Stored_definition) semanticObject); 
 				return; 
-			case MOlocPackage.STRING_PRIMARY:
-				sequence_StringPrimary(context, (StringPrimary) semanticObject); 
-				return; 
-			case MOlocPackage.SUBSCRIPT:
-				sequence_Subscript(context, (Subscript) semanticObject); 
-				return; 
-			case MOlocPackage.TERM:
-				sequence_Term(context, (Term) semanticObject); 
-				return; 
-			case MOlocPackage.TYPE_SPECIFIER:
-				sequence_TypeSpecifier(context, (TypeSpecifier) semanticObject); 
-				return; 
-			case MOlocPackage.WHEN_EQUATION:
-				if (rule == grammarAccess.getEquationRule()) {
-					sequence_Equation_WhenEquation(context, (WhenEquation) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getWhenEquationRule()) {
-					sequence_WhenEquation(context, (WhenEquation) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.WHEN_STATEMENT:
-				if (rule == grammarAccess.getStatementRule()) {
-					sequence_Statement_WhenStatement(context, (WhenStatement) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getWhenStatementRule()) {
-					sequence_WhenStatement(context, (WhenStatement) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.WHILE_STATEMENT:
-				if (rule == grammarAccess.getStatementRule()) {
-					sequence_Statement_WhileStatement(context, (WhileStatement) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getWhileStatementRule()) {
-					sequence_WhileStatement(context, (WhileStatement) semanticObject); 
-					return; 
-				}
-				else break;
-			case MOlocPackage.TYPE_CLAUSE:
-				sequence_typeClause(context, (typeClause) semanticObject); 
+			case MOlocPackage.UNFINISHED2:
+				sequence_Unfinished2(context, (Unfinished2) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -482,110 +87,47 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     AlgorithmSection returns AlgorithmSection
+	 *     Argument returns Argument
 	 *
 	 * Constraint:
-	 *     (initial?='initial'? statements+=Statement+)
+	 *     (
+	 *         isRedeclare?='redeclare'? 
+	 *         isEach?='each'? 
+	 *         isfinal?='final'? 
+	 *         isPartial?='partial'? 
+	 *         isExpandable?='expandable'? 
+	 *         (isPure?='pure' | isPure?='impure')? 
+	 *         isOperator?='operator'? 
+	 *         classType=ClassType 
+	 *         className=IDENT 
+	 *         (
+	 *             (direction=Direction typeSpecifier=TypeSpecifier description=DescriptionString?) | 
+	 *             (
+	 *                 direction=Direction 
+	 *                 typeSpecifier=TypeSpecifier 
+	 *                 (description=DescriptionString? isAnnotation?='annotation')? 
+	 *                 arguments+=Argument 
+	 *                 arguments+=Argument* 
+	 *                 description=DescriptionString? 
+	 *                 (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* description=DescriptionString?)*
+	 *             ) | 
+	 *             (
+	 *                 isEnumeration?='enumeration'? 
+	 *                 (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))? 
+	 *                 description=DescriptionString? 
+	 *                 (
+	 *                     isAnnotation?='annotation' 
+	 *                     arguments+=Argument 
+	 *                     arguments+=Argument* 
+	 *                     description=DescriptionString? 
+	 *                     (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* description=DescriptionString?)*
+	 *                 )?
+	 *             )
+	 *         )
+	 *     )
 	 * </pre>
 	 */
-	protected void sequence_AlgorithmSection(ISerializationContext context, AlgorithmSection semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Annotation returns Annotation
-	 *
-	 * Constraint:
-	 *     (isannotation?='annotation'? cm=ClassModification)
-	 * </pre>
-	 */
-	protected void sequence_Annotation(ISerializationContext context, Annotation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ArgumentList returns ArgumentList
-	 *
-	 * Constraint:
-	 *     (args+=Argument args+=Argument*)
-	 * </pre>
-	 */
-	protected void sequence_ArgumentList(ISerializationContext context, ArgumentList semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns ArithmeticExpression
-	 *     Expression returns ArithmeticExpression
-	 *     SimpleExpression returns ArithmeticExpression
-	 *     SimpleExpression.SimpleExpression_1_1 returns ArithmeticExpression
-	 *     LogicalExpression returns ArithmeticExpression
-	 *     LogicalExpression.LogicalExpression_1_0 returns ArithmeticExpression
-	 *     LogicalTerm returns ArithmeticExpression
-	 *     LogicalTerm.LogicalFactor_1_0 returns ArithmeticExpression
-	 *     LogicalFactor returns ArithmeticExpression
-	 *     Relation returns ArithmeticExpression
-	 *     Relation.Relation_1_0 returns ArithmeticExpression
-	 *     ArithmeticExpression returns ArithmeticExpression
-	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns ArithmeticExpression
-	 *     FunctionArgument returns ArithmeticExpression
-	 *
-	 * Constraint:
-	 *     (terms+=ArithmeticExpression_ArithmeticExpression_1_0 add_op+=AddOp terms+=Negation)
-	 * </pre>
-	 */
-	protected void sequence_ArithmeticExpression(ISerializationContext context, ArithmeticExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ArraySubscripts returns ArraySubscripts
-	 *
-	 * Constraint:
-	 *     (subscripts+=Subscript subscripts+=Subscript*)
-	 * </pre>
-	 */
-	protected void sequence_ArraySubscripts(ISerializationContext context, ArraySubscripts semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Array_arguments returns Array_arguments
-	 *
-	 * Constraint:
-	 *     (express=Expression (argu+=Array_arguments_non_first | fori=ForIndices)?)
-	 * </pre>
-	 */
-	protected void sequence_Array_arguments(ISerializationContext context, Array_arguments semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Array_arguments_non_first returns Array_arguments_non_first
-	 *
-	 * Constraint:
-	 *     (express=Expression argu+=Array_arguments_non_first*)
-	 * </pre>
-	 */
-	protected void sequence_Array_arguments_non_first(ISerializationContext context, Array_arguments_non_first semanticObject) {
+	protected void sequence_Argument_class_modification_class_name_class_prefixes_description_description_string_enum_list_short_class_specifier_type_specifier(ISerializationContext context, Argument semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -596,516 +138,112 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Break returns Break
 	 *
 	 * Constraint:
-	 *     val='break'
+	 *     (connect=NULLElement | breakName=IDENT)
 	 * </pre>
 	 */
 	protected void sequence_Break(ISerializationContext context, Break semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.BREAK__VAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.BREAK__VAL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBreakAccess().getValBreakKeyword_0(), semanticObject.getVal());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Statement returns Break
-	 *
-	 * Constraint:
-	 *     (val='break' comment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_Break_Statement(ISerializationContext context, Break semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.BREAK__VAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.BREAK__VAL));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.STATEMENT__COMMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.STATEMENT__COMMENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBreakAccess().getValBreakKeyword_0(), semanticObject.getVal());
-		feeder.accept(grammarAccess.getStatementAccess().getCommentCommentParserRuleCall_1_0(), semanticObject.getComment());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ClassDefinition returns ClassDefinition
+	 *     Class_definition returns Class_definition
 	 *
 	 * Constraint:
 	 *     (
-	 *         final?='final'? 
-	 *         encapsulated?='encapsulated'? 
-	 *         cp=ClassPrefix 
+	 *         isfinal?='final'? 
+	 *         isEncapsulated?='encapsulated'? 
+	 *         isPartial?='partial'? 
+	 *         isExpandable?='expandable'? 
+	 *         (isPure?='pure' | isPure?='impure')? 
+	 *         isOperator?='operator'? 
+	 *         classType=ClassType 
+	 *         isExtends?='extends'? 
+	 *         className=IDENT 
 	 *         (
-	 *             (name=IDENT str_comment=StringComment composition=Composition name_end=IDENT) | 
+	 *             ((direction=Direction | isDer?='def') typeSpecifier=TypeSpecifier (derName+=IDENT derName+=IDENT*)? description=DescriptionString?) | 
 	 *             (
-	 *                 name=IDENT 
-	 *                 prefix=BasePrefix 
-	 *                 name2=Name 
-	 *                 subs=ArraySubscripts? 
-	 *                 mod=ClassModification? 
-	 *                 comment=Comment
+	 *                 (
+	 *                     (
+	 *                         (direction=Direction | isDer?='def') 
+	 *                         typeSpecifier=TypeSpecifier 
+	 *                         (
+	 *                             (
+	 *                                 (derName+=IDENT derName+=IDENT*)? 
+	 *                                 description=DescriptionString? 
+	 *                                 isAnnotation?='annotation' 
+	 *                                 arguments+=Argument 
+	 *                                 arguments+=Argument* 
+	 *                                 description=DescriptionString?
+	 *                             ) | 
+	 *                             (arguments+=Argument arguments+=Argument* description=DescriptionString?)
+	 *                         )
+	 *                     ) | 
+	 *                     (arguments+=Argument arguments+=Argument* description=DescriptionString?)
+	 *                 ) 
+	 *                 (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* description=DescriptionString?)*
 	 *             ) | 
-	 *             (name=IDENT elementnum=Elementenumeratioan) | 
-	 *             (name=IDENT comment=Comment) | 
-	 *             (type=[ClassDefinition|Name] mod=ClassModification? str_comment=StringComment composition=Composition name_end=IDENT) | 
 	 *             (
-	 *                 name=IDENT 
-	 *                 baseType=BuiltInType 
-	 *                 mod=ClassModification? 
-	 *                 str_comment=StringComment? 
-	 *                 composition=Composition 
-	 *                 name_end=IDENT
+	 *                 isEnumeration?='enumeration'? 
+	 *                 (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))? 
+	 *                 description=DescriptionString? 
+	 *                 (
+	 *                     isAnnotation?='annotation' 
+	 *                     arguments+=Argument 
+	 *                     arguments+=Argument* 
+	 *                     description=DescriptionString? 
+	 *                     (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* description=DescriptionString?)*
+	 *                 )?
+	 *             )
+	 *         ) 
+	 *         elements+=Element*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Class_definition_class_modification_class_name_class_prefixes_composition_der_class_specifier_description_description_string_enum_list_long_class_specifier_short_class_specifier_type_specifier(ISerializationContext context, Class_definition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Component_declaration returns Component_declaration
+	 *
+	 * Constraint:
+	 *     (
+	 *         declarationName=IDENT 
+	 *         (subscript+=Subscript subscript+=Subscript*)? 
+	 *         (
+	 *             ((expression=Modification_expression | expression=Modification_expression)? condition_attribute=Expression? description=DescriptionString?) | 
+	 *             (
+	 *                 (
+	 *                     (expression=Modification_expression | expression=Modification_expression)? 
+	 *                     condition_attribute=Expression? 
+	 *                     description=DescriptionString? 
+	 *                     isAnnotation?='annotation'
+	 *                 )? 
+	 *                 arguments+=Argument 
+	 *                 arguments+=Argument* 
+	 *                 expression=Modification_expression? 
+	 *                 condition_attribute=Expression? 
+	 *                 description=DescriptionString? 
+	 *                 (
+	 *                     isAnnotation?='annotation' 
+	 *                     arguments+=Argument 
+	 *                     arguments+=Argument* 
+	 *                     expression=Modification_expression? 
+	 *                     condition_attribute=Expression? 
+	 *                     description=DescriptionString?
+	 *                 )*
 	 *             )
 	 *         )
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_ClassDefinition_ClassSpecifier(ISerializationContext context, ClassDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Element returns ClassDefinition
-	 *
-	 * Constraint:
-	 *     (
-	 *         final?='final'? 
-	 *         encapsulated?='encapsulated'? 
-	 *         cp=ClassPrefix 
-	 *         (
-	 *             (name=IDENT str_comment=StringComment composition=Composition name_end=IDENT) | 
-	 *             (
-	 *                 name=IDENT 
-	 *                 prefix=BasePrefix 
-	 *                 name2=Name 
-	 *                 subs=ArraySubscripts? 
-	 *                 mod=ClassModification? 
-	 *                 comment=Comment
-	 *             ) | 
-	 *             (name=IDENT elementnum=Elementenumeratioan) | 
-	 *             (name=IDENT comment=Comment) | 
-	 *             (type=[ClassDefinition|Name] mod=ClassModification? str_comment=StringComment composition=Composition name_end=IDENT) | 
-	 *             (
-	 *                 name=IDENT 
-	 *                 baseType=BuiltInType 
-	 *                 mod=ClassModification? 
-	 *                 str_comment=StringComment? 
-	 *                 composition=Composition 
-	 *                 name_end=IDENT
-	 *             )
-	 *         ) 
-	 *         (constraining=ConstrainingClause comment=Comment)?
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_ClassDefinition_ClassSpecifier_Element(ISerializationContext context, ClassDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ClassModification returns ClassModification
-	 *
-	 * Constraint:
-	 *     args+=ArgumentList?
-	 * </pre>
-	 */
-	protected void sequence_ClassModification(ISerializationContext context, ClassModification semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ClassPrefix returns ClassPrefix
-	 *
-	 * Constraint:
-	 *     (isPartial?='partial'? kind=ClassPrefixes)
-	 * </pre>
-	 */
-	protected void sequence_ClassPrefix(ISerializationContext context, ClassPrefix semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Comment returns Comment
-	 *
-	 * Constraint:
-	 *     (comment=StringComment annotation=Annotation?)
-	 * </pre>
-	 */
-	protected void sequence_Comment(ISerializationContext context, Comment semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ComponentClause1 returns ComponentClause1
-	 *
-	 * Constraint:
-	 *     (prefix=TypePrefix? type=TypeSpecifier? subs=ArraySubscripts? comp=ComponentDeclaration1)
-	 * </pre>
-	 */
-	protected void sequence_ComponentClause1(ISerializationContext context, ComponentClause1 semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ComponentClause returns ComponentClause
-	 *
-	 * Constraint:
-	 *     (prefix=TypePrefix type=TypeSpecifier subs=ArraySubscripts? comps=ComponentList)
-	 * </pre>
-	 */
-	protected void sequence_ComponentClause(ISerializationContext context, ComponentClause semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Element returns ComponentClause
-	 *
-	 * Constraint:
-	 *     (prefix=TypePrefix type=TypeSpecifier subs=ArraySubscripts? comps=ComponentList (constraining=ConstrainingClause comment=Comment)?)
-	 * </pre>
-	 */
-	protected void sequence_ComponentClause_Element(ISerializationContext context, ComponentClause semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ComponentDeclaration1 returns Declaration
-	 *
-	 * Constraint:
-	 *     ((name=IDENT | type=TypeSpecifier) subscripts=ArraySubscripts? mod=Modification? comment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_ComponentDeclaration1_Declaration(ISerializationContext context, Declaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ComponentDeclaration returns ComponentDeclaration
-	 *
-	 * Constraint:
-	 *     (decl=Declaration cond=ConditionAttribute? comment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_ComponentDeclaration(ISerializationContext context, ComponentDeclaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ComponentList returns ComponentList
-	 *
-	 * Constraint:
-	 *     (comps+=ComponentDeclaration comps+=ComponentDeclaration*)
-	 * </pre>
-	 */
-	protected void sequence_ComponentList(ISerializationContext context, ComponentList semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns ComponentReference
-	 *     Expression returns ComponentReference
-	 *     SimpleExpression returns ComponentReference
-	 *     SimpleExpression.SimpleExpression_1_1 returns ComponentReference
-	 *     LogicalExpression returns ComponentReference
-	 *     LogicalExpression.LogicalExpression_1_0 returns ComponentReference
-	 *     LogicalTerm returns ComponentReference
-	 *     LogicalTerm.LogicalFactor_1_0 returns ComponentReference
-	 *     LogicalFactor returns ComponentReference
-	 *     Relation returns ComponentReference
-	 *     Relation.Relation_1_0 returns ComponentReference
-	 *     ArithmeticExpression returns ComponentReference
-	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns ComponentReference
-	 *     Negation returns ComponentReference
-	 *     Term returns ComponentReference
-	 *     Term.Term_1_0 returns ComponentReference
-	 *     Factor returns ComponentReference
-	 *     Factor.Factor_1_0 returns ComponentReference
-	 *     Primary returns ComponentReference
-	 *     ComponentReference returns ComponentReference
-	 *     FunctionArgument returns ComponentReference
-	 *
-	 * Constraint:
-	 *     (idents+=IDENT subscripts+=ArraySubscripts?)+
-	 * </pre>
-	 */
-	protected void sequence_ComponentReference(ISerializationContext context, ComponentReference semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Composition returns Composition
-	 *
-	 * Constraint:
-	 *     (
-	 *         priv_elist=ElementList 
-	 *         (pub_elist+=PubElementList | protected_elist+=ProElementList | eq_secs+=EquationSection | alg_secs+=AlgorithmSection)* 
-	 *         ext_elist+=ExtElementList? 
-	 *         anno=Annotation?
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_Composition(ISerializationContext context, Composition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConnectClause returns ConnectClause
-	 *
-	 * Constraint:
-	 *     (left=ComponentReference right=ComponentReference)
-	 * </pre>
-	 */
-	protected void sequence_ConnectClause(ISerializationContext context, ConnectClause semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.CONNECT_CLAUSE__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.CONNECT_CLAUSE__LEFT));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.CONNECT_CLAUSE__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.CONNECT_CLAUSE__RIGHT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConnectClauseAccess().getLeftComponentReferenceParserRuleCall_2_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getConnectClauseAccess().getRightComponentReferenceParserRuleCall_4_0(), semanticObject.getRight());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Equation returns ConnectClause
-	 *
-	 * Constraint:
-	 *     (left=ComponentReference right=ComponentReference commment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_ConnectClause_Equation(ISerializationContext context, ConnectClause semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.CONNECT_CLAUSE__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.CONNECT_CLAUSE__LEFT));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.CONNECT_CLAUSE__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.CONNECT_CLAUSE__RIGHT));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.EQUATION__COMMMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.EQUATION__COMMMENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConnectClauseAccess().getLeftComponentReferenceParserRuleCall_2_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getConnectClauseAccess().getRightComponentReferenceParserRuleCall_4_0(), semanticObject.getRight());
-		feeder.accept(grammarAccess.getEquationAccess().getCommmentCommentParserRuleCall_1_0(), semanticObject.getCommment());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConstrainingClause returns ConstrainingClause
-	 *
-	 * Constraint:
-	 *     (name=Name mod=ClassModification?)
-	 * </pre>
-	 */
-	protected void sequence_ConstrainingClause(ISerializationContext context, ConstrainingClause semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Declaration returns Declaration
-	 *
-	 * Constraint:
-	 *     ((name=IDENT | type=TypeSpecifier) subscripts=ArraySubscripts? mod=Modification?)
-	 * </pre>
-	 */
-	protected void sequence_Declaration(ISerializationContext context, Declaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ElementList returns ElementList
-	 *
-	 * Constraint:
-	 *     elem+=Element*
-	 * </pre>
-	 */
-	protected void sequence_ElementList(ISerializationContext context, ElementList semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Argument returns ElementModicationOrReplaceable
-	 *     ElementModicationOrReplaceable returns ElementModicationOrReplaceable
-	 *
-	 * Constraint:
-	 *     (each?='each'? final?='final'? (element=ElementModification | element=ElementReplaceable))
-	 * </pre>
-	 */
-	protected void sequence_ElementModicationOrReplaceable(ISerializationContext context, ElementModicationOrReplaceable semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ElementModification returns ElementModification
-	 *
-	 * Constraint:
-	 *     (name=Name mod=Modification? comment=StringComment)
-	 * </pre>
-	 */
-	protected void sequence_ElementModification(ISerializationContext context, ElementModification semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Argument returns ElementRedeclaration
-	 *     ElementRedeclaration returns ElementRedeclaration
-	 *
-	 * Constraint:
-	 *     (redeclare?='redeclare' each?='each'? final?='final'? (element=ShortClassDefinition | element=ComponentClause1 | element=ElementReplaceable))
-	 * </pre>
-	 */
-	protected void sequence_ElementRedeclaration(ISerializationContext context, ElementRedeclaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ElementReplaceable returns ElementReplaceable
-	 *
-	 * Constraint:
-	 *     (replaceable?='replaceable' (element=ShortClassDefinition | element=ComponentClause1) const=ConstrainingClause?)
-	 * </pre>
-	 */
-	protected void sequence_ElementReplaceable(ISerializationContext context, ElementReplaceable semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Elementenumeratioan returns Elementenumeratioan
-	 *
-	 * Constraint:
-	 *     (enumeratioan?='enumeration' list=EnumList? comment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_Elementenumeratioan(ISerializationContext context, Elementenumeratioan semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns End
-	 *     Expression returns End
-	 *     SimpleExpression returns End
-	 *     SimpleExpression.SimpleExpression_1_1 returns End
-	 *     LogicalExpression returns End
-	 *     LogicalExpression.LogicalExpression_1_0 returns End
-	 *     LogicalTerm returns End
-	 *     LogicalTerm.LogicalFactor_1_0 returns End
-	 *     LogicalFactor returns End
-	 *     Relation returns End
-	 *     Relation.Relation_1_0 returns End
-	 *     ArithmeticExpression returns End
-	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns End
-	 *     Negation returns End
-	 *     Term returns End
-	 *     Term.Term_1_0 returns End
-	 *     Factor returns End
-	 *     Factor.Factor_1_0 returns End
-	 *     End returns End
-	 *     Primary returns End
-	 *     FunctionArgument returns End
-	 *
-	 * Constraint:
-	 *     val='end'
-	 * </pre>
-	 */
-	protected void sequence_End(ISerializationContext context, End semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.END__VAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.END__VAL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEndAccess().getValEndKeyword_0(), semanticObject.getVal());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     EnumList returns EnumList
-	 *
-	 * Constraint:
-	 *     (enums+=EnumerationLiteral enums+=EnumerationLiteral*)
-	 * </pre>
-	 */
-	protected void sequence_EnumList(ISerializationContext context, EnumList semanticObject) {
+	protected void sequence_Component_declaration_array_subscripts_class_modification_declaration_description_description_string_modification(ISerializationContext context, Component_declaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1116,134 +254,10 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     EnumerationLiteral returns EnumerationLiteral
 	 *
 	 * Constraint:
-	 *     (id=IDENT comment=Comment?)
+	 *     (title=IDENT description=DescriptionString? (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?)
 	 * </pre>
 	 */
-	protected void sequence_EnumerationLiteral(ISerializationContext context, EnumerationLiteral semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     EquationSection returns EquationSection
-	 *
-	 * Constraint:
-	 *     (initial?='initial'? equations+=Equation+)
-	 * </pre>
-	 */
-	protected void sequence_EquationSection(ISerializationContext context, EquationSection semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Equation returns ForEquation
-	 *
-	 * Constraint:
-	 *     (indices=ForIndices eqs+=Equation* commment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_Equation_ForEquation(ISerializationContext context, ForEquation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Equation returns FunctionCallArgs
-	 *
-	 * Constraint:
-	 *     (res=FunctionArguments? commment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_Equation_FunctionCallArgs(ISerializationContext context, FunctionCallArgs semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Equation returns IfEquation
-	 *
-	 * Constraint:
-	 *     (if_expr=Expression if_eqs+=Equation* (elsif_exprs+=Expression elseif_eqs+=Equation*)* else_eqs+=Equation* commment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_Equation_IfEquation(ISerializationContext context, IfEquation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Equation returns LREquation
-	 *
-	 * Constraint:
-	 *     (left=SimpleExpression right=Expression commment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_Equation_LREquation(ISerializationContext context, LREquation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LR_EQUATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LR_EQUATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LR_EQUATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LR_EQUATION__RIGHT));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.EQUATION__COMMMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.EQUATION__COMMMENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLREquationAccess().getLeftSimpleExpressionParserRuleCall_0_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getLREquationAccess().getRightExpressionParserRuleCall_2_0(), semanticObject.getRight());
-		feeder.accept(grammarAccess.getEquationAccess().getCommmentCommentParserRuleCall_1_0(), semanticObject.getCommment());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Equation returns WhenEquation
-	 *
-	 * Constraint:
-	 *     (when=Expression when_eqs+=Equation* (elsehwhen+=Expression elsewhen_eqs+=Equation)* commment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_Equation_WhenEquation(ISerializationContext context, WhenEquation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ExpressionList returns ExpressionList
-	 *
-	 * Constraint:
-	 *     (exprs+=Expression exprs+=Expression*)
-	 * </pre>
-	 */
-	protected void sequence_ExpressionList(ISerializationContext context, ExpressionList semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ExtElementList returns ExtElementList
-	 *
-	 * Constraint:
-	 *     (ext_lang_spec=LanguageSpecification? ext_func_call=ExternalFunctionCall? ext_anno=Annotation?)
-	 * </pre>
-	 */
-	protected void sequence_ExtElementList(ISerializationContext context, ExtElementList semanticObject) {
+	protected void sequence_EnumerationLiteral_class_modification_description_description_string(ISerializationContext context, EnumerationLiteral semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1255,10 +269,14 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ExtendsClause returns ExtendsClause
 	 *
 	 * Constraint:
-	 *     (name=Name mod=ClassModification? anno=Annotation?)
+	 *     (
+	 *         typeSpecifier=TypeSpecifier 
+	 *         ((arguments+=Argument | breaks+=Break) arguments+=Argument? (breaks+=Break? arguments+=Argument?)*)? 
+	 *         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?
+	 *     )
 	 * </pre>
 	 */
-	protected void sequence_ExtendsClause(ISerializationContext context, ExtendsClause semanticObject) {
+	protected void sequence_ExtendsClause_class_modification_type_specifier(ISerializationContext context, ExtendsClause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1266,13 +284,14 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     ExternalFunctionCall returns ExternalFunctionCall
+	 *     Element returns ExternalElement
+	 *     ExternalElement returns ExternalElement
 	 *
 	 * Constraint:
-	 *     (lhs=ComponentReference? name=IDENT args=ExpressionList?)
+	 *     (language_specification=STRING? ref=Component_reference? (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?)
 	 * </pre>
 	 */
-	protected void sequence_ExternalFunctionCall(ISerializationContext context, ExternalFunctionCall semanticObject) {
+	protected void sequence_ExternalElement_class_modification(ISerializationContext context, ExternalElement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1280,285 +299,27 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     ConditionAttribute returns Factor
-	 *     Expression returns Factor
-	 *     SimpleExpression returns Factor
-	 *     SimpleExpression.SimpleExpression_1_1 returns Factor
-	 *     LogicalExpression returns Factor
-	 *     LogicalExpression.LogicalExpression_1_0 returns Factor
-	 *     LogicalTerm returns Factor
-	 *     LogicalTerm.LogicalFactor_1_0 returns Factor
-	 *     LogicalFactor returns Factor
-	 *     Relation returns Factor
-	 *     Relation.Relation_1_0 returns Factor
-	 *     ArithmeticExpression returns Factor
-	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns Factor
-	 *     Negation returns Factor
-	 *     Term returns Factor
-	 *     Term.Term_1_0 returns Factor
-	 *     Factor returns Factor
-	 *     FunctionArgument returns Factor
+	 *     Element returns GeneralClause
+	 *     GeneralClause returns GeneralClause
 	 *
 	 * Constraint:
-	 *     (base=Factor_Factor_1_0 (cf?='^' | dcf?='.^') exp=Primary)
+	 *     (
+	 *         isRedeclare?='redeclare'? 
+	 *         isfinal?='final'? 
+	 *         isInner?='inner'? 
+	 *         isOuter?='outer'? 
+	 *         isReplaceable?='replaceable'? 
+	 *         relationshipType=RelationshipType? 
+	 *         parameterType=ParameterType? 
+	 *         directionType=Direction? 
+	 *         typeSpecifier=TypeSpecifier 
+	 *         (subscript+=Subscript subscript+=Subscript*)? 
+	 *         component_list+=Component_declaration 
+	 *         component_list+=Component_declaration*
+	 *     )
 	 * </pre>
 	 */
-	protected void sequence_Factor(ISerializationContext context, Factor semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns FloatPrimary
-	 *     Expression returns FloatPrimary
-	 *     SimpleExpression returns FloatPrimary
-	 *     SimpleExpression.SimpleExpression_1_1 returns FloatPrimary
-	 *     LogicalExpression returns FloatPrimary
-	 *     LogicalExpression.LogicalExpression_1_0 returns FloatPrimary
-	 *     LogicalTerm returns FloatPrimary
-	 *     LogicalTerm.LogicalFactor_1_0 returns FloatPrimary
-	 *     LogicalFactor returns FloatPrimary
-	 *     Relation returns FloatPrimary
-	 *     Relation.Relation_1_0 returns FloatPrimary
-	 *     ArithmeticExpression returns FloatPrimary
-	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns FloatPrimary
-	 *     Negation returns FloatPrimary
-	 *     Term returns FloatPrimary
-	 *     Term.Term_1_0 returns FloatPrimary
-	 *     Factor returns FloatPrimary
-	 *     Factor.Factor_1_0 returns FloatPrimary
-	 *     FloatPrimary returns FloatPrimary
-	 *     Primary returns FloatPrimary
-	 *     FunctionArgument returns FloatPrimary
-	 *
-	 * Constraint:
-	 *     val=UNSIGNED_NUMBER
-	 * </pre>
-	 */
-	protected void sequence_FloatPrimary(ISerializationContext context, FloatPrimary semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.FLOAT_PRIMARY__VAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.FLOAT_PRIMARY__VAL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFloatPrimaryAccess().getValUNSIGNED_NUMBERTerminalRuleCall_0(), semanticObject.getVal());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ForEquation returns ForEquation
-	 *
-	 * Constraint:
-	 *     (indices=ForIndices eqs+=Equation*)
-	 * </pre>
-	 */
-	protected void sequence_ForEquation(ISerializationContext context, ForEquation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ForIndex returns ForIndex
-	 *
-	 * Constraint:
-	 *     (id=IDENT expr=Expression)
-	 * </pre>
-	 */
-	protected void sequence_ForIndex(ISerializationContext context, ForIndex semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.FOR_INDEX__ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.FOR_INDEX__ID));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.FOR_INDEX__EXPR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.FOR_INDEX__EXPR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getForIndexAccess().getIdIDENTTerminalRuleCall_0_0(), semanticObject.getId());
-		feeder.accept(grammarAccess.getForIndexAccess().getExprExpressionParserRuleCall_1_1_0(), semanticObject.getExpr());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ForIndices returns ForIndices
-	 *
-	 * Constraint:
-	 *     (indices+=ForIndex indices+=ForIndex*)
-	 * </pre>
-	 */
-	protected void sequence_ForIndices(ISerializationContext context, ForIndices semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ForStatement returns ForStatement
-	 *
-	 * Constraint:
-	 *     (indices=ForIndices stmts+=Statement*)
-	 * </pre>
-	 */
-	protected void sequence_ForStatement(ISerializationContext context, ForStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Statement returns ForStatement
-	 *
-	 * Constraint:
-	 *     (indices=ForIndices stmts+=Statement* comment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_ForStatement_Statement(ISerializationContext context, ForStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     FunctionArguments returns FunctionArguments
-	 *
-	 * Constraint:
-	 *     (args+=FunctionArgument (args+=FunctionArguments | indices=ForIndices)?)
-	 * </pre>
-	 */
-	protected void sequence_FunctionArguments(ISerializationContext context, FunctionArguments semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     FunctionCallArgs returns FunctionCallArgs
-	 *
-	 * Constraint:
-	 *     res=FunctionArguments?
-	 * </pre>
-	 */
-	protected void sequence_FunctionCallArgs(ISerializationContext context, FunctionCallArgs semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns FunctionCall
-	 *     Expression returns FunctionCall
-	 *     SimpleExpression returns FunctionCall
-	 *     SimpleExpression.SimpleExpression_1_1 returns FunctionCall
-	 *     LogicalExpression returns FunctionCall
-	 *     LogicalExpression.LogicalExpression_1_0 returns FunctionCall
-	 *     LogicalTerm returns FunctionCall
-	 *     LogicalTerm.LogicalFactor_1_0 returns FunctionCall
-	 *     LogicalFactor returns FunctionCall
-	 *     Relation returns FunctionCall
-	 *     Relation.Relation_1_0 returns FunctionCall
-	 *     ArithmeticExpression returns FunctionCall
-	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns FunctionCall
-	 *     Negation returns FunctionCall
-	 *     Term returns FunctionCall
-	 *     Term.Term_1_0 returns FunctionCall
-	 *     Factor returns FunctionCall
-	 *     Factor.Factor_1_0 returns FunctionCall
-	 *     Primary returns FunctionCall
-	 *     FunctionCall returns FunctionCall
-	 *     FunctionArgument returns FunctionCall
-	 *
-	 * Constraint:
-	 *     ((comp_ref=QualifiedName | comp_ref='der' | comp_ref='initial') args=FunctionCallArgs)
-	 * </pre>
-	 */
-	protected void sequence_FunctionCall(ISerializationContext context, FunctionCall semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     FunctionArgument returns FunctionDefinition
-	 *     FunctionDefinition returns FunctionDefinition
-	 *
-	 * Constraint:
-	 *     (name=Name args=NamedArguments?)
-	 * </pre>
-	 */
-	protected void sequence_FunctionDefinition(ISerializationContext context, FunctionDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     IfEquation returns IfEquation
-	 *
-	 * Constraint:
-	 *     (if_expr=Expression if_eqs+=Equation* (elsif_exprs+=Expression elseif_eqs+=Equation*)* else_eqs+=Equation*)
-	 * </pre>
-	 */
-	protected void sequence_IfEquation(ISerializationContext context, IfEquation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns IfExpression
-	 *     Expression returns IfExpression
-	 *     IfExpression returns IfExpression
-	 *     FunctionArgument returns IfExpression
-	 *
-	 * Constraint:
-	 *     (if=Expression then=Expression (elseif+=Expression elseifthen+=Expression)* else+=Expression)
-	 * </pre>
-	 */
-	protected void sequence_IfExpression(ISerializationContext context, IfExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     IfStatement returns IfStatement
-	 *
-	 * Constraint:
-	 *     (if_expr=Expression if_stmts+=Statement* (elseif_exprs+=Expression elseif_stmts+=Statement*)* else_stmts+=Statement*)
-	 * </pre>
-	 */
-	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Statement returns IfStatement
-	 *
-	 * Constraint:
-	 *     (if_expr=Expression if_stmts+=Statement* (elseif_exprs+=Expression elseif_stmts+=Statement*)* else_stmts+=Statement* comment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_IfStatement_Statement(ISerializationContext context, IfStatement semanticObject) {
+	protected void sequence_GeneralClause_array_subscripts_type_prefix_type_specifier(ISerializationContext context, GeneralClause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1570,10 +331,14 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ImportClause returns ImportClause
 	 *
 	 * Constraint:
-	 *     (((id=IDENT name=QualifiedName) | (name=QualifiedName list=ImportList?)) comment=Comment?)
+	 *     (
+	 *         ((selfName=IDENT importName=Name) | (importName=Name (isImportAll?='.*' | isImportAll?='*' | (objectName+=IDENT objectName+=IDENT*)))) 
+	 *         description=DescriptionString? 
+	 *         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?
+	 *     )
 	 * </pre>
 	 */
-	protected void sequence_ImportClause(ISerializationContext context, ImportClause semanticObject) {
+	protected void sequence_ImportClause_class_modification_description_description_string(ISerializationContext context, ImportClause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1581,36 +346,19 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     ImportList returns ImportList
+	 *     NULLElement returns NULLElement
 	 *
 	 * Constraint:
-	 *     (names+=QualifiedName names+=QualifiedName*)
+	 *     nullname=Name
 	 * </pre>
 	 */
-	protected void sequence_ImportList(ISerializationContext context, ImportList semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     LREquation returns LREquation
-	 *
-	 * Constraint:
-	 *     (left=SimpleExpression right=Expression)
-	 * </pre>
-	 */
-	protected void sequence_LREquation(ISerializationContext context, LREquation semanticObject) {
+	protected void sequence_NULLElement(ISerializationContext context, NULLElement semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LR_EQUATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LR_EQUATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LR_EQUATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LR_EQUATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.NULL_ELEMENT__NULLNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.NULL_ELEMENT__NULLNAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLREquationAccess().getLeftSimpleExpressionParserRuleCall_0_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getLREquationAccess().getRightExpressionParserRuleCall_2_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getNULLElementAccess().getNullnameNameParserRuleCall_1_0(), semanticObject.getNullname());
 		feeder.finish();
 	}
 	
@@ -1618,660 +366,34 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     LRStatement returns LRKStatement
-	 *     LRKStatement returns LRKStatement
+	 *     Stored_definition returns Stored_definition
 	 *
 	 * Constraint:
-	 *     (left=OutputExpressionList ref=ComponentReference ref_call=FunctionCallArgs)
+	 *     ((isWithin?='within' within=Name classes+=Class_definition+) | classes+=Class_definition+)?
 	 * </pre>
 	 */
-	protected void sequence_LRKStatement(ISerializationContext context, LRKStatement semanticObject) {
+	protected void sequence_Stored_definition(ISerializationContext context, Stored_definition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Unfinished2 returns Unfinished2
+	 *
+	 * Constraint:
+	 *     aa=Name
+	 * </pre>
+	 */
+	protected void sequence_Unfinished2(ISerializationContext context, Unfinished2 semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LR_STATEMENT__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LR_STATEMENT__LEFT));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LRK_STATEMENT__REF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LRK_STATEMENT__REF));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LRK_STATEMENT__REF_CALL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LRK_STATEMENT__REF_CALL));
+			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.UNFINISHED2__AA) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.UNFINISHED2__AA));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLRKStatementAccess().getLeftOutputExpressionListParserRuleCall_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getLRKStatementAccess().getRefComponentReferenceParserRuleCall_4_0(), semanticObject.getRef());
-		feeder.accept(grammarAccess.getLRKStatementAccess().getRef_callFunctionCallArgsParserRuleCall_5_0(), semanticObject.getRef_call());
+		feeder.accept(grammarAccess.getUnfinished2Access().getAaNameParserRuleCall_1_0(), semanticObject.getAa());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Statement returns LRKStatement
-	 *
-	 * Constraint:
-	 *     (left=OutputExpressionList ref=ComponentReference ref_call=FunctionCallArgs comment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_LRKStatement_Statement(ISerializationContext context, LRKStatement semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LR_STATEMENT__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LR_STATEMENT__LEFT));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LRK_STATEMENT__REF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LRK_STATEMENT__REF));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LRK_STATEMENT__REF_CALL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LRK_STATEMENT__REF_CALL));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.STATEMENT__COMMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.STATEMENT__COMMENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLRKStatementAccess().getLeftOutputExpressionListParserRuleCall_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getLRKStatementAccess().getRefComponentReferenceParserRuleCall_4_0(), semanticObject.getRef());
-		feeder.accept(grammarAccess.getLRKStatementAccess().getRef_callFunctionCallArgsParserRuleCall_5_0(), semanticObject.getRef_call());
-		feeder.accept(grammarAccess.getStatementAccess().getCommentCommentParserRuleCall_1_0(), semanticObject.getComment());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     LRStatement returns LRStatement
-	 *
-	 * Constraint:
-	 *     (left=ComponentReference (right=Expression | right=FunctionCallArgs))
-	 * </pre>
-	 */
-	protected void sequence_LRStatement(ISerializationContext context, LRStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Statement returns LRStatement
-	 *
-	 * Constraint:
-	 *     (left=ComponentReference (right=Expression | right=FunctionCallArgs) comment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_LRStatement_Statement(ISerializationContext context, LRStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns LogicalExpression
-	 *     Expression returns LogicalExpression
-	 *     SimpleExpression returns LogicalExpression
-	 *     SimpleExpression.SimpleExpression_1_1 returns LogicalExpression
-	 *     LogicalExpression returns LogicalExpression
-	 *     LogicalExpression.LogicalExpression_1_0 returns LogicalExpression
-	 *     FunctionArgument returns LogicalExpression
-	 *
-	 * Constraint:
-	 *     (terms+=LogicalExpression_LogicalExpression_1_0 ro?='or' terms+=LogicalTerm)
-	 * </pre>
-	 */
-	protected void sequence_LogicalExpression(ISerializationContext context, LogicalExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     LogicalFactor returns LogicalFactor
-	 *
-	 * Constraint:
-	 *     (noot?='not' rel=Relation)
-	 * </pre>
-	 */
-	protected void sequence_LogicalFactor(ISerializationContext context, LogicalFactor semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LOGICAL_FACTOR__NOOT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LOGICAL_FACTOR__NOOT));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LOGICAL_FACTOR__REL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LOGICAL_FACTOR__REL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLogicalFactorAccess().getNootNotKeyword_1_0_0(), semanticObject.isNoot());
-		feeder.accept(grammarAccess.getLogicalFactorAccess().getRelRelationParserRuleCall_1_1_0(), semanticObject.getRel());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns LogicalFactor
-	 *     Expression returns LogicalFactor
-	 *     SimpleExpression returns LogicalFactor
-	 *     SimpleExpression.SimpleExpression_1_1 returns LogicalFactor
-	 *     LogicalExpression returns LogicalFactor
-	 *     LogicalExpression.LogicalExpression_1_0 returns LogicalFactor
-	 *     LogicalTerm returns LogicalFactor
-	 *     LogicalTerm.LogicalFactor_1_0 returns LogicalFactor
-	 *     FunctionArgument returns LogicalFactor
-	 *
-	 * Constraint:
-	 *     ((factors+=LogicalTerm_LogicalFactor_1_0 dna?='and' factors+=LogicalFactor) | (noot?='not' rel=Relation))
-	 * </pre>
-	 */
-	protected void sequence_LogicalFactor_LogicalTerm(ISerializationContext context, LogicalFactor semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns LogicalPrimary
-	 *     Expression returns LogicalPrimary
-	 *     SimpleExpression returns LogicalPrimary
-	 *     SimpleExpression.SimpleExpression_1_1 returns LogicalPrimary
-	 *     LogicalExpression returns LogicalPrimary
-	 *     LogicalExpression.LogicalExpression_1_0 returns LogicalPrimary
-	 *     LogicalTerm returns LogicalPrimary
-	 *     LogicalTerm.LogicalFactor_1_0 returns LogicalPrimary
-	 *     LogicalFactor returns LogicalPrimary
-	 *     Relation returns LogicalPrimary
-	 *     Relation.Relation_1_0 returns LogicalPrimary
-	 *     ArithmeticExpression returns LogicalPrimary
-	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns LogicalPrimary
-	 *     Negation returns LogicalPrimary
-	 *     Term returns LogicalPrimary
-	 *     Term.Term_1_0 returns LogicalPrimary
-	 *     Factor returns LogicalPrimary
-	 *     Factor.Factor_1_0 returns LogicalPrimary
-	 *     LogicalPrimary returns LogicalPrimary
-	 *     Primary returns LogicalPrimary
-	 *     FunctionArgument returns LogicalPrimary
-	 *
-	 * Constraint:
-	 *     val=TRUE_FALSE
-	 * </pre>
-	 */
-	protected void sequence_LogicalPrimary(ISerializationContext context, LogicalPrimary semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.LOGICAL_PRIMARY__VAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.LOGICAL_PRIMARY__VAL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLogicalPrimaryAccess().getValTRUE_FALSETerminalRuleCall_0(), semanticObject.isVal());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Modification returns Modification
-	 *
-	 * Constraint:
-	 *     ((mod=ClassModification (dh?='=' expr=Expression)?) | (dh?='=' expr=Expression) | (mh?=':=' expr=Expression))
-	 * </pre>
-	 */
-	protected void sequence_Modification(ISerializationContext context, Modification semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     FunctionArguments returns NamedArgument
-	 *     NamedArgument returns NamedArgument
-	 *
-	 * Constraint:
-	 *     (id=IDENT func=FunctionArgument)
-	 * </pre>
-	 */
-	protected void sequence_NamedArgument(ISerializationContext context, NamedArgument semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.NAMED_ARGUMENT__ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.NAMED_ARGUMENT__ID));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.NAMED_ARGUMENT__FUNC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.NAMED_ARGUMENT__FUNC));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNamedArgumentAccess().getIdIDENTTerminalRuleCall_0_0(), semanticObject.getId());
-		feeder.accept(grammarAccess.getNamedArgumentAccess().getFuncFunctionArgumentParserRuleCall_2_0(), semanticObject.getFunc());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     NamedArguments returns NamedArguments
-	 *
-	 * Constraint:
-	 *     (args+=NamedArgument args+=NamedArguments)
-	 * </pre>
-	 */
-	protected void sequence_NamedArguments(ISerializationContext context, NamedArguments semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns Negation
-	 *     Expression returns Negation
-	 *     SimpleExpression returns Negation
-	 *     SimpleExpression.SimpleExpression_1_1 returns Negation
-	 *     LogicalExpression returns Negation
-	 *     LogicalExpression.LogicalExpression_1_0 returns Negation
-	 *     LogicalTerm returns Negation
-	 *     LogicalTerm.LogicalFactor_1_0 returns Negation
-	 *     LogicalFactor returns Negation
-	 *     Relation returns Negation
-	 *     Relation.Relation_1_0 returns Negation
-	 *     ArithmeticExpression returns Negation
-	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns Negation
-	 *     Negation returns Negation
-	 *     FunctionArgument returns Negation
-	 *
-	 * Constraint:
-	 *     (neg_op=AddOp term=Term)
-	 * </pre>
-	 */
-	protected void sequence_Negation(ISerializationContext context, Negation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.NEGATION__NEG_OP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.NEGATION__NEG_OP));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.NEGATION__TERM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.NEGATION__TERM));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNegationAccess().getNeg_opAddOpParserRuleCall_1_0_0(), semanticObject.getNeg_op());
-		feeder.accept(grammarAccess.getNegationAccess().getTermTermParserRuleCall_1_1_0(), semanticObject.getTerm());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     OutputExpressionList returns OutputExpressionList
-	 *
-	 * Constraint:
-	 *     (exprs+=Expression? exprs+=Expression*)
-	 * </pre>
-	 */
-	protected void sequence_OutputExpressionList(ISerializationContext context, OutputExpressionList semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns Primary
-	 *     Expression returns Primary
-	 *     SimpleExpression returns Primary
-	 *     SimpleExpression.SimpleExpression_1_1 returns Primary
-	 *     LogicalExpression returns Primary
-	 *     LogicalExpression.LogicalExpression_1_0 returns Primary
-	 *     LogicalTerm returns Primary
-	 *     LogicalTerm.LogicalFactor_1_0 returns Primary
-	 *     LogicalFactor returns Primary
-	 *     Relation returns Primary
-	 *     Relation.Relation_1_0 returns Primary
-	 *     ArithmeticExpression returns Primary
-	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns Primary
-	 *     Negation returns Primary
-	 *     Term returns Primary
-	 *     Term.Term_1_0 returns Primary
-	 *     Factor returns Primary
-	 *     Factor.Factor_1_0 returns Primary
-	 *     Primary returns Primary
-	 *     FunctionArgument returns Primary
-	 *
-	 * Constraint:
-	 *     (oe=OutputExpressionList | (res+=ExpressionList res+=ExpressionList*) | fa+=Array_arguments)
-	 * </pre>
-	 */
-	protected void sequence_Primary(ISerializationContext context, Primary semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ProElementList returns ProElementList
-	 *
-	 * Constraint:
-	 *     ele+=ElementList
-	 * </pre>
-	 */
-	protected void sequence_ProElementList(ISerializationContext context, ProElementList semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     PubElementList returns PubElementList
-	 *
-	 * Constraint:
-	 *     ele+=ElementList
-	 * </pre>
-	 */
-	protected void sequence_PubElementList(ISerializationContext context, PubElementList semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns Relation
-	 *     Expression returns Relation
-	 *     SimpleExpression returns Relation
-	 *     SimpleExpression.SimpleExpression_1_1 returns Relation
-	 *     LogicalExpression returns Relation
-	 *     LogicalExpression.LogicalExpression_1_0 returns Relation
-	 *     LogicalTerm returns Relation
-	 *     LogicalTerm.LogicalFactor_1_0 returns Relation
-	 *     LogicalFactor returns Relation
-	 *     Relation returns Relation
-	 *     FunctionArgument returns Relation
-	 *
-	 * Constraint:
-	 *     (left=Relation_Relation_1_0 rel_op=RelOp right=ArithmeticExpression)
-	 * </pre>
-	 */
-	protected void sequence_Relation(ISerializationContext context, Relation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.RELATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.RELATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.RELATION__REL_OP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.RELATION__REL_OP));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.RELATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.RELATION__RIGHT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRelationAccess().getRelationLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getRelationAccess().getRel_opRelOpParserRuleCall_1_1_0(), semanticObject.getRel_op());
-		feeder.accept(grammarAccess.getRelationAccess().getRightArithmeticExpressionParserRuleCall_1_2_0(), semanticObject.getRight());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Return returns Return
-	 *
-	 * Constraint:
-	 *     val='return'
-	 * </pre>
-	 */
-	protected void sequence_Return(ISerializationContext context, Return semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.RETURN__VAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.RETURN__VAL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getReturnAccess().getValReturnKeyword_0(), semanticObject.getVal());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Statement returns Return
-	 *
-	 * Constraint:
-	 *     (val='return' comment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_Return_Statement(ISerializationContext context, Return semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.RETURN__VAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.RETURN__VAL));
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.STATEMENT__COMMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.STATEMENT__COMMENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getReturnAccess().getValReturnKeyword_0(), semanticObject.getVal());
-		feeder.accept(grammarAccess.getStatementAccess().getCommentCommentParserRuleCall_1_0(), semanticObject.getComment());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ShortClassDefinition returns ShortClassDefinition
-	 *
-	 * Constraint:
-	 *     (name=IDENT ((type=[ClassDefinition|Name] asts=ArraySubscripts? mode=ClassModification? comment=Comment) | elementnum=Elementenumeratioan))?
-	 * </pre>
-	 */
-	protected void sequence_ShortClassDefinition(ISerializationContext context, ShortClassDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns SimpleExpression
-	 *     Expression returns SimpleExpression
-	 *     SimpleExpression returns SimpleExpression
-	 *     FunctionArgument returns SimpleExpression
-	 *
-	 * Constraint:
-	 *     (exprs+=SimpleExpression_SimpleExpression_1_1 exprs+=LogicalExpression exprs+=LogicalExpression?)
-	 * </pre>
-	 */
-	protected void sequence_SimpleExpression(ISerializationContext context, SimpleExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Statement returns WhenStatement
-	 *
-	 * Constraint:
-	 *     (when=Expression when_stmts+=Statement* (elsehwhen+=Expression elsewhen_stmts+=Statement)* comment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_Statement_WhenStatement(ISerializationContext context, WhenStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Statement returns WhileStatement
-	 *
-	 * Constraint:
-	 *     (cond=Expression stmts+=Statement* comment=Comment)
-	 * </pre>
-	 */
-	protected void sequence_Statement_WhileStatement(ISerializationContext context, WhileStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     StoredDefinition returns StoredDefinition
-	 *
-	 * Constraint:
-	 *     ((within=Name classes+=ClassDefinition+) | classes+=ClassDefinition+)?
-	 * </pre>
-	 */
-	protected void sequence_StoredDefinition(ISerializationContext context, StoredDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns StringPrimary
-	 *     Expression returns StringPrimary
-	 *     SimpleExpression returns StringPrimary
-	 *     SimpleExpression.SimpleExpression_1_1 returns StringPrimary
-	 *     LogicalExpression returns StringPrimary
-	 *     LogicalExpression.LogicalExpression_1_0 returns StringPrimary
-	 *     LogicalTerm returns StringPrimary
-	 *     LogicalTerm.LogicalFactor_1_0 returns StringPrimary
-	 *     LogicalFactor returns StringPrimary
-	 *     Relation returns StringPrimary
-	 *     Relation.Relation_1_0 returns StringPrimary
-	 *     ArithmeticExpression returns StringPrimary
-	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns StringPrimary
-	 *     Negation returns StringPrimary
-	 *     Term returns StringPrimary
-	 *     Term.Term_1_0 returns StringPrimary
-	 *     Factor returns StringPrimary
-	 *     Factor.Factor_1_0 returns StringPrimary
-	 *     StringPrimary returns StringPrimary
-	 *     Primary returns StringPrimary
-	 *     FunctionArgument returns StringPrimary
-	 *
-	 * Constraint:
-	 *     val=STRING
-	 * </pre>
-	 */
-	protected void sequence_StringPrimary(ISerializationContext context, StringPrimary semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.STRING_PRIMARY__VAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.STRING_PRIMARY__VAL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStringPrimaryAccess().getValSTRINGTerminalRuleCall_0(), semanticObject.getVal());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Subscript returns Subscript
-	 *
-	 * Constraint:
-	 *     (all?=':' | expr=Expression)
-	 * </pre>
-	 */
-	protected void sequence_Subscript(ISerializationContext context, Subscript semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ConditionAttribute returns Term
-	 *     Expression returns Term
-	 *     SimpleExpression returns Term
-	 *     SimpleExpression.SimpleExpression_1_1 returns Term
-	 *     LogicalExpression returns Term
-	 *     LogicalExpression.LogicalExpression_1_0 returns Term
-	 *     LogicalTerm returns Term
-	 *     LogicalTerm.LogicalFactor_1_0 returns Term
-	 *     LogicalFactor returns Term
-	 *     Relation returns Term
-	 *     Relation.Relation_1_0 returns Term
-	 *     ArithmeticExpression returns Term
-	 *     ArithmeticExpression.ArithmeticExpression_1_0 returns Term
-	 *     Negation returns Term
-	 *     Term returns Term
-	 *     Term.Term_1_0 returns Term
-	 *     FunctionArgument returns Term
-	 *
-	 * Constraint:
-	 *     (factors+=Term_Term_1_0 mul_op+=MulOp factors+=Factor)
-	 * </pre>
-	 */
-	protected void sequence_Term(ISerializationContext context, Term semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     TypeSpecifier returns TypeSpecifier
-	 *
-	 * Constraint:
-	 *     (name=BuiltInType | name=Name | name1=[ClassDefinition|IDENT])
-	 * </pre>
-	 */
-	protected void sequence_TypeSpecifier(ISerializationContext context, TypeSpecifier semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     WhenEquation returns WhenEquation
-	 *
-	 * Constraint:
-	 *     (when=Expression when_eqs+=Equation* (elsehwhen+=Expression elsewhen_eqs+=Equation)*)
-	 * </pre>
-	 */
-	protected void sequence_WhenEquation(ISerializationContext context, WhenEquation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     WhenStatement returns WhenStatement
-	 *
-	 * Constraint:
-	 *     (when=Expression when_stmts+=Statement* (elsehwhen+=Expression elsewhen_stmts+=Statement)*)
-	 * </pre>
-	 */
-	protected void sequence_WhenStatement(ISerializationContext context, WhenStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     WhileStatement returns WhileStatement
-	 *
-	 * Constraint:
-	 *     (cond=Expression stmts+=Statement*)
-	 * </pre>
-	 */
-	protected void sequence_WhileStatement(ISerializationContext context, WhileStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Element returns typeClause
-	 *     typeClause returns typeClause
-	 *
-	 * Constraint:
-	 *     (name=IDENT baseType=BuiltInType mod=ClassModification? anno=Annotation?)
-	 * </pre>
-	 */
-	protected void sequence_typeClause(ISerializationContext context, typeClause semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

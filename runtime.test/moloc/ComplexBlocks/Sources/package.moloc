@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:StoredDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" within="Modelica.ComplexBlocks">
-  <classes name="Sources" str_comment="&quot;Library of signal source blocks generating Complex signals&quot;" name_end="Sources">
-    <composition>
-      <priv_elist>
-        <elem xsi:type="mOloc:ExtendsClause" name="Modelica.Icons.SourcesPackage"/>
-      </priv_elist>
-    </composition>
-    <cp kind="package"/>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks">
+  <classes classType="package" className="Sources" description="&quot;Library of signal source blocks generating Complex signals&quot;">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.SourcesPackage"/>
   </classes>
-</mOloc:StoredDefinition>
+</mOloc:Stored_definition>

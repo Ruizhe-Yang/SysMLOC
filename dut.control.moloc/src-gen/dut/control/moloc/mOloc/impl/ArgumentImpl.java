@@ -7,14 +7,10 @@ import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.MOlocPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,64 +20,74 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isEach <em>Each</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isFinal <em>Final</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getElement <em>Element</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsRedeclare <em>Is Redeclare</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsEach <em>Is Each</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsfinal <em>Isfinal</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ArgumentImpl extends MinimalEObjectImpl.Container implements Argument
+public class ArgumentImpl extends short_class_definitionImpl implements Argument
 {
   /**
-   * The default value of the '{@link #isEach() <em>Each</em>}' attribute.
+   * The default value of the '{@link #isIsRedeclare() <em>Is Redeclare</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isEach()
+   * @see #isIsRedeclare()
    * @generated
    * @ordered
    */
-  protected static final boolean EACH_EDEFAULT = false;
+  protected static final boolean IS_REDECLARE_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isEach() <em>Each</em>}' attribute.
+   * The cached value of the '{@link #isIsRedeclare() <em>Is Redeclare</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isEach()
+   * @see #isIsRedeclare()
    * @generated
    * @ordered
    */
-  protected boolean each = EACH_EDEFAULT;
+  protected boolean isRedeclare = IS_REDECLARE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
+   * The default value of the '{@link #isIsEach() <em>Is Each</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isFinal()
+   * @see #isIsEach()
    * @generated
    * @ordered
    */
-  protected static final boolean FINAL_EDEFAULT = false;
+  protected static final boolean IS_EACH_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isFinal() <em>Final</em>}' attribute.
+   * The cached value of the '{@link #isIsEach() <em>Is Each</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isFinal()
+   * @see #isIsEach()
    * @generated
    * @ordered
    */
-  protected boolean final_ = FINAL_EDEFAULT;
+  protected boolean isEach = IS_EACH_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference.
+   * The default value of the '{@link #isIsfinal() <em>Isfinal</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElement()
+   * @see #isIsfinal()
    * @generated
    * @ordered
    */
-  protected EObject element;
+  protected static final boolean ISFINAL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsfinal() <em>Isfinal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsfinal()
+   * @generated
+   * @ordered
+   */
+  protected boolean isfinal = ISFINAL_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -110,9 +116,9 @@ public class ArgumentImpl extends MinimalEObjectImpl.Container implements Argume
    * @generated
    */
   @Override
-  public boolean isEach()
+  public boolean isIsRedeclare()
   {
-    return each;
+    return isRedeclare;
   }
 
   /**
@@ -121,12 +127,12 @@ public class ArgumentImpl extends MinimalEObjectImpl.Container implements Argume
    * @generated
    */
   @Override
-  public void setEach(boolean newEach)
+  public void setIsRedeclare(boolean newIsRedeclare)
   {
-    boolean oldEach = each;
-    each = newEach;
+    boolean oldIsRedeclare = isRedeclare;
+    isRedeclare = newIsRedeclare;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__EACH, oldEach, each));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__IS_REDECLARE, oldIsRedeclare, isRedeclare));
   }
 
   /**
@@ -135,9 +141,9 @@ public class ArgumentImpl extends MinimalEObjectImpl.Container implements Argume
    * @generated
    */
   @Override
-  public boolean isFinal()
+  public boolean isIsEach()
   {
-    return final_;
+    return isEach;
   }
 
   /**
@@ -146,12 +152,12 @@ public class ArgumentImpl extends MinimalEObjectImpl.Container implements Argume
    * @generated
    */
   @Override
-  public void setFinal(boolean newFinal)
+  public void setIsEach(boolean newIsEach)
   {
-    boolean oldFinal = final_;
-    final_ = newFinal;
+    boolean oldIsEach = isEach;
+    isEach = newIsEach;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__FINAL, oldFinal, final_));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__IS_EACH, oldIsEach, isEach));
   }
 
   /**
@@ -160,9 +166,9 @@ public class ArgumentImpl extends MinimalEObjectImpl.Container implements Argume
    * @generated
    */
   @Override
-  public EObject getElement()
+  public boolean isIsfinal()
   {
-    return element;
+    return isfinal;
   }
 
   /**
@@ -170,54 +176,13 @@ public class ArgumentImpl extends MinimalEObjectImpl.Container implements Argume
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetElement(EObject newElement, NotificationChain msgs)
+  @Override
+  public void setIsfinal(boolean newIsfinal)
   {
-    EObject oldElement = element;
-    element = newElement;
+    boolean oldIsfinal = isfinal;
+    isfinal = newIsfinal;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__ELEMENT, oldElement, newElement);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setElement(EObject newElement)
-  {
-    if (newElement != element)
-    {
-      NotificationChain msgs = null;
-      if (element != null)
-        msgs = ((InternalEObject)element).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.ARGUMENT__ELEMENT, null, msgs);
-      if (newElement != null)
-        msgs = ((InternalEObject)newElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.ARGUMENT__ELEMENT, null, msgs);
-      msgs = basicSetElement(newElement, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__ELEMENT, newElement, newElement));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MOlocPackage.ARGUMENT__ELEMENT:
-        return basicSetElement(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__ISFINAL, oldIsfinal, isfinal));
   }
 
   /**
@@ -230,12 +195,12 @@ public class ArgumentImpl extends MinimalEObjectImpl.Container implements Argume
   {
     switch (featureID)
     {
-      case MOlocPackage.ARGUMENT__EACH:
-        return isEach();
-      case MOlocPackage.ARGUMENT__FINAL:
-        return isFinal();
-      case MOlocPackage.ARGUMENT__ELEMENT:
-        return getElement();
+      case MOlocPackage.ARGUMENT__IS_REDECLARE:
+        return isIsRedeclare();
+      case MOlocPackage.ARGUMENT__IS_EACH:
+        return isIsEach();
+      case MOlocPackage.ARGUMENT__ISFINAL:
+        return isIsfinal();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -250,14 +215,14 @@ public class ArgumentImpl extends MinimalEObjectImpl.Container implements Argume
   {
     switch (featureID)
     {
-      case MOlocPackage.ARGUMENT__EACH:
-        setEach((Boolean)newValue);
+      case MOlocPackage.ARGUMENT__IS_REDECLARE:
+        setIsRedeclare((Boolean)newValue);
         return;
-      case MOlocPackage.ARGUMENT__FINAL:
-        setFinal((Boolean)newValue);
+      case MOlocPackage.ARGUMENT__IS_EACH:
+        setIsEach((Boolean)newValue);
         return;
-      case MOlocPackage.ARGUMENT__ELEMENT:
-        setElement((EObject)newValue);
+      case MOlocPackage.ARGUMENT__ISFINAL:
+        setIsfinal((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -273,14 +238,14 @@ public class ArgumentImpl extends MinimalEObjectImpl.Container implements Argume
   {
     switch (featureID)
     {
-      case MOlocPackage.ARGUMENT__EACH:
-        setEach(EACH_EDEFAULT);
+      case MOlocPackage.ARGUMENT__IS_REDECLARE:
+        setIsRedeclare(IS_REDECLARE_EDEFAULT);
         return;
-      case MOlocPackage.ARGUMENT__FINAL:
-        setFinal(FINAL_EDEFAULT);
+      case MOlocPackage.ARGUMENT__IS_EACH:
+        setIsEach(IS_EACH_EDEFAULT);
         return;
-      case MOlocPackage.ARGUMENT__ELEMENT:
-        setElement((EObject)null);
+      case MOlocPackage.ARGUMENT__ISFINAL:
+        setIsfinal(ISFINAL_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -296,12 +261,12 @@ public class ArgumentImpl extends MinimalEObjectImpl.Container implements Argume
   {
     switch (featureID)
     {
-      case MOlocPackage.ARGUMENT__EACH:
-        return each != EACH_EDEFAULT;
-      case MOlocPackage.ARGUMENT__FINAL:
-        return final_ != FINAL_EDEFAULT;
-      case MOlocPackage.ARGUMENT__ELEMENT:
-        return element != null;
+      case MOlocPackage.ARGUMENT__IS_REDECLARE:
+        return isRedeclare != IS_REDECLARE_EDEFAULT;
+      case MOlocPackage.ARGUMENT__IS_EACH:
+        return isEach != IS_EACH_EDEFAULT;
+      case MOlocPackage.ARGUMENT__ISFINAL:
+        return isfinal != ISFINAL_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -317,10 +282,12 @@ public class ArgumentImpl extends MinimalEObjectImpl.Container implements Argume
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (each: ");
-    result.append(each);
-    result.append(", final: ");
-    result.append(final_);
+    result.append(" (isRedeclare: ");
+    result.append(isRedeclare);
+    result.append(", isEach: ");
+    result.append(isEach);
+    result.append(", isfinal: ");
+    result.append(isfinal);
     result.append(')');
     return result.toString();
   }

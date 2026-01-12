@@ -27,7 +27,7 @@ public class MOlocParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "StoredDefinition";
+		return "Stored_definition";
 	}
 
 	public MOlocGrammarAccess getGrammarAccess() {

@@ -3,19 +3,12 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AlgorithmSection;
-import dut.control.moloc.mOloc.Annotation;
-import dut.control.moloc.mOloc.Composition;
-import dut.control.moloc.mOloc.ElementList;
-import dut.control.moloc.mOloc.EquationSection;
-import dut.control.moloc.mOloc.ExtElementList;
+import dut.control.moloc.mOloc.Element;
 import dut.control.moloc.mOloc.MOlocPackage;
-import dut.control.moloc.mOloc.ProElementList;
-import dut.control.moloc.mOloc.PubElementList;
+import dut.control.moloc.mOloc.composition;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -23,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -31,101 +23,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Composition</b></em>'.
+ * An implementation of the model object '<em><b>composition</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.CompositionImpl#getPriv_elist <em>Priv elist</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.CompositionImpl#getPub_elist <em>Pub elist</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.CompositionImpl#getProtected_elist <em>Protected elist</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.CompositionImpl#getEq_secs <em>Eq secs</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.CompositionImpl#getAlg_secs <em>Alg secs</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.CompositionImpl#getExt_elist <em>Ext elist</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.CompositionImpl#getAnno <em>Anno</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.compositionImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CompositionImpl extends MinimalEObjectImpl.Container implements Composition
+public class compositionImpl extends MinimalEObjectImpl.Container implements composition
 {
   /**
-   * The cached value of the '{@link #getPriv_elist() <em>Priv elist</em>}' containment reference.
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPriv_elist()
+   * @see #getElements()
    * @generated
    * @ordered
    */
-  protected ElementList priv_elist;
-
-  /**
-   * The cached value of the '{@link #getPub_elist() <em>Pub elist</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPub_elist()
-   * @generated
-   * @ordered
-   */
-  protected EList<PubElementList> pub_elist;
-
-  /**
-   * The cached value of the '{@link #getProtected_elist() <em>Protected elist</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProtected_elist()
-   * @generated
-   * @ordered
-   */
-  protected EList<ProElementList> protected_elist;
-
-  /**
-   * The cached value of the '{@link #getEq_secs() <em>Eq secs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEq_secs()
-   * @generated
-   * @ordered
-   */
-  protected EList<EquationSection> eq_secs;
-
-  /**
-   * The cached value of the '{@link #getAlg_secs() <em>Alg secs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAlg_secs()
-   * @generated
-   * @ordered
-   */
-  protected EList<AlgorithmSection> alg_secs;
-
-  /**
-   * The cached value of the '{@link #getExt_elist() <em>Ext elist</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getExt_elist()
-   * @generated
-   * @ordered
-   */
-  protected EList<ExtElementList> ext_elist;
-
-  /**
-   * The cached value of the '{@link #getAnno() <em>Anno</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAnno()
-   * @generated
-   * @ordered
-   */
-  protected Annotation anno;
+  protected EList<Element> elements;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected CompositionImpl()
+  protected compositionImpl()
   {
     super();
   }
@@ -147,173 +73,13 @@ public class CompositionImpl extends MinimalEObjectImpl.Container implements Com
    * @generated
    */
   @Override
-  public ElementList getPriv_elist()
+  public EList<Element> getElements()
   {
-    return priv_elist;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPriv_elist(ElementList newPriv_elist, NotificationChain msgs)
-  {
-    ElementList oldPriv_elist = priv_elist;
-    priv_elist = newPriv_elist;
-    if (eNotificationRequired())
+    if (elements == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPOSITION__PRIV_ELIST, oldPriv_elist, newPriv_elist);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      elements = new EObjectContainmentEList<Element>(Element.class, this, MOlocPackage.COMPOSITION__ELEMENTS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setPriv_elist(ElementList newPriv_elist)
-  {
-    if (newPriv_elist != priv_elist)
-    {
-      NotificationChain msgs = null;
-      if (priv_elist != null)
-        msgs = ((InternalEObject)priv_elist).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.COMPOSITION__PRIV_ELIST, null, msgs);
-      if (newPriv_elist != null)
-        msgs = ((InternalEObject)newPriv_elist).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.COMPOSITION__PRIV_ELIST, null, msgs);
-      msgs = basicSetPriv_elist(newPriv_elist, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPOSITION__PRIV_ELIST, newPriv_elist, newPriv_elist));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<PubElementList> getPub_elist()
-  {
-    if (pub_elist == null)
-    {
-      pub_elist = new EObjectContainmentEList<PubElementList>(PubElementList.class, this, MOlocPackage.COMPOSITION__PUB_ELIST);
-    }
-    return pub_elist;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<ProElementList> getProtected_elist()
-  {
-    if (protected_elist == null)
-    {
-      protected_elist = new EObjectContainmentEList<ProElementList>(ProElementList.class, this, MOlocPackage.COMPOSITION__PROTECTED_ELIST);
-    }
-    return protected_elist;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<EquationSection> getEq_secs()
-  {
-    if (eq_secs == null)
-    {
-      eq_secs = new EObjectContainmentEList<EquationSection>(EquationSection.class, this, MOlocPackage.COMPOSITION__EQ_SECS);
-    }
-    return eq_secs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<AlgorithmSection> getAlg_secs()
-  {
-    if (alg_secs == null)
-    {
-      alg_secs = new EObjectContainmentEList<AlgorithmSection>(AlgorithmSection.class, this, MOlocPackage.COMPOSITION__ALG_SECS);
-    }
-    return alg_secs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<ExtElementList> getExt_elist()
-  {
-    if (ext_elist == null)
-    {
-      ext_elist = new EObjectContainmentEList<ExtElementList>(ExtElementList.class, this, MOlocPackage.COMPOSITION__EXT_ELIST);
-    }
-    return ext_elist;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Annotation getAnno()
-  {
-    return anno;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAnno(Annotation newAnno, NotificationChain msgs)
-  {
-    Annotation oldAnno = anno;
-    anno = newAnno;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPOSITION__ANNO, oldAnno, newAnno);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setAnno(Annotation newAnno)
-  {
-    if (newAnno != anno)
-    {
-      NotificationChain msgs = null;
-      if (anno != null)
-        msgs = ((InternalEObject)anno).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.COMPOSITION__ANNO, null, msgs);
-      if (newAnno != null)
-        msgs = ((InternalEObject)newAnno).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.COMPOSITION__ANNO, null, msgs);
-      msgs = basicSetAnno(newAnno, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPOSITION__ANNO, newAnno, newAnno));
+    return elements;
   }
 
   /**
@@ -326,20 +92,8 @@ public class CompositionImpl extends MinimalEObjectImpl.Container implements Com
   {
     switch (featureID)
     {
-      case MOlocPackage.COMPOSITION__PRIV_ELIST:
-        return basicSetPriv_elist(null, msgs);
-      case MOlocPackage.COMPOSITION__PUB_ELIST:
-        return ((InternalEList<?>)getPub_elist()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.COMPOSITION__PROTECTED_ELIST:
-        return ((InternalEList<?>)getProtected_elist()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.COMPOSITION__EQ_SECS:
-        return ((InternalEList<?>)getEq_secs()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.COMPOSITION__ALG_SECS:
-        return ((InternalEList<?>)getAlg_secs()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.COMPOSITION__EXT_ELIST:
-        return ((InternalEList<?>)getExt_elist()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.COMPOSITION__ANNO:
-        return basicSetAnno(null, msgs);
+      case MOlocPackage.COMPOSITION__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -354,20 +108,8 @@ public class CompositionImpl extends MinimalEObjectImpl.Container implements Com
   {
     switch (featureID)
     {
-      case MOlocPackage.COMPOSITION__PRIV_ELIST:
-        return getPriv_elist();
-      case MOlocPackage.COMPOSITION__PUB_ELIST:
-        return getPub_elist();
-      case MOlocPackage.COMPOSITION__PROTECTED_ELIST:
-        return getProtected_elist();
-      case MOlocPackage.COMPOSITION__EQ_SECS:
-        return getEq_secs();
-      case MOlocPackage.COMPOSITION__ALG_SECS:
-        return getAlg_secs();
-      case MOlocPackage.COMPOSITION__EXT_ELIST:
-        return getExt_elist();
-      case MOlocPackage.COMPOSITION__ANNO:
-        return getAnno();
+      case MOlocPackage.COMPOSITION__ELEMENTS:
+        return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -383,31 +125,9 @@ public class CompositionImpl extends MinimalEObjectImpl.Container implements Com
   {
     switch (featureID)
     {
-      case MOlocPackage.COMPOSITION__PRIV_ELIST:
-        setPriv_elist((ElementList)newValue);
-        return;
-      case MOlocPackage.COMPOSITION__PUB_ELIST:
-        getPub_elist().clear();
-        getPub_elist().addAll((Collection<? extends PubElementList>)newValue);
-        return;
-      case MOlocPackage.COMPOSITION__PROTECTED_ELIST:
-        getProtected_elist().clear();
-        getProtected_elist().addAll((Collection<? extends ProElementList>)newValue);
-        return;
-      case MOlocPackage.COMPOSITION__EQ_SECS:
-        getEq_secs().clear();
-        getEq_secs().addAll((Collection<? extends EquationSection>)newValue);
-        return;
-      case MOlocPackage.COMPOSITION__ALG_SECS:
-        getAlg_secs().clear();
-        getAlg_secs().addAll((Collection<? extends AlgorithmSection>)newValue);
-        return;
-      case MOlocPackage.COMPOSITION__EXT_ELIST:
-        getExt_elist().clear();
-        getExt_elist().addAll((Collection<? extends ExtElementList>)newValue);
-        return;
-      case MOlocPackage.COMPOSITION__ANNO:
-        setAnno((Annotation)newValue);
+      case MOlocPackage.COMPOSITION__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends Element>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -423,26 +143,8 @@ public class CompositionImpl extends MinimalEObjectImpl.Container implements Com
   {
     switch (featureID)
     {
-      case MOlocPackage.COMPOSITION__PRIV_ELIST:
-        setPriv_elist((ElementList)null);
-        return;
-      case MOlocPackage.COMPOSITION__PUB_ELIST:
-        getPub_elist().clear();
-        return;
-      case MOlocPackage.COMPOSITION__PROTECTED_ELIST:
-        getProtected_elist().clear();
-        return;
-      case MOlocPackage.COMPOSITION__EQ_SECS:
-        getEq_secs().clear();
-        return;
-      case MOlocPackage.COMPOSITION__ALG_SECS:
-        getAlg_secs().clear();
-        return;
-      case MOlocPackage.COMPOSITION__EXT_ELIST:
-        getExt_elist().clear();
-        return;
-      case MOlocPackage.COMPOSITION__ANNO:
-        setAnno((Annotation)null);
+      case MOlocPackage.COMPOSITION__ELEMENTS:
+        getElements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -458,22 +160,10 @@ public class CompositionImpl extends MinimalEObjectImpl.Container implements Com
   {
     switch (featureID)
     {
-      case MOlocPackage.COMPOSITION__PRIV_ELIST:
-        return priv_elist != null;
-      case MOlocPackage.COMPOSITION__PUB_ELIST:
-        return pub_elist != null && !pub_elist.isEmpty();
-      case MOlocPackage.COMPOSITION__PROTECTED_ELIST:
-        return protected_elist != null && !protected_elist.isEmpty();
-      case MOlocPackage.COMPOSITION__EQ_SECS:
-        return eq_secs != null && !eq_secs.isEmpty();
-      case MOlocPackage.COMPOSITION__ALG_SECS:
-        return alg_secs != null && !alg_secs.isEmpty();
-      case MOlocPackage.COMPOSITION__EXT_ELIST:
-        return ext_elist != null && !ext_elist.isEmpty();
-      case MOlocPackage.COMPOSITION__ANNO:
-        return anno != null;
+      case MOlocPackage.COMPOSITION__ELEMENTS:
+        return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //CompositionImpl
+} //compositionImpl

@@ -3,18 +3,14 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Comment;
 import dut.control.moloc.mOloc.EnumerationLiteral;
 import dut.control.moloc.mOloc.MOlocPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,43 +20,32 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.EnumerationLiteralImpl#getId <em>Id</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.EnumerationLiteralImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.EnumerationLiteralImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container implements EnumerationLiteral
+public class EnumerationLiteralImpl extends descriptionImpl implements EnumerationLiteral
 {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getTitle()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
+  protected static final String TITLE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getTitle()
    * @generated
    * @ordered
    */
-  protected String id = ID_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getComment()
-   * @generated
-   * @ordered
-   */
-  protected Comment comment;
+  protected String title = TITLE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -89,9 +74,9 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public String getId()
+  public String getTitle()
   {
-    return id;
+    return title;
   }
 
   /**
@@ -100,78 +85,12 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public void setId(String newId)
+  public void setTitle(String newTitle)
   {
-    String oldId = id;
-    id = newId;
+    String oldTitle = title;
+    title = newTitle;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ENUMERATION_LITERAL__ID, oldId, id));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Comment getComment()
-  {
-    return comment;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetComment(Comment newComment, NotificationChain msgs)
-  {
-    Comment oldComment = comment;
-    comment = newComment;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.ENUMERATION_LITERAL__COMMENT, oldComment, newComment);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setComment(Comment newComment)
-  {
-    if (newComment != comment)
-    {
-      NotificationChain msgs = null;
-      if (comment != null)
-        msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.ENUMERATION_LITERAL__COMMENT, null, msgs);
-      if (newComment != null)
-        msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.ENUMERATION_LITERAL__COMMENT, null, msgs);
-      msgs = basicSetComment(newComment, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ENUMERATION_LITERAL__COMMENT, newComment, newComment));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MOlocPackage.ENUMERATION_LITERAL__COMMENT:
-        return basicSetComment(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ENUMERATION_LITERAL__TITLE, oldTitle, title));
   }
 
   /**
@@ -184,10 +103,8 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MOlocPackage.ENUMERATION_LITERAL__ID:
-        return getId();
-      case MOlocPackage.ENUMERATION_LITERAL__COMMENT:
-        return getComment();
+      case MOlocPackage.ENUMERATION_LITERAL__TITLE:
+        return getTitle();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -202,11 +119,8 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MOlocPackage.ENUMERATION_LITERAL__ID:
-        setId((String)newValue);
-        return;
-      case MOlocPackage.ENUMERATION_LITERAL__COMMENT:
-        setComment((Comment)newValue);
+      case MOlocPackage.ENUMERATION_LITERAL__TITLE:
+        setTitle((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -222,11 +136,8 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MOlocPackage.ENUMERATION_LITERAL__ID:
-        setId(ID_EDEFAULT);
-        return;
-      case MOlocPackage.ENUMERATION_LITERAL__COMMENT:
-        setComment((Comment)null);
+      case MOlocPackage.ENUMERATION_LITERAL__TITLE:
+        setTitle(TITLE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -242,10 +153,8 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MOlocPackage.ENUMERATION_LITERAL__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case MOlocPackage.ENUMERATION_LITERAL__COMMENT:
-        return comment != null;
+      case MOlocPackage.ENUMERATION_LITERAL__TITLE:
+        return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
     }
     return super.eIsSet(featureID);
   }
@@ -261,8 +170,8 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (id: ");
-    result.append(id);
+    result.append(" (title: ");
+    result.append(title);
     result.append(')');
     return result.toString();
   }

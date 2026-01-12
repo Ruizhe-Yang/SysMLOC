@@ -3,18 +3,28 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Comment;
+import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.ImportClause;
-import dut.control.moloc.mOloc.ImportList;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.class_modification;
+import dut.control.moloc.mOloc.description;
+import dut.control.moloc.mOloc.description_string;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,10 +34,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getId <em>Id</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getName <em>Name</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getList <em>List</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getSelfName <em>Self Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getImportName <em>Import Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#isIsImportAll <em>Is Import All</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getObjectName <em>Object Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,64 +48,124 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ImportClauseImpl extends ElementImpl implements ImportClause
 {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
+  protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected String id = ID_EDEFAULT;
+  protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getArguments()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected EList<Argument> arguments;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #isIsAnnotation()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getList() <em>List</em>}' containment reference.
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getList()
+   * @see #isIsAnnotation()
    * @generated
    * @ordered
    */
-  protected ImportList list;
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
+   * The default value of the '{@link #getSelfName() <em>Self Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComment()
+   * @see #getSelfName()
    * @generated
    * @ordered
    */
-  protected Comment comment;
+  protected static final String SELF_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSelfName() <em>Self Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSelfName()
+   * @generated
+   * @ordered
+   */
+  protected String selfName = SELF_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getImportName() <em>Import Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImportName()
+   * @generated
+   * @ordered
+   */
+  protected static final String IMPORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getImportName() <em>Import Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImportName()
+   * @generated
+   * @ordered
+   */
+  protected String importName = IMPORT_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsImportAll() <em>Is Import All</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsImportAll()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_IMPORT_ALL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsImportAll() <em>Is Import All</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsImportAll()
+   * @generated
+   * @ordered
+   */
+  protected boolean isImportAll = IS_IMPORT_ALL_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getObjectName() <em>Object Name</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getObjectName()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> objectName;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,9 +194,9 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    */
   @Override
-  public String getId()
+  public String getDescription()
   {
-    return id;
+    return description;
   }
 
   /**
@@ -132,12 +205,12 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    */
   @Override
-  public void setId(String newId)
+  public void setDescription(String newDescription)
   {
-    String oldId = id;
-    id = newId;
+    String oldDescription = description;
+    description = newDescription;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -146,9 +219,13 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    */
   @Override
-  public String getName()
+  public EList<Argument> getArguments()
   {
-    return name;
+    if (arguments == null)
+    {
+      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.IMPORT_CLAUSE__ARGUMENTS);
+    }
+    return arguments;
   }
 
   /**
@@ -157,12 +234,23 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public boolean isIsAnnotation()
   {
-    String oldName = name;
-    name = newName;
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
   }
 
   /**
@@ -171,9 +259,9 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    */
   @Override
-  public ImportList getList()
+  public String getSelfName()
   {
-    return list;
+    return selfName;
   }
 
   /**
@@ -181,16 +269,13 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetList(ImportList newList, NotificationChain msgs)
+  @Override
+  public void setSelfName(String newSelfName)
   {
-    ImportList oldList = list;
-    list = newList;
+    String oldSelfName = selfName;
+    selfName = newSelfName;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__LIST, oldList, newList);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__SELF_NAME, oldSelfName, selfName));
   }
 
   /**
@@ -199,20 +284,9 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    */
   @Override
-  public void setList(ImportList newList)
+  public String getImportName()
   {
-    if (newList != list)
-    {
-      NotificationChain msgs = null;
-      if (list != null)
-        msgs = ((InternalEObject)list).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.IMPORT_CLAUSE__LIST, null, msgs);
-      if (newList != null)
-        msgs = ((InternalEObject)newList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.IMPORT_CLAUSE__LIST, null, msgs);
-      msgs = basicSetList(newList, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__LIST, newList, newList));
+    return importName;
   }
 
   /**
@@ -221,26 +295,12 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    */
   @Override
-  public Comment getComment()
+  public void setImportName(String newImportName)
   {
-    return comment;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetComment(Comment newComment, NotificationChain msgs)
-  {
-    Comment oldComment = comment;
-    comment = newComment;
+    String oldImportName = importName;
+    importName = newImportName;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__COMMENT, oldComment, newComment);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__IMPORT_NAME, oldImportName, importName));
   }
 
   /**
@@ -249,20 +309,38 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    */
   @Override
-  public void setComment(Comment newComment)
+  public boolean isIsImportAll()
   {
-    if (newComment != comment)
+    return isImportAll;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsImportAll(boolean newIsImportAll)
+  {
+    boolean oldIsImportAll = isImportAll;
+    isImportAll = newIsImportAll;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__IS_IMPORT_ALL, oldIsImportAll, isImportAll));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getObjectName()
+  {
+    if (objectName == null)
     {
-      NotificationChain msgs = null;
-      if (comment != null)
-        msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.IMPORT_CLAUSE__COMMENT, null, msgs);
-      if (newComment != null)
-        msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.IMPORT_CLAUSE__COMMENT, null, msgs);
-      msgs = basicSetComment(newComment, msgs);
-      if (msgs != null) msgs.dispatch();
+      objectName = new EDataTypeEList<String>(String.class, this, MOlocPackage.IMPORT_CLAUSE__OBJECT_NAME);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__COMMENT, newComment, newComment));
+    return objectName;
   }
 
   /**
@@ -275,10 +353,8 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
   {
     switch (featureID)
     {
-      case MOlocPackage.IMPORT_CLAUSE__LIST:
-        return basicSetList(null, msgs);
-      case MOlocPackage.IMPORT_CLAUSE__COMMENT:
-        return basicSetComment(null, msgs);
+      case MOlocPackage.IMPORT_CLAUSE__ARGUMENTS:
+        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -293,14 +369,20 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
   {
     switch (featureID)
     {
-      case MOlocPackage.IMPORT_CLAUSE__ID:
-        return getId();
-      case MOlocPackage.IMPORT_CLAUSE__NAME:
-        return getName();
-      case MOlocPackage.IMPORT_CLAUSE__LIST:
-        return getList();
-      case MOlocPackage.IMPORT_CLAUSE__COMMENT:
-        return getComment();
+      case MOlocPackage.IMPORT_CLAUSE__DESCRIPTION:
+        return getDescription();
+      case MOlocPackage.IMPORT_CLAUSE__ARGUMENTS:
+        return getArguments();
+      case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION:
+        return isIsAnnotation();
+      case MOlocPackage.IMPORT_CLAUSE__SELF_NAME:
+        return getSelfName();
+      case MOlocPackage.IMPORT_CLAUSE__IMPORT_NAME:
+        return getImportName();
+      case MOlocPackage.IMPORT_CLAUSE__IS_IMPORT_ALL:
+        return isIsImportAll();
+      case MOlocPackage.IMPORT_CLAUSE__OBJECT_NAME:
+        return getObjectName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -310,22 +392,34 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MOlocPackage.IMPORT_CLAUSE__ID:
-        setId((String)newValue);
+      case MOlocPackage.IMPORT_CLAUSE__DESCRIPTION:
+        setDescription((String)newValue);
         return;
-      case MOlocPackage.IMPORT_CLAUSE__NAME:
-        setName((String)newValue);
+      case MOlocPackage.IMPORT_CLAUSE__ARGUMENTS:
+        getArguments().clear();
+        getArguments().addAll((Collection<? extends Argument>)newValue);
         return;
-      case MOlocPackage.IMPORT_CLAUSE__LIST:
-        setList((ImportList)newValue);
+      case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
         return;
-      case MOlocPackage.IMPORT_CLAUSE__COMMENT:
-        setComment((Comment)newValue);
+      case MOlocPackage.IMPORT_CLAUSE__SELF_NAME:
+        setSelfName((String)newValue);
+        return;
+      case MOlocPackage.IMPORT_CLAUSE__IMPORT_NAME:
+        setImportName((String)newValue);
+        return;
+      case MOlocPackage.IMPORT_CLAUSE__IS_IMPORT_ALL:
+        setIsImportAll((Boolean)newValue);
+        return;
+      case MOlocPackage.IMPORT_CLAUSE__OBJECT_NAME:
+        getObjectName().clear();
+        getObjectName().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -341,17 +435,26 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
   {
     switch (featureID)
     {
-      case MOlocPackage.IMPORT_CLAUSE__ID:
-        setId(ID_EDEFAULT);
+      case MOlocPackage.IMPORT_CLAUSE__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
         return;
-      case MOlocPackage.IMPORT_CLAUSE__NAME:
-        setName(NAME_EDEFAULT);
+      case MOlocPackage.IMPORT_CLAUSE__ARGUMENTS:
+        getArguments().clear();
         return;
-      case MOlocPackage.IMPORT_CLAUSE__LIST:
-        setList((ImportList)null);
+      case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
         return;
-      case MOlocPackage.IMPORT_CLAUSE__COMMENT:
-        setComment((Comment)null);
+      case MOlocPackage.IMPORT_CLAUSE__SELF_NAME:
+        setSelfName(SELF_NAME_EDEFAULT);
+        return;
+      case MOlocPackage.IMPORT_CLAUSE__IMPORT_NAME:
+        setImportName(IMPORT_NAME_EDEFAULT);
+        return;
+      case MOlocPackage.IMPORT_CLAUSE__IS_IMPORT_ALL:
+        setIsImportAll(IS_IMPORT_ALL_EDEFAULT);
+        return;
+      case MOlocPackage.IMPORT_CLAUSE__OBJECT_NAME:
+        getObjectName().clear();
         return;
     }
     super.eUnset(featureID);
@@ -367,16 +470,92 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
   {
     switch (featureID)
     {
-      case MOlocPackage.IMPORT_CLAUSE__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case MOlocPackage.IMPORT_CLAUSE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case MOlocPackage.IMPORT_CLAUSE__LIST:
-        return list != null;
-      case MOlocPackage.IMPORT_CLAUSE__COMMENT:
-        return comment != null;
+      case MOlocPackage.IMPORT_CLAUSE__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case MOlocPackage.IMPORT_CLAUSE__ARGUMENTS:
+        return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.IMPORT_CLAUSE__SELF_NAME:
+        return SELF_NAME_EDEFAULT == null ? selfName != null : !SELF_NAME_EDEFAULT.equals(selfName);
+      case MOlocPackage.IMPORT_CLAUSE__IMPORT_NAME:
+        return IMPORT_NAME_EDEFAULT == null ? importName != null : !IMPORT_NAME_EDEFAULT.equals(importName);
+      case MOlocPackage.IMPORT_CLAUSE__IS_IMPORT_ALL:
+        return isImportAll != IS_IMPORT_ALL_EDEFAULT;
+      case MOlocPackage.IMPORT_CLAUSE__OBJECT_NAME:
+        return objectName != null && !objectName.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == description_string.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.IMPORT_CLAUSE__DESCRIPTION: return MOlocPackage.DESCRIPTION_STRING__DESCRIPTION;
+        default: return -1;
+      }
+    }
+    if (baseClass == class_modification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.IMPORT_CLAUSE__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        default: return -1;
+      }
+    }
+    if (baseClass == description.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == description_string.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.DESCRIPTION_STRING__DESCRIPTION: return MOlocPackage.IMPORT_CLAUSE__DESCRIPTION;
+        default: return -1;
+      }
+    }
+    if (baseClass == class_modification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.IMPORT_CLAUSE__ARGUMENTS;
+        default: return -1;
+      }
+    }
+    if (baseClass == description.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**
@@ -390,10 +569,18 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (id: ");
-    result.append(id);
-    result.append(", name: ");
-    result.append(name);
+    result.append(" (description: ");
+    result.append(description);
+    result.append(", isAnnotation: ");
+    result.append(isAnnotation);
+    result.append(", selfName: ");
+    result.append(selfName);
+    result.append(", importName: ");
+    result.append(importName);
+    result.append(", isImportAll: ");
+    result.append(isImportAll);
+    result.append(", objectName: ");
+    result.append(objectName);
     result.append(')');
     return result.toString();
   }

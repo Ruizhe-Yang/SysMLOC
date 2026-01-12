@@ -3,106 +3,100 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.ArraySubscripts;
-import dut.control.moloc.mOloc.Comment;
-import dut.control.moloc.mOloc.Declaration;
+import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.MOlocPackage;
-import dut.control.moloc.mOloc.Modification;
-import dut.control.moloc.mOloc.TypeSpecifier;
+import dut.control.moloc.mOloc.class_modification;
+import dut.control.moloc.mOloc.declaration;
+import dut.control.moloc.mOloc.modification;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Declaration</b></em>'.
+ * An implementation of the model object '<em><b>declaration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.DeclarationImpl#getName <em>Name</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.DeclarationImpl#getType <em>Type</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.DeclarationImpl#getSubscripts <em>Subscripts</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.DeclarationImpl#getMod <em>Mod</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.DeclarationImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.declarationImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.declarationImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.declarationImpl#getDeclarationName <em>Declaration Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DeclarationImpl extends ComponentDeclaration1Impl implements Declaration
+public class declarationImpl extends array_subscriptsImpl implements declaration
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getArguments()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected EList<Argument> arguments;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getExpression()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected static final String EXPRESSION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getExpression()
    * @generated
    * @ordered
    */
-  protected TypeSpecifier type;
+  protected String expression = EXPRESSION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSubscripts() <em>Subscripts</em>}' containment reference.
+   * The default value of the '{@link #getDeclarationName() <em>Declaration Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSubscripts()
+   * @see #getDeclarationName()
    * @generated
    * @ordered
    */
-  protected ArraySubscripts subscripts;
+  protected static final String DECLARATION_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMod() <em>Mod</em>}' containment reference.
+   * The cached value of the '{@link #getDeclarationName() <em>Declaration Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMod()
+   * @see #getDeclarationName()
    * @generated
    * @ordered
    */
-  protected Modification mod;
-
-  /**
-   * The cached value of the '{@link #getComment() <em>Comment</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getComment()
-   * @generated
-   * @ordered
-   */
-  protected Comment comment;
+  protected String declarationName = DECLARATION_NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DeclarationImpl()
+  protected declarationImpl()
   {
     super();
   }
@@ -124,9 +118,13 @@ public class DeclarationImpl extends ComponentDeclaration1Impl implements Declar
    * @generated
    */
   @Override
-  public String getName()
+  public EList<Argument> getArguments()
   {
-    return name;
+    if (arguments == null)
+    {
+      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.DECLARATION__ARGUMENTS);
+    }
+    return arguments;
   }
 
   /**
@@ -135,12 +133,23 @@ public class DeclarationImpl extends ComponentDeclaration1Impl implements Declar
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public String getExpression()
   {
-    String oldName = name;
-    name = newName;
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setExpression(String newExpression)
+  {
+    String oldExpression = expression;
+    expression = newExpression;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.DECLARATION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.DECLARATION__EXPRESSION, oldExpression, expression));
   }
 
   /**
@@ -149,9 +158,9 @@ public class DeclarationImpl extends ComponentDeclaration1Impl implements Declar
    * @generated
    */
   @Override
-  public TypeSpecifier getType()
+  public String getDeclarationName()
   {
-    return type;
+    return declarationName;
   }
 
   /**
@@ -159,188 +168,13 @@ public class DeclarationImpl extends ComponentDeclaration1Impl implements Declar
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(TypeSpecifier newType, NotificationChain msgs)
+  @Override
+  public void setDeclarationName(String newDeclarationName)
   {
-    TypeSpecifier oldType = type;
-    type = newType;
+    String oldDeclarationName = declarationName;
+    declarationName = newDeclarationName;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.DECLARATION__TYPE, oldType, newType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setType(TypeSpecifier newType)
-  {
-    if (newType != type)
-    {
-      NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.DECLARATION__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.DECLARATION__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.DECLARATION__TYPE, newType, newType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ArraySubscripts getSubscripts()
-  {
-    return subscripts;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetSubscripts(ArraySubscripts newSubscripts, NotificationChain msgs)
-  {
-    ArraySubscripts oldSubscripts = subscripts;
-    subscripts = newSubscripts;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.DECLARATION__SUBSCRIPTS, oldSubscripts, newSubscripts);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setSubscripts(ArraySubscripts newSubscripts)
-  {
-    if (newSubscripts != subscripts)
-    {
-      NotificationChain msgs = null;
-      if (subscripts != null)
-        msgs = ((InternalEObject)subscripts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.DECLARATION__SUBSCRIPTS, null, msgs);
-      if (newSubscripts != null)
-        msgs = ((InternalEObject)newSubscripts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.DECLARATION__SUBSCRIPTS, null, msgs);
-      msgs = basicSetSubscripts(newSubscripts, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.DECLARATION__SUBSCRIPTS, newSubscripts, newSubscripts));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Modification getMod()
-  {
-    return mod;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetMod(Modification newMod, NotificationChain msgs)
-  {
-    Modification oldMod = mod;
-    mod = newMod;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.DECLARATION__MOD, oldMod, newMod);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMod(Modification newMod)
-  {
-    if (newMod != mod)
-    {
-      NotificationChain msgs = null;
-      if (mod != null)
-        msgs = ((InternalEObject)mod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.DECLARATION__MOD, null, msgs);
-      if (newMod != null)
-        msgs = ((InternalEObject)newMod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.DECLARATION__MOD, null, msgs);
-      msgs = basicSetMod(newMod, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.DECLARATION__MOD, newMod, newMod));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Comment getComment()
-  {
-    return comment;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetComment(Comment newComment, NotificationChain msgs)
-  {
-    Comment oldComment = comment;
-    comment = newComment;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.DECLARATION__COMMENT, oldComment, newComment);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setComment(Comment newComment)
-  {
-    if (newComment != comment)
-    {
-      NotificationChain msgs = null;
-      if (comment != null)
-        msgs = ((InternalEObject)comment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.DECLARATION__COMMENT, null, msgs);
-      if (newComment != null)
-        msgs = ((InternalEObject)newComment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.DECLARATION__COMMENT, null, msgs);
-      msgs = basicSetComment(newComment, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.DECLARATION__COMMENT, newComment, newComment));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.DECLARATION__DECLARATION_NAME, oldDeclarationName, declarationName));
   }
 
   /**
@@ -353,14 +187,8 @@ public class DeclarationImpl extends ComponentDeclaration1Impl implements Declar
   {
     switch (featureID)
     {
-      case MOlocPackage.DECLARATION__TYPE:
-        return basicSetType(null, msgs);
-      case MOlocPackage.DECLARATION__SUBSCRIPTS:
-        return basicSetSubscripts(null, msgs);
-      case MOlocPackage.DECLARATION__MOD:
-        return basicSetMod(null, msgs);
-      case MOlocPackage.DECLARATION__COMMENT:
-        return basicSetComment(null, msgs);
+      case MOlocPackage.DECLARATION__ARGUMENTS:
+        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -375,16 +203,12 @@ public class DeclarationImpl extends ComponentDeclaration1Impl implements Declar
   {
     switch (featureID)
     {
-      case MOlocPackage.DECLARATION__NAME:
-        return getName();
-      case MOlocPackage.DECLARATION__TYPE:
-        return getType();
-      case MOlocPackage.DECLARATION__SUBSCRIPTS:
-        return getSubscripts();
-      case MOlocPackage.DECLARATION__MOD:
-        return getMod();
-      case MOlocPackage.DECLARATION__COMMENT:
-        return getComment();
+      case MOlocPackage.DECLARATION__ARGUMENTS:
+        return getArguments();
+      case MOlocPackage.DECLARATION__EXPRESSION:
+        return getExpression();
+      case MOlocPackage.DECLARATION__DECLARATION_NAME:
+        return getDeclarationName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -394,25 +218,21 @@ public class DeclarationImpl extends ComponentDeclaration1Impl implements Declar
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MOlocPackage.DECLARATION__NAME:
-        setName((String)newValue);
+      case MOlocPackage.DECLARATION__ARGUMENTS:
+        getArguments().clear();
+        getArguments().addAll((Collection<? extends Argument>)newValue);
         return;
-      case MOlocPackage.DECLARATION__TYPE:
-        setType((TypeSpecifier)newValue);
+      case MOlocPackage.DECLARATION__EXPRESSION:
+        setExpression((String)newValue);
         return;
-      case MOlocPackage.DECLARATION__SUBSCRIPTS:
-        setSubscripts((ArraySubscripts)newValue);
-        return;
-      case MOlocPackage.DECLARATION__MOD:
-        setMod((Modification)newValue);
-        return;
-      case MOlocPackage.DECLARATION__COMMENT:
-        setComment((Comment)newValue);
+      case MOlocPackage.DECLARATION__DECLARATION_NAME:
+        setDeclarationName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -428,20 +248,14 @@ public class DeclarationImpl extends ComponentDeclaration1Impl implements Declar
   {
     switch (featureID)
     {
-      case MOlocPackage.DECLARATION__NAME:
-        setName(NAME_EDEFAULT);
+      case MOlocPackage.DECLARATION__ARGUMENTS:
+        getArguments().clear();
         return;
-      case MOlocPackage.DECLARATION__TYPE:
-        setType((TypeSpecifier)null);
+      case MOlocPackage.DECLARATION__EXPRESSION:
+        setExpression(EXPRESSION_EDEFAULT);
         return;
-      case MOlocPackage.DECLARATION__SUBSCRIPTS:
-        setSubscripts((ArraySubscripts)null);
-        return;
-      case MOlocPackage.DECLARATION__MOD:
-        setMod((Modification)null);
-        return;
-      case MOlocPackage.DECLARATION__COMMENT:
-        setComment((Comment)null);
+      case MOlocPackage.DECLARATION__DECLARATION_NAME:
+        setDeclarationName(DECLARATION_NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -457,18 +271,68 @@ public class DeclarationImpl extends ComponentDeclaration1Impl implements Declar
   {
     switch (featureID)
     {
-      case MOlocPackage.DECLARATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case MOlocPackage.DECLARATION__TYPE:
-        return type != null;
-      case MOlocPackage.DECLARATION__SUBSCRIPTS:
-        return subscripts != null;
-      case MOlocPackage.DECLARATION__MOD:
-        return mod != null;
-      case MOlocPackage.DECLARATION__COMMENT:
-        return comment != null;
+      case MOlocPackage.DECLARATION__ARGUMENTS:
+        return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.DECLARATION__EXPRESSION:
+        return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
+      case MOlocPackage.DECLARATION__DECLARATION_NAME:
+        return DECLARATION_NAME_EDEFAULT == null ? declarationName != null : !DECLARATION_NAME_EDEFAULT.equals(declarationName);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == class_modification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.DECLARATION__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        default: return -1;
+      }
+    }
+    if (baseClass == modification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.DECLARATION__EXPRESSION: return MOlocPackage.MODIFICATION__EXPRESSION;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == class_modification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.DECLARATION__ARGUMENTS;
+        default: return -1;
+      }
+    }
+    if (baseClass == modification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.MODIFICATION__EXPRESSION: return MOlocPackage.DECLARATION__EXPRESSION;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**
@@ -482,10 +346,12 @@ public class DeclarationImpl extends ComponentDeclaration1Impl implements Declar
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (expression: ");
+    result.append(expression);
+    result.append(", declarationName: ");
+    result.append(declarationName);
     result.append(')');
     return result.toString();
   }
 
-} //DeclarationImpl
+} //declarationImpl

@@ -3,115 +3,45 @@
  */
 package dut.control.moloc.mOloc;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Modification</b></em>'.
+ * A representation of the model object '<em><b>modification</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.Modification#getMod <em>Mod</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.Modification#isDh <em>Dh</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.Modification#getExpr <em>Expr</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.Modification#isMh <em>Mh</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.modification#getExpression <em>Expression</em>}</li>
  * </ul>
  *
- * @see dut.control.moloc.mOloc.MOlocPackage#getModification()
+ * @see dut.control.moloc.mOloc.MOlocPackage#getmodification()
  * @model
  * @generated
  */
-public interface Modification extends EObject
+public interface modification extends class_modification
 {
   /**
-   * Returns the value of the '<em><b>Mod</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Mod</em>' containment reference.
-   * @see #setMod(ClassModification)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getModification_Mod()
-   * @model containment="true"
-   * @generated
-   */
-  ClassModification getMod();
-
-  /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Modification#getMod <em>Mod</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Mod</em>' containment reference.
-   * @see #getMod()
-   * @generated
-   */
-  void setMod(ClassModification value);
-
-  /**
-   * Returns the value of the '<em><b>Dh</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Dh</em>' attribute.
-   * @see #setDh(boolean)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getModification_Dh()
+   * @return the value of the '<em>Expression</em>' attribute.
+   * @see #setExpression(String)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getmodification_Expression()
    * @model
    * @generated
    */
-  boolean isDh();
+  String getExpression();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Modification#isDh <em>Dh</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.modification#getExpression <em>Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Dh</em>' attribute.
-   * @see #isDh()
+   * @param value the new value of the '<em>Expression</em>' attribute.
+   * @see #getExpression()
    * @generated
    */
-  void setDh(boolean value);
+  void setExpression(String value);
 
-  /**
-   * Returns the value of the '<em><b>Expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Expr</em>' containment reference.
-   * @see #setExpr(Expression)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getModification_Expr()
-   * @model containment="true"
-   * @generated
-   */
-  Expression getExpr();
-
-  /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Modification#getExpr <em>Expr</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expr</em>' containment reference.
-   * @see #getExpr()
-   * @generated
-   */
-  void setExpr(Expression value);
-
-  /**
-   * Returns the value of the '<em><b>Mh</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Mh</em>' attribute.
-   * @see #setMh(boolean)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getModification_Mh()
-   * @model
-   * @generated
-   */
-  boolean isMh();
-
-  /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Modification#isMh <em>Mh</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Mh</em>' attribute.
-   * @see #isMh()
-   * @generated
-   */
-  void setMh(boolean value);
-
-} // Modification
+} // modification

@@ -3,6 +3,7 @@
  */
 package dut.control.moloc.mOloc;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,104 +14,94 @@ package dut.control.moloc.mOloc;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.ImportClause#getId <em>Id</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.ImportClause#getName <em>Name</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.ImportClause#getList <em>List</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.ImportClause#getComment <em>Comment</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ImportClause#getSelfName <em>Self Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ImportClause#getImportName <em>Import Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ImportClause#isIsImportAll <em>Is Import All</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ImportClause#getObjectName <em>Object Name</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause()
  * @model
  * @generated
  */
-public interface ImportClause extends Element
+public interface ImportClause extends Element, description
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Self Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute.
-   * @see #setId(String)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause_Id()
+   * @return the value of the '<em>Self Name</em>' attribute.
+   * @see #setSelfName(String)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause_SelfName()
    * @model
    * @generated
    */
-  String getId();
+  String getSelfName();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.ImportClause#getId <em>Id</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ImportClause#getSelfName <em>Self Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' attribute.
-   * @see #getId()
+   * @param value the new value of the '<em>Self Name</em>' attribute.
+   * @see #getSelfName()
    * @generated
    */
-  void setId(String value);
+  void setSelfName(String value);
 
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Import Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause_Name()
+   * @return the value of the '<em>Import Name</em>' attribute.
+   * @see #setImportName(String)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause_ImportName()
    * @model
    * @generated
    */
-  String getName();
+  String getImportName();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.ImportClause#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ImportClause#getImportName <em>Import Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Import Name</em>' attribute.
+   * @see #getImportName()
    * @generated
    */
-  void setName(String value);
+  void setImportName(String value);
 
   /**
-   * Returns the value of the '<em><b>List</b></em>' containment reference.
+   * Returns the value of the '<em><b>Is Import All</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>List</em>' containment reference.
-   * @see #setList(ImportList)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause_List()
-   * @model containment="true"
+   * @return the value of the '<em>Is Import All</em>' attribute.
+   * @see #setIsImportAll(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause_IsImportAll()
+   * @model
    * @generated
    */
-  ImportList getList();
+  boolean isIsImportAll();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.ImportClause#getList <em>List</em>}' containment reference.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ImportClause#isIsImportAll <em>Is Import All</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>List</em>' containment reference.
-   * @see #getList()
+   * @param value the new value of the '<em>Is Import All</em>' attribute.
+   * @see #isIsImportAll()
    * @generated
    */
-  void setList(ImportList value);
+  void setIsImportAll(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Comment</b></em>' containment reference.
+   * Returns the value of the '<em><b>Object Name</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Comment</em>' containment reference.
-   * @see #setComment(Comment)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause_Comment()
-   * @model containment="true"
+   * @return the value of the '<em>Object Name</em>' attribute list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause_ObjectName()
+   * @model unique="false"
    * @generated
    */
-  Comment getComment();
-
-  /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.ImportClause#getComment <em>Comment</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Comment</em>' containment reference.
-   * @see #getComment()
-   * @generated
-   */
-  void setComment(Comment value);
+  EList<String> getObjectName();
 
 } // ImportClause

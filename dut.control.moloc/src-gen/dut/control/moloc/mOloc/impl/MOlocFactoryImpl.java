@@ -6,6 +6,7 @@ package dut.control.moloc.mOloc.impl;
 import dut.control.moloc.mOloc.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -65,93 +66,41 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
   {
     switch (eClass.getClassifierID())
     {
-      case MOlocPackage.STORED_DEFINITION: return createStoredDefinition();
-      case MOlocPackage.CLASS_DEFINITION: return createClassDefinition();
-      case MOlocPackage.CLASS_PREFIX: return createClassPrefix();
-      case MOlocPackage.CLASS_SPECIFIER: return createClassSpecifier();
-      case MOlocPackage.ENUM_LIST: return createEnumList();
+      case MOlocPackage.STORED_DEFINITION: return createStored_definition();
+      case MOlocPackage.CLASS_DEFINITION: return createClass_definition();
+      case MOlocPackage.CLASS_PREFIXES: return createclass_prefixes();
+      case MOlocPackage.CLASS_SPECIFIER: return createclass_specifier();
+      case MOlocPackage.LONG_CLASS_SPECIFIER: return createlong_class_specifier();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER: return createshort_class_specifier();
+      case MOlocPackage.DER_CLASS_SPECIFIER: return createder_class_specifier();
+      case MOlocPackage.CLASS_NAME: return createclass_name();
+      case MOlocPackage.CLASS_MODIFICATION: return createclass_modification();
+      case MOlocPackage.DESCRIPTION_STRING: return createdescription_string();
+      case MOlocPackage.COMPOSITION: return createcomposition();
+      case MOlocPackage.TYPE_SPECIFIER: return createtype_specifier();
+      case MOlocPackage.ENUM_LIST: return createenum_list();
       case MOlocPackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
-      case MOlocPackage.COMPOSITION: return createComposition();
-      case MOlocPackage.PUB_ELEMENT_LIST: return createPubElementList();
-      case MOlocPackage.PRO_ELEMENT_LIST: return createProElementList();
-      case MOlocPackage.EXT_ELEMENT_LIST: return createExtElementList();
-      case MOlocPackage.EXTERNAL_FUNCTION_CALL: return createExternalFunctionCall();
-      case MOlocPackage.ELEMENT_LIST: return createElementList();
+      case MOlocPackage.DESCRIPTION: return createdescription();
+      case MOlocPackage.ARGUMENT: return createArgument();
+      case MOlocPackage.ELEMENT_MODIFICATION: return createelement_modification();
+      case MOlocPackage.ELEMENT_REPLACEABLE: return createelement_replaceable();
+      case MOlocPackage.SHORT_CLASS_DEFINITION: return createshort_class_definition();
+      case MOlocPackage.COMPONENT_CLAUSE1: return createcomponent_clause1();
+      case MOlocPackage.TYPE_PREFIX: return createtype_prefix();
+      case MOlocPackage.COMPONENT_DECLARATION1: return createcomponent_declaration1();
+      case MOlocPackage.DECLARATION: return createdeclaration();
+      case MOlocPackage.ARRAY_SUBSCRIPTS: return createarray_subscripts();
+      case MOlocPackage.UNFINISHED2: return createUnfinished2();
+      case MOlocPackage.MODIFICATION: return createmodification();
+      case MOlocPackage.CONSTRAINING_CLAUSE: return createconstraining_clause();
       case MOlocPackage.ELEMENT: return createElement();
       case MOlocPackage.IMPORT_CLAUSE: return createImportClause();
-      case MOlocPackage.IMPORT_LIST: return createImportList();
       case MOlocPackage.EXTENDS_CLAUSE: return createExtendsClause();
-      case MOlocPackage.TYPE_CLAUSE: return createtypeClause();
-      case MOlocPackage.CONSTRAINING_CLAUSE: return createConstrainingClause();
-      case MOlocPackage.COMPONENT_CLAUSE: return createComponentClause();
-      case MOlocPackage.TYPE_SPECIFIER: return createTypeSpecifier();
-      case MOlocPackage.COMPONENT_LIST: return createComponentList();
-      case MOlocPackage.COMPONENT_DECLARATION: return createComponentDeclaration();
-      case MOlocPackage.CONDITION_ATTRIBUTE: return createConditionAttribute();
-      case MOlocPackage.DECLARATION: return createDeclaration();
-      case MOlocPackage.MODIFICATION: return createModification();
-      case MOlocPackage.CLASS_MODIFICATION: return createClassModification();
-      case MOlocPackage.ARGUMENT_LIST: return createArgumentList();
-      case MOlocPackage.ARGUMENT: return createArgument();
-      case MOlocPackage.ELEMENT_MODICATION_OR_REPLACEABLE: return createElementModicationOrReplaceable();
-      case MOlocPackage.ELEMENT_MODIFICATION: return createElementModification();
-      case MOlocPackage.ELEMENT_REDECLARATION: return createElementRedeclaration();
-      case MOlocPackage.ELEMENT_REPLACEABLE: return createElementReplaceable();
-      case MOlocPackage.COMPONENT_CLAUSE1: return createComponentClause1();
-      case MOlocPackage.COMPONENT_DECLARATION1: return createComponentDeclaration1();
-      case MOlocPackage.SHORT_CLASS_DEFINITION: return createShortClassDefinition();
-      case MOlocPackage.ELEMENTENUMERATIOAN: return createElementenumeratioan();
-      case MOlocPackage.EQUATION_SECTION: return createEquationSection();
-      case MOlocPackage.ALGORITHM_SECTION: return createAlgorithmSection();
-      case MOlocPackage.EQUATION: return createEquation();
-      case MOlocPackage.LR_EQUATION: return createLREquation();
-      case MOlocPackage.STATEMENT: return createStatement();
-      case MOlocPackage.LR_STATEMENT: return createLRStatement();
-      case MOlocPackage.LRK_STATEMENT: return createLRKStatement();
       case MOlocPackage.BREAK: return createBreak();
-      case MOlocPackage.RETURN: return createReturn();
-      case MOlocPackage.IF_EQUATION: return createIfEquation();
-      case MOlocPackage.IF_STATEMENT: return createIfStatement();
-      case MOlocPackage.FOR_EQUATION: return createForEquation();
-      case MOlocPackage.FOR_STATEMENT: return createForStatement();
-      case MOlocPackage.FOR_INDICES: return createForIndices();
-      case MOlocPackage.FOR_INDEX: return createForIndex();
-      case MOlocPackage.WHILE_STATEMENT: return createWhileStatement();
-      case MOlocPackage.WHEN_EQUATION: return createWhenEquation();
-      case MOlocPackage.WHEN_STATEMENT: return createWhenStatement();
-      case MOlocPackage.CONNECT_CLAUSE: return createConnectClause();
-      case MOlocPackage.EXPRESSION: return createExpression();
-      case MOlocPackage.IF_EXPRESSION: return createIfExpression();
-      case MOlocPackage.SIMPLE_EXPRESSION: return createSimpleExpression();
-      case MOlocPackage.LOGICAL_EXPRESSION: return createLogicalExpression();
-      case MOlocPackage.LOGICAL_TERM: return createLogicalTerm();
-      case MOlocPackage.LOGICAL_FACTOR: return createLogicalFactor();
-      case MOlocPackage.RELATION: return createRelation();
-      case MOlocPackage.ARITHMETIC_EXPRESSION: return createArithmeticExpression();
-      case MOlocPackage.NEGATION: return createNegation();
-      case MOlocPackage.TERM: return createTerm();
-      case MOlocPackage.FACTOR: return createFactor();
-      case MOlocPackage.FLOAT_PRIMARY: return createFloatPrimary();
-      case MOlocPackage.STRING_PRIMARY: return createStringPrimary();
-      case MOlocPackage.LOGICAL_PRIMARY: return createLogicalPrimary();
-      case MOlocPackage.END: return createEnd();
-      case MOlocPackage.PRIMARY: return createPrimary();
-      case MOlocPackage.ARRAY_ARGUMENTS: return createArray_arguments();
-      case MOlocPackage.ARRAY_ARGUMENTS_NON_FIRST: return createArray_arguments_non_first();
-      case MOlocPackage.FUNCTION_CALL: return createFunctionCall();
-      case MOlocPackage.COMPONENT_REFERENCE: return createComponentReference();
-      case MOlocPackage.FUNCTION_CALL_ARGS: return createFunctionCallArgs();
-      case MOlocPackage.FUNCTION_ARGUMENTS: return createFunctionArguments();
-      case MOlocPackage.NAMED_ARGUMENTS: return createNamedArguments();
-      case MOlocPackage.NAMED_ARGUMENT: return createNamedArgument();
-      case MOlocPackage.FUNCTION_ARGUMENT: return createFunctionArgument();
-      case MOlocPackage.FUNCTION_DEFINITION: return createFunctionDefinition();
-      case MOlocPackage.OUTPUT_EXPRESSION_LIST: return createOutputExpressionList();
-      case MOlocPackage.EXPRESSION_LIST: return createExpressionList();
-      case MOlocPackage.ARRAY_SUBSCRIPTS: return createArraySubscripts();
-      case MOlocPackage.SUBSCRIPT: return createSubscript();
-      case MOlocPackage.COMMENT: return createComment();
-      case MOlocPackage.ANNOTATION: return createAnnotation();
+      case MOlocPackage.GENERAL_CLAUSE: return createGeneralClause();
+      case MOlocPackage.COMPONENT_DECLARATION: return createComponent_declaration();
+      case MOlocPackage.EXTERNAL_ELEMENT: return createExternalElement();
+      case MOlocPackage.NULL_ELEMENT: return createNULLElement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -163,10 +112,21 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public StoredDefinition createStoredDefinition()
+  public Object createFromString(EDataType eDataType, String initialValue)
   {
-    StoredDefinitionImpl storedDefinition = new StoredDefinitionImpl();
-    return storedDefinition;
+    switch (eDataType.getClassifierID())
+    {
+      case MOlocPackage.CLASS_TYPE:
+        return createClassTypeFromString(eDataType, initialValue);
+      case MOlocPackage.DIRECTION:
+        return createDirectionFromString(eDataType, initialValue);
+      case MOlocPackage.RELATIONSHIP_TYPE:
+        return createRelationshipTypeFromString(eDataType, initialValue);
+      case MOlocPackage.PARAMETER_TYPE:
+        return createParameterTypeFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
   }
 
   /**
@@ -175,10 +135,21 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public ClassDefinition createClassDefinition()
+  public String convertToString(EDataType eDataType, Object instanceValue)
   {
-    ClassDefinitionImpl classDefinition = new ClassDefinitionImpl();
-    return classDefinition;
+    switch (eDataType.getClassifierID())
+    {
+      case MOlocPackage.CLASS_TYPE:
+        return convertClassTypeToString(eDataType, instanceValue);
+      case MOlocPackage.DIRECTION:
+        return convertDirectionToString(eDataType, instanceValue);
+      case MOlocPackage.RELATIONSHIP_TYPE:
+        return convertRelationshipTypeToString(eDataType, instanceValue);
+      case MOlocPackage.PARAMETER_TYPE:
+        return convertParameterTypeToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
   }
 
   /**
@@ -187,10 +158,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public ClassPrefix createClassPrefix()
+  public Stored_definition createStored_definition()
   {
-    ClassPrefixImpl classPrefix = new ClassPrefixImpl();
-    return classPrefix;
+    Stored_definitionImpl stored_definition = new Stored_definitionImpl();
+    return stored_definition;
   }
 
   /**
@@ -199,10 +170,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public ClassSpecifier createClassSpecifier()
+  public Class_definition createClass_definition()
   {
-    ClassSpecifierImpl classSpecifier = new ClassSpecifierImpl();
-    return classSpecifier;
+    Class_definitionImpl class_definition = new Class_definitionImpl();
+    return class_definition;
   }
 
   /**
@@ -211,10 +182,130 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public EnumList createEnumList()
+  public class_prefixes createclass_prefixes()
   {
-    EnumListImpl enumList = new EnumListImpl();
-    return enumList;
+    class_prefixesImpl class_prefixes = new class_prefixesImpl();
+    return class_prefixes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public class_specifier createclass_specifier()
+  {
+    class_specifierImpl class_specifier = new class_specifierImpl();
+    return class_specifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public long_class_specifier createlong_class_specifier()
+  {
+    long_class_specifierImpl long_class_specifier = new long_class_specifierImpl();
+    return long_class_specifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public short_class_specifier createshort_class_specifier()
+  {
+    short_class_specifierImpl short_class_specifier = new short_class_specifierImpl();
+    return short_class_specifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public der_class_specifier createder_class_specifier()
+  {
+    der_class_specifierImpl der_class_specifier = new der_class_specifierImpl();
+    return der_class_specifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public class_name createclass_name()
+  {
+    class_nameImpl class_name = new class_nameImpl();
+    return class_name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public class_modification createclass_modification()
+  {
+    class_modificationImpl class_modification = new class_modificationImpl();
+    return class_modification;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public description_string createdescription_string()
+  {
+    description_stringImpl description_string = new description_stringImpl();
+    return description_string;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public composition createcomposition()
+  {
+    compositionImpl composition = new compositionImpl();
+    return composition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public type_specifier createtype_specifier()
+  {
+    type_specifierImpl type_specifier = new type_specifierImpl();
+    return type_specifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public enum_list createenum_list()
+  {
+    enum_listImpl enum_list = new enum_listImpl();
+    return enum_list;
   }
 
   /**
@@ -235,10 +326,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public Composition createComposition()
+  public description createdescription()
   {
-    CompositionImpl composition = new CompositionImpl();
-    return composition;
+    descriptionImpl description = new descriptionImpl();
+    return description;
   }
 
   /**
@@ -247,10 +338,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public PubElementList createPubElementList()
+  public Argument createArgument()
   {
-    PubElementListImpl pubElementList = new PubElementListImpl();
-    return pubElementList;
+    ArgumentImpl argument = new ArgumentImpl();
+    return argument;
   }
 
   /**
@@ -259,10 +350,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public ProElementList createProElementList()
+  public element_modification createelement_modification()
   {
-    ProElementListImpl proElementList = new ProElementListImpl();
-    return proElementList;
+    element_modificationImpl element_modification = new element_modificationImpl();
+    return element_modification;
   }
 
   /**
@@ -271,10 +362,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public ExtElementList createExtElementList()
+  public element_replaceable createelement_replaceable()
   {
-    ExtElementListImpl extElementList = new ExtElementListImpl();
-    return extElementList;
+    element_replaceableImpl element_replaceable = new element_replaceableImpl();
+    return element_replaceable;
   }
 
   /**
@@ -283,10 +374,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public ExternalFunctionCall createExternalFunctionCall()
+  public short_class_definition createshort_class_definition()
   {
-    ExternalFunctionCallImpl externalFunctionCall = new ExternalFunctionCallImpl();
-    return externalFunctionCall;
+    short_class_definitionImpl short_class_definition = new short_class_definitionImpl();
+    return short_class_definition;
   }
 
   /**
@@ -295,10 +386,94 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public ElementList createElementList()
+  public component_clause1 createcomponent_clause1()
   {
-    ElementListImpl elementList = new ElementListImpl();
-    return elementList;
+    component_clause1Impl component_clause1 = new component_clause1Impl();
+    return component_clause1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public type_prefix createtype_prefix()
+  {
+    type_prefixImpl type_prefix = new type_prefixImpl();
+    return type_prefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public component_declaration1 createcomponent_declaration1()
+  {
+    component_declaration1Impl component_declaration1 = new component_declaration1Impl();
+    return component_declaration1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public declaration createdeclaration()
+  {
+    declarationImpl declaration = new declarationImpl();
+    return declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public array_subscripts createarray_subscripts()
+  {
+    array_subscriptsImpl array_subscripts = new array_subscriptsImpl();
+    return array_subscripts;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Unfinished2 createUnfinished2()
+  {
+    Unfinished2Impl unfinished2 = new Unfinished2Impl();
+    return unfinished2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public modification createmodification()
+  {
+    modificationImpl modification = new modificationImpl();
+    return modification;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public constraining_clause createconstraining_clause()
+  {
+    constraining_clauseImpl constraining_clause = new constraining_clauseImpl();
+    return constraining_clause;
   }
 
   /**
@@ -331,346 +506,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public ImportList createImportList()
-  {
-    ImportListImpl importList = new ImportListImpl();
-    return importList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public ExtendsClause createExtendsClause()
   {
     ExtendsClauseImpl extendsClause = new ExtendsClauseImpl();
     return extendsClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public typeClause createtypeClause()
-  {
-    typeClauseImpl typeClause = new typeClauseImpl();
-    return typeClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ConstrainingClause createConstrainingClause()
-  {
-    ConstrainingClauseImpl constrainingClause = new ConstrainingClauseImpl();
-    return constrainingClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ComponentClause createComponentClause()
-  {
-    ComponentClauseImpl componentClause = new ComponentClauseImpl();
-    return componentClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TypeSpecifier createTypeSpecifier()
-  {
-    TypeSpecifierImpl typeSpecifier = new TypeSpecifierImpl();
-    return typeSpecifier;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ComponentList createComponentList()
-  {
-    ComponentListImpl componentList = new ComponentListImpl();
-    return componentList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ComponentDeclaration createComponentDeclaration()
-  {
-    ComponentDeclarationImpl componentDeclaration = new ComponentDeclarationImpl();
-    return componentDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ConditionAttribute createConditionAttribute()
-  {
-    ConditionAttributeImpl conditionAttribute = new ConditionAttributeImpl();
-    return conditionAttribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Declaration createDeclaration()
-  {
-    DeclarationImpl declaration = new DeclarationImpl();
-    return declaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Modification createModification()
-  {
-    ModificationImpl modification = new ModificationImpl();
-    return modification;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ClassModification createClassModification()
-  {
-    ClassModificationImpl classModification = new ClassModificationImpl();
-    return classModification;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ArgumentList createArgumentList()
-  {
-    ArgumentListImpl argumentList = new ArgumentListImpl();
-    return argumentList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Argument createArgument()
-  {
-    ArgumentImpl argument = new ArgumentImpl();
-    return argument;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ElementModicationOrReplaceable createElementModicationOrReplaceable()
-  {
-    ElementModicationOrReplaceableImpl elementModicationOrReplaceable = new ElementModicationOrReplaceableImpl();
-    return elementModicationOrReplaceable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ElementModification createElementModification()
-  {
-    ElementModificationImpl elementModification = new ElementModificationImpl();
-    return elementModification;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ElementRedeclaration createElementRedeclaration()
-  {
-    ElementRedeclarationImpl elementRedeclaration = new ElementRedeclarationImpl();
-    return elementRedeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ElementReplaceable createElementReplaceable()
-  {
-    ElementReplaceableImpl elementReplaceable = new ElementReplaceableImpl();
-    return elementReplaceable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ComponentClause1 createComponentClause1()
-  {
-    ComponentClause1Impl componentClause1 = new ComponentClause1Impl();
-    return componentClause1;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ComponentDeclaration1 createComponentDeclaration1()
-  {
-    ComponentDeclaration1Impl componentDeclaration1 = new ComponentDeclaration1Impl();
-    return componentDeclaration1;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ShortClassDefinition createShortClassDefinition()
-  {
-    ShortClassDefinitionImpl shortClassDefinition = new ShortClassDefinitionImpl();
-    return shortClassDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Elementenumeratioan createElementenumeratioan()
-  {
-    ElementenumeratioanImpl elementenumeratioan = new ElementenumeratioanImpl();
-    return elementenumeratioan;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EquationSection createEquationSection()
-  {
-    EquationSectionImpl equationSection = new EquationSectionImpl();
-    return equationSection;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AlgorithmSection createAlgorithmSection()
-  {
-    AlgorithmSectionImpl algorithmSection = new AlgorithmSectionImpl();
-    return algorithmSection;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Equation createEquation()
-  {
-    EquationImpl equation = new EquationImpl();
-    return equation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public LREquation createLREquation()
-  {
-    LREquationImpl lrEquation = new LREquationImpl();
-    return lrEquation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Statement createStatement()
-  {
-    StatementImpl statement = new StatementImpl();
-    return statement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public LRStatement createLRStatement()
-  {
-    LRStatementImpl lrStatement = new LRStatementImpl();
-    return lrStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public LRKStatement createLRKStatement()
-  {
-    LRKStatementImpl lrkStatement = new LRKStatementImpl();
-    return lrkStatement;
   }
 
   /**
@@ -691,10 +530,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public Return createReturn()
+  public GeneralClause createGeneralClause()
   {
-    ReturnImpl return_ = new ReturnImpl();
-    return return_;
+    GeneralClauseImpl generalClause = new GeneralClauseImpl();
+    return generalClause;
   }
 
   /**
@@ -703,10 +542,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public IfEquation createIfEquation()
+  public Component_declaration createComponent_declaration()
   {
-    IfEquationImpl ifEquation = new IfEquationImpl();
-    return ifEquation;
+    Component_declarationImpl component_declaration = new Component_declarationImpl();
+    return component_declaration;
   }
 
   /**
@@ -715,10 +554,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public IfStatement createIfStatement()
+  public ExternalElement createExternalElement()
   {
-    IfStatementImpl ifStatement = new IfStatementImpl();
-    return ifStatement;
+    ExternalElementImpl externalElement = new ExternalElementImpl();
+    return externalElement;
   }
 
   /**
@@ -727,10 +566,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public ForEquation createForEquation()
+  public NULLElement createNULLElement()
   {
-    ForEquationImpl forEquation = new ForEquationImpl();
-    return forEquation;
+    NULLElementImpl nullElement = new NULLElementImpl();
+    return nullElement;
   }
 
   /**
@@ -738,11 +577,11 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public ForStatement createForStatement()
+  public ClassType createClassTypeFromString(EDataType eDataType, String initialValue)
   {
-    ForStatementImpl forStatement = new ForStatementImpl();
-    return forStatement;
+    ClassType result = ClassType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
   }
 
   /**
@@ -750,11 +589,9 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public ForIndices createForIndices()
+  public String convertClassTypeToString(EDataType eDataType, Object instanceValue)
   {
-    ForIndicesImpl forIndices = new ForIndicesImpl();
-    return forIndices;
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**
@@ -762,11 +599,11 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public ForIndex createForIndex()
+  public Direction createDirectionFromString(EDataType eDataType, String initialValue)
   {
-    ForIndexImpl forIndex = new ForIndexImpl();
-    return forIndex;
+    Direction result = Direction.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
   }
 
   /**
@@ -774,11 +611,9 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public WhileStatement createWhileStatement()
+  public String convertDirectionToString(EDataType eDataType, Object instanceValue)
   {
-    WhileStatementImpl whileStatement = new WhileStatementImpl();
-    return whileStatement;
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**
@@ -786,11 +621,11 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public WhenEquation createWhenEquation()
+  public RelationshipType createRelationshipTypeFromString(EDataType eDataType, String initialValue)
   {
-    WhenEquationImpl whenEquation = new WhenEquationImpl();
-    return whenEquation;
+    RelationshipType result = RelationshipType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
   }
 
   /**
@@ -798,11 +633,9 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public WhenStatement createWhenStatement()
+  public String convertRelationshipTypeToString(EDataType eDataType, Object instanceValue)
   {
-    WhenStatementImpl whenStatement = new WhenStatementImpl();
-    return whenStatement;
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**
@@ -810,11 +643,11 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public ConnectClause createConnectClause()
+  public ParameterType createParameterTypeFromString(EDataType eDataType, String initialValue)
   {
-    ConnectClauseImpl connectClause = new ConnectClauseImpl();
-    return connectClause;
+    ParameterType result = ParameterType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
   }
 
   /**
@@ -822,383 +655,9 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public Expression createExpression()
+  public String convertParameterTypeToString(EDataType eDataType, Object instanceValue)
   {
-    ExpressionImpl expression = new ExpressionImpl();
-    return expression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public IfExpression createIfExpression()
-  {
-    IfExpressionImpl ifExpression = new IfExpressionImpl();
-    return ifExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SimpleExpression createSimpleExpression()
-  {
-    SimpleExpressionImpl simpleExpression = new SimpleExpressionImpl();
-    return simpleExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public LogicalExpression createLogicalExpression()
-  {
-    LogicalExpressionImpl logicalExpression = new LogicalExpressionImpl();
-    return logicalExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public LogicalTerm createLogicalTerm()
-  {
-    LogicalTermImpl logicalTerm = new LogicalTermImpl();
-    return logicalTerm;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public LogicalFactor createLogicalFactor()
-  {
-    LogicalFactorImpl logicalFactor = new LogicalFactorImpl();
-    return logicalFactor;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Relation createRelation()
-  {
-    RelationImpl relation = new RelationImpl();
-    return relation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ArithmeticExpression createArithmeticExpression()
-  {
-    ArithmeticExpressionImpl arithmeticExpression = new ArithmeticExpressionImpl();
-    return arithmeticExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Negation createNegation()
-  {
-    NegationImpl negation = new NegationImpl();
-    return negation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Term createTerm()
-  {
-    TermImpl term = new TermImpl();
-    return term;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Factor createFactor()
-  {
-    FactorImpl factor = new FactorImpl();
-    return factor;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public FloatPrimary createFloatPrimary()
-  {
-    FloatPrimaryImpl floatPrimary = new FloatPrimaryImpl();
-    return floatPrimary;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public StringPrimary createStringPrimary()
-  {
-    StringPrimaryImpl stringPrimary = new StringPrimaryImpl();
-    return stringPrimary;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public LogicalPrimary createLogicalPrimary()
-  {
-    LogicalPrimaryImpl logicalPrimary = new LogicalPrimaryImpl();
-    return logicalPrimary;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public End createEnd()
-  {
-    EndImpl end = new EndImpl();
-    return end;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Primary createPrimary()
-  {
-    PrimaryImpl primary = new PrimaryImpl();
-    return primary;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Array_arguments createArray_arguments()
-  {
-    Array_argumentsImpl array_arguments = new Array_argumentsImpl();
-    return array_arguments;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Array_arguments_non_first createArray_arguments_non_first()
-  {
-    Array_arguments_non_firstImpl array_arguments_non_first = new Array_arguments_non_firstImpl();
-    return array_arguments_non_first;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public FunctionCall createFunctionCall()
-  {
-    FunctionCallImpl functionCall = new FunctionCallImpl();
-    return functionCall;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ComponentReference createComponentReference()
-  {
-    ComponentReferenceImpl componentReference = new ComponentReferenceImpl();
-    return componentReference;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public FunctionCallArgs createFunctionCallArgs()
-  {
-    FunctionCallArgsImpl functionCallArgs = new FunctionCallArgsImpl();
-    return functionCallArgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public FunctionArguments createFunctionArguments()
-  {
-    FunctionArgumentsImpl functionArguments = new FunctionArgumentsImpl();
-    return functionArguments;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NamedArguments createNamedArguments()
-  {
-    NamedArgumentsImpl namedArguments = new NamedArgumentsImpl();
-    return namedArguments;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NamedArgument createNamedArgument()
-  {
-    NamedArgumentImpl namedArgument = new NamedArgumentImpl();
-    return namedArgument;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public FunctionArgument createFunctionArgument()
-  {
-    FunctionArgumentImpl functionArgument = new FunctionArgumentImpl();
-    return functionArgument;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public FunctionDefinition createFunctionDefinition()
-  {
-    FunctionDefinitionImpl functionDefinition = new FunctionDefinitionImpl();
-    return functionDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public OutputExpressionList createOutputExpressionList()
-  {
-    OutputExpressionListImpl outputExpressionList = new OutputExpressionListImpl();
-    return outputExpressionList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ExpressionList createExpressionList()
-  {
-    ExpressionListImpl expressionList = new ExpressionListImpl();
-    return expressionList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ArraySubscripts createArraySubscripts()
-  {
-    ArraySubscriptsImpl arraySubscripts = new ArraySubscriptsImpl();
-    return arraySubscripts;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Subscript createSubscript()
-  {
-    SubscriptImpl subscript = new SubscriptImpl();
-    return subscript;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Comment createComment()
-  {
-    CommentImpl comment = new CommentImpl();
-    return comment;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Annotation createAnnotation()
-  {
-    AnnotationImpl annotation = new AnnotationImpl();
-    return annotation;
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

@@ -31,7 +31,7 @@
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Lugbolt">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tighteningTorque">
-        <subsetting>torque</subsetting>
+        <subsetting>String</subsetting>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* PORT DEFINITIONS */"/>

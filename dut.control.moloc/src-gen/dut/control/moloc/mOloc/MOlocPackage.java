@@ -5,6 +5,7 @@ package dut.control.moloc.mOloc;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -58,14 +59,23 @@ public interface MOlocPackage extends EPackage
   MOlocPackage eINSTANCE = dut.control.moloc.mOloc.impl.MOlocPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.StoredDefinitionImpl <em>Stored Definition</em>}' class.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Stored_definitionImpl <em>Stored definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.StoredDefinitionImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getStoredDefinition()
+   * @see dut.control.moloc.mOloc.impl.Stored_definitionImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getStored_definition()
    * @generated
    */
   int STORED_DEFINITION = 0;
+
+  /**
+   * The feature id for the '<em><b>Is Within</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STORED_DEFINITION__IS_WITHIN = 0;
 
   /**
    * The feature id for the '<em><b>Within</b></em>' attribute.
@@ -74,7 +84,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STORED_DEFINITION__WITHIN = 0;
+  int STORED_DEFINITION__WITHIN = 1;
 
   /**
    * The feature id for the '<em><b>Classes</b></em>' containment reference list.
@@ -83,316 +93,26 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STORED_DEFINITION__CLASSES = 1;
+  int STORED_DEFINITION__CLASSES = 2;
 
   /**
-   * The number of structural features of the '<em>Stored Definition</em>' class.
+   * The number of structural features of the '<em>Stored definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STORED_DEFINITION_FEATURE_COUNT = 2;
+  int STORED_DEFINITION_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ClassSpecifierImpl <em>Class Specifier</em>}' class.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.class_prefixesImpl <em>class prefixes</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ClassSpecifierImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClassSpecifier()
+   * @see dut.control.moloc.mOloc.impl.class_prefixesImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getclass_prefixes()
    * @generated
    */
-  int CLASS_SPECIFIER = 3;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Str comment</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__STR_COMMENT = 1;
-
-  /**
-   * The feature id for the '<em><b>Composition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__COMPOSITION = 2;
-
-  /**
-   * The feature id for the '<em><b>Name end</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__NAME_END = 3;
-
-  /**
-   * The feature id for the '<em><b>Prefix</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__PREFIX = 4;
-
-  /**
-   * The feature id for the '<em><b>Name2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__NAME2 = 5;
-
-  /**
-   * The feature id for the '<em><b>Subs</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__SUBS = 6;
-
-  /**
-   * The feature id for the '<em><b>Mod</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__MOD = 7;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__COMMENT = 8;
-
-  /**
-   * The feature id for the '<em><b>Elementnum</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__ELEMENTNUM = 9;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__TYPE = 10;
-
-  /**
-   * The feature id for the '<em><b>Base Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__BASE_TYPE = 11;
-
-  /**
-   * The number of structural features of the '<em>Class Specifier</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER_FEATURE_COUNT = 12;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ClassDefinitionImpl <em>Class Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ClassDefinitionImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClassDefinition()
-   * @generated
-   */
-  int CLASS_DEFINITION = 1;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__NAME = CLASS_SPECIFIER__NAME;
-
-  /**
-   * The feature id for the '<em><b>Str comment</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__STR_COMMENT = CLASS_SPECIFIER__STR_COMMENT;
-
-  /**
-   * The feature id for the '<em><b>Composition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__COMPOSITION = CLASS_SPECIFIER__COMPOSITION;
-
-  /**
-   * The feature id for the '<em><b>Name end</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__NAME_END = CLASS_SPECIFIER__NAME_END;
-
-  /**
-   * The feature id for the '<em><b>Prefix</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__PREFIX = CLASS_SPECIFIER__PREFIX;
-
-  /**
-   * The feature id for the '<em><b>Name2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__NAME2 = CLASS_SPECIFIER__NAME2;
-
-  /**
-   * The feature id for the '<em><b>Subs</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__SUBS = CLASS_SPECIFIER__SUBS;
-
-  /**
-   * The feature id for the '<em><b>Mod</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__MOD = CLASS_SPECIFIER__MOD;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__COMMENT = CLASS_SPECIFIER__COMMENT;
-
-  /**
-   * The feature id for the '<em><b>Elementnum</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__ELEMENTNUM = CLASS_SPECIFIER__ELEMENTNUM;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__TYPE = CLASS_SPECIFIER__TYPE;
-
-  /**
-   * The feature id for the '<em><b>Base Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__BASE_TYPE = CLASS_SPECIFIER__BASE_TYPE;
-
-  /**
-   * The feature id for the '<em><b>Final</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__FINAL = CLASS_SPECIFIER_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Encapsulated</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__ENCAPSULATED = CLASS_SPECIFIER_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Cp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__CP = CLASS_SPECIFIER_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Constraining</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__CONSTRAINING = CLASS_SPECIFIER_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Class Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION_FEATURE_COUNT = CLASS_SPECIFIER_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ClassPrefixImpl <em>Class Prefix</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ClassPrefixImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClassPrefix()
-   * @generated
-   */
-  int CLASS_PREFIX = 2;
+  int CLASS_PREFIXES = 2;
 
   /**
    * The feature id for the '<em><b>Is Partial</b></em>' attribute.
@@ -401,53 +121,847 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_PREFIX__IS_PARTIAL = 0;
+  int CLASS_PREFIXES__IS_PARTIAL = 0;
 
   /**
-   * The feature id for the '<em><b>Kind</b></em>' attribute.
+   * The feature id for the '<em><b>Is Expandable</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_PREFIX__KIND = 1;
+  int CLASS_PREFIXES__IS_EXPANDABLE = 1;
 
   /**
-   * The number of structural features of the '<em>Class Prefix</em>' class.
+   * The feature id for the '<em><b>Is Pure</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_PREFIX_FEATURE_COUNT = 2;
+  int CLASS_PREFIXES__IS_PURE = 2;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.EnumListImpl <em>Enum List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.EnumListImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEnumList()
-   * @generated
-   */
-  int ENUM_LIST = 4;
-
-  /**
-   * The feature id for the '<em><b>Enums</b></em>' containment reference list.
+   * The feature id for the '<em><b>Is Operator</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENUM_LIST__ENUMS = 0;
+  int CLASS_PREFIXES__IS_OPERATOR = 3;
 
   /**
-   * The number of structural features of the '<em>Enum List</em>' class.
+   * The feature id for the '<em><b>Class Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_PREFIXES__CLASS_TYPE = 4;
+
+  /**
+   * The number of structural features of the '<em>class prefixes</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_PREFIXES_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Class_definitionImpl <em>Class definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.Class_definitionImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClass_definition()
+   * @generated
+   */
+  int CLASS_DEFINITION = 1;
+
+  /**
+   * The feature id for the '<em><b>Is Partial</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_PARTIAL = CLASS_PREFIXES__IS_PARTIAL;
+
+  /**
+   * The feature id for the '<em><b>Is Expandable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_EXPANDABLE = CLASS_PREFIXES__IS_EXPANDABLE;
+
+  /**
+   * The feature id for the '<em><b>Is Pure</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_PURE = CLASS_PREFIXES__IS_PURE;
+
+  /**
+   * The feature id for the '<em><b>Is Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_OPERATOR = CLASS_PREFIXES__IS_OPERATOR;
+
+  /**
+   * The feature id for the '<em><b>Class Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__CLASS_TYPE = CLASS_PREFIXES__CLASS_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__CLASS_NAME = CLASS_PREFIXES_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__ARGUMENTS = CLASS_PREFIXES_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__DESCRIPTION = CLASS_PREFIXES_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__ELEMENTS = CLASS_PREFIXES_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Is Extends</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_EXTENDS = CLASS_PREFIXES_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__TYPE_SPECIFIER = CLASS_PREFIXES_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__ENUMERATION_LITERAL = CLASS_PREFIXES_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_ANNOTATION = CLASS_PREFIXES_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Direction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Is Colon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Is Der</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_DER = CLASS_PREFIXES_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Der Name</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__DER_NAME = CLASS_PREFIXES_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Isfinal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__ISFINAL = CLASS_PREFIXES_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_ENCAPSULATED = CLASS_PREFIXES_FEATURE_COUNT + 14;
+
+  /**
+   * The number of structural features of the '<em>Class definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 15;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.class_nameImpl <em>class name</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.class_nameImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getclass_name()
+   * @generated
+   */
+  int CLASS_NAME = 7;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_NAME__CLASS_NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>class name</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_NAME_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl <em>long class specifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.long_class_specifierImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getlong_class_specifier()
+   * @generated
+   */
+  int LONG_CLASS_SPECIFIER = 4;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_CLASS_SPECIFIER__CLASS_NAME = CLASS_NAME__CLASS_NAME;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_CLASS_SPECIFIER__ARGUMENTS = CLASS_NAME_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_CLASS_SPECIFIER__DESCRIPTION = CLASS_NAME_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_CLASS_SPECIFIER__ELEMENTS = CLASS_NAME_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Extends</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_CLASS_SPECIFIER__IS_EXTENDS = CLASS_NAME_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>long class specifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.class_specifierImpl <em>class specifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.class_specifierImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getclass_specifier()
+   * @generated
+   */
+  int CLASS_SPECIFIER = 3;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__CLASS_NAME = LONG_CLASS_SPECIFIER__CLASS_NAME;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__ARGUMENTS = LONG_CLASS_SPECIFIER__ARGUMENTS;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__DESCRIPTION = LONG_CLASS_SPECIFIER__DESCRIPTION;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__ELEMENTS = LONG_CLASS_SPECIFIER__ELEMENTS;
+
+  /**
+   * The feature id for the '<em><b>Is Extends</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__IS_EXTENDS = LONG_CLASS_SPECIFIER__IS_EXTENDS;
+
+  /**
+   * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__TYPE_SPECIFIER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__ENUMERATION_LITERAL = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__IS_ANNOTATION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Direction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__DIRECTION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__IS_ENUMERATION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Is Colon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__IS_COLON = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Is Der</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__IS_DER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Der Name</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__DER_NAME = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 7;
+
+  /**
+   * The number of structural features of the '<em>class specifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER_FEATURE_COUNT = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 8;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl <em>short class specifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.short_class_specifierImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getshort_class_specifier()
+   * @generated
+   */
+  int SHORT_CLASS_SPECIFIER = 5;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__CLASS_NAME = CLASS_NAME__CLASS_NAME;
+
+  /**
+   * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER = CLASS_NAME_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__ARGUMENTS = CLASS_NAME_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL = CLASS_NAME_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__DESCRIPTION = CLASS_NAME_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__IS_ANNOTATION = CLASS_NAME_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Direction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__DIRECTION = CLASS_NAME_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__IS_ENUMERATION = CLASS_NAME_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Is Colon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__IS_COLON = CLASS_NAME_FEATURE_COUNT + 7;
+
+  /**
+   * The number of structural features of the '<em>short class specifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 8;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.der_class_specifierImpl <em>der class specifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.der_class_specifierImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getder_class_specifier()
+   * @generated
+   */
+  int DER_CLASS_SPECIFIER = 6;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DER_CLASS_SPECIFIER__CLASS_NAME = CLASS_NAME__CLASS_NAME;
+
+  /**
+   * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DER_CLASS_SPECIFIER__TYPE_SPECIFIER = CLASS_NAME_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DER_CLASS_SPECIFIER__DESCRIPTION = CLASS_NAME_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DER_CLASS_SPECIFIER__ARGUMENTS = CLASS_NAME_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DER_CLASS_SPECIFIER__IS_ANNOTATION = CLASS_NAME_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Is Der</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DER_CLASS_SPECIFIER__IS_DER = CLASS_NAME_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Der Name</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DER_CLASS_SPECIFIER__DER_NAME = CLASS_NAME_FEATURE_COUNT + 5;
+
+  /**
+   * The number of structural features of the '<em>der class specifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DER_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 6;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.class_modificationImpl <em>class modification</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.class_modificationImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getclass_modification()
+   * @generated
+   */
+  int CLASS_MODIFICATION = 8;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_MODIFICATION__ARGUMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>class modification</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_MODIFICATION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.description_stringImpl <em>description string</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.description_stringImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getdescription_string()
+   * @generated
+   */
+  int DESCRIPTION_STRING = 9;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DESCRIPTION_STRING__DESCRIPTION = 0;
+
+  /**
+   * The number of structural features of the '<em>description string</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DESCRIPTION_STRING_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.compositionImpl <em>composition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.compositionImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getcomposition()
+   * @generated
+   */
+  int COMPOSITION = 10;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITION__ELEMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>composition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.type_specifierImpl <em>type specifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.type_specifierImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#gettype_specifier()
+   * @generated
+   */
+  int TYPE_SPECIFIER = 11;
+
+  /**
+   * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_SPECIFIER__TYPE_SPECIFIER = 0;
+
+  /**
+   * The number of structural features of the '<em>type specifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_SPECIFIER_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.enum_listImpl <em>enum list</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.enum_listImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getenum_list()
+   * @generated
+   */
+  int ENUM_LIST = 12;
+
+  /**
+   * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_LIST__ENUMERATION_LITERAL = 0;
+
+  /**
+   * The number of structural features of the '<em>enum list</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
   int ENUM_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.descriptionImpl <em>description</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.descriptionImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getdescription()
+   * @generated
+   */
+  int DESCRIPTION = 14;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DESCRIPTION__DESCRIPTION = DESCRIPTION_STRING__DESCRIPTION;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DESCRIPTION__ARGUMENTS = DESCRIPTION_STRING_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DESCRIPTION__IS_ANNOTATION = DESCRIPTION_STRING_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>description</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DESCRIPTION_FEATURE_COUNT = DESCRIPTION_STRING_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.EnumerationLiteralImpl <em>Enumeration Literal</em>}' class.
@@ -457,25 +971,43 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEnumerationLiteral()
    * @generated
    */
-  int ENUMERATION_LITERAL = 5;
+  int ENUMERATION_LITERAL = 13;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENUMERATION_LITERAL__ID = 0;
+  int ENUMERATION_LITERAL__DESCRIPTION = DESCRIPTION__DESCRIPTION;
 
   /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENUMERATION_LITERAL__COMMENT = 1;
+  int ENUMERATION_LITERAL__ARGUMENTS = DESCRIPTION__ARGUMENTS;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION_LITERAL__IS_ANNOTATION = DESCRIPTION__IS_ANNOTATION;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION_LITERAL__TITLE = DESCRIPTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Enumeration Literal</em>' class.
@@ -484,265 +1016,1000 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_LITERAL_FEATURE_COUNT = 2;
+  int ENUMERATION_LITERAL_FEATURE_COUNT = DESCRIPTION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.CompositionImpl <em>Composition</em>}' class.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl <em>short class definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.CompositionImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComposition()
+   * @see dut.control.moloc.mOloc.impl.short_class_definitionImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getshort_class_definition()
    * @generated
    */
-  int COMPOSITION = 6;
+  int SHORT_CLASS_DEFINITION = 18;
 
   /**
-   * The feature id for the '<em><b>Priv elist</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPOSITION__PRIV_ELIST = 0;
-
-  /**
-   * The feature id for the '<em><b>Pub elist</b></em>' containment reference list.
+   * The feature id for the '<em><b>Is Partial</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOSITION__PUB_ELIST = 1;
+  int SHORT_CLASS_DEFINITION__IS_PARTIAL = CLASS_PREFIXES__IS_PARTIAL;
 
   /**
-   * The feature id for the '<em><b>Protected elist</b></em>' containment reference list.
+   * The feature id for the '<em><b>Is Expandable</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOSITION__PROTECTED_ELIST = 2;
+  int SHORT_CLASS_DEFINITION__IS_EXPANDABLE = CLASS_PREFIXES__IS_EXPANDABLE;
 
   /**
-   * The feature id for the '<em><b>Eq secs</b></em>' containment reference list.
+   * The feature id for the '<em><b>Is Pure</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOSITION__EQ_SECS = 3;
+  int SHORT_CLASS_DEFINITION__IS_PURE = CLASS_PREFIXES__IS_PURE;
 
   /**
-   * The feature id for the '<em><b>Alg secs</b></em>' containment reference list.
+   * The feature id for the '<em><b>Is Operator</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOSITION__ALG_SECS = 4;
+  int SHORT_CLASS_DEFINITION__IS_OPERATOR = CLASS_PREFIXES__IS_OPERATOR;
 
   /**
-   * The feature id for the '<em><b>Ext elist</b></em>' containment reference list.
+   * The feature id for the '<em><b>Class Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOSITION__EXT_ELIST = 5;
+  int SHORT_CLASS_DEFINITION__CLASS_TYPE = CLASS_PREFIXES__CLASS_TYPE;
 
   /**
-   * The feature id for the '<em><b>Anno</b></em>' containment reference.
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOSITION__ANNO = 6;
+  int SHORT_CLASS_DEFINITION__CLASS_NAME = CLASS_PREFIXES_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Composition</em>' class.
+   * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOSITION_FEATURE_COUNT = 7;
+  int SHORT_CLASS_DEFINITION__TYPE_SPECIFIER = CLASS_PREFIXES_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.PubElementListImpl <em>Pub Element List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.PubElementListImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getPubElementList()
-   * @generated
-   */
-  int PUB_ELEMENT_LIST = 7;
-
-  /**
-   * The feature id for the '<em><b>Ele</b></em>' containment reference list.
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PUB_ELEMENT_LIST__ELE = 0;
+  int SHORT_CLASS_DEFINITION__ARGUMENTS = CLASS_PREFIXES_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Pub Element List</em>' class.
+   * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PUB_ELEMENT_LIST_FEATURE_COUNT = 1;
+  int SHORT_CLASS_DEFINITION__ENUMERATION_LITERAL = CLASS_PREFIXES_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ProElementListImpl <em>Pro Element List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ProElementListImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getProElementList()
-   * @generated
-   */
-  int PRO_ELEMENT_LIST = 8;
-
-  /**
-   * The feature id for the '<em><b>Ele</b></em>' containment reference list.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRO_ELEMENT_LIST__ELE = 0;
+  int SHORT_CLASS_DEFINITION__DESCRIPTION = CLASS_PREFIXES_FEATURE_COUNT + 4;
 
   /**
-   * The number of structural features of the '<em>Pro Element List</em>' class.
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRO_ELEMENT_LIST_FEATURE_COUNT = 1;
+  int SHORT_CLASS_DEFINITION__IS_ANNOTATION = CLASS_PREFIXES_FEATURE_COUNT + 5;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ExtElementListImpl <em>Ext Element List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ExtElementListImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExtElementList()
-   * @generated
-   */
-  int EXT_ELEMENT_LIST = 9;
-
-  /**
-   * The feature id for the '<em><b>Ext lang spec</b></em>' attribute.
+   * The feature id for the '<em><b>Direction</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXT_ELEMENT_LIST__EXT_LANG_SPEC = 0;
+  int SHORT_CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Ext func call</b></em>' containment reference.
+   * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXT_ELEMENT_LIST__EXT_FUNC_CALL = 1;
+  int SHORT_CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 7;
 
   /**
-   * The feature id for the '<em><b>Ext anno</b></em>' containment reference.
+   * The feature id for the '<em><b>Is Colon</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXT_ELEMENT_LIST__EXT_ANNO = 2;
+  int SHORT_CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 8;
 
   /**
-   * The number of structural features of the '<em>Ext Element List</em>' class.
+   * The number of structural features of the '<em>short class definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXT_ELEMENT_LIST_FEATURE_COUNT = 3;
+  int SHORT_CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 9;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ExternalFunctionCallImpl <em>External Function Call</em>}' class.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ArgumentImpl <em>Argument</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ExternalFunctionCallImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExternalFunctionCall()
+   * @see dut.control.moloc.mOloc.impl.ArgumentImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArgument()
    * @generated
    */
-  int EXTERNAL_FUNCTION_CALL = 10;
+  int ARGUMENT = 15;
 
   /**
-   * The feature id for the '<em><b>Lhs</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXTERNAL_FUNCTION_CALL__LHS = 0;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Is Partial</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTERNAL_FUNCTION_CALL__NAME = 1;
+  int ARGUMENT__IS_PARTIAL = SHORT_CLASS_DEFINITION__IS_PARTIAL;
 
   /**
-   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * The feature id for the '<em><b>Is Expandable</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTERNAL_FUNCTION_CALL__ARGS = 2;
+  int ARGUMENT__IS_EXPANDABLE = SHORT_CLASS_DEFINITION__IS_EXPANDABLE;
 
   /**
-   * The number of structural features of the '<em>External Function Call</em>' class.
+   * The feature id for the '<em><b>Is Pure</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTERNAL_FUNCTION_CALL_FEATURE_COUNT = 3;
+  int ARGUMENT__IS_PURE = SHORT_CLASS_DEFINITION__IS_PURE;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ElementListImpl <em>Element List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ElementListImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElementList()
-   * @generated
-   */
-  int ELEMENT_LIST = 11;
-
-  /**
-   * The feature id for the '<em><b>Elem</b></em>' containment reference list.
+   * The feature id for the '<em><b>Is Operator</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT_LIST__ELEM = 0;
+  int ARGUMENT__IS_OPERATOR = SHORT_CLASS_DEFINITION__IS_OPERATOR;
 
   /**
-   * The number of structural features of the '<em>Element List</em>' class.
+   * The feature id for the '<em><b>Class Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT_LIST_FEATURE_COUNT = 1;
+  int ARGUMENT__CLASS_TYPE = SHORT_CLASS_DEFINITION__CLASS_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__CLASS_NAME = SHORT_CLASS_DEFINITION__CLASS_NAME;
+
+  /**
+   * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__TYPE_SPECIFIER = SHORT_CLASS_DEFINITION__TYPE_SPECIFIER;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__ARGUMENTS = SHORT_CLASS_DEFINITION__ARGUMENTS;
+
+  /**
+   * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__ENUMERATION_LITERAL = SHORT_CLASS_DEFINITION__ENUMERATION_LITERAL;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__DESCRIPTION = SHORT_CLASS_DEFINITION__DESCRIPTION;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__IS_ANNOTATION = SHORT_CLASS_DEFINITION__IS_ANNOTATION;
+
+  /**
+   * The feature id for the '<em><b>Direction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__DIRECTION = SHORT_CLASS_DEFINITION__DIRECTION;
+
+  /**
+   * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__IS_ENUMERATION = SHORT_CLASS_DEFINITION__IS_ENUMERATION;
+
+  /**
+   * The feature id for the '<em><b>Is Colon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__IS_COLON = SHORT_CLASS_DEFINITION__IS_COLON;
+
+  /**
+   * The feature id for the '<em><b>Is Redeclare</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__IS_REDECLARE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Each</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__IS_EACH = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Isfinal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__ISFINAL = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Argument</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT_FEATURE_COUNT = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.modificationImpl <em>modification</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.modificationImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getmodification()
+   * @generated
+   */
+  int MODIFICATION = 25;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFICATION__ARGUMENTS = CLASS_MODIFICATION__ARGUMENTS;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFICATION__EXPRESSION = CLASS_MODIFICATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>modification</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFICATION_FEATURE_COUNT = CLASS_MODIFICATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.element_modificationImpl <em>element modification</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.element_modificationImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getelement_modification()
+   * @generated
+   */
+  int ELEMENT_MODIFICATION = 16;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_MODIFICATION__ARGUMENTS = MODIFICATION__ARGUMENTS;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_MODIFICATION__EXPRESSION = MODIFICATION__EXPRESSION;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_MODIFICATION__DESCRIPTION = MODIFICATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Element Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_MODIFICATION__ELEMENT_NAME = MODIFICATION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>element modification</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_MODIFICATION_FEATURE_COUNT = MODIFICATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.element_replaceableImpl <em>element replaceable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.element_replaceableImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getelement_replaceable()
+   * @generated
+   */
+  int ELEMENT_REPLACEABLE = 17;
+
+  /**
+   * The feature id for the '<em><b>Is Partial</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__IS_PARTIAL = SHORT_CLASS_DEFINITION__IS_PARTIAL;
+
+  /**
+   * The feature id for the '<em><b>Is Expandable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__IS_EXPANDABLE = SHORT_CLASS_DEFINITION__IS_EXPANDABLE;
+
+  /**
+   * The feature id for the '<em><b>Is Pure</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__IS_PURE = SHORT_CLASS_DEFINITION__IS_PURE;
+
+  /**
+   * The feature id for the '<em><b>Is Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__IS_OPERATOR = SHORT_CLASS_DEFINITION__IS_OPERATOR;
+
+  /**
+   * The feature id for the '<em><b>Class Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__CLASS_TYPE = SHORT_CLASS_DEFINITION__CLASS_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__CLASS_NAME = SHORT_CLASS_DEFINITION__CLASS_NAME;
+
+  /**
+   * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__TYPE_SPECIFIER = SHORT_CLASS_DEFINITION__TYPE_SPECIFIER;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__ARGUMENTS = SHORT_CLASS_DEFINITION__ARGUMENTS;
+
+  /**
+   * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__ENUMERATION_LITERAL = SHORT_CLASS_DEFINITION__ENUMERATION_LITERAL;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__DESCRIPTION = SHORT_CLASS_DEFINITION__DESCRIPTION;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__IS_ANNOTATION = SHORT_CLASS_DEFINITION__IS_ANNOTATION;
+
+  /**
+   * The feature id for the '<em><b>Direction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__DIRECTION = SHORT_CLASS_DEFINITION__DIRECTION;
+
+  /**
+   * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__IS_ENUMERATION = SHORT_CLASS_DEFINITION__IS_ENUMERATION;
+
+  /**
+   * The feature id for the '<em><b>Is Colon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__IS_COLON = SHORT_CLASS_DEFINITION__IS_COLON;
+
+  /**
+   * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__RELATIONSHIP_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Parameter Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__PARAMETER_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Direction Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__DIRECTION_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__SUBSCRIPT = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__EXPRESSION = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declaration Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__DECLARATION_NAME = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Elements2</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__ELEMENTS2 = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Is Replaceable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE__IS_REPLACEABLE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 7;
+
+  /**
+   * The number of structural features of the '<em>element replaceable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REPLACEABLE_FEATURE_COUNT = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 8;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.type_prefixImpl <em>type prefix</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.type_prefixImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#gettype_prefix()
+   * @generated
+   */
+  int TYPE_PREFIX = 20;
+
+  /**
+   * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_PREFIX__RELATIONSHIP_TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Parameter Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_PREFIX__PARAMETER_TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Direction Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_PREFIX__DIRECTION_TYPE = 2;
+
+  /**
+   * The number of structural features of the '<em>type prefix</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_PREFIX_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.component_clause1Impl <em>component clause1</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.component_clause1Impl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getcomponent_clause1()
+   * @generated
+   */
+  int COMPONENT_CLAUSE1 = 19;
+
+  /**
+   * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__RELATIONSHIP_TYPE = TYPE_PREFIX__RELATIONSHIP_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Parameter Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__PARAMETER_TYPE = TYPE_PREFIX__PARAMETER_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Direction Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__DIRECTION_TYPE = TYPE_PREFIX__DIRECTION_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__TYPE_SPECIFIER = TYPE_PREFIX_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__SUBSCRIPT = TYPE_PREFIX_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__ARGUMENTS = TYPE_PREFIX_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__EXPRESSION = TYPE_PREFIX_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declaration Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__DECLARATION_NAME = TYPE_PREFIX_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__DESCRIPTION = TYPE_PREFIX_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__IS_ANNOTATION = TYPE_PREFIX_FEATURE_COUNT + 6;
+
+  /**
+   * The number of structural features of the '<em>component clause1</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1_FEATURE_COUNT = TYPE_PREFIX_FEATURE_COUNT + 7;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.array_subscriptsImpl <em>array subscripts</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.array_subscriptsImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getarray_subscripts()
+   * @generated
+   */
+  int ARRAY_SUBSCRIPTS = 23;
+
+  /**
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_SUBSCRIPTS__SUBSCRIPT = 0;
+
+  /**
+   * The number of structural features of the '<em>array subscripts</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARRAY_SUBSCRIPTS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.declarationImpl <em>declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.declarationImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getdeclaration()
+   * @generated
+   */
+  int DECLARATION = 22;
+
+  /**
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__SUBSCRIPT = ARRAY_SUBSCRIPTS__SUBSCRIPT;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__ARGUMENTS = ARRAY_SUBSCRIPTS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__EXPRESSION = ARRAY_SUBSCRIPTS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Declaration Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__DECLARATION_NAME = ARRAY_SUBSCRIPTS_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_FEATURE_COUNT = ARRAY_SUBSCRIPTS_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.component_declaration1Impl <em>component declaration1</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.component_declaration1Impl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getcomponent_declaration1()
+   * @generated
+   */
+  int COMPONENT_DECLARATION1 = 21;
+
+  /**
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION1__SUBSCRIPT = DECLARATION__SUBSCRIPT;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION1__ARGUMENTS = DECLARATION__ARGUMENTS;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION1__EXPRESSION = DECLARATION__EXPRESSION;
+
+  /**
+   * The feature id for the '<em><b>Declaration Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION1__DECLARATION_NAME = DECLARATION__DECLARATION_NAME;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION1__DESCRIPTION = DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION1__IS_ANNOTATION = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>component declaration1</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION1_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Unfinished2Impl <em>Unfinished2</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.Unfinished2Impl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getUnfinished2()
+   * @generated
+   */
+  int UNFINISHED2 = 24;
+
+  /**
+   * The feature id for the '<em><b>Aa</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNFINISHED2__AA = 0;
+
+  /**
+   * The number of structural features of the '<em>Unfinished2</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNFINISHED2_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.constraining_clauseImpl <em>constraining clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.constraining_clauseImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getconstraining_clause()
+   * @generated
+   */
+  int CONSTRAINING_CLAUSE = 26;
+
+  /**
+   * The feature id for the '<em><b>Elements2</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINING_CLAUSE__ELEMENTS2 = 0;
+
+  /**
+   * The number of structural features of the '<em>constraining clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINING_CLAUSE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ElementImpl <em>Element</em>}' class.
@@ -752,7 +2019,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElement()
    * @generated
    */
-  int ELEMENT = 12;
+  int ELEMENT = 27;
 
   /**
    * The number of structural features of the '<em>Element</em>' class.
@@ -771,43 +2038,70 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getImportClause()
    * @generated
    */
-  int IMPORT_CLAUSE = 13;
+  int IMPORT_CLAUSE = 28;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__ID = ELEMENT_FEATURE_COUNT + 0;
+  int IMPORT_CLAUSE__DESCRIPTION = ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__NAME = ELEMENT_FEATURE_COUNT + 1;
+  int IMPORT_CLAUSE__ARGUMENTS = ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>List</b></em>' containment reference.
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__LIST = ELEMENT_FEATURE_COUNT + 2;
+  int IMPORT_CLAUSE__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * The feature id for the '<em><b>Self Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__COMMENT = ELEMENT_FEATURE_COUNT + 3;
+  int IMPORT_CLAUSE__SELF_NAME = ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Import Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_CLAUSE__IMPORT_NAME = ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Is Import All</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_CLAUSE__IS_IMPORT_ALL = ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Object Name</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_CLAUSE__OBJECT_NAME = ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Import Clause</em>' class.
@@ -816,35 +2110,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ImportListImpl <em>Import List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ImportListImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getImportList()
-   * @generated
-   */
-  int IMPORT_LIST = 14;
-
-  /**
-   * The feature id for the '<em><b>Names</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_LIST__NAMES = 0;
-
-  /**
-   * The number of structural features of the '<em>Import List</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_LIST_FEATURE_COUNT = 1;
+  int IMPORT_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl <em>Extends Clause</em>}' class.
@@ -854,34 +2120,43 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExtendsClause()
    * @generated
    */
-  int EXTENDS_CLAUSE = 15;
+  int EXTENDS_CLAUSE = 29;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE__NAME = ELEMENT_FEATURE_COUNT + 0;
+  int EXTENDS_CLAUSE__TYPE_SPECIFIER = ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Mod</b></em>' containment reference.
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE__MOD = ELEMENT_FEATURE_COUNT + 1;
+  int EXTENDS_CLAUSE__ARGUMENTS = ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Anno</b></em>' containment reference.
+   * The feature id for the '<em><b>Breaks</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE__ANNO = ELEMENT_FEATURE_COUNT + 2;
+  int EXTENDS_CLAUSE__BREAKS = ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDS_CLAUSE__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Extends Clause</em>' class.
@@ -890,1195 +2165,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.typeClauseImpl <em>type Clause</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.typeClauseImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#gettypeClause()
-   * @generated
-   */
-  int TYPE_CLAUSE = 16;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_CLAUSE__NAME = ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Base Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_CLAUSE__BASE_TYPE = ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Mod</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_CLAUSE__MOD = ELEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Anno</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_CLAUSE__ANNO = ELEMENT_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>type Clause</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ConstrainingClauseImpl <em>Constraining Clause</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ConstrainingClauseImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getConstrainingClause()
-   * @generated
-   */
-  int CONSTRAINING_CLAUSE = 17;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTRAINING_CLAUSE__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Mod</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTRAINING_CLAUSE__MOD = 1;
-
-  /**
-   * The number of structural features of the '<em>Constraining Clause</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTRAINING_CLAUSE_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl <em>Component Clause</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ComponentClauseImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentClause()
-   * @generated
-   */
-  int COMPONENT_CLAUSE = 18;
-
-  /**
-   * The feature id for the '<em><b>Constraining</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE__CONSTRAINING = ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE__COMMENT = ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Prefix</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE__PREFIX = ELEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE__TYPE = ELEMENT_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Subs</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE__SUBS = ELEMENT_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Comps</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE__COMPS = ELEMENT_FEATURE_COUNT + 5;
-
-  /**
-   * The number of structural features of the '<em>Component Clause</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 6;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.TypeSpecifierImpl <em>Type Specifier</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.TypeSpecifierImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getTypeSpecifier()
-   * @generated
-   */
-  int TYPE_SPECIFIER = 19;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_SPECIFIER__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Name1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_SPECIFIER__NAME1 = 1;
-
-  /**
-   * The number of structural features of the '<em>Type Specifier</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_SPECIFIER_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ComponentListImpl <em>Component List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ComponentListImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentList()
-   * @generated
-   */
-  int COMPONENT_LIST = 20;
-
-  /**
-   * The feature id for the '<em><b>Comps</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_LIST__COMPS = 0;
-
-  /**
-   * The number of structural features of the '<em>Component List</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_LIST_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ComponentDeclarationImpl <em>Component Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ComponentDeclarationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentDeclaration()
-   * @generated
-   */
-  int COMPONENT_DECLARATION = 21;
-
-  /**
-   * The feature id for the '<em><b>Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_DECLARATION__DECL = 0;
-
-  /**
-   * The feature id for the '<em><b>Cond</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_DECLARATION__COND = 1;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_DECLARATION__COMMENT = 2;
-
-  /**
-   * The number of structural features of the '<em>Component Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_DECLARATION_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ConditionAttributeImpl <em>Condition Attribute</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ConditionAttributeImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getConditionAttribute()
-   * @generated
-   */
-  int CONDITION_ATTRIBUTE = 22;
-
-  /**
-   * The number of structural features of the '<em>Condition Attribute</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_ATTRIBUTE_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ComponentDeclaration1Impl <em>Component Declaration1</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ComponentDeclaration1Impl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentDeclaration1()
-   * @generated
-   */
-  int COMPONENT_DECLARATION1 = 33;
-
-  /**
-   * The number of structural features of the '<em>Component Declaration1</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_DECLARATION1_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.DeclarationImpl <em>Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.DeclarationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getDeclaration()
-   * @generated
-   */
-  int DECLARATION = 23;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARATION__NAME = COMPONENT_DECLARATION1_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARATION__TYPE = COMPONENT_DECLARATION1_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Subscripts</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARATION__SUBSCRIPTS = COMPONENT_DECLARATION1_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Mod</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARATION__MOD = COMPONENT_DECLARATION1_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARATION__COMMENT = COMPONENT_DECLARATION1_FEATURE_COUNT + 4;
-
-  /**
-   * The number of structural features of the '<em>Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARATION_FEATURE_COUNT = COMPONENT_DECLARATION1_FEATURE_COUNT + 5;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ModificationImpl <em>Modification</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ModificationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getModification()
-   * @generated
-   */
-  int MODIFICATION = 24;
-
-  /**
-   * The feature id for the '<em><b>Mod</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODIFICATION__MOD = 0;
-
-  /**
-   * The feature id for the '<em><b>Dh</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODIFICATION__DH = 1;
-
-  /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODIFICATION__EXPR = 2;
-
-  /**
-   * The feature id for the '<em><b>Mh</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODIFICATION__MH = 3;
-
-  /**
-   * The number of structural features of the '<em>Modification</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODIFICATION_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ClassModificationImpl <em>Class Modification</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ClassModificationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClassModification()
-   * @generated
-   */
-  int CLASS_MODIFICATION = 25;
-
-  /**
-   * The feature id for the '<em><b>Args</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_MODIFICATION__ARGS = 0;
-
-  /**
-   * The number of structural features of the '<em>Class Modification</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_MODIFICATION_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ArgumentListImpl <em>Argument List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ArgumentListImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArgumentList()
-   * @generated
-   */
-  int ARGUMENT_LIST = 26;
-
-  /**
-   * The feature id for the '<em><b>Args</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGUMENT_LIST__ARGS = 0;
-
-  /**
-   * The number of structural features of the '<em>Argument List</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGUMENT_LIST_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ArgumentImpl <em>Argument</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ArgumentImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArgument()
-   * @generated
-   */
-  int ARGUMENT = 27;
-
-  /**
-   * The feature id for the '<em><b>Each</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGUMENT__EACH = 0;
-
-  /**
-   * The feature id for the '<em><b>Final</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGUMENT__FINAL = 1;
-
-  /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGUMENT__ELEMENT = 2;
-
-  /**
-   * The number of structural features of the '<em>Argument</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGUMENT_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ElementModicationOrReplaceableImpl <em>Element Modication Or Replaceable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ElementModicationOrReplaceableImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElementModicationOrReplaceable()
-   * @generated
-   */
-  int ELEMENT_MODICATION_OR_REPLACEABLE = 28;
-
-  /**
-   * The feature id for the '<em><b>Each</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_MODICATION_OR_REPLACEABLE__EACH = ARGUMENT__EACH;
-
-  /**
-   * The feature id for the '<em><b>Final</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_MODICATION_OR_REPLACEABLE__FINAL = ARGUMENT__FINAL;
-
-  /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_MODICATION_OR_REPLACEABLE__ELEMENT = ARGUMENT__ELEMENT;
-
-  /**
-   * The number of structural features of the '<em>Element Modication Or Replaceable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_MODICATION_OR_REPLACEABLE_FEATURE_COUNT = ARGUMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ElementModificationImpl <em>Element Modification</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ElementModificationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElementModification()
-   * @generated
-   */
-  int ELEMENT_MODIFICATION = 29;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_MODIFICATION__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Mod</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_MODIFICATION__MOD = 1;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_MODIFICATION__COMMENT = 2;
-
-  /**
-   * The number of structural features of the '<em>Element Modification</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_MODIFICATION_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ElementRedeclarationImpl <em>Element Redeclaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ElementRedeclarationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElementRedeclaration()
-   * @generated
-   */
-  int ELEMENT_REDECLARATION = 30;
-
-  /**
-   * The feature id for the '<em><b>Each</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_REDECLARATION__EACH = ARGUMENT__EACH;
-
-  /**
-   * The feature id for the '<em><b>Final</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_REDECLARATION__FINAL = ARGUMENT__FINAL;
-
-  /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_REDECLARATION__ELEMENT = ARGUMENT__ELEMENT;
-
-  /**
-   * The feature id for the '<em><b>Redeclare</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_REDECLARATION__REDECLARE = ARGUMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Element Redeclaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_REDECLARATION_FEATURE_COUNT = ARGUMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ElementReplaceableImpl <em>Element Replaceable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ElementReplaceableImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElementReplaceable()
-   * @generated
-   */
-  int ELEMENT_REPLACEABLE = 31;
-
-  /**
-   * The feature id for the '<em><b>Replaceable</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_REPLACEABLE__REPLACEABLE = 0;
-
-  /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_REPLACEABLE__ELEMENT = 1;
-
-  /**
-   * The feature id for the '<em><b>Const</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_REPLACEABLE__CONST = 2;
-
-  /**
-   * The number of structural features of the '<em>Element Replaceable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_REPLACEABLE_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ComponentClause1Impl <em>Component Clause1</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ComponentClause1Impl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentClause1()
-   * @generated
-   */
-  int COMPONENT_CLAUSE1 = 32;
-
-  /**
-   * The feature id for the '<em><b>Prefix</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE1__PREFIX = 0;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE1__TYPE = 1;
-
-  /**
-   * The feature id for the '<em><b>Subs</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE1__SUBS = 2;
-
-  /**
-   * The feature id for the '<em><b>Comp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE1__COMP = 3;
-
-  /**
-   * The number of structural features of the '<em>Component Clause1</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE1_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ShortClassDefinitionImpl <em>Short Class Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ShortClassDefinitionImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getShortClassDefinition()
-   * @generated
-   */
-  int SHORT_CLASS_DEFINITION = 34;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHORT_CLASS_DEFINITION__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHORT_CLASS_DEFINITION__TYPE = 1;
-
-  /**
-   * The feature id for the '<em><b>Asts</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHORT_CLASS_DEFINITION__ASTS = 2;
-
-  /**
-   * The feature id for the '<em><b>Mode</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHORT_CLASS_DEFINITION__MODE = 3;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHORT_CLASS_DEFINITION__COMMENT = 4;
-
-  /**
-   * The feature id for the '<em><b>Elementnum</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHORT_CLASS_DEFINITION__ELEMENTNUM = 5;
-
-  /**
-   * The number of structural features of the '<em>Short Class Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHORT_CLASS_DEFINITION_FEATURE_COUNT = 6;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ElementenumeratioanImpl <em>Elementenumeratioan</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ElementenumeratioanImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElementenumeratioan()
-   * @generated
-   */
-  int ELEMENTENUMERATIOAN = 35;
-
-  /**
-   * The feature id for the '<em><b>Enumeratioan</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENTENUMERATIOAN__ENUMERATIOAN = 0;
-
-  /**
-   * The feature id for the '<em><b>List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENTENUMERATIOAN__LIST = 1;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENTENUMERATIOAN__COMMENT = 2;
-
-  /**
-   * The number of structural features of the '<em>Elementenumeratioan</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENTENUMERATIOAN_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.EquationSectionImpl <em>Equation Section</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.EquationSectionImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEquationSection()
-   * @generated
-   */
-  int EQUATION_SECTION = 36;
-
-  /**
-   * The feature id for the '<em><b>Initial</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUATION_SECTION__INITIAL = 0;
-
-  /**
-   * The feature id for the '<em><b>Equations</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUATION_SECTION__EQUATIONS = 1;
-
-  /**
-   * The number of structural features of the '<em>Equation Section</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUATION_SECTION_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.AlgorithmSectionImpl <em>Algorithm Section</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.AlgorithmSectionImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAlgorithmSection()
-   * @generated
-   */
-  int ALGORITHM_SECTION = 37;
-
-  /**
-   * The feature id for the '<em><b>Initial</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALGORITHM_SECTION__INITIAL = 0;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALGORITHM_SECTION__STATEMENTS = 1;
-
-  /**
-   * The number of structural features of the '<em>Algorithm Section</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALGORITHM_SECTION_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.EquationImpl <em>Equation</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.EquationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEquation()
-   * @generated
-   */
-  int EQUATION = 38;
-
-  /**
-   * The feature id for the '<em><b>Commment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUATION__COMMMENT = 0;
-
-  /**
-   * The number of structural features of the '<em>Equation</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUATION_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.LREquationImpl <em>LR Equation</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.LREquationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLREquation()
-   * @generated
-   */
-  int LR_EQUATION = 39;
-
-  /**
-   * The feature id for the '<em><b>Commment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LR_EQUATION__COMMMENT = EQUATION__COMMMENT;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LR_EQUATION__LEFT = EQUATION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LR_EQUATION__RIGHT = EQUATION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>LR Equation</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LR_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.StatementImpl <em>Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.StatementImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getStatement()
-   * @generated
-   */
-  int STATEMENT = 40;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__COMMENT = 0;
-
-  /**
-   * The number of structural features of the '<em>Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.LRStatementImpl <em>LR Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.LRStatementImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLRStatement()
-   * @generated
-   */
-  int LR_STATEMENT = 41;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LR_STATEMENT__COMMENT = STATEMENT__COMMENT;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LR_STATEMENT__LEFT = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LR_STATEMENT__RIGHT = STATEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>LR Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LR_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.LRKStatementImpl <em>LRK Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.LRKStatementImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLRKStatement()
-   * @generated
-   */
-  int LRK_STATEMENT = 42;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LRK_STATEMENT__COMMENT = LR_STATEMENT__COMMENT;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LRK_STATEMENT__LEFT = LR_STATEMENT__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LRK_STATEMENT__RIGHT = LR_STATEMENT__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Ref</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LRK_STATEMENT__REF = LR_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Ref call</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LRK_STATEMENT__REF_CALL = LR_STATEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>LRK Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LRK_STATEMENT_FEATURE_COUNT = LR_STATEMENT_FEATURE_COUNT + 2;
+  int EXTENDS_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.BreakImpl <em>Break</em>}' class.
@@ -2088,25 +2175,25 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getBreak()
    * @generated
    */
-  int BREAK = 43;
+  int BREAK = 30;
 
   /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * The feature id for the '<em><b>Connect</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BREAK__COMMENT = STATEMENT__COMMENT;
+  int BREAK__CONNECT = 0;
 
   /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * The feature id for the '<em><b>Break Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BREAK__VAL = STATEMENT_FEATURE_COUNT + 0;
+  int BREAK__BREAK_NAME = 1;
 
   /**
    * The number of structural features of the '<em>Break</em>' class.
@@ -2115,3842 +2202,703 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BREAK_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+  int BREAK_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ReturnImpl <em>Return</em>}' class.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl <em>General Clause</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ReturnImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getReturn()
+   * @see dut.control.moloc.mOloc.impl.GeneralClauseImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getGeneralClause()
    * @generated
    */
-  int RETURN = 44;
+  int GENERAL_CLAUSE = 31;
 
   /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
+   * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RETURN__COMMENT = STATEMENT__COMMENT;
+  int GENERAL_CLAUSE__RELATIONSHIP_TYPE = ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * The feature id for the '<em><b>Parameter Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RETURN__VAL = STATEMENT_FEATURE_COUNT + 0;
+  int GENERAL_CLAUSE__PARAMETER_TYPE = ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Return</em>' class.
+   * The feature id for the '<em><b>Direction Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RETURN_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+  int GENERAL_CLAUSE__DIRECTION_TYPE = ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.IfEquationImpl <em>If Equation</em>}' class.
+   * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.IfEquationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getIfEquation()
    * @generated
-   */
-  int IF_EQUATION = 45;
-
-  /**
-   * The feature id for the '<em><b>Commment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EQUATION__COMMMENT = EQUATION__COMMMENT;
-
-  /**
-   * The feature id for the '<em><b>If expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EQUATION__IF_EXPR = EQUATION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>If eqs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EQUATION__IF_EQS = EQUATION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Elsif exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EQUATION__ELSIF_EXPRS = EQUATION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Elseif eqs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EQUATION__ELSEIF_EQS = EQUATION_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Else eqs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EQUATION__ELSE_EQS = EQUATION_FEATURE_COUNT + 4;
-
-  /**
-   * The number of structural features of the '<em>If Equation</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 5;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.IfStatementImpl <em>If Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.IfStatementImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getIfStatement()
-   * @generated
-   */
-  int IF_STATEMENT = 46;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__COMMENT = STATEMENT__COMMENT;
-
-  /**
-   * The feature id for the '<em><b>If expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__IF_EXPR = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>If stmts</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__IF_STMTS = STATEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Elseif exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__ELSEIF_EXPRS = STATEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Elseif stmts</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__ELSEIF_STMTS = STATEMENT_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Else stmts</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__ELSE_STMTS = STATEMENT_FEATURE_COUNT + 4;
-
-  /**
-   * The number of structural features of the '<em>If Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 5;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ForEquationImpl <em>For Equation</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ForEquationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getForEquation()
-   * @generated
-   */
-  int FOR_EQUATION = 47;
-
-  /**
-   * The feature id for the '<em><b>Commment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_EQUATION__COMMMENT = EQUATION__COMMMENT;
-
-  /**
-   * The feature id for the '<em><b>Indices</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_EQUATION__INDICES = EQUATION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Eqs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_EQUATION__EQS = EQUATION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>For Equation</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ForStatementImpl <em>For Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ForStatementImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getForStatement()
-   * @generated
-   */
-  int FOR_STATEMENT = 48;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT__COMMENT = STATEMENT__COMMENT;
-
-  /**
-   * The feature id for the '<em><b>Indices</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT__INDICES = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Stmts</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT__STMTS = STATEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>For Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ForIndicesImpl <em>For Indices</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ForIndicesImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getForIndices()
-   * @generated
-   */
-  int FOR_INDICES = 49;
-
-  /**
-   * The feature id for the '<em><b>Indices</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_INDICES__INDICES = 0;
-
-  /**
-   * The number of structural features of the '<em>For Indices</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_INDICES_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ForIndexImpl <em>For Index</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ForIndexImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getForIndex()
-   * @generated
-   */
-  int FOR_INDEX = 50;
-
-  /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_INDEX__ID = 0;
-
-  /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_INDEX__EXPR = 1;
-
-  /**
-   * The number of structural features of the '<em>For Index</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_INDEX_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.WhileStatementImpl <em>While Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.WhileStatementImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getWhileStatement()
-   * @generated
-   */
-  int WHILE_STATEMENT = 51;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHILE_STATEMENT__COMMENT = STATEMENT__COMMENT;
-
-  /**
-   * The feature id for the '<em><b>Cond</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHILE_STATEMENT__COND = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Stmts</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHILE_STATEMENT__STMTS = STATEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>While Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHILE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.WhenEquationImpl <em>When Equation</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.WhenEquationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getWhenEquation()
-   * @generated
-   */
-  int WHEN_EQUATION = 52;
-
-  /**
-   * The feature id for the '<em><b>Commment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_EQUATION__COMMMENT = EQUATION__COMMMENT;
-
-  /**
-   * The feature id for the '<em><b>When</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_EQUATION__WHEN = EQUATION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>When eqs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_EQUATION__WHEN_EQS = EQUATION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Elsehwhen</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_EQUATION__ELSEHWHEN = EQUATION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Elsewhen eqs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_EQUATION__ELSEWHEN_EQS = EQUATION_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>When Equation</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.WhenStatementImpl <em>When Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.WhenStatementImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getWhenStatement()
-   * @generated
-   */
-  int WHEN_STATEMENT = 53;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_STATEMENT__COMMENT = STATEMENT__COMMENT;
-
-  /**
-   * The feature id for the '<em><b>When</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_STATEMENT__WHEN = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>When stmts</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_STATEMENT__WHEN_STMTS = STATEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Elsehwhen</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_STATEMENT__ELSEHWHEN = STATEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Elsewhen stmts</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_STATEMENT__ELSEWHEN_STMTS = STATEMENT_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>When Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ConnectClauseImpl <em>Connect Clause</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ConnectClauseImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getConnectClause()
-   * @generated
-   */
-  int CONNECT_CLAUSE = 54;
-
-  /**
-   * The feature id for the '<em><b>Commment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECT_CLAUSE__COMMMENT = EQUATION__COMMMENT;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECT_CLAUSE__LEFT = EQUATION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECT_CLAUSE__RIGHT = EQUATION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Connect Clause</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECT_CLAUSE_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ExpressionImpl <em>Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ExpressionImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExpression()
-   * @generated
-   */
-  int EXPRESSION = 55;
-
-  /**
-   * The number of structural features of the '<em>Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION_FEATURE_COUNT = CONDITION_ATTRIBUTE_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.IfExpressionImpl <em>If Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.IfExpressionImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getIfExpression()
-   * @generated
-   */
-  int IF_EXPRESSION = 56;
-
-  /**
-   * The feature id for the '<em><b>If</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EXPRESSION__IF = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Then</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EXPRESSION__THEN = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Elseif</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EXPRESSION__ELSEIF = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Elseifthen</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EXPRESSION__ELSEIFTHEN = EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Else</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EXPRESSION__ELSE = EXPRESSION_FEATURE_COUNT + 4;
-
-  /**
-   * The number of structural features of the '<em>If Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 5;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.SimpleExpressionImpl <em>Simple Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.SimpleExpressionImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getSimpleExpression()
-   * @generated
-   */
-  int SIMPLE_EXPRESSION = 57;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_EXPRESSION__EXPRS = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Simple Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.LogicalExpressionImpl <em>Logical Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.LogicalExpressionImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLogicalExpression()
-   * @generated
-   */
-  int LOGICAL_EXPRESSION = 58;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_EXPRESSION__EXPRS = SIMPLE_EXPRESSION__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_EXPRESSION__TERMS = SIMPLE_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_EXPRESSION__RO = SIMPLE_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Logical Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_EXPRESSION_FEATURE_COUNT = SIMPLE_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.LogicalTermImpl <em>Logical Term</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.LogicalTermImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLogicalTerm()
-   * @generated
-   */
-  int LOGICAL_TERM = 59;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_TERM__EXPRS = LOGICAL_EXPRESSION__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_TERM__TERMS = LOGICAL_EXPRESSION__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_TERM__RO = LOGICAL_EXPRESSION__RO;
-
-  /**
-   * The number of structural features of the '<em>Logical Term</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_TERM_FEATURE_COUNT = LOGICAL_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.LogicalFactorImpl <em>Logical Factor</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.LogicalFactorImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLogicalFactor()
-   * @generated
-   */
-  int LOGICAL_FACTOR = 60;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_FACTOR__EXPRS = LOGICAL_TERM__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_FACTOR__TERMS = LOGICAL_TERM__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_FACTOR__RO = LOGICAL_TERM__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_FACTOR__FACTORS = LOGICAL_TERM_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_FACTOR__DNA = LOGICAL_TERM_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_FACTOR__NOOT = LOGICAL_TERM_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_FACTOR__REL = LOGICAL_TERM_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Logical Factor</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_FACTOR_FEATURE_COUNT = LOGICAL_TERM_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.RelationImpl <em>Relation</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.RelationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getRelation()
-   * @generated
-   */
-  int RELATION = 61;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__EXPRS = LOGICAL_FACTOR__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__TERMS = LOGICAL_FACTOR__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__RO = LOGICAL_FACTOR__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__FACTORS = LOGICAL_FACTOR__FACTORS;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__DNA = LOGICAL_FACTOR__DNA;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__NOOT = LOGICAL_FACTOR__NOOT;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__REL = LOGICAL_FACTOR__REL;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__LEFT = LOGICAL_FACTOR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Rel op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__REL_OP = LOGICAL_FACTOR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION__RIGHT = LOGICAL_FACTOR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Relation</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATION_FEATURE_COUNT = LOGICAL_FACTOR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ArithmeticExpressionImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArithmeticExpression()
-   * @generated
-   */
-  int ARITHMETIC_EXPRESSION = 62;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_EXPRESSION__EXPRS = RELATION__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_EXPRESSION__TERMS = RELATION__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_EXPRESSION__RO = RELATION__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_EXPRESSION__FACTORS = RELATION__FACTORS;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_EXPRESSION__DNA = RELATION__DNA;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_EXPRESSION__NOOT = RELATION__NOOT;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_EXPRESSION__REL = RELATION__REL;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_EXPRESSION__LEFT = RELATION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Rel op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_EXPRESSION__REL_OP = RELATION__REL_OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_EXPRESSION__RIGHT = RELATION__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Add op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_EXPRESSION__ADD_OP = RELATION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Arithmetic Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITHMETIC_EXPRESSION_FEATURE_COUNT = RELATION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.NegationImpl <em>Negation</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.NegationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getNegation()
-   * @generated
-   */
-  int NEGATION = 63;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__EXPRS = ARITHMETIC_EXPRESSION__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__TERMS = ARITHMETIC_EXPRESSION__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__RO = ARITHMETIC_EXPRESSION__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__FACTORS = ARITHMETIC_EXPRESSION__FACTORS;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__DNA = ARITHMETIC_EXPRESSION__DNA;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__NOOT = ARITHMETIC_EXPRESSION__NOOT;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__REL = ARITHMETIC_EXPRESSION__REL;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__LEFT = ARITHMETIC_EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Rel op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__REL_OP = ARITHMETIC_EXPRESSION__REL_OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__RIGHT = ARITHMETIC_EXPRESSION__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Add op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__ADD_OP = ARITHMETIC_EXPRESSION__ADD_OP;
-
-  /**
-   * The feature id for the '<em><b>Neg op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__NEG_OP = ARITHMETIC_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Term</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION__TERM = ARITHMETIC_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Negation</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NEGATION_FEATURE_COUNT = ARITHMETIC_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.TermImpl <em>Term</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.TermImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getTerm()
-   * @generated
-   */
-  int TERM = 64;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__EXPRS = NEGATION__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__TERMS = NEGATION__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__RO = NEGATION__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__FACTORS = NEGATION__FACTORS;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__DNA = NEGATION__DNA;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__NOOT = NEGATION__NOOT;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__REL = NEGATION__REL;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__LEFT = NEGATION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Rel op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__REL_OP = NEGATION__REL_OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__RIGHT = NEGATION__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Add op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__ADD_OP = NEGATION__ADD_OP;
-
-  /**
-   * The feature id for the '<em><b>Neg op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__NEG_OP = NEGATION__NEG_OP;
-
-  /**
-   * The feature id for the '<em><b>Term</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__TERM = NEGATION__TERM;
-
-  /**
-   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__MUL_OP = NEGATION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Term</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM_FEATURE_COUNT = NEGATION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.FactorImpl <em>Factor</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.FactorImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFactor()
-   * @generated
-   */
-  int FACTOR = 65;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__EXPRS = TERM__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__TERMS = TERM__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__RO = TERM__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__FACTORS = TERM__FACTORS;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__DNA = TERM__DNA;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__NOOT = TERM__NOOT;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__REL = TERM__REL;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__LEFT = TERM__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Rel op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__REL_OP = TERM__REL_OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__RIGHT = TERM__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Add op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__ADD_OP = TERM__ADD_OP;
-
-  /**
-   * The feature id for the '<em><b>Neg op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__NEG_OP = TERM__NEG_OP;
-
-  /**
-   * The feature id for the '<em><b>Term</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__TERM = TERM__TERM;
-
-  /**
-   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__MUL_OP = TERM__MUL_OP;
-
-  /**
-   * The feature id for the '<em><b>Base</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__BASE = TERM_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Cf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__CF = TERM_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Dcf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__DCF = TERM_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR__EXP = TERM_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Factor</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTOR_FEATURE_COUNT = TERM_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.PrimaryImpl <em>Primary</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.PrimaryImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getPrimary()
-   * @generated
-   */
-  int PRIMARY = 70;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__EXPRS = FACTOR__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__TERMS = FACTOR__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__RO = FACTOR__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__FACTORS = FACTOR__FACTORS;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__DNA = FACTOR__DNA;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__NOOT = FACTOR__NOOT;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__REL = FACTOR__REL;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__LEFT = FACTOR__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Rel op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__REL_OP = FACTOR__REL_OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__RIGHT = FACTOR__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Add op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__ADD_OP = FACTOR__ADD_OP;
-
-  /**
-   * The feature id for the '<em><b>Neg op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__NEG_OP = FACTOR__NEG_OP;
-
-  /**
-   * The feature id for the '<em><b>Term</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__TERM = FACTOR__TERM;
-
-  /**
-   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__MUL_OP = FACTOR__MUL_OP;
-
-  /**
-   * The feature id for the '<em><b>Base</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__BASE = FACTOR__BASE;
-
-  /**
-   * The feature id for the '<em><b>Cf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__CF = FACTOR__CF;
-
-  /**
-   * The feature id for the '<em><b>Dcf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__DCF = FACTOR__DCF;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__EXP = FACTOR__EXP;
-
-  /**
-   * The feature id for the '<em><b>Oe</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__OE = FACTOR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Res</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__RES = FACTOR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Fa</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY__FA = FACTOR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Primary</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_FEATURE_COUNT = FACTOR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.FloatPrimaryImpl <em>Float Primary</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.FloatPrimaryImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFloatPrimary()
-   * @generated
-   */
-  int FLOAT_PRIMARY = 66;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__EXPRS = PRIMARY__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__TERMS = PRIMARY__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__RO = PRIMARY__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__FACTORS = PRIMARY__FACTORS;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__DNA = PRIMARY__DNA;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__NOOT = PRIMARY__NOOT;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__REL = PRIMARY__REL;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__LEFT = PRIMARY__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Rel op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__REL_OP = PRIMARY__REL_OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__RIGHT = PRIMARY__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Add op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__ADD_OP = PRIMARY__ADD_OP;
-
-  /**
-   * The feature id for the '<em><b>Neg op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__NEG_OP = PRIMARY__NEG_OP;
-
-  /**
-   * The feature id for the '<em><b>Term</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__TERM = PRIMARY__TERM;
-
-  /**
-   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__MUL_OP = PRIMARY__MUL_OP;
-
-  /**
-   * The feature id for the '<em><b>Base</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__BASE = PRIMARY__BASE;
-
-  /**
-   * The feature id for the '<em><b>Cf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__CF = PRIMARY__CF;
-
-  /**
-   * The feature id for the '<em><b>Dcf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__DCF = PRIMARY__DCF;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__EXP = PRIMARY__EXP;
-
-  /**
-   * The feature id for the '<em><b>Oe</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__OE = PRIMARY__OE;
-
-  /**
-   * The feature id for the '<em><b>Res</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__RES = PRIMARY__RES;
-
-  /**
-   * The feature id for the '<em><b>Fa</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__FA = PRIMARY__FA;
-
-  /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY__VAL = PRIMARY_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Float Primary</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_PRIMARY_FEATURE_COUNT = PRIMARY_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.StringPrimaryImpl <em>String Primary</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.StringPrimaryImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getStringPrimary()
-   * @generated
-   */
-  int STRING_PRIMARY = 67;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__EXPRS = PRIMARY__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__TERMS = PRIMARY__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__RO = PRIMARY__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__FACTORS = PRIMARY__FACTORS;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__DNA = PRIMARY__DNA;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__NOOT = PRIMARY__NOOT;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__REL = PRIMARY__REL;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__LEFT = PRIMARY__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Rel op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__REL_OP = PRIMARY__REL_OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__RIGHT = PRIMARY__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Add op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__ADD_OP = PRIMARY__ADD_OP;
-
-  /**
-   * The feature id for the '<em><b>Neg op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__NEG_OP = PRIMARY__NEG_OP;
-
-  /**
-   * The feature id for the '<em><b>Term</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__TERM = PRIMARY__TERM;
-
-  /**
-   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__MUL_OP = PRIMARY__MUL_OP;
-
-  /**
-   * The feature id for the '<em><b>Base</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__BASE = PRIMARY__BASE;
-
-  /**
-   * The feature id for the '<em><b>Cf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__CF = PRIMARY__CF;
-
-  /**
-   * The feature id for the '<em><b>Dcf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__DCF = PRIMARY__DCF;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__EXP = PRIMARY__EXP;
-
-  /**
-   * The feature id for the '<em><b>Oe</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__OE = PRIMARY__OE;
-
-  /**
-   * The feature id for the '<em><b>Res</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__RES = PRIMARY__RES;
-
-  /**
-   * The feature id for the '<em><b>Fa</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__FA = PRIMARY__FA;
-
-  /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY__VAL = PRIMARY_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>String Primary</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_PRIMARY_FEATURE_COUNT = PRIMARY_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.LogicalPrimaryImpl <em>Logical Primary</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.LogicalPrimaryImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLogicalPrimary()
-   * @generated
-   */
-  int LOGICAL_PRIMARY = 68;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__EXPRS = PRIMARY__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__TERMS = PRIMARY__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__RO = PRIMARY__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__FACTORS = PRIMARY__FACTORS;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__DNA = PRIMARY__DNA;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__NOOT = PRIMARY__NOOT;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__REL = PRIMARY__REL;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__LEFT = PRIMARY__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Rel op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__REL_OP = PRIMARY__REL_OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__RIGHT = PRIMARY__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Add op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__ADD_OP = PRIMARY__ADD_OP;
-
-  /**
-   * The feature id for the '<em><b>Neg op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__NEG_OP = PRIMARY__NEG_OP;
-
-  /**
-   * The feature id for the '<em><b>Term</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__TERM = PRIMARY__TERM;
-
-  /**
-   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__MUL_OP = PRIMARY__MUL_OP;
-
-  /**
-   * The feature id for the '<em><b>Base</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__BASE = PRIMARY__BASE;
-
-  /**
-   * The feature id for the '<em><b>Cf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__CF = PRIMARY__CF;
-
-  /**
-   * The feature id for the '<em><b>Dcf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__DCF = PRIMARY__DCF;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__EXP = PRIMARY__EXP;
-
-  /**
-   * The feature id for the '<em><b>Oe</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__OE = PRIMARY__OE;
-
-  /**
-   * The feature id for the '<em><b>Res</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__RES = PRIMARY__RES;
-
-  /**
-   * The feature id for the '<em><b>Fa</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__FA = PRIMARY__FA;
-
-  /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY__VAL = PRIMARY_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Logical Primary</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOGICAL_PRIMARY_FEATURE_COUNT = PRIMARY_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.EndImpl <em>End</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.EndImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEnd()
-   * @generated
-   */
-  int END = 69;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__EXPRS = PRIMARY__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__TERMS = PRIMARY__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__RO = PRIMARY__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__FACTORS = PRIMARY__FACTORS;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__DNA = PRIMARY__DNA;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__NOOT = PRIMARY__NOOT;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__REL = PRIMARY__REL;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__LEFT = PRIMARY__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Rel op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__REL_OP = PRIMARY__REL_OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__RIGHT = PRIMARY__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Add op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__ADD_OP = PRIMARY__ADD_OP;
-
-  /**
-   * The feature id for the '<em><b>Neg op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__NEG_OP = PRIMARY__NEG_OP;
-
-  /**
-   * The feature id for the '<em><b>Term</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__TERM = PRIMARY__TERM;
-
-  /**
-   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__MUL_OP = PRIMARY__MUL_OP;
-
-  /**
-   * The feature id for the '<em><b>Base</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__BASE = PRIMARY__BASE;
-
-  /**
-   * The feature id for the '<em><b>Cf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__CF = PRIMARY__CF;
-
-  /**
-   * The feature id for the '<em><b>Dcf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__DCF = PRIMARY__DCF;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__EXP = PRIMARY__EXP;
-
-  /**
-   * The feature id for the '<em><b>Oe</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__OE = PRIMARY__OE;
-
-  /**
-   * The feature id for the '<em><b>Res</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__RES = PRIMARY__RES;
-
-  /**
-   * The feature id for the '<em><b>Fa</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__FA = PRIMARY__FA;
-
-  /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END__VAL = PRIMARY_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>End</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int END_FEATURE_COUNT = PRIMARY_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Array_argumentsImpl <em>Array arguments</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.Array_argumentsImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArray_arguments()
-   * @generated
-   */
-  int ARRAY_ARGUMENTS = 71;
-
-  /**
-   * The feature id for the '<em><b>Express</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARRAY_ARGUMENTS__EXPRESS = 0;
-
-  /**
-   * The feature id for the '<em><b>Argu</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARRAY_ARGUMENTS__ARGU = 1;
-
-  /**
-   * The feature id for the '<em><b>Fori</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARRAY_ARGUMENTS__FORI = 2;
-
-  /**
-   * The number of structural features of the '<em>Array arguments</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARRAY_ARGUMENTS_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Array_arguments_non_firstImpl <em>Array arguments non first</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.Array_arguments_non_firstImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArray_arguments_non_first()
-   * @generated
-   */
-  int ARRAY_ARGUMENTS_NON_FIRST = 72;
-
-  /**
-   * The feature id for the '<em><b>Express</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARRAY_ARGUMENTS_NON_FIRST__EXPRESS = 0;
-
-  /**
-   * The feature id for the '<em><b>Argu</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARRAY_ARGUMENTS_NON_FIRST__ARGU = 1;
-
-  /**
-   * The number of structural features of the '<em>Array arguments non first</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARRAY_ARGUMENTS_NON_FIRST_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.FunctionCallImpl <em>Function Call</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.FunctionCallImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionCall()
-   * @generated
-   */
-  int FUNCTION_CALL = 73;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__EXPRS = PRIMARY__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__TERMS = PRIMARY__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__RO = PRIMARY__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__FACTORS = PRIMARY__FACTORS;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__DNA = PRIMARY__DNA;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__NOOT = PRIMARY__NOOT;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__REL = PRIMARY__REL;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__LEFT = PRIMARY__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Rel op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__REL_OP = PRIMARY__REL_OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__RIGHT = PRIMARY__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Add op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__ADD_OP = PRIMARY__ADD_OP;
-
-  /**
-   * The feature id for the '<em><b>Neg op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__NEG_OP = PRIMARY__NEG_OP;
-
-  /**
-   * The feature id for the '<em><b>Term</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__TERM = PRIMARY__TERM;
-
-  /**
-   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__MUL_OP = PRIMARY__MUL_OP;
-
-  /**
-   * The feature id for the '<em><b>Base</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__BASE = PRIMARY__BASE;
-
-  /**
-   * The feature id for the '<em><b>Cf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__CF = PRIMARY__CF;
-
-  /**
-   * The feature id for the '<em><b>Dcf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__DCF = PRIMARY__DCF;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__EXP = PRIMARY__EXP;
-
-  /**
-   * The feature id for the '<em><b>Oe</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__OE = PRIMARY__OE;
-
-  /**
-   * The feature id for the '<em><b>Res</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__RES = PRIMARY__RES;
-
-  /**
-   * The feature id for the '<em><b>Fa</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__FA = PRIMARY__FA;
-
-  /**
-   * The feature id for the '<em><b>Comp ref</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__COMP_REF = PRIMARY_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Args</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__ARGS = PRIMARY_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Function Call</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL_FEATURE_COUNT = PRIMARY_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ComponentReferenceImpl <em>Component Reference</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ComponentReferenceImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentReference()
-   * @generated
-   */
-  int COMPONENT_REFERENCE = 74;
-
-  /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__EXPRS = PRIMARY__EXPRS;
-
-  /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__TERMS = PRIMARY__TERMS;
-
-  /**
-   * The feature id for the '<em><b>Ro</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__RO = PRIMARY__RO;
-
-  /**
-   * The feature id for the '<em><b>Factors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__FACTORS = PRIMARY__FACTORS;
-
-  /**
-   * The feature id for the '<em><b>Dna</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__DNA = PRIMARY__DNA;
-
-  /**
-   * The feature id for the '<em><b>Noot</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__NOOT = PRIMARY__NOOT;
-
-  /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__REL = PRIMARY__REL;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__LEFT = PRIMARY__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Rel op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__REL_OP = PRIMARY__REL_OP;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__RIGHT = PRIMARY__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Add op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__ADD_OP = PRIMARY__ADD_OP;
-
-  /**
-   * The feature id for the '<em><b>Neg op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__NEG_OP = PRIMARY__NEG_OP;
-
-  /**
-   * The feature id for the '<em><b>Term</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__TERM = PRIMARY__TERM;
-
-  /**
-   * The feature id for the '<em><b>Mul op</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__MUL_OP = PRIMARY__MUL_OP;
-
-  /**
-   * The feature id for the '<em><b>Base</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__BASE = PRIMARY__BASE;
-
-  /**
-   * The feature id for the '<em><b>Cf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__CF = PRIMARY__CF;
-
-  /**
-   * The feature id for the '<em><b>Dcf</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_REFERENCE__DCF = PRIMARY__DCF;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
    * @ordered
    */
-  int COMPONENT_REFERENCE__EXP = PRIMARY__EXP;
+  int GENERAL_CLAUSE__TYPE_SPECIFIER = ELEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Oe</b></em>' containment reference.
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_REFERENCE__OE = PRIMARY__OE;
+  int GENERAL_CLAUSE__SUBSCRIPT = ELEMENT_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Res</b></em>' containment reference list.
+   * The feature id for the '<em><b>Is Redeclare</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_REFERENCE__RES = PRIMARY__RES;
+  int GENERAL_CLAUSE__IS_REDECLARE = ELEMENT_FEATURE_COUNT + 5;
 
   /**
-   * The feature id for the '<em><b>Fa</b></em>' containment reference list.
+   * The feature id for the '<em><b>Isfinal</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_REFERENCE__FA = PRIMARY__FA;
+  int GENERAL_CLAUSE__ISFINAL = ELEMENT_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Idents</b></em>' attribute list.
+   * The feature id for the '<em><b>Is Inner</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_REFERENCE__IDENTS = PRIMARY_FEATURE_COUNT + 0;
+  int GENERAL_CLAUSE__IS_INNER = ELEMENT_FEATURE_COUNT + 7;
 
   /**
-   * The feature id for the '<em><b>Subscripts</b></em>' containment reference list.
+   * The feature id for the '<em><b>Is Outer</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_REFERENCE__SUBSCRIPTS = PRIMARY_FEATURE_COUNT + 1;
+  int GENERAL_CLAUSE__IS_OUTER = ELEMENT_FEATURE_COUNT + 8;
 
   /**
-   * The number of structural features of the '<em>Component Reference</em>' class.
+   * The feature id for the '<em><b>Is Replaceable</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_REFERENCE_FEATURE_COUNT = PRIMARY_FEATURE_COUNT + 2;
+  int GENERAL_CLAUSE__IS_REPLACEABLE = ELEMENT_FEATURE_COUNT + 9;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.FunctionCallArgsImpl <em>Function Call Args</em>}' class.
+   * The feature id for the '<em><b>Component list</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.FunctionCallArgsImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionCallArgs()
    * @generated
-   */
-  int FUNCTION_CALL_ARGS = 75;
-
-  /**
-   * The feature id for the '<em><b>Commment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL_ARGS__COMMMENT = EQUATION__COMMMENT;
-
-  /**
-   * The feature id for the '<em><b>Res</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL_ARGS__RES = EQUATION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Function Call Args</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL_ARGS_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.FunctionArgumentsImpl <em>Function Arguments</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.FunctionArgumentsImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionArguments()
-   * @generated
-   */
-  int FUNCTION_ARGUMENTS = 76;
-
-  /**
-   * The feature id for the '<em><b>Args</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_ARGUMENTS__ARGS = 0;
-
-  /**
-   * The feature id for the '<em><b>Indices</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_ARGUMENTS__INDICES = 1;
-
-  /**
-   * The number of structural features of the '<em>Function Arguments</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_ARGUMENTS_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.NamedArgumentsImpl <em>Named Arguments</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.NamedArgumentsImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getNamedArguments()
-   * @generated
-   */
-  int NAMED_ARGUMENTS = 77;
-
-  /**
-   * The feature id for the '<em><b>Args</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAMED_ARGUMENTS__ARGS = 0;
-
-  /**
-   * The number of structural features of the '<em>Named Arguments</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAMED_ARGUMENTS_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.NamedArgumentImpl <em>Named Argument</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.NamedArgumentImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getNamedArgument()
-   * @generated
-   */
-  int NAMED_ARGUMENT = 78;
-
-  /**
-   * The feature id for the '<em><b>Args</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
    * @ordered
    */
-  int NAMED_ARGUMENT__ARGS = FUNCTION_ARGUMENTS__ARGS;
+  int GENERAL_CLAUSE__COMPONENT_LIST = ELEMENT_FEATURE_COUNT + 10;
 
   /**
-   * The feature id for the '<em><b>Indices</b></em>' containment reference.
+   * The number of structural features of the '<em>General Clause</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_ARGUMENT__INDICES = FUNCTION_ARGUMENTS__INDICES;
+  int GENERAL_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 11;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Component_declarationImpl <em>Component declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.Component_declarationImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponent_declaration()
    * @generated
-   * @ordered
    */
-  int NAMED_ARGUMENT__ID = FUNCTION_ARGUMENTS_FEATURE_COUNT + 0;
+  int COMPONENT_DECLARATION = 32;
 
   /**
-   * The feature id for the '<em><b>Func</b></em>' containment reference.
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_ARGUMENT__FUNC = FUNCTION_ARGUMENTS_FEATURE_COUNT + 1;
+  int COMPONENT_DECLARATION__SUBSCRIPT = DECLARATION__SUBSCRIPT;
 
   /**
-   * The number of structural features of the '<em>Named Argument</em>' class.
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
-   */
-  int NAMED_ARGUMENT_FEATURE_COUNT = FUNCTION_ARGUMENTS_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.FunctionArgumentImpl <em>Function Argument</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.FunctionArgumentImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionArgument()
-   * @generated
    */
-  int FUNCTION_ARGUMENT = 79;
+  int COMPONENT_DECLARATION__ARGUMENTS = DECLARATION__ARGUMENTS;
 
   /**
-   * The number of structural features of the '<em>Function Argument</em>' class.
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
-   */
-  int FUNCTION_ARGUMENT_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.FunctionDefinitionImpl <em>Function Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.FunctionDefinitionImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionDefinition()
-   * @generated
    */
-  int FUNCTION_DEFINITION = 80;
+  int COMPONENT_DECLARATION__EXPRESSION = DECLARATION__EXPRESSION;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Declaration Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_DEFINITION__NAME = FUNCTION_ARGUMENT_FEATURE_COUNT + 0;
+  int COMPONENT_DECLARATION__DECLARATION_NAME = DECLARATION__DECLARATION_NAME;
 
   /**
-   * The feature id for the '<em><b>Args</b></em>' containment reference.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_DEFINITION__ARGS = FUNCTION_ARGUMENT_FEATURE_COUNT + 1;
+  int COMPONENT_DECLARATION__DESCRIPTION = DECLARATION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Function Definition</em>' class.
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
-   */
-  int FUNCTION_DEFINITION_FEATURE_COUNT = FUNCTION_ARGUMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.OutputExpressionListImpl <em>Output Expression List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.OutputExpressionListImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getOutputExpressionList()
-   * @generated
    */
-  int OUTPUT_EXPRESSION_LIST = 81;
+  int COMPONENT_DECLARATION__IS_ANNOTATION = DECLARATION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
+   * The feature id for the '<em><b>Condition attribute</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OUTPUT_EXPRESSION_LIST__EXPRS = 0;
+  int COMPONENT_DECLARATION__CONDITION_ATTRIBUTE = DECLARATION_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Output Expression List</em>' class.
+   * The number of structural features of the '<em>Component declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OUTPUT_EXPRESSION_LIST_FEATURE_COUNT = 1;
+  int COMPONENT_DECLARATION_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ExpressionListImpl <em>Expression List</em>}' class.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ExternalElementImpl <em>External Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ExpressionListImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExpressionList()
+   * @see dut.control.moloc.mOloc.impl.ExternalElementImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExternalElement()
    * @generated
    */
-  int EXPRESSION_LIST = 82;
+  int EXTERNAL_ELEMENT = 33;
 
   /**
-   * The feature id for the '<em><b>Exprs</b></em>' containment reference list.
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_LIST__EXPRS = 0;
+  int EXTERNAL_ELEMENT__ARGUMENTS = ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Expression List</em>' class.
+   * The feature id for the '<em><b>Language specification</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
-   */
-  int EXPRESSION_LIST_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ArraySubscriptsImpl <em>Array Subscripts</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.ArraySubscriptsImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArraySubscripts()
-   * @generated
    */
-  int ARRAY_SUBSCRIPTS = 83;
+  int EXTERNAL_ELEMENT__LANGUAGE_SPECIFICATION = ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Subscripts</b></em>' containment reference list.
+   * The feature id for the '<em><b>Ref</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARRAY_SUBSCRIPTS__SUBSCRIPTS = 0;
+  int EXTERNAL_ELEMENT__REF = ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Array Subscripts</em>' class.
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
-   */
-  int ARRAY_SUBSCRIPTS_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.SubscriptImpl <em>Subscript</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.SubscriptImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getSubscript()
-   * @generated
    */
-  int SUBSCRIPT = 84;
+  int EXTERNAL_ELEMENT__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>All</b></em>' attribute.
+   * The number of structural features of the '<em>External Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUBSCRIPT__ALL = 0;
+  int EXTERNAL_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.NULLElementImpl <em>NULL Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.NULLElementImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getNULLElement()
    * @generated
-   * @ordered
    */
-  int SUBSCRIPT__EXPR = 1;
+  int NULL_ELEMENT = 34;
 
   /**
-   * The number of structural features of the '<em>Subscript</em>' class.
+   * The feature id for the '<em><b>Nullname</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUBSCRIPT_FEATURE_COUNT = 2;
+  int NULL_ELEMENT__NULLNAME = 0;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.CommentImpl <em>Comment</em>}' class.
+   * The number of structural features of the '<em>NULL Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.CommentImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComment()
    * @generated
-   */
-  int COMMENT = 85;
-
-  /**
-   * The feature id for the '<em><b>Comment</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
    * @ordered
    */
-  int COMMENT__COMMENT = 0;
+  int NULL_ELEMENT_FEATURE_COUNT = 1;
 
   /**
-   * The feature id for the '<em><b>Annotation</b></em>' containment reference.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.ClassType <em>Class Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.ClassType
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClassType()
    * @generated
-   * @ordered
    */
-  int COMMENT__ANNOTATION = 1;
+  int CLASS_TYPE = 35;
 
   /**
-   * The number of structural features of the '<em>Comment</em>' class.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.Direction <em>Direction</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.Direction
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getDirection()
    * @generated
-   * @ordered
    */
-  int COMMENT_FEATURE_COUNT = 2;
+  int DIRECTION = 36;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.AnnotationImpl <em>Annotation</em>}' class.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.RelationshipType <em>Relationship Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.AnnotationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAnnotation()
+   * @see dut.control.moloc.mOloc.RelationshipType
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getRelationshipType()
    * @generated
    */
-  int ANNOTATION = 86;
+  int RELATIONSHIP_TYPE = 37;
 
   /**
-   * The feature id for the '<em><b>Isannotation</b></em>' attribute.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.ParameterType <em>Parameter Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.ParameterType
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getParameterType()
    * @generated
-   * @ordered
    */
-  int ANNOTATION__ISANNOTATION = 0;
+  int PARAMETER_TYPE = 38;
 
-  /**
-   * The feature id for the '<em><b>Cm</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ANNOTATION__CM = 1;
 
   /**
-   * The number of structural features of the '<em>Annotation</em>' class.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Stored_definition <em>Stored definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Stored definition</em>'.
+   * @see dut.control.moloc.mOloc.Stored_definition
    * @generated
-   * @ordered
    */
-  int ANNOTATION_FEATURE_COUNT = 2;
-
+  EClass getStored_definition();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.StoredDefinition <em>Stored Definition</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Stored_definition#isIsWithin <em>Is Within</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Stored Definition</em>'.
-   * @see dut.control.moloc.mOloc.StoredDefinition
+   * @return the meta object for the attribute '<em>Is Within</em>'.
+   * @see dut.control.moloc.mOloc.Stored_definition#isIsWithin()
+   * @see #getStored_definition()
    * @generated
    */
-  EClass getStoredDefinition();
+  EAttribute getStored_definition_IsWithin();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.StoredDefinition#getWithin <em>Within</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Stored_definition#getWithin <em>Within</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Within</em>'.
-   * @see dut.control.moloc.mOloc.StoredDefinition#getWithin()
-   * @see #getStoredDefinition()
+   * @see dut.control.moloc.mOloc.Stored_definition#getWithin()
+   * @see #getStored_definition()
    * @generated
    */
-  EAttribute getStoredDefinition_Within();
+  EAttribute getStored_definition_Within();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.StoredDefinition#getClasses <em>Classes</em>}'.
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.Stored_definition#getClasses <em>Classes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Classes</em>'.
-   * @see dut.control.moloc.mOloc.StoredDefinition#getClasses()
-   * @see #getStoredDefinition()
+   * @see dut.control.moloc.mOloc.Stored_definition#getClasses()
+   * @see #getStored_definition()
    * @generated
    */
-  EReference getStoredDefinition_Classes();
+  EReference getStored_definition_Classes();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ClassDefinition <em>Class Definition</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Class_definition <em>Class definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Class Definition</em>'.
-   * @see dut.control.moloc.mOloc.ClassDefinition
+   * @return the meta object for class '<em>Class definition</em>'.
+   * @see dut.control.moloc.mOloc.Class_definition
    * @generated
    */
-  EClass getClassDefinition();
+  EClass getClass_definition();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ClassDefinition#isFinal <em>Final</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Class_definition#isIsfinal <em>Isfinal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Final</em>'.
-   * @see dut.control.moloc.mOloc.ClassDefinition#isFinal()
-   * @see #getClassDefinition()
+   * @return the meta object for the attribute '<em>Isfinal</em>'.
+   * @see dut.control.moloc.mOloc.Class_definition#isIsfinal()
+   * @see #getClass_definition()
    * @generated
    */
-  EAttribute getClassDefinition_Final();
+  EAttribute getClass_definition_Isfinal();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ClassDefinition#isEncapsulated <em>Encapsulated</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Class_definition#isIsEncapsulated <em>Is Encapsulated</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Encapsulated</em>'.
-   * @see dut.control.moloc.mOloc.ClassDefinition#isEncapsulated()
-   * @see #getClassDefinition()
+   * @return the meta object for the attribute '<em>Is Encapsulated</em>'.
+   * @see dut.control.moloc.mOloc.Class_definition#isIsEncapsulated()
+   * @see #getClass_definition()
    * @generated
    */
-  EAttribute getClassDefinition_Encapsulated();
+  EAttribute getClass_definition_IsEncapsulated();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ClassDefinition#getCp <em>Cp</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.class_prefixes <em>class prefixes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cp</em>'.
-   * @see dut.control.moloc.mOloc.ClassDefinition#getCp()
-   * @see #getClassDefinition()
+   * @return the meta object for class '<em>class prefixes</em>'.
+   * @see dut.control.moloc.mOloc.class_prefixes
    * @generated
    */
-  EReference getClassDefinition_Cp();
+  EClass getclass_prefixes();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ClassDefinition#getConstraining <em>Constraining</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Constraining</em>'.
-   * @see dut.control.moloc.mOloc.ClassDefinition#getConstraining()
-   * @see #getClassDefinition()
-   * @generated
-   */
-  EReference getClassDefinition_Constraining();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ClassPrefix <em>Class Prefix</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Class Prefix</em>'.
-   * @see dut.control.moloc.mOloc.ClassPrefix
-   * @generated
-   */
-  EClass getClassPrefix();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ClassPrefix#isIsPartial <em>Is Partial</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.class_prefixes#isIsPartial <em>Is Partial</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Is Partial</em>'.
-   * @see dut.control.moloc.mOloc.ClassPrefix#isIsPartial()
-   * @see #getClassPrefix()
+   * @see dut.control.moloc.mOloc.class_prefixes#isIsPartial()
+   * @see #getclass_prefixes()
    * @generated
    */
-  EAttribute getClassPrefix_IsPartial();
+  EAttribute getclass_prefixes_IsPartial();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ClassPrefix#getKind <em>Kind</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.class_prefixes#isIsExpandable <em>Is Expandable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Kind</em>'.
-   * @see dut.control.moloc.mOloc.ClassPrefix#getKind()
-   * @see #getClassPrefix()
+   * @return the meta object for the attribute '<em>Is Expandable</em>'.
+   * @see dut.control.moloc.mOloc.class_prefixes#isIsExpandable()
+   * @see #getclass_prefixes()
    * @generated
    */
-  EAttribute getClassPrefix_Kind();
+  EAttribute getclass_prefixes_IsExpandable();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ClassSpecifier <em>Class Specifier</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.class_prefixes#isIsPure <em>Is Pure</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Class Specifier</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier
+   * @return the meta object for the attribute '<em>Is Pure</em>'.
+   * @see dut.control.moloc.mOloc.class_prefixes#isIsPure()
+   * @see #getclass_prefixes()
    * @generated
    */
-  EClass getClassSpecifier();
+  EAttribute getclass_prefixes_IsPure();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ClassSpecifier#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.class_prefixes#isIsOperator <em>Is Operator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier#getName()
-   * @see #getClassSpecifier()
+   * @return the meta object for the attribute '<em>Is Operator</em>'.
+   * @see dut.control.moloc.mOloc.class_prefixes#isIsOperator()
+   * @see #getclass_prefixes()
    * @generated
    */
-  EAttribute getClassSpecifier_Name();
+  EAttribute getclass_prefixes_IsOperator();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ClassSpecifier#getStr_comment <em>Str comment</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.class_prefixes#getClassType <em>Class Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Str comment</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier#getStr_comment()
-   * @see #getClassSpecifier()
+   * @return the meta object for the attribute '<em>Class Type</em>'.
+   * @see dut.control.moloc.mOloc.class_prefixes#getClassType()
+   * @see #getclass_prefixes()
    * @generated
    */
-  EAttribute getClassSpecifier_Str_comment();
+  EAttribute getclass_prefixes_ClassType();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ClassSpecifier#getComposition <em>Composition</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.class_specifier <em>class specifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Composition</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier#getComposition()
-   * @see #getClassSpecifier()
+   * @return the meta object for class '<em>class specifier</em>'.
+   * @see dut.control.moloc.mOloc.class_specifier
    * @generated
    */
-  EReference getClassSpecifier_Composition();
+  EClass getclass_specifier();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ClassSpecifier#getName_end <em>Name end</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.long_class_specifier <em>long class specifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name end</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier#getName_end()
-   * @see #getClassSpecifier()
+   * @return the meta object for class '<em>long class specifier</em>'.
+   * @see dut.control.moloc.mOloc.long_class_specifier
    * @generated
    */
-  EAttribute getClassSpecifier_Name_end();
+  EClass getlong_class_specifier();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ClassSpecifier#getPrefix <em>Prefix</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.long_class_specifier#isIsExtends <em>Is Extends</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Prefix</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier#getPrefix()
-   * @see #getClassSpecifier()
+   * @return the meta object for the attribute '<em>Is Extends</em>'.
+   * @see dut.control.moloc.mOloc.long_class_specifier#isIsExtends()
+   * @see #getlong_class_specifier()
    * @generated
    */
-  EAttribute getClassSpecifier_Prefix();
+  EAttribute getlong_class_specifier_IsExtends();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ClassSpecifier#getName2 <em>Name2</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.short_class_specifier <em>short class specifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name2</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier#getName2()
-   * @see #getClassSpecifier()
+   * @return the meta object for class '<em>short class specifier</em>'.
+   * @see dut.control.moloc.mOloc.short_class_specifier
    * @generated
    */
-  EAttribute getClassSpecifier_Name2();
+  EClass getshort_class_specifier();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ClassSpecifier#getSubs <em>Subs</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.short_class_specifier#getDirection <em>Direction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Subs</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier#getSubs()
-   * @see #getClassSpecifier()
+   * @return the meta object for the attribute '<em>Direction</em>'.
+   * @see dut.control.moloc.mOloc.short_class_specifier#getDirection()
+   * @see #getshort_class_specifier()
    * @generated
    */
-  EReference getClassSpecifier_Subs();
+  EAttribute getshort_class_specifier_Direction();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ClassSpecifier#getMod <em>Mod</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.short_class_specifier#isIsEnumeration <em>Is Enumeration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Mod</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier#getMod()
-   * @see #getClassSpecifier()
+   * @return the meta object for the attribute '<em>Is Enumeration</em>'.
+   * @see dut.control.moloc.mOloc.short_class_specifier#isIsEnumeration()
+   * @see #getshort_class_specifier()
    * @generated
    */
-  EReference getClassSpecifier_Mod();
+  EAttribute getshort_class_specifier_IsEnumeration();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ClassSpecifier#getComment <em>Comment</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.short_class_specifier#isIsColon <em>Is Colon</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comment</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier#getComment()
-   * @see #getClassSpecifier()
+   * @return the meta object for the attribute '<em>Is Colon</em>'.
+   * @see dut.control.moloc.mOloc.short_class_specifier#isIsColon()
+   * @see #getshort_class_specifier()
    * @generated
    */
-  EReference getClassSpecifier_Comment();
+  EAttribute getshort_class_specifier_IsColon();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ClassSpecifier#getElementnum <em>Elementnum</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.der_class_specifier <em>der class specifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Elementnum</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier#getElementnum()
-   * @see #getClassSpecifier()
+   * @return the meta object for class '<em>der class specifier</em>'.
+   * @see dut.control.moloc.mOloc.der_class_specifier
    * @generated
    */
-  EReference getClassSpecifier_Elementnum();
+  EClass getder_class_specifier();
 
   /**
-   * Returns the meta object for the reference '{@link dut.control.moloc.mOloc.ClassSpecifier#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.der_class_specifier#isIsDer <em>Is Der</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier#getType()
-   * @see #getClassSpecifier()
+   * @return the meta object for the attribute '<em>Is Der</em>'.
+   * @see dut.control.moloc.mOloc.der_class_specifier#isIsDer()
+   * @see #getder_class_specifier()
    * @generated
    */
-  EReference getClassSpecifier_Type();
+  EAttribute getder_class_specifier_IsDer();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ClassSpecifier#getBaseType <em>Base Type</em>}'.
+   * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.der_class_specifier#getDerName <em>Der Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Base Type</em>'.
-   * @see dut.control.moloc.mOloc.ClassSpecifier#getBaseType()
-   * @see #getClassSpecifier()
+   * @return the meta object for the attribute list '<em>Der Name</em>'.
+   * @see dut.control.moloc.mOloc.der_class_specifier#getDerName()
+   * @see #getder_class_specifier()
    * @generated
    */
-  EAttribute getClassSpecifier_BaseType();
+  EAttribute getder_class_specifier_DerName();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.EnumList <em>Enum List</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.class_name <em>class name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Enum List</em>'.
-   * @see dut.control.moloc.mOloc.EnumList
+   * @return the meta object for class '<em>class name</em>'.
+   * @see dut.control.moloc.mOloc.class_name
    * @generated
    */
-  EClass getEnumList();
+  EClass getclass_name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.EnumList#getEnums <em>Enums</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.class_name#getClassName <em>Class Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Enums</em>'.
-   * @see dut.control.moloc.mOloc.EnumList#getEnums()
-   * @see #getEnumList()
+   * @return the meta object for the attribute '<em>Class Name</em>'.
+   * @see dut.control.moloc.mOloc.class_name#getClassName()
+   * @see #getclass_name()
    * @generated
    */
-  EReference getEnumList_Enums();
+  EAttribute getclass_name_ClassName();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.class_modification <em>class modification</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>class modification</em>'.
+   * @see dut.control.moloc.mOloc.class_modification
+   * @generated
+   */
+  EClass getclass_modification();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.class_modification#getArguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Arguments</em>'.
+   * @see dut.control.moloc.mOloc.class_modification#getArguments()
+   * @see #getclass_modification()
+   * @generated
+   */
+  EReference getclass_modification_Arguments();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.description_string <em>description string</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>description string</em>'.
+   * @see dut.control.moloc.mOloc.description_string
+   * @generated
+   */
+  EClass getdescription_string();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.description_string#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see dut.control.moloc.mOloc.description_string#getDescription()
+   * @see #getdescription_string()
+   * @generated
+   */
+  EAttribute getdescription_string_Description();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.composition <em>composition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>composition</em>'.
+   * @see dut.control.moloc.mOloc.composition
+   * @generated
+   */
+  EClass getcomposition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.composition#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.moloc.mOloc.composition#getElements()
+   * @see #getcomposition()
+   * @generated
+   */
+  EReference getcomposition_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.type_specifier <em>type specifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>type specifier</em>'.
+   * @see dut.control.moloc.mOloc.type_specifier
+   * @generated
+   */
+  EClass gettype_specifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.type_specifier#getTypeSpecifier <em>Type Specifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type Specifier</em>'.
+   * @see dut.control.moloc.mOloc.type_specifier#getTypeSpecifier()
+   * @see #gettype_specifier()
+   * @generated
+   */
+  EAttribute gettype_specifier_TypeSpecifier();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.enum_list <em>enum list</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>enum list</em>'.
+   * @see dut.control.moloc.mOloc.enum_list
+   * @generated
+   */
+  EClass getenum_list();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.enum_list#getEnumerationLiteral <em>Enumeration Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Enumeration Literal</em>'.
+   * @see dut.control.moloc.mOloc.enum_list#getEnumerationLiteral()
+   * @see #getenum_list()
+   * @generated
+   */
+  EReference getenum_list_EnumerationLiteral();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.EnumerationLiteral <em>Enumeration Literal</em>}'.
@@ -5963,262 +2911,299 @@ public interface MOlocPackage extends EPackage
   EClass getEnumerationLiteral();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.EnumerationLiteral#getId <em>Id</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.EnumerationLiteral#getTitle <em>Title</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see dut.control.moloc.mOloc.EnumerationLiteral#getId()
+   * @return the meta object for the attribute '<em>Title</em>'.
+   * @see dut.control.moloc.mOloc.EnumerationLiteral#getTitle()
    * @see #getEnumerationLiteral()
    * @generated
    */
-  EAttribute getEnumerationLiteral_Id();
+  EAttribute getEnumerationLiteral_Title();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.EnumerationLiteral#getComment <em>Comment</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.description <em>description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comment</em>'.
-   * @see dut.control.moloc.mOloc.EnumerationLiteral#getComment()
-   * @see #getEnumerationLiteral()
+   * @return the meta object for class '<em>description</em>'.
+   * @see dut.control.moloc.mOloc.description
    * @generated
    */
-  EReference getEnumerationLiteral_Comment();
+  EClass getdescription();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Composition <em>Composition</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.description#isIsAnnotation <em>Is Annotation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Composition</em>'.
-   * @see dut.control.moloc.mOloc.Composition
+   * @return the meta object for the attribute '<em>Is Annotation</em>'.
+   * @see dut.control.moloc.mOloc.description#isIsAnnotation()
+   * @see #getdescription()
    * @generated
    */
-  EClass getComposition();
+  EAttribute getdescription_IsAnnotation();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Composition#getPriv_elist <em>Priv elist</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Argument <em>Argument</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Priv elist</em>'.
-   * @see dut.control.moloc.mOloc.Composition#getPriv_elist()
-   * @see #getComposition()
+   * @return the meta object for class '<em>Argument</em>'.
+   * @see dut.control.moloc.mOloc.Argument
    * @generated
    */
-  EReference getComposition_Priv_elist();
+  EClass getArgument();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.Composition#getPub_elist <em>Pub elist</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Argument#isIsRedeclare <em>Is Redeclare</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Pub elist</em>'.
-   * @see dut.control.moloc.mOloc.Composition#getPub_elist()
-   * @see #getComposition()
+   * @return the meta object for the attribute '<em>Is Redeclare</em>'.
+   * @see dut.control.moloc.mOloc.Argument#isIsRedeclare()
+   * @see #getArgument()
    * @generated
    */
-  EReference getComposition_Pub_elist();
+  EAttribute getArgument_IsRedeclare();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.Composition#getProtected_elist <em>Protected elist</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Argument#isIsEach <em>Is Each</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Protected elist</em>'.
-   * @see dut.control.moloc.mOloc.Composition#getProtected_elist()
-   * @see #getComposition()
+   * @return the meta object for the attribute '<em>Is Each</em>'.
+   * @see dut.control.moloc.mOloc.Argument#isIsEach()
+   * @see #getArgument()
    * @generated
    */
-  EReference getComposition_Protected_elist();
+  EAttribute getArgument_IsEach();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.Composition#getEq_secs <em>Eq secs</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Argument#isIsfinal <em>Isfinal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Eq secs</em>'.
-   * @see dut.control.moloc.mOloc.Composition#getEq_secs()
-   * @see #getComposition()
+   * @return the meta object for the attribute '<em>Isfinal</em>'.
+   * @see dut.control.moloc.mOloc.Argument#isIsfinal()
+   * @see #getArgument()
    * @generated
    */
-  EReference getComposition_Eq_secs();
+  EAttribute getArgument_Isfinal();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.Composition#getAlg_secs <em>Alg secs</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.element_modification <em>element modification</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Alg secs</em>'.
-   * @see dut.control.moloc.mOloc.Composition#getAlg_secs()
-   * @see #getComposition()
+   * @return the meta object for class '<em>element modification</em>'.
+   * @see dut.control.moloc.mOloc.element_modification
    * @generated
    */
-  EReference getComposition_Alg_secs();
+  EClass getelement_modification();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.Composition#getExt_elist <em>Ext elist</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.element_modification#getElementName <em>Element Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Ext elist</em>'.
-   * @see dut.control.moloc.mOloc.Composition#getExt_elist()
-   * @see #getComposition()
+   * @return the meta object for the attribute '<em>Element Name</em>'.
+   * @see dut.control.moloc.mOloc.element_modification#getElementName()
+   * @see #getelement_modification()
    * @generated
    */
-  EReference getComposition_Ext_elist();
+  EAttribute getelement_modification_ElementName();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Composition#getAnno <em>Anno</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.element_replaceable <em>element replaceable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Anno</em>'.
-   * @see dut.control.moloc.mOloc.Composition#getAnno()
-   * @see #getComposition()
+   * @return the meta object for class '<em>element replaceable</em>'.
+   * @see dut.control.moloc.mOloc.element_replaceable
    * @generated
    */
-  EReference getComposition_Anno();
+  EClass getelement_replaceable();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.PubElementList <em>Pub Element List</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.element_replaceable#isIsReplaceable <em>Is Replaceable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Pub Element List</em>'.
-   * @see dut.control.moloc.mOloc.PubElementList
+   * @return the meta object for the attribute '<em>Is Replaceable</em>'.
+   * @see dut.control.moloc.mOloc.element_replaceable#isIsReplaceable()
+   * @see #getelement_replaceable()
    * @generated
    */
-  EClass getPubElementList();
+  EAttribute getelement_replaceable_IsReplaceable();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.PubElementList#getEle <em>Ele</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.short_class_definition <em>short class definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Ele</em>'.
-   * @see dut.control.moloc.mOloc.PubElementList#getEle()
-   * @see #getPubElementList()
+   * @return the meta object for class '<em>short class definition</em>'.
+   * @see dut.control.moloc.mOloc.short_class_definition
    * @generated
    */
-  EReference getPubElementList_Ele();
+  EClass getshort_class_definition();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ProElementList <em>Pro Element List</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.component_clause1 <em>component clause1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Pro Element List</em>'.
-   * @see dut.control.moloc.mOloc.ProElementList
+   * @return the meta object for class '<em>component clause1</em>'.
+   * @see dut.control.moloc.mOloc.component_clause1
    * @generated
    */
-  EClass getProElementList();
+  EClass getcomponent_clause1();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ProElementList#getEle <em>Ele</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.type_prefix <em>type prefix</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Ele</em>'.
-   * @see dut.control.moloc.mOloc.ProElementList#getEle()
-   * @see #getProElementList()
+   * @return the meta object for class '<em>type prefix</em>'.
+   * @see dut.control.moloc.mOloc.type_prefix
    * @generated
    */
-  EReference getProElementList_Ele();
+  EClass gettype_prefix();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ExtElementList <em>Ext Element List</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.type_prefix#getRelationshipType <em>Relationship Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Ext Element List</em>'.
-   * @see dut.control.moloc.mOloc.ExtElementList
+   * @return the meta object for the attribute '<em>Relationship Type</em>'.
+   * @see dut.control.moloc.mOloc.type_prefix#getRelationshipType()
+   * @see #gettype_prefix()
    * @generated
    */
-  EClass getExtElementList();
+  EAttribute gettype_prefix_RelationshipType();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExtElementList#getExt_lang_spec <em>Ext lang spec</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.type_prefix#getParameterType <em>Parameter Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Ext lang spec</em>'.
-   * @see dut.control.moloc.mOloc.ExtElementList#getExt_lang_spec()
-   * @see #getExtElementList()
+   * @return the meta object for the attribute '<em>Parameter Type</em>'.
+   * @see dut.control.moloc.mOloc.type_prefix#getParameterType()
+   * @see #gettype_prefix()
    * @generated
    */
-  EAttribute getExtElementList_Ext_lang_spec();
+  EAttribute gettype_prefix_ParameterType();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ExtElementList#getExt_func_call <em>Ext func call</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.type_prefix#getDirectionType <em>Direction Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ext func call</em>'.
-   * @see dut.control.moloc.mOloc.ExtElementList#getExt_func_call()
-   * @see #getExtElementList()
+   * @return the meta object for the attribute '<em>Direction Type</em>'.
+   * @see dut.control.moloc.mOloc.type_prefix#getDirectionType()
+   * @see #gettype_prefix()
    * @generated
    */
-  EReference getExtElementList_Ext_func_call();
+  EAttribute gettype_prefix_DirectionType();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ExtElementList#getExt_anno <em>Ext anno</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.component_declaration1 <em>component declaration1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ext anno</em>'.
-   * @see dut.control.moloc.mOloc.ExtElementList#getExt_anno()
-   * @see #getExtElementList()
+   * @return the meta object for class '<em>component declaration1</em>'.
+   * @see dut.control.moloc.mOloc.component_declaration1
    * @generated
    */
-  EReference getExtElementList_Ext_anno();
+  EClass getcomponent_declaration1();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ExternalFunctionCall <em>External Function Call</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.declaration <em>declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>External Function Call</em>'.
-   * @see dut.control.moloc.mOloc.ExternalFunctionCall
+   * @return the meta object for class '<em>declaration</em>'.
+   * @see dut.control.moloc.mOloc.declaration
    * @generated
    */
-  EClass getExternalFunctionCall();
+  EClass getdeclaration();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ExternalFunctionCall#getLhs <em>Lhs</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.declaration#getDeclarationName <em>Declaration Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Lhs</em>'.
-   * @see dut.control.moloc.mOloc.ExternalFunctionCall#getLhs()
-   * @see #getExternalFunctionCall()
+   * @return the meta object for the attribute '<em>Declaration Name</em>'.
+   * @see dut.control.moloc.mOloc.declaration#getDeclarationName()
+   * @see #getdeclaration()
    * @generated
    */
-  EReference getExternalFunctionCall_Lhs();
+  EAttribute getdeclaration_DeclarationName();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExternalFunctionCall#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.array_subscripts <em>array subscripts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.moloc.mOloc.ExternalFunctionCall#getName()
-   * @see #getExternalFunctionCall()
+   * @return the meta object for class '<em>array subscripts</em>'.
+   * @see dut.control.moloc.mOloc.array_subscripts
    * @generated
    */
-  EAttribute getExternalFunctionCall_Name();
+  EClass getarray_subscripts();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ExternalFunctionCall#getArgs <em>Args</em>}'.
+   * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.array_subscripts#getSubscript <em>Subscript</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Args</em>'.
-   * @see dut.control.moloc.mOloc.ExternalFunctionCall#getArgs()
-   * @see #getExternalFunctionCall()
+   * @return the meta object for the attribute list '<em>Subscript</em>'.
+   * @see dut.control.moloc.mOloc.array_subscripts#getSubscript()
+   * @see #getarray_subscripts()
    * @generated
    */
-  EReference getExternalFunctionCall_Args();
+  EAttribute getarray_subscripts_Subscript();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ElementList <em>Element List</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Unfinished2 <em>Unfinished2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Element List</em>'.
-   * @see dut.control.moloc.mOloc.ElementList
+   * @return the meta object for class '<em>Unfinished2</em>'.
+   * @see dut.control.moloc.mOloc.Unfinished2
    * @generated
    */
-  EClass getElementList();
+  EClass getUnfinished2();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ElementList#getElem <em>Elem</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Unfinished2#getAa <em>Aa</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elem</em>'.
-   * @see dut.control.moloc.mOloc.ElementList#getElem()
-   * @see #getElementList()
+   * @return the meta object for the attribute '<em>Aa</em>'.
+   * @see dut.control.moloc.mOloc.Unfinished2#getAa()
+   * @see #getUnfinished2()
    * @generated
    */
-  EReference getElementList_Elem();
+  EAttribute getUnfinished2_Aa();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.modification <em>modification</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>modification</em>'.
+   * @see dut.control.moloc.mOloc.modification
+   * @generated
+   */
+  EClass getmodification();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.modification#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Expression</em>'.
+   * @see dut.control.moloc.mOloc.modification#getExpression()
+   * @see #getmodification()
+   * @generated
+   */
+  EAttribute getmodification_Expression();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.constraining_clause <em>constraining clause</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>constraining clause</em>'.
+   * @see dut.control.moloc.mOloc.constraining_clause
+   * @generated
+   */
+  EClass getconstraining_clause();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.constraining_clause#getElements2 <em>Elements2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements2</em>'.
+   * @see dut.control.moloc.mOloc.constraining_clause#getElements2()
+   * @see #getconstraining_clause()
+   * @generated
+   */
+  EReference getconstraining_clause_Elements2();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.Element <em>Element</em>}'.
@@ -6241,69 +3226,48 @@ public interface MOlocPackage extends EPackage
   EClass getImportClause();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ImportClause#getId <em>Id</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ImportClause#getSelfName <em>Self Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see dut.control.moloc.mOloc.ImportClause#getId()
+   * @return the meta object for the attribute '<em>Self Name</em>'.
+   * @see dut.control.moloc.mOloc.ImportClause#getSelfName()
    * @see #getImportClause()
    * @generated
    */
-  EAttribute getImportClause_Id();
+  EAttribute getImportClause_SelfName();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ImportClause#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ImportClause#getImportName <em>Import Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.moloc.mOloc.ImportClause#getName()
+   * @return the meta object for the attribute '<em>Import Name</em>'.
+   * @see dut.control.moloc.mOloc.ImportClause#getImportName()
    * @see #getImportClause()
    * @generated
    */
-  EAttribute getImportClause_Name();
+  EAttribute getImportClause_ImportName();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ImportClause#getList <em>List</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ImportClause#isIsImportAll <em>Is Import All</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>List</em>'.
-   * @see dut.control.moloc.mOloc.ImportClause#getList()
+   * @return the meta object for the attribute '<em>Is Import All</em>'.
+   * @see dut.control.moloc.mOloc.ImportClause#isIsImportAll()
    * @see #getImportClause()
    * @generated
    */
-  EReference getImportClause_List();
+  EAttribute getImportClause_IsImportAll();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ImportClause#getComment <em>Comment</em>}'.
+   * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.ImportClause#getObjectName <em>Object Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comment</em>'.
-   * @see dut.control.moloc.mOloc.ImportClause#getComment()
+   * @return the meta object for the attribute list '<em>Object Name</em>'.
+   * @see dut.control.moloc.mOloc.ImportClause#getObjectName()
    * @see #getImportClause()
    * @generated
    */
-  EReference getImportClause_Comment();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ImportList <em>Import List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Import List</em>'.
-   * @see dut.control.moloc.mOloc.ImportList
-   * @generated
-   */
-  EClass getImportList();
-
-  /**
-   * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.ImportList#getNames <em>Names</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Names</em>'.
-   * @see dut.control.moloc.mOloc.ImportList#getNames()
-   * @see #getImportList()
-   * @generated
-   */
-  EAttribute getImportList_Names();
+  EAttribute getImportClause_ObjectName();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.ExtendsClause <em>Extends Clause</em>}'.
@@ -6316,1011 +3280,26 @@ public interface MOlocPackage extends EPackage
   EClass getExtendsClause();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExtendsClause#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ExtendsClause#getBreaks <em>Breaks</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.moloc.mOloc.ExtendsClause#getName()
+   * @return the meta object for the containment reference list '<em>Breaks</em>'.
+   * @see dut.control.moloc.mOloc.ExtendsClause#getBreaks()
    * @see #getExtendsClause()
    * @generated
    */
-  EAttribute getExtendsClause_Name();
+  EReference getExtendsClause_Breaks();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ExtendsClause#getMod <em>Mod</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExtendsClause#isIsAnnotation <em>Is Annotation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Mod</em>'.
-   * @see dut.control.moloc.mOloc.ExtendsClause#getMod()
+   * @return the meta object for the attribute '<em>Is Annotation</em>'.
+   * @see dut.control.moloc.mOloc.ExtendsClause#isIsAnnotation()
    * @see #getExtendsClause()
    * @generated
    */
-  EReference getExtendsClause_Mod();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ExtendsClause#getAnno <em>Anno</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Anno</em>'.
-   * @see dut.control.moloc.mOloc.ExtendsClause#getAnno()
-   * @see #getExtendsClause()
-   * @generated
-   */
-  EReference getExtendsClause_Anno();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.typeClause <em>type Clause</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>type Clause</em>'.
-   * @see dut.control.moloc.mOloc.typeClause
-   * @generated
-   */
-  EClass gettypeClause();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.typeClause#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.moloc.mOloc.typeClause#getName()
-   * @see #gettypeClause()
-   * @generated
-   */
-  EAttribute gettypeClause_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.typeClause#getBaseType <em>Base Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Base Type</em>'.
-   * @see dut.control.moloc.mOloc.typeClause#getBaseType()
-   * @see #gettypeClause()
-   * @generated
-   */
-  EAttribute gettypeClause_BaseType();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.typeClause#getMod <em>Mod</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Mod</em>'.
-   * @see dut.control.moloc.mOloc.typeClause#getMod()
-   * @see #gettypeClause()
-   * @generated
-   */
-  EReference gettypeClause_Mod();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.typeClause#getAnno <em>Anno</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Anno</em>'.
-   * @see dut.control.moloc.mOloc.typeClause#getAnno()
-   * @see #gettypeClause()
-   * @generated
-   */
-  EReference gettypeClause_Anno();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ConstrainingClause <em>Constraining Clause</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Constraining Clause</em>'.
-   * @see dut.control.moloc.mOloc.ConstrainingClause
-   * @generated
-   */
-  EClass getConstrainingClause();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ConstrainingClause#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.moloc.mOloc.ConstrainingClause#getName()
-   * @see #getConstrainingClause()
-   * @generated
-   */
-  EAttribute getConstrainingClause_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ConstrainingClause#getMod <em>Mod</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Mod</em>'.
-   * @see dut.control.moloc.mOloc.ConstrainingClause#getMod()
-   * @see #getConstrainingClause()
-   * @generated
-   */
-  EReference getConstrainingClause_Mod();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ComponentClause <em>Component Clause</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component Clause</em>'.
-   * @see dut.control.moloc.mOloc.ComponentClause
-   * @generated
-   */
-  EClass getComponentClause();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ComponentClause#getConstraining <em>Constraining</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Constraining</em>'.
-   * @see dut.control.moloc.mOloc.ComponentClause#getConstraining()
-   * @see #getComponentClause()
-   * @generated
-   */
-  EReference getComponentClause_Constraining();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ComponentClause#getComment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comment</em>'.
-   * @see dut.control.moloc.mOloc.ComponentClause#getComment()
-   * @see #getComponentClause()
-   * @generated
-   */
-  EReference getComponentClause_Comment();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ComponentClause#getPrefix <em>Prefix</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Prefix</em>'.
-   * @see dut.control.moloc.mOloc.ComponentClause#getPrefix()
-   * @see #getComponentClause()
-   * @generated
-   */
-  EAttribute getComponentClause_Prefix();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ComponentClause#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see dut.control.moloc.mOloc.ComponentClause#getType()
-   * @see #getComponentClause()
-   * @generated
-   */
-  EReference getComponentClause_Type();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ComponentClause#getSubs <em>Subs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Subs</em>'.
-   * @see dut.control.moloc.mOloc.ComponentClause#getSubs()
-   * @see #getComponentClause()
-   * @generated
-   */
-  EReference getComponentClause_Subs();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ComponentClause#getComps <em>Comps</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comps</em>'.
-   * @see dut.control.moloc.mOloc.ComponentClause#getComps()
-   * @see #getComponentClause()
-   * @generated
-   */
-  EReference getComponentClause_Comps();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.TypeSpecifier <em>Type Specifier</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type Specifier</em>'.
-   * @see dut.control.moloc.mOloc.TypeSpecifier
-   * @generated
-   */
-  EClass getTypeSpecifier();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.TypeSpecifier#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.moloc.mOloc.TypeSpecifier#getName()
-   * @see #getTypeSpecifier()
-   * @generated
-   */
-  EAttribute getTypeSpecifier_Name();
-
-  /**
-   * Returns the meta object for the reference '{@link dut.control.moloc.mOloc.TypeSpecifier#getName1 <em>Name1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Name1</em>'.
-   * @see dut.control.moloc.mOloc.TypeSpecifier#getName1()
-   * @see #getTypeSpecifier()
-   * @generated
-   */
-  EReference getTypeSpecifier_Name1();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ComponentList <em>Component List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component List</em>'.
-   * @see dut.control.moloc.mOloc.ComponentList
-   * @generated
-   */
-  EClass getComponentList();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ComponentList#getComps <em>Comps</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Comps</em>'.
-   * @see dut.control.moloc.mOloc.ComponentList#getComps()
-   * @see #getComponentList()
-   * @generated
-   */
-  EReference getComponentList_Comps();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ComponentDeclaration <em>Component Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component Declaration</em>'.
-   * @see dut.control.moloc.mOloc.ComponentDeclaration
-   * @generated
-   */
-  EClass getComponentDeclaration();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ComponentDeclaration#getDecl <em>Decl</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Decl</em>'.
-   * @see dut.control.moloc.mOloc.ComponentDeclaration#getDecl()
-   * @see #getComponentDeclaration()
-   * @generated
-   */
-  EReference getComponentDeclaration_Decl();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ComponentDeclaration#getCond <em>Cond</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cond</em>'.
-   * @see dut.control.moloc.mOloc.ComponentDeclaration#getCond()
-   * @see #getComponentDeclaration()
-   * @generated
-   */
-  EReference getComponentDeclaration_Cond();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ComponentDeclaration#getComment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comment</em>'.
-   * @see dut.control.moloc.mOloc.ComponentDeclaration#getComment()
-   * @see #getComponentDeclaration()
-   * @generated
-   */
-  EReference getComponentDeclaration_Comment();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ConditionAttribute <em>Condition Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Condition Attribute</em>'.
-   * @see dut.control.moloc.mOloc.ConditionAttribute
-   * @generated
-   */
-  EClass getConditionAttribute();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Declaration <em>Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Declaration</em>'.
-   * @see dut.control.moloc.mOloc.Declaration
-   * @generated
-   */
-  EClass getDeclaration();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Declaration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.moloc.mOloc.Declaration#getName()
-   * @see #getDeclaration()
-   * @generated
-   */
-  EAttribute getDeclaration_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Declaration#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see dut.control.moloc.mOloc.Declaration#getType()
-   * @see #getDeclaration()
-   * @generated
-   */
-  EReference getDeclaration_Type();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Declaration#getSubscripts <em>Subscripts</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Subscripts</em>'.
-   * @see dut.control.moloc.mOloc.Declaration#getSubscripts()
-   * @see #getDeclaration()
-   * @generated
-   */
-  EReference getDeclaration_Subscripts();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Declaration#getMod <em>Mod</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Mod</em>'.
-   * @see dut.control.moloc.mOloc.Declaration#getMod()
-   * @see #getDeclaration()
-   * @generated
-   */
-  EReference getDeclaration_Mod();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Declaration#getComment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comment</em>'.
-   * @see dut.control.moloc.mOloc.Declaration#getComment()
-   * @see #getDeclaration()
-   * @generated
-   */
-  EReference getDeclaration_Comment();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Modification <em>Modification</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Modification</em>'.
-   * @see dut.control.moloc.mOloc.Modification
-   * @generated
-   */
-  EClass getModification();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Modification#getMod <em>Mod</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Mod</em>'.
-   * @see dut.control.moloc.mOloc.Modification#getMod()
-   * @see #getModification()
-   * @generated
-   */
-  EReference getModification_Mod();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Modification#isDh <em>Dh</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Dh</em>'.
-   * @see dut.control.moloc.mOloc.Modification#isDh()
-   * @see #getModification()
-   * @generated
-   */
-  EAttribute getModification_Dh();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Modification#getExpr <em>Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see dut.control.moloc.mOloc.Modification#getExpr()
-   * @see #getModification()
-   * @generated
-   */
-  EReference getModification_Expr();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Modification#isMh <em>Mh</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Mh</em>'.
-   * @see dut.control.moloc.mOloc.Modification#isMh()
-   * @see #getModification()
-   * @generated
-   */
-  EAttribute getModification_Mh();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ClassModification <em>Class Modification</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Class Modification</em>'.
-   * @see dut.control.moloc.mOloc.ClassModification
-   * @generated
-   */
-  EClass getClassModification();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ClassModification#getArgs <em>Args</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Args</em>'.
-   * @see dut.control.moloc.mOloc.ClassModification#getArgs()
-   * @see #getClassModification()
-   * @generated
-   */
-  EReference getClassModification_Args();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ArgumentList <em>Argument List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Argument List</em>'.
-   * @see dut.control.moloc.mOloc.ArgumentList
-   * @generated
-   */
-  EClass getArgumentList();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ArgumentList#getArgs <em>Args</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Args</em>'.
-   * @see dut.control.moloc.mOloc.ArgumentList#getArgs()
-   * @see #getArgumentList()
-   * @generated
-   */
-  EReference getArgumentList_Args();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Argument <em>Argument</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Argument</em>'.
-   * @see dut.control.moloc.mOloc.Argument
-   * @generated
-   */
-  EClass getArgument();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Argument#isEach <em>Each</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Each</em>'.
-   * @see dut.control.moloc.mOloc.Argument#isEach()
-   * @see #getArgument()
-   * @generated
-   */
-  EAttribute getArgument_Each();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Argument#isFinal <em>Final</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Final</em>'.
-   * @see dut.control.moloc.mOloc.Argument#isFinal()
-   * @see #getArgument()
-   * @generated
-   */
-  EAttribute getArgument_Final();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Argument#getElement <em>Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Element</em>'.
-   * @see dut.control.moloc.mOloc.Argument#getElement()
-   * @see #getArgument()
-   * @generated
-   */
-  EReference getArgument_Element();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ElementModicationOrReplaceable <em>Element Modication Or Replaceable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Element Modication Or Replaceable</em>'.
-   * @see dut.control.moloc.mOloc.ElementModicationOrReplaceable
-   * @generated
-   */
-  EClass getElementModicationOrReplaceable();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ElementModification <em>Element Modification</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Element Modification</em>'.
-   * @see dut.control.moloc.mOloc.ElementModification
-   * @generated
-   */
-  EClass getElementModification();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ElementModification#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.moloc.mOloc.ElementModification#getName()
-   * @see #getElementModification()
-   * @generated
-   */
-  EAttribute getElementModification_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ElementModification#getMod <em>Mod</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Mod</em>'.
-   * @see dut.control.moloc.mOloc.ElementModification#getMod()
-   * @see #getElementModification()
-   * @generated
-   */
-  EReference getElementModification_Mod();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ElementModification#getComment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Comment</em>'.
-   * @see dut.control.moloc.mOloc.ElementModification#getComment()
-   * @see #getElementModification()
-   * @generated
-   */
-  EAttribute getElementModification_Comment();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ElementRedeclaration <em>Element Redeclaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Element Redeclaration</em>'.
-   * @see dut.control.moloc.mOloc.ElementRedeclaration
-   * @generated
-   */
-  EClass getElementRedeclaration();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ElementRedeclaration#isRedeclare <em>Redeclare</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Redeclare</em>'.
-   * @see dut.control.moloc.mOloc.ElementRedeclaration#isRedeclare()
-   * @see #getElementRedeclaration()
-   * @generated
-   */
-  EAttribute getElementRedeclaration_Redeclare();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ElementReplaceable <em>Element Replaceable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Element Replaceable</em>'.
-   * @see dut.control.moloc.mOloc.ElementReplaceable
-   * @generated
-   */
-  EClass getElementReplaceable();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ElementReplaceable#isReplaceable <em>Replaceable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Replaceable</em>'.
-   * @see dut.control.moloc.mOloc.ElementReplaceable#isReplaceable()
-   * @see #getElementReplaceable()
-   * @generated
-   */
-  EAttribute getElementReplaceable_Replaceable();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ElementReplaceable#getElement <em>Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Element</em>'.
-   * @see dut.control.moloc.mOloc.ElementReplaceable#getElement()
-   * @see #getElementReplaceable()
-   * @generated
-   */
-  EReference getElementReplaceable_Element();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ElementReplaceable#getConst <em>Const</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Const</em>'.
-   * @see dut.control.moloc.mOloc.ElementReplaceable#getConst()
-   * @see #getElementReplaceable()
-   * @generated
-   */
-  EReference getElementReplaceable_Const();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ComponentClause1 <em>Component Clause1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component Clause1</em>'.
-   * @see dut.control.moloc.mOloc.ComponentClause1
-   * @generated
-   */
-  EClass getComponentClause1();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ComponentClause1#getPrefix <em>Prefix</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Prefix</em>'.
-   * @see dut.control.moloc.mOloc.ComponentClause1#getPrefix()
-   * @see #getComponentClause1()
-   * @generated
-   */
-  EAttribute getComponentClause1_Prefix();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ComponentClause1#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see dut.control.moloc.mOloc.ComponentClause1#getType()
-   * @see #getComponentClause1()
-   * @generated
-   */
-  EReference getComponentClause1_Type();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ComponentClause1#getSubs <em>Subs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Subs</em>'.
-   * @see dut.control.moloc.mOloc.ComponentClause1#getSubs()
-   * @see #getComponentClause1()
-   * @generated
-   */
-  EReference getComponentClause1_Subs();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ComponentClause1#getComp <em>Comp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comp</em>'.
-   * @see dut.control.moloc.mOloc.ComponentClause1#getComp()
-   * @see #getComponentClause1()
-   * @generated
-   */
-  EReference getComponentClause1_Comp();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ComponentDeclaration1 <em>Component Declaration1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component Declaration1</em>'.
-   * @see dut.control.moloc.mOloc.ComponentDeclaration1
-   * @generated
-   */
-  EClass getComponentDeclaration1();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ShortClassDefinition <em>Short Class Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Short Class Definition</em>'.
-   * @see dut.control.moloc.mOloc.ShortClassDefinition
-   * @generated
-   */
-  EClass getShortClassDefinition();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ShortClassDefinition#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.moloc.mOloc.ShortClassDefinition#getName()
-   * @see #getShortClassDefinition()
-   * @generated
-   */
-  EAttribute getShortClassDefinition_Name();
-
-  /**
-   * Returns the meta object for the reference '{@link dut.control.moloc.mOloc.ShortClassDefinition#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
-   * @see dut.control.moloc.mOloc.ShortClassDefinition#getType()
-   * @see #getShortClassDefinition()
-   * @generated
-   */
-  EReference getShortClassDefinition_Type();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ShortClassDefinition#getAsts <em>Asts</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Asts</em>'.
-   * @see dut.control.moloc.mOloc.ShortClassDefinition#getAsts()
-   * @see #getShortClassDefinition()
-   * @generated
-   */
-  EReference getShortClassDefinition_Asts();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ShortClassDefinition#getMode <em>Mode</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Mode</em>'.
-   * @see dut.control.moloc.mOloc.ShortClassDefinition#getMode()
-   * @see #getShortClassDefinition()
-   * @generated
-   */
-  EReference getShortClassDefinition_Mode();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ShortClassDefinition#getComment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comment</em>'.
-   * @see dut.control.moloc.mOloc.ShortClassDefinition#getComment()
-   * @see #getShortClassDefinition()
-   * @generated
-   */
-  EReference getShortClassDefinition_Comment();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ShortClassDefinition#getElementnum <em>Elementnum</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Elementnum</em>'.
-   * @see dut.control.moloc.mOloc.ShortClassDefinition#getElementnum()
-   * @see #getShortClassDefinition()
-   * @generated
-   */
-  EReference getShortClassDefinition_Elementnum();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Elementenumeratioan <em>Elementenumeratioan</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Elementenumeratioan</em>'.
-   * @see dut.control.moloc.mOloc.Elementenumeratioan
-   * @generated
-   */
-  EClass getElementenumeratioan();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Elementenumeratioan#isEnumeratioan <em>Enumeratioan</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Enumeratioan</em>'.
-   * @see dut.control.moloc.mOloc.Elementenumeratioan#isEnumeratioan()
-   * @see #getElementenumeratioan()
-   * @generated
-   */
-  EAttribute getElementenumeratioan_Enumeratioan();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Elementenumeratioan#getList <em>List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>List</em>'.
-   * @see dut.control.moloc.mOloc.Elementenumeratioan#getList()
-   * @see #getElementenumeratioan()
-   * @generated
-   */
-  EReference getElementenumeratioan_List();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Elementenumeratioan#getComment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comment</em>'.
-   * @see dut.control.moloc.mOloc.Elementenumeratioan#getComment()
-   * @see #getElementenumeratioan()
-   * @generated
-   */
-  EReference getElementenumeratioan_Comment();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.EquationSection <em>Equation Section</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Equation Section</em>'.
-   * @see dut.control.moloc.mOloc.EquationSection
-   * @generated
-   */
-  EClass getEquationSection();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.EquationSection#isInitial <em>Initial</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Initial</em>'.
-   * @see dut.control.moloc.mOloc.EquationSection#isInitial()
-   * @see #getEquationSection()
-   * @generated
-   */
-  EAttribute getEquationSection_Initial();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.EquationSection#getEquations <em>Equations</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Equations</em>'.
-   * @see dut.control.moloc.mOloc.EquationSection#getEquations()
-   * @see #getEquationSection()
-   * @generated
-   */
-  EReference getEquationSection_Equations();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.AlgorithmSection <em>Algorithm Section</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Algorithm Section</em>'.
-   * @see dut.control.moloc.mOloc.AlgorithmSection
-   * @generated
-   */
-  EClass getAlgorithmSection();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AlgorithmSection#isInitial <em>Initial</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Initial</em>'.
-   * @see dut.control.moloc.mOloc.AlgorithmSection#isInitial()
-   * @see #getAlgorithmSection()
-   * @generated
-   */
-  EAttribute getAlgorithmSection_Initial();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.AlgorithmSection#getStatements <em>Statements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see dut.control.moloc.mOloc.AlgorithmSection#getStatements()
-   * @see #getAlgorithmSection()
-   * @generated
-   */
-  EReference getAlgorithmSection_Statements();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Equation <em>Equation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Equation</em>'.
-   * @see dut.control.moloc.mOloc.Equation
-   * @generated
-   */
-  EClass getEquation();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Equation#getCommment <em>Commment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Commment</em>'.
-   * @see dut.control.moloc.mOloc.Equation#getCommment()
-   * @see #getEquation()
-   * @generated
-   */
-  EReference getEquation_Commment();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.LREquation <em>LR Equation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>LR Equation</em>'.
-   * @see dut.control.moloc.mOloc.LREquation
-   * @generated
-   */
-  EClass getLREquation();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.LREquation#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see dut.control.moloc.mOloc.LREquation#getLeft()
-   * @see #getLREquation()
-   * @generated
-   */
-  EReference getLREquation_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.LREquation#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see dut.control.moloc.mOloc.LREquation#getRight()
-   * @see #getLREquation()
-   * @generated
-   */
-  EReference getLREquation_Right();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Statement <em>Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Statement</em>'.
-   * @see dut.control.moloc.mOloc.Statement
-   * @generated
-   */
-  EClass getStatement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Statement#getComment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comment</em>'.
-   * @see dut.control.moloc.mOloc.Statement#getComment()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_Comment();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.LRStatement <em>LR Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>LR Statement</em>'.
-   * @see dut.control.moloc.mOloc.LRStatement
-   * @generated
-   */
-  EClass getLRStatement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.LRStatement#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see dut.control.moloc.mOloc.LRStatement#getLeft()
-   * @see #getLRStatement()
-   * @generated
-   */
-  EReference getLRStatement_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.LRStatement#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see dut.control.moloc.mOloc.LRStatement#getRight()
-   * @see #getLRStatement()
-   * @generated
-   */
-  EReference getLRStatement_Right();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.LRKStatement <em>LRK Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>LRK Statement</em>'.
-   * @see dut.control.moloc.mOloc.LRKStatement
-   * @generated
-   */
-  EClass getLRKStatement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.LRKStatement#getRef <em>Ref</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ref</em>'.
-   * @see dut.control.moloc.mOloc.LRKStatement#getRef()
-   * @see #getLRKStatement()
-   * @generated
-   */
-  EReference getLRKStatement_Ref();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.LRKStatement#getRef_call <em>Ref call</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ref call</em>'.
-   * @see dut.control.moloc.mOloc.LRKStatement#getRef_call()
-   * @see #getLRKStatement()
-   * @generated
-   */
-  EReference getLRKStatement_Ref_call();
+  EAttribute getExtendsClause_IsAnnotation();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.Break <em>Break</em>}'.
@@ -7333,1391 +3312,227 @@ public interface MOlocPackage extends EPackage
   EClass getBreak();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Break#getVal <em>Val</em>}'.
+   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Break#getConnect <em>Connect</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
-   * @see dut.control.moloc.mOloc.Break#getVal()
+   * @return the meta object for the containment reference '<em>Connect</em>'.
+   * @see dut.control.moloc.mOloc.Break#getConnect()
    * @see #getBreak()
    * @generated
    */
-  EAttribute getBreak_Val();
+  EReference getBreak_Connect();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Return <em>Return</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Break#getBreakName <em>Break Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Return</em>'.
-   * @see dut.control.moloc.mOloc.Return
+   * @return the meta object for the attribute '<em>Break Name</em>'.
+   * @see dut.control.moloc.mOloc.Break#getBreakName()
+   * @see #getBreak()
    * @generated
    */
-  EClass getReturn();
+  EAttribute getBreak_BreakName();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Return#getVal <em>Val</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.GeneralClause <em>General Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
-   * @see dut.control.moloc.mOloc.Return#getVal()
-   * @see #getReturn()
+   * @return the meta object for class '<em>General Clause</em>'.
+   * @see dut.control.moloc.mOloc.GeneralClause
    * @generated
    */
-  EAttribute getReturn_Val();
+  EClass getGeneralClause();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.IfEquation <em>If Equation</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.GeneralClause#isIsRedeclare <em>Is Redeclare</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>If Equation</em>'.
-   * @see dut.control.moloc.mOloc.IfEquation
+   * @return the meta object for the attribute '<em>Is Redeclare</em>'.
+   * @see dut.control.moloc.mOloc.GeneralClause#isIsRedeclare()
+   * @see #getGeneralClause()
    * @generated
    */
-  EClass getIfEquation();
+  EAttribute getGeneralClause_IsRedeclare();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.IfEquation#getIf_expr <em>If expr</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.GeneralClause#isIsfinal <em>Isfinal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>If expr</em>'.
-   * @see dut.control.moloc.mOloc.IfEquation#getIf_expr()
-   * @see #getIfEquation()
+   * @return the meta object for the attribute '<em>Isfinal</em>'.
+   * @see dut.control.moloc.mOloc.GeneralClause#isIsfinal()
+   * @see #getGeneralClause()
    * @generated
    */
-  EReference getIfEquation_If_expr();
+  EAttribute getGeneralClause_Isfinal();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfEquation#getIf_eqs <em>If eqs</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.GeneralClause#isIsInner <em>Is Inner</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>If eqs</em>'.
-   * @see dut.control.moloc.mOloc.IfEquation#getIf_eqs()
-   * @see #getIfEquation()
+   * @return the meta object for the attribute '<em>Is Inner</em>'.
+   * @see dut.control.moloc.mOloc.GeneralClause#isIsInner()
+   * @see #getGeneralClause()
    * @generated
    */
-  EReference getIfEquation_If_eqs();
+  EAttribute getGeneralClause_IsInner();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfEquation#getElsif_exprs <em>Elsif exprs</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.GeneralClause#isIsOuter <em>Is Outer</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elsif exprs</em>'.
-   * @see dut.control.moloc.mOloc.IfEquation#getElsif_exprs()
-   * @see #getIfEquation()
+   * @return the meta object for the attribute '<em>Is Outer</em>'.
+   * @see dut.control.moloc.mOloc.GeneralClause#isIsOuter()
+   * @see #getGeneralClause()
    * @generated
    */
-  EReference getIfEquation_Elsif_exprs();
+  EAttribute getGeneralClause_IsOuter();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfEquation#getElseif_eqs <em>Elseif eqs</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.GeneralClause#isIsReplaceable <em>Is Replaceable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elseif eqs</em>'.
-   * @see dut.control.moloc.mOloc.IfEquation#getElseif_eqs()
-   * @see #getIfEquation()
+   * @return the meta object for the attribute '<em>Is Replaceable</em>'.
+   * @see dut.control.moloc.mOloc.GeneralClause#isIsReplaceable()
+   * @see #getGeneralClause()
    * @generated
    */
-  EReference getIfEquation_Elseif_eqs();
+  EAttribute getGeneralClause_IsReplaceable();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfEquation#getElse_eqs <em>Else eqs</em>}'.
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.GeneralClause#getComponent_list <em>Component list</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Else eqs</em>'.
-   * @see dut.control.moloc.mOloc.IfEquation#getElse_eqs()
-   * @see #getIfEquation()
+   * @return the meta object for the containment reference list '<em>Component list</em>'.
+   * @see dut.control.moloc.mOloc.GeneralClause#getComponent_list()
+   * @see #getGeneralClause()
    * @generated
    */
-  EReference getIfEquation_Else_eqs();
+  EReference getGeneralClause_Component_list();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.IfStatement <em>If Statement</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Component_declaration <em>Component declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>If Statement</em>'.
-   * @see dut.control.moloc.mOloc.IfStatement
+   * @return the meta object for class '<em>Component declaration</em>'.
+   * @see dut.control.moloc.mOloc.Component_declaration
    * @generated
    */
-  EClass getIfStatement();
+  EClass getComponent_declaration();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.IfStatement#getIf_expr <em>If expr</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Component_declaration#getCondition_attribute <em>Condition attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>If expr</em>'.
-   * @see dut.control.moloc.mOloc.IfStatement#getIf_expr()
-   * @see #getIfStatement()
+   * @return the meta object for the attribute '<em>Condition attribute</em>'.
+   * @see dut.control.moloc.mOloc.Component_declaration#getCondition_attribute()
+   * @see #getComponent_declaration()
    * @generated
    */
-  EReference getIfStatement_If_expr();
+  EAttribute getComponent_declaration_Condition_attribute();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfStatement#getIf_stmts <em>If stmts</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ExternalElement <em>External Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>If stmts</em>'.
-   * @see dut.control.moloc.mOloc.IfStatement#getIf_stmts()
-   * @see #getIfStatement()
+   * @return the meta object for class '<em>External Element</em>'.
+   * @see dut.control.moloc.mOloc.ExternalElement
    * @generated
    */
-  EReference getIfStatement_If_stmts();
+  EClass getExternalElement();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfStatement#getElseif_exprs <em>Elseif exprs</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExternalElement#getLanguage_specification <em>Language specification</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elseif exprs</em>'.
-   * @see dut.control.moloc.mOloc.IfStatement#getElseif_exprs()
-   * @see #getIfStatement()
+   * @return the meta object for the attribute '<em>Language specification</em>'.
+   * @see dut.control.moloc.mOloc.ExternalElement#getLanguage_specification()
+   * @see #getExternalElement()
    * @generated
    */
-  EReference getIfStatement_Elseif_exprs();
+  EAttribute getExternalElement_Language_specification();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfStatement#getElseif_stmts <em>Elseif stmts</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExternalElement#getRef <em>Ref</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elseif stmts</em>'.
-   * @see dut.control.moloc.mOloc.IfStatement#getElseif_stmts()
-   * @see #getIfStatement()
+   * @return the meta object for the attribute '<em>Ref</em>'.
+   * @see dut.control.moloc.mOloc.ExternalElement#getRef()
+   * @see #getExternalElement()
    * @generated
    */
-  EReference getIfStatement_Elseif_stmts();
+  EAttribute getExternalElement_Ref();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfStatement#getElse_stmts <em>Else stmts</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExternalElement#isIsAnnotation <em>Is Annotation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Else stmts</em>'.
-   * @see dut.control.moloc.mOloc.IfStatement#getElse_stmts()
-   * @see #getIfStatement()
+   * @return the meta object for the attribute '<em>Is Annotation</em>'.
+   * @see dut.control.moloc.mOloc.ExternalElement#isIsAnnotation()
+   * @see #getExternalElement()
    * @generated
    */
-  EReference getIfStatement_Else_stmts();
+  EAttribute getExternalElement_IsAnnotation();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ForEquation <em>For Equation</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.NULLElement <em>NULL Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>For Equation</em>'.
-   * @see dut.control.moloc.mOloc.ForEquation
+   * @return the meta object for class '<em>NULL Element</em>'.
+   * @see dut.control.moloc.mOloc.NULLElement
    * @generated
    */
-  EClass getForEquation();
+  EClass getNULLElement();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ForEquation#getIndices <em>Indices</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.NULLElement#getNullname <em>Nullname</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Indices</em>'.
-   * @see dut.control.moloc.mOloc.ForEquation#getIndices()
-   * @see #getForEquation()
+   * @return the meta object for the attribute '<em>Nullname</em>'.
+   * @see dut.control.moloc.mOloc.NULLElement#getNullname()
+   * @see #getNULLElement()
    * @generated
    */
-  EReference getForEquation_Indices();
+  EAttribute getNULLElement_Nullname();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ForEquation#getEqs <em>Eqs</em>}'.
+   * Returns the meta object for enum '{@link dut.control.moloc.mOloc.ClassType <em>Class Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Eqs</em>'.
-   * @see dut.control.moloc.mOloc.ForEquation#getEqs()
-   * @see #getForEquation()
+   * @return the meta object for enum '<em>Class Type</em>'.
+   * @see dut.control.moloc.mOloc.ClassType
    * @generated
    */
-  EReference getForEquation_Eqs();
+  EEnum getClassType();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ForStatement <em>For Statement</em>}'.
+   * Returns the meta object for enum '{@link dut.control.moloc.mOloc.Direction <em>Direction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>For Statement</em>'.
-   * @see dut.control.moloc.mOloc.ForStatement
+   * @return the meta object for enum '<em>Direction</em>'.
+   * @see dut.control.moloc.mOloc.Direction
    * @generated
    */
-  EClass getForStatement();
+  EEnum getDirection();
 
   /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ForStatement#getIndices <em>Indices</em>}'.
+   * Returns the meta object for enum '{@link dut.control.moloc.mOloc.RelationshipType <em>Relationship Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Indices</em>'.
-   * @see dut.control.moloc.mOloc.ForStatement#getIndices()
-   * @see #getForStatement()
+   * @return the meta object for enum '<em>Relationship Type</em>'.
+   * @see dut.control.moloc.mOloc.RelationshipType
    * @generated
    */
-  EReference getForStatement_Indices();
+  EEnum getRelationshipType();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ForStatement#getStmts <em>Stmts</em>}'.
+   * Returns the meta object for enum '{@link dut.control.moloc.mOloc.ParameterType <em>Parameter Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Stmts</em>'.
-   * @see dut.control.moloc.mOloc.ForStatement#getStmts()
-   * @see #getForStatement()
+   * @return the meta object for enum '<em>Parameter Type</em>'.
+   * @see dut.control.moloc.mOloc.ParameterType
    * @generated
    */
-  EReference getForStatement_Stmts();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ForIndices <em>For Indices</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>For Indices</em>'.
-   * @see dut.control.moloc.mOloc.ForIndices
-   * @generated
-   */
-  EClass getForIndices();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ForIndices#getIndices <em>Indices</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Indices</em>'.
-   * @see dut.control.moloc.mOloc.ForIndices#getIndices()
-   * @see #getForIndices()
-   * @generated
-   */
-  EReference getForIndices_Indices();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ForIndex <em>For Index</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>For Index</em>'.
-   * @see dut.control.moloc.mOloc.ForIndex
-   * @generated
-   */
-  EClass getForIndex();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ForIndex#getId <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see dut.control.moloc.mOloc.ForIndex#getId()
-   * @see #getForIndex()
-   * @generated
-   */
-  EAttribute getForIndex_Id();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ForIndex#getExpr <em>Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see dut.control.moloc.mOloc.ForIndex#getExpr()
-   * @see #getForIndex()
-   * @generated
-   */
-  EReference getForIndex_Expr();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.WhileStatement <em>While Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>While Statement</em>'.
-   * @see dut.control.moloc.mOloc.WhileStatement
-   * @generated
-   */
-  EClass getWhileStatement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.WhileStatement#getCond <em>Cond</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cond</em>'.
-   * @see dut.control.moloc.mOloc.WhileStatement#getCond()
-   * @see #getWhileStatement()
-   * @generated
-   */
-  EReference getWhileStatement_Cond();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhileStatement#getStmts <em>Stmts</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Stmts</em>'.
-   * @see dut.control.moloc.mOloc.WhileStatement#getStmts()
-   * @see #getWhileStatement()
-   * @generated
-   */
-  EReference getWhileStatement_Stmts();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.WhenEquation <em>When Equation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>When Equation</em>'.
-   * @see dut.control.moloc.mOloc.WhenEquation
-   * @generated
-   */
-  EClass getWhenEquation();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.WhenEquation#getWhen <em>When</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>When</em>'.
-   * @see dut.control.moloc.mOloc.WhenEquation#getWhen()
-   * @see #getWhenEquation()
-   * @generated
-   */
-  EReference getWhenEquation_When();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhenEquation#getWhen_eqs <em>When eqs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>When eqs</em>'.
-   * @see dut.control.moloc.mOloc.WhenEquation#getWhen_eqs()
-   * @see #getWhenEquation()
-   * @generated
-   */
-  EReference getWhenEquation_When_eqs();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhenEquation#getElsehwhen <em>Elsehwhen</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elsehwhen</em>'.
-   * @see dut.control.moloc.mOloc.WhenEquation#getElsehwhen()
-   * @see #getWhenEquation()
-   * @generated
-   */
-  EReference getWhenEquation_Elsehwhen();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhenEquation#getElsewhen_eqs <em>Elsewhen eqs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elsewhen eqs</em>'.
-   * @see dut.control.moloc.mOloc.WhenEquation#getElsewhen_eqs()
-   * @see #getWhenEquation()
-   * @generated
-   */
-  EReference getWhenEquation_Elsewhen_eqs();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.WhenStatement <em>When Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>When Statement</em>'.
-   * @see dut.control.moloc.mOloc.WhenStatement
-   * @generated
-   */
-  EClass getWhenStatement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.WhenStatement#getWhen <em>When</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>When</em>'.
-   * @see dut.control.moloc.mOloc.WhenStatement#getWhen()
-   * @see #getWhenStatement()
-   * @generated
-   */
-  EReference getWhenStatement_When();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhenStatement#getWhen_stmts <em>When stmts</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>When stmts</em>'.
-   * @see dut.control.moloc.mOloc.WhenStatement#getWhen_stmts()
-   * @see #getWhenStatement()
-   * @generated
-   */
-  EReference getWhenStatement_When_stmts();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhenStatement#getElsehwhen <em>Elsehwhen</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elsehwhen</em>'.
-   * @see dut.control.moloc.mOloc.WhenStatement#getElsehwhen()
-   * @see #getWhenStatement()
-   * @generated
-   */
-  EReference getWhenStatement_Elsehwhen();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhenStatement#getElsewhen_stmts <em>Elsewhen stmts</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elsewhen stmts</em>'.
-   * @see dut.control.moloc.mOloc.WhenStatement#getElsewhen_stmts()
-   * @see #getWhenStatement()
-   * @generated
-   */
-  EReference getWhenStatement_Elsewhen_stmts();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ConnectClause <em>Connect Clause</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Connect Clause</em>'.
-   * @see dut.control.moloc.mOloc.ConnectClause
-   * @generated
-   */
-  EClass getConnectClause();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ConnectClause#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see dut.control.moloc.mOloc.ConnectClause#getLeft()
-   * @see #getConnectClause()
-   * @generated
-   */
-  EReference getConnectClause_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.ConnectClause#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see dut.control.moloc.mOloc.ConnectClause#getRight()
-   * @see #getConnectClause()
-   * @generated
-   */
-  EReference getConnectClause_Right();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Expression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expression</em>'.
-   * @see dut.control.moloc.mOloc.Expression
-   * @generated
-   */
-  EClass getExpression();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.IfExpression <em>If Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>If Expression</em>'.
-   * @see dut.control.moloc.mOloc.IfExpression
-   * @generated
-   */
-  EClass getIfExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.IfExpression#getIf <em>If</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>If</em>'.
-   * @see dut.control.moloc.mOloc.IfExpression#getIf()
-   * @see #getIfExpression()
-   * @generated
-   */
-  EReference getIfExpression_If();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.IfExpression#getThen <em>Then</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Then</em>'.
-   * @see dut.control.moloc.mOloc.IfExpression#getThen()
-   * @see #getIfExpression()
-   * @generated
-   */
-  EReference getIfExpression_Then();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfExpression#getElseif <em>Elseif</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elseif</em>'.
-   * @see dut.control.moloc.mOloc.IfExpression#getElseif()
-   * @see #getIfExpression()
-   * @generated
-   */
-  EReference getIfExpression_Elseif();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfExpression#getElseifthen <em>Elseifthen</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elseifthen</em>'.
-   * @see dut.control.moloc.mOloc.IfExpression#getElseifthen()
-   * @see #getIfExpression()
-   * @generated
-   */
-  EReference getIfExpression_Elseifthen();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfExpression#getElse <em>Else</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Else</em>'.
-   * @see dut.control.moloc.mOloc.IfExpression#getElse()
-   * @see #getIfExpression()
-   * @generated
-   */
-  EReference getIfExpression_Else();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.SimpleExpression <em>Simple Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Simple Expression</em>'.
-   * @see dut.control.moloc.mOloc.SimpleExpression
-   * @generated
-   */
-  EClass getSimpleExpression();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.SimpleExpression#getExprs <em>Exprs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Exprs</em>'.
-   * @see dut.control.moloc.mOloc.SimpleExpression#getExprs()
-   * @see #getSimpleExpression()
-   * @generated
-   */
-  EReference getSimpleExpression_Exprs();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.LogicalExpression <em>Logical Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Logical Expression</em>'.
-   * @see dut.control.moloc.mOloc.LogicalExpression
-   * @generated
-   */
-  EClass getLogicalExpression();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.LogicalExpression#getTerms <em>Terms</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Terms</em>'.
-   * @see dut.control.moloc.mOloc.LogicalExpression#getTerms()
-   * @see #getLogicalExpression()
-   * @generated
-   */
-  EReference getLogicalExpression_Terms();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.LogicalExpression#isRo <em>Ro</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Ro</em>'.
-   * @see dut.control.moloc.mOloc.LogicalExpression#isRo()
-   * @see #getLogicalExpression()
-   * @generated
-   */
-  EAttribute getLogicalExpression_Ro();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.LogicalTerm <em>Logical Term</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Logical Term</em>'.
-   * @see dut.control.moloc.mOloc.LogicalTerm
-   * @generated
-   */
-  EClass getLogicalTerm();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.LogicalFactor <em>Logical Factor</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Logical Factor</em>'.
-   * @see dut.control.moloc.mOloc.LogicalFactor
-   * @generated
-   */
-  EClass getLogicalFactor();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.LogicalFactor#getFactors <em>Factors</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Factors</em>'.
-   * @see dut.control.moloc.mOloc.LogicalFactor#getFactors()
-   * @see #getLogicalFactor()
-   * @generated
-   */
-  EReference getLogicalFactor_Factors();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.LogicalFactor#isDna <em>Dna</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Dna</em>'.
-   * @see dut.control.moloc.mOloc.LogicalFactor#isDna()
-   * @see #getLogicalFactor()
-   * @generated
-   */
-  EAttribute getLogicalFactor_Dna();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.LogicalFactor#isNoot <em>Noot</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Noot</em>'.
-   * @see dut.control.moloc.mOloc.LogicalFactor#isNoot()
-   * @see #getLogicalFactor()
-   * @generated
-   */
-  EAttribute getLogicalFactor_Noot();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.LogicalFactor#getRel <em>Rel</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Rel</em>'.
-   * @see dut.control.moloc.mOloc.LogicalFactor#getRel()
-   * @see #getLogicalFactor()
-   * @generated
-   */
-  EReference getLogicalFactor_Rel();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Relation <em>Relation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Relation</em>'.
-   * @see dut.control.moloc.mOloc.Relation
-   * @generated
-   */
-  EClass getRelation();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Relation#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see dut.control.moloc.mOloc.Relation#getLeft()
-   * @see #getRelation()
-   * @generated
-   */
-  EReference getRelation_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Relation#getRel_op <em>Rel op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Rel op</em>'.
-   * @see dut.control.moloc.mOloc.Relation#getRel_op()
-   * @see #getRelation()
-   * @generated
-   */
-  EAttribute getRelation_Rel_op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Relation#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see dut.control.moloc.mOloc.Relation#getRight()
-   * @see #getRelation()
-   * @generated
-   */
-  EReference getRelation_Right();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ArithmeticExpression <em>Arithmetic Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Arithmetic Expression</em>'.
-   * @see dut.control.moloc.mOloc.ArithmeticExpression
-   * @generated
-   */
-  EClass getArithmeticExpression();
-
-  /**
-   * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.ArithmeticExpression#getAdd_op <em>Add op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Add op</em>'.
-   * @see dut.control.moloc.mOloc.ArithmeticExpression#getAdd_op()
-   * @see #getArithmeticExpression()
-   * @generated
-   */
-  EAttribute getArithmeticExpression_Add_op();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Negation <em>Negation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Negation</em>'.
-   * @see dut.control.moloc.mOloc.Negation
-   * @generated
-   */
-  EClass getNegation();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Negation#getNeg_op <em>Neg op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Neg op</em>'.
-   * @see dut.control.moloc.mOloc.Negation#getNeg_op()
-   * @see #getNegation()
-   * @generated
-   */
-  EAttribute getNegation_Neg_op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Negation#getTerm <em>Term</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Term</em>'.
-   * @see dut.control.moloc.mOloc.Negation#getTerm()
-   * @see #getNegation()
-   * @generated
-   */
-  EReference getNegation_Term();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Term <em>Term</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Term</em>'.
-   * @see dut.control.moloc.mOloc.Term
-   * @generated
-   */
-  EClass getTerm();
-
-  /**
-   * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.Term#getMul_op <em>Mul op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Mul op</em>'.
-   * @see dut.control.moloc.mOloc.Term#getMul_op()
-   * @see #getTerm()
-   * @generated
-   */
-  EAttribute getTerm_Mul_op();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Factor <em>Factor</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Factor</em>'.
-   * @see dut.control.moloc.mOloc.Factor
-   * @generated
-   */
-  EClass getFactor();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Factor#getBase <em>Base</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Base</em>'.
-   * @see dut.control.moloc.mOloc.Factor#getBase()
-   * @see #getFactor()
-   * @generated
-   */
-  EReference getFactor_Base();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Factor#isCf <em>Cf</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Cf</em>'.
-   * @see dut.control.moloc.mOloc.Factor#isCf()
-   * @see #getFactor()
-   * @generated
-   */
-  EAttribute getFactor_Cf();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Factor#isDcf <em>Dcf</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Dcf</em>'.
-   * @see dut.control.moloc.mOloc.Factor#isDcf()
-   * @see #getFactor()
-   * @generated
-   */
-  EAttribute getFactor_Dcf();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Factor#getExp <em>Exp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp</em>'.
-   * @see dut.control.moloc.mOloc.Factor#getExp()
-   * @see #getFactor()
-   * @generated
-   */
-  EReference getFactor_Exp();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.FloatPrimary <em>Float Primary</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Float Primary</em>'.
-   * @see dut.control.moloc.mOloc.FloatPrimary
-   * @generated
-   */
-  EClass getFloatPrimary();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.FloatPrimary#getVal <em>Val</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
-   * @see dut.control.moloc.mOloc.FloatPrimary#getVal()
-   * @see #getFloatPrimary()
-   * @generated
-   */
-  EAttribute getFloatPrimary_Val();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.StringPrimary <em>String Primary</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>String Primary</em>'.
-   * @see dut.control.moloc.mOloc.StringPrimary
-   * @generated
-   */
-  EClass getStringPrimary();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.StringPrimary#getVal <em>Val</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
-   * @see dut.control.moloc.mOloc.StringPrimary#getVal()
-   * @see #getStringPrimary()
-   * @generated
-   */
-  EAttribute getStringPrimary_Val();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.LogicalPrimary <em>Logical Primary</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Logical Primary</em>'.
-   * @see dut.control.moloc.mOloc.LogicalPrimary
-   * @generated
-   */
-  EClass getLogicalPrimary();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.LogicalPrimary#isVal <em>Val</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
-   * @see dut.control.moloc.mOloc.LogicalPrimary#isVal()
-   * @see #getLogicalPrimary()
-   * @generated
-   */
-  EAttribute getLogicalPrimary_Val();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.End <em>End</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>End</em>'.
-   * @see dut.control.moloc.mOloc.End
-   * @generated
-   */
-  EClass getEnd();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.End#getVal <em>Val</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
-   * @see dut.control.moloc.mOloc.End#getVal()
-   * @see #getEnd()
-   * @generated
-   */
-  EAttribute getEnd_Val();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Primary <em>Primary</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Primary</em>'.
-   * @see dut.control.moloc.mOloc.Primary
-   * @generated
-   */
-  EClass getPrimary();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Primary#getOe <em>Oe</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Oe</em>'.
-   * @see dut.control.moloc.mOloc.Primary#getOe()
-   * @see #getPrimary()
-   * @generated
-   */
-  EReference getPrimary_Oe();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.Primary#getRes <em>Res</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Res</em>'.
-   * @see dut.control.moloc.mOloc.Primary#getRes()
-   * @see #getPrimary()
-   * @generated
-   */
-  EReference getPrimary_Res();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.Primary#getFa <em>Fa</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Fa</em>'.
-   * @see dut.control.moloc.mOloc.Primary#getFa()
-   * @see #getPrimary()
-   * @generated
-   */
-  EReference getPrimary_Fa();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Array_arguments <em>Array arguments</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Array arguments</em>'.
-   * @see dut.control.moloc.mOloc.Array_arguments
-   * @generated
-   */
-  EClass getArray_arguments();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Array_arguments#getExpress <em>Express</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Express</em>'.
-   * @see dut.control.moloc.mOloc.Array_arguments#getExpress()
-   * @see #getArray_arguments()
-   * @generated
-   */
-  EReference getArray_arguments_Express();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.Array_arguments#getArgu <em>Argu</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Argu</em>'.
-   * @see dut.control.moloc.mOloc.Array_arguments#getArgu()
-   * @see #getArray_arguments()
-   * @generated
-   */
-  EReference getArray_arguments_Argu();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Array_arguments#getFori <em>Fori</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Fori</em>'.
-   * @see dut.control.moloc.mOloc.Array_arguments#getFori()
-   * @see #getArray_arguments()
-   * @generated
-   */
-  EReference getArray_arguments_Fori();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Array_arguments_non_first <em>Array arguments non first</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Array arguments non first</em>'.
-   * @see dut.control.moloc.mOloc.Array_arguments_non_first
-   * @generated
-   */
-  EClass getArray_arguments_non_first();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Array_arguments_non_first#getExpress <em>Express</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Express</em>'.
-   * @see dut.control.moloc.mOloc.Array_arguments_non_first#getExpress()
-   * @see #getArray_arguments_non_first()
-   * @generated
-   */
-  EReference getArray_arguments_non_first_Express();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.Array_arguments_non_first#getArgu <em>Argu</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Argu</em>'.
-   * @see dut.control.moloc.mOloc.Array_arguments_non_first#getArgu()
-   * @see #getArray_arguments_non_first()
-   * @generated
-   */
-  EReference getArray_arguments_non_first_Argu();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.FunctionCall <em>Function Call</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Call</em>'.
-   * @see dut.control.moloc.mOloc.FunctionCall
-   * @generated
-   */
-  EClass getFunctionCall();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.FunctionCall#getComp_ref <em>Comp ref</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Comp ref</em>'.
-   * @see dut.control.moloc.mOloc.FunctionCall#getComp_ref()
-   * @see #getFunctionCall()
-   * @generated
-   */
-  EAttribute getFunctionCall_Comp_ref();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.FunctionCall#getArgs <em>Args</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Args</em>'.
-   * @see dut.control.moloc.mOloc.FunctionCall#getArgs()
-   * @see #getFunctionCall()
-   * @generated
-   */
-  EReference getFunctionCall_Args();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ComponentReference <em>Component Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component Reference</em>'.
-   * @see dut.control.moloc.mOloc.ComponentReference
-   * @generated
-   */
-  EClass getComponentReference();
-
-  /**
-   * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.ComponentReference#getIdents <em>Idents</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Idents</em>'.
-   * @see dut.control.moloc.mOloc.ComponentReference#getIdents()
-   * @see #getComponentReference()
-   * @generated
-   */
-  EAttribute getComponentReference_Idents();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ComponentReference#getSubscripts <em>Subscripts</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Subscripts</em>'.
-   * @see dut.control.moloc.mOloc.ComponentReference#getSubscripts()
-   * @see #getComponentReference()
-   * @generated
-   */
-  EReference getComponentReference_Subscripts();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.FunctionCallArgs <em>Function Call Args</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Call Args</em>'.
-   * @see dut.control.moloc.mOloc.FunctionCallArgs
-   * @generated
-   */
-  EClass getFunctionCallArgs();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.FunctionCallArgs#getRes <em>Res</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Res</em>'.
-   * @see dut.control.moloc.mOloc.FunctionCallArgs#getRes()
-   * @see #getFunctionCallArgs()
-   * @generated
-   */
-  EReference getFunctionCallArgs_Res();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.FunctionArguments <em>Function Arguments</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Arguments</em>'.
-   * @see dut.control.moloc.mOloc.FunctionArguments
-   * @generated
-   */
-  EClass getFunctionArguments();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.FunctionArguments#getArgs <em>Args</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Args</em>'.
-   * @see dut.control.moloc.mOloc.FunctionArguments#getArgs()
-   * @see #getFunctionArguments()
-   * @generated
-   */
-  EReference getFunctionArguments_Args();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.FunctionArguments#getIndices <em>Indices</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Indices</em>'.
-   * @see dut.control.moloc.mOloc.FunctionArguments#getIndices()
-   * @see #getFunctionArguments()
-   * @generated
-   */
-  EReference getFunctionArguments_Indices();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.NamedArguments <em>Named Arguments</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Named Arguments</em>'.
-   * @see dut.control.moloc.mOloc.NamedArguments
-   * @generated
-   */
-  EClass getNamedArguments();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.NamedArguments#getArgs <em>Args</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Args</em>'.
-   * @see dut.control.moloc.mOloc.NamedArguments#getArgs()
-   * @see #getNamedArguments()
-   * @generated
-   */
-  EReference getNamedArguments_Args();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.NamedArgument <em>Named Argument</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Named Argument</em>'.
-   * @see dut.control.moloc.mOloc.NamedArgument
-   * @generated
-   */
-  EClass getNamedArgument();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.NamedArgument#getId <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see dut.control.moloc.mOloc.NamedArgument#getId()
-   * @see #getNamedArgument()
-   * @generated
-   */
-  EAttribute getNamedArgument_Id();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.NamedArgument#getFunc <em>Func</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Func</em>'.
-   * @see dut.control.moloc.mOloc.NamedArgument#getFunc()
-   * @see #getNamedArgument()
-   * @generated
-   */
-  EReference getNamedArgument_Func();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.FunctionArgument <em>Function Argument</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Argument</em>'.
-   * @see dut.control.moloc.mOloc.FunctionArgument
-   * @generated
-   */
-  EClass getFunctionArgument();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.FunctionDefinition <em>Function Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Definition</em>'.
-   * @see dut.control.moloc.mOloc.FunctionDefinition
-   * @generated
-   */
-  EClass getFunctionDefinition();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.FunctionDefinition#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.moloc.mOloc.FunctionDefinition#getName()
-   * @see #getFunctionDefinition()
-   * @generated
-   */
-  EAttribute getFunctionDefinition_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.FunctionDefinition#getArgs <em>Args</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Args</em>'.
-   * @see dut.control.moloc.mOloc.FunctionDefinition#getArgs()
-   * @see #getFunctionDefinition()
-   * @generated
-   */
-  EReference getFunctionDefinition_Args();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.OutputExpressionList <em>Output Expression List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Output Expression List</em>'.
-   * @see dut.control.moloc.mOloc.OutputExpressionList
-   * @generated
-   */
-  EClass getOutputExpressionList();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.OutputExpressionList#getExprs <em>Exprs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Exprs</em>'.
-   * @see dut.control.moloc.mOloc.OutputExpressionList#getExprs()
-   * @see #getOutputExpressionList()
-   * @generated
-   */
-  EReference getOutputExpressionList_Exprs();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ExpressionList <em>Expression List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expression List</em>'.
-   * @see dut.control.moloc.mOloc.ExpressionList
-   * @generated
-   */
-  EClass getExpressionList();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ExpressionList#getExprs <em>Exprs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Exprs</em>'.
-   * @see dut.control.moloc.mOloc.ExpressionList#getExprs()
-   * @see #getExpressionList()
-   * @generated
-   */
-  EReference getExpressionList_Exprs();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ArraySubscripts <em>Array Subscripts</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Array Subscripts</em>'.
-   * @see dut.control.moloc.mOloc.ArraySubscripts
-   * @generated
-   */
-  EClass getArraySubscripts();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ArraySubscripts#getSubscripts <em>Subscripts</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Subscripts</em>'.
-   * @see dut.control.moloc.mOloc.ArraySubscripts#getSubscripts()
-   * @see #getArraySubscripts()
-   * @generated
-   */
-  EReference getArraySubscripts_Subscripts();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Subscript <em>Subscript</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Subscript</em>'.
-   * @see dut.control.moloc.mOloc.Subscript
-   * @generated
-   */
-  EClass getSubscript();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Subscript#isAll <em>All</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>All</em>'.
-   * @see dut.control.moloc.mOloc.Subscript#isAll()
-   * @see #getSubscript()
-   * @generated
-   */
-  EAttribute getSubscript_All();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Subscript#getExpr <em>Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see dut.control.moloc.mOloc.Subscript#getExpr()
-   * @see #getSubscript()
-   * @generated
-   */
-  EReference getSubscript_Expr();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Comment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comment</em>'.
-   * @see dut.control.moloc.mOloc.Comment
-   * @generated
-   */
-  EClass getComment();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Comment#getComment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Comment</em>'.
-   * @see dut.control.moloc.mOloc.Comment#getComment()
-   * @see #getComment()
-   * @generated
-   */
-  EAttribute getComment_Comment();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Comment#getAnnotation <em>Annotation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Annotation</em>'.
-   * @see dut.control.moloc.mOloc.Comment#getAnnotation()
-   * @see #getComment()
-   * @generated
-   */
-  EReference getComment_Annotation();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Annotation <em>Annotation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Annotation</em>'.
-   * @see dut.control.moloc.mOloc.Annotation
-   * @generated
-   */
-  EClass getAnnotation();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Annotation#isIsannotation <em>Isannotation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Isannotation</em>'.
-   * @see dut.control.moloc.mOloc.Annotation#isIsannotation()
-   * @see #getAnnotation()
-   * @generated
-   */
-  EAttribute getAnnotation_Isannotation();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dut.control.moloc.mOloc.Annotation#getCm <em>Cm</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cm</em>'.
-   * @see dut.control.moloc.mOloc.Annotation#getCm()
-   * @see #getAnnotation()
-   * @generated
-   */
-  EReference getAnnotation_Cm();
+  EEnum getParameterType();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -8743,14 +3558,22 @@ public interface MOlocPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.StoredDefinitionImpl <em>Stored Definition</em>}' class.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.Stored_definitionImpl <em>Stored definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.StoredDefinitionImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getStoredDefinition()
+     * @see dut.control.moloc.mOloc.impl.Stored_definitionImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getStored_definition()
      * @generated
      */
-    EClass STORED_DEFINITION = eINSTANCE.getStoredDefinition();
+    EClass STORED_DEFINITION = eINSTANCE.getStored_definition();
+
+    /**
+     * The meta object literal for the '<em><b>Is Within</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STORED_DEFINITION__IS_WITHIN = eINSTANCE.getStored_definition_IsWithin();
 
     /**
      * The meta object literal for the '<em><b>Within</b></em>' attribute feature.
@@ -8758,7 +3581,7 @@ public interface MOlocPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STORED_DEFINITION__WITHIN = eINSTANCE.getStoredDefinition_Within();
+    EAttribute STORED_DEFINITION__WITHIN = eINSTANCE.getStored_definition_Within();
 
     /**
      * The meta object literal for the '<em><b>Classes</b></em>' containment reference list feature.
@@ -8766,59 +3589,43 @@ public interface MOlocPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STORED_DEFINITION__CLASSES = eINSTANCE.getStoredDefinition_Classes();
+    EReference STORED_DEFINITION__CLASSES = eINSTANCE.getStored_definition_Classes();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ClassDefinitionImpl <em>Class Definition</em>}' class.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.Class_definitionImpl <em>Class definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ClassDefinitionImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClassDefinition()
+     * @see dut.control.moloc.mOloc.impl.Class_definitionImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClass_definition()
      * @generated
      */
-    EClass CLASS_DEFINITION = eINSTANCE.getClassDefinition();
+    EClass CLASS_DEFINITION = eINSTANCE.getClass_definition();
 
     /**
-     * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CLASS_DEFINITION__FINAL = eINSTANCE.getClassDefinition_Final();
-
-    /**
-     * The meta object literal for the '<em><b>Encapsulated</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Isfinal</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_DEFINITION__ENCAPSULATED = eINSTANCE.getClassDefinition_Encapsulated();
+    EAttribute CLASS_DEFINITION__ISFINAL = eINSTANCE.getClass_definition_Isfinal();
 
     /**
-     * The meta object literal for the '<em><b>Cp</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Is Encapsulated</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_DEFINITION__CP = eINSTANCE.getClassDefinition_Cp();
+    EAttribute CLASS_DEFINITION__IS_ENCAPSULATED = eINSTANCE.getClass_definition_IsEncapsulated();
 
     /**
-     * The meta object literal for the '<em><b>Constraining</b></em>' containment reference feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.class_prefixesImpl <em>class prefixes</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.class_prefixesImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getclass_prefixes()
      * @generated
      */
-    EReference CLASS_DEFINITION__CONSTRAINING = eINSTANCE.getClassDefinition_Constraining();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ClassPrefixImpl <em>Class Prefix</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ClassPrefixImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClassPrefix()
-     * @generated
-     */
-    EClass CLASS_PREFIX = eINSTANCE.getClassPrefix();
+    EClass CLASS_PREFIXES = eINSTANCE.getclass_prefixes();
 
     /**
      * The meta object literal for the '<em><b>Is Partial</b></em>' attribute feature.
@@ -8826,139 +3633,235 @@ public interface MOlocPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_PREFIX__IS_PARTIAL = eINSTANCE.getClassPrefix_IsPartial();
+    EAttribute CLASS_PREFIXES__IS_PARTIAL = eINSTANCE.getclass_prefixes_IsPartial();
 
     /**
-     * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Is Expandable</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_PREFIX__KIND = eINSTANCE.getClassPrefix_Kind();
+    EAttribute CLASS_PREFIXES__IS_EXPANDABLE = eINSTANCE.getclass_prefixes_IsExpandable();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ClassSpecifierImpl <em>Class Specifier</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ClassSpecifierImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClassSpecifier()
-     * @generated
-     */
-    EClass CLASS_SPECIFIER = eINSTANCE.getClassSpecifier();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Is Pure</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_SPECIFIER__NAME = eINSTANCE.getClassSpecifier_Name();
+    EAttribute CLASS_PREFIXES__IS_PURE = eINSTANCE.getclass_prefixes_IsPure();
 
     /**
-     * The meta object literal for the '<em><b>Str comment</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Is Operator</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_SPECIFIER__STR_COMMENT = eINSTANCE.getClassSpecifier_Str_comment();
+    EAttribute CLASS_PREFIXES__IS_OPERATOR = eINSTANCE.getclass_prefixes_IsOperator();
 
     /**
-     * The meta object literal for the '<em><b>Composition</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Class Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_SPECIFIER__COMPOSITION = eINSTANCE.getClassSpecifier_Composition();
+    EAttribute CLASS_PREFIXES__CLASS_TYPE = eINSTANCE.getclass_prefixes_ClassType();
 
     /**
-     * The meta object literal for the '<em><b>Name end</b></em>' attribute feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.class_specifierImpl <em>class specifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.class_specifierImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getclass_specifier()
+     * @generated
+     */
+    EClass CLASS_SPECIFIER = eINSTANCE.getclass_specifier();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl <em>long class specifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.long_class_specifierImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getlong_class_specifier()
+     * @generated
+     */
+    EClass LONG_CLASS_SPECIFIER = eINSTANCE.getlong_class_specifier();
+
+    /**
+     * The meta object literal for the '<em><b>Is Extends</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_SPECIFIER__NAME_END = eINSTANCE.getClassSpecifier_Name_end();
+    EAttribute LONG_CLASS_SPECIFIER__IS_EXTENDS = eINSTANCE.getlong_class_specifier_IsExtends();
 
     /**
-     * The meta object literal for the '<em><b>Prefix</b></em>' attribute feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl <em>short class specifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.short_class_specifierImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getshort_class_specifier()
+     * @generated
+     */
+    EClass SHORT_CLASS_SPECIFIER = eINSTANCE.getshort_class_specifier();
+
+    /**
+     * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_SPECIFIER__PREFIX = eINSTANCE.getClassSpecifier_Prefix();
+    EAttribute SHORT_CLASS_SPECIFIER__DIRECTION = eINSTANCE.getshort_class_specifier_Direction();
 
     /**
-     * The meta object literal for the '<em><b>Name2</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Is Enumeration</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_SPECIFIER__NAME2 = eINSTANCE.getClassSpecifier_Name2();
+    EAttribute SHORT_CLASS_SPECIFIER__IS_ENUMERATION = eINSTANCE.getshort_class_specifier_IsEnumeration();
 
     /**
-     * The meta object literal for the '<em><b>Subs</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Is Colon</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_SPECIFIER__SUBS = eINSTANCE.getClassSpecifier_Subs();
+    EAttribute SHORT_CLASS_SPECIFIER__IS_COLON = eINSTANCE.getshort_class_specifier_IsColon();
 
     /**
-     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.der_class_specifierImpl <em>der class specifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.der_class_specifierImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getder_class_specifier()
+     * @generated
+     */
+    EClass DER_CLASS_SPECIFIER = eINSTANCE.getder_class_specifier();
+
+    /**
+     * The meta object literal for the '<em><b>Is Der</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_SPECIFIER__MOD = eINSTANCE.getClassSpecifier_Mod();
+    EAttribute DER_CLASS_SPECIFIER__IS_DER = eINSTANCE.getder_class_specifier_IsDer();
 
     /**
-     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Der Name</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_SPECIFIER__COMMENT = eINSTANCE.getClassSpecifier_Comment();
+    EAttribute DER_CLASS_SPECIFIER__DER_NAME = eINSTANCE.getder_class_specifier_DerName();
 
     /**
-     * The meta object literal for the '<em><b>Elementnum</b></em>' containment reference feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.class_nameImpl <em>class name</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.class_nameImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getclass_name()
+     * @generated
+     */
+    EClass CLASS_NAME = eINSTANCE.getclass_name();
+
+    /**
+     * The meta object literal for the '<em><b>Class Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_SPECIFIER__ELEMENTNUM = eINSTANCE.getClassSpecifier_Elementnum();
+    EAttribute CLASS_NAME__CLASS_NAME = eINSTANCE.getclass_name_ClassName();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.class_modificationImpl <em>class modification</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.class_modificationImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getclass_modification()
+     * @generated
+     */
+    EClass CLASS_MODIFICATION = eINSTANCE.getclass_modification();
+
+    /**
+     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLASS_SPECIFIER__TYPE = eINSTANCE.getClassSpecifier_Type();
+    EReference CLASS_MODIFICATION__ARGUMENTS = eINSTANCE.getclass_modification_Arguments();
 
     /**
-     * The meta object literal for the '<em><b>Base Type</b></em>' attribute feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.description_stringImpl <em>description string</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.description_stringImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getdescription_string()
+     * @generated
+     */
+    EClass DESCRIPTION_STRING = eINSTANCE.getdescription_string();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLASS_SPECIFIER__BASE_TYPE = eINSTANCE.getClassSpecifier_BaseType();
+    EAttribute DESCRIPTION_STRING__DESCRIPTION = eINSTANCE.getdescription_string_Description();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.EnumListImpl <em>Enum List</em>}' class.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.compositionImpl <em>composition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.EnumListImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEnumList()
+     * @see dut.control.moloc.mOloc.impl.compositionImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getcomposition()
      * @generated
      */
-    EClass ENUM_LIST = eINSTANCE.getEnumList();
+    EClass COMPOSITION = eINSTANCE.getcomposition();
 
     /**
-     * The meta object literal for the '<em><b>Enums</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ENUM_LIST__ENUMS = eINSTANCE.getEnumList_Enums();
+    EReference COMPOSITION__ELEMENTS = eINSTANCE.getcomposition_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.type_specifierImpl <em>type specifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.type_specifierImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#gettype_specifier()
+     * @generated
+     */
+    EClass TYPE_SPECIFIER = eINSTANCE.gettype_specifier();
+
+    /**
+     * The meta object literal for the '<em><b>Type Specifier</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE_SPECIFIER__TYPE_SPECIFIER = eINSTANCE.gettype_specifier_TypeSpecifier();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.enum_listImpl <em>enum list</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.enum_listImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getenum_list()
+     * @generated
+     */
+    EClass ENUM_LIST = eINSTANCE.getenum_list();
+
+    /**
+     * The meta object literal for the '<em><b>Enumeration Literal</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENUM_LIST__ENUMERATION_LITERAL = eINSTANCE.getenum_list_EnumerationLiteral();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.EnumerationLiteralImpl <em>Enumeration Literal</em>}' class.
@@ -8971,208 +3874,254 @@ public interface MOlocPackage extends EPackage
     EClass ENUMERATION_LITERAL = eINSTANCE.getEnumerationLiteral();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ENUMERATION_LITERAL__ID = eINSTANCE.getEnumerationLiteral_Id();
+    EAttribute ENUMERATION_LITERAL__TITLE = eINSTANCE.getEnumerationLiteral_Title();
 
     /**
-     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.descriptionImpl <em>description</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.descriptionImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getdescription()
      * @generated
      */
-    EReference ENUMERATION_LITERAL__COMMENT = eINSTANCE.getEnumerationLiteral_Comment();
+    EClass DESCRIPTION = eINSTANCE.getdescription();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.CompositionImpl <em>Composition</em>}' class.
+     * The meta object literal for the '<em><b>Is Annotation</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.CompositionImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComposition()
      * @generated
      */
-    EClass COMPOSITION = eINSTANCE.getComposition();
+    EAttribute DESCRIPTION__IS_ANNOTATION = eINSTANCE.getdescription_IsAnnotation();
 
     /**
-     * The meta object literal for the '<em><b>Priv elist</b></em>' containment reference feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ArgumentImpl <em>Argument</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.ArgumentImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArgument()
      * @generated
      */
-    EReference COMPOSITION__PRIV_ELIST = eINSTANCE.getComposition_Priv_elist();
+    EClass ARGUMENT = eINSTANCE.getArgument();
 
     /**
-     * The meta object literal for the '<em><b>Pub elist</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Is Redeclare</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPOSITION__PUB_ELIST = eINSTANCE.getComposition_Pub_elist();
+    EAttribute ARGUMENT__IS_REDECLARE = eINSTANCE.getArgument_IsRedeclare();
 
     /**
-     * The meta object literal for the '<em><b>Protected elist</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Is Each</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPOSITION__PROTECTED_ELIST = eINSTANCE.getComposition_Protected_elist();
+    EAttribute ARGUMENT__IS_EACH = eINSTANCE.getArgument_IsEach();
 
     /**
-     * The meta object literal for the '<em><b>Eq secs</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Isfinal</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPOSITION__EQ_SECS = eINSTANCE.getComposition_Eq_secs();
+    EAttribute ARGUMENT__ISFINAL = eINSTANCE.getArgument_Isfinal();
 
     /**
-     * The meta object literal for the '<em><b>Alg secs</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.element_modificationImpl <em>element modification</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.element_modificationImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getelement_modification()
      * @generated
      */
-    EReference COMPOSITION__ALG_SECS = eINSTANCE.getComposition_Alg_secs();
+    EClass ELEMENT_MODIFICATION = eINSTANCE.getelement_modification();
 
     /**
-     * The meta object literal for the '<em><b>Ext elist</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Element Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPOSITION__EXT_ELIST = eINSTANCE.getComposition_Ext_elist();
+    EAttribute ELEMENT_MODIFICATION__ELEMENT_NAME = eINSTANCE.getelement_modification_ElementName();
 
     /**
-     * The meta object literal for the '<em><b>Anno</b></em>' containment reference feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.element_replaceableImpl <em>element replaceable</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.element_replaceableImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getelement_replaceable()
      * @generated
      */
-    EReference COMPOSITION__ANNO = eINSTANCE.getComposition_Anno();
+    EClass ELEMENT_REPLACEABLE = eINSTANCE.getelement_replaceable();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.PubElementListImpl <em>Pub Element List</em>}' class.
+     * The meta object literal for the '<em><b>Is Replaceable</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.PubElementListImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getPubElementList()
      * @generated
      */
-    EClass PUB_ELEMENT_LIST = eINSTANCE.getPubElementList();
+    EAttribute ELEMENT_REPLACEABLE__IS_REPLACEABLE = eINSTANCE.getelement_replaceable_IsReplaceable();
 
     /**
-     * The meta object literal for the '<em><b>Ele</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl <em>short class definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.short_class_definitionImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getshort_class_definition()
      * @generated
      */
-    EReference PUB_ELEMENT_LIST__ELE = eINSTANCE.getPubElementList_Ele();
+    EClass SHORT_CLASS_DEFINITION = eINSTANCE.getshort_class_definition();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ProElementListImpl <em>Pro Element List</em>}' class.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.component_clause1Impl <em>component clause1</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ProElementListImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getProElementList()
+     * @see dut.control.moloc.mOloc.impl.component_clause1Impl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getcomponent_clause1()
      * @generated
      */
-    EClass PRO_ELEMENT_LIST = eINSTANCE.getProElementList();
+    EClass COMPONENT_CLAUSE1 = eINSTANCE.getcomponent_clause1();
 
     /**
-     * The meta object literal for the '<em><b>Ele</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.type_prefixImpl <em>type prefix</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.type_prefixImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#gettype_prefix()
      * @generated
      */
-    EReference PRO_ELEMENT_LIST__ELE = eINSTANCE.getProElementList_Ele();
+    EClass TYPE_PREFIX = eINSTANCE.gettype_prefix();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ExtElementListImpl <em>Ext Element List</em>}' class.
+     * The meta object literal for the '<em><b>Relationship Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ExtElementListImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExtElementList()
      * @generated
      */
-    EClass EXT_ELEMENT_LIST = eINSTANCE.getExtElementList();
+    EAttribute TYPE_PREFIX__RELATIONSHIP_TYPE = eINSTANCE.gettype_prefix_RelationshipType();
 
     /**
-     * The meta object literal for the '<em><b>Ext lang spec</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Parameter Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXT_ELEMENT_LIST__EXT_LANG_SPEC = eINSTANCE.getExtElementList_Ext_lang_spec();
+    EAttribute TYPE_PREFIX__PARAMETER_TYPE = eINSTANCE.gettype_prefix_ParameterType();
 
     /**
-     * The meta object literal for the '<em><b>Ext func call</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Direction Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXT_ELEMENT_LIST__EXT_FUNC_CALL = eINSTANCE.getExtElementList_Ext_func_call();
+    EAttribute TYPE_PREFIX__DIRECTION_TYPE = eINSTANCE.gettype_prefix_DirectionType();
 
     /**
-     * The meta object literal for the '<em><b>Ext anno</b></em>' containment reference feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.component_declaration1Impl <em>component declaration1</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.component_declaration1Impl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getcomponent_declaration1()
      * @generated
      */
-    EReference EXT_ELEMENT_LIST__EXT_ANNO = eINSTANCE.getExtElementList_Ext_anno();
+    EClass COMPONENT_DECLARATION1 = eINSTANCE.getcomponent_declaration1();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ExternalFunctionCallImpl <em>External Function Call</em>}' class.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.declarationImpl <em>declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ExternalFunctionCallImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExternalFunctionCall()
+     * @see dut.control.moloc.mOloc.impl.declarationImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getdeclaration()
      * @generated
      */
-    EClass EXTERNAL_FUNCTION_CALL = eINSTANCE.getExternalFunctionCall();
+    EClass DECLARATION = eINSTANCE.getdeclaration();
 
     /**
-     * The meta object literal for the '<em><b>Lhs</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Declaration Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXTERNAL_FUNCTION_CALL__LHS = eINSTANCE.getExternalFunctionCall_Lhs();
+    EAttribute DECLARATION__DECLARATION_NAME = eINSTANCE.getdeclaration_DeclarationName();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.array_subscriptsImpl <em>array subscripts</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.array_subscriptsImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getarray_subscripts()
      * @generated
      */
-    EAttribute EXTERNAL_FUNCTION_CALL__NAME = eINSTANCE.getExternalFunctionCall_Name();
+    EClass ARRAY_SUBSCRIPTS = eINSTANCE.getarray_subscripts();
 
     /**
-     * The meta object literal for the '<em><b>Args</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Subscript</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXTERNAL_FUNCTION_CALL__ARGS = eINSTANCE.getExternalFunctionCall_Args();
+    EAttribute ARRAY_SUBSCRIPTS__SUBSCRIPT = eINSTANCE.getarray_subscripts_Subscript();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ElementListImpl <em>Element List</em>}' class.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.Unfinished2Impl <em>Unfinished2</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ElementListImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElementList()
+     * @see dut.control.moloc.mOloc.impl.Unfinished2Impl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getUnfinished2()
      * @generated
      */
-    EClass ELEMENT_LIST = eINSTANCE.getElementList();
+    EClass UNFINISHED2 = eINSTANCE.getUnfinished2();
 
     /**
-     * The meta object literal for the '<em><b>Elem</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Aa</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ELEMENT_LIST__ELEM = eINSTANCE.getElementList_Elem();
+    EAttribute UNFINISHED2__AA = eINSTANCE.getUnfinished2_Aa();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.modificationImpl <em>modification</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.modificationImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getmodification()
+     * @generated
+     */
+    EClass MODIFICATION = eINSTANCE.getmodification();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODIFICATION__EXPRESSION = eINSTANCE.getmodification_Expression();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.constraining_clauseImpl <em>constraining clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.constraining_clauseImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getconstraining_clause()
+     * @generated
+     */
+    EClass CONSTRAINING_CLAUSE = eINSTANCE.getconstraining_clause();
+
+    /**
+     * The meta object literal for the '<em><b>Elements2</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONSTRAINING_CLAUSE__ELEMENTS2 = eINSTANCE.getconstraining_clause_Elements2();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ElementImpl <em>Element</em>}' class.
@@ -9195,54 +4144,36 @@ public interface MOlocPackage extends EPackage
     EClass IMPORT_CLAUSE = eINSTANCE.getImportClause();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Self Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute IMPORT_CLAUSE__ID = eINSTANCE.getImportClause_Id();
+    EAttribute IMPORT_CLAUSE__SELF_NAME = eINSTANCE.getImportClause_SelfName();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Import Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute IMPORT_CLAUSE__NAME = eINSTANCE.getImportClause_Name();
+    EAttribute IMPORT_CLAUSE__IMPORT_NAME = eINSTANCE.getImportClause_ImportName();
 
     /**
-     * The meta object literal for the '<em><b>List</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Is Import All</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IMPORT_CLAUSE__LIST = eINSTANCE.getImportClause_List();
+    EAttribute IMPORT_CLAUSE__IS_IMPORT_ALL = eINSTANCE.getImportClause_IsImportAll();
 
     /**
-     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Object Name</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IMPORT_CLAUSE__COMMENT = eINSTANCE.getImportClause_Comment();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ImportListImpl <em>Import List</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ImportListImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getImportList()
-     * @generated
-     */
-    EClass IMPORT_LIST = eINSTANCE.getImportList();
-
-    /**
-     * The meta object literal for the '<em><b>Names</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPORT_LIST__NAMES = eINSTANCE.getImportList_Names();
+    EAttribute IMPORT_CLAUSE__OBJECT_NAME = eINSTANCE.getImportClause_ObjectName();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl <em>Extends Clause</em>}' class.
@@ -9255,810 +4186,20 @@ public interface MOlocPackage extends EPackage
     EClass EXTENDS_CLAUSE = eINSTANCE.getExtendsClause();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Breaks</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXTENDS_CLAUSE__NAME = eINSTANCE.getExtendsClause_Name();
+    EReference EXTENDS_CLAUSE__BREAKS = eINSTANCE.getExtendsClause_Breaks();
 
     /**
-     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Is Annotation</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXTENDS_CLAUSE__MOD = eINSTANCE.getExtendsClause_Mod();
-
-    /**
-     * The meta object literal for the '<em><b>Anno</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXTENDS_CLAUSE__ANNO = eINSTANCE.getExtendsClause_Anno();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.typeClauseImpl <em>type Clause</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.typeClauseImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#gettypeClause()
-     * @generated
-     */
-    EClass TYPE_CLAUSE = eINSTANCE.gettypeClause();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_CLAUSE__NAME = eINSTANCE.gettypeClause_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Base Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_CLAUSE__BASE_TYPE = eINSTANCE.gettypeClause_BaseType();
-
-    /**
-     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_CLAUSE__MOD = eINSTANCE.gettypeClause_Mod();
-
-    /**
-     * The meta object literal for the '<em><b>Anno</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_CLAUSE__ANNO = eINSTANCE.gettypeClause_Anno();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ConstrainingClauseImpl <em>Constraining Clause</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ConstrainingClauseImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getConstrainingClause()
-     * @generated
-     */
-    EClass CONSTRAINING_CLAUSE = eINSTANCE.getConstrainingClause();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONSTRAINING_CLAUSE__NAME = eINSTANCE.getConstrainingClause_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CONSTRAINING_CLAUSE__MOD = eINSTANCE.getConstrainingClause_Mod();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl <em>Component Clause</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ComponentClauseImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentClause()
-     * @generated
-     */
-    EClass COMPONENT_CLAUSE = eINSTANCE.getComponentClause();
-
-    /**
-     * The meta object literal for the '<em><b>Constraining</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_CLAUSE__CONSTRAINING = eINSTANCE.getComponentClause_Constraining();
-
-    /**
-     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_CLAUSE__COMMENT = eINSTANCE.getComponentClause_Comment();
-
-    /**
-     * The meta object literal for the '<em><b>Prefix</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COMPONENT_CLAUSE__PREFIX = eINSTANCE.getComponentClause_Prefix();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_CLAUSE__TYPE = eINSTANCE.getComponentClause_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Subs</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_CLAUSE__SUBS = eINSTANCE.getComponentClause_Subs();
-
-    /**
-     * The meta object literal for the '<em><b>Comps</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_CLAUSE__COMPS = eINSTANCE.getComponentClause_Comps();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.TypeSpecifierImpl <em>Type Specifier</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.TypeSpecifierImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getTypeSpecifier()
-     * @generated
-     */
-    EClass TYPE_SPECIFIER = eINSTANCE.getTypeSpecifier();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_SPECIFIER__NAME = eINSTANCE.getTypeSpecifier_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Name1</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_SPECIFIER__NAME1 = eINSTANCE.getTypeSpecifier_Name1();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ComponentListImpl <em>Component List</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ComponentListImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentList()
-     * @generated
-     */
-    EClass COMPONENT_LIST = eINSTANCE.getComponentList();
-
-    /**
-     * The meta object literal for the '<em><b>Comps</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_LIST__COMPS = eINSTANCE.getComponentList_Comps();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ComponentDeclarationImpl <em>Component Declaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ComponentDeclarationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentDeclaration()
-     * @generated
-     */
-    EClass COMPONENT_DECLARATION = eINSTANCE.getComponentDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Decl</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_DECLARATION__DECL = eINSTANCE.getComponentDeclaration_Decl();
-
-    /**
-     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_DECLARATION__COND = eINSTANCE.getComponentDeclaration_Cond();
-
-    /**
-     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_DECLARATION__COMMENT = eINSTANCE.getComponentDeclaration_Comment();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ConditionAttributeImpl <em>Condition Attribute</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ConditionAttributeImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getConditionAttribute()
-     * @generated
-     */
-    EClass CONDITION_ATTRIBUTE = eINSTANCE.getConditionAttribute();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.DeclarationImpl <em>Declaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.DeclarationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getDeclaration()
-     * @generated
-     */
-    EClass DECLARATION = eINSTANCE.getDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DECLARATION__NAME = eINSTANCE.getDeclaration_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DECLARATION__TYPE = eINSTANCE.getDeclaration_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Subscripts</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DECLARATION__SUBSCRIPTS = eINSTANCE.getDeclaration_Subscripts();
-
-    /**
-     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DECLARATION__MOD = eINSTANCE.getDeclaration_Mod();
-
-    /**
-     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DECLARATION__COMMENT = eINSTANCE.getDeclaration_Comment();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ModificationImpl <em>Modification</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ModificationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getModification()
-     * @generated
-     */
-    EClass MODIFICATION = eINSTANCE.getModification();
-
-    /**
-     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODIFICATION__MOD = eINSTANCE.getModification_Mod();
-
-    /**
-     * The meta object literal for the '<em><b>Dh</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MODIFICATION__DH = eINSTANCE.getModification_Dh();
-
-    /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODIFICATION__EXPR = eINSTANCE.getModification_Expr();
-
-    /**
-     * The meta object literal for the '<em><b>Mh</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MODIFICATION__MH = eINSTANCE.getModification_Mh();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ClassModificationImpl <em>Class Modification</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ClassModificationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClassModification()
-     * @generated
-     */
-    EClass CLASS_MODIFICATION = eINSTANCE.getClassModification();
-
-    /**
-     * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CLASS_MODIFICATION__ARGS = eINSTANCE.getClassModification_Args();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ArgumentListImpl <em>Argument List</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ArgumentListImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArgumentList()
-     * @generated
-     */
-    EClass ARGUMENT_LIST = eINSTANCE.getArgumentList();
-
-    /**
-     * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARGUMENT_LIST__ARGS = eINSTANCE.getArgumentList_Args();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ArgumentImpl <em>Argument</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ArgumentImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArgument()
-     * @generated
-     */
-    EClass ARGUMENT = eINSTANCE.getArgument();
-
-    /**
-     * The meta object literal for the '<em><b>Each</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ARGUMENT__EACH = eINSTANCE.getArgument_Each();
-
-    /**
-     * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ARGUMENT__FINAL = eINSTANCE.getArgument_Final();
-
-    /**
-     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARGUMENT__ELEMENT = eINSTANCE.getArgument_Element();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ElementModicationOrReplaceableImpl <em>Element Modication Or Replaceable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ElementModicationOrReplaceableImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElementModicationOrReplaceable()
-     * @generated
-     */
-    EClass ELEMENT_MODICATION_OR_REPLACEABLE = eINSTANCE.getElementModicationOrReplaceable();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ElementModificationImpl <em>Element Modification</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ElementModificationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElementModification()
-     * @generated
-     */
-    EClass ELEMENT_MODIFICATION = eINSTANCE.getElementModification();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEMENT_MODIFICATION__NAME = eINSTANCE.getElementModification_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Mod</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ELEMENT_MODIFICATION__MOD = eINSTANCE.getElementModification_Mod();
-
-    /**
-     * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEMENT_MODIFICATION__COMMENT = eINSTANCE.getElementModification_Comment();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ElementRedeclarationImpl <em>Element Redeclaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ElementRedeclarationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElementRedeclaration()
-     * @generated
-     */
-    EClass ELEMENT_REDECLARATION = eINSTANCE.getElementRedeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Redeclare</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEMENT_REDECLARATION__REDECLARE = eINSTANCE.getElementRedeclaration_Redeclare();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ElementReplaceableImpl <em>Element Replaceable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ElementReplaceableImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElementReplaceable()
-     * @generated
-     */
-    EClass ELEMENT_REPLACEABLE = eINSTANCE.getElementReplaceable();
-
-    /**
-     * The meta object literal for the '<em><b>Replaceable</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEMENT_REPLACEABLE__REPLACEABLE = eINSTANCE.getElementReplaceable_Replaceable();
-
-    /**
-     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ELEMENT_REPLACEABLE__ELEMENT = eINSTANCE.getElementReplaceable_Element();
-
-    /**
-     * The meta object literal for the '<em><b>Const</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ELEMENT_REPLACEABLE__CONST = eINSTANCE.getElementReplaceable_Const();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ComponentClause1Impl <em>Component Clause1</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ComponentClause1Impl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentClause1()
-     * @generated
-     */
-    EClass COMPONENT_CLAUSE1 = eINSTANCE.getComponentClause1();
-
-    /**
-     * The meta object literal for the '<em><b>Prefix</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COMPONENT_CLAUSE1__PREFIX = eINSTANCE.getComponentClause1_Prefix();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_CLAUSE1__TYPE = eINSTANCE.getComponentClause1_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Subs</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_CLAUSE1__SUBS = eINSTANCE.getComponentClause1_Subs();
-
-    /**
-     * The meta object literal for the '<em><b>Comp</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_CLAUSE1__COMP = eINSTANCE.getComponentClause1_Comp();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ComponentDeclaration1Impl <em>Component Declaration1</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ComponentDeclaration1Impl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentDeclaration1()
-     * @generated
-     */
-    EClass COMPONENT_DECLARATION1 = eINSTANCE.getComponentDeclaration1();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ShortClassDefinitionImpl <em>Short Class Definition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ShortClassDefinitionImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getShortClassDefinition()
-     * @generated
-     */
-    EClass SHORT_CLASS_DEFINITION = eINSTANCE.getShortClassDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SHORT_CLASS_DEFINITION__NAME = eINSTANCE.getShortClassDefinition_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SHORT_CLASS_DEFINITION__TYPE = eINSTANCE.getShortClassDefinition_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Asts</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SHORT_CLASS_DEFINITION__ASTS = eINSTANCE.getShortClassDefinition_Asts();
-
-    /**
-     * The meta object literal for the '<em><b>Mode</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SHORT_CLASS_DEFINITION__MODE = eINSTANCE.getShortClassDefinition_Mode();
-
-    /**
-     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SHORT_CLASS_DEFINITION__COMMENT = eINSTANCE.getShortClassDefinition_Comment();
-
-    /**
-     * The meta object literal for the '<em><b>Elementnum</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SHORT_CLASS_DEFINITION__ELEMENTNUM = eINSTANCE.getShortClassDefinition_Elementnum();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ElementenumeratioanImpl <em>Elementenumeratioan</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ElementenumeratioanImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElementenumeratioan()
-     * @generated
-     */
-    EClass ELEMENTENUMERATIOAN = eINSTANCE.getElementenumeratioan();
-
-    /**
-     * The meta object literal for the '<em><b>Enumeratioan</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEMENTENUMERATIOAN__ENUMERATIOAN = eINSTANCE.getElementenumeratioan_Enumeratioan();
-
-    /**
-     * The meta object literal for the '<em><b>List</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ELEMENTENUMERATIOAN__LIST = eINSTANCE.getElementenumeratioan_List();
-
-    /**
-     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ELEMENTENUMERATIOAN__COMMENT = eINSTANCE.getElementenumeratioan_Comment();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.EquationSectionImpl <em>Equation Section</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.EquationSectionImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEquationSection()
-     * @generated
-     */
-    EClass EQUATION_SECTION = eINSTANCE.getEquationSection();
-
-    /**
-     * The meta object literal for the '<em><b>Initial</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EQUATION_SECTION__INITIAL = eINSTANCE.getEquationSection_Initial();
-
-    /**
-     * The meta object literal for the '<em><b>Equations</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EQUATION_SECTION__EQUATIONS = eINSTANCE.getEquationSection_Equations();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.AlgorithmSectionImpl <em>Algorithm Section</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.AlgorithmSectionImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAlgorithmSection()
-     * @generated
-     */
-    EClass ALGORITHM_SECTION = eINSTANCE.getAlgorithmSection();
-
-    /**
-     * The meta object literal for the '<em><b>Initial</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ALGORITHM_SECTION__INITIAL = eINSTANCE.getAlgorithmSection_Initial();
-
-    /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ALGORITHM_SECTION__STATEMENTS = eINSTANCE.getAlgorithmSection_Statements();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.EquationImpl <em>Equation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.EquationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEquation()
-     * @generated
-     */
-    EClass EQUATION = eINSTANCE.getEquation();
-
-    /**
-     * The meta object literal for the '<em><b>Commment</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EQUATION__COMMMENT = eINSTANCE.getEquation_Commment();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.LREquationImpl <em>LR Equation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.LREquationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLREquation()
-     * @generated
-     */
-    EClass LR_EQUATION = eINSTANCE.getLREquation();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LR_EQUATION__LEFT = eINSTANCE.getLREquation_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LR_EQUATION__RIGHT = eINSTANCE.getLREquation_Right();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.StatementImpl <em>Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.StatementImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getStatement()
-     * @generated
-     */
-    EClass STATEMENT = eINSTANCE.getStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Comment</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__COMMENT = eINSTANCE.getStatement_Comment();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.LRStatementImpl <em>LR Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.LRStatementImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLRStatement()
-     * @generated
-     */
-    EClass LR_STATEMENT = eINSTANCE.getLRStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LR_STATEMENT__LEFT = eINSTANCE.getLRStatement_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LR_STATEMENT__RIGHT = eINSTANCE.getLRStatement_Right();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.LRKStatementImpl <em>LRK Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.LRKStatementImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLRKStatement()
-     * @generated
-     */
-    EClass LRK_STATEMENT = eINSTANCE.getLRKStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Ref</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LRK_STATEMENT__REF = eINSTANCE.getLRKStatement_Ref();
-
-    /**
-     * The meta object literal for the '<em><b>Ref call</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LRK_STATEMENT__REF_CALL = eINSTANCE.getLRKStatement_Ref_call();
+    EAttribute EXTENDS_CLAUSE__IS_ANNOTATION = eINSTANCE.getExtendsClause_IsAnnotation();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.BreakImpl <em>Break</em>}' class.
@@ -10071,1130 +4212,188 @@ public interface MOlocPackage extends EPackage
     EClass BREAK = eINSTANCE.getBreak();
 
     /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Connect</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BREAK__VAL = eINSTANCE.getBreak_Val();
+    EReference BREAK__CONNECT = eINSTANCE.getBreak_Connect();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ReturnImpl <em>Return</em>}' class.
+     * The meta object literal for the '<em><b>Break Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ReturnImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getReturn()
      * @generated
      */
-    EClass RETURN = eINSTANCE.getReturn();
+    EAttribute BREAK__BREAK_NAME = eINSTANCE.getBreak_BreakName();
 
     /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl <em>General Clause</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.GeneralClauseImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getGeneralClause()
      * @generated
      */
-    EAttribute RETURN__VAL = eINSTANCE.getReturn_Val();
+    EClass GENERAL_CLAUSE = eINSTANCE.getGeneralClause();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.IfEquationImpl <em>If Equation</em>}' class.
+     * The meta object literal for the '<em><b>Is Redeclare</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.IfEquationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getIfEquation()
      * @generated
      */
-    EClass IF_EQUATION = eINSTANCE.getIfEquation();
+    EAttribute GENERAL_CLAUSE__IS_REDECLARE = eINSTANCE.getGeneralClause_IsRedeclare();
 
     /**
-     * The meta object literal for the '<em><b>If expr</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Isfinal</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF_EQUATION__IF_EXPR = eINSTANCE.getIfEquation_If_expr();
+    EAttribute GENERAL_CLAUSE__ISFINAL = eINSTANCE.getGeneralClause_Isfinal();
 
     /**
-     * The meta object literal for the '<em><b>If eqs</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Is Inner</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF_EQUATION__IF_EQS = eINSTANCE.getIfEquation_If_eqs();
+    EAttribute GENERAL_CLAUSE__IS_INNER = eINSTANCE.getGeneralClause_IsInner();
 
     /**
-     * The meta object literal for the '<em><b>Elsif exprs</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Is Outer</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF_EQUATION__ELSIF_EXPRS = eINSTANCE.getIfEquation_Elsif_exprs();
+    EAttribute GENERAL_CLAUSE__IS_OUTER = eINSTANCE.getGeneralClause_IsOuter();
 
     /**
-     * The meta object literal for the '<em><b>Elseif eqs</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Is Replaceable</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF_EQUATION__ELSEIF_EQS = eINSTANCE.getIfEquation_Elseif_eqs();
+    EAttribute GENERAL_CLAUSE__IS_REPLACEABLE = eINSTANCE.getGeneralClause_IsReplaceable();
 
     /**
-     * The meta object literal for the '<em><b>Else eqs</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Component list</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF_EQUATION__ELSE_EQS = eINSTANCE.getIfEquation_Else_eqs();
+    EReference GENERAL_CLAUSE__COMPONENT_LIST = eINSTANCE.getGeneralClause_Component_list();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.IfStatementImpl <em>If Statement</em>}' class.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.Component_declarationImpl <em>Component declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.IfStatementImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getIfStatement()
+     * @see dut.control.moloc.mOloc.impl.Component_declarationImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponent_declaration()
      * @generated
      */
-    EClass IF_STATEMENT = eINSTANCE.getIfStatement();
+    EClass COMPONENT_DECLARATION = eINSTANCE.getComponent_declaration();
 
     /**
-     * The meta object literal for the '<em><b>If expr</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Condition attribute</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF_STATEMENT__IF_EXPR = eINSTANCE.getIfStatement_If_expr();
+    EAttribute COMPONENT_DECLARATION__CONDITION_ATTRIBUTE = eINSTANCE.getComponent_declaration_Condition_attribute();
 
     /**
-     * The meta object literal for the '<em><b>If stmts</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ExternalElementImpl <em>External Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.ExternalElementImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExternalElement()
      * @generated
      */
-    EReference IF_STATEMENT__IF_STMTS = eINSTANCE.getIfStatement_If_stmts();
+    EClass EXTERNAL_ELEMENT = eINSTANCE.getExternalElement();
 
     /**
-     * The meta object literal for the '<em><b>Elseif exprs</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Language specification</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF_STATEMENT__ELSEIF_EXPRS = eINSTANCE.getIfStatement_Elseif_exprs();
+    EAttribute EXTERNAL_ELEMENT__LANGUAGE_SPECIFICATION = eINSTANCE.getExternalElement_Language_specification();
 
     /**
-     * The meta object literal for the '<em><b>Elseif stmts</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Ref</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF_STATEMENT__ELSEIF_STMTS = eINSTANCE.getIfStatement_Elseif_stmts();
+    EAttribute EXTERNAL_ELEMENT__REF = eINSTANCE.getExternalElement_Ref();
 
     /**
-     * The meta object literal for the '<em><b>Else stmts</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Is Annotation</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF_STATEMENT__ELSE_STMTS = eINSTANCE.getIfStatement_Else_stmts();
+    EAttribute EXTERNAL_ELEMENT__IS_ANNOTATION = eINSTANCE.getExternalElement_IsAnnotation();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ForEquationImpl <em>For Equation</em>}' class.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.NULLElementImpl <em>NULL Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ForEquationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getForEquation()
+     * @see dut.control.moloc.mOloc.impl.NULLElementImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getNULLElement()
      * @generated
      */
-    EClass FOR_EQUATION = eINSTANCE.getForEquation();
+    EClass NULL_ELEMENT = eINSTANCE.getNULLElement();
 
     /**
-     * The meta object literal for the '<em><b>Indices</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Nullname</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FOR_EQUATION__INDICES = eINSTANCE.getForEquation_Indices();
+    EAttribute NULL_ELEMENT__NULLNAME = eINSTANCE.getNULLElement_Nullname();
 
     /**
-     * The meta object literal for the '<em><b>Eqs</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.ClassType <em>Class Type</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.ClassType
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClassType()
      * @generated
      */
-    EReference FOR_EQUATION__EQS = eINSTANCE.getForEquation_Eqs();
+    EEnum CLASS_TYPE = eINSTANCE.getClassType();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ForStatementImpl <em>For Statement</em>}' class.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.Direction <em>Direction</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ForStatementImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getForStatement()
+     * @see dut.control.moloc.mOloc.Direction
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getDirection()
      * @generated
      */
-    EClass FOR_STATEMENT = eINSTANCE.getForStatement();
+    EEnum DIRECTION = eINSTANCE.getDirection();
 
     /**
-     * The meta object literal for the '<em><b>Indices</b></em>' containment reference feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.RelationshipType <em>Relationship Type</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.RelationshipType
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getRelationshipType()
      * @generated
      */
-    EReference FOR_STATEMENT__INDICES = eINSTANCE.getForStatement_Indices();
+    EEnum RELATIONSHIP_TYPE = eINSTANCE.getRelationshipType();
 
     /**
-     * The meta object literal for the '<em><b>Stmts</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.ParameterType <em>Parameter Type</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.ParameterType
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getParameterType()
      * @generated
      */
-    EReference FOR_STATEMENT__STMTS = eINSTANCE.getForStatement_Stmts();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ForIndicesImpl <em>For Indices</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ForIndicesImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getForIndices()
-     * @generated
-     */
-    EClass FOR_INDICES = eINSTANCE.getForIndices();
-
-    /**
-     * The meta object literal for the '<em><b>Indices</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOR_INDICES__INDICES = eINSTANCE.getForIndices_Indices();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ForIndexImpl <em>For Index</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ForIndexImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getForIndex()
-     * @generated
-     */
-    EClass FOR_INDEX = eINSTANCE.getForIndex();
-
-    /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FOR_INDEX__ID = eINSTANCE.getForIndex_Id();
-
-    /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOR_INDEX__EXPR = eINSTANCE.getForIndex_Expr();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.WhileStatementImpl <em>While Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.WhileStatementImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getWhileStatement()
-     * @generated
-     */
-    EClass WHILE_STATEMENT = eINSTANCE.getWhileStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHILE_STATEMENT__COND = eINSTANCE.getWhileStatement_Cond();
-
-    /**
-     * The meta object literal for the '<em><b>Stmts</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHILE_STATEMENT__STMTS = eINSTANCE.getWhileStatement_Stmts();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.WhenEquationImpl <em>When Equation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.WhenEquationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getWhenEquation()
-     * @generated
-     */
-    EClass WHEN_EQUATION = eINSTANCE.getWhenEquation();
-
-    /**
-     * The meta object literal for the '<em><b>When</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHEN_EQUATION__WHEN = eINSTANCE.getWhenEquation_When();
-
-    /**
-     * The meta object literal for the '<em><b>When eqs</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHEN_EQUATION__WHEN_EQS = eINSTANCE.getWhenEquation_When_eqs();
-
-    /**
-     * The meta object literal for the '<em><b>Elsehwhen</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHEN_EQUATION__ELSEHWHEN = eINSTANCE.getWhenEquation_Elsehwhen();
-
-    /**
-     * The meta object literal for the '<em><b>Elsewhen eqs</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHEN_EQUATION__ELSEWHEN_EQS = eINSTANCE.getWhenEquation_Elsewhen_eqs();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.WhenStatementImpl <em>When Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.WhenStatementImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getWhenStatement()
-     * @generated
-     */
-    EClass WHEN_STATEMENT = eINSTANCE.getWhenStatement();
-
-    /**
-     * The meta object literal for the '<em><b>When</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHEN_STATEMENT__WHEN = eINSTANCE.getWhenStatement_When();
-
-    /**
-     * The meta object literal for the '<em><b>When stmts</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHEN_STATEMENT__WHEN_STMTS = eINSTANCE.getWhenStatement_When_stmts();
-
-    /**
-     * The meta object literal for the '<em><b>Elsehwhen</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHEN_STATEMENT__ELSEHWHEN = eINSTANCE.getWhenStatement_Elsehwhen();
-
-    /**
-     * The meta object literal for the '<em><b>Elsewhen stmts</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHEN_STATEMENT__ELSEWHEN_STMTS = eINSTANCE.getWhenStatement_Elsewhen_stmts();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ConnectClauseImpl <em>Connect Clause</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ConnectClauseImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getConnectClause()
-     * @generated
-     */
-    EClass CONNECT_CLAUSE = eINSTANCE.getConnectClause();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CONNECT_CLAUSE__LEFT = eINSTANCE.getConnectClause_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CONNECT_CLAUSE__RIGHT = eINSTANCE.getConnectClause_Right();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ExpressionImpl <em>Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ExpressionImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExpression()
-     * @generated
-     */
-    EClass EXPRESSION = eINSTANCE.getExpression();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.IfExpressionImpl <em>If Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.IfExpressionImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getIfExpression()
-     * @generated
-     */
-    EClass IF_EXPRESSION = eINSTANCE.getIfExpression();
-
-    /**
-     * The meta object literal for the '<em><b>If</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_EXPRESSION__IF = eINSTANCE.getIfExpression_If();
-
-    /**
-     * The meta object literal for the '<em><b>Then</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_EXPRESSION__THEN = eINSTANCE.getIfExpression_Then();
-
-    /**
-     * The meta object literal for the '<em><b>Elseif</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_EXPRESSION__ELSEIF = eINSTANCE.getIfExpression_Elseif();
-
-    /**
-     * The meta object literal for the '<em><b>Elseifthen</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_EXPRESSION__ELSEIFTHEN = eINSTANCE.getIfExpression_Elseifthen();
-
-    /**
-     * The meta object literal for the '<em><b>Else</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_EXPRESSION__ELSE = eINSTANCE.getIfExpression_Else();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.SimpleExpressionImpl <em>Simple Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.SimpleExpressionImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getSimpleExpression()
-     * @generated
-     */
-    EClass SIMPLE_EXPRESSION = eINSTANCE.getSimpleExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Exprs</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SIMPLE_EXPRESSION__EXPRS = eINSTANCE.getSimpleExpression_Exprs();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.LogicalExpressionImpl <em>Logical Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.LogicalExpressionImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLogicalExpression()
-     * @generated
-     */
-    EClass LOGICAL_EXPRESSION = eINSTANCE.getLogicalExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Terms</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LOGICAL_EXPRESSION__TERMS = eINSTANCE.getLogicalExpression_Terms();
-
-    /**
-     * The meta object literal for the '<em><b>Ro</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LOGICAL_EXPRESSION__RO = eINSTANCE.getLogicalExpression_Ro();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.LogicalTermImpl <em>Logical Term</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.LogicalTermImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLogicalTerm()
-     * @generated
-     */
-    EClass LOGICAL_TERM = eINSTANCE.getLogicalTerm();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.LogicalFactorImpl <em>Logical Factor</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.LogicalFactorImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLogicalFactor()
-     * @generated
-     */
-    EClass LOGICAL_FACTOR = eINSTANCE.getLogicalFactor();
-
-    /**
-     * The meta object literal for the '<em><b>Factors</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LOGICAL_FACTOR__FACTORS = eINSTANCE.getLogicalFactor_Factors();
-
-    /**
-     * The meta object literal for the '<em><b>Dna</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LOGICAL_FACTOR__DNA = eINSTANCE.getLogicalFactor_Dna();
-
-    /**
-     * The meta object literal for the '<em><b>Noot</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LOGICAL_FACTOR__NOOT = eINSTANCE.getLogicalFactor_Noot();
-
-    /**
-     * The meta object literal for the '<em><b>Rel</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LOGICAL_FACTOR__REL = eINSTANCE.getLogicalFactor_Rel();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.RelationImpl <em>Relation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.RelationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getRelation()
-     * @generated
-     */
-    EClass RELATION = eINSTANCE.getRelation();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RELATION__LEFT = eINSTANCE.getRelation_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Rel op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute RELATION__REL_OP = eINSTANCE.getRelation_Rel_op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RELATION__RIGHT = eINSTANCE.getRelation_Right();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ArithmeticExpressionImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArithmeticExpression()
-     * @generated
-     */
-    EClass ARITHMETIC_EXPRESSION = eINSTANCE.getArithmeticExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Add op</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ARITHMETIC_EXPRESSION__ADD_OP = eINSTANCE.getArithmeticExpression_Add_op();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.NegationImpl <em>Negation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.NegationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getNegation()
-     * @generated
-     */
-    EClass NEGATION = eINSTANCE.getNegation();
-
-    /**
-     * The meta object literal for the '<em><b>Neg op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NEGATION__NEG_OP = eINSTANCE.getNegation_Neg_op();
-
-    /**
-     * The meta object literal for the '<em><b>Term</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NEGATION__TERM = eINSTANCE.getNegation_Term();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.TermImpl <em>Term</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.TermImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getTerm()
-     * @generated
-     */
-    EClass TERM = eINSTANCE.getTerm();
-
-    /**
-     * The meta object literal for the '<em><b>Mul op</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TERM__MUL_OP = eINSTANCE.getTerm_Mul_op();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.FactorImpl <em>Factor</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.FactorImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFactor()
-     * @generated
-     */
-    EClass FACTOR = eINSTANCE.getFactor();
-
-    /**
-     * The meta object literal for the '<em><b>Base</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FACTOR__BASE = eINSTANCE.getFactor_Base();
-
-    /**
-     * The meta object literal for the '<em><b>Cf</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FACTOR__CF = eINSTANCE.getFactor_Cf();
-
-    /**
-     * The meta object literal for the '<em><b>Dcf</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FACTOR__DCF = eINSTANCE.getFactor_Dcf();
-
-    /**
-     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FACTOR__EXP = eINSTANCE.getFactor_Exp();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.FloatPrimaryImpl <em>Float Primary</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.FloatPrimaryImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFloatPrimary()
-     * @generated
-     */
-    EClass FLOAT_PRIMARY = eINSTANCE.getFloatPrimary();
-
-    /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FLOAT_PRIMARY__VAL = eINSTANCE.getFloatPrimary_Val();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.StringPrimaryImpl <em>String Primary</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.StringPrimaryImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getStringPrimary()
-     * @generated
-     */
-    EClass STRING_PRIMARY = eINSTANCE.getStringPrimary();
-
-    /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute STRING_PRIMARY__VAL = eINSTANCE.getStringPrimary_Val();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.LogicalPrimaryImpl <em>Logical Primary</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.LogicalPrimaryImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getLogicalPrimary()
-     * @generated
-     */
-    EClass LOGICAL_PRIMARY = eINSTANCE.getLogicalPrimary();
-
-    /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LOGICAL_PRIMARY__VAL = eINSTANCE.getLogicalPrimary_Val();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.EndImpl <em>End</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.EndImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEnd()
-     * @generated
-     */
-    EClass END = eINSTANCE.getEnd();
-
-    /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute END__VAL = eINSTANCE.getEnd_Val();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.PrimaryImpl <em>Primary</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.PrimaryImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getPrimary()
-     * @generated
-     */
-    EClass PRIMARY = eINSTANCE.getPrimary();
-
-    /**
-     * The meta object literal for the '<em><b>Oe</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRIMARY__OE = eINSTANCE.getPrimary_Oe();
-
-    /**
-     * The meta object literal for the '<em><b>Res</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRIMARY__RES = eINSTANCE.getPrimary_Res();
-
-    /**
-     * The meta object literal for the '<em><b>Fa</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRIMARY__FA = eINSTANCE.getPrimary_Fa();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.Array_argumentsImpl <em>Array arguments</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.Array_argumentsImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArray_arguments()
-     * @generated
-     */
-    EClass ARRAY_ARGUMENTS = eINSTANCE.getArray_arguments();
-
-    /**
-     * The meta object literal for the '<em><b>Express</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARRAY_ARGUMENTS__EXPRESS = eINSTANCE.getArray_arguments_Express();
-
-    /**
-     * The meta object literal for the '<em><b>Argu</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARRAY_ARGUMENTS__ARGU = eINSTANCE.getArray_arguments_Argu();
-
-    /**
-     * The meta object literal for the '<em><b>Fori</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARRAY_ARGUMENTS__FORI = eINSTANCE.getArray_arguments_Fori();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.Array_arguments_non_firstImpl <em>Array arguments non first</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.Array_arguments_non_firstImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArray_arguments_non_first()
-     * @generated
-     */
-    EClass ARRAY_ARGUMENTS_NON_FIRST = eINSTANCE.getArray_arguments_non_first();
-
-    /**
-     * The meta object literal for the '<em><b>Express</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARRAY_ARGUMENTS_NON_FIRST__EXPRESS = eINSTANCE.getArray_arguments_non_first_Express();
-
-    /**
-     * The meta object literal for the '<em><b>Argu</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARRAY_ARGUMENTS_NON_FIRST__ARGU = eINSTANCE.getArray_arguments_non_first_Argu();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.FunctionCallImpl <em>Function Call</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.FunctionCallImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionCall()
-     * @generated
-     */
-    EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
-
-    /**
-     * The meta object literal for the '<em><b>Comp ref</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_CALL__COMP_REF = eINSTANCE.getFunctionCall_Comp_ref();
-
-    /**
-     * The meta object literal for the '<em><b>Args</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_CALL__ARGS = eINSTANCE.getFunctionCall_Args();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ComponentReferenceImpl <em>Component Reference</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ComponentReferenceImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponentReference()
-     * @generated
-     */
-    EClass COMPONENT_REFERENCE = eINSTANCE.getComponentReference();
-
-    /**
-     * The meta object literal for the '<em><b>Idents</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COMPONENT_REFERENCE__IDENTS = eINSTANCE.getComponentReference_Idents();
-
-    /**
-     * The meta object literal for the '<em><b>Subscripts</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT_REFERENCE__SUBSCRIPTS = eINSTANCE.getComponentReference_Subscripts();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.FunctionCallArgsImpl <em>Function Call Args</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.FunctionCallArgsImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionCallArgs()
-     * @generated
-     */
-    EClass FUNCTION_CALL_ARGS = eINSTANCE.getFunctionCallArgs();
-
-    /**
-     * The meta object literal for the '<em><b>Res</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_CALL_ARGS__RES = eINSTANCE.getFunctionCallArgs_Res();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.FunctionArgumentsImpl <em>Function Arguments</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.FunctionArgumentsImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionArguments()
-     * @generated
-     */
-    EClass FUNCTION_ARGUMENTS = eINSTANCE.getFunctionArguments();
-
-    /**
-     * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_ARGUMENTS__ARGS = eINSTANCE.getFunctionArguments_Args();
-
-    /**
-     * The meta object literal for the '<em><b>Indices</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_ARGUMENTS__INDICES = eINSTANCE.getFunctionArguments_Indices();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.NamedArgumentsImpl <em>Named Arguments</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.NamedArgumentsImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getNamedArguments()
-     * @generated
-     */
-    EClass NAMED_ARGUMENTS = eINSTANCE.getNamedArguments();
-
-    /**
-     * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAMED_ARGUMENTS__ARGS = eINSTANCE.getNamedArguments_Args();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.NamedArgumentImpl <em>Named Argument</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.NamedArgumentImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getNamedArgument()
-     * @generated
-     */
-    EClass NAMED_ARGUMENT = eINSTANCE.getNamedArgument();
-
-    /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NAMED_ARGUMENT__ID = eINSTANCE.getNamedArgument_Id();
-
-    /**
-     * The meta object literal for the '<em><b>Func</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAMED_ARGUMENT__FUNC = eINSTANCE.getNamedArgument_Func();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.FunctionArgumentImpl <em>Function Argument</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.FunctionArgumentImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionArgument()
-     * @generated
-     */
-    EClass FUNCTION_ARGUMENT = eINSTANCE.getFunctionArgument();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.FunctionDefinitionImpl <em>Function Definition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.FunctionDefinitionImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionDefinition()
-     * @generated
-     */
-    EClass FUNCTION_DEFINITION = eINSTANCE.getFunctionDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_DEFINITION__NAME = eINSTANCE.getFunctionDefinition_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Args</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION__ARGS = eINSTANCE.getFunctionDefinition_Args();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.OutputExpressionListImpl <em>Output Expression List</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.OutputExpressionListImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getOutputExpressionList()
-     * @generated
-     */
-    EClass OUTPUT_EXPRESSION_LIST = eINSTANCE.getOutputExpressionList();
-
-    /**
-     * The meta object literal for the '<em><b>Exprs</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OUTPUT_EXPRESSION_LIST__EXPRS = eINSTANCE.getOutputExpressionList_Exprs();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ExpressionListImpl <em>Expression List</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ExpressionListImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExpressionList()
-     * @generated
-     */
-    EClass EXPRESSION_LIST = eINSTANCE.getExpressionList();
-
-    /**
-     * The meta object literal for the '<em><b>Exprs</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPRESSION_LIST__EXPRS = eINSTANCE.getExpressionList_Exprs();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ArraySubscriptsImpl <em>Array Subscripts</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.ArraySubscriptsImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getArraySubscripts()
-     * @generated
-     */
-    EClass ARRAY_SUBSCRIPTS = eINSTANCE.getArraySubscripts();
-
-    /**
-     * The meta object literal for the '<em><b>Subscripts</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARRAY_SUBSCRIPTS__SUBSCRIPTS = eINSTANCE.getArraySubscripts_Subscripts();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.SubscriptImpl <em>Subscript</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.SubscriptImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getSubscript()
-     * @generated
-     */
-    EClass SUBSCRIPT = eINSTANCE.getSubscript();
-
-    /**
-     * The meta object literal for the '<em><b>All</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SUBSCRIPT__ALL = eINSTANCE.getSubscript_All();
-
-    /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SUBSCRIPT__EXPR = eINSTANCE.getSubscript_Expr();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.CommentImpl <em>Comment</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.CommentImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComment()
-     * @generated
-     */
-    EClass COMMENT = eINSTANCE.getComment();
-
-    /**
-     * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COMMENT__COMMENT = eINSTANCE.getComment_Comment();
-
-    /**
-     * The meta object literal for the '<em><b>Annotation</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMMENT__ANNOTATION = eINSTANCE.getComment_Annotation();
-
-    /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.AnnotationImpl <em>Annotation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.AnnotationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAnnotation()
-     * @generated
-     */
-    EClass ANNOTATION = eINSTANCE.getAnnotation();
-
-    /**
-     * The meta object literal for the '<em><b>Isannotation</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ANNOTATION__ISANNOTATION = eINSTANCE.getAnnotation_Isannotation();
-
-    /**
-     * The meta object literal for the '<em><b>Cm</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ANNOTATION__CM = eINSTANCE.getAnnotation_Cm();
+    EEnum PARAMETER_TYPE = eINSTANCE.getParameterType();
 
   }
 

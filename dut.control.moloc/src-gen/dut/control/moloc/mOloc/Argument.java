@@ -3,7 +3,6 @@
  */
 package dut.control.moloc.mOloc;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,81 +13,81 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.Argument#isEach <em>Each</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.Argument#isFinal <em>Final</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.Argument#getElement <em>Element</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.Argument#isIsRedeclare <em>Is Redeclare</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.Argument#isIsEach <em>Is Each</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.Argument#isIsfinal <em>Isfinal</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getArgument()
  * @model
  * @generated
  */
-public interface Argument extends EObject
+public interface Argument extends short_class_definition, class_prefixes, short_class_specifier
 {
   /**
-   * Returns the value of the '<em><b>Each</b></em>' attribute.
+   * Returns the value of the '<em><b>Is Redeclare</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Each</em>' attribute.
-   * @see #setEach(boolean)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getArgument_Each()
+   * @return the value of the '<em>Is Redeclare</em>' attribute.
+   * @see #setIsRedeclare(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getArgument_IsRedeclare()
    * @model
    * @generated
    */
-  boolean isEach();
+  boolean isIsRedeclare();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Argument#isEach <em>Each</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.Argument#isIsRedeclare <em>Is Redeclare</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Each</em>' attribute.
-   * @see #isEach()
+   * @param value the new value of the '<em>Is Redeclare</em>' attribute.
+   * @see #isIsRedeclare()
    * @generated
    */
-  void setEach(boolean value);
+  void setIsRedeclare(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Final</b></em>' attribute.
+   * Returns the value of the '<em><b>Is Each</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Final</em>' attribute.
-   * @see #setFinal(boolean)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getArgument_Final()
+   * @return the value of the '<em>Is Each</em>' attribute.
+   * @see #setIsEach(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getArgument_IsEach()
    * @model
    * @generated
    */
-  boolean isFinal();
+  boolean isIsEach();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Argument#isFinal <em>Final</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.Argument#isIsEach <em>Is Each</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Final</em>' attribute.
-   * @see #isFinal()
+   * @param value the new value of the '<em>Is Each</em>' attribute.
+   * @see #isIsEach()
    * @generated
    */
-  void setFinal(boolean value);
+  void setIsEach(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Element</b></em>' containment reference.
+   * Returns the value of the '<em><b>Isfinal</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Element</em>' containment reference.
-   * @see #setElement(EObject)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getArgument_Element()
-   * @model containment="true"
+   * @return the value of the '<em>Isfinal</em>' attribute.
+   * @see #setIsfinal(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getArgument_Isfinal()
+   * @model
    * @generated
    */
-  EObject getElement();
+  boolean isIsfinal();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Argument#getElement <em>Element</em>}' containment reference.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.Argument#isIsfinal <em>Isfinal</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Element</em>' containment reference.
-   * @see #getElement()
+   * @param value the new value of the '<em>Isfinal</em>' attribute.
+   * @see #isIsfinal()
    * @generated
    */
-  void setElement(EObject value);
+  void setIsfinal(boolean value);
 
 } // Argument

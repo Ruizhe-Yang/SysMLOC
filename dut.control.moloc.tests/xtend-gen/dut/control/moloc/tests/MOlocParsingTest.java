@@ -4,7 +4,7 @@
 package dut.control.moloc.tests;
 
 import com.google.inject.Inject;
-import dut.control.moloc.mOloc.StoredDefinition;
+import dut.control.moloc.mOloc.Stored_definition;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -22,7 +22,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 @SuppressWarnings("all")
 public class MOlocParsingTest {
   @Inject
-  private ParseHelper<StoredDefinition> parseHelper;
+  private ParseHelper<Stored_definition> parseHelper;
 
   @Test
   public void loadModel() {
@@ -30,7 +30,7 @@ public class MOlocParsingTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Hello Xtext!");
       _builder.newLine();
-      final StoredDefinition result = this.parseHelper.parse(_builder);
+      final Stored_definition result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
       boolean _isEmpty = errors.isEmpty();

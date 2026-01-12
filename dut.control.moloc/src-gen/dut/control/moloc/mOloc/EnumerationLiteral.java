@@ -3,7 +3,6 @@
  */
 package dut.control.moloc.mOloc;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,58 +13,35 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.EnumerationLiteral#getId <em>Id</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.EnumerationLiteral#getComment <em>Comment</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.EnumerationLiteral#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getEnumerationLiteral()
  * @model
  * @generated
  */
-public interface EnumerationLiteral extends EObject
+public interface EnumerationLiteral extends description, description_string, class_modification
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Title</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute.
-   * @see #setId(String)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getEnumerationLiteral_Id()
+   * @return the value of the '<em>Title</em>' attribute.
+   * @see #setTitle(String)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getEnumerationLiteral_Title()
    * @model
    * @generated
    */
-  String getId();
+  String getTitle();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.EnumerationLiteral#getId <em>Id</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.EnumerationLiteral#getTitle <em>Title</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' attribute.
-   * @see #getId()
+   * @param value the new value of the '<em>Title</em>' attribute.
+   * @see #getTitle()
    * @generated
    */
-  void setId(String value);
-
-  /**
-   * Returns the value of the '<em><b>Comment</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Comment</em>' containment reference.
-   * @see #setComment(Comment)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getEnumerationLiteral_Comment()
-   * @model containment="true"
-   * @generated
-   */
-  Comment getComment();
-
-  /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.EnumerationLiteral#getComment <em>Comment</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Comment</em>' containment reference.
-   * @see #getComment()
-   * @generated
-   */
-  void setComment(Comment value);
+  void setTitle(String value);
 
 } // EnumerationLiteral

@@ -3,104 +3,56 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.ClassModification;
-import dut.control.moloc.mOloc.Expression;
 import dut.control.moloc.mOloc.MOlocPackage;
-import dut.control.moloc.mOloc.Modification;
+import dut.control.moloc.mOloc.modification;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Modification</b></em>'.
+ * An implementation of the model object '<em><b>modification</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.ModificationImpl#getMod <em>Mod</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ModificationImpl#isDh <em>Dh</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ModificationImpl#getExpr <em>Expr</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ModificationImpl#isMh <em>Mh</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.modificationImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModificationImpl extends MinimalEObjectImpl.Container implements Modification
+public class modificationImpl extends class_modificationImpl implements modification
 {
   /**
-   * The cached value of the '{@link #getMod() <em>Mod</em>}' containment reference.
+   * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMod()
+   * @see #getExpression()
    * @generated
    * @ordered
    */
-  protected ClassModification mod;
+  protected static final String EXPRESSION_EDEFAULT = null;
 
   /**
-   * The default value of the '{@link #isDh() <em>Dh</em>}' attribute.
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isDh()
+   * @see #getExpression()
    * @generated
    * @ordered
    */
-  protected static final boolean DH_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isDh() <em>Dh</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isDh()
-   * @generated
-   * @ordered
-   */
-  protected boolean dh = DH_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getExpr()
-   * @generated
-   * @ordered
-   */
-  protected Expression expr;
-
-  /**
-   * The default value of the '{@link #isMh() <em>Mh</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isMh()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean MH_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isMh() <em>Mh</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isMh()
-   * @generated
-   * @ordered
-   */
-  protected boolean mh = MH_EDEFAULT;
+  protected String expression = EXPRESSION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModificationImpl()
+  protected modificationImpl()
   {
     super();
   }
@@ -122,9 +74,9 @@ public class ModificationImpl extends MinimalEObjectImpl.Container implements Mo
    * @generated
    */
   @Override
-  public ClassModification getMod()
+  public String getExpression()
   {
-    return mod;
+    return expression;
   }
 
   /**
@@ -132,156 +84,13 @@ public class ModificationImpl extends MinimalEObjectImpl.Container implements Mo
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetMod(ClassModification newMod, NotificationChain msgs)
+  @Override
+  public void setExpression(String newExpression)
   {
-    ClassModification oldMod = mod;
-    mod = newMod;
+    String oldExpression = expression;
+    expression = newExpression;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION__MOD, oldMod, newMod);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMod(ClassModification newMod)
-  {
-    if (newMod != mod)
-    {
-      NotificationChain msgs = null;
-      if (mod != null)
-        msgs = ((InternalEObject)mod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.MODIFICATION__MOD, null, msgs);
-      if (newMod != null)
-        msgs = ((InternalEObject)newMod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.MODIFICATION__MOD, null, msgs);
-      msgs = basicSetMod(newMod, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION__MOD, newMod, newMod));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean isDh()
-  {
-    return dh;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDh(boolean newDh)
-  {
-    boolean oldDh = dh;
-    dh = newDh;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION__DH, oldDh, dh));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Expression getExpr()
-  {
-    return expr;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExpr(Expression newExpr, NotificationChain msgs)
-  {
-    Expression oldExpr = expr;
-    expr = newExpr;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION__EXPR, oldExpr, newExpr);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setExpr(Expression newExpr)
-  {
-    if (newExpr != expr)
-    {
-      NotificationChain msgs = null;
-      if (expr != null)
-        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.MODIFICATION__EXPR, null, msgs);
-      if (newExpr != null)
-        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.MODIFICATION__EXPR, null, msgs);
-      msgs = basicSetExpr(newExpr, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION__EXPR, newExpr, newExpr));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean isMh()
-  {
-    return mh;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMh(boolean newMh)
-  {
-    boolean oldMh = mh;
-    mh = newMh;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION__MH, oldMh, mh));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MOlocPackage.MODIFICATION__MOD:
-        return basicSetMod(null, msgs);
-      case MOlocPackage.MODIFICATION__EXPR:
-        return basicSetExpr(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION__EXPRESSION, oldExpression, expression));
   }
 
   /**
@@ -294,14 +103,8 @@ public class ModificationImpl extends MinimalEObjectImpl.Container implements Mo
   {
     switch (featureID)
     {
-      case MOlocPackage.MODIFICATION__MOD:
-        return getMod();
-      case MOlocPackage.MODIFICATION__DH:
-        return isDh();
-      case MOlocPackage.MODIFICATION__EXPR:
-        return getExpr();
-      case MOlocPackage.MODIFICATION__MH:
-        return isMh();
+      case MOlocPackage.MODIFICATION__EXPRESSION:
+        return getExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -316,17 +119,8 @@ public class ModificationImpl extends MinimalEObjectImpl.Container implements Mo
   {
     switch (featureID)
     {
-      case MOlocPackage.MODIFICATION__MOD:
-        setMod((ClassModification)newValue);
-        return;
-      case MOlocPackage.MODIFICATION__DH:
-        setDh((Boolean)newValue);
-        return;
-      case MOlocPackage.MODIFICATION__EXPR:
-        setExpr((Expression)newValue);
-        return;
-      case MOlocPackage.MODIFICATION__MH:
-        setMh((Boolean)newValue);
+      case MOlocPackage.MODIFICATION__EXPRESSION:
+        setExpression((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -342,17 +136,8 @@ public class ModificationImpl extends MinimalEObjectImpl.Container implements Mo
   {
     switch (featureID)
     {
-      case MOlocPackage.MODIFICATION__MOD:
-        setMod((ClassModification)null);
-        return;
-      case MOlocPackage.MODIFICATION__DH:
-        setDh(DH_EDEFAULT);
-        return;
-      case MOlocPackage.MODIFICATION__EXPR:
-        setExpr((Expression)null);
-        return;
-      case MOlocPackage.MODIFICATION__MH:
-        setMh(MH_EDEFAULT);
+      case MOlocPackage.MODIFICATION__EXPRESSION:
+        setExpression(EXPRESSION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -368,14 +153,8 @@ public class ModificationImpl extends MinimalEObjectImpl.Container implements Mo
   {
     switch (featureID)
     {
-      case MOlocPackage.MODIFICATION__MOD:
-        return mod != null;
-      case MOlocPackage.MODIFICATION__DH:
-        return dh != DH_EDEFAULT;
-      case MOlocPackage.MODIFICATION__EXPR:
-        return expr != null;
-      case MOlocPackage.MODIFICATION__MH:
-        return mh != MH_EDEFAULT;
+      case MOlocPackage.MODIFICATION__EXPRESSION:
+        return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
     }
     return super.eIsSet(featureID);
   }
@@ -391,12 +170,10 @@ public class ModificationImpl extends MinimalEObjectImpl.Container implements Mo
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (dh: ");
-    result.append(dh);
-    result.append(", mh: ");
-    result.append(mh);
+    result.append(" (expression: ");
+    result.append(expression);
     result.append(')');
     return result.toString();
   }
 
-} //ModificationImpl
+} //modificationImpl

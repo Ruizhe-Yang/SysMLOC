@@ -4,7 +4,7 @@
 package dut.control.moloc.tests
 
 import com.google.inject.Inject
-import dut.control.moloc.mOloc.StoredDefinition
+import dut.control.moloc.mOloc.Stored_definition
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.^extension.ExtendWith
 @InjectWith(MOlocInjectorProvider)
 class MOlocParsingTest {
 	@Inject
-	ParseHelper<StoredDefinition> parseHelper
+	ParseHelper<Stored_definition> parseHelper
 	
 	@Test
 	def void loadModel() {

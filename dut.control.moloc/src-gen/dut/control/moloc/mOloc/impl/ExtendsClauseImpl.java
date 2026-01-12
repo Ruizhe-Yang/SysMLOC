@@ -3,18 +3,27 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Annotation;
-import dut.control.moloc.mOloc.ClassModification;
+import dut.control.moloc.mOloc.Argument;
+import dut.control.moloc.mOloc.Break;
 import dut.control.moloc.mOloc.ExtendsClause;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.class_modification;
+import dut.control.moloc.mOloc.type_specifier;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,9 +33,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getName <em>Name</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getMod <em>Mod</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getAnno <em>Anno</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getBreaks <em>Breaks</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,44 +44,64 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getTypeSpecifier() <em>Type Specifier</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getTypeSpecifier()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String TYPE_SPECIFIER_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getTypeSpecifier() <em>Type Specifier</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getTypeSpecifier()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getMod() <em>Mod</em>}' containment reference.
+   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMod()
+   * @see #getArguments()
    * @generated
    * @ordered
    */
-  protected ClassModification mod;
+  protected EList<Argument> arguments;
 
   /**
-   * The cached value of the '{@link #getAnno() <em>Anno</em>}' containment reference.
+   * The cached value of the '{@link #getBreaks() <em>Breaks</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAnno()
+   * @see #getBreaks()
    * @generated
    * @ordered
    */
-  protected Annotation anno;
+  protected EList<Break> breaks;
+
+  /**
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,9 +130,9 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @generated
    */
   @Override
-  public String getName()
+  public String getTypeSpecifier()
   {
-    return name;
+    return typeSpecifier;
   }
 
   /**
@@ -111,12 +141,12 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setTypeSpecifier(String newTypeSpecifier)
   {
-    String oldName = name;
-    name = newName;
+    String oldTypeSpecifier = typeSpecifier;
+    typeSpecifier = newTypeSpecifier;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__TYPE_SPECIFIER, oldTypeSpecifier, typeSpecifier));
   }
 
   /**
@@ -125,9 +155,13 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @generated
    */
   @Override
-  public ClassModification getMod()
+  public EList<Argument> getArguments()
   {
-    return mod;
+    if (arguments == null)
+    {
+      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS);
+    }
+    return arguments;
   }
 
   /**
@@ -135,88 +169,39 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetMod(ClassModification newMod, NotificationChain msgs)
+  @Override
+  public EList<Break> getBreaks()
   {
-    ClassModification oldMod = mod;
-    mod = newMod;
+    if (breaks == null)
+    {
+      breaks = new EObjectContainmentEList<Break>(Break.class, this, MOlocPackage.EXTENDS_CLAUSE__BREAKS);
+    }
+    return breaks;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotation()
+  {
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__MOD, oldMod, newMod);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMod(ClassModification newMod)
-  {
-    if (newMod != mod)
-    {
-      NotificationChain msgs = null;
-      if (mod != null)
-        msgs = ((InternalEObject)mod).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.EXTENDS_CLAUSE__MOD, null, msgs);
-      if (newMod != null)
-        msgs = ((InternalEObject)newMod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.EXTENDS_CLAUSE__MOD, null, msgs);
-      msgs = basicSetMod(newMod, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__MOD, newMod, newMod));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Annotation getAnno()
-  {
-    return anno;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAnno(Annotation newAnno, NotificationChain msgs)
-  {
-    Annotation oldAnno = anno;
-    anno = newAnno;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__ANNO, oldAnno, newAnno);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setAnno(Annotation newAnno)
-  {
-    if (newAnno != anno)
-    {
-      NotificationChain msgs = null;
-      if (anno != null)
-        msgs = ((InternalEObject)anno).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.EXTENDS_CLAUSE__ANNO, null, msgs);
-      if (newAnno != null)
-        msgs = ((InternalEObject)newAnno).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.EXTENDS_CLAUSE__ANNO, null, msgs);
-      msgs = basicSetAnno(newAnno, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__ANNO, newAnno, newAnno));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
   }
 
   /**
@@ -229,10 +214,10 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
   {
     switch (featureID)
     {
-      case MOlocPackage.EXTENDS_CLAUSE__MOD:
-        return basicSetMod(null, msgs);
-      case MOlocPackage.EXTENDS_CLAUSE__ANNO:
-        return basicSetAnno(null, msgs);
+      case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
+        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
+        return ((InternalEList<?>)getBreaks()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -247,12 +232,14 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
   {
     switch (featureID)
     {
-      case MOlocPackage.EXTENDS_CLAUSE__NAME:
-        return getName();
-      case MOlocPackage.EXTENDS_CLAUSE__MOD:
-        return getMod();
-      case MOlocPackage.EXTENDS_CLAUSE__ANNO:
-        return getAnno();
+      case MOlocPackage.EXTENDS_CLAUSE__TYPE_SPECIFIER:
+        return getTypeSpecifier();
+      case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
+        return getArguments();
+      case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
+        return getBreaks();
+      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION:
+        return isIsAnnotation();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -262,19 +249,25 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MOlocPackage.EXTENDS_CLAUSE__NAME:
-        setName((String)newValue);
+      case MOlocPackage.EXTENDS_CLAUSE__TYPE_SPECIFIER:
+        setTypeSpecifier((String)newValue);
         return;
-      case MOlocPackage.EXTENDS_CLAUSE__MOD:
-        setMod((ClassModification)newValue);
+      case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
+        getArguments().clear();
+        getArguments().addAll((Collection<? extends Argument>)newValue);
         return;
-      case MOlocPackage.EXTENDS_CLAUSE__ANNO:
-        setAnno((Annotation)newValue);
+      case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
+        getBreaks().clear();
+        getBreaks().addAll((Collection<? extends Break>)newValue);
+        return;
+      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -290,14 +283,17 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
   {
     switch (featureID)
     {
-      case MOlocPackage.EXTENDS_CLAUSE__NAME:
-        setName(NAME_EDEFAULT);
+      case MOlocPackage.EXTENDS_CLAUSE__TYPE_SPECIFIER:
+        setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
         return;
-      case MOlocPackage.EXTENDS_CLAUSE__MOD:
-        setMod((ClassModification)null);
+      case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
+        getArguments().clear();
         return;
-      case MOlocPackage.EXTENDS_CLAUSE__ANNO:
-        setAnno((Annotation)null);
+      case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
+        getBreaks().clear();
+        return;
+      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -313,14 +309,70 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
   {
     switch (featureID)
     {
-      case MOlocPackage.EXTENDS_CLAUSE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case MOlocPackage.EXTENDS_CLAUSE__MOD:
-        return mod != null;
-      case MOlocPackage.EXTENDS_CLAUSE__ANNO:
-        return anno != null;
+      case MOlocPackage.EXTENDS_CLAUSE__TYPE_SPECIFIER:
+        return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
+      case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
+        return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
+        return breaks != null && !breaks.isEmpty();
+      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == type_specifier.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.EXTENDS_CLAUSE__TYPE_SPECIFIER: return MOlocPackage.TYPE_SPECIFIER__TYPE_SPECIFIER;
+        default: return -1;
+      }
+    }
+    if (baseClass == class_modification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == type_specifier.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.TYPE_SPECIFIER__TYPE_SPECIFIER: return MOlocPackage.EXTENDS_CLAUSE__TYPE_SPECIFIER;
+        default: return -1;
+      }
+    }
+    if (baseClass == class_modification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**
@@ -334,8 +386,10 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (typeSpecifier: ");
+    result.append(typeSpecifier);
+    result.append(", isAnnotation: ");
+    result.append(isAnnotation);
     result.append(')');
     return result.toString();
   }
