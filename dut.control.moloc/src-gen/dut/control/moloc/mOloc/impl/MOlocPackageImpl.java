@@ -3,25 +3,34 @@
  */
 package dut.control.moloc.mOloc.impl;
 
+import dut.control.moloc.mOloc.AnnotationClause;
 import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.Break;
 import dut.control.moloc.mOloc.ClassType;
 import dut.control.moloc.mOloc.Class_definition;
 import dut.control.moloc.mOloc.Component_declaration;
+import dut.control.moloc.mOloc.ConnectEquation;
 import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.Element;
 import dut.control.moloc.mOloc.EnumerationLiteral;
+import dut.control.moloc.mOloc.Equation;
+import dut.control.moloc.mOloc.EquationSection;
 import dut.control.moloc.mOloc.ExtendsClause;
 import dut.control.moloc.mOloc.ExternalElement;
+import dut.control.moloc.mOloc.ForEquation;
+import dut.control.moloc.mOloc.FunctionEquation;
 import dut.control.moloc.mOloc.GeneralClause;
+import dut.control.moloc.mOloc.IfEquation;
 import dut.control.moloc.mOloc.ImportClause;
 import dut.control.moloc.mOloc.MOlocFactory;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.NULLElement;
 import dut.control.moloc.mOloc.ParameterType;
 import dut.control.moloc.mOloc.RelationshipType;
+import dut.control.moloc.mOloc.SimpleEquation;
 import dut.control.moloc.mOloc.Stored_definition;
 import dut.control.moloc.mOloc.Unfinished2;
+import dut.control.moloc.mOloc.WhenEquation;
 import dut.control.moloc.mOloc.array_subscripts;
 import dut.control.moloc.mOloc.class_modification;
 import dut.control.moloc.mOloc.class_name;
@@ -298,6 +307,69 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   private EClass externalElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass annotationClauseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass equationSectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass equationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simpleEquationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ifEquationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass forEquationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass connectEquationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass whenEquationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass functionEquationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -820,17 +892,6 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
-  public EAttribute getdescription_IsAnnotation()
-  {
-    return (EAttribute)descriptionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getArgument()
   {
     return argumentEClass;
@@ -1128,7 +1189,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
-  public EAttribute getImportClause_SelfName()
+  public EAttribute getImportClause_IsPublic()
   {
     return (EAttribute)importClauseEClass.getEStructuralFeatures().get(0);
   }
@@ -1139,7 +1200,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
-  public EAttribute getImportClause_ImportName()
+  public EAttribute getImportClause_IsProtected()
   {
     return (EAttribute)importClauseEClass.getEStructuralFeatures().get(1);
   }
@@ -1150,7 +1211,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
-  public EAttribute getImportClause_IsImportAll()
+  public EAttribute getImportClause_SelfName()
   {
     return (EAttribute)importClauseEClass.getEStructuralFeatures().get(2);
   }
@@ -1161,9 +1222,31 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
-  public EAttribute getImportClause_ObjectName()
+  public EAttribute getImportClause_ImportName()
   {
     return (EAttribute)importClauseEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getImportClause_IsImportAll()
+  {
+    return (EAttribute)importClauseEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getImportClause_ObjectName()
+  {
+    return (EAttribute)importClauseEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1186,17 +1269,6 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
   public EReference getExtendsClause_Breaks()
   {
     return (EReference)extendsClauseEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getExtendsClause_IsAnnotation()
-  {
-    return (EAttribute)extendsClauseEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1249,7 +1321,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
-  public EAttribute getGeneralClause_IsRedeclare()
+  public EAttribute getGeneralClause_IsPublic()
   {
     return (EAttribute)generalClauseEClass.getEStructuralFeatures().get(0);
   }
@@ -1260,7 +1332,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
-  public EAttribute getGeneralClause_Isfinal()
+  public EAttribute getGeneralClause_IsProtected()
   {
     return (EAttribute)generalClauseEClass.getEStructuralFeatures().get(1);
   }
@@ -1271,7 +1343,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
-  public EAttribute getGeneralClause_IsInner()
+  public EAttribute getGeneralClause_IsRedeclare()
   {
     return (EAttribute)generalClauseEClass.getEStructuralFeatures().get(2);
   }
@@ -1282,7 +1354,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
-  public EAttribute getGeneralClause_IsOuter()
+  public EAttribute getGeneralClause_Isfinal()
   {
     return (EAttribute)generalClauseEClass.getEStructuralFeatures().get(3);
   }
@@ -1293,7 +1365,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
-  public EAttribute getGeneralClause_IsReplaceable()
+  public EAttribute getGeneralClause_IsInner()
   {
     return (EAttribute)generalClauseEClass.getEStructuralFeatures().get(4);
   }
@@ -1304,9 +1376,31 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
+  public EAttribute getGeneralClause_IsOuter()
+  {
+    return (EAttribute)generalClauseEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGeneralClause_IsReplaceable()
+  {
+    return (EAttribute)generalClauseEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getGeneralClause_Component_list()
   {
-    return (EReference)generalClauseEClass.getEStructuralFeatures().get(5);
+    return (EReference)generalClauseEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -1370,9 +1464,273 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
-  public EAttribute getExternalElement_IsAnnotation()
+  public EClass getAnnotationClause()
   {
-    return (EAttribute)externalElementEClass.getEStructuralFeatures().get(2);
+    return annotationClauseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEquationSection()
+  {
+    return equationSectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEquationSection_IsInitial()
+  {
+    return (EAttribute)equationSectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEquationSection_Equations()
+  {
+    return (EReference)equationSectionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEquation()
+  {
+    return equationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSimpleEquation()
+  {
+    return simpleEquationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSimpleEquation_Left()
+  {
+    return (EAttribute)simpleEquationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSimpleEquation_Right()
+  {
+    return (EAttribute)simpleEquationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getIfEquation()
+  {
+    return ifEquationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getIfEquation_Condition()
+  {
+    return (EAttribute)ifEquationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIfEquation_Equations()
+  {
+    return (EReference)ifEquationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getIfEquation_ElseCondition()
+  {
+    return (EAttribute)ifEquationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getForEquation()
+  {
+    return forEquationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getForEquation_ForIndices()
+  {
+    return (EAttribute)forEquationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getForEquation_Equations()
+  {
+    return (EReference)forEquationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConnectEquation()
+  {
+    return connectEquationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConnectEquation_Left()
+  {
+    return (EAttribute)connectEquationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConnectEquation_Right()
+  {
+    return (EAttribute)connectEquationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getWhenEquation()
+  {
+    return whenEquationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWhenEquation_Condition()
+  {
+    return (EAttribute)whenEquationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWhenEquation_Equations()
+  {
+    return (EReference)whenEquationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWhenEquation_ElseCondition()
+  {
+    return (EAttribute)whenEquationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFunctionEquation()
+  {
+    return functionEquationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFunctionEquation_Component()
+  {
+    return (EAttribute)functionEquationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFunctionEquation_Function()
+  {
+    return (EAttribute)functionEquationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1524,7 +1882,6 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     createEAttribute(enumerationLiteralEClass, ENUMERATION_LITERAL__TITLE);
 
     descriptionEClass = createEClass(DESCRIPTION);
-    createEAttribute(descriptionEClass, DESCRIPTION__IS_ANNOTATION);
 
     argumentEClass = createEClass(ARGUMENT);
     createEAttribute(argumentEClass, ARGUMENT__IS_REDECLARE);
@@ -1566,6 +1923,8 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     elementEClass = createEClass(ELEMENT);
 
     importClauseEClass = createEClass(IMPORT_CLAUSE);
+    createEAttribute(importClauseEClass, IMPORT_CLAUSE__IS_PUBLIC);
+    createEAttribute(importClauseEClass, IMPORT_CLAUSE__IS_PROTECTED);
     createEAttribute(importClauseEClass, IMPORT_CLAUSE__SELF_NAME);
     createEAttribute(importClauseEClass, IMPORT_CLAUSE__IMPORT_NAME);
     createEAttribute(importClauseEClass, IMPORT_CLAUSE__IS_IMPORT_ALL);
@@ -1573,13 +1932,14 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
 
     extendsClauseEClass = createEClass(EXTENDS_CLAUSE);
     createEReference(extendsClauseEClass, EXTENDS_CLAUSE__BREAKS);
-    createEAttribute(extendsClauseEClass, EXTENDS_CLAUSE__IS_ANNOTATION);
 
     breakEClass = createEClass(BREAK);
     createEReference(breakEClass, BREAK__CONNECT);
     createEAttribute(breakEClass, BREAK__BREAK_NAME);
 
     generalClauseEClass = createEClass(GENERAL_CLAUSE);
+    createEAttribute(generalClauseEClass, GENERAL_CLAUSE__IS_PUBLIC);
+    createEAttribute(generalClauseEClass, GENERAL_CLAUSE__IS_PROTECTED);
     createEAttribute(generalClauseEClass, GENERAL_CLAUSE__IS_REDECLARE);
     createEAttribute(generalClauseEClass, GENERAL_CLAUSE__ISFINAL);
     createEAttribute(generalClauseEClass, GENERAL_CLAUSE__IS_INNER);
@@ -1593,7 +1953,40 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     externalElementEClass = createEClass(EXTERNAL_ELEMENT);
     createEAttribute(externalElementEClass, EXTERNAL_ELEMENT__LANGUAGE_SPECIFICATION);
     createEAttribute(externalElementEClass, EXTERNAL_ELEMENT__REF);
-    createEAttribute(externalElementEClass, EXTERNAL_ELEMENT__IS_ANNOTATION);
+
+    annotationClauseEClass = createEClass(ANNOTATION_CLAUSE);
+
+    equationSectionEClass = createEClass(EQUATION_SECTION);
+    createEAttribute(equationSectionEClass, EQUATION_SECTION__IS_INITIAL);
+    createEReference(equationSectionEClass, EQUATION_SECTION__EQUATIONS);
+
+    equationEClass = createEClass(EQUATION);
+
+    simpleEquationEClass = createEClass(SIMPLE_EQUATION);
+    createEAttribute(simpleEquationEClass, SIMPLE_EQUATION__LEFT);
+    createEAttribute(simpleEquationEClass, SIMPLE_EQUATION__RIGHT);
+
+    ifEquationEClass = createEClass(IF_EQUATION);
+    createEAttribute(ifEquationEClass, IF_EQUATION__CONDITION);
+    createEReference(ifEquationEClass, IF_EQUATION__EQUATIONS);
+    createEAttribute(ifEquationEClass, IF_EQUATION__ELSE_CONDITION);
+
+    forEquationEClass = createEClass(FOR_EQUATION);
+    createEAttribute(forEquationEClass, FOR_EQUATION__FOR_INDICES);
+    createEReference(forEquationEClass, FOR_EQUATION__EQUATIONS);
+
+    connectEquationEClass = createEClass(CONNECT_EQUATION);
+    createEAttribute(connectEquationEClass, CONNECT_EQUATION__LEFT);
+    createEAttribute(connectEquationEClass, CONNECT_EQUATION__RIGHT);
+
+    whenEquationEClass = createEClass(WHEN_EQUATION);
+    createEAttribute(whenEquationEClass, WHEN_EQUATION__CONDITION);
+    createEReference(whenEquationEClass, WHEN_EQUATION__EQUATIONS);
+    createEAttribute(whenEquationEClass, WHEN_EQUATION__ELSE_CONDITION);
+
+    functionEquationEClass = createEClass(FUNCTION_EQUATION);
+    createEAttribute(functionEquationEClass, FUNCTION_EQUATION__COMPONENT);
+    createEAttribute(functionEquationEClass, FUNCTION_EQUATION__FUNCTION);
 
     nullElementEClass = createEClass(NULL_ELEMENT);
     createEAttribute(nullElementEClass, NULL_ELEMENT__NULLNAME);
@@ -1679,6 +2072,8 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     argumentEClass.getESuperTypes().add(this.getshort_class_definition());
     argumentEClass.getESuperTypes().add(this.getclass_prefixes());
     argumentEClass.getESuperTypes().add(this.getshort_class_specifier());
+    argumentEClass.getESuperTypes().add(this.getelement_modification());
+    argumentEClass.getESuperTypes().add(this.getmodification());
     element_modificationEClass.getESuperTypes().add(this.getmodification());
     element_modificationEClass.getESuperTypes().add(this.getclass_modification());
     element_modificationEClass.getESuperTypes().add(this.getdescription_string());
@@ -1724,6 +2119,21 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     component_declarationEClass.getESuperTypes().add(this.getdescription());
     externalElementEClass.getESuperTypes().add(this.getElement());
     externalElementEClass.getESuperTypes().add(this.getclass_modification());
+    annotationClauseEClass.getESuperTypes().add(this.getElement());
+    annotationClauseEClass.getESuperTypes().add(this.getclass_modification());
+    equationSectionEClass.getESuperTypes().add(this.getElement());
+    simpleEquationEClass.getESuperTypes().add(this.getEquation());
+    simpleEquationEClass.getESuperTypes().add(this.getdescription());
+    ifEquationEClass.getESuperTypes().add(this.getEquation());
+    ifEquationEClass.getESuperTypes().add(this.getdescription());
+    forEquationEClass.getESuperTypes().add(this.getEquation());
+    forEquationEClass.getESuperTypes().add(this.getdescription());
+    connectEquationEClass.getESuperTypes().add(this.getEquation());
+    connectEquationEClass.getESuperTypes().add(this.getdescription());
+    whenEquationEClass.getESuperTypes().add(this.getEquation());
+    whenEquationEClass.getESuperTypes().add(this.getdescription());
+    functionEquationEClass.getESuperTypes().add(this.getEquation());
+    functionEquationEClass.getESuperTypes().add(this.getdescription());
 
     // Initialize classes and features; add operations and parameters
     initEClass(stored_definitionEClass, Stored_definition.class, "Stored_definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1778,7 +2188,6 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     initEAttribute(getEnumerationLiteral_Title(), ecorePackage.getEString(), "title", null, 0, 1, EnumerationLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(descriptionEClass, description.class, "description", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getdescription_IsAnnotation(), ecorePackage.getEBoolean(), "isAnnotation", null, 0, 1, description.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(argumentEClass, Argument.class, "Argument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getArgument_IsRedeclare(), ecorePackage.getEBoolean(), "isRedeclare", null, 0, 1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1820,6 +2229,8 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(importClauseEClass, ImportClause.class, "ImportClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImportClause_IsPublic(), ecorePackage.getEBoolean(), "isPublic", null, 0, 1, ImportClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getImportClause_IsProtected(), ecorePackage.getEBoolean(), "isProtected", null, 0, 1, ImportClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImportClause_SelfName(), ecorePackage.getEString(), "selfName", null, 0, 1, ImportClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImportClause_ImportName(), ecorePackage.getEString(), "importName", null, 0, 1, ImportClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImportClause_IsImportAll(), ecorePackage.getEBoolean(), "isImportAll", null, 0, 1, ImportClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1827,13 +2238,14 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
 
     initEClass(extendsClauseEClass, ExtendsClause.class, "ExtendsClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExtendsClause_Breaks(), this.getBreak(), null, "breaks", null, 0, -1, ExtendsClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExtendsClause_IsAnnotation(), ecorePackage.getEBoolean(), "isAnnotation", null, 0, 1, ExtendsClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(breakEClass, Break.class, "Break", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBreak_Connect(), this.getNULLElement(), null, "connect", null, 0, 1, Break.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBreak_BreakName(), ecorePackage.getEString(), "breakName", null, 0, 1, Break.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(generalClauseEClass, GeneralClause.class, "GeneralClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGeneralClause_IsPublic(), ecorePackage.getEBoolean(), "isPublic", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGeneralClause_IsProtected(), ecorePackage.getEBoolean(), "isProtected", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGeneralClause_IsRedeclare(), ecorePackage.getEBoolean(), "isRedeclare", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGeneralClause_Isfinal(), ecorePackage.getEBoolean(), "isfinal", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGeneralClause_IsInner(), ecorePackage.getEBoolean(), "isInner", null, 0, 1, GeneralClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1847,7 +2259,40 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     initEClass(externalElementEClass, ExternalElement.class, "ExternalElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExternalElement_Language_specification(), ecorePackage.getEString(), "language_specification", null, 0, 1, ExternalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExternalElement_Ref(), ecorePackage.getEString(), "ref", null, 0, 1, ExternalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExternalElement_IsAnnotation(), ecorePackage.getEBoolean(), "isAnnotation", null, 0, 1, ExternalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(annotationClauseEClass, AnnotationClause.class, "AnnotationClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(equationSectionEClass, EquationSection.class, "EquationSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEquationSection_IsInitial(), ecorePackage.getEBoolean(), "isInitial", null, 0, 1, EquationSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEquationSection_Equations(), this.getEquation(), null, "equations", null, 0, -1, EquationSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(equationEClass, Equation.class, "Equation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(simpleEquationEClass, SimpleEquation.class, "SimpleEquation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSimpleEquation_Left(), ecorePackage.getEString(), "left", null, 0, 1, SimpleEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleEquation_Right(), ecorePackage.getEString(), "right", null, 0, 1, SimpleEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ifEquationEClass, IfEquation.class, "IfEquation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIfEquation_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, IfEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIfEquation_Equations(), this.getEquation(), null, "equations", null, 0, -1, IfEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIfEquation_ElseCondition(), ecorePackage.getEString(), "elseCondition", null, 0, -1, IfEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(forEquationEClass, ForEquation.class, "ForEquation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getForEquation_ForIndices(), ecorePackage.getEString(), "forIndices", null, 0, 1, ForEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForEquation_Equations(), this.getEquation(), null, "equations", null, 0, -1, ForEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(connectEquationEClass, ConnectEquation.class, "ConnectEquation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConnectEquation_Left(), ecorePackage.getEString(), "left", null, 0, 1, ConnectEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConnectEquation_Right(), ecorePackage.getEString(), "right", null, 0, 1, ConnectEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(whenEquationEClass, WhenEquation.class, "WhenEquation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWhenEquation_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, WhenEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWhenEquation_Equations(), this.getEquation(), null, "equations", null, 0, -1, WhenEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWhenEquation_ElseCondition(), ecorePackage.getEString(), "elseCondition", null, 0, -1, WhenEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(functionEquationEClass, FunctionEquation.class, "FunctionEquation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFunctionEquation_Component(), ecorePackage.getEString(), "component", null, 0, 1, FunctionEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFunctionEquation_Function(), ecorePackage.getEString(), "function", null, 0, 1, FunctionEquation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nullElementEClass, NULLElement.class, "NULLElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNULLElement_Nullname(), ecorePackage.getEString(), "nullname", null, 0, 1, NULLElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

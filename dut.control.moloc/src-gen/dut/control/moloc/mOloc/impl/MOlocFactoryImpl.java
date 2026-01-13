@@ -100,6 +100,15 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
       case MOlocPackage.GENERAL_CLAUSE: return createGeneralClause();
       case MOlocPackage.COMPONENT_DECLARATION: return createComponent_declaration();
       case MOlocPackage.EXTERNAL_ELEMENT: return createExternalElement();
+      case MOlocPackage.ANNOTATION_CLAUSE: return createAnnotationClause();
+      case MOlocPackage.EQUATION_SECTION: return createEquationSection();
+      case MOlocPackage.EQUATION: return createEquation();
+      case MOlocPackage.SIMPLE_EQUATION: return createSimpleEquation();
+      case MOlocPackage.IF_EQUATION: return createIfEquation();
+      case MOlocPackage.FOR_EQUATION: return createForEquation();
+      case MOlocPackage.CONNECT_EQUATION: return createConnectEquation();
+      case MOlocPackage.WHEN_EQUATION: return createWhenEquation();
+      case MOlocPackage.FUNCTION_EQUATION: return createFunctionEquation();
       case MOlocPackage.NULL_ELEMENT: return createNULLElement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -558,6 +567,114 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
   {
     ExternalElementImpl externalElement = new ExternalElementImpl();
     return externalElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AnnotationClause createAnnotationClause()
+  {
+    AnnotationClauseImpl annotationClause = new AnnotationClauseImpl();
+    return annotationClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EquationSection createEquationSection()
+  {
+    EquationSectionImpl equationSection = new EquationSectionImpl();
+    return equationSection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Equation createEquation()
+  {
+    EquationImpl equation = new EquationImpl();
+    return equation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SimpleEquation createSimpleEquation()
+  {
+    SimpleEquationImpl simpleEquation = new SimpleEquationImpl();
+    return simpleEquation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IfEquation createIfEquation()
+  {
+    IfEquationImpl ifEquation = new IfEquationImpl();
+    return ifEquation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ForEquation createForEquation()
+  {
+    ForEquationImpl forEquation = new ForEquationImpl();
+    return forEquation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConnectEquation createConnectEquation()
+  {
+    ConnectEquationImpl connectEquation = new ConnectEquationImpl();
+    return connectEquation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WhenEquation createWhenEquation()
+  {
+    WhenEquationImpl whenEquation = new WhenEquationImpl();
+    return whenEquation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FunctionEquation createFunctionEquation()
+  {
+    FunctionEquationImpl functionEquation = new FunctionEquationImpl();
+    return functionEquation;
   }
 
   /**

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks">
+  <classes classType="package" className="Routing" description="&quot;Library of blocks to combine and extract signals&quot;">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package"/>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments elementName="Documentation">
+        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This package contains blocks to combine and extract signals.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </arguments>
+      <arguments elementName="Icon">
+        <arguments expression="{ Line(points={{-90,0},{4,0}}, color={95,95,95}), Line(points={{88,65},{48,65},{-8,0}}, color={95,95,95}), Line(points={{-8,0},{93,0}}, color={95,95,95}), Line(points={{87,-65},{48,-65},{-8,0}}, color={95,95,95}) }" elementName="graphics"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

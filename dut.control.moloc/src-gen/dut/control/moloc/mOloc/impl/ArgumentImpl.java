@@ -5,6 +5,8 @@ package dut.control.moloc.mOloc.impl;
 
 import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.element_modification;
+import dut.control.moloc.mOloc.modification;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -20,6 +22,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getElementName <em>Element Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsRedeclare <em>Is Redeclare</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsEach <em>Is Each</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsfinal <em>Isfinal</em>}</li>
@@ -29,6 +33,46 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ArgumentImpl extends short_class_definitionImpl implements Argument
 {
+  /**
+   * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpression()
+   * @generated
+   * @ordered
+   */
+  protected static final String EXPRESSION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpression()
+   * @generated
+   * @ordered
+   */
+  protected String expression = EXPRESSION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getElementName() <em>Element Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElementName()
+   * @generated
+   * @ordered
+   */
+  protected static final String ELEMENT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getElementName() <em>Element Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElementName()
+   * @generated
+   * @ordered
+   */
+  protected String elementName = ELEMENT_NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #isIsRedeclare() <em>Is Redeclare</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -116,6 +160,56 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
    * @generated
    */
   @Override
+  public String getExpression()
+  {
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setExpression(String newExpression)
+  {
+    String oldExpression = expression;
+    expression = newExpression;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__EXPRESSION, oldExpression, expression));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getElementName()
+  {
+    return elementName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setElementName(String newElementName)
+  {
+    String oldElementName = elementName;
+    elementName = newElementName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__ELEMENT_NAME, oldElementName, elementName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsRedeclare()
   {
     return isRedeclare;
@@ -195,6 +289,10 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   {
     switch (featureID)
     {
+      case MOlocPackage.ARGUMENT__EXPRESSION:
+        return getExpression();
+      case MOlocPackage.ARGUMENT__ELEMENT_NAME:
+        return getElementName();
       case MOlocPackage.ARGUMENT__IS_REDECLARE:
         return isIsRedeclare();
       case MOlocPackage.ARGUMENT__IS_EACH:
@@ -215,6 +313,12 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   {
     switch (featureID)
     {
+      case MOlocPackage.ARGUMENT__EXPRESSION:
+        setExpression((String)newValue);
+        return;
+      case MOlocPackage.ARGUMENT__ELEMENT_NAME:
+        setElementName((String)newValue);
+        return;
       case MOlocPackage.ARGUMENT__IS_REDECLARE:
         setIsRedeclare((Boolean)newValue);
         return;
@@ -238,6 +342,12 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   {
     switch (featureID)
     {
+      case MOlocPackage.ARGUMENT__EXPRESSION:
+        setExpression(EXPRESSION_EDEFAULT);
+        return;
+      case MOlocPackage.ARGUMENT__ELEMENT_NAME:
+        setElementName(ELEMENT_NAME_EDEFAULT);
+        return;
       case MOlocPackage.ARGUMENT__IS_REDECLARE:
         setIsRedeclare(IS_REDECLARE_EDEFAULT);
         return;
@@ -261,6 +371,10 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   {
     switch (featureID)
     {
+      case MOlocPackage.ARGUMENT__EXPRESSION:
+        return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
+      case MOlocPackage.ARGUMENT__ELEMENT_NAME:
+        return ELEMENT_NAME_EDEFAULT == null ? elementName != null : !ELEMENT_NAME_EDEFAULT.equals(elementName);
       case MOlocPackage.ARGUMENT__IS_REDECLARE:
         return isRedeclare != IS_REDECLARE_EDEFAULT;
       case MOlocPackage.ARGUMENT__IS_EACH:
@@ -277,12 +391,70 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
    * @generated
    */
   @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == modification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.ARGUMENT__EXPRESSION: return MOlocPackage.MODIFICATION__EXPRESSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == element_modification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.ARGUMENT__ELEMENT_NAME: return MOlocPackage.ELEMENT_MODIFICATION__ELEMENT_NAME;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == modification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.MODIFICATION__EXPRESSION: return MOlocPackage.ARGUMENT__EXPRESSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == element_modification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ELEMENT_MODIFICATION__ELEMENT_NAME: return MOlocPackage.ARGUMENT__ELEMENT_NAME;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String toString()
   {
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (isRedeclare: ");
+    result.append(" (expression: ");
+    result.append(expression);
+    result.append(", elementName: ");
+    result.append(elementName);
+    result.append(", isRedeclare: ");
     result.append(isRedeclare);
     result.append(", isEach: ");
     result.append(isEach);

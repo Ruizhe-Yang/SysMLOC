@@ -14,6 +14,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.GeneralClause#isIsPublic <em>Is Public</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.GeneralClause#isIsProtected <em>Is Protected</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.GeneralClause#isIsRedeclare <em>Is Redeclare</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.GeneralClause#isIsfinal <em>Isfinal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.GeneralClause#isIsInner <em>Is Inner</em>}</li>
@@ -28,6 +30,50 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface GeneralClause extends Element, type_prefix, type_specifier, array_subscripts
 {
+  /**
+   * Returns the value of the '<em><b>Is Public</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Public</em>' attribute.
+   * @see #setIsPublic(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getGeneralClause_IsPublic()
+   * @model
+   * @generated
+   */
+  boolean isIsPublic();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.GeneralClause#isIsPublic <em>Is Public</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Public</em>' attribute.
+   * @see #isIsPublic()
+   * @generated
+   */
+  void setIsPublic(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Is Protected</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Protected</em>' attribute.
+   * @see #setIsProtected(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getGeneralClause_IsProtected()
+   * @model
+   * @generated
+   */
+  boolean isIsProtected();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.GeneralClause#isIsProtected <em>Is Protected</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Protected</em>' attribute.
+   * @see #isIsProtected()
+   * @generated
+   */
+  void setIsProtected(boolean value);
+
   /**
    * Returns the value of the '<em><b>Is Redeclare</b></em>' attribute.
    * <!-- begin-user-doc -->

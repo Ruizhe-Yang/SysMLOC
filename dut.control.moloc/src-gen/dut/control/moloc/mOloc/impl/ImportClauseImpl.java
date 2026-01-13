@@ -36,7 +36,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getArguments <em>Arguments</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#isIsPublic <em>Is Public</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#isIsProtected <em>Is Protected</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getSelfName <em>Self Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getImportName <em>Import Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#isIsImportAll <em>Is Import All</em>}</li>
@@ -78,24 +79,44 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
   protected EList<Argument> arguments;
 
   /**
-   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * The default value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isIsAnnotation()
+   * @see #isIsPublic()
    * @generated
    * @ordered
    */
-  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+  protected static final boolean IS_PUBLIC_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * The cached value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isIsAnnotation()
+   * @see #isIsPublic()
    * @generated
    * @ordered
    */
-  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
+  protected boolean isPublic = IS_PUBLIC_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsProtected() <em>Is Protected</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsProtected()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_PROTECTED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsProtected() <em>Is Protected</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsProtected()
+   * @generated
+   * @ordered
+   */
+  protected boolean isProtected = IS_PROTECTED_EDEFAULT;
 
   /**
    * The default value of the '{@link #getSelfName() <em>Self Name</em>}' attribute.
@@ -234,9 +255,9 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    */
   @Override
-  public boolean isIsAnnotation()
+  public boolean isIsPublic()
   {
-    return isAnnotation;
+    return isPublic;
   }
 
   /**
@@ -245,12 +266,37 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    */
   @Override
-  public void setIsAnnotation(boolean newIsAnnotation)
+  public void setIsPublic(boolean newIsPublic)
   {
-    boolean oldIsAnnotation = isAnnotation;
-    isAnnotation = newIsAnnotation;
+    boolean oldIsPublic = isPublic;
+    isPublic = newIsPublic;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__IS_PUBLIC, oldIsPublic, isPublic));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsProtected()
+  {
+    return isProtected;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsProtected(boolean newIsProtected)
+  {
+    boolean oldIsProtected = isProtected;
+    isProtected = newIsProtected;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__IS_PROTECTED, oldIsProtected, isProtected));
   }
 
   /**
@@ -373,8 +419,10 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
         return getDescription();
       case MOlocPackage.IMPORT_CLAUSE__ARGUMENTS:
         return getArguments();
-      case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION:
-        return isIsAnnotation();
+      case MOlocPackage.IMPORT_CLAUSE__IS_PUBLIC:
+        return isIsPublic();
+      case MOlocPackage.IMPORT_CLAUSE__IS_PROTECTED:
+        return isIsProtected();
       case MOlocPackage.IMPORT_CLAUSE__SELF_NAME:
         return getSelfName();
       case MOlocPackage.IMPORT_CLAUSE__IMPORT_NAME:
@@ -405,8 +453,11 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
         getArguments().clear();
         getArguments().addAll((Collection<? extends Argument>)newValue);
         return;
-      case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION:
-        setIsAnnotation((Boolean)newValue);
+      case MOlocPackage.IMPORT_CLAUSE__IS_PUBLIC:
+        setIsPublic((Boolean)newValue);
+        return;
+      case MOlocPackage.IMPORT_CLAUSE__IS_PROTECTED:
+        setIsProtected((Boolean)newValue);
         return;
       case MOlocPackage.IMPORT_CLAUSE__SELF_NAME:
         setSelfName((String)newValue);
@@ -441,8 +492,11 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
       case MOlocPackage.IMPORT_CLAUSE__ARGUMENTS:
         getArguments().clear();
         return;
-      case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION:
-        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+      case MOlocPackage.IMPORT_CLAUSE__IS_PUBLIC:
+        setIsPublic(IS_PUBLIC_EDEFAULT);
+        return;
+      case MOlocPackage.IMPORT_CLAUSE__IS_PROTECTED:
+        setIsProtected(IS_PROTECTED_EDEFAULT);
         return;
       case MOlocPackage.IMPORT_CLAUSE__SELF_NAME:
         setSelfName(SELF_NAME_EDEFAULT);
@@ -474,8 +528,10 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.IMPORT_CLAUSE__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
-      case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION:
-        return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.IMPORT_CLAUSE__IS_PUBLIC:
+        return isPublic != IS_PUBLIC_EDEFAULT;
+      case MOlocPackage.IMPORT_CLAUSE__IS_PROTECTED:
+        return isProtected != IS_PROTECTED_EDEFAULT;
       case MOlocPackage.IMPORT_CLAUSE__SELF_NAME:
         return SELF_NAME_EDEFAULT == null ? selfName != null : !SELF_NAME_EDEFAULT.equals(selfName);
       case MOlocPackage.IMPORT_CLAUSE__IMPORT_NAME:
@@ -516,7 +572,6 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -551,7 +606,6 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -571,8 +625,10 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (description: ");
     result.append(description);
-    result.append(", isAnnotation: ");
-    result.append(isAnnotation);
+    result.append(", isPublic: ");
+    result.append(isPublic);
+    result.append(", isProtected: ");
+    result.append(isProtected);
     result.append(", selfName: ");
     result.append(selfName);
     result.append(", importName: ");

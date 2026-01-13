@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Routing">
+  <classes classType="model" className="ComplexPassThrough" description="&quot;Pass a Complex signal through without modification&quot;">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexSISO"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="y" right="u"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments elementName="Icon">
+        <arguments elementName="coordinateSystem">
+          <arguments expression="true" elementName="preserveAspectRatio"/>
+          <arguments expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </arguments>
+        <arguments expression="{Line(points={{-100,0},{100,0}}, color={85,170,255} ) }" elementName="graphics"/>
+      </arguments>
+      <arguments elementName="Documentation">
+        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Passes a Complex signal through without modification. Enables signals to be read out of one bus, have their name changed and be sent back to a bus.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

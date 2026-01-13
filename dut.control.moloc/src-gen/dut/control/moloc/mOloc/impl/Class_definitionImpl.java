@@ -52,7 +52,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsExtends <em>Is Extends</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsEnumeration <em>Is Enumeration</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsColon <em>Is Colon</em>}</li>
@@ -175,26 +174,6 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
    * @ordered
    */
   protected EList<EnumerationLiteral> enumerationLiteral;
-
-  /**
-   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsAnnotation()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsAnnotation()
-   * @generated
-   * @ordered
-   */
-  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -498,31 +477,6 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
    * @generated
    */
   @Override
-  public boolean isIsAnnotation()
-  {
-    return isAnnotation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setIsAnnotation(boolean newIsAnnotation)
-  {
-    boolean oldIsAnnotation = isAnnotation;
-    isAnnotation = newIsAnnotation;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Direction getDirection()
   {
     return direction;
@@ -726,8 +680,6 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return getTypeSpecifier();
       case MOlocPackage.CLASS_DEFINITION__ENUMERATION_LITERAL:
         return getEnumerationLiteral();
-      case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION:
-        return isIsAnnotation();
       case MOlocPackage.CLASS_DEFINITION__DIRECTION:
         return getDirection();
       case MOlocPackage.CLASS_DEFINITION__IS_ENUMERATION:
@@ -780,9 +732,6 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       case MOlocPackage.CLASS_DEFINITION__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
         getEnumerationLiteral().addAll((Collection<? extends EnumerationLiteral>)newValue);
-        return;
-      case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION:
-        setIsAnnotation((Boolean)newValue);
         return;
       case MOlocPackage.CLASS_DEFINITION__DIRECTION:
         setDirection((Direction)newValue);
@@ -841,9 +790,6 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       case MOlocPackage.CLASS_DEFINITION__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
         return;
-      case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION:
-        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
-        return;
       case MOlocPackage.CLASS_DEFINITION__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
@@ -893,8 +839,6 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
       case MOlocPackage.CLASS_DEFINITION__ENUMERATION_LITERAL:
         return enumerationLiteral != null && !enumerationLiteral.isEmpty();
-      case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION:
-        return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.CLASS_DEFINITION__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case MOlocPackage.CLASS_DEFINITION__IS_ENUMERATION:
@@ -981,7 +925,6 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -1082,7 +1025,6 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -1134,8 +1076,6 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
     result.append(isExtends);
     result.append(", typeSpecifier: ");
     result.append(typeSpecifier);
-    result.append(", isAnnotation: ");
-    result.append(isAnnotation);
     result.append(", direction: ");
     result.append(direction);
     result.append(", isEnumeration: ");

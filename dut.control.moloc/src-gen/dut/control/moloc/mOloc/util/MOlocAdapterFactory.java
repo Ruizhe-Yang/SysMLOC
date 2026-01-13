@@ -246,6 +246,51 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
         return createExternalElementAdapter();
       }
       @Override
+      public Adapter caseAnnotationClause(AnnotationClause object)
+      {
+        return createAnnotationClauseAdapter();
+      }
+      @Override
+      public Adapter caseEquationSection(EquationSection object)
+      {
+        return createEquationSectionAdapter();
+      }
+      @Override
+      public Adapter caseEquation(Equation object)
+      {
+        return createEquationAdapter();
+      }
+      @Override
+      public Adapter caseSimpleEquation(SimpleEquation object)
+      {
+        return createSimpleEquationAdapter();
+      }
+      @Override
+      public Adapter caseIfEquation(IfEquation object)
+      {
+        return createIfEquationAdapter();
+      }
+      @Override
+      public Adapter caseForEquation(ForEquation object)
+      {
+        return createForEquationAdapter();
+      }
+      @Override
+      public Adapter caseConnectEquation(ConnectEquation object)
+      {
+        return createConnectEquationAdapter();
+      }
+      @Override
+      public Adapter caseWhenEquation(WhenEquation object)
+      {
+        return createWhenEquationAdapter();
+      }
+      @Override
+      public Adapter caseFunctionEquation(FunctionEquation object)
+      {
+        return createFunctionEquationAdapter();
+      }
+      @Override
       public Adapter caseNULLElement(NULLElement object)
       {
         return createNULLElementAdapter();
@@ -778,6 +823,141 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExternalElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.AnnotationClause <em>Annotation Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.AnnotationClause
+   * @generated
+   */
+  public Adapter createAnnotationClauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.EquationSection <em>Equation Section</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.EquationSection
+   * @generated
+   */
+  public Adapter createEquationSectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.Equation <em>Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.Equation
+   * @generated
+   */
+  public Adapter createEquationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.SimpleEquation <em>Simple Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.SimpleEquation
+   * @generated
+   */
+  public Adapter createSimpleEquationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.IfEquation <em>If Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.IfEquation
+   * @generated
+   */
+  public Adapter createIfEquationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.ForEquation <em>For Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.ForEquation
+   * @generated
+   */
+  public Adapter createForEquationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.ConnectEquation <em>Connect Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.ConnectEquation
+   * @generated
+   */
+  public Adapter createConnectEquationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.WhenEquation <em>When Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.WhenEquation
+   * @generated
+   */
+  public Adapter createWhenEquationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.FunctionEquation <em>Function Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.FunctionEquation
+   * @generated
+   */
+  public Adapter createFunctionEquationAdapter()
   {
     return null;
   }

@@ -225,8 +225,10 @@ public class MOlocSwitch<T> extends Switch<T>
         Argument argument = (Argument)theEObject;
         T result = caseArgument(argument);
         if (result == null) result = caseshort_class_definition(argument);
+        if (result == null) result = caseelement_modification(argument);
         if (result == null) result = caseclass_prefixes(argument);
         if (result == null) result = caseshort_class_specifier(argument);
+        if (result == null) result = casemodification(argument);
         if (result == null) result = caseclass_name(argument);
         if (result == null) result = casetype_specifier(argument);
         if (result == null) result = caseenum_list(argument);
@@ -424,6 +426,96 @@ public class MOlocSwitch<T> extends Switch<T>
         T result = caseExternalElement(externalElement);
         if (result == null) result = caseElement(externalElement);
         if (result == null) result = caseclass_modification(externalElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.ANNOTATION_CLAUSE:
+      {
+        AnnotationClause annotationClause = (AnnotationClause)theEObject;
+        T result = caseAnnotationClause(annotationClause);
+        if (result == null) result = caseElement(annotationClause);
+        if (result == null) result = caseclass_modification(annotationClause);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.EQUATION_SECTION:
+      {
+        EquationSection equationSection = (EquationSection)theEObject;
+        T result = caseEquationSection(equationSection);
+        if (result == null) result = caseElement(equationSection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.EQUATION:
+      {
+        Equation equation = (Equation)theEObject;
+        T result = caseEquation(equation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.SIMPLE_EQUATION:
+      {
+        SimpleEquation simpleEquation = (SimpleEquation)theEObject;
+        T result = caseSimpleEquation(simpleEquation);
+        if (result == null) result = caseEquation(simpleEquation);
+        if (result == null) result = casedescription(simpleEquation);
+        if (result == null) result = casedescription_string(simpleEquation);
+        if (result == null) result = caseclass_modification(simpleEquation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.IF_EQUATION:
+      {
+        IfEquation ifEquation = (IfEquation)theEObject;
+        T result = caseIfEquation(ifEquation);
+        if (result == null) result = caseEquation(ifEquation);
+        if (result == null) result = casedescription(ifEquation);
+        if (result == null) result = casedescription_string(ifEquation);
+        if (result == null) result = caseclass_modification(ifEquation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.FOR_EQUATION:
+      {
+        ForEquation forEquation = (ForEquation)theEObject;
+        T result = caseForEquation(forEquation);
+        if (result == null) result = caseEquation(forEquation);
+        if (result == null) result = casedescription(forEquation);
+        if (result == null) result = casedescription_string(forEquation);
+        if (result == null) result = caseclass_modification(forEquation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.CONNECT_EQUATION:
+      {
+        ConnectEquation connectEquation = (ConnectEquation)theEObject;
+        T result = caseConnectEquation(connectEquation);
+        if (result == null) result = caseEquation(connectEquation);
+        if (result == null) result = casedescription(connectEquation);
+        if (result == null) result = casedescription_string(connectEquation);
+        if (result == null) result = caseclass_modification(connectEquation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.WHEN_EQUATION:
+      {
+        WhenEquation whenEquation = (WhenEquation)theEObject;
+        T result = caseWhenEquation(whenEquation);
+        if (result == null) result = caseEquation(whenEquation);
+        if (result == null) result = casedescription(whenEquation);
+        if (result == null) result = casedescription_string(whenEquation);
+        if (result == null) result = caseclass_modification(whenEquation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.FUNCTION_EQUATION:
+      {
+        FunctionEquation functionEquation = (FunctionEquation)theEObject;
+        T result = caseFunctionEquation(functionEquation);
+        if (result == null) result = caseEquation(functionEquation);
+        if (result == null) result = casedescription(functionEquation);
+        if (result == null) result = casedescription_string(functionEquation);
+        if (result == null) result = caseclass_modification(functionEquation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -978,6 +1070,150 @@ public class MOlocSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExternalElement(ExternalElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Annotation Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Annotation Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnnotationClause(AnnotationClause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Equation Section</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Equation Section</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEquationSection(EquationSection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Equation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Equation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEquation(Equation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simple Equation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simple Equation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimpleEquation(SimpleEquation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Equation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Equation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfEquation(IfEquation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>For Equation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>For Equation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseForEquation(ForEquation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Connect Equation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Connect Equation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConnectEquation(ConnectEquation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>When Equation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>When Equation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhenEquation(WhenEquation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Equation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Equation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionEquation(FunctionEquation object)
   {
     return null;
   }

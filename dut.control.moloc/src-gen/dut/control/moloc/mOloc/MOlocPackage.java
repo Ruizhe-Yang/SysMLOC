@@ -287,22 +287,13 @@ public interface MOlocPackage extends EPackage
   int CLASS_DEFINITION__ENUMERATION_LITERAL = CLASS_PREFIXES_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__IS_ANNOTATION = CLASS_PREFIXES_FEATURE_COUNT + 7;
-
-  /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 8;
+  int CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -311,7 +302,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 9;
+  int CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -320,7 +311,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 10;
+  int CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Der</b></em>' attribute.
@@ -329,7 +320,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_DER = CLASS_PREFIXES_FEATURE_COUNT + 11;
+  int CLASS_DEFINITION__IS_DER = CLASS_PREFIXES_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Der Name</b></em>' attribute list.
@@ -338,7 +329,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__DER_NAME = CLASS_PREFIXES_FEATURE_COUNT + 12;
+  int CLASS_DEFINITION__DER_NAME = CLASS_PREFIXES_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Isfinal</b></em>' attribute.
@@ -347,7 +338,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__ISFINAL = CLASS_PREFIXES_FEATURE_COUNT + 13;
+  int CLASS_DEFINITION__ISFINAL = CLASS_PREFIXES_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
@@ -356,7 +347,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_ENCAPSULATED = CLASS_PREFIXES_FEATURE_COUNT + 14;
+  int CLASS_DEFINITION__IS_ENCAPSULATED = CLASS_PREFIXES_FEATURE_COUNT + 13;
 
   /**
    * The number of structural features of the '<em>Class definition</em>' class.
@@ -365,7 +356,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 15;
+  int CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 14;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.class_nameImpl <em>class name</em>}' class.
@@ -533,22 +524,13 @@ public interface MOlocPackage extends EPackage
   int CLASS_SPECIFIER__ENUMERATION_LITERAL = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_SPECIFIER__IS_ANNOTATION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 2;
-
-  /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__DIRECTION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 3;
+  int CLASS_SPECIFIER__DIRECTION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -557,7 +539,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__IS_ENUMERATION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 4;
+  int CLASS_SPECIFIER__IS_ENUMERATION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -566,7 +548,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__IS_COLON = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 5;
+  int CLASS_SPECIFIER__IS_COLON = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Der</b></em>' attribute.
@@ -575,7 +557,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__IS_DER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 6;
+  int CLASS_SPECIFIER__IS_DER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Der Name</b></em>' attribute list.
@@ -584,7 +566,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__DER_NAME = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 7;
+  int CLASS_SPECIFIER__DER_NAME = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>class specifier</em>' class.
@@ -593,7 +575,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER_FEATURE_COUNT = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 8;
+  int CLASS_SPECIFIER_FEATURE_COUNT = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl <em>short class specifier</em>}' class.
@@ -651,22 +633,13 @@ public interface MOlocPackage extends EPackage
   int SHORT_CLASS_SPECIFIER__DESCRIPTION = CLASS_NAME_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHORT_CLASS_SPECIFIER__IS_ANNOTATION = CLASS_NAME_FEATURE_COUNT + 4;
-
-  /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__DIRECTION = CLASS_NAME_FEATURE_COUNT + 5;
+  int SHORT_CLASS_SPECIFIER__DIRECTION = CLASS_NAME_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -675,7 +648,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__IS_ENUMERATION = CLASS_NAME_FEATURE_COUNT + 6;
+  int SHORT_CLASS_SPECIFIER__IS_ENUMERATION = CLASS_NAME_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -684,7 +657,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__IS_COLON = CLASS_NAME_FEATURE_COUNT + 7;
+  int SHORT_CLASS_SPECIFIER__IS_COLON = CLASS_NAME_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>short class specifier</em>' class.
@@ -693,7 +666,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 8;
+  int SHORT_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.der_class_specifierImpl <em>der class specifier</em>}' class.
@@ -742,22 +715,13 @@ public interface MOlocPackage extends EPackage
   int DER_CLASS_SPECIFIER__ARGUMENTS = CLASS_NAME_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DER_CLASS_SPECIFIER__IS_ANNOTATION = CLASS_NAME_FEATURE_COUNT + 3;
-
-  /**
    * The feature id for the '<em><b>Is Der</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DER_CLASS_SPECIFIER__IS_DER = CLASS_NAME_FEATURE_COUNT + 4;
+  int DER_CLASS_SPECIFIER__IS_DER = CLASS_NAME_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Der Name</b></em>' attribute list.
@@ -766,7 +730,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DER_CLASS_SPECIFIER__DER_NAME = CLASS_NAME_FEATURE_COUNT + 5;
+  int DER_CLASS_SPECIFIER__DER_NAME = CLASS_NAME_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>der class specifier</em>' class.
@@ -775,7 +739,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DER_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 6;
+  int DER_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.class_modificationImpl <em>class modification</em>}' class.
@@ -946,22 +910,13 @@ public interface MOlocPackage extends EPackage
   int DESCRIPTION__ARGUMENTS = DESCRIPTION_STRING_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DESCRIPTION__IS_ANNOTATION = DESCRIPTION_STRING_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>description</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DESCRIPTION_FEATURE_COUNT = DESCRIPTION_STRING_FEATURE_COUNT + 2;
+  int DESCRIPTION_FEATURE_COUNT = DESCRIPTION_STRING_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.EnumerationLiteralImpl <em>Enumeration Literal</em>}' class.
@@ -990,15 +945,6 @@ public interface MOlocPackage extends EPackage
    * @ordered
    */
   int ENUMERATION_LITERAL__ARGUMENTS = DESCRIPTION__ARGUMENTS;
-
-  /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENUMERATION_LITERAL__IS_ANNOTATION = DESCRIPTION__IS_ANNOTATION;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1119,22 +1065,13 @@ public interface MOlocPackage extends EPackage
   int SHORT_CLASS_DEFINITION__DESCRIPTION = CLASS_PREFIXES_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHORT_CLASS_DEFINITION__IS_ANNOTATION = CLASS_PREFIXES_FEATURE_COUNT + 5;
-
-  /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 6;
+  int SHORT_CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -1143,7 +1080,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 7;
+  int SHORT_CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -1152,7 +1089,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 8;
+  int SHORT_CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>short class definition</em>' class.
@@ -1161,7 +1098,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 9;
+  int SHORT_CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ArgumentImpl <em>Argument</em>}' class.
@@ -1264,15 +1201,6 @@ public interface MOlocPackage extends EPackage
   int ARGUMENT__DESCRIPTION = SHORT_CLASS_DEFINITION__DESCRIPTION;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGUMENT__IS_ANNOTATION = SHORT_CLASS_DEFINITION__IS_ANNOTATION;
-
-  /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1300,13 +1228,31 @@ public interface MOlocPackage extends EPackage
   int ARGUMENT__IS_COLON = SHORT_CLASS_DEFINITION__IS_COLON;
 
   /**
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__EXPRESSION = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Element Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__ELEMENT_NAME = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Is Redeclare</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARGUMENT__IS_REDECLARE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 0;
+  int ARGUMENT__IS_REDECLARE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Each</b></em>' attribute.
@@ -1315,7 +1261,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARGUMENT__IS_EACH = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 1;
+  int ARGUMENT__IS_EACH = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Isfinal</b></em>' attribute.
@@ -1324,7 +1270,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARGUMENT__ISFINAL = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 2;
+  int ARGUMENT__ISFINAL = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Argument</em>' class.
@@ -1333,7 +1279,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARGUMENT_FEATURE_COUNT = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 3;
+  int ARGUMENT_FEATURE_COUNT = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.modificationImpl <em>modification</em>}' class.
@@ -1526,15 +1472,6 @@ public interface MOlocPackage extends EPackage
    * @ordered
    */
   int ELEMENT_REPLACEABLE__DESCRIPTION = SHORT_CLASS_DEFINITION__DESCRIPTION;
-
-  /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_REPLACEABLE__IS_ANNOTATION = SHORT_CLASS_DEFINITION__IS_ANNOTATION;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -1782,22 +1719,13 @@ public interface MOlocPackage extends EPackage
   int COMPONENT_CLAUSE1__DESCRIPTION = TYPE_PREFIX_FEATURE_COUNT + 5;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_CLAUSE1__IS_ANNOTATION = TYPE_PREFIX_FEATURE_COUNT + 6;
-
-  /**
    * The number of structural features of the '<em>component clause1</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_CLAUSE1_FEATURE_COUNT = TYPE_PREFIX_FEATURE_COUNT + 7;
+  int COMPONENT_CLAUSE1_FEATURE_COUNT = TYPE_PREFIX_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.array_subscriptsImpl <em>array subscripts</em>}' class.
@@ -1938,22 +1866,13 @@ public interface MOlocPackage extends EPackage
   int COMPONENT_DECLARATION1__DESCRIPTION = DECLARATION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_DECLARATION1__IS_ANNOTATION = DECLARATION_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>component declaration1</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_DECLARATION1_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 2;
+  int COMPONENT_DECLARATION1_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Unfinished2Impl <em>Unfinished2</em>}' class.
@@ -2059,13 +1978,22 @@ public interface MOlocPackage extends EPackage
   int IMPORT_CLAUSE__ARGUMENTS = ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * The feature id for the '<em><b>Is Public</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 2;
+  int IMPORT_CLAUSE__IS_PUBLIC = ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Protected</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_CLAUSE__IS_PROTECTED = ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Self Name</b></em>' attribute.
@@ -2074,7 +2002,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__SELF_NAME = ELEMENT_FEATURE_COUNT + 3;
+  int IMPORT_CLAUSE__SELF_NAME = ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Import Name</b></em>' attribute.
@@ -2083,7 +2011,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__IMPORT_NAME = ELEMENT_FEATURE_COUNT + 4;
+  int IMPORT_CLAUSE__IMPORT_NAME = ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Import All</b></em>' attribute.
@@ -2092,7 +2020,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__IS_IMPORT_ALL = ELEMENT_FEATURE_COUNT + 5;
+  int IMPORT_CLAUSE__IS_IMPORT_ALL = ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Object Name</b></em>' attribute list.
@@ -2101,7 +2029,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__OBJECT_NAME = ELEMENT_FEATURE_COUNT + 6;
+  int IMPORT_CLAUSE__OBJECT_NAME = ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Import Clause</em>' class.
@@ -2110,7 +2038,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 7;
+  int IMPORT_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl <em>Extends Clause</em>}' class.
@@ -2150,22 +2078,13 @@ public interface MOlocPackage extends EPackage
   int EXTENDS_CLAUSE__BREAKS = ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXTENDS_CLAUSE__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 3;
-
-  /**
    * The number of structural features of the '<em>Extends Clause</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
+  int EXTENDS_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.BreakImpl <em>Break</em>}' class.
@@ -2260,13 +2179,31 @@ public interface MOlocPackage extends EPackage
   int GENERAL_CLAUSE__SUBSCRIPT = ELEMENT_FEATURE_COUNT + 4;
 
   /**
+   * The feature id for the '<em><b>Is Public</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__IS_PUBLIC = ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Is Protected</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__IS_PROTECTED = ELEMENT_FEATURE_COUNT + 6;
+
+  /**
    * The feature id for the '<em><b>Is Redeclare</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_REDECLARE = ELEMENT_FEATURE_COUNT + 5;
+  int GENERAL_CLAUSE__IS_REDECLARE = ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Isfinal</b></em>' attribute.
@@ -2275,7 +2212,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__ISFINAL = ELEMENT_FEATURE_COUNT + 6;
+  int GENERAL_CLAUSE__ISFINAL = ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Inner</b></em>' attribute.
@@ -2284,7 +2221,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_INNER = ELEMENT_FEATURE_COUNT + 7;
+  int GENERAL_CLAUSE__IS_INNER = ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Outer</b></em>' attribute.
@@ -2293,7 +2230,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_OUTER = ELEMENT_FEATURE_COUNT + 8;
+  int GENERAL_CLAUSE__IS_OUTER = ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Is Replaceable</b></em>' attribute.
@@ -2302,7 +2239,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_REPLACEABLE = ELEMENT_FEATURE_COUNT + 9;
+  int GENERAL_CLAUSE__IS_REPLACEABLE = ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Component list</b></em>' containment reference list.
@@ -2311,7 +2248,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__COMPONENT_LIST = ELEMENT_FEATURE_COUNT + 10;
+  int GENERAL_CLAUSE__COMPONENT_LIST = ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The number of structural features of the '<em>General Clause</em>' class.
@@ -2320,7 +2257,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 11;
+  int GENERAL_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Component_declarationImpl <em>Component declaration</em>}' class.
@@ -2378,22 +2315,13 @@ public interface MOlocPackage extends EPackage
   int COMPONENT_DECLARATION__DESCRIPTION = DECLARATION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_DECLARATION__IS_ANNOTATION = DECLARATION_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>Condition attribute</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_DECLARATION__CONDITION_ATTRIBUTE = DECLARATION_FEATURE_COUNT + 2;
+  int COMPONENT_DECLARATION__CONDITION_ATTRIBUTE = DECLARATION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Component declaration</em>' class.
@@ -2402,7 +2330,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_DECLARATION_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 3;
+  int COMPONENT_DECLARATION_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ExternalElementImpl <em>External Element</em>}' class.
@@ -2442,22 +2370,445 @@ public interface MOlocPackage extends EPackage
   int EXTERNAL_ELEMENT__REF = ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXTERNAL_ELEMENT__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 3;
-
-  /**
    * The number of structural features of the '<em>External Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTERNAL_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
+  int EXTERNAL_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.AnnotationClauseImpl <em>Annotation Clause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.AnnotationClauseImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAnnotationClause()
+   * @generated
+   */
+  int ANNOTATION_CLAUSE = 34;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_CLAUSE__ARGUMENTS = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Annotation Clause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.EquationSectionImpl <em>Equation Section</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.EquationSectionImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEquationSection()
+   * @generated
+   */
+  int EQUATION_SECTION = 35;
+
+  /**
+   * The feature id for the '<em><b>Is Initial</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUATION_SECTION__IS_INITIAL = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Equations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUATION_SECTION__EQUATIONS = ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Equation Section</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUATION_SECTION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.EquationImpl <em>Equation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.EquationImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEquation()
+   * @generated
+   */
+  int EQUATION = 36;
+
+  /**
+   * The number of structural features of the '<em>Equation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUATION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.SimpleEquationImpl <em>Simple Equation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.SimpleEquationImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getSimpleEquation()
+   * @generated
+   */
+  int SIMPLE_EQUATION = 37;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EQUATION__DESCRIPTION = EQUATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EQUATION__ARGUMENTS = EQUATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EQUATION__LEFT = EQUATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EQUATION__RIGHT = EQUATION_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Simple Equation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.IfEquationImpl <em>If Equation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.IfEquationImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getIfEquation()
+   * @generated
+   */
+  int IF_EQUATION = 38;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__DESCRIPTION = EQUATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__ARGUMENTS = EQUATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__CONDITION = EQUATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Equations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__EQUATIONS = EQUATION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Else Condition</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__ELSE_CONDITION = EQUATION_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>If Equation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ForEquationImpl <em>For Equation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.ForEquationImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getForEquation()
+   * @generated
+   */
+  int FOR_EQUATION = 39;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_EQUATION__DESCRIPTION = EQUATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_EQUATION__ARGUMENTS = EQUATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>For Indices</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_EQUATION__FOR_INDICES = EQUATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Equations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_EQUATION__EQUATIONS = EQUATION_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>For Equation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ConnectEquationImpl <em>Connect Equation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.ConnectEquationImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getConnectEquation()
+   * @generated
+   */
+  int CONNECT_EQUATION = 40;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECT_EQUATION__DESCRIPTION = EQUATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECT_EQUATION__ARGUMENTS = EQUATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECT_EQUATION__LEFT = EQUATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECT_EQUATION__RIGHT = EQUATION_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Connect Equation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECT_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.WhenEquationImpl <em>When Equation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.WhenEquationImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getWhenEquation()
+   * @generated
+   */
+  int WHEN_EQUATION = 41;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION__DESCRIPTION = EQUATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION__ARGUMENTS = EQUATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION__CONDITION = EQUATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Equations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION__EQUATIONS = EQUATION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Else Condition</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION__ELSE_CONDITION = EQUATION_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>When Equation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl <em>Function Equation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.FunctionEquationImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionEquation()
+   * @generated
+   */
+  int FUNCTION_EQUATION = 42;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_EQUATION__DESCRIPTION = EQUATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_EQUATION__ARGUMENTS = EQUATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Component</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_EQUATION__COMPONENT = EQUATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Function</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_EQUATION__FUNCTION = EQUATION_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Function Equation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.NULLElementImpl <em>NULL Element</em>}' class.
@@ -2467,7 +2818,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getNULLElement()
    * @generated
    */
-  int NULL_ELEMENT = 34;
+  int NULL_ELEMENT = 43;
 
   /**
    * The feature id for the '<em><b>Nullname</b></em>' attribute.
@@ -2495,7 +2846,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClassType()
    * @generated
    */
-  int CLASS_TYPE = 35;
+  int CLASS_TYPE = 44;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.Direction <em>Direction</em>}' enum.
@@ -2505,7 +2856,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getDirection()
    * @generated
    */
-  int DIRECTION = 36;
+  int DIRECTION = 45;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.RelationshipType <em>Relationship Type</em>}' enum.
@@ -2515,7 +2866,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getRelationshipType()
    * @generated
    */
-  int RELATIONSHIP_TYPE = 37;
+  int RELATIONSHIP_TYPE = 46;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.ParameterType <em>Parameter Type</em>}' enum.
@@ -2525,7 +2876,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getParameterType()
    * @generated
    */
-  int PARAMETER_TYPE = 38;
+  int PARAMETER_TYPE = 47;
 
 
   /**
@@ -2932,17 +3283,6 @@ public interface MOlocPackage extends EPackage
   EClass getdescription();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.description#isIsAnnotation <em>Is Annotation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Is Annotation</em>'.
-   * @see dut.control.moloc.mOloc.description#isIsAnnotation()
-   * @see #getdescription()
-   * @generated
-   */
-  EAttribute getdescription_IsAnnotation();
-
-  /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.Argument <em>Argument</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3226,6 +3566,28 @@ public interface MOlocPackage extends EPackage
   EClass getImportClause();
 
   /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ImportClause#isIsPublic <em>Is Public</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Public</em>'.
+   * @see dut.control.moloc.mOloc.ImportClause#isIsPublic()
+   * @see #getImportClause()
+   * @generated
+   */
+  EAttribute getImportClause_IsPublic();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ImportClause#isIsProtected <em>Is Protected</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Protected</em>'.
+   * @see dut.control.moloc.mOloc.ImportClause#isIsProtected()
+   * @see #getImportClause()
+   * @generated
+   */
+  EAttribute getImportClause_IsProtected();
+
+  /**
    * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ImportClause#getSelfName <em>Self Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3291,17 +3653,6 @@ public interface MOlocPackage extends EPackage
   EReference getExtendsClause_Breaks();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExtendsClause#isIsAnnotation <em>Is Annotation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Is Annotation</em>'.
-   * @see dut.control.moloc.mOloc.ExtendsClause#isIsAnnotation()
-   * @see #getExtendsClause()
-   * @generated
-   */
-  EAttribute getExtendsClause_IsAnnotation();
-
-  /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.Break <em>Break</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3342,6 +3693,28 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EClass getGeneralClause();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.GeneralClause#isIsPublic <em>Is Public</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Public</em>'.
+   * @see dut.control.moloc.mOloc.GeneralClause#isIsPublic()
+   * @see #getGeneralClause()
+   * @generated
+   */
+  EAttribute getGeneralClause_IsPublic();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.GeneralClause#isIsProtected <em>Is Protected</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Protected</em>'.
+   * @see dut.control.moloc.mOloc.GeneralClause#isIsProtected()
+   * @see #getGeneralClause()
+   * @generated
+   */
+  EAttribute getGeneralClause_IsProtected();
 
   /**
    * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.GeneralClause#isIsRedeclare <em>Is Redeclare</em>}'.
@@ -3463,15 +3836,270 @@ public interface MOlocPackage extends EPackage
   EAttribute getExternalElement_Ref();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExternalElement#isIsAnnotation <em>Is Annotation</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.AnnotationClause <em>Annotation Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Is Annotation</em>'.
-   * @see dut.control.moloc.mOloc.ExternalElement#isIsAnnotation()
-   * @see #getExternalElement()
+   * @return the meta object for class '<em>Annotation Clause</em>'.
+   * @see dut.control.moloc.mOloc.AnnotationClause
    * @generated
    */
-  EAttribute getExternalElement_IsAnnotation();
+  EClass getAnnotationClause();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.EquationSection <em>Equation Section</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Equation Section</em>'.
+   * @see dut.control.moloc.mOloc.EquationSection
+   * @generated
+   */
+  EClass getEquationSection();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.EquationSection#isIsInitial <em>Is Initial</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Initial</em>'.
+   * @see dut.control.moloc.mOloc.EquationSection#isIsInitial()
+   * @see #getEquationSection()
+   * @generated
+   */
+  EAttribute getEquationSection_IsInitial();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.EquationSection#getEquations <em>Equations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Equations</em>'.
+   * @see dut.control.moloc.mOloc.EquationSection#getEquations()
+   * @see #getEquationSection()
+   * @generated
+   */
+  EReference getEquationSection_Equations();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.Equation <em>Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Equation</em>'.
+   * @see dut.control.moloc.mOloc.Equation
+   * @generated
+   */
+  EClass getEquation();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.SimpleEquation <em>Simple Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Simple Equation</em>'.
+   * @see dut.control.moloc.mOloc.SimpleEquation
+   * @generated
+   */
+  EClass getSimpleEquation();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.SimpleEquation#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Left</em>'.
+   * @see dut.control.moloc.mOloc.SimpleEquation#getLeft()
+   * @see #getSimpleEquation()
+   * @generated
+   */
+  EAttribute getSimpleEquation_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.SimpleEquation#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Right</em>'.
+   * @see dut.control.moloc.mOloc.SimpleEquation#getRight()
+   * @see #getSimpleEquation()
+   * @generated
+   */
+  EAttribute getSimpleEquation_Right();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.IfEquation <em>If Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>If Equation</em>'.
+   * @see dut.control.moloc.mOloc.IfEquation
+   * @generated
+   */
+  EClass getIfEquation();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.IfEquation#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Condition</em>'.
+   * @see dut.control.moloc.mOloc.IfEquation#getCondition()
+   * @see #getIfEquation()
+   * @generated
+   */
+  EAttribute getIfEquation_Condition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfEquation#getEquations <em>Equations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Equations</em>'.
+   * @see dut.control.moloc.mOloc.IfEquation#getEquations()
+   * @see #getIfEquation()
+   * @generated
+   */
+  EReference getIfEquation_Equations();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.IfEquation#getElseCondition <em>Else Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Else Condition</em>'.
+   * @see dut.control.moloc.mOloc.IfEquation#getElseCondition()
+   * @see #getIfEquation()
+   * @generated
+   */
+  EAttribute getIfEquation_ElseCondition();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ForEquation <em>For Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>For Equation</em>'.
+   * @see dut.control.moloc.mOloc.ForEquation
+   * @generated
+   */
+  EClass getForEquation();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ForEquation#getForIndices <em>For Indices</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>For Indices</em>'.
+   * @see dut.control.moloc.mOloc.ForEquation#getForIndices()
+   * @see #getForEquation()
+   * @generated
+   */
+  EAttribute getForEquation_ForIndices();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ForEquation#getEquations <em>Equations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Equations</em>'.
+   * @see dut.control.moloc.mOloc.ForEquation#getEquations()
+   * @see #getForEquation()
+   * @generated
+   */
+  EReference getForEquation_Equations();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.ConnectEquation <em>Connect Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Connect Equation</em>'.
+   * @see dut.control.moloc.mOloc.ConnectEquation
+   * @generated
+   */
+  EClass getConnectEquation();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ConnectEquation#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Left</em>'.
+   * @see dut.control.moloc.mOloc.ConnectEquation#getLeft()
+   * @see #getConnectEquation()
+   * @generated
+   */
+  EAttribute getConnectEquation_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ConnectEquation#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Right</em>'.
+   * @see dut.control.moloc.mOloc.ConnectEquation#getRight()
+   * @see #getConnectEquation()
+   * @generated
+   */
+  EAttribute getConnectEquation_Right();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.WhenEquation <em>When Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>When Equation</em>'.
+   * @see dut.control.moloc.mOloc.WhenEquation
+   * @generated
+   */
+  EClass getWhenEquation();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.WhenEquation#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Condition</em>'.
+   * @see dut.control.moloc.mOloc.WhenEquation#getCondition()
+   * @see #getWhenEquation()
+   * @generated
+   */
+  EAttribute getWhenEquation_Condition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhenEquation#getEquations <em>Equations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Equations</em>'.
+   * @see dut.control.moloc.mOloc.WhenEquation#getEquations()
+   * @see #getWhenEquation()
+   * @generated
+   */
+  EReference getWhenEquation_Equations();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.WhenEquation#getElseCondition <em>Else Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Else Condition</em>'.
+   * @see dut.control.moloc.mOloc.WhenEquation#getElseCondition()
+   * @see #getWhenEquation()
+   * @generated
+   */
+  EAttribute getWhenEquation_ElseCondition();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.FunctionEquation <em>Function Equation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Equation</em>'.
+   * @see dut.control.moloc.mOloc.FunctionEquation
+   * @generated
+   */
+  EClass getFunctionEquation();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.FunctionEquation#getComponent <em>Component</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Component</em>'.
+   * @see dut.control.moloc.mOloc.FunctionEquation#getComponent()
+   * @see #getFunctionEquation()
+   * @generated
+   */
+  EAttribute getFunctionEquation_Component();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.FunctionEquation#getFunction <em>Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Function</em>'.
+   * @see dut.control.moloc.mOloc.FunctionEquation#getFunction()
+   * @see #getFunctionEquation()
+   * @generated
+   */
+  EAttribute getFunctionEquation_Function();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.NULLElement <em>NULL Element</em>}'.
@@ -3892,14 +4520,6 @@ public interface MOlocPackage extends EPackage
     EClass DESCRIPTION = eINSTANCE.getdescription();
 
     /**
-     * The meta object literal for the '<em><b>Is Annotation</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DESCRIPTION__IS_ANNOTATION = eINSTANCE.getdescription_IsAnnotation();
-
-    /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ArgumentImpl <em>Argument</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4144,6 +4764,22 @@ public interface MOlocPackage extends EPackage
     EClass IMPORT_CLAUSE = eINSTANCE.getImportClause();
 
     /**
+     * The meta object literal for the '<em><b>Is Public</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_CLAUSE__IS_PUBLIC = eINSTANCE.getImportClause_IsPublic();
+
+    /**
+     * The meta object literal for the '<em><b>Is Protected</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_CLAUSE__IS_PROTECTED = eINSTANCE.getImportClause_IsProtected();
+
+    /**
      * The meta object literal for the '<em><b>Self Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4194,14 +4830,6 @@ public interface MOlocPackage extends EPackage
     EReference EXTENDS_CLAUSE__BREAKS = eINSTANCE.getExtendsClause_Breaks();
 
     /**
-     * The meta object literal for the '<em><b>Is Annotation</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXTENDS_CLAUSE__IS_ANNOTATION = eINSTANCE.getExtendsClause_IsAnnotation();
-
-    /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.BreakImpl <em>Break</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4236,6 +4864,22 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EClass GENERAL_CLAUSE = eINSTANCE.getGeneralClause();
+
+    /**
+     * The meta object literal for the '<em><b>Is Public</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_CLAUSE__IS_PUBLIC = eINSTANCE.getGeneralClause_IsPublic();
+
+    /**
+     * The meta object literal for the '<em><b>Is Protected</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_CLAUSE__IS_PROTECTED = eINSTANCE.getGeneralClause_IsProtected();
 
     /**
      * The meta object literal for the '<em><b>Is Redeclare</b></em>' attribute feature.
@@ -4330,12 +4974,222 @@ public interface MOlocPackage extends EPackage
     EAttribute EXTERNAL_ELEMENT__REF = eINSTANCE.getExternalElement_Ref();
 
     /**
-     * The meta object literal for the '<em><b>Is Annotation</b></em>' attribute feature.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.AnnotationClauseImpl <em>Annotation Clause</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.AnnotationClauseImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAnnotationClause()
+     * @generated
+     */
+    EClass ANNOTATION_CLAUSE = eINSTANCE.getAnnotationClause();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.EquationSectionImpl <em>Equation Section</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.EquationSectionImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEquationSection()
+     * @generated
+     */
+    EClass EQUATION_SECTION = eINSTANCE.getEquationSection();
+
+    /**
+     * The meta object literal for the '<em><b>Is Initial</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXTERNAL_ELEMENT__IS_ANNOTATION = eINSTANCE.getExternalElement_IsAnnotation();
+    EAttribute EQUATION_SECTION__IS_INITIAL = eINSTANCE.getEquationSection_IsInitial();
+
+    /**
+     * The meta object literal for the '<em><b>Equations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EQUATION_SECTION__EQUATIONS = eINSTANCE.getEquationSection_Equations();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.EquationImpl <em>Equation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.EquationImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEquation()
+     * @generated
+     */
+    EClass EQUATION = eINSTANCE.getEquation();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.SimpleEquationImpl <em>Simple Equation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.SimpleEquationImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getSimpleEquation()
+     * @generated
+     */
+    EClass SIMPLE_EQUATION = eINSTANCE.getSimpleEquation();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_EQUATION__LEFT = eINSTANCE.getSimpleEquation_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_EQUATION__RIGHT = eINSTANCE.getSimpleEquation_Right();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.IfEquationImpl <em>If Equation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.IfEquationImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getIfEquation()
+     * @generated
+     */
+    EClass IF_EQUATION = eINSTANCE.getIfEquation();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IF_EQUATION__CONDITION = eINSTANCE.getIfEquation_Condition();
+
+    /**
+     * The meta object literal for the '<em><b>Equations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_EQUATION__EQUATIONS = eINSTANCE.getIfEquation_Equations();
+
+    /**
+     * The meta object literal for the '<em><b>Else Condition</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IF_EQUATION__ELSE_CONDITION = eINSTANCE.getIfEquation_ElseCondition();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ForEquationImpl <em>For Equation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.ForEquationImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getForEquation()
+     * @generated
+     */
+    EClass FOR_EQUATION = eINSTANCE.getForEquation();
+
+    /**
+     * The meta object literal for the '<em><b>For Indices</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FOR_EQUATION__FOR_INDICES = eINSTANCE.getForEquation_ForIndices();
+
+    /**
+     * The meta object literal for the '<em><b>Equations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_EQUATION__EQUATIONS = eINSTANCE.getForEquation_Equations();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ConnectEquationImpl <em>Connect Equation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.ConnectEquationImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getConnectEquation()
+     * @generated
+     */
+    EClass CONNECT_EQUATION = eINSTANCE.getConnectEquation();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONNECT_EQUATION__LEFT = eINSTANCE.getConnectEquation_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONNECT_EQUATION__RIGHT = eINSTANCE.getConnectEquation_Right();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.WhenEquationImpl <em>When Equation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.WhenEquationImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getWhenEquation()
+     * @generated
+     */
+    EClass WHEN_EQUATION = eINSTANCE.getWhenEquation();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WHEN_EQUATION__CONDITION = eINSTANCE.getWhenEquation_Condition();
+
+    /**
+     * The meta object literal for the '<em><b>Equations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHEN_EQUATION__EQUATIONS = eINSTANCE.getWhenEquation_Equations();
+
+    /**
+     * The meta object literal for the '<em><b>Else Condition</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WHEN_EQUATION__ELSE_CONDITION = eINSTANCE.getWhenEquation_ElseCondition();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl <em>Function Equation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.FunctionEquationImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionEquation()
+     * @generated
+     */
+    EClass FUNCTION_EQUATION = eINSTANCE.getFunctionEquation();
+
+    /**
+     * The meta object literal for the '<em><b>Component</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_EQUATION__COMPONENT = eINSTANCE.getFunctionEquation_Component();
+
+    /**
+     * The meta object literal for the '<em><b>Function</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_EQUATION__FUNCTION = eINSTANCE.getFunctionEquation_Function();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.NULLElementImpl <em>NULL Element</em>}' class.

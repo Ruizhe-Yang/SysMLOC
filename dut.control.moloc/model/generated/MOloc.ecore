@@ -72,10 +72,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral" eSuperTypes="#//description #//description_string #//class_modification">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="description" eSuperTypes="#//description_string #//class_modification">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAnnotation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//short_class_definition #//class_prefixes #//short_class_specifier">
+  <eClassifiers xsi:type="ecore:EClass" name="description" eSuperTypes="#//description_string #//class_modification"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//short_class_definition #//class_prefixes #//short_class_specifier #//element_modification #//modification">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRedeclare" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEach" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isfinal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -124,6 +122,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Element"/>
   <eClassifiers xsi:type="ecore:EClass" name="ImportClause" eSuperTypes="#//Element #//description">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPublic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isProtected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="selfName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isImportAll" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -133,7 +133,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExtendsClause" eSuperTypes="#//Element #//type_specifier #//class_modification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="breaks" upperBound="-1"
         eType="#//Break" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAnnotation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Break">
     <eStructuralFeatures xsi:type="ecore:EReference" name="connect" eType="#//NULLElement"
@@ -141,6 +140,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="breakName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralClause" eSuperTypes="#//Element #//type_prefix #//type_specifier #//array_subscripts">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPublic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isProtected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRedeclare" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isfinal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInner" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -156,7 +157,44 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language_specification"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAnnotation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationClause" eSuperTypes="#//Element #//class_modification"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EquationSection" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInitial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equations" upperBound="-1"
+        eType="#//Equation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Equation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleEquation" eSuperTypes="#//Equation #//description">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="left" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="right" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IfEquation" eSuperTypes="#//Equation #//description">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equations" upperBound="-1"
+        eType="#//Equation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elseCondition" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForEquation" eSuperTypes="#//Equation #//description">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forIndices" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equations" upperBound="-1"
+        eType="#//Equation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectEquation" eSuperTypes="#//Equation #//description">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="left" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="right" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WhenEquation" eSuperTypes="#//Equation #//description">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equations" upperBound="-1"
+        eType="#//Equation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elseCondition" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionEquation" eSuperTypes="#//Equation #//description">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="component" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="function" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NULLElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

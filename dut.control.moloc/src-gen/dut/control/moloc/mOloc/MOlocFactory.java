@@ -330,6 +330,87 @@ public interface MOlocFactory extends EFactory
   ExternalElement createExternalElement();
 
   /**
+   * Returns a new object of class '<em>Annotation Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotation Clause</em>'.
+   * @generated
+   */
+  AnnotationClause createAnnotationClause();
+
+  /**
+   * Returns a new object of class '<em>Equation Section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Equation Section</em>'.
+   * @generated
+   */
+  EquationSection createEquationSection();
+
+  /**
+   * Returns a new object of class '<em>Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Equation</em>'.
+   * @generated
+   */
+  Equation createEquation();
+
+  /**
+   * Returns a new object of class '<em>Simple Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Equation</em>'.
+   * @generated
+   */
+  SimpleEquation createSimpleEquation();
+
+  /**
+   * Returns a new object of class '<em>If Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Equation</em>'.
+   * @generated
+   */
+  IfEquation createIfEquation();
+
+  /**
+   * Returns a new object of class '<em>For Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Equation</em>'.
+   * @generated
+   */
+  ForEquation createForEquation();
+
+  /**
+   * Returns a new object of class '<em>Connect Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connect Equation</em>'.
+   * @generated
+   */
+  ConnectEquation createConnectEquation();
+
+  /**
+   * Returns a new object of class '<em>When Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>When Equation</em>'.
+   * @generated
+   */
+  WhenEquation createWhenEquation();
+
+  /**
+   * Returns a new object of class '<em>Function Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Equation</em>'.
+   * @generated
+   */
+  FunctionEquation createFunctionEquation();
+
+  /**
    * Returns a new object of class '<em>NULL Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -11,6 +11,9 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -18,10 +21,14 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MOlocGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q;
+	protected AbstractElementAlias match_IfEquation_ElseKeyword_5_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MOlocGrammarAccess) access;
+		match_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getExtendsClauseAccess().getLeftParenthesisKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getExtendsClauseAccess().getRightParenthesisKeyword_2_2()));
+		match_IfEquation_ElseKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getIfEquationAccess().getElseKeyword_5_0());
 	}
 	
 	@Override
@@ -48,8 +55,46 @@ public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q.equals(syntax))
+				emit_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_IfEquation_ElseKeyword_5_0_q.equals(syntax))
+				emit_IfEquation_ElseKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     typeSpecifier=TypeSpecifier (ambiguity) ';' (rule end)
+	 *     typeSpecifier=TypeSpecifier (ambiguity) 'annotation' '(' arguments+=Argument
+	 
+	 * </pre>
+	 */
+	protected void emit_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'else'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' ';' (rule end)
+	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' 'annotation' '(' arguments+=Argument
+	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' description=DescriptionString
+	 *     equations+=Equation (ambiguity) 'end' 'if' ';' (rule end)
+	 *     equations+=Equation (ambiguity) 'end' 'if' 'annotation' '(' arguments+=Argument
+	 *     equations+=Equation (ambiguity) 'end' 'if' description=DescriptionString
+	 
+	 * </pre>
+	 */
+	protected void emit_IfEquation_ElseKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

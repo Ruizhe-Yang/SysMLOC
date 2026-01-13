@@ -36,7 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getBreaks <em>Breaks</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,26 +81,6 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @ordered
    */
   protected EList<Break> breaks;
-
-  /**
-   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsAnnotation()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsAnnotation()
-   * @generated
-   * @ordered
-   */
-  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -185,31 +164,6 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @generated
    */
   @Override
-  public boolean isIsAnnotation()
-  {
-    return isAnnotation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setIsAnnotation(boolean newIsAnnotation)
-  {
-    boolean oldIsAnnotation = isAnnotation;
-    isAnnotation = newIsAnnotation;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -238,8 +192,6 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return getArguments();
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         return getBreaks();
-      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION:
-        return isIsAnnotation();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -266,9 +218,6 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         getBreaks().clear();
         getBreaks().addAll((Collection<? extends Break>)newValue);
         return;
-      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION:
-        setIsAnnotation((Boolean)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -292,9 +241,6 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         getBreaks().clear();
         return;
-      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION:
-        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -315,8 +261,6 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return arguments != null && !arguments.isEmpty();
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         return breaks != null && !breaks.isEmpty();
-      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION:
-        return isAnnotation != IS_ANNOTATION_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -388,8 +332,6 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (typeSpecifier: ");
     result.append(typeSpecifier);
-    result.append(", isAnnotation: ");
-    result.append(isAnnotation);
     result.append(')');
     return result.toString();
   }

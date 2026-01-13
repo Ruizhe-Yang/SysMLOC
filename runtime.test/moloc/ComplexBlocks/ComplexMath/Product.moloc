@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.ComplexMath">
+  <classes classType="block" className="Product" description="&quot;Output product of the two inputs&quot;">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.ComplexSI2SO"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1Internal*u2Internal"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments elementName="Documentation">
+        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes the output &lt;code>y&lt;/code> (element-wise)&#xA;as &lt;em>product&lt;/em> of the corresponding elements of&#xA;the two inputs &lt;code>u1&lt;/code> and &lt;code>u2&lt;/code>. Optionally, either input &lt;code>u1&lt;/code> or &lt;code>u2&lt;/code> or both inputs can be processed conjugate complex, when parameters &lt;code>useConjugateInput1&lt;/code> and &lt;code>useConjugateInput2&lt;/code> are &lt;code>true&lt;/code>, respectively. Depending on &lt;code>useConjugateInput1&lt;/code> and &lt;code>useConjugateInput2&lt;/code> the internal signals represent either the original or the conjugate complex input signal.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u1Inernal * u2Internal;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;p>&lt;strong>Example:&lt;/strong> If &lt;code>useConjugateInput1 = true&lt;/code> and &lt;code>useConjugateInput2 = false&lt;/code> the output signal &lt;code>y = Modelica.ComplexMath.conj(u1) * u2&lt;/code>.&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </arguments>
+      <arguments elementName="Icon">
+        <arguments elementName="coordinateSystem">
+          <arguments expression="true" elementName="preserveAspectRatio"/>
+          <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </arguments>
+        <arguments expression="{Line(points={{-100,60},{-40,60},{-30,40}}, color={85,170,255} ) , Line(points={{-100,-60},{-40,-60},{-30,-40}}, color={85,170,255} ) , Line(points={{50,0},{100,0}}, color={85,170,255}), Line(points={{-30,0},{30,0}}, color={85,170,255}), Line(points={{-15, 25.99 } ,{15,-25.99} } , color={85,170,255} ) , Line(points={{-15,-25.99},{15, 25.99 } } , color={85,170,255} ) , Ellipse(extent={{-50,50},{50,-50}}, lineColor={85,170,255} ) }" elementName="graphics"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

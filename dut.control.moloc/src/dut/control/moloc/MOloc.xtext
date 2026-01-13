@@ -112,19 +112,19 @@ EnumerationLiteral:
 ;
 
 fragment description:
-	description_string ( isAnnotation ?= 'annotation' class_modification)?
+	description_string ( 'annotation' class_modification)?
 ;
 
 Argument:
 	( isRedeclare ?= 'redeclare')?
 	( isEach ?= 'each' )?
 	( isfinal ?= 'final' )?
-//	( short_class_definition 
+	( short_class_definition 
 //	| component_clause1 
-//	| element_modification 
+	| element_modification 
 //	| element_replaceable
-//	)
-	short_class_definition
+	)
+//	short_class_definition
 ;
 
 fragment element_modification:
@@ -199,12 +199,17 @@ Element:
 	| ExtendsClause 
 	| GeneralClause 
 	| ExternalElement 
+	| AnnotationClause
+	| EquationSection
+//	| AlgorithmSection
 ;
 
 ImportClause:
+	( isPublic ?= 'public' )?
+	( isProtected ?= 'protected' )?
 	'import' 
 	( selfName=IDENT '=' importName=Name
-	| importName=Name ( isImportAll?='.*' | '.' ( isImportAll?='*' | '{' objectName+=IDENT ( ',' objectName+=IDENT)* '}'))
+	| importName=Name ( isImportAll?='.*' | '.' ( isImportAll?='*' | '{' objectName+=IDENT ( ',' objectName+=IDENT)* '}'))?
 	)
 	description
 	';'
@@ -213,8 +218,8 @@ ImportClause:
 ExtendsClause:
 	'extends' 
 	type_specifier 
-	( '(' ( arguments+=Argument | breaks+=Break ) (',' ( arguments+=Argument | breaks+=Break ) )* ')')?
-	( isAnnotation?='annotation' class_modification )?
+	( '(' (( arguments+=Argument | breaks+=Break ) (',' ( arguments+=Argument | breaks+=Break )* ))? ')')?
+	( 'annotation' class_modification )?
 	';'
 ;
 
@@ -226,6 +231,8 @@ Break:
 ;
 
 GeneralClause:
+	( isPublic ?= 'public' )?
+	( isProtected ?= 'protected' )?
 	( isRedeclare ?= 'redeclare' )?
 	( isfinal ?= 'final' )?
 	( isInner ?= 'inner' )?
@@ -252,16 +259,95 @@ ExternalElement:
 	(language_specification=STRING)?
 	//[fatal] rule ruleTerm has non-LL(*) decision due to recursive rule invocations reachable from alts 1,2.
 	( ref=Component_reference )?
-	( isAnnotation?='annotation' class_modification )?
+	( 'annotation' class_modification )?
 	';'
 ;
 
+AnnotationClause:
+	'annotation' 
+	class_modification 
+	';'
+;
+
+EquationSection:
+	{EquationSection} 
+	( isInitial ?= 'initial' )?
+	'equation'
+	( equations += Equation )*
+;
+
+Equation:
+	SimpleEquation
+	| IfEquation
+	| ForEquation
+	| ConnectEquation
+	| WhenEquation
+	| FunctionEquation
+;
+
+SimpleEquation:
+	left=Simple_expression
+	'='
+	right=Expression
+	description
+	';'
+;
+
+IfEquation:
+	'if'
+	condition=Expression
+	'then'
+	( equations += Equation )*
+	( 'elseif' elseCondition+=Expression 
+		'then' ( equations += Equation )*
+	)
+	( 'else' ( equations += Equation )*)?
+	'end' 'if' 
+	description
+	';'
+;
+
+ForEquation:
+	'for'
+	forIndices=ForIndices
+	'loop'
+	( equations += Equation )*
+	'end' 'for' 
+	description
+	';'
+;
+
+ConnectEquation:
+	'connect'
+	'(' left=Component_reference ',' right=Component_reference ')'
+	description
+	';'
+;
+
+WhenEquation:
+	'when'
+	condition=Expression
+	'then'
+	( equations += Equation )*
+	( 'elsewhen' elseCondition+=Expression
+		'then' ( equations += Equation )*
+	)?
+	'end' 'when' 
+	description
+	';'
+;
+
+FunctionEquation:
+	component=Component_reference
+	function=FunctionCallArgs
+	description
+	';'
+;
 
 NULLElement:
 	'nullElement'
 	nullname=Name
 ;
-
 
 Expression:
 	Simple_expression
@@ -305,7 +391,7 @@ Primary:
 	UNSIGNED_NUMBER
 	| STRING
 	| TRUE_FALSE
-//	| ( Component_reference | 'der' | 'initial' | 'pure' ) Function_call_args
+	| ( Component_reference | 'der' | 'initial' | 'pure' ) FunctionCallArgs
 	| Component_reference
 	| '(' Expression? (',' Expression) ')'
 	| '[' Expression (',' Expression) ']'
@@ -333,25 +419,59 @@ Component_reference:
 	'.'? IDENT ('[' Subscript (',' Subscript)* ']')? ('.' IDENT ('[' Subscript (',' Subscript)* ']')?)*
 ;
 
+FunctionCallArgs:
+	'(' (FunctionArguments)? ')'
+;
+
+FunctionArguments:
+	Expression (',' FunctionArgumentsNonFirst | 'for' ForIndices)?
+	| FunctionPartialApplication (',' FunctionArgumentsNonFirst)?
+	| NamedArguments
+;
+
+FunctionArgumentsNonFirst:
+	FunctionArguments (',' FunctionArgumentsNonFirst)?
+	| NamedArguments
+;
+
+FunctionPartialApplication:
+	'function' TypeSpecifier '(' NamedArguments ')'
+;
+
+NamedArguments:
+	NamedArgument (',' NamedArgument)
+;
+
+NamedArgument:
+	IDENT '=' FunctionArgument
+;
+
+FunctionArgument:
+	FunctionPartialApplication | Expression
+;
+
 Name:
 	IDENT ("." IDENT)*
 ;
-
 
 // terminals
 terminal TRUE_FALSE returns Ecore::EBoolean:
 	'true' | 'false'
 ;
+
 terminal IDENT returns Ecore::EString:
 	NON_DIGIT ( DIGIT | NON_DIGIT )* | Q_IDENT
 ;
+
 terminal UNSIGNED_NUMBER returns Ecore::EFloat:
 	UNSIGNED_INTEGER ( "." ( UNSIGNED_INTEGER )? )?
 	( ( "e" | "E" ) ( "+" | "-" )? UNSIGNED_INTEGER )?
 ;
+
 terminal STRING returns Ecore::EString:
 	"\"" ( S_CHAR | S_ESCAPE )* "\""
 ;
+
 terminal ML_COMMENT: '/*'->'*/';
 terminal SL_COMMENT: '//' !('\n'|'\r')* ('\r'? '\n')?;
 terminal WS: (' ' | '\t' | '\r' | '\n')+;

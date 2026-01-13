@@ -42,6 +42,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDirectionType <em>Direction Type</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getSubscript <em>Subscript</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsPublic <em>Is Public</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsProtected <em>Is Protected</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsRedeclare <em>Is Redeclare</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsfinal <em>Isfinal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsInner <em>Is Inner</em>}</li>
@@ -143,6 +145,46 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @ordered
    */
   protected EList<String> subscript;
+
+  /**
+   * The default value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsPublic()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_PUBLIC_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsPublic()
+   * @generated
+   * @ordered
+   */
+  protected boolean isPublic = IS_PUBLIC_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsProtected() <em>Is Protected</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsProtected()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_PROTECTED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsProtected() <em>Is Protected</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsProtected()
+   * @generated
+   * @ordered
+   */
+  protected boolean isProtected = IS_PROTECTED_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsRedeclare() <em>Is Redeclare</em>}' attribute.
@@ -396,6 +438,56 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @generated
    */
   @Override
+  public boolean isIsPublic()
+  {
+    return isPublic;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsPublic(boolean newIsPublic)
+  {
+    boolean oldIsPublic = isPublic;
+    isPublic = newIsPublic;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC, oldIsPublic, isPublic));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsProtected()
+  {
+    return isProtected;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsProtected(boolean newIsProtected)
+  {
+    boolean oldIsProtected = isProtected;
+    isProtected = newIsProtected;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_PROTECTED, oldIsProtected, isProtected));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsRedeclare()
   {
     return isRedeclare;
@@ -566,6 +658,10 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return getTypeSpecifier();
       case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
         return getSubscript();
+      case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
+        return isIsPublic();
+      case MOlocPackage.GENERAL_CLAUSE__IS_PROTECTED:
+        return isIsProtected();
       case MOlocPackage.GENERAL_CLAUSE__IS_REDECLARE:
         return isIsRedeclare();
       case MOlocPackage.GENERAL_CLAUSE__ISFINAL:
@@ -608,6 +704,12 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
         getSubscript().clear();
         getSubscript().addAll((Collection<? extends String>)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
+        setIsPublic((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_PROTECTED:
+        setIsProtected((Boolean)newValue);
         return;
       case MOlocPackage.GENERAL_CLAUSE__IS_REDECLARE:
         setIsRedeclare((Boolean)newValue);
@@ -657,6 +759,12 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
         getSubscript().clear();
         return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
+        setIsPublic(IS_PUBLIC_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_PROTECTED:
+        setIsProtected(IS_PROTECTED_EDEFAULT);
+        return;
       case MOlocPackage.GENERAL_CLAUSE__IS_REDECLARE:
         setIsRedeclare(IS_REDECLARE_EDEFAULT);
         return;
@@ -699,6 +807,10 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
       case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
         return subscript != null && !subscript.isEmpty();
+      case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
+        return isPublic != IS_PUBLIC_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__IS_PROTECTED:
+        return isProtected != IS_PROTECTED_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__IS_REDECLARE:
         return isRedeclare != IS_REDECLARE_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__ISFINAL:
@@ -810,6 +922,10 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     result.append(typeSpecifier);
     result.append(", subscript: ");
     result.append(subscript);
+    result.append(", isPublic: ");
+    result.append(isPublic);
+    result.append(", isProtected: ");
+    result.append(isProtected);
     result.append(", isRedeclare: ");
     result.append(isRedeclare);
     result.append(", isfinal: ");

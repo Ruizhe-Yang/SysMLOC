@@ -14,6 +14,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.ImportClause#isIsPublic <em>Is Public</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ImportClause#isIsProtected <em>Is Protected</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.ImportClause#getSelfName <em>Self Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.ImportClause#getImportName <em>Import Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.ImportClause#isIsImportAll <em>Is Import All</em>}</li>
@@ -26,6 +28,50 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ImportClause extends Element, description
 {
+  /**
+   * Returns the value of the '<em><b>Is Public</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Public</em>' attribute.
+   * @see #setIsPublic(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause_IsPublic()
+   * @model
+   * @generated
+   */
+  boolean isIsPublic();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ImportClause#isIsPublic <em>Is Public</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Public</em>' attribute.
+   * @see #isIsPublic()
+   * @generated
+   */
+  void setIsPublic(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Is Protected</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Protected</em>' attribute.
+   * @see #setIsProtected(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause_IsProtected()
+   * @model
+   * @generated
+   */
+  boolean isIsProtected();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ImportClause#isIsProtected <em>Is Protected</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Protected</em>' attribute.
+   * @see #isIsProtected()
+   * @generated
+   */
+  void setIsProtected(boolean value);
+
   /**
    * Returns the value of the '<em><b>Self Name</b></em>' attribute.
    * <!-- begin-user-doc -->
