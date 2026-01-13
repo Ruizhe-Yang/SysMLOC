@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.ConnectEquationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ConnectEquationImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ConnectEquationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ConnectEquationImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ConnectEquationImpl#getRight <em>Right</em>}</li>
  * </ul>
@@ -72,6 +73,26 @@ public class ConnectEquationImpl extends EquationImpl implements ConnectEquation
    * @ordered
    */
   protected EList<Argument> arguments;
+
+  /**
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
    * The default value of the '{@link #getLeft() <em>Left</em>}' attribute.
@@ -180,6 +201,31 @@ public class ConnectEquationImpl extends EquationImpl implements ConnectEquation
    * @generated
    */
   @Override
+  public boolean isIsAnnotation()
+  {
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CONNECT_EQUATION__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getLeft()
   {
     return left;
@@ -254,6 +300,8 @@ public class ConnectEquationImpl extends EquationImpl implements ConnectEquation
         return getDescription();
       case MOlocPackage.CONNECT_EQUATION__ARGUMENTS:
         return getArguments();
+      case MOlocPackage.CONNECT_EQUATION__IS_ANNOTATION:
+        return isIsAnnotation();
       case MOlocPackage.CONNECT_EQUATION__LEFT:
         return getLeft();
       case MOlocPackage.CONNECT_EQUATION__RIGHT:
@@ -279,6 +327,9 @@ public class ConnectEquationImpl extends EquationImpl implements ConnectEquation
       case MOlocPackage.CONNECT_EQUATION__ARGUMENTS:
         getArguments().clear();
         getArguments().addAll((Collection<? extends Argument>)newValue);
+        return;
+      case MOlocPackage.CONNECT_EQUATION__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
         return;
       case MOlocPackage.CONNECT_EQUATION__LEFT:
         setLeft((String)newValue);
@@ -306,6 +357,9 @@ public class ConnectEquationImpl extends EquationImpl implements ConnectEquation
       case MOlocPackage.CONNECT_EQUATION__ARGUMENTS:
         getArguments().clear();
         return;
+      case MOlocPackage.CONNECT_EQUATION__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
       case MOlocPackage.CONNECT_EQUATION__LEFT:
         setLeft(LEFT_EDEFAULT);
         return;
@@ -330,6 +384,8 @@ public class ConnectEquationImpl extends EquationImpl implements ConnectEquation
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.CONNECT_EQUATION__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.CONNECT_EQUATION__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.CONNECT_EQUATION__LEFT:
         return LEFT_EDEFAULT == null ? left != null : !LEFT_EDEFAULT.equals(left);
       case MOlocPackage.CONNECT_EQUATION__RIGHT:
@@ -366,6 +422,7 @@ public class ConnectEquationImpl extends EquationImpl implements ConnectEquation
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.CONNECT_EQUATION__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -400,6 +457,7 @@ public class ConnectEquationImpl extends EquationImpl implements ConnectEquation
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.CONNECT_EQUATION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -419,6 +477,8 @@ public class ConnectEquationImpl extends EquationImpl implements ConnectEquation
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (description: ");
     result.append(description);
+    result.append(", isAnnotation: ");
+    result.append(isAnnotation);
     result.append(", left: ");
     result.append(left);
     result.append(", right: ");

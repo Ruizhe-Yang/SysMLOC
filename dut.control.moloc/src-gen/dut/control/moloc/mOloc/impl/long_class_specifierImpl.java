@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#isIsExtends <em>Is Extends</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#getClassNameEnd <em>Class Name End</em>}</li>
  * </ul>
  *
  * @generated
@@ -103,6 +104,26 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
    * @ordered
    */
   protected boolean isExtends = IS_EXTENDS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getClassNameEnd() <em>Class Name End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClassNameEnd()
+   * @generated
+   * @ordered
+   */
+  protected static final String CLASS_NAME_END_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getClassNameEnd() <em>Class Name End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClassNameEnd()
+   * @generated
+   * @ordered
+   */
+  protected String classNameEnd = CLASS_NAME_END_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -211,6 +232,31 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
    * @generated
    */
   @Override
+  public String getClassNameEnd()
+  {
+    return classNameEnd;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setClassNameEnd(String newClassNameEnd)
+  {
+    String oldClassNameEnd = classNameEnd;
+    classNameEnd = newClassNameEnd;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END, oldClassNameEnd, classNameEnd));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -241,6 +287,8 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
         return getElements();
       case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS:
         return isIsExtends();
+      case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END:
+        return getClassNameEnd();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -270,6 +318,9 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
       case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS:
         setIsExtends((Boolean)newValue);
         return;
+      case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END:
+        setClassNameEnd((String)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -296,6 +347,9 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
       case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS:
         setIsExtends(IS_EXTENDS_EDEFAULT);
         return;
+      case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END:
+        setClassNameEnd(CLASS_NAME_END_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -318,6 +372,8 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
         return elements != null && !elements.isEmpty();
       case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS:
         return isExtends != IS_EXTENDS_EDEFAULT;
+      case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END:
+        return CLASS_NAME_END_EDEFAULT == null ? classNameEnd != null : !CLASS_NAME_END_EDEFAULT.equals(classNameEnd);
     }
     return super.eIsSet(featureID);
   }
@@ -407,6 +463,8 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
     result.append(description);
     result.append(", isExtends: ");
     result.append(isExtends);
+    result.append(", classNameEnd: ");
+    result.append(classNameEnd);
     result.append(')');
     return result.toString();
   }

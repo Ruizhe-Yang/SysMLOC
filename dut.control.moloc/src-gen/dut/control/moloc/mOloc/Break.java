@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.Break#getConnect <em>Connect</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.Break#getBreakName <em>Break Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.Break#getConnectObject <em>Connect Object</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.Break#getBreakObject <em>Break Object</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getBreak()
@@ -25,47 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface Break extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Connect</b></em>' containment reference.
+   * Returns the value of the '<em><b>Connect Object</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Connect</em>' containment reference.
-   * @see #setConnect(NULLElement)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getBreak_Connect()
+   * @return the value of the '<em>Connect Object</em>' containment reference.
+   * @see #setConnectObject(ConnectEquation)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getBreak_ConnectObject()
    * @model containment="true"
    * @generated
    */
-  NULLElement getConnect();
+  ConnectEquation getConnectObject();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Break#getConnect <em>Connect</em>}' containment reference.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.Break#getConnectObject <em>Connect Object</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Connect</em>' containment reference.
-   * @see #getConnect()
+   * @param value the new value of the '<em>Connect Object</em>' containment reference.
+   * @see #getConnectObject()
    * @generated
    */
-  void setConnect(NULLElement value);
+  void setConnectObject(ConnectEquation value);
 
   /**
-   * Returns the value of the '<em><b>Break Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Break Object</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Break Name</em>' attribute.
-   * @see #setBreakName(String)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getBreak_BreakName()
+   * @return the value of the '<em>Break Object</em>' attribute.
+   * @see #setBreakObject(String)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getBreak_BreakObject()
    * @model
    * @generated
    */
-  String getBreakName();
+  String getBreakObject();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Break#getBreakName <em>Break Name</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.Break#getBreakObject <em>Break Object</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Break Name</em>' attribute.
-   * @see #getBreakName()
+   * @param value the new value of the '<em>Break Object</em>' attribute.
+   * @see #getBreakObject()
    * @generated
    */
-  void setBreakName(String value);
+  void setBreakObject(String value);
 
 } // Break

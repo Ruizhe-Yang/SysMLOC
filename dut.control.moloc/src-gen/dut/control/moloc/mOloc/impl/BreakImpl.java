@@ -4,8 +4,8 @@
 package dut.control.moloc.mOloc.impl;
 
 import dut.control.moloc.mOloc.Break;
+import dut.control.moloc.mOloc.ConnectEquation;
 import dut.control.moloc.mOloc.MOlocPackage;
-import dut.control.moloc.mOloc.NULLElement;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.BreakImpl#getConnect <em>Connect</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.BreakImpl#getBreakName <em>Break Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.BreakImpl#getConnectObject <em>Connect Object</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.BreakImpl#getBreakObject <em>Break Object</em>}</li>
  * </ul>
  *
  * @generated
@@ -33,34 +33,34 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class BreakImpl extends MinimalEObjectImpl.Container implements Break
 {
   /**
-   * The cached value of the '{@link #getConnect() <em>Connect</em>}' containment reference.
+   * The cached value of the '{@link #getConnectObject() <em>Connect Object</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConnect()
+   * @see #getConnectObject()
    * @generated
    * @ordered
    */
-  protected NULLElement connect;
+  protected ConnectEquation connectObject;
 
   /**
-   * The default value of the '{@link #getBreakName() <em>Break Name</em>}' attribute.
+   * The default value of the '{@link #getBreakObject() <em>Break Object</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBreakName()
+   * @see #getBreakObject()
    * @generated
    * @ordered
    */
-  protected static final String BREAK_NAME_EDEFAULT = null;
+  protected static final String BREAK_OBJECT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getBreakName() <em>Break Name</em>}' attribute.
+   * The cached value of the '{@link #getBreakObject() <em>Break Object</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBreakName()
+   * @see #getBreakObject()
    * @generated
    * @ordered
    */
-  protected String breakName = BREAK_NAME_EDEFAULT;
+  protected String breakObject = BREAK_OBJECT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -89,9 +89,9 @@ public class BreakImpl extends MinimalEObjectImpl.Container implements Break
    * @generated
    */
   @Override
-  public NULLElement getConnect()
+  public ConnectEquation getConnectObject()
   {
-    return connect;
+    return connectObject;
   }
 
   /**
@@ -99,13 +99,13 @@ public class BreakImpl extends MinimalEObjectImpl.Container implements Break
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetConnect(NULLElement newConnect, NotificationChain msgs)
+  public NotificationChain basicSetConnectObject(ConnectEquation newConnectObject, NotificationChain msgs)
   {
-    NULLElement oldConnect = connect;
-    connect = newConnect;
+    ConnectEquation oldConnectObject = connectObject;
+    connectObject = newConnectObject;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.BREAK__CONNECT, oldConnect, newConnect);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.BREAK__CONNECT_OBJECT, oldConnectObject, newConnectObject);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -117,20 +117,20 @@ public class BreakImpl extends MinimalEObjectImpl.Container implements Break
    * @generated
    */
   @Override
-  public void setConnect(NULLElement newConnect)
+  public void setConnectObject(ConnectEquation newConnectObject)
   {
-    if (newConnect != connect)
+    if (newConnectObject != connectObject)
     {
       NotificationChain msgs = null;
-      if (connect != null)
-        msgs = ((InternalEObject)connect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.BREAK__CONNECT, null, msgs);
-      if (newConnect != null)
-        msgs = ((InternalEObject)newConnect).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.BREAK__CONNECT, null, msgs);
-      msgs = basicSetConnect(newConnect, msgs);
+      if (connectObject != null)
+        msgs = ((InternalEObject)connectObject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.BREAK__CONNECT_OBJECT, null, msgs);
+      if (newConnectObject != null)
+        msgs = ((InternalEObject)newConnectObject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.BREAK__CONNECT_OBJECT, null, msgs);
+      msgs = basicSetConnectObject(newConnectObject, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.BREAK__CONNECT, newConnect, newConnect));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.BREAK__CONNECT_OBJECT, newConnectObject, newConnectObject));
   }
 
   /**
@@ -139,9 +139,9 @@ public class BreakImpl extends MinimalEObjectImpl.Container implements Break
    * @generated
    */
   @Override
-  public String getBreakName()
+  public String getBreakObject()
   {
-    return breakName;
+    return breakObject;
   }
 
   /**
@@ -150,12 +150,12 @@ public class BreakImpl extends MinimalEObjectImpl.Container implements Break
    * @generated
    */
   @Override
-  public void setBreakName(String newBreakName)
+  public void setBreakObject(String newBreakObject)
   {
-    String oldBreakName = breakName;
-    breakName = newBreakName;
+    String oldBreakObject = breakObject;
+    breakObject = newBreakObject;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.BREAK__BREAK_NAME, oldBreakName, breakName));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.BREAK__BREAK_OBJECT, oldBreakObject, breakObject));
   }
 
   /**
@@ -168,8 +168,8 @@ public class BreakImpl extends MinimalEObjectImpl.Container implements Break
   {
     switch (featureID)
     {
-      case MOlocPackage.BREAK__CONNECT:
-        return basicSetConnect(null, msgs);
+      case MOlocPackage.BREAK__CONNECT_OBJECT:
+        return basicSetConnectObject(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -184,10 +184,10 @@ public class BreakImpl extends MinimalEObjectImpl.Container implements Break
   {
     switch (featureID)
     {
-      case MOlocPackage.BREAK__CONNECT:
-        return getConnect();
-      case MOlocPackage.BREAK__BREAK_NAME:
-        return getBreakName();
+      case MOlocPackage.BREAK__CONNECT_OBJECT:
+        return getConnectObject();
+      case MOlocPackage.BREAK__BREAK_OBJECT:
+        return getBreakObject();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -202,11 +202,11 @@ public class BreakImpl extends MinimalEObjectImpl.Container implements Break
   {
     switch (featureID)
     {
-      case MOlocPackage.BREAK__CONNECT:
-        setConnect((NULLElement)newValue);
+      case MOlocPackage.BREAK__CONNECT_OBJECT:
+        setConnectObject((ConnectEquation)newValue);
         return;
-      case MOlocPackage.BREAK__BREAK_NAME:
-        setBreakName((String)newValue);
+      case MOlocPackage.BREAK__BREAK_OBJECT:
+        setBreakObject((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -222,11 +222,11 @@ public class BreakImpl extends MinimalEObjectImpl.Container implements Break
   {
     switch (featureID)
     {
-      case MOlocPackage.BREAK__CONNECT:
-        setConnect((NULLElement)null);
+      case MOlocPackage.BREAK__CONNECT_OBJECT:
+        setConnectObject((ConnectEquation)null);
         return;
-      case MOlocPackage.BREAK__BREAK_NAME:
-        setBreakName(BREAK_NAME_EDEFAULT);
+      case MOlocPackage.BREAK__BREAK_OBJECT:
+        setBreakObject(BREAK_OBJECT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -242,10 +242,10 @@ public class BreakImpl extends MinimalEObjectImpl.Container implements Break
   {
     switch (featureID)
     {
-      case MOlocPackage.BREAK__CONNECT:
-        return connect != null;
-      case MOlocPackage.BREAK__BREAK_NAME:
-        return BREAK_NAME_EDEFAULT == null ? breakName != null : !BREAK_NAME_EDEFAULT.equals(breakName);
+      case MOlocPackage.BREAK__CONNECT_OBJECT:
+        return connectObject != null;
+      case MOlocPackage.BREAK__BREAK_OBJECT:
+        return BREAK_OBJECT_EDEFAULT == null ? breakObject != null : !BREAK_OBJECT_EDEFAULT.equals(breakObject);
     }
     return super.eIsSet(featureID);
   }
@@ -261,8 +261,8 @@ public class BreakImpl extends MinimalEObjectImpl.Container implements Break
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (breakName: ");
-    result.append(breakName);
+    result.append(" (breakObject: ");
+    result.append(breakObject);
     result.append(')');
     return result.toString();
   }

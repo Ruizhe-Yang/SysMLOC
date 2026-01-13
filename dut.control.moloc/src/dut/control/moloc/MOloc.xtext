@@ -1,22 +1,13 @@
-//grammar dut.control.moloc.MOloc with org.eclipse.xtext.common.Terminals
 grammar dut.control.moloc.MOloc hidden(WS, ML_COMMENT, SL_COMMENT)
 
 generate mOloc "http://www.control.dut/moloc/MOloc"
 
 import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
 
-//-----------------------------------------------
-// B.2.1 Stored Definition
-//-----------------------------------------------
-
 Stored_definition:
 	( isWithin?='within' within=Name ';')?
 	( classes += Class_definition )*
 ;
-
-//-----------------------------------------------
-// B.2.2 Class Definition
-//-----------------------------------------------
 
 Class_definition:
 	( isfinal ?= 'final' )?
@@ -51,7 +42,7 @@ fragment long_class_specifier:
 	class_modification? 
 	description_string
 	composition 
-	'end' IDENT
+	'end' classNameEnd=IDENT
 ;
 
 fragment short_class_specifier:
@@ -66,7 +57,7 @@ fragment short_class_specifier:
 fragment der_class_specifier:
 	class_name
 	'='
-	isDer?='def'
+	isDer?='der'
 	'(' type_specifier ',' derName+=IDENT (',' derName+=IDENT)* ')'
 	description
 ;
@@ -112,29 +103,23 @@ EnumerationLiteral:
 ;
 
 fragment description:
-	description_string ( 'annotation' class_modification)?
+	description_string ( isAnnotation?='annotation' class_modification)?
 ;
 
 Argument:
 	( isRedeclare ?= 'redeclare')?
 	( isEach ?= 'each' )?
 	( isfinal ?= 'final' )?
+	( isReplaceable ?= 'replaceable' )? 
 	( short_class_definition 
-//	| component_clause1 
+	| component_clause1 
 	| element_modification 
-//	| element_replaceable
 	)
-//	short_class_definition
+	constraining?
 ;
 
 fragment element_modification:
 	elementName=Name modification description_string
-;
-
-fragment element_replaceable:
-	( isReplaceable ?= 'replaceable' )? 
-	( short_class_definition | component_clause1 )
-	( constraining_clause )?
 ;
 
 fragment short_class_definition:
@@ -160,7 +145,8 @@ enum ParameterType:
 ;
 
 fragment component_declaration1:
-	declaration description
+	declaration 
+	description
 ;
 
 fragment declaration:
@@ -175,10 +161,6 @@ Subscript:
 	':' | Expression
 ;
 
-Unfinished2:
-	'Unfinished2' aa=Name
-;
-
 fragment modification:
 	class_modification ('=' expression=Modification_expression)?
 	| '=' expression=Modification_expression
@@ -189,10 +171,15 @@ Modification_expression:
 	Expression | 'break'
 ;
 
-fragment constraining_clause:
-	elements2+=Unfinished2
+fragment constraining:
+	constrain=ConstrainingClause
 ;
 
+ConstrainingClause:
+	'constrainedby'
+	type_specifier
+	class_modification
+;
 
 Element:
 	ImportClause 
@@ -201,7 +188,7 @@ Element:
 	| ExternalElement 
 	| AnnotationClause
 	| EquationSection
-//	| AlgorithmSection
+	| AlgorithmSection
 ;
 
 ImportClause:
@@ -218,15 +205,15 @@ ImportClause:
 ExtendsClause:
 	'extends' 
 	type_specifier 
-	( '(' (( arguments+=Argument | breaks+=Break ) (',' ( arguments+=Argument | breaks+=Break )* ))? ')')?
+	( '(' (( arguments+=Argument | breaks+=Break ) (',' ( arguments+=Argument | breaks+=Break ))* )? ')')?
 	( 'annotation' class_modification )?
 	';'
 ;
 
 Break:
 	'break'
-	( connect=NULLElement
-	| breakName=IDENT
+	( connectObject=ConnectEquation
+	| breakObject=IDENT
 	)
 ;
 
@@ -238,12 +225,13 @@ GeneralClause:
 	( isInner ?= 'inner' )?
 	( isOuter ?= 'outer' )?
 	( isReplaceable ?= 'replaceable' )?
-	type_prefix
 	//[type_specifier]Decision can match input such as "'.' RULE_IDENT" using multiple alternatives: 1, 2
-	type_specifier
-	//	typeSpecifier = Name
-	array_subscripts?
-	component_list+=Component_declaration (',' component_list+=Component_declaration)*
+	( class_prefixes class_specifier
+	| type_prefix type_specifier array_subscripts?
+		component_list+=Component_declaration (',' component_list+=Component_declaration)*
+	)
+	constraining?
+//	description?
 	';'
 ;
 
@@ -300,7 +288,7 @@ IfEquation:
 	( equations += Equation )*
 	( 'elseif' elseCondition+=Expression 
 		'then' ( equations += Equation )*
-	)
+	)*
 	( 'else' ( equations += Equation )*)?
 	'end' 'if' 
 	description
@@ -344,9 +332,89 @@ FunctionEquation:
 	';'
 ;
 
-NULLElement:
-	'nullElement'
-	nullname=Name
+AlgorithmSection:
+	{AlgorithmSection} 
+	( isInitial ?= 'initial' )?
+	'algorithm'
+	( statements += Statement )*
+;
+
+Statement:
+	FunctionStatement
+	| BreakStatement
+	| ReturnStatement
+	| IfStatement
+	| ForStatement
+	| WhenStatement
+	| WhileStatement
+;
+
+FunctionStatement:
+	( '(' output=OutputExpressionList ')' )?
+	component=Component_reference
+	':='
+	function = ( Expression | FunctionCallArgs )
+	description
+	';'
+;
+
+BreakStatement:
+	'break'
+	description
+	';'
+;
+
+ReturnStatement:
+	'return'
+	description
+	';'
+;
+
+IfStatement:
+	'if'
+	condition=Expression
+	'then'
+	( statements += Statement )*
+	( 'elseif' elseCondition+=Expression 
+		'then' ( statements += Statement )*
+	)*
+	( 'else' ( statements += Statement )*)?
+	'end' 'if' 
+	description
+	';'
+;
+
+ForStatement:
+	'for'
+	forIndices=ForIndices
+	'loop'
+	( statements += Statement )*
+	'end' 'for' 
+	description
+	';'
+;
+
+WhenStatement:
+	'when'
+	condition=Expression
+	'then'
+	( statements += Statement )*
+	( 'elsewhen' elseCondition+=Expression
+		'then' ( statements += Statement )*
+	)?
+	'end' 'when' 
+	description
+	';'
+;
+
+WhileStatement:
+	'while'
+	condition=Expression
+	'loop'
+	( statements += Statement )*
+	'end' 'while' 
+	description
+	';'
 ;
 
 Expression:
@@ -393,10 +461,14 @@ Primary:
 	| TRUE_FALSE
 	| ( Component_reference | 'der' | 'initial' | 'pure' ) FunctionCallArgs
 	| Component_reference
-	| '(' Expression? (',' Expression) ')'
+	| '(' OutputExpressionList ')'
 	| '[' Expression (',' Expression) ']'
 	| '{' ArrayArguments '}'
 	| 'end'
+;
+
+OutputExpressionList:
+	Expression? (',' Expression? )*
 ;
 
 ArrayArguments:
@@ -447,7 +519,7 @@ NamedArgument:
 ;
 
 FunctionArgument:
-	FunctionPartialApplication | Expression
+	Expression | FunctionPartialApplication 
 ;
 
 Name:

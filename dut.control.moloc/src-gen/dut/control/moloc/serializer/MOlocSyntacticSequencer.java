@@ -23,31 +23,21 @@ public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected MOlocGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q;
 	protected AbstractElementAlias match_IfEquation_ElseKeyword_5_0_q;
+	protected AbstractElementAlias match_IfStatement_ElseKeyword_5_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MOlocGrammarAccess) access;
 		match_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getExtendsClauseAccess().getLeftParenthesisKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getExtendsClauseAccess().getRightParenthesisKeyword_2_2()));
 		match_IfEquation_ElseKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getIfEquationAccess().getElseKeyword_5_0());
+		match_IfStatement_ElseKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getIfStatementAccess().getElseKeyword_5_0());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getIDENTRule())
-			return getIDENTToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * terminal IDENT returns Ecore::EString:
-	 * 	NON_DIGIT ( DIGIT | NON_DIGIT )* | Q_IDENT
-	 * ;
-	 */
-	protected String getIDENTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "_";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -59,6 +49,8 @@ public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_IfEquation_ElseKeyword_5_0_q.equals(syntax))
 				emit_IfEquation_ElseKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_IfStatement_ElseKeyword_5_0_q.equals(syntax))
+				emit_IfStatement_ElseKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -84,16 +76,41 @@ public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'else'?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     condition=Expression 'then' (ambiguity) 'end' 'if' ';' (rule end)
+	 *     condition=Expression 'then' (ambiguity) 'end' 'if' description=DescriptionString
+	 *     condition=Expression 'then' (ambiguity) 'end' 'if' isAnnotation?='annotation'
 	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' ';' (rule end)
-	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' 'annotation' '(' arguments+=Argument
 	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' description=DescriptionString
+	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' isAnnotation?='annotation'
 	 *     equations+=Equation (ambiguity) 'end' 'if' ';' (rule end)
-	 *     equations+=Equation (ambiguity) 'end' 'if' 'annotation' '(' arguments+=Argument
 	 *     equations+=Equation (ambiguity) 'end' 'if' description=DescriptionString
+	 *     equations+=Equation (ambiguity) 'end' 'if' isAnnotation?='annotation'
 	 
 	 * </pre>
 	 */
 	protected void emit_IfEquation_ElseKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'else'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     condition=Expression 'then' (ambiguity) 'end' 'if' ';' (rule end)
+	 *     condition=Expression 'then' (ambiguity) 'end' 'if' description=DescriptionString
+	 *     condition=Expression 'then' (ambiguity) 'end' 'if' isAnnotation?='annotation'
+	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' ';' (rule end)
+	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' description=DescriptionString
+	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' isAnnotation?='annotation'
+	 *     statements+=Statement (ambiguity) 'end' 'if' ';' (rule end)
+	 *     statements+=Statement (ambiguity) 'end' 'if' description=DescriptionString
+	 *     statements+=Statement (ambiguity) 'end' 'if' isAnnotation?='annotation'
+	 
+	 * </pre>
+	 */
+	protected void emit_IfStatement_ElseKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -45,6 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getExpression <em>Expression</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getDeclarationName <em>Declaration Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getDescription <em>Description</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#isIsAnnotation <em>Is Annotation</em>}</li>
  * </ul>
  *
  * @generated
@@ -150,6 +151,26 @@ public class component_clause1Impl extends type_prefixImpl implements component_
    * @ordered
    */
   protected String description = DESCRIPTION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -308,6 +329,31 @@ public class component_clause1Impl extends type_prefixImpl implements component_
    * @generated
    */
   @Override
+  public boolean isIsAnnotation()
+  {
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -340,6 +386,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return getDeclarationName();
       case MOlocPackage.COMPONENT_CLAUSE1__DESCRIPTION:
         return getDescription();
+      case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION:
+        return isIsAnnotation();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -375,6 +423,9 @@ public class component_clause1Impl extends type_prefixImpl implements component_
       case MOlocPackage.COMPONENT_CLAUSE1__DESCRIPTION:
         setDescription((String)newValue);
         return;
+      case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -407,6 +458,9 @@ public class component_clause1Impl extends type_prefixImpl implements component_
       case MOlocPackage.COMPONENT_CLAUSE1__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
+      case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -433,6 +487,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return DECLARATION_NAME_EDEFAULT == null ? declarationName != null : !DECLARATION_NAME_EDEFAULT.equals(declarationName);
       case MOlocPackage.COMPONENT_CLAUSE1__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -497,6 +553,7 @@ public class component_clause1Impl extends type_prefixImpl implements component_
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -570,6 +627,7 @@ public class component_clause1Impl extends type_prefixImpl implements component_
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -604,6 +662,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
     result.append(declarationName);
     result.append(", description: ");
     result.append(description);
+    result.append(", isAnnotation: ");
+    result.append(isAnnotation);
     result.append(')');
     return result.toString();
   }

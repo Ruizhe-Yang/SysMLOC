@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.Component_declarationImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.Component_declarationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Component_declarationImpl#getCondition_attribute <em>Condition attribute</em>}</li>
  * </ul>
  *
@@ -49,6 +50,26 @@ public class Component_declarationImpl extends declarationImpl implements Compon
    * @ordered
    */
   protected String description = DESCRIPTION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
    * The default value of the '{@link #getCondition_attribute() <em>Condition attribute</em>}' attribute.
@@ -122,6 +143,31 @@ public class Component_declarationImpl extends declarationImpl implements Compon
    * @generated
    */
   @Override
+  public boolean isIsAnnotation()
+  {
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getCondition_attribute()
   {
     return condition_attribute;
@@ -153,6 +199,8 @@ public class Component_declarationImpl extends declarationImpl implements Compon
     {
       case MOlocPackage.COMPONENT_DECLARATION__DESCRIPTION:
         return getDescription();
+      case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION:
+        return isIsAnnotation();
       case MOlocPackage.COMPONENT_DECLARATION__CONDITION_ATTRIBUTE:
         return getCondition_attribute();
     }
@@ -171,6 +219,9 @@ public class Component_declarationImpl extends declarationImpl implements Compon
     {
       case MOlocPackage.COMPONENT_DECLARATION__DESCRIPTION:
         setDescription((String)newValue);
+        return;
+      case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
         return;
       case MOlocPackage.COMPONENT_DECLARATION__CONDITION_ATTRIBUTE:
         setCondition_attribute((String)newValue);
@@ -192,6 +243,9 @@ public class Component_declarationImpl extends declarationImpl implements Compon
       case MOlocPackage.COMPONENT_DECLARATION__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
+      case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
       case MOlocPackage.COMPONENT_DECLARATION__CONDITION_ATTRIBUTE:
         setCondition_attribute(CONDITION_ATTRIBUTE_EDEFAULT);
         return;
@@ -211,6 +265,8 @@ public class Component_declarationImpl extends declarationImpl implements Compon
     {
       case MOlocPackage.COMPONENT_DECLARATION__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.COMPONENT_DECLARATION__CONDITION_ATTRIBUTE:
         return CONDITION_ATTRIBUTE_EDEFAULT == null ? condition_attribute != null : !CONDITION_ATTRIBUTE_EDEFAULT.equals(condition_attribute);
     }
@@ -237,6 +293,7 @@ public class Component_declarationImpl extends declarationImpl implements Compon
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -263,6 +320,7 @@ public class Component_declarationImpl extends declarationImpl implements Compon
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -282,6 +340,8 @@ public class Component_declarationImpl extends declarationImpl implements Compon
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (description: ");
     result.append(description);
+    result.append(", isAnnotation: ");
+    result.append(isAnnotation);
     result.append(", condition_attribute: ");
     result.append(condition_attribute);
     result.append(')');

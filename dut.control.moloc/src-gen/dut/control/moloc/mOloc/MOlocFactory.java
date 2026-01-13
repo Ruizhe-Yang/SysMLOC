@@ -177,15 +177,6 @@ public interface MOlocFactory extends EFactory
   element_modification createelement_modification();
 
   /**
-   * Returns a new object of class '<em>element replaceable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>element replaceable</em>'.
-   * @generated
-   */
-  element_replaceable createelement_replaceable();
-
-  /**
    * Returns a new object of class '<em>short class definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -240,15 +231,6 @@ public interface MOlocFactory extends EFactory
   array_subscripts createarray_subscripts();
 
   /**
-   * Returns a new object of class '<em>Unfinished2</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unfinished2</em>'.
-   * @generated
-   */
-  Unfinished2 createUnfinished2();
-
-  /**
    * Returns a new object of class '<em>modification</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -258,13 +240,22 @@ public interface MOlocFactory extends EFactory
   modification createmodification();
 
   /**
-   * Returns a new object of class '<em>constraining clause</em>'.
+   * Returns a new object of class '<em>constraining</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>constraining clause</em>'.
+   * @return a new object of class '<em>constraining</em>'.
    * @generated
    */
-  constraining_clause createconstraining_clause();
+  constraining createconstraining();
+
+  /**
+   * Returns a new object of class '<em>Constraining Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Constraining Clause</em>'.
+   * @generated
+   */
+  ConstrainingClause createConstrainingClause();
 
   /**
    * Returns a new object of class '<em>Element</em>'.
@@ -411,13 +402,85 @@ public interface MOlocFactory extends EFactory
   FunctionEquation createFunctionEquation();
 
   /**
-   * Returns a new object of class '<em>NULL Element</em>'.
+   * Returns a new object of class '<em>Algorithm Section</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>NULL Element</em>'.
+   * @return a new object of class '<em>Algorithm Section</em>'.
    * @generated
    */
-  NULLElement createNULLElement();
+  AlgorithmSection createAlgorithmSection();
+
+  /**
+   * Returns a new object of class '<em>Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Statement</em>'.
+   * @generated
+   */
+  Statement createStatement();
+
+  /**
+   * Returns a new object of class '<em>Function Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Statement</em>'.
+   * @generated
+   */
+  FunctionStatement createFunctionStatement();
+
+  /**
+   * Returns a new object of class '<em>Break Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Break Statement</em>'.
+   * @generated
+   */
+  BreakStatement createBreakStatement();
+
+  /**
+   * Returns a new object of class '<em>Return Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return Statement</em>'.
+   * @generated
+   */
+  ReturnStatement createReturnStatement();
+
+  /**
+   * Returns a new object of class '<em>If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Statement</em>'.
+   * @generated
+   */
+  IfStatement createIfStatement();
+
+  /**
+   * Returns a new object of class '<em>For Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Statement</em>'.
+   * @generated
+   */
+  ForStatement createForStatement();
+
+  /**
+   * Returns a new object of class '<em>When Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>When Statement</em>'.
+   * @generated
+   */
+  WhenStatement createWhenStatement();
+
+  /**
+   * Returns a new object of class '<em>While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>While Statement</em>'.
+   * @generated
+   */
+  WhileStatement createWhileStatement();
 
   /**
    * Returns the package supported by this factory.

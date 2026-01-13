@@ -161,11 +161,6 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
         return createelement_modificationAdapter();
       }
       @Override
-      public Adapter caseelement_replaceable(element_replaceable object)
-      {
-        return createelement_replaceableAdapter();
-      }
-      @Override
       public Adapter caseshort_class_definition(short_class_definition object)
       {
         return createshort_class_definitionAdapter();
@@ -196,19 +191,19 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
         return createarray_subscriptsAdapter();
       }
       @Override
-      public Adapter caseUnfinished2(Unfinished2 object)
-      {
-        return createUnfinished2Adapter();
-      }
-      @Override
       public Adapter casemodification(modification object)
       {
         return createmodificationAdapter();
       }
       @Override
-      public Adapter caseconstraining_clause(constraining_clause object)
+      public Adapter caseconstraining(constraining object)
       {
-        return createconstraining_clauseAdapter();
+        return createconstrainingAdapter();
+      }
+      @Override
+      public Adapter caseConstrainingClause(ConstrainingClause object)
+      {
+        return createConstrainingClauseAdapter();
       }
       @Override
       public Adapter caseElement(Element object)
@@ -291,9 +286,49 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
         return createFunctionEquationAdapter();
       }
       @Override
-      public Adapter caseNULLElement(NULLElement object)
+      public Adapter caseAlgorithmSection(AlgorithmSection object)
       {
-        return createNULLElementAdapter();
+        return createAlgorithmSectionAdapter();
+      }
+      @Override
+      public Adapter caseStatement(Statement object)
+      {
+        return createStatementAdapter();
+      }
+      @Override
+      public Adapter caseFunctionStatement(FunctionStatement object)
+      {
+        return createFunctionStatementAdapter();
+      }
+      @Override
+      public Adapter caseBreakStatement(BreakStatement object)
+      {
+        return createBreakStatementAdapter();
+      }
+      @Override
+      public Adapter caseReturnStatement(ReturnStatement object)
+      {
+        return createReturnStatementAdapter();
+      }
+      @Override
+      public Adapter caseIfStatement(IfStatement object)
+      {
+        return createIfStatementAdapter();
+      }
+      @Override
+      public Adapter caseForStatement(ForStatement object)
+      {
+        return createForStatementAdapter();
+      }
+      @Override
+      public Adapter caseWhenStatement(WhenStatement object)
+      {
+        return createWhenStatementAdapter();
+      }
+      @Override
+      public Adapter caseWhileStatement(WhileStatement object)
+      {
+        return createWhileStatementAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -573,21 +608,6 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.element_replaceable <em>element replaceable</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.moloc.mOloc.element_replaceable
-   * @generated
-   */
-  public Adapter createelement_replaceableAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.short_class_definition <em>short class definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -678,21 +698,6 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.Unfinished2 <em>Unfinished2</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.moloc.mOloc.Unfinished2
-   * @generated
-   */
-  public Adapter createUnfinished2Adapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.modification <em>modification</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -708,16 +713,31 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.constraining_clause <em>constraining clause</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.constraining <em>constraining</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.moloc.mOloc.constraining_clause
+   * @see dut.control.moloc.mOloc.constraining
    * @generated
    */
-  public Adapter createconstraining_clauseAdapter()
+  public Adapter createconstrainingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.ConstrainingClause <em>Constraining Clause</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.ConstrainingClause
+   * @generated
+   */
+  public Adapter createConstrainingClauseAdapter()
   {
     return null;
   }
@@ -963,16 +983,136 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.NULLElement <em>NULL Element</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.AlgorithmSection <em>Algorithm Section</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.moloc.mOloc.NULLElement
+   * @see dut.control.moloc.mOloc.AlgorithmSection
    * @generated
    */
-  public Adapter createNULLElementAdapter()
+  public Adapter createAlgorithmSectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.Statement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.Statement
+   * @generated
+   */
+  public Adapter createStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.FunctionStatement <em>Function Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.FunctionStatement
+   * @generated
+   */
+  public Adapter createFunctionStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.BreakStatement <em>Break Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.BreakStatement
+   * @generated
+   */
+  public Adapter createBreakStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.ReturnStatement <em>Return Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.ReturnStatement
+   * @generated
+   */
+  public Adapter createReturnStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.IfStatement <em>If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.IfStatement
+   * @generated
+   */
+  public Adapter createIfStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.ForStatement <em>For Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.ForStatement
+   * @generated
+   */
+  public Adapter createForStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.WhenStatement <em>When Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.WhenStatement
+   * @generated
+   */
+  public Adapter createWhenStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.WhileStatement <em>While Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.WhileStatement
+   * @generated
+   */
+  public Adapter createWhileStatementAdapter()
   {
     return null;
   }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
-  <classes classType="model" className="BouncingBall">
-    <elements xsi:type="mOloc:GeneralClause" parameterType="parameter" typeSpecifier="Real">
+  <classes classType="model" className="BouncingBall" classNameEnd="BouncingBall">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
       <component_list expression="9.81" declarationName="g" description="&quot;Gravity acceleration (m/s^2)&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" parameterType="parameter" typeSpecifier="Real">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
       <component_list expression="0.8" declarationName="e" description="&quot;Coefficient of restitution&quot;"/>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real">
@@ -19,12 +19,25 @@
         <arguments expression="true" elementName="fixed"/>
       </component_list>
     </elements>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Integrator" description="&quot;Output the integral of the input signal with optional reset&quot;" classNameEnd="Integrator">
+      <elements xsi:type="mOloc:ImportClause" importName="Modelica.Blocks.Types.Init"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
+      <arguments elementName="y">
+        <arguments expression="y_start" elementName="start"/>
+      </arguments>
+    </elements>
     <elements xsi:type="mOloc:EquationSection">
       <equations xsi:type="mOloc:SimpleEquation" left="der(h)" right="v"/>
       <equations xsi:type="mOloc:SimpleEquation" left="der(v)" right="-g"/>
       <equations xsi:type="mOloc:WhenEquation" condition="h &lt;= 0">
         <equations xsi:type="mOloc:FunctionEquation" component="reinit" function="(v, -e * v)"/>
       </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments elementName="Icon">
+        <arguments expression="{ Line( points={{-80.0,78.0},{-80.0,-90.0}}, color={192,192,192} ) , Polygon( lineColor ) }" elementName="graphics"/>
+      </arguments>
     </elements>
   </classes>
 </mOloc:Stored_definition>

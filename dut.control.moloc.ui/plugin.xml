@@ -431,4 +431,22 @@
 			type="text">
 		</fileTypes>
 	</extension>
+ <extension
+       id="dut.control.moloc.ui.MOGeneration"
+       name="MOGeneration"
+       point="org.eclipse.ui.popupMenus">
+    <objectContribution
+          adaptable="true"
+          id="dut.control.moloc.ui.generateMOAction"
+          nameFilter="*.moloc"
+          objectClass="org.eclipse.core.resources.IFile">
+       <action
+             class="dut.control.moloc.ui.actions.GenerateMOAction"
+             enablesFor="1"
+             id="dut.control.moloc.ui.generateMOAction"
+             label="Generate .mo"
+             menubarPath="additions">
+       </action>
+    </objectContribution>
+ </extension>
 </plugin>

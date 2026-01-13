@@ -10,12 +10,15 @@ import dut.control.moloc.mOloc.description;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -29,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.descriptionImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.descriptionImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,6 +48,26 @@ public class descriptionImpl extends description_stringImpl implements descripti
    * @ordered
    */
   protected EList<Argument> arguments;
+
+  /**
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -87,6 +111,31 @@ public class descriptionImpl extends description_stringImpl implements descripti
    * @generated
    */
   @Override
+  public boolean isIsAnnotation()
+  {
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.DESCRIPTION__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -109,6 +158,8 @@ public class descriptionImpl extends description_stringImpl implements descripti
     {
       case MOlocPackage.DESCRIPTION__ARGUMENTS:
         return getArguments();
+      case MOlocPackage.DESCRIPTION__IS_ANNOTATION:
+        return isIsAnnotation();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -128,6 +179,9 @@ public class descriptionImpl extends description_stringImpl implements descripti
         getArguments().clear();
         getArguments().addAll((Collection<? extends Argument>)newValue);
         return;
+      case MOlocPackage.DESCRIPTION__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -145,6 +199,9 @@ public class descriptionImpl extends description_stringImpl implements descripti
       case MOlocPackage.DESCRIPTION__ARGUMENTS:
         getArguments().clear();
         return;
+      case MOlocPackage.DESCRIPTION__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -161,6 +218,8 @@ public class descriptionImpl extends description_stringImpl implements descripti
     {
       case MOlocPackage.DESCRIPTION__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.DESCRIPTION__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -201,6 +260,23 @@ public class descriptionImpl extends description_stringImpl implements descripti
       }
     }
     return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (isAnnotation: ");
+    result.append(isAnnotation);
+    result.append(')');
+    return result.toString();
   }
 
 } //descriptionImpl

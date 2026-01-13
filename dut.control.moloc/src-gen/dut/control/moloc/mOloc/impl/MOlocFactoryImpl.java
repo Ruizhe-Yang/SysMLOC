@@ -83,16 +83,15 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
       case MOlocPackage.DESCRIPTION: return createdescription();
       case MOlocPackage.ARGUMENT: return createArgument();
       case MOlocPackage.ELEMENT_MODIFICATION: return createelement_modification();
-      case MOlocPackage.ELEMENT_REPLACEABLE: return createelement_replaceable();
       case MOlocPackage.SHORT_CLASS_DEFINITION: return createshort_class_definition();
       case MOlocPackage.COMPONENT_CLAUSE1: return createcomponent_clause1();
       case MOlocPackage.TYPE_PREFIX: return createtype_prefix();
       case MOlocPackage.COMPONENT_DECLARATION1: return createcomponent_declaration1();
       case MOlocPackage.DECLARATION: return createdeclaration();
       case MOlocPackage.ARRAY_SUBSCRIPTS: return createarray_subscripts();
-      case MOlocPackage.UNFINISHED2: return createUnfinished2();
       case MOlocPackage.MODIFICATION: return createmodification();
-      case MOlocPackage.CONSTRAINING_CLAUSE: return createconstraining_clause();
+      case MOlocPackage.CONSTRAINING: return createconstraining();
+      case MOlocPackage.CONSTRAINING_CLAUSE: return createConstrainingClause();
       case MOlocPackage.ELEMENT: return createElement();
       case MOlocPackage.IMPORT_CLAUSE: return createImportClause();
       case MOlocPackage.EXTENDS_CLAUSE: return createExtendsClause();
@@ -109,7 +108,15 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
       case MOlocPackage.CONNECT_EQUATION: return createConnectEquation();
       case MOlocPackage.WHEN_EQUATION: return createWhenEquation();
       case MOlocPackage.FUNCTION_EQUATION: return createFunctionEquation();
-      case MOlocPackage.NULL_ELEMENT: return createNULLElement();
+      case MOlocPackage.ALGORITHM_SECTION: return createAlgorithmSection();
+      case MOlocPackage.STATEMENT: return createStatement();
+      case MOlocPackage.FUNCTION_STATEMENT: return createFunctionStatement();
+      case MOlocPackage.BREAK_STATEMENT: return createBreakStatement();
+      case MOlocPackage.RETURN_STATEMENT: return createReturnStatement();
+      case MOlocPackage.IF_STATEMENT: return createIfStatement();
+      case MOlocPackage.FOR_STATEMENT: return createForStatement();
+      case MOlocPackage.WHEN_STATEMENT: return createWhenStatement();
+      case MOlocPackage.WHILE_STATEMENT: return createWhileStatement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -371,18 +378,6 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public element_replaceable createelement_replaceable()
-  {
-    element_replaceableImpl element_replaceable = new element_replaceableImpl();
-    return element_replaceable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public short_class_definition createshort_class_definition()
   {
     short_class_definitionImpl short_class_definition = new short_class_definitionImpl();
@@ -455,18 +450,6 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public Unfinished2 createUnfinished2()
-  {
-    Unfinished2Impl unfinished2 = new Unfinished2Impl();
-    return unfinished2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public modification createmodification()
   {
     modificationImpl modification = new modificationImpl();
@@ -479,10 +462,22 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public constraining_clause createconstraining_clause()
+  public constraining createconstraining()
   {
-    constraining_clauseImpl constraining_clause = new constraining_clauseImpl();
-    return constraining_clause;
+    constrainingImpl constraining = new constrainingImpl();
+    return constraining;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConstrainingClause createConstrainingClause()
+  {
+    ConstrainingClauseImpl constrainingClause = new ConstrainingClauseImpl();
+    return constrainingClause;
   }
 
   /**
@@ -683,10 +678,106 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public NULLElement createNULLElement()
+  public AlgorithmSection createAlgorithmSection()
   {
-    NULLElementImpl nullElement = new NULLElementImpl();
-    return nullElement;
+    AlgorithmSectionImpl algorithmSection = new AlgorithmSectionImpl();
+    return algorithmSection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Statement createStatement()
+  {
+    StatementImpl statement = new StatementImpl();
+    return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FunctionStatement createFunctionStatement()
+  {
+    FunctionStatementImpl functionStatement = new FunctionStatementImpl();
+    return functionStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BreakStatement createBreakStatement()
+  {
+    BreakStatementImpl breakStatement = new BreakStatementImpl();
+    return breakStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ReturnStatement createReturnStatement()
+  {
+    ReturnStatementImpl returnStatement = new ReturnStatementImpl();
+    return returnStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IfStatement createIfStatement()
+  {
+    IfStatementImpl ifStatement = new IfStatementImpl();
+    return ifStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ForStatement createForStatement()
+  {
+    ForStatementImpl forStatement = new ForStatementImpl();
+    return forStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WhenStatement createWhenStatement()
+  {
+    WhenStatementImpl whenStatement = new WhenStatementImpl();
+    return whenStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WhileStatement createWhileStatement()
+  {
+    WhileStatementImpl whileStatement = new WhileStatementImpl();
+    return whileStatement;
   }
 
   /**

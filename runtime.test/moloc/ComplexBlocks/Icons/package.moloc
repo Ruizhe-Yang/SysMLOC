@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks">
-  <classes classType="package" className="Icons" description="&quot;Icons for ComplexBlocks&quot;">
+  <classes classType="package" className="Icons" description="&quot;Icons for ComplexBlocks&quot;" classNameEnd="Icons">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.IconsPackage"/>
   </classes>
 </mOloc:Stored_definition>

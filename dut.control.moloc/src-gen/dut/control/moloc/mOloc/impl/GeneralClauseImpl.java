@@ -3,13 +3,30 @@
  */
 package dut.control.moloc.mOloc.impl;
 
+import dut.control.moloc.mOloc.Argument;
+import dut.control.moloc.mOloc.ClassType;
 import dut.control.moloc.mOloc.Component_declaration;
+import dut.control.moloc.mOloc.ConstrainingClause;
 import dut.control.moloc.mOloc.Direction;
+import dut.control.moloc.mOloc.Element;
+import dut.control.moloc.mOloc.EnumerationLiteral;
 import dut.control.moloc.mOloc.GeneralClause;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.ParameterType;
 import dut.control.moloc.mOloc.RelationshipType;
 import dut.control.moloc.mOloc.array_subscripts;
+import dut.control.moloc.mOloc.class_modification;
+import dut.control.moloc.mOloc.class_name;
+import dut.control.moloc.mOloc.class_prefixes;
+import dut.control.moloc.mOloc.class_specifier;
+import dut.control.moloc.mOloc.composition;
+import dut.control.moloc.mOloc.constraining;
+import dut.control.moloc.mOloc.der_class_specifier;
+import dut.control.moloc.mOloc.description;
+import dut.control.moloc.mOloc.description_string;
+import dut.control.moloc.mOloc.enum_list;
+import dut.control.moloc.mOloc.long_class_specifier;
+import dut.control.moloc.mOloc.short_class_specifier;
 import dut.control.moloc.mOloc.type_prefix;
 import dut.control.moloc.mOloc.type_specifier;
 
@@ -37,11 +54,30 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsPartial <em>Is Partial</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsExpandable <em>Is Expandable</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsPure <em>Is Pure</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsOperator <em>Is Operator</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassType <em>Class Type</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassName <em>Class Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsExtends <em>Is Extends</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassNameEnd <em>Class Name End</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDirection <em>Direction</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsEnumeration <em>Is Enumeration</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsColon <em>Is Colon</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsDer <em>Is Der</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDerName <em>Der Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getRelationshipType <em>Relationship Type</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getParameterType <em>Parameter Type</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDirectionType <em>Direction Type</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getSubscript <em>Subscript</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getConstrain <em>Constrain</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsPublic <em>Is Public</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsProtected <em>Is Protected</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsRedeclare <em>Is Redeclare</em>}</li>
@@ -56,6 +92,346 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class GeneralClauseImpl extends ElementImpl implements GeneralClause
 {
+  /**
+   * The default value of the '{@link #isIsPartial() <em>Is Partial</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsPartial()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_PARTIAL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsPartial() <em>Is Partial</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsPartial()
+   * @generated
+   * @ordered
+   */
+  protected boolean isPartial = IS_PARTIAL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsExpandable() <em>Is Expandable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsExpandable()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_EXPANDABLE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsExpandable() <em>Is Expandable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsExpandable()
+   * @generated
+   * @ordered
+   */
+  protected boolean isExpandable = IS_EXPANDABLE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsPure() <em>Is Pure</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsPure()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_PURE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsPure() <em>Is Pure</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsPure()
+   * @generated
+   * @ordered
+   */
+  protected boolean isPure = IS_PURE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsOperator() <em>Is Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOperator()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_OPERATOR_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsOperator() <em>Is Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOperator()
+   * @generated
+   * @ordered
+   */
+  protected boolean isOperator = IS_OPERATOR_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getClassType() <em>Class Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClassType()
+   * @generated
+   * @ordered
+   */
+  protected static final ClassType CLASS_TYPE_EDEFAULT = ClassType.NULL;
+
+  /**
+   * The cached value of the '{@link #getClassType() <em>Class Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClassType()
+   * @generated
+   * @ordered
+   */
+  protected ClassType classType = CLASS_TYPE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClassName()
+   * @generated
+   * @ordered
+   */
+  protected static final String CLASS_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClassName()
+   * @generated
+   * @ordered
+   */
+  protected String className = CLASS_NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArguments()
+   * @generated
+   * @ordered
+   */
+  protected EList<Argument> arguments;
+
+  /**
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESCRIPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected String description = DESCRIPTION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElements()
+   * @generated
+   * @ordered
+   */
+  protected EList<Element> elements;
+
+  /**
+   * The default value of the '{@link #isIsExtends() <em>Is Extends</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsExtends()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_EXTENDS_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsExtends() <em>Is Extends</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsExtends()
+   * @generated
+   * @ordered
+   */
+  protected boolean isExtends = IS_EXTENDS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getClassNameEnd() <em>Class Name End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClassNameEnd()
+   * @generated
+   * @ordered
+   */
+  protected static final String CLASS_NAME_END_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getClassNameEnd() <em>Class Name End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClassNameEnd()
+   * @generated
+   * @ordered
+   */
+  protected String classNameEnd = CLASS_NAME_END_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getTypeSpecifier() <em>Type Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTypeSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected static final String TYPE_SPECIFIER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTypeSpecifier() <em>Type Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTypeSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getEnumerationLiteral() <em>Enumeration Literal</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEnumerationLiteral()
+   * @generated
+   * @ordered
+   */
+  protected EList<EnumerationLiteral> enumerationLiteral;
+
+  /**
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected static final Direction DIRECTION_EDEFAULT = Direction.NULL;
+
+  /**
+   * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected Direction direction = DIRECTION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsEnumeration() <em>Is Enumeration</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEnumeration()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ENUMERATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsEnumeration() <em>Is Enumeration</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEnumeration()
+   * @generated
+   * @ordered
+   */
+  protected boolean isEnumeration = IS_ENUMERATION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsColon() <em>Is Colon</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsColon()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_COLON_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsColon() <em>Is Colon</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsColon()
+   * @generated
+   * @ordered
+   */
+  protected boolean isColon = IS_COLON_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsDer() <em>Is Der</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDer()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_DER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsDer() <em>Is Der</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDer()
+   * @generated
+   * @ordered
+   */
+  protected boolean isDer = IS_DER_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getDerName() <em>Der Name</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDerName()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> derName;
+
   /**
    * The default value of the '{@link #getRelationshipType() <em>Relationship Type</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -117,26 +493,6 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   protected Direction directionType = DIRECTION_TYPE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getTypeSpecifier() <em>Type Specifier</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTypeSpecifier()
-   * @generated
-   * @ordered
-   */
-  protected static final String TYPE_SPECIFIER_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTypeSpecifier() <em>Type Specifier</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTypeSpecifier()
-   * @generated
-   * @ordered
-   */
-  protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
-
-  /**
    * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -145,6 +501,16 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @ordered
    */
   protected EList<String> subscript;
+
+  /**
+   * The cached value of the '{@link #getConstrain() <em>Constrain</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConstrain()
+   * @generated
+   * @ordered
+   */
+  protected ConstrainingClause constrain;
 
   /**
    * The default value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
@@ -323,6 +689,441 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @generated
    */
   @Override
+  public boolean isIsPartial()
+  {
+    return isPartial;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsPartial(boolean newIsPartial)
+  {
+    boolean oldIsPartial = isPartial;
+    isPartial = newIsPartial;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL, oldIsPartial, isPartial));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsExpandable()
+  {
+    return isExpandable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsExpandable(boolean newIsExpandable)
+  {
+    boolean oldIsExpandable = isExpandable;
+    isExpandable = newIsExpandable;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE, oldIsExpandable, isExpandable));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsPure()
+  {
+    return isPure;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsPure(boolean newIsPure)
+  {
+    boolean oldIsPure = isPure;
+    isPure = newIsPure;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_PURE, oldIsPure, isPure));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsOperator()
+  {
+    return isOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsOperator(boolean newIsOperator)
+  {
+    boolean oldIsOperator = isOperator;
+    isOperator = newIsOperator;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR, oldIsOperator, isOperator));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ClassType getClassType()
+  {
+    return classType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setClassType(ClassType newClassType)
+  {
+    ClassType oldClassType = classType;
+    classType = newClassType == null ? CLASS_TYPE_EDEFAULT : newClassType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE, oldClassType, classType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getClassName()
+  {
+    return className;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setClassName(String newClassName)
+  {
+    String oldClassName = className;
+    className = newClassName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__CLASS_NAME, oldClassName, className));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Argument> getArguments()
+  {
+    if (arguments == null)
+    {
+      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.GENERAL_CLAUSE__ARGUMENTS);
+    }
+    return arguments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDescription(String newDescription)
+  {
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__DESCRIPTION, oldDescription, description));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Element> getElements()
+  {
+    if (elements == null)
+    {
+      elements = new EObjectContainmentEList<Element>(Element.class, this, MOlocPackage.GENERAL_CLAUSE__ELEMENTS);
+    }
+    return elements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsExtends()
+  {
+    return isExtends;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsExtends(boolean newIsExtends)
+  {
+    boolean oldIsExtends = isExtends;
+    isExtends = newIsExtends;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS, oldIsExtends, isExtends));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getClassNameEnd()
+  {
+    return classNameEnd;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setClassNameEnd(String newClassNameEnd)
+  {
+    String oldClassNameEnd = classNameEnd;
+    classNameEnd = newClassNameEnd;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END, oldClassNameEnd, classNameEnd));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getTypeSpecifier()
+  {
+    return typeSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setTypeSpecifier(String newTypeSpecifier)
+  {
+    String oldTypeSpecifier = typeSpecifier;
+    typeSpecifier = newTypeSpecifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER, oldTypeSpecifier, typeSpecifier));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<EnumerationLiteral> getEnumerationLiteral()
+  {
+    if (enumerationLiteral == null)
+    {
+      enumerationLiteral = new EObjectContainmentEList<EnumerationLiteral>(EnumerationLiteral.class, this, MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL);
+    }
+    return enumerationLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotation()
+  {
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Direction getDirection()
+  {
+    return direction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDirection(Direction newDirection)
+  {
+    Direction oldDirection = direction;
+    direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__DIRECTION, oldDirection, direction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsEnumeration()
+  {
+    return isEnumeration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsEnumeration(boolean newIsEnumeration)
+  {
+    boolean oldIsEnumeration = isEnumeration;
+    isEnumeration = newIsEnumeration;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION, oldIsEnumeration, isEnumeration));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsColon()
+  {
+    return isColon;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsColon(boolean newIsColon)
+  {
+    boolean oldIsColon = isColon;
+    isColon = newIsColon;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_COLON, oldIsColon, isColon));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsDer()
+  {
+    return isDer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsDer(boolean newIsDer)
+  {
+    boolean oldIsDer = isDer;
+    isDer = newIsDer;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_DER, oldIsDer, isDer));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getDerName()
+  {
+    if (derName == null)
+    {
+      derName = new EDataTypeEList<String>(String.class, this, MOlocPackage.GENERAL_CLAUSE__DER_NAME);
+    }
+    return derName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public RelationshipType getRelationshipType()
   {
     return relationshipType;
@@ -398,31 +1199,6 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @generated
    */
   @Override
-  public String getTypeSpecifier()
-  {
-    return typeSpecifier;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setTypeSpecifier(String newTypeSpecifier)
-  {
-    String oldTypeSpecifier = typeSpecifier;
-    typeSpecifier = newTypeSpecifier;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER, oldTypeSpecifier, typeSpecifier));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<String> getSubscript()
   {
     if (subscript == null)
@@ -430,6 +1206,56 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT);
     }
     return subscript;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConstrainingClause getConstrain()
+  {
+    return constrain;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetConstrain(ConstrainingClause newConstrain, NotificationChain msgs)
+  {
+    ConstrainingClause oldConstrain = constrain;
+    constrain = newConstrain;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__CONSTRAIN, oldConstrain, newConstrain);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setConstrain(ConstrainingClause newConstrain)
+  {
+    if (newConstrain != constrain)
+    {
+      NotificationChain msgs = null;
+      if (constrain != null)
+        msgs = ((InternalEObject)constrain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.GENERAL_CLAUSE__CONSTRAIN, null, msgs);
+      if (newConstrain != null)
+        msgs = ((InternalEObject)newConstrain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.GENERAL_CLAUSE__CONSTRAIN, null, msgs);
+      msgs = basicSetConstrain(newConstrain, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__CONSTRAIN, newConstrain, newConstrain));
   }
 
   /**
@@ -632,6 +1458,14 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
+      case MOlocPackage.GENERAL_CLAUSE__ARGUMENTS:
+        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
+        return ((InternalEList<?>)getEnumerationLiteral()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
+        return basicSetConstrain(null, msgs);
       case MOlocPackage.GENERAL_CLAUSE__COMPONENT_LIST:
         return ((InternalEList<?>)getComponent_list()).basicRemove(otherEnd, msgs);
     }
@@ -648,16 +1482,54 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
+      case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL:
+        return isIsPartial();
+      case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE:
+        return isIsExpandable();
+      case MOlocPackage.GENERAL_CLAUSE__IS_PURE:
+        return isIsPure();
+      case MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR:
+        return isIsOperator();
+      case MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE:
+        return getClassType();
+      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME:
+        return getClassName();
+      case MOlocPackage.GENERAL_CLAUSE__ARGUMENTS:
+        return getArguments();
+      case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
+        return getDescription();
+      case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
+        return getElements();
+      case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS:
+        return isIsExtends();
+      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END:
+        return getClassNameEnd();
+      case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
+        return getTypeSpecifier();
+      case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
+        return getEnumerationLiteral();
+      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
+        return isIsAnnotation();
+      case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
+        return getDirection();
+      case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION:
+        return isIsEnumeration();
+      case MOlocPackage.GENERAL_CLAUSE__IS_COLON:
+        return isIsColon();
+      case MOlocPackage.GENERAL_CLAUSE__IS_DER:
+        return isIsDer();
+      case MOlocPackage.GENERAL_CLAUSE__DER_NAME:
+        return getDerName();
       case MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE:
         return getRelationshipType();
       case MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE:
         return getParameterType();
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE:
         return getDirectionType();
-      case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
-        return getTypeSpecifier();
       case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
         return getSubscript();
+      case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
+        return getConstrain();
       case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
         return isIsPublic();
       case MOlocPackage.GENERAL_CLAUSE__IS_PROTECTED:
@@ -689,6 +1561,67 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
+      case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL:
+        setIsPartial((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE:
+        setIsExpandable((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_PURE:
+        setIsPure((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR:
+        setIsOperator((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE:
+        setClassType((ClassType)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME:
+        setClassName((String)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__ARGUMENTS:
+        getArguments().clear();
+        getArguments().addAll((Collection<? extends Argument>)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
+        setDescription((String)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends Element>)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS:
+        setIsExtends((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END:
+        setClassNameEnd((String)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
+        setTypeSpecifier((String)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
+        getEnumerationLiteral().clear();
+        getEnumerationLiteral().addAll((Collection<? extends EnumerationLiteral>)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
+        setDirection((Direction)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION:
+        setIsEnumeration((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_COLON:
+        setIsColon((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_DER:
+        setIsDer((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__DER_NAME:
+        getDerName().clear();
+        getDerName().addAll((Collection<? extends String>)newValue);
+        return;
       case MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE:
         setRelationshipType((RelationshipType)newValue);
         return;
@@ -698,12 +1631,12 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE:
         setDirectionType((Direction)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
-        setTypeSpecifier((String)newValue);
-        return;
       case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
         getSubscript().clear();
         getSubscript().addAll((Collection<? extends String>)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
+        setConstrain((ConstrainingClause)newValue);
         return;
       case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
         setIsPublic((Boolean)newValue);
@@ -744,6 +1677,63 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
+      case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL:
+        setIsPartial(IS_PARTIAL_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE:
+        setIsExpandable(IS_EXPANDABLE_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_PURE:
+        setIsPure(IS_PURE_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR:
+        setIsOperator(IS_OPERATOR_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE:
+        setClassType(CLASS_TYPE_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME:
+        setClassName(CLASS_NAME_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__ARGUMENTS:
+        getArguments().clear();
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
+        getElements().clear();
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS:
+        setIsExtends(IS_EXTENDS_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END:
+        setClassNameEnd(CLASS_NAME_END_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
+        setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
+        getEnumerationLiteral().clear();
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
+        setDirection(DIRECTION_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION:
+        setIsEnumeration(IS_ENUMERATION_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_COLON:
+        setIsColon(IS_COLON_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_DER:
+        setIsDer(IS_DER_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__DER_NAME:
+        getDerName().clear();
+        return;
       case MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE:
         setRelationshipType(RELATIONSHIP_TYPE_EDEFAULT);
         return;
@@ -753,11 +1743,11 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE:
         setDirectionType(DIRECTION_TYPE_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
-        setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
-        return;
       case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
         getSubscript().clear();
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
+        setConstrain((ConstrainingClause)null);
         return;
       case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
         setIsPublic(IS_PUBLIC_EDEFAULT);
@@ -797,16 +1787,54 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
+      case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL:
+        return isPartial != IS_PARTIAL_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE:
+        return isExpandable != IS_EXPANDABLE_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__IS_PURE:
+        return isPure != IS_PURE_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR:
+        return isOperator != IS_OPERATOR_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE:
+        return classType != CLASS_TYPE_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME:
+        return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
+      case MOlocPackage.GENERAL_CLAUSE__ARGUMENTS:
+        return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
+        return elements != null && !elements.isEmpty();
+      case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS:
+        return isExtends != IS_EXTENDS_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END:
+        return CLASS_NAME_END_EDEFAULT == null ? classNameEnd != null : !CLASS_NAME_END_EDEFAULT.equals(classNameEnd);
+      case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
+        return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
+      case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
+        return enumerationLiteral != null && !enumerationLiteral.isEmpty();
+      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
+        return direction != DIRECTION_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION:
+        return isEnumeration != IS_ENUMERATION_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__IS_COLON:
+        return isColon != IS_COLON_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__IS_DER:
+        return isDer != IS_DER_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__DER_NAME:
+        return derName != null && !derName.isEmpty();
       case MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE:
         return relationshipType != RELATIONSHIP_TYPE_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE:
         return parameterType != PARAMETER_TYPE_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE:
         return directionType != DIRECTION_TYPE_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
-        return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
       case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
         return subscript != null && !subscript.isEmpty();
+      case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
+        return constrain != null;
       case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
         return isPublic != IS_PUBLIC_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__IS_PROTECTED:
@@ -835,13 +1863,56 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
-    if (baseClass == type_prefix.class)
+    if (baseClass == class_prefixes.class)
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE: return MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE;
-        case MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE: return MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE;
-        case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE: return MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE;
+        case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL: return MOlocPackage.CLASS_PREFIXES__IS_PARTIAL;
+        case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE: return MOlocPackage.CLASS_PREFIXES__IS_EXPANDABLE;
+        case MOlocPackage.GENERAL_CLAUSE__IS_PURE: return MOlocPackage.CLASS_PREFIXES__IS_PURE;
+        case MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR: return MOlocPackage.CLASS_PREFIXES__IS_OPERATOR;
+        case MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE: return MOlocPackage.CLASS_PREFIXES__CLASS_TYPE;
+        default: return -1;
+      }
+    }
+    if (baseClass == class_name.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME: return MOlocPackage.CLASS_NAME__CLASS_NAME;
+        default: return -1;
+      }
+    }
+    if (baseClass == class_modification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        default: return -1;
+      }
+    }
+    if (baseClass == description_string.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION: return MOlocPackage.DESCRIPTION_STRING__DESCRIPTION;
+        default: return -1;
+      }
+    }
+    if (baseClass == composition.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__ELEMENTS: return MOlocPackage.COMPOSITION__ELEMENTS;
+        default: return -1;
+      }
+    }
+    if (baseClass == long_class_specifier.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS: return MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS;
+        case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END: return MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END;
         default: return -1;
       }
     }
@@ -853,11 +1924,71 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         default: return -1;
       }
     }
+    if (baseClass == enum_list.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL: return MOlocPackage.ENUM_LIST__ENUMERATION_LITERAL;
+        default: return -1;
+      }
+    }
+    if (baseClass == description.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
+        default: return -1;
+      }
+    }
+    if (baseClass == short_class_specifier.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__DIRECTION: return MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION;
+        case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION;
+        case MOlocPackage.GENERAL_CLAUSE__IS_COLON: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_COLON;
+        default: return -1;
+      }
+    }
+    if (baseClass == der_class_specifier.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__IS_DER: return MOlocPackage.DER_CLASS_SPECIFIER__IS_DER;
+        case MOlocPackage.GENERAL_CLAUSE__DER_NAME: return MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME;
+        default: return -1;
+      }
+    }
+    if (baseClass == class_specifier.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == type_prefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE: return MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE;
+        case MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE: return MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE;
+        case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE: return MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE;
+        default: return -1;
+      }
+    }
     if (baseClass == array_subscripts.class)
     {
       switch (derivedFeatureID)
       {
         case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
+        default: return -1;
+      }
+    }
+    if (baseClass == constraining.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN: return MOlocPackage.CONSTRAINING__CONSTRAIN;
         default: return -1;
       }
     }
@@ -872,13 +2003,56 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
-    if (baseClass == type_prefix.class)
+    if (baseClass == class_prefixes.class)
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE: return MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE;
-        case MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE: return MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE;
-        case MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE: return MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE;
+        case MOlocPackage.CLASS_PREFIXES__IS_PARTIAL: return MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL;
+        case MOlocPackage.CLASS_PREFIXES__IS_EXPANDABLE: return MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE;
+        case MOlocPackage.CLASS_PREFIXES__IS_PURE: return MOlocPackage.GENERAL_CLAUSE__IS_PURE;
+        case MOlocPackage.CLASS_PREFIXES__IS_OPERATOR: return MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR;
+        case MOlocPackage.CLASS_PREFIXES__CLASS_TYPE: return MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE;
+        default: return -1;
+      }
+    }
+    if (baseClass == class_name.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.CLASS_NAME__CLASS_NAME: return MOlocPackage.GENERAL_CLAUSE__CLASS_NAME;
+        default: return -1;
+      }
+    }
+    if (baseClass == class_modification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.GENERAL_CLAUSE__ARGUMENTS;
+        default: return -1;
+      }
+    }
+    if (baseClass == description_string.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.DESCRIPTION_STRING__DESCRIPTION: return MOlocPackage.GENERAL_CLAUSE__DESCRIPTION;
+        default: return -1;
+      }
+    }
+    if (baseClass == composition.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.COMPOSITION__ELEMENTS: return MOlocPackage.GENERAL_CLAUSE__ELEMENTS;
+        default: return -1;
+      }
+    }
+    if (baseClass == long_class_specifier.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS: return MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS;
+        case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END: return MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END;
         default: return -1;
       }
     }
@@ -890,11 +2064,71 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         default: return -1;
       }
     }
+    if (baseClass == enum_list.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ENUM_LIST__ENUMERATION_LITERAL: return MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL;
+        default: return -1;
+      }
+    }
+    if (baseClass == description.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION;
+        default: return -1;
+      }
+    }
+    if (baseClass == short_class_specifier.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION: return MOlocPackage.GENERAL_CLAUSE__DIRECTION;
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION: return MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION;
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_COLON: return MOlocPackage.GENERAL_CLAUSE__IS_COLON;
+        default: return -1;
+      }
+    }
+    if (baseClass == der_class_specifier.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER: return MOlocPackage.GENERAL_CLAUSE__IS_DER;
+        case MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME: return MOlocPackage.GENERAL_CLAUSE__DER_NAME;
+        default: return -1;
+      }
+    }
+    if (baseClass == class_specifier.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == type_prefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE: return MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE;
+        case MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE: return MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE;
+        case MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE: return MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE;
+        default: return -1;
+      }
+    }
     if (baseClass == array_subscripts.class)
     {
       switch (baseFeatureID)
       {
         case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT;
+        default: return -1;
+      }
+    }
+    if (baseClass == constraining.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.CONSTRAINING__CONSTRAIN: return MOlocPackage.GENERAL_CLAUSE__CONSTRAIN;
         default: return -1;
       }
     }
@@ -912,14 +2146,44 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (relationshipType: ");
+    result.append(" (isPartial: ");
+    result.append(isPartial);
+    result.append(", isExpandable: ");
+    result.append(isExpandable);
+    result.append(", isPure: ");
+    result.append(isPure);
+    result.append(", isOperator: ");
+    result.append(isOperator);
+    result.append(", classType: ");
+    result.append(classType);
+    result.append(", className: ");
+    result.append(className);
+    result.append(", description: ");
+    result.append(description);
+    result.append(", isExtends: ");
+    result.append(isExtends);
+    result.append(", classNameEnd: ");
+    result.append(classNameEnd);
+    result.append(", typeSpecifier: ");
+    result.append(typeSpecifier);
+    result.append(", isAnnotation: ");
+    result.append(isAnnotation);
+    result.append(", direction: ");
+    result.append(direction);
+    result.append(", isEnumeration: ");
+    result.append(isEnumeration);
+    result.append(", isColon: ");
+    result.append(isColon);
+    result.append(", isDer: ");
+    result.append(isDer);
+    result.append(", derName: ");
+    result.append(derName);
+    result.append(", relationshipType: ");
     result.append(relationshipType);
     result.append(", parameterType: ");
     result.append(parameterType);
     result.append(", directionType: ");
     result.append(directionType);
-    result.append(", typeSpecifier: ");
-    result.append(typeSpecifier);
     result.append(", subscript: ");
     result.append(subscript);
     result.append(", isPublic: ");

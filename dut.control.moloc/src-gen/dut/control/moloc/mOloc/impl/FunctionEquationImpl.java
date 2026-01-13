@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl#getFunction <em>Function</em>}</li>
  * </ul>
@@ -72,6 +73,26 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
    * @ordered
    */
   protected EList<Argument> arguments;
+
+  /**
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
    * The default value of the '{@link #getComponent() <em>Component</em>}' attribute.
@@ -180,6 +201,31 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
    * @generated
    */
   @Override
+  public boolean isIsAnnotation()
+  {
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getComponent()
   {
     return component;
@@ -254,6 +300,8 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
         return getDescription();
       case MOlocPackage.FUNCTION_EQUATION__ARGUMENTS:
         return getArguments();
+      case MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION:
+        return isIsAnnotation();
       case MOlocPackage.FUNCTION_EQUATION__COMPONENT:
         return getComponent();
       case MOlocPackage.FUNCTION_EQUATION__FUNCTION:
@@ -279,6 +327,9 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
       case MOlocPackage.FUNCTION_EQUATION__ARGUMENTS:
         getArguments().clear();
         getArguments().addAll((Collection<? extends Argument>)newValue);
+        return;
+      case MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
         return;
       case MOlocPackage.FUNCTION_EQUATION__COMPONENT:
         setComponent((String)newValue);
@@ -306,6 +357,9 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
       case MOlocPackage.FUNCTION_EQUATION__ARGUMENTS:
         getArguments().clear();
         return;
+      case MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
       case MOlocPackage.FUNCTION_EQUATION__COMPONENT:
         setComponent(COMPONENT_EDEFAULT);
         return;
@@ -330,6 +384,8 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.FUNCTION_EQUATION__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.FUNCTION_EQUATION__COMPONENT:
         return COMPONENT_EDEFAULT == null ? component != null : !COMPONENT_EDEFAULT.equals(component);
       case MOlocPackage.FUNCTION_EQUATION__FUNCTION:
@@ -366,6 +422,7 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -400,6 +457,7 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -419,6 +477,8 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (description: ");
     result.append(description);
+    result.append(", isAnnotation: ");
+    result.append(isAnnotation);
     result.append(", component: ");
     result.append(component);
     result.append(", function: ");

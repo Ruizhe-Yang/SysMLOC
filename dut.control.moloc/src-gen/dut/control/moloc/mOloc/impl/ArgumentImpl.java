@@ -4,15 +4,33 @@
 package dut.control.moloc.mOloc.impl;
 
 import dut.control.moloc.mOloc.Argument;
+import dut.control.moloc.mOloc.ConstrainingClause;
+import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.ParameterType;
+import dut.control.moloc.mOloc.RelationshipType;
+import dut.control.moloc.mOloc.array_subscripts;
+import dut.control.moloc.mOloc.component_clause1;
+import dut.control.moloc.mOloc.component_declaration1;
+import dut.control.moloc.mOloc.constraining;
+import dut.control.moloc.mOloc.declaration;
 import dut.control.moloc.mOloc.element_modification;
 import dut.control.moloc.mOloc.modification;
+import dut.control.moloc.mOloc.type_prefix;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,17 +40,94 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getRelationshipType <em>Relationship Type</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getParameterType <em>Parameter Type</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getDirectionType <em>Direction Type</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getSubscript <em>Subscript</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getDeclarationName <em>Declaration Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getElementName <em>Element Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getConstrain <em>Constrain</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsRedeclare <em>Is Redeclare</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsEach <em>Is Each</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsfinal <em>Isfinal</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsReplaceable <em>Is Replaceable</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ArgumentImpl extends short_class_definitionImpl implements Argument
 {
+  /**
+   * The default value of the '{@link #getRelationshipType() <em>Relationship Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRelationshipType()
+   * @generated
+   * @ordered
+   */
+  protected static final RelationshipType RELATIONSHIP_TYPE_EDEFAULT = RelationshipType.NULL;
+
+  /**
+   * The cached value of the '{@link #getRelationshipType() <em>Relationship Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRelationshipType()
+   * @generated
+   * @ordered
+   */
+  protected RelationshipType relationshipType = RELATIONSHIP_TYPE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getParameterType() <em>Parameter Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParameterType()
+   * @generated
+   * @ordered
+   */
+  protected static final ParameterType PARAMETER_TYPE_EDEFAULT = ParameterType.NULL;
+
+  /**
+   * The cached value of the '{@link #getParameterType() <em>Parameter Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParameterType()
+   * @generated
+   * @ordered
+   */
+  protected ParameterType parameterType = PARAMETER_TYPE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDirectionType() <em>Direction Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirectionType()
+   * @generated
+   * @ordered
+   */
+  protected static final Direction DIRECTION_TYPE_EDEFAULT = Direction.NULL;
+
+  /**
+   * The cached value of the '{@link #getDirectionType() <em>Direction Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirectionType()
+   * @generated
+   * @ordered
+   */
+  protected Direction directionType = DIRECTION_TYPE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubscript()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> subscript;
+
   /**
    * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -54,6 +149,26 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   protected String expression = EXPRESSION_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getDeclarationName() <em>Declaration Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclarationName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARATION_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclarationName() <em>Declaration Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclarationName()
+   * @generated
+   * @ordered
+   */
+  protected String declarationName = DECLARATION_NAME_EDEFAULT;
+
+  /**
    * The default value of the '{@link #getElementName() <em>Element Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -72,6 +187,16 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
    * @ordered
    */
   protected String elementName = ELEMENT_NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getConstrain() <em>Constrain</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConstrain()
+   * @generated
+   * @ordered
+   */
+  protected ConstrainingClause constrain;
 
   /**
    * The default value of the '{@link #isIsRedeclare() <em>Is Redeclare</em>}' attribute.
@@ -134,6 +259,26 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   protected boolean isfinal = ISFINAL_EDEFAULT;
 
   /**
+   * The default value of the '{@link #isIsReplaceable() <em>Is Replaceable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReplaceable()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_REPLACEABLE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsReplaceable() <em>Is Replaceable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReplaceable()
+   * @generated
+   * @ordered
+   */
+  protected boolean isReplaceable = IS_REPLACEABLE_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -152,6 +297,96 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   protected EClass eStaticClass()
   {
     return MOlocPackage.Literals.ARGUMENT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RelationshipType getRelationshipType()
+  {
+    return relationshipType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRelationshipType(RelationshipType newRelationshipType)
+  {
+    RelationshipType oldRelationshipType = relationshipType;
+    relationshipType = newRelationshipType == null ? RELATIONSHIP_TYPE_EDEFAULT : newRelationshipType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE, oldRelationshipType, relationshipType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ParameterType getParameterType()
+  {
+    return parameterType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setParameterType(ParameterType newParameterType)
+  {
+    ParameterType oldParameterType = parameterType;
+    parameterType = newParameterType == null ? PARAMETER_TYPE_EDEFAULT : newParameterType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__PARAMETER_TYPE, oldParameterType, parameterType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Direction getDirectionType()
+  {
+    return directionType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDirectionType(Direction newDirectionType)
+  {
+    Direction oldDirectionType = directionType;
+    directionType = newDirectionType == null ? DIRECTION_TYPE_EDEFAULT : newDirectionType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__DIRECTION_TYPE, oldDirectionType, directionType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getSubscript()
+  {
+    if (subscript == null)
+    {
+      subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.ARGUMENT__SUBSCRIPT);
+    }
+    return subscript;
   }
 
   /**
@@ -185,6 +420,31 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
    * @generated
    */
   @Override
+  public String getDeclarationName()
+  {
+    return declarationName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclarationName(String newDeclarationName)
+  {
+    String oldDeclarationName = declarationName;
+    declarationName = newDeclarationName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__DECLARATION_NAME, oldDeclarationName, declarationName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getElementName()
   {
     return elementName;
@@ -202,6 +462,56 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     elementName = newElementName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__ELEMENT_NAME, oldElementName, elementName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConstrainingClause getConstrain()
+  {
+    return constrain;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetConstrain(ConstrainingClause newConstrain, NotificationChain msgs)
+  {
+    ConstrainingClause oldConstrain = constrain;
+    constrain = newConstrain;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__CONSTRAIN, oldConstrain, newConstrain);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setConstrain(ConstrainingClause newConstrain)
+  {
+    if (newConstrain != constrain)
+    {
+      NotificationChain msgs = null;
+      if (constrain != null)
+        msgs = ((InternalEObject)constrain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.ARGUMENT__CONSTRAIN, null, msgs);
+      if (newConstrain != null)
+        msgs = ((InternalEObject)newConstrain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.ARGUMENT__CONSTRAIN, null, msgs);
+      msgs = basicSetConstrain(newConstrain, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__CONSTRAIN, newConstrain, newConstrain));
   }
 
   /**
@@ -285,20 +595,75 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
    * @generated
    */
   @Override
+  public boolean isIsReplaceable()
+  {
+    return isReplaceable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsReplaceable(boolean newIsReplaceable)
+  {
+    boolean oldIsReplaceable = isReplaceable;
+    isReplaceable = newIsReplaceable;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__IS_REPLACEABLE, oldIsReplaceable, isReplaceable));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MOlocPackage.ARGUMENT__CONSTRAIN:
+        return basicSetConstrain(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE:
+        return getRelationshipType();
+      case MOlocPackage.ARGUMENT__PARAMETER_TYPE:
+        return getParameterType();
+      case MOlocPackage.ARGUMENT__DIRECTION_TYPE:
+        return getDirectionType();
+      case MOlocPackage.ARGUMENT__SUBSCRIPT:
+        return getSubscript();
       case MOlocPackage.ARGUMENT__EXPRESSION:
         return getExpression();
+      case MOlocPackage.ARGUMENT__DECLARATION_NAME:
+        return getDeclarationName();
       case MOlocPackage.ARGUMENT__ELEMENT_NAME:
         return getElementName();
+      case MOlocPackage.ARGUMENT__CONSTRAIN:
+        return getConstrain();
       case MOlocPackage.ARGUMENT__IS_REDECLARE:
         return isIsRedeclare();
       case MOlocPackage.ARGUMENT__IS_EACH:
         return isIsEach();
       case MOlocPackage.ARGUMENT__ISFINAL:
         return isIsfinal();
+      case MOlocPackage.ARGUMENT__IS_REPLACEABLE:
+        return isIsReplaceable();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -308,16 +673,36 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
+      case MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE:
+        setRelationshipType((RelationshipType)newValue);
+        return;
+      case MOlocPackage.ARGUMENT__PARAMETER_TYPE:
+        setParameterType((ParameterType)newValue);
+        return;
+      case MOlocPackage.ARGUMENT__DIRECTION_TYPE:
+        setDirectionType((Direction)newValue);
+        return;
+      case MOlocPackage.ARGUMENT__SUBSCRIPT:
+        getSubscript().clear();
+        getSubscript().addAll((Collection<? extends String>)newValue);
+        return;
       case MOlocPackage.ARGUMENT__EXPRESSION:
         setExpression((String)newValue);
         return;
+      case MOlocPackage.ARGUMENT__DECLARATION_NAME:
+        setDeclarationName((String)newValue);
+        return;
       case MOlocPackage.ARGUMENT__ELEMENT_NAME:
         setElementName((String)newValue);
+        return;
+      case MOlocPackage.ARGUMENT__CONSTRAIN:
+        setConstrain((ConstrainingClause)newValue);
         return;
       case MOlocPackage.ARGUMENT__IS_REDECLARE:
         setIsRedeclare((Boolean)newValue);
@@ -327,6 +712,9 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
         return;
       case MOlocPackage.ARGUMENT__ISFINAL:
         setIsfinal((Boolean)newValue);
+        return;
+      case MOlocPackage.ARGUMENT__IS_REPLACEABLE:
+        setIsReplaceable((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -342,11 +730,29 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   {
     switch (featureID)
     {
+      case MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE:
+        setRelationshipType(RELATIONSHIP_TYPE_EDEFAULT);
+        return;
+      case MOlocPackage.ARGUMENT__PARAMETER_TYPE:
+        setParameterType(PARAMETER_TYPE_EDEFAULT);
+        return;
+      case MOlocPackage.ARGUMENT__DIRECTION_TYPE:
+        setDirectionType(DIRECTION_TYPE_EDEFAULT);
+        return;
+      case MOlocPackage.ARGUMENT__SUBSCRIPT:
+        getSubscript().clear();
+        return;
       case MOlocPackage.ARGUMENT__EXPRESSION:
         setExpression(EXPRESSION_EDEFAULT);
         return;
+      case MOlocPackage.ARGUMENT__DECLARATION_NAME:
+        setDeclarationName(DECLARATION_NAME_EDEFAULT);
+        return;
       case MOlocPackage.ARGUMENT__ELEMENT_NAME:
         setElementName(ELEMENT_NAME_EDEFAULT);
+        return;
+      case MOlocPackage.ARGUMENT__CONSTRAIN:
+        setConstrain((ConstrainingClause)null);
         return;
       case MOlocPackage.ARGUMENT__IS_REDECLARE:
         setIsRedeclare(IS_REDECLARE_EDEFAULT);
@@ -356,6 +762,9 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
         return;
       case MOlocPackage.ARGUMENT__ISFINAL:
         setIsfinal(ISFINAL_EDEFAULT);
+        return;
+      case MOlocPackage.ARGUMENT__IS_REPLACEABLE:
+        setIsReplaceable(IS_REPLACEABLE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -371,16 +780,30 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   {
     switch (featureID)
     {
+      case MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE:
+        return relationshipType != RELATIONSHIP_TYPE_EDEFAULT;
+      case MOlocPackage.ARGUMENT__PARAMETER_TYPE:
+        return parameterType != PARAMETER_TYPE_EDEFAULT;
+      case MOlocPackage.ARGUMENT__DIRECTION_TYPE:
+        return directionType != DIRECTION_TYPE_EDEFAULT;
+      case MOlocPackage.ARGUMENT__SUBSCRIPT:
+        return subscript != null && !subscript.isEmpty();
       case MOlocPackage.ARGUMENT__EXPRESSION:
         return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
+      case MOlocPackage.ARGUMENT__DECLARATION_NAME:
+        return DECLARATION_NAME_EDEFAULT == null ? declarationName != null : !DECLARATION_NAME_EDEFAULT.equals(declarationName);
       case MOlocPackage.ARGUMENT__ELEMENT_NAME:
         return ELEMENT_NAME_EDEFAULT == null ? elementName != null : !ELEMENT_NAME_EDEFAULT.equals(elementName);
+      case MOlocPackage.ARGUMENT__CONSTRAIN:
+        return constrain != null;
       case MOlocPackage.ARGUMENT__IS_REDECLARE:
         return isRedeclare != IS_REDECLARE_EDEFAULT;
       case MOlocPackage.ARGUMENT__IS_EACH:
         return isEach != IS_EACH_EDEFAULT;
       case MOlocPackage.ARGUMENT__ISFINAL:
         return isfinal != ISFINAL_EDEFAULT;
+      case MOlocPackage.ARGUMENT__IS_REPLACEABLE:
+        return isReplaceable != IS_REPLACEABLE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -393,6 +816,24 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == type_prefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE: return MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE;
+        case MOlocPackage.ARGUMENT__PARAMETER_TYPE: return MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE;
+        case MOlocPackage.ARGUMENT__DIRECTION_TYPE: return MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE;
+        default: return -1;
+      }
+    }
+    if (baseClass == array_subscripts.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.ARGUMENT__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
+        default: return -1;
+      }
+    }
     if (baseClass == modification.class)
     {
       switch (derivedFeatureID)
@@ -401,11 +842,41 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
         default: return -1;
       }
     }
+    if (baseClass == declaration.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.ARGUMENT__DECLARATION_NAME: return MOlocPackage.DECLARATION__DECLARATION_NAME;
+        default: return -1;
+      }
+    }
+    if (baseClass == component_declaration1.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == component_clause1.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == element_modification.class)
     {
       switch (derivedFeatureID)
       {
         case MOlocPackage.ARGUMENT__ELEMENT_NAME: return MOlocPackage.ELEMENT_MODIFICATION__ELEMENT_NAME;
+        default: return -1;
+      }
+    }
+    if (baseClass == constraining.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.ARGUMENT__CONSTRAIN: return MOlocPackage.CONSTRAINING__CONSTRAIN;
         default: return -1;
       }
     }
@@ -420,6 +891,24 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == type_prefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE: return MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE;
+        case MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE: return MOlocPackage.ARGUMENT__PARAMETER_TYPE;
+        case MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE: return MOlocPackage.ARGUMENT__DIRECTION_TYPE;
+        default: return -1;
+      }
+    }
+    if (baseClass == array_subscripts.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.ARGUMENT__SUBSCRIPT;
+        default: return -1;
+      }
+    }
     if (baseClass == modification.class)
     {
       switch (baseFeatureID)
@@ -428,11 +917,41 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
         default: return -1;
       }
     }
+    if (baseClass == declaration.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.DECLARATION__DECLARATION_NAME: return MOlocPackage.ARGUMENT__DECLARATION_NAME;
+        default: return -1;
+      }
+    }
+    if (baseClass == component_declaration1.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == component_clause1.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == element_modification.class)
     {
       switch (baseFeatureID)
       {
         case MOlocPackage.ELEMENT_MODIFICATION__ELEMENT_NAME: return MOlocPackage.ARGUMENT__ELEMENT_NAME;
+        default: return -1;
+      }
+    }
+    if (baseClass == constraining.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.CONSTRAINING__CONSTRAIN: return MOlocPackage.ARGUMENT__CONSTRAIN;
         default: return -1;
       }
     }
@@ -450,8 +969,18 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (expression: ");
+    result.append(" (relationshipType: ");
+    result.append(relationshipType);
+    result.append(", parameterType: ");
+    result.append(parameterType);
+    result.append(", directionType: ");
+    result.append(directionType);
+    result.append(", subscript: ");
+    result.append(subscript);
+    result.append(", expression: ");
     result.append(expression);
+    result.append(", declarationName: ");
+    result.append(declarationName);
     result.append(", elementName: ");
     result.append(elementName);
     result.append(", isRedeclare: ");
@@ -460,6 +989,8 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     result.append(isEach);
     result.append(", isfinal: ");
     result.append(isfinal);
+    result.append(", isReplaceable: ");
+    result.append(isReplaceable);
     result.append(')');
     return result.toString();
   }

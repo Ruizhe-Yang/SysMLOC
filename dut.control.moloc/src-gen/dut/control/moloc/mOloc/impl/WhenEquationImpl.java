@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#getEquations <em>Equations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#getElseCondition <em>Else Condition</em>}</li>
@@ -75,6 +76,26 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
    * @ordered
    */
   protected EList<Argument> arguments;
+
+  /**
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
    * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
@@ -183,6 +204,31 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
    * @generated
    */
   @Override
+  public boolean isIsAnnotation()
+  {
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.WHEN_EQUATION__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getCondition()
   {
     return condition;
@@ -264,6 +310,8 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
         return getDescription();
       case MOlocPackage.WHEN_EQUATION__ARGUMENTS:
         return getArguments();
+      case MOlocPackage.WHEN_EQUATION__IS_ANNOTATION:
+        return isIsAnnotation();
       case MOlocPackage.WHEN_EQUATION__CONDITION:
         return getCondition();
       case MOlocPackage.WHEN_EQUATION__EQUATIONS:
@@ -291,6 +339,9 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
       case MOlocPackage.WHEN_EQUATION__ARGUMENTS:
         getArguments().clear();
         getArguments().addAll((Collection<? extends Argument>)newValue);
+        return;
+      case MOlocPackage.WHEN_EQUATION__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
         return;
       case MOlocPackage.WHEN_EQUATION__CONDITION:
         setCondition((String)newValue);
@@ -323,6 +374,9 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
       case MOlocPackage.WHEN_EQUATION__ARGUMENTS:
         getArguments().clear();
         return;
+      case MOlocPackage.WHEN_EQUATION__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
       case MOlocPackage.WHEN_EQUATION__CONDITION:
         setCondition(CONDITION_EDEFAULT);
         return;
@@ -350,6 +404,8 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.WHEN_EQUATION__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.WHEN_EQUATION__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.WHEN_EQUATION__CONDITION:
         return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
       case MOlocPackage.WHEN_EQUATION__EQUATIONS:
@@ -388,6 +444,7 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.WHEN_EQUATION__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -422,6 +479,7 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.WHEN_EQUATION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -441,6 +499,8 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (description: ");
     result.append(description);
+    result.append(", isAnnotation: ");
+    result.append(isAnnotation);
     result.append(", condition: ");
     result.append(condition);
     result.append(", elseCondition: ");

@@ -14,6 +14,7 @@ package dut.control.moloc.mOloc;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.long_class_specifier#isIsExtends <em>Is Extends</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.long_class_specifier#getClassNameEnd <em>Class Name End</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getlong_class_specifier()
@@ -43,5 +44,27 @@ public interface long_class_specifier extends class_name, class_modification, de
    * @generated
    */
   void setIsExtends(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Class Name End</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Class Name End</em>' attribute.
+   * @see #setClassNameEnd(String)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getlong_class_specifier_ClassNameEnd()
+   * @model
+   * @generated
+   */
+  String getClassNameEnd();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.long_class_specifier#getClassNameEnd <em>Class Name End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Class Name End</em>' attribute.
+   * @see #getClassNameEnd()
+   * @generated
+   */
+  void setClassNameEnd(String value);
 
 } // long_class_specifier

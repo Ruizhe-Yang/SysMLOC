@@ -14,15 +14,16 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.emf.common,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-21
-Export-Package: dut.control.moloc.mOloc.util,
- dut.control.moloc.scoping,
- dut.control.moloc.parser.antlr,
- dut.control.moloc.validation,
+Export-Package: dut.control.moloc,
  dut.control.moloc.generator,
- dut.control.moloc.mOloc.impl,
  dut.control.moloc.mOloc,
- dut.control.moloc,
- dut.control.moloc.serializer,
+ dut.control.moloc.mOloc.impl,
+ dut.control.moloc.mOloc.util,
+ dut.control.moloc.parser.antlr,
  dut.control.moloc.parser.antlr.internal,
- dut.control.moloc.services
+ dut.control.moloc.scoping,
+ dut.control.moloc.serializer,
+ dut.control.moloc.services,
+ dut.control.moloc.util,
+ dut.control.moloc.validation
 Import-Package: org.apache.log4j

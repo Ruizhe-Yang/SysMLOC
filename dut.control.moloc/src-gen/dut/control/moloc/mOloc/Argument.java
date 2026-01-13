@@ -16,13 +16,14 @@ package dut.control.moloc.mOloc;
  *   <li>{@link dut.control.moloc.mOloc.Argument#isIsRedeclare <em>Is Redeclare</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.Argument#isIsEach <em>Is Each</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.Argument#isIsfinal <em>Isfinal</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.Argument#isIsReplaceable <em>Is Replaceable</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getArgument()
  * @model
  * @generated
  */
-public interface Argument extends short_class_definition, class_prefixes, short_class_specifier, element_modification, modification
+public interface Argument extends short_class_definition, class_prefixes, short_class_specifier, component_clause1, type_prefix, component_declaration1, declaration, array_subscripts, modification, element_modification, constraining
 {
   /**
    * Returns the value of the '<em><b>Is Redeclare</b></em>' attribute.
@@ -89,5 +90,27 @@ public interface Argument extends short_class_definition, class_prefixes, short_
    * @generated
    */
   void setIsfinal(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Is Replaceable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Replaceable</em>' attribute.
+   * @see #setIsReplaceable(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getArgument_IsReplaceable()
+   * @model
+   * @generated
+   */
+  boolean isIsReplaceable();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.Argument#isIsReplaceable <em>Is Replaceable</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Replaceable</em>' attribute.
+   * @see #isIsReplaceable()
+   * @generated
+   */
+  void setIsReplaceable(boolean value);
 
 } // Argument

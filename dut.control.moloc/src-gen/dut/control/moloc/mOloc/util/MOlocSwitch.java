@@ -225,16 +225,22 @@ public class MOlocSwitch<T> extends Switch<T>
         Argument argument = (Argument)theEObject;
         T result = caseArgument(argument);
         if (result == null) result = caseshort_class_definition(argument);
+        if (result == null) result = casecomponent_clause1(argument);
         if (result == null) result = caseelement_modification(argument);
+        if (result == null) result = caseconstraining(argument);
         if (result == null) result = caseclass_prefixes(argument);
         if (result == null) result = caseshort_class_specifier(argument);
-        if (result == null) result = casemodification(argument);
+        if (result == null) result = casetype_prefix(argument);
+        if (result == null) result = casecomponent_declaration1(argument);
         if (result == null) result = caseclass_name(argument);
         if (result == null) result = casetype_specifier(argument);
         if (result == null) result = caseenum_list(argument);
         if (result == null) result = casedescription(argument);
-        if (result == null) result = caseclass_modification(argument);
+        if (result == null) result = casedeclaration(argument);
         if (result == null) result = casedescription_string(argument);
+        if (result == null) result = casearray_subscripts(argument);
+        if (result == null) result = casemodification(argument);
+        if (result == null) result = caseclass_modification(argument);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -245,29 +251,6 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = casemodification(element_modification);
         if (result == null) result = casedescription_string(element_modification);
         if (result == null) result = caseclass_modification(element_modification);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MOlocPackage.ELEMENT_REPLACEABLE:
-      {
-        element_replaceable element_replaceable = (element_replaceable)theEObject;
-        T result = caseelement_replaceable(element_replaceable);
-        if (result == null) result = caseshort_class_definition(element_replaceable);
-        if (result == null) result = casecomponent_clause1(element_replaceable);
-        if (result == null) result = caseconstraining_clause(element_replaceable);
-        if (result == null) result = caseclass_prefixes(element_replaceable);
-        if (result == null) result = caseshort_class_specifier(element_replaceable);
-        if (result == null) result = casetype_prefix(element_replaceable);
-        if (result == null) result = casecomponent_declaration1(element_replaceable);
-        if (result == null) result = caseclass_name(element_replaceable);
-        if (result == null) result = casetype_specifier(element_replaceable);
-        if (result == null) result = caseenum_list(element_replaceable);
-        if (result == null) result = casedescription(element_replaceable);
-        if (result == null) result = casedeclaration(element_replaceable);
-        if (result == null) result = casedescription_string(element_replaceable);
-        if (result == null) result = casearray_subscripts(element_replaceable);
-        if (result == null) result = casemodification(element_replaceable);
-        if (result == null) result = caseclass_modification(element_replaceable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -339,13 +322,6 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MOlocPackage.UNFINISHED2:
-      {
-        Unfinished2 unfinished2 = (Unfinished2)theEObject;
-        T result = caseUnfinished2(unfinished2);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MOlocPackage.MODIFICATION:
       {
         modification modification = (modification)theEObject;
@@ -354,10 +330,19 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MOlocPackage.CONSTRAINING:
+      {
+        constraining constraining = (constraining)theEObject;
+        T result = caseconstraining(constraining);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MOlocPackage.CONSTRAINING_CLAUSE:
       {
-        constraining_clause constraining_clause = (constraining_clause)theEObject;
-        T result = caseconstraining_clause(constraining_clause);
+        ConstrainingClause constrainingClause = (ConstrainingClause)theEObject;
+        T result = caseConstrainingClause(constrainingClause);
+        if (result == null) result = casetype_specifier(constrainingClause);
+        if (result == null) result = caseclass_modification(constrainingClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -401,9 +386,21 @@ public class MOlocSwitch<T> extends Switch<T>
         GeneralClause generalClause = (GeneralClause)theEObject;
         T result = caseGeneralClause(generalClause);
         if (result == null) result = caseElement(generalClause);
+        if (result == null) result = caseclass_prefixes(generalClause);
+        if (result == null) result = caseclass_specifier(generalClause);
         if (result == null) result = casetype_prefix(generalClause);
-        if (result == null) result = casetype_specifier(generalClause);
         if (result == null) result = casearray_subscripts(generalClause);
+        if (result == null) result = caseconstraining(generalClause);
+        if (result == null) result = caselong_class_specifier(generalClause);
+        if (result == null) result = caseshort_class_specifier(generalClause);
+        if (result == null) result = caseder_class_specifier(generalClause);
+        if (result == null) result = caseclass_name(generalClause);
+        if (result == null) result = casecomposition(generalClause);
+        if (result == null) result = casetype_specifier(generalClause);
+        if (result == null) result = caseenum_list(generalClause);
+        if (result == null) result = casedescription(generalClause);
+        if (result == null) result = caseclass_modification(generalClause);
+        if (result == null) result = casedescription_string(generalClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -519,10 +516,95 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MOlocPackage.NULL_ELEMENT:
+      case MOlocPackage.ALGORITHM_SECTION:
       {
-        NULLElement nullElement = (NULLElement)theEObject;
-        T result = caseNULLElement(nullElement);
+        AlgorithmSection algorithmSection = (AlgorithmSection)theEObject;
+        T result = caseAlgorithmSection(algorithmSection);
+        if (result == null) result = caseElement(algorithmSection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.STATEMENT:
+      {
+        Statement statement = (Statement)theEObject;
+        T result = caseStatement(statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.FUNCTION_STATEMENT:
+      {
+        FunctionStatement functionStatement = (FunctionStatement)theEObject;
+        T result = caseFunctionStatement(functionStatement);
+        if (result == null) result = caseStatement(functionStatement);
+        if (result == null) result = casedescription(functionStatement);
+        if (result == null) result = casedescription_string(functionStatement);
+        if (result == null) result = caseclass_modification(functionStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.BREAK_STATEMENT:
+      {
+        BreakStatement breakStatement = (BreakStatement)theEObject;
+        T result = caseBreakStatement(breakStatement);
+        if (result == null) result = caseStatement(breakStatement);
+        if (result == null) result = casedescription(breakStatement);
+        if (result == null) result = casedescription_string(breakStatement);
+        if (result == null) result = caseclass_modification(breakStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.RETURN_STATEMENT:
+      {
+        ReturnStatement returnStatement = (ReturnStatement)theEObject;
+        T result = caseReturnStatement(returnStatement);
+        if (result == null) result = caseStatement(returnStatement);
+        if (result == null) result = casedescription(returnStatement);
+        if (result == null) result = casedescription_string(returnStatement);
+        if (result == null) result = caseclass_modification(returnStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.IF_STATEMENT:
+      {
+        IfStatement ifStatement = (IfStatement)theEObject;
+        T result = caseIfStatement(ifStatement);
+        if (result == null) result = caseStatement(ifStatement);
+        if (result == null) result = casedescription(ifStatement);
+        if (result == null) result = casedescription_string(ifStatement);
+        if (result == null) result = caseclass_modification(ifStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.FOR_STATEMENT:
+      {
+        ForStatement forStatement = (ForStatement)theEObject;
+        T result = caseForStatement(forStatement);
+        if (result == null) result = caseStatement(forStatement);
+        if (result == null) result = casedescription(forStatement);
+        if (result == null) result = casedescription_string(forStatement);
+        if (result == null) result = caseclass_modification(forStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.WHEN_STATEMENT:
+      {
+        WhenStatement whenStatement = (WhenStatement)theEObject;
+        T result = caseWhenStatement(whenStatement);
+        if (result == null) result = caseStatement(whenStatement);
+        if (result == null) result = casedescription(whenStatement);
+        if (result == null) result = casedescription_string(whenStatement);
+        if (result == null) result = caseclass_modification(whenStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.WHILE_STATEMENT:
+      {
+        WhileStatement whileStatement = (WhileStatement)theEObject;
+        T result = caseWhileStatement(whileStatement);
+        if (result == null) result = caseStatement(whileStatement);
+        if (result == null) result = casedescription(whileStatement);
+        if (result == null) result = casedescription_string(whileStatement);
+        if (result == null) result = caseclass_modification(whileStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -803,22 +885,6 @@ public class MOlocSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>element replaceable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>element replaceable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseelement_replaceable(element_replaceable object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>short class definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -915,22 +981,6 @@ public class MOlocSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Unfinished2</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Unfinished2</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUnfinished2(Unfinished2 object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>modification</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -947,17 +997,33 @@ public class MOlocSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>constraining clause</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>constraining</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>constraining clause</em>'.
+   * @return the result of interpreting the object as an instance of '<em>constraining</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseconstraining_clause(constraining_clause object)
+  public T caseconstraining(constraining object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Constraining Clause</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Constraining Clause</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConstrainingClause(ConstrainingClause object)
   {
     return null;
   }
@@ -1219,17 +1285,145 @@ public class MOlocSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>NULL Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Algorithm Section</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>NULL Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Algorithm Section</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNULLElement(NULLElement object)
+  public T caseAlgorithmSection(AlgorithmSection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStatement(Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionStatement(FunctionStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Break Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Break Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBreakStatement(BreakStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Return Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturnStatement(ReturnStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfStatement(IfStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>For Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>For Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseForStatement(ForStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>When Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>When Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhenStatement(WhenStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>While Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhileStatement(WhileStatement object)
   {
     return null;
   }

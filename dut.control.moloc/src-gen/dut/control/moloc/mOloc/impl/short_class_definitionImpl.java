@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#isIsEnumeration <em>Is Enumeration</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#isIsColon <em>Is Colon</em>}</li>
@@ -132,6 +133,26 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
    * @ordered
    */
   protected String description = DESCRIPTION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -325,6 +346,31 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
    * @generated
    */
   @Override
+  public boolean isIsAnnotation()
+  {
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.SHORT_CLASS_DEFINITION__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Direction getDirection()
   {
     return direction;
@@ -432,6 +478,8 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
         return getEnumerationLiteral();
       case MOlocPackage.SHORT_CLASS_DEFINITION__DESCRIPTION:
         return getDescription();
+      case MOlocPackage.SHORT_CLASS_DEFINITION__IS_ANNOTATION:
+        return isIsAnnotation();
       case MOlocPackage.SHORT_CLASS_DEFINITION__DIRECTION:
         return getDirection();
       case MOlocPackage.SHORT_CLASS_DEFINITION__IS_ENUMERATION:
@@ -469,6 +517,9 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
         return;
       case MOlocPackage.SHORT_CLASS_DEFINITION__DESCRIPTION:
         setDescription((String)newValue);
+        return;
+      case MOlocPackage.SHORT_CLASS_DEFINITION__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
         return;
       case MOlocPackage.SHORT_CLASS_DEFINITION__DIRECTION:
         setDirection((Direction)newValue);
@@ -508,6 +559,9 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
       case MOlocPackage.SHORT_CLASS_DEFINITION__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
+      case MOlocPackage.SHORT_CLASS_DEFINITION__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
       case MOlocPackage.SHORT_CLASS_DEFINITION__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
@@ -541,6 +595,8 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
         return enumerationLiteral != null && !enumerationLiteral.isEmpty();
       case MOlocPackage.SHORT_CLASS_DEFINITION__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case MOlocPackage.SHORT_CLASS_DEFINITION__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.SHORT_CLASS_DEFINITION__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case MOlocPackage.SHORT_CLASS_DEFINITION__IS_ENUMERATION:
@@ -603,6 +659,7 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.SHORT_CLASS_DEFINITION__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -671,6 +728,7 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.SHORT_CLASS_DEFINITION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -704,6 +762,8 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
     result.append(typeSpecifier);
     result.append(", description: ");
     result.append(description);
+    result.append(", isAnnotation: ");
+    result.append(isAnnotation);
     result.append(", direction: ");
     result.append(direction);
     result.append(", isEnumeration: ");

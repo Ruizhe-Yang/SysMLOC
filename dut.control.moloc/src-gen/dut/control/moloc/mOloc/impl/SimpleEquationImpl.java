@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.SimpleEquationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.SimpleEquationImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.SimpleEquationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.SimpleEquationImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.SimpleEquationImpl#getRight <em>Right</em>}</li>
  * </ul>
@@ -72,6 +73,26 @@ public class SimpleEquationImpl extends EquationImpl implements SimpleEquation
    * @ordered
    */
   protected EList<Argument> arguments;
+
+  /**
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
    * The default value of the '{@link #getLeft() <em>Left</em>}' attribute.
@@ -180,6 +201,31 @@ public class SimpleEquationImpl extends EquationImpl implements SimpleEquation
    * @generated
    */
   @Override
+  public boolean isIsAnnotation()
+  {
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.SIMPLE_EQUATION__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getLeft()
   {
     return left;
@@ -254,6 +300,8 @@ public class SimpleEquationImpl extends EquationImpl implements SimpleEquation
         return getDescription();
       case MOlocPackage.SIMPLE_EQUATION__ARGUMENTS:
         return getArguments();
+      case MOlocPackage.SIMPLE_EQUATION__IS_ANNOTATION:
+        return isIsAnnotation();
       case MOlocPackage.SIMPLE_EQUATION__LEFT:
         return getLeft();
       case MOlocPackage.SIMPLE_EQUATION__RIGHT:
@@ -279,6 +327,9 @@ public class SimpleEquationImpl extends EquationImpl implements SimpleEquation
       case MOlocPackage.SIMPLE_EQUATION__ARGUMENTS:
         getArguments().clear();
         getArguments().addAll((Collection<? extends Argument>)newValue);
+        return;
+      case MOlocPackage.SIMPLE_EQUATION__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
         return;
       case MOlocPackage.SIMPLE_EQUATION__LEFT:
         setLeft((String)newValue);
@@ -306,6 +357,9 @@ public class SimpleEquationImpl extends EquationImpl implements SimpleEquation
       case MOlocPackage.SIMPLE_EQUATION__ARGUMENTS:
         getArguments().clear();
         return;
+      case MOlocPackage.SIMPLE_EQUATION__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
       case MOlocPackage.SIMPLE_EQUATION__LEFT:
         setLeft(LEFT_EDEFAULT);
         return;
@@ -330,6 +384,8 @@ public class SimpleEquationImpl extends EquationImpl implements SimpleEquation
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.SIMPLE_EQUATION__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.SIMPLE_EQUATION__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.SIMPLE_EQUATION__LEFT:
         return LEFT_EDEFAULT == null ? left != null : !LEFT_EDEFAULT.equals(left);
       case MOlocPackage.SIMPLE_EQUATION__RIGHT:
@@ -366,6 +422,7 @@ public class SimpleEquationImpl extends EquationImpl implements SimpleEquation
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.SIMPLE_EQUATION__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -400,6 +457,7 @@ public class SimpleEquationImpl extends EquationImpl implements SimpleEquation
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.SIMPLE_EQUATION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -419,6 +477,8 @@ public class SimpleEquationImpl extends EquationImpl implements SimpleEquation
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (description: ");
     result.append(description);
+    result.append(", isAnnotation: ");
+    result.append(isAnnotation);
     result.append(", left: ");
     result.append(left);
     result.append(", right: ");

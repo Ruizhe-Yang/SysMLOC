@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.ComplexMath">
-  <classes classType="block" className="Sum" description="&quot;Output the sum of the elements of the input vector&quot;">
+  <classes classType="block" className="Sum" description="&quot;Output the sum of the elements of the input vector&quot;" classNameEnd="Sum">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.ComplexMISO"/>
-    <elements xsi:type="mOloc:GeneralClause" parameterType="parameter" typeSpecifier="Complex">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" parameterType="parameter">
       <component_list expression="fill(Complex(1, 0), nin)" declarationName="k" description="&quot;Optional: sum coefficients&quot;">
         <subscript>nin</subscript>
       </component_list>
