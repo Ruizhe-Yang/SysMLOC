@@ -9,12 +9,12 @@
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package"/>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_degC" description="&quot;Convert from Kelvin to degCelsius&quot;" classNameEnd="To_degC">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;K&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;degC&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_degC(u)"/>
@@ -34,12 +34,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_degC" description="&quot;Convert from degCelsius to Kelvin&quot;" classNameEnd="From_degC">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;degC&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;K&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_degC(u)"/>
@@ -59,12 +59,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_degF" description="&quot;Convert from Kelvin to degFahrenheit&quot;" classNameEnd="To_degF">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;K&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;degF&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_degF(u)"/>
@@ -84,12 +84,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_degF" description="&quot;Convert from degFahrenheit to Kelvin&quot;" classNameEnd="From_degF">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;degF&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;K&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_degF(u)"/>
@@ -109,12 +109,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_degRk" description="&quot;Convert from Kelvin to degRankine&quot;" classNameEnd="To_degRk">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;K&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;degRk&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_degRk(u)"/>
@@ -134,12 +134,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_degRk" description="&quot;Convert from degRankine to Kelvin&quot;" classNameEnd="From_degRk">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;degRk&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;K&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_degRk(u)"/>
@@ -159,12 +159,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_deg" description="&quot;Convert from radian to degree&quot;" classNameEnd="To_deg">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;rad&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;deg&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_deg(u)"/>
@@ -184,12 +184,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_deg" description="&quot;Convert from degree to radian&quot;" classNameEnd="From_deg">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;deg&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;rad&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_deg(u)"/>
@@ -209,12 +209,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_rpm" description="&quot;Convert from radian per second to revolutions per minute&quot;" classNameEnd="To_rpm">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;rad/s&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;rev/min&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_rpm(u)"/>
@@ -234,12 +234,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_rpm" description="&quot;Convert from revolutions per minute to radian per second&quot;" classNameEnd="From_rpm">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;rev/min&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;rad/s&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_rpm(u)"/>
@@ -259,12 +259,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_kmh" description="&quot;Convert from metre per second to kilometre per hour&quot;" classNameEnd="To_kmh">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;m/s&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;km/h&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_kmh(u)"/>
@@ -284,12 +284,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_kmh" description="&quot;Convert from kilometre per hour to metre per second&quot;" classNameEnd="From_kmh">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;km/h&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;m/s&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_kmh(u)"/>
@@ -309,12 +309,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_day" description="&quot;Convert from second to day&quot;" classNameEnd="To_day">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;s&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;d&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_day(u)"/>
@@ -334,12 +334,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_day" description="&quot;Convert from day to second&quot;" classNameEnd="From_day">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;d&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;s&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_day(u)"/>
@@ -359,12 +359,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_hour" description="&quot;Convert from second to hour&quot;" classNameEnd="To_hour">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;s&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;h&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_hour(u)"/>
@@ -384,12 +384,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_hour" description="&quot;Convert from hour to second&quot;" classNameEnd="From_hour">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;h&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;s&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_hour(u)"/>
@@ -409,12 +409,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_minute" description="&quot;Convert from second to minute&quot;" classNameEnd="To_minute">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;s&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;min&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_minute(u)"/>
@@ -434,12 +434,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_minute" description="&quot;Convert from minute to second&quot;" classNameEnd="From_minute">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;min&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;s&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_minute(u)"/>
@@ -459,12 +459,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_litre" description="&quot;Convert from cubic metre to litre&quot;" classNameEnd="To_litre">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;m3&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;l&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_litre(u)"/>
@@ -484,12 +484,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_litre" description="&quot;Convert from litre to cubic metre&quot;" classNameEnd="From_litre">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;l&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;m3&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_litre(u)"/>
@@ -509,12 +509,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_kWh" description="&quot;Convert from Joule to kilo Watt hour&quot;" classNameEnd="To_kWh">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;J&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;kW.h&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_kWh(u)"/>
@@ -534,12 +534,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_kWh" description="&quot;Convert from kilo Watt hour to Joule&quot;" classNameEnd="From_kWh">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;kW.h&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;J&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_kWh(u)"/>
@@ -559,12 +559,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_bar" description="&quot;Convert from Pascal to bar&quot;" classNameEnd="To_bar">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;Pa&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;bar&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_bar(u)"/>
@@ -584,12 +584,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_bar" description="&quot;Convert from bar to Pascal&quot;" classNameEnd="From_bar">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;bar&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;Pa&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_bar(u)"/>
@@ -609,12 +609,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="To_gps" description="&quot;Convert from kilogram per second to gram per second&quot;" classNameEnd="To_gps">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;kg/s&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;g/s&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.to_gps(u)"/>
@@ -634,12 +634,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="block" className="From_gps" description="&quot;Convert from gram per second to kilogram per second&quot;" classNameEnd="From_gps">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialConversionBlock">
-          <arguments elementName="u">
+          <targuments elementName="u">
             <arguments expression="&quot;g/s&quot;" elementName="unit"/>
-          </arguments>
-          <arguments elementName="y">
+          </targuments>
+          <targuments elementName="y">
             <arguments expression="&quot;kg/s&quot;" elementName="unit"/>
-          </arguments>
+          </targuments>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Units.Conversions.from_gps(u)"/>
@@ -777,8 +777,8 @@
         <component_list subscripts="[:, :]" expression="[1, 0; 0, 1]" declarationName="K" description="&quot;Gain matrix which is multiplied with the input&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.MIMO">
-        <arguments expression="size(K, 2)" elementName="nin" isfinal="true"/>
-        <arguments expression="size(K, 1)" elementName="nout" isfinal="true"/>
+        <targuments expression="size(K, 2)" elementName="nin" isfinal="true"/>
+        <targuments expression="size(K, 1)" elementName="nout" isfinal="true"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="K*u"/>
@@ -1175,9 +1175,9 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Sin" description="&quot;Output the sine of the input&quot;" classNameEnd="Sin">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-        <arguments elementName="u">
+        <targuments elementName="u">
           <arguments expression="&quot;rad&quot;" elementName="unit"/>
-        </arguments>
+        </targuments>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.sin(u)"/>
@@ -1197,9 +1197,9 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Cos" description="&quot;Output the cosine of the input&quot;" classNameEnd="Cos">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-        <arguments elementName="u">
+        <targuments elementName="u">
           <arguments expression="&quot;rad&quot;" elementName="unit"/>
-        </arguments>
+        </targuments>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.cos(u)"/>
@@ -1219,9 +1219,9 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Tan" description="&quot;Output the tangent of the input&quot;" classNameEnd="Tan">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-        <arguments elementName="u">
+        <targuments elementName="u">
           <arguments expression="&quot;rad&quot;" elementName="unit"/>
-        </arguments>
+        </targuments>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.tan(u)"/>
@@ -1241,9 +1241,9 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Asin" description="&quot;Output the arc sine of the input&quot;" classNameEnd="Asin">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-        <arguments elementName="y">
+        <targuments elementName="y">
           <arguments expression="&quot;rad&quot;" elementName="unit"/>
-        </arguments>
+        </targuments>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.asin(u)"/>
@@ -1263,9 +1263,9 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Acos" description="&quot;Output the arc cosine of the input&quot;" classNameEnd="Acos">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-        <arguments elementName="y">
+        <targuments elementName="y">
           <arguments expression="&quot;rad&quot;" elementName="unit"/>
-        </arguments>
+        </targuments>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.acos(u)"/>
@@ -1285,9 +1285,9 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Atan" description="&quot;Output the arc tangent of the input&quot;" classNameEnd="Atan">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-        <arguments elementName="y">
+        <targuments elementName="y">
           <arguments expression="&quot;rad&quot;" elementName="unit"/>
-        </arguments>
+        </targuments>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.atan(u)"/>
@@ -1307,9 +1307,9 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Atan2" description="&quot;Output atan(u1/u2) of the inputs u1 and u2&quot;" classNameEnd="Atan2">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SI2SO">
-        <arguments elementName="y">
+        <targuments elementName="y">
           <arguments expression="&quot;rad&quot;" elementName="unit"/>
-        </arguments>
+        </targuments>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.atan2(u1, u2)"/>
@@ -1470,12 +1470,12 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="WrapAngle" description="&quot;Wrap angle to interval ]-pi,pi] or [0,2*pi[&quot;" classNameEnd="WrapAngle">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-        <arguments elementName="u">
+        <targuments elementName="u">
           <arguments expression="&quot;rad&quot;" elementName="unit"/>
-        </arguments>
-        <arguments elementName="y">
+        </targuments>
+        <targuments elementName="y">
           <arguments expression="&quot;rad&quot;" elementName="unit"/>
-        </arguments>
+        </targuments>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
         <component_list expression="false" declarationName="positiveRange" description="&quot;Use only positive output range, if true&quot;"/>
@@ -2628,7 +2628,7 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="RealFFT" description="&quot;Sampling and FFT of input u&quot;" classNameEnd="RealFFT">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.DiscreteBlock">
-        <arguments expression="1/(2*f_res*div(ns, 2))" elementName="samplePeriod" isfinal="true"/>
+        <targuments expression="1/(2*f_res*div(ns, 2))" elementName="samplePeriod" isfinal="true"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter">
         <component_list declarationName="f_max" description="&quot;Maximum frequency of interest&quot;"/>

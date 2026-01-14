@@ -2303,9 +2303,9 @@ rule__ExtendsClause__Alternatives_4_1_0
 	}
 :
 	(
-		{ before(grammarAccess.getExtendsClauseAccess().getArgumentsAssignment_4_1_0_0()); }
-		(rule__ExtendsClause__ArgumentsAssignment_4_1_0_0)
-		{ after(grammarAccess.getExtendsClauseAccess().getArgumentsAssignment_4_1_0_0()); }
+		{ before(grammarAccess.getExtendsClauseAccess().getTargumentsAssignment_4_1_0_0()); }
+		(rule__ExtendsClause__TargumentsAssignment_4_1_0_0)
+		{ after(grammarAccess.getExtendsClauseAccess().getTargumentsAssignment_4_1_0_0()); }
 	)
 	|
 	(
@@ -2324,9 +2324,9 @@ rule__ExtendsClause__Alternatives_4_1_1_1
 	}
 :
 	(
-		{ before(grammarAccess.getExtendsClauseAccess().getArgumentsAssignment_4_1_1_1_0()); }
-		(rule__ExtendsClause__ArgumentsAssignment_4_1_1_1_0)
-		{ after(grammarAccess.getExtendsClauseAccess().getArgumentsAssignment_4_1_1_1_0()); }
+		{ before(grammarAccess.getExtendsClauseAccess().getTargumentsAssignment_4_1_1_1_0()); }
+		(rule__ExtendsClause__TargumentsAssignment_4_1_1_1_0)
+		{ after(grammarAccess.getExtendsClauseAccess().getTargumentsAssignment_4_1_1_1_0()); }
 	)
 	|
 	(
@@ -15973,15 +15973,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ExtendsClause__ArgumentsAssignment_4_1_0_0
+rule__ExtendsClause__TargumentsAssignment_4_1_0_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getExtendsClauseAccess().getArgumentsArgumentParserRuleCall_4_1_0_0_0()); }
+		{ before(grammarAccess.getExtendsClauseAccess().getTargumentsArgumentParserRuleCall_4_1_0_0_0()); }
 		ruleArgument
-		{ after(grammarAccess.getExtendsClauseAccess().getArgumentsArgumentParserRuleCall_4_1_0_0_0()); }
+		{ after(grammarAccess.getExtendsClauseAccess().getTargumentsArgumentParserRuleCall_4_1_0_0_0()); }
 	)
 ;
 finally {
@@ -16003,15 +16003,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ExtendsClause__ArgumentsAssignment_4_1_1_1_0
+rule__ExtendsClause__TargumentsAssignment_4_1_1_1_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getExtendsClauseAccess().getArgumentsArgumentParserRuleCall_4_1_1_1_0_0()); }
+		{ before(grammarAccess.getExtendsClauseAccess().getTargumentsArgumentParserRuleCall_4_1_1_1_0_0()); }
 		ruleArgument
-		{ after(grammarAccess.getExtendsClauseAccess().getArgumentsArgumentParserRuleCall_4_1_1_1_0_0()); }
+		{ after(grammarAccess.getExtendsClauseAccess().getTargumentsArgumentParserRuleCall_4_1_1_1_0_0()); }
 	)
 ;
 finally {

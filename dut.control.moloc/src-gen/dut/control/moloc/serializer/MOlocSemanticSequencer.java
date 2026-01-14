@@ -467,7 +467,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         isPublic?='public'? 
 	 *         isProtected?='protected'? 
 	 *         typeSpecifier=TypeSpecifier 
-	 *         ((arguments+=Argument | breaks+=Break) arguments+=Argument? (breaks+=Break? arguments+=Argument?)*)? 
+	 *         ((targuments+=Argument | breaks+=Break) targuments+=Argument? (breaks+=Break? targuments+=Argument?)*)? 
 	 *         (arguments+=Argument arguments+=Argument*)?
 	 *     )
 	 * </pre>

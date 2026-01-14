@@ -2431,17 +2431,17 @@ ruleExtendsClause returns [EObject current=null]
 					(
 						(
 							{
-								newCompositeNode(grammarAccess.getExtendsClauseAccess().getArgumentsArgumentParserRuleCall_4_1_0_0_0());
+								newCompositeNode(grammarAccess.getExtendsClauseAccess().getTargumentsArgumentParserRuleCall_4_1_0_0_0());
 							}
-							lv_arguments_5_0=ruleArgument
+							lv_targuments_5_0=ruleArgument
 							{
 								if ($current==null) {
 									$current = createModelElementForParent(grammarAccess.getExtendsClauseRule());
 								}
 								add(
 									$current,
-									"arguments",
-									lv_arguments_5_0,
+									"targuments",
+									lv_targuments_5_0,
 									"dut.control.moloc.MOloc.Argument");
 								afterParserOrEnumRuleCall();
 							}
@@ -2477,17 +2477,17 @@ ruleExtendsClause returns [EObject current=null]
 						(
 							(
 								{
-									newCompositeNode(grammarAccess.getExtendsClauseAccess().getArgumentsArgumentParserRuleCall_4_1_1_1_0_0());
+									newCompositeNode(grammarAccess.getExtendsClauseAccess().getTargumentsArgumentParserRuleCall_4_1_1_1_0_0());
 								}
-								lv_arguments_8_0=ruleArgument
+								lv_targuments_8_0=ruleArgument
 								{
 									if ($current==null) {
 										$current = createModelElementForParent(grammarAccess.getExtendsClauseRule());
 									}
 									add(
 										$current,
-										"arguments",
-										lv_arguments_8_0,
+										"targuments",
+										lv_targuments_8_0,
 										"dut.control.moloc.MOloc.Argument");
 									afterParserOrEnumRuleCall();
 								}

@@ -9,7 +9,7 @@ package Continuous "Library of continuous control blocks with internal states"
     import Modelica.Blocks.Types.Init;
     parameter Real k(unit="1")=1 "Integrator gain";
     parameter Boolean use_reset = false "= true, if reset port enabled"
-      annotation(Evaluate=true, HideResult=true, choices(checkBox=true));
+      annotation(Evaluate=true, HideResult=true, choices(checkBox=true)); 
     parameter Boolean use_set = false "= true, if set port enabled and used as reinitialization value when reset"
       annotation(Dialog(enable=use_reset), Evaluate=true, HideResult=true, choices(checkBox=true));
 

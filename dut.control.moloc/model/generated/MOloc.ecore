@@ -131,6 +131,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExtendsClause" eSuperTypes="#//Element #//type_specifier #//class_modification">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPublic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isProtected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targuments" upperBound="-1"
+        eType="#//Argument" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="breaks" upperBound="-1"
         eType="#//Break" containment="true"/>
   </eClassifiers>

@@ -129,6 +129,7 @@
     <genClasses ecoreClass="MOloc.ecore#//ExtendsClause">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExtendsClause/isPublic"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExtendsClause/isProtected"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ExtendsClause/targuments"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ExtendsClause/breaks"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//Break">

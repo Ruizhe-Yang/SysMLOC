@@ -23,9 +23,9 @@
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Blocks.Types.Init"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-      <arguments elementName="y">
+      <targuments elementName="y">
         <arguments expression="y_start" elementName="start"/>
-      </arguments>
+      </targuments>
     </elements>
     <elements xsi:type="mOloc:EquationSection">
       <equations xsi:type="mOloc:SimpleEquation" left="der(h)" right="v"/>

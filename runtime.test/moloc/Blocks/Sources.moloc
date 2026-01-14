@@ -894,7 +894,7 @@
         <component_list expression="0" declarationName="startTime" description="&quot;Time instant at which movement starts&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.MO">
-        <arguments expression="max([size(deltaq, 1); size(qd_max, 1); size(qdd_max, 1)])" elementName="nout" isfinal="true"/>
+        <targuments expression="max([size(deltaq, 1); size(qd_max, 1); size(qdd_max, 1)])" elementName="nout" isfinal="true"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isProtected="true">
         <component_list subscripts="[nout]" expression="(if size(deltaq, 1) == 1 then ones(nout)* deltaq[1] else deltaq )" declarationName="p_deltaq"/>
@@ -1362,7 +1362,7 @@
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="CombiTimeTable" description="&quot;Table look-up with respect to time and linear/periodic extrapolation methods (data from matrix/file)&quot;" classNameEnd="CombiTimeTable">
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Blocks.Tables.Internal"/>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.MO">
-        <arguments expression="max([size(columns, 1); size(offset, 1)])" elementName="nout" isfinal="true"/>
+        <targuments expression="max([size(columns, 1); size(offset, 1)])" elementName="nout" isfinal="true"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
         <component_list expression="false" declarationName="tableOnFile" description="&quot;= true, if table is defined on file or in function usertab&quot;" isAnnotation="true">

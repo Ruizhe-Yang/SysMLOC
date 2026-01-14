@@ -258,9 +258,9 @@ public class MOlocParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImportClauseAccess().getObjectNameAssignment_3_1_1_1_1_1_2_1(), "rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_2_1");
 			builder.put(grammarAccess.getExtendsClauseAccess().getIsPublicAssignment_0(), "rule__ExtendsClause__IsPublicAssignment_0");
 			builder.put(grammarAccess.getExtendsClauseAccess().getIsProtectedAssignment_1(), "rule__ExtendsClause__IsProtectedAssignment_1");
-			builder.put(grammarAccess.getExtendsClauseAccess().getArgumentsAssignment_4_1_0_0(), "rule__ExtendsClause__ArgumentsAssignment_4_1_0_0");
+			builder.put(grammarAccess.getExtendsClauseAccess().getTargumentsAssignment_4_1_0_0(), "rule__ExtendsClause__TargumentsAssignment_4_1_0_0");
 			builder.put(grammarAccess.getExtendsClauseAccess().getBreaksAssignment_4_1_0_1(), "rule__ExtendsClause__BreaksAssignment_4_1_0_1");
-			builder.put(grammarAccess.getExtendsClauseAccess().getArgumentsAssignment_4_1_1_1_0(), "rule__ExtendsClause__ArgumentsAssignment_4_1_1_1_0");
+			builder.put(grammarAccess.getExtendsClauseAccess().getTargumentsAssignment_4_1_1_1_0(), "rule__ExtendsClause__TargumentsAssignment_4_1_1_1_0");
 			builder.put(grammarAccess.getExtendsClauseAccess().getBreaksAssignment_4_1_1_1_1(), "rule__ExtendsClause__BreaksAssignment_4_1_1_1_1");
 			builder.put(grammarAccess.getBreakAccess().getConnectObjectAssignment_1_0(), "rule__Break__ConnectObjectAssignment_1_0");
 			builder.put(grammarAccess.getBreakAccess().getBreakObjectAssignment_1_1(), "rule__Break__BreakObjectAssignment_1_1");

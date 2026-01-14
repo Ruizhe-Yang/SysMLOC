@@ -185,8 +185,8 @@
         <component_list subscripts="[size(C, 1), size(B, 2)]" expression="zeros(size(C, 1), size(B, 2))" declarationName="D" description="&quot;Matrix D of state space model&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.DiscreteMIMO">
-        <arguments expression="size(B, 2)" elementName="nin" isfinal="true"/>
-        <arguments expression="size(C, 1)" elementName="nout" isfinal="true"/>
+        <targuments expression="size(B, 2)" elementName="nin" isfinal="true"/>
+        <targuments expression="size(C, 1)" elementName="nout" isfinal="true"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
         <component_list subscripts="[size(A, 1)]" declarationName="x" description="&quot;State vector&quot;"/>

@@ -47,9 +47,9 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-        <arguments elementName="y">
+        <targuments elementName="y">
           <arguments expression="y_start" elementName="start"/>
-        </arguments>
+        </targuments>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput">
         <component_list declarationName="reset" description="&quot;Optional connector of reset signal&quot;" isAnnotation="true" condition_attribute="use_reset">
@@ -189,9 +189,9 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-        <arguments elementName="y">
+        <targuments elementName="y">
           <arguments expression="y_start" elementName="start"/>
-        </arguments>
+        </targuments>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput">
         <component_list declarationName="reset" description="&quot;Optional connector of reset signal&quot;" isAnnotation="true" condition_attribute="use_reset">
@@ -367,9 +367,9 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-        <arguments elementName="y">
+        <targuments elementName="y">
           <arguments expression="y_start" elementName="start"/>
-        </arguments>
+        </targuments>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
         <equations xsi:type="mOloc:IfEquation" condition="initType == Init.SteadyState">
@@ -434,9 +434,9 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-        <arguments elementName="y">
+        <targuments elementName="y">
           <arguments expression="y_start" elementName="start"/>
-        </arguments>
+        </targuments>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
         <component_list declarationName="yd" description="&quot;Derivative of y&quot;">
@@ -1347,8 +1347,8 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.MIMO">
-        <arguments expression="size(B, 2)" elementName="nin" isfinal="true"/>
-        <arguments expression="size(C, 1)" elementName="nout" isfinal="true"/>
+        <targuments expression="size(B, 2)" elementName="nin" isfinal="true"/>
+        <targuments expression="size(C, 1)" elementName="nout" isfinal="true"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
         <component_list subscripts="[size(A, 1)]" declarationName="x" description="&quot;State vector&quot;">

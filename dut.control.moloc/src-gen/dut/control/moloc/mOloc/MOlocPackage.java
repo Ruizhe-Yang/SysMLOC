@@ -2140,13 +2140,22 @@ public interface MOlocPackage extends EPackage
   int EXTENDS_CLAUSE__IS_PROTECTED = ELEMENT_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Targuments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDS_CLAUSE__TARGUMENTS = ELEMENT_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Breaks</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE__BREAKS = ELEMENT_FEATURE_COUNT + 4;
+  int EXTENDS_CLAUSE__BREAKS = ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Extends Clause</em>' class.
@@ -2155,7 +2164,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 5;
+  int EXTENDS_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.BreakImpl <em>Break</em>}' class.
@@ -4527,6 +4536,17 @@ public interface MOlocPackage extends EPackage
   EAttribute getExtendsClause_IsProtected();
 
   /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ExtendsClause#getTarguments <em>Targuments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Targuments</em>'.
+   * @see dut.control.moloc.mOloc.ExtendsClause#getTarguments()
+   * @see #getExtendsClause()
+   * @generated
+   */
+  EReference getExtendsClause_Targuments();
+
+  /**
    * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ExtendsClause#getBreaks <em>Breaks</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -6052,6 +6072,14 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EAttribute EXTENDS_CLAUSE__IS_PROTECTED = eINSTANCE.getExtendsClause_IsProtected();
+
+    /**
+     * The meta object literal for the '<em><b>Targuments</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXTENDS_CLAUSE__TARGUMENTS = eINSTANCE.getExtendsClause_Targuments();
 
     /**
      * The meta object literal for the '<em><b>Breaks</b></em>' containment reference list feature.

@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsPublic <em>Is Public</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsProtected <em>Is Protected</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getTarguments <em>Targuments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getBreaks <em>Breaks</em>}</li>
  * </ul>
  *
@@ -113,6 +114,16 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @ordered
    */
   protected boolean isProtected = IS_PROTECTED_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getTarguments() <em>Targuments</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTarguments()
+   * @generated
+   * @ordered
+   */
+  protected EList<Argument> targuments;
 
   /**
    * The cached value of the '{@link #getBreaks() <em>Breaks</em>}' containment reference list.
@@ -241,6 +252,21 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @generated
    */
   @Override
+  public EList<Argument> getTarguments()
+  {
+    if (targuments == null)
+    {
+      targuments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.EXTENDS_CLAUSE__TARGUMENTS);
+    }
+    return targuments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Break> getBreaks()
   {
     if (breaks == null)
@@ -262,6 +288,8 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
     {
       case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
         return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.EXTENDS_CLAUSE__TARGUMENTS:
+        return ((InternalEList<?>)getTarguments()).basicRemove(otherEnd, msgs);
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         return ((InternalEList<?>)getBreaks()).basicRemove(otherEnd, msgs);
     }
@@ -286,6 +314,8 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return isIsPublic();
       case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
         return isIsProtected();
+      case MOlocPackage.EXTENDS_CLAUSE__TARGUMENTS:
+        return getTarguments();
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         return getBreaks();
     }
@@ -315,6 +345,10 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return;
       case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
         setIsProtected((Boolean)newValue);
+        return;
+      case MOlocPackage.EXTENDS_CLAUSE__TARGUMENTS:
+        getTarguments().clear();
+        getTarguments().addAll((Collection<? extends Argument>)newValue);
         return;
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         getBreaks().clear();
@@ -346,6 +380,9 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
       case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
         setIsProtected(IS_PROTECTED_EDEFAULT);
         return;
+      case MOlocPackage.EXTENDS_CLAUSE__TARGUMENTS:
+        getTarguments().clear();
+        return;
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         getBreaks().clear();
         return;
@@ -371,6 +408,8 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return isPublic != IS_PUBLIC_EDEFAULT;
       case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
         return isProtected != IS_PROTECTED_EDEFAULT;
+      case MOlocPackage.EXTENDS_CLAUSE__TARGUMENTS:
+        return targuments != null && !targuments.isEmpty();
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         return breaks != null && !breaks.isEmpty();
     }

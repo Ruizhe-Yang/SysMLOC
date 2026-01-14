@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Examples">
+  <classes classType="model" className="ShowTransferFunction" description="&quot;Test Complex Transfer Function Block&quot;" classNameEnd="ShowTransferFunction">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+      <component_list expression="1/sqrt(2)" declarationName="d" description="&quot;Damping coefficient&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+      <component_list subscripts="[:]" expression="{1}" declarationName="b" description="&quot;Numerator polynomial coefficients of the transfer function&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+      <component_list subscripts="[:]" expression="{1,2*d,1}" declarationName="a" description="&quot;Denominator polynomial coefficients of the transfer function&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+      <component_list expression="0.01" declarationName="wMin" description="&quot;Lower bound for frequency sweep&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+      <component_list expression="100" declarationName="wMax" description="&quot;Upper bound for frequency sweep&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real">
+      <component_list expression="log10(logFrequencySweep.y)" declarationName="lg_w" description="&quot;Logarithm of frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real">
+      <component_list expression="20*log10(complexToPolar.len)" declarationName="dB" description="&quot;Magnitude of the transfer function in decibel&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Angle">
+      <component_list expression="complexToPolar.phi" declarationName="phi" description="&quot;Argument of the transfer function&quot;">
+        <arguments expression="&quot;deg&quot;" elementName="displayUnit"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.LogFrequencySweep">
+      <component_list declarationName="logFrequencySweep" isAnnotation="true">
+        <arguments expression="1" elementName="duration"/>
+        <arguments expression="wMin" elementName="wMin"/>
+        <arguments expression="wMax" elementName="wMax"/>
+        <arguments elementName="Placement">
+          <arguments elementName="transformation">
+            <arguments expression="{{-80,-40},{-60,-20}}" elementName="extent"/>
+          </arguments>
+        </arguments>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.Sources.ComplexConstant">
+      <component_list declarationName="const" isAnnotation="true">
+        <arguments elementName="k">
+          <arguments expression="1" elementName="re"/>
+          <arguments expression="0" elementName="im"/>
+        </arguments>
+        <arguments elementName="Placement">
+          <arguments elementName="transformation">
+            <arguments expression="{{-80,-10},{-60,10}}" elementName="extent"/>
+          </arguments>
+        </arguments>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.ComplexMath.TransferFunction">
+      <component_list declarationName="transferFunction" isAnnotation="true">
+        <arguments expression="b" elementName="b"/>
+        <arguments expression="a" elementName="a"/>
+        <arguments elementName="Placement">
+          <arguments elementName="transformation">
+            <arguments expression="{{-40,-10},{-20,10}}" elementName="extent"/>
+          </arguments>
+        </arguments>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.ComplexMath.ComplexToPolar">
+      <component_list declarationName="complexToPolar" isAnnotation="true">
+        <arguments elementName="Placement">
+          <arguments elementName="transformation">
+            <arguments expression="{{0,-10},{20,10}}" elementName="extent"/>
+          </arguments>
+        </arguments>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="const.y" right="transferFunction.u">
+        <arguments elementName="Line">
+          <arguments expression="{{-59,0},{-50.5,0},{-42,0}}" elementName="points"/>
+          <arguments expression="{85,170,255}" elementName="color"/>
+        </arguments>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="logFrequencySweep.y" right="transferFunction.w">
+        <arguments elementName="Line">
+          <arguments expression="{{-59,-30},{-30,-30},{-30,-12}}" elementName="points"/>
+          <arguments expression="{0,0,127}" elementName="color"/>
+        </arguments>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="transferFunction.y" right="complexToPolar.u">
+        <arguments elementName="Line">
+          <arguments expression="{{-19,0},{-2,0}}" elementName="points"/>
+          <arguments expression="{85,170,255}" elementName="color"/>
+        </arguments>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments elementName="experiment">
+        <arguments expression="1" elementName="StopTime"/>
+        <arguments expression="0.001" elementName="Interval"/>
+      </arguments>
+      <arguments elementName="Documentation">
+        <arguments expression="&quot;&lt;html>&#xA;&lt;p>This example shows the response of a PT2 defined by its transfer function&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;            1&#xA;H(jw)=-------------------&#xA;      1 + 2 d jw + (jw)^2&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>Frequency performs a logarithmic ramp from 0.01 to 100 s^-1.&lt;/p>&#xA;&lt;p>&#xA;Plot the magnitude locus (in dB) dB versus lg_w and the phase locus versus lg_w.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

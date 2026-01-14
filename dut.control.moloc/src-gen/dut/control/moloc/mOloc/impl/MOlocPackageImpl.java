@@ -1344,9 +1344,20 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
    * @generated
    */
   @Override
-  public EReference getExtendsClause_Breaks()
+  public EReference getExtendsClause_Targuments()
   {
     return (EReference)extendsClauseEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getExtendsClause_Breaks()
+  {
+    return (EReference)extendsClauseEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2351,6 +2362,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     extendsClauseEClass = createEClass(EXTENDS_CLAUSE);
     createEAttribute(extendsClauseEClass, EXTENDS_CLAUSE__IS_PUBLIC);
     createEAttribute(extendsClauseEClass, EXTENDS_CLAUSE__IS_PROTECTED);
+    createEReference(extendsClauseEClass, EXTENDS_CLAUSE__TARGUMENTS);
     createEReference(extendsClauseEClass, EXTENDS_CLAUSE__BREAKS);
 
     breakEClass = createEClass(BREAK);
@@ -2713,6 +2725,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     initEClass(extendsClauseEClass, ExtendsClause.class, "ExtendsClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExtendsClause_IsPublic(), ecorePackage.getEBoolean(), "isPublic", null, 0, 1, ExtendsClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExtendsClause_IsProtected(), ecorePackage.getEBoolean(), "isProtected", null, 0, 1, ExtendsClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExtendsClause_Targuments(), this.getArgument(), null, "targuments", null, 0, -1, ExtendsClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExtendsClause_Breaks(), this.getBreak(), null, "breaks", null, 0, -1, ExtendsClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(breakEClass, Break.class, "Break", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

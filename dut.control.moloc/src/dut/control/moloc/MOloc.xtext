@@ -211,7 +211,7 @@ ExtendsClause:
 	( isProtected ?= 'protected' )?
 	'extends' 
 	type_specifier 
-	( '(' (( arguments+=Argument | breaks+=Break ) (',' ( arguments+=Argument | breaks+=Break ))* )? ')')?
+	( '(' (( targuments+=Argument | breaks+=Break ) (',' ( targuments+=Argument | breaks+=Break ))* )? ')')?
 	( 'annotation' class_modification )?
 	';'
 ;

@@ -1387,15 +1387,15 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cLeftParenthesisKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Group cGroup_4_1 = (Group)cGroup_4.eContents().get(1);
 		private final Alternatives cAlternatives_4_1_0 = (Alternatives)cGroup_4_1.eContents().get(0);
-		private final Assignment cArgumentsAssignment_4_1_0_0 = (Assignment)cAlternatives_4_1_0.eContents().get(0);
-		private final RuleCall cArgumentsArgumentParserRuleCall_4_1_0_0_0 = (RuleCall)cArgumentsAssignment_4_1_0_0.eContents().get(0);
+		private final Assignment cTargumentsAssignment_4_1_0_0 = (Assignment)cAlternatives_4_1_0.eContents().get(0);
+		private final RuleCall cTargumentsArgumentParserRuleCall_4_1_0_0_0 = (RuleCall)cTargumentsAssignment_4_1_0_0.eContents().get(0);
 		private final Assignment cBreaksAssignment_4_1_0_1 = (Assignment)cAlternatives_4_1_0.eContents().get(1);
 		private final RuleCall cBreaksBreakParserRuleCall_4_1_0_1_0 = (RuleCall)cBreaksAssignment_4_1_0_1.eContents().get(0);
 		private final Group cGroup_4_1_1 = (Group)cGroup_4_1.eContents().get(1);
 		private final Keyword cCommaKeyword_4_1_1_0 = (Keyword)cGroup_4_1_1.eContents().get(0);
 		private final Alternatives cAlternatives_4_1_1_1 = (Alternatives)cGroup_4_1_1.eContents().get(1);
-		private final Assignment cArgumentsAssignment_4_1_1_1_0 = (Assignment)cAlternatives_4_1_1_1.eContents().get(0);
-		private final RuleCall cArgumentsArgumentParserRuleCall_4_1_1_1_0_0 = (RuleCall)cArgumentsAssignment_4_1_1_1_0.eContents().get(0);
+		private final Assignment cTargumentsAssignment_4_1_1_1_0 = (Assignment)cAlternatives_4_1_1_1.eContents().get(0);
+		private final RuleCall cTargumentsArgumentParserRuleCall_4_1_1_1_0_0 = (RuleCall)cTargumentsAssignment_4_1_1_1_0.eContents().get(0);
 		private final Assignment cBreaksAssignment_4_1_1_1_1 = (Assignment)cAlternatives_4_1_1_1.eContents().get(1);
 		private final RuleCall cBreaksBreakParserRuleCall_4_1_1_1_1_0 = (RuleCall)cBreaksAssignment_4_1_1_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
@@ -1409,7 +1409,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    ( isProtected ?= 'protected' )?
 		//    'extends'
 		//    type_specifier
-		//    ( '(' (( arguments+=Argument | breaks+=Break ) (',' ( arguments+=Argument | breaks+=Break ))* )? ')')?
+		//    ( '(' (( targuments+=Argument | breaks+=Break ) (',' ( targuments+=Argument | breaks+=Break ))* )? ')')?
 		//    ( 'annotation' class_modification )?
 		//    ';'
 		//;
@@ -1419,7 +1419,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//( isProtected ?= 'protected' )?
 		//'extends'
 		//type_specifier
-		//( '(' (( arguments+=Argument | breaks+=Break ) (',' ( arguments+=Argument | breaks+=Break ))* )? ')')?
+		//( '(' (( targuments+=Argument | breaks+=Break ) (',' ( targuments+=Argument | breaks+=Break ))* )? ')')?
 		//( 'annotation' class_modification )?
 		//';'
 		public Group getGroup() { return cGroup; }
@@ -1442,23 +1442,23 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//type_specifier
 		public RuleCall getType_specifierParserRuleCall_3() { return cType_specifierParserRuleCall_3; }
 		
-		//( '(' (( arguments+=Argument | breaks+=Break ) (',' ( arguments+=Argument | breaks+=Break ))* )? ')')?
+		//( '(' (( targuments+=Argument | breaks+=Break ) (',' ( targuments+=Argument | breaks+=Break ))* )? ')')?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_4_0() { return cLeftParenthesisKeyword_4_0; }
 		
-		//(( arguments+=Argument | breaks+=Break ) (',' ( arguments+=Argument | breaks+=Break ))* )?
+		//(( targuments+=Argument | breaks+=Break ) (',' ( targuments+=Argument | breaks+=Break ))* )?
 		public Group getGroup_4_1() { return cGroup_4_1; }
 		
-		//( arguments+=Argument | breaks+=Break )
+		//( targuments+=Argument | breaks+=Break )
 		public Alternatives getAlternatives_4_1_0() { return cAlternatives_4_1_0; }
 		
-		//arguments+=Argument
-		public Assignment getArgumentsAssignment_4_1_0_0() { return cArgumentsAssignment_4_1_0_0; }
+		//targuments+=Argument
+		public Assignment getTargumentsAssignment_4_1_0_0() { return cTargumentsAssignment_4_1_0_0; }
 		
 		//Argument
-		public RuleCall getArgumentsArgumentParserRuleCall_4_1_0_0_0() { return cArgumentsArgumentParserRuleCall_4_1_0_0_0; }
+		public RuleCall getTargumentsArgumentParserRuleCall_4_1_0_0_0() { return cTargumentsArgumentParserRuleCall_4_1_0_0_0; }
 		
 		//breaks+=Break
 		public Assignment getBreaksAssignment_4_1_0_1() { return cBreaksAssignment_4_1_0_1; }
@@ -1466,20 +1466,20 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//Break
 		public RuleCall getBreaksBreakParserRuleCall_4_1_0_1_0() { return cBreaksBreakParserRuleCall_4_1_0_1_0; }
 		
-		//(',' ( arguments+=Argument | breaks+=Break ))*
+		//(',' ( targuments+=Argument | breaks+=Break ))*
 		public Group getGroup_4_1_1() { return cGroup_4_1_1; }
 		
 		//','
 		public Keyword getCommaKeyword_4_1_1_0() { return cCommaKeyword_4_1_1_0; }
 		
-		//( arguments+=Argument | breaks+=Break )
+		//( targuments+=Argument | breaks+=Break )
 		public Alternatives getAlternatives_4_1_1_1() { return cAlternatives_4_1_1_1; }
 		
-		//arguments+=Argument
-		public Assignment getArgumentsAssignment_4_1_1_1_0() { return cArgumentsAssignment_4_1_1_1_0; }
+		//targuments+=Argument
+		public Assignment getTargumentsAssignment_4_1_1_1_0() { return cTargumentsAssignment_4_1_1_1_0; }
 		
 		//Argument
-		public RuleCall getArgumentsArgumentParserRuleCall_4_1_1_1_0_0() { return cArgumentsArgumentParserRuleCall_4_1_1_1_0_0; }
+		public RuleCall getTargumentsArgumentParserRuleCall_4_1_1_1_0_0() { return cTargumentsArgumentParserRuleCall_4_1_1_1_0_0; }
 		
 		//breaks+=Break
 		public Assignment getBreaksAssignment_4_1_1_1_1() { return cBreaksAssignment_4_1_1_1_1; }
@@ -4974,7 +4974,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    ( isProtected ?= 'protected' )?
 	//    'extends'
 	//    type_specifier
-	//    ( '(' (( arguments+=Argument | breaks+=Break ) (',' ( arguments+=Argument | breaks+=Break ))* )? ')')?
+	//    ( '(' (( targuments+=Argument | breaks+=Break ) (',' ( targuments+=Argument | breaks+=Break ))* )? ')')?
 	//    ( 'annotation' class_modification )?
 	//    ';'
 	//;

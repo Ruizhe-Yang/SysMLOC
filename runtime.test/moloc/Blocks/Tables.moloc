@@ -4,7 +4,7 @@
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package"/>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="CombiTable1Ds" description="&quot;Table look-up in one dimension (matrix/file) with one input and n outputs&quot;" classNameEnd="CombiTable1Ds">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SIMO">
-        <arguments expression="size(columns, 1)" elementName="nout" isfinal="true"/>
+        <targuments expression="size(columns, 1)" elementName="nout" isfinal="true"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
         <component_list expression="false" declarationName="tableOnFile" description="&quot;= true, if table is defined on file or in function usertab&quot;" isAnnotation="true">
@@ -124,7 +124,7 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="CombiTable1Dv" description="&quot;Table look-up in one dimension (matrix/file) with n inputs and n outputs&quot;" classNameEnd="CombiTable1Dv">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.MIMOs">
-        <arguments expression="size(columns, 1)" elementName="n" isfinal="true"/>
+        <targuments expression="size(columns, 1)" elementName="n" isfinal="true"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
         <component_list expression="false" declarationName="tableOnFile" description="&quot;= true, if table is defined on file or in function usertab&quot;" isAnnotation="true">
