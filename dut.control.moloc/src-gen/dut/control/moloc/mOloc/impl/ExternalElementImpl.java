@@ -34,6 +34,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#getLanguage_specification <em>Language specification</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#getRef <em>Ref</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#getRefValue <em>Ref Value</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#getExpressionList <em>Expression List</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,6 +92,66 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
    * @ordered
    */
   protected String ref = REF_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getRefValue() <em>Ref Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRefValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String REF_VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getRefValue() <em>Ref Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRefValue()
+   * @generated
+   * @ordered
+   */
+  protected String refValue = REF_VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getExpressionList() <em>Expression List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpressionList()
+   * @generated
+   * @ordered
+   */
+  protected static final String EXPRESSION_LIST_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getExpressionList() <em>Expression List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpressionList()
+   * @generated
+   * @ordered
+   */
+  protected String expressionList = EXPRESSION_LIST_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -182,6 +245,81 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
    * @generated
    */
   @Override
+  public String getRefValue()
+  {
+    return refValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRefValue(String newRefValue)
+  {
+    String oldRefValue = refValue;
+    refValue = newRefValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTERNAL_ELEMENT__REF_VALUE, oldRefValue, refValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getExpressionList()
+  {
+    return expressionList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setExpressionList(String newExpressionList)
+  {
+    String oldExpressionList = expressionList;
+    expressionList = newExpressionList;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTERNAL_ELEMENT__EXPRESSION_LIST, oldExpressionList, expressionList));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotation()
+  {
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -208,6 +346,12 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
         return getLanguage_specification();
       case MOlocPackage.EXTERNAL_ELEMENT__REF:
         return getRef();
+      case MOlocPackage.EXTERNAL_ELEMENT__REF_VALUE:
+        return getRefValue();
+      case MOlocPackage.EXTERNAL_ELEMENT__EXPRESSION_LIST:
+        return getExpressionList();
+      case MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION:
+        return isIsAnnotation();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -233,6 +377,15 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
       case MOlocPackage.EXTERNAL_ELEMENT__REF:
         setRef((String)newValue);
         return;
+      case MOlocPackage.EXTERNAL_ELEMENT__REF_VALUE:
+        setRefValue((String)newValue);
+        return;
+      case MOlocPackage.EXTERNAL_ELEMENT__EXPRESSION_LIST:
+        setExpressionList((String)newValue);
+        return;
+      case MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -256,6 +409,15 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
       case MOlocPackage.EXTERNAL_ELEMENT__REF:
         setRef(REF_EDEFAULT);
         return;
+      case MOlocPackage.EXTERNAL_ELEMENT__REF_VALUE:
+        setRefValue(REF_VALUE_EDEFAULT);
+        return;
+      case MOlocPackage.EXTERNAL_ELEMENT__EXPRESSION_LIST:
+        setExpressionList(EXPRESSION_LIST_EDEFAULT);
+        return;
+      case MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -276,6 +438,12 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
         return LANGUAGE_SPECIFICATION_EDEFAULT == null ? language_specification != null : !LANGUAGE_SPECIFICATION_EDEFAULT.equals(language_specification);
       case MOlocPackage.EXTERNAL_ELEMENT__REF:
         return REF_EDEFAULT == null ? ref != null : !REF_EDEFAULT.equals(ref);
+      case MOlocPackage.EXTERNAL_ELEMENT__REF_VALUE:
+        return REF_VALUE_EDEFAULT == null ? refValue != null : !REF_VALUE_EDEFAULT.equals(refValue);
+      case MOlocPackage.EXTERNAL_ELEMENT__EXPRESSION_LIST:
+        return EXPRESSION_LIST_EDEFAULT == null ? expressionList != null : !EXPRESSION_LIST_EDEFAULT.equals(expressionList);
+      case MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -333,6 +501,12 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
     result.append(language_specification);
     result.append(", ref: ");
     result.append(ref);
+    result.append(", refValue: ");
+    result.append(refValue);
+    result.append(", expressionList: ");
+    result.append(expressionList);
+    result.append(", isAnnotation: ");
+    result.append(isAnnotation);
     result.append(')');
     return result.toString();
   }

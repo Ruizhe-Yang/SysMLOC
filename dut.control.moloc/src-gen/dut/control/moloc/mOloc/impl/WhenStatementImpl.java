@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenStatementImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenStatementImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenStatementImpl#getCondition <em>Condition</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.WhenStatementImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.WhenStatementImpl#getWhenStatements <em>When Statements</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenStatementImpl#getElseCondition <em>Else Condition</em>}</li>
  * </ul>
  *
@@ -118,14 +118,14 @@ public class WhenStatementImpl extends StatementImpl implements WhenStatement
   protected String condition = CONDITION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+   * The cached value of the '{@link #getWhenStatements() <em>When Statements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatements()
+   * @see #getWhenStatements()
    * @generated
    * @ordered
    */
-  protected EList<Statement> statements;
+  protected EList<Statement> whenStatements;
 
   /**
    * The cached value of the '{@link #getElseCondition() <em>Else Condition</em>}' attribute list.
@@ -254,13 +254,13 @@ public class WhenStatementImpl extends StatementImpl implements WhenStatement
    * @generated
    */
   @Override
-  public EList<Statement> getStatements()
+  public EList<Statement> getWhenStatements()
   {
-    if (statements == null)
+    if (whenStatements == null)
     {
-      statements = new EObjectContainmentEList<Statement>(Statement.class, this, MOlocPackage.WHEN_STATEMENT__STATEMENTS);
+      whenStatements = new EObjectContainmentEList<Statement>(Statement.class, this, MOlocPackage.WHEN_STATEMENT__WHEN_STATEMENTS);
     }
-    return statements;
+    return whenStatements;
   }
 
   /**
@@ -290,8 +290,8 @@ public class WhenStatementImpl extends StatementImpl implements WhenStatement
     {
       case MOlocPackage.WHEN_STATEMENT__ARGUMENTS:
         return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.WHEN_STATEMENT__STATEMENTS:
-        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.WHEN_STATEMENT__WHEN_STATEMENTS:
+        return ((InternalEList<?>)getWhenStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -314,8 +314,8 @@ public class WhenStatementImpl extends StatementImpl implements WhenStatement
         return isIsAnnotation();
       case MOlocPackage.WHEN_STATEMENT__CONDITION:
         return getCondition();
-      case MOlocPackage.WHEN_STATEMENT__STATEMENTS:
-        return getStatements();
+      case MOlocPackage.WHEN_STATEMENT__WHEN_STATEMENTS:
+        return getWhenStatements();
       case MOlocPackage.WHEN_STATEMENT__ELSE_CONDITION:
         return getElseCondition();
     }
@@ -346,9 +346,9 @@ public class WhenStatementImpl extends StatementImpl implements WhenStatement
       case MOlocPackage.WHEN_STATEMENT__CONDITION:
         setCondition((String)newValue);
         return;
-      case MOlocPackage.WHEN_STATEMENT__STATEMENTS:
-        getStatements().clear();
-        getStatements().addAll((Collection<? extends Statement>)newValue);
+      case MOlocPackage.WHEN_STATEMENT__WHEN_STATEMENTS:
+        getWhenStatements().clear();
+        getWhenStatements().addAll((Collection<? extends Statement>)newValue);
         return;
       case MOlocPackage.WHEN_STATEMENT__ELSE_CONDITION:
         getElseCondition().clear();
@@ -380,8 +380,8 @@ public class WhenStatementImpl extends StatementImpl implements WhenStatement
       case MOlocPackage.WHEN_STATEMENT__CONDITION:
         setCondition(CONDITION_EDEFAULT);
         return;
-      case MOlocPackage.WHEN_STATEMENT__STATEMENTS:
-        getStatements().clear();
+      case MOlocPackage.WHEN_STATEMENT__WHEN_STATEMENTS:
+        getWhenStatements().clear();
         return;
       case MOlocPackage.WHEN_STATEMENT__ELSE_CONDITION:
         getElseCondition().clear();
@@ -408,8 +408,8 @@ public class WhenStatementImpl extends StatementImpl implements WhenStatement
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.WHEN_STATEMENT__CONDITION:
         return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
-      case MOlocPackage.WHEN_STATEMENT__STATEMENTS:
-        return statements != null && !statements.isEmpty();
+      case MOlocPackage.WHEN_STATEMENT__WHEN_STATEMENTS:
+        return whenStatements != null && !whenStatements.isEmpty();
       case MOlocPackage.WHEN_STATEMENT__ELSE_CONDITION:
         return elseCondition != null && !elseCondition.isEmpty();
     }

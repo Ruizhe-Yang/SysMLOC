@@ -8,8 +8,7 @@
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexOutput">
-      <component_list declarationName="y" description="&quot;Connector of Complex output signals&quot;" isAnnotation="true">
-        <subscript>nout</subscript>
+      <component_list subscripts="[nout]" declarationName="y" description="&quot;Connector of Complex output signals&quot;" isAnnotation="true">
         <arguments elementName="Placement">
           <arguments elementName="transformation">
             <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>

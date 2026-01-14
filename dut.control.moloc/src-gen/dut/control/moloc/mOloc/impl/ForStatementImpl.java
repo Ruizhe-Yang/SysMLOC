@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.ForStatementImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ForStatementImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ForStatementImpl#getForIndices <em>For Indices</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ForStatementImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ForStatementImpl#getForStatements <em>For Statements</em>}</li>
  * </ul>
  *
  * @generated
@@ -116,14 +116,14 @@ public class ForStatementImpl extends StatementImpl implements ForStatement
   protected String forIndices = FOR_INDICES_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+   * The cached value of the '{@link #getForStatements() <em>For Statements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatements()
+   * @see #getForStatements()
    * @generated
    * @ordered
    */
-  protected EList<Statement> statements;
+  protected EList<Statement> forStatements;
 
   /**
    * <!-- begin-user-doc -->
@@ -242,13 +242,13 @@ public class ForStatementImpl extends StatementImpl implements ForStatement
    * @generated
    */
   @Override
-  public EList<Statement> getStatements()
+  public EList<Statement> getForStatements()
   {
-    if (statements == null)
+    if (forStatements == null)
     {
-      statements = new EObjectContainmentEList<Statement>(Statement.class, this, MOlocPackage.FOR_STATEMENT__STATEMENTS);
+      forStatements = new EObjectContainmentEList<Statement>(Statement.class, this, MOlocPackage.FOR_STATEMENT__FOR_STATEMENTS);
     }
-    return statements;
+    return forStatements;
   }
 
   /**
@@ -263,8 +263,8 @@ public class ForStatementImpl extends StatementImpl implements ForStatement
     {
       case MOlocPackage.FOR_STATEMENT__ARGUMENTS:
         return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.FOR_STATEMENT__STATEMENTS:
-        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.FOR_STATEMENT__FOR_STATEMENTS:
+        return ((InternalEList<?>)getForStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -287,8 +287,8 @@ public class ForStatementImpl extends StatementImpl implements ForStatement
         return isIsAnnotation();
       case MOlocPackage.FOR_STATEMENT__FOR_INDICES:
         return getForIndices();
-      case MOlocPackage.FOR_STATEMENT__STATEMENTS:
-        return getStatements();
+      case MOlocPackage.FOR_STATEMENT__FOR_STATEMENTS:
+        return getForStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -317,9 +317,9 @@ public class ForStatementImpl extends StatementImpl implements ForStatement
       case MOlocPackage.FOR_STATEMENT__FOR_INDICES:
         setForIndices((String)newValue);
         return;
-      case MOlocPackage.FOR_STATEMENT__STATEMENTS:
-        getStatements().clear();
-        getStatements().addAll((Collection<? extends Statement>)newValue);
+      case MOlocPackage.FOR_STATEMENT__FOR_STATEMENTS:
+        getForStatements().clear();
+        getForStatements().addAll((Collection<? extends Statement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -347,8 +347,8 @@ public class ForStatementImpl extends StatementImpl implements ForStatement
       case MOlocPackage.FOR_STATEMENT__FOR_INDICES:
         setForIndices(FOR_INDICES_EDEFAULT);
         return;
-      case MOlocPackage.FOR_STATEMENT__STATEMENTS:
-        getStatements().clear();
+      case MOlocPackage.FOR_STATEMENT__FOR_STATEMENTS:
+        getForStatements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -372,8 +372,8 @@ public class ForStatementImpl extends StatementImpl implements ForStatement
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.FOR_STATEMENT__FOR_INDICES:
         return FOR_INDICES_EDEFAULT == null ? forIndices != null : !FOR_INDICES_EDEFAULT.equals(forIndices);
-      case MOlocPackage.FOR_STATEMENT__STATEMENTS:
-        return statements != null && !statements.isEmpty();
+      case MOlocPackage.FOR_STATEMENT__FOR_STATEMENTS:
+        return forStatements != null && !forStatements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

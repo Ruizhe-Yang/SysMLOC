@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -40,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getTypeSpecifier <em>Type Specifier</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getSubscript <em>Subscript</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getSubscripts <em>Subscripts</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getExpression <em>Expression</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getDeclarationName <em>Declaration Name</em>}</li>
@@ -73,14 +72,24 @@ public class component_clause1Impl extends type_prefixImpl implements component_
   protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
+   * The default value of the '{@link #getSubscripts() <em>Subscripts</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSubscript()
+   * @see #getSubscripts()
    * @generated
    * @ordered
    */
-  protected EList<String> subscript;
+  protected static final String SUBSCRIPTS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSubscripts() <em>Subscripts</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubscripts()
+   * @generated
+   * @ordered
+   */
+  protected String subscripts = SUBSCRIPTS_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
@@ -224,13 +233,23 @@ public class component_clause1Impl extends type_prefixImpl implements component_
    * @generated
    */
   @Override
-  public EList<String> getSubscript()
+  public String getSubscripts()
   {
-    if (subscript == null)
-    {
-      subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPT);
-    }
-    return subscript;
+    return subscripts;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSubscripts(String newSubscripts)
+  {
+    String oldSubscripts = subscripts;
+    subscripts = newSubscripts;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPTS, oldSubscripts, subscripts));
   }
 
   /**
@@ -376,8 +395,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
     {
       case MOlocPackage.COMPONENT_CLAUSE1__TYPE_SPECIFIER:
         return getTypeSpecifier();
-      case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPT:
-        return getSubscript();
+      case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPTS:
+        return getSubscripts();
       case MOlocPackage.COMPONENT_CLAUSE1__ARGUMENTS:
         return getArguments();
       case MOlocPackage.COMPONENT_CLAUSE1__EXPRESSION:
@@ -406,9 +425,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
       case MOlocPackage.COMPONENT_CLAUSE1__TYPE_SPECIFIER:
         setTypeSpecifier((String)newValue);
         return;
-      case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPT:
-        getSubscript().clear();
-        getSubscript().addAll((Collection<? extends String>)newValue);
+      case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPTS:
+        setSubscripts((String)newValue);
         return;
       case MOlocPackage.COMPONENT_CLAUSE1__ARGUMENTS:
         getArguments().clear();
@@ -443,8 +461,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
       case MOlocPackage.COMPONENT_CLAUSE1__TYPE_SPECIFIER:
         setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
         return;
-      case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPT:
-        getSubscript().clear();
+      case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPTS:
+        setSubscripts(SUBSCRIPTS_EDEFAULT);
         return;
       case MOlocPackage.COMPONENT_CLAUSE1__ARGUMENTS:
         getArguments().clear();
@@ -477,8 +495,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
     {
       case MOlocPackage.COMPONENT_CLAUSE1__TYPE_SPECIFIER:
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
-      case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPT:
-        return subscript != null && !subscript.isEmpty();
+      case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPTS:
+        return SUBSCRIPTS_EDEFAULT == null ? subscripts != null : !SUBSCRIPTS_EDEFAULT.equals(subscripts);
       case MOlocPackage.COMPONENT_CLAUSE1__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
       case MOlocPackage.COMPONENT_CLAUSE1__EXPRESSION:
@@ -513,7 +531,7 @@ public class component_clause1Impl extends type_prefixImpl implements component_
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
+        case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPTS: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS;
         default: return -1;
       }
     }
@@ -587,7 +605,7 @@ public class component_clause1Impl extends type_prefixImpl implements component_
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPT;
+        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS: return MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPTS;
         default: return -1;
       }
     }
@@ -654,8 +672,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (typeSpecifier: ");
     result.append(typeSpecifier);
-    result.append(", subscript: ");
-    result.append(subscript);
+    result.append(", subscripts: ");
+    result.append(subscripts);
     result.append(", expression: ");
     result.append(expression);
     result.append(", declarationName: ");

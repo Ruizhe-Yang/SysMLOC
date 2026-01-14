@@ -932,8 +932,7 @@ The output <code>Q</code> is set by the input <code>S</code>, is reset by the in
   block TerminateSimulation "Terminate simulation if condition is fulfilled"
 
     Modelica.Blocks.Interfaces.BooleanOutput condition=false
-      "Terminate simulation when condition becomes true" annotation (Dialog,
-        Placement(transformation(extent={{200,-10},{220,10}})));
+      "Terminate simulation when condition becomes true" annotation (Dialog,Placement(transformation(extent={{200,-10},{220,10}})));
     parameter String terminationText="... End condition reached"
       "Text that will be displayed when simulation is terminated";
 

@@ -35,6 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsPublic <em>Is Public</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsProtected <em>Is Protected</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getBreaks <em>Breaks</em>}</li>
  * </ul>
  *
@@ -71,6 +73,46 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @ordered
    */
   protected EList<Argument> arguments;
+
+  /**
+   * The default value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsPublic()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_PUBLIC_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsPublic()
+   * @generated
+   * @ordered
+   */
+  protected boolean isPublic = IS_PUBLIC_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsProtected() <em>Is Protected</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsProtected()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_PROTECTED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsProtected() <em>Is Protected</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsProtected()
+   * @generated
+   * @ordered
+   */
+  protected boolean isProtected = IS_PROTECTED_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getBreaks() <em>Breaks</em>}' containment reference list.
@@ -149,6 +191,56 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @generated
    */
   @Override
+  public boolean isIsPublic()
+  {
+    return isPublic;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsPublic(boolean newIsPublic)
+  {
+    boolean oldIsPublic = isPublic;
+    isPublic = newIsPublic;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC, oldIsPublic, isPublic));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsProtected()
+  {
+    return isProtected;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsProtected(boolean newIsProtected)
+  {
+    boolean oldIsProtected = isProtected;
+    isProtected = newIsProtected;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED, oldIsProtected, isProtected));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Break> getBreaks()
   {
     if (breaks == null)
@@ -190,6 +282,10 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return getTypeSpecifier();
       case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
         return getArguments();
+      case MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC:
+        return isIsPublic();
+      case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
+        return isIsProtected();
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         return getBreaks();
     }
@@ -213,6 +309,12 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
       case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
         getArguments().clear();
         getArguments().addAll((Collection<? extends Argument>)newValue);
+        return;
+      case MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC:
+        setIsPublic((Boolean)newValue);
+        return;
+      case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
+        setIsProtected((Boolean)newValue);
         return;
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         getBreaks().clear();
@@ -238,6 +340,12 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
       case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
         getArguments().clear();
         return;
+      case MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC:
+        setIsPublic(IS_PUBLIC_EDEFAULT);
+        return;
+      case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
+        setIsProtected(IS_PROTECTED_EDEFAULT);
+        return;
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         getBreaks().clear();
         return;
@@ -259,6 +367,10 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
       case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC:
+        return isPublic != IS_PUBLIC_EDEFAULT;
+      case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
+        return isProtected != IS_PROTECTED_EDEFAULT;
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         return breaks != null && !breaks.isEmpty();
     }
@@ -332,6 +444,10 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (typeSpecifier: ");
     result.append(typeSpecifier);
+    result.append(", isPublic: ");
+    result.append(isPublic);
+    result.append(", isProtected: ");
+    result.append(isProtected);
     result.append(')');
     return result.toString();
   }

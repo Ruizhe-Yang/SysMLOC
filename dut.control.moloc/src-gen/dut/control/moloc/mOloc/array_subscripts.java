@@ -3,8 +3,6 @@
  */
 package dut.control.moloc.mOloc;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.array_subscripts#getSubscript <em>Subscript</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.array_subscripts#getSubscripts <em>Subscripts</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getarray_subscripts()
@@ -26,15 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface array_subscripts extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Subscript</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Subscripts</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Subscript</em>' attribute list.
-   * @see dut.control.moloc.mOloc.MOlocPackage#getarray_subscripts_Subscript()
-   * @model unique="false"
+   * @return the value of the '<em>Subscripts</em>' attribute.
+   * @see #setSubscripts(String)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getarray_subscripts_Subscripts()
+   * @model
    * @generated
    */
-  EList<String> getSubscript();
+  String getSubscripts();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.array_subscripts#getSubscripts <em>Subscripts</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Subscripts</em>' attribute.
+   * @see #getSubscripts()
+   * @generated
+   */
+  void setSubscripts(String value);
 
 } // array_subscripts

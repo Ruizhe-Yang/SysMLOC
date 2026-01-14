@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.WhenStatement#getCondition <em>Condition</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.WhenStatement#getStatements <em>Statements</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.WhenStatement#getWhenStatements <em>When Statements</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.WhenStatement#getElseCondition <em>Else Condition</em>}</li>
  * </ul>
  *
@@ -48,16 +48,16 @@ public interface WhenStatement extends Statement, description
   void setCondition(String value);
 
   /**
-   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+   * Returns the value of the '<em><b>When Statements</b></em>' containment reference list.
    * The list contents are of type {@link dut.control.moloc.mOloc.Statement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statements</em>' containment reference list.
-   * @see dut.control.moloc.mOloc.MOlocPackage#getWhenStatement_Statements()
+   * @return the value of the '<em>When Statements</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getWhenStatement_WhenStatements()
    * @model containment="true"
    * @generated
    */
-  EList<Statement> getStatements();
+  EList<Statement> getWhenStatements();
 
   /**
    * Returns the value of the '<em><b>Else Condition</b></em>' attribute list.

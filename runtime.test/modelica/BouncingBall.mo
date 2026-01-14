@@ -18,7 +18,7 @@ equation
   end when;
   
   der(x_scaled[2:nx]) = zeros(nx-1);
-  
+  der(x_scaled[1])    = (-a[2:na]*x_scaled + a_end*u)/a[1];
   annotation (
        Icon(
           graphics={
@@ -40,4 +40,12 @@ equation
           }
        )
     );
+  encapsulated function bandPassAlpha "Return alpha for band pass"
+    extends Modelica.Icons.Function;
+	import Modelica;
+	input Real a "Coefficient of s^1";
+	input Real b "Coefficient of s^0";
+	input Modelica.Units.SI.AngularVelocity w "Bandwidth angular frequency";
+	output Real alpha "Alpha factor to build up band pass";
+	end bandPassAlpha;
 end BouncingBall;

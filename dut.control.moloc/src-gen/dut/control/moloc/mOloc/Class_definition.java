@@ -14,7 +14,6 @@ package dut.control.moloc.mOloc;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.Class_definition#isIsfinal <em>Isfinal</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.Class_definition#isIsEncapsulated <em>Is Encapsulated</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getClass_definition()
@@ -44,27 +43,5 @@ public interface Class_definition extends class_prefixes, class_specifier, long_
    * @generated
    */
   void setIsfinal(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Is Encapsulated</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Is Encapsulated</em>' attribute.
-   * @see #setIsEncapsulated(boolean)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getClass_definition_IsEncapsulated()
-   * @model
-   * @generated
-   */
-  boolean isIsEncapsulated();
-
-  /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Class_definition#isIsEncapsulated <em>Is Encapsulated</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Is Encapsulated</em>' attribute.
-   * @see #isIsEncapsulated()
-   * @generated
-   */
-  void setIsEncapsulated(boolean value);
 
 } // Class_definition

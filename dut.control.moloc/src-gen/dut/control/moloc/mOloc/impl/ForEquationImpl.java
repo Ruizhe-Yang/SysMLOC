@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.ForEquationImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ForEquationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ForEquationImpl#getForIndices <em>For Indices</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ForEquationImpl#getEquations <em>Equations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ForEquationImpl#getForEquations <em>For Equations</em>}</li>
  * </ul>
  *
  * @generated
@@ -116,14 +116,14 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
   protected String forIndices = FOR_INDICES_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getEquations() <em>Equations</em>}' containment reference list.
+   * The cached value of the '{@link #getForEquations() <em>For Equations</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEquations()
+   * @see #getForEquations()
    * @generated
    * @ordered
    */
-  protected EList<Equation> equations;
+  protected EList<Equation> forEquations;
 
   /**
    * <!-- begin-user-doc -->
@@ -242,13 +242,13 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
    * @generated
    */
   @Override
-  public EList<Equation> getEquations()
+  public EList<Equation> getForEquations()
   {
-    if (equations == null)
+    if (forEquations == null)
     {
-      equations = new EObjectContainmentEList<Equation>(Equation.class, this, MOlocPackage.FOR_EQUATION__EQUATIONS);
+      forEquations = new EObjectContainmentEList<Equation>(Equation.class, this, MOlocPackage.FOR_EQUATION__FOR_EQUATIONS);
     }
-    return equations;
+    return forEquations;
   }
 
   /**
@@ -263,8 +263,8 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
     {
       case MOlocPackage.FOR_EQUATION__ARGUMENTS:
         return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.FOR_EQUATION__EQUATIONS:
-        return ((InternalEList<?>)getEquations()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.FOR_EQUATION__FOR_EQUATIONS:
+        return ((InternalEList<?>)getForEquations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -287,8 +287,8 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
         return isIsAnnotation();
       case MOlocPackage.FOR_EQUATION__FOR_INDICES:
         return getForIndices();
-      case MOlocPackage.FOR_EQUATION__EQUATIONS:
-        return getEquations();
+      case MOlocPackage.FOR_EQUATION__FOR_EQUATIONS:
+        return getForEquations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -317,9 +317,9 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
       case MOlocPackage.FOR_EQUATION__FOR_INDICES:
         setForIndices((String)newValue);
         return;
-      case MOlocPackage.FOR_EQUATION__EQUATIONS:
-        getEquations().clear();
-        getEquations().addAll((Collection<? extends Equation>)newValue);
+      case MOlocPackage.FOR_EQUATION__FOR_EQUATIONS:
+        getForEquations().clear();
+        getForEquations().addAll((Collection<? extends Equation>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -347,8 +347,8 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
       case MOlocPackage.FOR_EQUATION__FOR_INDICES:
         setForIndices(FOR_INDICES_EDEFAULT);
         return;
-      case MOlocPackage.FOR_EQUATION__EQUATIONS:
-        getEquations().clear();
+      case MOlocPackage.FOR_EQUATION__FOR_EQUATIONS:
+        getForEquations().clear();
         return;
     }
     super.eUnset(featureID);
@@ -372,8 +372,8 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.FOR_EQUATION__FOR_INDICES:
         return FOR_INDICES_EDEFAULT == null ? forIndices != null : !FOR_INDICES_EDEFAULT.equals(forIndices);
-      case MOlocPackage.FOR_EQUATION__EQUATIONS:
-        return equations != null && !equations.isEmpty();
+      case MOlocPackage.FOR_EQUATION__FOR_EQUATIONS:
+        return forEquations != null && !forEquations.isEmpty();
     }
     return super.eIsSet(featureID);
   }

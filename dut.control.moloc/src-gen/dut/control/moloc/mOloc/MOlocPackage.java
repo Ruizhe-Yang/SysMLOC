@@ -115,13 +115,22 @@ public interface MOlocPackage extends EPackage
   int CLASS_PREFIXES = 2;
 
   /**
+   * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_PREFIXES__IS_ENCAPSULATED = 0;
+
+  /**
    * The feature id for the '<em><b>Is Partial</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_PREFIXES__IS_PARTIAL = 0;
+  int CLASS_PREFIXES__IS_PARTIAL = 1;
 
   /**
    * The feature id for the '<em><b>Is Expandable</b></em>' attribute.
@@ -130,7 +139,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_PREFIXES__IS_EXPANDABLE = 1;
+  int CLASS_PREFIXES__IS_EXPANDABLE = 2;
 
   /**
    * The feature id for the '<em><b>Is Pure</b></em>' attribute.
@@ -139,7 +148,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_PREFIXES__IS_PURE = 2;
+  int CLASS_PREFIXES__IS_PURE = 3;
 
   /**
    * The feature id for the '<em><b>Is Operator</b></em>' attribute.
@@ -148,7 +157,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_PREFIXES__IS_OPERATOR = 3;
+  int CLASS_PREFIXES__IS_OPERATOR = 4;
 
   /**
    * The feature id for the '<em><b>Class Type</b></em>' attribute.
@@ -157,7 +166,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_PREFIXES__CLASS_TYPE = 4;
+  int CLASS_PREFIXES__CLASS_TYPE = 5;
 
   /**
    * The number of structural features of the '<em>class prefixes</em>' class.
@@ -166,7 +175,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_PREFIXES_FEATURE_COUNT = 5;
+  int CLASS_PREFIXES_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Class_definitionImpl <em>Class definition</em>}' class.
@@ -177,6 +186,15 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   int CLASS_DEFINITION = 1;
+
+  /**
+   * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_ENCAPSULATED = CLASS_PREFIXES__IS_ENCAPSULATED;
 
   /**
    * The feature id for the '<em><b>Is Partial</b></em>' attribute.
@@ -287,13 +305,13 @@ public interface MOlocPackage extends EPackage
   int CLASS_DEFINITION__TYPE_SPECIFIER = CLASS_PREFIXES_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * The feature id for the '<em><b>Subscripts</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__SUBSCRIPT = CLASS_PREFIXES_FEATURE_COUNT + 7;
+  int CLASS_DEFINITION__SUBSCRIPTS = CLASS_PREFIXES_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
@@ -368,22 +386,13 @@ public interface MOlocPackage extends EPackage
   int CLASS_DEFINITION__ISFINAL = CLASS_PREFIXES_FEATURE_COUNT + 15;
 
   /**
-   * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLASS_DEFINITION__IS_ENCAPSULATED = CLASS_PREFIXES_FEATURE_COUNT + 16;
-
-  /**
    * The number of structural features of the '<em>Class definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 17;
+  int CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 16;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.class_nameImpl <em>class name</em>}' class.
@@ -560,13 +569,13 @@ public interface MOlocPackage extends EPackage
   int CLASS_SPECIFIER__TYPE_SPECIFIER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * The feature id for the '<em><b>Subscripts</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__SUBSCRIPT = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 1;
+  int CLASS_SPECIFIER__SUBSCRIPTS = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
@@ -669,13 +678,13 @@ public interface MOlocPackage extends EPackage
   int SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER = CLASS_NAME_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * The feature id for the '<em><b>Subscripts</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__SUBSCRIPT = CLASS_NAME_FEATURE_COUNT + 1;
+  int SHORT_CLASS_SPECIFIER__SUBSCRIPTS = CLASS_NAME_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -1083,6 +1092,15 @@ public interface MOlocPackage extends EPackage
   int SHORT_CLASS_DEFINITION = 17;
 
   /**
+   * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_DEFINITION__IS_ENCAPSULATED = CLASS_PREFIXES__IS_ENCAPSULATED;
+
+  /**
    * The feature id for the '<em><b>Is Partial</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1146,13 +1164,13 @@ public interface MOlocPackage extends EPackage
   int SHORT_CLASS_DEFINITION__TYPE_SPECIFIER = CLASS_PREFIXES_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * The feature id for the '<em><b>Subscripts</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__SUBSCRIPT = CLASS_PREFIXES_FEATURE_COUNT + 2;
+  int SHORT_CLASS_DEFINITION__SUBSCRIPTS = CLASS_PREFIXES_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -1237,6 +1255,15 @@ public interface MOlocPackage extends EPackage
   int ARGUMENT = 15;
 
   /**
+   * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__IS_ENCAPSULATED = SHORT_CLASS_DEFINITION__IS_ENCAPSULATED;
+
+  /**
    * The feature id for the '<em><b>Is Partial</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1300,13 +1327,13 @@ public interface MOlocPackage extends EPackage
   int ARGUMENT__TYPE_SPECIFIER = SHORT_CLASS_DEFINITION__TYPE_SPECIFIER;
 
   /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * The feature id for the '<em><b>Subscripts</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARGUMENT__SUBSCRIPT = SHORT_CLASS_DEFINITION__SUBSCRIPT;
+  int ARGUMENT__SUBSCRIPTS = SHORT_CLASS_DEFINITION__SUBSCRIPTS;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -1664,13 +1691,13 @@ public interface MOlocPackage extends EPackage
   int COMPONENT_CLAUSE1__TYPE_SPECIFIER = TYPE_PREFIX_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * The feature id for the '<em><b>Subscripts</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_CLAUSE1__SUBSCRIPT = TYPE_PREFIX_FEATURE_COUNT + 1;
+  int COMPONENT_CLAUSE1__SUBSCRIPTS = TYPE_PREFIX_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -1737,13 +1764,13 @@ public interface MOlocPackage extends EPackage
   int ARRAY_SUBSCRIPTS = 22;
 
   /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * The feature id for the '<em><b>Subscripts</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARRAY_SUBSCRIPTS__SUBSCRIPT = 0;
+  int ARRAY_SUBSCRIPTS__SUBSCRIPTS = 0;
 
   /**
    * The number of structural features of the '<em>array subscripts</em>' class.
@@ -1765,13 +1792,13 @@ public interface MOlocPackage extends EPackage
   int DECLARATION = 21;
 
   /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * The feature id for the '<em><b>Subscripts</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECLARATION__SUBSCRIPT = ARRAY_SUBSCRIPTS__SUBSCRIPT;
+  int DECLARATION__SUBSCRIPTS = ARRAY_SUBSCRIPTS__SUBSCRIPTS;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -1820,13 +1847,13 @@ public interface MOlocPackage extends EPackage
   int COMPONENT_DECLARATION1 = 20;
 
   /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * The feature id for the '<em><b>Subscripts</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_DECLARATION1__SUBSCRIPT = DECLARATION__SUBSCRIPT;
+  int COMPONENT_DECLARATION1__SUBSCRIPTS = DECLARATION__SUBSCRIPTS;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -2095,13 +2122,31 @@ public interface MOlocPackage extends EPackage
   int EXTENDS_CLAUSE__ARGUMENTS = ELEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Is Public</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDS_CLAUSE__IS_PUBLIC = ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Protected</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDS_CLAUSE__IS_PROTECTED = ELEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Breaks</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE__BREAKS = ELEMENT_FEATURE_COUNT + 2;
+  int EXTENDS_CLAUSE__BREAKS = ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Extends Clause</em>' class.
@@ -2110,7 +2155,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
+  int EXTENDS_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.BreakImpl <em>Break</em>}' class.
@@ -2160,13 +2205,22 @@ public interface MOlocPackage extends EPackage
   int GENERAL_CLAUSE = 30;
 
   /**
+   * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__IS_ENCAPSULATED = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Is Partial</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_PARTIAL = ELEMENT_FEATURE_COUNT + 0;
+  int GENERAL_CLAUSE__IS_PARTIAL = ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Expandable</b></em>' attribute.
@@ -2175,7 +2229,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_EXPANDABLE = ELEMENT_FEATURE_COUNT + 1;
+  int GENERAL_CLAUSE__IS_EXPANDABLE = ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Pure</b></em>' attribute.
@@ -2184,7 +2238,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_PURE = ELEMENT_FEATURE_COUNT + 2;
+  int GENERAL_CLAUSE__IS_PURE = ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Operator</b></em>' attribute.
@@ -2193,7 +2247,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_OPERATOR = ELEMENT_FEATURE_COUNT + 3;
+  int GENERAL_CLAUSE__IS_OPERATOR = ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Class Type</b></em>' attribute.
@@ -2202,7 +2256,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__CLASS_TYPE = ELEMENT_FEATURE_COUNT + 4;
+  int GENERAL_CLAUSE__CLASS_TYPE = ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -2211,7 +2265,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__CLASS_NAME = ELEMENT_FEATURE_COUNT + 5;
+  int GENERAL_CLAUSE__CLASS_NAME = ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -2220,7 +2274,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__ARGUMENTS = ELEMENT_FEATURE_COUNT + 6;
+  int GENERAL_CLAUSE__ARGUMENTS = ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2229,7 +2283,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__DESCRIPTION = ELEMENT_FEATURE_COUNT + 7;
+  int GENERAL_CLAUSE__DESCRIPTION = ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -2238,7 +2292,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__ELEMENTS = ELEMENT_FEATURE_COUNT + 8;
+  int GENERAL_CLAUSE__ELEMENTS = ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Extends</b></em>' attribute.
@@ -2247,7 +2301,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_EXTENDS = ELEMENT_FEATURE_COUNT + 9;
+  int GENERAL_CLAUSE__IS_EXTENDS = ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Class Name End</b></em>' attribute.
@@ -2256,7 +2310,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__CLASS_NAME_END = ELEMENT_FEATURE_COUNT + 10;
+  int GENERAL_CLAUSE__CLASS_NAME_END = ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
@@ -2265,16 +2319,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__TYPE_SPECIFIER = ELEMENT_FEATURE_COUNT + 11;
+  int GENERAL_CLAUSE__TYPE_SPECIFIER = ELEMENT_FEATURE_COUNT + 12;
 
   /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * The feature id for the '<em><b>Subscripts</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__SUBSCRIPT = ELEMENT_FEATURE_COUNT + 12;
+  int GENERAL_CLAUSE__SUBSCRIPTS = ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
@@ -2283,7 +2337,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__ENUMERATION_LITERAL = ELEMENT_FEATURE_COUNT + 13;
+  int GENERAL_CLAUSE__ENUMERATION_LITERAL = ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -2292,7 +2346,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 14;
+  int GENERAL_CLAUSE__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -2301,7 +2355,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__DIRECTION = ELEMENT_FEATURE_COUNT + 15;
+  int GENERAL_CLAUSE__DIRECTION = ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -2310,7 +2364,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_ENUMERATION = ELEMENT_FEATURE_COUNT + 16;
+  int GENERAL_CLAUSE__IS_ENUMERATION = ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -2319,7 +2373,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_COLON = ELEMENT_FEATURE_COUNT + 17;
+  int GENERAL_CLAUSE__IS_COLON = ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Is Der</b></em>' attribute.
@@ -2328,7 +2382,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_DER = ELEMENT_FEATURE_COUNT + 18;
+  int GENERAL_CLAUSE__IS_DER = ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Der Name</b></em>' attribute list.
@@ -2337,7 +2391,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__DER_NAME = ELEMENT_FEATURE_COUNT + 19;
+  int GENERAL_CLAUSE__DER_NAME = ELEMENT_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
@@ -2346,7 +2400,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__RELATIONSHIP_TYPE = ELEMENT_FEATURE_COUNT + 20;
+  int GENERAL_CLAUSE__RELATIONSHIP_TYPE = ELEMENT_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Parameter Type</b></em>' attribute.
@@ -2355,7 +2409,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__PARAMETER_TYPE = ELEMENT_FEATURE_COUNT + 21;
+  int GENERAL_CLAUSE__PARAMETER_TYPE = ELEMENT_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Direction Type</b></em>' attribute.
@@ -2364,7 +2418,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__DIRECTION_TYPE = ELEMENT_FEATURE_COUNT + 22;
+  int GENERAL_CLAUSE__DIRECTION_TYPE = ELEMENT_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Constrain</b></em>' containment reference.
@@ -2373,7 +2427,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__CONSTRAIN = ELEMENT_FEATURE_COUNT + 23;
+  int GENERAL_CLAUSE__CONSTRAIN = ELEMENT_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Public</b></em>' attribute.
@@ -2382,7 +2436,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_PUBLIC = ELEMENT_FEATURE_COUNT + 24;
+  int GENERAL_CLAUSE__IS_PUBLIC = ELEMENT_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Protected</b></em>' attribute.
@@ -2391,7 +2445,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_PROTECTED = ELEMENT_FEATURE_COUNT + 25;
+  int GENERAL_CLAUSE__IS_PROTECTED = ELEMENT_FEATURE_COUNT + 26;
 
   /**
    * The feature id for the '<em><b>Is Redeclare</b></em>' attribute.
@@ -2400,7 +2454,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_REDECLARE = ELEMENT_FEATURE_COUNT + 26;
+  int GENERAL_CLAUSE__IS_REDECLARE = ELEMENT_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Isfinal</b></em>' attribute.
@@ -2409,7 +2463,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__ISFINAL = ELEMENT_FEATURE_COUNT + 27;
+  int GENERAL_CLAUSE__ISFINAL = ELEMENT_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Is Inner</b></em>' attribute.
@@ -2418,7 +2472,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_INNER = ELEMENT_FEATURE_COUNT + 28;
+  int GENERAL_CLAUSE__IS_INNER = ELEMENT_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Is Outer</b></em>' attribute.
@@ -2427,7 +2481,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_OUTER = ELEMENT_FEATURE_COUNT + 29;
+  int GENERAL_CLAUSE__IS_OUTER = ELEMENT_FEATURE_COUNT + 30;
 
   /**
    * The feature id for the '<em><b>Is Replaceable</b></em>' attribute.
@@ -2436,7 +2490,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_REPLACEABLE = ELEMENT_FEATURE_COUNT + 30;
+  int GENERAL_CLAUSE__IS_REPLACEABLE = ELEMENT_FEATURE_COUNT + 31;
 
   /**
    * The feature id for the '<em><b>Component list</b></em>' containment reference list.
@@ -2445,7 +2499,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__COMPONENT_LIST = ELEMENT_FEATURE_COUNT + 31;
+  int GENERAL_CLAUSE__COMPONENT_LIST = ELEMENT_FEATURE_COUNT + 32;
 
   /**
    * The number of structural features of the '<em>General Clause</em>' class.
@@ -2454,7 +2508,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 32;
+  int GENERAL_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 33;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Component_declarationImpl <em>Component declaration</em>}' class.
@@ -2467,13 +2521,13 @@ public interface MOlocPackage extends EPackage
   int COMPONENT_DECLARATION = 31;
 
   /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * The feature id for the '<em><b>Subscripts</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_DECLARATION__SUBSCRIPT = DECLARATION__SUBSCRIPT;
+  int COMPONENT_DECLARATION__SUBSCRIPTS = DECLARATION__SUBSCRIPTS;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -2576,13 +2630,40 @@ public interface MOlocPackage extends EPackage
   int EXTERNAL_ELEMENT__REF = ELEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Ref Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTERNAL_ELEMENT__REF_VALUE = ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Expression List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTERNAL_ELEMENT__EXPRESSION_LIST = ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTERNAL_ELEMENT__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 5;
+
+  /**
    * The number of structural features of the '<em>External Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTERNAL_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
+  int EXTERNAL_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.AnnotationClauseImpl <em>Annotation Clause</em>}' class.
@@ -2779,13 +2860,13 @@ public interface MOlocPackage extends EPackage
   int IF_EQUATION__CONDITION = EQUATION_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Equations</b></em>' containment reference list.
+   * The feature id for the '<em><b>If Equations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_EQUATION__EQUATIONS = EQUATION_FEATURE_COUNT + 4;
+  int IF_EQUATION__IF_EQUATIONS = EQUATION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Else Condition</b></em>' attribute list.
@@ -2797,13 +2878,31 @@ public interface MOlocPackage extends EPackage
   int IF_EQUATION__ELSE_CONDITION = EQUATION_FEATURE_COUNT + 5;
 
   /**
+   * The feature id for the '<em><b>Elseif Equations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__ELSEIF_EQUATIONS = EQUATION_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Else Equations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__ELSE_EQUATIONS = EQUATION_FEATURE_COUNT + 7;
+
+  /**
    * The number of structural features of the '<em>If Equation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 6;
+  int IF_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ForEquationImpl <em>For Equation</em>}' class.
@@ -2852,13 +2951,13 @@ public interface MOlocPackage extends EPackage
   int FOR_EQUATION__FOR_INDICES = EQUATION_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Equations</b></em>' containment reference list.
+   * The feature id for the '<em><b>For Equations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR_EQUATION__EQUATIONS = EQUATION_FEATURE_COUNT + 4;
+  int FOR_EQUATION__FOR_EQUATIONS = EQUATION_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>For Equation</em>' class.
@@ -2980,13 +3079,13 @@ public interface MOlocPackage extends EPackage
   int WHEN_EQUATION__CONDITION = EQUATION_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Equations</b></em>' containment reference list.
+   * The feature id for the '<em><b>When Equations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHEN_EQUATION__EQUATIONS = EQUATION_FEATURE_COUNT + 4;
+  int WHEN_EQUATION__WHEN_EQUATIONS = EQUATION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Else Condition</b></em>' attribute list.
@@ -2998,13 +3097,22 @@ public interface MOlocPackage extends EPackage
   int WHEN_EQUATION__ELSE_CONDITION = EQUATION_FEATURE_COUNT + 5;
 
   /**
+   * The feature id for the '<em><b>Elsewhen Equations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION__ELSEWHEN_EQUATIONS = EQUATION_FEATURE_COUNT + 6;
+
+  /**
    * The number of structural features of the '<em>When Equation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHEN_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 6;
+  int WHEN_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl <em>Function Equation</em>}' class.
@@ -3164,22 +3272,22 @@ public interface MOlocPackage extends EPackage
   int FUNCTION_STATEMENT__IS_ANNOTATION = STATEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Output</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_STATEMENT__OUTPUT = STATEMENT_FEATURE_COUNT + 3;
-
-  /**
    * The feature id for the '<em><b>Component</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_STATEMENT__COMPONENT = STATEMENT_FEATURE_COUNT + 4;
+  int FUNCTION_STATEMENT__COMPONENT = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_STATEMENT__EXPRESSION = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -3191,13 +3299,22 @@ public interface MOlocPackage extends EPackage
   int FUNCTION_STATEMENT__FUNCTION = STATEMENT_FEATURE_COUNT + 5;
 
   /**
+   * The feature id for the '<em><b>Output</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_STATEMENT__OUTPUT = STATEMENT_FEATURE_COUNT + 6;
+
+  /**
    * The number of structural features of the '<em>Function Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 6;
+  int FUNCTION_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.BreakStatementImpl <em>Break Statement</em>}' class.
@@ -3338,13 +3455,13 @@ public interface MOlocPackage extends EPackage
   int IF_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * The feature id for the '<em><b>If Statements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_STATEMENT__STATEMENTS = STATEMENT_FEATURE_COUNT + 4;
+  int IF_STATEMENT__IF_STATEMENTS = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Else Condition</b></em>' attribute list.
@@ -3356,13 +3473,31 @@ public interface MOlocPackage extends EPackage
   int IF_STATEMENT__ELSE_CONDITION = STATEMENT_FEATURE_COUNT + 5;
 
   /**
+   * The feature id for the '<em><b>Elseif Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__ELSEIF_STATEMENTS = STATEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Else Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__ELSE_STATEMENTS = STATEMENT_FEATURE_COUNT + 7;
+
+  /**
    * The number of structural features of the '<em>If Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 6;
+  int IF_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ForStatementImpl <em>For Statement</em>}' class.
@@ -3411,13 +3546,13 @@ public interface MOlocPackage extends EPackage
   int FOR_STATEMENT__FOR_INDICES = STATEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * The feature id for the '<em><b>For Statements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR_STATEMENT__STATEMENTS = STATEMENT_FEATURE_COUNT + 4;
+  int FOR_STATEMENT__FOR_STATEMENTS = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>For Statement</em>' class.
@@ -3475,13 +3610,13 @@ public interface MOlocPackage extends EPackage
   int WHEN_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * The feature id for the '<em><b>When Statements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHEN_STATEMENT__STATEMENTS = STATEMENT_FEATURE_COUNT + 4;
+  int WHEN_STATEMENT__WHEN_STATEMENTS = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Else Condition</b></em>' attribute list.
@@ -3548,13 +3683,13 @@ public interface MOlocPackage extends EPackage
   int WHILE_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * The feature id for the '<em><b>While Statements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHILE_STATEMENT__STATEMENTS = STATEMENT_FEATURE_COUNT + 4;
+  int WHILE_STATEMENT__WHILE_STATEMENTS = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>While Statement</em>' class.
@@ -3671,17 +3806,6 @@ public interface MOlocPackage extends EPackage
   EAttribute getClass_definition_Isfinal();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Class_definition#isIsEncapsulated <em>Is Encapsulated</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Is Encapsulated</em>'.
-   * @see dut.control.moloc.mOloc.Class_definition#isIsEncapsulated()
-   * @see #getClass_definition()
-   * @generated
-   */
-  EAttribute getClass_definition_IsEncapsulated();
-
-  /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.class_prefixes <em>class prefixes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3690,6 +3814,17 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EClass getclass_prefixes();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.class_prefixes#isIsEncapsulated <em>Is Encapsulated</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Encapsulated</em>'.
+   * @see dut.control.moloc.mOloc.class_prefixes#isIsEncapsulated()
+   * @see #getclass_prefixes()
+   * @generated
+   */
+  EAttribute getclass_prefixes_IsEncapsulated();
 
   /**
    * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.class_prefixes#isIsPartial <em>Is Partial</em>}'.
@@ -4211,15 +4346,15 @@ public interface MOlocPackage extends EPackage
   EClass getarray_subscripts();
 
   /**
-   * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.array_subscripts#getSubscript <em>Subscript</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.array_subscripts#getSubscripts <em>Subscripts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Subscript</em>'.
-   * @see dut.control.moloc.mOloc.array_subscripts#getSubscript()
+   * @return the meta object for the attribute '<em>Subscripts</em>'.
+   * @see dut.control.moloc.mOloc.array_subscripts#getSubscripts()
    * @see #getarray_subscripts()
    * @generated
    */
-  EAttribute getarray_subscripts_Subscript();
+  EAttribute getarray_subscripts_Subscripts();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.modification <em>modification</em>}'.
@@ -4368,6 +4503,28 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EClass getExtendsClause();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExtendsClause#isIsPublic <em>Is Public</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Public</em>'.
+   * @see dut.control.moloc.mOloc.ExtendsClause#isIsPublic()
+   * @see #getExtendsClause()
+   * @generated
+   */
+  EAttribute getExtendsClause_IsPublic();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExtendsClause#isIsProtected <em>Is Protected</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Protected</em>'.
+   * @see dut.control.moloc.mOloc.ExtendsClause#isIsProtected()
+   * @see #getExtendsClause()
+   * @generated
+   */
+  EAttribute getExtendsClause_IsProtected();
 
   /**
    * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ExtendsClause#getBreaks <em>Breaks</em>}'.
@@ -4564,6 +4721,39 @@ public interface MOlocPackage extends EPackage
   EAttribute getExternalElement_Ref();
 
   /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExternalElement#getRefValue <em>Ref Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ref Value</em>'.
+   * @see dut.control.moloc.mOloc.ExternalElement#getRefValue()
+   * @see #getExternalElement()
+   * @generated
+   */
+  EAttribute getExternalElement_RefValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExternalElement#getExpressionList <em>Expression List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Expression List</em>'.
+   * @see dut.control.moloc.mOloc.ExternalElement#getExpressionList()
+   * @see #getExternalElement()
+   * @generated
+   */
+  EAttribute getExternalElement_ExpressionList();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExternalElement#isIsAnnotation <em>Is Annotation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Annotation</em>'.
+   * @see dut.control.moloc.mOloc.ExternalElement#isIsAnnotation()
+   * @see #getExternalElement()
+   * @generated
+   */
+  EAttribute getExternalElement_IsAnnotation();
+
+  /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.AnnotationClause <em>Annotation Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4669,15 +4859,15 @@ public interface MOlocPackage extends EPackage
   EAttribute getIfEquation_Condition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfEquation#getEquations <em>Equations</em>}'.
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfEquation#getIfEquations <em>If Equations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Equations</em>'.
-   * @see dut.control.moloc.mOloc.IfEquation#getEquations()
+   * @return the meta object for the containment reference list '<em>If Equations</em>'.
+   * @see dut.control.moloc.mOloc.IfEquation#getIfEquations()
    * @see #getIfEquation()
    * @generated
    */
-  EReference getIfEquation_Equations();
+  EReference getIfEquation_IfEquations();
 
   /**
    * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.IfEquation#getElseCondition <em>Else Condition</em>}'.
@@ -4689,6 +4879,28 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EAttribute getIfEquation_ElseCondition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfEquation#getElseifEquations <em>Elseif Equations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elseif Equations</em>'.
+   * @see dut.control.moloc.mOloc.IfEquation#getElseifEquations()
+   * @see #getIfEquation()
+   * @generated
+   */
+  EReference getIfEquation_ElseifEquations();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfEquation#getElseEquations <em>Else Equations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Else Equations</em>'.
+   * @see dut.control.moloc.mOloc.IfEquation#getElseEquations()
+   * @see #getIfEquation()
+   * @generated
+   */
+  EReference getIfEquation_ElseEquations();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.ForEquation <em>For Equation</em>}'.
@@ -4712,15 +4924,15 @@ public interface MOlocPackage extends EPackage
   EAttribute getForEquation_ForIndices();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ForEquation#getEquations <em>Equations</em>}'.
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ForEquation#getForEquations <em>For Equations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Equations</em>'.
-   * @see dut.control.moloc.mOloc.ForEquation#getEquations()
+   * @return the meta object for the containment reference list '<em>For Equations</em>'.
+   * @see dut.control.moloc.mOloc.ForEquation#getForEquations()
    * @see #getForEquation()
    * @generated
    */
-  EReference getForEquation_Equations();
+  EReference getForEquation_ForEquations();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.ConnectEquation <em>Connect Equation</em>}'.
@@ -4776,15 +4988,15 @@ public interface MOlocPackage extends EPackage
   EAttribute getWhenEquation_Condition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhenEquation#getEquations <em>Equations</em>}'.
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhenEquation#getWhenEquations <em>When Equations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Equations</em>'.
-   * @see dut.control.moloc.mOloc.WhenEquation#getEquations()
+   * @return the meta object for the containment reference list '<em>When Equations</em>'.
+   * @see dut.control.moloc.mOloc.WhenEquation#getWhenEquations()
    * @see #getWhenEquation()
    * @generated
    */
-  EReference getWhenEquation_Equations();
+  EReference getWhenEquation_WhenEquations();
 
   /**
    * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.WhenEquation#getElseCondition <em>Else Condition</em>}'.
@@ -4796,6 +5008,17 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EAttribute getWhenEquation_ElseCondition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhenEquation#getElsewhenEquations <em>Elsewhen Equations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elsewhen Equations</em>'.
+   * @see dut.control.moloc.mOloc.WhenEquation#getElsewhenEquations()
+   * @see #getWhenEquation()
+   * @generated
+   */
+  EReference getWhenEquation_ElsewhenEquations();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.FunctionEquation <em>Function Equation</em>}'.
@@ -4882,17 +5105,6 @@ public interface MOlocPackage extends EPackage
   EClass getFunctionStatement();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.FunctionStatement#getOutput <em>Output</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Output</em>'.
-   * @see dut.control.moloc.mOloc.FunctionStatement#getOutput()
-   * @see #getFunctionStatement()
-   * @generated
-   */
-  EAttribute getFunctionStatement_Output();
-
-  /**
    * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.FunctionStatement#getComponent <em>Component</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4904,6 +5116,17 @@ public interface MOlocPackage extends EPackage
   EAttribute getFunctionStatement_Component();
 
   /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.FunctionStatement#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Expression</em>'.
+   * @see dut.control.moloc.mOloc.FunctionStatement#getExpression()
+   * @see #getFunctionStatement()
+   * @generated
+   */
+  EAttribute getFunctionStatement_Expression();
+
+  /**
    * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.FunctionStatement#getFunction <em>Function</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4913,6 +5136,17 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EAttribute getFunctionStatement_Function();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.FunctionStatement#getOutput <em>Output</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Output</em>'.
+   * @see dut.control.moloc.mOloc.FunctionStatement#getOutput()
+   * @see #getFunctionStatement()
+   * @generated
+   */
+  EAttribute getFunctionStatement_Output();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.BreakStatement <em>Break Statement</em>}'.
@@ -4956,15 +5190,15 @@ public interface MOlocPackage extends EPackage
   EAttribute getIfStatement_Condition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfStatement#getStatements <em>Statements</em>}'.
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfStatement#getIfStatements <em>If Statements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see dut.control.moloc.mOloc.IfStatement#getStatements()
+   * @return the meta object for the containment reference list '<em>If Statements</em>'.
+   * @see dut.control.moloc.mOloc.IfStatement#getIfStatements()
    * @see #getIfStatement()
    * @generated
    */
-  EReference getIfStatement_Statements();
+  EReference getIfStatement_IfStatements();
 
   /**
    * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.IfStatement#getElseCondition <em>Else Condition</em>}'.
@@ -4976,6 +5210,28 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EAttribute getIfStatement_ElseCondition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfStatement#getElseifStatements <em>Elseif Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elseif Statements</em>'.
+   * @see dut.control.moloc.mOloc.IfStatement#getElseifStatements()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_ElseifStatements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.IfStatement#getElseStatements <em>Else Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Else Statements</em>'.
+   * @see dut.control.moloc.mOloc.IfStatement#getElseStatements()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_ElseStatements();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.ForStatement <em>For Statement</em>}'.
@@ -4999,15 +5255,15 @@ public interface MOlocPackage extends EPackage
   EAttribute getForStatement_ForIndices();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ForStatement#getStatements <em>Statements</em>}'.
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.ForStatement#getForStatements <em>For Statements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see dut.control.moloc.mOloc.ForStatement#getStatements()
+   * @return the meta object for the containment reference list '<em>For Statements</em>'.
+   * @see dut.control.moloc.mOloc.ForStatement#getForStatements()
    * @see #getForStatement()
    * @generated
    */
-  EReference getForStatement_Statements();
+  EReference getForStatement_ForStatements();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.WhenStatement <em>When Statement</em>}'.
@@ -5031,15 +5287,15 @@ public interface MOlocPackage extends EPackage
   EAttribute getWhenStatement_Condition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhenStatement#getStatements <em>Statements</em>}'.
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhenStatement#getWhenStatements <em>When Statements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see dut.control.moloc.mOloc.WhenStatement#getStatements()
+   * @return the meta object for the containment reference list '<em>When Statements</em>'.
+   * @see dut.control.moloc.mOloc.WhenStatement#getWhenStatements()
    * @see #getWhenStatement()
    * @generated
    */
-  EReference getWhenStatement_Statements();
+  EReference getWhenStatement_WhenStatements();
 
   /**
    * Returns the meta object for the attribute list '{@link dut.control.moloc.mOloc.WhenStatement#getElseCondition <em>Else Condition</em>}'.
@@ -5074,15 +5330,15 @@ public interface MOlocPackage extends EPackage
   EAttribute getWhileStatement_Condition();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhileStatement#getStatements <em>Statements</em>}'.
+   * Returns the meta object for the containment reference list '{@link dut.control.moloc.mOloc.WhileStatement#getWhileStatements <em>While Statements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see dut.control.moloc.mOloc.WhileStatement#getStatements()
+   * @return the meta object for the containment reference list '<em>While Statements</em>'.
+   * @see dut.control.moloc.mOloc.WhileStatement#getWhileStatements()
    * @see #getWhileStatement()
    * @generated
    */
-  EReference getWhileStatement_Statements();
+  EReference getWhileStatement_WhileStatements();
 
   /**
    * Returns the meta object for enum '{@link dut.control.moloc.mOloc.ClassType <em>Class Type</em>}'.
@@ -5200,14 +5456,6 @@ public interface MOlocPackage extends EPackage
     EAttribute CLASS_DEFINITION__ISFINAL = eINSTANCE.getClass_definition_Isfinal();
 
     /**
-     * The meta object literal for the '<em><b>Is Encapsulated</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CLASS_DEFINITION__IS_ENCAPSULATED = eINSTANCE.getClass_definition_IsEncapsulated();
-
-    /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.class_prefixesImpl <em>class prefixes</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5216,6 +5464,14 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EClass CLASS_PREFIXES = eINSTANCE.getclass_prefixes();
+
+    /**
+     * The meta object literal for the '<em><b>Is Encapsulated</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLASS_PREFIXES__IS_ENCAPSULATED = eINSTANCE.getclass_prefixes_IsEncapsulated();
 
     /**
      * The meta object literal for the '<em><b>Is Partial</b></em>' attribute feature.
@@ -5650,12 +5906,12 @@ public interface MOlocPackage extends EPackage
     EClass ARRAY_SUBSCRIPTS = eINSTANCE.getarray_subscripts();
 
     /**
-     * The meta object literal for the '<em><b>Subscript</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Subscripts</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ARRAY_SUBSCRIPTS__SUBSCRIPT = eINSTANCE.getarray_subscripts_Subscript();
+    EAttribute ARRAY_SUBSCRIPTS__SUBSCRIPTS = eINSTANCE.getarray_subscripts_Subscripts();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.modificationImpl <em>modification</em>}' class.
@@ -5780,6 +6036,22 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EClass EXTENDS_CLAUSE = eINSTANCE.getExtendsClause();
+
+    /**
+     * The meta object literal for the '<em><b>Is Public</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXTENDS_CLAUSE__IS_PUBLIC = eINSTANCE.getExtendsClause_IsPublic();
+
+    /**
+     * The meta object literal for the '<em><b>Is Protected</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXTENDS_CLAUSE__IS_PROTECTED = eINSTANCE.getExtendsClause_IsProtected();
 
     /**
      * The meta object literal for the '<em><b>Breaks</b></em>' containment reference list feature.
@@ -5934,6 +6206,30 @@ public interface MOlocPackage extends EPackage
     EAttribute EXTERNAL_ELEMENT__REF = eINSTANCE.getExternalElement_Ref();
 
     /**
+     * The meta object literal for the '<em><b>Ref Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXTERNAL_ELEMENT__REF_VALUE = eINSTANCE.getExternalElement_RefValue();
+
+    /**
+     * The meta object literal for the '<em><b>Expression List</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXTERNAL_ELEMENT__EXPRESSION_LIST = eINSTANCE.getExternalElement_ExpressionList();
+
+    /**
+     * The meta object literal for the '<em><b>Is Annotation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXTERNAL_ELEMENT__IS_ANNOTATION = eINSTANCE.getExternalElement_IsAnnotation();
+
+    /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.AnnotationClauseImpl <em>Annotation Clause</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6024,12 +6320,12 @@ public interface MOlocPackage extends EPackage
     EAttribute IF_EQUATION__CONDITION = eINSTANCE.getIfEquation_Condition();
 
     /**
-     * The meta object literal for the '<em><b>Equations</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>If Equations</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF_EQUATION__EQUATIONS = eINSTANCE.getIfEquation_Equations();
+    EReference IF_EQUATION__IF_EQUATIONS = eINSTANCE.getIfEquation_IfEquations();
 
     /**
      * The meta object literal for the '<em><b>Else Condition</b></em>' attribute list feature.
@@ -6038,6 +6334,22 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EAttribute IF_EQUATION__ELSE_CONDITION = eINSTANCE.getIfEquation_ElseCondition();
+
+    /**
+     * The meta object literal for the '<em><b>Elseif Equations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_EQUATION__ELSEIF_EQUATIONS = eINSTANCE.getIfEquation_ElseifEquations();
+
+    /**
+     * The meta object literal for the '<em><b>Else Equations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_EQUATION__ELSE_EQUATIONS = eINSTANCE.getIfEquation_ElseEquations();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ForEquationImpl <em>For Equation</em>}' class.
@@ -6058,12 +6370,12 @@ public interface MOlocPackage extends EPackage
     EAttribute FOR_EQUATION__FOR_INDICES = eINSTANCE.getForEquation_ForIndices();
 
     /**
-     * The meta object literal for the '<em><b>Equations</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>For Equations</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FOR_EQUATION__EQUATIONS = eINSTANCE.getForEquation_Equations();
+    EReference FOR_EQUATION__FOR_EQUATIONS = eINSTANCE.getForEquation_ForEquations();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ConnectEquationImpl <em>Connect Equation</em>}' class.
@@ -6110,12 +6422,12 @@ public interface MOlocPackage extends EPackage
     EAttribute WHEN_EQUATION__CONDITION = eINSTANCE.getWhenEquation_Condition();
 
     /**
-     * The meta object literal for the '<em><b>Equations</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>When Equations</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference WHEN_EQUATION__EQUATIONS = eINSTANCE.getWhenEquation_Equations();
+    EReference WHEN_EQUATION__WHEN_EQUATIONS = eINSTANCE.getWhenEquation_WhenEquations();
 
     /**
      * The meta object literal for the '<em><b>Else Condition</b></em>' attribute list feature.
@@ -6124,6 +6436,14 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EAttribute WHEN_EQUATION__ELSE_CONDITION = eINSTANCE.getWhenEquation_ElseCondition();
+
+    /**
+     * The meta object literal for the '<em><b>Elsewhen Equations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHEN_EQUATION__ELSEWHEN_EQUATIONS = eINSTANCE.getWhenEquation_ElsewhenEquations();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl <em>Function Equation</em>}' class.
@@ -6198,14 +6518,6 @@ public interface MOlocPackage extends EPackage
     EClass FUNCTION_STATEMENT = eINSTANCE.getFunctionStatement();
 
     /**
-     * The meta object literal for the '<em><b>Output</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_STATEMENT__OUTPUT = eINSTANCE.getFunctionStatement_Output();
-
-    /**
      * The meta object literal for the '<em><b>Component</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6214,12 +6526,28 @@ public interface MOlocPackage extends EPackage
     EAttribute FUNCTION_STATEMENT__COMPONENT = eINSTANCE.getFunctionStatement_Component();
 
     /**
+     * The meta object literal for the '<em><b>Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_STATEMENT__EXPRESSION = eINSTANCE.getFunctionStatement_Expression();
+
+    /**
      * The meta object literal for the '<em><b>Function</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute FUNCTION_STATEMENT__FUNCTION = eINSTANCE.getFunctionStatement_Function();
+
+    /**
+     * The meta object literal for the '<em><b>Output</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_STATEMENT__OUTPUT = eINSTANCE.getFunctionStatement_Output();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.BreakStatementImpl <em>Break Statement</em>}' class.
@@ -6260,12 +6588,12 @@ public interface MOlocPackage extends EPackage
     EAttribute IF_STATEMENT__CONDITION = eINSTANCE.getIfStatement_Condition();
 
     /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>If Statements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF_STATEMENT__STATEMENTS = eINSTANCE.getIfStatement_Statements();
+    EReference IF_STATEMENT__IF_STATEMENTS = eINSTANCE.getIfStatement_IfStatements();
 
     /**
      * The meta object literal for the '<em><b>Else Condition</b></em>' attribute list feature.
@@ -6274,6 +6602,22 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EAttribute IF_STATEMENT__ELSE_CONDITION = eINSTANCE.getIfStatement_ElseCondition();
+
+    /**
+     * The meta object literal for the '<em><b>Elseif Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__ELSEIF_STATEMENTS = eINSTANCE.getIfStatement_ElseifStatements();
+
+    /**
+     * The meta object literal for the '<em><b>Else Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__ELSE_STATEMENTS = eINSTANCE.getIfStatement_ElseStatements();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ForStatementImpl <em>For Statement</em>}' class.
@@ -6294,12 +6638,12 @@ public interface MOlocPackage extends EPackage
     EAttribute FOR_STATEMENT__FOR_INDICES = eINSTANCE.getForStatement_ForIndices();
 
     /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>For Statements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FOR_STATEMENT__STATEMENTS = eINSTANCE.getForStatement_Statements();
+    EReference FOR_STATEMENT__FOR_STATEMENTS = eINSTANCE.getForStatement_ForStatements();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.WhenStatementImpl <em>When Statement</em>}' class.
@@ -6320,12 +6664,12 @@ public interface MOlocPackage extends EPackage
     EAttribute WHEN_STATEMENT__CONDITION = eINSTANCE.getWhenStatement_Condition();
 
     /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>When Statements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference WHEN_STATEMENT__STATEMENTS = eINSTANCE.getWhenStatement_Statements();
+    EReference WHEN_STATEMENT__WHEN_STATEMENTS = eINSTANCE.getWhenStatement_WhenStatements();
 
     /**
      * The meta object literal for the '<em><b>Else Condition</b></em>' attribute list feature.
@@ -6354,12 +6698,12 @@ public interface MOlocPackage extends EPackage
     EAttribute WHILE_STATEMENT__CONDITION = eINSTANCE.getWhileStatement_Condition();
 
     /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>While Statements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference WHILE_STATEMENT__STATEMENTS = eINSTANCE.getWhileStatement_Statements();
+    EReference WHILE_STATEMENT__WHILE_STATEMENTS = eINSTANCE.getWhileStatement_WhileStatements();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.ClassType <em>Class Type</em>}' enum.

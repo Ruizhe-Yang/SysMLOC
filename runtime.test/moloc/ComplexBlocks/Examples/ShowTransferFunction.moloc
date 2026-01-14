@@ -6,14 +6,10 @@
       <component_list expression="1/sqrt(2)" declarationName="d" description="&quot;Damping coefficient&quot;"/>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
-      <component_list expression="{1}" declarationName="b" description="&quot;Numerator polynomial coefficients of the transfer function&quot;">
-        <subscript>:</subscript>
-      </component_list>
+      <component_list subscripts="[:]" expression="{1}" declarationName="b" description="&quot;Numerator polynomial coefficients of the transfer function&quot;"/>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
-      <component_list expression="{1,2*d,1}" declarationName="a" description="&quot;Denominator polynomial coefficients of the transfer function&quot;">
-        <subscript>:</subscript>
-      </component_list>
+      <component_list subscripts="[:]" expression="{1,2*d,1}" declarationName="a" description="&quot;Denominator polynomial coefficients of the transfer function&quot;"/>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
       <component_list expression="0.01" declarationName="wMin" description="&quot;Lower bound for frequency sweep&quot;"/>

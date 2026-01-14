@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.ForStatement#getForIndices <em>For Indices</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.ForStatement#getStatements <em>Statements</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ForStatement#getForStatements <em>For Statements</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getForStatement()
@@ -47,15 +47,15 @@ public interface ForStatement extends Statement, description
   void setForIndices(String value);
 
   /**
-   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+   * Returns the value of the '<em><b>For Statements</b></em>' containment reference list.
    * The list contents are of type {@link dut.control.moloc.mOloc.Statement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statements</em>' containment reference list.
-   * @see dut.control.moloc.mOloc.MOlocPackage#getForStatement_Statements()
+   * @return the value of the '<em>For Statements</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getForStatement_ForStatements()
    * @model containment="true"
    * @generated
    */
-  EList<Statement> getStatements();
+  EList<Statement> getForStatements();
 
 } // ForStatement

@@ -39,8 +39,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#getCondition <em>Condition</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#getEquations <em>Equations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#getWhenEquations <em>When Equations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#getElseCondition <em>Else Condition</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.WhenEquationImpl#getElsewhenEquations <em>Elsewhen Equations</em>}</li>
  * </ul>
  *
  * @generated
@@ -118,14 +119,14 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
   protected String condition = CONDITION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getEquations() <em>Equations</em>}' containment reference list.
+   * The cached value of the '{@link #getWhenEquations() <em>When Equations</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEquations()
+   * @see #getWhenEquations()
    * @generated
    * @ordered
    */
-  protected EList<Equation> equations;
+  protected EList<Equation> whenEquations;
 
   /**
    * The cached value of the '{@link #getElseCondition() <em>Else Condition</em>}' attribute list.
@@ -136,6 +137,16 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
    * @ordered
    */
   protected EList<String> elseCondition;
+
+  /**
+   * The cached value of the '{@link #getElsewhenEquations() <em>Elsewhen Equations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElsewhenEquations()
+   * @generated
+   * @ordered
+   */
+  protected EList<Equation> elsewhenEquations;
 
   /**
    * <!-- begin-user-doc -->
@@ -254,13 +265,13 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
    * @generated
    */
   @Override
-  public EList<Equation> getEquations()
+  public EList<Equation> getWhenEquations()
   {
-    if (equations == null)
+    if (whenEquations == null)
     {
-      equations = new EObjectContainmentEList<Equation>(Equation.class, this, MOlocPackage.WHEN_EQUATION__EQUATIONS);
+      whenEquations = new EObjectContainmentEList<Equation>(Equation.class, this, MOlocPackage.WHEN_EQUATION__WHEN_EQUATIONS);
     }
-    return equations;
+    return whenEquations;
   }
 
   /**
@@ -284,14 +295,31 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
    * @generated
    */
   @Override
+  public EList<Equation> getElsewhenEquations()
+  {
+    if (elsewhenEquations == null)
+    {
+      elsewhenEquations = new EObjectContainmentEList<Equation>(Equation.class, this, MOlocPackage.WHEN_EQUATION__ELSEWHEN_EQUATIONS);
+    }
+    return elsewhenEquations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case MOlocPackage.WHEN_EQUATION__ARGUMENTS:
         return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.WHEN_EQUATION__EQUATIONS:
-        return ((InternalEList<?>)getEquations()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.WHEN_EQUATION__WHEN_EQUATIONS:
+        return ((InternalEList<?>)getWhenEquations()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.WHEN_EQUATION__ELSEWHEN_EQUATIONS:
+        return ((InternalEList<?>)getElsewhenEquations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -314,10 +342,12 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
         return isIsAnnotation();
       case MOlocPackage.WHEN_EQUATION__CONDITION:
         return getCondition();
-      case MOlocPackage.WHEN_EQUATION__EQUATIONS:
-        return getEquations();
+      case MOlocPackage.WHEN_EQUATION__WHEN_EQUATIONS:
+        return getWhenEquations();
       case MOlocPackage.WHEN_EQUATION__ELSE_CONDITION:
         return getElseCondition();
+      case MOlocPackage.WHEN_EQUATION__ELSEWHEN_EQUATIONS:
+        return getElsewhenEquations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -346,13 +376,17 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
       case MOlocPackage.WHEN_EQUATION__CONDITION:
         setCondition((String)newValue);
         return;
-      case MOlocPackage.WHEN_EQUATION__EQUATIONS:
-        getEquations().clear();
-        getEquations().addAll((Collection<? extends Equation>)newValue);
+      case MOlocPackage.WHEN_EQUATION__WHEN_EQUATIONS:
+        getWhenEquations().clear();
+        getWhenEquations().addAll((Collection<? extends Equation>)newValue);
         return;
       case MOlocPackage.WHEN_EQUATION__ELSE_CONDITION:
         getElseCondition().clear();
         getElseCondition().addAll((Collection<? extends String>)newValue);
+        return;
+      case MOlocPackage.WHEN_EQUATION__ELSEWHEN_EQUATIONS:
+        getElsewhenEquations().clear();
+        getElsewhenEquations().addAll((Collection<? extends Equation>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -380,11 +414,14 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
       case MOlocPackage.WHEN_EQUATION__CONDITION:
         setCondition(CONDITION_EDEFAULT);
         return;
-      case MOlocPackage.WHEN_EQUATION__EQUATIONS:
-        getEquations().clear();
+      case MOlocPackage.WHEN_EQUATION__WHEN_EQUATIONS:
+        getWhenEquations().clear();
         return;
       case MOlocPackage.WHEN_EQUATION__ELSE_CONDITION:
         getElseCondition().clear();
+        return;
+      case MOlocPackage.WHEN_EQUATION__ELSEWHEN_EQUATIONS:
+        getElsewhenEquations().clear();
         return;
     }
     super.eUnset(featureID);
@@ -408,10 +445,12 @@ public class WhenEquationImpl extends EquationImpl implements WhenEquation
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.WHEN_EQUATION__CONDITION:
         return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
-      case MOlocPackage.WHEN_EQUATION__EQUATIONS:
-        return equations != null && !equations.isEmpty();
+      case MOlocPackage.WHEN_EQUATION__WHEN_EQUATIONS:
+        return whenEquations != null && !whenEquations.isEmpty();
       case MOlocPackage.WHEN_EQUATION__ELSE_CONDITION:
         return elseCondition != null && !elseCondition.isEmpty();
+      case MOlocPackage.WHEN_EQUATION__ELSEWHEN_EQUATIONS:
+        return elsewhenEquations != null && !elsewhenEquations.isEmpty();
     }
     return super.eIsSet(featureID);
   }

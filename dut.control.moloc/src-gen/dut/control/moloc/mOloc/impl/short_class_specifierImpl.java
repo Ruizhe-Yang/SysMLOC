@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -40,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getSubscript <em>Subscript</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getSubscripts <em>Subscripts</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getDescription <em>Description</em>}</li>
@@ -75,14 +74,24 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
   protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
+   * The default value of the '{@link #getSubscripts() <em>Subscripts</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSubscript()
+   * @see #getSubscripts()
    * @generated
    * @ordered
    */
-  protected EList<String> subscript;
+  protected static final String SUBSCRIPTS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSubscripts() <em>Subscripts</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubscripts()
+   * @generated
+   * @ordered
+   */
+  protected String subscripts = SUBSCRIPTS_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
@@ -256,13 +265,23 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
    * @generated
    */
   @Override
-  public EList<String> getSubscript()
+  public String getSubscripts()
   {
-    if (subscript == null)
-    {
-      subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT);
-    }
-    return subscript;
+    return subscripts;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSubscripts(String newSubscripts)
+  {
+    String oldSubscripts = subscripts;
+    subscripts = newSubscripts;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPTS, oldSubscripts, subscripts));
   }
 
   /**
@@ -450,8 +469,8 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     {
       case MOlocPackage.SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER:
         return getTypeSpecifier();
-      case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT:
-        return getSubscript();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPTS:
+        return getSubscripts();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
         return getArguments();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
@@ -484,9 +503,8 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
       case MOlocPackage.SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER:
         setTypeSpecifier((String)newValue);
         return;
-      case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT:
-        getSubscript().clear();
-        getSubscript().addAll((Collection<? extends String>)newValue);
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPTS:
+        setSubscripts((String)newValue);
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
         getArguments().clear();
@@ -528,8 +546,8 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
       case MOlocPackage.SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER:
         setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
         return;
-      case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT:
-        getSubscript().clear();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPTS:
+        setSubscripts(SUBSCRIPTS_EDEFAULT);
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
         getArguments().clear();
@@ -568,8 +586,8 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     {
       case MOlocPackage.SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER:
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
-      case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT:
-        return subscript != null && !subscript.isEmpty();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPTS:
+        return SUBSCRIPTS_EDEFAULT == null ? subscripts != null : !SUBSCRIPTS_EDEFAULT.equals(subscripts);
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
@@ -608,7 +626,7 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPTS: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS;
         default: return -1;
       }
     }
@@ -667,7 +685,7 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT;
+        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS: return MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPTS;
         default: return -1;
       }
     }
@@ -719,8 +737,8 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (typeSpecifier: ");
     result.append(typeSpecifier);
-    result.append(", subscript: ");
-    result.append(subscript);
+    result.append(", subscripts: ");
+    result.append(subscripts);
     result.append(", description: ");
     result.append(description);
     result.append(", isAnnotation: ");

@@ -36,9 +36,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#isIsAnnotation <em>Is Annotation</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getOutput <em>Output</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getComponent <em>Component</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getFunction <em>Function</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getOutput <em>Output</em>}</li>
  * </ul>
  *
  * @generated
@@ -96,26 +97,6 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
   protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getOutput() <em>Output</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOutput()
-   * @generated
-   * @ordered
-   */
-  protected static final String OUTPUT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getOutput() <em>Output</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOutput()
-   * @generated
-   * @ordered
-   */
-  protected String output = OUTPUT_EDEFAULT;
-
-  /**
    * The default value of the '{@link #getComponent() <em>Component</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -136,6 +117,26 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
   protected String component = COMPONENT_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpression()
+   * @generated
+   * @ordered
+   */
+  protected static final String EXPRESSION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpression()
+   * @generated
+   * @ordered
+   */
+  protected String expression = EXPRESSION_EDEFAULT;
+
+  /**
    * The default value of the '{@link #getFunction() <em>Function</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -154,6 +155,26 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
    * @ordered
    */
   protected String function = FUNCTION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getOutput() <em>Output</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOutput()
+   * @generated
+   * @ordered
+   */
+  protected static final String OUTPUT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOutput() <em>Output</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOutput()
+   * @generated
+   * @ordered
+   */
+  protected String output = OUTPUT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -247,31 +268,6 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
    * @generated
    */
   @Override
-  public String getOutput()
-  {
-    return output;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setOutput(String newOutput)
-  {
-    String oldOutput = output;
-    output = newOutput;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.FUNCTION_STATEMENT__OUTPUT, oldOutput, output));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getComponent()
   {
     return component;
@@ -297,6 +293,31 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
    * @generated
    */
   @Override
+  public String getExpression()
+  {
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setExpression(String newExpression)
+  {
+    String oldExpression = expression;
+    expression = newExpression;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.FUNCTION_STATEMENT__EXPRESSION, oldExpression, expression));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getFunction()
   {
     return function;
@@ -314,6 +335,31 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
     function = newFunction;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.FUNCTION_STATEMENT__FUNCTION, oldFunction, function));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getOutput()
+  {
+    return output;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setOutput(String newOutput)
+  {
+    String oldOutput = output;
+    output = newOutput;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.FUNCTION_STATEMENT__OUTPUT, oldOutput, output));
   }
 
   /**
@@ -348,12 +394,14 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
         return getArguments();
       case MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION:
         return isIsAnnotation();
-      case MOlocPackage.FUNCTION_STATEMENT__OUTPUT:
-        return getOutput();
       case MOlocPackage.FUNCTION_STATEMENT__COMPONENT:
         return getComponent();
+      case MOlocPackage.FUNCTION_STATEMENT__EXPRESSION:
+        return getExpression();
       case MOlocPackage.FUNCTION_STATEMENT__FUNCTION:
         return getFunction();
+      case MOlocPackage.FUNCTION_STATEMENT__OUTPUT:
+        return getOutput();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -379,14 +427,17 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
       case MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
         return;
-      case MOlocPackage.FUNCTION_STATEMENT__OUTPUT:
-        setOutput((String)newValue);
-        return;
       case MOlocPackage.FUNCTION_STATEMENT__COMPONENT:
         setComponent((String)newValue);
         return;
+      case MOlocPackage.FUNCTION_STATEMENT__EXPRESSION:
+        setExpression((String)newValue);
+        return;
       case MOlocPackage.FUNCTION_STATEMENT__FUNCTION:
         setFunction((String)newValue);
+        return;
+      case MOlocPackage.FUNCTION_STATEMENT__OUTPUT:
+        setOutput((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -411,14 +462,17 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
       case MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
         return;
-      case MOlocPackage.FUNCTION_STATEMENT__OUTPUT:
-        setOutput(OUTPUT_EDEFAULT);
-        return;
       case MOlocPackage.FUNCTION_STATEMENT__COMPONENT:
         setComponent(COMPONENT_EDEFAULT);
         return;
+      case MOlocPackage.FUNCTION_STATEMENT__EXPRESSION:
+        setExpression(EXPRESSION_EDEFAULT);
+        return;
       case MOlocPackage.FUNCTION_STATEMENT__FUNCTION:
         setFunction(FUNCTION_EDEFAULT);
+        return;
+      case MOlocPackage.FUNCTION_STATEMENT__OUTPUT:
+        setOutput(OUTPUT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -440,12 +494,14 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
         return arguments != null && !arguments.isEmpty();
       case MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
-      case MOlocPackage.FUNCTION_STATEMENT__OUTPUT:
-        return OUTPUT_EDEFAULT == null ? output != null : !OUTPUT_EDEFAULT.equals(output);
       case MOlocPackage.FUNCTION_STATEMENT__COMPONENT:
         return COMPONENT_EDEFAULT == null ? component != null : !COMPONENT_EDEFAULT.equals(component);
+      case MOlocPackage.FUNCTION_STATEMENT__EXPRESSION:
+        return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
       case MOlocPackage.FUNCTION_STATEMENT__FUNCTION:
         return FUNCTION_EDEFAULT == null ? function != null : !FUNCTION_EDEFAULT.equals(function);
+      case MOlocPackage.FUNCTION_STATEMENT__OUTPUT:
+        return OUTPUT_EDEFAULT == null ? output != null : !OUTPUT_EDEFAULT.equals(output);
     }
     return super.eIsSet(featureID);
   }
@@ -535,12 +591,14 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
     result.append(description);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
-    result.append(", output: ");
-    result.append(output);
     result.append(", component: ");
     result.append(component);
+    result.append(", expression: ");
+    result.append(expression);
     result.append(", function: ");
     result.append(function);
+    result.append(", output: ");
+    result.append(output);
     result.append(')');
     return result.toString();
   }

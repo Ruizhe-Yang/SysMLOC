@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Blocks">
+  <classes classType="package" className="Tables" description="&quot;Library of blocks to interpolate in one and two-dimensional tables&quot;" classNameEnd="Tables">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package"/>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="CombiTable1Ds" description="&quot;Table look-up in one dimension (matrix/file) with one input and n outputs&quot;" classNameEnd="CombiTable1Ds">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SIMO">
+        <arguments expression="size(columns, 1)" elementName="nout" isfinal="true"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+        <component_list expression="false" declarationName="tableOnFile" description="&quot;= true, if table is defined on file or in function usertab&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+        <component_list subscripts="[:, :]" expression="fill(0.0, 0, 2)" declarationName="table" description="&quot;Table matrix (grid = first column; e.g., table=[0, 0; 1, 1; 2, 4])&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+            <arguments expression="not tableOnFile" elementName="enable"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter">
+        <component_list expression="&quot;NoName&quot;" declarationName="tableName" description="&quot;Table name on file or in function usertab (see docu)&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+            <arguments expression="tableOnFile" elementName="enable"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter">
+        <component_list expression="&quot;NoName&quot;" declarationName="fileName" description="&quot;File where matrix is stored&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+            <arguments expression="tableOnFile" elementName="enable"/>
+            <arguments elementName="loadSelector">
+              <arguments expression="&quot;Text files (*.txt);;MATLAB MAT-files (*.mat)&quot;" elementName="filter"/>
+              <arguments expression="&quot;Open file in which table is present&quot;" elementName="caption"/>
+            </arguments>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+        <component_list expression="true" declarationName="verboseRead" description="&quot;= true, if info message that file is loading is to be printed&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+            <arguments expression="tableOnFile" elementName="enable"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter">
+        <component_list subscripts="[:]" expression="2:size(table, 2)" declarationName="columns" description="&quot;Columns of table to be interpolated&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data interpretation&quot;" elementName="group"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Smoothness" parameterType="parameter">
+        <component_list expression="Modelica.Blocks.Types.Smoothness.LinearSegments" declarationName="smoothness" description="&quot;Smoothness of table interpolation&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data interpretation&quot;" elementName="group"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Extrapolation" parameterType="parameter">
+        <component_list expression="Modelica.Blocks.Types.Extrapolation.LastTwoPoints" declarationName="extrapolation" description="&quot;Extrapolation of data outside the definition range&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data interpretation&quot;" elementName="group"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+        <component_list expression="false" declarationName="verboseExtrapolation" description="&quot;= true, if warning messages are to be printed if table input is outside the definition range&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data interpretation&quot;" elementName="group"/>
+            <arguments expression="extrapolation == Modelica.Blocks.Types.Extrapolation.LastTwoPoints or extrapolation == Modelica.Blocks.Types.Extrapolation.HoldLastPoint" elementName="enable"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isfinal="true">
+        <component_list expression="Internal.getTable1DAbscissaUmin(tableID)" declarationName="u_min" description="&quot;Minimum abscissa value defined in table&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isfinal="true">
+        <component_list expression="Internal.getTable1DAbscissaUmax(tableID)" declarationName="u_max" description="&quot;Maximum abscissa value defined in table&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable1D" parameterType="parameter" isProtected="true">
+        <component_list expression="Modelica.Blocks.Types.ExternalCombiTable1D( if tableOnFile then tableName else &quot;NoName&quot;, if tableOnFile and fileName &lt;> &quot;NoName&quot; and not Modelica.Utilities.Strings.isEmpty(fileName) then fileName else &quot;NoName&quot;, table, columns, smoothness, extrapolation, if tableOnFile then verboseRead else false )" declarationName="tableID" description="&quot;External table object&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:IfEquation" condition="tableOnFile">
+          <ifEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(tableName &lt;> &quot;NoName&quot;, &quot;tableOnFile = true and no table name given&quot; )"/>
+          <elseEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(size(table, 1) > 0 and size(table, 2) > 0, &quot;tableOnFile = false and parameter table is an empty matrix&quot; )"/>
+        </equations>
+        <equations xsi:type="mOloc:IfEquation" condition="verboseExtrapolation and ( extrapolation == Modelica.Blocks.Types.Extrapolation.LastTwoPoints or extrapolation == Modelica.Blocks.Types.Extrapolation.HoldLastPoint )">
+          <ifEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(noEvent(u >= u_min), &quot;&#xA;Extrapolation warning: The value u (=&quot; + String(u) + &quot;) must be greater or equal&#xA;than the minimum abscissa value u_min (=&quot; + String(u_min) + &quot;) defined in the table.&#xA;&quot;, level=AssertionLevel.warning)"/>
+          <ifEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(noEvent(u &lt;= u_max), &quot;&#xA;Extrapolation warning: The value u (=&quot; + String(u) + &quot;) must be less or equal&#xA;than the maximum abscissa value u_max (=&quot; + String(u_max) + &quot;) defined in the table.&#xA;&quot;, level=AssertionLevel.warning)"/>
+        </equations>
+        <equations xsi:type="mOloc:IfEquation" condition="smoothness == Modelica.Blocks.Types.Smoothness.ConstantSegments">
+          <ifEquations xsi:type="mOloc:ForEquation" forIndices="i in 1:nout">
+            <forEquations xsi:type="mOloc:SimpleEquation" left="y[i]" right="Internal.getTable1DValueNoDer(tableID, i, u)"/>
+          </ifEquations>
+          <elseCondition>smoothness == Modelica.Blocks.Types.Smoothness.LinearSegments</elseCondition>
+          <elseifEquations xsi:type="mOloc:ForEquation" forIndices="i in 1:nout">
+            <forEquations xsi:type="mOloc:SimpleEquation" left="y[i]" right="Internal.getTable1DValueNoDer2(tableID, i, u)"/>
+          </elseifEquations>
+          <elseEquations xsi:type="mOloc:ForEquation" forIndices="i in 1:nout">
+            <forEquations xsi:type="mOloc:SimpleEquation" left="y[i]" right="Internal.getTable1DValue(tableID, i, u)"/>
+          </elseEquations>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause">
+        <arguments elementName="Documentation">
+          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;&lt;strong>Univariate constant&lt;/strong>, &lt;strong>linear&lt;/strong> or &lt;strong>cubic Hermite&#xA;spline interpolation&lt;/strong> in &lt;strong>one&lt;/strong> dimension of a&#xA;&lt;strong>table&lt;/strong>.&#xA;Via parameter &lt;strong>columns&lt;/strong> it can be defined how many columns of the&#xA;table are interpolated. If, e.g., columns={2,4}, it is assumed that&#xA;2 output signals are present and that the first output interpolates&#xA;via column 2 and the second output interpolates via column 4 of the&#xA;table matrix.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The grid points and function values are stored in a matrix \&quot;table[i,j]\&quot;,&#xA;where the first column \&quot;table[:,1]\&quot; contains the grid points and the&#xA;other columns contain the data to be interpolated. Example:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;table = [0,  0;&#xA;         1,  1;&#xA;         2,  4;&#xA;         4, 16]&#xA;If, e.g., the input u = 1.0, the output y =  1.0,&#xA;    e.g., the input u = 1.5, the output y =  2.5,&#xA;    e.g., the input u = 2.0, the output y =  4.0,&#xA;    e.g., the input u =-1.0, the output y = -1.0 (i.e., extrapolation).&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;ul>&#xA;&lt;li>The interpolation interval is found by a binary search where the interval used in the&#xA;    last call is used as start interval.&lt;/li>&#xA;&lt;li>Via parameter &lt;strong>smoothness&lt;/strong> it is defined how the data is interpolated:&#xA;&lt;blockquote>&lt;pre>&#xA;smoothness = 1: Linear interpolation&#xA;           = 2: Akima interpolation: Smooth interpolation by cubic Hermite&#xA;                splines such that der(y) is continuous, also if extrapolated.&#xA;           = 3: Constant segments&#xA;           = 4: Fritsch-Butland interpolation: Smooth interpolation by cubic&#xA;                Hermite splines such that y preserves the monotonicity and&#xA;                der(y) is continuous, also if extrapolated.&#xA;           = 5: Steffen interpolation: Smooth interpolation by cubic Hermite&#xA;                splines such that y preserves the monotonicity and der(y)&#xA;                is continuous, also if extrapolated.&#xA;           = 6: Modified Akima interpolation: Smooth interpolation by cubic&#xA;                Hermite splines such that der(y) is continuous, also if&#xA;                extrapolated. Additionally, overshoots and edge cases of the&#xA;                original Akima interpolation method are avoided.&#xA;&lt;/pre>&lt;/blockquote>&lt;/li>&#xA;&lt;li>First and second &lt;strong>derivatives&lt;/strong> are provided, with exception of the following two smoothness options.&#xA;&lt;ol>&#xA;&lt;li>No derivatives are provided for interpolation by constant segments.&lt;/li>&#xA;&lt;li>No second derivative is provided for linear interpolation.&lt;/li>&#xA;&lt;/ol>&lt;/li>&#xA;&lt;li>Values &lt;strong>outside&lt;/strong> of the table range, are computed by&#xA;    extrapolation according to the setting of parameter &lt;strong>extrapolation&lt;/strong>:&#xA;&lt;blockquote>&lt;pre>&#xA;extrapolation = 1: Hold the first or last value of the table,&#xA;                   if outside of the table scope.&#xA;              = 2: Extrapolate by using the derivative at the first/last table&#xA;                   points if outside of the table scope.&#xA;                   (If smoothness is LinearSegments or ConstantSegments&#xA;                   this means to extrapolate linearly through the first/last&#xA;                   two table points.).&#xA;              = 3: Periodically repeat the table data (periodical function).&#xA;              = 4: No extrapolation, i.e. extrapolation triggers an error&#xA;&lt;/pre>&lt;/blockquote>&lt;/li>&#xA;&lt;li>If the table has only &lt;strong>one row&lt;/strong>, the table value is returned,&#xA;    independent of the value of the input signal.&lt;/li>&#xA;&lt;li>The grid values (first column) have to be strictly increasing.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;The table matrix can be defined in the following ways:&#xA;&lt;/p>&#xA;&lt;ol>&#xA;&lt;li>Explicitly supplied as &lt;strong>parameter matrix&lt;/strong> \&quot;table\&quot;,&#xA;    and the other parameters have the following values:&#xA;&lt;blockquote>&lt;pre>&#xA;tableName is \&quot;NoName\&quot; or has only blanks,&#xA;fileName  is \&quot;NoName\&quot; or has only blanks.&#xA;&lt;/pre>&lt;/blockquote>&lt;/li>&#xA;&lt;li>&lt;strong>Read&lt;/strong> from a &lt;strong>file&lt;/strong> \&quot;fileName\&quot; where the matrix is stored as&#xA;    \&quot;tableName\&quot;. Both text and MATLAB MAT-file format is possible.&#xA;    (The text format is described below).&#xA;    The MAT-file format comes in four different versions: v4, v6, v7 and v7.3.&#xA;    The library supports at least v4, v6 and v7 whereas v7.3 is optional.&#xA;    It is most convenient to generate the MAT-file from FreeMat or MATLAB&amp;reg;&#xA;    by command&#xA;&lt;blockquote>&lt;pre>&#xA;save tables.mat tab1 tab2 tab3&#xA;&lt;/pre>&lt;/blockquote>&#xA;    or Scilab by command&#xA;&lt;blockquote>&lt;pre>&#xA;savematfile tables.mat tab1 tab2 tab3&#xA;&lt;/pre>&lt;/blockquote>&#xA;    when the three tables tab1, tab2, tab3 should be used from the model.&lt;br>&#xA;    Note, a fileName can be defined as URI by using the helper function&#xA;    &lt;a href=\&quot;modelica://Modelica.Utilities.Files.loadResource\&quot;>loadResource&lt;/a>.&lt;/li>&#xA;&lt;li>Statically stored in function \&quot;usertab\&quot; in file \&quot;usertab.c\&quot;.&#xA;    The matrix is identified by \&quot;tableName\&quot;. Parameter&#xA;    fileName = \&quot;NoName\&quot; or has only blanks. Row-wise storage is always to be&#xA;    preferred as otherwise the table is reallocated and transposed.&#xA;    See the &lt;a href=\&quot;modelica://Modelica.Blocks.Tables\&quot;>Tables&lt;/a> package&#xA;    documentation for more details.&lt;/li>&#xA;&lt;/ol>&#xA;&lt;p>&#xA;When the constant \&quot;NO_FILE_SYSTEM\&quot; is defined, all file I/O related parts of the&#xA;source code are removed by the C-preprocessor, such that no access to files takes place.&#xA;&lt;/p>&#xA;&lt;p>&#xA;If tables are read from a text file, the file needs to have the&#xA;following structure (\&quot;-----\&quot; is not part of the file content):&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;-----------------------------------------------------&#xA;#1&#xA;double tab1(5,2)   # comment line&#xA;  0   0&#xA;  1   1&#xA;  2   4&#xA;  3   9&#xA;  4  16&#xA;double tab2(5,2)   # another comment line&#xA;  0   0&#xA;  2   2&#xA;  4   8&#xA;  6  18&#xA;  8  32&#xA;-----------------------------------------------------&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;Note, that the first two characters in the file need to be&#xA;\&quot;#1\&quot; (a line comment defining the version number of the file format).&#xA;Afterwards, the corresponding matrix has to be declared&#xA;with type (= \&quot;double\&quot; or \&quot;float\&quot;), name and actual dimensions.&#xA;Finally, in successive rows of the file, the elements of the matrix&#xA;have to be given. The elements have to be provided as a sequence of&#xA;numbers in row-wise order (therefore a matrix row can span several&#xA;lines in the file and need not start at the beginning of a line).&#xA;Numbers have to be given according to C syntax (such as 2.3, -2, +2.e4).&#xA;Number separators are spaces, tab (\\t), comma (,), or semicolon (;).&#xA;Several matrices may be defined one after another. Line comments start&#xA;with the hash symbol (#) and can appear everywhere.&#xA;Text files should either be ASCII or UTF-8 encoded, where UTF-8 encoded strings are only allowed in line comments and an optional UTF-8 BOM at the start of the text file is ignored.&#xA;Other characters, like trailing non comments, are not allowed in the file.&#xA;&lt;/p>&#xA;&lt;p>&#xA;MATLAB is a registered trademark of The MathWorks, Inc.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </arguments>
+        <arguments elementName="Icon">
+          <arguments elementName="coordinateSystem">
+            <arguments expression="true" elementName="preserveAspectRatio"/>
+            <arguments expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+          </arguments>
+          <arguments expression="{ Line(points={{-60.0,40.0},{-60.0,-40.0},{60.0,-40.0},{60.0,40.0},{30.0,40.0},{30.0,-40.0},{-30.0,-40.0},{-30.0,40.0},{-60.0,40.0},{-60.0,20.0},{60.0,20.0},{60.0,0.0},{-60.0,0.0},{-60.0,-20.0},{60.0,-20.0},{60.0,-40.0},{-60.0,-40.0},{-60.0,40.0},{60.0,40.0},{60.0,-40.0}}), Line(points={{0.0,40.0},{0.0,-40.0}}), Rectangle(fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-60.0,20.0},{-30.0,40.0}} ) , Rectangle(fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-60.0,0.0},{-30.0,20.0}} ) , Rectangle(fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-60.0,-20.0},{-30.0,0.0}} ) , Rectangle(fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-60.0,-40.0},{-30.0,-20.0}} ) }" elementName="graphics"/>
+        </arguments>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="CombiTable1Dv" description="&quot;Table look-up in one dimension (matrix/file) with n inputs and n outputs&quot;" classNameEnd="CombiTable1Dv">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.MIMOs">
+        <arguments expression="size(columns, 1)" elementName="n" isfinal="true"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+        <component_list expression="false" declarationName="tableOnFile" description="&quot;= true, if table is defined on file or in function usertab&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+        <component_list subscripts="[:, :]" expression="fill(0.0, 0, 2)" declarationName="table" description="&quot;Table matrix (grid = first column; e.g., table=[0, 0; 1, 1; 2, 4])&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+            <arguments expression="not tableOnFile" elementName="enable"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter">
+        <component_list expression="&quot;NoName&quot;" declarationName="tableName" description="&quot;Table name on file or in function usertab (see docu)&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+            <arguments expression="tableOnFile" elementName="enable"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter">
+        <component_list expression="&quot;NoName&quot;" declarationName="fileName" description="&quot;File where matrix is stored&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+            <arguments expression="tableOnFile" elementName="enable"/>
+            <arguments elementName="loadSelector">
+              <arguments expression="&quot;Text files (*.txt);;MATLAB MAT-files (*.mat)&quot;" elementName="filter"/>
+              <arguments expression="&quot;Open file in which table is present&quot;" elementName="caption"/>
+            </arguments>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+        <component_list expression="true" declarationName="verboseRead" description="&quot;= true, if info message that file is loading is to be printed&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+            <arguments expression="tableOnFile" elementName="enable"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter">
+        <component_list subscripts="[:]" expression="2:size(table, 2)" declarationName="columns" description="&quot;Columns of table to be interpolated&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data interpretation&quot;" elementName="group"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Smoothness" parameterType="parameter">
+        <component_list expression="Modelica.Blocks.Types.Smoothness.LinearSegments" declarationName="smoothness" description="&quot;Smoothness of table interpolation&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data interpretation&quot;" elementName="group"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Extrapolation" parameterType="parameter">
+        <component_list expression="Modelica.Blocks.Types.Extrapolation.LastTwoPoints" declarationName="extrapolation" description="&quot;Extrapolation of data outside the definition range&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data interpretation&quot;" elementName="group"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+        <component_list expression="false" declarationName="verboseExtrapolation" description="&quot;= true, if warning messages are to be printed if table input is outside the definition range&quot;" isAnnotation="true">
+          <arguments elementName="Dialog">
+            <arguments expression="&quot;Table data interpretation&quot;" elementName="group"/>
+            <arguments expression="extrapolation == Modelica.Blocks.Types.Extrapolation.LastTwoPoints or extrapolation == Modelica.Blocks.Types.Extrapolation.HoldLastPoint" elementName="enable"/>
+          </arguments>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isfinal="true">
+        <component_list expression="Internal.getTable1DAbscissaUmin(tableID)" declarationName="u_min" description="&quot;Minimum abscissa value defined in table&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isfinal="true">
+        <component_list expression="Internal.getTable1DAbscissaUmax(tableID)" declarationName="u_max" description="&quot;Maximum abscissa value defined in table&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable1D" parameterType="parameter" isProtected="true">
+        <component_list expression="Modelica.Blocks.Types.ExternalCombiTable1D( if tableOnFile then tableName else &quot;NoName&quot;, if tableOnFile and fileName &lt;> &quot;NoName&quot; and not Modelica.Utilities.Strings.isEmpty(fileName) then fileName else &quot;NoName&quot;, table, columns, smoothness, extrapolation, if tableOnFile then verboseRead else false )" declarationName="tableID" description="&quot;External table object&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:IfEquation" condition="tableOnFile">
+          <ifEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(tableName &lt;> &quot;NoName&quot;, &quot;tableOnFile = true and no table name given&quot; )"/>
+          <elseEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(size(table, 1) > 0 and size(table, 2) > 0, &quot;tableOnFile = false and parameter table is an empty matrix&quot; )"/>
+        </equations>
+        <equations xsi:type="mOloc:IfEquation" condition="verboseExtrapolation and ( extrapolation == Modelica.Blocks.Types.Extrapolation.LastTwoPoints or extrapolation == Modelica.Blocks.Types.Extrapolation.HoldLastPoint )">
+          <ifEquations xsi:type="mOloc:ForEquation" forIndices="i in 1:n">
+            <forEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(noEvent(u[i] >= u_min), &quot;&#xA;Extrapolation warning: The value u[&quot; + String(i) +&quot;] (=&quot; + String(u[i]) + &quot;) must be greater or equal&#xA;than the minimum abscissa value u_min (=&quot; + String(u_min) + &quot;) defined in the table.&#xA;&quot;, level=AssertionLevel.warning)"/>
+            <forEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(noEvent(u[i] &lt;= u_max), &quot;&#xA;Extrapolation warning: The value u[&quot; + String(i) +&quot;] (=&quot; + String(u[i]) + &quot;) must be less or equal&#xA;than the maximum abscissa value u_max (=&quot; + String(u_max) + &quot;) defined in the table.&#xA;&quot;, level=AssertionLevel.warning)"/>
+          </ifEquations>
+        </equations>
+        <equations xsi:type="mOloc:IfEquation" condition="smoothness == Modelica.Blocks.Types.Smoothness.ConstantSegments">
+          <ifEquations xsi:type="mOloc:ForEquation" forIndices="i in 1:n">
+            <forEquations xsi:type="mOloc:SimpleEquation" left="y[i]" right="Internal.getTable1DValueNoDer(tableID, i, u[i])"/>
+          </ifEquations>
+          <elseCondition>smoothness == Modelica.Blocks.Types.Smoothness.LinearSegments</elseCondition>
+          <elseifEquations xsi:type="mOloc:ForEquation" forIndices="i in 1:n">
+            <forEquations xsi:type="mOloc:SimpleEquation" left="y[i]" right="Internal.getTable1DValueNoDer2(tableID, i, u[i])"/>
+          </elseifEquations>
+          <elseEquations xsi:type="mOloc:ForEquation" forIndices="i in 1:n">
+            <forEquations xsi:type="mOloc:SimpleEquation" left="y[i]" right="Internal.getTable1DValue(tableID, i, u[i])"/>
+          </elseEquations>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause">
+        <arguments elementName="Documentation">
+          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;&lt;strong>Univariate constant&lt;/strong>, &lt;strong>linear&lt;/strong> or &lt;strong>cubic Hermite&#xA;spline interpolation&lt;/strong> in &lt;strong>one&lt;/strong> dimension of a&#xA;&lt;strong>table&lt;/strong>.&#xA;Via parameter &lt;strong>columns&lt;/strong> it can be defined how many columns of the&#xA;table are interpolated. If, e.g., columns={2,4}, it is assumed that 2 input&#xA;and 2 output signals are present and that the first output interpolates&#xA;the first input via column 2 and the second output interpolates the&#xA;second input via column 4 of the table matrix.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The grid points and function values are stored in a matrix \&quot;table[i,j]\&quot;,&#xA;where the first column \&quot;table[:,1]\&quot; contains the grid points and the&#xA;other columns contain the data to be interpolated. Example:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;table = [0,  0;&#xA;         1,  1;&#xA;         2,  4;&#xA;         4, 16]&#xA;If, e.g., the input u = 1.0, the output y =  1.0,&#xA;    e.g., the input u = 1.5, the output y =  2.5,&#xA;    e.g., the input u = 2.0, the output y =  4.0,&#xA;    e.g., the input u =-1.0, the output y = -1.0 (i.e., extrapolation).&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;ul>&#xA;&lt;li>The interpolation interval is found by a binary search where the interval used in the&#xA;    last call is used as start interval.&lt;/li>&#xA;&lt;li>Via parameter &lt;strong>smoothness&lt;/strong> it is defined how the data is interpolated:&#xA;&lt;blockquote>&lt;pre>&#xA;smoothness = 1: Linear interpolation&#xA;           = 2: Akima interpolation: Smooth interpolation by cubic Hermite&#xA;                splines such that der(y) is continuous, also if extrapolated.&#xA;           = 3: Constant segments&#xA;           = 4: Fritsch-Butland interpolation: Smooth interpolation by cubic&#xA;                Hermite splines such that y preserves the monotonicity and&#xA;                der(y) is continuous, also if extrapolated.&#xA;           = 5: Steffen interpolation: Smooth interpolation by cubic Hermite&#xA;                splines such that y preserves the monotonicity and der(y)&#xA;                is continuous, also if extrapolated.&#xA;           = 6: Modified Akima interpolation: Smooth interpolation by cubic&#xA;                Hermite splines such that der(y) is continuous, also if&#xA;                extrapolated. Additionally, overshoots and edge cases of the&#xA;                original Akima interpolation method are avoided.&#xA;&lt;/pre>&lt;/blockquote>&lt;/li>&#xA;&lt;li>First and second &lt;strong>derivatives&lt;/strong> are provided, with exception of the following two smoothness options.&#xA;&lt;ol>&#xA;&lt;li>No derivatives are provided for interpolation by constant segments.&lt;/li>&#xA;&lt;li>No second derivative is provided for linear interpolation.&lt;/li>&#xA;&lt;/ol>&lt;/li>&#xA;&lt;li>Values &lt;strong>outside&lt;/strong> of the table range, are computed by&#xA;    extrapolation according to the setting of parameter &lt;strong>extrapolation&lt;/strong>:&#xA;&lt;blockquote>&lt;pre>&#xA;extrapolation = 1: Hold the first or last value of the table,&#xA;                   if outside of the table scope.&#xA;              = 2: Extrapolate by using the derivative at the first/last table&#xA;                   points if outside of the table scope.&#xA;                   (If smoothness is LinearSegments or ConstantSegments&#xA;                   this means to extrapolate linearly through the first/last&#xA;                   two table points.).&#xA;              = 3: Periodically repeat the table data (periodical function).&#xA;              = 4: No extrapolation, i.e. extrapolation triggers an error&#xA;&lt;/pre>&lt;/blockquote>&lt;/li>&#xA;&lt;li>If the table has only &lt;strong>one row&lt;/strong>, the table value is returned,&#xA;    independent of the value of the input signal.&lt;/li>&#xA;&lt;li>The grid values (first column) have to be strictly increasing.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;The table matrix can be defined in the following ways:&#xA;&lt;/p>&#xA;&lt;ol>&#xA;&lt;li>Explicitly supplied as &lt;strong>parameter matrix&lt;/strong> \&quot;table\&quot;,&#xA;    and the other parameters have the following values:&#xA;&lt;blockquote>&lt;pre>&#xA;tableName is \&quot;NoName\&quot; or has only blanks,&#xA;fileName  is \&quot;NoName\&quot; or has only blanks.&#xA;&lt;/pre>&lt;/blockquote>&lt;/li>&#xA;&lt;li>&lt;strong>Read&lt;/strong> from a &lt;strong>file&lt;/strong> \&quot;fileName\&quot; where the matrix is stored as&#xA;    \&quot;tableName\&quot;. Both text and MATLAB MAT-file format is possible.&#xA;    (The text format is described below).&#xA;    The MAT-file format comes in four different versions: v4, v6, v7 and v7.3.&#xA;    The library supports at least v4, v6 and v7 whereas v7.3 is optional.&#xA;    It is most convenient to generate the MAT-file from FreeMat or MATLAB&amp;reg;&#xA;    by command&#xA;&lt;blockquote>&lt;pre>&#xA;save tables.mat tab1 tab2 tab3&#xA;&lt;/pre>&lt;/blockquote>&#xA;    or Scilab by command&#xA;&lt;blockquote>&lt;pre>&#xA;savematfile tables.mat tab1 tab2 tab3&#xA;&lt;/pre>&lt;/blockquote>&#xA;    when the three tables tab1, tab2, tab3 should be used from the model.&lt;br>&#xA;    Note, a fileName can be defined as URI by using the helper function&#xA;    &lt;a href=\&quot;modelica://Modelica.Utilities.Files.loadResource\&quot;>loadResource&lt;/a>.&lt;/li>&#xA;&lt;li>Statically stored in function \&quot;usertab\&quot; in file \&quot;usertab.c\&quot;.&#xA;    The matrix is identified by \&quot;tableName\&quot;. Parameter&#xA;    fileName = \&quot;NoName\&quot; or has only blanks. Row-wise storage is always to be&#xA;    preferred as otherwise the table is reallocated and transposed.&#xA;    See the &lt;a href=\&quot;modelica://Modelica.Blocks.Tables\&quot;>Tables&lt;/a> package&#xA;    documentation for more details.&lt;/li>&#xA;&lt;/ol>&#xA;&lt;p>&#xA;When the constant \&quot;NO_FILE_SYSTEM\&quot; is defined, all file I/O related parts of the&#xA;source code are removed by the C-preprocessor, such that no access to files takes place.&#xA;&lt;/p>&#xA;&lt;p>&#xA;If tables are read from a text file, the file needs to have the&#xA;following structure (\&quot;-----\&quot; is not part of the file content):&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;-----------------------------------------------------&#xA;#1&#xA;double tab1(5,2)   # comment line&#xA;  0   0&#xA;  1   1&#xA;  2   4&#xA;  3   9&#xA;  4  16&#xA;double tab2(5,2)   # another comment line&#xA;  0   0&#xA;  2   2&#xA;  4   8&#xA;  6  18&#xA;  8  32&#xA;-----------------------------------------------------&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;Note, that the first two characters in the file need to be&#xA;\&quot;#1\&quot; (a line comment defining the version number of the file format).&#xA;Afterwards, the corresponding matrix has to be declared&#xA;with type (= \&quot;double\&quot; or \&quot;float\&quot;), name and actual dimensions.&#xA;Finally, in successive rows of the file, the elements of the matrix&#xA;have to be given. The elements have to be provided as a sequence of&#xA;numbers in row-wise order (therefore a matrix row can span several&#xA;lines in the file and need not start at the beginning of a line).&#xA;Numbers have to be given according to C syntax (such as 2.3, -2, +2.e4).&#xA;Number separators are spaces, tab (\\t), comma (,), or semicolon (;).&#xA;Several matrices may be defined one after another. Line comments start&#xA;with the hash symbol (#) and can appear everywhere.&#xA;Text files should either be ASCII or UTF-8 encoded, where UTF-8 encoded strings are only allowed in line comments and an optional UTF-8 BOM at the start of the text file is ignored.&#xA;Other characters, like trailing non comments, are not allowed in the file.&#xA;&lt;/p>&#xA;&lt;p>&#xA;MATLAB is a registered trademark of The MathWorks, Inc.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </arguments>
+        <arguments elementName="Icon">
+          <arguments elementName="coordinateSystem">
+            <arguments expression="true" elementName="preserveAspectRatio"/>
+            <arguments expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+          </arguments>
+          <arguments expression="{ Line(points={{-60.0,40.0},{-60.0,-40.0},{60.0,-40.0},{60.0,40.0},{30.0,40.0},{30.0,-40.0},{-30.0,-40.0},{-30.0,40.0},{-60.0,40.0},{-60.0,20.0},{60.0,20.0},{60.0,0.0},{-60.0,0.0},{-60.0,-20.0},{60.0,-20.0},{60.0,-40.0},{-60.0,-40.0},{-60.0,40.0},{60.0,40.0},{60.0,-40.0}}), Line(points={{0.0,40.0},{0.0,-40.0}}), Rectangle(fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-60.0,20.0},{-30.0,40.0}} ) , Rectangle(fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-60.0,0.0},{-30.0,20.0}} ) , Rectangle(fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-60.0,-20.0},{-30.0,0.0}} ) , Rectangle(fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-60.0,-40.0},{-30.0,-20.0}} ) }" elementName="graphics"/>
+        </arguments>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="CombiTable2Ds" description="&quot;Table look-up in two dimensions (matrix/file)&quot;" classNameEnd="CombiTable2Ds">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SI2SO"/>
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Internal.CombiTable2DBase"/>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:IfEquation" condition="verboseExtrapolation and ( extrapolation == Modelica.Blocks.Types.Extrapolation.LastTwoPoints or extrapolation == Modelica.Blocks.Types.Extrapolation.HoldLastPoint )">
+          <ifEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(noEvent(u1 >= u_min[1]), &quot;&#xA;Extrapolation warning: The value u1 (=&quot; + String(u1) + &quot;) must be greater or equal&#xA;than the minimum abscissa value u_min[1] (=&quot; + String(u_min[1]) + &quot;) defined in the table.&#xA;&quot;, level=AssertionLevel.warning)"/>
+          <ifEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(noEvent(u1 &lt;= u_max[1]), &quot;&#xA;Extrapolation warning: The value u1 (=&quot; + String(u1) + &quot;) must be less or equal&#xA;than the maximum abscissa value u_max[1] (=&quot; + String(u_max[1]) + &quot;) defined in the table.&#xA;&quot;, level=AssertionLevel.warning)"/>
+          <ifEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(noEvent(u2 >= u_min[2]), &quot;&#xA;Extrapolation warning: The value u2 (=&quot; + String(u2) + &quot;) must be greater or equal&#xA;than the minimum abscissa value u_min[2] (=&quot; + String(u_min[2]) + &quot;) defined in the table.&#xA;&quot;, level=AssertionLevel.warning)"/>
+          <ifEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(noEvent(u2 &lt;= u_max[2]), &quot;&#xA;Extrapolation warning: The value u2 (=&quot; + String(u2) + &quot;) must be less or equal&#xA;than the maximum abscissa value u_max[2] (=&quot; + String(u_max[2]) + &quot;) defined in the table.&#xA;&quot;, level=AssertionLevel.warning)"/>
+        </equations>
+        <equations xsi:type="mOloc:IfEquation" condition="smoothness == Modelica.Blocks.Types.Smoothness.ConstantSegments">
+          <ifEquations xsi:type="mOloc:SimpleEquation" left="y" right="Internal.getTable2DValueNoDer(tableID, u1, u2)"/>
+          <elseCondition>smoothness == Modelica.Blocks.Types.Smoothness.LinearSegments</elseCondition>
+          <elseifEquations xsi:type="mOloc:SimpleEquation" left="y" right="Internal.getTable2DValueNoDer2(tableID, u1, u2)"/>
+          <elseEquations xsi:type="mOloc:SimpleEquation" left="y" right="Internal.getTable2DValue(tableID, u1, u2)"/>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause">
+        <arguments elementName="Documentation">
+          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;&lt;strong>Bivariate constant&lt;/strong>, &lt;strong>bilinear&lt;/strong> or &lt;strong>bivariate&#xA;Akima interpolation&lt;/strong> of a &lt;strong>two-dimensional table&lt;/strong>.&#xA;The grid points and function values are stored in a matrix \&quot;table[i,j]\&quot;,&#xA;where:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>the first column \&quot;table[2:,1]\&quot; contains the u1 grid points,&lt;/li>&#xA;&lt;li>the first row \&quot;table[1,2:]\&quot; contains the u2 grid points,&lt;/li>&#xA;&lt;li>the other rows and columns contain the data to be interpolated.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;Example:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;        |       |       |       |&#xA;        |  1.0  |  2.0  |  3.0  |  // u2&#xA;    ----*-------*-------*-------*&#xA;    1.0 |  1.0  |  3.0  |  5.0  |&#xA;    ----*-------*-------*-------*&#xA;    2.0 |  2.0  |  4.0  |  6.0  |&#xA;    ----*-------*-------*-------*&#xA;  // u1&#xA;is defined as&#xA;   table = [0.0,   1.0,   2.0,   3.0;&#xA;            1.0,   1.0,   3.0,   5.0;&#xA;            2.0,   2.0,   4.0,   6.0]&#xA;If, e.g., the input u1 is 1.0, input u2 is 1.0 and smoothness is LinearSegments, the output y is 1.0,&#xA;    e.g., the input u1 is 2.0, input u2 is 1.5 and smoothness is LinearSegments, the output y is 3.0.&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;ul>&#xA;&lt;li>The interpolation interval is found by a binary search where the interval used in the&#xA;    last call is used as start interval.&lt;/li>&#xA;&lt;li>Via parameter &lt;strong>smoothness&lt;/strong> it is defined how the data is interpolated:&#xA;&lt;blockquote>&lt;pre>&#xA;smoothness = 1: Bilinear interpolation&#xA;           = 2: Bivariate Akima interpolation: Smooth interpolation by bicubic Hermite&#xA;                splines such that der(y) is continuous, also if extrapolated.&#xA;           = 3: Constant segments&#xA;           = 4: Fritsch-Butland interpolation: Not supported&#xA;           = 5: Steffen interpolation: Not supported&#xA;           = 6: Modified Akima interpolation: Not supported&#xA;&lt;/pre>&lt;/blockquote>&lt;/li>&#xA;&lt;li>First and second &lt;strong>derivatives&lt;/strong> are provided, with exception of the following two smoothness options.&#xA;&lt;ol>&#xA;&lt;li>No derivatives are provided for interpolation by constant segments.&lt;/li>&#xA;&lt;li>No second derivative is provided for linear interpolation.&lt;/li>&#xA;&lt;/ol>&lt;/li>&#xA;&lt;li>Values &lt;strong>outside&lt;/strong> of the table range, are computed by&#xA;    extrapolation according to the setting of parameter &lt;strong>extrapolation&lt;/strong>:&#xA;&lt;blockquote>&lt;pre>&#xA;extrapolation = 1: Hold the first or last values of the table,&#xA;                   if outside of the table scope.&#xA;              = 2: Extrapolate by using the derivative at the first/last table&#xA;                   points if outside of the table scope.&#xA;                   (If smoothness is LinearSegments or ConstantSegments&#xA;                   this means to extrapolate linearly through the first/last&#xA;                   two table points.).&#xA;              = 3: Periodically repeat the table data (periodical function).&#xA;              = 4: No extrapolation, i.e. extrapolation triggers an error&#xA;&lt;/pre>&lt;/blockquote>&lt;/li>&#xA;&lt;li>If the table has only &lt;strong>one element&lt;/strong>, the table value is returned,&#xA;    independent of the value of the input signal.&lt;/li>&#xA;&lt;li>The grid values (first column and first row) have to be strictly&#xA;    increasing.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;The table matrix can be defined in the following ways:&#xA;&lt;/p>&#xA;&lt;ol>&#xA;&lt;li>Explicitly supplied as &lt;strong>parameter matrix&lt;/strong> \&quot;table\&quot;,&#xA;    and the other parameters have the following values:&#xA;&lt;blockquote>&lt;pre>&#xA;tableName is \&quot;NoName\&quot; or has only blanks,&#xA;fileName  is \&quot;NoName\&quot; or has only blanks.&#xA;&lt;/pre>&lt;/blockquote>&lt;/li>&#xA;&lt;li>&lt;strong>Read&lt;/strong> from a &lt;strong>file&lt;/strong> \&quot;fileName\&quot; where the matrix is stored as&#xA;    \&quot;tableName\&quot;. Both text and MATLAB MAT-file format is possible.&#xA;    (The text format is described below).&#xA;    The MAT-file format comes in four different versions: v4, v6, v7 and v7.3.&#xA;    The library supports at least v4, v6 and v7 whereas v7.3 is optional.&#xA;    It is most convenient to generate the MAT-file from FreeMat or MATLAB&amp;reg;&#xA;    by command&#xA;&lt;blockquote>&lt;pre>&#xA;save tables.mat tab1 tab2 tab3&#xA;&lt;/pre>&lt;/blockquote>&#xA;    or Scilab by command&#xA;&lt;blockquote>&lt;pre>&#xA;savematfile tables.mat tab1 tab2 tab3&#xA;&lt;/pre>&lt;/blockquote>&#xA;    when the three tables tab1, tab2, tab3 should be used from the model.&lt;br>&#xA;    Note, a fileName can be defined as URI by using the helper function&#xA;    &lt;a href=\&quot;modelica://Modelica.Utilities.Files.loadResource\&quot;>loadResource&lt;/a>.&lt;/li>&#xA;&lt;li>Statically stored in function \&quot;usertab\&quot; in file \&quot;usertab.c\&quot;.&#xA;    The matrix is identified by \&quot;tableName\&quot;. Parameter&#xA;    fileName = \&quot;NoName\&quot; or has only blanks. Row-wise storage is always to be&#xA;    preferred as otherwise the table is reallocated and transposed.&#xA;    See the &lt;a href=\&quot;modelica://Modelica.Blocks.Tables\&quot;>Tables&lt;/a> package&#xA;    documentation for more details.&lt;/li>&#xA;&lt;/ol>&#xA;&lt;p>&#xA;When the constant \&quot;NO_FILE_SYSTEM\&quot; is defined, all file I/O related parts of the&#xA;source code are removed by the C-preprocessor, such that no access to files takes place.&#xA;&lt;/p>&#xA;&lt;p>&#xA;If tables are read from a text file, the file needs to have the&#xA;following structure (\&quot;-----\&quot; is not part of the file content):&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;-----------------------------------------------------&#xA;#1&#xA;double table2D_1(3,4)   # comment line&#xA;0.0  1.0  2.0  3.0  # u[2] grid points&#xA;1.0  1.0  3.0  5.0&#xA;2.0  2.0  4.0  6.0&#xA;&#xA;double table2D_2(4,4)   # comment line&#xA;0.0  1.0  2.0  3.0  # u[2] grid points&#xA;1.0  1.0  3.0  5.0&#xA;2.0  2.0  4.0  6.0&#xA;3.0  3.0  5.0  7.0&#xA;-----------------------------------------------------&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;Note, that the first two characters in the file need to be&#xA;\&quot;#1\&quot; (a line comment defining the version number of the file format).&#xA;Afterwards, the corresponding matrix has to be declared&#xA;with type (= \&quot;double\&quot; or \&quot;float\&quot;), name and actual dimensions.&#xA;Finally, in successive rows of the file, the elements of the matrix&#xA;have to be given. The elements have to be provided as a sequence of&#xA;numbers in row-wise order (therefore a matrix row can span several&#xA;lines in the file and need not start at the beginning of a line).&#xA;Numbers have to be given according to C syntax (such as 2.3, -2, +2.e4).&#xA;Number separators are spaces, tab (\\t), comma (,), or semicolon (;).&#xA;Several matrices may be defined one after another. Line comments start&#xA;with the hash symbol (#) and can appear everywhere.&#xA;Text files should either be ASCII or UTF-8 encoded, where UTF-8 encoded strings are only allowed in line comments and an optional UTF-8 BOM at the start of the text file is ignored.&#xA;Other characters, like trailing non comments, are not allowed in the file.&#xA;The matrix elements are interpreted in exactly the same way&#xA;as if the matrix is given as a parameter. For example, the first&#xA;column \&quot;table2D_1[2:,1]\&quot; contains the u[1] grid points,&#xA;and the first row \&quot;table2D_1[1,2:]\&quot; contains the u[2] grid points.&#xA;&lt;/p>&#xA;&lt;p>&#xA;MATLAB is a registered trademark of The MathWorks, Inc.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </arguments>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="CombiTable2Dv" description="&quot;Table look-up in two dimensions (matrix/file) with vector inputs and vector output of size n&quot;" classNameEnd="CombiTable2Dv">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.MI2MO"/>
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Internal.CombiTable2DBase"/>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:IfEquation" condition="verboseExtrapolation and ( extrapolation == Modelica.Blocks.Types.Extrapolation.LastTwoPoints or extrapolation == Modelica.Blocks.Types.Extrapolation.HoldLastPoint )">
+          <ifEquations xsi:type="mOloc:ForEquation" forIndices="j in 1:n">
+            <forEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(noEvent(u1[j] >= u_min[1]), &quot;&#xA;Extrapolation warning: The value u1[&quot; + String(j) + &quot;] (=&quot; + String(u1[j]) + &quot;) must be greater or equal&#xA;than the minimum abscissa value u_min[1] (=&quot; + String(u_min[1]) + &quot;) defined in the table.&#xA;&quot;, level=AssertionLevel.warning)"/>
+            <forEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(noEvent(u1[j] &lt;= u_max[1]), &quot;&#xA;Extrapolation warning: The value u1[&quot; + String(j) + &quot;] (=&quot; + String(u1[j]) + &quot;) must be less or equal&#xA;than the maximum abscissa value u_max[1] (=&quot; + String(u_max[1]) + &quot;) defined in the table.&#xA;&quot;, level=AssertionLevel.warning)"/>
+            <forEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(noEvent(u2[j] >= u_min[2]), &quot;&#xA;Extrapolation warning: The value u2[&quot; + String(j) + &quot;] (=&quot; + String(u2[j]) + &quot;) must be greater or equal&#xA;than the minimum abscissa value u_min[2] (=&quot; + String(u_min[2]) + &quot;) defined in the table.&#xA;&quot;, level=AssertionLevel.warning)"/>
+            <forEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(noEvent(u2[j] &lt;= u_max[2]), &quot;&#xA;Extrapolation warning: The value u2[&quot; + String(j) + &quot;] (=&quot; + String(u2[j]) + &quot;) must be less or equal&#xA;than the maximum abscissa value u_max[2] (=&quot; + String(u_max[2]) + &quot;) defined in the table.&#xA;&quot;, level=AssertionLevel.warning)"/>
+          </ifEquations>
+        </equations>
+        <equations xsi:type="mOloc:IfEquation" condition="smoothness == Modelica.Blocks.Types.Smoothness.ConstantSegments">
+          <ifEquations xsi:type="mOloc:ForEquation" forIndices="j in 1:n">
+            <forEquations xsi:type="mOloc:SimpleEquation" left="y[j]" right="Modelica.Blocks.Tables.Internal.getTable2DValueNoDer(tableID, u1[j], u2[j])"/>
+          </ifEquations>
+          <elseCondition>smoothness == Modelica.Blocks.Types.Smoothness.LinearSegments</elseCondition>
+          <elseifEquations xsi:type="mOloc:ForEquation" forIndices="j in 1:n">
+            <forEquations xsi:type="mOloc:SimpleEquation" left="y[j]" right="Modelica.Blocks.Tables.Internal.getTable2DValueNoDer2(tableID, u1[j], u2[j])"/>
+          </elseifEquations>
+          <elseEquations xsi:type="mOloc:ForEquation" forIndices="j in 1:n">
+            <forEquations xsi:type="mOloc:SimpleEquation" left="y[j]" right="Modelica.Blocks.Tables.Internal.getTable2DValue(tableID, u1[j], u2[j])"/>
+          </elseEquations>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause">
+        <arguments elementName="Documentation">
+          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;&lt;strong>Bivariate constant&lt;/strong>, &lt;strong>bilinear&lt;/strong> or &lt;strong>bivariate&#xA;Akima interpolation&lt;/strong> of a &lt;strong>two-dimensional table&lt;/strong>.&#xA;The grid points and function values are stored in a matrix \&quot;table[i,j]\&quot;,&#xA;where:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>the first column \&quot;table[2:,1]\&quot; contains the u1 grid points,&lt;/li>&#xA;&lt;li>the first row \&quot;table[1,2:]\&quot; contains the u2 grid points,&lt;/li>&#xA;&lt;li>the other rows and columns contain the data to be interpolated.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;Example:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;        |       |       |       |&#xA;        |  1.0  |  2.0  |  3.0  |  // u2&#xA;    ----*-------*-------*-------*&#xA;    1.0 |  1.0  |  3.0  |  5.0  |&#xA;    ----*-------*-------*-------*&#xA;    2.0 |  2.0  |  4.0  |  6.0  |&#xA;    ----*-------*-------*-------*&#xA;  // u1&#xA;is defined as&#xA;   table = [0.0,   1.0,   2.0,   3.0;&#xA;            1.0,   1.0,   3.0,   5.0;&#xA;            2.0,   2.0,   4.0,   6.0]&#xA;If, e.g., the input u1 is {1.0}, input u2 is {1.0} and smoothness is LinearSegments, the output y is {1.0},&#xA;    e.g., the input u1 is {2.0}, input u2 is {1.5} and smoothness is LinearSegments, the output y is {3.0}.&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;ul>&#xA;&lt;li>The interpolation interval is found by a binary search where the interval used in the&#xA;    last call is used as start interval.&lt;/li>&#xA;&lt;li>Via parameter &lt;strong>smoothness&lt;/strong> it is defined how the data is interpolated:&#xA;&lt;blockquote>&lt;pre>&#xA;smoothness = 1: Bilinear interpolation&#xA;           = 2: Bivariate Akima interpolation: Smooth interpolation by bicubic Hermite&#xA;                splines such that der(y) is continuous, also if extrapolated.&#xA;           = 3: Constant segments&#xA;           = 4: Fritsch-Butland interpolation: Not supported&#xA;           = 5: Steffen interpolation: Not supported&#xA;           = 6: Modified Akima interpolation: Not supported&#xA;&lt;/pre>&lt;/blockquote>&lt;/li>&#xA;&lt;li>First and second &lt;strong>derivatives&lt;/strong> are provided, with exception of the following two smoothness options.&#xA;&lt;ol>&#xA;&lt;li>No derivatives are provided for interpolation by constant segments.&lt;/li>&#xA;&lt;li>No second derivative is provided for linear interpolation.&lt;/li>&#xA;&lt;/ol>&lt;/li>&#xA;&lt;li>Values &lt;strong>outside&lt;/strong> of the table range, are computed by&#xA;    extrapolation according to the setting of parameter &lt;strong>extrapolation&lt;/strong>:&#xA;&lt;blockquote>&lt;pre>&#xA;extrapolation = 1: Hold the first or last values of the table,&#xA;                   if outside of the table scope.&#xA;              = 2: Extrapolate by using the derivative at the first/last table&#xA;                   points if outside of the table scope.&#xA;                   (If smoothness is LinearSegments or ConstantSegments&#xA;                   this means to extrapolate linearly through the first/last&#xA;                   two table points.).&#xA;              = 3: Periodically repeat the table data (periodical function).&#xA;              = 4: No extrapolation, i.e. extrapolation triggers an error&#xA;&lt;/pre>&lt;/blockquote>&lt;/li>&#xA;&lt;li>If the table has only &lt;strong>one element&lt;/strong>, the table value is returned,&#xA;    independent of the value of the input signal.&lt;/li>&#xA;&lt;li>The grid values (first column and first row) have to be strictly&#xA;    increasing.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;The table matrix can be defined in the following ways:&#xA;&lt;/p>&#xA;&lt;ol>&#xA;&lt;li>Explicitly supplied as &lt;strong>parameter matrix&lt;/strong> \&quot;table\&quot;,&#xA;    and the other parameters have the following values:&#xA;&lt;blockquote>&lt;pre>&#xA;tableName is \&quot;NoName\&quot; or has only blanks,&#xA;fileName  is \&quot;NoName\&quot; or has only blanks.&#xA;&lt;/pre>&lt;/blockquote>&lt;/li>&#xA;&lt;li>&lt;strong>Read&lt;/strong> from a &lt;strong>file&lt;/strong> \&quot;fileName\&quot; where the matrix is stored as&#xA;    \&quot;tableName\&quot;. Both text and MATLAB MAT-file format is possible.&#xA;    (The text format is described below).&#xA;    The MAT-file format comes in four different versions: v4, v6, v7 and v7.3.&#xA;    The library supports at least v4, v6 and v7 whereas v7.3 is optional.&#xA;    It is most convenient to generate the MAT-file from FreeMat or MATLAB&amp;reg;&#xA;    by command&#xA;&lt;blockquote>&lt;pre>&#xA;save tables.mat tab1 tab2 tab3&#xA;&lt;/pre>&lt;/blockquote>&#xA;    or Scilab by command&#xA;&lt;blockquote>&lt;pre>&#xA;savematfile tables.mat tab1 tab2 tab3&#xA;&lt;/pre>&lt;/blockquote>&#xA;    when the three tables tab1, tab2, tab3 should be used from the model.&lt;br>&#xA;    Note, a fileName can be defined as URI by using the helper function&#xA;    &lt;a href=\&quot;modelica://Modelica.Utilities.Files.loadResource\&quot;>loadResource&lt;/a>.&lt;/li>&#xA;&lt;li>Statically stored in function \&quot;usertab\&quot; in file \&quot;usertab.c\&quot;.&#xA;    The matrix is identified by \&quot;tableName\&quot;. Parameter&#xA;    fileName = \&quot;NoName\&quot; or has only blanks. Row-wise storage is always to be&#xA;    preferred as otherwise the table is reallocated and transposed.&#xA;    See the &lt;a href=\&quot;modelica://Modelica.Blocks.Tables\&quot;>Tables&lt;/a> package&#xA;    documentation for more details.&lt;/li>&#xA;&lt;/ol>&#xA;&lt;p>&#xA;When the constant \&quot;NO_FILE_SYSTEM\&quot; is defined, all file I/O related parts of the&#xA;source code are removed by the C-preprocessor, such that no access to files takes place.&#xA;&lt;/p>&#xA;&lt;p>&#xA;If tables are read from a text file, the file needs to have the&#xA;following structure (\&quot;-----\&quot; is not part of the file content):&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;-----------------------------------------------------&#xA;#1&#xA;double table2D_1(3,4)   # comment line&#xA;0.0  1.0  2.0  3.0  # u[2] grid points&#xA;1.0  1.0  3.0  5.0&#xA;2.0  2.0  4.0  6.0&#xA;&#xA;double table2D_2(4,4)   # comment line&#xA;0.0  1.0  2.0  3.0  # u[2] grid points&#xA;1.0  1.0  3.0  5.0&#xA;2.0  2.0  4.0  6.0&#xA;3.0  3.0  5.0  7.0&#xA;-----------------------------------------------------&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;Note, that the first two characters in the file need to be&#xA;\&quot;#1\&quot; (a line comment defining the version number of the file format).&#xA;Afterwards, the corresponding matrix has to be declared&#xA;with type (= \&quot;double\&quot; or \&quot;float\&quot;), name and actual dimensions.&#xA;Finally, in successive rows of the file, the elements of the matrix&#xA;have to be given. The elements have to be provided as a sequence of&#xA;numbers in row-wise order (therefore a matrix row can span several&#xA;lines in the file and need not start at the beginning of a line).&#xA;Numbers have to be given according to C syntax (such as 2.3, -2, +2.e4).&#xA;Number separators are spaces, tab (\\t), comma (,), or semicolon (;).&#xA;Several matrices may be defined one after another. Line comments start&#xA;with the hash symbol (#) and can appear everywhere.&#xA;Text files should either be ASCII or UTF-8 encoded, where UTF-8 encoded strings are only allowed in line comments and an optional UTF-8 BOM at the start of the text file is ignored.&#xA;Other characters, like trailing non comments, are not allowed in the file.&#xA;The matrix elements are interpreted in exactly the same way&#xA;as if the matrix is given as a parameter. For example, the first&#xA;column \&quot;table2D_1[2:,1]\&quot; contains the u[1] grid points,&#xA;and the first row \&quot;table2D_1[1,2:]\&quot; contains the u[2] grid points.&#xA;&lt;/p>&#xA;&lt;p>&#xA;MATLAB is a registered trademark of The MathWorks, Inc.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </arguments>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" classType="package" className="Internal" description="&quot;Internal external object definitions for table functions that should not be directly utilized by the user&quot;" classNameEnd="Internal">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.InternalPackage"/>
+      <elements xsi:type="mOloc:GeneralClause" isPartial="true" classType="block" className="CombiTable2DBase" description="&quot;Base class for variants of table look-up in two dimensions&quot;" classNameEnd="CombiTable2DBase">
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+          <component_list expression="false" declarationName="tableOnFile" description="&quot;= true, if table is defined on file or in function usertab&quot;" isAnnotation="true">
+            <arguments elementName="Dialog">
+              <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+          <component_list subscripts="[:, :]" expression="fill(0.0, 0, 2)" declarationName="table" description="&quot;Table matrix (grid u1 = first column, grid u2 = first row; e.g., table=[0, 0; 0, 1])&quot;" isAnnotation="true">
+            <arguments elementName="Dialog">
+              <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+              <arguments expression="not tableOnFile" elementName="enable"/>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter">
+          <component_list expression="&quot;NoName&quot;" declarationName="tableName" description="&quot;Table name on file or in function usertab (see docu)&quot;" isAnnotation="true">
+            <arguments elementName="Dialog">
+              <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+              <arguments expression="tableOnFile" elementName="enable"/>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter">
+          <component_list expression="&quot;NoName&quot;" declarationName="fileName" description="&quot;File where matrix is stored&quot;" isAnnotation="true">
+            <arguments elementName="Dialog">
+              <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+              <arguments expression="tableOnFile" elementName="enable"/>
+              <arguments elementName="loadSelector">
+                <arguments expression="&quot;Text files (*.txt);;MATLAB MAT-files (*.mat)&quot;" elementName="filter"/>
+                <arguments expression="&quot;Open file in which table is present&quot;" elementName="caption"/>
+              </arguments>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+          <component_list expression="true" declarationName="verboseRead" description="&quot;= true, if info message that file is loading is to be printed&quot;" isAnnotation="true">
+            <arguments elementName="Dialog">
+              <arguments expression="&quot;Table data definition&quot;" elementName="group"/>
+              <arguments expression="tableOnFile" elementName="enable"/>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Smoothness" parameterType="parameter">
+          <component_list expression="Modelica.Blocks.Types.Smoothness.LinearSegments" declarationName="smoothness" description="&quot;Smoothness of table interpolation&quot;" isAnnotation="true">
+            <arguments elementName="Dialog">
+              <arguments expression="&quot;Table data interpretation&quot;" elementName="group"/>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Extrapolation" parameterType="parameter">
+          <component_list expression="Modelica.Blocks.Types.Extrapolation.LastTwoPoints" declarationName="extrapolation" description="&quot;Extrapolation of data outside the definition range&quot;" isAnnotation="true">
+            <arguments elementName="Dialog">
+              <arguments expression="&quot;Table data interpretation&quot;" elementName="group"/>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+          <component_list expression="false" declarationName="verboseExtrapolation" description="&quot;= true, if warning messages are to be printed if table input is outside the definition range&quot;" isAnnotation="true">
+            <arguments elementName="Dialog">
+              <arguments expression="&quot;Table data interpretation&quot;" elementName="group"/>
+              <arguments expression="extrapolation == Modelica.Blocks.Types.Extrapolation.LastTwoPoints or extrapolation == Modelica.Blocks.Types.Extrapolation.HoldLastPoint" elementName="enable"/>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isfinal="true">
+          <component_list subscripts="[2]" expression="getTable2DAbscissaUmin(tableID)" declarationName="u_min" description="&quot;Minimum abscissa value defined in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isfinal="true">
+          <component_list subscripts="[2]" expression="getTable2DAbscissaUmax(tableID)" declarationName="u_max" description="&quot;Maximum abscissa value defined in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable2D" parameterType="parameter" isProtected="true">
+          <component_list expression="Modelica.Blocks.Types.ExternalCombiTable2D( if tableOnFile then tableName else &quot;NoName&quot;, if tableOnFile and fileName &lt;> &quot;NoName&quot; and not Modelica.Utilities.Strings.isEmpty(fileName) then fileName else &quot;NoName&quot;, table, smoothness, extrapolation, if tableOnFile then verboseRead else false )" declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:EquationSection">
+          <equations xsi:type="mOloc:IfEquation" condition="tableOnFile">
+            <ifEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(tableName &lt;> &quot;NoName&quot;, &quot;tableOnFile = true and no table name given&quot; )"/>
+            <elseEquations xsi:type="mOloc:FunctionEquation" component="assert" function="(size(table, 1) > 0 and size(table, 2) > 0, &quot;tableOnFile = false and parameter table is an empty matrix&quot; )"/>
+          </equations>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments elementName="Icon">
+            <arguments elementName="coordinateSystem">
+              <arguments expression="true" elementName="preserveAspectRatio"/>
+              <arguments expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+            </arguments>
+            <arguments expression="{ Line(points={{-60.0,40.0},{-60.0,-40.0},{60.0,-40.0},{60.0,40.0},{30.0,40.0},{30.0,-40.0},{-30.0,-40.0},{-30.0,40.0},{-60.0,40.0},{-60.0,20.0},{60.0,20.0},{60.0,0.0},{-60.0,0.0},{-60.0,-20.0},{60.0,-20.0},{60.0,-40.0},{-60.0,-40.0},{-60.0,40.0},{60.0,40.0},{60.0,-40.0}}), Line(points={{0.0,40.0},{0.0,-40.0}}), Line(points={{-60.0,40.0},{-30.0,20.0}}), Line(points={{-30.0,40.0},{-60.0,20.0}}), Rectangle(origin={2.3077,-0.0}, fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-62.3077,0.0},{-32.3077,20.0}} ) , Rectangle(origin={2.3077,-0.0}, fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-62.3077,-20.0},{-32.3077,0.0}} ) , Rectangle(origin={2.3077,-0.0}, fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-62.3077,-40.0},{-32.3077,-20.0}} ) , Rectangle(fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-30.0,20.0},{0.0,40.0}} ) , Rectangle(fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{0.0,20.0},{30.0,40.0}} ) , Rectangle(origin={-2.3077,-0.0}, fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{32.3077,20.0},{62.3077,40.0}} ) }" elementName="graphics"/>
+          </arguments>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTimeTableValue" description="&quot;Interpolate 1-dim. table where first column is time&quot;" classNameEnd="getTimeTableValue">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTimeTable" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list declarationName="icol" description="&quot;Column number&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="timeIn" description="&quot;(Scaled) time value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" directionType="input">
+          <component_list declarationName="nextTimeEvent" description="&quot;(Scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" directionType="input">
+          <component_list declarationName="pre_nextTimeEvent" description="&quot;Pre-value of (scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="y" description="&quot;Interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="y" refValue="ModelicaStandardTables_CombiTimeTable_getValue" expressionList="tableID, icol, timeIn, nextTimeEvent, pre_nextTimeEvent" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments expression="getDerTimeTableValue" elementName="derivative">
+            <arguments expression="nextTimeEvent" elementName="noDerivative"/>
+            <arguments expression="pre_nextTimeEvent" elementName="noDerivative"/>
+          </arguments>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTimeTableValueNoDer" description="&quot;Interpolate 1-dim. table where first column is time (but do not provide a derivative function)&quot;" classNameEnd="getTimeTableValueNoDer">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTimeTable" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list declarationName="icol" description="&quot;Column number&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="timeIn" description="&quot;(Scaled) time value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" directionType="input">
+          <component_list declarationName="nextTimeEvent" description="&quot;(Scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" directionType="input">
+          <component_list declarationName="pre_nextTimeEvent" description="&quot;Pre-value of (scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="y" description="&quot;Interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="y" refValue="ModelicaStandardTables_CombiTimeTable_getValue" expressionList="tableID, icol, timeIn, nextTimeEvent, pre_nextTimeEvent" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTimeTableValueNoDer2" description="&quot;Interpolate 1-dim. table where first column is time (but do not provide a second derivative function)&quot;" classNameEnd="getTimeTableValueNoDer2">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTimeTable" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list declarationName="icol" description="&quot;Column number&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="timeIn" description="&quot;(Scaled) time value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" directionType="input">
+          <component_list declarationName="nextTimeEvent" description="&quot;(Scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" directionType="input">
+          <component_list declarationName="pre_nextTimeEvent" description="&quot;Pre-value of (scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="y" description="&quot;Interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="y" refValue="ModelicaStandardTables_CombiTimeTable_getValue" expressionList="tableID, icol, timeIn, nextTimeEvent, pre_nextTimeEvent" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments expression="getDerTimeTableValueNoDer" elementName="derivative">
+            <arguments expression="nextTimeEvent" elementName="noDerivative"/>
+            <arguments expression="pre_nextTimeEvent" elementName="noDerivative"/>
+          </arguments>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getDerTimeTableValue" description="&quot;Derivative of interpolated 1-dim. table where first column is time&quot;" classNameEnd="getDerTimeTableValue">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTimeTable" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list declarationName="icol" description="&quot;Column number&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="timeIn" description="&quot;(Scaled) time value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" directionType="input">
+          <component_list declarationName="nextTimeEvent" description="&quot;(Scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" directionType="input">
+          <component_list declarationName="pre_nextTimeEvent" description="&quot;Pre-value of (scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der_timeIn" description="&quot;Derivative of (scaled) time value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="der_y" description="&quot;Derivative of interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="der_y" refValue="ModelicaStandardTables_CombiTimeTable_getDerValue" expressionList="tableID, icol, timeIn, nextTimeEvent, pre_nextTimeEvent, der_timeIn" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments expression="getDer2TimeTableValue" elementName="derivative">
+            <arguments expression="2" elementName="order"/>
+            <arguments expression="nextTimeEvent" elementName="noDerivative"/>
+            <arguments expression="pre_nextTimeEvent" elementName="noDerivative"/>
+          </arguments>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getDerTimeTableValueNoDer" description="&quot;Derivative of interpolated 1-dim. table where first column is time (but do not provide a derivative function)&quot;" classNameEnd="getDerTimeTableValueNoDer">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTimeTable" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list declarationName="icol" description="&quot;Column number&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="timeIn" description="&quot;(Scaled) time value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" directionType="input">
+          <component_list declarationName="nextTimeEvent" description="&quot;(Scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" directionType="input">
+          <component_list declarationName="pre_nextTimeEvent" description="&quot;Pre-value of (scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der_timeIn" description="&quot;Derivative of (scaled) time value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="der_y" description="&quot;Derivative of interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="der_y" refValue="ModelicaStandardTables_CombiTimeTable_getDerValue" expressionList="tableID, icol, timeIn, nextTimeEvent, pre_nextTimeEvent, der_timeIn" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getDer2TimeTableValue" description="&quot;Second derivative of interpolated 1-dim. table where first column is time&quot;" classNameEnd="getDer2TimeTableValue">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTimeTable" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list declarationName="icol" description="&quot;Column number&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="timeIn" description="&quot;(Scaled) time value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" directionType="input">
+          <component_list declarationName="nextTimeEvent" description="&quot;(Scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" directionType="input">
+          <component_list declarationName="pre_nextTimeEvent" description="&quot;Pre-value of (scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der_timeIn" description="&quot;Derivative of (scaled) time value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der2_timeIn" description="&quot;Second derivative of (scaled) time value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="der2_y" description="&quot;Second derivative of interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="der2_y" refValue="ModelicaStandardTables_CombiTimeTable_getDer2Value" expressionList="tableID, icol, timeIn, nextTimeEvent, pre_nextTimeEvent, der_timeIn, der2_timeIn" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTimeTableTmin" description="&quot;Return minimum abscissa value of 1-dim. table where first column is time&quot;" classNameEnd="getTimeTableTmin">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTimeTable" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="timeMin" description="&quot;Minimum abscissa value in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="timeMin" refValue="ModelicaStandardTables_CombiTimeTable_minimumTime" expressionList="tableID" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTimeTableTmax" description="&quot;Return maximum abscissa value of 1-dim. table where first column is time&quot;" classNameEnd="getTimeTableTmax">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTimeTable" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="timeMax" description="&quot;Maximum abscissa value in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="timeMax" refValue="ModelicaStandardTables_CombiTimeTable_maximumTime" expressionList="tableID" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getNextTimeEvent" description="&quot;Return next time event value of 1-dim. table where first column is time&quot;" classNameEnd="getNextTimeEvent">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTimeTable" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="timeIn" description="&quot;(Scaled) time value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="nextTimeEvent" description="&quot;(Scaled) next time event in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="nextTimeEvent" refValue="ModelicaStandardTables_CombiTimeTable_nextTimeEvent" expressionList="tableID, timeIn" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTable1DValue" description="&quot;Interpolate 1-dim. table defined by matrix&quot;" classNameEnd="getTable1DValue">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable1D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list declarationName="icol" description="&quot;Column number&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u" description="&quot;Abscissa value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="y" description="&quot;Interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="y" refValue="ModelicaStandardTables_CombiTable1D_getValue" expressionList="tableID, icol, u" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments expression="getDerTable1DValue" elementName="derivative"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTable1DValueNoDer" description="&quot;Interpolate 1-dim. table defined by matrix (but do not provide a derivative function)&quot;" classNameEnd="getTable1DValueNoDer">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable1D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list declarationName="icol" description="&quot;Column number&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u" description="&quot;Abscissa value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="y" description="&quot;Interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="y" refValue="ModelicaStandardTables_CombiTable1D_getValue" expressionList="tableID, icol, u" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTable1DValueNoDer2" description="&quot;Interpolate 1-dim. table defined by matrix (but do not provide a second derivative function)&quot;" classNameEnd="getTable1DValueNoDer2">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable1D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list declarationName="icol" description="&quot;Column number&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u" description="&quot;Abscissa value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="y" description="&quot;Interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="y" refValue="ModelicaStandardTables_CombiTable1D_getValue" expressionList="tableID, icol, u" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments expression="getDerTable1DValueNoDer" elementName="derivative"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getDerTable1DValue" description="&quot;Derivative of interpolated 1-dim. table defined by matrix&quot;" classNameEnd="getDerTable1DValue">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable1D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list declarationName="icol" description="&quot;Column number&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u" description="&quot;Abscissa value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der_u" description="&quot;Derivative of abscissa value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="der_y" description="&quot;Derivative of interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="der_y" refValue="ModelicaStandardTables_CombiTable1D_getDerValue" expressionList="tableID, icol, u, der_u" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments expression="getDer2Table1DValue" elementName="derivative">
+            <arguments expression="2" elementName="order"/>
+          </arguments>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getDerTable1DValueNoDer" description="&quot;Derivative of interpolated 1-dim. table defined by matrix (but do not provide a second derivative function)&quot;" classNameEnd="getDerTable1DValueNoDer">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable1D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list declarationName="icol" description="&quot;Column number&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u" description="&quot;Abscissa value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der_u" description="&quot;Derivative of abscissa value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="der_y" description="&quot;Derivative of interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="der_y" refValue="ModelicaStandardTables_CombiTable1D_getDerValue" expressionList="tableID, icol, u, der_u" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getDer2Table1DValue" description="&quot;Second derivative of interpolated 1-dim. table defined by matrix&quot;" classNameEnd="getDer2Table1DValue">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable1D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list declarationName="icol" description="&quot;Column number&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u" description="&quot;Abscissa value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der_u" description="&quot;Derivative of abscissa value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der2_u" description="&quot; Second derivative of abscissa value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="der2_y" description="&quot;Second derivative of interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="der2_y" refValue="ModelicaStandardTables_CombiTable1D_getDer2Value" expressionList="tableID, icol, u, der_u, der2_u" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTable1DAbscissaUmin" description="&quot;Return minimum abscissa value of 1-dim. table defined by matrix&quot;" classNameEnd="getTable1DAbscissaUmin">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable1D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="uMin" description="&quot;Minimum abscissa value in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="uMin" refValue="ModelicaStandardTables_CombiTable1D_minimumAbscissa" expressionList="tableID" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTable1DAbscissaUmax" description="&quot;Return maximum abscissa value of 1-dim. table defined by matrix&quot;" classNameEnd="getTable1DAbscissaUmax">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable1D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="uMax" description="&quot;Maximum abscissa value in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="uMax" refValue="ModelicaStandardTables_CombiTable1D_maximumAbscissa" expressionList="tableID" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTable2DValue" description="&quot;Interpolate 2-dim. table defined by matrix&quot;" classNameEnd="getTable2DValue">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable2D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u1" description="&quot;Value of first independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u2" description="&quot;Value of second independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="y" description="&quot;Interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="y" refValue="ModelicaStandardTables_CombiTable2D_getValue" expressionList="tableID, u1, u2" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments expression="getDerTable2DValue" elementName="derivative"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTable2DValueNoDer" description="&quot;Interpolate 2-dim. table defined by matrix (but do not provide a derivative function)&quot;" classNameEnd="getTable2DValueNoDer">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable2D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u1" description="&quot;Value of first independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u2" description="&quot;Value of second independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="y" description="&quot;Interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="y" refValue="ModelicaStandardTables_CombiTable2D_getValue" expressionList="tableID, u1, u2" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTable2DValueNoDer2" description="&quot;Interpolate 2-dim. table defined by matrix (but do not provide a second derivative function)&quot;" classNameEnd="getTable2DValueNoDer2">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable2D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u1" description="&quot;Value of first independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u2" description="&quot;Value of second independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="y" description="&quot;Interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="y" refValue="ModelicaStandardTables_CombiTable2D_getValue" expressionList="tableID, u1, u2" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments expression="getDerTable2DValueNoDer" elementName="derivative"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getDerTable2DValue" description="&quot;Derivative of interpolated 2-dim. table defined by matrix&quot;" classNameEnd="getDerTable2DValue">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable2D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u1" description="&quot;Value of first independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u2" description="&quot;Value of second independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der_u1" description="&quot;Derivative of first independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der_u2" description="&quot;Derivative of second independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="der_y" description="&quot;Derivative of interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="der_y" refValue="ModelicaStandardTables_CombiTable2D_getDerValue" expressionList="tableID, u1, u2, der_u1, der_u2" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments expression="getDer2Table2DValue" elementName="derivative">
+            <arguments expression="2" elementName="order"/>
+          </arguments>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getDerTable2DValueNoDer" description="&quot;Derivative of interpolated 2-dim. table defined by matrix (but do not provide a second derivative function)&quot;" classNameEnd="getDerTable2DValueNoDer">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable2D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u1" description="&quot;Value of first independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u2" description="&quot;Value of second independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der_u1" description="&quot;Derivative of first independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der_u2" description="&quot;Derivative of second independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="der_y" description="&quot;Derivative of interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="der_y" refValue="ModelicaStandardTables_CombiTable2D_getDerValue" expressionList="tableID, u1, u2, der_u1, der_u2" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getDer2Table2DValue" description="&quot;Second derivative of interpolated 2-dim. table defined by matrix&quot;" classNameEnd="getDer2Table2DValue">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable2D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u1" description="&quot;Value of first independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="u2" description="&quot;Value of second independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der_u1" description="&quot;Derivative of first independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der_u2" description="&quot;Derivative of second independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der2_u1" description="&quot;Second derivative of first independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list declarationName="der2_u2" description="&quot;Second derivative of second independent variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list declarationName="der2_y" description="&quot;Second derivative of interpolated value&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="der2_y" refValue="ModelicaStandardTables_CombiTable2D_getDer2Value" expressionList="tableID, u1, u2, der_u1, der_u2, der2_u1, der2_u2" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTable2DAbscissaUmin" description="&quot;Return minimum abscissa value of 2-dim. table defined by matrix&quot;" classNameEnd="getTable2DAbscissaUmin">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable2D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list subscripts="[2]" declarationName="uMin" description="&quot;Minimum abscissa value in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" refValue="ModelicaStandardTables_CombiTable2D_minimumAbscissa" expressionList="tableID, uMin" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" isPure="true" classType="function" className="getTable2DAbscissaUmax" description="&quot;Return maximum abscissa value of 2-dim. table defined by matrix&quot;" classNameEnd="getTable2DAbscissaUmax">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTable2D" directionType="input">
+          <component_list declarationName="tableID" description="&quot;External table object&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+          <component_list subscripts="[2]" declarationName="uMax" description="&quot;Maximum abscissa value in table&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ExternalElement" language_specification="C" refValue="ModelicaStandardTables_CombiTable2D_maximumAbscissa" expressionList="tableID, uMax" isAnnotation="true">
+          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments elementName="Documentation">
+        <arguments expression="&quot;&lt;html>&#xA;&lt;p>This package contains blocks for one- and two-dimensional interpolation in tables.&lt;/p>&#xA;&lt;h4>Special interest topic: Statically stored tables for real-time simulation targets&lt;/h4>&#xA;&lt;p>Especially for use on real-time platform targets (e.g., HIL-simulators) with &lt;strong>no file system&lt;/strong>, it is possible to statically&#xA;store tables using a function &amp;quot;usertab&amp;quot; in a file conventionally named &amp;quot;usertab.c&amp;quot;. This can be more efficient than providing the tables as Modelica parameter arrays.&lt;/p>&#xA;&lt;p>This is achieved by providing the tables in a specific structure as C-code and compiling that C-code together with the rest of the simulation model into a binary&#xA;that can be executed on the target platform. The &amp;quot;Resources/Data/Tables/&amp;quot; subdirectory of the MSL installation directory contains the files&#xA;&lt;a href=\&quot;modelica://Modelica/Resources/Data/Tables/usertab.c\&quot;>&amp;quot;usertab.c&amp;quot;&lt;/a> and &lt;a href=\&quot;modelica://Modelica/Resources/Data/Tables/usertab.h\&quot;>&amp;quot;usertab.h&amp;quot;&lt;/a>&#xA;that can be used as a template for own developments. While &amp;quot;usertab.c&amp;quot; would be typically used unmodified, the&#xA;&amp;quot;usertab.h&amp;quot; needs to adapted for the own needs.&lt;/p>&#xA;&lt;p>In order to work it is necessary that the compiler pulls in the &amp;quot;usertab.c&amp;quot; file. Different Modelica tools might provide different mechanisms to do so.&#xA;Please consult the respective documentation/support for your Modelica tool.&lt;/p>&#xA;&lt;p>A possible (though slightly makeshift) approach is to pull in the required files by utilizing a &amp;quot;dummy&amp;quot;-function that uses the Modelica external function&#xA;interface to include the required &amp;quot;usertab.c&amp;quot;. An example how this can be done is given below.&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;model ExampleCTable \&quot;Example utilizing the usertab.c interface\&quot;&#xA;  extends Modelica.Icons.Example;&#xA;  parameter Real dummy(fixed=false) \&quot;Dummy parameter\&quot; annotation(HideResult=true);&#xA;  Modelica.Blocks.Tables.CombiTable1Dv table(tableOnFile=true, tableName=\&quot;TestTable_1D_a\&quot;)&#xA;    annotation (Placement(transformation(extent={{-40,0},{-20,20}})));&#xA;  Modelica.Blocks.Sources.ContinuousClock clock&#xA;    annotation (Placement(transformation(extent={{-80,0},{-60,20}})));&#xA;protected&#xA;  encapsulated impure function getUsertab \&quot;External dummy function to include \\\&quot;usertab.c\\\&quot;\&quot;&#xA;    input Real dummy_u[:];&#xA;    output Real dummy_y;&#xA;    external \&quot;C\&quot; dummy_y = mydummyfunc(dummy_u);&#xA;    annotation(IncludeDirectory=\&quot;modelica://Modelica/Resources/Data/Tables\&quot;,&#xA;           Include = \&quot;#include \&quot;usertab.c\&quot;&#xA;double mydummyfunc(double* dummy_in) {&#xA;   return 0;&#xA;}&#xA;\&quot;);&#xA;  end getUsertab;&#xA;initial equation&#xA;  dummy = getUsertab(table.y);&#xA;equation&#xA;  connect(clock.y, table.u[1]) annotation (Line(points={{-59,10},{-42,10}}, color={0,0,127}));&#xA;  annotation (experiment(StartTime=0, StopTime=5), uses(Modelica(version=\&quot;4.0.0\&quot;)));&#xA;end ExampleCTable;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </arguments>
+      <arguments elementName="Icon">
+        <arguments elementName="coordinateSystem">
+          <arguments expression="false" elementName="preserveAspectRatio"/>
+          <arguments expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+        </arguments>
+        <arguments expression="{ Rectangle( extent={{-76,-26},{80,-76}}, lineColor={95,95,95}, fillColor={235,235,235}, fillPattern=FillPattern.Solid ) , Rectangle( extent={{-76,24},{80,-26}}, lineColor={95,95,95}, fillColor={235,235,235}, fillPattern=FillPattern.Solid ) , Rectangle( extent={{-76,74},{80,24}}, lineColor={95,95,95}, fillColor={235,235,235}, fillPattern=FillPattern.Solid ) , Line( points={{-28,74},{-28,-76}}, color={95,95,95} ) , Line( points={{24,74},{24,-76}}, color={95,95,95} ) }" elementName="graphics"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

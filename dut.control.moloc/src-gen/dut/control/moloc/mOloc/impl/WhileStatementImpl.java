@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.WhileStatementImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhileStatementImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.WhileStatementImpl#getCondition <em>Condition</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.WhileStatementImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.WhileStatementImpl#getWhileStatements <em>While Statements</em>}</li>
  * </ul>
  *
  * @generated
@@ -116,14 +116,14 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement
   protected String condition = CONDITION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+   * The cached value of the '{@link #getWhileStatements() <em>While Statements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatements()
+   * @see #getWhileStatements()
    * @generated
    * @ordered
    */
-  protected EList<Statement> statements;
+  protected EList<Statement> whileStatements;
 
   /**
    * <!-- begin-user-doc -->
@@ -242,13 +242,13 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement
    * @generated
    */
   @Override
-  public EList<Statement> getStatements()
+  public EList<Statement> getWhileStatements()
   {
-    if (statements == null)
+    if (whileStatements == null)
     {
-      statements = new EObjectContainmentEList<Statement>(Statement.class, this, MOlocPackage.WHILE_STATEMENT__STATEMENTS);
+      whileStatements = new EObjectContainmentEList<Statement>(Statement.class, this, MOlocPackage.WHILE_STATEMENT__WHILE_STATEMENTS);
     }
-    return statements;
+    return whileStatements;
   }
 
   /**
@@ -263,8 +263,8 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement
     {
       case MOlocPackage.WHILE_STATEMENT__ARGUMENTS:
         return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.WHILE_STATEMENT__STATEMENTS:
-        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.WHILE_STATEMENT__WHILE_STATEMENTS:
+        return ((InternalEList<?>)getWhileStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -287,8 +287,8 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement
         return isIsAnnotation();
       case MOlocPackage.WHILE_STATEMENT__CONDITION:
         return getCondition();
-      case MOlocPackage.WHILE_STATEMENT__STATEMENTS:
-        return getStatements();
+      case MOlocPackage.WHILE_STATEMENT__WHILE_STATEMENTS:
+        return getWhileStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -317,9 +317,9 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement
       case MOlocPackage.WHILE_STATEMENT__CONDITION:
         setCondition((String)newValue);
         return;
-      case MOlocPackage.WHILE_STATEMENT__STATEMENTS:
-        getStatements().clear();
-        getStatements().addAll((Collection<? extends Statement>)newValue);
+      case MOlocPackage.WHILE_STATEMENT__WHILE_STATEMENTS:
+        getWhileStatements().clear();
+        getWhileStatements().addAll((Collection<? extends Statement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -347,8 +347,8 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement
       case MOlocPackage.WHILE_STATEMENT__CONDITION:
         setCondition(CONDITION_EDEFAULT);
         return;
-      case MOlocPackage.WHILE_STATEMENT__STATEMENTS:
-        getStatements().clear();
+      case MOlocPackage.WHILE_STATEMENT__WHILE_STATEMENTS:
+        getWhileStatements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -372,8 +372,8 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.WHILE_STATEMENT__CONDITION:
         return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
-      case MOlocPackage.WHILE_STATEMENT__STATEMENTS:
-        return statements != null && !statements.isEmpty();
+      case MOlocPackage.WHILE_STATEMENT__WHILE_STATEMENTS:
+        return whileStatements != null && !whileStatements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

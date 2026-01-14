@@ -13,9 +13,10 @@ package dut.control.moloc.mOloc;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.FunctionStatement#getOutput <em>Output</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.FunctionStatement#getComponent <em>Component</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.FunctionStatement#getExpression <em>Expression</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.FunctionStatement#getFunction <em>Function</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.FunctionStatement#getOutput <em>Output</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getFunctionStatement()
@@ -24,28 +25,6 @@ package dut.control.moloc.mOloc;
  */
 public interface FunctionStatement extends Statement, description
 {
-  /**
-   * Returns the value of the '<em><b>Output</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Output</em>' attribute.
-   * @see #setOutput(String)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getFunctionStatement_Output()
-   * @model
-   * @generated
-   */
-  String getOutput();
-
-  /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.FunctionStatement#getOutput <em>Output</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Output</em>' attribute.
-   * @see #getOutput()
-   * @generated
-   */
-  void setOutput(String value);
-
   /**
    * Returns the value of the '<em><b>Component</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -69,6 +48,28 @@ public interface FunctionStatement extends Statement, description
   void setComponent(String value);
 
   /**
+   * Returns the value of the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expression</em>' attribute.
+   * @see #setExpression(String)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getFunctionStatement_Expression()
+   * @model
+   * @generated
+   */
+  String getExpression();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.FunctionStatement#getExpression <em>Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expression</em>' attribute.
+   * @see #getExpression()
+   * @generated
+   */
+  void setExpression(String value);
+
+  /**
    * Returns the value of the '<em><b>Function</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -89,5 +90,27 @@ public interface FunctionStatement extends Statement, description
    * @generated
    */
   void setFunction(String value);
+
+  /**
+   * Returns the value of the '<em><b>Output</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Output</em>' attribute.
+   * @see #setOutput(String)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getFunctionStatement_Output()
+   * @model
+   * @generated
+   */
+  String getOutput();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.FunctionStatement#getOutput <em>Output</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Output</em>' attribute.
+   * @see #getOutput()
+   * @generated
+   */
+  void setOutput(String value);
 
 } // FunctionStatement

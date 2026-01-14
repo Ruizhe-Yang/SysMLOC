@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.impl.class_prefixesImpl#isIsEncapsulated <em>Is Encapsulated</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_prefixesImpl#isIsPartial <em>Is Partial</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_prefixesImpl#isIsExpandable <em>Is Expandable</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_prefixesImpl#isIsPure <em>Is Pure</em>}</li>
@@ -33,6 +34,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class class_prefixesImpl extends MinimalEObjectImpl.Container implements class_prefixes
 {
+  /**
+   * The default value of the '{@link #isIsEncapsulated() <em>Is Encapsulated</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEncapsulated()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ENCAPSULATED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsEncapsulated() <em>Is Encapsulated</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEncapsulated()
+   * @generated
+   * @ordered
+   */
+  protected boolean isEncapsulated = IS_ENCAPSULATED_EDEFAULT;
+
   /**
    * The default value of the '{@link #isIsPartial() <em>Is Partial</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -152,6 +173,31 @@ public class class_prefixesImpl extends MinimalEObjectImpl.Container implements 
   protected EClass eStaticClass()
   {
     return MOlocPackage.Literals.CLASS_PREFIXES;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsEncapsulated()
+  {
+    return isEncapsulated;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsEncapsulated(boolean newIsEncapsulated)
+  {
+    boolean oldIsEncapsulated = isEncapsulated;
+    isEncapsulated = newIsEncapsulated;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_PREFIXES__IS_ENCAPSULATED, oldIsEncapsulated, isEncapsulated));
   }
 
   /**
@@ -289,6 +335,8 @@ public class class_prefixesImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
+      case MOlocPackage.CLASS_PREFIXES__IS_ENCAPSULATED:
+        return isIsEncapsulated();
       case MOlocPackage.CLASS_PREFIXES__IS_PARTIAL:
         return isIsPartial();
       case MOlocPackage.CLASS_PREFIXES__IS_EXPANDABLE:
@@ -313,6 +361,9 @@ public class class_prefixesImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
+      case MOlocPackage.CLASS_PREFIXES__IS_ENCAPSULATED:
+        setIsEncapsulated((Boolean)newValue);
+        return;
       case MOlocPackage.CLASS_PREFIXES__IS_PARTIAL:
         setIsPartial((Boolean)newValue);
         return;
@@ -342,6 +393,9 @@ public class class_prefixesImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
+      case MOlocPackage.CLASS_PREFIXES__IS_ENCAPSULATED:
+        setIsEncapsulated(IS_ENCAPSULATED_EDEFAULT);
+        return;
       case MOlocPackage.CLASS_PREFIXES__IS_PARTIAL:
         setIsPartial(IS_PARTIAL_EDEFAULT);
         return;
@@ -371,6 +425,8 @@ public class class_prefixesImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
+      case MOlocPackage.CLASS_PREFIXES__IS_ENCAPSULATED:
+        return isEncapsulated != IS_ENCAPSULATED_EDEFAULT;
       case MOlocPackage.CLASS_PREFIXES__IS_PARTIAL:
         return isPartial != IS_PARTIAL_EDEFAULT;
       case MOlocPackage.CLASS_PREFIXES__IS_EXPANDABLE:
@@ -396,7 +452,9 @@ public class class_prefixesImpl extends MinimalEObjectImpl.Container implements 
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (isPartial: ");
+    result.append(" (isEncapsulated: ");
+    result.append(isEncapsulated);
+    result.append(", isPartial: ");
     result.append(isPartial);
     result.append(", isExpandable: ");
     result.append(isExpandable);

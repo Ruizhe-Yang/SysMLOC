@@ -39,8 +39,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#getCondition <em>Condition</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#getEquations <em>Equations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#getIfEquations <em>If Equations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#getElseCondition <em>Else Condition</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#getElseifEquations <em>Elseif Equations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#getElseEquations <em>Else Equations</em>}</li>
  * </ul>
  *
  * @generated
@@ -118,14 +120,14 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
   protected String condition = CONDITION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getEquations() <em>Equations</em>}' containment reference list.
+   * The cached value of the '{@link #getIfEquations() <em>If Equations</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEquations()
+   * @see #getIfEquations()
    * @generated
    * @ordered
    */
-  protected EList<Equation> equations;
+  protected EList<Equation> ifEquations;
 
   /**
    * The cached value of the '{@link #getElseCondition() <em>Else Condition</em>}' attribute list.
@@ -136,6 +138,26 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
    * @ordered
    */
   protected EList<String> elseCondition;
+
+  /**
+   * The cached value of the '{@link #getElseifEquations() <em>Elseif Equations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElseifEquations()
+   * @generated
+   * @ordered
+   */
+  protected EList<Equation> elseifEquations;
+
+  /**
+   * The cached value of the '{@link #getElseEquations() <em>Else Equations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElseEquations()
+   * @generated
+   * @ordered
+   */
+  protected EList<Equation> elseEquations;
 
   /**
    * <!-- begin-user-doc -->
@@ -254,13 +276,13 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
    * @generated
    */
   @Override
-  public EList<Equation> getEquations()
+  public EList<Equation> getIfEquations()
   {
-    if (equations == null)
+    if (ifEquations == null)
     {
-      equations = new EObjectContainmentEList<Equation>(Equation.class, this, MOlocPackage.IF_EQUATION__EQUATIONS);
+      ifEquations = new EObjectContainmentEList<Equation>(Equation.class, this, MOlocPackage.IF_EQUATION__IF_EQUATIONS);
     }
-    return equations;
+    return ifEquations;
   }
 
   /**
@@ -284,14 +306,48 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
    * @generated
    */
   @Override
+  public EList<Equation> getElseifEquations()
+  {
+    if (elseifEquations == null)
+    {
+      elseifEquations = new EObjectContainmentEList<Equation>(Equation.class, this, MOlocPackage.IF_EQUATION__ELSEIF_EQUATIONS);
+    }
+    return elseifEquations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Equation> getElseEquations()
+  {
+    if (elseEquations == null)
+    {
+      elseEquations = new EObjectContainmentEList<Equation>(Equation.class, this, MOlocPackage.IF_EQUATION__ELSE_EQUATIONS);
+    }
+    return elseEquations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case MOlocPackage.IF_EQUATION__ARGUMENTS:
         return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.IF_EQUATION__EQUATIONS:
-        return ((InternalEList<?>)getEquations()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.IF_EQUATION__IF_EQUATIONS:
+        return ((InternalEList<?>)getIfEquations()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.IF_EQUATION__ELSEIF_EQUATIONS:
+        return ((InternalEList<?>)getElseifEquations()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.IF_EQUATION__ELSE_EQUATIONS:
+        return ((InternalEList<?>)getElseEquations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -314,10 +370,14 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
         return isIsAnnotation();
       case MOlocPackage.IF_EQUATION__CONDITION:
         return getCondition();
-      case MOlocPackage.IF_EQUATION__EQUATIONS:
-        return getEquations();
+      case MOlocPackage.IF_EQUATION__IF_EQUATIONS:
+        return getIfEquations();
       case MOlocPackage.IF_EQUATION__ELSE_CONDITION:
         return getElseCondition();
+      case MOlocPackage.IF_EQUATION__ELSEIF_EQUATIONS:
+        return getElseifEquations();
+      case MOlocPackage.IF_EQUATION__ELSE_EQUATIONS:
+        return getElseEquations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -346,13 +406,21 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
       case MOlocPackage.IF_EQUATION__CONDITION:
         setCondition((String)newValue);
         return;
-      case MOlocPackage.IF_EQUATION__EQUATIONS:
-        getEquations().clear();
-        getEquations().addAll((Collection<? extends Equation>)newValue);
+      case MOlocPackage.IF_EQUATION__IF_EQUATIONS:
+        getIfEquations().clear();
+        getIfEquations().addAll((Collection<? extends Equation>)newValue);
         return;
       case MOlocPackage.IF_EQUATION__ELSE_CONDITION:
         getElseCondition().clear();
         getElseCondition().addAll((Collection<? extends String>)newValue);
+        return;
+      case MOlocPackage.IF_EQUATION__ELSEIF_EQUATIONS:
+        getElseifEquations().clear();
+        getElseifEquations().addAll((Collection<? extends Equation>)newValue);
+        return;
+      case MOlocPackage.IF_EQUATION__ELSE_EQUATIONS:
+        getElseEquations().clear();
+        getElseEquations().addAll((Collection<? extends Equation>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -380,11 +448,17 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
       case MOlocPackage.IF_EQUATION__CONDITION:
         setCondition(CONDITION_EDEFAULT);
         return;
-      case MOlocPackage.IF_EQUATION__EQUATIONS:
-        getEquations().clear();
+      case MOlocPackage.IF_EQUATION__IF_EQUATIONS:
+        getIfEquations().clear();
         return;
       case MOlocPackage.IF_EQUATION__ELSE_CONDITION:
         getElseCondition().clear();
+        return;
+      case MOlocPackage.IF_EQUATION__ELSEIF_EQUATIONS:
+        getElseifEquations().clear();
+        return;
+      case MOlocPackage.IF_EQUATION__ELSE_EQUATIONS:
+        getElseEquations().clear();
         return;
     }
     super.eUnset(featureID);
@@ -408,10 +482,14 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.IF_EQUATION__CONDITION:
         return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
-      case MOlocPackage.IF_EQUATION__EQUATIONS:
-        return equations != null && !equations.isEmpty();
+      case MOlocPackage.IF_EQUATION__IF_EQUATIONS:
+        return ifEquations != null && !ifEquations.isEmpty();
       case MOlocPackage.IF_EQUATION__ELSE_CONDITION:
         return elseCondition != null && !elseCondition.isEmpty();
+      case MOlocPackage.IF_EQUATION__ELSEIF_EQUATIONS:
+        return elseifEquations != null && !elseifEquations.isEmpty();
+      case MOlocPackage.IF_EQUATION__ELSE_EQUATIONS:
+        return elseEquations != null && !elseEquations.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -3911,7 +3911,7 @@
             </elements>
             <elements xsi:type="mOloc:EquationSection">
               <equations xsi:type="mOloc:WhenEquation" condition="{initial(), sample(samplePeriod,samplePeriod)}">
-                <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.Random.Utilities.impureRandom(globalSeed.id_impure)"/>
+                <whenEquations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.Random.Utilities.impureRandom(globalSeed.id_impure)"/>
               </equations>
             </elements>
             <elements xsi:type="mOloc:AnnotationClause">

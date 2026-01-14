@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.WhileStatement#getCondition <em>Condition</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.WhileStatement#getStatements <em>Statements</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.WhileStatement#getWhileStatements <em>While Statements</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getWhileStatement()
@@ -47,15 +47,15 @@ public interface WhileStatement extends Statement, description
   void setCondition(String value);
 
   /**
-   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+   * Returns the value of the '<em><b>While Statements</b></em>' containment reference list.
    * The list contents are of type {@link dut.control.moloc.mOloc.Statement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statements</em>' containment reference list.
-   * @see dut.control.moloc.mOloc.MOlocPackage#getWhileStatement_Statements()
+   * @return the value of the '<em>While Statements</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getWhileStatement_WhileStatements()
    * @model containment="true"
    * @generated
    */
-  EList<Statement> getStatements();
+  EList<Statement> getWhileStatements();
 
 } // WhileStatement

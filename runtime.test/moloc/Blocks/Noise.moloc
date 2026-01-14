@@ -80,7 +80,7 @@
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:WhenEquation" condition="generateNoise and sample(startTime, samplePeriod)">
-          <equations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, y_min, y_max)"/>
+          <whenEquations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, y_min, y_max)"/>
         </equations>
       </elements>
       <elements xsi:type="mOloc:AnnotationClause">
@@ -120,7 +120,7 @@
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:WhenEquation" condition="generateNoise and sample(startTime, samplePeriod)">
-          <equations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, mu, sigma)"/>
+          <whenEquations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, mu, sigma)"/>
         </equations>
       </elements>
       <elements xsi:type="mOloc:AnnotationClause">
@@ -179,7 +179,7 @@
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:WhenEquation" condition="generateNoise and sample(startTime, samplePeriod)">
-          <equations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, y_min, y_max, mu, sigma)"/>
+          <whenEquations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, y_min, y_max, mu, sigma)"/>
         </equations>
       </elements>
       <elements xsi:type="mOloc:AnnotationClause">
@@ -217,7 +217,7 @@
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:WhenEquation" condition="generateNoise and sample(startTime, samplePeriod)">
-          <equations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, mu, sigma)"/>
+          <whenEquations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, mu, sigma)"/>
         </equations>
       </elements>
       <elements xsi:type="mOloc:AnnotationClause">

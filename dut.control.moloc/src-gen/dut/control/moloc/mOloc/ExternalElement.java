@@ -15,6 +15,9 @@ package dut.control.moloc.mOloc;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.ExternalElement#getLanguage_specification <em>Language specification</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.ExternalElement#getRef <em>Ref</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ExternalElement#getRefValue <em>Ref Value</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ExternalElement#getExpressionList <em>Expression List</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ExternalElement#isIsAnnotation <em>Is Annotation</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getExternalElement()
@@ -66,5 +69,71 @@ public interface ExternalElement extends Element, class_modification
    * @generated
    */
   void setRef(String value);
+
+  /**
+   * Returns the value of the '<em><b>Ref Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ref Value</em>' attribute.
+   * @see #setRefValue(String)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getExternalElement_RefValue()
+   * @model
+   * @generated
+   */
+  String getRefValue();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ExternalElement#getRefValue <em>Ref Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ref Value</em>' attribute.
+   * @see #getRefValue()
+   * @generated
+   */
+  void setRefValue(String value);
+
+  /**
+   * Returns the value of the '<em><b>Expression List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expression List</em>' attribute.
+   * @see #setExpressionList(String)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getExternalElement_ExpressionList()
+   * @model
+   * @generated
+   */
+  String getExpressionList();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ExternalElement#getExpressionList <em>Expression List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expression List</em>' attribute.
+   * @see #getExpressionList()
+   * @generated
+   */
+  void setExpressionList(String value);
+
+  /**
+   * Returns the value of the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Annotation</em>' attribute.
+   * @see #setIsAnnotation(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getExternalElement_IsAnnotation()
+   * @model
+   * @generated
+   */
+  boolean isIsAnnotation();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ExternalElement#isIsAnnotation <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Annotation</em>' attribute.
+   * @see #isIsAnnotation()
+   * @generated
+   */
+  void setIsAnnotation(boolean value);
 
 } // ExternalElement

@@ -42,8 +42,8 @@
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:IfEquation" condition="use_numberPort">
-            <equations xsi:type="mOloc:ConnectEquation" left="numberPort" right="showNumber"/>
-            <equations xsi:type="mOloc:SimpleEquation" left="showNumber" right="number"/>
+            <ifEquations xsi:type="mOloc:ConnectEquation" left="numberPort" right="showNumber"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="showNumber" right="number"/>
           </equations>
         </elements>
         <elements xsi:type="mOloc:AnnotationClause">
@@ -92,8 +92,8 @@
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:IfEquation" condition="use_numberPort">
-            <equations xsi:type="mOloc:ConnectEquation" left="numberPort" right="showNumber"/>
-            <equations xsi:type="mOloc:SimpleEquation" left="showNumber" right="number"/>
+            <ifEquations xsi:type="mOloc:ConnectEquation" left="numberPort" right="showNumber"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="showNumber" right="number"/>
           </equations>
         </elements>
         <elements xsi:type="mOloc:AnnotationClause">
@@ -142,8 +142,8 @@
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:IfEquation" condition="use_activePort">
-            <equations xsi:type="mOloc:ConnectEquation" left="activePort" right="showActive"/>
-            <equations xsi:type="mOloc:SimpleEquation" left="showActive" right="active"/>
+            <ifEquations xsi:type="mOloc:ConnectEquation" left="activePort" right="showActive"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="showActive" right="active"/>
           </equations>
         </elements>
         <elements xsi:type="mOloc:AnnotationClause">

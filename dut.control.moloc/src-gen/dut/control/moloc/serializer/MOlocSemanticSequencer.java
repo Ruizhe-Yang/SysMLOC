@@ -179,39 +179,33 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *             (
 	 *                 (
 	 *                     (
+	 *                         isEncapsulated?='encapsulated'? 
 	 *                         isPartial?='partial'? 
 	 *                         isExpandable?='expandable'? 
 	 *                         (isPure?='pure' | isPure?='impure')? 
 	 *                         isOperator?='operator'? 
 	 *                         classType=ClassType 
 	 *                         className=IDENT 
-	 *                         direction=Direction? 
-	 *                         typeSpecifier=TypeSpecifier 
-	 *                         declarationName=IDENT? 
-	 *                         subscript+=Subscript 
-	 *                         subscript+=Subscript*
+	 *                         direction=Direction?
 	 *                     ) | 
-	 *                     (
-	 *                         relationshipType=RelationshipType? 
-	 *                         parameterType=ParameterType? 
-	 *                         directionType=Direction? 
-	 *                         typeSpecifier=TypeSpecifier 
-	 *                         declarationName=IDENT? 
-	 *                         subscript+=Subscript 
-	 *                         subscript+=Subscript*
-	 *                     )
+	 *                     (relationshipType=RelationshipType? parameterType=ParameterType? directionType=Direction?)
 	 *                 ) 
+	 *                 typeSpecifier=TypeSpecifier 
+	 *                 ((declarationName=IDENT subscripts=ArraySubscripts) | subscripts=ArraySubscripts)? 
 	 *                 (
-	 *                     (description=DescriptionString isAnnotation?='annotation') | 
-	 *                     ((expression=Modification_expression | expression=Modification_expression) description=DescriptionString isAnnotation?='annotation')
-	 *                 )? 
-	 *                 arguments+=Argument 
-	 *                 arguments+=Argument* 
-	 *                 expression=Modification_expression? 
-	 *                 description=DescriptionString 
-	 *                 (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* expression=Modification_expression? description=DescriptionString)*
+	 *                     ((expression=Modification_expression | expression=Modification_expression)? description=DescriptionString?) | 
+	 *                     (
+	 *                         ((expression=Modification_expression | expression=Modification_expression)? description=DescriptionString? isAnnotation?='annotation')? 
+	 *                         arguments+=Argument 
+	 *                         arguments+=Argument* 
+	 *                         expression=Modification_expression? 
+	 *                         description=DescriptionString? 
+	 *                         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* expression=Modification_expression? description=DescriptionString?)*
+	 *                     )
+	 *                 )
 	 *             ) | 
 	 *             (
+	 *                 isEncapsulated?='encapsulated'? 
 	 *                 isPartial?='partial'? 
 	 *                 isExpandable?='expandable'? 
 	 *                 (isPure?='pure' | isPure?='impure')? 
@@ -222,105 +216,66 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *                     (
 	 *                         direction=Direction? 
 	 *                         typeSpecifier=TypeSpecifier 
-	 *                         declarationName=IDENT? 
-	 *                         subscript+=Subscript 
-	 *                         subscript+=Subscript* 
-	 *                         (description=DescriptionString | ((expression=Modification_expression | expression=Modification_expression) description=DescriptionString))?
-	 *                     ) | 
-	 *                     (
-	 *                         direction=Direction? 
-	 *                         typeSpecifier=TypeSpecifier 
-	 *                         declarationName=IDENT? 
-	 *                         (expression=Modification_expression | expression=Modification_expression) 
-	 *                         description=DescriptionString 
-	 *                         (
-	 *                             isAnnotation?='annotation' 
-	 *                             arguments+=Argument 
-	 *                             arguments+=Argument* 
-	 *                             expression=Modification_expression? 
-	 *                             description=DescriptionString 
-	 *                             (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* expression=Modification_expression? description=DescriptionString)*
-	 *                         )?
-	 *                     ) | 
-	 *                     (direction=Direction? typeSpecifier=TypeSpecifier declarationName=IDENT? description=DescriptionString) | 
-	 *                     (
-	 *                         (
-	 *                             (direction=Direction? typeSpecifier=TypeSpecifier declarationName=IDENT?) | 
-	 *                             (direction=Direction? typeSpecifier=TypeSpecifier declarationName=IDENT? description=DescriptionString isAnnotation?='annotation')
-	 *                         ) 
 	 *                         arguments+=Argument 
 	 *                         arguments+=Argument* 
 	 *                         expression=Modification_expression? 
-	 *                         description=DescriptionString 
-	 *                         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* expression=Modification_expression? description=DescriptionString)*
+	 *                         description=DescriptionString? 
+	 *                         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* expression=Modification_expression? description=DescriptionString?)*
 	 *                     ) | 
 	 *                     (
-	 *                         isEnumeration?='enumeration' 
-	 *                         (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))? 
-	 *                         description=DescriptionString 
+	 *                         (
+	 *                             (direction=Direction? typeSpecifier=TypeSpecifier) | 
+	 *                             (isEnumeration?='enumeration' (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))?)
+	 *                         ) 
+	 *                         description=DescriptionString? 
 	 *                         (
 	 *                             isAnnotation?='annotation' 
 	 *                             arguments+=Argument 
 	 *                             arguments+=Argument* 
 	 *                             expression=Modification_expression? 
-	 *                             description=DescriptionString 
-	 *                             (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* expression=Modification_expression? description=DescriptionString)*
+	 *                             description=DescriptionString? 
+	 *                             (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* expression=Modification_expression? description=DescriptionString?)*
 	 *                         )?
 	 *                     )
 	 *                 )
 	 *             ) | 
+	 *             (elementName=Name (expression=Modification_expression | expression=Modification_expression)? description=DescriptionString?) | 
 	 *             (
 	 *                 (
-	 *                     elementName=Name | 
-	 *                     (relationshipType=RelationshipType? parameterType=ParameterType? directionType=Direction? typeSpecifier=TypeSpecifier declarationName=IDENT?)
-	 *                 ) 
-	 *                 (expression=Modification_expression | expression=Modification_expression) 
-	 *                 description=DescriptionString 
-	 *                 (
-	 *                     isAnnotation?='annotation' 
-	 *                     arguments+=Argument 
-	 *                     arguments+=Argument* 
-	 *                     expression=Modification_expression? 
-	 *                     description=DescriptionString 
-	 *                     (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* expression=Modification_expression? description=DescriptionString)*
-	 *                 )?
-	 *             ) | 
-	 *             (
-	 *                 (
-	 *                     elementName=Name | 
 	 *                     (
-	 *                         relationshipType=RelationshipType? 
-	 *                         parameterType=ParameterType? 
-	 *                         directionType=Direction? 
 	 *                         (
-	 *                             (typeSpecifier=TypeSpecifier declarationName=IDENT?) | 
-	 *                             (typeSpecifier=TypeSpecifier declarationName=IDENT? description=DescriptionString isAnnotation?='annotation')
-	 *                         )
+	 *                             elementName=Name | 
+	 *                             (
+	 *                                 relationshipType=RelationshipType? 
+	 *                                 parameterType=ParameterType? 
+	 *                                 directionType=Direction? 
+	 *                                 (typeSpecifier=TypeSpecifier | (typeSpecifier=TypeSpecifier description=DescriptionString? isAnnotation?='annotation'))
+	 *                             )
+	 *                         ) 
+	 *                         arguments+=Argument 
+	 *                         arguments+=Argument* 
+	 *                         expression=Modification_expression? 
+	 *                         description=DescriptionString?
+	 *                     ) | 
+	 *                     (
+	 *                         elementName=Name 
+	 *                         (expression=Modification_expression | expression=Modification_expression)? 
+	 *                         description=DescriptionString? 
+	 *                         isAnnotation?='annotation' 
+	 *                         arguments+=Argument 
+	 *                         arguments+=Argument* 
+	 *                         expression=Modification_expression? 
+	 *                         description=DescriptionString?
 	 *                     )
 	 *                 ) 
-	 *                 arguments+=Argument 
-	 *                 arguments+=Argument* 
-	 *                 expression=Modification_expression? 
-	 *                 description=DescriptionString 
-	 *                 (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* expression=Modification_expression? description=DescriptionString)*
+	 *                 (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* expression=Modification_expression? description=DescriptionString?)*
 	 *             ) | 
 	 *             (
 	 *                 relationshipType=RelationshipType? 
 	 *                 parameterType=ParameterType? 
 	 *                 directionType=Direction? 
 	 *                 typeSpecifier=TypeSpecifier 
-	 *                 declarationName=IDENT? 
-	 *                 description=DescriptionString
-	 *             ) | 
-	 *             (
-	 *                 relationshipType=RelationshipType? 
-	 *                 parameterType=ParameterType? 
-	 *                 directionType=Direction? 
-	 *                 typeSpecifier=TypeSpecifier 
-	 *                 declarationName=IDENT? 
-	 *                 subscript+=Subscript 
-	 *                 subscript+=Subscript* 
-	 *                 (description=DescriptionString | ((expression=Modification_expression | expression=Modification_expression) description=DescriptionString))?
+	 *                 description=DescriptionString?
 	 *             )
 	 *         ) 
 	 *         constrain=ConstrainingClause?
@@ -366,33 +321,25 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *             (
 	 *                 (direction=Direction | isDer?='der')? 
 	 *                 typeSpecifier=TypeSpecifier 
+	 *                 ((derName+=IDENT derName+=IDENT*) | subscripts=ArraySubscripts)? 
+	 *                 description=DescriptionString? 
 	 *                 (
-	 *                     ((derName+=IDENT derName+=IDENT*)? description=DescriptionString?) | 
-	 *                     ((subscript+=Subscript subscript+=Subscript*)? description=DescriptionString?)
-	 *                 )
+	 *                     isAnnotation?='annotation' 
+	 *                     arguments+=Argument 
+	 *                     arguments+=Argument* 
+	 *                     description=DescriptionString? 
+	 *                     (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* description=DescriptionString?)*
+	 *                 )?
 	 *             ) | 
 	 *             (
 	 *                 (
 	 *                     (
 	 *                         (direction=Direction | isDer?='der')? 
 	 *                         typeSpecifier=TypeSpecifier 
-	 *                         (
-	 *                             (
-	 *                                 (derName+=IDENT derName+=IDENT*)? 
-	 *                                 description=DescriptionString? 
-	 *                                 isAnnotation?='annotation' 
-	 *                                 arguments+=Argument 
-	 *                                 arguments+=Argument* 
-	 *                                 description=DescriptionString?
-	 *                             ) | 
-	 *                             (
-	 *                                 (subscript+=Subscript subscript+=Subscript*)? 
-	 *                                 (description=DescriptionString? isAnnotation?='annotation')? 
-	 *                                 arguments+=Argument 
-	 *                                 arguments+=Argument* 
-	 *                                 description=DescriptionString?
-	 *                             )
-	 *                         )
+	 *                         subscripts=ArraySubscripts 
+	 *                         arguments+=Argument 
+	 *                         arguments+=Argument* 
+	 *                         description=DescriptionString?
 	 *                     ) | 
 	 *                     (arguments+=Argument arguments+=Argument* description=DescriptionString?)
 	 *                 ) 
@@ -427,7 +374,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         declarationName=IDENT 
-	 *         (subscript+=Subscript subscript+=Subscript*)? 
+	 *         subscripts=ArraySubscripts? 
 	 *         (
 	 *             ((expression=Modification_expression | expression=Modification_expression)? condition_attribute=Expression? description=DescriptionString?) | 
 	 *             (
@@ -517,6 +464,8 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
+	 *         isPublic?='public'? 
+	 *         isProtected?='protected'? 
 	 *         typeSpecifier=TypeSpecifier 
 	 *         ((arguments+=Argument | breaks+=Break) arguments+=Argument? (breaks+=Break? arguments+=Argument?)*)? 
 	 *         (arguments+=Argument arguments+=Argument*)?
@@ -535,7 +484,11 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ExternalElement returns ExternalElement
 	 *
 	 * Constraint:
-	 *     (language_specification=STRING? ref=Component_reference? (arguments+=Argument arguments+=Argument*)?)
+	 *     (
+	 *         language_specification=STRING? 
+	 *         (ref=Component_reference? refValue=IDENT expressionList=ExpressionList?)? 
+	 *         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_ExternalElement_class_modification(ISerializationContext context, ExternalElement semanticObject) {
@@ -552,7 +505,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         forIndices=ForIndices 
-	 *         equations+=Equation* 
+	 *         forEquations+=Equation* 
 	 *         description=DescriptionString? 
 	 *         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?
 	 *     )
@@ -572,7 +525,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         forIndices=ForIndices 
-	 *         statements+=Statement* 
+	 *         forStatements+=Statement* 
 	 *         description=DescriptionString? 
 	 *         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?
 	 *     )
@@ -611,9 +564,10 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         output=OutputExpressionList? 
-	 *         component=Component_reference 
-	 *         (function=Expression | function=FunctionCallArgs) 
+	 *         (
+	 *             (component=Component_reference (expression=Expression | function=FunctionCallArgs)) | 
+	 *             (output=OutputExpressionList component=Component_reference function=FunctionCallArgs)
+	 *         ) 
 	 *         description=DescriptionString? 
 	 *         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?
 	 *     )
@@ -640,53 +594,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         isReplaceable?='replaceable'? 
 	 *         (
 	 *             (
-	 *                 (
-	 *                     (
-	 *                         isPartial?='partial'? 
-	 *                         isExpandable?='expandable'? 
-	 *                         (isPure?='pure' | isPure?='impure')? 
-	 *                         isOperator?='operator'? 
-	 *                         classType=ClassType 
-	 *                         isExtends?='extends'? 
-	 *                         className=IDENT 
-	 *                         (
-	 *                             (
-	 *                                 isEnumeration?='enumeration' 
-	 *                                 (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))? 
-	 *                                 ((description=DescriptionString isAnnotation?='annotation') | isAnnotation?='annotation')? 
-	 *                                 arguments+=Argument 
-	 *                                 arguments+=Argument*
-	 *                             ) | 
-	 *                             ((description=DescriptionString isAnnotation?='annotation')? arguments+=Argument arguments+=Argument*)
-	 *                         )
-	 *                     ) | 
-	 *                     (
-	 *                         (
-	 *                             (
-	 *                                 isPartial?='partial'? 
-	 *                                 isExpandable?='expandable'? 
-	 *                                 (isPure?='pure' | isPure?='impure')? 
-	 *                                 isOperator?='operator'? 
-	 *                                 classType=ClassType 
-	 *                                 isExtends?='extends'? 
-	 *                                 className=IDENT 
-	 *                                 (direction=Direction | isDer?='der')? 
-	 *                                 typeSpecifier=TypeSpecifier
-	 *                             ) | 
-	 *                             (relationshipType=RelationshipType? parameterType=ParameterType? directionType=Direction? typeSpecifier=TypeSpecifier)
-	 *                         ) 
-	 *                         (
-	 *                             ((derName+=IDENT derName+=IDENT*)? ((description=DescriptionString isAnnotation?='annotation') | isAnnotation?='annotation')) | 
-	 *                             ((subscript+=Subscript subscript+=Subscript*)? ((description=DescriptionString isAnnotation?='annotation') | isAnnotation?='annotation'))
-	 *                         ) 
-	 *                         arguments+=Argument 
-	 *                         arguments+=Argument*
-	 *                     )
-	 *                 ) 
-	 *                 (((description=DescriptionString isAnnotation?='annotation') | isAnnotation?='annotation') arguments+=Argument arguments+=Argument*)* 
-	 *                 (description=DescriptionString | (description=DescriptionString elements+=Element* classNameEnd=IDENT))?
-	 *             ) | 
-	 *             (
+	 *                 isEncapsulated?='encapsulated'? 
 	 *                 isPartial?='partial'? 
 	 *                 isExpandable?='expandable'? 
 	 *                 (isPure?='pure' | isPure?='impure')? 
@@ -696,17 +604,26 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *                 className=IDENT 
 	 *                 (
 	 *                     (
+	 *                         (direction=Direction | isDer?='der')? 
+	 *                         typeSpecifier=TypeSpecifier 
+	 *                         (
+	 *                             (subscripts=ArraySubscripts? description=DescriptionString) | 
+	 *                             (subscripts=ArraySubscripts? description=DescriptionString elements+=Element* classNameEnd=IDENT)
+	 *                         )
+	 *                     ) | 
+	 *                     (
 	 *                         isEnumeration?='enumeration' 
 	 *                         (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))? 
 	 *                         (description=DescriptionString | (description=DescriptionString elements+=Element* classNameEnd=IDENT))
 	 *                     ) | 
 	 *                     description=DescriptionString | 
 	 *                     (description=DescriptionString elements+=Element* classNameEnd=IDENT)
-	 *                 )
+	 *                 )?
 	 *             ) | 
 	 *             (
 	 *                 (
 	 *                     (
+	 *                         isEncapsulated?='encapsulated'? 
 	 *                         isPartial?='partial'? 
 	 *                         isExpandable?='expandable'? 
 	 *                         (isPure?='pure' | isPure?='impure')? 
@@ -720,19 +637,87 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *                     (relationshipType=RelationshipType? parameterType=ParameterType? directionType=Direction? typeSpecifier=TypeSpecifier)
 	 *                 ) 
 	 *                 (
+	 *                     (derName+=IDENT derName+=IDENT* description=DescriptionString elements+=Element* classNameEnd=IDENT) | 
+	 *                     (derName+=IDENT derName+=IDENT* description=DescriptionString) | 
+	 *                     (subscripts=ArraySubscripts? (component_list+=Component_declaration component_list+=Component_declaration*)?)
+	 *                 )
+	 *             ) | 
+	 *             (
+	 *                 (
 	 *                     (
+	 *                         isEncapsulated?='encapsulated'? 
+	 *                         isPartial?='partial'? 
+	 *                         isExpandable?='expandable'? 
+	 *                         (isPure?='pure' | isPure?='impure')? 
+	 *                         isOperator?='operator'? 
+	 *                         classType=ClassType 
+	 *                         isExtends?='extends'? 
+	 *                         className=IDENT 
 	 *                         (
-	 *                             ((derName+=IDENT derName+=IDENT*)? description=DescriptionString) | 
-	 *                             ((subscript+=Subscript subscript+=Subscript*)? description=DescriptionString)
-	 *                         ) 
-	 *                         elements+=Element* 
-	 *                         classNameEnd=IDENT
+	 *                             (
+	 *                                 (direction=Direction | isDer?='der')? 
+	 *                                 typeSpecifier=TypeSpecifier 
+	 *                                 derName+=IDENT 
+	 *                                 derName+=IDENT* 
+	 *                                 ((description=DescriptionString isAnnotation?='annotation') | isAnnotation?='annotation')? 
+	 *                                 arguments+=Argument 
+	 *                                 arguments+=Argument*
+	 *                             ) | 
+	 *                             (
+	 *                                 (direction=Direction | isDer?='der')? 
+	 *                                 typeSpecifier=TypeSpecifier 
+	 *                                 (
+	 *                                     (subscripts=ArraySubscripts? isAnnotation?='annotation') | 
+	 *                                     (subscripts=ArraySubscripts? description=DescriptionString isAnnotation?='annotation')
+	 *                                 ) 
+	 *                                 arguments+=Argument 
+	 *                                 arguments+=Argument*
+	 *                             ) | 
+	 *                             (
+	 *                                 isEnumeration?='enumeration' 
+	 *                                 (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))? 
+	 *                                 ((description=DescriptionString isAnnotation?='annotation') | isAnnotation?='annotation') 
+	 *                                 arguments+=Argument 
+	 *                                 arguments+=Argument*
+	 *                             ) | 
+	 *                             ((description=DescriptionString isAnnotation?='annotation')? arguments+=Argument arguments+=Argument*)
+	 *                         )
 	 *                     ) | 
-	 *                     ((derName+=IDENT derName+=IDENT*)? description=DescriptionString) | 
 	 *                     (
-	 *                         (subscript+=Subscript subscript+=Subscript*)? 
-	 *                         (description=DescriptionString | (component_list+=Component_declaration component_list+=Component_declaration*))?
+	 *                         relationshipType=RelationshipType? 
+	 *                         parameterType=ParameterType? 
+	 *                         directionType=Direction? 
+	 *                         typeSpecifier=TypeSpecifier 
+	 *                         (
+	 *                             (subscripts=ArraySubscripts? isAnnotation?='annotation') | 
+	 *                             (subscripts=ArraySubscripts? description=DescriptionString isAnnotation?='annotation')
+	 *                         ) 
+	 *                         arguments+=Argument 
+	 *                         arguments+=Argument*
+	 *                     ) | 
+	 *                     (
+	 *                         relationshipType=RelationshipType? 
+	 *                         parameterType=ParameterType? 
+	 *                         directionType=Direction? 
+	 *                         typeSpecifier=TypeSpecifier 
+	 *                         derName+=IDENT 
+	 *                         derName+=IDENT* 
+	 *                         ((description=DescriptionString isAnnotation?='annotation') | isAnnotation?='annotation')? 
+	 *                         arguments+=Argument 
+	 *                         arguments+=Argument*
 	 *                     )
+	 *                 ) 
+	 *                 (((description=DescriptionString isAnnotation?='annotation') | isAnnotation?='annotation') arguments+=Argument arguments+=Argument*)* 
+	 *                 (description=DescriptionString | (description=DescriptionString elements+=Element* classNameEnd=IDENT))
+	 *             ) | 
+	 *             (
+	 *                 relationshipType=RelationshipType? 
+	 *                 parameterType=ParameterType? 
+	 *                 directionType=Direction? 
+	 *                 typeSpecifier=TypeSpecifier 
+	 *                 (
+	 *                     (subscripts=ArraySubscripts? description=DescriptionString) | 
+	 *                     (subscripts=ArraySubscripts? description=DescriptionString elements+=Element* classNameEnd=IDENT)
 	 *                 )
 	 *             )
 	 *         ) 
@@ -763,6 +748,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	//         isReplaceable?='replaceable'? 
 	//         (
 	//             (
+	//                 isEncapsulated?='encapsulated'? 
 	//                 isPartial?='partial'? 
 	//                 isExpandable?='expandable'? 
 	//                 (isPure?='pure' | isPure?='impure')? 
@@ -772,27 +758,36 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	//                 className=IDENT 
 	//                 (
 	//                     (
+	//                         (direction=Direction | isDer?='der')? 
+	//                         typeSpecifier=TypeSpecifier 
+	//                         ((derName+=IDENT derName+=IDENT*) | subscripts=ArraySubscripts)? 
+	//                         description=DescriptionString? 
+	//                         (
+	//                             (elements+=Element* classNameEnd=IDENT) | 
+	//                             (
+	//                                 isAnnotation?='annotation' 
+	//                                 arguments+=Argument 
+	//                                 arguments+=Argument* 
+	//                                 description=DescriptionString? 
+	//                                 (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* description=DescriptionString?)* 
+	//                                 (elements+=Element* classNameEnd=IDENT)
+	//                             )
+	//                         )?
+	//                     ) | 
+	//                     (
+	//                         (direction=Direction | isDer?='der')? 
+	//                         typeSpecifier=TypeSpecifier 
+	//                         subscripts=ArraySubscripts 
+	//                         component_list+=Component_declaration 
+	//                         component_list+=Component_declaration*
+	//                     ) | 
+	//                     (
 	//                         (
 	//                             (
-	//                                 (direction=Direction | isDer?='der')? 
-	//                                 typeSpecifier=TypeSpecifier 
-	//                                 (
-	//                                     (
-	//                                         (derName+=IDENT derName+=IDENT*)? 
-	//                                         description=DescriptionString? 
-	//                                         isAnnotation?='annotation' 
-	//                                         arguments+=Argument 
-	//                                         arguments+=Argument* 
-	//                                         description=DescriptionString?
-	//                                     ) | 
-	//                                     (
-	//                                         (subscript+=Subscript subscript+=Subscript*)? 
-	//                                         (description=DescriptionString? isAnnotation?='annotation')? 
-	//                                         arguments+=Argument 
-	//                                         arguments+=Argument* 
-	//                                         description=DescriptionString?
-	//                                     )
-	//                                 )
+	//                                 ((direction=Direction | isDer?='der')? typeSpecifier=TypeSpecifier subscripts=ArraySubscripts)? 
+	//                                 arguments+=Argument 
+	//                                 arguments+=Argument* 
+	//                                 description=DescriptionString?
 	//                             ) | 
 	//                             (
 	//                                 (isEnumeration?='enumeration' (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))?)? 
@@ -801,32 +796,15 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	//                                 arguments+=Argument 
 	//                                 arguments+=Argument* 
 	//                                 description=DescriptionString?
-	//                             ) | 
-	//                             (arguments+=Argument arguments+=Argument* description=DescriptionString?)
+	//                             )
 	//                         ) 
 	//                         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* description=DescriptionString?)* 
-	//                         (elements+=Element* classNameEnd=IDENT)?
-	//                     ) | 
-	//                     (
-	//                         (direction=Direction | isDer?='der')? 
-	//                         typeSpecifier=TypeSpecifier 
-	//                         (subscript+=Subscript subscript+=Subscript*)? 
-	//                         (
-	//                             (description=DescriptionString? (elements+=Element* classNameEnd=IDENT)?) | 
-	//                             (component_list+=Component_declaration component_list+=Component_declaration*)
-	//                         )
-	//                     ) | 
-	//                     (
-	//                         (direction=Direction | isDer?='der')? 
-	//                         typeSpecifier=TypeSpecifier 
-	//                         (derName+=IDENT derName+=IDENT*)? 
-	//                         description=DescriptionString? 
-	//                         (elements+=Element* classNameEnd=IDENT)?
+	//                         (elements+=Element* classNameEnd=IDENT)
 	//                     ) | 
 	//                     (
 	//                         (isEnumeration?='enumeration' (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))?)? 
 	//                         description=DescriptionString? 
-	//                         (elements+=Element* classNameEnd=IDENT)?
+	//                         (elements+=Element* classNameEnd=IDENT)
 	//                     )
 	//                 )
 	//             ) | 
@@ -835,35 +813,18 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	//                 parameterType=ParameterType? 
 	//                 directionType=Direction? 
 	//                 typeSpecifier=TypeSpecifier 
+	//                 ((derName+=IDENT derName+=IDENT*) | subscripts=ArraySubscripts)? 
+	//                 description=DescriptionString? 
 	//                 (
+	//                     (elements+=Element* classNameEnd=IDENT) | 
 	//                     (
-	//                         (derName+=IDENT derName+=IDENT*)? 
-	//                         description=DescriptionString? 
 	//                         isAnnotation?='annotation' 
 	//                         arguments+=Argument 
 	//                         arguments+=Argument* 
-	//                         description=DescriptionString?
-	//                     ) | 
-	//                     (
-	//                         (subscript+=Subscript subscript+=Subscript*)? 
-	//                         (description=DescriptionString? isAnnotation?='annotation')? 
-	//                         arguments+=Argument 
-	//                         arguments+=Argument* 
-	//                         description=DescriptionString?
+	//                         description=DescriptionString? 
+	//                         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* description=DescriptionString?)* 
+	//                         (elements+=Element* classNameEnd=IDENT)
 	//                     )
-	//                 ) 
-	//                 (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* description=DescriptionString?)* 
-	//                 (elements+=Element* classNameEnd=IDENT)?
-	//             ) | 
-	//             (
-	//                 relationshipType=RelationshipType? 
-	//                 parameterType=ParameterType? 
-	//                 directionType=Direction? 
-	//                 typeSpecifier=TypeSpecifier 
-	//                 (subscript+=Subscript subscript+=Subscript*)? 
-	//                 (
-	//                     (description=DescriptionString? (elements+=Element* classNameEnd=IDENT)?) | 
-	//                     (component_list+=Component_declaration component_list+=Component_declaration*)
 	//                 )
 	//             ) | 
 	//             (
@@ -871,9 +832,21 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	//                 parameterType=ParameterType? 
 	//                 directionType=Direction? 
 	//                 typeSpecifier=TypeSpecifier 
-	//                 (derName+=IDENT derName+=IDENT*)? 
+	//                 subscripts=ArraySubscripts 
+	//                 component_list+=Component_declaration 
+	//                 component_list+=Component_declaration*
+	//             ) | 
+	//             (
+	//                 relationshipType=RelationshipType? 
+	//                 parameterType=ParameterType? 
+	//                 directionType=Direction? 
+	//                 typeSpecifier=TypeSpecifier 
+	//                 subscripts=ArraySubscripts 
+	//                 arguments+=Argument 
+	//                 arguments+=Argument* 
 	//                 description=DescriptionString? 
-	//                 (elements+=Element* classNameEnd=IDENT)?
+	//                 (isAnnotation?='annotation' arguments+=Argument arguments+=Argument* description=DescriptionString?)* 
+	//                 (elements+=Element* classNameEnd=IDENT)
 	//             )
 	//         ) 
 	//         constrain=ConstrainingClause?
@@ -890,9 +863,9 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         condition=Expression 
-	 *         equations+=Equation* 
-	 *         (elseCondition+=Expression equations+=Equation*)* 
-	 *         equations+=Equation* 
+	 *         ifEquations+=Equation* 
+	 *         (elseCondition+=Expression elseifEquations+=Equation*)* 
+	 *         elseEquations+=Equation* 
 	 *         description=DescriptionString? 
 	 *         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?
 	 *     )
@@ -912,9 +885,9 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         condition=Expression 
-	 *         statements+=Statement* 
-	 *         (elseCondition+=Expression statements+=Statement*)* 
-	 *         statements+=Statement* 
+	 *         ifStatements+=Statement* 
+	 *         (elseCondition+=Expression elseifStatements+=Statement*)* 
+	 *         elseStatements+=Statement* 
 	 *         description=DescriptionString? 
 	 *         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?
 	 *     )
@@ -984,8 +957,8 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         condition=Expression 
-	 *         equations+=Equation* 
-	 *         (elseCondition+=Expression equations+=Equation*)? 
+	 *         whenEquations+=Equation* 
+	 *         (elseCondition+=Expression elsewhenEquations+=Equation*)* 
 	 *         description=DescriptionString? 
 	 *         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?
 	 *     )
@@ -1005,8 +978,8 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         condition=Expression 
-	 *         statements+=Statement* 
-	 *         (elseCondition+=Expression statements+=Statement*)? 
+	 *         whenStatements+=Statement* 
+	 *         (elseCondition+=Expression whenStatements+=Statement*)* 
 	 *         description=DescriptionString? 
 	 *         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?
 	 *     )
@@ -1026,7 +999,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         condition=Expression 
-	 *         statements+=Statement* 
+	 *         whileStatements+=Statement* 
 	 *         description=DescriptionString? 
 	 *         (isAnnotation?='annotation' arguments+=Argument arguments+=Argument*)?
 	 *     )

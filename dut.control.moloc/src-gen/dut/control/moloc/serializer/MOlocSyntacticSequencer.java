@@ -21,14 +21,14 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MOlocGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q;
+	protected AbstractElementAlias match_ExtendsClause___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q;
 	protected AbstractElementAlias match_IfEquation_ElseKeyword_5_0_q;
 	protected AbstractElementAlias match_IfStatement_ElseKeyword_5_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MOlocGrammarAccess) access;
-		match_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getExtendsClauseAccess().getLeftParenthesisKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getExtendsClauseAccess().getRightParenthesisKeyword_2_2()));
+		match_ExtendsClause___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getExtendsClauseAccess().getLeftParenthesisKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getExtendsClauseAccess().getRightParenthesisKeyword_4_2()));
 		match_IfEquation_ElseKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getIfEquationAccess().getElseKeyword_5_0());
 		match_IfStatement_ElseKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getIfStatementAccess().getElseKeyword_5_0());
 	}
@@ -45,8 +45,8 @@ public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q.equals(syntax))
-				emit_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_ExtendsClause___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q.equals(syntax))
+				emit_ExtendsClause___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_IfEquation_ElseKeyword_5_0_q.equals(syntax))
 				emit_IfEquation_ElseKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_IfStatement_ElseKeyword_5_0_q.equals(syntax))
@@ -66,7 +66,7 @@ public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_ExtendsClause___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ExtendsClause___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -82,9 +82,12 @@ public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' ';' (rule end)
 	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' description=DescriptionString
 	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' isAnnotation?='annotation'
-	 *     equations+=Equation (ambiguity) 'end' 'if' ';' (rule end)
-	 *     equations+=Equation (ambiguity) 'end' 'if' description=DescriptionString
-	 *     equations+=Equation (ambiguity) 'end' 'if' isAnnotation?='annotation'
+	 *     elseifEquations+=Equation (ambiguity) 'end' 'if' ';' (rule end)
+	 *     elseifEquations+=Equation (ambiguity) 'end' 'if' description=DescriptionString
+	 *     elseifEquations+=Equation (ambiguity) 'end' 'if' isAnnotation?='annotation'
+	 *     ifEquations+=Equation (ambiguity) 'end' 'if' ';' (rule end)
+	 *     ifEquations+=Equation (ambiguity) 'end' 'if' description=DescriptionString
+	 *     ifEquations+=Equation (ambiguity) 'end' 'if' isAnnotation?='annotation'
 	 
 	 * </pre>
 	 */
@@ -104,9 +107,12 @@ public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' ';' (rule end)
 	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' description=DescriptionString
 	 *     elseCondition+=Expression 'then' (ambiguity) 'end' 'if' isAnnotation?='annotation'
-	 *     statements+=Statement (ambiguity) 'end' 'if' ';' (rule end)
-	 *     statements+=Statement (ambiguity) 'end' 'if' description=DescriptionString
-	 *     statements+=Statement (ambiguity) 'end' 'if' isAnnotation?='annotation'
+	 *     elseifStatements+=Statement (ambiguity) 'end' 'if' ';' (rule end)
+	 *     elseifStatements+=Statement (ambiguity) 'end' 'if' description=DescriptionString
+	 *     elseifStatements+=Statement (ambiguity) 'end' 'if' isAnnotation?='annotation'
+	 *     ifStatements+=Statement (ambiguity) 'end' 'if' ';' (rule end)
+	 *     ifStatements+=Statement (ambiguity) 'end' 'if' description=DescriptionString
+	 *     ifStatements+=Statement (ambiguity) 'end' 'if' isAnnotation?='annotation'
 	 
 	 * </pre>
 	 */

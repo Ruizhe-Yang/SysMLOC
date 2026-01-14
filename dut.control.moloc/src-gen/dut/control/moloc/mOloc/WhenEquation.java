@@ -15,8 +15,9 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.WhenEquation#getCondition <em>Condition</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.WhenEquation#getEquations <em>Equations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.WhenEquation#getWhenEquations <em>When Equations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.WhenEquation#getElseCondition <em>Else Condition</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.WhenEquation#getElsewhenEquations <em>Elsewhen Equations</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getWhenEquation()
@@ -48,16 +49,16 @@ public interface WhenEquation extends Equation, description
   void setCondition(String value);
 
   /**
-   * Returns the value of the '<em><b>Equations</b></em>' containment reference list.
+   * Returns the value of the '<em><b>When Equations</b></em>' containment reference list.
    * The list contents are of type {@link dut.control.moloc.mOloc.Equation}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Equations</em>' containment reference list.
-   * @see dut.control.moloc.mOloc.MOlocPackage#getWhenEquation_Equations()
+   * @return the value of the '<em>When Equations</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getWhenEquation_WhenEquations()
    * @model containment="true"
    * @generated
    */
-  EList<Equation> getEquations();
+  EList<Equation> getWhenEquations();
 
   /**
    * Returns the value of the '<em><b>Else Condition</b></em>' attribute list.
@@ -70,5 +71,17 @@ public interface WhenEquation extends Equation, description
    * @generated
    */
   EList<String> getElseCondition();
+
+  /**
+   * Returns the value of the '<em><b>Elsewhen Equations</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.moloc.mOloc.Equation}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elsewhen Equations</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getWhenEquation_ElsewhenEquations()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Equation> getElsewhenEquations();
 
 } // WhenEquation

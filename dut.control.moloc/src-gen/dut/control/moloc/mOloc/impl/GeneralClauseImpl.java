@@ -54,6 +54,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsEncapsulated <em>Is Encapsulated</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsPartial <em>Is Partial</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsExpandable <em>Is Expandable</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsPure <em>Is Pure</em>}</li>
@@ -66,7 +67,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsExtends <em>Is Extends</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassNameEnd <em>Class Name End</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getSubscript <em>Subscript</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getSubscripts <em>Subscripts</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDirection <em>Direction</em>}</li>
@@ -92,6 +93,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class GeneralClauseImpl extends ElementImpl implements GeneralClause
 {
+  /**
+   * The default value of the '{@link #isIsEncapsulated() <em>Is Encapsulated</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEncapsulated()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ENCAPSULATED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsEncapsulated() <em>Is Encapsulated</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEncapsulated()
+   * @generated
+   * @ordered
+   */
+  protected boolean isEncapsulated = IS_ENCAPSULATED_EDEFAULT;
+
   /**
    * The default value of the '{@link #isIsPartial() <em>Is Partial</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -313,14 +334,24 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
+   * The default value of the '{@link #getSubscripts() <em>Subscripts</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSubscript()
+   * @see #getSubscripts()
    * @generated
    * @ordered
    */
-  protected EList<String> subscript;
+  protected static final String SUBSCRIPTS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSubscripts() <em>Subscripts</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubscripts()
+   * @generated
+   * @ordered
+   */
+  protected String subscripts = SUBSCRIPTS_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getEnumerationLiteral() <em>Enumeration Literal</em>}' containment reference list.
@@ -689,6 +720,31 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @generated
    */
   @Override
+  public boolean isIsEncapsulated()
+  {
+    return isEncapsulated;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsEncapsulated(boolean newIsEncapsulated)
+  {
+    boolean oldIsEncapsulated = isEncapsulated;
+    isEncapsulated = newIsEncapsulated;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED, oldIsEncapsulated, isEncapsulated));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsPartial()
   {
     return isPartial;
@@ -969,13 +1025,23 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @generated
    */
   @Override
-  public EList<String> getSubscript()
+  public String getSubscripts()
   {
-    if (subscript == null)
-    {
-      subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT);
-    }
-    return subscript;
+    return subscripts;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSubscripts(String newSubscripts)
+  {
+    String oldSubscripts = subscripts;
+    subscripts = newSubscripts;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS, oldSubscripts, subscripts));
   }
 
   /**
@@ -1482,6 +1548,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
+      case MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED:
+        return isIsEncapsulated();
       case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL:
         return isIsPartial();
       case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE:
@@ -1506,8 +1574,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return getClassNameEnd();
       case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
         return getTypeSpecifier();
-      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
-        return getSubscript();
+      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS:
+        return getSubscripts();
       case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
         return getEnumerationLiteral();
       case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
@@ -1561,6 +1629,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
+      case MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED:
+        setIsEncapsulated((Boolean)newValue);
+        return;
       case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL:
         setIsPartial((Boolean)newValue);
         return;
@@ -1599,9 +1670,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
         setTypeSpecifier((String)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
-        getSubscript().clear();
-        getSubscript().addAll((Collection<? extends String>)newValue);
+      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS:
+        setSubscripts((String)newValue);
         return;
       case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
@@ -1677,6 +1747,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
+      case MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED:
+        setIsEncapsulated(IS_ENCAPSULATED_EDEFAULT);
+        return;
       case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL:
         setIsPartial(IS_PARTIAL_EDEFAULT);
         return;
@@ -1713,8 +1786,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
         setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
-        getSubscript().clear();
+      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS:
+        setSubscripts(SUBSCRIPTS_EDEFAULT);
         return;
       case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
@@ -1787,6 +1860,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
+      case MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED:
+        return isEncapsulated != IS_ENCAPSULATED_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL:
         return isPartial != IS_PARTIAL_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE:
@@ -1811,8 +1886,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return CLASS_NAME_END_EDEFAULT == null ? classNameEnd != null : !CLASS_NAME_END_EDEFAULT.equals(classNameEnd);
       case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
-      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
-        return subscript != null && !subscript.isEmpty();
+      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS:
+        return SUBSCRIPTS_EDEFAULT == null ? subscripts != null : !SUBSCRIPTS_EDEFAULT.equals(subscripts);
       case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
         return enumerationLiteral != null && !enumerationLiteral.isEmpty();
       case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
@@ -1867,6 +1942,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED: return MOlocPackage.CLASS_PREFIXES__IS_ENCAPSULATED;
         case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL: return MOlocPackage.CLASS_PREFIXES__IS_PARTIAL;
         case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE: return MOlocPackage.CLASS_PREFIXES__IS_EXPANDABLE;
         case MOlocPackage.GENERAL_CLAUSE__IS_PURE: return MOlocPackage.CLASS_PREFIXES__IS_PURE;
@@ -1928,7 +2004,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
+        case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS;
         default: return -1;
       }
     }
@@ -2007,6 +2083,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.CLASS_PREFIXES__IS_ENCAPSULATED: return MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED;
         case MOlocPackage.CLASS_PREFIXES__IS_PARTIAL: return MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL;
         case MOlocPackage.CLASS_PREFIXES__IS_EXPANDABLE: return MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE;
         case MOlocPackage.CLASS_PREFIXES__IS_PURE: return MOlocPackage.GENERAL_CLAUSE__IS_PURE;
@@ -2068,7 +2145,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT;
+        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS: return MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS;
         default: return -1;
       }
     }
@@ -2146,7 +2223,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (isPartial: ");
+    result.append(" (isEncapsulated: ");
+    result.append(isEncapsulated);
+    result.append(", isPartial: ");
     result.append(isPartial);
     result.append(", isExpandable: ");
     result.append(isExpandable);
@@ -2166,8 +2245,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     result.append(classNameEnd);
     result.append(", typeSpecifier: ");
     result.append(typeSpecifier);
-    result.append(", subscript: ");
-    result.append(subscript);
+    result.append(", subscripts: ");
+    result.append(subscripts);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
     result.append(", direction: ");

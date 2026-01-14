@@ -39,8 +39,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getCondition <em>Condition</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getIfStatements <em>If Statements</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getElseCondition <em>Else Condition</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getElseifStatements <em>Elseif Statements</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getElseStatements <em>Else Statements</em>}</li>
  * </ul>
  *
  * @generated
@@ -118,14 +120,14 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
   protected String condition = CONDITION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+   * The cached value of the '{@link #getIfStatements() <em>If Statements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatements()
+   * @see #getIfStatements()
    * @generated
    * @ordered
    */
-  protected EList<Statement> statements;
+  protected EList<Statement> ifStatements;
 
   /**
    * The cached value of the '{@link #getElseCondition() <em>Else Condition</em>}' attribute list.
@@ -136,6 +138,26 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
    * @ordered
    */
   protected EList<String> elseCondition;
+
+  /**
+   * The cached value of the '{@link #getElseifStatements() <em>Elseif Statements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElseifStatements()
+   * @generated
+   * @ordered
+   */
+  protected EList<Statement> elseifStatements;
+
+  /**
+   * The cached value of the '{@link #getElseStatements() <em>Else Statements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElseStatements()
+   * @generated
+   * @ordered
+   */
+  protected EList<Statement> elseStatements;
 
   /**
    * <!-- begin-user-doc -->
@@ -254,13 +276,13 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
    * @generated
    */
   @Override
-  public EList<Statement> getStatements()
+  public EList<Statement> getIfStatements()
   {
-    if (statements == null)
+    if (ifStatements == null)
     {
-      statements = new EObjectContainmentEList<Statement>(Statement.class, this, MOlocPackage.IF_STATEMENT__STATEMENTS);
+      ifStatements = new EObjectContainmentEList<Statement>(Statement.class, this, MOlocPackage.IF_STATEMENT__IF_STATEMENTS);
     }
-    return statements;
+    return ifStatements;
   }
 
   /**
@@ -284,14 +306,48 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
    * @generated
    */
   @Override
+  public EList<Statement> getElseifStatements()
+  {
+    if (elseifStatements == null)
+    {
+      elseifStatements = new EObjectContainmentEList<Statement>(Statement.class, this, MOlocPackage.IF_STATEMENT__ELSEIF_STATEMENTS);
+    }
+    return elseifStatements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Statement> getElseStatements()
+  {
+    if (elseStatements == null)
+    {
+      elseStatements = new EObjectContainmentEList<Statement>(Statement.class, this, MOlocPackage.IF_STATEMENT__ELSE_STATEMENTS);
+    }
+    return elseStatements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case MOlocPackage.IF_STATEMENT__ARGUMENTS:
         return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.IF_STATEMENT__STATEMENTS:
-        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.IF_STATEMENT__IF_STATEMENTS:
+        return ((InternalEList<?>)getIfStatements()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.IF_STATEMENT__ELSEIF_STATEMENTS:
+        return ((InternalEList<?>)getElseifStatements()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.IF_STATEMENT__ELSE_STATEMENTS:
+        return ((InternalEList<?>)getElseStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -314,10 +370,14 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
         return isIsAnnotation();
       case MOlocPackage.IF_STATEMENT__CONDITION:
         return getCondition();
-      case MOlocPackage.IF_STATEMENT__STATEMENTS:
-        return getStatements();
+      case MOlocPackage.IF_STATEMENT__IF_STATEMENTS:
+        return getIfStatements();
       case MOlocPackage.IF_STATEMENT__ELSE_CONDITION:
         return getElseCondition();
+      case MOlocPackage.IF_STATEMENT__ELSEIF_STATEMENTS:
+        return getElseifStatements();
+      case MOlocPackage.IF_STATEMENT__ELSE_STATEMENTS:
+        return getElseStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -346,13 +406,21 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
       case MOlocPackage.IF_STATEMENT__CONDITION:
         setCondition((String)newValue);
         return;
-      case MOlocPackage.IF_STATEMENT__STATEMENTS:
-        getStatements().clear();
-        getStatements().addAll((Collection<? extends Statement>)newValue);
+      case MOlocPackage.IF_STATEMENT__IF_STATEMENTS:
+        getIfStatements().clear();
+        getIfStatements().addAll((Collection<? extends Statement>)newValue);
         return;
       case MOlocPackage.IF_STATEMENT__ELSE_CONDITION:
         getElseCondition().clear();
         getElseCondition().addAll((Collection<? extends String>)newValue);
+        return;
+      case MOlocPackage.IF_STATEMENT__ELSEIF_STATEMENTS:
+        getElseifStatements().clear();
+        getElseifStatements().addAll((Collection<? extends Statement>)newValue);
+        return;
+      case MOlocPackage.IF_STATEMENT__ELSE_STATEMENTS:
+        getElseStatements().clear();
+        getElseStatements().addAll((Collection<? extends Statement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -380,11 +448,17 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
       case MOlocPackage.IF_STATEMENT__CONDITION:
         setCondition(CONDITION_EDEFAULT);
         return;
-      case MOlocPackage.IF_STATEMENT__STATEMENTS:
-        getStatements().clear();
+      case MOlocPackage.IF_STATEMENT__IF_STATEMENTS:
+        getIfStatements().clear();
         return;
       case MOlocPackage.IF_STATEMENT__ELSE_CONDITION:
         getElseCondition().clear();
+        return;
+      case MOlocPackage.IF_STATEMENT__ELSEIF_STATEMENTS:
+        getElseifStatements().clear();
+        return;
+      case MOlocPackage.IF_STATEMENT__ELSE_STATEMENTS:
+        getElseStatements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -408,10 +482,14 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.IF_STATEMENT__CONDITION:
         return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
-      case MOlocPackage.IF_STATEMENT__STATEMENTS:
-        return statements != null && !statements.isEmpty();
+      case MOlocPackage.IF_STATEMENT__IF_STATEMENTS:
+        return ifStatements != null && !ifStatements.isEmpty();
       case MOlocPackage.IF_STATEMENT__ELSE_CONDITION:
         return elseCondition != null && !elseCondition.isEmpty();
+      case MOlocPackage.IF_STATEMENT__ELSEIF_STATEMENTS:
+        return elseifStatements != null && !elseifStatements.isEmpty();
+      case MOlocPackage.IF_STATEMENT__ELSE_STATEMENTS:
+        return elseStatements != null && !elseStatements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

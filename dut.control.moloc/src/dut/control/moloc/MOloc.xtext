@@ -11,13 +11,13 @@ Stored_definition:
 
 Class_definition:
 	( isfinal ?= 'final' )?
-	( isEncapsulated ?= 'encapsulated' )?
 	class_prefixes
 	class_specifier
 	';'
 ;
 
 fragment class_prefixes :
+	( isEncapsulated ?= 'encapsulated' )?
 	( isPartial ?= 'partial')? 
 	( isExpandable ?= 'expandable' )?
 	( isPure ?= 'pure' | isPure ?= 'impure' )?
@@ -49,7 +49,7 @@ fragment short_class_specifier:
 	class_name 
 	'=' 
 	( (direction=Direction)? type_specifier array_subscripts? class_modification? 
-	 | isEnumeration ?= 'enumeration' '(' ( enum_list? | isColon ?= ':') ')'
+	 | isEnumeration?='enumeration' '(' ( enum_list? | isColon ?= ':') ')'
 	)
 	description
 ;
@@ -119,7 +119,7 @@ Argument:
 ;
 
 fragment element_modification:
-	elementName=Name modification description_string
+	elementName=Name modification? description_string
 ;
 
 fragment short_class_definition:
@@ -153,7 +153,12 @@ fragment declaration:
 ;
 
 fragment array_subscripts:
-	'[' subscript+=Subscript (',' subscript+=Subscript)* ']'
+	subscripts=ArraySubscripts
+//	'[' subscript+=Subscript (',' subscript+=Subscript)* ']'
+;
+
+ArraySubscripts:
+	'[' Subscript ( ',' Subscript )* ']'
 ;
 
 Subscript:
@@ -202,6 +207,8 @@ ImportClause:
 ;
 
 ExtendsClause:
+	( isPublic ?= 'public' )?
+	( isProtected ?= 'protected' )?
 	'extends' 
 	type_specifier 
 	( '(' (( arguments+=Argument | breaks+=Break ) (',' ( arguments+=Argument | breaks+=Break ))* )? ')')?
@@ -245,8 +252,8 @@ ExternalElement:
 	'external' 
 	(language_specification=STRING)?
 	//[fatal] rule ruleTerm has non-LL(*) decision due to recursive rule invocations reachable from alts 1,2.
-	( ref=Component_reference )?
-	( 'annotation' class_modification )?
+	( (ref=Component_reference '=')? refValue=IDENT '(' (expressionList=ExpressionList)? ')')?
+	( isAnnotation?='annotation' class_modification )?
 	';'
 ;
 
@@ -284,11 +291,11 @@ IfEquation:
 	'if'
 	condition=Expression
 	'then'
-	( equations += Equation )*
+	( ifEquations += Equation )*
 	( 'elseif' elseCondition+=Expression 
-		'then' ( equations += Equation )*
+		'then' ( elseifEquations += Equation )*
 	)*
-	( 'else' ( equations += Equation )*)?
+	( 'else' ( elseEquations += Equation )*)?
 	'end' 'if' 
 	description
 	';'
@@ -298,7 +305,7 @@ ForEquation:
 	'for'
 	forIndices=ForIndices
 	'loop'
-	( equations += Equation )*
+	( forEquations += Equation )*
 	'end' 'for' 
 	description
 	';'
@@ -315,10 +322,10 @@ WhenEquation:
 	'when'
 	condition=Expression
 	'then'
-	( equations += Equation )*
+	( whenEquations += Equation )*
 	( 'elsewhen' elseCondition+=Expression
-		'then' ( equations += Equation )*
-	)?
+		'then' ( elsewhenEquations += Equation )*
+	)*
 	'end' 'when' 
 	description
 	';'
@@ -349,10 +356,9 @@ Statement:
 ;
 
 FunctionStatement:
-	( '(' output=OutputExpressionList ')' )?
-	component=Component_reference
-	':='
-	function = ( Expression | FunctionCallArgs )
+	( component=Component_reference ( ':=' expression=Expression | function=FunctionCallArgs )
+	| '(' output=OutputExpressionList ')' ':=' component=Component_reference function=FunctionCallArgs
+	)
 	description
 	';'
 ;
@@ -373,11 +379,11 @@ IfStatement:
 	'if'
 	condition=Expression
 	'then'
-	( statements += Statement )*
+	( ifStatements += Statement )*
 	( 'elseif' elseCondition+=Expression 
-		'then' ( statements += Statement )*
+		'then' ( elseifStatements += Statement )*
 	)*
-	( 'else' ( statements += Statement )*)?
+	( 'else' ( elseStatements += Statement )*)?
 	'end' 'if' 
 	description
 	';'
@@ -387,7 +393,7 @@ ForStatement:
 	'for'
 	forIndices=ForIndices
 	'loop'
-	( statements += Statement )*
+	( forStatements += Statement )*
 	'end' 'for' 
 	description
 	';'
@@ -397,10 +403,10 @@ WhenStatement:
 	'when'
 	condition=Expression
 	'then'
-	( statements += Statement )*
+	( whenStatements += Statement )*
 	( 'elsewhen' elseCondition+=Expression
-		'then' ( statements += Statement )*
-	)?
+		'then' ( whenStatements += Statement )*
+	)*
 	'end' 'when' 
 	description
 	';'
@@ -410,7 +416,7 @@ WhileStatement:
 	'while'
 	condition=Expression
 	'loop'
-	( statements += Statement )*
+	( whileStatements += Statement )*
 	'end' 'while' 
 	description
 	';'
@@ -422,7 +428,7 @@ Expression:
 ;
 
 Simple_expression:
-	Logical_expression ( ':' Logical_expression (':' Logical_expression))?
+	Logical_expression ( ':' Logical_expression (':' Logical_expression)?)?
 ;
 
 Logical_expression:
@@ -491,7 +497,7 @@ ForIndex:
 ;
 
 Component_reference:
-	'.'? IDENT ('[' Subscript (',' Subscript)* ']')? ('.' IDENT ('[' Subscript (',' Subscript)* ']')?)*
+	'.'? IDENT ArraySubscripts? ('.' IDENT ArraySubscripts?)*
 ;
 
 ResultReference:

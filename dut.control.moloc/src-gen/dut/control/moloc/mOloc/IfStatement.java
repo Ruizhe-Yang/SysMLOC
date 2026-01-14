@@ -15,8 +15,10 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.IfStatement#getCondition <em>Condition</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.IfStatement#getStatements <em>Statements</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.IfStatement#getIfStatements <em>If Statements</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.IfStatement#getElseCondition <em>Else Condition</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.IfStatement#getElseifStatements <em>Elseif Statements</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.IfStatement#getElseStatements <em>Else Statements</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getIfStatement()
@@ -48,16 +50,16 @@ public interface IfStatement extends Statement, description
   void setCondition(String value);
 
   /**
-   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+   * Returns the value of the '<em><b>If Statements</b></em>' containment reference list.
    * The list contents are of type {@link dut.control.moloc.mOloc.Statement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statements</em>' containment reference list.
-   * @see dut.control.moloc.mOloc.MOlocPackage#getIfStatement_Statements()
+   * @return the value of the '<em>If Statements</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getIfStatement_IfStatements()
    * @model containment="true"
    * @generated
    */
-  EList<Statement> getStatements();
+  EList<Statement> getIfStatements();
 
   /**
    * Returns the value of the '<em><b>Else Condition</b></em>' attribute list.
@@ -70,5 +72,29 @@ public interface IfStatement extends Statement, description
    * @generated
    */
   EList<String> getElseCondition();
+
+  /**
+   * Returns the value of the '<em><b>Elseif Statements</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.moloc.mOloc.Statement}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elseif Statements</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getIfStatement_ElseifStatements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Statement> getElseifStatements();
+
+  /**
+   * Returns the value of the '<em><b>Else Statements</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.moloc.mOloc.Statement}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Else Statements</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getIfStatement_ElseStatements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Statement> getElseStatements();
 
 } // IfStatement

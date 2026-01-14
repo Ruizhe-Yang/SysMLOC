@@ -15,8 +15,10 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.IfEquation#getCondition <em>Condition</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.IfEquation#getEquations <em>Equations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.IfEquation#getIfEquations <em>If Equations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.IfEquation#getElseCondition <em>Else Condition</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.IfEquation#getElseifEquations <em>Elseif Equations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.IfEquation#getElseEquations <em>Else Equations</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getIfEquation()
@@ -48,16 +50,16 @@ public interface IfEquation extends Equation, description
   void setCondition(String value);
 
   /**
-   * Returns the value of the '<em><b>Equations</b></em>' containment reference list.
+   * Returns the value of the '<em><b>If Equations</b></em>' containment reference list.
    * The list contents are of type {@link dut.control.moloc.mOloc.Equation}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Equations</em>' containment reference list.
-   * @see dut.control.moloc.mOloc.MOlocPackage#getIfEquation_Equations()
+   * @return the value of the '<em>If Equations</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getIfEquation_IfEquations()
    * @model containment="true"
    * @generated
    */
-  EList<Equation> getEquations();
+  EList<Equation> getIfEquations();
 
   /**
    * Returns the value of the '<em><b>Else Condition</b></em>' attribute list.
@@ -70,5 +72,29 @@ public interface IfEquation extends Equation, description
    * @generated
    */
   EList<String> getElseCondition();
+
+  /**
+   * Returns the value of the '<em><b>Elseif Equations</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.moloc.mOloc.Equation}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elseif Equations</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getIfEquation_ElseifEquations()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Equation> getElseifEquations();
+
+  /**
+   * Returns the value of the '<em><b>Else Equations</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.moloc.mOloc.Equation}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Else Equations</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getIfEquation_ElseEquations()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Equation> getElseEquations();
 
 } // IfEquation

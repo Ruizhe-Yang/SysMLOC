@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.ForEquation#getForIndices <em>For Indices</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.ForEquation#getEquations <em>Equations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ForEquation#getForEquations <em>For Equations</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getForEquation()
@@ -47,15 +47,15 @@ public interface ForEquation extends Equation, description
   void setForIndices(String value);
 
   /**
-   * Returns the value of the '<em><b>Equations</b></em>' containment reference list.
+   * Returns the value of the '<em><b>For Equations</b></em>' containment reference list.
    * The list contents are of type {@link dut.control.moloc.mOloc.Equation}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Equations</em>' containment reference list.
-   * @see dut.control.moloc.mOloc.MOlocPackage#getForEquation_Equations()
+   * @return the value of the '<em>For Equations</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getForEquation_ForEquations()
    * @model containment="true"
    * @generated
    */
-  EList<Equation> getEquations();
+  EList<Equation> getForEquations();
 
 } // ForEquation

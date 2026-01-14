@@ -241,8 +241,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealOutput">
-        <component_list declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
-          <subscript>nout</subscript>
+        <component_list subscripts="[nout]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -332,8 +331,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealOutput">
-        <component_list declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
-          <subscript>nout</subscript>
+        <component_list subscripts="[nout]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -353,8 +351,7 @@
         <component_list expression="1" declarationName="nin" description="&quot;Number of inputs&quot;"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealInput">
-        <component_list declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true">
-          <subscript>nin</subscript>
+        <component_list subscripts="[nin]" declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
@@ -396,8 +393,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealVectorInput">
-        <component_list declarationName="u" isAnnotation="true">
-          <subscript>nu</subscript>
+        <component_list subscripts="[nu]" declarationName="u" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-120,70},{-80,-70}}" elementName="extent"/>
@@ -434,8 +430,7 @@
         <component_list expression="1" declarationName="nout" description="&quot;Number of outputs&quot;"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealInput">
-        <component_list declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true">
-          <subscript>nin</subscript>
+        <component_list subscripts="[nin]" declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
@@ -444,8 +439,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealOutput">
-        <component_list declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
-          <subscript>nout</subscript>
+        <component_list subscripts="[nout]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -465,8 +459,7 @@
         <component_list expression="1" declarationName="n" description="&quot;Number of inputs (= number of outputs)&quot;"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealInput">
-        <component_list declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
@@ -475,8 +468,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealOutput">
-        <component_list declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -496,8 +488,7 @@
         <component_list expression="1" declarationName="n" description="&quot;Dimension of input and output vectors.&quot;"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealInput">
-        <component_list declarationName="u1" description="&quot;Connector 1 of Real input signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="u1" description="&quot;Connector 1 of Real input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,40},{-100,80}}" elementName="extent"/>
@@ -506,8 +497,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealInput">
-        <component_list declarationName="u2" description="&quot;Connector 2 of Real input signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="u2" description="&quot;Connector 2 of Real input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
@@ -516,8 +506,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealOutput">
-        <component_list declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -594,8 +583,7 @@
         <component_list expression="1" declarationName="ny" description="&quot;Number of actuator outputs&quot;"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealInput">
-        <component_list declarationName="u_s" description="&quot;Connector of setpoint input signals&quot;" isAnnotation="true">
-          <subscript>nu_s</subscript>
+        <component_list subscripts="[nu_s]" declarationName="u_s" description="&quot;Connector of setpoint input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
@@ -604,8 +592,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealInput">
-        <component_list declarationName="u_m" description="&quot;Connector of measurement input signals&quot;" isAnnotation="true">
-          <subscript>nu_m</subscript>
+        <component_list subscripts="[nu_m]" declarationName="u_m" description="&quot;Connector of measurement input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{0,-120}" elementName="origin"/>
@@ -616,8 +603,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealOutput">
-        <component_list declarationName="y" description="&quot;Connector of actuator output signals&quot;" isAnnotation="true">
-          <subscript>ny</subscript>
+        <component_list subscripts="[ny]" declarationName="y" description="&quot;Connector of actuator output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -654,7 +640,7 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="sampleTrigger" right="sample(startTime, samplePeriod)"/>
         <equations xsi:type="mOloc:WhenEquation" condition="sampleTrigger">
-          <equations xsi:type="mOloc:SimpleEquation" left="firstTrigger" right="time &lt;= startTime + samplePeriod/2"/>
+          <whenEquations xsi:type="mOloc:SimpleEquation" left="firstTrigger" right="time &lt;= startTime + samplePeriod/2"/>
         </equations>
       </elements>
       <elements xsi:type="mOloc:AnnotationClause">
@@ -698,8 +684,7 @@
         <component_list expression="1" declarationName="nout" description="&quot;Number of outputs&quot;"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput">
-        <component_list declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true">
-          <subscript>nin</subscript>
+        <component_list subscripts="[nin]" declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
@@ -708,8 +693,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput">
-        <component_list declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
-          <subscript>nout</subscript>
+        <component_list subscripts="[nout]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -729,8 +713,7 @@
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="DiscreteBlock"/>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput">
-        <component_list declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
@@ -739,8 +722,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput">
-        <component_list declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -839,8 +821,7 @@
         <component_list expression="1" declarationName="ny" description="&quot;Number of actuator outputs&quot;"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Discrete.Sampler">
-        <component_list declarationName="sampler_s" isAnnotation="true">
-          <subscript>nu_s</subscript>
+        <component_list subscripts="[nu_s]" declarationName="sampler_s" isAnnotation="true">
           <arguments expression="samplePeriod" elementName="samplePeriod" isEach="true" isfinal="true"/>
           <arguments expression="startTime" elementName="startTime" isEach="true" isfinal="true"/>
           <arguments elementName="Placement">
@@ -851,8 +832,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Discrete.Sampler">
-        <component_list declarationName="sampler_m" isAnnotation="true">
-          <subscript>nu_m</subscript>
+        <component_list subscripts="[nu_m]" declarationName="sampler_m" isAnnotation="true">
           <arguments expression="samplePeriod" elementName="samplePeriod" isEach="true" isfinal="true"/>
           <arguments expression="startTime" elementName="startTime" isEach="true" isfinal="true"/>
           <arguments elementName="Placement">
@@ -865,8 +845,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput">
-        <component_list declarationName="u_s" description="&quot;Setpoint input signals&quot;" isAnnotation="true">
-          <subscript>nu_s</subscript>
+        <component_list subscripts="[nu_s]" declarationName="u_s" description="&quot;Setpoint input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
@@ -875,8 +854,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput">
-        <component_list declarationName="u_m" description="&quot;Measurement input signals&quot;" isAnnotation="true">
-          <subscript>nu_m</subscript>
+        <component_list subscripts="[nu_m]" declarationName="u_m" description="&quot;Measurement input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{0,-120}" elementName="origin"/>
@@ -887,8 +865,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput">
-        <component_list declarationName="y" description="&quot;Actuator output signals&quot;" isAnnotation="true">
-          <subscript>ny</subscript>
+        <component_list subscripts="[ny]" declarationName="y" description="&quot;Actuator output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -953,8 +930,7 @@
         <component_list expression="1" declarationName="n" description="&quot;Number of inputs (= number of outputs)&quot;"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="BooleanInput">
-        <component_list declarationName="u" description="&quot;Connector of Boolean input signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="u" description="&quot;Connector of Boolean input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
@@ -963,8 +939,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="BooleanOutput">
-        <component_list declarationName="y" description="&quot;Connector of Boolean output signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Boolean output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -984,8 +959,7 @@
         <component_list expression="1" declarationName="n" description="&quot;Dimension of input and output vectors.&quot;"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealInput">
-        <component_list declarationName="u1" description="&quot;Connector 1 of Boolean input signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="u1" description="&quot;Connector 1 of Boolean input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,40},{-100,80}}" elementName="extent"/>
@@ -994,8 +968,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="RealInput">
-        <component_list declarationName="u2" description="&quot;Connector 2 of Boolean input signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="u2" description="&quot;Connector 2 of Boolean input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
@@ -1004,8 +977,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="BooleanOutput">
-        <component_list declarationName="y" description="&quot;Connector of Boolean output signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Boolean output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -1103,8 +1075,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="IntegerOutput">
-        <component_list declarationName="y" description="&quot;Connector of Integer output signals&quot;" isAnnotation="true">
-          <subscript>nout</subscript>
+        <component_list subscripts="[nout]" declarationName="y" description="&quot;Connector of Integer output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -1164,8 +1135,7 @@
         <component_list expression="1" declarationName="n" description="&quot;Number of inputs (= number of outputs)&quot;"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="IntegerInput">
-        <component_list declarationName="u" description="&quot;Connector of Integer input signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="u" description="&quot;Connector of Integer input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
@@ -1174,8 +1144,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="BooleanOutput">
-        <component_list declarationName="y" description="&quot;Connector of Boolean output signals&quot;" isAnnotation="true">
-          <subscript>n</subscript>
+        <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Boolean output signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
@@ -1230,8 +1199,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerVectorInput">
-        <component_list declarationName="u" description="&quot;Vector of Integer input signals&quot;" isAnnotation="true">
-          <subscript>nu</subscript>
+        <component_list subscripts="[nu]" declarationName="u" description="&quot;Vector of Integer input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-120,70},{-80,-70}}" elementName="extent"/>
@@ -1574,8 +1542,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanVectorInput">
-        <component_list declarationName="u" description="&quot;Vector of Boolean input signals&quot;" isAnnotation="true">
-          <subscript>nu</subscript>
+        <component_list subscripts="[nu]" declarationName="u" description="&quot;Vector of Boolean input signals&quot;" isAnnotation="true">
           <arguments elementName="Placement">
             <arguments elementName="transformation">
               <arguments expression="{{-120,70},{-80,-70}}" elementName="extent"/>
@@ -1723,9 +1690,7 @@
         <component_list expression="enableNoise and globalSeed.enableNoise" declarationName="generateNoise" description="&quot;= true, if noise shall be generated, otherwise no noise&quot;"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer">
-        <component_list declarationName="state" description="&quot;Internal state of random number generator&quot;">
-          <subscript>generator.nState</subscript>
-        </component_list>
+        <component_list subscripts="[generator.nState]" declarationName="state" description="&quot;Internal state of random number generator&quot;"/>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete">
         <component_list declarationName="r" description="&quot;Random number according to the desired distribution&quot;"/>
@@ -1740,7 +1705,7 @@
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:WhenEquation" condition="generateNoise and sample(startTime, samplePeriod)">
-          <equations xsi:type="mOloc:SimpleEquation" left="(r_raw, state)" right="generator.random(pre(state))"/>
+          <whenEquations xsi:type="mOloc:SimpleEquation" left="(r_raw, state)" right="generator.random(pre(state))"/>
         </equations>
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="if not generateNoise or time &lt; startTime then y_off else r"/>
       </elements>
@@ -1906,18 +1871,18 @@
           <equations xsi:type="mOloc:ConnectEquation" left="y1" right="pder"/>
           <equations xsi:type="mOloc:ConnectEquation" left="y2" right="pder2"/>
           <equations xsi:type="mOloc:IfEquation" condition="use_fder">
-            <equations xsi:type="mOloc:ConnectEquation" left="fder" right="u1"/>
-            <equations xsi:type="mOloc:SimpleEquation" left="u1" right="0"/>
+            <ifEquations xsi:type="mOloc:ConnectEquation" left="fder" right="u1"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="u1" right="0"/>
           </equations>
           <equations xsi:type="mOloc:IfEquation" condition="(use_fder and use_fder2)">
-            <equations xsi:type="mOloc:ConnectEquation" left="fder2" right="u2"/>
-            <equations xsi:type="mOloc:SimpleEquation" left="u2" right="0"/>
+            <ifEquations xsi:type="mOloc:ConnectEquation" left="fder2" right="u2"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="u2" right="0"/>
           </equations>
           <equations xsi:type="mOloc:IfEquation" condition="(use_fder and use_fder2)">
-            <equations xsi:type="mOloc:SimpleEquation" left="u" right="Functions.state2({f, u1, u2}, time)"/>
-            <equations xsi:type="mOloc:SimpleEquation" left="u" right="Functions.state1({f, u1}, time)"/>
-            <equations xsi:type="mOloc:SimpleEquation" left="u" right="f"/>
+            <ifEquations xsi:type="mOloc:SimpleEquation" left="u" right="Functions.state2({f, u1, u2}, time)"/>
             <elseCondition>(use_fder and not use_fder2)</elseCondition>
+            <elseifEquations xsi:type="mOloc:SimpleEquation" left="u" right="Functions.state1({f, u1}, time)"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="u" right="f"/>
           </equations>
         </elements>
         <elements xsi:type="mOloc:AnnotationClause">
@@ -2083,18 +2048,18 @@
           <equations xsi:type="mOloc:ConnectEquation" left="y1" right="fder"/>
           <equations xsi:type="mOloc:ConnectEquation" left="y2" right="fder2"/>
           <equations xsi:type="mOloc:IfEquation" condition="use_pder">
-            <equations xsi:type="mOloc:ConnectEquation" left="pder" right="u1"/>
-            <equations xsi:type="mOloc:SimpleEquation" left="u1" right="0"/>
+            <ifEquations xsi:type="mOloc:ConnectEquation" left="pder" right="u1"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="u1" right="0"/>
           </equations>
           <equations xsi:type="mOloc:IfEquation" condition="(use_pder and use_pder2)">
-            <equations xsi:type="mOloc:ConnectEquation" left="pder2" right="u2"/>
-            <equations xsi:type="mOloc:SimpleEquation" left="u2" right="0"/>
+            <ifEquations xsi:type="mOloc:ConnectEquation" left="pder2" right="u2"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="u2" right="0"/>
           </equations>
           <equations xsi:type="mOloc:IfEquation" condition="(use_pder and use_pder2)">
-            <equations xsi:type="mOloc:SimpleEquation" left="u" right="Functions.state2({p, u1, u2}, time)"/>
-            <equations xsi:type="mOloc:SimpleEquation" left="u" right="Functions.state1({p, u1}, time)"/>
-            <equations xsi:type="mOloc:SimpleEquation" left="u" right="p"/>
+            <ifEquations xsi:type="mOloc:SimpleEquation" left="u" right="Functions.state2({p, u1, u2}, time)"/>
             <elseCondition>(use_pder and not use_pder2)</elseCondition>
+            <elseifEquations xsi:type="mOloc:SimpleEquation" left="u" right="Functions.state1({p, u1}, time)"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="u" right="p"/>
           </equations>
         </elements>
         <elements xsi:type="mOloc:AnnotationClause">
@@ -2119,9 +2084,7 @@
         <elements xsi:type="mOloc:GeneralClause" classType="function" className="state1" description="&quot;Return state (with one derivative)&quot;" classNameEnd="state1">
           <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
           <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
-            <component_list declarationName="u" description="&quot;Required values for state and der(s)&quot;">
-              <subscript>2</subscript>
-            </component_list>
+            <component_list subscripts="[2]" declarationName="u" description="&quot;Required values for state and der(s)&quot;"/>
           </elements>
           <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
             <component_list declarationName="dummy" description="&quot;Just to have one input signal that should be differentiated to avoid possible problems in the Modelica tool (is not used)&quot;"/>
@@ -2130,7 +2093,7 @@
             <component_list declarationName="s"/>
           </elements>
           <elements xsi:type="mOloc:AlgorithmSection">
-            <statements xsi:type="mOloc:FunctionStatement" component="s" function="u[1]"/>
+            <statements xsi:type="mOloc:FunctionStatement" component="s" expression="u[1]"/>
           </elements>
           <elements xsi:type="mOloc:AnnotationClause">
             <arguments expression="state1der1" elementName="derivative">
@@ -2142,9 +2105,7 @@
         <elements xsi:type="mOloc:GeneralClause" classType="function" className="state1der1" description="&quot;Return 1st derivative (der of state1)&quot;" classNameEnd="state1der1">
           <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
           <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
-            <component_list declarationName="u" description="&quot;Required values for state and der(s)&quot;">
-              <subscript>2</subscript>
-            </component_list>
+            <component_list subscripts="[2]" declarationName="u" description="&quot;Required values for state and der(s)&quot;"/>
           </elements>
           <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
             <component_list declarationName="dummy" description="&quot;Just to have one input signal that should be differentiated to avoid possible problems in the Modelica tool (is not used)&quot;"/>
@@ -2156,7 +2117,7 @@
             <component_list declarationName="sder1"/>
           </elements>
           <elements xsi:type="mOloc:AlgorithmSection">
-            <statements xsi:type="mOloc:FunctionStatement" component="sder1" function="u[2]"/>
+            <statements xsi:type="mOloc:FunctionStatement" component="sder1" expression="u[2]"/>
           </elements>
           <elements xsi:type="mOloc:AnnotationClause">
             <arguments expression="true" elementName="InlineAfterIndexReduction"/>
@@ -2165,9 +2126,7 @@
         <elements xsi:type="mOloc:GeneralClause" classType="function" className="state2" description="&quot;Return state (with two derivatives)&quot;" classNameEnd="state2">
           <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
           <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
-            <component_list declarationName="u" description="&quot;Required values for state and der(s)&quot;">
-              <subscript>3</subscript>
-            </component_list>
+            <component_list subscripts="[3]" declarationName="u" description="&quot;Required values for state and der(s)&quot;"/>
           </elements>
           <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
             <component_list declarationName="dummy" description="&quot;Just to have one input signal that should be differentiated to avoid possible problems in the Modelica tool (is not used)&quot;"/>
@@ -2176,7 +2135,7 @@
             <component_list declarationName="s"/>
           </elements>
           <elements xsi:type="mOloc:AlgorithmSection">
-            <statements xsi:type="mOloc:FunctionStatement" component="s" function="u[1]"/>
+            <statements xsi:type="mOloc:FunctionStatement" component="s" expression="u[1]"/>
           </elements>
           <elements xsi:type="mOloc:AnnotationClause">
             <arguments expression="state2der1" elementName="derivative">
@@ -2188,9 +2147,7 @@
         <elements xsi:type="mOloc:GeneralClause" classType="function" className="state2der1" description="&quot;Return 1st derivative (der of state2)&quot;" classNameEnd="state2der1">
           <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
           <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
-            <component_list declarationName="u" description="&quot;Required values for state and der(s)&quot;">
-              <subscript>3</subscript>
-            </component_list>
+            <component_list subscripts="[3]" declarationName="u" description="&quot;Required values for state and der(s)&quot;"/>
           </elements>
           <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
             <component_list declarationName="dummy" description="&quot;Just to have one input signal that should be differentiated to avoid possible problems in the Modelica tool (is not used)&quot;"/>
@@ -2202,7 +2159,7 @@
             <component_list declarationName="sder1"/>
           </elements>
           <elements xsi:type="mOloc:AlgorithmSection">
-            <statements xsi:type="mOloc:FunctionStatement" component="sder1" function="u[2]"/>
+            <statements xsi:type="mOloc:FunctionStatement" component="sder1" expression="u[2]"/>
           </elements>
           <elements xsi:type="mOloc:AnnotationClause">
             <arguments expression="state2der2" elementName="derivative">
@@ -2215,9 +2172,7 @@
         <elements xsi:type="mOloc:GeneralClause" classType="function" className="state2der2" description="&quot;Return 2nd derivative (der of state2der1)&quot;" classNameEnd="state2der2">
           <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>
           <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
-            <component_list declarationName="u" description="&quot;Required values for state and der(s)&quot;">
-              <subscript>3</subscript>
-            </component_list>
+            <component_list subscripts="[3]" declarationName="u" description="&quot;Required values for state and der(s)&quot;"/>
           </elements>
           <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
             <component_list declarationName="dummy" description="&quot;Just to have one input signal that should be differentiated to avoid possible problems in the Modelica tool (is not used)&quot;"/>
@@ -2232,7 +2187,7 @@
             <component_list declarationName="sder2"/>
           </elements>
           <elements xsi:type="mOloc:AlgorithmSection">
-            <statements xsi:type="mOloc:FunctionStatement" component="sder2" function="u[3]"/>
+            <statements xsi:type="mOloc:FunctionStatement" component="sder2" expression="u[3]"/>
           </elements>
           <elements xsi:type="mOloc:AnnotationClause">
             <arguments expression="true" elementName="InlineAfterIndexReduction"/>

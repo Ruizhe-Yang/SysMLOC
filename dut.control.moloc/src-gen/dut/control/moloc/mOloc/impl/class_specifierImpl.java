@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getSubscript <em>Subscript</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getSubscripts <em>Subscripts</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getDirection <em>Direction</em>}</li>
@@ -74,14 +74,24 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
   protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
+   * The default value of the '{@link #getSubscripts() <em>Subscripts</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSubscript()
+   * @see #getSubscripts()
    * @generated
    * @ordered
    */
-  protected EList<String> subscript;
+  protected static final String SUBSCRIPTS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSubscripts() <em>Subscripts</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubscripts()
+   * @generated
+   * @ordered
+   */
+  protected String subscripts = SUBSCRIPTS_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getEnumerationLiteral() <em>Enumeration Literal</em>}' containment reference list.
@@ -255,13 +265,23 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
    * @generated
    */
   @Override
-  public EList<String> getSubscript()
+  public String getSubscripts()
   {
-    if (subscript == null)
-    {
-      subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT);
-    }
-    return subscript;
+    return subscripts;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSubscripts(String newSubscripts)
+  {
+    String oldSubscripts = subscripts;
+    subscripts = newSubscripts;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_SPECIFIER__SUBSCRIPTS, oldSubscripts, subscripts));
   }
 
   /**
@@ -447,8 +467,8 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     {
       case MOlocPackage.CLASS_SPECIFIER__TYPE_SPECIFIER:
         return getTypeSpecifier();
-      case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT:
-        return getSubscript();
+      case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPTS:
+        return getSubscripts();
       case MOlocPackage.CLASS_SPECIFIER__ENUMERATION_LITERAL:
         return getEnumerationLiteral();
       case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION:
@@ -481,9 +501,8 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
       case MOlocPackage.CLASS_SPECIFIER__TYPE_SPECIFIER:
         setTypeSpecifier((String)newValue);
         return;
-      case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT:
-        getSubscript().clear();
-        getSubscript().addAll((Collection<? extends String>)newValue);
+      case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPTS:
+        setSubscripts((String)newValue);
         return;
       case MOlocPackage.CLASS_SPECIFIER__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
@@ -525,8 +544,8 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
       case MOlocPackage.CLASS_SPECIFIER__TYPE_SPECIFIER:
         setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
         return;
-      case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT:
-        getSubscript().clear();
+      case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPTS:
+        setSubscripts(SUBSCRIPTS_EDEFAULT);
         return;
       case MOlocPackage.CLASS_SPECIFIER__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
@@ -565,8 +584,8 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     {
       case MOlocPackage.CLASS_SPECIFIER__TYPE_SPECIFIER:
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
-      case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT:
-        return subscript != null && !subscript.isEmpty();
+      case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPTS:
+        return SUBSCRIPTS_EDEFAULT == null ? subscripts != null : !SUBSCRIPTS_EDEFAULT.equals(subscripts);
       case MOlocPackage.CLASS_SPECIFIER__ENUMERATION_LITERAL:
         return enumerationLiteral != null && !enumerationLiteral.isEmpty();
       case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION:
@@ -605,7 +624,7 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
+        case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPTS: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS;
         default: return -1;
       }
     }
@@ -667,7 +686,7 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT;
+        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS: return MOlocPackage.CLASS_SPECIFIER__SUBSCRIPTS;
         default: return -1;
       }
     }
@@ -722,8 +741,8 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (typeSpecifier: ");
     result.append(typeSpecifier);
-    result.append(", subscript: ");
-    result.append(subscript);
+    result.append(", subscripts: ");
+    result.append(subscripts);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
     result.append(", direction: ");

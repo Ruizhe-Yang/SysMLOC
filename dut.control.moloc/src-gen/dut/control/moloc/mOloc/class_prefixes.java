@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.class_prefixes#isIsEncapsulated <em>Is Encapsulated</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.class_prefixes#isIsPartial <em>Is Partial</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.class_prefixes#isIsExpandable <em>Is Expandable</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.class_prefixes#isIsPure <em>Is Pure</em>}</li>
@@ -27,6 +28,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface class_prefixes extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Is Encapsulated</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Encapsulated</em>' attribute.
+   * @see #setIsEncapsulated(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getclass_prefixes_IsEncapsulated()
+   * @model
+   * @generated
+   */
+  boolean isIsEncapsulated();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.class_prefixes#isIsEncapsulated <em>Is Encapsulated</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Encapsulated</em>' attribute.
+   * @see #isIsEncapsulated()
+   * @generated
+   */
+  void setIsEncapsulated(boolean value);
+
   /**
    * Returns the value of the '<em><b>Is Partial</b></em>' attribute.
    * <!-- begin-user-doc -->

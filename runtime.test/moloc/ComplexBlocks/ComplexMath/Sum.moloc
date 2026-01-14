@@ -3,9 +3,7 @@
   <classes classType="block" className="Sum" description="&quot;Output the sum of the elements of the input vector&quot;" classNameEnd="Sum">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.ComplexMISO"/>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" parameterType="parameter">
-      <component_list expression="fill(Complex(1, 0), nin)" declarationName="k" description="&quot;Optional: sum coefficients&quot;">
-        <subscript>nin</subscript>
-      </component_list>
+      <component_list subscripts="[nin]" expression="fill(Complex(1, 0), nin)" declarationName="k" description="&quot;Optional: sum coefficients&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">
       <equations xsi:type="mOloc:SimpleEquation" left="y" right="k*uInternal"/>
