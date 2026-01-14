@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Semiconductors">
+  <classes classType="model" className="Diode2" description="&quot;Improved diode model&quot;" isLongClassSpecifier="true" classNameEnd="Diode2" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="293.15" elementName="T"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="0.7" declarationName="Vf" description="&quot;Forward voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="1e-13" declarationName="Ids" description="&quot;Reverse saturation current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="16" declarationName="Rs" description="&quot;Ohmic resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="Modelica.Constants.R * T/Modelica.Constants.F" declarationName="Vt" description="&quot;Thermal voltage (kT/q), 0.026 at normal conditions (around 20 degC)&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="not useHeatPort" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="N" description="&quot;Emission coefficient&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="100" declarationName="Bv" description="&quot;Reverse breakdown voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+      <component_list expression="1e-6" declarationName="Gp" description="&quot;Parallel conductance for numerical stability&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list declarationName="vd" description="&quot;Voltage across pure diode part&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list declarationName="id" description="&quot;Diode current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isProtected="true" isOver="true">
+      <component_list expression="Vf + (N*Vt_applied)" declarationName="VdMax" description="&quot;Linear continuation threshold&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list expression="Ids*(exp(VdMax/(N*Vt_applied)) - 1)" declarationName="iVdMax" description="&quot;Current at threshold&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" isOver="true">
+      <component_list expression="Ids*exp(VdMax/(N*Vt_applied))/(N*Vt_applied)" declarationName="diVdMax" description="&quot;Conductance at threshold&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list declarationName="Vt_applied"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="Vt_applied" right="if useHeatPort then Modelica.Constants.R * T_heatPort/Modelica.Constants.F else Vt"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="id" right="smooth(1, if vd &lt; -Bv / 2 then -Ids * (exp(-(vd+Bv)/(N*Vt_applied)) + 1 - 2*exp(-Bv/(2*N*Vt_applied))) elseif vd &lt; VdMax then Ids * (exp(vd/(N*Vt_applied)) - 1) else iVdMax + (vd - VdMax) * diVdMax )"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="vd + id * Rs"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i" right="id + v*Gp"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="LossPower" right="i*v"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(Bv>0, &quot;Bv must be greater than zero&quot;)"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(Vf>0, &quot;Vf must be greater than zero&quot;)"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(Vt>0, &quot;Vt must be greater than zero&quot;)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;diode&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This diode model is an improved version of the &lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Semiconductors.Diode\&quot;>simple diode&lt;/a> model. It includes a series resistance, parallel conductance, and also models reverse breakdown. The model is divided into three parts:&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>lower half of reversed bias region including breakdown: -Ids&amp;middot;(exp(-(vd+Bv)/(N&amp;middot;Vt)) + 1 - 2&amp;middot;exp(-Bv/(2&amp;middot;N&amp;middot;Vt)))&lt;/li>&#xA;&lt;li>upper half of reverse biased region and forward biased region before conduction: Ids&amp;middot;(exp(vd/(N&amp;middot;Vt)) - 1)&lt;/li>&#xA;&lt;li>forward biased region after conduction: iVdMax + (vd - VdMax)&amp;middot;diVdMax&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>Temperature dependent behaviour is modelled when useHeatPort=true. In that case, the Vt parameter is ignored, and Vt is computed as k&amp;middot;T/q, where&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>k is Boltzmann&amp;#39;s constant&lt;/li>&#xA;&lt;li>T is the heat port temperature.&lt;/li>&#xA;&lt;li>q is the electron charge.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>November 2015 &lt;/em>&#xA;by Stefan Vorkoetter&lt;br>implemented dynamic temperature dependency&lt;br>&lt;/li>&#xA;&lt;li>&lt;em>November 2015&lt;/em>&#xA;by Kristin Majetta&lt;br> defined parameter Vt based on fixed temperature&lt;br>&lt;/li>&#xA;&lt;li>&lt;em>June 2014&lt;/em>&#xA;by Stefan Vorkoetter, Kristin Majetta, and Christoph Clauss&lt;br>implemented&lt;br>&lt;/li>&#xA;&lt;li>&lt;em>October 2011&lt;/em>&#xA;Stefan Vorkoetter - new model proposed.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Polygon( points={{30,0},{-30,40},{-30,-40},{30,0}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{40,0}}, color={0,0,255}), Line(points={{40,0},{90,0}}, color={0,0,255}), Line(points={{30,40},{30,-40}}, color={0,0,255}), Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Line( visible=useHeatPort, points={{0,-100},{0,-20}}, color={127,0,0}, pattern=LinePattern.Dot ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

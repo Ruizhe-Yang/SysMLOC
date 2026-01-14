@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.DCDC.Control">
+  <classes classType="model" className="SignalPWM" description="&quot;Generates a pulse width modulated (PWM) boolean fire signal&quot;" isLongClassSpecifier="true" classNameEnd="SignalPWM" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Icons.Control" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="useConstantDutyCycle" description="&quot;Enables constant duty cycle&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="constantDutyCycle" description="&quot;Constant duty cycle&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="useConstantDutyCycle" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="1000" declarationName="f" description="&quot;Switching frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="startTime" description="&quot;Start time&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list declarationName="dutyCycle" description="&quot;Duty cycle&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantDutyCycle">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <component_list declarationName="fire" description="&quot;Firing PWM signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-60,110}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <component_list declarationName="notFire" description="&quot;Firing PWM signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{60,110}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+      <component_list isModificationOver="true" declarationName="const" isAnnotation="true" isAnnotationOver="true" condition_attribute="useConstantDutyCycle">
+        <modifications expression="constantDutyCycle" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-100,-60},{-80,-40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Nonlinear.Limiter" isOver="true">
+      <component_list isModificationOver="true" declarationName="limiter" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="uMax"/>
+        <modifications expression="0" elementName="uMin"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-60,-10},{-40,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Less" isOver="true">
+      <component_list declarationName="greaterEqual" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="{22,-8}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Discrete.ZeroOrderHold" isOver="true">
+      <component_list isModificationOver="true" declarationName="zeroOrderHold" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="startTime" elementName="startTime" isfinal="true"/>
+        <modifications expression="1/f" elementName="samplePeriod" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-30,-10},{-10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.SawTooth" isOver="true">
+      <component_list isModificationOver="true" declarationName="sawtooth" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1/f" elementName="period" isfinal="true"/>
+        <modifications expression="1" elementName="amplitude" isfinal="true"/>
+        <modifications expression="-1" elementName="nperiod" isfinal="true"/>
+        <modifications expression="0" elementName="offset" isfinal="true"/>
+        <modifications expression="startTime" elementName="startTime" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-50,-50}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Not" isOver="true">
+      <component_list declarationName="inverse" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{52,20}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="const.y" right="limiter.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-79,-50},{-70,-50},{-70,0},{-62,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="dutyCycle" right="limiter.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-120,0},{-62,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="limiter.y" right="zeroOrderHold.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-39,0},{-32,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="zeroOrderHold.y" right="greaterEqual.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-9,0},{10,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sawtooth.y" right="greaterEqual.u1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-39,-50},{0,-50},{0,-8},{10,-8}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="greaterEqual.y" right="inverse.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{33,-8},{52,-8},{52,8}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="greaterEqual.y" right="fire">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{33,-8},{36,-8},{36,80},{-60,80},{-60,110}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="inverse.y" right="notFire">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{52,31},{52,80},{60,80},{60,110}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;pwm&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Line( points={{-100,0},{-98,0},{12,0}}, color={0,0,255} ) ,Line( points={{-60,-22},{-60,-64},{44,-64},{44,-36}}, color={0,0,255} ) ,Line( points={{-80,-16},{-80,-20},{-40,20},{-40,-20},{-36,-16}}, color={0,0,255} ) ,Line( points={{-62,0},{-76,4},{-76,-4},{-62,0}}, color={0,0,255} ) ,Line( points={{44,-36},{44,-36},{40,-50},{44,-50},{48,-50},{44, -36 } } , color={0,0,255} ) ,Line( points={{20,-20},{22,-20},{24,-20},{24,20},{44,20},{44,-20}, {64,-20},{64,-16} } , color={255,0,255} ) ,Line( points={{-40,-16},{-40,-20},{0,20},{0,-20},{4,-16}}, color={0,0,255} ) ,Line( points={{60,-20},{62,-20},{64,-20},{64,20},{84,20},{84,-20}, {84,-20},{88,-20} } , color={255,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This controller can be used both for DC/DC and AC/DC converters.&#xA;The signal input of the PWM controller is the duty cycle; the duty cycle is the ratio of the on time&#xA;to the switching period. The output firing signal is strictly determined by the actual duty cycle, indicated as &lt;code>d&lt;/code> in Fig.&amp;nbsp;1.&#xA;&lt;/p>&#xA;&#xA;&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&#xA;  &lt;caption align=\&quot;bottom\&quot;>&lt;strong>Fig. 1:&lt;/strong> Firing (&lt;code>fire&lt;/code>) and inverse firing (&lt;code>notFire&lt;/code>) signal of PWM control; &lt;code>d&lt;/code> = duty cycle; &lt;code>f&lt;/code> = switching frequency &lt;/caption>&#xA;  &lt;tr>&#xA;    &lt;td>&#xA;      &lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/PowerConverters/dutyCycle.png\&quot;>&#xA;    &lt;/td>&#xA;  &lt;/tr>&#xA;&lt;/table>&#xA;&#xA;&lt;p>&#xA;The firing signal is generated by comparing the sampled duty cycle input with a periodic saw tooth signal [&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.UsersGuide.References\&quot;>Williams2006&lt;/a>].&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

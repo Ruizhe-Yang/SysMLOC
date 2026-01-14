@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.ACDC.Control">
+  <classes classType="model" className="VoltageBridge2mPulse" description="&quot;Control of 2*m pulse bridge rectifier&quot;" isLongClassSpecifier="true" classNameEnd="VoltageBridge2mPulse" isOver="true">
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Icons.Control" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="3" elementName="min" isfinal="true"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="50" declarationName="f" description="&quot;Frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="useConstantFiringAngle" description="&quot;Use constant firing angle instead of signal input&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="constantFiringAngle" description="&quot;Firing angle&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="useConstantFiringAngle" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="Modelica.Constants.pi" declarationName="firingAngleMax" description="&quot;Maximum firing angle&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+        <modifications expression="Modelica.Constants.pi" elementName="max" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="useFilter" description="&quot;Enable use of filter&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Filter&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="2*f" declarationName="fCut" description="&quot;Cut off frequency of filter&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Filter&quot;" elementName="tab"/>
+          <modifications expression="useFilter" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" expression="zeros(m)" declarationName="vStart" description="&quot;Start voltage of filter output&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Filter&quot;" elementName="tab"/>
+          <modifications expression="useFilter" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="firingAngle" description="&quot;Firing angle&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantFiringAngle">
+        <modifications expression="&quot;rad&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{0,-120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Signal2mPulse" isOver="true">
+      <component_list isModificationOver="true" declarationName="twomPulse" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="useConstantFiringAngle" elementName="useConstantFiringAngle" isfinal="true"/>
+        <modifications expression="f" elementName="f" isfinal="true"/>
+        <modifications expression="constantFiringAngle" elementName="constantFiringAngle" isfinal="true"/>
+        <modifications expression="firingAngleMax" elementName="firingAngleMax" isfinal="true"/>
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="useFilter" elementName="useFilter"/>
+        <modifications expression="fCut" elementName="fCut" isfinal="true"/>
+        <modifications expression="vStart" elementName="vStart" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="{0,10}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="ac" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.MultiDelta" isOver="true">
+      <component_list isModificationOver="true" declarationName="delta" description="&quot;Delta connection&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-80,10}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Sensors.VoltageSensor" isOver="true">
+      <component_list isModificationOver="true" declarationName="voltageSensor" description="&quot;Voltage sensor&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,10},{-10,-10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-44,10}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <component_list subscripts="[m]" declarationName="fire_p" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-60,110}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <component_list subscripts="[m]" declarationName="fire_n" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{60,110}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ac" right="voltageSensor.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-44,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltageSensor.plug_p" right="delta.plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-44,0},{-80,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="delta.plug_p" right="voltageSensor.plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,20},{-44,20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltageSensor.v" right="twomPulse.v">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-33,10},{-12,10}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="firingAngle" right="twomPulse.firingAngle">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-120},{0,-2}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="twomPulse.fire_n" right="fire_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{6,21},{6,80},{60,80},{60,110}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="twomPulse.fire_p" right="fire_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-6,21},{-6,80},{-60,80},{-60,110}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;adaptor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Line( points={{-40,-20},{-40,-24},{-20,-24},{-20,-40},{-40,-40}, {-40,-60} } , color={255,0,255} ) ,Line( points={{20,-20},{20,-44},{40,-44},{40,-60},{20,-60},{20, -60 } } , color={255,0,255} ) ,Text( extent={{-40,60},{40,0}}, textColor={255,0,255}, textString=&quot;2*%m%&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&#xA;&lt;p>&#xA;General information about controllers is summarized in&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.ACDC.Control\&quot;>Control&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;Half of the semiconductors of the &lt;code>2*m&lt;/code> pulse bridge rectifier are connected with the positive DC output pin (firing signal &lt;code>fire_p&lt;/code>). The other half of the semiconductors is connected with the negative DC output pin (firing signal &lt;code>fire_n&lt;/code>). Parameter &lt;code>m&lt;/code> indicates the number of phases.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

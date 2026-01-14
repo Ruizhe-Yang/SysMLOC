@@ -258,28 +258,53 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MOlocPackage.ANNOTATION_MODIFICATION:
+      case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT:
       {
-        AnnotationModification annotationModification = (AnnotationModification)theEObject;
-        T result = caseAnnotationModification(annotationModification);
-        if (result == null) result = caseshort_class_definition(annotationModification);
-        if (result == null) result = casecomponent_clause1(annotationModification);
-        if (result == null) result = caseelement_modification(annotationModification);
-        if (result == null) result = caseconstraining(annotationModification);
-        if (result == null) result = caseclass_prefixes(annotationModification);
-        if (result == null) result = caseshort_class_specifier(annotationModification);
-        if (result == null) result = casetype_prefix(annotationModification);
-        if (result == null) result = casecomponent_declaration1(annotationModification);
-        if (result == null) result = caseclass_name(annotationModification);
-        if (result == null) result = casetype_specifier(annotationModification);
-        if (result == null) result = caseenum_list(annotationModification);
-        if (result == null) result = casedescription(annotationModification);
-        if (result == null) result = casedeclaration(annotationModification);
-        if (result == null) result = casearray_subscripts(annotationModification);
-        if (result == null) result = casedescription_string(annotationModification);
-        if (result == null) result = caseannotation_modification_part(annotationModification);
-        if (result == null) result = casemodification(annotationModification);
-        if (result == null) result = caseclass_modification(annotationModification);
+        AnnotationModificationElement annotationModificationElement = (AnnotationModificationElement)theEObject;
+        T result = caseAnnotationModificationElement(annotationModificationElement);
+        if (result == null) result = caseshort_class_definition(annotationModificationElement);
+        if (result == null) result = casecomponent_clause1(annotationModificationElement);
+        if (result == null) result = caseelement_modification(annotationModificationElement);
+        if (result == null) result = caseconstraining(annotationModificationElement);
+        if (result == null) result = caseclass_prefixes(annotationModificationElement);
+        if (result == null) result = caseshort_class_specifier(annotationModificationElement);
+        if (result == null) result = casetype_prefix(annotationModificationElement);
+        if (result == null) result = casecomponent_declaration1(annotationModificationElement);
+        if (result == null) result = caseclass_name(annotationModificationElement);
+        if (result == null) result = casetype_specifier(annotationModificationElement);
+        if (result == null) result = caseenum_list(annotationModificationElement);
+        if (result == null) result = casedescription(annotationModificationElement);
+        if (result == null) result = casedeclaration(annotationModificationElement);
+        if (result == null) result = casearray_subscripts(annotationModificationElement);
+        if (result == null) result = casedescription_string(annotationModificationElement);
+        if (result == null) result = caseannotation_modification_part(annotationModificationElement);
+        if (result == null) result = casemodification(annotationModificationElement);
+        if (result == null) result = caseclass_modification(annotationModificationElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT2:
+      {
+        AnnotationModificationElement2 annotationModificationElement2 = (AnnotationModificationElement2)theEObject;
+        T result = caseAnnotationModificationElement2(annotationModificationElement2);
+        if (result == null) result = caseshort_class_definition(annotationModificationElement2);
+        if (result == null) result = casecomponent_clause1(annotationModificationElement2);
+        if (result == null) result = caseelement_modification(annotationModificationElement2);
+        if (result == null) result = caseconstraining(annotationModificationElement2);
+        if (result == null) result = caseclass_prefixes(annotationModificationElement2);
+        if (result == null) result = caseshort_class_specifier(annotationModificationElement2);
+        if (result == null) result = casetype_prefix(annotationModificationElement2);
+        if (result == null) result = casecomponent_declaration1(annotationModificationElement2);
+        if (result == null) result = caseclass_name(annotationModificationElement2);
+        if (result == null) result = casetype_specifier(annotationModificationElement2);
+        if (result == null) result = caseenum_list(annotationModificationElement2);
+        if (result == null) result = casedescription(annotationModificationElement2);
+        if (result == null) result = casedeclaration(annotationModificationElement2);
+        if (result == null) result = casearray_subscripts(annotationModificationElement2);
+        if (result == null) result = casedescription_string(annotationModificationElement2);
+        if (result == null) result = caseannotation_modification_part(annotationModificationElement2);
+        if (result == null) result = casemodification(annotationModificationElement2);
+        if (result == null) result = caseclass_modification(annotationModificationElement2);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -930,17 +955,33 @@ public class MOlocSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Annotation Modification</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Annotation Modification Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Annotation Modification</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Annotation Modification Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAnnotationModification(AnnotationModification object)
+  public T caseAnnotationModificationElement(AnnotationModificationElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Annotation Modification Element2</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Annotation Modification Element2</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnnotationModificationElement2(AnnotationModificationElement2 object)
   {
     return null;
   }

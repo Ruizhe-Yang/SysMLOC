@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.annotation_modification_part;
 
@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.annotation_modification_partImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.annotation_modification_partImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.annotation_modification_partImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,7 +68,27 @@ public class annotation_modification_partImpl extends MinimalEObjectImpl.Contain
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,13 +142,38 @@ public class annotation_modification_partImpl extends MinimalEObjectImpl.Contain
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
   }
 
   /**
@@ -160,6 +206,8 @@ public class annotation_modification_partImpl extends MinimalEObjectImpl.Contain
         return isIsAnnotation();
       case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -180,7 +228,10 @@ public class annotation_modification_partImpl extends MinimalEObjectImpl.Contain
         return;
       case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -202,6 +253,9 @@ public class annotation_modification_partImpl extends MinimalEObjectImpl.Contain
       case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -220,6 +274,8 @@ public class annotation_modification_partImpl extends MinimalEObjectImpl.Contain
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -237,6 +293,8 @@ public class annotation_modification_partImpl extends MinimalEObjectImpl.Contain
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
     result.append(')');
     return result.toString();
   }

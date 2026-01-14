@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.Utilities">
+  <classes classType="block" className="PulseSeries" description="&quot;Series of pulses&quot;" isLongClassSpecifier="true" classNameEnd="PulseSeries" isOver="true">
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Math.BooleanVectors.oneTrue" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="amplitude1" description="&quot;Amplitude of 1st pulse series&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1" declarationName="n1" description="&quot;Number of pulses of 1st series&quot;">
+        <modifications expression="0" elementName="min"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list declarationName="T1" description="&quot;Length of pulses of 1st series&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list declarationName="Tp1" description="&quot;Pause between pulses of 1st series&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="-amplitude1" declarationName="amplitude2" description="&quot;Amplitude of 2nd pulse series&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1" declarationName="n2" description="&quot;Number of pulses of 2nd series&quot;">
+        <modifications expression="0" elementName="min"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="T1" declarationName="T2" description="&quot;Length of pulses of 2nd series&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="Tp1" declarationName="Tp2" description="&quot;Pause between pulses of 1st series&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list declarationName="Tp" description="&quot;Pause between the two series&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SignalSource" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isProtected="true" isOver="true">
+      <component_list subscripts="[n1]" expression="{startTime + (k-1)*(T1 + Tp1) for k in 1:n1}" declarationName="Tstart1"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list subscripts="[n1]" expression="{startTime + n1*(T1 + Tp1) + Tp + (k-1)*(T2 + Tp2) for k in 1:n2}" declarationName="Tstart2"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isOver="true">
+      <component_list declarationName="on1"/>
+      <component_list declarationName="on2"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="on1" right="oneTrue({time >= Tstart1[k] and time &lt; Tstart1[k] + T1 for k in 1:n1})"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="on2" right="oneTrue({time >= Tstart2[k] and time &lt; Tstart2[k] + T2 for k in 1:n1})"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="y" right="offset + (if on1 then amplitude1 elseif on2 then amplitude2 else 0)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line( points={{-100,0},{-80,0}}, color={0,0,0}, pattern=LinePattern.Dash ) , Line(points={{-10,0},{-10,-60},{10,-60},{10,0},{20,0}}, color={0,0,0}), Line(points={{-50,0},{-50,60},{-40,60},{-40,0},{-20,0}}, color={0,0,0}), Line( points={{-20,0},{-10,0}}, color={0,0,0}, pattern=LinePattern.Dash ) , Line(points={{-80,0},{-80,60},{-70,60},{-70,0},{-50,0}}, color={0,0,0}), Line(points={{20,0},{20,-60},{40,-60},{40,0},{50,0}}, color={0,0,0}), Line(points={{50,0},{50,-60},{70,-60},{70,0},{80,0}}, color={0,0,0}), Line( points={{80,0},{100,0}}, color={0,0,0}, pattern=LinePattern.Dash ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Starting at &lt;code>time = startTime&lt;/code>, first a series of &lt;code>n1&lt;/code> pulses of &lt;code>amplitude1&lt;/code> with length &lt;code>T1&lt;/code> and pause after each pulse &lt;code>Tp1&lt;/code> is issued.&lt;br>&#xA;Then, after a pause &lt;code>Tp&lt;/code>, a series of &lt;code>n2&lt;/code> pulses of &lt;code>amplitude2&lt;/code> with length &lt;code>T2&lt;/code> and pause after each pulse &lt;code>Tp2&lt;/code> is issued.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

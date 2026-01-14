@@ -35,9 +35,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#getModifications <em>Modifications</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#isIsModificationOver <em>Is Modification Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#isIsExtends <em>Is Extends</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#isIsLongClassSpecifier <em>Is Long Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#getClassNameEnd <em>Class Name End</em>}</li>
  * </ul>
  *
@@ -54,6 +56,26 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
    * @ordered
    */
   protected EList<ModificationElement> modifications;
+
+  /**
+   * The default value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_MODIFICATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isModificationOver = IS_MODIFICATION_OVER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -104,6 +126,26 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
    * @ordered
    */
   protected boolean isExtends = IS_EXTENDS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsLongClassSpecifier() <em>Is Long Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsLongClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_LONG_CLASS_SPECIFIER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsLongClassSpecifier() <em>Is Long Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsLongClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected boolean isLongClassSpecifier = IS_LONG_CLASS_SPECIFIER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getClassNameEnd() <em>Class Name End</em>}' attribute.
@@ -159,6 +201,31 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
       modifications = new EObjectContainmentEList<ModificationElement>(ModificationElement.class, this, MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS);
     }
     return modifications;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsModificationOver()
+  {
+    return isModificationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsModificationOver(boolean newIsModificationOver)
+  {
+    boolean oldIsModificationOver = isModificationOver;
+    isModificationOver = newIsModificationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.LONG_CLASS_SPECIFIER__IS_MODIFICATION_OVER, oldIsModificationOver, isModificationOver));
   }
 
   /**
@@ -232,6 +299,31 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
    * @generated
    */
   @Override
+  public boolean isIsLongClassSpecifier()
+  {
+    return isLongClassSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsLongClassSpecifier(boolean newIsLongClassSpecifier)
+  {
+    boolean oldIsLongClassSpecifier = isLongClassSpecifier;
+    isLongClassSpecifier = newIsLongClassSpecifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER, oldIsLongClassSpecifier, isLongClassSpecifier));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getClassNameEnd()
   {
     return classNameEnd;
@@ -281,12 +373,16 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
     {
       case MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS:
         return getModifications();
+      case MOlocPackage.LONG_CLASS_SPECIFIER__IS_MODIFICATION_OVER:
+        return isIsModificationOver();
       case MOlocPackage.LONG_CLASS_SPECIFIER__DESCRIPTION:
         return getDescription();
       case MOlocPackage.LONG_CLASS_SPECIFIER__ELEMENTS:
         return getElements();
       case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS:
         return isIsExtends();
+      case MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER:
+        return isIsLongClassSpecifier();
       case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END:
         return getClassNameEnd();
     }
@@ -308,6 +404,9 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
         getModifications().clear();
         getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
+      case MOlocPackage.LONG_CLASS_SPECIFIER__IS_MODIFICATION_OVER:
+        setIsModificationOver((Boolean)newValue);
+        return;
       case MOlocPackage.LONG_CLASS_SPECIFIER__DESCRIPTION:
         setDescription((String)newValue);
         return;
@@ -317,6 +416,9 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
         return;
       case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS:
         setIsExtends((Boolean)newValue);
+        return;
+      case MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER:
+        setIsLongClassSpecifier((Boolean)newValue);
         return;
       case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END:
         setClassNameEnd((String)newValue);
@@ -338,6 +440,9 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
       case MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS:
         getModifications().clear();
         return;
+      case MOlocPackage.LONG_CLASS_SPECIFIER__IS_MODIFICATION_OVER:
+        setIsModificationOver(IS_MODIFICATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.LONG_CLASS_SPECIFIER__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
@@ -346,6 +451,9 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
         return;
       case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS:
         setIsExtends(IS_EXTENDS_EDEFAULT);
+        return;
+      case MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER:
+        setIsLongClassSpecifier(IS_LONG_CLASS_SPECIFIER_EDEFAULT);
         return;
       case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END:
         setClassNameEnd(CLASS_NAME_END_EDEFAULT);
@@ -366,12 +474,16 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
     {
       case MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS:
         return modifications != null && !modifications.isEmpty();
+      case MOlocPackage.LONG_CLASS_SPECIFIER__IS_MODIFICATION_OVER:
+        return isModificationOver != IS_MODIFICATION_OVER_EDEFAULT;
       case MOlocPackage.LONG_CLASS_SPECIFIER__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.LONG_CLASS_SPECIFIER__ELEMENTS:
         return elements != null && !elements.isEmpty();
       case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS:
         return isExtends != IS_EXTENDS_EDEFAULT;
+      case MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER:
+        return isLongClassSpecifier != IS_LONG_CLASS_SPECIFIER_EDEFAULT;
       case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END:
         return CLASS_NAME_END_EDEFAULT == null ? classNameEnd != null : !CLASS_NAME_END_EDEFAULT.equals(classNameEnd);
     }
@@ -391,6 +503,7 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
       switch (derivedFeatureID)
       {
         case MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
+        case MOlocPackage.LONG_CLASS_SPECIFIER__IS_MODIFICATION_OVER: return MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -426,6 +539,7 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
       switch (baseFeatureID)
       {
         case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS;
+        case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER: return MOlocPackage.LONG_CLASS_SPECIFIER__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -459,10 +573,14 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (description: ");
+    result.append(" (isModificationOver: ");
+    result.append(isModificationOver);
+    result.append(", description: ");
     result.append(description);
     result.append(", isExtends: ");
     result.append(isExtends);
+    result.append(", isLongClassSpecifier: ");
+    result.append(isLongClassSpecifier);
     result.append(", classNameEnd: ");
     result.append(classNameEnd);
     result.append(')');

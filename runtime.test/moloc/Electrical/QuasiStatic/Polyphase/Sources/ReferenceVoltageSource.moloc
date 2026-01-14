@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Sources">
+  <classes classType="model" className="ReferenceVoltageSource" description="&quot;Variable polyphase AC voltage with reference angle input&quot;" isLongClassSpecifier="true" classNameEnd="ReferenceVoltageSource" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.ReferenceSource" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list declarationName="gamma" description="&quot;Reference angle of voltage source&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{60,120}" elementName="origin"/>
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexInput" isOver="true">
+      <component_list subscripts="[m]" declarationName="V" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-60,120}" elementName="origin"/>
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p.reference.gamma" right="gamma"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="V"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;voltageSource&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&#xA;&lt;p>&#xA;This model describes &lt;em>m&lt;/em> variable current sources, with &lt;em>m&lt;/em> complex signal inputs,&#xA;specifying the complex current by the complex RMS voltage components.&#xA;Additionally, the frequency of the current source is defined by a real signal input.&#xA;&lt;em>m&lt;/em> &lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sources.VariableCurrentSource\&quot;>single-phase VariableCurrentSources&lt;/a> are used.&#xA;&lt;/p>&#xA;&#xA;&lt;h4>See also&lt;/h4>&#xA;&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sources.VoltageSource\&quot;>SinglePhase.VoltageSource&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sources.VoltageSource\&quot;>VoltageSource&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sources.VariableVoltageSource\&quot;>VariableVoltageSource&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sources.CurrentSource\&quot;>CurrentSource&lt;/a>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line(points={{-70,30},{-70,10}}, color={85,170,255}), Line(points={{-80,20},{-60,20}}, color={85,170,255}), Line(points={{60,20},{80,20}}, color={85,170,255}), Line(points={{-50,0},{50,0}}, color={85,170,255} ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

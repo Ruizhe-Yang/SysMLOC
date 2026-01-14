@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.ClassType;
 import dut.control.moloc.mOloc.Component_declaration;
 import dut.control.moloc.mOloc.ConstrainingClause;
@@ -64,18 +64,23 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassType <em>Class Type</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassName <em>Class Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getModifications <em>Modifications</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsModificationOver <em>Is Modification Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsExtends <em>Is Extends</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsLongClassSpecifier <em>Is Long Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassNameEnd <em>Class Name End</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getSubscripts <em>Subscripts</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsShortClassSpecifier <em>Is Short Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsEnumeration <em>Is Enumeration</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsColon <em>Is Colon</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsDerClassSpecifier <em>Is Der Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsDer <em>Is Der</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDerName <em>Der Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getRelationshipType <em>Relationship Type</em>}</li>
@@ -90,6 +95,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsOuter <em>Is Outer</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsReplaceable <em>Is Replaceable</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getComponent_list <em>Component list</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsOver <em>Is Over</em>}</li>
  * </ul>
  *
  * @generated
@@ -247,6 +253,26 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   protected EList<ModificationElement> modifications;
 
   /**
+   * The default value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_MODIFICATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isModificationOver = IS_MODIFICATION_OVER_EDEFAULT;
+
+  /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -295,6 +321,26 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @ordered
    */
   protected boolean isExtends = IS_EXTENDS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsLongClassSpecifier() <em>Is Long Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsLongClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_LONG_CLASS_SPECIFIER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsLongClassSpecifier() <em>Is Long Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsLongClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected boolean isLongClassSpecifier = IS_LONG_CLASS_SPECIFIER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getClassNameEnd() <em>Class Name End</em>}' attribute.
@@ -394,7 +440,47 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsShortClassSpecifier() <em>Is Short Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsShortClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_SHORT_CLASS_SPECIFIER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsShortClassSpecifier() <em>Is Short Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsShortClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected boolean isShortClassSpecifier = IS_SHORT_CLASS_SPECIFIER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -455,6 +541,26 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @ordered
    */
   protected boolean isColon = IS_COLON_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsDerClassSpecifier() <em>Is Der Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_DER_CLASS_SPECIFIER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsDerClassSpecifier() <em>Is Der Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected boolean isDerClassSpecifier = IS_DER_CLASS_SPECIFIER_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsDer() <em>Is Der</em>}' attribute.
@@ -707,6 +813,26 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   protected EList<Component_declaration> component_list;
 
   /**
+   * The default value of the '{@link #isIsOver() <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsOver() <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isOver = IS_OVER_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -923,6 +1049,31 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @generated
    */
   @Override
+  public boolean isIsModificationOver()
+  {
+    return isModificationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsModificationOver(boolean newIsModificationOver)
+  {
+    boolean oldIsModificationOver = isModificationOver;
+    isModificationOver = newIsModificationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER, oldIsModificationOver, isModificationOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getDescription()
   {
     return description;
@@ -980,6 +1131,31 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     isExtends = newIsExtends;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS, oldIsExtends, isExtends));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsLongClassSpecifier()
+  {
+    return isLongClassSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsLongClassSpecifier(boolean newIsLongClassSpecifier)
+  {
+    boolean oldIsLongClassSpecifier = isLongClassSpecifier;
+    isLongClassSpecifier = newIsLongClassSpecifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER, oldIsLongClassSpecifier, isLongClassSpecifier));
   }
 
   /**
@@ -1103,13 +1279,63 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsShortClassSpecifier()
+  {
+    return isShortClassSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsShortClassSpecifier(boolean newIsShortClassSpecifier)
+  {
+    boolean oldIsShortClassSpecifier = isShortClassSpecifier;
+    isShortClassSpecifier = newIsShortClassSpecifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER, oldIsShortClassSpecifier, isShortClassSpecifier));
   }
 
   /**
@@ -1185,6 +1411,31 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     isColon = newIsColon;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_COLON, oldIsColon, isColon));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsDerClassSpecifier()
+  {
+    return isDerClassSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsDerClassSpecifier(boolean newIsDerClassSpecifier)
+  {
+    boolean oldIsDerClassSpecifier = isDerClassSpecifier;
+    isDerClassSpecifier = newIsDerClassSpecifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER, oldIsDerClassSpecifier, isDerClassSpecifier));
   }
 
   /**
@@ -1548,6 +1799,31 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @generated
    */
   @Override
+  public boolean isIsOver()
+  {
+    return isOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsOver(boolean newIsOver)
+  {
+    boolean oldIsOver = isOver;
+    isOver = newIsOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_OVER, oldIsOver, isOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -1594,12 +1870,16 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return getClassName();
       case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
         return getModifications();
+      case MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER:
+        return isIsModificationOver();
       case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
         return getDescription();
       case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
         return getElements();
       case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS:
         return isIsExtends();
+      case MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER:
+        return isIsLongClassSpecifier();
       case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END:
         return getClassNameEnd();
       case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
@@ -1612,12 +1892,18 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return isIsAnnotation();
       case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
+      case MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER:
+        return isIsShortClassSpecifier();
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
         return getDirection();
       case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION:
         return isIsEnumeration();
       case MOlocPackage.GENERAL_CLAUSE__IS_COLON:
         return isIsColon();
+      case MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER:
+        return isIsDerClassSpecifier();
       case MOlocPackage.GENERAL_CLAUSE__IS_DER:
         return isIsDer();
       case MOlocPackage.GENERAL_CLAUSE__DER_NAME:
@@ -1646,6 +1932,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return isIsReplaceable();
       case MOlocPackage.GENERAL_CLAUSE__COMPONENT_LIST:
         return getComponent_list();
+      case MOlocPackage.GENERAL_CLAUSE__IS_OVER:
+        return isIsOver();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -1686,6 +1974,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         getModifications().clear();
         getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER:
+        setIsModificationOver((Boolean)newValue);
+        return;
       case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
         setDescription((String)newValue);
         return;
@@ -1695,6 +1986,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return;
       case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS:
         setIsExtends((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER:
+        setIsLongClassSpecifier((Boolean)newValue);
         return;
       case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END:
         setClassNameEnd((String)newValue);
@@ -1714,7 +2008,13 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return;
       case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER:
+        setIsShortClassSpecifier((Boolean)newValue);
         return;
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
         setDirection((Direction)newValue);
@@ -1724,6 +2024,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return;
       case MOlocPackage.GENERAL_CLAUSE__IS_COLON:
         setIsColon((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER:
+        setIsDerClassSpecifier((Boolean)newValue);
         return;
       case MOlocPackage.GENERAL_CLAUSE__IS_DER:
         setIsDer((Boolean)newValue);
@@ -1769,6 +2072,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         getComponent_list().clear();
         getComponent_list().addAll((Collection<? extends Component_declaration>)newValue);
         return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_OVER:
+        setIsOver((Boolean)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -1807,6 +2113,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
         getModifications().clear();
         return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER:
+        setIsModificationOver(IS_MODIFICATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
@@ -1815,6 +2124,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return;
       case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS:
         setIsExtends(IS_EXTENDS_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER:
+        setIsLongClassSpecifier(IS_LONG_CLASS_SPECIFIER_EDEFAULT);
         return;
       case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END:
         setClassNameEnd(CLASS_NAME_END_EDEFAULT);
@@ -1834,6 +2146,12 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER:
+        setIsShortClassSpecifier(IS_SHORT_CLASS_SPECIFIER_EDEFAULT);
+        return;
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
@@ -1842,6 +2160,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return;
       case MOlocPackage.GENERAL_CLAUSE__IS_COLON:
         setIsColon(IS_COLON_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER:
+        setIsDerClassSpecifier(IS_DER_CLASS_SPECIFIER_EDEFAULT);
         return;
       case MOlocPackage.GENERAL_CLAUSE__IS_DER:
         setIsDer(IS_DER_EDEFAULT);
@@ -1885,6 +2206,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__COMPONENT_LIST:
         getComponent_list().clear();
         return;
+      case MOlocPackage.GENERAL_CLAUSE__IS_OVER:
+        setIsOver(IS_OVER_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -1915,12 +2239,16 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
       case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
         return modifications != null && !modifications.isEmpty();
+      case MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER:
+        return isModificationOver != IS_MODIFICATION_OVER_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
         return elements != null && !elements.isEmpty();
       case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS:
         return isExtends != IS_EXTENDS_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER:
+        return isLongClassSpecifier != IS_LONG_CLASS_SPECIFIER_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END:
         return CLASS_NAME_END_EDEFAULT == null ? classNameEnd != null : !CLASS_NAME_END_EDEFAULT.equals(classNameEnd);
       case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
@@ -1933,12 +2261,18 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER:
+        return isShortClassSpecifier != IS_SHORT_CLASS_SPECIFIER_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION:
         return isEnumeration != IS_ENUMERATION_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__IS_COLON:
         return isColon != IS_COLON_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER:
+        return isDerClassSpecifier != IS_DER_CLASS_SPECIFIER_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__IS_DER:
         return isDer != IS_DER_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__DER_NAME:
@@ -1967,6 +2301,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return isReplaceable != IS_REPLACEABLE_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__COMPONENT_LIST:
         return component_list != null && !component_list.isEmpty();
+      case MOlocPackage.GENERAL_CLAUSE__IS_OVER:
+        return isOver != IS_OVER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -2005,6 +2341,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       switch (derivedFeatureID)
       {
         case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
+        case MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER: return MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -2029,6 +2366,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       switch (derivedFeatureID)
       {
         case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS: return MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS;
+        case MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER: return MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER;
         case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END: return MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END;
         default: return -1;
       }
@@ -2063,6 +2401,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       {
         case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -2077,6 +2416,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER;
         case MOlocPackage.GENERAL_CLAUSE__DIRECTION: return MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION;
         case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION;
         case MOlocPackage.GENERAL_CLAUSE__IS_COLON: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_COLON;
@@ -2087,6 +2427,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER: return MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER;
         case MOlocPackage.GENERAL_CLAUSE__IS_DER: return MOlocPackage.DER_CLASS_SPECIFIER__IS_DER;
         case MOlocPackage.GENERAL_CLAUSE__DER_NAME: return MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME;
         default: return -1;
@@ -2154,6 +2495,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       switch (baseFeatureID)
       {
         case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS;
+        case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER: return MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -2178,6 +2520,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       switch (baseFeatureID)
       {
         case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS: return MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS;
+        case MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER: return MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER;
         case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END: return MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END;
         default: return -1;
       }
@@ -2212,6 +2555,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -2226,6 +2570,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER: return MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER;
         case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION: return MOlocPackage.GENERAL_CLAUSE__DIRECTION;
         case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION: return MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION;
         case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_COLON: return MOlocPackage.GENERAL_CLAUSE__IS_COLON;
@@ -2236,6 +2581,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER: return MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER;
         case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER: return MOlocPackage.GENERAL_CLAUSE__IS_DER;
         case MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME: return MOlocPackage.GENERAL_CLAUSE__DER_NAME;
         default: return -1;
@@ -2294,10 +2640,14 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     result.append(classType);
     result.append(", className: ");
     result.append(className);
+    result.append(", isModificationOver: ");
+    result.append(isModificationOver);
     result.append(", description: ");
     result.append(description);
     result.append(", isExtends: ");
     result.append(isExtends);
+    result.append(", isLongClassSpecifier: ");
+    result.append(isLongClassSpecifier);
     result.append(", classNameEnd: ");
     result.append(classNameEnd);
     result.append(", typeSpecifier: ");
@@ -2306,12 +2656,18 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     result.append(subscripts);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
+    result.append(", isShortClassSpecifier: ");
+    result.append(isShortClassSpecifier);
     result.append(", direction: ");
     result.append(direction);
     result.append(", isEnumeration: ");
     result.append(isEnumeration);
     result.append(", isColon: ");
     result.append(isColon);
+    result.append(", isDerClassSpecifier: ");
+    result.append(isDerClassSpecifier);
     result.append(", isDer: ");
     result.append(isDer);
     result.append(", derName: ");
@@ -2336,6 +2692,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     result.append(isOuter);
     result.append(", isReplaceable: ");
     result.append(isReplaceable);
+    result.append(", isOver: ");
+    result.append(isOver);
     result.append(')');
     return result.toString();
   }

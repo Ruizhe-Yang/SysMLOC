@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.Examples">
+  <classes classType="model" className="ShowImpedance" description="&quot;Show complex cell impedance&quot;" isLongClassSpecifier="true" classNameEnd="ShowImpedance" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Sources.LogFrequencySweep" isOver="true">
+      <component_list isModificationOver="true" declarationName="logSweep" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1e-6" elementName="wMin"/>
+        <modifications expression="1e3" elementName="wMax"/>
+        <modifications expression="1" elementName="duration"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-50,-10},{-30,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.Impedance" isOver="true">
+      <component_list isModificationOver="true" declarationName="impedance" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="cellData" elementName="cellData"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ParameterRecords.TransientData.ExampleData" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="cellData" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="3600" elementName="Qnom"/>
+        <modifications expression="0.01" elementName="Ri"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-40},{10,-20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="logSweep.y" right="impedance.f">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-29,0},{-12,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="0.0001" elementName="Interval"/>
+        <modifications expression="1" elementName="StopTime"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Plot &lt;code>impedance.z.im&lt;/code> versus &lt;code>impedance.z.re&lt;/code>&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

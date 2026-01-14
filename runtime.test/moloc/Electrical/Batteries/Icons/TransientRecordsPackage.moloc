@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.Icons">
+  <classes isPartial="true" classType="package" className="TransientRecordsPackage" description="&quot;Icon for package containing records with transient data&quot;" isLongClassSpecifier="true" classNameEnd="TransientRecordsPackage" isOver="true">
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Rectangle( lineColor={200,200,200}, fillColor={248,248,248}, fillPattern=FillPattern.HorizontalCylinder, extent={{-100.0,-100.0},{100.0,100.0}}, radius=25.0 ) , Rectangle( origin={0,-20}, lineColor={64,64,64}, fillColor={255,215,136}, fillPattern=FillPattern.Solid, extent={{-80,-60},{80,60}}, radius=25.0 ) , Line( points={{-80,0},{-6,0}}, color={64,64,64} ) , Line( origin={-40,-40}, points={{-40,0},{0,0}}, color={64,64,64} ) , Line( origin={-6,-5}, points={{0,23},{0,-13}}, color={64,64,64} ) , Line( points={{6,0},{80,0}}, color={64,64,64} ) , Line( origin={6,-5}, points={{0,23},{0,-13}}, color={64,64,64} ) , Line( origin={80,-40}, points={{-40,0},{0,0}}, color={64,64,64} ) , Rectangle(extent={{-40,-28},{40,-52}}, lineColor={0,0,0}) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This icon indicates a package that contains records&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

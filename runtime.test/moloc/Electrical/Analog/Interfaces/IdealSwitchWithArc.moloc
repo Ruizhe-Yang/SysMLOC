@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Interfaces">
+  <classes isPartial="true" classType="model" className="IdealSwitchWithArc" description="&quot;Ideal switch with simple arc model&quot;" isLongClassSpecifier="true" classNameEnd="IdealSwitchWithArc" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="1E-5" declarationName="Ron" description="&quot;Closed switch resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+      <component_list expression="1E-5" declarationName="Goff" description="&quot;Opened switch conductance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="V0" description="&quot;Initial arc voltage&quot;">
+        <modifications expression="30" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.VoltageSlope" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="dVdt" description="&quot;Arc voltage slope&quot;">
+        <modifications expression="10E3" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Vmax" description="&quot;Max. arc voltage&quot;">
+        <modifications expression="60" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="293.15" elementName="T" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isOver="true">
+      <component_list isModificationOver="true" declarationName="off" description="&quot;Indicates off-state (but maybe not quenched)&quot;">
+        <modifications expression="true" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
+      <component_list isModificationOver="true" declarationName="quenched" description="&quot;Indicating quenched arc (if switch is off)&quot;">
+        <modifications expression="true" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
+      <component_list isModificationOver="true" declarationName="tSwitch" description="&quot;Last switch off time instant&quot;">
+        <modifications expression="-Modelica.Constants.inf" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:WhenEquation" condition="edge(off)">
+        <whenEquations xsi:type="mOloc:SimpleEquation" left="tSwitch" right="time"/>
+      </equations>
+      <equations xsi:type="mOloc:SimpleEquation" left="quenched" right="off and (abs(i) &lt;= abs(v)*Goff or pre(quenched))"/>
+      <equations xsi:type="mOloc:IfEquation" condition="off">
+        <ifEquations xsi:type="mOloc:IfEquation" condition="quenched">
+          <ifEquations xsi:type="mOloc:SimpleEquation" left="i" right="Goff*v"/>
+          <elseEquations xsi:type="mOloc:SimpleEquation" left="v" right="min(Vmax, V0 + dVdt*(time - tSwitch))*sign(i)"/>
+        </ifEquations>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="v" right="Ron*i"/>
+      </equations>
+      <equations xsi:type="mOloc:SimpleEquation" left="LossPower" right="v*i"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Ellipse(extent={{-44,4},{-36,-4}}, lineColor={0,0,255}), Line(points={{-90,0},{-44,0}}, color={0,0,255}), Line(points={{-37,2},{40,40}}, color={0,0,255}), Line(points={{40,0},{90,0}}, color={0,0,255}), Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications expression="{Line(points={{-60,60},{-60,-60},{60,-60}}, color={0,0,255}), Line(points={{-60,-60},{-40,-60},{-40,-40},{-20,40},{40,40}}),Text( extent={{30,-60},{50,-70}}, textString=&quot;time&quot; ) ,Text( extent={{-60,60},{-20,50}}, textString=&quot;voltage&quot; ) ,Text( extent={{-60,-30},{-40,-40}}, textString=&quot;V0&quot; ) ,Text( extent={{-50,40},{-30,30}}, textString=&quot;Vmax&quot; ) ,Text( extent={{-40,10},{-20,0}}, textString=&quot;dVdt&quot; ) ,Polygon( points={{-60,60},{-62,52},{-58,52},{-60,60}}, fillPattern=FillPattern.Solid ) ,Polygon( points={{60,-60},{54,-58},{54,-62},{60,-60}}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This model is an extension to the &lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Interfaces.IdealSwitch\&quot;>IdealSwitch&lt;/a>.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The basic model interrupts the current through the switch in an infinitesimal time span.&#xA;If an inductive circuit is connected, the voltage across the switch is limited only by numerics.&#xA;In order to give a better idea for the voltage across the switch, a simple arc model is added:&#xA;&lt;/p>&#xA;&lt;p>&#xA;When the Boolean variable &lt;code>off&lt;/code> signals to open the switch, a voltage across the opened switch is impressed.&#xA;This voltage starts with &lt;code>V0&lt;/code> (simulating the voltage drop of the arc roots), then rising with slope &lt;code>dVdt&lt;/code>&#xA;(simulating the rising voltage of an extending arc) until a maximum voltage &lt;code>Vmax&lt;/code> is reached.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;     | voltage&#xA;Vmax |      +-----&#xA;     |     /&#xA;     |    /&#xA;V0   |   +&#xA;     |   |&#xA;     +---+-------- time&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;This arc voltage tends to lower the current following through the switch; it depends on the connected circuit, when the arc is quenched.&#xA;Once the arc is quenched, i.e., the current flowing through the switch gets zero, the equation for the off-state is activated&#xA;&lt;code>i=Goff*v&lt;/code>.&#xA;&lt;/p>&#xA;&lt;p>&#xA;When the Boolean variable &lt;code>off&lt;/code> signals to close the switch again, the switch is closed immediately,&#xA;i.e., the equation for the on-state is activated &lt;code>v=Ron*i&lt;/code>.&#xA;&lt;/p>&#xA;&lt;p>&#xA;Please note: In an AC circuit, at least the arc quenches when the next natural zero-crossing of the current occurs.&#xA;In a DC circuit, the arc will not quench if the arc voltage is not sufficient that a zero-crossing of the current occurs.&#xA;&lt;br>&lt;br>&#xA;&lt;strong>Please note:&lt;/strong>&#xA;In case of useHeatPort=true the temperature dependence of the electrical&#xA;behavior is &lt;strong>not&lt;/strong> modelled. The parameters are not temperature dependent.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>June, 2009   &lt;/em>&#xA;       by Christoph Clauss&lt;br> adapted to OpenerWithArc&lt;br>&#xA;       &lt;/li>&#xA;&lt;li>&lt;em>May, 2009   &lt;/em>&#xA;       by Anton Haumer&lt;br> CloserWithArc initially implemented&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

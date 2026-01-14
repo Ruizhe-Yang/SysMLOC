@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.Utilities">
+  <classes classType="model" className="CCCVcharger" description="&quot;Charger with constant current - constant voltage characteristic&quot;" isLongClassSpecifier="true" classNameEnd="CCCVcharger" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list declarationName="I" description="&quot;Constant charge current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="startTime" description="&quot;Start time of charging&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="60" declarationName="rampTime" description="&quot;Ramp up charging current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list declarationName="Vend" description="&quot;End of charge voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isOver="true">
+      <component_list isModificationOver="true" declarationName="CV" description="&quot;Indicates CV charging&quot;">
+        <modifications expression="false" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="CV" right="v>=Vend"/>
+      <equations xsi:type="mOloc:IfEquation" condition="CV">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="v" right="Vend"/>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="i" right="-I*(if time&lt;startTime then 0 else min(1,(time - startTime)/rampTime))"/>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;cccvCharger&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Rectangle( extent={{-100,-100},{100,100}}, lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Polygon( points={{20,80},{-50,-20},{0,-20},{-20,-80},{50,20},{0,20},{20,80}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Ideal charger switching from constant current to constant voltage characteristic.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

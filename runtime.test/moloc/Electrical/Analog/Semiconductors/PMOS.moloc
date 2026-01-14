@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Semiconductors">
+  <classes classType="model" className="PMOS" description="&quot;Simple PMOS transistor with heating port&quot;" isLongClassSpecifier="true" classNameEnd="PMOS" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.Pin" isOver="true">
+      <component_list declarationName="D" description="&quot;Drain&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,50},{110,70}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{90,50},{110,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.Pin" isOver="true">
+      <component_list declarationName="G" description="&quot;Gate&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-90,-50},{-110,-70}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-90,-50},{-110,-70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.Pin" isOver="true">
+      <component_list declarationName="S" description="&quot;Source&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-50},{110,-70}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{90,-50},{110,-70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.Pin" isOver="true">
+      <component_list declarationName="B" description="&quot;Bulk&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Length" parameterType="parameter" isOver="true">
+      <component_list expression="20.0e-6" declarationName="W" description="&quot;Width&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Length" parameterType="parameter" isOver="true">
+      <component_list expression="6.0e-6" declarationName="L" description="&quot;Length&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Transconductance" parameterType="parameter" isOver="true">
+      <component_list expression="0.0105e-3" declarationName="Beta" description="&quot;Transconductance parameter&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="-1.0" declarationName="Vt" description="&quot;Zero bias threshold voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0.41" declarationName="K2" description="&quot;Bulk threshold parameter&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0.839" declarationName="K5" description="&quot;Reduction of pinch-off region&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Length" parameterType="parameter" isOver="true">
+      <component_list expression="-2.5e-6" declarationName="dW" description="&quot;Narrowing of channel&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Length" parameterType="parameter" isOver="true">
+      <component_list expression="-2.1e-6" declarationName="dL" description="&quot;Shortening of channel&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="1e7" declarationName="RDS" description="&quot;Drain-Source-Resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="useTemperatureDependency" description="&quot;= true, if parameters Beta, K2 and Vt depend on temperature&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+        <annotations expression="true" elementName="HideResult"/>
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications expression="true" elementName="checkBox"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="300.15" declarationName="Tnom" description="&quot;Parameter measurement temperature&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="useTemperatureDependency" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="-2.9e-3" declarationName="kvt" description="&quot;Fitting parameter for Vt&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="useTemperatureDependency" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="6.2e-4" declarationName="kk2" description="&quot;Fitting parameter for K2&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="useTemperatureDependency" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="useTemperatureDependency" elementName="useHeatPort"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isProtected="true" isOver="true">
+      <component_list declarationName="v"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list declarationName="uds"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list declarationName="ubs"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list declarationName="ugst"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list declarationName="ud"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list declarationName="us"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list declarationName="id"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list declarationName="gds"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list declarationName="beta_t"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list declarationName="vt_t"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list declarationName="k2_t"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(L + dL > 0, &quot;PMOS: Effective length must be positive&quot;)"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(W + dW > 0, &quot;PMOS: Effective width must be positive&quot;)"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(T_heatPort > 0,&quot;PMOS: Temperature must be positive&quot;)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="gds" right="if (RDS &lt; 1e-20 and RDS > -1e-20) then 1e20 else 1/RDS"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="beta_t*(W + dW)/(L + dL)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="ud" right="smooth(0,if (D.v > S.v) then S.v else D.v)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="us" right="smooth(0,if (D.v > S.v) then D.v else S.v)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="uds" right="ud - us"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="ubs" right="smooth(0,if (B.v &lt; us) then 0 else B.v - us)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="ugst" right="(G.v - us - vt_t + k2_t*ubs)*K5"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="id" right="smooth(0,if (ugst >= 0) then uds*gds else if (ugst &lt; uds) then -v*uds*( ugst - uds/2) + uds*gds else -v*ugst*ugst/2 + uds*gds )"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="beta_t" right="if useTemperatureDependency then Beta*pow((T_heatPort/Tnom), -1.5) else Beta"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="vt_t" right="if useTemperatureDependency then Vt*(1 + (T_heatPort - Tnom)*kvt) else Vt"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="k2_t" right="if useTemperatureDependency then K2*(1 + (T_heatPort - Tnom)*kk2) else K2"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="G.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="D.i" right="smooth(0,if (D.v > S.v) then -id else id)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="S.i" right="smooth(0,if (D.v > S.v) then id else -id)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="B.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="LossPower" right="D.i*(D.v - S.v)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;pMOS&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>The PMOS model is a simple model of a p-channel metal-oxide semiconductor FET. It differs slightly from the device used in the SPICE simulator. For more details please care for [&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.UsersGuide.References\&quot;>Spiro1990&lt;/a>].&#xA;&lt;br>A heating port is added for thermal electric simulation. The heating port is defined in the Modelica.Thermal library.&#xA;&lt;br>The model does not consider capacitances. A high drain-source resistance RDS is included to avoid numerical difficulties.&lt;/p>&#xA;&lt;p>&lt;strong>References:&lt;/strong> [&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.UsersGuide.References\&quot;>Spiro1990&lt;/a>]&lt;/p>&#xA;&lt;p>Some typical parameter sets are:&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;W       L      Beta        Vt    K2     K5      dW       dL&#xA;m       m      A/V^2       V     -      -       m        m&#xA;50.e-6  8.e-6  0.0085e-3  -0.15  0.41   0.839  -3.8e-6  -4.0e-6&#xA;20.e-6  6.e-6  0.0105e-3  -1.0   0.41   0.839  -2.5e-6  -2.1e-6&#xA;30.e-6  5.e-6  0.0059e-3  -0.3   0.98   1.01    0       -3.9e-6&#xA;30.e-6  5.e-6  0.0152e-3  -0.69  0.104  1.1    -0.8e-6  -0.4e-6&#xA;30.e-6  5.e-6  0.0163e-3  -0.69  0.104  1.1    -0.8e-6  -0.4e-6&#xA;30.e-6  5.e-6  0.0182e-3  -0.69  0.086  1.06   -0.1e-6  -0.6e-6&#xA;20.e-6  6.e-6  0.0074e-3  -1.    0.4    0.59    0        0&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em> March 11, 2009   &lt;/em>&#xA;       by Christoph Clauss&lt;br> conditional heat port added&lt;br>&#xA;       &lt;/li>&#xA;&lt;li>&lt;em>December 7, 2005   &lt;/em>&#xA;       by Christoph Clauss&lt;br>&#xA;       error in RDS calculation deleted&lt;/li>&#xA;&lt;li>&lt;em>March 31, 2004   &lt;/em>&#xA;       by Christoph Clauss&lt;br> implemented&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line(points={{-90,-60},{-10,-60}}, color={0,0,255}), Line(points={{-10,-60},{-10,60}}, color={0,0,255}), Line(points={{10,80},{10,39}}, color={0,0,255}), Line(points={{10,20},{10,-21}}, color={0,0,255}), Line(points={{10,-40},{10,-81}}, color={0,0,255}), Line(points={{10,60},{91,60}}, color={0,0,255}), Line(points={{10,0},{90,0}}, color={0,0,255}), Line(points={{10,-60},{90,-60}}, color={0,0,255}), Polygon( points={{60,0},{40,5},{40,-5},{60,0}}, fillColor={0,0,255}, fillPattern=FillPattern.Solid, lineColor={0,0,255} ) , Text( extent={{-150,130},{150,90}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Basic">
+  <classes classType="model" className="MultiStarResistance" description="&quot;Resistance connection of star points&quot;" isLongClassSpecifier="true" classNameEnd="MultiStarResistance" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="3" elementName="min" isfinal="true"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="Modelica.Electrical.Polyphase.Functions.numberOfSymmetricBaseSystems( m)" declarationName="mBasic" description="&quot;Number of symmetric base systems&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="1e6" declarationName="R" description="&quot;Insulation resistance between base systems&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="MultiStar" isOver="true">
+      <component_list isModificationOver="true" declarationName="multiStar" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="{-50,0}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="mBasic" elementName="m"/>
+        <modifications expression="fill(R, mBasic)" elementName="R_ref" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Star" isOver="true">
+      <component_list isModificationOver="true" declarationName="star" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="mBasic" elementName="m"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="{50,0}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SinglePhase.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="pin" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+            <modifications expression="{100,0}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug" right="multiStar.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-60,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="multiStar.starpoints" right="resistor.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-40,0},{-10,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor.plug_n" right="star.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{40,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="star.pin_n" right="pin">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,0},{100,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;multiStar&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Line( points={{-40,40},{0,0},{40,40},{0,0},{0,-40}}, color={85,170,255}, origin={-60,0}, rotation=90 ) ,Rectangle( extent={{-10,20},{10,-20}}, lineColor={85,170,255}, rotation=90 ) ,Line( points={{-40,40},{0,0},{40,40},{0,0},{0,-40}}, color={85,170,255}, origin={60,0}, rotation=90 ) , Text( extent={{-150,70},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text( extent={{-150,-110},{150,-70}}, textString=&quot;R=%R&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Multi star points are connected by resistors. This model is required to operate polyphase systems with even phase numbers to avoid ideal connections of start points of base systems; see&#xA;&lt;a href=\&quot;modelica://Modelica.Magnetic.FundamentalWave.UsersGuide.Polyphase\&quot;>polyphase guidelines&lt;/a>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

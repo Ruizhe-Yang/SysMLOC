@@ -9,6 +9,12 @@ package dut.control.moloc.mOloc;
  * A representation of the model object '<em><b>Annotation Clause</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.AnnotationClause#isIsOver <em>Is Over</em>}</li>
+ * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getAnnotationClause()
  * @model
@@ -16,4 +22,26 @@ package dut.control.moloc.mOloc;
  */
 public interface AnnotationClause extends Element, annotation_modification_part
 {
+  /**
+   * Returns the value of the '<em><b>Is Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Over</em>' attribute.
+   * @see #setIsOver(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getAnnotationClause_IsOver()
+   * @model
+   * @generated
+   */
+  boolean isIsOver();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.AnnotationClause#isIsOver <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Over</em>' attribute.
+   * @see #isIsOver()
+   * @generated
+   */
+  void setIsOver(boolean value);
+
 } // AnnotationClause

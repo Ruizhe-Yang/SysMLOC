@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.ACDC">
+  <classes classType="model" className="ThyristorBridge2mPulse" description="&quot;2*m pulse thyristor rectifier bridge&quot;" isLongClassSpecifier="true" classNameEnd="ThyristorBridge2mPulse" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Icons.Converter" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1e-05" declarationName="RonThyristor" description="&quot;Closed thyristor resistance&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1e-05" declarationName="GoffThyristor" description="&quot;Opened thyristor conductance&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="0" declarationName="VkneeThyristor" description="&quot;Thyristor forward threshold voltage&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" expression="fill(true, m)" declarationName="offStart_p" description="&quot;Boolean start value of variable thyristor_p[:].off&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications expression="true" elementName="checkBox"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" expression="fill(true, m)" declarationName="offStart_n" description="&quot;Boolean start value of variable thyristor_n[:].off&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications expression="true" elementName="checkBox"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PowerConverters.Interfaces.ACDC.ACplug" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PowerConverters.Interfaces.ACDC.DCtwoPin" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="293.15" elementName="T" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.Enable.Enable2m" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Ideal.IdealThyristor" isOver="true">
+      <component_list isModificationOver="true" declarationName="thyristor_p" description="&quot;Thyristors connected to positive DC potential&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="fill(RonThyristor, m)" elementName="Ron" isfinal="true"/>
+        <modifications expression="fill(GoffThyristor, m)" elementName="Goff" isfinal="true"/>
+        <modifications expression="fill(VkneeThyristor, m)" elementName="Vknee" isfinal="true"/>
+        <modifications expression="useHeatPort" elementName="useHeatPort" isfinal="true"/>
+        <modifications isModificationOver="true" elementName="idealThyristor" isfinal="true">
+          <modifications isModificationOver="true" elementName="off">
+            <modifications expression="offStart_p" elementName="start"/>
+            <modifications expression="fill(true, m)" elementName="fixed"/>
+          </modifications>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,40}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Ideal.IdealThyristor" isOver="true">
+      <component_list isModificationOver="true" declarationName="thyristor_n" description="&quot;Thyristors connected to negative DC potential&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="fill(RonThyristor, m)" elementName="Ron" isfinal="true"/>
+        <modifications expression="fill(GoffThyristor, m)" elementName="Goff" isfinal="true"/>
+        <modifications expression="fill(VkneeThyristor, m)" elementName="Vknee" isfinal="true"/>
+        <modifications expression="useHeatPort" elementName="useHeatPort" isfinal="true"/>
+        <modifications isModificationOver="true" elementName="idealThyristor" isfinal="true">
+          <modifications isModificationOver="true" elementName="off">
+            <modifications expression="offStart_n" elementName="start"/>
+            <modifications expression="fill(true, m)" elementName="fixed"/>
+          </modifications>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,-10}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
+      <component_list isModificationOver="true" declarationName="star_p" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{70,70},{90,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
+      <component_list isModificationOver="true" declarationName="star_n" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{70,-20},{90,-40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Components.ThermalCollector" isOver="true">
+      <component_list isModificationOver="true" declarationName="thermalConnector" isAnnotation="true" isAnnotationOver="true" condition_attribute="useHeatPort">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-100},{30,-80}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Pre" isOver="true">
+      <component_list subscripts="[m]" declarationName="pre_p" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-60,-36}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Pre" isOver="true">
+      <component_list subscripts="[m]" declarationName="pre_n" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-20,-36}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:IfEquation" condition="not useHeatPort">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="LossPower" right="sum(thyristor_p.idealThyristor.LossPower) + sum(thyristor_n.idealThyristor.LossPower)"/>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ac" right="thyristor_p.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{0,0},{0,30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thyristor_p.plug_p" right="thyristor_n.plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,30},{0,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thyristor_p.plug_n" right="star_p.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,50},{0,60},{70,60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="star_p.pin_n" right="dc_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{90,60},{100,60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thyristor_n.plug_p" right="star_n.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-20},{0,-30},{70,-30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="star_n.pin_n" right="dc_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{90,-30},{100,-30},{100,-60},{100,-60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="heatPort" right="thermalConnector.port_b">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-100},{20,-100}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thermalConnector.port_a" right="thyristor_n.heatPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,-80},{20,-10},{10,-10}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thyristor_p.heatPort" right="thermalConnector.port_a">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,40},{20,40},{20,-80}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="andCondition_p.y" right="pre_p.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,-69},{-60,-48}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="pre_p.y" right="thyristor_p.fire">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,-25},{-60,-25},{-60,46},{-60,50},{-11.8,50}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="pre_n.y" right="thyristor_n.fire">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,-25},{-20,0},{-11.8,0}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="andCondition_n.y" right="pre_n.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,-69},{60, -60 } ,{-20,-60},{-20,-48} }" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;rectifier&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Text( extent={{-100,70},{0,50}}, textColor={0,0,255}, textString=&quot;AC&quot; ) , Text( extent={{0,-50},{100,-70}}, textColor={0,0,255}, textString=&quot;DC&quot; ) , Rectangle( extent={{-40,24},{40,-24}}, lineColor={255,255,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line( points={{-40,0},{40,0}}, color={0,0,255} ) , Line( points={{20,24},{20,-24}}, color={0,0,255} ) , Line( points={{20,0},{-20,24},{-20,-24},{20,0}}, color={0,0,255} ) , Line( points={{0,12},{0,28}}, color={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;General information about AC/DC converters can be found at the&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.UsersGuide.ACDCConcept\&quot;>AC/DC converter concept&lt;/a>&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;This is a 2*m pulse thyristor rectifier bridge. In order to operate this rectifier a voltage source with center tap is required. It is important to note that for polyphase circuits with phase even phase numbers greater than three the&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Polyphase.Basic.MultiStarResistance\&quot;>MultiStarResistance&lt;/a> shall be used for grounding the voltage sources.&#xA;See example&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.Examples.ACDC.RectifierBridge2mPulse\&quot;>Examples.ACDC.RectifierBridge2mPulse&lt;/a>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

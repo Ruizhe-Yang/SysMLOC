@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.EnumerationLiteral;
 import dut.control.moloc.mOloc.MOlocPackage;
@@ -45,9 +45,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#isIsShortClassSpecifier <em>Is Short Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#isIsEnumeration <em>Is Enumeration</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#isIsColon <em>Is Colon</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#isIsDerClassSpecifier <em>Is Der Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#isIsDer <em>Is Der</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getDerName <em>Der Name</em>}</li>
  * </ul>
@@ -134,7 +137,47 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsShortClassSpecifier() <em>Is Short Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsShortClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_SHORT_CLASS_SPECIFIER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsShortClassSpecifier() <em>Is Short Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsShortClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected boolean isShortClassSpecifier = IS_SHORT_CLASS_SPECIFIER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -195,6 +238,26 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
    * @ordered
    */
   protected boolean isColon = IS_COLON_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsDerClassSpecifier() <em>Is Der Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_DER_CLASS_SPECIFIER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsDerClassSpecifier() <em>Is Der Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected boolean isDerClassSpecifier = IS_DER_CLASS_SPECIFIER_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsDer() <em>Is Der</em>}' attribute.
@@ -343,13 +406,63 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsShortClassSpecifier()
+  {
+    return isShortClassSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsShortClassSpecifier(boolean newIsShortClassSpecifier)
+  {
+    boolean oldIsShortClassSpecifier = isShortClassSpecifier;
+    isShortClassSpecifier = newIsShortClassSpecifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER, oldIsShortClassSpecifier, isShortClassSpecifier));
   }
 
   /**
@@ -433,6 +546,31 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
    * @generated
    */
   @Override
+  public boolean isIsDerClassSpecifier()
+  {
+    return isDerClassSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsDerClassSpecifier(boolean newIsDerClassSpecifier)
+  {
+    boolean oldIsDerClassSpecifier = isDerClassSpecifier;
+    isDerClassSpecifier = newIsDerClassSpecifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER, oldIsDerClassSpecifier, isDerClassSpecifier));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsDer()
   {
     return isDer;
@@ -505,12 +643,18 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
         return isIsAnnotation();
       case MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
+      case MOlocPackage.CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER:
+        return isIsShortClassSpecifier();
       case MOlocPackage.CLASS_SPECIFIER__DIRECTION:
         return getDirection();
       case MOlocPackage.CLASS_SPECIFIER__IS_ENUMERATION:
         return isIsEnumeration();
       case MOlocPackage.CLASS_SPECIFIER__IS_COLON:
         return isIsColon();
+      case MOlocPackage.CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER:
+        return isIsDerClassSpecifier();
       case MOlocPackage.CLASS_SPECIFIER__IS_DER:
         return isIsDer();
       case MOlocPackage.CLASS_SPECIFIER__DER_NAME:
@@ -545,7 +689,13 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
         return;
       case MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
+        return;
+      case MOlocPackage.CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER:
+        setIsShortClassSpecifier((Boolean)newValue);
         return;
       case MOlocPackage.CLASS_SPECIFIER__DIRECTION:
         setDirection((Direction)newValue);
@@ -555,6 +705,9 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
         return;
       case MOlocPackage.CLASS_SPECIFIER__IS_COLON:
         setIsColon((Boolean)newValue);
+        return;
+      case MOlocPackage.CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER:
+        setIsDerClassSpecifier((Boolean)newValue);
         return;
       case MOlocPackage.CLASS_SPECIFIER__IS_DER:
         setIsDer((Boolean)newValue);
@@ -592,6 +745,12 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
       case MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
+      case MOlocPackage.CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER:
+        setIsShortClassSpecifier(IS_SHORT_CLASS_SPECIFIER_EDEFAULT);
+        return;
       case MOlocPackage.CLASS_SPECIFIER__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
@@ -600,6 +759,9 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
         return;
       case MOlocPackage.CLASS_SPECIFIER__IS_COLON:
         setIsColon(IS_COLON_EDEFAULT);
+        return;
+      case MOlocPackage.CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER:
+        setIsDerClassSpecifier(IS_DER_CLASS_SPECIFIER_EDEFAULT);
         return;
       case MOlocPackage.CLASS_SPECIFIER__IS_DER:
         setIsDer(IS_DER_EDEFAULT);
@@ -631,12 +793,18 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
+      case MOlocPackage.CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER:
+        return isShortClassSpecifier != IS_SHORT_CLASS_SPECIFIER_EDEFAULT;
       case MOlocPackage.CLASS_SPECIFIER__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case MOlocPackage.CLASS_SPECIFIER__IS_ENUMERATION:
         return isEnumeration != IS_ENUMERATION_EDEFAULT;
       case MOlocPackage.CLASS_SPECIFIER__IS_COLON:
         return isColon != IS_COLON_EDEFAULT;
+      case MOlocPackage.CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER:
+        return isDerClassSpecifier != IS_DER_CLASS_SPECIFIER_EDEFAULT;
       case MOlocPackage.CLASS_SPECIFIER__IS_DER:
         return isDer != IS_DER_EDEFAULT;
       case MOlocPackage.CLASS_SPECIFIER__DER_NAME:
@@ -683,6 +851,7 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
       {
         case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -697,6 +866,7 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER;
         case MOlocPackage.CLASS_SPECIFIER__DIRECTION: return MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION;
         case MOlocPackage.CLASS_SPECIFIER__IS_ENUMERATION: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION;
         case MOlocPackage.CLASS_SPECIFIER__IS_COLON: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_COLON;
@@ -707,6 +877,7 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER: return MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER;
         case MOlocPackage.CLASS_SPECIFIER__IS_DER: return MOlocPackage.DER_CLASS_SPECIFIER__IS_DER;
         case MOlocPackage.CLASS_SPECIFIER__DER_NAME: return MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME;
         default: return -1;
@@ -753,6 +924,7 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -767,6 +939,7 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER: return MOlocPackage.CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER;
         case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION: return MOlocPackage.CLASS_SPECIFIER__DIRECTION;
         case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION: return MOlocPackage.CLASS_SPECIFIER__IS_ENUMERATION;
         case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_COLON: return MOlocPackage.CLASS_SPECIFIER__IS_COLON;
@@ -777,6 +950,7 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER: return MOlocPackage.CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER;
         case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER: return MOlocPackage.CLASS_SPECIFIER__IS_DER;
         case MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME: return MOlocPackage.CLASS_SPECIFIER__DER_NAME;
         default: return -1;
@@ -802,12 +976,18 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     result.append(subscripts);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
+    result.append(", isShortClassSpecifier: ");
+    result.append(isShortClassSpecifier);
     result.append(", direction: ");
     result.append(direction);
     result.append(", isEnumeration: ");
     result.append(isEnumeration);
     result.append(", isColon: ");
     result.append(isColon);
+    result.append(", isDerClassSpecifier: ");
+    result.append(isDerClassSpecifier);
     result.append(", isDer: ");
     result.append(isDer);
     result.append(", derName: ");

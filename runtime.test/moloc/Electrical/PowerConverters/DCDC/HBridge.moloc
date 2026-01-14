@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.DCDC">
+  <classes classType="model" className="HBridge" description="&quot;H bridge (four quadrant converter)&quot;" isLongClassSpecifier="true" classNameEnd="HBridge" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Icons.Converter" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PowerConverters.Interfaces.DCDC.DCtwoPin1" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PowerConverters.Interfaces.DCDC.DCtwoPin2" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="293.15" elementName="T" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="1e-05" declarationName="RonTransistor" description="&quot;Transistor closed resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+      <component_list expression="1e-05" declarationName="GoffTransistor" description="&quot;Transistor opened conductance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="VkneeTransistor" description="&quot;Transistor threshold voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="1e-05" declarationName="RonDiode" description="&quot;Diode closed resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+      <component_list expression="1e-05" declarationName="GoffDiode" description="&quot;Diode opened conductance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="VkneeDiode" description="&quot;Diode threshold voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.Enable.Enable2" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="DCAC.SinglePhase2Level" isOver="true">
+      <component_list isModificationOver="true" declarationName="inverter_p" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="RonTransistor" elementName="RonTransistor" isfinal="true"/>
+        <modifications expression="GoffTransistor" elementName="GoffTransistor" isfinal="true"/>
+        <modifications expression="VkneeTransistor" elementName="VkneeTransistor" isfinal="true"/>
+        <modifications expression="RonDiode" elementName="RonDiode" isfinal="true"/>
+        <modifications expression="GoffDiode" elementName="GoffDiode" isfinal="true"/>
+        <modifications expression="VkneeDiode" elementName="VkneeDiode" isfinal="true"/>
+        <modifications expression="useHeatPort" elementName="useHeatPort" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,20},{0,40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="DCAC.SinglePhase2Level" isOver="true">
+      <component_list isModificationOver="true" declarationName="inverter_n" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="RonTransistor" elementName="RonTransistor" isfinal="true"/>
+        <modifications expression="GoffTransistor" elementName="GoffTransistor" isfinal="true"/>
+        <modifications expression="VkneeTransistor" elementName="VkneeTransistor" isfinal="true"/>
+        <modifications expression="RonDiode" elementName="RonDiode" isfinal="true"/>
+        <modifications expression="GoffDiode" elementName="GoffDiode" isfinal="true"/>
+        <modifications expression="VkneeDiode" elementName="VkneeDiode" isfinal="true"/>
+        <modifications expression="useHeatPort" elementName="useHeatPort" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-58,-40},{-38,-20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <component_list declarationName="fire_p" description="&quot;Firing signals of positive potential leg&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-60,-120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <component_list declarationName="fire_n" description="&quot;Firing signals of negative potential leg&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{60,-120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:IfEquation" condition="not useHeatPort">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="LossPower" right="inverter_p.LossPower + inverter_n.LossPower"/>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="inverter_n.heatPort" right="heatPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-48,-40},{-48,-70},{-10,-70},{-10,-100},{0,-100}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="inverter_p.heatPort" right="heatPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,20},{-10,-100},{0,-100}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="dc_p1" right="inverter_p.dc_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,60},{-70,60},{-70,36},{-20,36}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="dc_p1" right="inverter_n.dc_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,60},{-70,60},{-70,-24},{-58,-24}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="dc_n1" right="inverter_n.dc_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,-60},{-80,-60},{-80,-36},{-58,-36}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="dc_n1" right="inverter_p.dc_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,-60},{-80,-60},{-80,24},{-20,24}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="inverter_p.ac" right="dc_p2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,30},{100,30},{100,60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="inverter_n.ac" right="dc_n2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-38,-30},{100,-30},{100,-60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="andCondition_n.y" right="inverter_p.fire_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,-69},{60,-50},{-4,-50},{-4,18}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="andCondition_n.y" right="inverter_n.fire_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,-69},{60,-50},{-54,-50},{-54,-42}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="andCondition_p.y" right="inverter_n.fire_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,-69},{-60,-60},{-42,-60},{-42,-42}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="andCondition_p.y" right="inverter_p.fire_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,-69},{-60,-60},{-16,-60},{-16,18}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;dcdc&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Rectangle( extent={{-40,40},{40,-40}}, lineColor={255,255,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{0,-50},{100,-70}}, textColor={0,0,255}, textString=&quot;DC out&quot; ) , Text( extent={{-100,70},{0,50}}, textColor={0,0,255}, textString=&quot;DC in&quot; ) , Line( points={{-40,0},{-28,0}}, color={0,0,255} ) , Line( points={{-28,20},{-28,-20}}, color={0,0,255} ) , Line( points={{-20,20},{-20,-20}}, color={0,0,255} ) , Line( points={{-20,4},{0,24},{0,40}}, color={0,0,255} ) , Line( points={{-20,-4},{0,-24},{0,-40}}, color={0,0,255} ) , Line( points={{-4,-20},{-10,-8},{-16,-14},{-4,-20}}, color={0,0,255} ) , Line( points={{0,-24},{10,-24},{10,24},{0,24}}, color={0,0,255} ) , Line( points={{0,8},{20,8}}, color={0,0,255} ) , Line( points={{10,8},{0,-8},{20,-8},{10,8}}, color={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The H bridge is a four quadrant DC/DC converter. It consists of two single-phase DC/AC converters which are controlled differently; see Fig.&amp;nbsp;1.&lt;/p>&#xA;&#xA;&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&#xA;  &lt;caption align=\&quot;bottom\&quot;>&lt;strong>Fig. 1:&lt;/strong> H bridge&lt;/caption>&#xA;  &lt;tr>&#xA;    &lt;td>&#xA;      &lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/PowerConverters/Hbridge.png\&quot;>&#xA;    &lt;/td>&#xA;  &lt;/tr>&#xA;&lt;/table>&#xA;&#xA;&lt;p>If the firing inputs &lt;code>fire_p&lt;/code> and &lt;code>fire_n&lt;/code> are inverse, the two legs are controlled symmetrically so that full positive or negative output voltage can be generated. See examples&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.Examples.DCDC.HBridge\&quot;>DCDC.HBridge&lt;/a>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

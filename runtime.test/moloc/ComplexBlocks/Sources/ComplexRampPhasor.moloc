@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Sources">
-  <classes classType="block" className="ComplexRampPhasor" description="&quot;Generate a phasor with ramped magnitude and constant angle&quot;" classNameEnd="ComplexRampPhasor">
-    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexSO"/>
-    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
-      <component_list declarationName="magnitude1" description="&quot;Magnitude of complex phasor at startTime&quot;" isAnnotation="true">
+  <classes classType="block" className="ComplexRampPhasor" description="&quot;Generate a phasor with ramped magnitude and constant angle&quot;" isLongClassSpecifier="true" classNameEnd="ComplexRampPhasor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexSO" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="magnitude1" description="&quot;Magnitude of complex phasor at startTime&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0" elementName="min" isfinal="true"/>
         <modifications expression="1" elementName="start"/>
-        <annotations elementName="Dialog">
+        <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="&quot;modelica://Modelica/Resources/Images/ComplexBlocks/Sources/ComplexRampPhasor.png&quot;" elementName="groupImage"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
-      <component_list declarationName="magnitude2" description="&quot;Magnitude of complex phasor at startTime+duration&quot;">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="magnitude2" description="&quot;Magnitude of complex phasor at startTime+duration&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useLogRamp" description="&quot;Ramp appears linear on a logarithmic scale, if true&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Angle" parameterType="parameter">
-      <component_list declarationName="phi" description="&quot;Angle of complex phasor&quot;">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Angle" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="phi" description="&quot;Angle of complex phasor&quot;">
         <modifications expression="0" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="startTime" description="&quot;Start time of frequency sweep&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter">
-      <component_list declarationName="duration" description="&quot;Duration of ramp (= 0.0 gives a Step)&quot;">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="duration" description="&quot;Duration of ramp (= 0.0 gives a Step)&quot;">
         <modifications expression="0.0" elementName="min"/>
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
       <component_list declarationName="magnitude" description="&quot;Actual magnitude of complex phasor&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">
@@ -43,16 +43,16 @@
       <equations xsi:type="mOloc:SimpleEquation" left="magnitude" right="if not useLogRamp then magnitude1 + (if time &lt; startTime then 0 else if time &lt; (startTime + max(duration,eps)) then (time - startTime)*(magnitude2-magnitude1)/max(duration,eps) else magnitude2-magnitude1 ) else if time &lt; startTime then magnitude1 else if time &lt; (startTime + max(duration,eps)) then 10^(log10(magnitude1) + (log10(magnitude2) - log10(magnitude1))*min(1, (time-startTime)/max(duration,eps))) else magnitude2"/>
       <equations xsi:type="mOloc:SimpleEquation" left="y" right="magnitude*Modelica.ComplexMath.exp(Complex(0, phi))"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
       <annotations expression="&quot;complexRamp&quot;" elementName="defaultComponentName"/>
-      <annotations elementName="Icon">
-        <modifications elementName="coordinateSystem">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
           <modifications expression="true" elementName="preserveAspectRatio"/>
           <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
         </modifications>
         <modifications expression="{ Line( points={{0,-8},{24,12}}, color={85,170,255} ) , Polygon( points={{38,24},{17,15},{26,4},{38,24}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) ,Line( points={{0,8},{60,58}}, color={85,170,255} ) , Polygon( points={{76,72},{55,63},{64,52},{76,72}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{68,0}}, color={192,192,192}), Line(points={{0,-80},{0,68}}, color={192,192,192} ) , Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Polygon( points={{90,0},{68,8},{68,-8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
       </annotations>
-      <annotations elementName="Documentation">
+      <annotations isModificationOver="true" elementName="Documentation">
         <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output y is a complex phasor with constant angle and a ramped magnitude.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;In case of &lt;code>useLogRamp == false&lt;/code> the magnitude ramp is linear:&#xA;&lt;/p>&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/ComplexBlocks/Sources/ComplexRampPhasorLinear.png\&quot;&#xA;     alt=\&quot;ComplexRampPhasorLinear.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;In case of &lt;code>useLogRamp == true&lt;/code> the magnitude ramp appears linear on a logarithmic scale:&#xA;&lt;/p>&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/ComplexBlocks/Sources/ComplexRampPhasorLog.png\&quot;&#xA;     alt=\&quot;ComplexRampPhasorLog.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
       </annotations>
     </elements>

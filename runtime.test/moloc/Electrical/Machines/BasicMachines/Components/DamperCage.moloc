@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.BasicMachines.Components">
+  <classes classType="model" className="DamperCage" description="&quot;Squirrel Cage&quot;" isLongClassSpecifier="true" classNameEnd="DamperCage" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list declarationName="Lrsigmad" description="&quot;Stray inductance in d-axis per phase translated to stator&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list declarationName="Lrsigmaq" description="&quot;Stray inductance in q-axis per phase translated to stator&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list declarationName="Rrd" description="&quot;Resistance in d-axis per phase translated to stator at T_ref&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list declarationName="Rrq" description="&quot;Resistance in q-axis per phase translated to stator at T_ref&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="293.15" declarationName="T_ref" description="&quot;Reference temperature of both resistances in d- and q-axis&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="alpha" description="&quot;Temperature coefficient of both resistances in d- and q-axis at T_ref&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="T_ref" elementName="T"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" isOver="true">
+      <component_list declarationName="Rrd_actual" description="&quot;Actual resistance = Rrd*(1 + alpha*(T_heatPort - T_ref))&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" isOver="true">
+      <component_list declarationName="Rrq_actual" description="&quot;Actual resistance = Rrq*(1 + alpha*(T_heatPort - T_ref))&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list subscripts="[2]" isModificationOver="true" expression="-spacePhasor_r.i_" declarationName="i" description="&quot;Currents out from damper&quot;">
+        <modifications expression="&quot;ElectricCurrent&quot;" elementName="quantity" isEach="true" isfinal="true"/>
+        <modifications expression="&quot;A&quot;" elementName="unit" isEach="true" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" expression="LossPower" declarationName="lossPower" description="&quot;Damper losses&quot;">
+        <modifications expression="&quot;Power&quot;" elementName="quantity" isfinal="true"/>
+        <modifications expression="&quot;W&quot;" elementName="unit" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Interfaces.SpacePhasor" isOver="true">
+      <component_list declarationName="spacePhasor_r" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,90},{-90,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="((1 + alpha*(T_heatPort - T_ref)) >= Modelica.Constants.eps, &quot;Temperature outside scope of model!&quot; )"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="Rrd_actual" right="Rrd*(1 + alpha*(T_heatPort - T_ref))"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="Rrq_actual" right="Rrq*(1 + alpha*(T_heatPort - T_ref))"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="spacePhasor_r.v_[1]" right="Rrd_actual*spacePhasor_r.i_[1] + Lrsigmad*der( spacePhasor_r.i_[1])"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="spacePhasor_r.v_[2]" right="Rrq_actual*spacePhasor_r.i_[2] + Lrsigmaq*der( spacePhasor_r.i_[2])"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="2/3*LossPower" right="Rrd_actual*spacePhasor_r.i_[1]*spacePhasor_r.i_[1] + Rrq_actual*spacePhasor_r.i_[2]*spacePhasor_r.i_[2]"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          <modifications expression="{2,2}" elementName="grid"/>
+        </modifications>
+        <modifications expression="{ Line(points={{60,60},{100,60}}, color={0,0,255}), Line(points={{70,40},{90,40}}, color={0,0,255}), Line(points={{66,50},{94,50}}, color={0,0,255}), Line(points={{-80,0},{-80,-20}}, color={0,0,255}), Rectangle(extent={{20,90},{60,70}}, lineColor={0,0,255}), Line(points={{60,80},{80,80},{80,60}}, color={0,0,255}), Line(points={{-100,90},{-100,80},{-60,80}}, color={0,0,255}), Line(points={{-100,90},{-100,80},{-80,80},{-80,60}}, color={0,0,255}), Line(points={{0,80},{20,80}}, color={0,0,255}), Rectangle(extent={{-90,-20},{-70,-60}}, lineColor={0,0,255}), Line(points={{-100,-80},{-60,-80}}, color={0,0,255}), Line(points={{-90,-100},{-70,-100}}, color={0,0,255}), Line(points={{-94,-90},{-66,-90}}, color={0,0,255}), Line(points={{-80,-60},{-80,-80}}, color={0,0,255}), Line( points={{-60,80},{-59,85},{-54,90},{-46,90},{-41,85},{-40,80}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-40,80},{-39,85},{-34,90},{-26,90},{-21,85},{-20,80}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-20,80},{-19,85},{-14,90},{-6,90},{-1,85},{0,80}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-10,-5},{-9,0},{-4,5},{4,5},{9,0},{10,-5}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-85,50}, rotation=90 ) , Line( points={{-10,-5},{-9,0},{-4,5},{4,5},{9,0},{10,-5}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-85,30}, rotation=90 ) , Line( points={{-10,-5},{-9,0},{-4,5},{4,5},{9,0},{10,-5}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-85,10}, rotation=90 ) , Text( extent={{-150,-148},{150,-110}}, textColor={0,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Model of an asymmetrical damper cage in two axis.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The damper cage has an optional (conditional) HeatPort,&#xA;which can be enabled or disabled by the Boolean parameter useHeatPort.&#xA;Temperatures of both axis are the same, both losses are added.&#xA;Material properties alpha can be set differently for both d- and q-axis,&#xA;although reference temperature for both resistances is the same.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

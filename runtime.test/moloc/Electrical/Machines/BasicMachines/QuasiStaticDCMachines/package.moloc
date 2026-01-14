@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.BasicMachines">
+  <classes classType="package" className="QuasiStaticDCMachines" description="&quot;Models of quasi-static DC machines&quot;" isLongClassSpecifier="true" classNameEnd="QuasiStaticDCMachines" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.VariantsPackage" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This package contains quasi-static models of DC machines;&#xA;these models are fully compatible with the&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Machines.BasicMachines.DCMachines\&quot;>transient machine models of DC machines&lt;/a>;&#xA;the only difference is that electrical transients are neglected.&#xA;&lt;/p>&#xA;&lt;h4>Note&lt;/h4>&#xA;&lt;p>&#xA;Quasi-static DC machine models are basically different from quasi-static induction machine models:&#xA;Quasi-static DC machine models neglect electrical transients, i.e., setting &lt;code>der(i) = 0&lt;/code>,&#xA;whereas quasi-static induction machine models are based on time phasor theory,&#xA;see &lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic\&quot;>QuasiStatic Library&lt;/a>,&#xA;where e.g., &lt;code>L*der(i)&lt;/code> is replaced by &lt;code>j*omega*L*(I_re+j*I_im)&lt;/code>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;dl>&#xA;  &lt;dt>&lt;strong>Main Authors:&lt;/strong>&lt;/dt>&#xA;  &lt;dd>&#xA;  &lt;a href=\&quot;https://www.haumer.at/\&quot;>Anton Haumer&lt;/a>&lt;br>&#xA;  Technical Consulting &amp;amp; Electrical Engineering&lt;br>&#xA;  D-93049 Regensburg&lt;br>Germany&lt;br>&#xA;  email: &lt;a href=\&quot;mailto:a.haumer@haumer.at\&quot;>a.haumer@haumer.at&lt;/a>&#xA;  &lt;/dd>&#xA;&lt;/dl>&#xA;  &lt;ul>&#xA;  &lt;li> v2.3.0 2010/02/16 Anton Haumer&lt;br>&#xA;       first implementation&lt;/li>&#xA;  &lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.BatteryStacksWithSensors">
+  <classes classType="model" className="Stack" description="&quot;Stack with sensors&quot;" isLongClassSpecifier="true" classNameEnd="Stack" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.BaseClasses.BaseStackWithSensors" isOver="true">
+      <extendsModifications typeSpecifier="Modelica.Electrical.Batteries.BaseClasses.BaseStackData" declarationName="stackData" isRedeclare="true"/>
+      <extendsModifications typeSpecifier="Modelica.Electrical.Batteries.BatteryStacksWithSensors.Cell" isModificationOver="true" declarationName="cell" isRedeclare="true">
+        <modifications expression="stackData.cellData" elementName="cellData"/>
+        <modifications expression="SOC0" elementName="SOC0"/>
+        <modifications expression="SOCtolerance" elementName="SOCtolerance" isEach="true"/>
+        <modifications expression="useHeatPort" elementName="useHeatPort" isEach="true"/>
+        <modifications expression="T" elementName="T" isEach="true"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This is a stack of &lt;code>Ns&lt;/code> x &lt;code>Np&lt;/code> &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.BatteryStacksWithSensors.Cell\&quot;>cell[Np=1, Ns=1]&lt;/a> with measurement, arranged in a matrix.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

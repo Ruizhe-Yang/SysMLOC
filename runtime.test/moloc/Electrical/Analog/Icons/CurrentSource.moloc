@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Icons">
+  <classes isPartial="true" classType="model" className="CurrentSource" description="&quot;Icon for current sources&quot;" isLongClassSpecifier="true" classNameEnd="CurrentSource" isOver="true">
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Ellipse( extent={{-50,50},{50,-50}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{-50,0}}, color={0,0,255}), Line(points={{50,0},{90,0}}, color={0,0,255}), Line(points={{0,-50},{0,50}}, color={0,0,255}), Text( extent={{-150,100},{150,60}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Polygon( points={{90,0},{60,10},{60,-10},{90,0}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em> 1998   &lt;/em>&#xA;       by Christoph Clauss&lt;br> initially implemented&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>Just the common icon for current sources.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

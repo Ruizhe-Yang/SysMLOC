@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Utilities">
+  <classes classType="model" className="SwitchYDwithArc" description="&quot;Y-D-switch with arc&quot;" isLongClassSpecifier="true" classNameEnd="SwitchYDwithArc" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="1e-5" declarationName="Ron" description="&quot;Closed switch resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+      <component_list expression="1e-5" declarationName="Goff" description="&quot;Opened switch conductance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="0" declarationName="delayTime" description="&quot;Time delay&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="V0" description="&quot;Initial arc voltage&quot;">
+        <modifications expression="30" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.VoltageSlope" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="dVdt" description="&quot;Arc voltage slope&quot;">
+        <modifications expression="10E3" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Vmax" description="&quot;Max. arc voltage&quot;">
+        <modifications expression="60" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plugSupply" description="&quot;To grid&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,90},{ 10,110} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_sp" description="&quot;To positive stator plug&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{ {50,-90},{70,-110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.NegativePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_sn" description="&quot;To negative stator plug&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{ {-70,-90},{-50,-110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
+      <component_list isModificationOver="true" declarationName="star" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,-50},{40,-30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Delta" isOver="true">
+      <component_list isModificationOver="true" declarationName="delta" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,-80},{20,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Polyphase.Ideal.CloserWithArc" isOver="true">
+      <component_list isModificationOver="true" declarationName="idealCloser" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="fill(Ron, m)" elementName="Ron"/>
+        <modifications expression="fill(Goff, m)" elementName="Goff"/>
+        <modifications expression="fill(V0, m)" elementName="V0"/>
+        <modifications expression="fill(dVdt, m)" elementName="dVdt"/>
+        <modifications expression="fill(Vmax, m)" elementName="Vmax"/>
+        <modifications isModificationOver="true" elementName="closerWithArc">
+          <modifications isModificationOver="true" elementName="off">
+            <modifications expression="fill(true, m)" elementName="start"/>
+            <modifications expression="fill(true, m)" elementName="fixed"/>
+          </modifications>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-80},{10,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <component_list subscripts="[m]" declarationName="control" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-120,0},{-100,20}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Polyphase.Ideal.OpenerWithArc" isOver="true">
+      <component_list isModificationOver="true" declarationName="idealOpener" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="fill(Ron, m)" elementName="Ron"/>
+        <modifications expression="fill(Goff, m)" elementName="Goff"/>
+        <modifications expression="fill(V0, m)" elementName="V0"/>
+        <modifications expression="fill(dVdt, m)" elementName="dVdt"/>
+        <modifications expression="fill(Vmax, m)" elementName="Vmax"/>
+        <modifications isModificationOver="true" elementName="openerWithArc">
+          <modifications isModificationOver="true" elementName="off">
+            <modifications expression="fill(true, m)" elementName="start"/>
+            <modifications expression="fill(true, m)" elementName="fixed"/>
+          </modifications>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-60,-50},{-40,-30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Logical.LogicalDelay" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="logicalDelay" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="fill(delayTime, m)" elementName="delayTime"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-80,0},{-60,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="delta.plug_p" right="plugSupply">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,-70},{60,-70}, {60,100},{0,100} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="delta.plug_p" right="plug_sp">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,-70},{60,-70}, {60,-100} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealCloser.plug_p" right="plug_sn">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,-70},{-60,-70}, {-60,-100} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealCloser.plug_n" right="delta.plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,-70},{20,-70}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealOpener.plug_p" right="plug_sn">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,-40},{-60,-100}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealOpener.plug_n" right="star.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-40,-40},{20,-40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="control" right="logicalDelay.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-110,10},{-82,10}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="logicalDelay.y1" right="idealOpener.control">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-59,16},{-50,16},{-50,-28}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="logicalDelay.y2" right="idealCloser.control">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-59,4},{0,4},{0,-58}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line( points={{20,22},{40,12},{60,22},{40,12},{40,-10}}, color={0,0,255} ) , Ellipse( extent={{-64,-16},{-56,-24}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Ellipse( extent={{-4,4},{4,-4}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Ellipse( extent={{-4,-36},{4,-44}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-2,-20},{-56,-20}}, color={0,0,255}), Line(points={{40,-62},{20,-30},{60,-30},{40,-62}}, color={0,0,255}), Line(points={{0,90},{0,88},{0,80},{80,80},{80,78},{80,-40},{60,-40}}, color={0,0,255}), Line(points={{4,0},{20,0}}, color={0,0,255}), Line(points={{4,-40},{20,-40}}, color={0,0,255}), Line(points={{-60,-24},{-60,-90}}, color={0,0,255}), Line( points={{-100,0},{-30,0},{-30,-20}}, color={255,0,255}, pattern=LinePattern.Dash ) , Line(points={{60,-90},{60,-40}}, color={0,0,255}), Line(points={{-12,20},{-20,-6},{-4,2},{-12,-20}}, color={255,0,0} ) , Line(points={{-12,-20},{-20,-46},{-4,-38},{-12,-60}}, color={255,0,0} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;Star-Delta-switch with arc when switch opens.&lt;br>&#xA;If &lt;em>control&lt;/em> is false, plug_sp and plug_sn are star connected and plug_sp connected to the supply plug.&lt;br>&#xA;If &lt;em>control&lt;/em> is true, plug_sp and plug_sn are delta connected and they are connected to the supply plug.&lt;br>&#xA;Note there is a delay between opening star connection and closing delta connection, respectively opening delta connection and closing star connection.&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

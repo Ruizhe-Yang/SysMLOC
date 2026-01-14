@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Blocks">
-  <classes classType="package" className="MathBoolean" description="&quot;Library of Boolean mathematical functions as input/output blocks&quot;" classNameEnd="MathBoolean">
-    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package"/>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="MultiSwitch" description="&quot;Set Boolean expression that is associated with the first active input signal&quot;" classNameEnd="MultiSwitch">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input">
-        <component_list subscripts="[nu]" expression="fill(false, nu)" declarationName="expr" description="&quot;Sets y = if u[i] then expr[i] else y_default (time varying)&quot;" isAnnotation="true">
+  <classes classType="package" className="MathBoolean" description="&quot;Library of Boolean mathematical functions as input/output blocks&quot;" isLongClassSpecifier="true" classNameEnd="MathBoolean" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="MultiSwitch" description="&quot;Set Boolean expression that is associated with the first active input signal&quot;" isLongClassSpecifier="true" classNameEnd="MultiSwitch" isOver="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+        <component_list subscripts="[nu]" expression="fill(false, nu)" declarationName="expr" description="&quot;Sets y = if u[i] then expr[i] else y_default (time varying)&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations elementName="Dialog"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
-        <component_list expression="true" declarationName="use_pre_as_default" description="&quot;Set true to hold last value as default (y_default = pre(y))&quot;" isAnnotation="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+        <component_list expression="true" declarationName="use_pre_as_default" description="&quot;Set true to hold last value as default (y_default = pre(y))&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="HideResult"/>
-          <annotations elementName="choices">
+          <annotations isModificationOver="true" elementName="choices">
             <modifications expression="true" elementName="checkBox"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
-        <component_list expression="false" declarationName="y_default" description="&quot;Default value of output y if all u[i] = false&quot;" isAnnotation="true">
-          <annotations elementName="Dialog">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+        <component_list expression="false" declarationName="y_default" description="&quot;Default value of output y if all u[i] = false&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="not use_pre_as_default" elementName="enable"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter">
-        <component_list expression="0" declarationName="nu" description="&quot;Number of input connections&quot;" isAnnotation="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" expression="0" declarationName="nu" description="&quot;Number of input connections&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="0" elementName="min"/>
-          <annotations elementName="Dialog">
+          <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="true" elementName="connectorSizing"/>
           </annotations>
           <annotations expression="true" elementName="HideResult"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanVectorInput">
-        <component_list subscripts="[nu]" declarationName="u" description="&quot;Set y = expr[i], if u[i] = true&quot;" isAnnotation="true">
-          <annotations elementName="Placement">
-            <modifications elementName="transformation">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanVectorInput" isOver="true">
+        <component_list subscripts="[nu]" declarationName="u" description="&quot;Set y = expr[i], if u[i] = true&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
               <modifications expression="{{-110,30},{-90,-30}}" elementName="extent"/>
             </modifications>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput">
-        <component_list declarationName="y" description="&quot;Output depending on expression&quot;" isAnnotation="true">
-          <annotations elementName="Placement">
-            <modifications elementName="transformation">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Output depending on expression&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
               <modifications expression="{{300,-10},{320,10}}" elementName="extent"/>
             </modifications>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isProtected="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isProtected="true" isOver="true">
         <component_list declarationName="firstActiveIndex"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -60,138 +60,138 @@
         <equations xsi:type="mOloc:SimpleEquation" left="firstActiveIndex" right="Modelica.Math.BooleanVectors.firstTrueIndex( u)"/>
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="if firstActiveIndex == 0 then (if use_pre_as_default then pre(y) else y_default) else expr[firstActiveIndex]"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
         <annotations expression="&quot;set1&quot;" elementName="defaultComponentName"/>
-        <annotations elementName="Icon">
-          <modifications elementName="coordinateSystem">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
             <modifications expression="true" elementName="preserveAspectRatio"/>
             <modifications expression="{{-100,-100},{300,100}}" elementName="extent"/>
           </modifications>
           <modifications expression="{ Text( visible=not use_pre_as_default, extent={{-100,-60},{300,-90}}, textString=&quot;else: %y_default&quot; ) , Text( visible=use_pre_as_default, extent={{-100,-60},{300,-90}}, textString=&quot;else: pre(y)&quot; ) , Text( extent={{-99,99},{300,59}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Rectangle( extent={{-100,-51},{300,50}}, lineColor={255,127,0}, lineThickness=5.0, fillColor={210,210,210}, fillPattern=FillPattern.Solid, borderPattern=BorderPattern.Raised ) , Text( extent={{-84,16},{273,-15}}, textString=&quot;%expr&quot; ) , Ellipse( extent={{275,8},{289,-6}}, lineColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The block has a vector of Boolean input signals u[nu] and a vector of&#xA;(time varying) Boolean expressions expr[:]. The output signal y is&#xA;set to expr[i], if i is the first element in the input vector u that is true.&#xA;If all input signals are false, y is set to parameter \&quot;y_default\&quot; or the&#xA;previous value of y is kept if parameter use_pre_as_default = &lt;strong>true&lt;/strong>:&#xA;&lt;/p>&#xA;&#xA;&lt;blockquote>&lt;pre>&#xA;// Conceptual equation (not valid Modelica)&#xA;i = 'first element of u[:] that is true';&#xA;y = &lt;strong>if&lt;/strong> i==0 &lt;strong>then&lt;/strong> (&lt;strong>if&lt;/strong> use_pre_as_default &lt;strong>then&lt;/strong> pre(y)&#xA;                                        &lt;strong>else&lt;/strong> y_default)&#xA;    &lt;strong>else&lt;/strong> expr[i];&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.BooleanNetwork1\&quot;>Modelica.Blocks.Examples.BooleanNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="And" description="&quot;Logical 'and': y = u[1] and u[2] and ... and u[nu]&quot;" classNameEnd="And">
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO"/>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="And" description="&quot;Logical 'and': y = u[1] and u[2] and ... and u[nu]&quot;" isLongClassSpecifier="true" classNameEnd="And" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.BooleanVectors.andTrue( u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
         <annotations expression="&quot;and1&quot;" elementName="defaultComponentName"/>
-        <annotations elementName="Icon">
+        <annotations isModificationOver="true" elementName="Icon">
           <modifications expression="{Text( extent={{-76,40},{60,-40}}, textString=&quot;and&quot; ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if all inputs are &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The input connector is a vector of Boolean input signals.&#xA;When a connection line is drawn, the dimension of the input&#xA;vector is enlarged by one and the connection is automatically&#xA;connected to this new free index (thanks to the&#xA;connectorSizing annotation).&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.BooleanNetwork1\&quot;>Modelica.Blocks.Examples.BooleanNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;If no connection to the input connector \&quot;u\&quot; is present,&#xA;the output is set to &lt;strong>true&lt;/strong>: y=true.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Or" description="&quot;Logical 'or': y = u[1] or u[2] or ... or u[nu]&quot;" classNameEnd="Or">
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO"/>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Or" description="&quot;Logical 'or': y = u[1] or u[2] or ... or u[nu]&quot;" isLongClassSpecifier="true" classNameEnd="Or" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.BooleanVectors.anyTrue( u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
         <annotations expression="&quot;or1&quot;" elementName="defaultComponentName"/>
-        <annotations elementName="Icon">
+        <annotations isModificationOver="true" elementName="Icon">
           <modifications expression="{Text( extent={{-80,40},{60,-40}}, textString=&quot;or&quot; ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if at least one input is &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The input connector is a vector of Boolean input signals.&#xA;When a connection line is drawn, the dimension of the input&#xA;vector is enlarged by one and the connection is automatically&#xA;connected to this new free index (thanks to the&#xA;connectorSizing annotation).&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.BooleanNetwork1\&quot;>Modelica.Blocks.Examples.BooleanNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;If no connection to the input connector \&quot;u\&quot; is present,&#xA;the output is set to &lt;strong>false&lt;/strong>: y=false.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Xor" description="&quot;Logical 'xor': y = oneTrue(u)  (y is true, if exactly one element of u is true, otherwise it is false)&quot;" classNameEnd="Xor">
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO"/>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Xor" description="&quot;Logical 'xor': y = oneTrue(u)  (y is true, if exactly one element of u is true, otherwise it is false)&quot;" isLongClassSpecifier="true" classNameEnd="Xor" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.BooleanVectors.oneTrue( u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
         <annotations expression="&quot;xor1&quot;" elementName="defaultComponentName"/>
-        <annotations elementName="Icon">
+        <annotations isModificationOver="true" elementName="Icon">
           <modifications expression="{Text( extent={{-80,40},{60,-40}}, textString=&quot;xor&quot; ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if exactly one input is &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The input connector is a vector of Boolean input signals.&#xA;When a connection line is drawn, the dimension of the input&#xA;vector is enlarged by one and the connection is automatically&#xA;connected to this new free index (thanks to the&#xA;connectorSizing annotation).&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.BooleanNetwork1\&quot;>Modelica.Blocks.Examples.BooleanNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;If no connection to the input connector \&quot;u\&quot; is present,&#xA;the output is set to &lt;strong>false&lt;/strong>: y=false.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Nand" description="&quot;Logical 'nand': y = not ( u[1] and u[2] and ... and u[nu] )&quot;" classNameEnd="Nand">
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO"/>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Nand" description="&quot;Logical 'nand': y = not ( u[1] and u[2] and ... and u[nu] )&quot;" isLongClassSpecifier="true" classNameEnd="Nand" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not Modelica.Math.BooleanVectors.andTrue( u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
         <annotations expression="&quot;nand1&quot;" elementName="defaultComponentName"/>
-        <annotations elementName="Icon">
+        <annotations isModificationOver="true" elementName="Icon">
           <modifications expression="{Text( extent={{-78,36},{64,-30}}, textString=&quot;nand&quot; ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if at least one input is &lt;strong>false&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The input connector is a vector of Boolean input signals.&#xA;When a connection line is drawn, the dimension of the input&#xA;vector is enlarged by one and the connection is automatically&#xA;connected to this new free index (thanks to the&#xA;connectorSizing annotation).&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.BooleanNetwork1\&quot;>Modelica.Blocks.Examples.BooleanNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;If no connection to the input connector \&quot;u\&quot; is present,&#xA;the output is set to &lt;strong>false&lt;/strong>: y=false.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Nor" description="&quot;Logical 'nor': y = not ( u[1] or u[2] or ... or u[nu] )&quot;" classNameEnd="Nor">
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO"/>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Nor" description="&quot;Logical 'nor': y = not ( u[1] or u[2] or ... or u[nu] )&quot;" isLongClassSpecifier="true" classNameEnd="Nor" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not Modelica.Math.BooleanVectors.anyTrue( u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
         <annotations expression="&quot;nor1&quot;" elementName="defaultComponentName"/>
-        <annotations elementName="Icon">
+        <annotations isModificationOver="true" elementName="Icon">
           <modifications expression="{Text( extent={{-80,40},{60,-40}}, textString=&quot;nor&quot; ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>false&lt;/strong> if at least one input is &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>true&lt;/strong>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The input connector is a vector of Boolean input signals.&#xA;When a connection line is drawn, the dimension of the input&#xA;vector is enlarged by one and the connection is automatically&#xA;connected to this new free index (thanks to the&#xA;connectorSizing annotation).&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.BooleanNetwork1\&quot;>Modelica.Blocks.Examples.BooleanNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;If no connection to the input connector \&quot;u\&quot; is present,&#xA;the output is set to &lt;strong>false&lt;/strong>: y=false.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Not" description="&quot;Logical 'not': y = not u&quot;" classNameEnd="Not">
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small"/>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Not" description="&quot;Logical 'not': y = not u&quot;" isLongClassSpecifier="true" classNameEnd="Not" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not u"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
         <annotations expression="&quot;not1&quot;" elementName="defaultComponentName"/>
-        <annotations elementName="Icon">
+        <annotations isModificationOver="true" elementName="Icon">
           <modifications expression="{Text( extent={{-98,40},{42,-40}}, textString=&quot;not&quot; ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>false&lt;/strong> if at least one input is &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>true&lt;/strong>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The input connector is a vector of Boolean input signals.&#xA;When a connection line is drawn, the dimension of the input&#xA;vector is enlarged by one and the connection is automatically&#xA;connected to this new free index (thanks to the&#xA;connectorSizing annotation).&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.BooleanNetwork1\&quot;>Modelica.Blocks.Examples.BooleanNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="RisingEdge" description="&quot;Output y is true, if the input u has a rising edge, otherwise it is false (y = edge(u))&quot;" classNameEnd="RisingEdge">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="RisingEdge" description="&quot;Output y is true, if the input u has a rising edge, otherwise it is false (y = edge(u))&quot;" isLongClassSpecifier="true" classNameEnd="RisingEdge" isOver="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="pre_u_start" description="&quot;Value of pre(u) at initial time&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small"/>
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
         <equations xsi:type="mOloc:SimpleEquation" left="pre(u)" right="pre_u_start"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="edge(u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
         <annotations expression="&quot;rising1&quot;" elementName="defaultComponentName"/>
-        <annotations elementName="Icon">
+        <annotations isModificationOver="true" elementName="Icon">
           <modifications expression="{Line(points= {{-80,-68},{-36,-68},{-36,-24},{22,-24},{22,-68},{66,-68}} ) , Line(points={{-80,32},{-36,32},{-36,76},{-36,76}, {-36,32},{66,32} } , color={255,0,255} ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;A rising edge of the Boolean input u results in y = &lt;strong>true&lt;/strong> at this&#xA;time instant. At all other time instants, y = &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.BooleanNetwork1\&quot;>Modelica.Blocks.Examples.BooleanNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="FallingEdge" description="&quot;Output y is true, if the input u has a falling edge, otherwise it is false (y = edge(not u))&quot;" classNameEnd="FallingEdge">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="FallingEdge" description="&quot;Output y is true, if the input u has a falling edge, otherwise it is false (y = edge(not u))&quot;" isLongClassSpecifier="true" classNameEnd="FallingEdge" isOver="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="pre_u_start" description="&quot;Value of pre(u) at initial time&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isProtected="true">
-        <component_list expression="not u" declarationName="not_u" isAnnotation="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small" isOver="true"/>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
+        <component_list expression="not u" declarationName="not_u" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="HideResult"/>
         </component_list>
       </elements>
@@ -201,49 +201,49 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="edge(not_u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
         <annotations expression="&quot;falling1&quot;" elementName="defaultComponentName"/>
-        <annotations elementName="Icon">
+        <annotations isModificationOver="true" elementName="Icon">
           <modifications expression="{Line(points= {{-80,-68},{-36,-68},{-36,-24},{22,-24},{22,-68},{66,-68}} ) , Line(points={{-80,32},{24,32},{24,76},{24,76},{ 24,32} ,{66,32} } , color={255,0,255} ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;A falling edge of the Boolean input u results in y = &lt;strong>true&lt;/strong> at this&#xA;time instant. At all other time instants, y = &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.BooleanNetwork1\&quot;>Modelica.Blocks.Examples.BooleanNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="ChangingEdge" description="&quot;Output y is true, if the input u has either a rising or a falling edge and otherwise it is false (y=change(u))&quot;" classNameEnd="ChangingEdge">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="ChangingEdge" description="&quot;Output y is true, if the input u has either a rising or a falling edge and otherwise it is false (y=change(u))&quot;" isLongClassSpecifier="true" classNameEnd="ChangingEdge" isOver="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="pre_u_start" description="&quot;Value of pre(u) at initial time&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small"/>
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
         <equations xsi:type="mOloc:SimpleEquation" left="pre(u)" right="pre_u_start"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="change(u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
         <annotations expression="&quot;changing1&quot;" elementName="defaultComponentName"/>
-        <annotations elementName="Icon">
+        <annotations isModificationOver="true" elementName="Icon">
           <modifications expression="{ Line(points={{-80,-68},{-36,-68},{-36,-24},{22,-24},{22,-68},{66,-68}}), Line(points={{-80,32},{-36,32},{-36,76},{-36,76},{-36,32},{66,32}}, color={255,0,255} ) , Line( points={{24,32},{24,76}}, color={255,0,255} ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;A changing edge, i.e., either rising or falling,&#xA;of the Boolean input u results in y = &lt;strong>true&lt;/strong> at this&#xA;time instant. At all other time instants, y = &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.BooleanNetwork1\&quot;>Modelica.Blocks.Examples.BooleanNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="OnDelay" description="&quot;Delay a rising edge of the input, but do not delay a falling edge.&quot;" classNameEnd="OnDelay">
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="OnDelay" description="&quot;Delay a rising edge of the input, but do not delay a falling edge.&quot;" isLongClassSpecifier="true" classNameEnd="OnDelay" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small" isOver="true"/>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list declarationName="delayTime" description="&quot;Delay time&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isProtected="true">
-        <component_list declarationName="delaySignal">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
+        <component_list isModificationOver="true" declarationName="delaySignal">
           <modifications expression="false" elementName="start"/>
           <modifications expression="true" elementName="fixed"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
         <component_list declarationName="t_next"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -268,20 +268,20 @@
           <elseEquations xsi:type="mOloc:SimpleEquation" left="y" right="false"/>
         </equations>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-        <annotations elementName="Icon">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
           <modifications expression="{ Text( extent={{-250,-120},{250,-150}}, textString=&quot;%delayTime s&quot; ) , Line(points={{-80,-66},{-60,-66},{-60,-22},{38,-22},{38,-66},{66,-66}}), Line(points={{-80,32},{-4,32},{-4,76},{38,76},{38,32},{66,32}}, color={255,0,255} ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;A rising edge of the Boolean input u gives a delayed output.&#xA;A falling edge of the input is immediately given to the output.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;Simulation results of a typical example with a delay time of 0.1 s&#xA;is shown in the next figure.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/MathBoolean/OnDelay1.png\&quot;&#xA;     alt=\&quot;OnDelay1.png\&quot;>&#xA;&lt;br>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/MathBoolean/OnDelay2.png\&quot;&#xA;     alt=\&quot;OnDelay2.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.BooleanNetwork1\&quot;>Modelica.Blocks.Examples.BooleanNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-      <annotations elementName="Documentation">
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
         <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This package contains basic &lt;strong>mathematical operations&lt;/strong>&#xA;on &lt;strong>Boolean&lt;/strong> signals.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The new features are:&#xA;&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&lt;li> If useful, blocks may have an arbitrary number of inputs (e.g., \&quot;And\&quot; block with 2,3,4,...&#xA;     Boolean inputs). This is based on the \&quot;connectorSizing\&quot; annotation which&#xA;     allows a tool to conveniently handle vectors of connectors.&lt;/li>&#xA;&#xA;&lt;li> The blocks are smaller in size, so that the diagram area is better&#xA;     utilized for trivial blocks such as \&quot;And\&quot; or \&quot;Or\&quot;.&lt;/li>&#xA;&#xA;&lt;/ul>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
       </annotations>
-      <annotations elementName="Icon">
+      <annotations isModificationOver="true" elementName="Icon">
         <modifications expression="{Line(points={{-80,-16},{-4,-16},{-4,28},{38,28},{38, -16 } ,{66,-16} } , color={255,0,255} ) }" elementName="graphics"/>
       </annotations>
     </elements>

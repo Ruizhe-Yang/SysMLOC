@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Utilities">
+  <classes classType="block" className="SinCosEvaluation" description="&quot;Evaluation of the signals of a sin-cos-resolver&quot;" isLongClassSpecifier="true" classNameEnd="SinCosEvaluation" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <component_list subscripts="[4]" declarationName="u" description="&quot;Signal from sin-cos-resolver&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-140,20},{-100,-20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Math.Feedback" isOver="true">
+      <component_list declarationName="feedbackCos" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-70,30},{-50,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Math.Feedback" isOver="true">
+      <component_list declarationName="feedbackSin" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-70,-30},{-50,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SpacePhasors.Blocks.Rotator" isOver="true">
+      <component_list declarationName="rotator" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-10},{0,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Continuous.Integrator" isOver="true">
+      <component_list isModificationOver="true" declarationName="integrator" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1e6" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{30,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Continuous.Der" isOver="true">
+      <component_list declarationName="der1" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{60,-70},{80,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="phi" description="&quot;Angle&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;rad&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="w" description="&quot;Angular velocity&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;rad/s&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-70},{120,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u[1]" right="feedbackCos.u1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-120,15},{-80,15}, {-80,40},{-68,40} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u[2]" right="feedbackCos.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-120,5},{-60,5},{-60,32}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u[3]" right="feedbackSin.u1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-120,-5},{-80,-5}, {-80,-40},{-68,-40} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u[4]" right="feedbackSin.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-120,-15},{-60, -15 } ,{-60,-32} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="feedbackCos.y" right="rotator.u[1]">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-51,40},{ -40,40} ,{-40,0},{-22,0} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="feedbackSin.y" right="rotator.u[2]">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-51,-40},{ -40,-40} ,{-40,0},{-22,0} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="rotator.y[2]" right="integrator.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{1,0},{8,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="integrator.y" right="rotator.angle">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{31,0},{40, 0 } ,{40,-20},{-10,-20},{-10,-12} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="integrator.y" right="der1.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{31,0},{40,0},{40, -60 } ,{58,-60} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="integrator.y" right="phi">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{31,0},{110,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="der1.y" right="w">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{81,-60},{110,-60}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line(points={{-80,80},{-76.2,79.8},{-70.6,76.6},{-64.9,69.7},{-59.3, 59.4 } ,{-52.9,44.1},{-44.83,21.2},{-27.9,-30.8},{-20.7,-50.2},{-14.3, -64.2 } ,{-8.7,-73.1},{-3,-78.4},{2.6,-80},{8.2,-77.6},{13.9,-71.5}, {19.5,-61.9},{25.9,-47.2},{34,-24.8},{42,0} } , smooth=Smooth.Bezier ) , Line(points={{-80,0},{-68.7,34.2},{-61.5,53.1},{-55.1,66.4},{-49.4, 74.6 } ,{-43.8,79.1},{-38.2,79.8},{-32.6,76.6},{-26.9,69.7},{-21.3, 59.4 } ,{-14.9,44.1},{-6.83,21.2},{10.1,-30.8},{17.3,-50.2},{23.7, -64.2 } ,{29.3,-73.1},{35,-78.4},{40.6,-80},{46.2,-77.6},{51.9,-71.5}, {57.5,-61.9},{63.9,-47.2},{72,-24.8},{80,0} } , smooth = Smooth.Bezier ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The &lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Sensors.SinCosResolver\&quot;>sin-cos-resolver&lt;/a> provides four tracks:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>cosine&lt;/li>&#xA;&lt;li>minus sine&lt;/li>&#xA;&lt;li>sine&lt;/li>&#xA;&lt;li>minus cosine&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;All four tracks have the same amplitude and the same offset &amp;gt; amplitude. Offset is used to detect loss of a track.&#xA;To remove offset, (minus sine) is subtracted from (sine) and (minus cosine) from (cosine),&#xA;resulting in a cosine and a sine signal with doubled amplitude but without offset.&#xA;&lt;/p>&#xA;&lt;p>&#xA;Interpreting cosine and sine as real and imaginary part of a phasor, one could calculate the angle of the phasor (i.e., transform rectangular coordinates to polar coordinates).&#xA;This is not very robust if the signals are superimposed with some noise.&#xA;Therefore the phasor is rotated by an angle that is obtained by a controller. The controller aims at imaginary part equal to zero.&#xA;The resulting angle is continuous, i.e. differentiating the angle results in 2*&amp;pi;*frequency.&#xA;If desired, the angle can be wrapped to the interval ]-&amp;pi;, +&amp;pi;].&#xA;&lt;/p>&#xA;&lt;p>&#xA;If the &lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Sensors.SinCosResolver\&quot;>sin-cos-resolver&lt;/a> provides one period of the tracks during a rotation of 2&amp;pi;/p,&#xA;the result is the angle with respect to one pole pair and can be directly used for field oriented control.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

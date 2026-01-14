@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Examples">
-  <classes classType="model" className="TestConversionBlock" description="&quot;Test the conversion blocks&quot;" classNameEnd="TestConversionBlock">
-    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Ramp">
-      <component_list declarationName="len" isAnnotation="true">
+  <classes classType="model" className="TestConversionBlock" description="&quot;Test the conversion blocks&quot;" isLongClassSpecifier="true" classNameEnd="TestConversionBlock" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Ramp" isOver="true">
+      <component_list isModificationOver="true" declarationName="len" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="duration"/>
         <modifications expression="1E-6" elementName="offset"/>
-        <annotations elementName="Placement">
-          <modifications elementName="transformation">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
             <modifications expression="{{-80,10},{-60,30}}" elementName="extent"/>
           </modifications>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Ramp">
-      <component_list declarationName="phi" isAnnotation="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Ramp" isOver="true">
+      <component_list isModificationOver="true" declarationName="phi" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="4*Modelica.Constants.pi" elementName="height"/>
         <modifications expression="1" elementName="duration"/>
-        <annotations elementName="Placement">
-          <modifications elementName="transformation">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
             <modifications expression="{{-80,-30},{-60,-10}}" elementName="extent"/>
           </modifications>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.ComplexMath.PolarToComplex">
-      <component_list declarationName="polarToComplex" isAnnotation="true">
-        <annotations elementName="Placement">
-          <modifications elementName="transformation">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.ComplexMath.PolarToComplex" isOver="true">
+      <component_list declarationName="polarToComplex" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
             <modifications expression="{{-40,-10},{-20,10}}" elementName="extent"/>
           </modifications>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.ComplexMath.ComplexToReal">
-      <component_list declarationName="complexToReal" isAnnotation="true">
-        <annotations elementName="Placement">
-          <modifications elementName="transformation">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.ComplexMath.ComplexToReal" isOver="true">
+      <component_list declarationName="complexToReal" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
             <modifications expression="{{0,-10},{20,10}}" elementName="extent"/>
           </modifications>
         </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:EquationSection">
-      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="phi.y" right="polarToComplex.phi">
-        <annotations elementName="Line">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="phi.y" right="polarToComplex.phi">
+        <annotations isModificationOver="true" elementName="Line">
           <modifications expression="{{-59,-20},{-50, -20 } ,{-50,-6},{-46,-6},{-42,-6} }" elementName="points"/>
           <modifications expression="{0,0,127}" elementName="color"/>
         </annotations>
       </equations>
-      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="len.y" right="polarToComplex.len">
-        <annotations elementName="Line">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="len.y" right="polarToComplex.len">
+        <annotations isModificationOver="true" elementName="Line">
           <modifications expression="{{-59,20},{-50,20},{-50,6},{-42,6}}" elementName="points"/>
           <modifications expression="{0,0,127}" elementName="color"/>
         </annotations>
       </equations>
-      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="polarToComplex.y" right="complexToReal.u">
-        <annotations elementName="Line">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="polarToComplex.y" right="complexToReal.u">
+        <annotations isModificationOver="true" elementName="Line">
           <modifications expression="{{-19,0},{-2,0}}" elementName="points"/>
           <modifications expression="{85,170,255}" elementName="color"/>
         </annotations>
       </equations>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-      <annotations elementName="Documentation">
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
         <modifications expression="&quot;&lt;html>&#xA;&lt;p>A Complex signal is defined by its length and angle, both linearly rising with time.&#xA;Plotting the imaginary part versus the real part, you will see an Archimedean spiral.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
       </annotations>
-      <annotations elementName="experiment">
+      <annotations isModificationOver="true" elementName="experiment">
         <modifications expression="1.01" elementName="StopTime"/>
         <modifications expression="0.001" elementName="Interval"/>
       </annotations>

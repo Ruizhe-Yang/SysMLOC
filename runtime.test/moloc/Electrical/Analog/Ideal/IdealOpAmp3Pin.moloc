@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Ideal">
+  <classes classType="model" className="IdealOpAmp3Pin" description="&quot;Ideal operational amplifier (norator-nullator pair), but 3 pins&quot;" isLongClassSpecifier="true" classNameEnd="IdealOpAmp3Pin" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="in_p" description="&quot;Positive pin of the input port&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-70},{-90,-50}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-110,-70},{-90,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="in_n" description="&quot;Negative pin of the input port&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,50},{-90,70}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-110,50},{-90,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="out" description="&quot;Output pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="in_p.v" right="in_n.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="in_p.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="in_n.i" right="0"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;opAmp&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The ideal OpAmp with three pins is of exactly the same behaviour as the ideal&#xA;OpAmp with four pins. Only the negative output pin is left out.&#xA;Both the input voltage and current are fixed to zero (nullator).&#xA;At the output pin both any voltage &lt;em>v2&lt;/em> and any current &lt;em>i2&lt;/em>&#xA;are possible.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em> 2002   &lt;/em>&#xA;       by Christoph Clauss&lt;br> initially implemented&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line(points={{60,0},{90,0}}, color={0,0,255}), Text( extent={{-150,130},{150,90}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Polygon( points={{70,0},{-70,80},{-70,-80},{70,0}}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, lineColor={0,0,255} ) , Line(points={{-100,60},{-70,60}}, color={0,0,255}), Line(points={{-100,-60},{-70,-60}}, color={0,0,255}), Line(points={{70,0},{100,0}}, color={0,0,255}), Line(points={{-60,50},{-40,50}}, color={0,0,255}), Line(points={{-60,-50},{-40,-50}}, color={0,0,255}), Line(points={{-50,-40},{-50,-60}}, color={0,0,255}) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

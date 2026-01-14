@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Blocks">
-  <classes classType="package" className="Discrete" description="&quot;Library of discrete input/output blocks with fixed sample period&quot;" classNameEnd="Discrete">
-    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package"/>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Sampler" description="&quot;Ideal sampling of continuous signals&quot;" classNameEnd="Sampler">
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.DiscreteSISO"/>
+  <classes classType="package" className="Discrete" description="&quot;Library of discrete input/output blocks with fixed sample period&quot;" isLongClassSpecifier="true" classNameEnd="Discrete" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Sampler" description="&quot;Ideal sampling of continuous signals&quot;" isLongClassSpecifier="true" classNameEnd="Sampler" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.DiscreteSISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:WhenEquation" condition="{sampleTrigger, initial()}">
           <whenEquations xsi:type="mOloc:SimpleEquation" left="y" right="u"/>
         </equations>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-        <annotations elementName="Icon">
-          <modifications elementName="coordinateSystem">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
             <modifications expression="true" elementName="preserveAspectRatio"/>
             <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
           </modifications>
           <modifications expression="{ Ellipse(lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{25.0,-10.0},{45.0,10.0}} ) , Line(points={{-100.0,0.0},{-45.0,0.0}}, color={0,0,127} ) , Line(points={{45.0,0.0},{100.0,0.0}}, color={0,0,127} ) , Line(points={{-35.0,0.0},{30.0,35.0}}, color={0,0,127} ) , Ellipse(lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{-45.0,-10.0},{-25.0,10.0}} ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Samples the continues input signal with a sampling rate defined&#xA;via parameter &lt;strong>samplePeriod&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="ZeroOrderHold" description="&quot;Zero order hold of a sampled-data system&quot;" classNameEnd="ZeroOrderHold">
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.DiscreteSISO"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
-        <component_list declarationName="ySample">
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="ZeroOrderHold" description="&quot;Zero order hold of a sampled-data system&quot;" isLongClassSpecifier="true" classNameEnd="ZeroOrderHold" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.DiscreteSISO" isOver="true"/>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+        <component_list isModificationOver="true" declarationName="ySample">
           <modifications expression="0" elementName="start"/>
           <modifications expression="true" elementName="fixed"/>
         </component_list>
@@ -36,31 +36,31 @@
         </equations>
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="pre(ySample)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-        <annotations elementName="Icon">
-          <modifications elementName="coordinateSystem">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
             <modifications expression="true" elementName="preserveAspectRatio"/>
             <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
           </modifications>
           <modifications expression="{ Line(points={{-78.0,-42.0},{-52.0,-42.0},{-52.0,0.0},{-26.0,0.0},{-26.0,24.0},{-6.0,24.0},{-6.0,64.0},{18.0,64.0},{18.0,20.0},{38.0,20.0},{38.0,0.0},{44.0,0.0},{44.0,0.0},{62.0,0.0}}, color={0,0,127} ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is identical to the sampled input signal at sample&#xA;time instants and holds the output at the value of the last&#xA;sample instant during the sample points.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="FirstOrderHold" description="&quot;First order hold of a sampled-data system&quot;" classNameEnd="FirstOrderHold">
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.DiscreteSISO"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isProtected="true">
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="FirstOrderHold" description="&quot;First order hold of a sampled-data system&quot;" isLongClassSpecifier="true" classNameEnd="FirstOrderHold" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.DiscreteSISO" isOver="true"/>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isProtected="true" isOver="true">
         <component_list declarationName="tSample"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="uSample"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="pre_uSample"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="c"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -78,24 +78,24 @@
         </equations>
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="pre_uSample + pre(c)*(time - tSample)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-        <annotations elementName="Icon">
-          <modifications elementName="coordinateSystem">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
             <modifications expression="true" elementName="preserveAspectRatio"/>
             <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
           </modifications>
           <modifications expression="{ Line(points={{-79.0,-41.0},{-59.0,-33.0},{-40.0,1.0},{-20.0,9.0},{0.0,63.0},{21.0,20.0},{41.0,10.0},{60.0,20.0}}, color={0,0,127} ) , Line(points={{60.0,20.0},{81.0,10.0}}, color={0,0,127} ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output signal is the extrapolation through the&#xA;values of the last two sampled input signals.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="UnitDelay" description="&quot;Unit Delay Block&quot;" classNameEnd="UnitDelay">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="UnitDelay" description="&quot;Unit Delay Block&quot;" isLongClassSpecifier="true" classNameEnd="UnitDelay" isOver="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="y_start" description="&quot;Initial value of output signal&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.DiscreteSISO"/>
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.DiscreteSISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:WhenEquation" condition="sampleTrigger">
           <whenEquations xsi:type="mOloc:SimpleEquation" left="y" right="pre(u)"/>
@@ -104,12 +104,12 @@
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="y_start"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-        <annotations elementName="Documentation">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This block describes a unit delay:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;     1&#xA;y = --- * u&#xA;     z&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;that is, the output signal y is the input signal u of the&#xA;previous sample instant. Before the second sample instant,&#xA;the output y is identical to parameter yStart.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
-        <annotations elementName="Icon">
-          <modifications elementName="coordinateSystem">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
             <modifications expression="true" elementName="preserveAspectRatio"/>
             <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
           </modifications>
@@ -117,34 +117,34 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="TransferFunction" description="&quot;Discrete Transfer Function block&quot;" classNameEnd="TransferFunction">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="TransferFunction" description="&quot;Discrete Transfer Function block&quot;" isLongClassSpecifier="true" classNameEnd="TransferFunction" isOver="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" expression="{1}" declarationName="b" description="&quot;Numerator coefficients of transfer function.&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" expression="{1}" declarationName="a" description="&quot;Denominator coefficients of transfer function.&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.DiscreteSISO"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
-        <component_list subscripts="[size(a, 1) - 1]" declarationName="x" description="&quot;State of transfer function from controller canonical form&quot;">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.DiscreteSISO" isOver="true"/>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+        <component_list subscripts="[size(a, 1) - 1]" isModificationOver="true" declarationName="x" description="&quot;State of transfer function from controller canonical form&quot;">
           <modifications expression="0" elementName="start" isEach="true"/>
           <modifications expression="true" elementName="fixed" isEach="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isProtected="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isProtected="true" isOver="true">
         <component_list expression="size(b, 1)" declarationName="nb" description="&quot;Size of Numerator of transfer function&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="size(a, 1)" declarationName="na" description="&quot;Size of Denominator of transfer function&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real">
-        <component_list declarationName="x1">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <component_list isModificationOver="true" declarationName="x1">
           <modifications expression="0" elementName="start"/>
           <modifications expression="true" elementName="fixed"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real">
-        <component_list subscripts="[size(a, 1)]" declarationName="xext">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <component_list subscripts="[size(a, 1)]" isModificationOver="true" declarationName="xext">
           <modifications expression="0" elementName="start" isEach="true"/>
           <modifications expression="true" elementName="fixed" isEach="true"/>
         </component_list>
@@ -157,13 +157,13 @@
           <whenEquations xsi:type="mOloc:SimpleEquation" left="y" right="vector([zeros(na - nb, 1); b])*xext"/>
         </equations>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-        <annotations elementName="Documentation">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>The &lt;strong>discrete transfer function&lt;/strong> block defines the&#xA;transfer function between the input signal u and the output&#xA;signal y. The numerator has the order nb-1, the denominator&#xA;has the order na-1.&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;       b(1)*z^(nb-1) + b(2)*z^(nb-2) + ... + b(nb)&#xA;y(z) = -------------------------------------------- * u(z)&#xA;       a(1)*z^(na-1) + a(2)*z^(na-2) + ... + a(na)&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>State variables &lt;strong>x&lt;/strong> are defined according to&#xA;&lt;strong>controller canonical&lt;/strong> form. Initial values of the&#xA;states can be set as start values of &lt;strong>x&lt;/strong>.&lt;/p>&#xA;&lt;p>Example:&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;Blocks.Discrete.TransferFunction g(b = {2,4}, a = {1,3});&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>results in the following transfer function:&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;     2*z + 4&#xA;y = --------- * u&#xA;      z + 3&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&lt;strong>Release Notes:&lt;/strong>&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>November 15, 2000&lt;/em>&#xA;    by &lt;a href=\&quot;http://www.dynasim.se\&quot;>Hans Olsson&lt;/a>:&lt;br>&#xA;    Converted to when-semantics of Modelica 1.4 with special&#xA;    care to avoid unnecessary algebraic loops.&lt;/li>&#xA;&lt;li>&lt;em>June 18, 2000&lt;/em>&#xA;    by &lt;a href=\&quot;http://www.robotic.dlr.de/Martin.Otter/\&quot;>Martin Otter&lt;/a>:&lt;br>&#xA;    Realized based on a corresponding model of Dieter Moormann&#xA;    and Hilding Elmqvist.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
         </annotations>
-        <annotations elementName="Icon">
-          <modifications elementName="coordinateSystem">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
             <modifications expression="true" elementName="preserveAspectRatio"/>
             <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
           </modifications>
@@ -171,24 +171,24 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="StateSpace" description="&quot;Discrete State Space block&quot;" classNameEnd="StateSpace">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="StateSpace" description="&quot;Discrete State Space block&quot;" isLongClassSpecifier="true" classNameEnd="StateSpace" isOver="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:, size(A, 1)]" expression="[1, 0; 0, 1]" declarationName="A" description="&quot;Matrix A of state space model&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[size(A, 1), :]" expression="[1; 1]" declarationName="B" description="&quot;Matrix B of state space model&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:, size(A, 1)]" expression="[1, 1]" declarationName="C" description="&quot;Matrix C of state space model&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[size(C, 1), size(B, 2)]" expression="zeros(size(C, 1), size(B, 2))" declarationName="D" description="&quot;Matrix D of state space model&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.DiscreteMIMO">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.DiscreteMIMO" isOver="true">
         <extendsModifications expression="size(B, 2)" elementName="nin" isfinal="true"/>
         <extendsModifications expression="size(C, 1)" elementName="nout" isfinal="true"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
         <component_list subscripts="[size(A, 1)]" declarationName="x" description="&quot;State vector&quot;"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
@@ -197,12 +197,12 @@
           <whenEquations xsi:type="mOloc:SimpleEquation" left="y" right="C*pre(x) + D*u"/>
         </equations>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-        <annotations elementName="Documentation">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The &lt;strong>discrete state space&lt;/strong> block defines the relation&#xA;between the input u and the output y in state space form:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;x = A * pre(x) + B * u&#xA;y = C * pre(x) + D * u&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;where pre(x) is the value of the discrete state x at&#xA;the previous sample time instant.&#xA;The input is a vector of length nu, the output is a vector&#xA;of length ny and nx is the number of states. Accordingly&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;A has the dimension: A(nx,nx),&#xA;B has the dimension: B(nx,nu),&#xA;C has the dimension: C(ny,nx),&#xA;D has the dimension: D(ny,nu)&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;Example:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;parameter: A = [0.12, 2;3, 1.5]&#xA;parameter: B = [2, 7;3, 1]&#xA;parameter: C = [0.1, 2]&#xA;parameter: D = zeros(ny,nu)&#xA;&#xA;results in the following equations:&#xA;  [x[1]]   [0.12  2.00] [pre(x[1])]   [2.0  7.0] [u[1]]&#xA;  [    ] = [          ]*[         ] + [        ]*[    ]&#xA;  [x[2]]   [3.00  1.50] [pre(x[2])]   [0.1  2.0] [u[2]]&#xA;                             [pre(x[1])]            [u[1]]&#xA;       y[1]   = [0.1  2.0] * [         ] + [0  0] * [    ]&#xA;                             [pre(x[2])]            [u[2]]&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
-        <annotations elementName="Icon">
-          <modifications elementName="coordinateSystem">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
             <modifications expression="true" elementName="preserveAspectRatio"/>
             <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
           </modifications>
@@ -210,33 +210,33 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="TriggeredSampler" description="&quot;Triggered sampling of continuous signals&quot;" classNameEnd="TriggeredSampler">
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.DiscreteBlock"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="TriggeredSampler" description="&quot;Triggered sampling of continuous signals&quot;" isLongClassSpecifier="true" classNameEnd="TriggeredSampler" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.DiscreteBlock" isOver="true"/>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="y_start" description="&quot;Initial value of output signal&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput">
-        <component_list declarationName="u" description="&quot;Connector with a Real input signal&quot;" isAnnotation="true">
-          <annotations elementName="Placement">
-            <modifications elementName="transformation">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+        <component_list declarationName="u" description="&quot;Connector with a Real input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
               <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
             </modifications>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput">
-        <component_list declarationName="y" description="&quot;Connector with a Real output signal&quot;" isAnnotation="true">
-          <annotations elementName="Placement">
-            <modifications elementName="transformation">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector with a Real output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
               <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
             </modifications>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput">
-        <component_list declarationName="trigger" description="&quot;Trigger input&quot;" isAnnotation="true">
-          <annotations elementName="Placement">
-            <modifications elementName="transformation">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+        <component_list declarationName="trigger" description="&quot;Trigger input&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
               <modifications expression="{0,-118}" elementName="origin"/>
               <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
               <modifications expression="90" elementName="rotation"/>
@@ -252,43 +252,43 @@
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="y_start"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-        <annotations elementName="Icon">
-          <modifications elementName="coordinateSystem">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
             <modifications expression="true" elementName="preserveAspectRatio"/>
             <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
           </modifications>
           <modifications expression="{ Ellipse(lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{25.0,-10.0},{45.0,10.0}} ) , Line(points={{-100.0,0.0},{-45.0,0.0}}, color={0,0,127} ) , Line(points={{45.0,0.0},{100.0,0.0}}, color={0,0,127} ) , Line(points={{0.0,-100.0},{0.0,-26.0}}, color={255,0,255} ) , Line(points={{-35.0,0.0},{28.0,-48.0}}, color={0,0,127} ) , Ellipse(lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{-45.0,-10.0},{-25.0,10.0}} ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Samples the continuous input signal whenever the trigger input&#xA;signal is rising (i.e., trigger changes from &lt;strong>false&lt;/strong> to&#xA;&lt;strong>true&lt;/strong>) and provides the sampled input signal as output.&#xA;Before the first sampling, the output signal is equal to&#xA;the initial value defined via parameter &lt;strong>y0&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="TriggeredMax" description="&quot;Compute maximum, absolute value of continuous signal at trigger instants&quot;" classNameEnd="TriggeredMax">
-      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.DiscreteBlock"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput">
-        <component_list declarationName="u" description="&quot;Connector with a Real input signal&quot;" isAnnotation="true">
-          <annotations elementName="Placement">
-            <modifications elementName="transformation">
+    <elements xsi:type="mOloc:GeneralClause" classType="block" className="TriggeredMax" description="&quot;Compute maximum, absolute value of continuous signal at trigger instants&quot;" isLongClassSpecifier="true" classNameEnd="TriggeredMax" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.DiscreteBlock" isOver="true"/>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+        <component_list declarationName="u" description="&quot;Connector with a Real input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
               <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
             </modifications>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput">
-        <component_list declarationName="y" description="&quot;Connector with a Real output signal&quot;" isAnnotation="true">
-          <annotations elementName="Placement">
-            <modifications elementName="transformation">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector with a Real output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
               <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
             </modifications>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput">
-        <component_list declarationName="trigger" isAnnotation="true">
-          <annotations elementName="Placement">
-            <modifications elementName="transformation">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+        <component_list declarationName="trigger" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
               <modifications expression="{0,-118}" elementName="origin"/>
               <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
               <modifications expression="90" elementName="rotation"/>
@@ -304,25 +304,25 @@
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="0"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-        <annotations elementName="Icon">
-          <modifications elementName="coordinateSystem">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
             <modifications expression="true" elementName="preserveAspectRatio"/>
             <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
           </modifications>
           <modifications expression="{ Ellipse(lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{25.0,-10.0},{45.0,10.0}} ) , Line(points={{-100.0,0.0},{-45.0,0.0}}, color={0,0,127} ) , Line(points={{45.0,0.0},{100.0,0.0}}, color={0,0,127} ) , Line(points={{0.0,-100.0},{0.0,-26.0}}, color={255,0,255} ) , Line(points={{-35.0,0.0},{28.0,-48.0}}, color={0,0,127} ) , Text(extent={{-86.0,24.0},{82.0,82.0}}, color={0,0,127}, textString=&quot;max&quot; ) , Ellipse(lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{-45.0,-10.0},{-25.0,10.0}} ) }" elementName="graphics"/>
         </annotations>
-        <annotations elementName="Documentation">
+        <annotations isModificationOver="true" elementName="Documentation">
           <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Samples the continuous input signal whenever the trigger input&#xA;signal is rising (i.e., trigger changes from &lt;strong>false&lt;/strong> to&#xA;&lt;strong>true&lt;/strong>). The maximum, absolute value of the input signal&#xA;at the sampling point is provided as output signal.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-      <annotations elementName="Documentation">
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
         <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This package contains &lt;strong>discrete control blocks&lt;/strong>&#xA;with &lt;strong>fixed sample period&lt;/strong>.&#xA;Every component of this package is structured in the following way:&#xA;&lt;/p>&#xA;&lt;ol>&#xA;&lt;li> A component has &lt;strong>continuous real&lt;/strong> input and output signals.&lt;/li>&#xA;&lt;li> The &lt;strong>input&lt;/strong> signals are &lt;strong>sampled&lt;/strong> by the given sample period&#xA;     defined via parameter &lt;strong>samplePeriod&lt;/strong>.&#xA;     The first sample instant is defined by parameter &lt;strong>startTime&lt;/strong>.&lt;/li>&#xA;&lt;li> The &lt;strong>output&lt;/strong> signals are computed from the sampled input signals.&lt;/li>&#xA;&lt;/ol>&#xA;&lt;p>&#xA;A &lt;strong>sampled data system&lt;/strong> may consist of components of package &lt;strong>Discrete&lt;/strong>&#xA;and of every other purely &lt;strong>algebraic&lt;/strong> input/output block, such&#xA;as the components of packages &lt;strong>Modelica.Blocks.Math&lt;/strong>,&#xA;&lt;strong>Modelica.Blocks.Nonlinear&lt;/strong> or &lt;strong>Modelica.Blocks.Sources&lt;/strong>.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
         <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>October 21, 2002&lt;/em>&#xA;       by &lt;a href=\&quot;http://www.robotic.dlr.de/Martin.Otter/\&quot;>Martin Otter&lt;/a>:&lt;br>&#xA;       New components TriggeredSampler and TriggeredMax added.&lt;/li>&#xA;&lt;li>&lt;em>June 18, 2000&lt;/em>&#xA;       by &lt;a href=\&quot;http://www.robotic.dlr.de/Martin.Otter/\&quot;>Martin Otter&lt;/a>:&lt;br>&#xA;       Realized based on a corresponding library of Dieter Moormann and&#xA;       Hilding Elmqvist.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
       </annotations>
-      <annotations elementName="Icon">
+      <annotations isModificationOver="true" elementName="Icon">
         <modifications expression="{ Line(points={{-88,0},{-45,0}}, color={95,95,95}), Ellipse( lineColor={95,95,95}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{-45,-10},{-25,10}} ) , Line(points={{-35,0},{24,52}}, color={95,95,95}), Ellipse( lineColor={95,95,95}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{25,-10},{45,10}} ) , Line(points={{45,0},{82,0}}, color={95,95,95}) }" elementName="graphics"/>
       </annotations>
     </elements>

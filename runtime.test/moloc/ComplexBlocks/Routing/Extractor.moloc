@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Routing">
-  <classes classType="block" className="Extractor" description="&quot;Extract scalar signal out of signal vector dependent on IntegerRealInput index&quot;" classNameEnd="Extractor">
-    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexMISO"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+  <classes classType="block" className="Extractor" description="&quot;Extract scalar signal out of signal vector dependent on IntegerRealInput index&quot;" isLongClassSpecifier="true" classNameEnd="Extractor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexMISO" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="allowOutOfRange" description="&quot;Index may be out of range&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" parameterType="parameter" isOver="true">
       <component_list expression="Complex(1e10,0)" declarationName="outOfRangeValue" description="&quot;Output signal if index is out of range&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerInput">
-      <component_list declarationName="index" isAnnotation="true">
-        <annotations elementName="Placement">
-          <modifications elementName="transformation">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerInput" isOver="true">
+      <component_list declarationName="index" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
             <modifications expression="{0,-120}" elementName="origin"/>
             <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
             <modifications expression="90" elementName="rotation"/>
@@ -19,7 +19,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isProtected="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isProtected="true" isOver="true">
       <component_list subscripts="[nin]" declarationName="k"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">
@@ -30,15 +30,15 @@
       </equations>
       <equations xsi:type="mOloc:SimpleEquation" left="y" right="if not allowOutOfRange or index > 0 and index &lt;= nin then k*u else outOfRangeValue"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-      <annotations elementName="Icon">
-        <modifications elementName="coordinateSystem">
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
           <modifications expression="true" elementName="preserveAspectRatio"/>
           <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
         </modifications>
         <modifications expression="{ Rectangle( extent={{-80,50},{-40,-50}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-84.4104,1.9079},{-84.4104,-2.09208},{-80.4104,-0.09208},{ -84.4104,1.9079} } , lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) , Line(points={{-62,2},{-50.1395,12.907},{-39.1395,12.907}}, color={85, 170,255 } ) , Line(points={{-63,4},{-49,40},{-39,40}}, color={85,170,255}), Line(points={{-102,0},{-65.0373,-0.01802}}, color={85,170,255}), Ellipse( extent={{-70.0437,4.5925},{-60.0437,-4.90745}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) , Line(points={{-63,-5},{-50,-40},{-39,-40}}, color={85,170,255}), Line(points={{-62,-2},{-50.0698,-12.907},{-39.0698,-12.907}}, color={85, 170,255 } ) , Polygon( points={{-38.8808,-11},{-38.8808,-15},{-34.8808,-13},{-38.8808,-11}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-39,42},{-39,38},{-35,40},{-39,42}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-38.8728,-38.0295},{-38.8728,-42.0295},{-34.8728,-40.0295}, {-38.8728,-38.0295} } , lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-38.9983,14.8801},{-38.9983,10.8801},{-34.9983,12.8801},{-38.9983, 14.8801 } } , lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Rectangle( extent={{-30,50},{30,-50}}, fillColor={235,235,235}, fillPattern=FillPattern.Solid, lineColor={85,170,255} ) , Line(points={{100,0},{0,0}}, color={85,170,255}), Line(points={{0,2},{0,-104}}, color={255,128,0}), Line(points={{-35,40},{-20,40}}, color={85,170,255}), Line(points={{-35,13},{-20,13}}, color={85,170,255}), Line(points={{-35,-13},{-20,-13}}, color={85,170,255}), Line(points={{-35,-40},{-20,-40}}, color={85,170,255}), Polygon(points={{0,0},{-20,13},{-20,13},{0,0},{0,0}}, lineColor={85, 170,255 } ) , Ellipse( extent={{-6,6},{6,-6}}, lineColor={255,128,0}, fillColor={255,128,0}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
       </annotations>
-      <annotations elementName="Documentation">
+      <annotations isModificationOver="true" elementName="Documentation">
         <modifications expression="&quot;&lt;html>&#xA;&lt;p>This block extracts a scalar output signal out the&#xA;vector of input signals dependent on the Integer&#xA;value of the additional u index:&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u [ index ] ;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>where index is an additional Integer input signal.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
       </annotations>
     </elements>

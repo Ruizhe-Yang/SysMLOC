@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.Component_declaration;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.annotation_modification_part;
@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.Component_declarationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Component_declarationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Component_declarationImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.Component_declarationImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Component_declarationImpl#getCondition_attribute <em>Condition attribute</em>}</li>
  * </ul>
  *
@@ -91,7 +92,27 @@ public class Component_declarationImpl extends declarationImpl implements Compon
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getCondition_attribute() <em>Condition attribute</em>}' attribute.
@@ -190,13 +211,38 @@ public class Component_declarationImpl extends declarationImpl implements Compon
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
   }
 
   /**
@@ -256,6 +302,8 @@ public class Component_declarationImpl extends declarationImpl implements Compon
         return isIsAnnotation();
       case MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
       case MOlocPackage.COMPONENT_DECLARATION__CONDITION_ATTRIBUTE:
         return getCondition_attribute();
     }
@@ -281,7 +329,10 @@ public class Component_declarationImpl extends declarationImpl implements Compon
         return;
       case MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
         return;
       case MOlocPackage.COMPONENT_DECLARATION__CONDITION_ATTRIBUTE:
         setCondition_attribute((String)newValue);
@@ -309,6 +360,9 @@ public class Component_declarationImpl extends declarationImpl implements Compon
       case MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.COMPONENT_DECLARATION__CONDITION_ATTRIBUTE:
         setCondition_attribute(CONDITION_ATTRIBUTE_EDEFAULT);
         return;
@@ -332,6 +386,8 @@ public class Component_declarationImpl extends declarationImpl implements Compon
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
       case MOlocPackage.COMPONENT_DECLARATION__CONDITION_ATTRIBUTE:
         return CONDITION_ATTRIBUTE_EDEFAULT == null ? condition_attribute != null : !CONDITION_ATTRIBUTE_EDEFAULT.equals(condition_attribute);
     }
@@ -360,6 +416,7 @@ public class Component_declarationImpl extends declarationImpl implements Compon
       {
         case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -395,6 +452,7 @@ public class Component_declarationImpl extends declarationImpl implements Compon
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -423,6 +481,8 @@ public class Component_declarationImpl extends declarationImpl implements Compon
     result.append(description);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
     result.append(", condition_attribute: ");
     result.append(condition_attribute);
     result.append(')');

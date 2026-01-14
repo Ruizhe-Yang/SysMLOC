@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Ideal">
+  <classes classType="model" className="IdealCommutingSwitch" description="&quot;Ideal commuting switch&quot;" isLongClassSpecifier="true" classNameEnd="IdealCommutingSwitch" isOver="true">
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.real" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.conj" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1e-5" declarationName="Ron" description="&quot;Closed switch resistance&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1e-5" declarationName="Goff" description="&quot;Opened switch conductance&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="293.15" elementName="T" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="p" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="n2" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="n1" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,30},{110,50}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{ 90,30} ,{110,50} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <component_list declarationName="control" description="&quot;true => p--n2 connected, false => p--n1 connected&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,120}" elementName="origin"/>
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isProtected="true" isOver="true">
+      <component_list isModificationOver="true" declarationName="s1">
+        <modifications isModificationOver="true" elementName="re">
+          <modifications expression="&quot;1&quot;" elementName="unit" isfinal="true"/>
+        </modifications>
+        <modifications isModificationOver="true" elementName="im">
+          <modifications expression="&quot;1&quot;" elementName="unit" isfinal="true"/>
+        </modifications>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isOver="true">
+      <component_list isModificationOver="true" declarationName="s2" description="&quot;Auxiliary variables&quot;">
+        <modifications isModificationOver="true" elementName="re">
+          <modifications expression="&quot;1&quot;" elementName="unit" isfinal="true"/>
+        </modifications>
+        <modifications isModificationOver="true" elementName="im">
+          <modifications expression="&quot;1&quot;" elementName="unit" isfinal="true"/>
+        </modifications>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexVoltage" parameterType="constant" isOver="true">
+      <component_list expression="Complex(1, 0)" declarationName="unitVoltage" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="HideResult"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexCurrent" parameterType="constant" isOver="true">
+      <component_list expression="Complex(1, 0)" declarationName="unitCurrent" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="HideResult"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.branch" function="(p.reference, n1.reference)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="p.reference.gamma" right="n1.reference.gamma"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.branch" function="(p.reference, n2.reference)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="p.reference.gamma" right="n2.reference.gamma"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="p.i + n2.i + n1.i" right="Complex(0, 0)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="p.v - n1.v" right="(s1*unitCurrent)*(if (control) then 1 else Ron)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="n1.i" right="-(s1*unitVoltage)*(if (control) then Goff else 1)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="p.v - n2.v" right="(s2*unitCurrent)*(if (control) then Ron else 1)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="n2.i" right="-(s2*unitVoltage)*(if (control) then 1 else Goff)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="LossPower" right="real(p.v*conj(p.i)) + real(n1.v*conj(n1.i)) + real(n2.v*conj( n2.i) )"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;switch&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The commuting switch has a positive pin p and two negative pins n1 and n2.&#xA;The switching behaviour is controlled&#xA;by the input signal control. If control is true, the pin p is connected&#xA;with the negative pin n2. Otherwise, the pin p is connected to the negative pin n1.&#xA;&lt;/p>&#xA;&lt;p>&#xA;In order to prevent singularities during switching, the opened&#xA;switch has a (very low) conductance Goff&#xA;and the closed switch has a (very low) resistance Ron.&#xA;The limiting case is also allowed, i.e., the resistance Ron of the&#xA;closed switch could be exactly zero and the conductance Goff of the&#xA;open switch could be also exactly zero. Note, there are circuits,&#xA;where a description with zero Ron or zero Goff is not possible.&#xA;&lt;br>&lt;br>&#xA;&lt;strong>Please note:&lt;/strong>&#xA;In case of useHeatPort=true the temperature dependence of the electrical&#xA;behavior is &lt;strong>not&lt;/strong> modelled. The parameters are not temperature dependent.&#xA;&lt;/p>&#xA;&lt;p>&#xA;&lt;strong>Use with care:&lt;/strong>&#xA;This switch is only intended to be used for structural changes, not for fast switching sequences, due to the quasi-static formulation.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Ellipse(extent={{-44,4},{-36,-4}}, lineColor={85,170,255}), Line(points={{-100,0},{-44,0}}, color={85,170,255}), Line(points={{-37,2},{40,40}}, color={85,170,255}), Line(points={{40,40},{100,40}}, color={85,170,255}), Line(points={{40,0},{100,0}}, color={85,170,255}), Line( visible=useHeatPort, points={{0,-100},{0,25}}, color={127,0,0}, pattern=LinePattern.Dot ) , Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Basic">
+  <classes classType="model" className="Inductor" description="&quot;Polyphase linear inductor&quot;" isLongClassSpecifier="true" classNameEnd="Inductor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPlug" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="L" description="&quot;Inductances&quot;">
+        <modifications expression="fill(1, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Basic.Inductor" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="inductor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="L" elementName="L" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPins_p.pin_p" right="inductor.pin_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-68, 0 } ,{-53.5,0},{-53.5,0},{-39,0},{-39,0},{-10,0} }" elementName="points"/>
+          <modifications expression="{85,170, 255 }" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="inductor.pin_n" right="plugToPins_n.pin_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10, 0 } ,{39,0},{39,0},{68,0} }" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Line(points={{60,0},{90,0}}, color={85,170,255} ) ,Line(points={{-90,0},{-60,0}}, color={85,170,255}), Text( extent={{150,-80},{-150,-40}}, textString=&quot;m=%m&quot; ) , Line( points={{-60,0},{-59,6},{-52,14},{-38,14},{-31,6},{-30,0}}, color={85,170,255}, smooth=Smooth.Bezier ) , Line( points={{-30,0},{-29,6},{-22,14},{-8,14},{-1,6},{0,0}}, color={85,170,255}, smooth=Smooth.Bezier ) , Line( points={{0,0},{1,6},{8,14},{22,14},{29,6},{30,0}}, color={85,170,255}, smooth=Smooth.Bezier ) , Line( points={{30,0},{31,6},{38,14},{52,14},{59,6},{60,0}}, color={85,170,255}, smooth=Smooth.Bezier ) , Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The linear inductor connects the complex voltages &lt;code>&lt;u>v&lt;/u>&lt;/code> with the complex&#xA;currents &lt;code>&lt;u>i&lt;/u>&lt;/code> by &lt;code>&lt;u>i&lt;/u>*j*&amp;omega;*L = &lt;u>v&lt;/u>&lt;/code>,&#xA;using &lt;code>m&lt;/code> &lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Inductor\&quot;>single-phase Inductors&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;h4>See also&lt;/h4>&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Inductor\&quot;>Inductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.Resistor\&quot;>Resistor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.Conductor\&quot;>Conductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.Capacitor\&quot;>Capacitor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.Impedance\&quot;>Impedance&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.Admittance\&quot;>Admittance&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.VariableResistor\&quot;>Variable resistor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.VariableConductor\&quot;>Variable conductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.VariableCapacitor\&quot;>Variable capacitor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.VariableInductor\&quot;>Variable inductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.VariableImpedance\&quot;>Variable impedance&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.VariableAdmittance\&quot;>Variable admittance&lt;/a>&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

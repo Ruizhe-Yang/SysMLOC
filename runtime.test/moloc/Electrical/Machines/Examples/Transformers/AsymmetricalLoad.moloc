@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Examples.Transformers">
+  <classes classType="model" className="AsymmetricalLoad" description="&quot;Asymmetrical load&quot;" isLongClassSpecifier="true" classNameEnd="AsymmetricalLoad" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="RL" description="&quot;Load resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Sources.SineVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="source" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="fill( 50, 3)" elementName="f"/>
+        <modifications expression="fill(sqrt(2/3)*100, 3)" elementName="V"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-90,-10}" elementName="origin"/>
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
+      <component_list declarationName="starS" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-90,-40}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="groundS" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-100,-80},{-80,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Sensors.CurrentSensor" isOver="true">
+      <component_list declarationName="currentSensorS" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-60,20},{-40,0}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="groundL" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{0,-80},{20,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Utilities.TransformerData" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="transformerData" description="&quot;Transformer data&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Modelica.Utilities.Strings.substring( transformer.VectorGroup, 1, 1 )" elementName="C1"/>
+        <modifications expression="Modelica.Utilities.Strings.substring( transformer.VectorGroup, 2, 2 )" elementName="C2"/>
+        <modifications expression="50" elementName="f"/>
+        <modifications expression="100" elementName="V1"/>
+        <modifications expression="100" elementName="V2"/>
+        <modifications expression="30E3" elementName="SNominal"/>
+        <modifications expression="0.05" elementName="v_sc"/>
+        <modifications expression="300" elementName="P_sc"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,40},{10,60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="BasicMachines.Transformers.Dy.Dy01" isOver="true">
+      <component_list isModificationOver="true" declarationName="transformer" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="transformerData.n" elementName="n"/>
+        <modifications expression="transformerData.R1" elementName="R1"/>
+        <modifications expression="transformerData.L1sigma" elementName="L1sigma"/>
+        <modifications expression="transformerData.R2" elementName="R2"/>
+        <modifications expression="transformerData.L2sigma" elementName="L2sigma"/>
+        <modifications expression="293.15" elementName="T1Ref"/>
+        <modifications isModificationOver="true" expression="Modelica.Electrical.Machines.Thermal.Constants.alpha20Zero" elementName="alpha20_1">
+          <modifications expression="&quot;1/K&quot;" elementName="displayUnit"/>
+        </modifications>
+        <modifications expression="293.15" elementName="T2Ref"/>
+        <modifications isModificationOver="true" expression="Modelica.Electrical.Machines.Thermal.Constants.alpha20Zero" elementName="alpha20_2">
+          <modifications expression="&quot;1/K&quot;" elementName="displayUnit"/>
+        </modifications>
+        <modifications expression="293.15" elementName="T1Operational"/>
+        <modifications expression="293.15" elementName="T2Operational"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20, -10 } ,{20,30} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.PlugToPin_n" isOver="true">
+      <component_list isModificationOver="true" declarationName="plugToPin_n" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="k"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,0},{40,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="load" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="RL" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{50,0}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="earth" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1e6" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-10,-40}" elementName="origin"/>
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="groundT" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-80},{0,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection" isInitial="true">
+      <equations xsi:type="mOloc:SimpleEquation" left="transformer.i2[1]" right="0"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="starS.pin_n" right="groundS.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-90,-50},{-90,-60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="source.plug_n" right="starS.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-90,-20},{-90,-30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="currentSensorS.plug_n" right="transformer.plug1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-40,10},{-20,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="transformer.plug2" right="plugToPin_n.plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,10},{28,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="transformer.starpoint2" right="groundL.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,-10},{10,-60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="load.p" right="plugToPin_n.pin_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,10},{32,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="transformer.starpoint2" right="load.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,-10},{50,-10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="source.plug_p" right="currentSensorS.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-90,0},{-90,10},{-60,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="earth.n" right="groundT.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,-50},{-10,-50}, {-10,-60} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;h4>Asymmetrical (single-phase) load&lt;/h4>&#xA;&lt;p>&#xA;You may choose different connections.&#xA;&lt;/p>&#xA;&lt;p>&#xA;&lt;strong>Please pay attention&lt;/strong> to proper grounding of the primary and secondary part of the whole circuit.&lt;br>&#xA;The primary and secondary starpoint are available as connectors, if the connection is not delta (D or d).&#xA;&lt;/p>&#xA;&lt;p>&#xA;In some cases it may be necessary to ground the transformer's starpoint even though the source's or load's starpoint are grounded:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>Yy with primary starpoint connected to source's starpoint: primary current in only one phase&lt;/li>&#xA;&lt;li>Yy primary starpoint  not connected to source's starpoint: secondary voltage breaks down&lt;/li>&#xA;&lt;li>Yz ... Grounding of transformer's primary starpoint with reasonable high earthing resistance is necessary.&lt;/li>&#xA;&lt;li>Dy ... Load current in two   primary phases.&lt;/li>&#xA;&lt;li>Dz ... Load current in three primary phases.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="0.1" elementName="StopTime"/>
+        <modifications expression="1E-4" elementName="Interval"/>
+        <modifications expression="1E-6" elementName="Tolerance"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.DCDC.Control">
+  <classes classType="block" className="Voltage2DutyCycle" description="&quot;Linearly transforms voltage to duty cycle&quot;" isLongClassSpecifier="true" classNameEnd="Voltage2DutyCycle" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="reciprocal" description="&quot;Enables reciprocal formula between voltage and duty cycle&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="useBipolarVoltage" description="&quot;Enables bipolar input voltage range&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="not reciprocal" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="useConstantVoltageLimit" description="&quot;Enables constant voltage limit&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="VLim" description="&quot;Voltage range limit mapped to dutyCycle = 1 resp. 0&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="useConstantVoltageLimit" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="v" description="&quot;Voltage&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;V&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list declarationName="dutyCycle" description="&quot;Duty cycle&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="vLim" description="&quot;Voltage limit&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantVoltageLimit">
+        <modifications expression="&quot;V&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{0,120}" elementName="origin"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{0,120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+      <component_list isModificationOver="true" declarationName="vLimConst" description="&quot;Constant voltage limit&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useConstantVoltageLimit">
+        <modifications expression="VLim" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,70},{20,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isProtected="true" isOver="true">
+      <component_list isModificationOver="true" declarationName="vLimInt" description="&quot;Internal voltage limit&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;V&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-4,-4},{4,4}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+            <modifications expression="{0,80}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:IfEquation" condition="not reciprocal">
+        <ifEquations xsi:type="mOloc:IfEquation" condition="not useBipolarVoltage">
+          <ifEquations xsi:type="mOloc:SimpleEquation" left="dutyCycle" right="max(min(v, vLimInt), 0)/vLimInt"/>
+          <elseEquations xsi:type="mOloc:SimpleEquation" left="dutyCycle" right="(max(min(v, vLimInt), -vLimInt)/vLimInt + 1)/2"/>
+        </ifEquations>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="dutyCycle" right="1 - vLimInt/max(v, vLimInt)"/>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="vLim" right="vLimInt">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,120},{0,80},{4.44089e-16, 80 } }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="vLimInt" right="vLimConst.y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{4.44089e-16,80}, {19,80} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;adaptor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Rectangle( extent={{-100,100},{100,-100}}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line( points={{0,-60},{60,60}}, pattern=LinePattern.Dash ) , Line( points={{-60,-60},{60,60}}) , Polygon( points={{-78,-60},{-76,-60},{62,-60},{62,-54},{82,-60},{62,-66},{62,-60}, {62,-60},{-78,-60} } , fillPattern=FillPattern.Solid ) , Polygon( points={{0,-80},{0,60},{-6,60},{0,80},{6,60},{0,60},{0,-80}}, fillPattern=FillPattern.Solid ) , Text(extent={{ -150,-120} ,{150,-160} } , textString = &quot;%name&quot;, textColor = {0, 0, 255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Transforms the input voltage signal into a duty cycle:&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;code>reciprocal = false and useBipolarVoltage = false: v/VLim = dutyCycle&lt;/code>&lt;/li>&#xA;&lt;li>&lt;code>reciprocal = false and useBipolarVoltage = true : v/VLim = 2*dutyCycle - 1&lt;/code>&lt;/li>&#xA;&lt;li>&lt;code>reciprocal = true:                                v/VLim = 1/(1 - dutyCycle)&lt;/code>&lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

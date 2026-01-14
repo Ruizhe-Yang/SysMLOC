@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Basic">
+  <classes classType="model" className="MutualInductor" description="&quot;Linear mutual inductor&quot;" isLongClassSpecifier="true" classNameEnd="MutualInductor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Polyphase.Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="1e-9" declarationName="epsilon" description="&quot;Relative accuracy tolerance of matrix symmetry&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m, m]" declarationName="L" description="&quot;Mutual inductance matrix&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection" isInitial="true">
+      <equations xsi:type="mOloc:IfEquation" condition="abs(Modelica.Math.Matrices.det(L)) &lt; epsilon">
+        <ifEquations xsi:type="mOloc:FunctionEquation" component="Modelica.Utilities.Streams.print" function="(&quot;Warning: mutual inductance matrix singular!&quot;)"/>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(sum(abs(L - transpose(L))) &lt; epsilon*sum(abs(L)),&quot;Mutual inductance matrix is not symmetric&quot;)"/>
+      <equations xsi:type="mOloc:ForEquation" forIndices="j in 1:m">
+        <forEquations xsi:type="mOloc:SimpleEquation" left="v[j]" right="sum(L[j, k]*der(i[k]) for k in 1:m)"/>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;inductor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Model of a polyphase inductor providing a mutual inductance matrix model.&#xA;&lt;/p>&#xA;&lt;h4>Implementation&lt;/h4>&#xA;&lt;blockquote>&lt;pre>&#xA;  v[1] = L[1,1]*der(i[1]) + L[1,2]*der(i[2]) + ... + L[1,m]*der(i[m])&#xA;  v[2] = L[2,1]*der(i[1]) + L[2,2]*der(i[2]) + ... + L[2,m]*der(i[m])&#xA;    :              :                         :                                :&#xA;  v[m] = L[m,1]*der(i[1]) + L[m,2]*der(i[2]) + ... + L[m,m]*der(i[m])&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line(points={{-80,20},{-80,-20},{-60,-20}}, color={0,0,255}), Line(points={{-80,20},{-60,20}}, color={0,0,255}), Line(points={{60,20},{80,20}}, color={0,0,255}), Line(points={{80,20},{80,-20},{60,-20}}, color={0,0,255}), Line(points={{-90,0},{-80,0}}, color={0,0,255}), Line(points={{80,0},{90,0}}, color={0,0,255}), Line( points={{-60,20},{-59,26},{-52,34},{-38,34},{-31,26},{-30,20}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-30,20},{-29,26},{-22,34},{-8,34},{-1,26},{0,20}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{0,20},{1,26},{8,34},{22,34},{29,26},{30,20}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{30,20},{31,26},{38,34},{52,34},{59,26},{60,20}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-45,-27}, rotation=180 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-15,-27}, rotation=180 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={15,-27}, rotation=180 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={45,-27}, rotation=180 ) , Text( extent={{-150,50},{150,90}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text( extent={{-150,-80},{150,-40}}, textString=&quot;m=%m&quot; ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

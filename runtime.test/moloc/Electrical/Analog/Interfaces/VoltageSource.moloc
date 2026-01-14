@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Interfaces">
+  <classes isPartial="true" classType="model" className="VoltageSource" description="&quot;Interface for voltage sources&quot;" isLongClassSpecifier="true" classNameEnd="VoltageSource" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Icons.VoltageSource" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.SignalSource" isReplaceable="true" isOver="true">
+      <component_list isModificationOver="true" declarationName="signalSource" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="offset" elementName="offset" isfinal="true"/>
+        <modifications expression="startTime" elementName="startTime" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{70,69},{91,89}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="offset" description="&quot;Voltage offset&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="startTime" description="&quot;Time offset&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="signalSource.y"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em> 1998   &lt;/em>&#xA;       by Christoph Clauss&lt;br> initially implemented&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>The VoltageSource partial model prepares voltage sources by providing the pins, and the offset and startTime parameters, which are the same at all voltage sources. The source behavior is taken from Modelica.Blocks signal sources by inheritance and usage of the replaceable possibilities.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

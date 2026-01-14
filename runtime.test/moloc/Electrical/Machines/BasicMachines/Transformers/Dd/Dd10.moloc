@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.BasicMachines.Transformers.Dd">
+  <classes classType="model" className="Dd10" description="&quot;Transformer Dd10&quot;" isLongClassSpecifier="true" classNameEnd="Dd10" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.PartialBasicTransformer" isOver="true">
+      <extendsModifications expression="&quot;Dd10&quot;" elementName="VectorGroup" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Delta" isOver="true">
+      <component_list isModificationOver="true" declarationName="Delta1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-50,-30},{-30,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Delta" isOver="true">
+      <component_list isModificationOver="true" declarationName="Delta2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{30,-30},{50,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="r1.plug_p" right="Delta1.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-90,0},{-90, -20 } ,{-50,-20} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Delta2.plug_n" right="r2.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,-20},{ 90,-20} ,{90,0} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="l1sigma.plug_n" right="core.plug_p1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,0}, {-50,20},{-10,20},{-10,5} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Delta1.plug_n" right="core.plug_n1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,-20}, {-10,-20},{-10,-5} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="core.plug_n2" right="core.plug_p3">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,4},{10,-4}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="core.plug_p2" right="l2sigma.plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,10}, {10,20},{50,20},{50,0} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="core.plug_n3" right="Delta2.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,-10}, {10,-20},{30,-20} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;transformer&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;Transformer Dd10&#xA;&lt;br>Typical parameters see:&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Interfaces.PartialBasicTransformer\&quot;>PartialBasicTransformer&lt;/a>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

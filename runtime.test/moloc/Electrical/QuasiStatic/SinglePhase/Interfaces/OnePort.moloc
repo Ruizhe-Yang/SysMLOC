@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces">
+  <classes isPartial="true" classType="model" className="OnePort" description="&quot;Two pins, current through&quot;" isLongClassSpecifier="true" classNameEnd="OnePort" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="TwoPin" isOver="true"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="pin_p.i + pin_n.i" right="Complex(0)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This partial model is based on &lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.TwoPin\&quot;>TwoPin&lt;/a> and&#xA;additionally considers the complex current balance of the&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.PositivePin\&quot;>positive&lt;/a> and the&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.NegativePin\&quot;>negative pin&lt;/a>.&#xA;This model is intended to be used with textual representation of user models.&#xA;&lt;/p>&#xA;&#xA;&lt;h4>See also&lt;/h4>&#xA;&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.PositivePin\&quot;>PositivePin&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.NegativePin\&quot;>NegativePin&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.TwoPinElementary\&quot;>TwoPinElementary&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.TwoPin\&quot;>TwoPin&lt;/a>&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

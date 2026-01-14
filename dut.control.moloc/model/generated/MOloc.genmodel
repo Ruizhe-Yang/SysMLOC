@@ -40,6 +40,7 @@
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//Class_definition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//Class_definition/isfinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//Class_definition/isOver"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//class_prefixes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//class_prefixes/isEncapsulated"/>
@@ -52,14 +53,17 @@
     <genClasses ecoreClass="MOloc.ecore#//class_specifier"/>
     <genClasses ecoreClass="MOloc.ecore#//long_class_specifier">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//long_class_specifier/isExtends"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//long_class_specifier/isLongClassSpecifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//long_class_specifier/classNameEnd"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//short_class_specifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//short_class_specifier/isShortClassSpecifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//short_class_specifier/direction"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//short_class_specifier/isEnumeration"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//short_class_specifier/isColon"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//der_class_specifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//der_class_specifier/isDerClassSpecifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//der_class_specifier/isDer"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//der_class_specifier/derName"/>
     </genClasses>
@@ -68,10 +72,12 @@
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//class_modification">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//class_modification/modifications"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//class_modification/isModificationOver"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//annotation_modification_part">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//annotation_modification_part/isAnnotation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//annotation_modification_part/annotations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//annotation_modification_part/isAnnotationOver"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//description_string">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//description_string/description"/>
@@ -95,11 +101,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ModificationElement/isfinal"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ModificationElement/isReplaceable"/>
     </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//AnnotationModification">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModification/isRedeclare"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModification/isEach"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModification/isfinal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModification/isReplaceable"/>
+    <genClasses ecoreClass="MOloc.ecore#//AnnotationModificationElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement/isRedeclare"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement/isEach"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement/isfinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement/isReplaceable"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//AnnotationModificationElement2">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement2/isRedeclare"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement2/isEach"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement2/isfinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement2/isReplaceable"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//element_modification">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//element_modification/elementName"/>
@@ -133,12 +145,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/importName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/isImportAll"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/objectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/isOver"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//ExtendsClause">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExtendsClause/isPublic"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExtendsClause/isProtected"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ExtendsClause/extendsModifications"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ExtendsClause/breaks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExtendsClause/isOver"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//Break">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//Break/connectObject"/>
@@ -153,6 +167,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//GeneralClause/isOuter"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//GeneralClause/isReplaceable"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//GeneralClause/component_list"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//GeneralClause/isOver"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//Component_declaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//Component_declaration/condition_attribute"/>
@@ -162,8 +177,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/ref"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/refValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/expressionList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/isOver"/>
     </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//AnnotationClause"/>
+    <genClasses ecoreClass="MOloc.ecore#//AnnotationClause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationClause/isOver"/>
+    </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//EquationSection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//EquationSection/isInitial"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//EquationSection/equations"/>

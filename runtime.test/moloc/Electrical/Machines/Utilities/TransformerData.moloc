@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Utilities">
+  <classes classType="record" className="TransformerData" description="&quot;Calculates Impedances from nominal values&quot;" isLongClassSpecifier="true" classNameEnd="TransformerData" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Record" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="f" description="&quot;Nominal frequency&quot;">
+        <modifications expression="50" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="V1" description="&quot;Primary nominal line-to-line voltage (RMS)&quot;">
+        <modifications expression="100" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="C1" description="&quot;Choose primary connection&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;Y&quot;" elementName="start"/>
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications description="&quot;Star connection&quot;" expression="&quot;Y&quot;" elementName="choice"/>
+          <modifications description="&quot;Delta connection&quot;" expression="&quot;D&quot;" elementName="choice"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="V2" description="&quot;Secondary open circuit line-to-line voltage (RMS) @ primary nominal voltage&quot;">
+        <modifications expression="100" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="C2" description="&quot;Choose secondary connection&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;y&quot;" elementName="start"/>
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications description="&quot;Star connection&quot;" expression="&quot;y&quot;" elementName="choice"/>
+          <modifications description="&quot;Delta connection&quot;" expression="&quot;d&quot;" elementName="choice"/>
+          <modifications description="&quot;Zig-zag connection&quot;" expression="&quot;z&quot;" elementName="choice"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ApparentPower" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="SNominal" description="&quot;Nominal apparent power&quot;">
+        <modifications expression="30E3" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="v_sc" description="&quot;Impedance voltage drop pu&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+        <modifications expression="1" elementName="max" isfinal="true"/>
+        <modifications expression="0.05" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="P_sc" description="&quot;Short-circuit (copper) losses&quot;">
+        <modifications expression="300" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="V1/V2" declarationName="n" description="&quot;Ratio primary voltage (line-to-line) / secondary voltage (line-to-line)&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="V1/(if C1 == &quot;D&quot; then 1 else sqrt(3) )" declarationName="V1ph" description="&quot;Primary phase voltage (RMS)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="SNominal/(3*V1ph)" declarationName="I1ph" description="&quot;Primary phase current (RMS)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="V2/(if C2 == &quot;d&quot; then 1 else sqrt(3) )" declarationName="V2ph" description="&quot;Secondary phase voltage (RMS)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="SNominal/(3*V2ph)" declarationName="I2ph" description="&quot;Secondary phase current (RMS)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Impedance" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="0.5*v_sc*V1ph/I1ph" declarationName="Z1ph" description="&quot;Primary impedance per phase&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="0.5*P_sc/(3*I1ph^2)" declarationName="R1" description="&quot;Warm primary resistance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="sqrt(Z1ph^2 - R1^2)/(2* Modelica.Constants.pi*f )" declarationName="L1sigma" description="&quot;Primary stray inductance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Impedance" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="0.5*v_sc*V2ph/I2ph" declarationName="Z2ph" description="&quot;Secondary impedance per phase&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="0.5*P_sc/(3*I2ph^2)" declarationName="R2" description="&quot;Warm secondary resistance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="sqrt(Z2ph^2 - R2^2)/(2* Modelica.Constants.pi*f )" declarationName="L2sigma" description="&quot;Secondary stray inductance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;parameter&quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>The parameters of the transformer models are calculated from parameters normally given in a technical description.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

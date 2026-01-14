@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.UsersGuide">
+  <classes classType="class" className="ReleaseNotes" description="&quot;Release Notes&quot;" isLongClassSpecifier="true" classNameEnd="ReleaseNotes" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.ReleaseNotes" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&#xA;&lt;h5>Version 2.5.0, 2019-12-24&lt;/h5>&#xA;&lt;ul>&#xA;&lt;li>Extension with stack models built from a matrix of different cells&lt;/li>&#xA;&lt;li>Cell and stack models with sensors&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;h5>Version 1.1.0, 2019-07-17&lt;/h5>&#xA;&lt;ul>&#xA;&lt;li>Agreement on consistent naming&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;h5>Version 1.0.0, 2019-07-14&lt;/h5>&#xA;&lt;ul>&#xA;&lt;li>First tagged version&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

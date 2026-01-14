@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Interfaces">
+  <classes classType="connector" className="Plug" description="&quot;Polyphase electrical plug with m pins&quot;" isLongClassSpecifier="true" classNameEnd="Plug" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.Pin" isOver="true">
+      <component_list subscripts="[m]" declarationName="pin" description="&quot;Pins of the plug&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Connectors PositivePlug and NegativePlug are nearly identical.&#xA;The only difference is that the icons are different in order&#xA;to identify more easily the plugs of a component.&#xA;Usually, connector PositivePlug is used for the positive and&#xA;connector NegativePlug for the negative plug of an electrical component.&lt;br>&#xA;Connector Plug is a composite connector containing m Pins (Modelica.Electrical.Analog.Interfaces.Pin).&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-100,-99},{100,-179}}, textColor={0,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

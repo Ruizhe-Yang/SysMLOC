@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Examples">
+  <classes classType="model" className="PolyphaseRectifier" description="&quot;Demonstrate a polyphase diode rectifier&quot;" isLongClassSpecifier="true" classNameEnd="PolyphaseRectifier" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.PolyphaseRectifierData" parameterType="parameter" isOver="true">
+      <component_list declarationName="data" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-90,70},{-70,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Sources.SineVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="sineVoltage" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.m" elementName="m"/>
+        <modifications expression="sqrt(2)*fill(data.VrmsY, data.m)" elementName="V"/>
+        <modifications expression="fill(data.f, data.m)" elementName="f"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-90,-60}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.MultiStarResistance" isOver="true">
+      <component_list isModificationOver="true" declarationName="multiStar" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.m" elementName="m"/>
+        <modifications expression="data.RGnd" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="{-60,-90}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="resistor2ground" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.RGnd" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="{-30,-90}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="groundAC" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{0,-90}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.AnalysatorAC" isOver="true">
+      <component_list isModificationOver="true" declarationName="analysatorAC" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.m" elementName="m"/>
+        <modifications expression="data.f" elementName="f"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-90,-30}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.SplitToSubsystems" isOver="true">
+      <component_list isModificationOver="true" declarationName="splitToSubsystems" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.m" elementName="m"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-90,-10},{-70,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Ideal.IdealDiode" isOver="true">
+      <component_list subscripts="[data.mSystems]" isModificationOver="true" declarationName="diode1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.mBasic" elementName="m" isEach="true"/>
+        <modifications expression="fill(1e-6, data.mBasic)" elementName="Ron" isEach="true"/>
+        <modifications expression="fill(1e-6, data.mBasic)" elementName="Goff" isEach="true"/>
+        <modifications expression="fill(0, data.mBasic)" elementName="Vknee" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-50,20}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Ideal.IdealDiode" isOver="true">
+      <component_list subscripts="[data.mSystems]" isModificationOver="true" declarationName="diode2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.mBasic" elementName="m" isEach="true"/>
+        <modifications expression="fill(1e-6, data.mBasic)" elementName="Ron" isEach="true"/>
+        <modifications expression="fill(1e-6, data.mBasic)" elementName="Goff" isEach="true"/>
+        <modifications expression="fill(0, data.mBasic)" elementName="Vknee" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-50,-20}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Star" isOver="true">
+      <component_list subscripts="[data.mSystems]" isModificationOver="true" declarationName="star1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.mBasic" elementName="m" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-50,50}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Star" isOver="true">
+      <component_list subscripts="[data.mSystems]" isModificationOver="true" declarationName="star2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.mBasic" elementName="m" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-50,-50}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Basic.Resistor" isOver="true">
+      <component_list subscripts="[data.mSystems]" isModificationOver="true" declarationName="resistorDC1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.RDC/2" elementName="R" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,50},{10,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Basic.Inductor" isOver="true">
+      <component_list subscripts="[data.mSystems]" isModificationOver="true" declarationName="inductorDC1" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="i" isEach="true">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="0" elementName="start"/>
+        </modifications>
+        <modifications expression="data.LDC/2" elementName="L" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,50},{40,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.AnalysatorDC" isOver="true">
+      <component_list subscripts="[data.mSystems]" isModificationOver="true" declarationName="analysatorDC" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.f" elementName="f" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-40,50},{-20,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Basic.Resistor" isOver="true">
+      <component_list subscripts="[data.mSystems]" isModificationOver="true" declarationName="resistorDC2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.RDC/2" elementName="R" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+            <modifications expression="{0,-60}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Basic.Inductor" isOver="true">
+      <component_list subscripts="[data.mSystems]" isModificationOver="true" declarationName="inductorDC2" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="i" isEach="true">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="0" elementName="start"/>
+        </modifications>
+        <modifications expression="data.LDC/2" elementName="L" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+            <modifications expression="{30,-60}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.AnalysatorDC" isOver="true">
+      <component_list isModificationOver="true" declarationName="analysatorDCload" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.f" elementName="f"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{60,50},{80,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="loadResistor1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.RLoad/2" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{90,30}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="loadResistor2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="data.RLoad/2" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{90,-30}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="groundDC" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{80,0}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ForEquation" forIndices="p in 1:data.Par">
+        <forEquations xsi:type="mOloc:ForEquation" forIndices="s in 1:data.Ser - 1">
+          <forEquations xsi:type="mOloc:ConnectEquation" left="inductorDC2[(p - 1)*data.Ser + s].p" right="inductorDC1[(p - 1)*data.Ser + s + 1].n"/>
+        </forEquations>
+        <forEquations xsi:type="mOloc:ConnectEquation" left="inductorDC1[(p - 1)*data.Ser + 1].n" right="analysatorDCload.p"/>
+        <forEquations xsi:type="mOloc:ConnectEquation" left="loadResistor2.n" right="inductorDC2[p*data.Ser].p"/>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sineVoltage.plug_n" right="multiStar.plug">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-90,-70},{-90,-90},{-70,-90}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="star1.plug_p" right="diode1.plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,40},{-50,30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="diode2.plug_p" right="star2.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,-30},{-50,-40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="loadResistor1.n" right="groundDC.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{90,20},{90,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="groundDC.p" right="loadResistor2.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{90,0},{90,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="multiStar.pin" right="resistor2ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,-90},{-40,-90}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor2ground.n" right="groundAC.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,-90},{-10,-90}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="diode1.plug_p" right="diode2.plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,10},{-50,-10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="analysatorAC.plug_p" right="sineVoltage.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-90,-40},{-90,-50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="analysatorAC.plug_nv" right="multiStar.plug">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,-30},{-70,-30},{-70,-90}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="analysatorDCload.n" right="loadResistor1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{80,60},{90,60},{90,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="loadResistor2.n" right="analysatorDCload.nv">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{90,-40}, {90,-60},{70,-60},{70,50} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="analysatorAC.plug_n" right="splitToSubsystems.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-90,-20},{-90,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="splitToSubsystems.plugs_n" right="diode1.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,0},{-50,0},{-50,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="star1.pin_n" right="analysatorDC.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,60},{-40,60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="analysatorDC.n" right="resistorDC1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,60},{-10,60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistorDC1.n" right="inductorDC1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,60},{20,60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="star2.pin_n" right="resistorDC2.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,-60},{-10,-60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistorDC2.p" right="inductorDC2.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,-60},{20,-60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="star2.pin_n" right="analysatorDC.nv">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,-60},{-30,-60},{-30,50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="0.2" elementName="StopTime"/>
+        <modifications expression="5e-05" elementName="Interval"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This example demonstrates a polyphase system with a rectifier per subsystem.&#xA;&lt;/p>&#xA;&lt;p>&#xA;Note that the interaction between the subsystems is damped by the DC resistors and inductors.&#xA;&lt;/p>&#xA;&lt;p>&#xA;You may try different number of phases 2 &amp;le; &lt;code>m&lt;/code>, as well as connect the rectifiers with different number of parallel branches, and investigate AC values:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>AC power &lt;code>analysatorAC.pTotal&lt;/code> (sum of all phases)&lt;/li>&#xA;&lt;li>AC current &lt;code>analysatorAC.iFeed[m]&lt;/code> (1st harmonic rms)&lt;/li>&#xA;&lt;li>AC voltage &lt;code>analysatorAC.vLN[m]&lt;/code> (1st harmonic rms, line to neutral)&lt;/li>&#xA;&lt;li>AC voltage &lt;code>analysatorAC.vLL[m]&lt;/code> (1st harmonic rms, line to line)&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;as well as DC values per subsystem (rectifier) and total (load):&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>DC power   total &lt;code>analysatorAC.pDC&lt;/code> (mean)&lt;/li>&#xA;&lt;li>DC current total &lt;code>analysatorAC.iDC&lt;/code> (mean)&lt;/li>&#xA;&lt;li>DC voltage total &lt;code>analysatorAC.vDC&lt;/code> (mean)&lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Rectangle( extent={{-62,72},{42,-70}}, lineColor={175,175,175}, fillColor={215,215,215}, fillPattern=FillPattern.Solid, radius=5 ) , Text( extent={{-24,10},{36,-10}}, textColor={0,0,0}, fillColor={215,215,215}, fillPattern=FillPattern.None, textString=&quot;rectifiers[mSystems]&quot; ) , Text( extent={{-58,10},{58,-10}}, textColor={0,0,0}, fillColor={215,215,215}, fillPattern=FillPattern.Solid, origin={50,0}, rotation=90, textString=&quot;connected in series / in parallel&quot; ) , Line( points={{60,60},{40,60}}, color={0,0,0}, pattern=LinePattern.Dot ) , Line(points={{70,-60},{40,-60}}, color={0,0,0}, pattern=LinePattern.Dot ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples">
+  <classes classType="model" className="Resistor" description="&quot;Resistor with simple thermal network&quot;" isLongClassSpecifier="true" classNameEnd="Resistor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="100" elementName="R"/>
+        <modifications expression="1e-3" elementName="alpha"/>
+        <modifications expression="293.15" elementName="T_ref"/>
+        <modifications isModificationOver="true" elementName="i">
+          <modifications expression="0" elementName="start"/>
+        </modifications>
+        <modifications expression="true" elementName="useHeatPort"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="-90" elementName="rotation"/>
+            <modifications expression="{-32,34}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="G" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-80,0},{-60,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SineVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="SineVoltage1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="220" elementName="V"/>
+        <modifications expression="1" elementName="f"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-70,40}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Components.ThermalConductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="thermalConductor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="50" elementName="G"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{4,34}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Thermal.HeatTransfer.Celsius.FixedTemperature" isOver="true">
+      <component_list isModificationOver="true" declarationName="fixedTemperature" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="20" elementName="T"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{52,24},{32,44}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="SineVoltage1.n" right="G.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,30},{-70,20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor.heatPort" right="thermalConductor.port_a">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-22,34},{-6,34}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="SineVoltage1.p" right="resistor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,50},{-32,50},{-32,44}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="G.p" right="resistor.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,20},{-32,20},{-32,24}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thermalConductor.port_b" right="fixedTemperature.port">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{14,34},{32,34}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This is a very simple circuit consisting of a voltage source and a resistor. The loss power in the resistor is transported to the environment via its heatPort.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="5" elementName="StopTime"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

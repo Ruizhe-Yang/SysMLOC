@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dut.control.moloc.mOloc.GeneralClause#isIsOuter <em>Is Outer</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.GeneralClause#isIsReplaceable <em>Is Replaceable</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.GeneralClause#getComponent_list <em>Component list</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.GeneralClause#isIsOver <em>Is Over</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getGeneralClause()
@@ -195,5 +196,27 @@ public interface GeneralClause extends Element, class_prefixes, class_specifier,
    * @generated
    */
   EList<Component_declaration> getComponent_list();
+
+  /**
+   * Returns the value of the '<em><b>Is Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Over</em>' attribute.
+   * @see #setIsOver(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getGeneralClause_IsOver()
+   * @model
+   * @generated
+   */
+  boolean isIsOver();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.GeneralClause#isIsOver <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Over</em>' attribute.
+   * @see #isIsOver()
+   * @generated
+   */
+  void setIsOver(boolean value);
 
 } // GeneralClause

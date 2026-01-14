@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.FunctionEquation;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.annotation_modification_part;
@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl#getFunction <em>Function</em>}</li>
  * </ul>
@@ -92,7 +93,27 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getComponent() <em>Component</em>}' attribute.
@@ -211,13 +232,38 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.FUNCTION_EQUATION__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.FUNCTION_EQUATION__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
   }
 
   /**
@@ -302,6 +348,8 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
         return isIsAnnotation();
       case MOlocPackage.FUNCTION_EQUATION__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
       case MOlocPackage.FUNCTION_EQUATION__COMPONENT:
         return getComponent();
       case MOlocPackage.FUNCTION_EQUATION__FUNCTION:
@@ -329,7 +377,10 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
         return;
       case MOlocPackage.FUNCTION_EQUATION__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
         return;
       case MOlocPackage.FUNCTION_EQUATION__COMPONENT:
         setComponent((String)newValue);
@@ -360,6 +411,9 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
       case MOlocPackage.FUNCTION_EQUATION__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.FUNCTION_EQUATION__COMPONENT:
         setComponent(COMPONENT_EDEFAULT);
         return;
@@ -386,6 +440,8 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.FUNCTION_EQUATION__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
       case MOlocPackage.FUNCTION_EQUATION__COMPONENT:
         return COMPONENT_EDEFAULT == null ? component != null : !COMPONENT_EDEFAULT.equals(component);
       case MOlocPackage.FUNCTION_EQUATION__FUNCTION:
@@ -416,6 +472,7 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
       {
         case MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.FUNCTION_EQUATION__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -451,6 +508,7 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.FUNCTION_EQUATION__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.FUNCTION_EQUATION__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -479,6 +537,8 @@ public class FunctionEquationImpl extends EquationImpl implements FunctionEquati
     result.append(description);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
     result.append(", component: ");
     result.append(component);
     result.append(", function: ");

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Utilities.ParameterRecords">
+  <classes classType="record" className="InductionMachineData" description="&quot;Common parameters for induction machines&quot;" isLongClassSpecifier="true" classNameEnd="InductionMachineData" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Record" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inertia" parameterType="parameter" isOver="true">
+      <component_list expression="0.29" declarationName="Jr" description="&quot;Rotor's moment of inertia&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inertia" parameterType="parameter" isOver="true">
+      <component_list expression="Jr" declarationName="Js" description="&quot;Stator's moment of inertia&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="2" declarationName="p" description="&quot;Number of pole pairs (Integer)&quot;">
+        <modifications expression="1" elementName="min"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="50" declarationName="fsNominal" description="&quot;Nominal frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="0.03" declarationName="Rs" description="&quot;Stator resistance per phase at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="293.15" declarationName="TsRef" description="&quot;Reference temperature of stator resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="alpha20s" description="&quot;Temperature coefficient of stator resistance at 20 degC&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="effectiveStatorTurns" description="&quot;Effective number of stator turns&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="Lssigma" declarationName="Lszero" description="&quot;Stator zero sequence inductance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="3*(1 - sqrt(1 - 0.0667))/ (2*pi*fsNominal)" declarationName="Lssigma" description="&quot;Stator stray inductance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Losses.FrictionParameters" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="frictionParameters" description="&quot;Friction loss parameter record&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="PRef"/>
+        <modifications expression="2*pi*fsNominal/p" elementName="wRef"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Losses&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Losses.CoreParameters" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="statorCoreParameters" description="&quot;Stator core loss parameter record; all parameters refer to stator side&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="0" elementName="PRef"/>
+        <modifications expression="100" elementName="VRef"/>
+        <modifications expression="2*pi*fsNominal" elementName="wRef"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Losses&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Losses.StrayLoadParameters" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="strayLoadParameters" description="&quot;Stray load losses&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="PRef"/>
+        <modifications expression="100" elementName="IRef"/>
+        <modifications expression="2*pi*fsNominal/p" elementName="wRef"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Losses&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;inductionMachineData&quot;" elementName="defaultComponentName"/>
+      <annotations expression="&quot;parameter&quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>Basic parameters of induction machines are predefined with default values.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

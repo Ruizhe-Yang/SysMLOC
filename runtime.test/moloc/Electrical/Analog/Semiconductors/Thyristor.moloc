@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Semiconductors">
+  <classes classType="model" className="Thyristor" description="&quot;Simple Thyristor Model&quot;" isLongClassSpecifier="true" classNameEnd="Thyristor" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="100" declarationName="VDRM" description="&quot;Forward breakthrough voltage&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="100" declarationName="VRRM" description="&quot;Reverse breakthrough voltage&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="0.1" declarationName="IDRM" description="&quot;Saturation current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="1.7" declarationName="VTM" description="&quot;Conducting voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="6e-3" declarationName="IH" description="&quot;Holding current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="25" declarationName="ITM" description="&quot;Conducting current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="0.7" declarationName="VGT" description="&quot;Gate trigger voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="5e-3" declarationName="IGT" description="&quot;Gate trigger current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="1e-6" declarationName="TON" description="&quot;Switch on time&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="15e-6" declarationName="TOFF" description="&quot;Switch off time&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="0.04" declarationName="Vt" description="&quot;Voltage equivalent of temperature (kT/qn)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0.74" declarationName="Nbv" description="&quot;Reverse Breakthrough emission coefficient&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list declarationName="iGK" description="&quot;Gate current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list declarationName="vGK" description="&quot;Voltage between gate and cathode&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list declarationName="vAK" description="&quot;Voltage between anode and cathode&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="vControl">
+        <modifications expression="0" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list declarationName="vContot"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list declarationName="vConmain"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isPublic="true" isOver="true">
+      <component_list declarationName="Anode" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="Cathode" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="Gate" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,90},{110,110}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{90,90},{110,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isProtected="true" isOver="true">
+      <component_list expression="5" declarationName="Von"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="1.5" declarationName="Voff"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="(VTM-0.7)/ITM" declarationName="Ron" description="&quot;Forward conducting mode resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="(VDRM^2)/VTM/IH" declarationName="Roff" description="&quot;Blocking mode resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="Anode.i+Gate.i+Cathode.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="vGK" right="Gate.v-Cathode.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="vAK" right="Anode.v-Cathode.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="iGK" right="Gate.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="vGK" right="smooth(0,(if vGK &lt; 0.65 then VGT/IGT*iGK else 0.65^2/VGT+iGK*(VGT-0.65)/IGT ) )"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="vContot" right="vConmain + smooth(0, if iGK &lt; 0.95 * IGT then 0 else if iGK &lt; 0.95*IGT + 1e-3 then 10000*(iGK-0.95*IGT)*vAK else 10* vAK)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="der(vControl)" right="(vContot - vControl) / (if (vContot - vControl) > 0 then 1.87*TON else 0.638*TOFF)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="Anode.i" right="smooth(1, if vAK &lt; -VRRM then -VRRM/Roff*exp(-(vAK+VRRM)/(Nbv*Vt)) else if vControl&lt;Voff then vAK/Roff else if vControl&lt;Von then vAK/(sqrt(Ron*Roff)*(Ron/Roff)^((3*((2*vControl-Von-Voff)/(2*(Von-Voff)))-4*((2*vControl-Von-Voff)/(2*(Von-Voff)))^3)/2)) else vAK/Ron )"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="vConmain" right="(if Anode.i>IH or vAK>VDRM then Von else 0)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="LossPower" right="Anode.i*Anode.v + Cathode.i*Cathode.v + Gate.i*Gate.v"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This is a simple thyristor model with three pins: Anode, Cathode and Gate. There are three operating modes:conducting, blocking and reverse breakthrough.&#xA;&lt;br>As long as the thyristor is in blocking mode it behaves like a linear resistance Roff=VDRM^2/(VTM*IH). But if the voltage between anode and cathode exceeds VDRM or a positive gate current flows for a sufficient time the mode changes to conducting mode. The model stays in conducting mode until the anode current falls below the holding current IH. There is no way to switch off the thyristor via the gate. If the voltage between anode and cathode is negative, the model represents a diode (parameters Vt, Nbv) with reverse breakthrough voltage VRRM.&lt;/p>&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Semiconductors/Thyristor.png\&quot;&#xA;     alt=\&quot;Thyristor.png\&quot;>&#xA;&lt;/p>&#xA;&lt;p>The dV/dt switch on is not taken into account in this model. The gate circuit is not influenced by the main circuit.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>May 12, 2009   &lt;/em>&#xA;       by Matthias Franke&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Polygon( points={{30,0},{-30,40},{-30,-40},{30,0}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{40,0}}, color={0,0,255}), Line(points={{40,0},{90,0}}, color={0,0,255}), Line(points={{30,40},{30,-40}}, color={0,0,255}), Line(points={{30,20},{100,90},{100,100}}, color={0,0,255} ) , Text( extent={{-150,-40},{150,-80}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

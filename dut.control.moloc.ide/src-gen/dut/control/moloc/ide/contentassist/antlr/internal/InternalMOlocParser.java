@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_UNSIGNED_NUMBER", "RULE_STRING", "RULE_TRUE_FALSE", "RULE_IDENT", "RULE_NON_DIGIT", "RULE_DIGIT", "RULE_Q_IDENT", "RULE_UNSIGNED_INTEGER", "RULE_S_CHAR", "RULE_S_ESCAPE", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_Q_CHAR", "':'", "'break'", "'<'", "'<='", "'>'", "'>='", "'=='", "'<>'", "'+'", "'-'", "'.+'", "'.-'", "'*'", "'/'", "'.*'", "'^'", "'.^'", "'end'", "'der'", "'initial'", "'pure'", "'NULLClassType'", "'class'", "'model'", "'record'", "'block'", "'connector'", "'type'", "'package'", "'function'", "'NULLDirection'", "'input'", "'output'", "'NULLRelationshipType'", "'flow'", "'stream'", "'NULLParameterType'", "'discrete'", "'parameter'", "'constant'", "';'", "'='", "'('", "')'", "','", "'.'", "'['", "']'", "':='", "'constrainedby'", "'import'", "'{'", "'}'", "'extends'", "'if'", "'external'", "'equation'", "'then'", "'elseif'", "'else'", "'for'", "'loop'", "'connect'", "'when'", "'elsewhen'", "'algorithm'", "'return'", "'while'", "'or'", "'and'", "'not'", "'in'", "'within'", "'final'", "'encapsulated'", "'partial'", "'expandable'", "'impure'", "'operator'", "'enumeration'", "'annotation'", "'redeclare'", "'each'", "'replaceable'", "'public'", "'protected'", "'inner'", "'outer'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_UNSIGNED_NUMBER", "RULE_STRING", "RULE_TRUE_FALSE", "RULE_IDENT", "RULE_NON_DIGIT", "RULE_DIGIT", "RULE_Q_IDENT", "RULE_UNSIGNED_INTEGER", "RULE_S_CHAR", "RULE_S_ESCAPE", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_Q_CHAR", "':'", "'break'", "'<'", "'<='", "'>'", "'>='", "'=='", "'<>'", "'+'", "'-'", "'.+'", "'.-'", "'*'", "'/'", "'.*'", "'^'", "'.^'", "'end'", "'der'", "'initial'", "'pure'", "'NULLClassType'", "'class'", "'model'", "'record'", "'block'", "'connector'", "'type'", "'package'", "'function'", "'NULLDirection'", "'input'", "'output'", "'NULLRelationshipType'", "'flow'", "'stream'", "'NULLParameterType'", "'discrete'", "'parameter'", "'constant'", "';'", "'('", "')'", "','", "'.'", "'['", "']'", "'='", "':='", "'constrainedby'", "'import'", "'{'", "'}'", "'extends'", "'if'", "'external'", "'equation'", "'then'", "'elseif'", "'else'", "'for'", "'loop'", "'connect'", "'when'", "'elsewhen'", "'algorithm'", "'return'", "'while'", "'or'", "'and'", "'not'", "'in'", "'within'", "'final'", "'encapsulated'", "'partial'", "'expandable'", "'impure'", "'operator'", "'enumeration'", "'annotation'", "'redeclare'", "'each'", "'replaceable'", "'public'", "'protected'", "'inner'", "'outer'"
     };
     public static final int T__50=50;
     public static final int RULE_UNSIGNED_NUMBER=4;
@@ -138,7 +138,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
         }
         public InternalMOlocParser(TokenStream input, RecognizerSharedState state) {
             super(input, state);
-            this.state.ruleMemo = new HashMap[1418+1];
+            this.state.ruleMemo = new HashMap[1429+1];
              
              
         }
@@ -960,7 +960,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==RULE_IDENT||(LA2_0>=37 && LA2_0<=57)||LA2_0==63||LA2_0==68||LA2_0==71||(LA2_0>=73 && LA2_0<=74)||LA2_0==83||(LA2_0>=91 && LA2_0<=96)||(LA2_0>=98 && LA2_0<=99)||(LA2_0>=101 && LA2_0<=105)) ) {
+                if ( (LA2_0==RULE_IDENT||(LA2_0>=37 && LA2_0<=57)||LA2_0==62||LA2_0==68||LA2_0==71||(LA2_0>=73 && LA2_0<=74)||LA2_0==83||(LA2_0>=91 && LA2_0<=96)||(LA2_0>=98 && LA2_0<=99)||(LA2_0>=101 && LA2_0<=105)) ) {
                     alt2=1;
                 }
 
@@ -1443,25 +1443,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleModificationElement"
 
 
-    // $ANTLR start "entryRuleAnnotationModification"
-    // InternalMOloc.g:426:1: entryRuleAnnotationModification : ruleAnnotationModification EOF ;
-    public final void entryRuleAnnotationModification() throws RecognitionException {
-        int entryRuleAnnotationModification_StartIndex = input.index();
+    // $ANTLR start "entryRuleAnnotationModificationElement"
+    // InternalMOloc.g:426:1: entryRuleAnnotationModificationElement : ruleAnnotationModificationElement EOF ;
+    public final void entryRuleAnnotationModificationElement() throws RecognitionException {
+        int entryRuleAnnotationModificationElement_StartIndex = input.index();
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 26) ) { return ; }
-            // InternalMOloc.g:427:1: ( ruleAnnotationModification EOF )
-            // InternalMOloc.g:428:1: ruleAnnotationModification EOF
+            // InternalMOloc.g:427:1: ( ruleAnnotationModificationElement EOF )
+            // InternalMOloc.g:428:1: ruleAnnotationModificationElement EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationRule()); 
+               before(grammarAccess.getAnnotationModificationElementRule()); 
             }
             pushFollow(FOLLOW_1);
-            ruleAnnotationModification();
+            ruleAnnotationModificationElement();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationRule()); 
+               after(grammarAccess.getAnnotationModificationElementRule()); 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return ;
 
@@ -1473,36 +1473,36 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 26, entryRuleAnnotationModification_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 26, entryRuleAnnotationModificationElement_StartIndex); }
         }
         return ;
     }
-    // $ANTLR end "entryRuleAnnotationModification"
+    // $ANTLR end "entryRuleAnnotationModificationElement"
 
 
-    // $ANTLR start "ruleAnnotationModification"
-    // InternalMOloc.g:435:1: ruleAnnotationModification : ( ( rule__AnnotationModification__Group__0 ) ) ;
-    public final void ruleAnnotationModification() throws RecognitionException {
-        int ruleAnnotationModification_StartIndex = input.index();
+    // $ANTLR start "ruleAnnotationModificationElement"
+    // InternalMOloc.g:435:1: ruleAnnotationModificationElement : ( ( rule__AnnotationModificationElement__Group__0 ) ) ;
+    public final void ruleAnnotationModificationElement() throws RecognitionException {
+        int ruleAnnotationModificationElement_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 27) ) { return ; }
-            // InternalMOloc.g:439:2: ( ( ( rule__AnnotationModification__Group__0 ) ) )
-            // InternalMOloc.g:440:2: ( ( rule__AnnotationModification__Group__0 ) )
+            // InternalMOloc.g:439:2: ( ( ( rule__AnnotationModificationElement__Group__0 ) ) )
+            // InternalMOloc.g:440:2: ( ( rule__AnnotationModificationElement__Group__0 ) )
             {
-            // InternalMOloc.g:440:2: ( ( rule__AnnotationModification__Group__0 ) )
-            // InternalMOloc.g:441:3: ( rule__AnnotationModification__Group__0 )
+            // InternalMOloc.g:440:2: ( ( rule__AnnotationModificationElement__Group__0 ) )
+            // InternalMOloc.g:441:3: ( rule__AnnotationModificationElement__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getGroup()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getGroup()); 
             }
-            // InternalMOloc.g:442:3: ( rule__AnnotationModification__Group__0 )
-            // InternalMOloc.g:442:4: rule__AnnotationModification__Group__0
+            // InternalMOloc.g:442:3: ( rule__AnnotationModificationElement__Group__0 )
+            // InternalMOloc.g:442:4: rule__AnnotationModificationElement__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__AnnotationModification__Group__0();
+            rule__AnnotationModificationElement__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -1510,7 +1510,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getGroup()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getGroup()); 
             }
 
             }
@@ -1524,14 +1524,14 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 27, ruleAnnotationModification_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 27, ruleAnnotationModificationElement_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "ruleAnnotationModification"
+    // $ANTLR end "ruleAnnotationModificationElement"
 
 
     // $ANTLR start "ruleelement_modification"
@@ -7363,14 +7363,14 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             else if ( (LA4_0==RULE_IDENT) ) {
                 int LA4_2 = input.LA(2);
 
-                if ( (LA4_2==59) ) {
+                if ( (LA4_2==65) ) {
                     int LA4_3 = input.LA(3);
 
-                    if ( (LA4_3==36) ) {
-                        alt4=3;
-                    }
-                    else if ( (LA4_3==RULE_IDENT||(LA4_3>=48 && LA4_3<=50)||LA4_3==63||LA4_3==97) ) {
+                    if ( (LA4_3==RULE_IDENT||(LA4_3>=48 && LA4_3<=50)||LA4_3==62||LA4_3==97) ) {
                         alt4=2;
+                    }
+                    else if ( (LA4_3==36) ) {
+                        alt4=3;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return ;}
@@ -7380,7 +7380,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                         throw nvae;
                     }
                 }
-                else if ( (LA4_2==RULE_STRING||LA4_2==RULE_IDENT||LA4_2==35||(LA4_2>=37 && LA4_2<=57)||LA4_2==60||LA4_2==63||LA4_2==68||LA4_2==71||(LA4_2>=73 && LA4_2<=74)||LA4_2==83||(LA4_2>=91 && LA4_2<=96)||(LA4_2>=98 && LA4_2<=99)||(LA4_2>=101 && LA4_2<=105)) ) {
+                else if ( (LA4_2==RULE_STRING||LA4_2==RULE_IDENT||LA4_2==35||(LA4_2>=37 && LA4_2<=57)||LA4_2==59||LA4_2==62||LA4_2==68||LA4_2==71||(LA4_2>=73 && LA4_2<=74)||LA4_2==83||(LA4_2>=91 && LA4_2<=96)||(LA4_2>=98 && LA4_2<=99)||(LA4_2>=101 && LA4_2<=105)) ) {
                     alt4=1;
                 }
                 else {
@@ -7499,7 +7499,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==RULE_IDENT||(LA5_0>=48 && LA5_0<=50)||LA5_0==63) ) {
+            if ( (LA5_0==RULE_IDENT||(LA5_0>=48 && LA5_0<=50)||LA5_0==62) ) {
                 alt5=1;
             }
             else if ( (LA5_0==97) ) {
@@ -7602,7 +7602,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_IDENT||LA7_0==61) ) {
+            if ( (LA7_0==RULE_IDENT||LA7_0==60) ) {
                 alt7=1;
             }
             else if ( (LA7_0==18) ) {
@@ -7803,10 +7803,10 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ModificationElement__Alternatives_4"
 
 
-    // $ANTLR start "rule__AnnotationModification__Alternatives_4"
-    // InternalMOloc.g:2159:1: rule__AnnotationModification__Alternatives_4 : ( ( ruleshort_class_definition ) | ( rulecomponent_clause1 ) | ( ruleelement_modification ) );
-    public final void rule__AnnotationModification__Alternatives_4() throws RecognitionException {
-        int rule__AnnotationModification__Alternatives_4_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Alternatives_4"
+    // InternalMOloc.g:2159:1: rule__AnnotationModificationElement__Alternatives_4 : ( ( ruleshort_class_definition ) | ( rulecomponent_clause1 ) | ( ruleelement_modification ) );
+    public final void rule__AnnotationModificationElement__Alternatives_4() throws RecognitionException {
+        int rule__AnnotationModificationElement__Alternatives_4_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
@@ -7823,7 +7823,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                     // InternalMOloc.g:2165:3: ruleshort_class_definition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getAnnotationModificationAccess().getShort_class_definitionParserRuleCall_4_0()); 
+                       before(grammarAccess.getAnnotationModificationElementAccess().getShort_class_definitionParserRuleCall_4_0()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleshort_class_definition();
@@ -7831,7 +7831,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getAnnotationModificationAccess().getShort_class_definitionParserRuleCall_4_0()); 
+                       after(grammarAccess.getAnnotationModificationElementAccess().getShort_class_definitionParserRuleCall_4_0()); 
                     }
 
                     }
@@ -7846,7 +7846,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                     // InternalMOloc.g:2171:3: rulecomponent_clause1
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getAnnotationModificationAccess().getComponent_clause1ParserRuleCall_4_1()); 
+                       before(grammarAccess.getAnnotationModificationElementAccess().getComponent_clause1ParserRuleCall_4_1()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulecomponent_clause1();
@@ -7854,7 +7854,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getAnnotationModificationAccess().getComponent_clause1ParserRuleCall_4_1()); 
+                       after(grammarAccess.getAnnotationModificationElementAccess().getComponent_clause1ParserRuleCall_4_1()); 
                     }
 
                     }
@@ -7869,7 +7869,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                     // InternalMOloc.g:2177:3: ruleelement_modification
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getAnnotationModificationAccess().getElement_modificationParserRuleCall_4_2()); 
+                       before(grammarAccess.getAnnotationModificationElementAccess().getElement_modificationParserRuleCall_4_2()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleelement_modification();
@@ -7877,7 +7877,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getAnnotationModificationAccess().getElement_modificationParserRuleCall_4_2()); 
+                       after(grammarAccess.getAnnotationModificationElementAccess().getElement_modificationParserRuleCall_4_2()); 
                     }
 
                     }
@@ -7893,14 +7893,14 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 156, rule__AnnotationModification__Alternatives_4_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 156, rule__AnnotationModificationElement__Alternatives_4_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Alternatives_4"
+    // $ANTLR end "rule__AnnotationModificationElement__Alternatives_4"
 
 
     // $ANTLR start "rule__Subscript__Alternatives"
@@ -7919,7 +7919,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( (LA10_0==18) ) {
                 alt10=1;
             }
-            else if ( ((LA10_0>=RULE_UNSIGNED_NUMBER && LA10_0<=RULE_IDENT)||(LA10_0>=26 && LA10_0<=29)||(LA10_0>=35 && LA10_0<=38)||LA10_0==60||(LA10_0>=63 && LA10_0<=64)||LA10_0==69||LA10_0==72||LA10_0==88) ) {
+            else if ( ((LA10_0>=RULE_UNSIGNED_NUMBER && LA10_0<=RULE_IDENT)||(LA10_0>=26 && LA10_0<=29)||(LA10_0>=35 && LA10_0<=38)||LA10_0==59||(LA10_0>=62 && LA10_0<=63)||LA10_0==69||LA10_0==72||LA10_0==88) ) {
                 alt10=2;
             }
             else {
@@ -8002,12 +8002,12 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             // InternalMOloc.g:2211:1: ( ( ( rule__Modification__Group_0__0 ) ) | ( ( rule__Modification__Group_1__0 ) ) | ( ( rule__Modification__Group_2__0 ) ) )
             int alt11=3;
             switch ( input.LA(1) ) {
-            case 60:
+            case 59:
                 {
                 alt11=1;
                 }
                 break;
-            case 59:
+            case 65:
                 {
                 alt11=2;
                 }
@@ -8144,7 +8144,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( ((LA12_0>=RULE_UNSIGNED_NUMBER && LA12_0<=RULE_IDENT)||(LA12_0>=26 && LA12_0<=29)||(LA12_0>=35 && LA12_0<=38)||LA12_0==60||(LA12_0>=63 && LA12_0<=64)||LA12_0==69||LA12_0==72||LA12_0==88) ) {
+            if ( ((LA12_0>=RULE_UNSIGNED_NUMBER && LA12_0<=RULE_IDENT)||(LA12_0>=26 && LA12_0<=29)||(LA12_0>=35 && LA12_0<=38)||LA12_0==59||(LA12_0>=62 && LA12_0<=63)||LA12_0==69||LA12_0==72||LA12_0==88) ) {
                 alt12=1;
             }
             else if ( (LA12_0==19) ) {
@@ -8426,11 +8426,11 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( (LA14_0==RULE_IDENT) ) {
                 int LA14_1 = input.LA(2);
 
-                if ( (LA14_1==RULE_STRING||LA14_1==32||LA14_1==58||LA14_1==63||LA14_1==98) ) {
-                    alt14=2;
-                }
-                else if ( (LA14_1==59) ) {
+                if ( (LA14_1==65) ) {
                     alt14=1;
+                }
+                else if ( (LA14_1==RULE_STRING||LA14_1==32||LA14_1==58||LA14_1==62||LA14_1==98) ) {
+                    alt14=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -8540,7 +8540,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( (LA15_0==32) ) {
                 alt15=1;
             }
-            else if ( (LA15_0==63) ) {
+            else if ( (LA15_0==62) ) {
                 alt15=2;
             }
             else {
@@ -8743,7 +8743,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==RULE_IDENT||(LA17_0>=38 && LA17_0<=57)||LA17_0==63||(LA17_0>=91 && LA17_0<=96)||(LA17_0>=99 && LA17_0<=101)) ) {
+            if ( (LA17_0==RULE_IDENT||(LA17_0>=38 && LA17_0<=57)||LA17_0==62||(LA17_0>=91 && LA17_0<=96)||(LA17_0>=99 && LA17_0<=101)) ) {
                 alt17=1;
             }
             else if ( (LA17_0==19) ) {
@@ -8846,7 +8846,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==RULE_IDENT||(LA18_0>=38 && LA18_0<=57)||LA18_0==63||(LA18_0>=91 && LA18_0<=96)||(LA18_0>=99 && LA18_0<=101)) ) {
+            if ( (LA18_0==RULE_IDENT||(LA18_0>=38 && LA18_0<=57)||LA18_0==62||(LA18_0>=91 && LA18_0<=96)||(LA18_0>=99 && LA18_0<=101)) ) {
                 alt18=1;
             }
             else if ( (LA18_0==19) ) {
@@ -9055,7 +9055,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( ((LA20_0>=38 && LA20_0<=47)||(LA20_0>=92 && LA20_0<=96)) ) {
                 alt20=1;
             }
-            else if ( (LA20_0==RULE_IDENT||(LA20_0>=48 && LA20_0<=57)||LA20_0==63) ) {
+            else if ( (LA20_0==RULE_IDENT||(LA20_0>=48 && LA20_0<=57)||LA20_0==62) ) {
                 alt20=2;
             }
             else {
@@ -9324,8 +9324,8 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt22=7;
             switch ( input.LA(1) ) {
             case RULE_IDENT:
-            case 60:
-            case 63:
+            case 59:
+            case 62:
                 {
                 alt22=1;
                 }
@@ -9561,10 +9561,10 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt23=2;
             int LA23_0 = input.LA(1);
 
-            if ( (LA23_0==RULE_IDENT||LA23_0==63) ) {
+            if ( (LA23_0==RULE_IDENT||LA23_0==62) ) {
                 alt23=1;
             }
-            else if ( (LA23_0==60) ) {
+            else if ( (LA23_0==59) ) {
                 alt23=2;
             }
             else {
@@ -9667,7 +9667,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( (LA24_0==66) ) {
                 alt24=1;
             }
-            else if ( (LA24_0==60) ) {
+            else if ( (LA24_0==59) ) {
                 alt24=2;
             }
             else {
@@ -9767,7 +9767,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt25=2;
             int LA25_0 = input.LA(1);
 
-            if ( ((LA25_0>=RULE_UNSIGNED_NUMBER && LA25_0<=RULE_IDENT)||(LA25_0>=26 && LA25_0<=29)||(LA25_0>=35 && LA25_0<=38)||LA25_0==60||(LA25_0>=63 && LA25_0<=64)||LA25_0==69||LA25_0==88) ) {
+            if ( ((LA25_0>=RULE_UNSIGNED_NUMBER && LA25_0<=RULE_IDENT)||(LA25_0>=26 && LA25_0<=29)||(LA25_0>=35 && LA25_0<=38)||LA25_0==59||(LA25_0>=62 && LA25_0<=63)||LA25_0==69||LA25_0==88) ) {
                 alt25=1;
             }
             else if ( (LA25_0==72) ) {
@@ -10781,7 +10781,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt32=4;
             switch ( input.LA(1) ) {
             case RULE_IDENT:
-            case 63:
+            case 62:
                 {
                 alt32=1;
                 }
@@ -10921,7 +10921,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt33=2;
             int LA33_0 = input.LA(1);
 
-            if ( (LA33_0==62) ) {
+            if ( (LA33_0==61) ) {
                 alt33=1;
             }
             else if ( (LA33_0==78) ) {
@@ -11024,7 +11024,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt34=2;
             int LA34_0 = input.LA(1);
 
-            if ( (LA34_0==RULE_IDENT||LA34_0==63) ) {
+            if ( (LA34_0==RULE_IDENT||LA34_0==62) ) {
                 alt34=1;
             }
             else if ( (LA34_0==36) ) {
@@ -11131,9 +11131,9 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             case 36:
             case 37:
             case 38:
-            case 60:
+            case 59:
+            case 62:
             case 63:
-            case 64:
             case 69:
             case 72:
             case 88:
@@ -11145,11 +11145,11 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 {
                 int LA35_2 = input.LA(2);
 
-                if ( (LA35_2==EOF||LA35_2==18||(LA35_2>=20 && LA35_2<=34)||(LA35_2>=60 && LA35_2<=64)||LA35_2==78||(LA35_2>=86 && LA35_2<=87)) ) {
-                    alt35=1;
-                }
-                else if ( (LA35_2==59) ) {
+                if ( (LA35_2==65) ) {
                     alt35=3;
+                }
+                else if ( (LA35_2==EOF||LA35_2==18||(LA35_2>=20 && LA35_2<=34)||(LA35_2>=59 && LA35_2<=63)||LA35_2==78||(LA35_2>=86 && LA35_2<=87)) ) {
+                    alt35=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -11286,7 +11286,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt36=2;
             int LA36_0 = input.LA(1);
 
-            if ( (LA36_0==62) ) {
+            if ( (LA36_0==61) ) {
                 alt36=1;
             }
             else if ( (LA36_0==78) ) {
@@ -11472,7 +11472,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt38=2;
             int LA38_0 = input.LA(1);
 
-            if ( ((LA38_0>=RULE_UNSIGNED_NUMBER && LA38_0<=RULE_IDENT)||(LA38_0>=26 && LA38_0<=29)||(LA38_0>=35 && LA38_0<=38)||LA38_0==60||(LA38_0>=63 && LA38_0<=64)||LA38_0==69||LA38_0==72||LA38_0==88) ) {
+            if ( ((LA38_0>=RULE_UNSIGNED_NUMBER && LA38_0<=RULE_IDENT)||(LA38_0>=26 && LA38_0<=29)||(LA38_0>=35 && LA38_0<=38)||LA38_0==59||(LA38_0>=62 && LA38_0<=63)||LA38_0==69||LA38_0==72||LA38_0==88) ) {
                 alt38=1;
             }
             else if ( (LA38_0==47) ) {
@@ -13081,7 +13081,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class_definition__Group__3__Impl"
-    // InternalMOloc.g:3382:1: rule__Class_definition__Group__3__Impl : ( ';' ) ;
+    // InternalMOloc.g:3382:1: rule__Class_definition__Group__3__Impl : ( ( rule__Class_definition__IsOverAssignment_3 ) ) ;
     public final void rule__Class_definition__Group__3__Impl() throws RecognitionException {
         int rule__Class_definition__Group__3__Impl_StartIndex = input.index();
 
@@ -13089,18 +13089,28 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 207) ) { return ; }
-            // InternalMOloc.g:3386:1: ( ( ';' ) )
-            // InternalMOloc.g:3387:1: ( ';' )
+            // InternalMOloc.g:3386:1: ( ( ( rule__Class_definition__IsOverAssignment_3 ) ) )
+            // InternalMOloc.g:3387:1: ( ( rule__Class_definition__IsOverAssignment_3 ) )
             {
-            // InternalMOloc.g:3387:1: ( ';' )
-            // InternalMOloc.g:3388:2: ';'
+            // InternalMOloc.g:3387:1: ( ( rule__Class_definition__IsOverAssignment_3 ) )
+            // InternalMOloc.g:3388:2: ( rule__Class_definition__IsOverAssignment_3 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getClass_definitionAccess().getSemicolonKeyword_3()); 
+               before(grammarAccess.getClass_definitionAccess().getIsOverAssignment_3()); 
             }
-            match(input,58,FOLLOW_2); if (state.failed) return ;
+            // InternalMOloc.g:3389:2: ( rule__Class_definition__IsOverAssignment_3 )
+            // InternalMOloc.g:3389:3: rule__Class_definition__IsOverAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Class_definition__IsOverAssignment_3();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getClass_definitionAccess().getSemicolonKeyword_3()); 
+               after(grammarAccess.getClass_definitionAccess().getIsOverAssignment_3()); 
             }
 
             }
@@ -14002,7 +14012,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt52=2;
             int LA52_0 = input.LA(1);
 
-            if ( (LA52_0==60) ) {
+            if ( (LA52_0==59) ) {
                 alt52=1;
             }
             switch (alt52) {
@@ -14265,7 +14275,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Long_class_specifier__Group__5__Impl"
-    // InternalMOloc.g:3707:1: rule__Long_class_specifier__Group__5__Impl : ( 'end' ) ;
+    // InternalMOloc.g:3707:1: rule__Long_class_specifier__Group__5__Impl : ( ( rule__Long_class_specifier__IsLongClassSpecifierAssignment_5 ) ) ;
     public final void rule__Long_class_specifier__Group__5__Impl() throws RecognitionException {
         int rule__Long_class_specifier__Group__5__Impl_StartIndex = input.index();
 
@@ -14273,18 +14283,28 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 231) ) { return ; }
-            // InternalMOloc.g:3711:1: ( ( 'end' ) )
-            // InternalMOloc.g:3712:1: ( 'end' )
+            // InternalMOloc.g:3711:1: ( ( ( rule__Long_class_specifier__IsLongClassSpecifierAssignment_5 ) ) )
+            // InternalMOloc.g:3712:1: ( ( rule__Long_class_specifier__IsLongClassSpecifierAssignment_5 ) )
             {
-            // InternalMOloc.g:3712:1: ( 'end' )
-            // InternalMOloc.g:3713:2: 'end'
+            // InternalMOloc.g:3712:1: ( ( rule__Long_class_specifier__IsLongClassSpecifierAssignment_5 ) )
+            // InternalMOloc.g:3713:2: ( rule__Long_class_specifier__IsLongClassSpecifierAssignment_5 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLong_class_specifierAccess().getEndKeyword_5()); 
+               before(grammarAccess.getLong_class_specifierAccess().getIsLongClassSpecifierAssignment_5()); 
             }
-            match(input,35,FOLLOW_2); if (state.failed) return ;
+            // InternalMOloc.g:3714:2: ( rule__Long_class_specifier__IsLongClassSpecifierAssignment_5 )
+            // InternalMOloc.g:3714:3: rule__Long_class_specifier__IsLongClassSpecifierAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__Long_class_specifier__IsLongClassSpecifierAssignment_5();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLong_class_specifierAccess().getEndKeyword_5()); 
+               after(grammarAccess.getLong_class_specifierAccess().getIsLongClassSpecifierAssignment_5()); 
             }
 
             }
@@ -14529,7 +14549,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Short_class_specifier__Group__1__Impl"
-    // InternalMOloc.g:3788:1: rule__Short_class_specifier__Group__1__Impl : ( '=' ) ;
+    // InternalMOloc.g:3788:1: rule__Short_class_specifier__Group__1__Impl : ( ( rule__Short_class_specifier__IsShortClassSpecifierAssignment_1 ) ) ;
     public final void rule__Short_class_specifier__Group__1__Impl() throws RecognitionException {
         int rule__Short_class_specifier__Group__1__Impl_StartIndex = input.index();
 
@@ -14537,18 +14557,28 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 237) ) { return ; }
-            // InternalMOloc.g:3792:1: ( ( '=' ) )
-            // InternalMOloc.g:3793:1: ( '=' )
+            // InternalMOloc.g:3792:1: ( ( ( rule__Short_class_specifier__IsShortClassSpecifierAssignment_1 ) ) )
+            // InternalMOloc.g:3793:1: ( ( rule__Short_class_specifier__IsShortClassSpecifierAssignment_1 ) )
             {
-            // InternalMOloc.g:3793:1: ( '=' )
-            // InternalMOloc.g:3794:2: '='
+            // InternalMOloc.g:3793:1: ( ( rule__Short_class_specifier__IsShortClassSpecifierAssignment_1 ) )
+            // InternalMOloc.g:3794:2: ( rule__Short_class_specifier__IsShortClassSpecifierAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getShort_class_specifierAccess().getEqualsSignKeyword_1()); 
+               before(grammarAccess.getShort_class_specifierAccess().getIsShortClassSpecifierAssignment_1()); 
             }
-            match(input,59,FOLLOW_2); if (state.failed) return ;
+            // InternalMOloc.g:3795:2: ( rule__Short_class_specifier__IsShortClassSpecifierAssignment_1 )
+            // InternalMOloc.g:3795:3: rule__Short_class_specifier__IsShortClassSpecifierAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Short_class_specifier__IsShortClassSpecifierAssignment_1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getShort_class_specifierAccess().getEqualsSignKeyword_1()); 
+               after(grammarAccess.getShort_class_specifierAccess().getIsShortClassSpecifierAssignment_1()); 
             }
 
             }
@@ -15009,7 +15039,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt54=2;
             int LA54_0 = input.LA(1);
 
-            if ( (LA54_0==64) ) {
+            if ( (LA54_0==63) ) {
                 alt54=1;
             }
             switch (alt54) {
@@ -15110,7 +15140,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt55=2;
             int LA55_0 = input.LA(1);
 
-            if ( (LA55_0==60) ) {
+            if ( (LA55_0==59) ) {
                 alt55=1;
             }
             switch (alt55) {
@@ -15307,7 +15337,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getShort_class_specifierAccess().getLeftParenthesisKeyword_2_1_1()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getShort_class_specifierAccess().getLeftParenthesisKeyword_2_1_1()); 
             }
@@ -15482,7 +15512,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getShort_class_specifierAccess().getRightParenthesisKeyword_2_1_3()); 
             }
-            match(input,61,FOLLOW_2); if (state.failed) return ;
+            match(input,60,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getShort_class_specifierAccess().getRightParenthesisKeyword_2_1_3()); 
             }
@@ -15639,7 +15669,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Der_class_specifier__Group__1__Impl"
-    // InternalMOloc.g:4112:1: rule__Der_class_specifier__Group__1__Impl : ( '=' ) ;
+    // InternalMOloc.g:4112:1: rule__Der_class_specifier__Group__1__Impl : ( ( rule__Der_class_specifier__IsDerClassSpecifierAssignment_1 ) ) ;
     public final void rule__Der_class_specifier__Group__1__Impl() throws RecognitionException {
         int rule__Der_class_specifier__Group__1__Impl_StartIndex = input.index();
 
@@ -15647,18 +15677,28 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 261) ) { return ; }
-            // InternalMOloc.g:4116:1: ( ( '=' ) )
-            // InternalMOloc.g:4117:1: ( '=' )
+            // InternalMOloc.g:4116:1: ( ( ( rule__Der_class_specifier__IsDerClassSpecifierAssignment_1 ) ) )
+            // InternalMOloc.g:4117:1: ( ( rule__Der_class_specifier__IsDerClassSpecifierAssignment_1 ) )
             {
-            // InternalMOloc.g:4117:1: ( '=' )
-            // InternalMOloc.g:4118:2: '='
+            // InternalMOloc.g:4117:1: ( ( rule__Der_class_specifier__IsDerClassSpecifierAssignment_1 ) )
+            // InternalMOloc.g:4118:2: ( rule__Der_class_specifier__IsDerClassSpecifierAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getDer_class_specifierAccess().getEqualsSignKeyword_1()); 
+               before(grammarAccess.getDer_class_specifierAccess().getIsDerClassSpecifierAssignment_1()); 
             }
-            match(input,59,FOLLOW_2); if (state.failed) return ;
+            // InternalMOloc.g:4119:2: ( rule__Der_class_specifier__IsDerClassSpecifierAssignment_1 )
+            // InternalMOloc.g:4119:3: rule__Der_class_specifier__IsDerClassSpecifierAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Der_class_specifier__IsDerClassSpecifierAssignment_1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getDer_class_specifierAccess().getEqualsSignKeyword_1()); 
+               after(grammarAccess.getDer_class_specifierAccess().getIsDerClassSpecifierAssignment_1()); 
             }
 
             }
@@ -15836,7 +15876,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDer_class_specifierAccess().getLeftParenthesisKeyword_3()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getDer_class_specifierAccess().getLeftParenthesisKeyword_3()); 
             }
@@ -16010,7 +16050,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDer_class_specifierAccess().getCommaKeyword_5()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getDer_class_specifierAccess().getCommaKeyword_5()); 
             }
@@ -16196,7 +16236,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt56=2;
                 int LA56_0 = input.LA(1);
 
-                if ( (LA56_0==62) ) {
+                if ( (LA56_0==61) ) {
                     alt56=1;
                 }
 
@@ -16303,7 +16343,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDer_class_specifierAccess().getRightParenthesisKeyword_8()); 
             }
-            match(input,61,FOLLOW_2); if (state.failed) return ;
+            match(input,60,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getDer_class_specifierAccess().getRightParenthesisKeyword_8()); 
             }
@@ -16472,7 +16512,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDer_class_specifierAccess().getCommaKeyword_7_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getDer_class_specifierAccess().getCommaKeyword_7_0()); 
             }
@@ -16647,7 +16687,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_modificationAccess().getLeftParenthesisKeyword_0()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getClass_modificationAccess().getLeftParenthesisKeyword_0()); 
             }
@@ -16833,7 +16873,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt57=2;
                 int LA57_0 = input.LA(1);
 
-                if ( (LA57_0==62) ) {
+                if ( (LA57_0==61) ) {
                     alt57=1;
                 }
 
@@ -16918,7 +16958,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class_modification__Group__3__Impl"
-    // InternalMOloc.g:4489:1: rule__Class_modification__Group__3__Impl : ( ')' ) ;
+    // InternalMOloc.g:4489:1: rule__Class_modification__Group__3__Impl : ( ( rule__Class_modification__IsModificationOverAssignment_3 ) ) ;
     public final void rule__Class_modification__Group__3__Impl() throws RecognitionException {
         int rule__Class_modification__Group__3__Impl_StartIndex = input.index();
 
@@ -16926,18 +16966,28 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 289) ) { return ; }
-            // InternalMOloc.g:4493:1: ( ( ')' ) )
-            // InternalMOloc.g:4494:1: ( ')' )
+            // InternalMOloc.g:4493:1: ( ( ( rule__Class_modification__IsModificationOverAssignment_3 ) ) )
+            // InternalMOloc.g:4494:1: ( ( rule__Class_modification__IsModificationOverAssignment_3 ) )
             {
-            // InternalMOloc.g:4494:1: ( ')' )
-            // InternalMOloc.g:4495:2: ')'
+            // InternalMOloc.g:4494:1: ( ( rule__Class_modification__IsModificationOverAssignment_3 ) )
+            // InternalMOloc.g:4495:2: ( rule__Class_modification__IsModificationOverAssignment_3 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getClass_modificationAccess().getRightParenthesisKeyword_3()); 
+               before(grammarAccess.getClass_modificationAccess().getIsModificationOverAssignment_3()); 
             }
-            match(input,61,FOLLOW_2); if (state.failed) return ;
+            // InternalMOloc.g:4496:2: ( rule__Class_modification__IsModificationOverAssignment_3 )
+            // InternalMOloc.g:4496:3: rule__Class_modification__IsModificationOverAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Class_modification__IsModificationOverAssignment_3();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getClass_modificationAccess().getRightParenthesisKeyword_3()); 
+               after(grammarAccess.getClass_modificationAccess().getIsModificationOverAssignment_3()); 
             }
 
             }
@@ -17020,7 +17070,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_modificationAccess().getCommaKeyword_2_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getClass_modificationAccess().getCommaKeyword_2_0()); 
             }
@@ -17290,7 +17340,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAnnotation_modification_partAccess().getLeftParenthesisKeyword_1()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAnnotation_modification_partAccess().getLeftParenthesisKeyword_1()); 
             }
@@ -17476,7 +17526,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt58=2;
                 int LA58_0 = input.LA(1);
 
-                if ( (LA58_0==62) ) {
+                if ( (LA58_0==61) ) {
                     alt58=1;
                 }
 
@@ -17561,7 +17611,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Annotation_modification_part__Group__4__Impl"
-    // InternalMOloc.g:4678:1: rule__Annotation_modification_part__Group__4__Impl : ( ')' ) ;
+    // InternalMOloc.g:4678:1: rule__Annotation_modification_part__Group__4__Impl : ( ( rule__Annotation_modification_part__IsAnnotationOverAssignment_4 ) ) ;
     public final void rule__Annotation_modification_part__Group__4__Impl() throws RecognitionException {
         int rule__Annotation_modification_part__Group__4__Impl_StartIndex = input.index();
 
@@ -17569,18 +17619,28 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 303) ) { return ; }
-            // InternalMOloc.g:4682:1: ( ( ')' ) )
-            // InternalMOloc.g:4683:1: ( ')' )
+            // InternalMOloc.g:4682:1: ( ( ( rule__Annotation_modification_part__IsAnnotationOverAssignment_4 ) ) )
+            // InternalMOloc.g:4683:1: ( ( rule__Annotation_modification_part__IsAnnotationOverAssignment_4 ) )
             {
-            // InternalMOloc.g:4683:1: ( ')' )
-            // InternalMOloc.g:4684:2: ')'
+            // InternalMOloc.g:4683:1: ( ( rule__Annotation_modification_part__IsAnnotationOverAssignment_4 ) )
+            // InternalMOloc.g:4684:2: ( rule__Annotation_modification_part__IsAnnotationOverAssignment_4 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotation_modification_partAccess().getRightParenthesisKeyword_4()); 
+               before(grammarAccess.getAnnotation_modification_partAccess().getIsAnnotationOverAssignment_4()); 
             }
-            match(input,61,FOLLOW_2); if (state.failed) return ;
+            // InternalMOloc.g:4685:2: ( rule__Annotation_modification_part__IsAnnotationOverAssignment_4 )
+            // InternalMOloc.g:4685:3: rule__Annotation_modification_part__IsAnnotationOverAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__Annotation_modification_part__IsAnnotationOverAssignment_4();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotation_modification_partAccess().getRightParenthesisKeyword_4()); 
+               after(grammarAccess.getAnnotation_modification_partAccess().getIsAnnotationOverAssignment_4()); 
             }
 
             }
@@ -17663,7 +17723,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAnnotation_modification_partAccess().getCommaKeyword_3_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAnnotation_modification_partAccess().getCommaKeyword_3_0()); 
             }
@@ -18200,14 +18260,14 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt60=2;
             int LA60_0 = input.LA(1);
 
-            if ( (LA60_0==63) ) {
+            if ( (LA60_0==62) ) {
                 alt60=1;
             }
             switch (alt60) {
                 case 1 :
                     // InternalMOloc.g:4875:3: '.'
                     {
-                    match(input,63,FOLLOW_2); if (state.failed) return ;
+                    match(input,62,FOLLOW_2); if (state.failed) return ;
 
                     }
                     break;
@@ -18478,7 +18538,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt61=2;
                 int LA61_0 = input.LA(1);
 
-                if ( (LA61_0==62) ) {
+                if ( (LA61_0==61) ) {
                     alt61=1;
                 }
 
@@ -18585,7 +18645,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEnum_listAccess().getCommaKeyword_1_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getEnum_listAccess().getCommaKeyword_1_0()); 
             }
@@ -19690,25 +19750,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ModificationElement__Group__5__Impl"
 
 
-    // $ANTLR start "rule__AnnotationModification__Group__0"
-    // InternalMOloc.g:5288:1: rule__AnnotationModification__Group__0 : rule__AnnotationModification__Group__0__Impl rule__AnnotationModification__Group__1 ;
-    public final void rule__AnnotationModification__Group__0() throws RecognitionException {
-        int rule__AnnotationModification__Group__0_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Group__0"
+    // InternalMOloc.g:5288:1: rule__AnnotationModificationElement__Group__0 : rule__AnnotationModificationElement__Group__0__Impl rule__AnnotationModificationElement__Group__1 ;
+    public final void rule__AnnotationModificationElement__Group__0() throws RecognitionException {
+        int rule__AnnotationModificationElement__Group__0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 348) ) { return ; }
-            // InternalMOloc.g:5292:1: ( rule__AnnotationModification__Group__0__Impl rule__AnnotationModification__Group__1 )
-            // InternalMOloc.g:5293:2: rule__AnnotationModification__Group__0__Impl rule__AnnotationModification__Group__1
+            // InternalMOloc.g:5292:1: ( rule__AnnotationModificationElement__Group__0__Impl rule__AnnotationModificationElement__Group__1 )
+            // InternalMOloc.g:5293:2: rule__AnnotationModificationElement__Group__0__Impl rule__AnnotationModificationElement__Group__1
             {
             pushFollow(FOLLOW_25);
-            rule__AnnotationModification__Group__0__Impl();
+            rule__AnnotationModificationElement__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__AnnotationModification__Group__1();
+            rule__AnnotationModificationElement__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -19721,35 +19781,35 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 348, rule__AnnotationModification__Group__0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 348, rule__AnnotationModificationElement__Group__0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Group__0"
+    // $ANTLR end "rule__AnnotationModificationElement__Group__0"
 
 
-    // $ANTLR start "rule__AnnotationModification__Group__0__Impl"
-    // InternalMOloc.g:5300:1: rule__AnnotationModification__Group__0__Impl : ( ( rule__AnnotationModification__IsRedeclareAssignment_0 )? ) ;
-    public final void rule__AnnotationModification__Group__0__Impl() throws RecognitionException {
-        int rule__AnnotationModification__Group__0__Impl_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Group__0__Impl"
+    // InternalMOloc.g:5300:1: rule__AnnotationModificationElement__Group__0__Impl : ( ( rule__AnnotationModificationElement__IsRedeclareAssignment_0 )? ) ;
+    public final void rule__AnnotationModificationElement__Group__0__Impl() throws RecognitionException {
+        int rule__AnnotationModificationElement__Group__0__Impl_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 349) ) { return ; }
-            // InternalMOloc.g:5304:1: ( ( ( rule__AnnotationModification__IsRedeclareAssignment_0 )? ) )
-            // InternalMOloc.g:5305:1: ( ( rule__AnnotationModification__IsRedeclareAssignment_0 )? )
+            // InternalMOloc.g:5304:1: ( ( ( rule__AnnotationModificationElement__IsRedeclareAssignment_0 )? ) )
+            // InternalMOloc.g:5305:1: ( ( rule__AnnotationModificationElement__IsRedeclareAssignment_0 )? )
             {
-            // InternalMOloc.g:5305:1: ( ( rule__AnnotationModification__IsRedeclareAssignment_0 )? )
-            // InternalMOloc.g:5306:2: ( rule__AnnotationModification__IsRedeclareAssignment_0 )?
+            // InternalMOloc.g:5305:1: ( ( rule__AnnotationModificationElement__IsRedeclareAssignment_0 )? )
+            // InternalMOloc.g:5306:2: ( rule__AnnotationModificationElement__IsRedeclareAssignment_0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getIsRedeclareAssignment_0()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getIsRedeclareAssignment_0()); 
             }
-            // InternalMOloc.g:5307:2: ( rule__AnnotationModification__IsRedeclareAssignment_0 )?
+            // InternalMOloc.g:5307:2: ( rule__AnnotationModificationElement__IsRedeclareAssignment_0 )?
             int alt68=2;
             int LA68_0 = input.LA(1);
 
@@ -19758,10 +19818,10 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             }
             switch (alt68) {
                 case 1 :
-                    // InternalMOloc.g:5307:3: rule__AnnotationModification__IsRedeclareAssignment_0
+                    // InternalMOloc.g:5307:3: rule__AnnotationModificationElement__IsRedeclareAssignment_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AnnotationModification__IsRedeclareAssignment_0();
+                    rule__AnnotationModificationElement__IsRedeclareAssignment_0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -19772,7 +19832,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getIsRedeclareAssignment_0()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getIsRedeclareAssignment_0()); 
             }
 
             }
@@ -19786,35 +19846,35 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 349, rule__AnnotationModification__Group__0__Impl_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 349, rule__AnnotationModificationElement__Group__0__Impl_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Group__0__Impl"
+    // $ANTLR end "rule__AnnotationModificationElement__Group__0__Impl"
 
 
-    // $ANTLR start "rule__AnnotationModification__Group__1"
-    // InternalMOloc.g:5315:1: rule__AnnotationModification__Group__1 : rule__AnnotationModification__Group__1__Impl rule__AnnotationModification__Group__2 ;
-    public final void rule__AnnotationModification__Group__1() throws RecognitionException {
-        int rule__AnnotationModification__Group__1_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Group__1"
+    // InternalMOloc.g:5315:1: rule__AnnotationModificationElement__Group__1 : rule__AnnotationModificationElement__Group__1__Impl rule__AnnotationModificationElement__Group__2 ;
+    public final void rule__AnnotationModificationElement__Group__1() throws RecognitionException {
+        int rule__AnnotationModificationElement__Group__1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 350) ) { return ; }
-            // InternalMOloc.g:5319:1: ( rule__AnnotationModification__Group__1__Impl rule__AnnotationModification__Group__2 )
-            // InternalMOloc.g:5320:2: rule__AnnotationModification__Group__1__Impl rule__AnnotationModification__Group__2
+            // InternalMOloc.g:5319:1: ( rule__AnnotationModificationElement__Group__1__Impl rule__AnnotationModificationElement__Group__2 )
+            // InternalMOloc.g:5320:2: rule__AnnotationModificationElement__Group__1__Impl rule__AnnotationModificationElement__Group__2
             {
             pushFollow(FOLLOW_25);
-            rule__AnnotationModification__Group__1__Impl();
+            rule__AnnotationModificationElement__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__AnnotationModification__Group__2();
+            rule__AnnotationModificationElement__Group__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -19827,35 +19887,35 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 350, rule__AnnotationModification__Group__1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 350, rule__AnnotationModificationElement__Group__1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Group__1"
+    // $ANTLR end "rule__AnnotationModificationElement__Group__1"
 
 
-    // $ANTLR start "rule__AnnotationModification__Group__1__Impl"
-    // InternalMOloc.g:5327:1: rule__AnnotationModification__Group__1__Impl : ( ( rule__AnnotationModification__IsEachAssignment_1 )? ) ;
-    public final void rule__AnnotationModification__Group__1__Impl() throws RecognitionException {
-        int rule__AnnotationModification__Group__1__Impl_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Group__1__Impl"
+    // InternalMOloc.g:5327:1: rule__AnnotationModificationElement__Group__1__Impl : ( ( rule__AnnotationModificationElement__IsEachAssignment_1 )? ) ;
+    public final void rule__AnnotationModificationElement__Group__1__Impl() throws RecognitionException {
+        int rule__AnnotationModificationElement__Group__1__Impl_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 351) ) { return ; }
-            // InternalMOloc.g:5331:1: ( ( ( rule__AnnotationModification__IsEachAssignment_1 )? ) )
-            // InternalMOloc.g:5332:1: ( ( rule__AnnotationModification__IsEachAssignment_1 )? )
+            // InternalMOloc.g:5331:1: ( ( ( rule__AnnotationModificationElement__IsEachAssignment_1 )? ) )
+            // InternalMOloc.g:5332:1: ( ( rule__AnnotationModificationElement__IsEachAssignment_1 )? )
             {
-            // InternalMOloc.g:5332:1: ( ( rule__AnnotationModification__IsEachAssignment_1 )? )
-            // InternalMOloc.g:5333:2: ( rule__AnnotationModification__IsEachAssignment_1 )?
+            // InternalMOloc.g:5332:1: ( ( rule__AnnotationModificationElement__IsEachAssignment_1 )? )
+            // InternalMOloc.g:5333:2: ( rule__AnnotationModificationElement__IsEachAssignment_1 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getIsEachAssignment_1()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getIsEachAssignment_1()); 
             }
-            // InternalMOloc.g:5334:2: ( rule__AnnotationModification__IsEachAssignment_1 )?
+            // InternalMOloc.g:5334:2: ( rule__AnnotationModificationElement__IsEachAssignment_1 )?
             int alt69=2;
             int LA69_0 = input.LA(1);
 
@@ -19864,10 +19924,10 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             }
             switch (alt69) {
                 case 1 :
-                    // InternalMOloc.g:5334:3: rule__AnnotationModification__IsEachAssignment_1
+                    // InternalMOloc.g:5334:3: rule__AnnotationModificationElement__IsEachAssignment_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AnnotationModification__IsEachAssignment_1();
+                    rule__AnnotationModificationElement__IsEachAssignment_1();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -19878,7 +19938,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getIsEachAssignment_1()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getIsEachAssignment_1()); 
             }
 
             }
@@ -19892,35 +19952,35 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 351, rule__AnnotationModification__Group__1__Impl_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 351, rule__AnnotationModificationElement__Group__1__Impl_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Group__1__Impl"
+    // $ANTLR end "rule__AnnotationModificationElement__Group__1__Impl"
 
 
-    // $ANTLR start "rule__AnnotationModification__Group__2"
-    // InternalMOloc.g:5342:1: rule__AnnotationModification__Group__2 : rule__AnnotationModification__Group__2__Impl rule__AnnotationModification__Group__3 ;
-    public final void rule__AnnotationModification__Group__2() throws RecognitionException {
-        int rule__AnnotationModification__Group__2_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Group__2"
+    // InternalMOloc.g:5342:1: rule__AnnotationModificationElement__Group__2 : rule__AnnotationModificationElement__Group__2__Impl rule__AnnotationModificationElement__Group__3 ;
+    public final void rule__AnnotationModificationElement__Group__2() throws RecognitionException {
+        int rule__AnnotationModificationElement__Group__2_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 352) ) { return ; }
-            // InternalMOloc.g:5346:1: ( rule__AnnotationModification__Group__2__Impl rule__AnnotationModification__Group__3 )
-            // InternalMOloc.g:5347:2: rule__AnnotationModification__Group__2__Impl rule__AnnotationModification__Group__3
+            // InternalMOloc.g:5346:1: ( rule__AnnotationModificationElement__Group__2__Impl rule__AnnotationModificationElement__Group__3 )
+            // InternalMOloc.g:5347:2: rule__AnnotationModificationElement__Group__2__Impl rule__AnnotationModificationElement__Group__3
             {
             pushFollow(FOLLOW_25);
-            rule__AnnotationModification__Group__2__Impl();
+            rule__AnnotationModificationElement__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__AnnotationModification__Group__3();
+            rule__AnnotationModificationElement__Group__3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -19933,35 +19993,35 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 352, rule__AnnotationModification__Group__2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 352, rule__AnnotationModificationElement__Group__2_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Group__2"
+    // $ANTLR end "rule__AnnotationModificationElement__Group__2"
 
 
-    // $ANTLR start "rule__AnnotationModification__Group__2__Impl"
-    // InternalMOloc.g:5354:1: rule__AnnotationModification__Group__2__Impl : ( ( rule__AnnotationModification__IsfinalAssignment_2 )? ) ;
-    public final void rule__AnnotationModification__Group__2__Impl() throws RecognitionException {
-        int rule__AnnotationModification__Group__2__Impl_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Group__2__Impl"
+    // InternalMOloc.g:5354:1: rule__AnnotationModificationElement__Group__2__Impl : ( ( rule__AnnotationModificationElement__IsfinalAssignment_2 )? ) ;
+    public final void rule__AnnotationModificationElement__Group__2__Impl() throws RecognitionException {
+        int rule__AnnotationModificationElement__Group__2__Impl_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 353) ) { return ; }
-            // InternalMOloc.g:5358:1: ( ( ( rule__AnnotationModification__IsfinalAssignment_2 )? ) )
-            // InternalMOloc.g:5359:1: ( ( rule__AnnotationModification__IsfinalAssignment_2 )? )
+            // InternalMOloc.g:5358:1: ( ( ( rule__AnnotationModificationElement__IsfinalAssignment_2 )? ) )
+            // InternalMOloc.g:5359:1: ( ( rule__AnnotationModificationElement__IsfinalAssignment_2 )? )
             {
-            // InternalMOloc.g:5359:1: ( ( rule__AnnotationModification__IsfinalAssignment_2 )? )
-            // InternalMOloc.g:5360:2: ( rule__AnnotationModification__IsfinalAssignment_2 )?
+            // InternalMOloc.g:5359:1: ( ( rule__AnnotationModificationElement__IsfinalAssignment_2 )? )
+            // InternalMOloc.g:5360:2: ( rule__AnnotationModificationElement__IsfinalAssignment_2 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getIsfinalAssignment_2()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getIsfinalAssignment_2()); 
             }
-            // InternalMOloc.g:5361:2: ( rule__AnnotationModification__IsfinalAssignment_2 )?
+            // InternalMOloc.g:5361:2: ( rule__AnnotationModificationElement__IsfinalAssignment_2 )?
             int alt70=2;
             int LA70_0 = input.LA(1);
 
@@ -19970,10 +20030,10 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             }
             switch (alt70) {
                 case 1 :
-                    // InternalMOloc.g:5361:3: rule__AnnotationModification__IsfinalAssignment_2
+                    // InternalMOloc.g:5361:3: rule__AnnotationModificationElement__IsfinalAssignment_2
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AnnotationModification__IsfinalAssignment_2();
+                    rule__AnnotationModificationElement__IsfinalAssignment_2();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -19984,7 +20044,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getIsfinalAssignment_2()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getIsfinalAssignment_2()); 
             }
 
             }
@@ -19998,35 +20058,35 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 353, rule__AnnotationModification__Group__2__Impl_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 353, rule__AnnotationModificationElement__Group__2__Impl_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Group__2__Impl"
+    // $ANTLR end "rule__AnnotationModificationElement__Group__2__Impl"
 
 
-    // $ANTLR start "rule__AnnotationModification__Group__3"
-    // InternalMOloc.g:5369:1: rule__AnnotationModification__Group__3 : rule__AnnotationModification__Group__3__Impl rule__AnnotationModification__Group__4 ;
-    public final void rule__AnnotationModification__Group__3() throws RecognitionException {
-        int rule__AnnotationModification__Group__3_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Group__3"
+    // InternalMOloc.g:5369:1: rule__AnnotationModificationElement__Group__3 : rule__AnnotationModificationElement__Group__3__Impl rule__AnnotationModificationElement__Group__4 ;
+    public final void rule__AnnotationModificationElement__Group__3() throws RecognitionException {
+        int rule__AnnotationModificationElement__Group__3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 354) ) { return ; }
-            // InternalMOloc.g:5373:1: ( rule__AnnotationModification__Group__3__Impl rule__AnnotationModification__Group__4 )
-            // InternalMOloc.g:5374:2: rule__AnnotationModification__Group__3__Impl rule__AnnotationModification__Group__4
+            // InternalMOloc.g:5373:1: ( rule__AnnotationModificationElement__Group__3__Impl rule__AnnotationModificationElement__Group__4 )
+            // InternalMOloc.g:5374:2: rule__AnnotationModificationElement__Group__3__Impl rule__AnnotationModificationElement__Group__4
             {
             pushFollow(FOLLOW_25);
-            rule__AnnotationModification__Group__3__Impl();
+            rule__AnnotationModificationElement__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__AnnotationModification__Group__4();
+            rule__AnnotationModificationElement__Group__4();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20039,35 +20099,35 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 354, rule__AnnotationModification__Group__3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 354, rule__AnnotationModificationElement__Group__3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Group__3"
+    // $ANTLR end "rule__AnnotationModificationElement__Group__3"
 
 
-    // $ANTLR start "rule__AnnotationModification__Group__3__Impl"
-    // InternalMOloc.g:5381:1: rule__AnnotationModification__Group__3__Impl : ( ( rule__AnnotationModification__IsReplaceableAssignment_3 )? ) ;
-    public final void rule__AnnotationModification__Group__3__Impl() throws RecognitionException {
-        int rule__AnnotationModification__Group__3__Impl_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Group__3__Impl"
+    // InternalMOloc.g:5381:1: rule__AnnotationModificationElement__Group__3__Impl : ( ( rule__AnnotationModificationElement__IsReplaceableAssignment_3 )? ) ;
+    public final void rule__AnnotationModificationElement__Group__3__Impl() throws RecognitionException {
+        int rule__AnnotationModificationElement__Group__3__Impl_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 355) ) { return ; }
-            // InternalMOloc.g:5385:1: ( ( ( rule__AnnotationModification__IsReplaceableAssignment_3 )? ) )
-            // InternalMOloc.g:5386:1: ( ( rule__AnnotationModification__IsReplaceableAssignment_3 )? )
+            // InternalMOloc.g:5385:1: ( ( ( rule__AnnotationModificationElement__IsReplaceableAssignment_3 )? ) )
+            // InternalMOloc.g:5386:1: ( ( rule__AnnotationModificationElement__IsReplaceableAssignment_3 )? )
             {
-            // InternalMOloc.g:5386:1: ( ( rule__AnnotationModification__IsReplaceableAssignment_3 )? )
-            // InternalMOloc.g:5387:2: ( rule__AnnotationModification__IsReplaceableAssignment_3 )?
+            // InternalMOloc.g:5386:1: ( ( rule__AnnotationModificationElement__IsReplaceableAssignment_3 )? )
+            // InternalMOloc.g:5387:2: ( rule__AnnotationModificationElement__IsReplaceableAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getIsReplaceableAssignment_3()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getIsReplaceableAssignment_3()); 
             }
-            // InternalMOloc.g:5388:2: ( rule__AnnotationModification__IsReplaceableAssignment_3 )?
+            // InternalMOloc.g:5388:2: ( rule__AnnotationModificationElement__IsReplaceableAssignment_3 )?
             int alt71=2;
             int LA71_0 = input.LA(1);
 
@@ -20076,10 +20136,10 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             }
             switch (alt71) {
                 case 1 :
-                    // InternalMOloc.g:5388:3: rule__AnnotationModification__IsReplaceableAssignment_3
+                    // InternalMOloc.g:5388:3: rule__AnnotationModificationElement__IsReplaceableAssignment_3
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AnnotationModification__IsReplaceableAssignment_3();
+                    rule__AnnotationModificationElement__IsReplaceableAssignment_3();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -20090,7 +20150,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getIsReplaceableAssignment_3()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getIsReplaceableAssignment_3()); 
             }
 
             }
@@ -20104,35 +20164,35 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 355, rule__AnnotationModification__Group__3__Impl_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 355, rule__AnnotationModificationElement__Group__3__Impl_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Group__3__Impl"
+    // $ANTLR end "rule__AnnotationModificationElement__Group__3__Impl"
 
 
-    // $ANTLR start "rule__AnnotationModification__Group__4"
-    // InternalMOloc.g:5396:1: rule__AnnotationModification__Group__4 : rule__AnnotationModification__Group__4__Impl rule__AnnotationModification__Group__5 ;
-    public final void rule__AnnotationModification__Group__4() throws RecognitionException {
-        int rule__AnnotationModification__Group__4_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Group__4"
+    // InternalMOloc.g:5396:1: rule__AnnotationModificationElement__Group__4 : rule__AnnotationModificationElement__Group__4__Impl rule__AnnotationModificationElement__Group__5 ;
+    public final void rule__AnnotationModificationElement__Group__4() throws RecognitionException {
+        int rule__AnnotationModificationElement__Group__4_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 356) ) { return ; }
-            // InternalMOloc.g:5400:1: ( rule__AnnotationModification__Group__4__Impl rule__AnnotationModification__Group__5 )
-            // InternalMOloc.g:5401:2: rule__AnnotationModification__Group__4__Impl rule__AnnotationModification__Group__5
+            // InternalMOloc.g:5400:1: ( rule__AnnotationModificationElement__Group__4__Impl rule__AnnotationModificationElement__Group__5 )
+            // InternalMOloc.g:5401:2: rule__AnnotationModificationElement__Group__4__Impl rule__AnnotationModificationElement__Group__5
             {
             pushFollow(FOLLOW_29);
-            rule__AnnotationModification__Group__4__Impl();
+            rule__AnnotationModificationElement__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__AnnotationModification__Group__5();
+            rule__AnnotationModificationElement__Group__5();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20145,39 +20205,39 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 356, rule__AnnotationModification__Group__4_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 356, rule__AnnotationModificationElement__Group__4_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Group__4"
+    // $ANTLR end "rule__AnnotationModificationElement__Group__4"
 
 
-    // $ANTLR start "rule__AnnotationModification__Group__4__Impl"
-    // InternalMOloc.g:5408:1: rule__AnnotationModification__Group__4__Impl : ( ( rule__AnnotationModification__Alternatives_4 ) ) ;
-    public final void rule__AnnotationModification__Group__4__Impl() throws RecognitionException {
-        int rule__AnnotationModification__Group__4__Impl_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Group__4__Impl"
+    // InternalMOloc.g:5408:1: rule__AnnotationModificationElement__Group__4__Impl : ( ( rule__AnnotationModificationElement__Alternatives_4 ) ) ;
+    public final void rule__AnnotationModificationElement__Group__4__Impl() throws RecognitionException {
+        int rule__AnnotationModificationElement__Group__4__Impl_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 357) ) { return ; }
-            // InternalMOloc.g:5412:1: ( ( ( rule__AnnotationModification__Alternatives_4 ) ) )
-            // InternalMOloc.g:5413:1: ( ( rule__AnnotationModification__Alternatives_4 ) )
+            // InternalMOloc.g:5412:1: ( ( ( rule__AnnotationModificationElement__Alternatives_4 ) ) )
+            // InternalMOloc.g:5413:1: ( ( rule__AnnotationModificationElement__Alternatives_4 ) )
             {
-            // InternalMOloc.g:5413:1: ( ( rule__AnnotationModification__Alternatives_4 ) )
-            // InternalMOloc.g:5414:2: ( rule__AnnotationModification__Alternatives_4 )
+            // InternalMOloc.g:5413:1: ( ( rule__AnnotationModificationElement__Alternatives_4 ) )
+            // InternalMOloc.g:5414:2: ( rule__AnnotationModificationElement__Alternatives_4 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getAlternatives_4()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getAlternatives_4()); 
             }
-            // InternalMOloc.g:5415:2: ( rule__AnnotationModification__Alternatives_4 )
-            // InternalMOloc.g:5415:3: rule__AnnotationModification__Alternatives_4
+            // InternalMOloc.g:5415:2: ( rule__AnnotationModificationElement__Alternatives_4 )
+            // InternalMOloc.g:5415:3: rule__AnnotationModificationElement__Alternatives_4
             {
             pushFollow(FOLLOW_2);
-            rule__AnnotationModification__Alternatives_4();
+            rule__AnnotationModificationElement__Alternatives_4();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20185,7 +20245,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getAlternatives_4()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getAlternatives_4()); 
             }
 
             }
@@ -20199,30 +20259,30 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 357, rule__AnnotationModification__Group__4__Impl_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 357, rule__AnnotationModificationElement__Group__4__Impl_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Group__4__Impl"
+    // $ANTLR end "rule__AnnotationModificationElement__Group__4__Impl"
 
 
-    // $ANTLR start "rule__AnnotationModification__Group__5"
-    // InternalMOloc.g:5423:1: rule__AnnotationModification__Group__5 : rule__AnnotationModification__Group__5__Impl ;
-    public final void rule__AnnotationModification__Group__5() throws RecognitionException {
-        int rule__AnnotationModification__Group__5_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Group__5"
+    // InternalMOloc.g:5423:1: rule__AnnotationModificationElement__Group__5 : rule__AnnotationModificationElement__Group__5__Impl ;
+    public final void rule__AnnotationModificationElement__Group__5() throws RecognitionException {
+        int rule__AnnotationModificationElement__Group__5_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 358) ) { return ; }
-            // InternalMOloc.g:5427:1: ( rule__AnnotationModification__Group__5__Impl )
-            // InternalMOloc.g:5428:2: rule__AnnotationModification__Group__5__Impl
+            // InternalMOloc.g:5427:1: ( rule__AnnotationModificationElement__Group__5__Impl )
+            // InternalMOloc.g:5428:2: rule__AnnotationModificationElement__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__AnnotationModification__Group__5__Impl();
+            rule__AnnotationModificationElement__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20235,20 +20295,20 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 358, rule__AnnotationModification__Group__5_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 358, rule__AnnotationModificationElement__Group__5_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Group__5"
+    // $ANTLR end "rule__AnnotationModificationElement__Group__5"
 
 
-    // $ANTLR start "rule__AnnotationModification__Group__5__Impl"
-    // InternalMOloc.g:5434:1: rule__AnnotationModification__Group__5__Impl : ( ( ruleconstraining )? ) ;
-    public final void rule__AnnotationModification__Group__5__Impl() throws RecognitionException {
-        int rule__AnnotationModification__Group__5__Impl_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__Group__5__Impl"
+    // InternalMOloc.g:5434:1: rule__AnnotationModificationElement__Group__5__Impl : ( ( ruleconstraining )? ) ;
+    public final void rule__AnnotationModificationElement__Group__5__Impl() throws RecognitionException {
+        int rule__AnnotationModificationElement__Group__5__Impl_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
@@ -20261,7 +20321,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             // InternalMOloc.g:5440:2: ( ruleconstraining )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getConstrainingParserRuleCall_5()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getConstrainingParserRuleCall_5()); 
             }
             // InternalMOloc.g:5441:2: ( ruleconstraining )?
             int alt72=2;
@@ -20286,7 +20346,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getConstrainingParserRuleCall_5()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getConstrainingParserRuleCall_5()); 
             }
 
             }
@@ -20300,14 +20360,14 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 359, rule__AnnotationModification__Group__5__Impl_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 359, rule__AnnotationModificationElement__Group__5__Impl_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__Group__5__Impl"
+    // $ANTLR end "rule__AnnotationModificationElement__Group__5__Impl"
 
 
     // $ANTLR start "rule__Element_modification__Group__0"
@@ -20468,7 +20528,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt73=2;
             int LA73_0 = input.LA(1);
 
-            if ( ((LA73_0>=59 && LA73_0<=60)||LA73_0==66) ) {
+            if ( (LA73_0==59||(LA73_0>=65 && LA73_0<=66)) ) {
                 alt73=1;
             }
             switch (alt73) {
@@ -21674,7 +21734,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt77=2;
             int LA77_0 = input.LA(1);
 
-            if ( (LA77_0==64) ) {
+            if ( (LA77_0==63) ) {
                 alt77=1;
             }
             switch (alt77) {
@@ -21775,7 +21835,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt78=2;
             int LA78_0 = input.LA(1);
 
-            if ( ((LA78_0>=59 && LA78_0<=60)||LA78_0==66) ) {
+            if ( (LA78_0==59||(LA78_0>=65 && LA78_0<=66)) ) {
                 alt78=1;
             }
             switch (alt78) {
@@ -21877,7 +21937,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArraySubscriptsAccess().getLeftSquareBracketKeyword_0()); 
             }
-            match(input,64,FOLLOW_2); if (state.failed) return ;
+            match(input,63,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getArraySubscriptsAccess().getLeftSquareBracketKeyword_0()); 
             }
@@ -22057,7 +22117,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt79=2;
                 int LA79_0 = input.LA(1);
 
-                if ( (LA79_0==62) ) {
+                if ( (LA79_0==61) ) {
                     alt79=1;
                 }
 
@@ -22159,7 +22219,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArraySubscriptsAccess().getRightSquareBracketKeyword_3()); 
             }
-            match(input,65,FOLLOW_2); if (state.failed) return ;
+            match(input,64,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getArraySubscriptsAccess().getRightSquareBracketKeyword_3()); 
             }
@@ -22244,7 +22304,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArraySubscriptsAccess().getCommaKeyword_2_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getArraySubscriptsAccess().getCommaKeyword_2_0()); 
             }
@@ -22501,7 +22561,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt80=2;
             int LA80_0 = input.LA(1);
 
-            if ( (LA80_0==59) ) {
+            if ( (LA80_0==65) ) {
                 alt80=1;
             }
             switch (alt80) {
@@ -22603,7 +22663,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationAccess().getEqualsSignKeyword_0_1_0()); 
             }
-            match(input,59,FOLLOW_2); if (state.failed) return ;
+            match(input,65,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getModificationAccess().getEqualsSignKeyword_0_1_0()); 
             }
@@ -22778,7 +22838,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationAccess().getEqualsSignKeyword_1_0()); 
             }
-            match(input,59,FOLLOW_2); if (state.failed) return ;
+            match(input,65,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getModificationAccess().getEqualsSignKeyword_1_0()); 
             }
@@ -23845,7 +23905,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ImportClause__Group__5__Impl"
-    // InternalMOloc.g:6487:1: rule__ImportClause__Group__5__Impl : ( ';' ) ;
+    // InternalMOloc.g:6487:1: rule__ImportClause__Group__5__Impl : ( ( rule__ImportClause__IsOverAssignment_5 ) ) ;
     public final void rule__ImportClause__Group__5__Impl() throws RecognitionException {
         int rule__ImportClause__Group__5__Impl_StartIndex = input.index();
 
@@ -23853,18 +23913,28 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 437) ) { return ; }
-            // InternalMOloc.g:6491:1: ( ( ';' ) )
-            // InternalMOloc.g:6492:1: ( ';' )
+            // InternalMOloc.g:6491:1: ( ( ( rule__ImportClause__IsOverAssignment_5 ) ) )
+            // InternalMOloc.g:6492:1: ( ( rule__ImportClause__IsOverAssignment_5 ) )
             {
-            // InternalMOloc.g:6492:1: ( ';' )
-            // InternalMOloc.g:6493:2: ';'
+            // InternalMOloc.g:6492:1: ( ( rule__ImportClause__IsOverAssignment_5 ) )
+            // InternalMOloc.g:6493:2: ( rule__ImportClause__IsOverAssignment_5 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getImportClauseAccess().getSemicolonKeyword_5()); 
+               before(grammarAccess.getImportClauseAccess().getIsOverAssignment_5()); 
             }
-            match(input,58,FOLLOW_2); if (state.failed) return ;
+            // InternalMOloc.g:6494:2: ( rule__ImportClause__IsOverAssignment_5 )
+            // InternalMOloc.g:6494:3: rule__ImportClause__IsOverAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__ImportClause__IsOverAssignment_5();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getImportClauseAccess().getSemicolonKeyword_5()); 
+               after(grammarAccess.getImportClauseAccess().getIsOverAssignment_5()); 
             }
 
             }
@@ -24042,7 +24112,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getEqualsSignKeyword_3_0_1()); 
             }
-            match(input,59,FOLLOW_2); if (state.failed) return ;
+            match(input,65,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getImportClauseAccess().getEqualsSignKeyword_3_0_1()); 
             }
@@ -24311,7 +24381,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt83=2;
             int LA83_0 = input.LA(1);
 
-            if ( (LA83_0==32||LA83_0==63) ) {
+            if ( (LA83_0==32||LA83_0==62) ) {
                 alt83=1;
             }
             switch (alt83) {
@@ -24413,7 +24483,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getFullStopKeyword_3_1_1_1_0()); 
             }
-            match(input,63,FOLLOW_2); if (state.failed) return ;
+            match(input,62,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getImportClauseAccess().getFullStopKeyword_3_1_1_1_0()); 
             }
@@ -24774,7 +24844,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt84=2;
                 int LA84_0 = input.LA(1);
 
-                if ( (LA84_0==62) ) {
+                if ( (LA84_0==61) ) {
                     alt84=1;
                 }
 
@@ -24961,7 +25031,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getCommaKeyword_3_1_1_1_1_1_2_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getImportClauseAccess().getCommaKeyword_3_1_1_1_1_1_2_0()); 
             }
@@ -25526,7 +25596,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt87=2;
             int LA87_0 = input.LA(1);
 
-            if ( (LA87_0==60) ) {
+            if ( (LA87_0==59) ) {
                 alt87=1;
             }
             switch (alt87) {
@@ -25712,7 +25782,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExtendsClause__Group__6__Impl"
-    // InternalMOloc.g:7027:1: rule__ExtendsClause__Group__6__Impl : ( ';' ) ;
+    // InternalMOloc.g:7027:1: rule__ExtendsClause__Group__6__Impl : ( ( rule__ExtendsClause__IsOverAssignment_6 ) ) ;
     public final void rule__ExtendsClause__Group__6__Impl() throws RecognitionException {
         int rule__ExtendsClause__Group__6__Impl_StartIndex = input.index();
 
@@ -25720,18 +25790,28 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 477) ) { return ; }
-            // InternalMOloc.g:7031:1: ( ( ';' ) )
-            // InternalMOloc.g:7032:1: ( ';' )
+            // InternalMOloc.g:7031:1: ( ( ( rule__ExtendsClause__IsOverAssignment_6 ) ) )
+            // InternalMOloc.g:7032:1: ( ( rule__ExtendsClause__IsOverAssignment_6 ) )
             {
-            // InternalMOloc.g:7032:1: ( ';' )
-            // InternalMOloc.g:7033:2: ';'
+            // InternalMOloc.g:7032:1: ( ( rule__ExtendsClause__IsOverAssignment_6 ) )
+            // InternalMOloc.g:7033:2: ( rule__ExtendsClause__IsOverAssignment_6 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getExtendsClauseAccess().getSemicolonKeyword_6()); 
+               before(grammarAccess.getExtendsClauseAccess().getIsOverAssignment_6()); 
             }
-            match(input,58,FOLLOW_2); if (state.failed) return ;
+            // InternalMOloc.g:7034:2: ( rule__ExtendsClause__IsOverAssignment_6 )
+            // InternalMOloc.g:7034:3: rule__ExtendsClause__IsOverAssignment_6
+            {
+            pushFollow(FOLLOW_2);
+            rule__ExtendsClause__IsOverAssignment_6();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getExtendsClauseAccess().getSemicolonKeyword_6()); 
+               after(grammarAccess.getExtendsClauseAccess().getIsOverAssignment_6()); 
             }
 
             }
@@ -25814,7 +25894,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExtendsClauseAccess().getLeftParenthesisKeyword_4_0()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getExtendsClauseAccess().getLeftParenthesisKeyword_4_0()); 
             }
@@ -25903,7 +25983,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt89=2;
             int LA89_0 = input.LA(1);
 
-            if ( (LA89_0==RULE_IDENT||LA89_0==19||(LA89_0>=38 && LA89_0<=57)||LA89_0==63||(LA89_0>=91 && LA89_0<=96)||(LA89_0>=99 && LA89_0<=101)) ) {
+            if ( (LA89_0==RULE_IDENT||LA89_0==19||(LA89_0>=38 && LA89_0<=57)||LA89_0==62||(LA89_0>=91 && LA89_0<=96)||(LA89_0>=99 && LA89_0<=101)) ) {
                 alt89=1;
             }
             switch (alt89) {
@@ -26000,7 +26080,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExtendsClauseAccess().getRightParenthesisKeyword_4_2()); 
             }
-            match(input,61,FOLLOW_2); if (state.failed) return ;
+            match(input,60,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getExtendsClauseAccess().getRightParenthesisKeyword_4_2()); 
             }
@@ -26181,7 +26261,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt90=2;
                 int LA90_0 = input.LA(1);
 
-                if ( (LA90_0==62) ) {
+                if ( (LA90_0==61) ) {
                     alt90=1;
                 }
 
@@ -26288,7 +26368,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExtendsClauseAccess().getCommaKeyword_4_1_1_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getExtendsClauseAccess().getCommaKeyword_4_1_1_0()); 
             }
@@ -27559,7 +27639,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GeneralClause__Group__9__Impl"
-    // InternalMOloc.g:7540:1: rule__GeneralClause__Group__9__Impl : ( ';' ) ;
+    // InternalMOloc.g:7540:1: rule__GeneralClause__Group__9__Impl : ( ( rule__GeneralClause__IsOverAssignment_9 ) ) ;
     public final void rule__GeneralClause__Group__9__Impl() throws RecognitionException {
         int rule__GeneralClause__Group__9__Impl_StartIndex = input.index();
 
@@ -27567,18 +27647,28 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 515) ) { return ; }
-            // InternalMOloc.g:7544:1: ( ( ';' ) )
-            // InternalMOloc.g:7545:1: ( ';' )
+            // InternalMOloc.g:7544:1: ( ( ( rule__GeneralClause__IsOverAssignment_9 ) ) )
+            // InternalMOloc.g:7545:1: ( ( rule__GeneralClause__IsOverAssignment_9 ) )
             {
-            // InternalMOloc.g:7545:1: ( ';' )
-            // InternalMOloc.g:7546:2: ';'
+            // InternalMOloc.g:7545:1: ( ( rule__GeneralClause__IsOverAssignment_9 ) )
+            // InternalMOloc.g:7546:2: ( rule__GeneralClause__IsOverAssignment_9 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getGeneralClauseAccess().getSemicolonKeyword_9()); 
+               before(grammarAccess.getGeneralClauseAccess().getIsOverAssignment_9()); 
             }
-            match(input,58,FOLLOW_2); if (state.failed) return ;
+            // InternalMOloc.g:7547:2: ( rule__GeneralClause__IsOverAssignment_9 )
+            // InternalMOloc.g:7547:3: rule__GeneralClause__IsOverAssignment_9
+            {
+            pushFollow(FOLLOW_2);
+            rule__GeneralClause__IsOverAssignment_9();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getGeneralClauseAccess().getSemicolonKeyword_9()); 
+               after(grammarAccess.getGeneralClauseAccess().getIsOverAssignment_9()); 
             }
 
             }
@@ -28016,7 +28106,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt99=2;
             int LA99_0 = input.LA(1);
 
-            if ( (LA99_0==64) ) {
+            if ( (LA99_0==63) ) {
                 alt99=1;
             }
             switch (alt99) {
@@ -28214,7 +28304,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt100=2;
                 int LA100_0 = input.LA(1);
 
-                if ( (LA100_0==62) ) {
+                if ( (LA100_0==61) ) {
                     alt100=1;
                 }
 
@@ -28321,7 +28411,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getCommaKeyword_7_1_4_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getGeneralClauseAccess().getCommaKeyword_7_1_4_0()); 
             }
@@ -29230,7 +29320,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt103=2;
             int LA103_0 = input.LA(1);
 
-            if ( (LA103_0==RULE_IDENT||LA103_0==63) ) {
+            if ( (LA103_0==RULE_IDENT||LA103_0==62) ) {
                 alt103=1;
             }
             switch (alt103) {
@@ -29416,7 +29506,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalElement__Group__5__Impl"
-    // InternalMOloc.g:8080:1: rule__ExternalElement__Group__5__Impl : ( ';' ) ;
+    // InternalMOloc.g:8080:1: rule__ExternalElement__Group__5__Impl : ( ( rule__ExternalElement__IsOverAssignment_5 ) ) ;
     public final void rule__ExternalElement__Group__5__Impl() throws RecognitionException {
         int rule__ExternalElement__Group__5__Impl_StartIndex = input.index();
 
@@ -29424,18 +29514,28 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 555) ) { return ; }
-            // InternalMOloc.g:8084:1: ( ( ';' ) )
-            // InternalMOloc.g:8085:1: ( ';' )
+            // InternalMOloc.g:8084:1: ( ( ( rule__ExternalElement__IsOverAssignment_5 ) ) )
+            // InternalMOloc.g:8085:1: ( ( rule__ExternalElement__IsOverAssignment_5 ) )
             {
-            // InternalMOloc.g:8085:1: ( ';' )
-            // InternalMOloc.g:8086:2: ';'
+            // InternalMOloc.g:8085:1: ( ( rule__ExternalElement__IsOverAssignment_5 ) )
+            // InternalMOloc.g:8086:2: ( rule__ExternalElement__IsOverAssignment_5 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getExternalElementAccess().getSemicolonKeyword_5()); 
+               before(grammarAccess.getExternalElementAccess().getIsOverAssignment_5()); 
             }
-            match(input,58,FOLLOW_2); if (state.failed) return ;
+            // InternalMOloc.g:8087:2: ( rule__ExternalElement__IsOverAssignment_5 )
+            // InternalMOloc.g:8087:3: rule__ExternalElement__IsOverAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__ExternalElement__IsOverAssignment_5();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getExternalElementAccess().getSemicolonKeyword_5()); 
+               after(grammarAccess.getExternalElementAccess().getIsOverAssignment_5()); 
             }
 
             }
@@ -29522,13 +29622,13 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt105=2;
             int LA105_0 = input.LA(1);
 
-            if ( (LA105_0==63) ) {
+            if ( (LA105_0==62) ) {
                 alt105=1;
             }
             else if ( (LA105_0==RULE_IDENT) ) {
                 int LA105_2 = input.LA(2);
 
-                if ( (LA105_2==59||(LA105_2>=63 && LA105_2<=64)) ) {
+                if ( ((LA105_2>=62 && LA105_2<=63)||LA105_2==65) ) {
                     alt105=1;
                 }
             }
@@ -29726,7 +29826,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExternalElementAccess().getLeftParenthesisKeyword_3_2()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getExternalElementAccess().getLeftParenthesisKeyword_3_2()); 
             }
@@ -29815,7 +29915,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt106=2;
             int LA106_0 = input.LA(1);
 
-            if ( ((LA106_0>=RULE_UNSIGNED_NUMBER && LA106_0<=RULE_IDENT)||(LA106_0>=26 && LA106_0<=29)||(LA106_0>=35 && LA106_0<=38)||LA106_0==60||(LA106_0>=63 && LA106_0<=64)||LA106_0==69||LA106_0==72||LA106_0==88) ) {
+            if ( ((LA106_0>=RULE_UNSIGNED_NUMBER && LA106_0<=RULE_IDENT)||(LA106_0>=26 && LA106_0<=29)||(LA106_0>=35 && LA106_0<=38)||LA106_0==59||(LA106_0>=62 && LA106_0<=63)||LA106_0==69||LA106_0==72||LA106_0==88) ) {
                 alt106=1;
             }
             switch (alt106) {
@@ -29912,7 +30012,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExternalElementAccess().getRightParenthesisKeyword_3_4()); 
             }
-            match(input,61,FOLLOW_2); if (state.failed) return ;
+            match(input,60,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getExternalElementAccess().getRightParenthesisKeyword_3_4()); 
             }
@@ -30087,7 +30187,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExternalElementAccess().getEqualsSignKeyword_3_0_1()); 
             }
-            match(input,59,FOLLOW_2); if (state.failed) return ;
+            match(input,65,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getExternalElementAccess().getEqualsSignKeyword_3_0_1()); 
             }
@@ -30239,7 +30339,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AnnotationClause__Group__1__Impl"
-    // InternalMOloc.g:8323:1: rule__AnnotationClause__Group__1__Impl : ( ';' ) ;
+    // InternalMOloc.g:8323:1: rule__AnnotationClause__Group__1__Impl : ( ( rule__AnnotationClause__IsOverAssignment_1 ) ) ;
     public final void rule__AnnotationClause__Group__1__Impl() throws RecognitionException {
         int rule__AnnotationClause__Group__1__Impl_StartIndex = input.index();
 
@@ -30247,18 +30347,28 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
         	
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 573) ) { return ; }
-            // InternalMOloc.g:8327:1: ( ( ';' ) )
-            // InternalMOloc.g:8328:1: ( ';' )
+            // InternalMOloc.g:8327:1: ( ( ( rule__AnnotationClause__IsOverAssignment_1 ) ) )
+            // InternalMOloc.g:8328:1: ( ( rule__AnnotationClause__IsOverAssignment_1 ) )
             {
-            // InternalMOloc.g:8328:1: ( ';' )
-            // InternalMOloc.g:8329:2: ';'
+            // InternalMOloc.g:8328:1: ( ( rule__AnnotationClause__IsOverAssignment_1 ) )
+            // InternalMOloc.g:8329:2: ( rule__AnnotationClause__IsOverAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationClauseAccess().getSemicolonKeyword_1()); 
+               before(grammarAccess.getAnnotationClauseAccess().getIsOverAssignment_1()); 
             }
-            match(input,58,FOLLOW_2); if (state.failed) return ;
+            // InternalMOloc.g:8330:2: ( rule__AnnotationClause__IsOverAssignment_1 )
+            // InternalMOloc.g:8330:3: rule__AnnotationClause__IsOverAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__AnnotationClause__IsOverAssignment_1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationClauseAccess().getSemicolonKeyword_1()); 
+               after(grammarAccess.getAnnotationClauseAccess().getIsOverAssignment_1()); 
             }
 
             }
@@ -30814,7 +30924,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSimpleEquationAccess().getEqualsSignKeyword_1()); 
             }
-            match(input,59,FOLLOW_2); if (state.failed) return ;
+            match(input,65,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSimpleEquationAccess().getEqualsSignKeyword_1()); 
             }
@@ -31437,13 +31547,13 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 if ( (LA109_0==35) ) {
                     int LA109_2 = input.LA(2);
 
-                    if ( (LA109_2==18||(LA109_2>=20 && LA109_2<=34)||LA109_2==59||(LA109_2>=86 && LA109_2<=87)) ) {
+                    if ( (LA109_2==18||(LA109_2>=20 && LA109_2<=34)||LA109_2==65||(LA109_2>=86 && LA109_2<=87)) ) {
                         alt109=1;
                     }
 
 
                 }
-                else if ( ((LA109_0>=RULE_UNSIGNED_NUMBER && LA109_0<=RULE_IDENT)||(LA109_0>=26 && LA109_0<=29)||(LA109_0>=36 && LA109_0<=38)||LA109_0==60||(LA109_0>=63 && LA109_0<=64)||LA109_0==69||LA109_0==72||LA109_0==78||(LA109_0>=80 && LA109_0<=81)||LA109_0==88) ) {
+                else if ( ((LA109_0>=RULE_UNSIGNED_NUMBER && LA109_0<=RULE_IDENT)||(LA109_0>=26 && LA109_0<=29)||(LA109_0>=36 && LA109_0<=38)||LA109_0==59||(LA109_0>=62 && LA109_0<=63)||LA109_0==69||LA109_0==72||LA109_0==78||(LA109_0>=80 && LA109_0<=81)||LA109_0==88) ) {
                     alt109=1;
                 }
 
@@ -32377,13 +32487,13 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 if ( (LA112_0==35) ) {
                     int LA112_2 = input.LA(2);
 
-                    if ( (LA112_2==18||(LA112_2>=20 && LA112_2<=34)||LA112_2==59||(LA112_2>=86 && LA112_2<=87)) ) {
+                    if ( (LA112_2==18||(LA112_2>=20 && LA112_2<=34)||LA112_2==65||(LA112_2>=86 && LA112_2<=87)) ) {
                         alt112=1;
                     }
 
 
                 }
-                else if ( ((LA112_0>=RULE_UNSIGNED_NUMBER && LA112_0<=RULE_IDENT)||(LA112_0>=26 && LA112_0<=29)||(LA112_0>=36 && LA112_0<=38)||LA112_0==60||(LA112_0>=63 && LA112_0<=64)||LA112_0==69||LA112_0==72||LA112_0==78||(LA112_0>=80 && LA112_0<=81)||LA112_0==88) ) {
+                else if ( ((LA112_0>=RULE_UNSIGNED_NUMBER && LA112_0<=RULE_IDENT)||(LA112_0>=26 && LA112_0<=29)||(LA112_0>=36 && LA112_0<=38)||LA112_0==59||(LA112_0>=62 && LA112_0<=63)||LA112_0==69||LA112_0==72||LA112_0==78||(LA112_0>=80 && LA112_0<=81)||LA112_0==88) ) {
                     alt112=1;
                 }
 
@@ -32579,13 +32689,13 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 if ( (LA113_0==35) ) {
                     int LA113_1 = input.LA(2);
 
-                    if ( (LA113_1==18||(LA113_1>=20 && LA113_1<=34)||LA113_1==59||(LA113_1>=86 && LA113_1<=87)) ) {
+                    if ( (LA113_1==18||(LA113_1>=20 && LA113_1<=34)||LA113_1==65||(LA113_1>=86 && LA113_1<=87)) ) {
                         alt113=1;
                     }
 
 
                 }
-                else if ( ((LA113_0>=RULE_UNSIGNED_NUMBER && LA113_0<=RULE_IDENT)||(LA113_0>=26 && LA113_0<=29)||(LA113_0>=36 && LA113_0<=38)||LA113_0==60||(LA113_0>=63 && LA113_0<=64)||LA113_0==69||LA113_0==72||LA113_0==78||(LA113_0>=80 && LA113_0<=81)||LA113_0==88) ) {
+                else if ( ((LA113_0>=RULE_UNSIGNED_NUMBER && LA113_0<=RULE_IDENT)||(LA113_0>=26 && LA113_0<=29)||(LA113_0>=36 && LA113_0<=38)||LA113_0==59||(LA113_0>=62 && LA113_0<=63)||LA113_0==69||LA113_0==72||LA113_0==78||(LA113_0>=80 && LA113_0<=81)||LA113_0==88) ) {
                     alt113=1;
                 }
 
@@ -32966,13 +33076,13 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 if ( (LA114_0==35) ) {
                     int LA114_1 = input.LA(2);
 
-                    if ( (LA114_1==18||(LA114_1>=20 && LA114_1<=34)||LA114_1==59||(LA114_1>=86 && LA114_1<=87)) ) {
+                    if ( (LA114_1==18||(LA114_1>=20 && LA114_1<=34)||LA114_1==65||(LA114_1>=86 && LA114_1<=87)) ) {
                         alt114=1;
                     }
 
 
                 }
-                else if ( ((LA114_0>=RULE_UNSIGNED_NUMBER && LA114_0<=RULE_IDENT)||(LA114_0>=26 && LA114_0<=29)||(LA114_0>=36 && LA114_0<=38)||LA114_0==60||(LA114_0>=63 && LA114_0<=64)||LA114_0==69||LA114_0==72||LA114_0==78||(LA114_0>=80 && LA114_0<=81)||LA114_0==88) ) {
+                else if ( ((LA114_0>=RULE_UNSIGNED_NUMBER && LA114_0<=RULE_IDENT)||(LA114_0>=26 && LA114_0<=29)||(LA114_0>=36 && LA114_0<=38)||LA114_0==59||(LA114_0>=62 && LA114_0<=63)||LA114_0==69||LA114_0==72||LA114_0==78||(LA114_0>=80 && LA114_0<=81)||LA114_0==88) ) {
                     alt114=1;
                 }
 
@@ -33503,7 +33613,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectEquationAccess().getLeftParenthesisKeyword_1()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getConnectEquationAccess().getLeftParenthesisKeyword_1()); 
             }
@@ -33683,7 +33793,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectEquationAccess().getCommaKeyword_3()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getConnectEquationAccess().getCommaKeyword_3()); 
             }
@@ -33863,7 +33973,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectEquationAccess().getRightParenthesisKeyword_5()); 
             }
-            match(input,61,FOLLOW_2); if (state.failed) return ;
+            match(input,60,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getConnectEquationAccess().getRightParenthesisKeyword_5()); 
             }
@@ -34391,13 +34501,13 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 if ( (LA115_0==35) ) {
                     int LA115_2 = input.LA(2);
 
-                    if ( (LA115_2==18||(LA115_2>=20 && LA115_2<=34)||LA115_2==59||(LA115_2>=86 && LA115_2<=87)) ) {
+                    if ( (LA115_2==18||(LA115_2>=20 && LA115_2<=34)||LA115_2==65||(LA115_2>=86 && LA115_2<=87)) ) {
                         alt115=1;
                     }
 
 
                 }
-                else if ( ((LA115_0>=RULE_UNSIGNED_NUMBER && LA115_0<=RULE_IDENT)||(LA115_0>=26 && LA115_0<=29)||(LA115_0>=36 && LA115_0<=38)||LA115_0==60||(LA115_0>=63 && LA115_0<=64)||LA115_0==69||LA115_0==72||LA115_0==78||(LA115_0>=80 && LA115_0<=81)||LA115_0==88) ) {
+                else if ( ((LA115_0>=RULE_UNSIGNED_NUMBER && LA115_0<=RULE_IDENT)||(LA115_0>=26 && LA115_0<=29)||(LA115_0>=36 && LA115_0<=38)||LA115_0==59||(LA115_0>=62 && LA115_0<=63)||LA115_0==69||LA115_0==72||LA115_0==78||(LA115_0>=80 && LA115_0<=81)||LA115_0==88) ) {
                     alt115=1;
                 }
 
@@ -35225,13 +35335,13 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 if ( (LA117_0==35) ) {
                     int LA117_1 = input.LA(2);
 
-                    if ( (LA117_1==18||(LA117_1>=20 && LA117_1<=34)||LA117_1==59||(LA117_1>=86 && LA117_1<=87)) ) {
+                    if ( (LA117_1==18||(LA117_1>=20 && LA117_1<=34)||LA117_1==65||(LA117_1>=86 && LA117_1<=87)) ) {
                         alt117=1;
                     }
 
 
                 }
-                else if ( ((LA117_0>=RULE_UNSIGNED_NUMBER && LA117_0<=RULE_IDENT)||(LA117_0>=26 && LA117_0<=29)||(LA117_0>=36 && LA117_0<=38)||LA117_0==60||(LA117_0>=63 && LA117_0<=64)||LA117_0==69||LA117_0==72||LA117_0==78||(LA117_0>=80 && LA117_0<=81)||LA117_0==88) ) {
+                else if ( ((LA117_0>=RULE_UNSIGNED_NUMBER && LA117_0<=RULE_IDENT)||(LA117_0>=26 && LA117_0<=29)||(LA117_0>=36 && LA117_0<=38)||LA117_0==59||(LA117_0>=62 && LA117_0<=63)||LA117_0==69||LA117_0==72||LA117_0==78||(LA117_0>=80 && LA117_0<=81)||LA117_0==88) ) {
                     alt117=1;
                 }
 
@@ -36699,7 +36809,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionStatementAccess().getLeftParenthesisKeyword_0_1_0()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFunctionStatementAccess().getLeftParenthesisKeyword_0_1_0()); 
             }
@@ -36879,7 +36989,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionStatementAccess().getRightParenthesisKeyword_0_1_2()); 
             }
-            match(input,61,FOLLOW_2); if (state.failed) return ;
+            match(input,60,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFunctionStatementAccess().getRightParenthesisKeyword_0_1_2()); 
             }
@@ -38013,7 +38123,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt120=2;
                 int LA120_0 = input.LA(1);
 
-                if ( (LA120_0==RULE_IDENT||LA120_0==19||LA120_0==60||LA120_0==63||LA120_0==72||LA120_0==78||LA120_0==81||(LA120_0>=84 && LA120_0<=85)) ) {
+                if ( (LA120_0==RULE_IDENT||LA120_0==19||LA120_0==59||LA120_0==62||LA120_0==72||LA120_0==78||LA120_0==81||(LA120_0>=84 && LA120_0<=85)) ) {
                     alt120=1;
                 }
 
@@ -38944,7 +39054,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt123=2;
                 int LA123_0 = input.LA(1);
 
-                if ( (LA123_0==RULE_IDENT||LA123_0==19||LA123_0==60||LA123_0==63||LA123_0==72||LA123_0==78||LA123_0==81||(LA123_0>=84 && LA123_0<=85)) ) {
+                if ( (LA123_0==RULE_IDENT||LA123_0==19||LA123_0==59||LA123_0==62||LA123_0==72||LA123_0==78||LA123_0==81||(LA123_0>=84 && LA123_0<=85)) ) {
                     alt123=1;
                 }
 
@@ -39137,7 +39247,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt124=2;
                 int LA124_0 = input.LA(1);
 
-                if ( (LA124_0==RULE_IDENT||LA124_0==19||LA124_0==60||LA124_0==63||LA124_0==72||LA124_0==78||LA124_0==81||(LA124_0>=84 && LA124_0<=85)) ) {
+                if ( (LA124_0==RULE_IDENT||LA124_0==19||LA124_0==59||LA124_0==62||LA124_0==72||LA124_0==78||LA124_0==81||(LA124_0>=84 && LA124_0<=85)) ) {
                     alt124=1;
                 }
 
@@ -39515,7 +39625,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt125=2;
                 int LA125_0 = input.LA(1);
 
-                if ( (LA125_0==RULE_IDENT||LA125_0==19||LA125_0==60||LA125_0==63||LA125_0==72||LA125_0==78||LA125_0==81||(LA125_0>=84 && LA125_0<=85)) ) {
+                if ( (LA125_0==RULE_IDENT||LA125_0==19||LA125_0==59||LA125_0==62||LA125_0==72||LA125_0==78||LA125_0==81||(LA125_0>=84 && LA125_0<=85)) ) {
                     alt125=1;
                 }
 
@@ -40232,7 +40342,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt126=2;
                 int LA126_0 = input.LA(1);
 
-                if ( (LA126_0==RULE_IDENT||LA126_0==19||LA126_0==60||LA126_0==63||LA126_0==72||LA126_0==78||LA126_0==81||(LA126_0>=84 && LA126_0<=85)) ) {
+                if ( (LA126_0==RULE_IDENT||LA126_0==19||LA126_0==59||LA126_0==62||LA126_0==72||LA126_0==78||LA126_0==81||(LA126_0>=84 && LA126_0<=85)) ) {
                     alt126=1;
                 }
 
@@ -41057,7 +41167,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt128=2;
                 int LA128_0 = input.LA(1);
 
-                if ( (LA128_0==RULE_IDENT||LA128_0==19||LA128_0==60||LA128_0==63||LA128_0==72||LA128_0==78||LA128_0==81||(LA128_0>=84 && LA128_0<=85)) ) {
+                if ( (LA128_0==RULE_IDENT||LA128_0==19||LA128_0==59||LA128_0==62||LA128_0==72||LA128_0==78||LA128_0==81||(LA128_0>=84 && LA128_0<=85)) ) {
                     alt128=1;
                 }
 
@@ -41435,7 +41545,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt129=2;
                 int LA129_0 = input.LA(1);
 
-                if ( (LA129_0==RULE_IDENT||LA129_0==19||LA129_0==60||LA129_0==63||LA129_0==72||LA129_0==78||LA129_0==81||(LA129_0>=84 && LA129_0<=85)) ) {
+                if ( (LA129_0==RULE_IDENT||LA129_0==19||LA129_0==59||LA129_0==62||LA129_0==72||LA129_0==78||LA129_0==81||(LA129_0>=84 && LA129_0<=85)) ) {
                     alt129=1;
                 }
 
@@ -46175,7 +46285,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_5_0()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_5_0()); 
             }
@@ -46344,7 +46454,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_5_2()); 
             }
-            match(input,61,FOLLOW_2); if (state.failed) return ;
+            match(input,60,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_5_2()); 
             }
@@ -46429,7 +46539,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrimaryAccess().getLeftSquareBracketKeyword_6_0()); 
             }
-            match(input,64,FOLLOW_2); if (state.failed) return ;
+            match(input,63,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPrimaryAccess().getLeftSquareBracketKeyword_6_0()); 
             }
@@ -46711,7 +46821,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrimaryAccess().getRightSquareBracketKeyword_6_3()); 
             }
-            match(input,65,FOLLOW_2); if (state.failed) return ;
+            match(input,64,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPrimaryAccess().getRightSquareBracketKeyword_6_3()); 
             }
@@ -47223,7 +47333,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt142=2;
             int LA142_0 = input.LA(1);
 
-            if ( ((LA142_0>=RULE_UNSIGNED_NUMBER && LA142_0<=RULE_IDENT)||(LA142_0>=26 && LA142_0<=29)||(LA142_0>=35 && LA142_0<=38)||LA142_0==60||(LA142_0>=63 && LA142_0<=64)||LA142_0==69||LA142_0==72||LA142_0==88) ) {
+            if ( ((LA142_0>=RULE_UNSIGNED_NUMBER && LA142_0<=RULE_IDENT)||(LA142_0>=26 && LA142_0<=29)||(LA142_0>=35 && LA142_0<=38)||LA142_0==59||(LA142_0>=62 && LA142_0<=63)||LA142_0==69||LA142_0==72||LA142_0==88) ) {
                 alt142=1;
             }
             switch (alt142) {
@@ -47326,7 +47436,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt143=2;
                 int LA143_0 = input.LA(1);
 
-                if ( (LA143_0==62) ) {
+                if ( (LA143_0==61) ) {
                     alt143=1;
                 }
 
@@ -47433,7 +47543,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOutputExpressionListAccess().getCommaKeyword_1_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOutputExpressionListAccess().getCommaKeyword_1_0()); 
             }
@@ -47517,7 +47627,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt144=2;
             int LA144_0 = input.LA(1);
 
-            if ( ((LA144_0>=RULE_UNSIGNED_NUMBER && LA144_0<=RULE_IDENT)||(LA144_0>=26 && LA144_0<=29)||(LA144_0>=35 && LA144_0<=38)||LA144_0==60||(LA144_0>=63 && LA144_0<=64)||LA144_0==69||LA144_0==72||LA144_0==88) ) {
+            if ( ((LA144_0>=RULE_UNSIGNED_NUMBER && LA144_0<=RULE_IDENT)||(LA144_0>=26 && LA144_0<=29)||(LA144_0>=35 && LA144_0<=38)||LA144_0==59||(LA144_0>=62 && LA144_0<=63)||LA144_0==69||LA144_0==72||LA144_0==88) ) {
                 alt144=1;
             }
             switch (alt144) {
@@ -47709,7 +47819,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt145=2;
                 int LA145_0 = input.LA(1);
 
-                if ( (LA145_0==62) ) {
+                if ( (LA145_0==61) ) {
                     alt145=1;
                 }
 
@@ -47816,7 +47926,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExpressionListAccess().getCommaKeyword_1_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getExpressionListAccess().getCommaKeyword_1_0()); 
             }
@@ -48073,7 +48183,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt146=2;
             int LA146_0 = input.LA(1);
 
-            if ( (LA146_0==62||LA146_0==78) ) {
+            if ( (LA146_0==61||LA146_0==78) ) {
                 alt146=1;
             }
             switch (alt146) {
@@ -48175,7 +48285,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArrayArgumentsAccess().getCommaKeyword_1_0_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getArrayArgumentsAccess().getCommaKeyword_1_0_0()); 
             }
@@ -48601,7 +48711,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt147=2;
             int LA147_0 = input.LA(1);
 
-            if ( (LA147_0==62) ) {
+            if ( (LA147_0==61) ) {
                 alt147=1;
             }
             switch (alt147) {
@@ -48703,7 +48813,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArrayArgumentsNonFirstAccess().getCommaKeyword_1_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getArrayArgumentsNonFirstAccess().getCommaKeyword_1_0()); 
             }
@@ -48962,7 +49072,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt148=2;
                 int LA148_0 = input.LA(1);
 
-                if ( (LA148_0==62) ) {
+                if ( (LA148_0==61) ) {
                     int LA148_2 = input.LA(2);
 
                     if ( (LA148_2==RULE_IDENT) ) {
@@ -49081,7 +49191,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForIndicesAccess().getCommaKeyword_1_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getForIndicesAccess().getCommaKeyword_1_0()); 
             }
@@ -49609,14 +49719,14 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt150=2;
             int LA150_0 = input.LA(1);
 
-            if ( (LA150_0==63) ) {
+            if ( (LA150_0==62) ) {
                 alt150=1;
             }
             switch (alt150) {
                 case 1 :
                     // InternalMOloc.g:14055:3: '.'
                     {
-                    match(input,63,FOLLOW_2); if (state.failed) return ;
+                    match(input,62,FOLLOW_2); if (state.failed) return ;
 
                     }
                     break;
@@ -49796,7 +49906,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt151=2;
             int LA151_0 = input.LA(1);
 
-            if ( (LA151_0==64) ) {
+            if ( (LA151_0==63) ) {
                 alt151=1;
             }
             switch (alt151) {
@@ -49899,7 +50009,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt152=2;
                 int LA152_0 = input.LA(1);
 
-                if ( (LA152_0==63) ) {
+                if ( (LA152_0==62) ) {
                     alt152=1;
                 }
 
@@ -50006,7 +50116,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComponent_referenceAccess().getFullStopKeyword_3_0()); 
             }
-            match(input,63,FOLLOW_2); if (state.failed) return ;
+            match(input,62,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getComponent_referenceAccess().getFullStopKeyword_3_0()); 
             }
@@ -50175,7 +50285,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt153=2;
             int LA153_0 = input.LA(1);
 
-            if ( (LA153_0==64) ) {
+            if ( (LA153_0==63) ) {
                 alt153=1;
             }
             switch (alt153) {
@@ -50362,7 +50472,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getResultReferenceAccess().getLeftParenthesisKeyword_1_1()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getResultReferenceAccess().getLeftParenthesisKeyword_1_1()); 
             }
@@ -50540,7 +50650,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt154=2;
             int LA154_0 = input.LA(1);
 
-            if ( (LA154_0==62) ) {
+            if ( (LA154_0==61) ) {
                 alt154=1;
             }
             switch (alt154) {
@@ -50637,7 +50747,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getResultReferenceAccess().getRightParenthesisKeyword_1_4()); 
             }
-            match(input,61,FOLLOW_2); if (state.failed) return ;
+            match(input,60,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getResultReferenceAccess().getRightParenthesisKeyword_1_4()); 
             }
@@ -50722,7 +50832,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getResultReferenceAccess().getCommaKeyword_1_3_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getResultReferenceAccess().getCommaKeyword_1_3_0()); 
             }
@@ -50887,7 +50997,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionCallArgsAccess().getLeftParenthesisKeyword_0()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFunctionCallArgsAccess().getLeftParenthesisKeyword_0()); 
             }
@@ -50976,7 +51086,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt155=2;
             int LA155_0 = input.LA(1);
 
-            if ( ((LA155_0>=RULE_UNSIGNED_NUMBER && LA155_0<=RULE_IDENT)||(LA155_0>=26 && LA155_0<=29)||(LA155_0>=35 && LA155_0<=38)||LA155_0==47||LA155_0==60||(LA155_0>=63 && LA155_0<=64)||LA155_0==69||LA155_0==72||LA155_0==88) ) {
+            if ( ((LA155_0>=RULE_UNSIGNED_NUMBER && LA155_0<=RULE_IDENT)||(LA155_0>=26 && LA155_0<=29)||(LA155_0>=35 && LA155_0<=38)||LA155_0==47||LA155_0==59||(LA155_0>=62 && LA155_0<=63)||LA155_0==69||LA155_0==72||LA155_0==88) ) {
                 alt155=1;
             }
             switch (alt155) {
@@ -51073,7 +51183,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionCallArgsAccess().getRightParenthesisKeyword_2()); 
             }
-            match(input,61,FOLLOW_2); if (state.failed) return ;
+            match(input,60,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFunctionCallArgsAccess().getRightParenthesisKeyword_2()); 
             }
@@ -51246,7 +51356,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt156=2;
             int LA156_0 = input.LA(1);
 
-            if ( (LA156_0==62) ) {
+            if ( (LA156_0==61) ) {
                 int LA156_1 = input.LA(2);
 
                 if ( (synpred205_InternalMOloc()) ) {
@@ -51355,7 +51465,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionArgumentsAccess().getCommaKeyword_0_1_0_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFunctionArgumentsAccess().getCommaKeyword_0_1_0_0()); 
             }
@@ -51781,7 +51891,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt157=2;
             int LA157_0 = input.LA(1);
 
-            if ( (LA157_0==62) ) {
+            if ( (LA157_0==61) ) {
                 int LA157_1 = input.LA(2);
 
                 if ( (synpred206_InternalMOloc()) ) {
@@ -51887,7 +51997,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionArgumentsAccess().getCommaKeyword_1_1_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFunctionArgumentsAccess().getCommaKeyword_1_1_0()); 
             }
@@ -52144,7 +52254,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt158=2;
             int LA158_0 = input.LA(1);
 
-            if ( (LA158_0==62) ) {
+            if ( (LA158_0==61) ) {
                 int LA158_1 = input.LA(2);
 
                 if ( (synpred207_InternalMOloc()) ) {
@@ -52250,7 +52360,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionArgumentsNonFirstAccess().getCommaKeyword_0_1_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFunctionArgumentsNonFirstAccess().getCommaKeyword_0_1_0()); 
             }
@@ -52593,7 +52703,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionPartialApplicationAccess().getLeftParenthesisKeyword_2()); 
             }
-            match(input,60,FOLLOW_2); if (state.failed) return ;
+            match(input,59,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFunctionPartialApplicationAccess().getLeftParenthesisKeyword_2()); 
             }
@@ -52762,7 +52872,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionPartialApplicationAccess().getRightParenthesisKeyword_4()); 
             }
-            match(input,61,FOLLOW_2); if (state.failed) return ;
+            match(input,60,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFunctionPartialApplicationAccess().getRightParenthesisKeyword_4()); 
             }
@@ -52935,7 +53045,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             int alt159=2;
             int LA159_0 = input.LA(1);
 
-            if ( (LA159_0==62) ) {
+            if ( (LA159_0==61) ) {
                 int LA159_1 = input.LA(2);
 
                 if ( (synpred208_InternalMOloc()) ) {
@@ -53041,7 +53151,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNamedArgumentsAccess().getCommaKeyword_1_0()); 
             }
-            match(input,62,FOLLOW_2); if (state.failed) return ;
+            match(input,61,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNamedArgumentsAccess().getCommaKeyword_1_0()); 
             }
@@ -53295,7 +53405,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNamedArgumentAccess().getEqualsSignKeyword_1()); 
             }
-            match(input,59,FOLLOW_2); if (state.failed) return ;
+            match(input,65,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNamedArgumentAccess().getEqualsSignKeyword_1()); 
             }
@@ -53550,7 +53660,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
                 int alt160=2;
                 int LA160_0 = input.LA(1);
 
-                if ( (LA160_0==63) ) {
+                if ( (LA160_0==62) ) {
                     int LA160_2 = input.LA(2);
 
                     if ( (LA160_2==RULE_IDENT) ) {
@@ -53663,7 +53773,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNameAccess().getFullStopKeyword_1_0()); 
             }
-            match(input,63,FOLLOW_2); if (state.failed) return ;
+            match(input,62,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getNameAccess().getFullStopKeyword_1_0()); 
             }
@@ -53977,26 +54087,82 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Class_definition__IsfinalAssignment_0"
 
 
+    // $ANTLR start "rule__Class_definition__IsOverAssignment_3"
+    // InternalMOloc.g:15373:1: rule__Class_definition__IsOverAssignment_3 : ( ( ';' ) ) ;
+    public final void rule__Class_definition__IsOverAssignment_3() throws RecognitionException {
+        int rule__Class_definition__IsOverAssignment_3_StartIndex = input.index();
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1094) ) { return ; }
+            // InternalMOloc.g:15377:1: ( ( ( ';' ) ) )
+            // InternalMOloc.g:15378:2: ( ( ';' ) )
+            {
+            // InternalMOloc.g:15378:2: ( ( ';' ) )
+            // InternalMOloc.g:15379:3: ( ';' )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getClass_definitionAccess().getIsOverSemicolonKeyword_3_0()); 
+            }
+            // InternalMOloc.g:15380:3: ( ';' )
+            // InternalMOloc.g:15381:4: ';'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getClass_definitionAccess().getIsOverSemicolonKeyword_3_0()); 
+            }
+            match(input,58,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getClass_definitionAccess().getIsOverSemicolonKeyword_3_0()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getClass_definitionAccess().getIsOverSemicolonKeyword_3_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 1094, rule__Class_definition__IsOverAssignment_3_StartIndex); }
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Class_definition__IsOverAssignment_3"
+
+
     // $ANTLR start "rule__Class_prefixes__IsEncapsulatedAssignment_0"
-    // InternalMOloc.g:15373:1: rule__Class_prefixes__IsEncapsulatedAssignment_0 : ( ( 'encapsulated' ) ) ;
+    // InternalMOloc.g:15392:1: rule__Class_prefixes__IsEncapsulatedAssignment_0 : ( ( 'encapsulated' ) ) ;
     public final void rule__Class_prefixes__IsEncapsulatedAssignment_0() throws RecognitionException {
         int rule__Class_prefixes__IsEncapsulatedAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1094) ) { return ; }
-            // InternalMOloc.g:15377:1: ( ( ( 'encapsulated' ) ) )
-            // InternalMOloc.g:15378:2: ( ( 'encapsulated' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1095) ) { return ; }
+            // InternalMOloc.g:15396:1: ( ( ( 'encapsulated' ) ) )
+            // InternalMOloc.g:15397:2: ( ( 'encapsulated' ) )
             {
-            // InternalMOloc.g:15378:2: ( ( 'encapsulated' ) )
-            // InternalMOloc.g:15379:3: ( 'encapsulated' )
+            // InternalMOloc.g:15397:2: ( ( 'encapsulated' ) )
+            // InternalMOloc.g:15398:3: ( 'encapsulated' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getIsEncapsulatedEncapsulatedKeyword_0_0()); 
             }
-            // InternalMOloc.g:15380:3: ( 'encapsulated' )
-            // InternalMOloc.g:15381:4: 'encapsulated'
+            // InternalMOloc.g:15399:3: ( 'encapsulated' )
+            // InternalMOloc.g:15400:4: 'encapsulated'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getIsEncapsulatedEncapsulatedKeyword_0_0()); 
@@ -54023,7 +54189,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1094, rule__Class_prefixes__IsEncapsulatedAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1095, rule__Class_prefixes__IsEncapsulatedAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54034,25 +54200,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class_prefixes__IsPartialAssignment_1"
-    // InternalMOloc.g:15392:1: rule__Class_prefixes__IsPartialAssignment_1 : ( ( 'partial' ) ) ;
+    // InternalMOloc.g:15411:1: rule__Class_prefixes__IsPartialAssignment_1 : ( ( 'partial' ) ) ;
     public final void rule__Class_prefixes__IsPartialAssignment_1() throws RecognitionException {
         int rule__Class_prefixes__IsPartialAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1095) ) { return ; }
-            // InternalMOloc.g:15396:1: ( ( ( 'partial' ) ) )
-            // InternalMOloc.g:15397:2: ( ( 'partial' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1096) ) { return ; }
+            // InternalMOloc.g:15415:1: ( ( ( 'partial' ) ) )
+            // InternalMOloc.g:15416:2: ( ( 'partial' ) )
             {
-            // InternalMOloc.g:15397:2: ( ( 'partial' ) )
-            // InternalMOloc.g:15398:3: ( 'partial' )
+            // InternalMOloc.g:15416:2: ( ( 'partial' ) )
+            // InternalMOloc.g:15417:3: ( 'partial' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getIsPartialPartialKeyword_1_0()); 
             }
-            // InternalMOloc.g:15399:3: ( 'partial' )
-            // InternalMOloc.g:15400:4: 'partial'
+            // InternalMOloc.g:15418:3: ( 'partial' )
+            // InternalMOloc.g:15419:4: 'partial'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getIsPartialPartialKeyword_1_0()); 
@@ -54079,7 +54245,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1095, rule__Class_prefixes__IsPartialAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1096, rule__Class_prefixes__IsPartialAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54090,25 +54256,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class_prefixes__IsExpandableAssignment_2"
-    // InternalMOloc.g:15411:1: rule__Class_prefixes__IsExpandableAssignment_2 : ( ( 'expandable' ) ) ;
+    // InternalMOloc.g:15430:1: rule__Class_prefixes__IsExpandableAssignment_2 : ( ( 'expandable' ) ) ;
     public final void rule__Class_prefixes__IsExpandableAssignment_2() throws RecognitionException {
         int rule__Class_prefixes__IsExpandableAssignment_2_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1096) ) { return ; }
-            // InternalMOloc.g:15415:1: ( ( ( 'expandable' ) ) )
-            // InternalMOloc.g:15416:2: ( ( 'expandable' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1097) ) { return ; }
+            // InternalMOloc.g:15434:1: ( ( ( 'expandable' ) ) )
+            // InternalMOloc.g:15435:2: ( ( 'expandable' ) )
             {
-            // InternalMOloc.g:15416:2: ( ( 'expandable' ) )
-            // InternalMOloc.g:15417:3: ( 'expandable' )
+            // InternalMOloc.g:15435:2: ( ( 'expandable' ) )
+            // InternalMOloc.g:15436:3: ( 'expandable' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getIsExpandableExpandableKeyword_2_0()); 
             }
-            // InternalMOloc.g:15418:3: ( 'expandable' )
-            // InternalMOloc.g:15419:4: 'expandable'
+            // InternalMOloc.g:15437:3: ( 'expandable' )
+            // InternalMOloc.g:15438:4: 'expandable'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getIsExpandableExpandableKeyword_2_0()); 
@@ -54135,7 +54301,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1096, rule__Class_prefixes__IsExpandableAssignment_2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1097, rule__Class_prefixes__IsExpandableAssignment_2_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54146,25 +54312,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class_prefixes__IsPureAssignment_3_0"
-    // InternalMOloc.g:15430:1: rule__Class_prefixes__IsPureAssignment_3_0 : ( ( 'pure' ) ) ;
+    // InternalMOloc.g:15449:1: rule__Class_prefixes__IsPureAssignment_3_0 : ( ( 'pure' ) ) ;
     public final void rule__Class_prefixes__IsPureAssignment_3_0() throws RecognitionException {
         int rule__Class_prefixes__IsPureAssignment_3_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1097) ) { return ; }
-            // InternalMOloc.g:15434:1: ( ( ( 'pure' ) ) )
-            // InternalMOloc.g:15435:2: ( ( 'pure' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1098) ) { return ; }
+            // InternalMOloc.g:15453:1: ( ( ( 'pure' ) ) )
+            // InternalMOloc.g:15454:2: ( ( 'pure' ) )
             {
-            // InternalMOloc.g:15435:2: ( ( 'pure' ) )
-            // InternalMOloc.g:15436:3: ( 'pure' )
+            // InternalMOloc.g:15454:2: ( ( 'pure' ) )
+            // InternalMOloc.g:15455:3: ( 'pure' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getIsPurePureKeyword_3_0_0()); 
             }
-            // InternalMOloc.g:15437:3: ( 'pure' )
-            // InternalMOloc.g:15438:4: 'pure'
+            // InternalMOloc.g:15456:3: ( 'pure' )
+            // InternalMOloc.g:15457:4: 'pure'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getIsPurePureKeyword_3_0_0()); 
@@ -54191,7 +54357,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1097, rule__Class_prefixes__IsPureAssignment_3_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1098, rule__Class_prefixes__IsPureAssignment_3_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54202,25 +54368,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class_prefixes__IsPureAssignment_3_1"
-    // InternalMOloc.g:15449:1: rule__Class_prefixes__IsPureAssignment_3_1 : ( ( 'impure' ) ) ;
+    // InternalMOloc.g:15468:1: rule__Class_prefixes__IsPureAssignment_3_1 : ( ( 'impure' ) ) ;
     public final void rule__Class_prefixes__IsPureAssignment_3_1() throws RecognitionException {
         int rule__Class_prefixes__IsPureAssignment_3_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1098) ) { return ; }
-            // InternalMOloc.g:15453:1: ( ( ( 'impure' ) ) )
-            // InternalMOloc.g:15454:2: ( ( 'impure' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1099) ) { return ; }
+            // InternalMOloc.g:15472:1: ( ( ( 'impure' ) ) )
+            // InternalMOloc.g:15473:2: ( ( 'impure' ) )
             {
-            // InternalMOloc.g:15454:2: ( ( 'impure' ) )
-            // InternalMOloc.g:15455:3: ( 'impure' )
+            // InternalMOloc.g:15473:2: ( ( 'impure' ) )
+            // InternalMOloc.g:15474:3: ( 'impure' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getIsPureImpureKeyword_3_1_0()); 
             }
-            // InternalMOloc.g:15456:3: ( 'impure' )
-            // InternalMOloc.g:15457:4: 'impure'
+            // InternalMOloc.g:15475:3: ( 'impure' )
+            // InternalMOloc.g:15476:4: 'impure'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getIsPureImpureKeyword_3_1_0()); 
@@ -54247,7 +54413,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1098, rule__Class_prefixes__IsPureAssignment_3_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1099, rule__Class_prefixes__IsPureAssignment_3_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54258,25 +54424,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class_prefixes__IsOperatorAssignment_4"
-    // InternalMOloc.g:15468:1: rule__Class_prefixes__IsOperatorAssignment_4 : ( ( 'operator' ) ) ;
+    // InternalMOloc.g:15487:1: rule__Class_prefixes__IsOperatorAssignment_4 : ( ( 'operator' ) ) ;
     public final void rule__Class_prefixes__IsOperatorAssignment_4() throws RecognitionException {
         int rule__Class_prefixes__IsOperatorAssignment_4_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1099) ) { return ; }
-            // InternalMOloc.g:15472:1: ( ( ( 'operator' ) ) )
-            // InternalMOloc.g:15473:2: ( ( 'operator' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1100) ) { return ; }
+            // InternalMOloc.g:15491:1: ( ( ( 'operator' ) ) )
+            // InternalMOloc.g:15492:2: ( ( 'operator' ) )
             {
-            // InternalMOloc.g:15473:2: ( ( 'operator' ) )
-            // InternalMOloc.g:15474:3: ( 'operator' )
+            // InternalMOloc.g:15492:2: ( ( 'operator' ) )
+            // InternalMOloc.g:15493:3: ( 'operator' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getIsOperatorOperatorKeyword_4_0()); 
             }
-            // InternalMOloc.g:15475:3: ( 'operator' )
-            // InternalMOloc.g:15476:4: 'operator'
+            // InternalMOloc.g:15494:3: ( 'operator' )
+            // InternalMOloc.g:15495:4: 'operator'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getIsOperatorOperatorKeyword_4_0()); 
@@ -54303,7 +54469,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1099, rule__Class_prefixes__IsOperatorAssignment_4_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1100, rule__Class_prefixes__IsOperatorAssignment_4_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54314,19 +54480,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class_prefixes__ClassTypeAssignment_5"
-    // InternalMOloc.g:15487:1: rule__Class_prefixes__ClassTypeAssignment_5 : ( ruleClassType ) ;
+    // InternalMOloc.g:15506:1: rule__Class_prefixes__ClassTypeAssignment_5 : ( ruleClassType ) ;
     public final void rule__Class_prefixes__ClassTypeAssignment_5() throws RecognitionException {
         int rule__Class_prefixes__ClassTypeAssignment_5_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1100) ) { return ; }
-            // InternalMOloc.g:15491:1: ( ( ruleClassType ) )
-            // InternalMOloc.g:15492:2: ( ruleClassType )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1101) ) { return ; }
+            // InternalMOloc.g:15510:1: ( ( ruleClassType ) )
+            // InternalMOloc.g:15511:2: ( ruleClassType )
             {
-            // InternalMOloc.g:15492:2: ( ruleClassType )
-            // InternalMOloc.g:15493:3: ruleClassType
+            // InternalMOloc.g:15511:2: ( ruleClassType )
+            // InternalMOloc.g:15512:3: ruleClassType
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_prefixesAccess().getClassTypeClassTypeEnumRuleCall_5_0()); 
@@ -54351,7 +54517,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1100, rule__Class_prefixes__ClassTypeAssignment_5_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1101, rule__Class_prefixes__ClassTypeAssignment_5_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54362,25 +54528,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Long_class_specifier__IsExtendsAssignment_0"
-    // InternalMOloc.g:15502:1: rule__Long_class_specifier__IsExtendsAssignment_0 : ( ( 'extends' ) ) ;
+    // InternalMOloc.g:15521:1: rule__Long_class_specifier__IsExtendsAssignment_0 : ( ( 'extends' ) ) ;
     public final void rule__Long_class_specifier__IsExtendsAssignment_0() throws RecognitionException {
         int rule__Long_class_specifier__IsExtendsAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1101) ) { return ; }
-            // InternalMOloc.g:15506:1: ( ( ( 'extends' ) ) )
-            // InternalMOloc.g:15507:2: ( ( 'extends' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1102) ) { return ; }
+            // InternalMOloc.g:15525:1: ( ( ( 'extends' ) ) )
+            // InternalMOloc.g:15526:2: ( ( 'extends' ) )
             {
-            // InternalMOloc.g:15507:2: ( ( 'extends' ) )
-            // InternalMOloc.g:15508:3: ( 'extends' )
+            // InternalMOloc.g:15526:2: ( ( 'extends' ) )
+            // InternalMOloc.g:15527:3: ( 'extends' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLong_class_specifierAccess().getIsExtendsExtendsKeyword_0_0()); 
             }
-            // InternalMOloc.g:15509:3: ( 'extends' )
-            // InternalMOloc.g:15510:4: 'extends'
+            // InternalMOloc.g:15528:3: ( 'extends' )
+            // InternalMOloc.g:15529:4: 'extends'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLong_class_specifierAccess().getIsExtendsExtendsKeyword_0_0()); 
@@ -54407,7 +54573,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1101, rule__Long_class_specifier__IsExtendsAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1102, rule__Long_class_specifier__IsExtendsAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54417,20 +54583,76 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Long_class_specifier__IsExtendsAssignment_0"
 
 
+    // $ANTLR start "rule__Long_class_specifier__IsLongClassSpecifierAssignment_5"
+    // InternalMOloc.g:15540:1: rule__Long_class_specifier__IsLongClassSpecifierAssignment_5 : ( ( 'end' ) ) ;
+    public final void rule__Long_class_specifier__IsLongClassSpecifierAssignment_5() throws RecognitionException {
+        int rule__Long_class_specifier__IsLongClassSpecifierAssignment_5_StartIndex = input.index();
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1103) ) { return ; }
+            // InternalMOloc.g:15544:1: ( ( ( 'end' ) ) )
+            // InternalMOloc.g:15545:2: ( ( 'end' ) )
+            {
+            // InternalMOloc.g:15545:2: ( ( 'end' ) )
+            // InternalMOloc.g:15546:3: ( 'end' )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getLong_class_specifierAccess().getIsLongClassSpecifierEndKeyword_5_0()); 
+            }
+            // InternalMOloc.g:15547:3: ( 'end' )
+            // InternalMOloc.g:15548:4: 'end'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getLong_class_specifierAccess().getIsLongClassSpecifierEndKeyword_5_0()); 
+            }
+            match(input,35,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getLong_class_specifierAccess().getIsLongClassSpecifierEndKeyword_5_0()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getLong_class_specifierAccess().getIsLongClassSpecifierEndKeyword_5_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 1103, rule__Long_class_specifier__IsLongClassSpecifierAssignment_5_StartIndex); }
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Long_class_specifier__IsLongClassSpecifierAssignment_5"
+
+
     // $ANTLR start "rule__Long_class_specifier__ClassNameEndAssignment_6"
-    // InternalMOloc.g:15521:1: rule__Long_class_specifier__ClassNameEndAssignment_6 : ( RULE_IDENT ) ;
+    // InternalMOloc.g:15559:1: rule__Long_class_specifier__ClassNameEndAssignment_6 : ( RULE_IDENT ) ;
     public final void rule__Long_class_specifier__ClassNameEndAssignment_6() throws RecognitionException {
         int rule__Long_class_specifier__ClassNameEndAssignment_6_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1102) ) { return ; }
-            // InternalMOloc.g:15525:1: ( ( RULE_IDENT ) )
-            // InternalMOloc.g:15526:2: ( RULE_IDENT )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1104) ) { return ; }
+            // InternalMOloc.g:15563:1: ( ( RULE_IDENT ) )
+            // InternalMOloc.g:15564:2: ( RULE_IDENT )
             {
-            // InternalMOloc.g:15526:2: ( RULE_IDENT )
-            // InternalMOloc.g:15527:3: RULE_IDENT
+            // InternalMOloc.g:15564:2: ( RULE_IDENT )
+            // InternalMOloc.g:15565:3: RULE_IDENT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLong_class_specifierAccess().getClassNameEndIDENTTerminalRuleCall_6_0()); 
@@ -54451,7 +54673,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1102, rule__Long_class_specifier__ClassNameEndAssignment_6_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1104, rule__Long_class_specifier__ClassNameEndAssignment_6_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54461,20 +54683,76 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Long_class_specifier__ClassNameEndAssignment_6"
 
 
+    // $ANTLR start "rule__Short_class_specifier__IsShortClassSpecifierAssignment_1"
+    // InternalMOloc.g:15574:1: rule__Short_class_specifier__IsShortClassSpecifierAssignment_1 : ( ( '=' ) ) ;
+    public final void rule__Short_class_specifier__IsShortClassSpecifierAssignment_1() throws RecognitionException {
+        int rule__Short_class_specifier__IsShortClassSpecifierAssignment_1_StartIndex = input.index();
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1105) ) { return ; }
+            // InternalMOloc.g:15578:1: ( ( ( '=' ) ) )
+            // InternalMOloc.g:15579:2: ( ( '=' ) )
+            {
+            // InternalMOloc.g:15579:2: ( ( '=' ) )
+            // InternalMOloc.g:15580:3: ( '=' )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getShort_class_specifierAccess().getIsShortClassSpecifierEqualsSignKeyword_1_0()); 
+            }
+            // InternalMOloc.g:15581:3: ( '=' )
+            // InternalMOloc.g:15582:4: '='
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getShort_class_specifierAccess().getIsShortClassSpecifierEqualsSignKeyword_1_0()); 
+            }
+            match(input,65,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getShort_class_specifierAccess().getIsShortClassSpecifierEqualsSignKeyword_1_0()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getShort_class_specifierAccess().getIsShortClassSpecifierEqualsSignKeyword_1_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 1105, rule__Short_class_specifier__IsShortClassSpecifierAssignment_1_StartIndex); }
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Short_class_specifier__IsShortClassSpecifierAssignment_1"
+
+
     // $ANTLR start "rule__Short_class_specifier__DirectionAssignment_2_0_0"
-    // InternalMOloc.g:15536:1: rule__Short_class_specifier__DirectionAssignment_2_0_0 : ( ruleDirection ) ;
+    // InternalMOloc.g:15593:1: rule__Short_class_specifier__DirectionAssignment_2_0_0 : ( ruleDirection ) ;
     public final void rule__Short_class_specifier__DirectionAssignment_2_0_0() throws RecognitionException {
         int rule__Short_class_specifier__DirectionAssignment_2_0_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1103) ) { return ; }
-            // InternalMOloc.g:15540:1: ( ( ruleDirection ) )
-            // InternalMOloc.g:15541:2: ( ruleDirection )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1106) ) { return ; }
+            // InternalMOloc.g:15597:1: ( ( ruleDirection ) )
+            // InternalMOloc.g:15598:2: ( ruleDirection )
             {
-            // InternalMOloc.g:15541:2: ( ruleDirection )
-            // InternalMOloc.g:15542:3: ruleDirection
+            // InternalMOloc.g:15598:2: ( ruleDirection )
+            // InternalMOloc.g:15599:3: ruleDirection
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getShort_class_specifierAccess().getDirectionDirectionEnumRuleCall_2_0_0_0()); 
@@ -54499,7 +54777,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1103, rule__Short_class_specifier__DirectionAssignment_2_0_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1106, rule__Short_class_specifier__DirectionAssignment_2_0_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54510,25 +54788,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Short_class_specifier__IsEnumerationAssignment_2_1_0"
-    // InternalMOloc.g:15551:1: rule__Short_class_specifier__IsEnumerationAssignment_2_1_0 : ( ( 'enumeration' ) ) ;
+    // InternalMOloc.g:15608:1: rule__Short_class_specifier__IsEnumerationAssignment_2_1_0 : ( ( 'enumeration' ) ) ;
     public final void rule__Short_class_specifier__IsEnumerationAssignment_2_1_0() throws RecognitionException {
         int rule__Short_class_specifier__IsEnumerationAssignment_2_1_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1104) ) { return ; }
-            // InternalMOloc.g:15555:1: ( ( ( 'enumeration' ) ) )
-            // InternalMOloc.g:15556:2: ( ( 'enumeration' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1107) ) { return ; }
+            // InternalMOloc.g:15612:1: ( ( ( 'enumeration' ) ) )
+            // InternalMOloc.g:15613:2: ( ( 'enumeration' ) )
             {
-            // InternalMOloc.g:15556:2: ( ( 'enumeration' ) )
-            // InternalMOloc.g:15557:3: ( 'enumeration' )
+            // InternalMOloc.g:15613:2: ( ( 'enumeration' ) )
+            // InternalMOloc.g:15614:3: ( 'enumeration' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getShort_class_specifierAccess().getIsEnumerationEnumerationKeyword_2_1_0_0()); 
             }
-            // InternalMOloc.g:15558:3: ( 'enumeration' )
-            // InternalMOloc.g:15559:4: 'enumeration'
+            // InternalMOloc.g:15615:3: ( 'enumeration' )
+            // InternalMOloc.g:15616:4: 'enumeration'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getShort_class_specifierAccess().getIsEnumerationEnumerationKeyword_2_1_0_0()); 
@@ -54555,7 +54833,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1104, rule__Short_class_specifier__IsEnumerationAssignment_2_1_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1107, rule__Short_class_specifier__IsEnumerationAssignment_2_1_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54566,25 +54844,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Short_class_specifier__IsColonAssignment_2_1_2_1"
-    // InternalMOloc.g:15570:1: rule__Short_class_specifier__IsColonAssignment_2_1_2_1 : ( ( ':' ) ) ;
+    // InternalMOloc.g:15627:1: rule__Short_class_specifier__IsColonAssignment_2_1_2_1 : ( ( ':' ) ) ;
     public final void rule__Short_class_specifier__IsColonAssignment_2_1_2_1() throws RecognitionException {
         int rule__Short_class_specifier__IsColonAssignment_2_1_2_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1105) ) { return ; }
-            // InternalMOloc.g:15574:1: ( ( ( ':' ) ) )
-            // InternalMOloc.g:15575:2: ( ( ':' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1108) ) { return ; }
+            // InternalMOloc.g:15631:1: ( ( ( ':' ) ) )
+            // InternalMOloc.g:15632:2: ( ( ':' ) )
             {
-            // InternalMOloc.g:15575:2: ( ( ':' ) )
-            // InternalMOloc.g:15576:3: ( ':' )
+            // InternalMOloc.g:15632:2: ( ( ':' ) )
+            // InternalMOloc.g:15633:3: ( ':' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getShort_class_specifierAccess().getIsColonColonKeyword_2_1_2_1_0()); 
             }
-            // InternalMOloc.g:15577:3: ( ':' )
-            // InternalMOloc.g:15578:4: ':'
+            // InternalMOloc.g:15634:3: ( ':' )
+            // InternalMOloc.g:15635:4: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getShort_class_specifierAccess().getIsColonColonKeyword_2_1_2_1_0()); 
@@ -54611,7 +54889,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1105, rule__Short_class_specifier__IsColonAssignment_2_1_2_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1108, rule__Short_class_specifier__IsColonAssignment_2_1_2_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54621,26 +54899,82 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Short_class_specifier__IsColonAssignment_2_1_2_1"
 
 
+    // $ANTLR start "rule__Der_class_specifier__IsDerClassSpecifierAssignment_1"
+    // InternalMOloc.g:15646:1: rule__Der_class_specifier__IsDerClassSpecifierAssignment_1 : ( ( '=' ) ) ;
+    public final void rule__Der_class_specifier__IsDerClassSpecifierAssignment_1() throws RecognitionException {
+        int rule__Der_class_specifier__IsDerClassSpecifierAssignment_1_StartIndex = input.index();
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1109) ) { return ; }
+            // InternalMOloc.g:15650:1: ( ( ( '=' ) ) )
+            // InternalMOloc.g:15651:2: ( ( '=' ) )
+            {
+            // InternalMOloc.g:15651:2: ( ( '=' ) )
+            // InternalMOloc.g:15652:3: ( '=' )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getDer_class_specifierAccess().getIsDerClassSpecifierEqualsSignKeyword_1_0()); 
+            }
+            // InternalMOloc.g:15653:3: ( '=' )
+            // InternalMOloc.g:15654:4: '='
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getDer_class_specifierAccess().getIsDerClassSpecifierEqualsSignKeyword_1_0()); 
+            }
+            match(input,65,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getDer_class_specifierAccess().getIsDerClassSpecifierEqualsSignKeyword_1_0()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getDer_class_specifierAccess().getIsDerClassSpecifierEqualsSignKeyword_1_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 1109, rule__Der_class_specifier__IsDerClassSpecifierAssignment_1_StartIndex); }
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Der_class_specifier__IsDerClassSpecifierAssignment_1"
+
+
     // $ANTLR start "rule__Der_class_specifier__IsDerAssignment_2"
-    // InternalMOloc.g:15589:1: rule__Der_class_specifier__IsDerAssignment_2 : ( ( 'der' ) ) ;
+    // InternalMOloc.g:15665:1: rule__Der_class_specifier__IsDerAssignment_2 : ( ( 'der' ) ) ;
     public final void rule__Der_class_specifier__IsDerAssignment_2() throws RecognitionException {
         int rule__Der_class_specifier__IsDerAssignment_2_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1106) ) { return ; }
-            // InternalMOloc.g:15593:1: ( ( ( 'der' ) ) )
-            // InternalMOloc.g:15594:2: ( ( 'der' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1110) ) { return ; }
+            // InternalMOloc.g:15669:1: ( ( ( 'der' ) ) )
+            // InternalMOloc.g:15670:2: ( ( 'der' ) )
             {
-            // InternalMOloc.g:15594:2: ( ( 'der' ) )
-            // InternalMOloc.g:15595:3: ( 'der' )
+            // InternalMOloc.g:15670:2: ( ( 'der' ) )
+            // InternalMOloc.g:15671:3: ( 'der' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDer_class_specifierAccess().getIsDerDerKeyword_2_0()); 
             }
-            // InternalMOloc.g:15596:3: ( 'der' )
-            // InternalMOloc.g:15597:4: 'der'
+            // InternalMOloc.g:15672:3: ( 'der' )
+            // InternalMOloc.g:15673:4: 'der'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDer_class_specifierAccess().getIsDerDerKeyword_2_0()); 
@@ -54667,7 +55001,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1106, rule__Der_class_specifier__IsDerAssignment_2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1110, rule__Der_class_specifier__IsDerAssignment_2_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54678,19 +55012,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Der_class_specifier__DerNameAssignment_6"
-    // InternalMOloc.g:15608:1: rule__Der_class_specifier__DerNameAssignment_6 : ( RULE_IDENT ) ;
+    // InternalMOloc.g:15684:1: rule__Der_class_specifier__DerNameAssignment_6 : ( RULE_IDENT ) ;
     public final void rule__Der_class_specifier__DerNameAssignment_6() throws RecognitionException {
         int rule__Der_class_specifier__DerNameAssignment_6_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1107) ) { return ; }
-            // InternalMOloc.g:15612:1: ( ( RULE_IDENT ) )
-            // InternalMOloc.g:15613:2: ( RULE_IDENT )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1111) ) { return ; }
+            // InternalMOloc.g:15688:1: ( ( RULE_IDENT ) )
+            // InternalMOloc.g:15689:2: ( RULE_IDENT )
             {
-            // InternalMOloc.g:15613:2: ( RULE_IDENT )
-            // InternalMOloc.g:15614:3: RULE_IDENT
+            // InternalMOloc.g:15689:2: ( RULE_IDENT )
+            // InternalMOloc.g:15690:3: RULE_IDENT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDer_class_specifierAccess().getDerNameIDENTTerminalRuleCall_6_0()); 
@@ -54711,7 +55045,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1107, rule__Der_class_specifier__DerNameAssignment_6_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1111, rule__Der_class_specifier__DerNameAssignment_6_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54722,19 +55056,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Der_class_specifier__DerNameAssignment_7_1"
-    // InternalMOloc.g:15623:1: rule__Der_class_specifier__DerNameAssignment_7_1 : ( RULE_IDENT ) ;
+    // InternalMOloc.g:15699:1: rule__Der_class_specifier__DerNameAssignment_7_1 : ( RULE_IDENT ) ;
     public final void rule__Der_class_specifier__DerNameAssignment_7_1() throws RecognitionException {
         int rule__Der_class_specifier__DerNameAssignment_7_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1108) ) { return ; }
-            // InternalMOloc.g:15627:1: ( ( RULE_IDENT ) )
-            // InternalMOloc.g:15628:2: ( RULE_IDENT )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1112) ) { return ; }
+            // InternalMOloc.g:15703:1: ( ( RULE_IDENT ) )
+            // InternalMOloc.g:15704:2: ( RULE_IDENT )
             {
-            // InternalMOloc.g:15628:2: ( RULE_IDENT )
-            // InternalMOloc.g:15629:3: RULE_IDENT
+            // InternalMOloc.g:15704:2: ( RULE_IDENT )
+            // InternalMOloc.g:15705:3: RULE_IDENT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDer_class_specifierAccess().getDerNameIDENTTerminalRuleCall_7_1_0()); 
@@ -54755,7 +55089,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1108, rule__Der_class_specifier__DerNameAssignment_7_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1112, rule__Der_class_specifier__DerNameAssignment_7_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54766,19 +55100,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class_name__ClassNameAssignment"
-    // InternalMOloc.g:15638:1: rule__Class_name__ClassNameAssignment : ( RULE_IDENT ) ;
+    // InternalMOloc.g:15714:1: rule__Class_name__ClassNameAssignment : ( RULE_IDENT ) ;
     public final void rule__Class_name__ClassNameAssignment() throws RecognitionException {
         int rule__Class_name__ClassNameAssignment_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1109) ) { return ; }
-            // InternalMOloc.g:15642:1: ( ( RULE_IDENT ) )
-            // InternalMOloc.g:15643:2: ( RULE_IDENT )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1113) ) { return ; }
+            // InternalMOloc.g:15718:1: ( ( RULE_IDENT ) )
+            // InternalMOloc.g:15719:2: ( RULE_IDENT )
             {
-            // InternalMOloc.g:15643:2: ( RULE_IDENT )
-            // InternalMOloc.g:15644:3: RULE_IDENT
+            // InternalMOloc.g:15719:2: ( RULE_IDENT )
+            // InternalMOloc.g:15720:3: RULE_IDENT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_nameAccess().getClassNameIDENTTerminalRuleCall_0()); 
@@ -54799,7 +55133,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1109, rule__Class_name__ClassNameAssignment_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1113, rule__Class_name__ClassNameAssignment_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54810,19 +55144,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class_modification__ModificationsAssignment_1"
-    // InternalMOloc.g:15653:1: rule__Class_modification__ModificationsAssignment_1 : ( ruleModificationElement ) ;
+    // InternalMOloc.g:15729:1: rule__Class_modification__ModificationsAssignment_1 : ( ruleModificationElement ) ;
     public final void rule__Class_modification__ModificationsAssignment_1() throws RecognitionException {
         int rule__Class_modification__ModificationsAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1110) ) { return ; }
-            // InternalMOloc.g:15657:1: ( ( ruleModificationElement ) )
-            // InternalMOloc.g:15658:2: ( ruleModificationElement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1114) ) { return ; }
+            // InternalMOloc.g:15733:1: ( ( ruleModificationElement ) )
+            // InternalMOloc.g:15734:2: ( ruleModificationElement )
             {
-            // InternalMOloc.g:15658:2: ( ruleModificationElement )
-            // InternalMOloc.g:15659:3: ruleModificationElement
+            // InternalMOloc.g:15734:2: ( ruleModificationElement )
+            // InternalMOloc.g:15735:3: ruleModificationElement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_modificationAccess().getModificationsModificationElementParserRuleCall_1_0()); 
@@ -54847,7 +55181,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1110, rule__Class_modification__ModificationsAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1114, rule__Class_modification__ModificationsAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54858,19 +55192,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Class_modification__ModificationsAssignment_2_1"
-    // InternalMOloc.g:15668:1: rule__Class_modification__ModificationsAssignment_2_1 : ( ruleModificationElement ) ;
+    // InternalMOloc.g:15744:1: rule__Class_modification__ModificationsAssignment_2_1 : ( ruleModificationElement ) ;
     public final void rule__Class_modification__ModificationsAssignment_2_1() throws RecognitionException {
         int rule__Class_modification__ModificationsAssignment_2_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1111) ) { return ; }
-            // InternalMOloc.g:15672:1: ( ( ruleModificationElement ) )
-            // InternalMOloc.g:15673:2: ( ruleModificationElement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1115) ) { return ; }
+            // InternalMOloc.g:15748:1: ( ( ruleModificationElement ) )
+            // InternalMOloc.g:15749:2: ( ruleModificationElement )
             {
-            // InternalMOloc.g:15673:2: ( ruleModificationElement )
-            // InternalMOloc.g:15674:3: ruleModificationElement
+            // InternalMOloc.g:15749:2: ( ruleModificationElement )
+            // InternalMOloc.g:15750:3: ruleModificationElement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getClass_modificationAccess().getModificationsModificationElementParserRuleCall_2_1_0()); 
@@ -54895,7 +55229,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1111, rule__Class_modification__ModificationsAssignment_2_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1115, rule__Class_modification__ModificationsAssignment_2_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54905,26 +55239,82 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Class_modification__ModificationsAssignment_2_1"
 
 
+    // $ANTLR start "rule__Class_modification__IsModificationOverAssignment_3"
+    // InternalMOloc.g:15759:1: rule__Class_modification__IsModificationOverAssignment_3 : ( ( ')' ) ) ;
+    public final void rule__Class_modification__IsModificationOverAssignment_3() throws RecognitionException {
+        int rule__Class_modification__IsModificationOverAssignment_3_StartIndex = input.index();
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1116) ) { return ; }
+            // InternalMOloc.g:15763:1: ( ( ( ')' ) ) )
+            // InternalMOloc.g:15764:2: ( ( ')' ) )
+            {
+            // InternalMOloc.g:15764:2: ( ( ')' ) )
+            // InternalMOloc.g:15765:3: ( ')' )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getClass_modificationAccess().getIsModificationOverRightParenthesisKeyword_3_0()); 
+            }
+            // InternalMOloc.g:15766:3: ( ')' )
+            // InternalMOloc.g:15767:4: ')'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getClass_modificationAccess().getIsModificationOverRightParenthesisKeyword_3_0()); 
+            }
+            match(input,60,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getClass_modificationAccess().getIsModificationOverRightParenthesisKeyword_3_0()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getClass_modificationAccess().getIsModificationOverRightParenthesisKeyword_3_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 1116, rule__Class_modification__IsModificationOverAssignment_3_StartIndex); }
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Class_modification__IsModificationOverAssignment_3"
+
+
     // $ANTLR start "rule__Annotation_modification_part__IsAnnotationAssignment_0"
-    // InternalMOloc.g:15683:1: rule__Annotation_modification_part__IsAnnotationAssignment_0 : ( ( 'annotation' ) ) ;
+    // InternalMOloc.g:15778:1: rule__Annotation_modification_part__IsAnnotationAssignment_0 : ( ( 'annotation' ) ) ;
     public final void rule__Annotation_modification_part__IsAnnotationAssignment_0() throws RecognitionException {
         int rule__Annotation_modification_part__IsAnnotationAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1112) ) { return ; }
-            // InternalMOloc.g:15687:1: ( ( ( 'annotation' ) ) )
-            // InternalMOloc.g:15688:2: ( ( 'annotation' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1117) ) { return ; }
+            // InternalMOloc.g:15782:1: ( ( ( 'annotation' ) ) )
+            // InternalMOloc.g:15783:2: ( ( 'annotation' ) )
             {
-            // InternalMOloc.g:15688:2: ( ( 'annotation' ) )
-            // InternalMOloc.g:15689:3: ( 'annotation' )
+            // InternalMOloc.g:15783:2: ( ( 'annotation' ) )
+            // InternalMOloc.g:15784:3: ( 'annotation' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAnnotation_modification_partAccess().getIsAnnotationAnnotationKeyword_0_0()); 
             }
-            // InternalMOloc.g:15690:3: ( 'annotation' )
-            // InternalMOloc.g:15691:4: 'annotation'
+            // InternalMOloc.g:15785:3: ( 'annotation' )
+            // InternalMOloc.g:15786:4: 'annotation'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAnnotation_modification_partAccess().getIsAnnotationAnnotationKeyword_0_0()); 
@@ -54951,7 +55341,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1112, rule__Annotation_modification_part__IsAnnotationAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1117, rule__Annotation_modification_part__IsAnnotationAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -54962,30 +55352,30 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Annotation_modification_part__AnnotationsAssignment_2"
-    // InternalMOloc.g:15702:1: rule__Annotation_modification_part__AnnotationsAssignment_2 : ( ruleAnnotationModification ) ;
+    // InternalMOloc.g:15797:1: rule__Annotation_modification_part__AnnotationsAssignment_2 : ( ruleAnnotationModificationElement ) ;
     public final void rule__Annotation_modification_part__AnnotationsAssignment_2() throws RecognitionException {
         int rule__Annotation_modification_part__AnnotationsAssignment_2_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1113) ) { return ; }
-            // InternalMOloc.g:15706:1: ( ( ruleAnnotationModification ) )
-            // InternalMOloc.g:15707:2: ( ruleAnnotationModification )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1118) ) { return ; }
+            // InternalMOloc.g:15801:1: ( ( ruleAnnotationModificationElement ) )
+            // InternalMOloc.g:15802:2: ( ruleAnnotationModificationElement )
             {
-            // InternalMOloc.g:15707:2: ( ruleAnnotationModification )
-            // InternalMOloc.g:15708:3: ruleAnnotationModification
+            // InternalMOloc.g:15802:2: ( ruleAnnotationModificationElement )
+            // InternalMOloc.g:15803:3: ruleAnnotationModificationElement
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationParserRuleCall_2_0()); 
+               before(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationElementParserRuleCall_2_0()); 
             }
             pushFollow(FOLLOW_2);
-            ruleAnnotationModification();
+            ruleAnnotationModificationElement();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationParserRuleCall_2_0()); 
+               after(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationElementParserRuleCall_2_0()); 
             }
 
             }
@@ -54999,7 +55389,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1113, rule__Annotation_modification_part__AnnotationsAssignment_2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1118, rule__Annotation_modification_part__AnnotationsAssignment_2_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55010,30 +55400,30 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Annotation_modification_part__AnnotationsAssignment_3_1"
-    // InternalMOloc.g:15717:1: rule__Annotation_modification_part__AnnotationsAssignment_3_1 : ( ruleAnnotationModification ) ;
+    // InternalMOloc.g:15812:1: rule__Annotation_modification_part__AnnotationsAssignment_3_1 : ( ruleAnnotationModificationElement ) ;
     public final void rule__Annotation_modification_part__AnnotationsAssignment_3_1() throws RecognitionException {
         int rule__Annotation_modification_part__AnnotationsAssignment_3_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1114) ) { return ; }
-            // InternalMOloc.g:15721:1: ( ( ruleAnnotationModification ) )
-            // InternalMOloc.g:15722:2: ( ruleAnnotationModification )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1119) ) { return ; }
+            // InternalMOloc.g:15816:1: ( ( ruleAnnotationModificationElement ) )
+            // InternalMOloc.g:15817:2: ( ruleAnnotationModificationElement )
             {
-            // InternalMOloc.g:15722:2: ( ruleAnnotationModification )
-            // InternalMOloc.g:15723:3: ruleAnnotationModification
+            // InternalMOloc.g:15817:2: ( ruleAnnotationModificationElement )
+            // InternalMOloc.g:15818:3: ruleAnnotationModificationElement
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationParserRuleCall_3_1_0()); 
+               before(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationElementParserRuleCall_3_1_0()); 
             }
             pushFollow(FOLLOW_2);
-            ruleAnnotationModification();
+            ruleAnnotationModificationElement();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationParserRuleCall_3_1_0()); 
+               after(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationElementParserRuleCall_3_1_0()); 
             }
 
             }
@@ -55047,7 +55437,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1114, rule__Annotation_modification_part__AnnotationsAssignment_3_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1119, rule__Annotation_modification_part__AnnotationsAssignment_3_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55057,20 +55447,76 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Annotation_modification_part__AnnotationsAssignment_3_1"
 
 
+    // $ANTLR start "rule__Annotation_modification_part__IsAnnotationOverAssignment_4"
+    // InternalMOloc.g:15827:1: rule__Annotation_modification_part__IsAnnotationOverAssignment_4 : ( ( ')' ) ) ;
+    public final void rule__Annotation_modification_part__IsAnnotationOverAssignment_4() throws RecognitionException {
+        int rule__Annotation_modification_part__IsAnnotationOverAssignment_4_StartIndex = input.index();
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1120) ) { return ; }
+            // InternalMOloc.g:15831:1: ( ( ( ')' ) ) )
+            // InternalMOloc.g:15832:2: ( ( ')' ) )
+            {
+            // InternalMOloc.g:15832:2: ( ( ')' ) )
+            // InternalMOloc.g:15833:3: ( ')' )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getAnnotation_modification_partAccess().getIsAnnotationOverRightParenthesisKeyword_4_0()); 
+            }
+            // InternalMOloc.g:15834:3: ( ')' )
+            // InternalMOloc.g:15835:4: ')'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getAnnotation_modification_partAccess().getIsAnnotationOverRightParenthesisKeyword_4_0()); 
+            }
+            match(input,60,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getAnnotation_modification_partAccess().getIsAnnotationOverRightParenthesisKeyword_4_0()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getAnnotation_modification_partAccess().getIsAnnotationOverRightParenthesisKeyword_4_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 1120, rule__Annotation_modification_part__IsAnnotationOverAssignment_4_StartIndex); }
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Annotation_modification_part__IsAnnotationOverAssignment_4"
+
+
     // $ANTLR start "rule__Description_string__DescriptionAssignment"
-    // InternalMOloc.g:15732:1: rule__Description_string__DescriptionAssignment : ( ruleDescriptionString ) ;
+    // InternalMOloc.g:15846:1: rule__Description_string__DescriptionAssignment : ( ruleDescriptionString ) ;
     public final void rule__Description_string__DescriptionAssignment() throws RecognitionException {
         int rule__Description_string__DescriptionAssignment_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1115) ) { return ; }
-            // InternalMOloc.g:15736:1: ( ( ruleDescriptionString ) )
-            // InternalMOloc.g:15737:2: ( ruleDescriptionString )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1121) ) { return ; }
+            // InternalMOloc.g:15850:1: ( ( ruleDescriptionString ) )
+            // InternalMOloc.g:15851:2: ( ruleDescriptionString )
             {
-            // InternalMOloc.g:15737:2: ( ruleDescriptionString )
-            // InternalMOloc.g:15738:3: ruleDescriptionString
+            // InternalMOloc.g:15851:2: ( ruleDescriptionString )
+            // InternalMOloc.g:15852:3: ruleDescriptionString
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDescription_stringAccess().getDescriptionDescriptionStringParserRuleCall_0()); 
@@ -55095,7 +55541,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1115, rule__Description_string__DescriptionAssignment_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1121, rule__Description_string__DescriptionAssignment_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55106,19 +55552,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Composition__ElementsAssignment"
-    // InternalMOloc.g:15747:1: rule__Composition__ElementsAssignment : ( ruleElement ) ;
+    // InternalMOloc.g:15861:1: rule__Composition__ElementsAssignment : ( ruleElement ) ;
     public final void rule__Composition__ElementsAssignment() throws RecognitionException {
         int rule__Composition__ElementsAssignment_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1116) ) { return ; }
-            // InternalMOloc.g:15751:1: ( ( ruleElement ) )
-            // InternalMOloc.g:15752:2: ( ruleElement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1122) ) { return ; }
+            // InternalMOloc.g:15865:1: ( ( ruleElement ) )
+            // InternalMOloc.g:15866:2: ( ruleElement )
             {
-            // InternalMOloc.g:15752:2: ( ruleElement )
-            // InternalMOloc.g:15753:3: ruleElement
+            // InternalMOloc.g:15866:2: ( ruleElement )
+            // InternalMOloc.g:15867:3: ruleElement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCompositionAccess().getElementsElementParserRuleCall_0()); 
@@ -55143,7 +55589,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1116, rule__Composition__ElementsAssignment_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1122, rule__Composition__ElementsAssignment_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55154,19 +55600,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Type_specifier__TypeSpecifierAssignment"
-    // InternalMOloc.g:15762:1: rule__Type_specifier__TypeSpecifierAssignment : ( ruleTypeSpecifier ) ;
+    // InternalMOloc.g:15876:1: rule__Type_specifier__TypeSpecifierAssignment : ( ruleTypeSpecifier ) ;
     public final void rule__Type_specifier__TypeSpecifierAssignment() throws RecognitionException {
         int rule__Type_specifier__TypeSpecifierAssignment_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1117) ) { return ; }
-            // InternalMOloc.g:15766:1: ( ( ruleTypeSpecifier ) )
-            // InternalMOloc.g:15767:2: ( ruleTypeSpecifier )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1123) ) { return ; }
+            // InternalMOloc.g:15880:1: ( ( ruleTypeSpecifier ) )
+            // InternalMOloc.g:15881:2: ( ruleTypeSpecifier )
             {
-            // InternalMOloc.g:15767:2: ( ruleTypeSpecifier )
-            // InternalMOloc.g:15768:3: ruleTypeSpecifier
+            // InternalMOloc.g:15881:2: ( ruleTypeSpecifier )
+            // InternalMOloc.g:15882:3: ruleTypeSpecifier
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getType_specifierAccess().getTypeSpecifierTypeSpecifierParserRuleCall_0()); 
@@ -55191,7 +55637,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1117, rule__Type_specifier__TypeSpecifierAssignment_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1123, rule__Type_specifier__TypeSpecifierAssignment_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55202,19 +55648,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Enum_list__EnumerationLiteralAssignment_0"
-    // InternalMOloc.g:15777:1: rule__Enum_list__EnumerationLiteralAssignment_0 : ( ruleEnumerationLiteral ) ;
+    // InternalMOloc.g:15891:1: rule__Enum_list__EnumerationLiteralAssignment_0 : ( ruleEnumerationLiteral ) ;
     public final void rule__Enum_list__EnumerationLiteralAssignment_0() throws RecognitionException {
         int rule__Enum_list__EnumerationLiteralAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1118) ) { return ; }
-            // InternalMOloc.g:15781:1: ( ( ruleEnumerationLiteral ) )
-            // InternalMOloc.g:15782:2: ( ruleEnumerationLiteral )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1124) ) { return ; }
+            // InternalMOloc.g:15895:1: ( ( ruleEnumerationLiteral ) )
+            // InternalMOloc.g:15896:2: ( ruleEnumerationLiteral )
             {
-            // InternalMOloc.g:15782:2: ( ruleEnumerationLiteral )
-            // InternalMOloc.g:15783:3: ruleEnumerationLiteral
+            // InternalMOloc.g:15896:2: ( ruleEnumerationLiteral )
+            // InternalMOloc.g:15897:3: ruleEnumerationLiteral
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEnum_listAccess().getEnumerationLiteralEnumerationLiteralParserRuleCall_0_0()); 
@@ -55239,7 +55685,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1118, rule__Enum_list__EnumerationLiteralAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1124, rule__Enum_list__EnumerationLiteralAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55250,19 +55696,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Enum_list__EnumerationLiteralAssignment_1_1"
-    // InternalMOloc.g:15792:1: rule__Enum_list__EnumerationLiteralAssignment_1_1 : ( ruleEnumerationLiteral ) ;
+    // InternalMOloc.g:15906:1: rule__Enum_list__EnumerationLiteralAssignment_1_1 : ( ruleEnumerationLiteral ) ;
     public final void rule__Enum_list__EnumerationLiteralAssignment_1_1() throws RecognitionException {
         int rule__Enum_list__EnumerationLiteralAssignment_1_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1119) ) { return ; }
-            // InternalMOloc.g:15796:1: ( ( ruleEnumerationLiteral ) )
-            // InternalMOloc.g:15797:2: ( ruleEnumerationLiteral )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1125) ) { return ; }
+            // InternalMOloc.g:15910:1: ( ( ruleEnumerationLiteral ) )
+            // InternalMOloc.g:15911:2: ( ruleEnumerationLiteral )
             {
-            // InternalMOloc.g:15797:2: ( ruleEnumerationLiteral )
-            // InternalMOloc.g:15798:3: ruleEnumerationLiteral
+            // InternalMOloc.g:15911:2: ( ruleEnumerationLiteral )
+            // InternalMOloc.g:15912:3: ruleEnumerationLiteral
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEnum_listAccess().getEnumerationLiteralEnumerationLiteralParserRuleCall_1_1_0()); 
@@ -55287,7 +55733,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1119, rule__Enum_list__EnumerationLiteralAssignment_1_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1125, rule__Enum_list__EnumerationLiteralAssignment_1_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55298,19 +55744,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationLiteral__TitleAssignment_0"
-    // InternalMOloc.g:15807:1: rule__EnumerationLiteral__TitleAssignment_0 : ( RULE_IDENT ) ;
+    // InternalMOloc.g:15921:1: rule__EnumerationLiteral__TitleAssignment_0 : ( RULE_IDENT ) ;
     public final void rule__EnumerationLiteral__TitleAssignment_0() throws RecognitionException {
         int rule__EnumerationLiteral__TitleAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1120) ) { return ; }
-            // InternalMOloc.g:15811:1: ( ( RULE_IDENT ) )
-            // InternalMOloc.g:15812:2: ( RULE_IDENT )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1126) ) { return ; }
+            // InternalMOloc.g:15925:1: ( ( RULE_IDENT ) )
+            // InternalMOloc.g:15926:2: ( RULE_IDENT )
             {
-            // InternalMOloc.g:15812:2: ( RULE_IDENT )
-            // InternalMOloc.g:15813:3: RULE_IDENT
+            // InternalMOloc.g:15926:2: ( RULE_IDENT )
+            // InternalMOloc.g:15927:3: RULE_IDENT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEnumerationLiteralAccess().getTitleIDENTTerminalRuleCall_0_0()); 
@@ -55331,7 +55777,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1120, rule__EnumerationLiteral__TitleAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1126, rule__EnumerationLiteral__TitleAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55342,25 +55788,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModificationElement__IsRedeclareAssignment_0"
-    // InternalMOloc.g:15822:1: rule__ModificationElement__IsRedeclareAssignment_0 : ( ( 'redeclare' ) ) ;
+    // InternalMOloc.g:15936:1: rule__ModificationElement__IsRedeclareAssignment_0 : ( ( 'redeclare' ) ) ;
     public final void rule__ModificationElement__IsRedeclareAssignment_0() throws RecognitionException {
         int rule__ModificationElement__IsRedeclareAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1121) ) { return ; }
-            // InternalMOloc.g:15826:1: ( ( ( 'redeclare' ) ) )
-            // InternalMOloc.g:15827:2: ( ( 'redeclare' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1127) ) { return ; }
+            // InternalMOloc.g:15940:1: ( ( ( 'redeclare' ) ) )
+            // InternalMOloc.g:15941:2: ( ( 'redeclare' ) )
             {
-            // InternalMOloc.g:15827:2: ( ( 'redeclare' ) )
-            // InternalMOloc.g:15828:3: ( 'redeclare' )
+            // InternalMOloc.g:15941:2: ( ( 'redeclare' ) )
+            // InternalMOloc.g:15942:3: ( 'redeclare' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationElementAccess().getIsRedeclareRedeclareKeyword_0_0()); 
             }
-            // InternalMOloc.g:15829:3: ( 'redeclare' )
-            // InternalMOloc.g:15830:4: 'redeclare'
+            // InternalMOloc.g:15943:3: ( 'redeclare' )
+            // InternalMOloc.g:15944:4: 'redeclare'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationElementAccess().getIsRedeclareRedeclareKeyword_0_0()); 
@@ -55387,7 +55833,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1121, rule__ModificationElement__IsRedeclareAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1127, rule__ModificationElement__IsRedeclareAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55398,25 +55844,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModificationElement__IsEachAssignment_1"
-    // InternalMOloc.g:15841:1: rule__ModificationElement__IsEachAssignment_1 : ( ( 'each' ) ) ;
+    // InternalMOloc.g:15955:1: rule__ModificationElement__IsEachAssignment_1 : ( ( 'each' ) ) ;
     public final void rule__ModificationElement__IsEachAssignment_1() throws RecognitionException {
         int rule__ModificationElement__IsEachAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1122) ) { return ; }
-            // InternalMOloc.g:15845:1: ( ( ( 'each' ) ) )
-            // InternalMOloc.g:15846:2: ( ( 'each' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1128) ) { return ; }
+            // InternalMOloc.g:15959:1: ( ( ( 'each' ) ) )
+            // InternalMOloc.g:15960:2: ( ( 'each' ) )
             {
-            // InternalMOloc.g:15846:2: ( ( 'each' ) )
-            // InternalMOloc.g:15847:3: ( 'each' )
+            // InternalMOloc.g:15960:2: ( ( 'each' ) )
+            // InternalMOloc.g:15961:3: ( 'each' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationElementAccess().getIsEachEachKeyword_1_0()); 
             }
-            // InternalMOloc.g:15848:3: ( 'each' )
-            // InternalMOloc.g:15849:4: 'each'
+            // InternalMOloc.g:15962:3: ( 'each' )
+            // InternalMOloc.g:15963:4: 'each'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationElementAccess().getIsEachEachKeyword_1_0()); 
@@ -55443,7 +55889,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1122, rule__ModificationElement__IsEachAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1128, rule__ModificationElement__IsEachAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55454,25 +55900,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModificationElement__IsfinalAssignment_2"
-    // InternalMOloc.g:15860:1: rule__ModificationElement__IsfinalAssignment_2 : ( ( 'final' ) ) ;
+    // InternalMOloc.g:15974:1: rule__ModificationElement__IsfinalAssignment_2 : ( ( 'final' ) ) ;
     public final void rule__ModificationElement__IsfinalAssignment_2() throws RecognitionException {
         int rule__ModificationElement__IsfinalAssignment_2_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1123) ) { return ; }
-            // InternalMOloc.g:15864:1: ( ( ( 'final' ) ) )
-            // InternalMOloc.g:15865:2: ( ( 'final' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1129) ) { return ; }
+            // InternalMOloc.g:15978:1: ( ( ( 'final' ) ) )
+            // InternalMOloc.g:15979:2: ( ( 'final' ) )
             {
-            // InternalMOloc.g:15865:2: ( ( 'final' ) )
-            // InternalMOloc.g:15866:3: ( 'final' )
+            // InternalMOloc.g:15979:2: ( ( 'final' ) )
+            // InternalMOloc.g:15980:3: ( 'final' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationElementAccess().getIsfinalFinalKeyword_2_0()); 
             }
-            // InternalMOloc.g:15867:3: ( 'final' )
-            // InternalMOloc.g:15868:4: 'final'
+            // InternalMOloc.g:15981:3: ( 'final' )
+            // InternalMOloc.g:15982:4: 'final'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationElementAccess().getIsfinalFinalKeyword_2_0()); 
@@ -55499,7 +55945,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1123, rule__ModificationElement__IsfinalAssignment_2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1129, rule__ModificationElement__IsfinalAssignment_2_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55510,25 +55956,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModificationElement__IsReplaceableAssignment_3"
-    // InternalMOloc.g:15879:1: rule__ModificationElement__IsReplaceableAssignment_3 : ( ( 'replaceable' ) ) ;
+    // InternalMOloc.g:15993:1: rule__ModificationElement__IsReplaceableAssignment_3 : ( ( 'replaceable' ) ) ;
     public final void rule__ModificationElement__IsReplaceableAssignment_3() throws RecognitionException {
         int rule__ModificationElement__IsReplaceableAssignment_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1124) ) { return ; }
-            // InternalMOloc.g:15883:1: ( ( ( 'replaceable' ) ) )
-            // InternalMOloc.g:15884:2: ( ( 'replaceable' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1130) ) { return ; }
+            // InternalMOloc.g:15997:1: ( ( ( 'replaceable' ) ) )
+            // InternalMOloc.g:15998:2: ( ( 'replaceable' ) )
             {
-            // InternalMOloc.g:15884:2: ( ( 'replaceable' ) )
-            // InternalMOloc.g:15885:3: ( 'replaceable' )
+            // InternalMOloc.g:15998:2: ( ( 'replaceable' ) )
+            // InternalMOloc.g:15999:3: ( 'replaceable' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationElementAccess().getIsReplaceableReplaceableKeyword_3_0()); 
             }
-            // InternalMOloc.g:15886:3: ( 'replaceable' )
-            // InternalMOloc.g:15887:4: 'replaceable'
+            // InternalMOloc.g:16000:3: ( 'replaceable' )
+            // InternalMOloc.g:16001:4: 'replaceable'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationElementAccess().getIsReplaceableReplaceableKeyword_3_0()); 
@@ -55555,7 +56001,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1124, rule__ModificationElement__IsReplaceableAssignment_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1130, rule__ModificationElement__IsReplaceableAssignment_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55565,39 +56011,39 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ModificationElement__IsReplaceableAssignment_3"
 
 
-    // $ANTLR start "rule__AnnotationModification__IsRedeclareAssignment_0"
-    // InternalMOloc.g:15898:1: rule__AnnotationModification__IsRedeclareAssignment_0 : ( ( 'redeclare' ) ) ;
-    public final void rule__AnnotationModification__IsRedeclareAssignment_0() throws RecognitionException {
-        int rule__AnnotationModification__IsRedeclareAssignment_0_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__IsRedeclareAssignment_0"
+    // InternalMOloc.g:16012:1: rule__AnnotationModificationElement__IsRedeclareAssignment_0 : ( ( 'redeclare' ) ) ;
+    public final void rule__AnnotationModificationElement__IsRedeclareAssignment_0() throws RecognitionException {
+        int rule__AnnotationModificationElement__IsRedeclareAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1125) ) { return ; }
-            // InternalMOloc.g:15902:1: ( ( ( 'redeclare' ) ) )
-            // InternalMOloc.g:15903:2: ( ( 'redeclare' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1131) ) { return ; }
+            // InternalMOloc.g:16016:1: ( ( ( 'redeclare' ) ) )
+            // InternalMOloc.g:16017:2: ( ( 'redeclare' ) )
             {
-            // InternalMOloc.g:15903:2: ( ( 'redeclare' ) )
-            // InternalMOloc.g:15904:3: ( 'redeclare' )
+            // InternalMOloc.g:16017:2: ( ( 'redeclare' ) )
+            // InternalMOloc.g:16018:3: ( 'redeclare' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getIsRedeclareRedeclareKeyword_0_0()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getIsRedeclareRedeclareKeyword_0_0()); 
             }
-            // InternalMOloc.g:15905:3: ( 'redeclare' )
-            // InternalMOloc.g:15906:4: 'redeclare'
+            // InternalMOloc.g:16019:3: ( 'redeclare' )
+            // InternalMOloc.g:16020:4: 'redeclare'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getIsRedeclareRedeclareKeyword_0_0()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getIsRedeclareRedeclareKeyword_0_0()); 
             }
             match(input,99,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getIsRedeclareRedeclareKeyword_0_0()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getIsRedeclareRedeclareKeyword_0_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getIsRedeclareRedeclareKeyword_0_0()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getIsRedeclareRedeclareKeyword_0_0()); 
             }
 
             }
@@ -55611,49 +56057,49 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1125, rule__AnnotationModification__IsRedeclareAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1131, rule__AnnotationModificationElement__IsRedeclareAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__IsRedeclareAssignment_0"
+    // $ANTLR end "rule__AnnotationModificationElement__IsRedeclareAssignment_0"
 
 
-    // $ANTLR start "rule__AnnotationModification__IsEachAssignment_1"
-    // InternalMOloc.g:15917:1: rule__AnnotationModification__IsEachAssignment_1 : ( ( 'each' ) ) ;
-    public final void rule__AnnotationModification__IsEachAssignment_1() throws RecognitionException {
-        int rule__AnnotationModification__IsEachAssignment_1_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__IsEachAssignment_1"
+    // InternalMOloc.g:16031:1: rule__AnnotationModificationElement__IsEachAssignment_1 : ( ( 'each' ) ) ;
+    public final void rule__AnnotationModificationElement__IsEachAssignment_1() throws RecognitionException {
+        int rule__AnnotationModificationElement__IsEachAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1126) ) { return ; }
-            // InternalMOloc.g:15921:1: ( ( ( 'each' ) ) )
-            // InternalMOloc.g:15922:2: ( ( 'each' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1132) ) { return ; }
+            // InternalMOloc.g:16035:1: ( ( ( 'each' ) ) )
+            // InternalMOloc.g:16036:2: ( ( 'each' ) )
             {
-            // InternalMOloc.g:15922:2: ( ( 'each' ) )
-            // InternalMOloc.g:15923:3: ( 'each' )
+            // InternalMOloc.g:16036:2: ( ( 'each' ) )
+            // InternalMOloc.g:16037:3: ( 'each' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getIsEachEachKeyword_1_0()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getIsEachEachKeyword_1_0()); 
             }
-            // InternalMOloc.g:15924:3: ( 'each' )
-            // InternalMOloc.g:15925:4: 'each'
+            // InternalMOloc.g:16038:3: ( 'each' )
+            // InternalMOloc.g:16039:4: 'each'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getIsEachEachKeyword_1_0()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getIsEachEachKeyword_1_0()); 
             }
             match(input,100,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getIsEachEachKeyword_1_0()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getIsEachEachKeyword_1_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getIsEachEachKeyword_1_0()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getIsEachEachKeyword_1_0()); 
             }
 
             }
@@ -55667,49 +56113,49 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1126, rule__AnnotationModification__IsEachAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1132, rule__AnnotationModificationElement__IsEachAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__IsEachAssignment_1"
+    // $ANTLR end "rule__AnnotationModificationElement__IsEachAssignment_1"
 
 
-    // $ANTLR start "rule__AnnotationModification__IsfinalAssignment_2"
-    // InternalMOloc.g:15936:1: rule__AnnotationModification__IsfinalAssignment_2 : ( ( 'final' ) ) ;
-    public final void rule__AnnotationModification__IsfinalAssignment_2() throws RecognitionException {
-        int rule__AnnotationModification__IsfinalAssignment_2_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__IsfinalAssignment_2"
+    // InternalMOloc.g:16050:1: rule__AnnotationModificationElement__IsfinalAssignment_2 : ( ( 'final' ) ) ;
+    public final void rule__AnnotationModificationElement__IsfinalAssignment_2() throws RecognitionException {
+        int rule__AnnotationModificationElement__IsfinalAssignment_2_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1127) ) { return ; }
-            // InternalMOloc.g:15940:1: ( ( ( 'final' ) ) )
-            // InternalMOloc.g:15941:2: ( ( 'final' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1133) ) { return ; }
+            // InternalMOloc.g:16054:1: ( ( ( 'final' ) ) )
+            // InternalMOloc.g:16055:2: ( ( 'final' ) )
             {
-            // InternalMOloc.g:15941:2: ( ( 'final' ) )
-            // InternalMOloc.g:15942:3: ( 'final' )
+            // InternalMOloc.g:16055:2: ( ( 'final' ) )
+            // InternalMOloc.g:16056:3: ( 'final' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getIsfinalFinalKeyword_2_0()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getIsfinalFinalKeyword_2_0()); 
             }
-            // InternalMOloc.g:15943:3: ( 'final' )
-            // InternalMOloc.g:15944:4: 'final'
+            // InternalMOloc.g:16057:3: ( 'final' )
+            // InternalMOloc.g:16058:4: 'final'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getIsfinalFinalKeyword_2_0()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getIsfinalFinalKeyword_2_0()); 
             }
             match(input,91,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getIsfinalFinalKeyword_2_0()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getIsfinalFinalKeyword_2_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getIsfinalFinalKeyword_2_0()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getIsfinalFinalKeyword_2_0()); 
             }
 
             }
@@ -55723,49 +56169,49 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1127, rule__AnnotationModification__IsfinalAssignment_2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1133, rule__AnnotationModificationElement__IsfinalAssignment_2_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__IsfinalAssignment_2"
+    // $ANTLR end "rule__AnnotationModificationElement__IsfinalAssignment_2"
 
 
-    // $ANTLR start "rule__AnnotationModification__IsReplaceableAssignment_3"
-    // InternalMOloc.g:15955:1: rule__AnnotationModification__IsReplaceableAssignment_3 : ( ( 'replaceable' ) ) ;
-    public final void rule__AnnotationModification__IsReplaceableAssignment_3() throws RecognitionException {
-        int rule__AnnotationModification__IsReplaceableAssignment_3_StartIndex = input.index();
+    // $ANTLR start "rule__AnnotationModificationElement__IsReplaceableAssignment_3"
+    // InternalMOloc.g:16069:1: rule__AnnotationModificationElement__IsReplaceableAssignment_3 : ( ( 'replaceable' ) ) ;
+    public final void rule__AnnotationModificationElement__IsReplaceableAssignment_3() throws RecognitionException {
+        int rule__AnnotationModificationElement__IsReplaceableAssignment_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1128) ) { return ; }
-            // InternalMOloc.g:15959:1: ( ( ( 'replaceable' ) ) )
-            // InternalMOloc.g:15960:2: ( ( 'replaceable' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1134) ) { return ; }
+            // InternalMOloc.g:16073:1: ( ( ( 'replaceable' ) ) )
+            // InternalMOloc.g:16074:2: ( ( 'replaceable' ) )
             {
-            // InternalMOloc.g:15960:2: ( ( 'replaceable' ) )
-            // InternalMOloc.g:15961:3: ( 'replaceable' )
+            // InternalMOloc.g:16074:2: ( ( 'replaceable' ) )
+            // InternalMOloc.g:16075:3: ( 'replaceable' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getIsReplaceableReplaceableKeyword_3_0()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getIsReplaceableReplaceableKeyword_3_0()); 
             }
-            // InternalMOloc.g:15962:3: ( 'replaceable' )
-            // InternalMOloc.g:15963:4: 'replaceable'
+            // InternalMOloc.g:16076:3: ( 'replaceable' )
+            // InternalMOloc.g:16077:4: 'replaceable'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAnnotationModificationAccess().getIsReplaceableReplaceableKeyword_3_0()); 
+               before(grammarAccess.getAnnotationModificationElementAccess().getIsReplaceableReplaceableKeyword_3_0()); 
             }
             match(input,101,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getIsReplaceableReplaceableKeyword_3_0()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getIsReplaceableReplaceableKeyword_3_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAnnotationModificationAccess().getIsReplaceableReplaceableKeyword_3_0()); 
+               after(grammarAccess.getAnnotationModificationElementAccess().getIsReplaceableReplaceableKeyword_3_0()); 
             }
 
             }
@@ -55779,30 +56225,30 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1128, rule__AnnotationModification__IsReplaceableAssignment_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1134, rule__AnnotationModificationElement__IsReplaceableAssignment_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
         }
         return ;
     }
-    // $ANTLR end "rule__AnnotationModification__IsReplaceableAssignment_3"
+    // $ANTLR end "rule__AnnotationModificationElement__IsReplaceableAssignment_3"
 
 
     // $ANTLR start "rule__Element_modification__ElementNameAssignment_0"
-    // InternalMOloc.g:15974:1: rule__Element_modification__ElementNameAssignment_0 : ( ruleName ) ;
+    // InternalMOloc.g:16088:1: rule__Element_modification__ElementNameAssignment_0 : ( ruleName ) ;
     public final void rule__Element_modification__ElementNameAssignment_0() throws RecognitionException {
         int rule__Element_modification__ElementNameAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1129) ) { return ; }
-            // InternalMOloc.g:15978:1: ( ( ruleName ) )
-            // InternalMOloc.g:15979:2: ( ruleName )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1135) ) { return ; }
+            // InternalMOloc.g:16092:1: ( ( ruleName ) )
+            // InternalMOloc.g:16093:2: ( ruleName )
             {
-            // InternalMOloc.g:15979:2: ( ruleName )
-            // InternalMOloc.g:15980:3: ruleName
+            // InternalMOloc.g:16093:2: ( ruleName )
+            // InternalMOloc.g:16094:3: ruleName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getElement_modificationAccess().getElementNameNameParserRuleCall_0_0()); 
@@ -55827,7 +56273,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1129, rule__Element_modification__ElementNameAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1135, rule__Element_modification__ElementNameAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55838,19 +56284,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Type_prefix__RelationshipTypeAssignment_0"
-    // InternalMOloc.g:15989:1: rule__Type_prefix__RelationshipTypeAssignment_0 : ( ruleRelationshipType ) ;
+    // InternalMOloc.g:16103:1: rule__Type_prefix__RelationshipTypeAssignment_0 : ( ruleRelationshipType ) ;
     public final void rule__Type_prefix__RelationshipTypeAssignment_0() throws RecognitionException {
         int rule__Type_prefix__RelationshipTypeAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1130) ) { return ; }
-            // InternalMOloc.g:15993:1: ( ( ruleRelationshipType ) )
-            // InternalMOloc.g:15994:2: ( ruleRelationshipType )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1136) ) { return ; }
+            // InternalMOloc.g:16107:1: ( ( ruleRelationshipType ) )
+            // InternalMOloc.g:16108:2: ( ruleRelationshipType )
             {
-            // InternalMOloc.g:15994:2: ( ruleRelationshipType )
-            // InternalMOloc.g:15995:3: ruleRelationshipType
+            // InternalMOloc.g:16108:2: ( ruleRelationshipType )
+            // InternalMOloc.g:16109:3: ruleRelationshipType
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getType_prefixAccess().getRelationshipTypeRelationshipTypeEnumRuleCall_0_0()); 
@@ -55875,7 +56321,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1130, rule__Type_prefix__RelationshipTypeAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1136, rule__Type_prefix__RelationshipTypeAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55886,19 +56332,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Type_prefix__ParameterTypeAssignment_1"
-    // InternalMOloc.g:16004:1: rule__Type_prefix__ParameterTypeAssignment_1 : ( ruleParameterType ) ;
+    // InternalMOloc.g:16118:1: rule__Type_prefix__ParameterTypeAssignment_1 : ( ruleParameterType ) ;
     public final void rule__Type_prefix__ParameterTypeAssignment_1() throws RecognitionException {
         int rule__Type_prefix__ParameterTypeAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1131) ) { return ; }
-            // InternalMOloc.g:16008:1: ( ( ruleParameterType ) )
-            // InternalMOloc.g:16009:2: ( ruleParameterType )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1137) ) { return ; }
+            // InternalMOloc.g:16122:1: ( ( ruleParameterType ) )
+            // InternalMOloc.g:16123:2: ( ruleParameterType )
             {
-            // InternalMOloc.g:16009:2: ( ruleParameterType )
-            // InternalMOloc.g:16010:3: ruleParameterType
+            // InternalMOloc.g:16123:2: ( ruleParameterType )
+            // InternalMOloc.g:16124:3: ruleParameterType
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getType_prefixAccess().getParameterTypeParameterTypeEnumRuleCall_1_0()); 
@@ -55923,7 +56369,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1131, rule__Type_prefix__ParameterTypeAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1137, rule__Type_prefix__ParameterTypeAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55934,19 +56380,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Type_prefix__DirectionTypeAssignment_2"
-    // InternalMOloc.g:16019:1: rule__Type_prefix__DirectionTypeAssignment_2 : ( ruleDirection ) ;
+    // InternalMOloc.g:16133:1: rule__Type_prefix__DirectionTypeAssignment_2 : ( ruleDirection ) ;
     public final void rule__Type_prefix__DirectionTypeAssignment_2() throws RecognitionException {
         int rule__Type_prefix__DirectionTypeAssignment_2_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1132) ) { return ; }
-            // InternalMOloc.g:16023:1: ( ( ruleDirection ) )
-            // InternalMOloc.g:16024:2: ( ruleDirection )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1138) ) { return ; }
+            // InternalMOloc.g:16137:1: ( ( ruleDirection ) )
+            // InternalMOloc.g:16138:2: ( ruleDirection )
             {
-            // InternalMOloc.g:16024:2: ( ruleDirection )
-            // InternalMOloc.g:16025:3: ruleDirection
+            // InternalMOloc.g:16138:2: ( ruleDirection )
+            // InternalMOloc.g:16139:3: ruleDirection
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getType_prefixAccess().getDirectionTypeDirectionEnumRuleCall_2_0()); 
@@ -55971,7 +56417,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1132, rule__Type_prefix__DirectionTypeAssignment_2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1138, rule__Type_prefix__DirectionTypeAssignment_2_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -55982,19 +56428,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Declaration__DeclarationNameAssignment_0"
-    // InternalMOloc.g:16034:1: rule__Declaration__DeclarationNameAssignment_0 : ( RULE_IDENT ) ;
+    // InternalMOloc.g:16148:1: rule__Declaration__DeclarationNameAssignment_0 : ( RULE_IDENT ) ;
     public final void rule__Declaration__DeclarationNameAssignment_0() throws RecognitionException {
         int rule__Declaration__DeclarationNameAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1133) ) { return ; }
-            // InternalMOloc.g:16038:1: ( ( RULE_IDENT ) )
-            // InternalMOloc.g:16039:2: ( RULE_IDENT )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1139) ) { return ; }
+            // InternalMOloc.g:16152:1: ( ( RULE_IDENT ) )
+            // InternalMOloc.g:16153:2: ( RULE_IDENT )
             {
-            // InternalMOloc.g:16039:2: ( RULE_IDENT )
-            // InternalMOloc.g:16040:3: RULE_IDENT
+            // InternalMOloc.g:16153:2: ( RULE_IDENT )
+            // InternalMOloc.g:16154:3: RULE_IDENT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getDeclarationAccess().getDeclarationNameIDENTTerminalRuleCall_0_0()); 
@@ -56015,7 +56461,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1133, rule__Declaration__DeclarationNameAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1139, rule__Declaration__DeclarationNameAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56026,19 +56472,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array_subscripts__SubscriptsAssignment"
-    // InternalMOloc.g:16049:1: rule__Array_subscripts__SubscriptsAssignment : ( ruleArraySubscripts ) ;
+    // InternalMOloc.g:16163:1: rule__Array_subscripts__SubscriptsAssignment : ( ruleArraySubscripts ) ;
     public final void rule__Array_subscripts__SubscriptsAssignment() throws RecognitionException {
         int rule__Array_subscripts__SubscriptsAssignment_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1134) ) { return ; }
-            // InternalMOloc.g:16053:1: ( ( ruleArraySubscripts ) )
-            // InternalMOloc.g:16054:2: ( ruleArraySubscripts )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1140) ) { return ; }
+            // InternalMOloc.g:16167:1: ( ( ruleArraySubscripts ) )
+            // InternalMOloc.g:16168:2: ( ruleArraySubscripts )
             {
-            // InternalMOloc.g:16054:2: ( ruleArraySubscripts )
-            // InternalMOloc.g:16055:3: ruleArraySubscripts
+            // InternalMOloc.g:16168:2: ( ruleArraySubscripts )
+            // InternalMOloc.g:16169:3: ruleArraySubscripts
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArray_subscriptsAccess().getSubscriptsArraySubscriptsParserRuleCall_0()); 
@@ -56063,7 +56509,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1134, rule__Array_subscripts__SubscriptsAssignment_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1140, rule__Array_subscripts__SubscriptsAssignment_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56074,19 +56520,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Modification__ExpressionAssignment_0_1_1"
-    // InternalMOloc.g:16064:1: rule__Modification__ExpressionAssignment_0_1_1 : ( ruleModification_expression ) ;
+    // InternalMOloc.g:16178:1: rule__Modification__ExpressionAssignment_0_1_1 : ( ruleModification_expression ) ;
     public final void rule__Modification__ExpressionAssignment_0_1_1() throws RecognitionException {
         int rule__Modification__ExpressionAssignment_0_1_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1135) ) { return ; }
-            // InternalMOloc.g:16068:1: ( ( ruleModification_expression ) )
-            // InternalMOloc.g:16069:2: ( ruleModification_expression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1141) ) { return ; }
+            // InternalMOloc.g:16182:1: ( ( ruleModification_expression ) )
+            // InternalMOloc.g:16183:2: ( ruleModification_expression )
             {
-            // InternalMOloc.g:16069:2: ( ruleModification_expression )
-            // InternalMOloc.g:16070:3: ruleModification_expression
+            // InternalMOloc.g:16183:2: ( ruleModification_expression )
+            // InternalMOloc.g:16184:3: ruleModification_expression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationAccess().getExpressionModification_expressionParserRuleCall_0_1_1_0()); 
@@ -56111,7 +56557,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1135, rule__Modification__ExpressionAssignment_0_1_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1141, rule__Modification__ExpressionAssignment_0_1_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56122,19 +56568,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Modification__ExpressionAssignment_1_1"
-    // InternalMOloc.g:16079:1: rule__Modification__ExpressionAssignment_1_1 : ( ruleModification_expression ) ;
+    // InternalMOloc.g:16193:1: rule__Modification__ExpressionAssignment_1_1 : ( ruleModification_expression ) ;
     public final void rule__Modification__ExpressionAssignment_1_1() throws RecognitionException {
         int rule__Modification__ExpressionAssignment_1_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1136) ) { return ; }
-            // InternalMOloc.g:16083:1: ( ( ruleModification_expression ) )
-            // InternalMOloc.g:16084:2: ( ruleModification_expression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1142) ) { return ; }
+            // InternalMOloc.g:16197:1: ( ( ruleModification_expression ) )
+            // InternalMOloc.g:16198:2: ( ruleModification_expression )
             {
-            // InternalMOloc.g:16084:2: ( ruleModification_expression )
-            // InternalMOloc.g:16085:3: ruleModification_expression
+            // InternalMOloc.g:16198:2: ( ruleModification_expression )
+            // InternalMOloc.g:16199:3: ruleModification_expression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationAccess().getExpressionModification_expressionParserRuleCall_1_1_0()); 
@@ -56159,7 +56605,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1136, rule__Modification__ExpressionAssignment_1_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1142, rule__Modification__ExpressionAssignment_1_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56170,19 +56616,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Modification__ExpressionAssignment_2_1"
-    // InternalMOloc.g:16094:1: rule__Modification__ExpressionAssignment_2_1 : ( ruleModification_expression ) ;
+    // InternalMOloc.g:16208:1: rule__Modification__ExpressionAssignment_2_1 : ( ruleModification_expression ) ;
     public final void rule__Modification__ExpressionAssignment_2_1() throws RecognitionException {
         int rule__Modification__ExpressionAssignment_2_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1137) ) { return ; }
-            // InternalMOloc.g:16098:1: ( ( ruleModification_expression ) )
-            // InternalMOloc.g:16099:2: ( ruleModification_expression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1143) ) { return ; }
+            // InternalMOloc.g:16212:1: ( ( ruleModification_expression ) )
+            // InternalMOloc.g:16213:2: ( ruleModification_expression )
             {
-            // InternalMOloc.g:16099:2: ( ruleModification_expression )
-            // InternalMOloc.g:16100:3: ruleModification_expression
+            // InternalMOloc.g:16213:2: ( ruleModification_expression )
+            // InternalMOloc.g:16214:3: ruleModification_expression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModificationAccess().getExpressionModification_expressionParserRuleCall_2_1_0()); 
@@ -56207,7 +56653,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1137, rule__Modification__ExpressionAssignment_2_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1143, rule__Modification__ExpressionAssignment_2_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56218,19 +56664,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Constraining__ConstrainAssignment"
-    // InternalMOloc.g:16109:1: rule__Constraining__ConstrainAssignment : ( ruleConstrainingClause ) ;
+    // InternalMOloc.g:16223:1: rule__Constraining__ConstrainAssignment : ( ruleConstrainingClause ) ;
     public final void rule__Constraining__ConstrainAssignment() throws RecognitionException {
         int rule__Constraining__ConstrainAssignment_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1138) ) { return ; }
-            // InternalMOloc.g:16113:1: ( ( ruleConstrainingClause ) )
-            // InternalMOloc.g:16114:2: ( ruleConstrainingClause )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1144) ) { return ; }
+            // InternalMOloc.g:16227:1: ( ( ruleConstrainingClause ) )
+            // InternalMOloc.g:16228:2: ( ruleConstrainingClause )
             {
-            // InternalMOloc.g:16114:2: ( ruleConstrainingClause )
-            // InternalMOloc.g:16115:3: ruleConstrainingClause
+            // InternalMOloc.g:16228:2: ( ruleConstrainingClause )
+            // InternalMOloc.g:16229:3: ruleConstrainingClause
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConstrainingAccess().getConstrainConstrainingClauseParserRuleCall_0()); 
@@ -56255,7 +56701,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1138, rule__Constraining__ConstrainAssignment_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1144, rule__Constraining__ConstrainAssignment_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56266,25 +56712,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ImportClause__IsPublicAssignment_0"
-    // InternalMOloc.g:16124:1: rule__ImportClause__IsPublicAssignment_0 : ( ( 'public' ) ) ;
+    // InternalMOloc.g:16238:1: rule__ImportClause__IsPublicAssignment_0 : ( ( 'public' ) ) ;
     public final void rule__ImportClause__IsPublicAssignment_0() throws RecognitionException {
         int rule__ImportClause__IsPublicAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1139) ) { return ; }
-            // InternalMOloc.g:16128:1: ( ( ( 'public' ) ) )
-            // InternalMOloc.g:16129:2: ( ( 'public' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1145) ) { return ; }
+            // InternalMOloc.g:16242:1: ( ( ( 'public' ) ) )
+            // InternalMOloc.g:16243:2: ( ( 'public' ) )
             {
-            // InternalMOloc.g:16129:2: ( ( 'public' ) )
-            // InternalMOloc.g:16130:3: ( 'public' )
+            // InternalMOloc.g:16243:2: ( ( 'public' ) )
+            // InternalMOloc.g:16244:3: ( 'public' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getIsPublicPublicKeyword_0_0()); 
             }
-            // InternalMOloc.g:16131:3: ( 'public' )
-            // InternalMOloc.g:16132:4: 'public'
+            // InternalMOloc.g:16245:3: ( 'public' )
+            // InternalMOloc.g:16246:4: 'public'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getIsPublicPublicKeyword_0_0()); 
@@ -56311,7 +56757,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1139, rule__ImportClause__IsPublicAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1145, rule__ImportClause__IsPublicAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56322,25 +56768,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ImportClause__IsProtectedAssignment_1"
-    // InternalMOloc.g:16143:1: rule__ImportClause__IsProtectedAssignment_1 : ( ( 'protected' ) ) ;
+    // InternalMOloc.g:16257:1: rule__ImportClause__IsProtectedAssignment_1 : ( ( 'protected' ) ) ;
     public final void rule__ImportClause__IsProtectedAssignment_1() throws RecognitionException {
         int rule__ImportClause__IsProtectedAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1140) ) { return ; }
-            // InternalMOloc.g:16147:1: ( ( ( 'protected' ) ) )
-            // InternalMOloc.g:16148:2: ( ( 'protected' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1146) ) { return ; }
+            // InternalMOloc.g:16261:1: ( ( ( 'protected' ) ) )
+            // InternalMOloc.g:16262:2: ( ( 'protected' ) )
             {
-            // InternalMOloc.g:16148:2: ( ( 'protected' ) )
-            // InternalMOloc.g:16149:3: ( 'protected' )
+            // InternalMOloc.g:16262:2: ( ( 'protected' ) )
+            // InternalMOloc.g:16263:3: ( 'protected' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getIsProtectedProtectedKeyword_1_0()); 
             }
-            // InternalMOloc.g:16150:3: ( 'protected' )
-            // InternalMOloc.g:16151:4: 'protected'
+            // InternalMOloc.g:16264:3: ( 'protected' )
+            // InternalMOloc.g:16265:4: 'protected'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getIsProtectedProtectedKeyword_1_0()); 
@@ -56367,7 +56813,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1140, rule__ImportClause__IsProtectedAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1146, rule__ImportClause__IsProtectedAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56378,19 +56824,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ImportClause__SelfNameAssignment_3_0_0"
-    // InternalMOloc.g:16162:1: rule__ImportClause__SelfNameAssignment_3_0_0 : ( RULE_IDENT ) ;
+    // InternalMOloc.g:16276:1: rule__ImportClause__SelfNameAssignment_3_0_0 : ( RULE_IDENT ) ;
     public final void rule__ImportClause__SelfNameAssignment_3_0_0() throws RecognitionException {
         int rule__ImportClause__SelfNameAssignment_3_0_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1141) ) { return ; }
-            // InternalMOloc.g:16166:1: ( ( RULE_IDENT ) )
-            // InternalMOloc.g:16167:2: ( RULE_IDENT )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1147) ) { return ; }
+            // InternalMOloc.g:16280:1: ( ( RULE_IDENT ) )
+            // InternalMOloc.g:16281:2: ( RULE_IDENT )
             {
-            // InternalMOloc.g:16167:2: ( RULE_IDENT )
-            // InternalMOloc.g:16168:3: RULE_IDENT
+            // InternalMOloc.g:16281:2: ( RULE_IDENT )
+            // InternalMOloc.g:16282:3: RULE_IDENT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getSelfNameIDENTTerminalRuleCall_3_0_0_0()); 
@@ -56411,7 +56857,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1141, rule__ImportClause__SelfNameAssignment_3_0_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1147, rule__ImportClause__SelfNameAssignment_3_0_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56422,19 +56868,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ImportClause__ImportNameAssignment_3_0_2"
-    // InternalMOloc.g:16177:1: rule__ImportClause__ImportNameAssignment_3_0_2 : ( ruleName ) ;
+    // InternalMOloc.g:16291:1: rule__ImportClause__ImportNameAssignment_3_0_2 : ( ruleName ) ;
     public final void rule__ImportClause__ImportNameAssignment_3_0_2() throws RecognitionException {
         int rule__ImportClause__ImportNameAssignment_3_0_2_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1142) ) { return ; }
-            // InternalMOloc.g:16181:1: ( ( ruleName ) )
-            // InternalMOloc.g:16182:2: ( ruleName )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1148) ) { return ; }
+            // InternalMOloc.g:16295:1: ( ( ruleName ) )
+            // InternalMOloc.g:16296:2: ( ruleName )
             {
-            // InternalMOloc.g:16182:2: ( ruleName )
-            // InternalMOloc.g:16183:3: ruleName
+            // InternalMOloc.g:16296:2: ( ruleName )
+            // InternalMOloc.g:16297:3: ruleName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getImportNameNameParserRuleCall_3_0_2_0()); 
@@ -56459,7 +56905,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1142, rule__ImportClause__ImportNameAssignment_3_0_2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1148, rule__ImportClause__ImportNameAssignment_3_0_2_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56470,19 +56916,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ImportClause__ImportNameAssignment_3_1_0"
-    // InternalMOloc.g:16192:1: rule__ImportClause__ImportNameAssignment_3_1_0 : ( ruleName ) ;
+    // InternalMOloc.g:16306:1: rule__ImportClause__ImportNameAssignment_3_1_0 : ( ruleName ) ;
     public final void rule__ImportClause__ImportNameAssignment_3_1_0() throws RecognitionException {
         int rule__ImportClause__ImportNameAssignment_3_1_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1143) ) { return ; }
-            // InternalMOloc.g:16196:1: ( ( ruleName ) )
-            // InternalMOloc.g:16197:2: ( ruleName )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1149) ) { return ; }
+            // InternalMOloc.g:16310:1: ( ( ruleName ) )
+            // InternalMOloc.g:16311:2: ( ruleName )
             {
-            // InternalMOloc.g:16197:2: ( ruleName )
-            // InternalMOloc.g:16198:3: ruleName
+            // InternalMOloc.g:16311:2: ( ruleName )
+            // InternalMOloc.g:16312:3: ruleName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getImportNameNameParserRuleCall_3_1_0_0()); 
@@ -56507,7 +56953,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1143, rule__ImportClause__ImportNameAssignment_3_1_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1149, rule__ImportClause__ImportNameAssignment_3_1_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56518,25 +56964,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ImportClause__IsImportAllAssignment_3_1_1_0"
-    // InternalMOloc.g:16207:1: rule__ImportClause__IsImportAllAssignment_3_1_1_0 : ( ( '.*' ) ) ;
+    // InternalMOloc.g:16321:1: rule__ImportClause__IsImportAllAssignment_3_1_1_0 : ( ( '.*' ) ) ;
     public final void rule__ImportClause__IsImportAllAssignment_3_1_1_0() throws RecognitionException {
         int rule__ImportClause__IsImportAllAssignment_3_1_1_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1144) ) { return ; }
-            // InternalMOloc.g:16211:1: ( ( ( '.*' ) ) )
-            // InternalMOloc.g:16212:2: ( ( '.*' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1150) ) { return ; }
+            // InternalMOloc.g:16325:1: ( ( ( '.*' ) ) )
+            // InternalMOloc.g:16326:2: ( ( '.*' ) )
             {
-            // InternalMOloc.g:16212:2: ( ( '.*' ) )
-            // InternalMOloc.g:16213:3: ( '.*' )
+            // InternalMOloc.g:16326:2: ( ( '.*' ) )
+            // InternalMOloc.g:16327:3: ( '.*' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getIsImportAllFullStopAsteriskKeyword_3_1_1_0_0()); 
             }
-            // InternalMOloc.g:16214:3: ( '.*' )
-            // InternalMOloc.g:16215:4: '.*'
+            // InternalMOloc.g:16328:3: ( '.*' )
+            // InternalMOloc.g:16329:4: '.*'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getIsImportAllFullStopAsteriskKeyword_3_1_1_0_0()); 
@@ -56563,7 +57009,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1144, rule__ImportClause__IsImportAllAssignment_3_1_1_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1150, rule__ImportClause__IsImportAllAssignment_3_1_1_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56574,25 +57020,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ImportClause__IsImportAllAssignment_3_1_1_1_1_0"
-    // InternalMOloc.g:16226:1: rule__ImportClause__IsImportAllAssignment_3_1_1_1_1_0 : ( ( '*' ) ) ;
+    // InternalMOloc.g:16340:1: rule__ImportClause__IsImportAllAssignment_3_1_1_1_1_0 : ( ( '*' ) ) ;
     public final void rule__ImportClause__IsImportAllAssignment_3_1_1_1_1_0() throws RecognitionException {
         int rule__ImportClause__IsImportAllAssignment_3_1_1_1_1_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1145) ) { return ; }
-            // InternalMOloc.g:16230:1: ( ( ( '*' ) ) )
-            // InternalMOloc.g:16231:2: ( ( '*' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1151) ) { return ; }
+            // InternalMOloc.g:16344:1: ( ( ( '*' ) ) )
+            // InternalMOloc.g:16345:2: ( ( '*' ) )
             {
-            // InternalMOloc.g:16231:2: ( ( '*' ) )
-            // InternalMOloc.g:16232:3: ( '*' )
+            // InternalMOloc.g:16345:2: ( ( '*' ) )
+            // InternalMOloc.g:16346:3: ( '*' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getIsImportAllAsteriskKeyword_3_1_1_1_1_0_0()); 
             }
-            // InternalMOloc.g:16233:3: ( '*' )
-            // InternalMOloc.g:16234:4: '*'
+            // InternalMOloc.g:16347:3: ( '*' )
+            // InternalMOloc.g:16348:4: '*'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getIsImportAllAsteriskKeyword_3_1_1_1_1_0_0()); 
@@ -56619,7 +57065,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1145, rule__ImportClause__IsImportAllAssignment_3_1_1_1_1_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1151, rule__ImportClause__IsImportAllAssignment_3_1_1_1_1_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56630,19 +57076,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_1"
-    // InternalMOloc.g:16245:1: rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_1 : ( RULE_IDENT ) ;
+    // InternalMOloc.g:16359:1: rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_1 : ( RULE_IDENT ) ;
     public final void rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_1() throws RecognitionException {
         int rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1146) ) { return ; }
-            // InternalMOloc.g:16249:1: ( ( RULE_IDENT ) )
-            // InternalMOloc.g:16250:2: ( RULE_IDENT )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1152) ) { return ; }
+            // InternalMOloc.g:16363:1: ( ( RULE_IDENT ) )
+            // InternalMOloc.g:16364:2: ( RULE_IDENT )
             {
-            // InternalMOloc.g:16250:2: ( RULE_IDENT )
-            // InternalMOloc.g:16251:3: RULE_IDENT
+            // InternalMOloc.g:16364:2: ( RULE_IDENT )
+            // InternalMOloc.g:16365:3: RULE_IDENT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getObjectNameIDENTTerminalRuleCall_3_1_1_1_1_1_1_0()); 
@@ -56663,7 +57109,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1146, rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1152, rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56674,19 +57120,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_2_1"
-    // InternalMOloc.g:16260:1: rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_2_1 : ( RULE_IDENT ) ;
+    // InternalMOloc.g:16374:1: rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_2_1 : ( RULE_IDENT ) ;
     public final void rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_2_1() throws RecognitionException {
         int rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_2_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1147) ) { return ; }
-            // InternalMOloc.g:16264:1: ( ( RULE_IDENT ) )
-            // InternalMOloc.g:16265:2: ( RULE_IDENT )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1153) ) { return ; }
+            // InternalMOloc.g:16378:1: ( ( RULE_IDENT ) )
+            // InternalMOloc.g:16379:2: ( RULE_IDENT )
             {
-            // InternalMOloc.g:16265:2: ( RULE_IDENT )
-            // InternalMOloc.g:16266:3: RULE_IDENT
+            // InternalMOloc.g:16379:2: ( RULE_IDENT )
+            // InternalMOloc.g:16380:3: RULE_IDENT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getImportClauseAccess().getObjectNameIDENTTerminalRuleCall_3_1_1_1_1_1_2_1_0()); 
@@ -56707,7 +57153,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1147, rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_2_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1153, rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_2_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56717,26 +57163,82 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ImportClause__ObjectNameAssignment_3_1_1_1_1_1_2_1"
 
 
+    // $ANTLR start "rule__ImportClause__IsOverAssignment_5"
+    // InternalMOloc.g:16389:1: rule__ImportClause__IsOverAssignment_5 : ( ( ';' ) ) ;
+    public final void rule__ImportClause__IsOverAssignment_5() throws RecognitionException {
+        int rule__ImportClause__IsOverAssignment_5_StartIndex = input.index();
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1154) ) { return ; }
+            // InternalMOloc.g:16393:1: ( ( ( ';' ) ) )
+            // InternalMOloc.g:16394:2: ( ( ';' ) )
+            {
+            // InternalMOloc.g:16394:2: ( ( ';' ) )
+            // InternalMOloc.g:16395:3: ( ';' )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getImportClauseAccess().getIsOverSemicolonKeyword_5_0()); 
+            }
+            // InternalMOloc.g:16396:3: ( ';' )
+            // InternalMOloc.g:16397:4: ';'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getImportClauseAccess().getIsOverSemicolonKeyword_5_0()); 
+            }
+            match(input,58,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getImportClauseAccess().getIsOverSemicolonKeyword_5_0()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getImportClauseAccess().getIsOverSemicolonKeyword_5_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 1154, rule__ImportClause__IsOverAssignment_5_StartIndex); }
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ImportClause__IsOverAssignment_5"
+
+
     // $ANTLR start "rule__ExtendsClause__IsPublicAssignment_0"
-    // InternalMOloc.g:16275:1: rule__ExtendsClause__IsPublicAssignment_0 : ( ( 'public' ) ) ;
+    // InternalMOloc.g:16408:1: rule__ExtendsClause__IsPublicAssignment_0 : ( ( 'public' ) ) ;
     public final void rule__ExtendsClause__IsPublicAssignment_0() throws RecognitionException {
         int rule__ExtendsClause__IsPublicAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1148) ) { return ; }
-            // InternalMOloc.g:16279:1: ( ( ( 'public' ) ) )
-            // InternalMOloc.g:16280:2: ( ( 'public' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1155) ) { return ; }
+            // InternalMOloc.g:16412:1: ( ( ( 'public' ) ) )
+            // InternalMOloc.g:16413:2: ( ( 'public' ) )
             {
-            // InternalMOloc.g:16280:2: ( ( 'public' ) )
-            // InternalMOloc.g:16281:3: ( 'public' )
+            // InternalMOloc.g:16413:2: ( ( 'public' ) )
+            // InternalMOloc.g:16414:3: ( 'public' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExtendsClauseAccess().getIsPublicPublicKeyword_0_0()); 
             }
-            // InternalMOloc.g:16282:3: ( 'public' )
-            // InternalMOloc.g:16283:4: 'public'
+            // InternalMOloc.g:16415:3: ( 'public' )
+            // InternalMOloc.g:16416:4: 'public'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExtendsClauseAccess().getIsPublicPublicKeyword_0_0()); 
@@ -56763,7 +57265,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1148, rule__ExtendsClause__IsPublicAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1155, rule__ExtendsClause__IsPublicAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56774,25 +57276,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExtendsClause__IsProtectedAssignment_1"
-    // InternalMOloc.g:16294:1: rule__ExtendsClause__IsProtectedAssignment_1 : ( ( 'protected' ) ) ;
+    // InternalMOloc.g:16427:1: rule__ExtendsClause__IsProtectedAssignment_1 : ( ( 'protected' ) ) ;
     public final void rule__ExtendsClause__IsProtectedAssignment_1() throws RecognitionException {
         int rule__ExtendsClause__IsProtectedAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1149) ) { return ; }
-            // InternalMOloc.g:16298:1: ( ( ( 'protected' ) ) )
-            // InternalMOloc.g:16299:2: ( ( 'protected' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1156) ) { return ; }
+            // InternalMOloc.g:16431:1: ( ( ( 'protected' ) ) )
+            // InternalMOloc.g:16432:2: ( ( 'protected' ) )
             {
-            // InternalMOloc.g:16299:2: ( ( 'protected' ) )
-            // InternalMOloc.g:16300:3: ( 'protected' )
+            // InternalMOloc.g:16432:2: ( ( 'protected' ) )
+            // InternalMOloc.g:16433:3: ( 'protected' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExtendsClauseAccess().getIsProtectedProtectedKeyword_1_0()); 
             }
-            // InternalMOloc.g:16301:3: ( 'protected' )
-            // InternalMOloc.g:16302:4: 'protected'
+            // InternalMOloc.g:16434:3: ( 'protected' )
+            // InternalMOloc.g:16435:4: 'protected'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExtendsClauseAccess().getIsProtectedProtectedKeyword_1_0()); 
@@ -56819,7 +57321,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1149, rule__ExtendsClause__IsProtectedAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1156, rule__ExtendsClause__IsProtectedAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56830,19 +57332,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExtendsClause__ExtendsModificationsAssignment_4_1_0_0"
-    // InternalMOloc.g:16313:1: rule__ExtendsClause__ExtendsModificationsAssignment_4_1_0_0 : ( ruleModificationElement ) ;
+    // InternalMOloc.g:16446:1: rule__ExtendsClause__ExtendsModificationsAssignment_4_1_0_0 : ( ruleModificationElement ) ;
     public final void rule__ExtendsClause__ExtendsModificationsAssignment_4_1_0_0() throws RecognitionException {
         int rule__ExtendsClause__ExtendsModificationsAssignment_4_1_0_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1150) ) { return ; }
-            // InternalMOloc.g:16317:1: ( ( ruleModificationElement ) )
-            // InternalMOloc.g:16318:2: ( ruleModificationElement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1157) ) { return ; }
+            // InternalMOloc.g:16450:1: ( ( ruleModificationElement ) )
+            // InternalMOloc.g:16451:2: ( ruleModificationElement )
             {
-            // InternalMOloc.g:16318:2: ( ruleModificationElement )
-            // InternalMOloc.g:16319:3: ruleModificationElement
+            // InternalMOloc.g:16451:2: ( ruleModificationElement )
+            // InternalMOloc.g:16452:3: ruleModificationElement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExtendsClauseAccess().getExtendsModificationsModificationElementParserRuleCall_4_1_0_0_0()); 
@@ -56867,7 +57369,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1150, rule__ExtendsClause__ExtendsModificationsAssignment_4_1_0_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1157, rule__ExtendsClause__ExtendsModificationsAssignment_4_1_0_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56878,19 +57380,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExtendsClause__BreaksAssignment_4_1_0_1"
-    // InternalMOloc.g:16328:1: rule__ExtendsClause__BreaksAssignment_4_1_0_1 : ( ruleBreak ) ;
+    // InternalMOloc.g:16461:1: rule__ExtendsClause__BreaksAssignment_4_1_0_1 : ( ruleBreak ) ;
     public final void rule__ExtendsClause__BreaksAssignment_4_1_0_1() throws RecognitionException {
         int rule__ExtendsClause__BreaksAssignment_4_1_0_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1151) ) { return ; }
-            // InternalMOloc.g:16332:1: ( ( ruleBreak ) )
-            // InternalMOloc.g:16333:2: ( ruleBreak )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1158) ) { return ; }
+            // InternalMOloc.g:16465:1: ( ( ruleBreak ) )
+            // InternalMOloc.g:16466:2: ( ruleBreak )
             {
-            // InternalMOloc.g:16333:2: ( ruleBreak )
-            // InternalMOloc.g:16334:3: ruleBreak
+            // InternalMOloc.g:16466:2: ( ruleBreak )
+            // InternalMOloc.g:16467:3: ruleBreak
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExtendsClauseAccess().getBreaksBreakParserRuleCall_4_1_0_1_0()); 
@@ -56915,7 +57417,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1151, rule__ExtendsClause__BreaksAssignment_4_1_0_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1158, rule__ExtendsClause__BreaksAssignment_4_1_0_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56926,19 +57428,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExtendsClause__ExtendsModificationsAssignment_4_1_1_1_0"
-    // InternalMOloc.g:16343:1: rule__ExtendsClause__ExtendsModificationsAssignment_4_1_1_1_0 : ( ruleModificationElement ) ;
+    // InternalMOloc.g:16476:1: rule__ExtendsClause__ExtendsModificationsAssignment_4_1_1_1_0 : ( ruleModificationElement ) ;
     public final void rule__ExtendsClause__ExtendsModificationsAssignment_4_1_1_1_0() throws RecognitionException {
         int rule__ExtendsClause__ExtendsModificationsAssignment_4_1_1_1_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1152) ) { return ; }
-            // InternalMOloc.g:16347:1: ( ( ruleModificationElement ) )
-            // InternalMOloc.g:16348:2: ( ruleModificationElement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1159) ) { return ; }
+            // InternalMOloc.g:16480:1: ( ( ruleModificationElement ) )
+            // InternalMOloc.g:16481:2: ( ruleModificationElement )
             {
-            // InternalMOloc.g:16348:2: ( ruleModificationElement )
-            // InternalMOloc.g:16349:3: ruleModificationElement
+            // InternalMOloc.g:16481:2: ( ruleModificationElement )
+            // InternalMOloc.g:16482:3: ruleModificationElement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExtendsClauseAccess().getExtendsModificationsModificationElementParserRuleCall_4_1_1_1_0_0()); 
@@ -56963,7 +57465,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1152, rule__ExtendsClause__ExtendsModificationsAssignment_4_1_1_1_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1159, rule__ExtendsClause__ExtendsModificationsAssignment_4_1_1_1_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -56974,19 +57476,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExtendsClause__BreaksAssignment_4_1_1_1_1"
-    // InternalMOloc.g:16358:1: rule__ExtendsClause__BreaksAssignment_4_1_1_1_1 : ( ruleBreak ) ;
+    // InternalMOloc.g:16491:1: rule__ExtendsClause__BreaksAssignment_4_1_1_1_1 : ( ruleBreak ) ;
     public final void rule__ExtendsClause__BreaksAssignment_4_1_1_1_1() throws RecognitionException {
         int rule__ExtendsClause__BreaksAssignment_4_1_1_1_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1153) ) { return ; }
-            // InternalMOloc.g:16362:1: ( ( ruleBreak ) )
-            // InternalMOloc.g:16363:2: ( ruleBreak )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1160) ) { return ; }
+            // InternalMOloc.g:16495:1: ( ( ruleBreak ) )
+            // InternalMOloc.g:16496:2: ( ruleBreak )
             {
-            // InternalMOloc.g:16363:2: ( ruleBreak )
-            // InternalMOloc.g:16364:3: ruleBreak
+            // InternalMOloc.g:16496:2: ( ruleBreak )
+            // InternalMOloc.g:16497:3: ruleBreak
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExtendsClauseAccess().getBreaksBreakParserRuleCall_4_1_1_1_1_0()); 
@@ -57011,7 +57513,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1153, rule__ExtendsClause__BreaksAssignment_4_1_1_1_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1160, rule__ExtendsClause__BreaksAssignment_4_1_1_1_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57021,20 +57523,76 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ExtendsClause__BreaksAssignment_4_1_1_1_1"
 
 
+    // $ANTLR start "rule__ExtendsClause__IsOverAssignment_6"
+    // InternalMOloc.g:16506:1: rule__ExtendsClause__IsOverAssignment_6 : ( ( ';' ) ) ;
+    public final void rule__ExtendsClause__IsOverAssignment_6() throws RecognitionException {
+        int rule__ExtendsClause__IsOverAssignment_6_StartIndex = input.index();
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1161) ) { return ; }
+            // InternalMOloc.g:16510:1: ( ( ( ';' ) ) )
+            // InternalMOloc.g:16511:2: ( ( ';' ) )
+            {
+            // InternalMOloc.g:16511:2: ( ( ';' ) )
+            // InternalMOloc.g:16512:3: ( ';' )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getExtendsClauseAccess().getIsOverSemicolonKeyword_6_0()); 
+            }
+            // InternalMOloc.g:16513:3: ( ';' )
+            // InternalMOloc.g:16514:4: ';'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getExtendsClauseAccess().getIsOverSemicolonKeyword_6_0()); 
+            }
+            match(input,58,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getExtendsClauseAccess().getIsOverSemicolonKeyword_6_0()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getExtendsClauseAccess().getIsOverSemicolonKeyword_6_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 1161, rule__ExtendsClause__IsOverAssignment_6_StartIndex); }
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ExtendsClause__IsOverAssignment_6"
+
+
     // $ANTLR start "rule__Break__ConnectObjectAssignment_1_0"
-    // InternalMOloc.g:16373:1: rule__Break__ConnectObjectAssignment_1_0 : ( ruleConnectEquation ) ;
+    // InternalMOloc.g:16525:1: rule__Break__ConnectObjectAssignment_1_0 : ( ruleConnectEquation ) ;
     public final void rule__Break__ConnectObjectAssignment_1_0() throws RecognitionException {
         int rule__Break__ConnectObjectAssignment_1_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1154) ) { return ; }
-            // InternalMOloc.g:16377:1: ( ( ruleConnectEquation ) )
-            // InternalMOloc.g:16378:2: ( ruleConnectEquation )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1162) ) { return ; }
+            // InternalMOloc.g:16529:1: ( ( ruleConnectEquation ) )
+            // InternalMOloc.g:16530:2: ( ruleConnectEquation )
             {
-            // InternalMOloc.g:16378:2: ( ruleConnectEquation )
-            // InternalMOloc.g:16379:3: ruleConnectEquation
+            // InternalMOloc.g:16530:2: ( ruleConnectEquation )
+            // InternalMOloc.g:16531:3: ruleConnectEquation
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBreakAccess().getConnectObjectConnectEquationParserRuleCall_1_0_0()); 
@@ -57059,7 +57617,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1154, rule__Break__ConnectObjectAssignment_1_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1162, rule__Break__ConnectObjectAssignment_1_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57070,19 +57628,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Break__BreakObjectAssignment_1_1"
-    // InternalMOloc.g:16388:1: rule__Break__BreakObjectAssignment_1_1 : ( RULE_IDENT ) ;
+    // InternalMOloc.g:16540:1: rule__Break__BreakObjectAssignment_1_1 : ( RULE_IDENT ) ;
     public final void rule__Break__BreakObjectAssignment_1_1() throws RecognitionException {
         int rule__Break__BreakObjectAssignment_1_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1155) ) { return ; }
-            // InternalMOloc.g:16392:1: ( ( RULE_IDENT ) )
-            // InternalMOloc.g:16393:2: ( RULE_IDENT )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1163) ) { return ; }
+            // InternalMOloc.g:16544:1: ( ( RULE_IDENT ) )
+            // InternalMOloc.g:16545:2: ( RULE_IDENT )
             {
-            // InternalMOloc.g:16393:2: ( RULE_IDENT )
-            // InternalMOloc.g:16394:3: RULE_IDENT
+            // InternalMOloc.g:16545:2: ( RULE_IDENT )
+            // InternalMOloc.g:16546:3: RULE_IDENT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getBreakAccess().getBreakObjectIDENTTerminalRuleCall_1_1_0()); 
@@ -57103,7 +57661,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1155, rule__Break__BreakObjectAssignment_1_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1163, rule__Break__BreakObjectAssignment_1_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57114,25 +57672,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GeneralClause__IsPublicAssignment_0"
-    // InternalMOloc.g:16403:1: rule__GeneralClause__IsPublicAssignment_0 : ( ( 'public' ) ) ;
+    // InternalMOloc.g:16555:1: rule__GeneralClause__IsPublicAssignment_0 : ( ( 'public' ) ) ;
     public final void rule__GeneralClause__IsPublicAssignment_0() throws RecognitionException {
         int rule__GeneralClause__IsPublicAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1156) ) { return ; }
-            // InternalMOloc.g:16407:1: ( ( ( 'public' ) ) )
-            // InternalMOloc.g:16408:2: ( ( 'public' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1164) ) { return ; }
+            // InternalMOloc.g:16559:1: ( ( ( 'public' ) ) )
+            // InternalMOloc.g:16560:2: ( ( 'public' ) )
             {
-            // InternalMOloc.g:16408:2: ( ( 'public' ) )
-            // InternalMOloc.g:16409:3: ( 'public' )
+            // InternalMOloc.g:16560:2: ( ( 'public' ) )
+            // InternalMOloc.g:16561:3: ( 'public' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsPublicPublicKeyword_0_0()); 
             }
-            // InternalMOloc.g:16410:3: ( 'public' )
-            // InternalMOloc.g:16411:4: 'public'
+            // InternalMOloc.g:16562:3: ( 'public' )
+            // InternalMOloc.g:16563:4: 'public'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsPublicPublicKeyword_0_0()); 
@@ -57159,7 +57717,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1156, rule__GeneralClause__IsPublicAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1164, rule__GeneralClause__IsPublicAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57170,25 +57728,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GeneralClause__IsProtectedAssignment_1"
-    // InternalMOloc.g:16422:1: rule__GeneralClause__IsProtectedAssignment_1 : ( ( 'protected' ) ) ;
+    // InternalMOloc.g:16574:1: rule__GeneralClause__IsProtectedAssignment_1 : ( ( 'protected' ) ) ;
     public final void rule__GeneralClause__IsProtectedAssignment_1() throws RecognitionException {
         int rule__GeneralClause__IsProtectedAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1157) ) { return ; }
-            // InternalMOloc.g:16426:1: ( ( ( 'protected' ) ) )
-            // InternalMOloc.g:16427:2: ( ( 'protected' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1165) ) { return ; }
+            // InternalMOloc.g:16578:1: ( ( ( 'protected' ) ) )
+            // InternalMOloc.g:16579:2: ( ( 'protected' ) )
             {
-            // InternalMOloc.g:16427:2: ( ( 'protected' ) )
-            // InternalMOloc.g:16428:3: ( 'protected' )
+            // InternalMOloc.g:16579:2: ( ( 'protected' ) )
+            // InternalMOloc.g:16580:3: ( 'protected' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsProtectedProtectedKeyword_1_0()); 
             }
-            // InternalMOloc.g:16429:3: ( 'protected' )
-            // InternalMOloc.g:16430:4: 'protected'
+            // InternalMOloc.g:16581:3: ( 'protected' )
+            // InternalMOloc.g:16582:4: 'protected'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsProtectedProtectedKeyword_1_0()); 
@@ -57215,7 +57773,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1157, rule__GeneralClause__IsProtectedAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1165, rule__GeneralClause__IsProtectedAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57226,25 +57784,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GeneralClause__IsRedeclareAssignment_2"
-    // InternalMOloc.g:16441:1: rule__GeneralClause__IsRedeclareAssignment_2 : ( ( 'redeclare' ) ) ;
+    // InternalMOloc.g:16593:1: rule__GeneralClause__IsRedeclareAssignment_2 : ( ( 'redeclare' ) ) ;
     public final void rule__GeneralClause__IsRedeclareAssignment_2() throws RecognitionException {
         int rule__GeneralClause__IsRedeclareAssignment_2_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1158) ) { return ; }
-            // InternalMOloc.g:16445:1: ( ( ( 'redeclare' ) ) )
-            // InternalMOloc.g:16446:2: ( ( 'redeclare' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1166) ) { return ; }
+            // InternalMOloc.g:16597:1: ( ( ( 'redeclare' ) ) )
+            // InternalMOloc.g:16598:2: ( ( 'redeclare' ) )
             {
-            // InternalMOloc.g:16446:2: ( ( 'redeclare' ) )
-            // InternalMOloc.g:16447:3: ( 'redeclare' )
+            // InternalMOloc.g:16598:2: ( ( 'redeclare' ) )
+            // InternalMOloc.g:16599:3: ( 'redeclare' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsRedeclareRedeclareKeyword_2_0()); 
             }
-            // InternalMOloc.g:16448:3: ( 'redeclare' )
-            // InternalMOloc.g:16449:4: 'redeclare'
+            // InternalMOloc.g:16600:3: ( 'redeclare' )
+            // InternalMOloc.g:16601:4: 'redeclare'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsRedeclareRedeclareKeyword_2_0()); 
@@ -57271,7 +57829,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1158, rule__GeneralClause__IsRedeclareAssignment_2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1166, rule__GeneralClause__IsRedeclareAssignment_2_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57282,25 +57840,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GeneralClause__IsfinalAssignment_3"
-    // InternalMOloc.g:16460:1: rule__GeneralClause__IsfinalAssignment_3 : ( ( 'final' ) ) ;
+    // InternalMOloc.g:16612:1: rule__GeneralClause__IsfinalAssignment_3 : ( ( 'final' ) ) ;
     public final void rule__GeneralClause__IsfinalAssignment_3() throws RecognitionException {
         int rule__GeneralClause__IsfinalAssignment_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1159) ) { return ; }
-            // InternalMOloc.g:16464:1: ( ( ( 'final' ) ) )
-            // InternalMOloc.g:16465:2: ( ( 'final' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1167) ) { return ; }
+            // InternalMOloc.g:16616:1: ( ( ( 'final' ) ) )
+            // InternalMOloc.g:16617:2: ( ( 'final' ) )
             {
-            // InternalMOloc.g:16465:2: ( ( 'final' ) )
-            // InternalMOloc.g:16466:3: ( 'final' )
+            // InternalMOloc.g:16617:2: ( ( 'final' ) )
+            // InternalMOloc.g:16618:3: ( 'final' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsfinalFinalKeyword_3_0()); 
             }
-            // InternalMOloc.g:16467:3: ( 'final' )
-            // InternalMOloc.g:16468:4: 'final'
+            // InternalMOloc.g:16619:3: ( 'final' )
+            // InternalMOloc.g:16620:4: 'final'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsfinalFinalKeyword_3_0()); 
@@ -57327,7 +57885,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1159, rule__GeneralClause__IsfinalAssignment_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1167, rule__GeneralClause__IsfinalAssignment_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57338,25 +57896,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GeneralClause__IsInnerAssignment_4"
-    // InternalMOloc.g:16479:1: rule__GeneralClause__IsInnerAssignment_4 : ( ( 'inner' ) ) ;
+    // InternalMOloc.g:16631:1: rule__GeneralClause__IsInnerAssignment_4 : ( ( 'inner' ) ) ;
     public final void rule__GeneralClause__IsInnerAssignment_4() throws RecognitionException {
         int rule__GeneralClause__IsInnerAssignment_4_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1160) ) { return ; }
-            // InternalMOloc.g:16483:1: ( ( ( 'inner' ) ) )
-            // InternalMOloc.g:16484:2: ( ( 'inner' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1168) ) { return ; }
+            // InternalMOloc.g:16635:1: ( ( ( 'inner' ) ) )
+            // InternalMOloc.g:16636:2: ( ( 'inner' ) )
             {
-            // InternalMOloc.g:16484:2: ( ( 'inner' ) )
-            // InternalMOloc.g:16485:3: ( 'inner' )
+            // InternalMOloc.g:16636:2: ( ( 'inner' ) )
+            // InternalMOloc.g:16637:3: ( 'inner' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsInnerInnerKeyword_4_0()); 
             }
-            // InternalMOloc.g:16486:3: ( 'inner' )
-            // InternalMOloc.g:16487:4: 'inner'
+            // InternalMOloc.g:16638:3: ( 'inner' )
+            // InternalMOloc.g:16639:4: 'inner'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsInnerInnerKeyword_4_0()); 
@@ -57383,7 +57941,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1160, rule__GeneralClause__IsInnerAssignment_4_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1168, rule__GeneralClause__IsInnerAssignment_4_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57394,25 +57952,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GeneralClause__IsOuterAssignment_5"
-    // InternalMOloc.g:16498:1: rule__GeneralClause__IsOuterAssignment_5 : ( ( 'outer' ) ) ;
+    // InternalMOloc.g:16650:1: rule__GeneralClause__IsOuterAssignment_5 : ( ( 'outer' ) ) ;
     public final void rule__GeneralClause__IsOuterAssignment_5() throws RecognitionException {
         int rule__GeneralClause__IsOuterAssignment_5_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1161) ) { return ; }
-            // InternalMOloc.g:16502:1: ( ( ( 'outer' ) ) )
-            // InternalMOloc.g:16503:2: ( ( 'outer' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1169) ) { return ; }
+            // InternalMOloc.g:16654:1: ( ( ( 'outer' ) ) )
+            // InternalMOloc.g:16655:2: ( ( 'outer' ) )
             {
-            // InternalMOloc.g:16503:2: ( ( 'outer' ) )
-            // InternalMOloc.g:16504:3: ( 'outer' )
+            // InternalMOloc.g:16655:2: ( ( 'outer' ) )
+            // InternalMOloc.g:16656:3: ( 'outer' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsOuterOuterKeyword_5_0()); 
             }
-            // InternalMOloc.g:16505:3: ( 'outer' )
-            // InternalMOloc.g:16506:4: 'outer'
+            // InternalMOloc.g:16657:3: ( 'outer' )
+            // InternalMOloc.g:16658:4: 'outer'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsOuterOuterKeyword_5_0()); 
@@ -57439,7 +57997,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1161, rule__GeneralClause__IsOuterAssignment_5_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1169, rule__GeneralClause__IsOuterAssignment_5_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57450,25 +58008,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GeneralClause__IsReplaceableAssignment_6"
-    // InternalMOloc.g:16517:1: rule__GeneralClause__IsReplaceableAssignment_6 : ( ( 'replaceable' ) ) ;
+    // InternalMOloc.g:16669:1: rule__GeneralClause__IsReplaceableAssignment_6 : ( ( 'replaceable' ) ) ;
     public final void rule__GeneralClause__IsReplaceableAssignment_6() throws RecognitionException {
         int rule__GeneralClause__IsReplaceableAssignment_6_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1162) ) { return ; }
-            // InternalMOloc.g:16521:1: ( ( ( 'replaceable' ) ) )
-            // InternalMOloc.g:16522:2: ( ( 'replaceable' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1170) ) { return ; }
+            // InternalMOloc.g:16673:1: ( ( ( 'replaceable' ) ) )
+            // InternalMOloc.g:16674:2: ( ( 'replaceable' ) )
             {
-            // InternalMOloc.g:16522:2: ( ( 'replaceable' ) )
-            // InternalMOloc.g:16523:3: ( 'replaceable' )
+            // InternalMOloc.g:16674:2: ( ( 'replaceable' ) )
+            // InternalMOloc.g:16675:3: ( 'replaceable' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsReplaceableReplaceableKeyword_6_0()); 
             }
-            // InternalMOloc.g:16524:3: ( 'replaceable' )
-            // InternalMOloc.g:16525:4: 'replaceable'
+            // InternalMOloc.g:16676:3: ( 'replaceable' )
+            // InternalMOloc.g:16677:4: 'replaceable'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getIsReplaceableReplaceableKeyword_6_0()); 
@@ -57495,7 +58053,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1162, rule__GeneralClause__IsReplaceableAssignment_6_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1170, rule__GeneralClause__IsReplaceableAssignment_6_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57506,19 +58064,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GeneralClause__Component_listAssignment_7_1_3"
-    // InternalMOloc.g:16536:1: rule__GeneralClause__Component_listAssignment_7_1_3 : ( ruleComponent_declaration ) ;
+    // InternalMOloc.g:16688:1: rule__GeneralClause__Component_listAssignment_7_1_3 : ( ruleComponent_declaration ) ;
     public final void rule__GeneralClause__Component_listAssignment_7_1_3() throws RecognitionException {
         int rule__GeneralClause__Component_listAssignment_7_1_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1163) ) { return ; }
-            // InternalMOloc.g:16540:1: ( ( ruleComponent_declaration ) )
-            // InternalMOloc.g:16541:2: ( ruleComponent_declaration )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1171) ) { return ; }
+            // InternalMOloc.g:16692:1: ( ( ruleComponent_declaration ) )
+            // InternalMOloc.g:16693:2: ( ruleComponent_declaration )
             {
-            // InternalMOloc.g:16541:2: ( ruleComponent_declaration )
-            // InternalMOloc.g:16542:3: ruleComponent_declaration
+            // InternalMOloc.g:16693:2: ( ruleComponent_declaration )
+            // InternalMOloc.g:16694:3: ruleComponent_declaration
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getComponent_listComponent_declarationParserRuleCall_7_1_3_0()); 
@@ -57543,7 +58101,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1163, rule__GeneralClause__Component_listAssignment_7_1_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1171, rule__GeneralClause__Component_listAssignment_7_1_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57554,19 +58112,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GeneralClause__Component_listAssignment_7_1_4_1"
-    // InternalMOloc.g:16551:1: rule__GeneralClause__Component_listAssignment_7_1_4_1 : ( ruleComponent_declaration ) ;
+    // InternalMOloc.g:16703:1: rule__GeneralClause__Component_listAssignment_7_1_4_1 : ( ruleComponent_declaration ) ;
     public final void rule__GeneralClause__Component_listAssignment_7_1_4_1() throws RecognitionException {
         int rule__GeneralClause__Component_listAssignment_7_1_4_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1164) ) { return ; }
-            // InternalMOloc.g:16555:1: ( ( ruleComponent_declaration ) )
-            // InternalMOloc.g:16556:2: ( ruleComponent_declaration )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1172) ) { return ; }
+            // InternalMOloc.g:16707:1: ( ( ruleComponent_declaration ) )
+            // InternalMOloc.g:16708:2: ( ruleComponent_declaration )
             {
-            // InternalMOloc.g:16556:2: ( ruleComponent_declaration )
-            // InternalMOloc.g:16557:3: ruleComponent_declaration
+            // InternalMOloc.g:16708:2: ( ruleComponent_declaration )
+            // InternalMOloc.g:16709:3: ruleComponent_declaration
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGeneralClauseAccess().getComponent_listComponent_declarationParserRuleCall_7_1_4_1_0()); 
@@ -57591,7 +58149,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1164, rule__GeneralClause__Component_listAssignment_7_1_4_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1172, rule__GeneralClause__Component_listAssignment_7_1_4_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57601,20 +58159,76 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__GeneralClause__Component_listAssignment_7_1_4_1"
 
 
+    // $ANTLR start "rule__GeneralClause__IsOverAssignment_9"
+    // InternalMOloc.g:16718:1: rule__GeneralClause__IsOverAssignment_9 : ( ( ';' ) ) ;
+    public final void rule__GeneralClause__IsOverAssignment_9() throws RecognitionException {
+        int rule__GeneralClause__IsOverAssignment_9_StartIndex = input.index();
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1173) ) { return ; }
+            // InternalMOloc.g:16722:1: ( ( ( ';' ) ) )
+            // InternalMOloc.g:16723:2: ( ( ';' ) )
+            {
+            // InternalMOloc.g:16723:2: ( ( ';' ) )
+            // InternalMOloc.g:16724:3: ( ';' )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getGeneralClauseAccess().getIsOverSemicolonKeyword_9_0()); 
+            }
+            // InternalMOloc.g:16725:3: ( ';' )
+            // InternalMOloc.g:16726:4: ';'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getGeneralClauseAccess().getIsOverSemicolonKeyword_9_0()); 
+            }
+            match(input,58,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getGeneralClauseAccess().getIsOverSemicolonKeyword_9_0()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getGeneralClauseAccess().getIsOverSemicolonKeyword_9_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 1173, rule__GeneralClause__IsOverAssignment_9_StartIndex); }
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__GeneralClause__IsOverAssignment_9"
+
+
     // $ANTLR start "rule__Component_declaration__Condition_attributeAssignment_1_1"
-    // InternalMOloc.g:16566:1: rule__Component_declaration__Condition_attributeAssignment_1_1 : ( ruleExpression ) ;
+    // InternalMOloc.g:16737:1: rule__Component_declaration__Condition_attributeAssignment_1_1 : ( ruleExpression ) ;
     public final void rule__Component_declaration__Condition_attributeAssignment_1_1() throws RecognitionException {
         int rule__Component_declaration__Condition_attributeAssignment_1_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1165) ) { return ; }
-            // InternalMOloc.g:16570:1: ( ( ruleExpression ) )
-            // InternalMOloc.g:16571:2: ( ruleExpression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1174) ) { return ; }
+            // InternalMOloc.g:16741:1: ( ( ruleExpression ) )
+            // InternalMOloc.g:16742:2: ( ruleExpression )
             {
-            // InternalMOloc.g:16571:2: ( ruleExpression )
-            // InternalMOloc.g:16572:3: ruleExpression
+            // InternalMOloc.g:16742:2: ( ruleExpression )
+            // InternalMOloc.g:16743:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getComponent_declarationAccess().getCondition_attributeExpressionParserRuleCall_1_1_0()); 
@@ -57639,7 +58253,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1165, rule__Component_declaration__Condition_attributeAssignment_1_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1174, rule__Component_declaration__Condition_attributeAssignment_1_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57650,19 +58264,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalElement__Language_specificationAssignment_2"
-    // InternalMOloc.g:16581:1: rule__ExternalElement__Language_specificationAssignment_2 : ( RULE_STRING ) ;
+    // InternalMOloc.g:16752:1: rule__ExternalElement__Language_specificationAssignment_2 : ( RULE_STRING ) ;
     public final void rule__ExternalElement__Language_specificationAssignment_2() throws RecognitionException {
         int rule__ExternalElement__Language_specificationAssignment_2_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1166) ) { return ; }
-            // InternalMOloc.g:16585:1: ( ( RULE_STRING ) )
-            // InternalMOloc.g:16586:2: ( RULE_STRING )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1175) ) { return ; }
+            // InternalMOloc.g:16756:1: ( ( RULE_STRING ) )
+            // InternalMOloc.g:16757:2: ( RULE_STRING )
             {
-            // InternalMOloc.g:16586:2: ( RULE_STRING )
-            // InternalMOloc.g:16587:3: RULE_STRING
+            // InternalMOloc.g:16757:2: ( RULE_STRING )
+            // InternalMOloc.g:16758:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExternalElementAccess().getLanguage_specificationSTRINGTerminalRuleCall_2_0()); 
@@ -57683,7 +58297,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1166, rule__ExternalElement__Language_specificationAssignment_2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1175, rule__ExternalElement__Language_specificationAssignment_2_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57694,19 +58308,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalElement__RefAssignment_3_0_0"
-    // InternalMOloc.g:16596:1: rule__ExternalElement__RefAssignment_3_0_0 : ( ruleComponent_reference ) ;
+    // InternalMOloc.g:16767:1: rule__ExternalElement__RefAssignment_3_0_0 : ( ruleComponent_reference ) ;
     public final void rule__ExternalElement__RefAssignment_3_0_0() throws RecognitionException {
         int rule__ExternalElement__RefAssignment_3_0_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1167) ) { return ; }
-            // InternalMOloc.g:16600:1: ( ( ruleComponent_reference ) )
-            // InternalMOloc.g:16601:2: ( ruleComponent_reference )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1176) ) { return ; }
+            // InternalMOloc.g:16771:1: ( ( ruleComponent_reference ) )
+            // InternalMOloc.g:16772:2: ( ruleComponent_reference )
             {
-            // InternalMOloc.g:16601:2: ( ruleComponent_reference )
-            // InternalMOloc.g:16602:3: ruleComponent_reference
+            // InternalMOloc.g:16772:2: ( ruleComponent_reference )
+            // InternalMOloc.g:16773:3: ruleComponent_reference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExternalElementAccess().getRefComponent_referenceParserRuleCall_3_0_0_0()); 
@@ -57731,7 +58345,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1167, rule__ExternalElement__RefAssignment_3_0_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1176, rule__ExternalElement__RefAssignment_3_0_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57742,19 +58356,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalElement__RefValueAssignment_3_1"
-    // InternalMOloc.g:16611:1: rule__ExternalElement__RefValueAssignment_3_1 : ( RULE_IDENT ) ;
+    // InternalMOloc.g:16782:1: rule__ExternalElement__RefValueAssignment_3_1 : ( RULE_IDENT ) ;
     public final void rule__ExternalElement__RefValueAssignment_3_1() throws RecognitionException {
         int rule__ExternalElement__RefValueAssignment_3_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1168) ) { return ; }
-            // InternalMOloc.g:16615:1: ( ( RULE_IDENT ) )
-            // InternalMOloc.g:16616:2: ( RULE_IDENT )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1177) ) { return ; }
+            // InternalMOloc.g:16786:1: ( ( RULE_IDENT ) )
+            // InternalMOloc.g:16787:2: ( RULE_IDENT )
             {
-            // InternalMOloc.g:16616:2: ( RULE_IDENT )
-            // InternalMOloc.g:16617:3: RULE_IDENT
+            // InternalMOloc.g:16787:2: ( RULE_IDENT )
+            // InternalMOloc.g:16788:3: RULE_IDENT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExternalElementAccess().getRefValueIDENTTerminalRuleCall_3_1_0()); 
@@ -57775,7 +58389,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1168, rule__ExternalElement__RefValueAssignment_3_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1177, rule__ExternalElement__RefValueAssignment_3_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57786,19 +58400,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalElement__ExpressionListAssignment_3_3"
-    // InternalMOloc.g:16626:1: rule__ExternalElement__ExpressionListAssignment_3_3 : ( ruleExpressionList ) ;
+    // InternalMOloc.g:16797:1: rule__ExternalElement__ExpressionListAssignment_3_3 : ( ruleExpressionList ) ;
     public final void rule__ExternalElement__ExpressionListAssignment_3_3() throws RecognitionException {
         int rule__ExternalElement__ExpressionListAssignment_3_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1169) ) { return ; }
-            // InternalMOloc.g:16630:1: ( ( ruleExpressionList ) )
-            // InternalMOloc.g:16631:2: ( ruleExpressionList )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1178) ) { return ; }
+            // InternalMOloc.g:16801:1: ( ( ruleExpressionList ) )
+            // InternalMOloc.g:16802:2: ( ruleExpressionList )
             {
-            // InternalMOloc.g:16631:2: ( ruleExpressionList )
-            // InternalMOloc.g:16632:3: ruleExpressionList
+            // InternalMOloc.g:16802:2: ( ruleExpressionList )
+            // InternalMOloc.g:16803:3: ruleExpressionList
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getExternalElementAccess().getExpressionListExpressionListParserRuleCall_3_3_0()); 
@@ -57823,7 +58437,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1169, rule__ExternalElement__ExpressionListAssignment_3_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1178, rule__ExternalElement__ExpressionListAssignment_3_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57833,26 +58447,138 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ExternalElement__ExpressionListAssignment_3_3"
 
 
+    // $ANTLR start "rule__ExternalElement__IsOverAssignment_5"
+    // InternalMOloc.g:16812:1: rule__ExternalElement__IsOverAssignment_5 : ( ( ';' ) ) ;
+    public final void rule__ExternalElement__IsOverAssignment_5() throws RecognitionException {
+        int rule__ExternalElement__IsOverAssignment_5_StartIndex = input.index();
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1179) ) { return ; }
+            // InternalMOloc.g:16816:1: ( ( ( ';' ) ) )
+            // InternalMOloc.g:16817:2: ( ( ';' ) )
+            {
+            // InternalMOloc.g:16817:2: ( ( ';' ) )
+            // InternalMOloc.g:16818:3: ( ';' )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getExternalElementAccess().getIsOverSemicolonKeyword_5_0()); 
+            }
+            // InternalMOloc.g:16819:3: ( ';' )
+            // InternalMOloc.g:16820:4: ';'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getExternalElementAccess().getIsOverSemicolonKeyword_5_0()); 
+            }
+            match(input,58,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getExternalElementAccess().getIsOverSemicolonKeyword_5_0()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getExternalElementAccess().getIsOverSemicolonKeyword_5_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 1179, rule__ExternalElement__IsOverAssignment_5_StartIndex); }
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ExternalElement__IsOverAssignment_5"
+
+
+    // $ANTLR start "rule__AnnotationClause__IsOverAssignment_1"
+    // InternalMOloc.g:16831:1: rule__AnnotationClause__IsOverAssignment_1 : ( ( ';' ) ) ;
+    public final void rule__AnnotationClause__IsOverAssignment_1() throws RecognitionException {
+        int rule__AnnotationClause__IsOverAssignment_1_StartIndex = input.index();
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1180) ) { return ; }
+            // InternalMOloc.g:16835:1: ( ( ( ';' ) ) )
+            // InternalMOloc.g:16836:2: ( ( ';' ) )
+            {
+            // InternalMOloc.g:16836:2: ( ( ';' ) )
+            // InternalMOloc.g:16837:3: ( ';' )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getAnnotationClauseAccess().getIsOverSemicolonKeyword_1_0()); 
+            }
+            // InternalMOloc.g:16838:3: ( ';' )
+            // InternalMOloc.g:16839:4: ';'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getAnnotationClauseAccess().getIsOverSemicolonKeyword_1_0()); 
+            }
+            match(input,58,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getAnnotationClauseAccess().getIsOverSemicolonKeyword_1_0()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getAnnotationClauseAccess().getIsOverSemicolonKeyword_1_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 1180, rule__AnnotationClause__IsOverAssignment_1_StartIndex); }
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AnnotationClause__IsOverAssignment_1"
+
+
     // $ANTLR start "rule__EquationSection__IsInitialAssignment_1"
-    // InternalMOloc.g:16641:1: rule__EquationSection__IsInitialAssignment_1 : ( ( 'initial' ) ) ;
+    // InternalMOloc.g:16850:1: rule__EquationSection__IsInitialAssignment_1 : ( ( 'initial' ) ) ;
     public final void rule__EquationSection__IsInitialAssignment_1() throws RecognitionException {
         int rule__EquationSection__IsInitialAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1170) ) { return ; }
-            // InternalMOloc.g:16645:1: ( ( ( 'initial' ) ) )
-            // InternalMOloc.g:16646:2: ( ( 'initial' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1181) ) { return ; }
+            // InternalMOloc.g:16854:1: ( ( ( 'initial' ) ) )
+            // InternalMOloc.g:16855:2: ( ( 'initial' ) )
             {
-            // InternalMOloc.g:16646:2: ( ( 'initial' ) )
-            // InternalMOloc.g:16647:3: ( 'initial' )
+            // InternalMOloc.g:16855:2: ( ( 'initial' ) )
+            // InternalMOloc.g:16856:3: ( 'initial' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquationSectionAccess().getIsInitialInitialKeyword_1_0()); 
             }
-            // InternalMOloc.g:16648:3: ( 'initial' )
-            // InternalMOloc.g:16649:4: 'initial'
+            // InternalMOloc.g:16857:3: ( 'initial' )
+            // InternalMOloc.g:16858:4: 'initial'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquationSectionAccess().getIsInitialInitialKeyword_1_0()); 
@@ -57879,7 +58605,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1170, rule__EquationSection__IsInitialAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1181, rule__EquationSection__IsInitialAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57890,19 +58616,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EquationSection__EquationsAssignment_3"
-    // InternalMOloc.g:16660:1: rule__EquationSection__EquationsAssignment_3 : ( ruleEquation ) ;
+    // InternalMOloc.g:16869:1: rule__EquationSection__EquationsAssignment_3 : ( ruleEquation ) ;
     public final void rule__EquationSection__EquationsAssignment_3() throws RecognitionException {
         int rule__EquationSection__EquationsAssignment_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1171) ) { return ; }
-            // InternalMOloc.g:16664:1: ( ( ruleEquation ) )
-            // InternalMOloc.g:16665:2: ( ruleEquation )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1182) ) { return ; }
+            // InternalMOloc.g:16873:1: ( ( ruleEquation ) )
+            // InternalMOloc.g:16874:2: ( ruleEquation )
             {
-            // InternalMOloc.g:16665:2: ( ruleEquation )
-            // InternalMOloc.g:16666:3: ruleEquation
+            // InternalMOloc.g:16874:2: ( ruleEquation )
+            // InternalMOloc.g:16875:3: ruleEquation
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEquationSectionAccess().getEquationsEquationParserRuleCall_3_0()); 
@@ -57927,7 +58653,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1171, rule__EquationSection__EquationsAssignment_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1182, rule__EquationSection__EquationsAssignment_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57938,19 +58664,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SimpleEquation__LeftAssignment_0"
-    // InternalMOloc.g:16675:1: rule__SimpleEquation__LeftAssignment_0 : ( ruleSimple_expression ) ;
+    // InternalMOloc.g:16884:1: rule__SimpleEquation__LeftAssignment_0 : ( ruleSimple_expression ) ;
     public final void rule__SimpleEquation__LeftAssignment_0() throws RecognitionException {
         int rule__SimpleEquation__LeftAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1172) ) { return ; }
-            // InternalMOloc.g:16679:1: ( ( ruleSimple_expression ) )
-            // InternalMOloc.g:16680:2: ( ruleSimple_expression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1183) ) { return ; }
+            // InternalMOloc.g:16888:1: ( ( ruleSimple_expression ) )
+            // InternalMOloc.g:16889:2: ( ruleSimple_expression )
             {
-            // InternalMOloc.g:16680:2: ( ruleSimple_expression )
-            // InternalMOloc.g:16681:3: ruleSimple_expression
+            // InternalMOloc.g:16889:2: ( ruleSimple_expression )
+            // InternalMOloc.g:16890:3: ruleSimple_expression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSimpleEquationAccess().getLeftSimple_expressionParserRuleCall_0_0()); 
@@ -57975,7 +58701,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1172, rule__SimpleEquation__LeftAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1183, rule__SimpleEquation__LeftAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -57986,19 +58712,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SimpleEquation__RightAssignment_2"
-    // InternalMOloc.g:16690:1: rule__SimpleEquation__RightAssignment_2 : ( ruleExpression ) ;
+    // InternalMOloc.g:16899:1: rule__SimpleEquation__RightAssignment_2 : ( ruleExpression ) ;
     public final void rule__SimpleEquation__RightAssignment_2() throws RecognitionException {
         int rule__SimpleEquation__RightAssignment_2_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1173) ) { return ; }
-            // InternalMOloc.g:16694:1: ( ( ruleExpression ) )
-            // InternalMOloc.g:16695:2: ( ruleExpression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1184) ) { return ; }
+            // InternalMOloc.g:16903:1: ( ( ruleExpression ) )
+            // InternalMOloc.g:16904:2: ( ruleExpression )
             {
-            // InternalMOloc.g:16695:2: ( ruleExpression )
-            // InternalMOloc.g:16696:3: ruleExpression
+            // InternalMOloc.g:16904:2: ( ruleExpression )
+            // InternalMOloc.g:16905:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSimpleEquationAccess().getRightExpressionParserRuleCall_2_0()); 
@@ -58023,7 +58749,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1173, rule__SimpleEquation__RightAssignment_2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1184, rule__SimpleEquation__RightAssignment_2_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58034,19 +58760,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfEquation__ConditionAssignment_1"
-    // InternalMOloc.g:16705:1: rule__IfEquation__ConditionAssignment_1 : ( ruleExpression ) ;
+    // InternalMOloc.g:16914:1: rule__IfEquation__ConditionAssignment_1 : ( ruleExpression ) ;
     public final void rule__IfEquation__ConditionAssignment_1() throws RecognitionException {
         int rule__IfEquation__ConditionAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1174) ) { return ; }
-            // InternalMOloc.g:16709:1: ( ( ruleExpression ) )
-            // InternalMOloc.g:16710:2: ( ruleExpression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1185) ) { return ; }
+            // InternalMOloc.g:16918:1: ( ( ruleExpression ) )
+            // InternalMOloc.g:16919:2: ( ruleExpression )
             {
-            // InternalMOloc.g:16710:2: ( ruleExpression )
-            // InternalMOloc.g:16711:3: ruleExpression
+            // InternalMOloc.g:16919:2: ( ruleExpression )
+            // InternalMOloc.g:16920:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfEquationAccess().getConditionExpressionParserRuleCall_1_0()); 
@@ -58071,7 +58797,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1174, rule__IfEquation__ConditionAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1185, rule__IfEquation__ConditionAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58082,19 +58808,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfEquation__IfEquationsAssignment_3"
-    // InternalMOloc.g:16720:1: rule__IfEquation__IfEquationsAssignment_3 : ( ruleEquation ) ;
+    // InternalMOloc.g:16929:1: rule__IfEquation__IfEquationsAssignment_3 : ( ruleEquation ) ;
     public final void rule__IfEquation__IfEquationsAssignment_3() throws RecognitionException {
         int rule__IfEquation__IfEquationsAssignment_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1175) ) { return ; }
-            // InternalMOloc.g:16724:1: ( ( ruleEquation ) )
-            // InternalMOloc.g:16725:2: ( ruleEquation )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1186) ) { return ; }
+            // InternalMOloc.g:16933:1: ( ( ruleEquation ) )
+            // InternalMOloc.g:16934:2: ( ruleEquation )
             {
-            // InternalMOloc.g:16725:2: ( ruleEquation )
-            // InternalMOloc.g:16726:3: ruleEquation
+            // InternalMOloc.g:16934:2: ( ruleEquation )
+            // InternalMOloc.g:16935:3: ruleEquation
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfEquationAccess().getIfEquationsEquationParserRuleCall_3_0()); 
@@ -58119,7 +58845,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1175, rule__IfEquation__IfEquationsAssignment_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1186, rule__IfEquation__IfEquationsAssignment_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58130,19 +58856,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfEquation__ElseConditionAssignment_4_1"
-    // InternalMOloc.g:16735:1: rule__IfEquation__ElseConditionAssignment_4_1 : ( ruleExpression ) ;
+    // InternalMOloc.g:16944:1: rule__IfEquation__ElseConditionAssignment_4_1 : ( ruleExpression ) ;
     public final void rule__IfEquation__ElseConditionAssignment_4_1() throws RecognitionException {
         int rule__IfEquation__ElseConditionAssignment_4_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1176) ) { return ; }
-            // InternalMOloc.g:16739:1: ( ( ruleExpression ) )
-            // InternalMOloc.g:16740:2: ( ruleExpression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1187) ) { return ; }
+            // InternalMOloc.g:16948:1: ( ( ruleExpression ) )
+            // InternalMOloc.g:16949:2: ( ruleExpression )
             {
-            // InternalMOloc.g:16740:2: ( ruleExpression )
-            // InternalMOloc.g:16741:3: ruleExpression
+            // InternalMOloc.g:16949:2: ( ruleExpression )
+            // InternalMOloc.g:16950:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfEquationAccess().getElseConditionExpressionParserRuleCall_4_1_0()); 
@@ -58167,7 +58893,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1176, rule__IfEquation__ElseConditionAssignment_4_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1187, rule__IfEquation__ElseConditionAssignment_4_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58178,19 +58904,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfEquation__ElseifEquationsAssignment_4_3"
-    // InternalMOloc.g:16750:1: rule__IfEquation__ElseifEquationsAssignment_4_3 : ( ruleEquation ) ;
+    // InternalMOloc.g:16959:1: rule__IfEquation__ElseifEquationsAssignment_4_3 : ( ruleEquation ) ;
     public final void rule__IfEquation__ElseifEquationsAssignment_4_3() throws RecognitionException {
         int rule__IfEquation__ElseifEquationsAssignment_4_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1177) ) { return ; }
-            // InternalMOloc.g:16754:1: ( ( ruleEquation ) )
-            // InternalMOloc.g:16755:2: ( ruleEquation )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1188) ) { return ; }
+            // InternalMOloc.g:16963:1: ( ( ruleEquation ) )
+            // InternalMOloc.g:16964:2: ( ruleEquation )
             {
-            // InternalMOloc.g:16755:2: ( ruleEquation )
-            // InternalMOloc.g:16756:3: ruleEquation
+            // InternalMOloc.g:16964:2: ( ruleEquation )
+            // InternalMOloc.g:16965:3: ruleEquation
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfEquationAccess().getElseifEquationsEquationParserRuleCall_4_3_0()); 
@@ -58215,7 +58941,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1177, rule__IfEquation__ElseifEquationsAssignment_4_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1188, rule__IfEquation__ElseifEquationsAssignment_4_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58226,19 +58952,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfEquation__ElseEquationsAssignment_5_1"
-    // InternalMOloc.g:16765:1: rule__IfEquation__ElseEquationsAssignment_5_1 : ( ruleEquation ) ;
+    // InternalMOloc.g:16974:1: rule__IfEquation__ElseEquationsAssignment_5_1 : ( ruleEquation ) ;
     public final void rule__IfEquation__ElseEquationsAssignment_5_1() throws RecognitionException {
         int rule__IfEquation__ElseEquationsAssignment_5_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1178) ) { return ; }
-            // InternalMOloc.g:16769:1: ( ( ruleEquation ) )
-            // InternalMOloc.g:16770:2: ( ruleEquation )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1189) ) { return ; }
+            // InternalMOloc.g:16978:1: ( ( ruleEquation ) )
+            // InternalMOloc.g:16979:2: ( ruleEquation )
             {
-            // InternalMOloc.g:16770:2: ( ruleEquation )
-            // InternalMOloc.g:16771:3: ruleEquation
+            // InternalMOloc.g:16979:2: ( ruleEquation )
+            // InternalMOloc.g:16980:3: ruleEquation
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfEquationAccess().getElseEquationsEquationParserRuleCall_5_1_0()); 
@@ -58263,7 +58989,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1178, rule__IfEquation__ElseEquationsAssignment_5_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1189, rule__IfEquation__ElseEquationsAssignment_5_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58274,19 +59000,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ForEquation__ForIndicesAssignment_1"
-    // InternalMOloc.g:16780:1: rule__ForEquation__ForIndicesAssignment_1 : ( ruleForIndices ) ;
+    // InternalMOloc.g:16989:1: rule__ForEquation__ForIndicesAssignment_1 : ( ruleForIndices ) ;
     public final void rule__ForEquation__ForIndicesAssignment_1() throws RecognitionException {
         int rule__ForEquation__ForIndicesAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1179) ) { return ; }
-            // InternalMOloc.g:16784:1: ( ( ruleForIndices ) )
-            // InternalMOloc.g:16785:2: ( ruleForIndices )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1190) ) { return ; }
+            // InternalMOloc.g:16993:1: ( ( ruleForIndices ) )
+            // InternalMOloc.g:16994:2: ( ruleForIndices )
             {
-            // InternalMOloc.g:16785:2: ( ruleForIndices )
-            // InternalMOloc.g:16786:3: ruleForIndices
+            // InternalMOloc.g:16994:2: ( ruleForIndices )
+            // InternalMOloc.g:16995:3: ruleForIndices
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForEquationAccess().getForIndicesForIndicesParserRuleCall_1_0()); 
@@ -58311,7 +59037,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1179, rule__ForEquation__ForIndicesAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1190, rule__ForEquation__ForIndicesAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58322,19 +59048,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ForEquation__ForEquationsAssignment_3"
-    // InternalMOloc.g:16795:1: rule__ForEquation__ForEquationsAssignment_3 : ( ruleEquation ) ;
+    // InternalMOloc.g:17004:1: rule__ForEquation__ForEquationsAssignment_3 : ( ruleEquation ) ;
     public final void rule__ForEquation__ForEquationsAssignment_3() throws RecognitionException {
         int rule__ForEquation__ForEquationsAssignment_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1180) ) { return ; }
-            // InternalMOloc.g:16799:1: ( ( ruleEquation ) )
-            // InternalMOloc.g:16800:2: ( ruleEquation )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1191) ) { return ; }
+            // InternalMOloc.g:17008:1: ( ( ruleEquation ) )
+            // InternalMOloc.g:17009:2: ( ruleEquation )
             {
-            // InternalMOloc.g:16800:2: ( ruleEquation )
-            // InternalMOloc.g:16801:3: ruleEquation
+            // InternalMOloc.g:17009:2: ( ruleEquation )
+            // InternalMOloc.g:17010:3: ruleEquation
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForEquationAccess().getForEquationsEquationParserRuleCall_3_0()); 
@@ -58359,7 +59085,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1180, rule__ForEquation__ForEquationsAssignment_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1191, rule__ForEquation__ForEquationsAssignment_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58370,19 +59096,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConnectEquation__LeftAssignment_2"
-    // InternalMOloc.g:16810:1: rule__ConnectEquation__LeftAssignment_2 : ( ruleComponent_reference ) ;
+    // InternalMOloc.g:17019:1: rule__ConnectEquation__LeftAssignment_2 : ( ruleComponent_reference ) ;
     public final void rule__ConnectEquation__LeftAssignment_2() throws RecognitionException {
         int rule__ConnectEquation__LeftAssignment_2_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1181) ) { return ; }
-            // InternalMOloc.g:16814:1: ( ( ruleComponent_reference ) )
-            // InternalMOloc.g:16815:2: ( ruleComponent_reference )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1192) ) { return ; }
+            // InternalMOloc.g:17023:1: ( ( ruleComponent_reference ) )
+            // InternalMOloc.g:17024:2: ( ruleComponent_reference )
             {
-            // InternalMOloc.g:16815:2: ( ruleComponent_reference )
-            // InternalMOloc.g:16816:3: ruleComponent_reference
+            // InternalMOloc.g:17024:2: ( ruleComponent_reference )
+            // InternalMOloc.g:17025:3: ruleComponent_reference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectEquationAccess().getLeftComponent_referenceParserRuleCall_2_0()); 
@@ -58407,7 +59133,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1181, rule__ConnectEquation__LeftAssignment_2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1192, rule__ConnectEquation__LeftAssignment_2_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58418,19 +59144,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConnectEquation__RightAssignment_4"
-    // InternalMOloc.g:16825:1: rule__ConnectEquation__RightAssignment_4 : ( ruleComponent_reference ) ;
+    // InternalMOloc.g:17034:1: rule__ConnectEquation__RightAssignment_4 : ( ruleComponent_reference ) ;
     public final void rule__ConnectEquation__RightAssignment_4() throws RecognitionException {
         int rule__ConnectEquation__RightAssignment_4_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1182) ) { return ; }
-            // InternalMOloc.g:16829:1: ( ( ruleComponent_reference ) )
-            // InternalMOloc.g:16830:2: ( ruleComponent_reference )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1193) ) { return ; }
+            // InternalMOloc.g:17038:1: ( ( ruleComponent_reference ) )
+            // InternalMOloc.g:17039:2: ( ruleComponent_reference )
             {
-            // InternalMOloc.g:16830:2: ( ruleComponent_reference )
-            // InternalMOloc.g:16831:3: ruleComponent_reference
+            // InternalMOloc.g:17039:2: ( ruleComponent_reference )
+            // InternalMOloc.g:17040:3: ruleComponent_reference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectEquationAccess().getRightComponent_referenceParserRuleCall_4_0()); 
@@ -58455,7 +59181,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1182, rule__ConnectEquation__RightAssignment_4_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1193, rule__ConnectEquation__RightAssignment_4_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58466,19 +59192,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhenEquation__ConditionAssignment_1"
-    // InternalMOloc.g:16840:1: rule__WhenEquation__ConditionAssignment_1 : ( ruleExpression ) ;
+    // InternalMOloc.g:17049:1: rule__WhenEquation__ConditionAssignment_1 : ( ruleExpression ) ;
     public final void rule__WhenEquation__ConditionAssignment_1() throws RecognitionException {
         int rule__WhenEquation__ConditionAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1183) ) { return ; }
-            // InternalMOloc.g:16844:1: ( ( ruleExpression ) )
-            // InternalMOloc.g:16845:2: ( ruleExpression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1194) ) { return ; }
+            // InternalMOloc.g:17053:1: ( ( ruleExpression ) )
+            // InternalMOloc.g:17054:2: ( ruleExpression )
             {
-            // InternalMOloc.g:16845:2: ( ruleExpression )
-            // InternalMOloc.g:16846:3: ruleExpression
+            // InternalMOloc.g:17054:2: ( ruleExpression )
+            // InternalMOloc.g:17055:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhenEquationAccess().getConditionExpressionParserRuleCall_1_0()); 
@@ -58503,7 +59229,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1183, rule__WhenEquation__ConditionAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1194, rule__WhenEquation__ConditionAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58514,19 +59240,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhenEquation__WhenEquationsAssignment_3"
-    // InternalMOloc.g:16855:1: rule__WhenEquation__WhenEquationsAssignment_3 : ( ruleEquation ) ;
+    // InternalMOloc.g:17064:1: rule__WhenEquation__WhenEquationsAssignment_3 : ( ruleEquation ) ;
     public final void rule__WhenEquation__WhenEquationsAssignment_3() throws RecognitionException {
         int rule__WhenEquation__WhenEquationsAssignment_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1184) ) { return ; }
-            // InternalMOloc.g:16859:1: ( ( ruleEquation ) )
-            // InternalMOloc.g:16860:2: ( ruleEquation )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1195) ) { return ; }
+            // InternalMOloc.g:17068:1: ( ( ruleEquation ) )
+            // InternalMOloc.g:17069:2: ( ruleEquation )
             {
-            // InternalMOloc.g:16860:2: ( ruleEquation )
-            // InternalMOloc.g:16861:3: ruleEquation
+            // InternalMOloc.g:17069:2: ( ruleEquation )
+            // InternalMOloc.g:17070:3: ruleEquation
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhenEquationAccess().getWhenEquationsEquationParserRuleCall_3_0()); 
@@ -58551,7 +59277,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1184, rule__WhenEquation__WhenEquationsAssignment_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1195, rule__WhenEquation__WhenEquationsAssignment_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58562,19 +59288,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhenEquation__ElseConditionAssignment_4_1"
-    // InternalMOloc.g:16870:1: rule__WhenEquation__ElseConditionAssignment_4_1 : ( ruleExpression ) ;
+    // InternalMOloc.g:17079:1: rule__WhenEquation__ElseConditionAssignment_4_1 : ( ruleExpression ) ;
     public final void rule__WhenEquation__ElseConditionAssignment_4_1() throws RecognitionException {
         int rule__WhenEquation__ElseConditionAssignment_4_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1185) ) { return ; }
-            // InternalMOloc.g:16874:1: ( ( ruleExpression ) )
-            // InternalMOloc.g:16875:2: ( ruleExpression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1196) ) { return ; }
+            // InternalMOloc.g:17083:1: ( ( ruleExpression ) )
+            // InternalMOloc.g:17084:2: ( ruleExpression )
             {
-            // InternalMOloc.g:16875:2: ( ruleExpression )
-            // InternalMOloc.g:16876:3: ruleExpression
+            // InternalMOloc.g:17084:2: ( ruleExpression )
+            // InternalMOloc.g:17085:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhenEquationAccess().getElseConditionExpressionParserRuleCall_4_1_0()); 
@@ -58599,7 +59325,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1185, rule__WhenEquation__ElseConditionAssignment_4_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1196, rule__WhenEquation__ElseConditionAssignment_4_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58610,19 +59336,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhenEquation__ElsewhenEquationsAssignment_4_3"
-    // InternalMOloc.g:16885:1: rule__WhenEquation__ElsewhenEquationsAssignment_4_3 : ( ruleEquation ) ;
+    // InternalMOloc.g:17094:1: rule__WhenEquation__ElsewhenEquationsAssignment_4_3 : ( ruleEquation ) ;
     public final void rule__WhenEquation__ElsewhenEquationsAssignment_4_3() throws RecognitionException {
         int rule__WhenEquation__ElsewhenEquationsAssignment_4_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1186) ) { return ; }
-            // InternalMOloc.g:16889:1: ( ( ruleEquation ) )
-            // InternalMOloc.g:16890:2: ( ruleEquation )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1197) ) { return ; }
+            // InternalMOloc.g:17098:1: ( ( ruleEquation ) )
+            // InternalMOloc.g:17099:2: ( ruleEquation )
             {
-            // InternalMOloc.g:16890:2: ( ruleEquation )
-            // InternalMOloc.g:16891:3: ruleEquation
+            // InternalMOloc.g:17099:2: ( ruleEquation )
+            // InternalMOloc.g:17100:3: ruleEquation
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhenEquationAccess().getElsewhenEquationsEquationParserRuleCall_4_3_0()); 
@@ -58647,7 +59373,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1186, rule__WhenEquation__ElsewhenEquationsAssignment_4_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1197, rule__WhenEquation__ElsewhenEquationsAssignment_4_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58658,19 +59384,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionEquation__ComponentAssignment_0"
-    // InternalMOloc.g:16900:1: rule__FunctionEquation__ComponentAssignment_0 : ( ruleComponent_reference ) ;
+    // InternalMOloc.g:17109:1: rule__FunctionEquation__ComponentAssignment_0 : ( ruleComponent_reference ) ;
     public final void rule__FunctionEquation__ComponentAssignment_0() throws RecognitionException {
         int rule__FunctionEquation__ComponentAssignment_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1187) ) { return ; }
-            // InternalMOloc.g:16904:1: ( ( ruleComponent_reference ) )
-            // InternalMOloc.g:16905:2: ( ruleComponent_reference )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1198) ) { return ; }
+            // InternalMOloc.g:17113:1: ( ( ruleComponent_reference ) )
+            // InternalMOloc.g:17114:2: ( ruleComponent_reference )
             {
-            // InternalMOloc.g:16905:2: ( ruleComponent_reference )
-            // InternalMOloc.g:16906:3: ruleComponent_reference
+            // InternalMOloc.g:17114:2: ( ruleComponent_reference )
+            // InternalMOloc.g:17115:3: ruleComponent_reference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionEquationAccess().getComponentComponent_referenceParserRuleCall_0_0()); 
@@ -58695,7 +59421,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1187, rule__FunctionEquation__ComponentAssignment_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1198, rule__FunctionEquation__ComponentAssignment_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58706,19 +59432,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionEquation__FunctionAssignment_1"
-    // InternalMOloc.g:16915:1: rule__FunctionEquation__FunctionAssignment_1 : ( ruleFunctionCallArgs ) ;
+    // InternalMOloc.g:17124:1: rule__FunctionEquation__FunctionAssignment_1 : ( ruleFunctionCallArgs ) ;
     public final void rule__FunctionEquation__FunctionAssignment_1() throws RecognitionException {
         int rule__FunctionEquation__FunctionAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1188) ) { return ; }
-            // InternalMOloc.g:16919:1: ( ( ruleFunctionCallArgs ) )
-            // InternalMOloc.g:16920:2: ( ruleFunctionCallArgs )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1199) ) { return ; }
+            // InternalMOloc.g:17128:1: ( ( ruleFunctionCallArgs ) )
+            // InternalMOloc.g:17129:2: ( ruleFunctionCallArgs )
             {
-            // InternalMOloc.g:16920:2: ( ruleFunctionCallArgs )
-            // InternalMOloc.g:16921:3: ruleFunctionCallArgs
+            // InternalMOloc.g:17129:2: ( ruleFunctionCallArgs )
+            // InternalMOloc.g:17130:3: ruleFunctionCallArgs
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionEquationAccess().getFunctionFunctionCallArgsParserRuleCall_1_0()); 
@@ -58743,7 +59469,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1188, rule__FunctionEquation__FunctionAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1199, rule__FunctionEquation__FunctionAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58754,25 +59480,25 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlgorithmSection__IsInitialAssignment_1"
-    // InternalMOloc.g:16930:1: rule__AlgorithmSection__IsInitialAssignment_1 : ( ( 'initial' ) ) ;
+    // InternalMOloc.g:17139:1: rule__AlgorithmSection__IsInitialAssignment_1 : ( ( 'initial' ) ) ;
     public final void rule__AlgorithmSection__IsInitialAssignment_1() throws RecognitionException {
         int rule__AlgorithmSection__IsInitialAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1189) ) { return ; }
-            // InternalMOloc.g:16934:1: ( ( ( 'initial' ) ) )
-            // InternalMOloc.g:16935:2: ( ( 'initial' ) )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1200) ) { return ; }
+            // InternalMOloc.g:17143:1: ( ( ( 'initial' ) ) )
+            // InternalMOloc.g:17144:2: ( ( 'initial' ) )
             {
-            // InternalMOloc.g:16935:2: ( ( 'initial' ) )
-            // InternalMOloc.g:16936:3: ( 'initial' )
+            // InternalMOloc.g:17144:2: ( ( 'initial' ) )
+            // InternalMOloc.g:17145:3: ( 'initial' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAlgorithmSectionAccess().getIsInitialInitialKeyword_1_0()); 
             }
-            // InternalMOloc.g:16937:3: ( 'initial' )
-            // InternalMOloc.g:16938:4: 'initial'
+            // InternalMOloc.g:17146:3: ( 'initial' )
+            // InternalMOloc.g:17147:4: 'initial'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAlgorithmSectionAccess().getIsInitialInitialKeyword_1_0()); 
@@ -58799,7 +59525,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1189, rule__AlgorithmSection__IsInitialAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1200, rule__AlgorithmSection__IsInitialAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58810,19 +59536,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlgorithmSection__StatementsAssignment_3"
-    // InternalMOloc.g:16949:1: rule__AlgorithmSection__StatementsAssignment_3 : ( ruleStatement ) ;
+    // InternalMOloc.g:17158:1: rule__AlgorithmSection__StatementsAssignment_3 : ( ruleStatement ) ;
     public final void rule__AlgorithmSection__StatementsAssignment_3() throws RecognitionException {
         int rule__AlgorithmSection__StatementsAssignment_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1190) ) { return ; }
-            // InternalMOloc.g:16953:1: ( ( ruleStatement ) )
-            // InternalMOloc.g:16954:2: ( ruleStatement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1201) ) { return ; }
+            // InternalMOloc.g:17162:1: ( ( ruleStatement ) )
+            // InternalMOloc.g:17163:2: ( ruleStatement )
             {
-            // InternalMOloc.g:16954:2: ( ruleStatement )
-            // InternalMOloc.g:16955:3: ruleStatement
+            // InternalMOloc.g:17163:2: ( ruleStatement )
+            // InternalMOloc.g:17164:3: ruleStatement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAlgorithmSectionAccess().getStatementsStatementParserRuleCall_3_0()); 
@@ -58847,7 +59573,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1190, rule__AlgorithmSection__StatementsAssignment_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1201, rule__AlgorithmSection__StatementsAssignment_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58858,19 +59584,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionStatement__ComponentAssignment_0_0_0"
-    // InternalMOloc.g:16964:1: rule__FunctionStatement__ComponentAssignment_0_0_0 : ( ruleComponent_reference ) ;
+    // InternalMOloc.g:17173:1: rule__FunctionStatement__ComponentAssignment_0_0_0 : ( ruleComponent_reference ) ;
     public final void rule__FunctionStatement__ComponentAssignment_0_0_0() throws RecognitionException {
         int rule__FunctionStatement__ComponentAssignment_0_0_0_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1191) ) { return ; }
-            // InternalMOloc.g:16968:1: ( ( ruleComponent_reference ) )
-            // InternalMOloc.g:16969:2: ( ruleComponent_reference )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1202) ) { return ; }
+            // InternalMOloc.g:17177:1: ( ( ruleComponent_reference ) )
+            // InternalMOloc.g:17178:2: ( ruleComponent_reference )
             {
-            // InternalMOloc.g:16969:2: ( ruleComponent_reference )
-            // InternalMOloc.g:16970:3: ruleComponent_reference
+            // InternalMOloc.g:17178:2: ( ruleComponent_reference )
+            // InternalMOloc.g:17179:3: ruleComponent_reference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionStatementAccess().getComponentComponent_referenceParserRuleCall_0_0_0_0()); 
@@ -58895,7 +59621,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1191, rule__FunctionStatement__ComponentAssignment_0_0_0_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1202, rule__FunctionStatement__ComponentAssignment_0_0_0_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58906,19 +59632,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionStatement__ExpressionAssignment_0_0_1_0_1"
-    // InternalMOloc.g:16979:1: rule__FunctionStatement__ExpressionAssignment_0_0_1_0_1 : ( ruleExpression ) ;
+    // InternalMOloc.g:17188:1: rule__FunctionStatement__ExpressionAssignment_0_0_1_0_1 : ( ruleExpression ) ;
     public final void rule__FunctionStatement__ExpressionAssignment_0_0_1_0_1() throws RecognitionException {
         int rule__FunctionStatement__ExpressionAssignment_0_0_1_0_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1192) ) { return ; }
-            // InternalMOloc.g:16983:1: ( ( ruleExpression ) )
-            // InternalMOloc.g:16984:2: ( ruleExpression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1203) ) { return ; }
+            // InternalMOloc.g:17192:1: ( ( ruleExpression ) )
+            // InternalMOloc.g:17193:2: ( ruleExpression )
             {
-            // InternalMOloc.g:16984:2: ( ruleExpression )
-            // InternalMOloc.g:16985:3: ruleExpression
+            // InternalMOloc.g:17193:2: ( ruleExpression )
+            // InternalMOloc.g:17194:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionStatementAccess().getExpressionExpressionParserRuleCall_0_0_1_0_1_0()); 
@@ -58943,7 +59669,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1192, rule__FunctionStatement__ExpressionAssignment_0_0_1_0_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1203, rule__FunctionStatement__ExpressionAssignment_0_0_1_0_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -58954,19 +59680,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionStatement__FunctionAssignment_0_0_1_1"
-    // InternalMOloc.g:16994:1: rule__FunctionStatement__FunctionAssignment_0_0_1_1 : ( ruleFunctionCallArgs ) ;
+    // InternalMOloc.g:17203:1: rule__FunctionStatement__FunctionAssignment_0_0_1_1 : ( ruleFunctionCallArgs ) ;
     public final void rule__FunctionStatement__FunctionAssignment_0_0_1_1() throws RecognitionException {
         int rule__FunctionStatement__FunctionAssignment_0_0_1_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1193) ) { return ; }
-            // InternalMOloc.g:16998:1: ( ( ruleFunctionCallArgs ) )
-            // InternalMOloc.g:16999:2: ( ruleFunctionCallArgs )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1204) ) { return ; }
+            // InternalMOloc.g:17207:1: ( ( ruleFunctionCallArgs ) )
+            // InternalMOloc.g:17208:2: ( ruleFunctionCallArgs )
             {
-            // InternalMOloc.g:16999:2: ( ruleFunctionCallArgs )
-            // InternalMOloc.g:17000:3: ruleFunctionCallArgs
+            // InternalMOloc.g:17208:2: ( ruleFunctionCallArgs )
+            // InternalMOloc.g:17209:3: ruleFunctionCallArgs
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionStatementAccess().getFunctionFunctionCallArgsParserRuleCall_0_0_1_1_0()); 
@@ -58991,7 +59717,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1193, rule__FunctionStatement__FunctionAssignment_0_0_1_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1204, rule__FunctionStatement__FunctionAssignment_0_0_1_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59002,19 +59728,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionStatement__OutputAssignment_0_1_1"
-    // InternalMOloc.g:17009:1: rule__FunctionStatement__OutputAssignment_0_1_1 : ( ruleOutputExpressionList ) ;
+    // InternalMOloc.g:17218:1: rule__FunctionStatement__OutputAssignment_0_1_1 : ( ruleOutputExpressionList ) ;
     public final void rule__FunctionStatement__OutputAssignment_0_1_1() throws RecognitionException {
         int rule__FunctionStatement__OutputAssignment_0_1_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1194) ) { return ; }
-            // InternalMOloc.g:17013:1: ( ( ruleOutputExpressionList ) )
-            // InternalMOloc.g:17014:2: ( ruleOutputExpressionList )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1205) ) { return ; }
+            // InternalMOloc.g:17222:1: ( ( ruleOutputExpressionList ) )
+            // InternalMOloc.g:17223:2: ( ruleOutputExpressionList )
             {
-            // InternalMOloc.g:17014:2: ( ruleOutputExpressionList )
-            // InternalMOloc.g:17015:3: ruleOutputExpressionList
+            // InternalMOloc.g:17223:2: ( ruleOutputExpressionList )
+            // InternalMOloc.g:17224:3: ruleOutputExpressionList
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionStatementAccess().getOutputOutputExpressionListParserRuleCall_0_1_1_0()); 
@@ -59039,7 +59765,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1194, rule__FunctionStatement__OutputAssignment_0_1_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1205, rule__FunctionStatement__OutputAssignment_0_1_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59050,19 +59776,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionStatement__ComponentAssignment_0_1_4"
-    // InternalMOloc.g:17024:1: rule__FunctionStatement__ComponentAssignment_0_1_4 : ( ruleComponent_reference ) ;
+    // InternalMOloc.g:17233:1: rule__FunctionStatement__ComponentAssignment_0_1_4 : ( ruleComponent_reference ) ;
     public final void rule__FunctionStatement__ComponentAssignment_0_1_4() throws RecognitionException {
         int rule__FunctionStatement__ComponentAssignment_0_1_4_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1195) ) { return ; }
-            // InternalMOloc.g:17028:1: ( ( ruleComponent_reference ) )
-            // InternalMOloc.g:17029:2: ( ruleComponent_reference )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1206) ) { return ; }
+            // InternalMOloc.g:17237:1: ( ( ruleComponent_reference ) )
+            // InternalMOloc.g:17238:2: ( ruleComponent_reference )
             {
-            // InternalMOloc.g:17029:2: ( ruleComponent_reference )
-            // InternalMOloc.g:17030:3: ruleComponent_reference
+            // InternalMOloc.g:17238:2: ( ruleComponent_reference )
+            // InternalMOloc.g:17239:3: ruleComponent_reference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionStatementAccess().getComponentComponent_referenceParserRuleCall_0_1_4_0()); 
@@ -59087,7 +59813,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1195, rule__FunctionStatement__ComponentAssignment_0_1_4_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1206, rule__FunctionStatement__ComponentAssignment_0_1_4_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59098,19 +59824,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionStatement__FunctionAssignment_0_1_5"
-    // InternalMOloc.g:17039:1: rule__FunctionStatement__FunctionAssignment_0_1_5 : ( ruleFunctionCallArgs ) ;
+    // InternalMOloc.g:17248:1: rule__FunctionStatement__FunctionAssignment_0_1_5 : ( ruleFunctionCallArgs ) ;
     public final void rule__FunctionStatement__FunctionAssignment_0_1_5() throws RecognitionException {
         int rule__FunctionStatement__FunctionAssignment_0_1_5_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1196) ) { return ; }
-            // InternalMOloc.g:17043:1: ( ( ruleFunctionCallArgs ) )
-            // InternalMOloc.g:17044:2: ( ruleFunctionCallArgs )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1207) ) { return ; }
+            // InternalMOloc.g:17252:1: ( ( ruleFunctionCallArgs ) )
+            // InternalMOloc.g:17253:2: ( ruleFunctionCallArgs )
             {
-            // InternalMOloc.g:17044:2: ( ruleFunctionCallArgs )
-            // InternalMOloc.g:17045:3: ruleFunctionCallArgs
+            // InternalMOloc.g:17253:2: ( ruleFunctionCallArgs )
+            // InternalMOloc.g:17254:3: ruleFunctionCallArgs
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFunctionStatementAccess().getFunctionFunctionCallArgsParserRuleCall_0_1_5_0()); 
@@ -59135,7 +59861,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1196, rule__FunctionStatement__FunctionAssignment_0_1_5_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1207, rule__FunctionStatement__FunctionAssignment_0_1_5_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59146,19 +59872,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfStatement__ConditionAssignment_1"
-    // InternalMOloc.g:17054:1: rule__IfStatement__ConditionAssignment_1 : ( ruleExpression ) ;
+    // InternalMOloc.g:17263:1: rule__IfStatement__ConditionAssignment_1 : ( ruleExpression ) ;
     public final void rule__IfStatement__ConditionAssignment_1() throws RecognitionException {
         int rule__IfStatement__ConditionAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1197) ) { return ; }
-            // InternalMOloc.g:17058:1: ( ( ruleExpression ) )
-            // InternalMOloc.g:17059:2: ( ruleExpression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1208) ) { return ; }
+            // InternalMOloc.g:17267:1: ( ( ruleExpression ) )
+            // InternalMOloc.g:17268:2: ( ruleExpression )
             {
-            // InternalMOloc.g:17059:2: ( ruleExpression )
-            // InternalMOloc.g:17060:3: ruleExpression
+            // InternalMOloc.g:17268:2: ( ruleExpression )
+            // InternalMOloc.g:17269:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getConditionExpressionParserRuleCall_1_0()); 
@@ -59183,7 +59909,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1197, rule__IfStatement__ConditionAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1208, rule__IfStatement__ConditionAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59194,19 +59920,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfStatement__IfStatementsAssignment_3"
-    // InternalMOloc.g:17069:1: rule__IfStatement__IfStatementsAssignment_3 : ( ruleStatement ) ;
+    // InternalMOloc.g:17278:1: rule__IfStatement__IfStatementsAssignment_3 : ( ruleStatement ) ;
     public final void rule__IfStatement__IfStatementsAssignment_3() throws RecognitionException {
         int rule__IfStatement__IfStatementsAssignment_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1198) ) { return ; }
-            // InternalMOloc.g:17073:1: ( ( ruleStatement ) )
-            // InternalMOloc.g:17074:2: ( ruleStatement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1209) ) { return ; }
+            // InternalMOloc.g:17282:1: ( ( ruleStatement ) )
+            // InternalMOloc.g:17283:2: ( ruleStatement )
             {
-            // InternalMOloc.g:17074:2: ( ruleStatement )
-            // InternalMOloc.g:17075:3: ruleStatement
+            // InternalMOloc.g:17283:2: ( ruleStatement )
+            // InternalMOloc.g:17284:3: ruleStatement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getIfStatementsStatementParserRuleCall_3_0()); 
@@ -59231,7 +59957,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1198, rule__IfStatement__IfStatementsAssignment_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1209, rule__IfStatement__IfStatementsAssignment_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59242,19 +59968,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfStatement__ElseConditionAssignment_4_1"
-    // InternalMOloc.g:17084:1: rule__IfStatement__ElseConditionAssignment_4_1 : ( ruleExpression ) ;
+    // InternalMOloc.g:17293:1: rule__IfStatement__ElseConditionAssignment_4_1 : ( ruleExpression ) ;
     public final void rule__IfStatement__ElseConditionAssignment_4_1() throws RecognitionException {
         int rule__IfStatement__ElseConditionAssignment_4_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1199) ) { return ; }
-            // InternalMOloc.g:17088:1: ( ( ruleExpression ) )
-            // InternalMOloc.g:17089:2: ( ruleExpression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1210) ) { return ; }
+            // InternalMOloc.g:17297:1: ( ( ruleExpression ) )
+            // InternalMOloc.g:17298:2: ( ruleExpression )
             {
-            // InternalMOloc.g:17089:2: ( ruleExpression )
-            // InternalMOloc.g:17090:3: ruleExpression
+            // InternalMOloc.g:17298:2: ( ruleExpression )
+            // InternalMOloc.g:17299:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getElseConditionExpressionParserRuleCall_4_1_0()); 
@@ -59279,7 +60005,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1199, rule__IfStatement__ElseConditionAssignment_4_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1210, rule__IfStatement__ElseConditionAssignment_4_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59290,19 +60016,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfStatement__ElseifStatementsAssignment_4_3"
-    // InternalMOloc.g:17099:1: rule__IfStatement__ElseifStatementsAssignment_4_3 : ( ruleStatement ) ;
+    // InternalMOloc.g:17308:1: rule__IfStatement__ElseifStatementsAssignment_4_3 : ( ruleStatement ) ;
     public final void rule__IfStatement__ElseifStatementsAssignment_4_3() throws RecognitionException {
         int rule__IfStatement__ElseifStatementsAssignment_4_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1200) ) { return ; }
-            // InternalMOloc.g:17103:1: ( ( ruleStatement ) )
-            // InternalMOloc.g:17104:2: ( ruleStatement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1211) ) { return ; }
+            // InternalMOloc.g:17312:1: ( ( ruleStatement ) )
+            // InternalMOloc.g:17313:2: ( ruleStatement )
             {
-            // InternalMOloc.g:17104:2: ( ruleStatement )
-            // InternalMOloc.g:17105:3: ruleStatement
+            // InternalMOloc.g:17313:2: ( ruleStatement )
+            // InternalMOloc.g:17314:3: ruleStatement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getElseifStatementsStatementParserRuleCall_4_3_0()); 
@@ -59327,7 +60053,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1200, rule__IfStatement__ElseifStatementsAssignment_4_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1211, rule__IfStatement__ElseifStatementsAssignment_4_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59338,19 +60064,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfStatement__ElseStatementsAssignment_5_1"
-    // InternalMOloc.g:17114:1: rule__IfStatement__ElseStatementsAssignment_5_1 : ( ruleStatement ) ;
+    // InternalMOloc.g:17323:1: rule__IfStatement__ElseStatementsAssignment_5_1 : ( ruleStatement ) ;
     public final void rule__IfStatement__ElseStatementsAssignment_5_1() throws RecognitionException {
         int rule__IfStatement__ElseStatementsAssignment_5_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1201) ) { return ; }
-            // InternalMOloc.g:17118:1: ( ( ruleStatement ) )
-            // InternalMOloc.g:17119:2: ( ruleStatement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1212) ) { return ; }
+            // InternalMOloc.g:17327:1: ( ( ruleStatement ) )
+            // InternalMOloc.g:17328:2: ( ruleStatement )
             {
-            // InternalMOloc.g:17119:2: ( ruleStatement )
-            // InternalMOloc.g:17120:3: ruleStatement
+            // InternalMOloc.g:17328:2: ( ruleStatement )
+            // InternalMOloc.g:17329:3: ruleStatement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getIfStatementAccess().getElseStatementsStatementParserRuleCall_5_1_0()); 
@@ -59375,7 +60101,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1201, rule__IfStatement__ElseStatementsAssignment_5_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1212, rule__IfStatement__ElseStatementsAssignment_5_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59386,19 +60112,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ForStatement__ForIndicesAssignment_1"
-    // InternalMOloc.g:17129:1: rule__ForStatement__ForIndicesAssignment_1 : ( ruleForIndices ) ;
+    // InternalMOloc.g:17338:1: rule__ForStatement__ForIndicesAssignment_1 : ( ruleForIndices ) ;
     public final void rule__ForStatement__ForIndicesAssignment_1() throws RecognitionException {
         int rule__ForStatement__ForIndicesAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1202) ) { return ; }
-            // InternalMOloc.g:17133:1: ( ( ruleForIndices ) )
-            // InternalMOloc.g:17134:2: ( ruleForIndices )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1213) ) { return ; }
+            // InternalMOloc.g:17342:1: ( ( ruleForIndices ) )
+            // InternalMOloc.g:17343:2: ( ruleForIndices )
             {
-            // InternalMOloc.g:17134:2: ( ruleForIndices )
-            // InternalMOloc.g:17135:3: ruleForIndices
+            // InternalMOloc.g:17343:2: ( ruleForIndices )
+            // InternalMOloc.g:17344:3: ruleForIndices
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getForIndicesForIndicesParserRuleCall_1_0()); 
@@ -59423,7 +60149,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1202, rule__ForStatement__ForIndicesAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1213, rule__ForStatement__ForIndicesAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59434,19 +60160,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ForStatement__ForStatementsAssignment_3"
-    // InternalMOloc.g:17144:1: rule__ForStatement__ForStatementsAssignment_3 : ( ruleStatement ) ;
+    // InternalMOloc.g:17353:1: rule__ForStatement__ForStatementsAssignment_3 : ( ruleStatement ) ;
     public final void rule__ForStatement__ForStatementsAssignment_3() throws RecognitionException {
         int rule__ForStatement__ForStatementsAssignment_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1203) ) { return ; }
-            // InternalMOloc.g:17148:1: ( ( ruleStatement ) )
-            // InternalMOloc.g:17149:2: ( ruleStatement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1214) ) { return ; }
+            // InternalMOloc.g:17357:1: ( ( ruleStatement ) )
+            // InternalMOloc.g:17358:2: ( ruleStatement )
             {
-            // InternalMOloc.g:17149:2: ( ruleStatement )
-            // InternalMOloc.g:17150:3: ruleStatement
+            // InternalMOloc.g:17358:2: ( ruleStatement )
+            // InternalMOloc.g:17359:3: ruleStatement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getForStatementAccess().getForStatementsStatementParserRuleCall_3_0()); 
@@ -59471,7 +60197,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1203, rule__ForStatement__ForStatementsAssignment_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1214, rule__ForStatement__ForStatementsAssignment_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59482,19 +60208,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhenStatement__ConditionAssignment_1"
-    // InternalMOloc.g:17159:1: rule__WhenStatement__ConditionAssignment_1 : ( ruleExpression ) ;
+    // InternalMOloc.g:17368:1: rule__WhenStatement__ConditionAssignment_1 : ( ruleExpression ) ;
     public final void rule__WhenStatement__ConditionAssignment_1() throws RecognitionException {
         int rule__WhenStatement__ConditionAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1204) ) { return ; }
-            // InternalMOloc.g:17163:1: ( ( ruleExpression ) )
-            // InternalMOloc.g:17164:2: ( ruleExpression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1215) ) { return ; }
+            // InternalMOloc.g:17372:1: ( ( ruleExpression ) )
+            // InternalMOloc.g:17373:2: ( ruleExpression )
             {
-            // InternalMOloc.g:17164:2: ( ruleExpression )
-            // InternalMOloc.g:17165:3: ruleExpression
+            // InternalMOloc.g:17373:2: ( ruleExpression )
+            // InternalMOloc.g:17374:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhenStatementAccess().getConditionExpressionParserRuleCall_1_0()); 
@@ -59519,7 +60245,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1204, rule__WhenStatement__ConditionAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1215, rule__WhenStatement__ConditionAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59530,19 +60256,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhenStatement__WhenStatementsAssignment_3"
-    // InternalMOloc.g:17174:1: rule__WhenStatement__WhenStatementsAssignment_3 : ( ruleStatement ) ;
+    // InternalMOloc.g:17383:1: rule__WhenStatement__WhenStatementsAssignment_3 : ( ruleStatement ) ;
     public final void rule__WhenStatement__WhenStatementsAssignment_3() throws RecognitionException {
         int rule__WhenStatement__WhenStatementsAssignment_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1205) ) { return ; }
-            // InternalMOloc.g:17178:1: ( ( ruleStatement ) )
-            // InternalMOloc.g:17179:2: ( ruleStatement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1216) ) { return ; }
+            // InternalMOloc.g:17387:1: ( ( ruleStatement ) )
+            // InternalMOloc.g:17388:2: ( ruleStatement )
             {
-            // InternalMOloc.g:17179:2: ( ruleStatement )
-            // InternalMOloc.g:17180:3: ruleStatement
+            // InternalMOloc.g:17388:2: ( ruleStatement )
+            // InternalMOloc.g:17389:3: ruleStatement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhenStatementAccess().getWhenStatementsStatementParserRuleCall_3_0()); 
@@ -59567,7 +60293,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1205, rule__WhenStatement__WhenStatementsAssignment_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1216, rule__WhenStatement__WhenStatementsAssignment_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59578,19 +60304,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhenStatement__ElseConditionAssignment_4_1"
-    // InternalMOloc.g:17189:1: rule__WhenStatement__ElseConditionAssignment_4_1 : ( ruleExpression ) ;
+    // InternalMOloc.g:17398:1: rule__WhenStatement__ElseConditionAssignment_4_1 : ( ruleExpression ) ;
     public final void rule__WhenStatement__ElseConditionAssignment_4_1() throws RecognitionException {
         int rule__WhenStatement__ElseConditionAssignment_4_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1206) ) { return ; }
-            // InternalMOloc.g:17193:1: ( ( ruleExpression ) )
-            // InternalMOloc.g:17194:2: ( ruleExpression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1217) ) { return ; }
+            // InternalMOloc.g:17402:1: ( ( ruleExpression ) )
+            // InternalMOloc.g:17403:2: ( ruleExpression )
             {
-            // InternalMOloc.g:17194:2: ( ruleExpression )
-            // InternalMOloc.g:17195:3: ruleExpression
+            // InternalMOloc.g:17403:2: ( ruleExpression )
+            // InternalMOloc.g:17404:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhenStatementAccess().getElseConditionExpressionParserRuleCall_4_1_0()); 
@@ -59615,7 +60341,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1206, rule__WhenStatement__ElseConditionAssignment_4_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1217, rule__WhenStatement__ElseConditionAssignment_4_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59626,19 +60352,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhenStatement__WhenStatementsAssignment_4_3"
-    // InternalMOloc.g:17204:1: rule__WhenStatement__WhenStatementsAssignment_4_3 : ( ruleStatement ) ;
+    // InternalMOloc.g:17413:1: rule__WhenStatement__WhenStatementsAssignment_4_3 : ( ruleStatement ) ;
     public final void rule__WhenStatement__WhenStatementsAssignment_4_3() throws RecognitionException {
         int rule__WhenStatement__WhenStatementsAssignment_4_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1207) ) { return ; }
-            // InternalMOloc.g:17208:1: ( ( ruleStatement ) )
-            // InternalMOloc.g:17209:2: ( ruleStatement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1218) ) { return ; }
+            // InternalMOloc.g:17417:1: ( ( ruleStatement ) )
+            // InternalMOloc.g:17418:2: ( ruleStatement )
             {
-            // InternalMOloc.g:17209:2: ( ruleStatement )
-            // InternalMOloc.g:17210:3: ruleStatement
+            // InternalMOloc.g:17418:2: ( ruleStatement )
+            // InternalMOloc.g:17419:3: ruleStatement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhenStatementAccess().getWhenStatementsStatementParserRuleCall_4_3_0()); 
@@ -59663,7 +60389,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1207, rule__WhenStatement__WhenStatementsAssignment_4_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1218, rule__WhenStatement__WhenStatementsAssignment_4_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59674,19 +60400,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileStatement__ConditionAssignment_1"
-    // InternalMOloc.g:17219:1: rule__WhileStatement__ConditionAssignment_1 : ( ruleExpression ) ;
+    // InternalMOloc.g:17428:1: rule__WhileStatement__ConditionAssignment_1 : ( ruleExpression ) ;
     public final void rule__WhileStatement__ConditionAssignment_1() throws RecognitionException {
         int rule__WhileStatement__ConditionAssignment_1_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1208) ) { return ; }
-            // InternalMOloc.g:17223:1: ( ( ruleExpression ) )
-            // InternalMOloc.g:17224:2: ( ruleExpression )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1219) ) { return ; }
+            // InternalMOloc.g:17432:1: ( ( ruleExpression ) )
+            // InternalMOloc.g:17433:2: ( ruleExpression )
             {
-            // InternalMOloc.g:17224:2: ( ruleExpression )
-            // InternalMOloc.g:17225:3: ruleExpression
+            // InternalMOloc.g:17433:2: ( ruleExpression )
+            // InternalMOloc.g:17434:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileStatementAccess().getConditionExpressionParserRuleCall_1_0()); 
@@ -59711,7 +60437,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1208, rule__WhileStatement__ConditionAssignment_1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1219, rule__WhileStatement__ConditionAssignment_1_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -59722,19 +60448,19 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WhileStatement__WhileStatementsAssignment_3"
-    // InternalMOloc.g:17234:1: rule__WhileStatement__WhileStatementsAssignment_3 : ( ruleStatement ) ;
+    // InternalMOloc.g:17443:1: rule__WhileStatement__WhileStatementsAssignment_3 : ( ruleStatement ) ;
     public final void rule__WhileStatement__WhileStatementsAssignment_3() throws RecognitionException {
         int rule__WhileStatement__WhileStatementsAssignment_3_StartIndex = input.index();
 
         		int stackSize = keepStackSize();
         	
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 1209) ) { return ; }
-            // InternalMOloc.g:17238:1: ( ( ruleStatement ) )
-            // InternalMOloc.g:17239:2: ( ruleStatement )
+            if ( state.backtracking>0 && alreadyParsedRule(input, 1220) ) { return ; }
+            // InternalMOloc.g:17447:1: ( ( ruleStatement ) )
+            // InternalMOloc.g:17448:2: ( ruleStatement )
             {
-            // InternalMOloc.g:17239:2: ( ruleStatement )
-            // InternalMOloc.g:17240:3: ruleStatement
+            // InternalMOloc.g:17448:2: ( ruleStatement )
+            // InternalMOloc.g:17449:3: ruleStatement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getWhileStatementAccess().getWhileStatementsStatementParserRuleCall_3_0()); 
@@ -59759,7 +60485,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
-            if ( state.backtracking>0 ) { memoize(input, 1209, rule__WhileStatement__WhileStatementsAssignment_3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 1220, rule__WhileStatement__WhileStatementsAssignment_3_StartIndex); }
 
             	restoreStackSize(stackSize);
 
@@ -60184,13 +60910,13 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     static final String dfa_5s = "\1\uffff\1\1\1\2\2\uffff\1\3\1\uffff";
     static final String dfa_6s = "\7\uffff}>";
     static final String[] dfa_7s = {
-            "\1\3\36\uffff\12\1\12\2\5\uffff\1\2\34\uffff\5\1",
+            "\1\3\36\uffff\12\1\12\2\4\uffff\1\2\35\uffff\5\1",
             "",
             "",
-            "\1\5\1\uffff\1\2\63\uffff\4\5\1\4\2\uffff\2\5",
+            "\1\5\1\uffff\1\2\63\uffff\3\5\1\4\2\uffff\3\5",
             "\1\6",
             "",
-            "\1\5\1\uffff\1\2\63\uffff\4\5\1\4\2\uffff\2\5"
+            "\1\5\1\uffff\1\2\63\uffff\3\5\1\4\2\uffff\3\5"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -60233,7 +60959,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "2159:1: rule__AnnotationModification__Alternatives_4 : ( ( ruleshort_class_definition ) | ( rulecomponent_clause1 ) | ( ruleelement_modification ) );";
+            return "2159:1: rule__AnnotationModificationElement__Alternatives_4 : ( ( ruleshort_class_definition ) | ( rulecomponent_clause1 ) | ( ruleelement_modification ) );";
         }
     }
     static final String dfa_8s = "\13\uffff";
@@ -60242,9 +60968,9 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     static final String dfa_11s = "\3\uffff\1\1\1\2\1\3\1\4\1\5\1\uffff\1\6\1\7";
     static final String dfa_12s = "\13\uffff}>";
     static final String[] dfa_13s = {
-            "\1\5\35\uffff\1\10\24\5\5\uffff\1\5\4\uffff\1\3\2\uffff\1\4\1\uffff\1\6\1\11\10\uffff\1\12\7\uffff\6\5\1\uffff\1\7\1\5\1\uffff\1\5\1\1\1\2\2\5",
-            "\1\5\36\uffff\24\5\5\uffff\1\5\4\uffff\1\3\2\uffff\1\4\23\uffff\6\5\2\uffff\1\5\1\uffff\1\5\1\uffff\1\2\2\5",
-            "\1\5\36\uffff\24\5\5\uffff\1\5\4\uffff\1\3\2\uffff\1\4\23\uffff\6\5\2\uffff\1\5\1\uffff\1\5\2\uffff\2\5",
+            "\1\5\35\uffff\1\10\24\5\4\uffff\1\5\5\uffff\1\3\2\uffff\1\4\1\uffff\1\6\1\11\10\uffff\1\12\7\uffff\6\5\1\uffff\1\7\1\5\1\uffff\1\5\1\1\1\2\2\5",
+            "\1\5\36\uffff\24\5\4\uffff\1\5\5\uffff\1\3\2\uffff\1\4\23\uffff\6\5\2\uffff\1\5\1\uffff\1\5\1\uffff\1\2\2\5",
+            "\1\5\36\uffff\24\5\4\uffff\1\5\5\uffff\1\3\2\uffff\1\4\23\uffff\6\5\2\uffff\1\5\1\uffff\1\5\2\uffff\2\5",
             "",
             "",
             "",
@@ -60285,7 +61011,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     static final String dfa_17s = "\1\uffff\1\1\20\uffff\1\2\1\3\1\4\1\5\1\6";
     static final String dfa_18s = "\11\uffff\1\0\1\1\14\uffff}>";
     static final String[] dfa_19s = {
-            "\3\1\1\12\22\uffff\4\1\5\uffff\4\1\25\uffff\1\1\2\uffff\1\11\1\1\4\uffff\1\1\2\uffff\1\22\5\uffff\1\23\1\uffff\1\24\1\25\6\uffff\1\1",
+            "\3\1\1\12\22\uffff\4\1\5\uffff\4\1\24\uffff\1\1\2\uffff\1\11\1\1\5\uffff\1\1\2\uffff\1\22\5\uffff\1\23\1\uffff\1\24\1\25\6\uffff\1\1",
             "",
             "",
             "",
@@ -60381,7 +61107,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     static final String dfa_23s = "\1\uffff\1\1\1\2\1\3\3\uffff\1\4\1\uffff\1\6\1\7\1\10\1\11\1\5";
     static final String dfa_24s = "\4\uffff\1\0\1\1\1\2\7\uffff}>";
     static final String[] dfa_25s = {
-            "\1\1\1\2\1\3\1\5\33\uffff\1\14\1\6\2\7\25\uffff\1\11\2\uffff\1\4\1\12\4\uffff\1\13",
+            "\1\1\1\2\1\3\1\5\33\uffff\1\14\1\6\2\7\24\uffff\1\11\2\uffff\1\4\1\12\5\uffff\1\13",
             "",
             "",
             "",
@@ -60483,7 +61209,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     static final String dfa_29s = "\1\uffff\1\1\22\uffff\1\2";
     static final String dfa_30s = "\12\uffff\1\0\12\uffff}>";
     static final String[] dfa_31s = {
-            "\3\1\1\12\22\uffff\4\1\5\uffff\4\1\10\uffff\1\1\14\uffff\1\1\2\uffff\2\1\4\uffff\1\1\2\uffff\1\1\17\uffff\1\1",
+            "\3\1\1\12\22\uffff\4\1\5\uffff\4\1\10\uffff\1\1\13\uffff\1\1\2\uffff\2\1\5\uffff\1\1\2\uffff\1\1\17\uffff\1\1",
             "",
             "",
             "",
@@ -60563,7 +61289,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     static final String dfa_36s = "\1\uffff\1\2\52\uffff\1\1\17\uffff";
     static final String dfa_37s = "\2\uffff\1\0\14\uffff\1\1\25\uffff\1\2\1\3\2\uffff\1\4\22\uffff}>";
     static final String[] dfa_38s = {
-            "\3\54\1\46\22\uffff\4\54\5\uffff\1\2\1\54\1\51\1\17\23\1\2\uffff\1\54\2\uffff\1\45\1\54\3\uffff\1\1\1\54\1\uffff\1\1\1\54\2\1\3\uffff\1\54\1\uffff\2\54\1\uffff\1\1\4\uffff\1\54\2\uffff\6\1\1\uffff\2\1\1\uffff\5\1",
+            "\3\54\1\46\22\uffff\4\54\5\uffff\1\2\1\54\1\51\1\17\23\1\1\uffff\1\54\2\uffff\1\45\1\54\4\uffff\1\1\1\54\1\uffff\1\1\1\54\2\1\3\uffff\1\54\1\uffff\2\54\1\uffff\1\1\4\uffff\1\54\2\uffff\6\1\1\uffff\2\1\1\uffff\5\1",
             "",
             "\1\uffff",
             "",
@@ -60743,7 +61469,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     static final String dfa_43s = "\1\uffff\1\2\52\uffff\1\1\6\uffff";
     static final String dfa_44s = "\45\uffff\1\0\1\1\14\uffff}>";
     static final String[] dfa_45s = {
-            "\1\46\13\uffff\1\54\17\uffff\1\1\1\uffff\25\1\2\uffff\1\54\2\uffff\1\45\4\uffff\1\1\2\uffff\1\1\1\54\2\1\3\uffff\1\54\2\uffff\1\54\1\uffff\1\1\2\54\5\uffff\6\1\1\uffff\2\1\1\uffff\5\1",
+            "\1\46\13\uffff\1\54\17\uffff\1\1\1\uffff\25\1\1\uffff\1\54\2\uffff\1\45\5\uffff\1\1\2\uffff\1\1\1\54\2\1\3\uffff\1\54\2\uffff\1\54\1\uffff\1\1\2\54\5\uffff\6\1\1\uffff\2\1\1\uffff\5\1",
             "",
             "",
             "",
@@ -60869,7 +61595,7 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     static final String dfa_50s = "\1\uffff\1\2\34\uffff\1\1\2\uffff";
     static final String dfa_51s = "\5\uffff\1\0\33\uffff}>";
     static final String[] dfa_52s = {
-            "\1\1\14\uffff\1\1\1\uffff\11\1\1\5\3\36\31\uffff\2\1\1\uffff\2\1\2\uffff\1\1\1\uffff\1\1\2\uffff\1\1\1\uffff\1\1\2\uffff\5\1\6\uffff\2\1\12\uffff\1\1",
+            "\1\1\14\uffff\1\1\1\uffff\11\1\1\5\3\36\31\uffff\1\1\1\uffff\2\1\2\uffff\2\1\1\uffff\1\1\2\uffff\1\1\1\uffff\1\1\2\uffff\5\1\6\uffff\2\1\12\uffff\1\1",
             "",
             "",
             "",
@@ -60966,72 +61692,72 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0400000000000000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000080L,0x0000000000000080L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000FFC000000000L,0x00000001F0000000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x1000000000000020L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0800000000000020L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x03FFFFE000000000L,0x000003EDF8080690L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x8007000000000080L,0x0000000200000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x4007000000000080L,0x0000000200000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x8007000000000080L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x1000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x1000000000000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x4007000000000080L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x8800000000000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0800000000000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000040080L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x1000000000000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x4000000000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x6000000000000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x4000000000000002L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x3000000000000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x2000000000000002L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x03FFFFC000000080L,0x000003F9F8000000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000004000002L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000000L,0x0000000400000000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x1800000000000020L,0x0000000000000004L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0800000000000020L,0x0000000000000006L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x03FFFFC000000000L,0x000003E9F8000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x1800000000000000L,0x0000000000000005L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x900000783C0400F0L,0x0000000001000121L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x900000783C0C00F0L,0x0000000001000121L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x8800000000000000L,0x0000000000000006L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0xC80000783C0400F0L,0x0000000001000120L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x2000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0xC80000783C0C00F0L,0x0000000001000120L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000000L,0x000000C000000010L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x8000000100000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x4000000100000000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000040000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x2000000000000000L,0x0000000000000040L});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x000000C000000080L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x1400000000000000L,0x0000000400000000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x23FFFFC000080080L,0x000003F9F8000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0C00000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x13FFFFC000080080L,0x000003F9F8000000L});
     public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x03FFFFC000080080L,0x000003F9F8000000L});
     public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000080L,0x0000000000010000L});
     public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0400000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000080L,0x0000000000000001L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x8000000000000080L});
     public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000100L});
     public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x84000000000000A0L,0x0000000400000000L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x8000000000000080L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0xB00000783C0400F0L,0x0000000001000121L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x44000000000000A0L,0x0000000400000000L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x4000000000000080L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0xD80000783C0400F0L,0x0000000001000120L});
     public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000002000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x900000783C0000F0L,0x0000000001034121L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x900000783C0000F2L,0x0000000001034121L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0xC80000783C0000F0L,0x0000000001034120L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0xC80000783C0000F2L,0x0000000001034120L});
     public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x900000783C0000F0L,0x0000000001037121L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0xC80000783C0000F0L,0x0000000001037120L});
     public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000002L,0x0000000000001000L});
     public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
     public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
     public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x900000783C0000F0L,0x0000000001074121L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0xC80000783C0000F0L,0x0000000001074120L});
     public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000002L,0x0000000000040000L});
     public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x9000000000080080L,0x0000000000324100L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x9000000000080082L,0x0000000000324100L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x1000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0xD00000783C0400F0L,0x0000000001000121L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x4800000000080080L,0x0000000000324100L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x4800000000080082L,0x0000000000324100L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0800000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0xE80000783C0400F0L,0x0000000001000120L});
     public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x9000000800080080L,0x0000000000327100L});
-    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x9000000800080080L,0x0000000000324100L});
-    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x9000000800080080L,0x0000000000364100L});
+    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x4800000800080080L,0x0000000000327100L});
+    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x4800000800080080L,0x0000000000324100L});
+    public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x4800000800080080L,0x0000000000364100L});
     public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
     public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003000L});
     public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x900000783C0000F0L,0x0000000001000021L});
+    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0xC80000783C0000F0L,0x0000000001000020L});
     public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
     public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000002L,0x0000000000400000L});
     public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
@@ -61042,17 +61768,17 @@ public class InternalMOlocParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x00000001E0000000L});
     public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x00000001E0000002L});
     public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000600000000L});
-    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0400000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0400000000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0400000000000002L});
     public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x4000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x2000000000000000L,0x0000000000004000L});
     public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x8000000000000002L});
-    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0xC000000000000000L});
+    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x4000000000000002L});
+    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x8000000000000000L});
     public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0xB00080783C0400F0L,0x0000000001000121L});
-    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x900080783C0400F0L,0x0000000001000121L});
-    public static final BitSet FOLLOW_97 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0xD80080783C0400F0L,0x0000000001000120L});
+    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0xC80080783C0400F0L,0x0000000001000120L});
+    public static final BitSet FOLLOW_97 = new BitSet(new long[]{0x4000000000000000L});
 
 }

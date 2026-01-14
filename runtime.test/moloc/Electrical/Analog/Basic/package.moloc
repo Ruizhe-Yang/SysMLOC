@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog">
+  <classes classType="package" className="Basic" description="&quot;Basic electrical components&quot;" isLongClassSpecifier="true" classNameEnd="Basic" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This package contains very basic analog electrical components such as resistor, conductor, capacitor, inductor, and the ground (which is needed in each electrical circuit description. Furthermore, controlled sources, coupling components, and some improved (but nevertheless basic) are in this package.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;dl>&#xA;&lt;dt>&#xA;&lt;strong>Main Authors:&lt;/strong>&#xA;&lt;/dt>&#xA;&lt;dd>&#xA;Christoph Clau&amp;szlig;&#xA;    &amp;lt;&lt;a href=\&quot;mailto:christoph@clauss-it.com\&quot;>christoph@clauss-it.com&lt;/a>&amp;gt;&lt;br>&#xA;    Andr&amp;eacute; Schneider&#xA;    &amp;lt;&lt;a href=\&quot;mailto:Andre.Schneider@eas.iis.fraunhofer.de\&quot;>Andre.Schneider@eas.iis.fraunhofer.de&lt;/a>&amp;gt;&lt;br>&#xA;    Fraunhofer Institute for Integrated Circuits&lt;br>&#xA;    Design Automation Department&lt;br>&#xA;    Zeunerstra&amp;szlig;e 38&lt;br>&#xA;    D-01069 Dresden&lt;br>&#xA;&lt;/dd>&#xA;&lt;/dl>&#xA;&#xA;&lt;p>&#xA;Copyright &amp;copy; 1998-2020, Modelica Association and contributors&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line(points={{-12,60},{-12,-60}}), Line(points={{-80,0},{-12,0}}), Line(points={{12,60},{12,-60}}), Line(points={{12,0},{80,0}}) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

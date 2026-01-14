@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.ImportClause;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.annotation_modification_part;
@@ -37,12 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#isIsPublic <em>Is Public</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#isIsProtected <em>Is Protected</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getSelfName <em>Self Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getImportName <em>Import Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#isIsImportAll <em>Is Import All</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#getObjectName <em>Object Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ImportClauseImpl#isIsOver <em>Is Over</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,7 +99,27 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
@@ -210,6 +232,26 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
   protected EList<String> objectName;
 
   /**
+   * The default value of the '{@link #isIsOver() <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsOver() <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isOver = IS_OVER_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -286,13 +328,38 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.IMPORT_CLAUSE__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.IMPORT_CLAUSE__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
   }
 
   /**
@@ -441,6 +508,31 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
    * @generated
    */
   @Override
+  public boolean isIsOver()
+  {
+    return isOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsOver(boolean newIsOver)
+  {
+    boolean oldIsOver = isOver;
+    isOver = newIsOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IMPORT_CLAUSE__IS_OVER, oldIsOver, isOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -467,6 +559,8 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
         return isIsAnnotation();
       case MOlocPackage.IMPORT_CLAUSE__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
       case MOlocPackage.IMPORT_CLAUSE__IS_PUBLIC:
         return isIsPublic();
       case MOlocPackage.IMPORT_CLAUSE__IS_PROTECTED:
@@ -479,6 +573,8 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
         return isIsImportAll();
       case MOlocPackage.IMPORT_CLAUSE__OBJECT_NAME:
         return getObjectName();
+      case MOlocPackage.IMPORT_CLAUSE__IS_OVER:
+        return isIsOver();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -502,7 +598,10 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
         return;
       case MOlocPackage.IMPORT_CLAUSE__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
         return;
       case MOlocPackage.IMPORT_CLAUSE__IS_PUBLIC:
         setIsPublic((Boolean)newValue);
@@ -522,6 +621,9 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
       case MOlocPackage.IMPORT_CLAUSE__OBJECT_NAME:
         getObjectName().clear();
         getObjectName().addAll((Collection<? extends String>)newValue);
+        return;
+      case MOlocPackage.IMPORT_CLAUSE__IS_OVER:
+        setIsOver((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -546,6 +648,9 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
       case MOlocPackage.IMPORT_CLAUSE__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.IMPORT_CLAUSE__IS_PUBLIC:
         setIsPublic(IS_PUBLIC_EDEFAULT);
         return;
@@ -563,6 +668,9 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
         return;
       case MOlocPackage.IMPORT_CLAUSE__OBJECT_NAME:
         getObjectName().clear();
+        return;
+      case MOlocPackage.IMPORT_CLAUSE__IS_OVER:
+        setIsOver(IS_OVER_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -584,6 +692,8 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.IMPORT_CLAUSE__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
       case MOlocPackage.IMPORT_CLAUSE__IS_PUBLIC:
         return isPublic != IS_PUBLIC_EDEFAULT;
       case MOlocPackage.IMPORT_CLAUSE__IS_PROTECTED:
@@ -596,6 +706,8 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
         return isImportAll != IS_IMPORT_ALL_EDEFAULT;
       case MOlocPackage.IMPORT_CLAUSE__OBJECT_NAME:
         return objectName != null && !objectName.isEmpty();
+      case MOlocPackage.IMPORT_CLAUSE__IS_OVER:
+        return isOver != IS_OVER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -622,6 +734,7 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
       {
         case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.IMPORT_CLAUSE__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -657,6 +770,7 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.IMPORT_CLAUSE__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.IMPORT_CLAUSE__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -685,6 +799,8 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
     result.append(description);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
     result.append(", isPublic: ");
     result.append(isPublic);
     result.append(", isProtected: ");
@@ -697,6 +813,8 @@ public class ImportClauseImpl extends ElementImpl implements ImportClause
     result.append(isImportAll);
     result.append(", objectName: ");
     result.append(objectName);
+    result.append(", isOver: ");
+    result.append(isOver);
     result.append(')');
     return result.toString();
   }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.ParameterRecords">
+  <classes classType="package" className="TransientData" description="&quot;Parameter records for transient battery models&quot;" isLongClassSpecifier="true" classNameEnd="TransientData" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.Icons.TransientRecordsPackage" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Parameter records for transient battery models&#xA;&lt;/p>&#xA;&lt;h4>Note&lt;/h4>&#xA;&lt;p>&#xA;The user can easily build up a collection of different battery types by creating individual parameter records extending from the base record &lt;code>CellData&lt;/code>.&#xA;Do not forget to add the &lt;code>annotation(defaultComponentPrefixes=\&quot;parameter\&quot;);&lt;/code> in each individual parameter record.&#xA;&lt;/p>&#xA;&lt;p>&#xA;Record &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.ParameterRecords.TransientData.RCData\&quot;>RCData&lt;/a> is used in record &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.ParameterRecords.TransientData.CellData\&quot;>CellData&lt;/a>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Functions">
+  <classes classType="function" className="symmetricOrientation" description="&quot;Orientations of the resulting fundamental wave field phasors&quot;" isLongClassSpecifier="true" classNameEnd="symmetricOrientation" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input" isOver="true">
+      <component_list declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
+      <component_list subscripts="[m]" declarationName="orientation" description="&quot;Orientation of the resulting fundamental wave field phasors&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:IfStatement" condition="mod(m, 2) == 0">
+        <ifStatements xsi:type="mOloc:IfStatement" condition="m == 2">
+          <ifStatements xsi:type="mOloc:FunctionStatement" component="orientation[1]" expression="0"/>
+          <ifStatements xsi:type="mOloc:FunctionStatement" component="orientation[2]" expression="+pi/2"/>
+          <elseStatements xsi:type="mOloc:FunctionStatement" component="orientation[1:integer(m/2)]" expression="symmetricOrientation(integer(m/2))"/>
+          <elseStatements xsi:type="mOloc:FunctionStatement" component="orientation[integer(m/2) + 1:m]" expression="symmetricOrientation(integer(m/2)) - fill(pi/m, integer(m/2))"/>
+        </ifStatements>
+        <elseStatements xsi:type="mOloc:FunctionStatement" component="orientation" expression="{(k - 1)*2*pi/m for k in 1:m}"/>
+      </statements>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This function determines the orientation angles of the symmetrical winding with m phases.&#xA;&lt;/p>&#xA;&lt;h4>See also&lt;/h4>&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Polyphase.UsersGuide.PhaseOrientation\&quot;>User's guide&lt;/a> on symmetrical components and orientation.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

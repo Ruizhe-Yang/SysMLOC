@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Interfaces.InductionMachines">
+  <classes classType="connector" className="ThermalPortIMS" description="&quot;Thermal port of induction machine with slipring&quot;" isLongClassSpecifier="true" classNameEnd="ThermalPortIMS" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.InductionMachines.PartialThermalPortInductionMachines" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list expression="m" declarationName="mr" description="&quot;Number of rotor phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
+      <component_list subscripts="[mr]" declarationName="heatPortRotorWinding" description="&quot;Heat port of rotor windings&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-30},{0,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
+      <component_list declarationName="heatPortBrush" description="&quot;Heat port of (optional) brush losses&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,30},{10,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;Thermal port for induction machine with slipring rotor&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase">
+  <classes classType="package" className="Sensors" description="&quot;Polyphase potential, voltage and current sensors&quot;" isLongClassSpecifier="true" classNameEnd="Sensors" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.SensorsPackage" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This package contains polyphase potential, voltage, and current sensors.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;dl>&#xA;  &lt;dt>&lt;strong>Main Authors:&lt;/strong>&lt;/dt>&#xA;  &lt;dd>&#xA;  &lt;a href=\&quot;https://www.haumer.at/\&quot;>Anton Haumer&lt;/a>&lt;br>&#xA;  Technical Consulting &amp;amp; Electrical Engineering&lt;br>&#xA;  D-93049 Regensburg&lt;br>Germany&lt;br>&#xA;  email: &lt;a href=\&quot;mailto:a.haumer@haumer.at\&quot;>a.haumer@haumer.at&lt;/a>&#xA;  &lt;/dd>&#xA;  &lt;dt>&lt;strong>Release Notes:&lt;/strong>&lt;/dt>&#xA;  &lt;dd>&#xA;  &lt;ul>&#xA;  &lt;li>v1.0 2004/10/01 Anton Haumer&lt;/li>&#xA;  &lt;li>v1.1 2006/01/12 Anton Haumer&lt;br>&#xA;      added PowerSensor&lt;/li>&#xA;  &lt;/ul>&#xA;  &lt;/dd>&#xA;&lt;/dl>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

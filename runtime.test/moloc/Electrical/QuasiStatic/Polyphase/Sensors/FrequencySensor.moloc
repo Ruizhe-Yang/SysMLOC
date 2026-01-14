@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Sensors">
+  <classes classType="model" className="FrequencySensor" description="&quot;Frequency sensor&quot;" isLongClassSpecifier="true" classNameEnd="FrequencySensor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.AbsoluteSensor" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SinglePhase.Sensors.FrequencySensor" isOver="true">
+      <component_list declarationName="frequencySensor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.PlugToPin_p" isOver="true">
+      <component_list isModificationOver="true" declarationName="plugToPin_p" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="1" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-80,-10},{-60,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="f" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;Hz&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_p" right="plugToPin_p.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-72,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPin_p.pin_p" right="frequencySensor.pin">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-68,0},{-10,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="frequencySensor.f" right="f">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{11,0},{110,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Text( extent={{-30,-10},{30,-70}}, textColor={64,64,64}, textString=&quot;Hz&quot; ) , Line(points={{70,0},{100,0}}, color={0,0,127}) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&#xA;&lt;p>&#xA;This sensor can be used to measure the frequency of the reference system, using &lt;em>one&lt;/em>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sensors.FrequencySensor\&quot;>single-phase FrequencySensor&lt;/a>.&#xA;&lt;/p>&#xA;&#xA;&lt;h4>See also&lt;/h4>&#xA;&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sensors.FrequencySensor\&quot;>SinglePhase.Sensors.FrequencySensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.ReferenceSensor\&quot;>ReferenceSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.PotentialSensor\&quot;>PotentialSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.VoltageSensor\&quot;>VoltageSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.VoltageQuasiRMSSensor\&quot;>VoltageQuasiRMSSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.CurrentSensor\&quot;>CurrentSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.CurrentQuasiRMSSensor\&quot;>CurrentQuasiRMSSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.PowerSensor\&quot;>PowerSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.MultiSensor\&quot;>MultiSensor&lt;/a>&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

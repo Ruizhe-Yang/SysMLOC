@@ -9,6 +9,7 @@ import dut.control.moloc.mOloc.class_modification;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -30,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_modificationImpl#getModifications <em>Modifications</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.class_modificationImpl#isIsModificationOver <em>Is Modification Over</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +48,26 @@ public class class_modificationImpl extends MinimalEObjectImpl.Container impleme
    * @ordered
    */
   protected EList<ModificationElement> modifications;
+
+  /**
+   * The default value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_MODIFICATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isModificationOver = IS_MODIFICATION_OVER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -88,6 +111,31 @@ public class class_modificationImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
+  public boolean isIsModificationOver()
+  {
+    return isModificationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsModificationOver(boolean newIsModificationOver)
+  {
+    boolean oldIsModificationOver = isModificationOver;
+    isModificationOver = newIsModificationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER, oldIsModificationOver, isModificationOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -110,6 +158,8 @@ public class class_modificationImpl extends MinimalEObjectImpl.Container impleme
     {
       case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS:
         return getModifications();
+      case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER:
+        return isIsModificationOver();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -129,6 +179,9 @@ public class class_modificationImpl extends MinimalEObjectImpl.Container impleme
         getModifications().clear();
         getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
+      case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER:
+        setIsModificationOver((Boolean)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -146,6 +199,9 @@ public class class_modificationImpl extends MinimalEObjectImpl.Container impleme
       case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS:
         getModifications().clear();
         return;
+      case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER:
+        setIsModificationOver(IS_MODIFICATION_OVER_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -162,8 +218,27 @@ public class class_modificationImpl extends MinimalEObjectImpl.Container impleme
     {
       case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS:
         return modifications != null && !modifications.isEmpty();
+      case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER:
+        return isModificationOver != IS_MODIFICATION_OVER_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (isModificationOver: ");
+    result.append(isModificationOver);
+    result.append(')');
+    return result.toString();
   }
 
 } //class_modificationImpl

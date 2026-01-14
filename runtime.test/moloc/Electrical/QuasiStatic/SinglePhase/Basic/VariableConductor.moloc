@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Basic">
+  <classes classType="model" className="VariableConductor" description="&quot;Single-phase variable conductor&quot;" isLongClassSpecifier="true" classNameEnd="VariableConductor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.real" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.conj" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="293.15" declarationName="T_ref" description="&quot;Reference temperature&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="alpha_ref" description="&quot;Temperature coefficient of conductance (G_actual = G_ref/(1 + alpha_ref*(heatPort.T - T_ref))&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="T_ref" elementName="T"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" isOver="true">
+      <component_list declarationName="G_actual" description="&quot;Conductance = G_ref/(1 + alpha_ref*(heatPort.T - T_ref))&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="G_ref" description="&quot;Variable conductance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;S&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,120}" elementName="origin"/>
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{0,120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="((1 + alpha_ref*(T_heatPort - T_ref)) >= Modelica.Constants.eps, &quot;Temperature outside scope of model!&quot; )"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="G_actual" right="G_ref/(1 + alpha_ref*(T_heatPort - T_ref))"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i" right="G_actual*v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="LossPower" right="real(v*conj(i))"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;conductor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line(points={{60,0},{90,0}}, color={85,170,255}), Line(points={{-90,0},{-60,0}}, color={85,170,255}), Rectangle( extent={{-70,30},{70,-30}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&#xA;&lt;p>&#xA;The linear conductor connects the voltage &lt;code>&lt;u>v&lt;/u>&lt;/code> with the&#xA;current &lt;code>&lt;u>i&lt;/u>&lt;/code> by &lt;code>&lt;u>i&lt;/u> = G*&lt;u>v&lt;/u>&lt;/code>.&#xA;The conductance &lt;code>G&lt;/code> is given as input signal.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The variable conductor model also has an optional&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort\&quot;>conditional heat port&lt;/a>.&#xA;A linear temperature dependency of the conductance is also taken into account.&#xA;&lt;/p>&#xA;&#xA;&lt;h4>See also&lt;/h4>&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Resistor\&quot;>Resistor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Conductor\&quot;>Conductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Capacitor\&quot;>Capacitor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Inductor\&quot;>Inductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Impedance\&quot;>Impedance&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Admittance\&quot;>Admittance&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.VariableResistor\&quot;>Variable resistor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.VariableCapacitor\&quot;>Variable capacitor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.VariableInductor\&quot;>Variable inductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.VariableImpedance\&quot;>Variable impedance&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.VariableAdmittance\&quot;>Variable admittance&lt;/a>&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

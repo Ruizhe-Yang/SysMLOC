@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Basic">
+  <classes classType="model" className="MultiDelta" description="&quot;Delta (polygon) connection of polyphase systems consisting of multiple base systems&quot;" isLongClassSpecifier="true" classNameEnd="MultiDelta" isOver="true">
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Electrical.Polyphase.Functions.numberOfSymmetricBaseSystems" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Utilities.Streams.print" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="2" elementName="min" isfinal="true"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="kPolygon" description="&quot;Alternative of polygon&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="numberOfSymmetricBaseSystems(m)" declarationName="mSystems" description="&quot;Number of base systems&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="integer(m/mSystems)" declarationName="mBasic" description="&quot;Phase number of base systems&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_p" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.NegativePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_n" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Basic.PlugToPins_p" isOver="true">
+      <component_list isModificationOver="true" declarationName="plugToPins_p" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-80,-10},{-60,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Basic.PlugToPins_n" isOver="true">
+      <component_list isModificationOver="true" declarationName="plugToPins_n" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{80,-10},{60,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isProtected="true" isOver="true">
+      <component_list expression="if (mBasic&lt;=2 or kPolygon&lt;1 or kPolygon>integer(mBasic - 1)/2) then 1 else kPolygon" declarationName="kP"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:WhenEquation" condition="initial()">
+        <whenEquations xsi:type="mOloc:IfEquation" condition="(mBasic&lt;=2 or kPolygon&lt;1 or kPolygon>integer(mBasic - 1)/2)">
+          <ifEquations xsi:type="mOloc:FunctionEquation" component="print" function="(&quot;MultiDelta: replaced erroneous kPolygon = &quot;+String(kPolygon)+&quot; by kPolygon = 1&quot;)"/>
+        </whenEquations>
+      </equations>
+      <equations xsi:type="mOloc:ForEquation" forIndices="k in 1:mSystems">
+        <forEquations xsi:type="mOloc:ForEquation" forIndices="j in 1:(mBasic - kP)">
+          <forEquations xsi:type="mOloc:ConnectEquation" left="plugToPins_n.pin_n[(k - 1)*mBasic + j]" right="plugToPins_p.pin_p[(k - 1)*mBasic + j + kP]"/>
+        </forEquations>
+        <forEquations xsi:type="mOloc:ForEquation" forIndices="j in (mBasic - kP + 1):mBasic">
+          <forEquations xsi:type="mOloc:ConnectEquation" left="plugToPins_n.pin_n[(k - 1)*mBasic + j]" right="plugToPins_p.pin_p[(k - 2)*mBasic + j + kP]"/>
+        </forEquations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_p" right="plugToPins_p.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-93, 0 } ,{-86,0},{-72,0} }" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPins_n.plug_n" right="plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{72,0},{79, 0 } ,{79,0},{86,0},{86,0},{100,0} }" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Line( points={{-44,62},{-44,-76},{75,-6},{-44,62},{-44,61}}, color={85,170,255}, thickness=0.5 ) , Line(points={{-90,0},{-44,0}}, color={85,170,255}), Line(points={{80,0},{90,0}}, color={85,170,255}),Line( points={{-36,74},{-36,-64},{83,6},{-36,74},{-36,73}}, color={85,170,255}, thickness=0.5 ) , Text( extent={{-150,70},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text( extent={{-150,-110},{150,-70}}, textString=&quot;m=%m&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Delta (polygon) connection of a polyphase circuit consisting of multiple base systems (see&#xA;&lt;a href=\&quot;modelica://Modelica.Magnetic.FundamentalWave.UsersGuide.Polyphase\&quot;>polyphase guidelines&lt;/a>).&#xA;&lt;/p>&#xA;&lt;h4>See also&lt;/h4>&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.Star\&quot;>Star&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.Delta\&quot;>Delta&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.MultiStar\&quot;>MultiStar&lt;/a>&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

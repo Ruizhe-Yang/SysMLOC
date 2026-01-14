@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Sources">
+  <classes classType="model" className="TableVoltage" description="&quot;Voltage source by linear interpolation in a table&quot;" isLongClassSpecifier="true" classNameEnd="TableVoltage" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list subscripts="[:, :]" expression="[0, 0; 1, 1; 2, 4]" declarationName="table" description="&quot;Table matrix (time = first column, voltage = second column)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.VoltageSource" isOver="true">
+      <extendsModifications typeSpecifier="Modelica.Blocks.Sources.TimeTable" isModificationOver="true" declarationName="signalSource" isRedeclare="true">
+        <modifications expression="table" elementName="table" isfinal="true"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Line(points={{-58,-36},{-58,84},{42,84},{42,-36}, {-58,-36},{-58,-6},{42,-6},{42,24},{-58,24},{-58,54},{42,54},{ 42,84} ,{-8,84},{-8,-37} } , color={192,192,192} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This voltage source uses the corresponding signal source of the Modelica.Blocks.Sources package.  Furthermore, an offset parameter is introduced, which is added to the value calculated by the blocks source. The startTime parameter allows to shift the blocks source behavior on the time axis.&lt;/p>&#xA;&lt;p>&lt;br>This block generates a voltage source by &lt;strong>linear interpolation&lt;/strong> in a table. The time points and voltage values are stored in a matrix &lt;strong>table[i,j]&lt;/strong>, where the first column table[:,1] contains the time points and the second column contains the voltage to be interpolated. The table interpolation has the following properties:&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>The time points need to be &lt;strong>monotonically increasing&lt;/strong>.&lt;/li>&#xA;&lt;li>&lt;strong>Discontinuities&lt;/strong> are allowed, by providing the same time point twice in the table.&lt;/li>&#xA;&lt;li>Values &lt;strong>outside&lt;/strong> of the table range, are computed by &lt;strong>extrapolation&lt;/strong> through the last or first two points of the table.&lt;/li>&#xA;&lt;li>If the table has only &lt;strong>one row&lt;/strong>, no interpolation is performed and the voltage value is just returned independently of the actual time instant, i.e., this is a constant voltage source.&lt;/li>&#xA;&lt;li>Via parameters &lt;strong>startTime&lt;/strong> and &lt;strong>offset&lt;/strong> the curve defined by the table can be shifted both in time and in the voltage.&lt;/li>&#xA;&lt;li>The table is implemented in a numerically sound way by generating &lt;strong>time events&lt;/strong> at interval boundaries.&#xA;    This generates continuously differentiable values for the integrator.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>Example:&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;   table = [0  0&#xA;            1  0&#xA;            1  1&#xA;            2  4&#xA;            3  9&#xA;            4 16]&#xA;If, e.g., time = 1.0, the voltage v =  0.0 (before event), 1.0 (after event)&#xA;    e.g., time = 1.5, the voltage v =  2.5,&#xA;    e.g., time = 2.0, the voltage v =  4.0,&#xA;    e.g., time = 5.0, the voltage v = 23.0 (i.e., extrapolation).&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&lt;br>  Furthermore, an offset parameter is introduced, which is added to the value calculated by the blocks source. The startTime parameter allows to shift the blocks source behavior on the time axis.&lt;/p>&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Sources/TableVoltage.png\&quot;&#xA;     alt=\&quot;TableVoltage.png\&quot;>&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em> 1998   &lt;/em>&#xA;       by Christoph Clauss&lt;br> initially implemented&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

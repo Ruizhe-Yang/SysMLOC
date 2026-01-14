@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Thermal">
+  <classes classType="package" className="Constants" description="&quot;Material Constants&quot;" isLongClassSpecifier="true" classNameEnd="Constants" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="constant" isOver="true">
+      <component_list expression="0" declarationName="alpha20Zero" description="&quot;Not temperature dependent&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="constant" isOver="true">
+      <component_list expression="4.000e-3" declarationName="alpha20Aluminium" description="&quot;Aluminium&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="constant" isOver="true">
+      <component_list expression="1.100e-3" declarationName="alpha20Brass" description="&quot;Brass&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="constant" isOver="true">
+      <component_list expression="0.800e-3" declarationName="alpha20Bronze" description="&quot;Bronze&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="constant" isOver="true">
+      <component_list expression="3.920e-3" declarationName="alpha20Copper" description="&quot;Copper&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Polygon( origin={-9.2597,25.6673}, fillColor={102,102,102}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{48.017,11.336},{48.017,11.336},{10.766,11.336},{-25.684, 10.95 } ,{-34.944,-15.111},{-34.944,-15.111},{-32.298,-15.244},{-32.298, -15.244 } ,{-22.112,0.168},{11.292,0.234},{48.267,-0.097},{48.267, -0.097 } } , smooth=Smooth.Bezier ) ,Polygon( origin={-19.9923,-8.3993}, fillColor={102,102,102}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{3.239,37.343},{3.305,37.343},{-0.399,2.683},{-16.936, -20.071 } ,{-7.808,-28.604},{6.811,-22.519},{9.986,37.145},{9.986, 37.145 } } , smooth=Smooth.Bezier ) ,Polygon( origin={23.753,-11.5422}, fillColor={102,102,102}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{-10.873,41.478},{-10.873,41.478},{-14.048,-4.162},{-9.352, -24.8 } ,{7.912,-24.469},{16.247,0.27},{16.247,0.27},{13.336, 0.071 } ,{13.336,0.071},{7.515,-9.983},{-3.134,-7.271},{-2.671, 41.214 } ,{-2.671,41.214} } , smooth=Smooth.Bezier ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;Material constants, especially linear temperature coefficients of commonly used conductor materials&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

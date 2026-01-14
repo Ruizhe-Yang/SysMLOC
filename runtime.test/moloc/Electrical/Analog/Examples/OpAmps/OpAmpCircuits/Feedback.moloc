@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples.OpAmps.OpAmpCircuits">
+  <classes classType="model" className="Feedback" description="&quot;Subtracting operational amplifier circuit&quot;" isLongClassSpecifier="true" classNameEnd="Feedback" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PartialOpAmp" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list expression="p1_2.v - n1.v" declarationName="v1_2" description="&quot;Voltage drop of port 1_2 (= p1_2.v - n1.v)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list expression="p1_2.i" declarationName="i1_2" description="&quot;Current flowing from pos. to neg. pin of port 1_2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1" declarationName="k" description="&quot;Desired amplification&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="1000" declarationName="R1" description="&quot;Resistance at inputs of OpAmp&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="R1/k" declarationName="R3" description="&quot;Calculated resistance to reach desired amplification k&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="r1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="R1" elementName="R" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="{-40,70}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="r2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="R1" elementName="R" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+            <modifications expression="{-40,-70}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="p1_2" description="&quot;Positive electrical pin 1.2&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="r3" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="R3" elementName="R" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="{20,70}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="r4" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="R3" elementName="R" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+            <modifications expression="{20,-70}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="n1" right="n2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,-100},{100,-100}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="p1" right="r1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,100},{-80,100},{-80,70},{-50, 70 } }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="r1.n" right="opAmp.in_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,70},{-10,70},{-10,6}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="r1.n" right="r3.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,70},{10,70}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="opAmp.out" right="r3.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{30,0},{30,70}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="opAmp.out" right="p2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{80,0},{80,100},{100,100}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="p1_2" right="r2.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-80,0},{-80,-70},{-50,-70}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="r2.n" right="opAmp.in_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,-70},{-10,-70},{-10,-6}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="opAmp.in_p" right="r4.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,-6},{-10,-70},{10,-70}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="n1" right="r4.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,-100},{30,-100},{30,-70}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>Inverting subtracter = feedback, based on the &lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Ideal.IdealizedOpAmpLimited\&quot;>IdealizedOpAmpLimited&lt;/a> model.&lt;/p>&#xA;&lt;p>&lt;code>vOut = -k*(vIn1 - vIn2)&lt;/code>&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Text( extent={{-40,40},{40,-40}}, textColor={0,0,255}, textString=&quot;-&quot; ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

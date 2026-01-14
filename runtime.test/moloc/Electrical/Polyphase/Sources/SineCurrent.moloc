@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Sources">
+  <classes classType="model" className="SineCurrent" description="&quot;Polyphase sine current source&quot;" isLongClassSpecifier="true" classNameEnd="SineCurrent" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPlug" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="I" description="&quot;Amplitudes of sine waves&quot;">
+        <modifications expression="fill(1, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" expression="- Polyphase.Functions.symmetricOrientation( m)" declarationName="phase" description="&quot;Phases of sine waves&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="f" description="&quot;Frequencies of sine waves&quot;">
+        <modifications expression="fill(1, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" expression="zeros(m)" declarationName="offset" description="&quot;Current offsets&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" expression="zeros(m)" declarationName="startTime" description="&quot;Time offsets&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SineCurrent" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="sineCurrent" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="I" elementName="I" isfinal="true"/>
+        <modifications expression="phase" elementName="phase" isfinal="true"/>
+        <modifications expression="f" elementName="f" isfinal="true"/>
+        <modifications expression="offset" elementName="offset" isfinal="true"/>
+        <modifications expression="startTime" elementName="startTime" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sineCurrent.p" right="plug_p.pin">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,0},{-100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sineCurrent.n" right="plug_n.pin">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Line(points={{-90,0},{-50,0}}, color={0,0,255}), Line(points={{50,0},{90,0}}, color={0,0,255}),Ellipse( extent={{-50,50},{50,-50}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Line(points={{0,50},{0,-50}}, color={0,0,255} ) ,Line( points={{-70,0},{-60.2,29.9},{-53.8,46.5},{-48.2,58.1},{-43.3, 65.2 } ,{-38.3,69.2},{-33.4,69.8},{-28.5,67},{-23.6,61},{-18.6,52}, {-13,38.6},{-5.98,18.6},{8.79,-26.9},{15.1,-44},{20.8,-56.2},{ 25.7,-64} ,{30.6,-68.6},{35.5,-70},{40.5,-67.9},{45.4,-62.5},{ 50.3,-54.1} ,{55.9,-41.3},{63,-21.7},{70,0} } , color={192,192,192}, smooth=Smooth.Bezier ) , Polygon( points={{90,0},{60,10},{60,-10},{90,0}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-150,60},{150,100}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text( extent={{150,-100},{-150,-60}}, textString=&quot;m=%m&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Contains m sine current sources (Modelica.Electrical.Analog.Sources.SineCurrent)&#xA;with a default phase shift determined by&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Polyphase.Functions.symmetricOrientation\&quot;>symmetricOrientation&lt;/a>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

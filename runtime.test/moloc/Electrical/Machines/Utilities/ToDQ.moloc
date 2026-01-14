@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Utilities">
+  <classes classType="block" className="ToDQ" description="&quot;Transform instantaneous stator inputs to rotor fixed space phasor&quot;" isLongClassSpecifier="true" classNameEnd="ToDQ" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.MIMO" isOver="true">
+      <extendsModifications expression="m" elementName="nin" isfinal="true"/>
+      <extendsModifications expression="2" elementName="nout" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list declarationName="p" description="&quot;Number of pole pairs&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+      <component_list isModificationOver="true" declarationName="toGamma" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="p" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,-50}" elementName="origin"/>
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Machines.SpacePhasors.Blocks.Rotator" isOver="true">
+      <component_list declarationName="rotator" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="phi" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;rad&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,-120}" elementName="origin"/>
+            <modifications expression="{{20,-20},{-20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Machines.SpacePhasors.Blocks.ToSpacePhasor" isOver="true">
+      <component_list isModificationOver="true" declarationName="toSpacePhasor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-60,-10},{-40,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="phi" right="toGamma.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-120},{0,-120},{0,-62}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="rotator.angle" right="toGamma.y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-12},{0,-39},{0,-39}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="toSpacePhasor.y" right="rotator.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-39,0},{-12,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u" right="toSpacePhasor.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-120,0},{-62,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="rotator.y" right="y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{11,0},{110,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The polyphase input values &lt;code>u[m]&lt;/code> are transformed to the corresponding space phasor which is rotated to the rotor fixed reference system,&#xA;using the provided mechanical rotor angle phi. The output are the resulting d and q components of the space phasor arranged in one vector &lt;code>y[2]&lt;/code>.&#xA;&lt;/p>&#xA;&#xA;&lt;h4>See also&lt;/h4>&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Utilities.FromDQ\&quot;>FromDQ&lt;/a>&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

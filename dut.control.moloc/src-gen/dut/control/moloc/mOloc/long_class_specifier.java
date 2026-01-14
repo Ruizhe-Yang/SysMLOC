@@ -14,6 +14,7 @@ package dut.control.moloc.mOloc;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.long_class_specifier#isIsExtends <em>Is Extends</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.long_class_specifier#isIsLongClassSpecifier <em>Is Long Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.long_class_specifier#getClassNameEnd <em>Class Name End</em>}</li>
  * </ul>
  *
@@ -44,6 +45,28 @@ public interface long_class_specifier extends class_name, class_modification, de
    * @generated
    */
   void setIsExtends(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Is Long Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Long Class Specifier</em>' attribute.
+   * @see #setIsLongClassSpecifier(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getlong_class_specifier_IsLongClassSpecifier()
+   * @model
+   * @generated
+   */
+  boolean isIsLongClassSpecifier();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.long_class_specifier#isIsLongClassSpecifier <em>Is Long Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Long Class Specifier</em>' attribute.
+   * @see #isIsLongClassSpecifier()
+   * @generated
+   */
+  void setIsLongClassSpecifier(boolean value);
 
   /**
    * Returns the value of the '<em><b>Class Name End</b></em>' attribute.

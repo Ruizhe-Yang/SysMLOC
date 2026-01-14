@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.DCAC.Control">
+  <classes classType="block" className="SVPWM" description="&quot;SpaceVector Pulse Width Modulation&quot;" isLongClassSpecifier="true" classNameEnd="SVPWM" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list declarationName="f" description="&quot;Switching frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.DiscreteBlock" isOver="true">
+      <extendsModifications expression="1/f" elementName="samplePeriod" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.small" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Math.atan2" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="constant" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list declarationName="uMax" description="&quot;Maximum length of space vector = half diagonal of hexagon&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="constant" isOver="true">
+      <component_list subscripts="[6,m]" expression="[true, false,false; true, true, false; false,true, false; false,true, true; false,false,true; true, false,true]" declarationName="fire" description="&quot;Switching patterns&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list subscripts="[2]" declarationName="u" description="&quot;Reference space phasor&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <component_list subscripts="[m]" declarationName="fire_p" description="&quot;Positive fire signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,50},{120,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <component_list subscripts="[m]" declarationName="fire_n" description="&quot;Negative fire signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-70},{120,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" isProtected="true" isOver="true">
+      <component_list isModificationOver="true" declarationName="uRef" description="&quot;Length of reference vector&quot;">
+        <modifications expression="0" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="discrete" isOver="true">
+      <component_list isModificationOver="true" declarationName="phiRef" description="&quot;Angle of reference vector within (-pi, +pi]&quot;">
+        <modifications expression="0" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="discrete" isOver="true">
+      <component_list isModificationOver="true" declarationName="phiPos" description="&quot;Angle of reference vector within [0, 2*pi)&quot;">
+        <modifications expression="0" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+      <component_list isModificationOver="true" declarationName="ka">
+        <modifications expression="0" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+      <component_list isModificationOver="true" declarationName="kb" description="&quot;Switching patterns limiting the sector&quot;">
+        <modifications expression="0" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="discrete" isOver="true">
+      <component_list isModificationOver="true" declarationName="phiSec" description="&quot;Angle of reference vector within sector within [0, pi/m)&quot;">
+        <modifications expression="0" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
+      <component_list isModificationOver="true" declarationName="ta">
+        <modifications expression="0" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+      <component_list isModificationOver="true" declarationName="tb">
+        <modifications expression="0" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+      <component_list isModificationOver="true" declarationName="t0" description="&quot;Relative time spans of vectors a, b, and 0&quot;">
+        <modifications expression="samplePeriod" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
+      <component_list isModificationOver="true" declarationName="T0" description="&quot;Start time of switching interval&quot;">
+        <modifications expression="startTime" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:WhenStatement" condition="sampleTrigger">
+        <whenStatements xsi:type="mOloc:FunctionStatement" component="uRef" expression="min(sqrt(u[1]^2 + u[2]^2)/(2/3*uMax), cos(pi/6))"/>
+        <whenStatements xsi:type="mOloc:FunctionStatement" component="phiRef" expression="if noEvent(uRef &lt; small) then 0 else atan2(u[2], u[1])"/>
+        <whenStatements xsi:type="mOloc:FunctionStatement" component="phiPos" expression="max(phiRef + (if phiRef &lt; -eps then 2*pi else 0), 0)"/>
+        <whenStatements xsi:type="mOloc:FunctionStatement" component="ka" expression="integer(phiPos/(pi/m))"/>
+        <whenStatements xsi:type="mOloc:FunctionStatement" component="kb" expression="if noEvent(ka >= 5) then 0 else ka + 1"/>
+        <whenStatements xsi:type="mOloc:FunctionStatement" component="phiSec" expression="phiPos - ka*pi/m"/>
+        <whenStatements xsi:type="mOloc:FunctionStatement" component="tb" expression="min(uRef*sin(phiSec)/sin(pi/m), 1)"/>
+        <whenStatements xsi:type="mOloc:FunctionStatement" component="ta" expression="min(uRef*cos(phiSec) - tb*cos(pi/m), 1)"/>
+        <whenStatements xsi:type="mOloc:FunctionStatement" component="t0" expression="max(1 - ta - tb, 0)"/>
+        <whenStatements xsi:type="mOloc:FunctionStatement" component="T0" expression="time"/>
+      </statements>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:IfEquation" condition="time&lt;startTime">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="fire_p" right="fill(true, m)"/>
+        <elseCondition>(time - T0)/samplePeriod &lt; (t0/4)</elseCondition>
+        <elseCondition>(time - T0)/samplePeriod &lt; (t0/4 + ta/2)</elseCondition>
+        <elseCondition>(time - T0)/samplePeriod &lt; (t0/4 + ta/2 + tb/2)</elseCondition>
+        <elseCondition>(time - T0)/samplePeriod &lt; (t0/4 + ta/2 + tb/2 + t0/2)</elseCondition>
+        <elseCondition>(time - T0)/samplePeriod &lt; (t0/4 + ta/2 + tb/2 + t0/2 + tb/2)</elseCondition>
+        <elseCondition>(time - T0)/samplePeriod &lt; (t0/4 + ta/2 + tb/2 + t0/2 + tb/2 + ta/2)</elseCondition>
+        <elseifEquations xsi:type="mOloc:SimpleEquation" left="fire_p" right="fill(false, m)"/>
+        <elseifEquations xsi:type="mOloc:SimpleEquation" left="fire_p" right="fire[ka + 1, :]"/>
+        <elseifEquations xsi:type="mOloc:SimpleEquation" left="fire_p" right="fire[kb + 1, :]"/>
+        <elseifEquations xsi:type="mOloc:SimpleEquation" left="fire_p" right="fill(true, m)"/>
+        <elseifEquations xsi:type="mOloc:SimpleEquation" left="fire_p" right="fire[kb + 1, :]"/>
+        <elseifEquations xsi:type="mOloc:SimpleEquation" left="fire_p" right="fire[ka + 1, :]"/>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="fire_p" right="fill(false, m)"/>
+      </equations>
+      <equations xsi:type="mOloc:SimpleEquation" left="fire_n" right="not fire_p"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;svPWM&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+        </modifications>
+        <modifications expression="{ Line(points={{-80,30},{-36,30},{-36,50},{-10,50},{-10,30},{10,30},{10,50}, {36,50},{36,30},{80,30} } , color={255,0,0} ) , Line(points={{-80,-10},{-70,-10},{-70,10},{-36,10},{-36,-10},{36,-10},{36, 10 } ,{70,10},{70,-10},{80,-10} } , color={0,0,255} ) , Line(points={{-80,-50},{-80,-30},{-70,-30},{-70,-50},{-10,-50},{-10,-30}, {10,-30},{10,-50},{70,-50},{70,-30},{80,-30},{80,-50} } , color={0,0, 0 } ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;For a three-phase system, 8 space vectors are available according to the following switching patterns:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>0 [0,0,0] length 0&lt;/li>&#xA;&lt;li>1 [1,0,0] 000&amp;deg;&lt;/li>&#xA;&lt;li>2 [1,1,0] 060&amp;deg;&lt;/li>&#xA;&lt;li>3 [0,1,0] 120&amp;deg;&lt;/li>&#xA;&lt;li>4 [0,1,1] 180&amp;deg;&lt;/li>&#xA;&lt;li>5 [0,0,1] 240&amp;deg;&lt;/li>&#xA;&lt;li>6 [1,0,1] 300&amp;deg;&lt;/li>&#xA;&lt;li>7 [1,1,1] length 0&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;Vector 1..6 form a hexagon, vector 0 and 7 are of length 0.&#xA;&lt;/p>&#xA;&lt;p>&#xA;First, the space vector is limited,&#xA;and the sector of the hexagon is determined where the input space vector &lt;u>u&lt;/u> is located;&#xA;then the angle of the space vector within this sector 0&amp;le;&amp;phi;&amp;lt;60&amp;deg; is calculated.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The input space vector is averaged by &lt;u>u&lt;/u> = t&lt;sub>a&lt;/sub>*&lt;u>u&lt;/u>&lt;sub>a&lt;/sub> + t&lt;sub>b&lt;/sub>*&lt;u>u&lt;/u>&lt;sub>b&lt;/sub> + t&lt;sub>0&lt;/sub>*0,&#xA;where &lt;u>u&lt;/u>&lt;sub>a&lt;/sub> is the space vector at the left border of the sector&#xA;and &lt;u>u&lt;/u>&lt;sub>b&lt;/sub> is the space vector at the right border of the sector.&#xA;If necessary, a zero length vector is applied additionally.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The relative time spans for averaging over one switching period are determined by the following equations:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>Real part: &lt;u>u&lt;/u>*cos(&amp;phi;) = &lt;u>u&lt;/u>&lt;sub>b&lt;/sub>*t&lt;sub>b&lt;/sub>*cos(60&amp;deg;) + &lt;u>u&lt;/u>&lt;sub>a&lt;/sub>*t&lt;sub>a&lt;/sub>*1&lt;/li>&#xA;&lt;li>Imag.part: &lt;u>u&lt;/u>*sin(&amp;phi;) = &lt;u>u&lt;/u>&lt;sub>b&lt;/sub>*t&lt;sub>b&lt;/sub>*sin(60&amp;deg;)&lt;/li>&#xA;&lt;li>t&lt;sub>a&lt;/sub> + t&lt;sub>b&lt;/sub> + t&lt;sub>0&lt;/sub> = 1&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;To obtain the positive fire signal, the switching time spans are distributed symmetrically:&#xA;t&lt;sub>0&lt;/sub>/4 + t&lt;sub>a&lt;/sub>/2 + t&lt;sub>b&lt;/sub>/2 +t&lt;sub>0&lt;/sub>/2 + t&lt;sub>b&lt;/sub>/2 + t&lt;sub>a&lt;/sub>/2 + t&lt;sub>0&lt;/sub>/4&#xA;&lt;/p>&#xA;&lt;p>&#xA;The switching pattern of the negative fire signal is just the inverse of the positive fire signal.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

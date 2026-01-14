@@ -13,7 +13,7 @@ Class_definition:
 	( isfinal ?= 'final' )?
 	class_prefixes
 	class_specifier
-	';'
+	isOver?=';'
 ;
 
 fragment class_prefixes :
@@ -42,12 +42,12 @@ fragment long_class_specifier:
 	class_modification? 
 	description_string
 	composition 
-	'end' classNameEnd=IDENT
+	isLongClassSpecifier?='end' classNameEnd=IDENT
 ;
 
 fragment short_class_specifier:
 	class_name 
-	'=' 
+	isShortClassSpecifier?='=' 
 	( (direction=Direction)? type_specifier array_subscripts? class_modification? 
 	 | isEnumeration?='enumeration' '(' ( enum_list? | isColon ?= ':') ')'
 	)
@@ -56,7 +56,7 @@ fragment short_class_specifier:
 
 fragment der_class_specifier:
 	class_name
-	'='
+	isDerClassSpecifier?='='
 	isDer?='der'
 	'(' type_specifier ',' derName+=IDENT (',' derName+=IDENT)* ')'
 	description
@@ -67,12 +67,12 @@ fragment class_name:
 ;
 
 fragment class_modification:
-	'(' modifications+=ModificationElement ( ',' modifications+=ModificationElement )* ')'
+	'(' modifications+=ModificationElement ( ',' modifications+=ModificationElement )* isModificationOver?=')'
 ;
 
 fragment annotation_modification_part:
 	isAnnotation?='annotation'
-	'(' annotations+=AnnotationModification ( ',' annotations+=AnnotationModification )* ')'
+	'(' annotations+=AnnotationModificationElement ( ',' annotations+=AnnotationModificationElement )* isAnnotationOver?=')'
 ;
 
 fragment description_string:
@@ -125,7 +125,19 @@ ModificationElement: // Argument
 	constraining?
 ;
 
-AnnotationModification: // Argument
+AnnotationModificationElement: // Argument
+	( isRedeclare ?= 'redeclare')?
+	( isEach ?= 'each' )?
+	( isfinal ?= 'final' )?
+	( isReplaceable ?= 'replaceable' )? 
+	( short_class_definition 
+	| component_clause1 
+	| element_modification 
+	)
+	constraining?
+;
+
+AnnotationModificationElement2: // Argument
 	( isRedeclare ?= 'redeclare')?
 	( isEach ?= 'each' )?
 	( isfinal ?= 'final' )?
@@ -222,7 +234,7 @@ ImportClause:
 	| importName=Name ( isImportAll?='.*' | '.' ( isImportAll?='*' | '{' objectName+=IDENT ( ',' objectName+=IDENT)* '}'))?
 	)
 	description
-	';'
+	isOver?=';'
 ;
 
 ExtendsClause:
@@ -233,7 +245,7 @@ ExtendsClause:
 	( '(' (( extendsModifications+=ModificationElement | breaks+=Break ) (',' ( extendsModifications+=ModificationElement | breaks+=Break ))* )? ')')?
 	//	( 'annotation' class_modification )?
 	annotation_modification_part?
-	';'
+	isOver?=';'
 ;
 
 Break:
@@ -258,7 +270,10 @@ GeneralClause:
 	)
 	constraining?
 	//	description?
-	';'
+//	( description2 = DescriptionString )? 
+	//	( isAnnotation?='annotation' class_modification)?
+//	( isAnnotation2?='annotation' '(' annotations2+=AnnotationModificationElement2 ( ',' annotations2+=AnnotationModificationElement2 )* isAnnotationOver2?=')')?
+	isOver?=';'
 ;
 
 Component_declaration:
@@ -275,13 +290,13 @@ ExternalElement:
 	( (ref=Component_reference '=')? refValue=IDENT '(' (expressionList=ExpressionList)? ')')?
 	//	( isAnnotation?='annotation' class_modification )?
 	annotation_modification_part?
-	';'
+	isOver?=';'
 ;
 
 AnnotationClause:
 	//	'annotation' class_modification 
 	annotation_modification_part
-	';'
+	isOver?=';'
 ;
 
 EquationSection:

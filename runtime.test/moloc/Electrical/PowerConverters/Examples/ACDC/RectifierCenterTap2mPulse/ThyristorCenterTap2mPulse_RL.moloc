@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.Examples.ACDC.RectifierCenterTap2mPulse">
+  <classes classType="model" className="ThyristorCenterTap2mPulse_RL" description="&quot;2*m pulse thyristor rectifier with R-L load&quot;" isLongClassSpecifier="true" classNameEnd="ThyristorCenterTap2mPulse_RL" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="ExampleTemplates.ThyristorCenterTap2mPulse" isOver="true">
+      <extendsModifications isModificationOver="true" elementName="pulse2m">
+        <modifications expression="constantFiringAngle" elementName="constantFiringAngle"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+      <component_list expression="30*pi/180" declarationName="constantFiringAngle" description="&quot;Firing angle&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="20" declarationName="R" description="&quot;Load resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="L" description="&quot;Load resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="R" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{30,30}" elementName="origin"/>
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Inductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="inductor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="L" elementName="L"/>
+        <modifications isModificationOver="true" elementName="i">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="0" elementName="start"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{30,0}" elementName="origin"/>
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor.n" right="inductor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{30,20},{30,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="inductor.n" right="currentSensor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{30,-10},{30,-50},{10,-50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor.p" right="rectifier.dc_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{30,40},{-10,40},{-10,40},{-20,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="0.1" elementName="StopTime"/>
+        <modifications expression="1e-06" elementName="Tolerance"/>
+        <modifications expression="0.0002" elementName="Interval"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This example shows a controlled &lt;code>2*m&lt;/code> pulse center tap rectifier with R-L load, where &lt;code>m&lt;/code> is the number of phases.&lt;/p>&#xA;&#xA;&lt;p>Plot current &lt;code>currentSensor.i&lt;/code>, average current &lt;code>meanCurrent.y&lt;/code>, voltage &lt;code>voltageSensor.v&lt;/code> and average voltage &lt;code>meanVoltage.v&lt;/code>.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

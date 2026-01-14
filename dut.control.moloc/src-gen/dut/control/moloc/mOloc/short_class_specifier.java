@@ -13,6 +13,7 @@ package dut.control.moloc.mOloc;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.short_class_specifier#isIsShortClassSpecifier <em>Is Short Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.short_class_specifier#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.short_class_specifier#isIsEnumeration <em>Is Enumeration</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.short_class_specifier#isIsColon <em>Is Colon</em>}</li>
@@ -24,6 +25,28 @@ package dut.control.moloc.mOloc;
  */
 public interface short_class_specifier extends class_name, type_specifier, array_subscripts, class_modification, enum_list, description, description_string, annotation_modification_part
 {
+  /**
+   * Returns the value of the '<em><b>Is Short Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Short Class Specifier</em>' attribute.
+   * @see #setIsShortClassSpecifier(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getshort_class_specifier_IsShortClassSpecifier()
+   * @model
+   * @generated
+   */
+  boolean isIsShortClassSpecifier();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.short_class_specifier#isIsShortClassSpecifier <em>Is Short Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Short Class Specifier</em>' attribute.
+   * @see #isIsShortClassSpecifier()
+   * @generated
+   */
+  void setIsShortClassSpecifier(boolean value);
+
   /**
    * Returns the value of the '<em><b>Direction</b></em>' attribute.
    * The literals are from the enumeration {@link dut.control.moloc.mOloc.Direction}.

@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.Break;
 import dut.control.moloc.mOloc.ExtendsClause;
 import dut.control.moloc.mOloc.MOlocPackage;
@@ -37,10 +37,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsPublic <em>Is Public</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsProtected <em>Is Protected</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getExtendsModifications <em>Extends Modifications</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getBreaks <em>Breaks</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsOver <em>Is Over</em>}</li>
  * </ul>
  *
  * @generated
@@ -95,7 +97,27 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
@@ -156,6 +178,26 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @ordered
    */
   protected EList<Break> breaks;
+
+  /**
+   * The default value of the '{@link #isIsOver() <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsOver() <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isOver = IS_OVER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -234,13 +276,38 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
   }
 
   /**
@@ -329,6 +396,31 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @generated
    */
   @Override
+  public boolean isIsOver()
+  {
+    return isOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsOver(boolean newIsOver)
+  {
+    boolean oldIsOver = isOver;
+    isOver = newIsOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__IS_OVER, oldIsOver, isOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -359,6 +451,8 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return isIsAnnotation();
       case MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
       case MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC:
         return isIsPublic();
       case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
@@ -367,6 +461,8 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return getExtendsModifications();
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         return getBreaks();
+      case MOlocPackage.EXTENDS_CLAUSE__IS_OVER:
+        return isIsOver();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -390,7 +486,10 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return;
       case MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
         return;
       case MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC:
         setIsPublic((Boolean)newValue);
@@ -405,6 +504,9 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         getBreaks().clear();
         getBreaks().addAll((Collection<? extends Break>)newValue);
+        return;
+      case MOlocPackage.EXTENDS_CLAUSE__IS_OVER:
+        setIsOver((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -429,6 +531,9 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
       case MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC:
         setIsPublic(IS_PUBLIC_EDEFAULT);
         return;
@@ -440,6 +545,9 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return;
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         getBreaks().clear();
+        return;
+      case MOlocPackage.EXTENDS_CLAUSE__IS_OVER:
+        setIsOver(IS_OVER_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -461,6 +569,8 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
       case MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC:
         return isPublic != IS_PUBLIC_EDEFAULT;
       case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
@@ -469,6 +579,8 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         return extendsModifications != null && !extendsModifications.isEmpty();
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         return breaks != null && !breaks.isEmpty();
+      case MOlocPackage.EXTENDS_CLAUSE__IS_OVER:
+        return isOver != IS_OVER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -495,6 +607,7 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
       {
         case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -523,6 +636,7 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -544,10 +658,14 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
     result.append(typeSpecifier);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
     result.append(", isPublic: ");
     result.append(isPublic);
     result.append(", isProtected: ");
     result.append(isProtected);
+    result.append(", isOver: ");
+    result.append(isOver);
     result.append(')');
     return result.toString();
   }

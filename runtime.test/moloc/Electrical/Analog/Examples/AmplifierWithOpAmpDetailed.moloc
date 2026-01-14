@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples">
+  <classes classType="model" className="AmplifierWithOpAmpDetailed" description="&quot;Simple Amplifier circuit which uses OpAmpDetailed&quot;" isLongClassSpecifier="true" classNameEnd="AmplifierWithOpAmpDetailed" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.OpAmpDetailed" isOver="true">
+      <component_list declarationName="opAmp" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-26,-4},{2,24}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="10000" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-74,8},{-56,26}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="resistor1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="20000" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-22,46},{-4,64}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="resistor2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="10000" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-9,-9},{9,9}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{21,-23}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SineVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="sineVoltage" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="12" elementName="V"/>
+        <modifications expression="1000" elementName="f"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-80,-30}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-70},{0,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.ConstantVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="constantVoltage" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="15" elementName="V"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{48,10},{68,30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.ConstantVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="constantVoltage1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="-15" elementName="V"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{48,-10},{68,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection" isInitial="true">
+      <equations xsi:type="mOloc:SimpleEquation" left="resistor2.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="opAmp.q_fp1" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="opAmp.q_fr1" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="opAmp.q_fr2" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="opAmp.q_fr3" right="0"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor.n" right="opAmp.m">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-56,17},{-34,17},{-34,17.07},{-26.07,17.07}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor1.n" right="resistor2.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-4,55},{21,55},{21,-14}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor.p" right="sineVoltage.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-74,17},{-80,17},{-80,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor1.p" right="opAmp.m">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-22,55},{-26.07,55},{-26.07,17.07}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sineVoltage.n" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,-40},{-10,-40},{-10,-50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="opAmp.p" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-26.07,2.93},{-26.07,-20},{-10,-20},{-10,-50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor2.n" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{21,-32},{21,-40},{-10,-40},{-10,-50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="opAmp.p_supply" right="constantVoltage.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-11.93,20.29},{18.035,20.29},{18.035,20},{48,20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="opAmp.m_supply" right="constantVoltage1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-12,-0.36},{18,-0.36},{18,0},{48,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="constantVoltage.n" right="constantVoltage1.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{68,20},{80,20},{80,0},{68,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="constantVoltage1.n" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{68,0},{80,0},{80,-40},{-10,-40},{-10,-50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="opAmp.outp" right="resistor2.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{2,10},{21,10},{21,-14}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="0.003" elementName="StopTime"/>
+        <modifications expression="1.2e-6" elementName="Interval"/>
+        <modifications expression="2e-007" elementName="Tolerance"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;dl>&#xA;&lt;dt>June 17, 2009&lt;/dt>&#xA;&lt;dd>by Susann Wolf realized&lt;/dd>&#xA;&lt;/dl>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>With the test circuit AmplifierWithOpAmpDetailed a time domain analysis of the example arrangement with a sinusoidal input voltage (12 V amplitude, frequency 1 kHz) using the operational amplifier model OpAmpDetailed is carried out. The working voltages are 15 V and -15 V.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

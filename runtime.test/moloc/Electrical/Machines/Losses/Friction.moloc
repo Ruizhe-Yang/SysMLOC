@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Losses">
+  <classes classType="model" className="Friction" description="&quot;Model of angular velocity dependent friction losses&quot;" isLongClassSpecifier="true" classNameEnd="Friction" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.FlangeSupport" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="FrictionParameters" parameterType="parameter" isOver="true">
+      <component_list declarationName="frictionParameters" description="&quot;Friction loss parameters&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.PartialElementaryConditionalHeatPortWithoutT" isOver="true">
+      <extendsModifications expression="false" elementName="useHeatPort"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:IfEquation" condition="(frictionParameters.PRef &lt;= 0)">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="tau" right="0"/>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="tau" right="-(if noEvent(abs(w)>frictionParameters.wLinear) then frictionParameters.tauRef*sign(w)*(abs(w)/frictionParameters.wRef)^frictionParameters.power_w else frictionParameters.tauLinear*w/frictionParameters.wLinear )"/>
+      </equations>
+      <equations xsi:type="mOloc:SimpleEquation" left="lossPower" right="-tau*w"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Ellipse( extent={{-60,60},{60,-60}}, fillColor={175,175,175}, fillPattern=FillPattern.Solid ) , Ellipse( extent={{-50,50},{50,-50}}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Ellipse( extent={{-12,50},{8,30}}, fillPattern=FillPattern.Sphere, fillColor={135,135,135} ) , Ellipse( extent={{-10,-30},{10,-50}}, fillPattern=FillPattern.Sphere, fillColor={135,135,135} ) , Ellipse( extent={{24,-10},{44,-30}}, fillPattern=FillPattern.Sphere, fillColor={135,135,135} ) , Ellipse( extent={{22,34},{42,14}}, fillPattern=FillPattern.Sphere, fillColor={135,135,135} ) , Ellipse( extent={{-44,30},{-24,10}}, fillPattern=FillPattern.Sphere, fillColor={135,135,135} ) , Ellipse( extent={{-44,-12},{-24,-32}}, fillPattern=FillPattern.Sphere, fillColor={135,135,135} ) , Ellipse( extent={{-30,30},{30,-30}}, fillColor={175,175,175}, fillPattern=FillPattern.Solid ) , Ellipse( extent={{-20,20},{20,-20}}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line( visible=useHeatPort, points={{-40,0},{-100,0},{-100,-90}}, color={255,0,0} ) , Line( points={{0,90},{0,0}}, color={95,95,95} ) , Line( points={{0,-60},{0,-90}}, color={95,95,95} ) , Text( extent={{-150,90},{150,60}}, textColor={0,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The friction losses are considered by the equations&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;  tau / tauRef = (+w / wRef) ^ power_w    for w &amp;gt; +wLinear&#xA;- tau / tauRef = (-w / wRef) ^ power_w    for w &amp;lt; -wLinear&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;with&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;tauRef * wRef = PRef&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;being the friction torque at the reference angular velocity&#xA;&lt;code>wRef&lt;/code>. The exponent &lt;code>power_w&lt;/code> is&#xA;approximately 1.5 for axial ventilation and approximately 2.0 for radial ventilation.&#xA;&lt;/p>&#xA;&lt;p>&#xA;For stability reasons the friction torque &lt;code>tau&lt;/code> is approximated by a linear curve&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;tau / tauLinear = w / wLinear&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;with&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;tauLinear = tauRef*(wLinear/wRef) ^ power_w&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;in the range &lt;code> -wLinear &amp;le; w &amp;le; wLinear&lt;/code> with &lt;code>wLinear = 0.001 * wRef&lt;/code>. The relationship of torque&#xA;and angular velocity is depicted in Fig. 1&#xA;&lt;/p>&#xA;&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;1\&quot;>&#xA;  &lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Machines/frictiontorque.png\&quot;&#xA;                alt=\&quot;frictiontorque.png\&quot;> &lt;/td>&#xA;  &lt;/tr>&#xA;  &lt;tr>&lt;td> &lt;strong> Fig. 1: &lt;/strong>Friction loss torque versus angular velocity for &lt;code>power_w = 2&lt;/code>&lt;/td>&#xA;  &lt;/tr>&#xA;&lt;/table>&#xA;&lt;h4>See also&lt;/h4>&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Losses.FrictionParameters\&quot;>FrictionParameters&lt;/a>&#xA;&lt;/p>&#xA;&lt;p>&#xA;If it is desired to neglect friction losses, set &lt;code>frictionParameters.PRef = 0&lt;/code> (this is the default).&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

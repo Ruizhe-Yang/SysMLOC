@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.BasicMachines.Components">
+  <classes classType="model" className="InductorDC" description="&quot;Ideal linear electrical inductor for electrical DC machines&quot;" isLongClassSpecifier="true" classNameEnd="InductorDC" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="L" description="&quot;Inductance&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="quasiStatic" description="&quot;No electrical transients if true&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="false" elementName="start"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="if quasiStatic then 0 else L*der(i)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;inductor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>The linear inductor connects the branch voltage &lt;em>v&lt;/em> with the branch current &lt;em>i&lt;/em> by &lt;em>v = L * di/dt&lt;/em>.&#xA;If &lt;code>quasiStatic == false&lt;/code>, the electrical transients are neglected, i.e., the voltage drop is zero.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Ellipse(extent={{-60,-15},{-30,15}}, lineColor={0,0,255} ) ,Ellipse(extent={{-30,-15},{0,15}}, lineColor={0,0,255} ) ,Ellipse(extent={{0,-15},{30,15}}, lineColor={0,0,255} ) ,Ellipse(extent={{30,-15},{60,15}}, lineColor={0,0,255} ) ,Rectangle( extent={{-60,-30},{60,0}}, lineColor={255,255,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Line(points={{60,0},{90,0}}, color={0,0,255} ) ,Line(points={{-90,0},{-60,0}}, color={0,0,255}), Text( extent={{-150,-80},{150,-40}}, textString=&quot;L=%L&quot; ) ,Text( extent={{-150,50},{150,90}}, textString=&quot;%name&quot;, textColor={0,0,255} ) ,Rectangle( visible=quasiStatic, extent={{-70,30},{70,-30}}, lineColor={0,0,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

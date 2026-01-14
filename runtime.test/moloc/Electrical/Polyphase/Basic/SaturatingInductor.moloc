@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Basic">
+  <classes classType="model" className="SaturatingInductor" description="&quot;Simple model of inductors with saturation&quot;" isLongClassSpecifier="true" classNameEnd="SaturatingInductor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPlug" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="Inom" description="&quot;Nominal current&quot;">
+        <modifications expression="fill(1, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="Lnom" description="&quot;Nominal inductance at Nominal current&quot;">
+        <modifications expression="fill(1, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="Lzer" description="&quot;Inductance near current=0&quot;">
+        <modifications expression="{2*Lnom[j] for j in 1 :m }" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="Linf" description="&quot;Inductance at large currents&quot;">
+        <modifications expression="{Lnom[j]/2 for j in 1 :m }" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.SaturatingInductor" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="saturatingInductor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Inom" elementName="Inom" isfinal="true"/>
+        <modifications expression="Lnom" elementName="Lnom" isfinal="true"/>
+        <modifications expression="Lzer" elementName="Lzer" isfinal="true"/>
+        <modifications expression="Linf" elementName="Linf" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10}, {10,10} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="saturatingInductor.p" right="plug_p.pin">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,0},{-100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="saturatingInductor.n" right="plug_n.pin">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;inductor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line(points={{60,0},{90,0}}, color={0,0,255}), Line(points={{-90,0},{-60,0}}, color={0,0,255}), Rectangle( extent={{-60,-10},{60,-20}}, fillPattern=FillPattern.Sphere, fillColor={0,0,255} ) , Line( points={{-60,0},{-59,6},{-52,14},{-38,14},{-31,6},{-30,0}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-30,0},{-29,6},{-22,14},{-8,14},{-1,6},{0,0}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{0,0},{1,6},{8,14},{22,14},{29,6},{30,0}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{30,0},{31,6},{38,14},{52,14},{59,6},{60,0}}, color={0,0,255}, smooth=Smooth.Bezier ) , Text( extent={{-150,-80},{150,-40}}, textString=&quot;m=%m&quot; ) , Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Contains m saturating inductors (Modelica.Electrical.Analog.Basic.SaturatingInductor)&#xA;&lt;/p>&#xA;&lt;p>&#xA;&lt;strong>Attention!!!&lt;/strong>&lt;br>&#xA;Each element of the array of saturatingInductors is only dependent on the current flowing through this element.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples">
+  <classes classType="model" className="ThyristorBehaviourTest" description="&quot;Thyristor demonstration example&quot;" isLongClassSpecifier="true" classNameEnd="ThyristorBehaviourTest" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{18,-40},{38,-20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SineVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="sineVoltage" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="30" elementName="V"/>
+        <modifications expression="10000" elementName="f"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-72,4}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="10" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{8,20}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.PulseCurrent" isOver="true">
+      <component_list isModificationOver="true" declarationName="pulseCurrent" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="10" elementName="width"/>
+        <modifications expression="0.0001" elementName="period"/>
+        <modifications expression="0.00002" elementName="startTime"/>
+        <modifications expression="0.005" elementName="I"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+            <modifications expression="{-8,70}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Semiconductors.Thyristor" isOver="true">
+      <component_list isModificationOver="true" declarationName="thyristor_v4_1" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="vControl">
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <modifications isModificationOver="true" elementName="vAK">
+          <modifications expression="0" elementName="start"/>
+        </modifications>
+        <modifications isModificationOver="true" elementName="vGK">
+          <modifications expression="0" elementName="start"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-44,30},{-24,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Inductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="inductor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="2e-6" elementName="L"/>
+        <modifications isModificationOver="true" elementName="i">
+          <modifications expression="0" elementName="start"/>
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{8,-4}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sineVoltage.n" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-72,-6},{-72,-20},{28,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sineVoltage.p" right="thyristor_v4_1.Anode">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-72,14},{-72,40},{-43,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor.p" right="thyristor_v4_1.Cathode">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{8,30},{8,40},{-25,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="pulseCurrent.n" right="thyristor_v4_1.Gate">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-18,70},{-26,70},{-26,49},{-27,49}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor.p" right="pulseCurrent.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{8,30},{8,70},{2,70}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor.n" right="inductor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{8,10},{8,8},{8,6},{8,6}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="inductor.n" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{8,-14},{8,-20},{28,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="0.0002" elementName="StopTime"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This is a simple test circuit, to test the behavior of the thyristor model.&lt;/p>&lt;p>Interesting values to plot are Cathode.v, Gate.v and sineVoltage.p.v. and in another plot window pulseCurrent.p.i&lt;/p>&lt;p>The simulation time should be from 0 seconds to 2e-4 seconds.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

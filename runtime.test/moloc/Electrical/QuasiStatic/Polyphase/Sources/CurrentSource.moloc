@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Sources">
+  <classes classType="model" className="CurrentSource" description="&quot;Constant polyphase AC current&quot;" isLongClassSpecifier="true" classNameEnd="CurrentSource" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.Source" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.j" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.exp" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="f" description="&quot;Frequency of the source&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="I" description="&quot;RMS current of the source&quot;">
+        <modifications expression="fill(1, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" expression="- Modelica.Electrical.Polyphase.Functions.symmetricOrientation(m)" declarationName="phi" description="&quot;Phase shift of the source&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="omega" right="2*Modelica.Constants.pi*f"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i" right="{I[k]*exp(j*phi[k]) for k in 1:m}"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Line(points={{0,50},{0,-50}}, color={85,170,255}), Polygon( points={{90,0},{60,10},{60,-10},{90,0}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&#xA;&lt;p>&#xA;This model describes &lt;em>m&lt;/em> constant current sources, specifying the complex currents by the RMS currents and the phase shifts&#xA;(defaults are&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Polyphase.Functions.symmetricOrientation\&quot;>-symmetricOrientation&lt;/a>).&#xA;&lt;em>m&lt;/em> &lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sources.CurrentSource\&quot;>single-phase CurrentSources&lt;/a> are used.&#xA;&lt;/p>&#xA;&#xA;&lt;h4>See also&lt;/h4>&#xA;&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sources.CurrentSource\&quot;>SinglePhase.CurrentSource&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sources.VoltageSource\&quot;>VoltageSource&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sources.VariableVoltageSource\&quot;>VariableVoltageSource&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sources.VariableCurrentSource\&quot;>VariableCurrentSource&lt;/a>&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Lines">
+  <classes classType="model" className="M_OLine" description="&quot;Multiple OLine&quot;" isLongClassSpecifier="true" classNameEnd="M_OLine" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Length" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="0.1" declarationName="length" description="&quot;Length of line&quot;">
+        <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="5" declarationName="N" description="&quot;Number of lumped segments&quot;">
+        <modifications expression="2" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="4" declarationName="lines" description="&quot;Number of lines&quot;">
+        <modifications expression="2" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isProtected="true" isOver="true">
+      <component_list expression="div(lines*(lines + 1), 2)" declarationName="dim_vector_lgc"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isPublic="true" isOver="true">
+      <component_list subscripts="[lines]" isModificationOver="true" expression="{4.76e5,1.72e5,1.72e5,1.72e5}" declarationName="r" description="&quot;Resistance per meter&quot;">
+        <modifications expression="Modelica.Constants.small" elementName="min" isEach="true" isfinal="true"/>
+        <modifications expression="&quot;Ohm/m&quot;" elementName="unit" isEach="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list subscripts="[dim_vector_lgc]" isModificationOver="true" expression="{5.98e-7,4.44e-7,4.39e-7,3.99e-7,5.81e-7,4.09e-7, 4.23e-7,5.96e-7,4.71e-7,6.06e-7 }" declarationName="l" description="&quot;Inductance per meter&quot;">
+        <modifications expression="Modelica.Constants.small" elementName="min" isEach="true" isfinal="true"/>
+        <modifications expression="&quot;H/m&quot;" elementName="unit" isEach="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list subscripts="[dim_vector_lgc]" isModificationOver="true" expression="{8.05e-6,3.42e-5,2.91e-5,1.76e-6,9.16e-6,7.12e-6, 2.43e-5,5.93e-6,4.19e-5,6.64e-6 }" declarationName="g" description="&quot;Conductance per meter&quot;">
+        <modifications expression="Modelica.Constants.small" elementName="min" isEach="true" isfinal="true"/>
+        <modifications expression="&quot;S/m&quot;" elementName="unit" isEach="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list subscripts="[dim_vector_lgc]" isModificationOver="true" expression="{2.38e-11,1.01e-10,8.56e-11,5.09e-12,2.71e-11,2.09e-11, 7.16e-11,1.83e-11,1.23e-10,2.07e-11 }" declarationName="c" description="&quot;Capacitance per meter&quot;">
+        <modifications expression="Modelica.Constants.small" elementName="min" isEach="true" isfinal="true"/>
+        <modifications expression="&quot;F/m&quot;" elementName="unit" isEach="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="useInternalGround" description="&quot;= true if internal ground is used, otherwise use reference pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+        <annotations expression="true" elementName="HideResult"/>
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications expression="true" elementName="checkBox"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="alpha_R" description="&quot;Temperature coefficient of resistance (R_actual = R*(1 + alpha*(heatPort.T - T_ref))&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="alpha_G" description="&quot;Temperature coefficient of conductance (G_actual = G/(1 + alpha*(heatPort.T - T_ref))&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="useHeatPort" description="&quot;= true, if heatPort is enabled&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+        <annotations expression="true" elementName="HideResult"/>
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications expression="true" elementName="checkBox"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="293.15" declarationName="T" description="&quot;Fixed device temperature if useHeatPort = false&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="not useHeatPort" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="300.15" declarationName="T_ref" description="&quot;Reference temperature&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
+      <component_list declarationName="heatPort" isAnnotation="true" isAnnotationOver="true" condition_attribute="useHeatPort">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" classType="model" className="segment" description="&quot;Multiple line segment model&quot;" isLongClassSpecifier="true" classNameEnd="segment" isOver="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" expression="3" declarationName="lines" description="&quot;Number of lines&quot;">
+          <modifications expression="1" elementName="min" isfinal="true"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="div(lines*(lines + 1), 2)" declarationName="dim_vector_lgc" description="&quot;Length of the vectors for l, g, c&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+        <component_list subscripts="[lines]" declarationName="p" description="&quot;Positive pin&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+            </modifications>
+            <modifications isModificationOver="true" elementName="iconTransformation">
+              <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+        <component_list subscripts="[lines]" declarationName="n" description="&quot;Negative pin&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+            </modifications>
+            <modifications isModificationOver="true" elementName="iconTransformation">
+              <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+        <component_list declarationName="refPin" description="&quot;Reference pin&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-10,-110},{10,-90}}" elementName="extent"/>
+            </modifications>
+            <modifications isModificationOver="true" elementName="iconTransformation">
+              <modifications expression="{{-10,-110},{10,-90}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list subscripts="[dim_vector_lgc]" expression="fill(1, dim_vector_lgc)" declarationName="Cl" description="&quot;Capacitance matrix&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list subscripts="[lines]" expression="fill(7, lines)" declarationName="Rl" description="&quot;Resistance matrix&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list subscripts="[dim_vector_lgc]" expression="fill(2, dim_vector_lgc)" declarationName="Ll" description="&quot;Inductance matrix&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list subscripts="[dim_vector_lgc]" expression="fill(1, dim_vector_lgc)" declarationName="Gl" description="&quot;Conductance matrix&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+        <component_list declarationName="alpha_R" description="&quot;Temperature coefficient of resistance (R_actual = R*(1 + alpha*(heatPort.T - T_ref))&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+        <component_list declarationName="alpha_G" description="&quot;Temperature coefficient of conductance (G_actual = G/(1 + alpha*(heatPort.T - T_ref))&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+        <component_list expression="false" declarationName="useHeatPort" description="&quot;= true, if heatPort is enabled&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations expression="true" elementName="Evaluate"/>
+          <annotations expression="true" elementName="HideResult"/>
+          <annotations isModificationOver="true" elementName="choices">
+            <modifications expression="true" elementName="checkBox"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+        <component_list expression="293.15" declarationName="T" description="&quot;Fixed device temperature if useHeatPort = false&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="not useHeatPort" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+        <component_list declarationName="T_ref"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
+        <component_list declarationName="heatPort" isAnnotation="true" isAnnotationOver="true" condition_attribute="useHeatPort">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+            </modifications>
+            <modifications isModificationOver="true" elementName="iconTransformation">
+              <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Capacitor" isOver="true">
+        <component_list subscripts="[dim_vector_lgc]" isModificationOver="true" declarationName="C">
+          <modifications expression="Cl" elementName="C"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+        <component_list subscripts="[lines]" isModificationOver="true" declarationName="R">
+          <modifications expression="Rl" elementName="R"/>
+          <modifications expression="fill(T_ref, lines)" elementName="T_ref"/>
+          <modifications expression="fill(alpha_R, lines)" elementName="alpha"/>
+          <modifications expression="fill(useHeatPort, lines)" elementName="useHeatPort"/>
+          <modifications expression="fill(T, lines)" elementName="T"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Conductor" isOver="true">
+        <component_list subscripts="[dim_vector_lgc]" isModificationOver="true" declarationName="G">
+          <modifications expression="Gl" elementName="G"/>
+          <modifications expression="fill(T_ref, dim_vector_lgc)" elementName="T_ref"/>
+          <modifications expression="fill(alpha_G, dim_vector_lgc)" elementName="alpha"/>
+          <modifications expression="fill(useHeatPort, dim_vector_lgc)" elementName="useHeatPort"/>
+          <modifications expression="fill(T, dim_vector_lgc)" elementName="T"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.M_Transformer" isOver="true">
+        <component_list isModificationOver="true" declarationName="inductance">
+          <modifications expression="lines" elementName="N"/>
+          <modifications expression="Ll" elementName="L"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.Short" isOver="true">
+        <component_list declarationName="M" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+              <modifications expression="270" elementName="rotation"/>
+              <modifications expression="{0,-70}" elementName="origin"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:ForEquation" forIndices="j in 1:lines - 1">
+          <forEquations xsi:type="mOloc:ConnectEquation" left="R[j].p" right="p[j]"/>
+          <forEquations xsi:type="mOloc:ConnectEquation" left="R[j].n" right="inductance.p[j]"/>
+          <forEquations xsi:type="mOloc:ConnectEquation" left="inductance.n[j]" right="n[j]"/>
+          <forEquations xsi:type="mOloc:ConnectEquation" left="inductance.n[j]" right="C[((1 + (j - 1)*lines) - div(((j - 2)*(j - 1)), 2 ) ) ] .p"/>
+          <forEquations xsi:type="mOloc:ConnectEquation" left="C[((1 + (j - 1)*lines) - div(((j - 2)*(j - 1)), 2))].n" right="M.p"/>
+          <forEquations xsi:type="mOloc:ConnectEquation" left="inductance.n[j]" right="G[((1 + (j - 1)*lines) - div(((j - 2)*(j - 1)), 2 ) ) ] .p"/>
+          <forEquations xsi:type="mOloc:ConnectEquation" left="G[((1 + (j - 1)*lines) - div(((j - 2)*(j - 1)), 2))].n" right="M.p"/>
+          <forEquations xsi:type="mOloc:ForEquation" forIndices="i in j + 1:lines">
+            <forEquations xsi:type="mOloc:ConnectEquation" left="inductance.n[j]" right="C[((1 + (j - 1)*lines) - div(((j - 2)*(j - 1)), 2 ) ) + 1 + i - (j + 1) ] .p"/>
+            <forEquations xsi:type="mOloc:ConnectEquation" left="C[((1 + (j - 1)*lines) - div(((j - 2)*(j - 1)), 2)) + 1 + i - (j + 1) ] .n" right="inductance.n[i]"/>
+            <forEquations xsi:type="mOloc:ConnectEquation" left="inductance.n[j]" right="G[((1 + (j - 1)*lines) - div(((j - 2)*(j - 1)), 2 ) ) + 1 + i - (j + 1) ] .p"/>
+            <forEquations xsi:type="mOloc:ConnectEquation" left="G[((1 + (j - 1)*lines) - div(((j - 2)*(j - 1)), 2)) + 1 + i - (j + 1) ] .n" right="inductance.n[i]"/>
+          </forEquations>
+        </equations>
+        <equations xsi:type="mOloc:ConnectEquation" left="R[lines].p" right="p[lines]"/>
+        <equations xsi:type="mOloc:ConnectEquation" left="R[lines].n" right="inductance.p[lines]"/>
+        <equations xsi:type="mOloc:ConnectEquation" left="inductance.n[lines]" right="n[lines]"/>
+        <equations xsi:type="mOloc:ConnectEquation" left="inductance.n[lines]" right="C[dim_vector_lgc].p"/>
+        <equations xsi:type="mOloc:ConnectEquation" left="C[dim_vector_lgc].n" right="M.p"/>
+        <equations xsi:type="mOloc:ConnectEquation" left="inductance.n[lines]" right="G[dim_vector_lgc].p"/>
+        <equations xsi:type="mOloc:ConnectEquation" left="G[dim_vector_lgc].n" right="M.p"/>
+        <equations xsi:type="mOloc:IfEquation" condition="useHeatPort">
+          <ifEquations xsi:type="mOloc:ForEquation" forIndices="j in 1:lines - 1">
+            <forEquations xsi:type="mOloc:ConnectEquation" left="heatPort" right="R[j].heatPort"/>
+            <forEquations xsi:type="mOloc:ConnectEquation" left="heatPort" right="G[((1 + (j - 1)*lines) - div(((j - 2)*(j - 1)), 2))].heatPort"/>
+            <forEquations xsi:type="mOloc:ForEquation" forIndices="i in j + 1:lines">
+              <forEquations xsi:type="mOloc:ConnectEquation" left="heatPort" right="G[((1 + (j - 1)*lines) - div(((j - 2)*(j - 1)), 2)) + 1 + i - (j + 1) ] .heatPort"/>
+            </forEquations>
+          </ifEquations>
+          <ifEquations xsi:type="mOloc:ConnectEquation" left="heatPort" right="R[lines].heatPort"/>
+          <ifEquations xsi:type="mOloc:ConnectEquation" left="heatPort" right="G[dim_vector_lgc].heatPort"/>
+        </equations>
+        <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="M.n" right="refPin">
+          <annotations isModificationOver="true" elementName="Line">
+            <modifications expression="{{-1.77636e-15,-80},{-1.77636e-15, -91 } ,{0,-91},{0,-100} }" elementName="points"/>
+            <modifications expression="{0,0,255}" elementName="color"/>
+          </annotations>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations expression="&quot;segment&quot;" elementName="defaultComponentName"/>
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Rectangle(extent={{40,-40},{-40,40}}, lineColor={0,0,255} ) , Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>The segment model is part of the multiple line model. It describes one line segment as outlined in the M_OLine description. Using the loop possibilities of Modelica it is formulated by connecting components the number of which depends on the number of lines.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" classType="model" className="segment_last" description="&quot;Multiple line last segment model&quot;" isLongClassSpecifier="true" classNameEnd="segment_last" isOver="true">
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+        <component_list subscripts="[lines]" declarationName="p" description="&quot;Positive pin&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+            </modifications>
+            <modifications isModificationOver="true" elementName="iconTransformation">
+              <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+        <component_list subscripts="[lines]" declarationName="n" description="&quot;Negative pin&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+            </modifications>
+            <modifications isModificationOver="true" elementName="iconTransformation">
+              <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" expression="3" declarationName="lines" description="&quot;Number of lines&quot;">
+          <modifications expression="1" elementName="min" isfinal="true"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="div(lines*(lines + 1), 2)" declarationName="dim_vector_lgc" description="&quot;Length of the vectors for l, g, c&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list subscripts="[lines]" expression="fill(1, lines)" declarationName="Rl" description="&quot;Resistance matrix&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list subscripts="[dim_vector_lgc]" expression="fill(1, dim_vector_lgc)" declarationName="Ll" description="&quot;Inductance matrix&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+        <component_list declarationName="alpha_R" description="&quot;Temperature coefficient of resistance (R_actual = R*(1 + alpha*(heatPort.T - T_ref))&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+        <component_list expression="false" declarationName="useHeatPort" description="&quot;= true, if HeatPort is enabled&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations expression="true" elementName="Evaluate"/>
+          <annotations expression="true" elementName="HideResult"/>
+          <annotations isModificationOver="true" elementName="choices">
+            <modifications expression="true" elementName="checkBox"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+        <component_list expression="293.15" declarationName="T" description="&quot;Fixed device temperature if useHeatPort = false&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="not useHeatPort" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" declarationName="T_ref">
+          <modifications expression="293.15" elementName="start"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
+        <component_list declarationName="heatPort" isAnnotation="true" isAnnotationOver="true" condition_attribute="useHeatPort">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+            </modifications>
+            <modifications isModificationOver="true" elementName="iconTransformation">
+              <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+        <component_list subscripts="[lines]" isModificationOver="true" declarationName="R">
+          <modifications expression="Rl" elementName="R"/>
+          <modifications expression="fill(T_ref, lines)" elementName="T_ref"/>
+          <modifications expression="fill(useHeatPort, lines)" elementName="useHeatPort"/>
+          <modifications expression="fill(T, lines)" elementName="T"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.M_Transformer" isOver="true">
+        <component_list isModificationOver="true" declarationName="inductance">
+          <modifications expression="lines" elementName="N"/>
+          <modifications expression="Ll" elementName="L"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:ForEquation" forIndices="j in 1:lines - 1">
+          <forEquations xsi:type="mOloc:ConnectEquation" left="p[j]" right="inductance.p[j]"/>
+          <forEquations xsi:type="mOloc:ConnectEquation" left="inductance.n[j]" right="R[j].p"/>
+          <forEquations xsi:type="mOloc:ConnectEquation" left="R[j].n" right="n[j]"/>
+        </equations>
+        <equations xsi:type="mOloc:ConnectEquation" left="p[lines]" right="inductance.p[lines]"/>
+        <equations xsi:type="mOloc:ConnectEquation" left="inductance.n[lines]" right="R[lines].p"/>
+        <equations xsi:type="mOloc:ConnectEquation" left="R[lines].n" right="n[lines]"/>
+        <equations xsi:type="mOloc:IfEquation" condition="useHeatPort">
+          <ifEquations xsi:type="mOloc:ForEquation" forIndices="j in 1:lines - 1">
+            <forEquations xsi:type="mOloc:ConnectEquation" left="heatPort" right="R[j].heatPort"/>
+          </ifEquations>
+          <ifEquations xsi:type="mOloc:ConnectEquation" left="heatPort" right="R[lines].heatPort"/>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations expression="&quot;segment&quot;" elementName="defaultComponentName"/>
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Rectangle(extent={{20,-40},{-20,40}}, lineColor={0,0,255} ) , Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>The segment_last model is part of the multiple line model. It describes the special  line segment which is used to get the line symmetrical as outlined in the M_OLine description. Using the loop possibilities of Modelica it is formulated by connecting components the number of which depends on the number of lines.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="segment" isOver="true">
+      <component_list subscripts="[N - 1]" isModificationOver="true" declarationName="s">
+        <modifications expression="fill(lines, N - 1)" elementName="lines"/>
+        <modifications expression="fill(dim_vector_lgc, N - 1)" elementName="dim_vector_lgc"/>
+        <modifications expression="fill(r*length/N, N - 1)" elementName="Rl"/>
+        <modifications expression="fill(l*length/N, N - 1)" elementName="Ll"/>
+        <modifications expression="fill(c*length/N, N - 1)" elementName="Cl"/>
+        <modifications expression="fill(g*length/N, N - 1)" elementName="Gl"/>
+        <modifications expression="fill(alpha_R, N - 1)" elementName="alpha_R"/>
+        <modifications expression="fill(alpha_G, N - 1)" elementName="alpha_G"/>
+        <modifications expression="fill(T_ref, N - 1)" elementName="T_ref"/>
+        <modifications expression="fill(useHeatPort, N - 1)" elementName="useHeatPort"/>
+        <modifications expression="fill(T, N - 1)" elementName="T"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="segment" isOver="true">
+      <component_list isModificationOver="true" declarationName="s_first">
+        <modifications expression="lines" elementName="lines"/>
+        <modifications expression="dim_vector_lgc" elementName="dim_vector_lgc"/>
+        <modifications expression="r*length/(2*N)" elementName="Rl"/>
+        <modifications expression="c*length/(N)" elementName="Cl"/>
+        <modifications expression="l*length/(2*N)" elementName="Ll"/>
+        <modifications expression="g*length/(N)" elementName="Gl"/>
+        <modifications expression="alpha_R" elementName="alpha_R"/>
+        <modifications expression="alpha_G" elementName="alpha_G"/>
+        <modifications expression="T_ref" elementName="T_ref"/>
+        <modifications expression="useHeatPort" elementName="useHeatPort"/>
+        <modifications expression="T" elementName="T"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="segment_last" isOver="true">
+      <component_list isModificationOver="true" declarationName="s_last">
+        <modifications expression="lines" elementName="lines"/>
+        <modifications expression="r*length/(2*N)" elementName="Rl"/>
+        <modifications expression="l*length/(2*N)" elementName="Ll"/>
+        <modifications expression="alpha_R" elementName="alpha_R"/>
+        <modifications expression="T_ref" elementName="T_ref"/>
+        <modifications expression="useHeatPort" elementName="useHeatPort"/>
+        <modifications expression="T" elementName="T"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list subscripts="[lines]" declarationName="p" description="&quot;Positive pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-60},{-90,60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list subscripts="[lines]" declarationName="n" description="&quot;Negative pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-60},{110,60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="refPin" description="&quot;Reference pin&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useInternalGround">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-110},{10,-90}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-10,-110},{10,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true" condition_attribute="useInternalGround">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-80},{10,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" left="p" right="s_first.p"/>
+      <equations xsi:type="mOloc:ConnectEquation" left="s_first.n" right="s[1].p"/>
+      <equations xsi:type="mOloc:ForEquation" forIndices="i in 1:N - 2">
+        <forEquations xsi:type="mOloc:ConnectEquation" left="s[i].n" right="s[i + 1].p"/>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" left="s[N - 1].n" right="s_last.p"/>
+      <equations xsi:type="mOloc:ConnectEquation" left="s_last.n" right="n"/>
+      <equations xsi:type="mOloc:ConnectEquation" left="s_first.refPin" right="refPin"/>
+      <equations xsi:type="mOloc:ConnectEquation" left="s_first.refPin" right="ground.p"/>
+      <equations xsi:type="mOloc:ForEquation" forIndices="i in 1:N-1">
+        <forEquations xsi:type="mOloc:ConnectEquation" left="s[i].refPin" right="refPin"/>
+        <forEquations xsi:type="mOloc:ConnectEquation" left="s[i].refPin" right="ground.p"/>
+      </equations>
+      <equations xsi:type="mOloc:IfEquation" condition="useHeatPort">
+        <ifEquations xsi:type="mOloc:ConnectEquation" left="heatPort" right="s_first.heatPort"/>
+        <ifEquations xsi:type="mOloc:ForEquation" forIndices="i in 1:N - 1">
+          <forEquations xsi:type="mOloc:ConnectEquation" left="heatPort" right="s[i].heatPort"/>
+        </ifEquations>
+        <ifEquations xsi:type="mOloc:ConnectEquation" left="heatPort" right="s_last.heatPort"/>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;line&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Rectangle( extent={{80,80},{-80,-80}}, lineColor={0,0,255}, fillPattern=FillPattern.Solid, fillColor={255,255,255} ) , Line(points={{40,60},{40,40}}), Line(points={{40,50},{-40,50}}), Line(points={{-40,60},{-40,40}}), Line(points={{40,-40},{40,-60}}), Line(points={{40,-50},{-40,-50}}), Line(points={{-40,-40},{-40,-60}}), Line(points={{40,30},{40,10}}), Line(points={{40,20},{-40,20}}), Line(points={{-40,30},{-40,10}}), Line( points={{0,6},{0,-34}}, color={0,0,255}, pattern=LinePattern.Dot ) , Text( extent={{-150,130},{150,90}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>The &lt;code>M_OLine&lt;/code> is a multi line model which consists of several segments &#xA;and several single lines. Each segment consists of resistors and inductors that &#xA;are connected in series in each single line, and of capacitors and conductors both &#xA;between the lines and to the ground. The inductors are coupled to each other like in the&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Basic.M_Transformer\&quot;>M_Transformer&lt;/a> model. &#xA;The following picture shows the schematic of a segment with four single lines (lines=4):&lt;/p>&#xA;&#xA;&lt;blockquote>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Lines/segment.png\&quot;&#xA;     alt=\&quot;segment.png\&quot;>&#xA;&lt;/blockquote>&#xA;&#xA;&lt;p>Note that the user can choose whether the optional &amp;quot;refPin&amp;quot; &#xA;is active (so that it can be connected to any other pin), &#xA;otherwise the internal &amp;quot;ground&amp;quot; is used. &#xA;This is done with the checkbox useInternalGround, true by default&#xA; (for compatibility with previous versions).&#xA;Obviously the  potential of the internal ground is always zero, &#xA;its current can be accessed for plotting.&lt;/p>&#xA;&#xA;&lt;p>The complete multi line consists of N segments and an auxiliary segment_last:&lt;/p>&#xA;&#xA;&lt;p align=\&quot;center\&quot;>&lt;code>-- segment_1 -- segment_2 -- ... -- segment_N -- segment_last --&lt;/code>&lt;/p>&#xA;&#xA;&lt;p>In the picture of the segment can be seen, that a single segment is asymmetric. &#xA;Connecting such asymmetric segments in a series forces also an asymmetric multi line. &#xA;To get a symmetric model which is useful for coupling and which guaranties the same pin properties, &#xA;in the &lt;code>segment_1&lt;/code> only half valued resistors and inductors are used. &#xA;The remaining resistors and inductors are at the other end of the line within &#xA;the auxiliary segment_last. For the example with 4 lines the schematic of &#xA;&lt;code>segment_last&lt;/code> is like this:&lt;/p>&#xA;&#xA;&lt;blockquote>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Lines/segment_last.png\&quot;&#xA;     alt=\&quot;segment_last.png\&quot;>&#xA;&lt;/blockquote>&#xA;&#xA;&lt;p>The number of the capacitors and conductors depends on the number of single lines that are used,&#xA;because each line is connected to every other line by both a capacitor and a conductor. &#xA;One line consists of &lt;strong>at least two segments&lt;/strong>. &#xA;Inside the model &lt;code>M_OLine&lt;/code> the model &lt;code>segment&lt;/code> is used. &#xA;This model represents one segment which is build as described above. &#xA;For modelling the inductances and their mutual couplings the model &#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Basic.M_Transformer\&quot;>M_Transformer&lt;/a> is used. &#xA;To fill the resistance vector, resistance values as many as lines are needed, e.g., &#xA;if there are four lines, four resistances are needed. For example for a microelectronic line &#xA;of 0.1m length, a sensible resistance-vector would be R=[4.76e5, 1.72e5, 1.72e5, 1.72e5].&lt;/p>&#xA;&#xA;&lt;p>Filling the matrices of the inductances, capacitances and conductances is a bit more complicated,&#xA;because those components occur also between two lines and not only (like the resistor) in one line.&#xA;The entries of the matrices are given by the user in form of a vector. &#xA;The vector length &lt;code>dim_vector_lgc&lt;/code> is calculated by:&lt;/p>&#xA;&#xA;&lt;blockquote>&#xA;&lt;pre>dim_vector_lgc = lines*(lines+1)/2&lt;/pre>&#xA;&lt;/blockquote>&#xA;&#xA;&lt;p>Inside the model a symmetric inductance matrix, a symmetric capacitance matrix and&#xA;a symmetric conductance matrix are built out of the entries of the vectors given by the user. &#xA;The way of building is the same for each matrix, so the approach for filling one of the matrices&#xA;will be shown in the the examplebelow.&lt;/p>&#xA;&#xA;&lt;h5>Example&lt;/h5>&#xA;&#xA;&lt;p>The number of lines is assumed to be four. To build the matrix, the model needs the &#xA;values from the main diagonal and from the positions that are below the main diagonal. &#xA;To get the following matrix&lt;/p>&#xA;&#xA;&lt;blockquote>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Lines/M_OLine-eqMatrix.png\&quot; alt=\&quot;Matrix\&quot;/>&#xA;&lt;/blockquote>&#xA;&#xA;&lt;p>the vector with dim_vector_lgc=4*5/2=10 has to appear in the following way: &#xA;vector = [&lt;strong>1&lt;/strong>, 0.1, 0.2, 0.4, &lt;strong>2&lt;/strong>, 0.3 0.5, &lt;strong>3&lt;/strong>, 0.6, &lt;strong>4&lt;/strong>]&lt;/p>&#xA;&#xA;&lt;p>For the example of a microelectronic line of 0.1m length, &#xA;which is used as default example for the &lt;code>M_OLine&lt;/code> model, &#xA;a sensible inductance-matrix would be:&lt;/p>&#xA;&#xA;&lt;blockquote>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Lines/M_OLine-eqL.png\&quot; alt=\&quot;L\&quot;/>&#xA;&lt;/blockquote>&#xA;&#xA;&lt;p>For the example of a microelectronic line of 0.1m length, which is used as default example &#xA;for the &lt;code>M_OLine&lt;/code> model, a sensible capacitance-matrix would be:&lt;/p>&#xA;&#xA;&lt;blockquote>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Lines/M_OLine-eqC.png\&quot; alt=\&quot;C\&quot;/>&#xA;&lt;/blockquote>&#xA;&#xA;&lt;p>For the example of a microelectronic line of 0.1m length, which is used as default example &#xA;for the &lt;code>M_OLine&lt;/code> model, a sensible conductance-matrix would be:&lt;/p>&#xA;&#xA;&lt;blockquote>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Lines/M_OLine-eqG.png\&quot; alt=\&quot;G\&quot;/>&#xA;&lt;/blockquote>&#xA;&#xA;&lt;p>The user has the possibility to enable a conditional heatport. If so, the &lt;code>M_OLine&lt;/code> &#xA;can be connected to a thermal network. When the parameter &lt;code>alpha&lt;/code> is set to a value greater than zero,&#xA;the &lt;code>M_OLine&lt;/code> becomes temperature sensitive due to their resistors which resistances &#xA;are calculated by&lt;/p>&#xA;&#xA;&lt;blockquote>&#xA;&lt;pre>R_actual = R*(1 + alpha*(heatPort.T - T_ref))&lt;/pre>&#xA;&lt;/blockquote>&#xA;&#xA;&lt;p>and conductors calculated by&lt;/p> &#xA;&#xA;&lt;blockquote>&#xA;&lt;pre>G_actual = G/(1 + alpha*(heatPort.T - T_ref))&lt;/pre>&#xA;&lt;/blockquote>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&#xA;    &lt;tr>&#xA;      &lt;th>Version&lt;/th>&#xA;      &lt;th>Revision&lt;/th>&#xA;      &lt;th>Date&lt;/th>&#xA;      &lt;th>Author&lt;/th>&#xA;      &lt;th>Comment&lt;/th>&#xA;    &lt;/tr>&#xA;   &lt;tr>&#xA;      &lt;td>&lt;/td>&#xA;      &lt;td>4163&lt;/td>&#xA;      &lt;td>2010-09-11&lt;/td>&#xA;      &lt;td>Dietmar Winkler&lt;/td>&#xA;      &lt;td>Documentation corrected according to documentation guidelines.&lt;/td>&#xA;    &lt;/tr>&#xA;    &lt;tr>&#xA;      &lt;td>&lt;/td>&#xA;      &lt;td>&lt;/td>&#xA;      &lt;td>2008-11-24&lt;/td>&#xA;      &lt;td>Kristin Majetta&lt;/td>&#xA;      &lt;td>Documentation added.&lt;/td>&#xA;    &lt;/tr>&#xA;    &lt;tr>&#xA;      &lt;td>&lt;/td>&#xA;      &lt;td>&lt;/td>&#xA;      &lt;td>2007-02-26&lt;/td>&#xA;      &lt;td>Kristin Majetta&lt;/td>&#xA;      &lt;td>Initially implemented&lt;/td>&#xA;    &lt;/tr>&#xA;&lt;/table>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

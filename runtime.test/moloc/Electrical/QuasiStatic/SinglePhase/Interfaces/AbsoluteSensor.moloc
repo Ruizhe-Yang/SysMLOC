@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces">
+  <classes isPartial="true" classType="model" className="AbsoluteSensor" description="&quot;Partial potential sensor&quot;" isLongClassSpecifier="true" classNameEnd="AbsoluteSensor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.RoundSensor" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularVelocity" isOver="true">
+      <component_list declarationName="omega"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="PositivePin" isOver="true">
+      <component_list declarationName="pin" description="&quot;Positive quasi-static single-phase pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110, -10 } ,{-90,10} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="omega" right="der(pin.reference.gamma)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="pin.i" right="Complex(0)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line(points={{-70,0},{-94,0}}, color={85,170,255}), Text( extent={{-150,120},{150,80}}, textColor={0,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The absolute sensor partial model provides a single&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.PositivePin\&quot;>positive pin&lt;/a>&#xA;to measure the complex voltage, frequency, angular frequency. Additionally this model contains&#xA;a proper icon and a definition of the angular velocity.&#xA;&lt;/p>&#xA;&#xA;&lt;h4>See also&lt;/h4>&#xA;&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.RelativeSensorElementary\&quot;>RelativeSensorElementary&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sensors.PotentialSensor\&quot;>PotentialSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Interfaces.AbsoluteSensor\&quot;>Polyphase.Interfaces.AbsoluteSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Interfaces.RelativeSensorElementary\&quot;>Polyphase.Interfaces.RelativeSensorElementary&lt;/a>&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

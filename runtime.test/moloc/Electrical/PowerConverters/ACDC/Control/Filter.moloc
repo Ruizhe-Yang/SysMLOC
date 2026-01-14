@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.ACDC.Control">
+  <classes classType="block" className="Filter" description="&quot;PT1 + all-pass filter&quot;" isLongClassSpecifier="true" classNameEnd="Filter" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SISO" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="50" declarationName="f" description="&quot;Mains Frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="2*f" declarationName="fCut" description="&quot;Cut off frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list isModificationOver="true" expression="2" declarationName="na" description="&quot;Count of 1st order all-pass&quot;">
+        <modifications expression="2" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="f/tan(pi/na - atan(f/fCut) /(2*na) )" declarationName="fa" description="&quot;Characteristic frequency of all-pass filter&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="yStart" description="&quot;Start value of output&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Continuous.FirstOrder" isOver="true">
+      <component_list isModificationOver="true" declarationName="firstOrder" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="k" isfinal="true"/>
+        <modifications expression="1/(2*pi*fCut)" elementName="T" isfinal="true"/>
+        <modifications expression="Modelica.Blocks.Types.Init.InitialOutput" elementName="initType"/>
+        <modifications expression="yStart" elementName="y_start"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-60,-10},{-40,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Continuous.TransferFunction" isOver="true">
+      <component_list subscripts="[na]" isModificationOver="true" declarationName="transferFunction" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="{-1/(2*pi*fa),1}" elementName="b" isEach="true" isfinal="true"/>
+        <modifications expression="{+1/(2*pi*fa),1}" elementName="a" isEach="true" isfinal="true"/>
+        <modifications expression="Modelica.Blocks.Types.Init.InitialOutput" elementName="initType" isEach="true"/>
+        <modifications expression="yStart" elementName="y_start" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,-10},{60,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ForEquation" forIndices="j in 1:na - 1">
+        <forEquations xsi:type="mOloc:ConnectEquation" left="transferFunction[j].y" right="transferFunction[j + 1].u"/>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u" right="firstOrder.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-120,0},{-62,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="firstOrder.y" right="transferFunction[1].u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-39,0},{38,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="transferFunction[na].y" right="y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{61,0},{110,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>First order filter with cut-off frequency &lt;code>fCut&lt;/code>. The phase shift of the filter is compensated by a series of two first order all-pass filters tuned on supply frequency &lt;code>f&lt;/code>.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Polygon( lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{-80,90},{-88,68},{-72,68},{-80,90}} ) ,Line( points={{-80,78},{-80,-90}}, color={192,192,192} ) ,Polygon( lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{90,-80},{68,-72},{68,-88},{90,-80}} ) ,Line( points={{-90,-80},{82,-80}}, color={192,192,192} ) ,Rectangle( lineColor={160,160,164}, fillColor={255,255,255}, fillPattern=FillPattern.Backward, extent={{-80,-80},{22,8}} ) ,Line( origin={3.333,-8.667}, points={{-83.333,34.667},{24.667,34.667},{42.667,-71.333}}, color={0,0,127}, smooth=Smooth.Bezier ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

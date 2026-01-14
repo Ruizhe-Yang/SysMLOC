@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.Utilities">
+  <classes classType="block" className="Impedance" description="&quot;Calculate complex impedance&quot;" isLongClassSpecifier="true" classNameEnd="Impedance" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Icons.Block" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.sum" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Batteries.ParameterRecords.TransientData.CellData" parameterType="parameter" isOver="true">
+      <component_list declarationName="cellData" description="&quot;Transient cell data&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="f" description="&quot;Frequency&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;Hz&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="z" description="&quot;Complex impedance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="re">
+          <modifications expression="&quot;Ohm&quot;" elementName="unit"/>
+        </modifications>
+        <modifications isModificationOver="true" elementName="im">
+          <modifications expression="&quot;Ohm&quot;" elementName="unit"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="z" right="Complex(cellData.R0, 0) + sum({1/Complex(1/cellData.rcData[k].R, 2*pi*f*cellData.rcData[k].C) for k in 1:cellData.nRC})"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Calculates the complex cell impedance from given cell data and frequency.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Ellipse( extent={{-42,60},{78,-60}}, lineColor={0,0,0}, startAngle=0, endAngle=141, closure=EllipseClosure.None ) , Polygon( points={{-82,90},{-90,68},{-74,68},{-82,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-82,-80},{-82,68}}, color={192,192,192} ) , Line(points={{-82,0},{76,0}}, color={192,192,192}), Polygon( points={{98,0},{76,8},{76,-8},{98,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Ellipse( extent={{-82,40},{-2,-40}}, lineColor={0,0,0}, startAngle=70, endAngle=180, closure=EllipseClosure.None ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

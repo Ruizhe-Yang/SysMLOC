@@ -10,12 +10,15 @@ import dut.control.moloc.mOloc.class_modification;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -29,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.ConstrainingClauseImpl#getModifications <em>Modifications</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ConstrainingClauseImpl#isIsModificationOver <em>Is Modification Over</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,6 +48,26 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
    * @ordered
    */
   protected EList<ModificationElement> modifications;
+
+  /**
+   * The default value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_MODIFICATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isModificationOver = IS_MODIFICATION_OVER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -87,6 +111,31 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
    * @generated
    */
   @Override
+  public boolean isIsModificationOver()
+  {
+    return isModificationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsModificationOver(boolean newIsModificationOver)
+  {
+    boolean oldIsModificationOver = isModificationOver;
+    isModificationOver = newIsModificationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CONSTRAINING_CLAUSE__IS_MODIFICATION_OVER, oldIsModificationOver, isModificationOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -109,6 +158,8 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
     {
       case MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS:
         return getModifications();
+      case MOlocPackage.CONSTRAINING_CLAUSE__IS_MODIFICATION_OVER:
+        return isIsModificationOver();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -128,6 +179,9 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
         getModifications().clear();
         getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
+      case MOlocPackage.CONSTRAINING_CLAUSE__IS_MODIFICATION_OVER:
+        setIsModificationOver((Boolean)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -145,6 +199,9 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
       case MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS:
         getModifications().clear();
         return;
+      case MOlocPackage.CONSTRAINING_CLAUSE__IS_MODIFICATION_OVER:
+        setIsModificationOver(IS_MODIFICATION_OVER_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -161,6 +218,8 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
     {
       case MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS:
         return modifications != null && !modifications.isEmpty();
+      case MOlocPackage.CONSTRAINING_CLAUSE__IS_MODIFICATION_OVER:
+        return isModificationOver != IS_MODIFICATION_OVER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -178,6 +237,7 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
       switch (derivedFeatureID)
       {
         case MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
+        case MOlocPackage.CONSTRAINING_CLAUSE__IS_MODIFICATION_OVER: return MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -197,10 +257,28 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
       switch (baseFeatureID)
       {
         case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS;
+        case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER: return MOlocPackage.CONSTRAINING_CLAUSE__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
     return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (isModificationOver: ");
+    result.append(isModificationOver);
+    result.append(')');
+    return result.toString();
   }
 
 } //ConstrainingClauseImpl

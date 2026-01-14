@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.IfStatement;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.Statement;
@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getIfStatements <em>If Statements</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getElseCondition <em>Else Condition</em>}</li>
@@ -97,7 +98,27 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
@@ -236,13 +257,38 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.IF_STATEMENT__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.IF_STATEMENT__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IF_STATEMENT__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
   }
 
   /**
@@ -368,6 +414,8 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
         return isIsAnnotation();
       case MOlocPackage.IF_STATEMENT__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.IF_STATEMENT__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
       case MOlocPackage.IF_STATEMENT__CONDITION:
         return getCondition();
       case MOlocPackage.IF_STATEMENT__IF_STATEMENTS:
@@ -401,7 +449,10 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
         return;
       case MOlocPackage.IF_STATEMENT__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.IF_STATEMENT__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
         return;
       case MOlocPackage.IF_STATEMENT__CONDITION:
         setCondition((String)newValue);
@@ -445,6 +496,9 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
       case MOlocPackage.IF_STATEMENT__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.IF_STATEMENT__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.IF_STATEMENT__CONDITION:
         setCondition(CONDITION_EDEFAULT);
         return;
@@ -480,6 +534,8 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.IF_STATEMENT__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.IF_STATEMENT__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
       case MOlocPackage.IF_STATEMENT__CONDITION:
         return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
       case MOlocPackage.IF_STATEMENT__IF_STATEMENTS:
@@ -516,6 +572,7 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
       {
         case MOlocPackage.IF_STATEMENT__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.IF_STATEMENT__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.IF_STATEMENT__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -551,6 +608,7 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.IF_STATEMENT__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.IF_STATEMENT__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.IF_STATEMENT__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -579,6 +637,8 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
     result.append(description);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
     result.append(", condition: ");
     result.append(condition);
     result.append(", elseCondition: ");

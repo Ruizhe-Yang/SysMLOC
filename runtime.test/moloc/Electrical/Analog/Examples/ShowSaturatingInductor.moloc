@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples">
+  <classes classType="model" className="ShowSaturatingInductor" description="&quot;Simple demo to show behaviour of SaturatingInductor component&quot;" isLongClassSpecifier="true" classNameEnd="ShowSaturatingInductor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="2" declarationName="Lzer" description="&quot;Inductance near current=0&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="Lnom" description="&quot;Nominal inductance at Nominal current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="Inom" description="&quot;Nominal current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="0.5" declarationName="Linf" description="&quot;Inductance at large currents&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="1.25" declarationName="U" description="&quot;Source voltage (peak)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="1/(2*Modelica.Constants.pi)" declarationName="f" description="&quot;Source frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+      <component_list expression="Modelica.Constants.pi/2" declarationName="phase" description="&quot;Source voltage phase shift&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SineVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="SineVoltage1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="U" elementName="V"/>
+        <modifications expression="phase" elementName="phase"/>
+        <modifications expression="f" elementName="f"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-60,-6}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="Ground1" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-70,-36},{-50,-16}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.SaturatingInductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="SaturatingInductance1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Lzer" elementName="Lzer"/>
+        <modifications expression="Lnom" elementName="Lnom"/>
+        <modifications expression="Inom" elementName="Inom"/>
+        <modifications expression="Linf" elementName="Linf"/>
+        <modifications isModificationOver="true" elementName="i">
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-20,0}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Inductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="Inductance1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Lnom" elementName="L"/>
+        <modifications isModificationOver="true" elementName="i">
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{20,0}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="SineVoltage1.n" right="Ground1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,-16},{-60, -16 } }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="SineVoltage1.n" right="SaturatingInductance1.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,-16}, {-20,-16},{-20,-10} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="SaturatingInductance1.p" right="SineVoltage1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,10}, {-20,20},{-60,20},{-60,4} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Inductance1.p" right="SineVoltage1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,10},{20,20},{-60,20},{-60,4}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Inductance1.n" right="SineVoltage1.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,-10},{20,-16},{-60,-16}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-80,84},{70,38}}, textColor={0,0,255}, textString=&quot;Show Saturating Inductor&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="6.2832" elementName="StopTime"/>
+        <modifications expression="0.01" elementName="Interval"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This simple circuit uses the saturating inductor which has a changing inductance.&lt;/p>&#xA;&lt;p>This circuit should be simulated until 1 s. Compare &lt;code>SaturatingInductance1.p.i&lt;/code> with &lt;code>Inductance1.p.i&lt;/code> to see the difference between saturating and ideal inductor.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

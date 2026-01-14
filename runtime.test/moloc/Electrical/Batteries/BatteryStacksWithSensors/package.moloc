@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries">
+  <classes classType="package" className="BatteryStacksWithSensors" description="&quot;Battery cells and stacks with sensors&quot;" isLongClassSpecifier="true" classNameEnd="BatteryStacksWithSensors" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>Cells and stacks with measurement&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Rectangle(extent={{-13,20},{13,-20}}, lineColor={95,95,95}, fillColor={215,215,215}, fillPattern=FillPattern.HorizontalCylinder, origin={0,73}, rotation=90 ) , Rectangle(extent={{-70,50},{70,-50}}, lineColor={95,95,95}, fillColor={215,215,215}, fillPattern=FillPattern.HorizontalCylinder, origin={-7.10543e-15,-10}, rotation=90 ) , Polygon( points={{-40,25},{40,25},{50,15},{40,-20},{30,-25},{-30,-25},{-40,-20},{-50,15}}, fillColor={255,204,51}, fillPattern=FillPattern.Solid, smooth=Smooth.Bezier ) , Ellipse( extent={{-22.5,7.5},{-17.5,12.5}}, fillPattern=FillPattern.Solid ) , Ellipse( extent={{17.5,12.5},{22.5,7.5}}, fillPattern=FillPattern.Solid ) , Ellipse( extent={{-2.5,-7.5},{2.5,-12.5}}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

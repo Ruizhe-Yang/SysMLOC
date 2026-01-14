@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Utilities.ParameterRecords">
+  <classes classType="record" className="IM_SlipRingData" description="&quot;Common parameters for induction machines with slip ring&quot;" isLongClassSpecifier="true" classNameEnd="IM_SlipRingData" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="InductionMachineData" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="3*sqrt(1 - 0.0667)/(2*pi* fsNominal )" declarationName="Lm" description="&quot;Stator main field inductance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="3*(1 - sqrt(1 - 0.0667))/ (2*pi*fsNominal)/turnsRatio^2" declarationName="Lrsigma" description="&quot;Rotor stray inductance per phase w.r.t. rotor side&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="Lrsigma/turnsRatio^2" declarationName="Lrzero" description="&quot;Rotor zero sequence inductance w.r.t. rotor side&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="0.04/turnsRatio^2" declarationName="Rr" description="&quot;Rotor resistance per phase at TRef w.r.t. rotor side&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="293.15" declarationName="TrRef" description="&quot;Reference temperature of rotor resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="alpha20r" description="&quot;Temperature coefficient of rotor resistance at 20 degC&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="useTurnsRatio" description="&quot;Use turnsRatio or calculate from locked-rotor voltage?&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="VsNominal/VrLockedRotor*(2*pi*fsNominal*Lm)/sqrt(Rs^2 + (2*pi* fsNominal*(Lm + Lssigma) ) ^2 )" declarationName="turnsRatio" description="&quot;Effective number of stator turns / effective number of rotor turns&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="useTurnsRatio" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="100" declarationName="VsNominal" description="&quot;Nominal stator voltage per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="not useTurnsRatio" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="100*(2*pi*fsNominal*Lm) /sqrt(Rs^2 + (2*pi*fsNominal*(Lm + Lssigma))^2)" declarationName="VrLockedRotor" description="&quot;Locked-rotor voltage per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="not useTurnsRatio" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Losses.CoreParameters" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="rotorCoreParameters" description="&quot;Rotor core loss parameter record; all parameters refer to rotor side&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="3" elementName="m" isfinal="true"/>
+        <modifications expression="0" elementName="PRef"/>
+        <modifications expression="1" elementName="VRef"/>
+        <modifications expression="1" elementName="wRef"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Losses&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;imsData&quot;" elementName="defaultComponentName"/>
+      <annotations expression="&quot;parameter&quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>Basic parameters of induction machines with slip ring are predefined with default values.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

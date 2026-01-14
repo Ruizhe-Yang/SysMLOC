@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.Examples">
+  <classes classType="model" className="CCCV_Cell" description="&quot;Charge a cell with constant current - constant voltage characteristic&quot;" isLongClassSpecifier="true" classNameEnd="CCCV_Cell" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Batteries.ParameterRecords.ExampleData" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="cellData" description="&quot;Cell data&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="18000" elementName="Qnom"/>
+        <modifications expression="false" elementName="useLinearSOCDependency"/>
+        <modifications expression="4.2/1200" elementName="Ri"/>
+        <modifications expression="0.001" elementName="Idis"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-60},{10,-40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Batteries.Utilities.CCCVcharger" isOver="true">
+      <component_list isModificationOver="true" declarationName="cccvCharger" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="25" elementName="I"/>
+        <modifications expression="4.2" elementName="Vend"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-50,0}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-30,-40},{-10,-20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Batteries.BatteryStacksWithSensors.Cell" isOver="true">
+      <component_list isModificationOver="true" declarationName="cell" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="cellData" elementName="cellData"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Analog.Sensors.MultiSensor" isOver="true">
+      <component_list declarationName="multiSensor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-30,30},{-10,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Continuous.Integrator" isOver="true">
+      <component_list isModificationOver="true" declarationName="energy" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="u">
+          <modifications expression="&quot;W&quot;" elementName="unit"/>
+        </modifications>
+        <modifications isModificationOver="true" elementName="y">
+          <modifications expression="&quot;J&quot;" elementName="unit"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-60,24},{-80,44}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="cell.n" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-10},{0,-20},{-20,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ground.p" right="cccvCharger.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,-20},{-50,-20},{-50,-10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="cccvCharger.p" right="multiSensor.pc">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,10},{-50,40},{-30,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="multiSensor.pc" right="multiSensor.pv">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,40},{-30,50},{-20,50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="multiSensor.nc" right="cell.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,40},{0,40},{0,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ground.p" right="multiSensor.nv">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,-20},{-20,30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="multiSensor.power" right="energy.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-31,34},{-58,34}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="1200" elementName="StopTime"/>
+        <modifications expression="0.1" elementName="Interval"/>
+        <modifications expression="1e-06" elementName="Tolerance"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;A single cell depleted to &lt;code>SOC = 0.1&lt;/code> is recharged with a CC-CV charger.&#xA;Charging current in CC mode is 5C which means the battery is theoretically nearly fulled charged after &lt;code>0.9*3600 s/5 = 648 s&lt;/code> and the charger switches to CV mode.&#xA;Simulate for 1200 s and plot &lt;code>cell.cellBus.soc&lt;/code> versus &lt;code>time&lt;/code>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

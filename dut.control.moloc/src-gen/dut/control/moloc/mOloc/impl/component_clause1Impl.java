@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.ModificationElement;
 import dut.control.moloc.mOloc.annotation_modification_part;
@@ -43,11 +43,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getSubscripts <em>Subscripts</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getModifications <em>Modifications</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#isIsModificationOver <em>Is Modification Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getExpression <em>Expression</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getDeclarationName <em>Declaration Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
  * </ul>
  *
  * @generated
@@ -103,6 +105,26 @@ public class component_clause1Impl extends type_prefixImpl implements component_
    * @ordered
    */
   protected EList<ModificationElement> modifications;
+
+  /**
+   * The default value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_MODIFICATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isModificationOver = IS_MODIFICATION_OVER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
@@ -192,7 +214,27 @@ public class component_clause1Impl extends type_prefixImpl implements component_
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -278,6 +320,31 @@ public class component_clause1Impl extends type_prefixImpl implements component_
       modifications = new EObjectContainmentEList<ModificationElement>(ModificationElement.class, this, MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS);
     }
     return modifications;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsModificationOver()
+  {
+    return isModificationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsModificationOver(boolean newIsModificationOver)
+  {
+    boolean oldIsModificationOver = isModificationOver;
+    isModificationOver = newIsModificationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE1__IS_MODIFICATION_OVER, oldIsModificationOver, isModificationOver));
   }
 
   /**
@@ -386,13 +453,38 @@ public class component_clause1Impl extends type_prefixImpl implements component_
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
   }
 
   /**
@@ -429,6 +521,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return getSubscripts();
       case MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS:
         return getModifications();
+      case MOlocPackage.COMPONENT_CLAUSE1__IS_MODIFICATION_OVER:
+        return isIsModificationOver();
       case MOlocPackage.COMPONENT_CLAUSE1__EXPRESSION:
         return getExpression();
       case MOlocPackage.COMPONENT_CLAUSE1__DECLARATION_NAME:
@@ -439,6 +533,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return isIsAnnotation();
       case MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -464,6 +560,9 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         getModifications().clear();
         getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
+      case MOlocPackage.COMPONENT_CLAUSE1__IS_MODIFICATION_OVER:
+        setIsModificationOver((Boolean)newValue);
+        return;
       case MOlocPackage.COMPONENT_CLAUSE1__EXPRESSION:
         setExpression((String)newValue);
         return;
@@ -478,7 +577,10 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return;
       case MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -503,6 +605,9 @@ public class component_clause1Impl extends type_prefixImpl implements component_
       case MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS:
         getModifications().clear();
         return;
+      case MOlocPackage.COMPONENT_CLAUSE1__IS_MODIFICATION_OVER:
+        setIsModificationOver(IS_MODIFICATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.COMPONENT_CLAUSE1__EXPRESSION:
         setExpression(EXPRESSION_EDEFAULT);
         return;
@@ -517,6 +622,9 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return;
       case MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS:
         getAnnotations().clear();
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -538,6 +646,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return SUBSCRIPTS_EDEFAULT == null ? subscripts != null : !SUBSCRIPTS_EDEFAULT.equals(subscripts);
       case MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS:
         return modifications != null && !modifications.isEmpty();
+      case MOlocPackage.COMPONENT_CLAUSE1__IS_MODIFICATION_OVER:
+        return isModificationOver != IS_MODIFICATION_OVER_EDEFAULT;
       case MOlocPackage.COMPONENT_CLAUSE1__EXPRESSION:
         return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
       case MOlocPackage.COMPONENT_CLAUSE1__DECLARATION_NAME:
@@ -548,6 +658,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -581,6 +693,7 @@ public class component_clause1Impl extends type_prefixImpl implements component_
       switch (derivedFeatureID)
       {
         case MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
+        case MOlocPackage.COMPONENT_CLAUSE1__IS_MODIFICATION_OVER: return MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -614,6 +727,7 @@ public class component_clause1Impl extends type_prefixImpl implements component_
       {
         case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -663,6 +777,7 @@ public class component_clause1Impl extends type_prefixImpl implements component_
       switch (baseFeatureID)
       {
         case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS;
+        case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER: return MOlocPackage.COMPONENT_CLAUSE1__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -696,6 +811,7 @@ public class component_clause1Impl extends type_prefixImpl implements component_
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -731,6 +847,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
     result.append(typeSpecifier);
     result.append(", subscripts: ");
     result.append(subscripts);
+    result.append(", isModificationOver: ");
+    result.append(isModificationOver);
     result.append(", expression: ");
     result.append(expression);
     result.append(", declarationName: ");
@@ -739,6 +857,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
     result.append(description);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
     result.append(')');
     return result.toString();
   }

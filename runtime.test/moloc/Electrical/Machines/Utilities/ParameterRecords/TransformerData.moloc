@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Utilities.ParameterRecords">
+  <classes classType="record" className="TransformerData" description="&quot;Common parameters for transformers&quot;" isLongClassSpecifier="true" classNameEnd="TransformerData" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Record" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="n_phase" description="&quot;Ratio primary voltage per phase / secondary voltage per phase&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+      <component_list expression="&quot;Y&quot;" declarationName="C1" description="&quot;Choose primary connection&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications description="&quot;Star connection&quot;" expression="&quot;Y&quot;" elementName="choice"/>
+          <modifications description="&quot;Delta connection&quot;" expression="&quot;D&quot;" elementName="choice"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+      <component_list expression="&quot;y&quot;" declarationName="C2" description="&quot;Choose secondary connection&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications description="&quot;Star connection&quot;" expression="&quot;y&quot;" elementName="choice"/>
+          <modifications description="&quot;Delta connection&quot;" expression="&quot;d&quot;" elementName="choice"/>
+          <modifications description="&quot;Zig-zag connection&quot;" expression="&quot;z&quot;" elementName="choice"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="n_phase*(if C1 == &quot;D&quot; and (C2 == &quot;y&quot; or C2 == &quot;z&quot;) then 1/sqrt(3) else if C1 == &quot;Y&quot; and C2 == &quot;d&quot; then sqrt(3) else 1 )" declarationName="n" description="&quot;Ratio primary voltage (line-to-line) / secondary voltage (line-to-line)&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="5E-3/3" declarationName="R1" description="&quot;Primary resistance per phase at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="293.15" declarationName="T1Ref" description="&quot;Reference temperature of primary resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="alpha20_1" description="&quot;Temperature coefficient of primary resistance at 20 degC&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="78E-6/3" declarationName="L1sigma" description="&quot;Primary stray inductance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="5E-3/3" declarationName="R2" description="&quot;Secondary resistance per phase at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="293.15" declarationName="T2Ref" description="&quot;Reference temperature of secondary resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="alpha20_2" description="&quot;Temperature coefficient of secondary resistance at 20 degC&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="78E-6/3" declarationName="L2sigma" description="&quot;Secondary stray inductance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;transformerData&quot;" elementName="defaultComponentName"/>
+      <annotations expression="&quot;parameter&quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>Basic parameters of transformers are predefined with default values.&lt;/p>&#xA;&lt;p>Note: ratio n is defined between primary / secondary line-to-line voltage;&#xA;   therefore the user has to take into account primary and secondary connection!&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

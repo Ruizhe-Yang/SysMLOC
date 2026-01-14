@@ -203,10 +203,20 @@ ruleClass_definition returns [EObject current=null]
 			$current = $this_class_specifier_2.current;
 			afterParserOrEnumRuleCall();
 		}
-		otherlv_3=';'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getClass_definitionAccess().getSemicolonKeyword_3());
-		}
+		(
+			(
+				lv_isOver_3_0=';'
+				{
+					newLeafNode(lv_isOver_3_0, grammarAccess.getClass_definitionAccess().getIsOverSemicolonKeyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getClass_definitionRule());
+					}
+					setWithLastConsumed($current, "isOver", lv_isOver_3_0 != null, ";");
+				}
+			)
+		)
 	)
 ;
 
@@ -468,10 +478,20 @@ rulelong_class_specifier[EObject in_current]  returns [EObject current=in_curren
 			$current = $this_composition_4.current;
 			afterParserOrEnumRuleCall();
 		}
-		otherlv_5='end'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getLong_class_specifierAccess().getEndKeyword_5());
-		}
+		(
+			(
+				lv_isLongClassSpecifier_5_0='end'
+				{
+					newLeafNode(lv_isLongClassSpecifier_5_0, grammarAccess.getLong_class_specifierAccess().getIsLongClassSpecifierEndKeyword_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLong_class_specifierRule());
+					}
+					setWithLastConsumed($current, "isLongClassSpecifier", lv_isLongClassSpecifier_5_0 != null, "end");
+				}
+			)
+		)
 		(
 			(
 				lv_classNameEnd_6_0=RULE_IDENT
@@ -517,10 +537,20 @@ ruleshort_class_specifier[EObject in_current]  returns [EObject current=in_curre
 			$current = $this_class_name_0.current;
 			afterParserOrEnumRuleCall();
 		}
-		otherlv_1='='
-		{
-			newLeafNode(otherlv_1, grammarAccess.getShort_class_specifierAccess().getEqualsSignKeyword_1());
-		}
+		(
+			(
+				lv_isShortClassSpecifier_1_0='='
+				{
+					newLeafNode(lv_isShortClassSpecifier_1_0, grammarAccess.getShort_class_specifierAccess().getIsShortClassSpecifierEqualsSignKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getShort_class_specifierRule());
+					}
+					setWithLastConsumed($current, "isShortClassSpecifier", lv_isShortClassSpecifier_1_0 != null, "=");
+				}
+			)
+		)
 		(
 			(
 				(
@@ -689,10 +719,20 @@ ruleder_class_specifier[EObject in_current]  returns [EObject current=in_current
 			$current = $this_class_name_0.current;
 			afterParserOrEnumRuleCall();
 		}
-		otherlv_1='='
-		{
-			newLeafNode(otherlv_1, grammarAccess.getDer_class_specifierAccess().getEqualsSignKeyword_1());
-		}
+		(
+			(
+				lv_isDerClassSpecifier_1_0='='
+				{
+					newLeafNode(lv_isDerClassSpecifier_1_0, grammarAccess.getDer_class_specifierAccess().getIsDerClassSpecifierEqualsSignKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDer_class_specifierRule());
+					}
+					setWithLastConsumed($current, "isDerClassSpecifier", lv_isDerClassSpecifier_1_0 != null, "=");
+				}
+			)
+		)
 		(
 			(
 				lv_isDer_2_0='der'
@@ -879,10 +919,20 @@ ruleclass_modification[EObject in_current]  returns [EObject current=in_current]
 				)
 			)
 		)*
-		otherlv_4=')'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getClass_modificationAccess().getRightParenthesisKeyword_3());
-		}
+		(
+			(
+				lv_isModificationOver_4_0=')'
+				{
+					newLeafNode(lv_isModificationOver_4_0, grammarAccess.getClass_modificationAccess().getIsModificationOverRightParenthesisKeyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getClass_modificationRule());
+					}
+					setWithLastConsumed($current, "isModificationOver", lv_isModificationOver_4_0 != null, ")");
+				}
+			)
+		)
 	)
 ;
 
@@ -917,9 +967,9 @@ ruleannotation_modification_part[EObject in_current]  returns [EObject current=i
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationElementParserRuleCall_2_0());
 				}
-				lv_annotations_2_0=ruleAnnotationModification
+				lv_annotations_2_0=ruleAnnotationModificationElement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAnnotation_modification_partRule());
@@ -928,7 +978,7 @@ ruleannotation_modification_part[EObject in_current]  returns [EObject current=i
 						$current,
 						"annotations",
 						lv_annotations_2_0,
-						"dut.control.moloc.MOloc.AnnotationModification");
+						"dut.control.moloc.MOloc.AnnotationModificationElement");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -941,9 +991,9 @@ ruleannotation_modification_part[EObject in_current]  returns [EObject current=i
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationElementParserRuleCall_3_1_0());
 					}
-					lv_annotations_4_0=ruleAnnotationModification
+					lv_annotations_4_0=ruleAnnotationModificationElement
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAnnotation_modification_partRule());
@@ -952,16 +1002,26 @@ ruleannotation_modification_part[EObject in_current]  returns [EObject current=i
 							$current,
 							"annotations",
 							lv_annotations_4_0,
-							"dut.control.moloc.MOloc.AnnotationModification");
+							"dut.control.moloc.MOloc.AnnotationModificationElement");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_5=')'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getAnnotation_modification_partAccess().getRightParenthesisKeyword_4());
-		}
+		(
+			(
+				lv_isAnnotationOver_5_0=')'
+				{
+					newLeafNode(lv_isAnnotationOver_5_0, grammarAccess.getAnnotation_modification_partAccess().getIsAnnotationOverRightParenthesisKeyword_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAnnotation_modification_partRule());
+					}
+					setWithLastConsumed($current, "isAnnotationOver", lv_isAnnotationOver_5_0 != null, ")");
+				}
+			)
+		)
 	)
 ;
 
@@ -1419,15 +1479,15 @@ ruleModificationElement returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleAnnotationModification
-entryRuleAnnotationModification returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAnnotationModificationRule()); }
-	iv_ruleAnnotationModification=ruleAnnotationModification
-	{ $current=$iv_ruleAnnotationModification.current; }
+// Entry rule entryRuleAnnotationModificationElement
+entryRuleAnnotationModificationElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAnnotationModificationElementRule()); }
+	iv_ruleAnnotationModificationElement=ruleAnnotationModificationElement
+	{ $current=$iv_ruleAnnotationModificationElement.current; }
 	EOF;
 
-// Rule AnnotationModification
-ruleAnnotationModification returns [EObject current=null]
+// Rule AnnotationModificationElement
+ruleAnnotationModificationElement returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1439,11 +1499,11 @@ ruleAnnotationModification returns [EObject current=null]
 			(
 				lv_isRedeclare_0_0='redeclare'
 				{
-					newLeafNode(lv_isRedeclare_0_0, grammarAccess.getAnnotationModificationAccess().getIsRedeclareRedeclareKeyword_0_0());
+					newLeafNode(lv_isRedeclare_0_0, grammarAccess.getAnnotationModificationElementAccess().getIsRedeclareRedeclareKeyword_0_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+						$current = createModelElement(grammarAccess.getAnnotationModificationElementRule());
 					}
 					setWithLastConsumed($current, "isRedeclare", lv_isRedeclare_0_0 != null, "redeclare");
 				}
@@ -1453,11 +1513,11 @@ ruleAnnotationModification returns [EObject current=null]
 			(
 				lv_isEach_1_0='each'
 				{
-					newLeafNode(lv_isEach_1_0, grammarAccess.getAnnotationModificationAccess().getIsEachEachKeyword_1_0());
+					newLeafNode(lv_isEach_1_0, grammarAccess.getAnnotationModificationElementAccess().getIsEachEachKeyword_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+						$current = createModelElement(grammarAccess.getAnnotationModificationElementRule());
 					}
 					setWithLastConsumed($current, "isEach", lv_isEach_1_0 != null, "each");
 				}
@@ -1467,11 +1527,11 @@ ruleAnnotationModification returns [EObject current=null]
 			(
 				lv_isfinal_2_0='final'
 				{
-					newLeafNode(lv_isfinal_2_0, grammarAccess.getAnnotationModificationAccess().getIsfinalFinalKeyword_2_0());
+					newLeafNode(lv_isfinal_2_0, grammarAccess.getAnnotationModificationElementAccess().getIsfinalFinalKeyword_2_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+						$current = createModelElement(grammarAccess.getAnnotationModificationElementRule());
 					}
 					setWithLastConsumed($current, "isfinal", lv_isfinal_2_0 != null, "final");
 				}
@@ -1481,11 +1541,11 @@ ruleAnnotationModification returns [EObject current=null]
 			(
 				lv_isReplaceable_3_0='replaceable'
 				{
-					newLeafNode(lv_isReplaceable_3_0, grammarAccess.getAnnotationModificationAccess().getIsReplaceableReplaceableKeyword_3_0());
+					newLeafNode(lv_isReplaceable_3_0, grammarAccess.getAnnotationModificationElementAccess().getIsReplaceableReplaceableKeyword_3_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+						$current = createModelElement(grammarAccess.getAnnotationModificationElementRule());
 					}
 					setWithLastConsumed($current, "isReplaceable", lv_isReplaceable_3_0 != null, "replaceable");
 				}
@@ -1497,9 +1557,9 @@ ruleAnnotationModification returns [EObject current=null]
 			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+					$current = createModelElement(grammarAccess.getAnnotationModificationElementRule());
 				}
-				newCompositeNode(grammarAccess.getAnnotationModificationAccess().getShort_class_definitionParserRuleCall_4_0());
+				newCompositeNode(grammarAccess.getAnnotationModificationElementAccess().getShort_class_definitionParserRuleCall_4_0());
 			}
 			this_short_class_definition_4=ruleshort_class_definition[$current]
 			{
@@ -1512,9 +1572,9 @@ ruleAnnotationModification returns [EObject current=null]
 			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+					$current = createModelElement(grammarAccess.getAnnotationModificationElementRule());
 				}
-				newCompositeNode(grammarAccess.getAnnotationModificationAccess().getComponent_clause1ParserRuleCall_4_1());
+				newCompositeNode(grammarAccess.getAnnotationModificationElementAccess().getComponent_clause1ParserRuleCall_4_1());
 			}
 			this_component_clause1_5=rulecomponent_clause1[$current]
 			{
@@ -1527,9 +1587,9 @@ ruleAnnotationModification returns [EObject current=null]
 			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+					$current = createModelElement(grammarAccess.getAnnotationModificationElementRule());
 				}
-				newCompositeNode(grammarAccess.getAnnotationModificationAccess().getElement_modificationParserRuleCall_4_2());
+				newCompositeNode(grammarAccess.getAnnotationModificationElementAccess().getElement_modificationParserRuleCall_4_2());
 			}
 			this_element_modification_6=ruleelement_modification[$current]
 			{
@@ -1543,9 +1603,9 @@ ruleAnnotationModification returns [EObject current=null]
 			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+					$current = createModelElement(grammarAccess.getAnnotationModificationElementRule());
 				}
-				newCompositeNode(grammarAccess.getAnnotationModificationAccess().getConstrainingParserRuleCall_5());
+				newCompositeNode(grammarAccess.getAnnotationModificationElementAccess().getConstrainingParserRuleCall_5());
 			}
 			this_constraining_7=ruleconstraining[$current]
 			{
@@ -2554,10 +2614,20 @@ ruleImportClause returns [EObject current=null]
 			$current = $this_description_15.current;
 			afterParserOrEnumRuleCall();
 		}
-		otherlv_16=';'
-		{
-			newLeafNode(otherlv_16, grammarAccess.getImportClauseAccess().getSemicolonKeyword_5());
-		}
+		(
+			(
+				lv_isOver_16_0=';'
+				{
+					newLeafNode(lv_isOver_16_0, grammarAccess.getImportClauseAccess().getIsOverSemicolonKeyword_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getImportClauseRule());
+					}
+					setWithLastConsumed($current, "isOver", lv_isOver_16_0 != null, ";");
+				}
+			)
+		)
 	)
 ;
 
@@ -2739,10 +2809,20 @@ ruleExtendsClause returns [EObject current=null]
 				afterParserOrEnumRuleCall();
 			}
 		)?
-		otherlv_12=';'
-		{
-			newLeafNode(otherlv_12, grammarAccess.getExtendsClauseAccess().getSemicolonKeyword_6());
-		}
+		(
+			(
+				lv_isOver_12_0=';'
+				{
+					newLeafNode(lv_isOver_12_0, grammarAccess.getExtendsClauseAccess().getIsOverSemicolonKeyword_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getExtendsClauseRule());
+					}
+					setWithLastConsumed($current, "isOver", lv_isOver_12_0 != null, ";");
+				}
+			)
+		)
 	)
 ;
 
@@ -3062,10 +3142,20 @@ ruleGeneralClause returns [EObject current=null]
 				afterParserOrEnumRuleCall();
 			}
 		)?
-		otherlv_16=';'
-		{
-			newLeafNode(otherlv_16, grammarAccess.getGeneralClauseAccess().getSemicolonKeyword_9());
-		}
+		(
+			(
+				lv_isOver_16_0=';'
+				{
+					newLeafNode(lv_isOver_16_0, grammarAccess.getGeneralClauseAccess().getIsOverSemicolonKeyword_9_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGeneralClauseRule());
+					}
+					setWithLastConsumed($current, "isOver", lv_isOver_16_0 != null, ";");
+				}
+			)
+		)
 	)
 ;
 
@@ -3277,10 +3367,20 @@ ruleExternalElement returns [EObject current=null]
 				afterParserOrEnumRuleCall();
 			}
 		)?
-		otherlv_10=';'
-		{
-			newLeafNode(otherlv_10, grammarAccess.getExternalElementAccess().getSemicolonKeyword_5());
-		}
+		(
+			(
+				lv_isOver_10_0=';'
+				{
+					newLeafNode(lv_isOver_10_0, grammarAccess.getExternalElementAccess().getIsOverSemicolonKeyword_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getExternalElementRule());
+					}
+					setWithLastConsumed($current, "isOver", lv_isOver_10_0 != null, ";");
+				}
+			)
+		)
 	)
 ;
 
@@ -3314,10 +3414,20 @@ ruleAnnotationClause returns [EObject current=null]
 			$current = $this_annotation_modification_part_0.current;
 			afterParserOrEnumRuleCall();
 		}
-		otherlv_1=';'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getAnnotationClauseAccess().getSemicolonKeyword_1());
-		}
+		(
+			(
+				lv_isOver_1_0=';'
+				{
+					newLeafNode(lv_isOver_1_0, grammarAccess.getAnnotationClauseAccess().getIsOverSemicolonKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAnnotationClauseRule());
+					}
+					setWithLastConsumed($current, "isOver", lv_isOver_1_0 != null, ";");
+				}
+			)
+		)
 	)
 ;
 

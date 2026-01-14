@@ -260,13 +260,22 @@ public interface MOlocPackage extends EPackage
   int CLASS_DEFINITION__MODIFICATIONS = CLASS_PREFIXES_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_MODIFICATION_OVER = CLASS_PREFIXES_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__DESCRIPTION = CLASS_PREFIXES_FEATURE_COUNT + 2;
+  int CLASS_DEFINITION__DESCRIPTION = CLASS_PREFIXES_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -275,7 +284,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__ELEMENTS = CLASS_PREFIXES_FEATURE_COUNT + 3;
+  int CLASS_DEFINITION__ELEMENTS = CLASS_PREFIXES_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Extends</b></em>' attribute.
@@ -284,7 +293,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_EXTENDS = CLASS_PREFIXES_FEATURE_COUNT + 4;
+  int CLASS_DEFINITION__IS_EXTENDS = CLASS_PREFIXES_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Is Long Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_LONG_CLASS_SPECIFIER = CLASS_PREFIXES_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Class Name End</b></em>' attribute.
@@ -293,7 +311,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__CLASS_NAME_END = CLASS_PREFIXES_FEATURE_COUNT + 5;
+  int CLASS_DEFINITION__CLASS_NAME_END = CLASS_PREFIXES_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
@@ -302,7 +320,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__TYPE_SPECIFIER = CLASS_PREFIXES_FEATURE_COUNT + 6;
+  int CLASS_DEFINITION__TYPE_SPECIFIER = CLASS_PREFIXES_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Subscripts</b></em>' attribute.
@@ -311,7 +329,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__SUBSCRIPTS = CLASS_PREFIXES_FEATURE_COUNT + 7;
+  int CLASS_DEFINITION__SUBSCRIPTS = CLASS_PREFIXES_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
@@ -320,7 +338,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__ENUMERATION_LITERAL = CLASS_PREFIXES_FEATURE_COUNT + 8;
+  int CLASS_DEFINITION__ENUMERATION_LITERAL = CLASS_PREFIXES_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -329,7 +347,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_ANNOTATION = CLASS_PREFIXES_FEATURE_COUNT + 9;
+  int CLASS_DEFINITION__IS_ANNOTATION = CLASS_PREFIXES_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -338,7 +356,25 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__ANNOTATIONS = CLASS_PREFIXES_FEATURE_COUNT + 10;
+  int CLASS_DEFINITION__ANNOTATIONS = CLASS_PREFIXES_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_ANNOTATION_OVER = CLASS_PREFIXES_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Short Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_SHORT_CLASS_SPECIFIER = CLASS_PREFIXES_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -347,7 +383,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 11;
+  int CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -356,7 +392,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 12;
+  int CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -365,7 +401,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 13;
+  int CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 17;
+
+  /**
+   * The feature id for the '<em><b>Is Der Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_DER_CLASS_SPECIFIER = CLASS_PREFIXES_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Is Der</b></em>' attribute.
@@ -374,7 +419,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_DER = CLASS_PREFIXES_FEATURE_COUNT + 14;
+  int CLASS_DEFINITION__IS_DER = CLASS_PREFIXES_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Der Name</b></em>' attribute list.
@@ -383,7 +428,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__DER_NAME = CLASS_PREFIXES_FEATURE_COUNT + 15;
+  int CLASS_DEFINITION__DER_NAME = CLASS_PREFIXES_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Isfinal</b></em>' attribute.
@@ -392,7 +437,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__ISFINAL = CLASS_PREFIXES_FEATURE_COUNT + 16;
+  int CLASS_DEFINITION__ISFINAL = CLASS_PREFIXES_FEATURE_COUNT + 21;
+
+  /**
+   * The feature id for the '<em><b>Is Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__IS_OVER = CLASS_PREFIXES_FEATURE_COUNT + 22;
 
   /**
    * The number of structural features of the '<em>Class definition</em>' class.
@@ -401,7 +455,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 17;
+  int CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 23;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.class_nameImpl <em>class name</em>}' class.
@@ -460,13 +514,22 @@ public interface MOlocPackage extends EPackage
   int LONG_CLASS_SPECIFIER__MODIFICATIONS = CLASS_NAME_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_CLASS_SPECIFIER__IS_MODIFICATION_OVER = CLASS_NAME_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LONG_CLASS_SPECIFIER__DESCRIPTION = CLASS_NAME_FEATURE_COUNT + 1;
+  int LONG_CLASS_SPECIFIER__DESCRIPTION = CLASS_NAME_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -475,7 +538,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LONG_CLASS_SPECIFIER__ELEMENTS = CLASS_NAME_FEATURE_COUNT + 2;
+  int LONG_CLASS_SPECIFIER__ELEMENTS = CLASS_NAME_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Extends</b></em>' attribute.
@@ -484,7 +547,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LONG_CLASS_SPECIFIER__IS_EXTENDS = CLASS_NAME_FEATURE_COUNT + 3;
+  int LONG_CLASS_SPECIFIER__IS_EXTENDS = CLASS_NAME_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Is Long Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER = CLASS_NAME_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Class Name End</b></em>' attribute.
@@ -493,7 +565,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LONG_CLASS_SPECIFIER__CLASS_NAME_END = CLASS_NAME_FEATURE_COUNT + 4;
+  int LONG_CLASS_SPECIFIER__CLASS_NAME_END = CLASS_NAME_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>long class specifier</em>' class.
@@ -502,7 +574,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LONG_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 5;
+  int LONG_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.class_specifierImpl <em>class specifier</em>}' class.
@@ -533,6 +605,15 @@ public interface MOlocPackage extends EPackage
   int CLASS_SPECIFIER__MODIFICATIONS = LONG_CLASS_SPECIFIER__MODIFICATIONS;
 
   /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__IS_MODIFICATION_OVER = LONG_CLASS_SPECIFIER__IS_MODIFICATION_OVER;
+
+  /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -558,6 +639,15 @@ public interface MOlocPackage extends EPackage
    * @ordered
    */
   int CLASS_SPECIFIER__IS_EXTENDS = LONG_CLASS_SPECIFIER__IS_EXTENDS;
+
+  /**
+   * The feature id for the '<em><b>Is Long Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER = LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER;
 
   /**
    * The feature id for the '<em><b>Class Name End</b></em>' attribute.
@@ -614,13 +704,31 @@ public interface MOlocPackage extends EPackage
   int CLASS_SPECIFIER__ANNOTATIONS = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 4;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__IS_ANNOTATION_OVER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Is Short Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 6;
+
+  /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__DIRECTION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 5;
+  int CLASS_SPECIFIER__DIRECTION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -629,7 +737,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__IS_ENUMERATION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 6;
+  int CLASS_SPECIFIER__IS_ENUMERATION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -638,7 +746,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__IS_COLON = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 7;
+  int CLASS_SPECIFIER__IS_COLON = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Is Der Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Is Der</b></em>' attribute.
@@ -647,7 +764,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__IS_DER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 8;
+  int CLASS_SPECIFIER__IS_DER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Der Name</b></em>' attribute list.
@@ -656,7 +773,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__DER_NAME = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 9;
+  int CLASS_SPECIFIER__DER_NAME = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 12;
 
   /**
    * The number of structural features of the '<em>class specifier</em>' class.
@@ -665,7 +782,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER_FEATURE_COUNT = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 10;
+  int CLASS_SPECIFIER_FEATURE_COUNT = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 13;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl <em>short class specifier</em>}' class.
@@ -714,13 +831,22 @@ public interface MOlocPackage extends EPackage
   int SHORT_CLASS_SPECIFIER__MODIFICATIONS = CLASS_NAME_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__IS_MODIFICATION_OVER = CLASS_NAME_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL = CLASS_NAME_FEATURE_COUNT + 3;
+  int SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL = CLASS_NAME_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -729,7 +855,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__DESCRIPTION = CLASS_NAME_FEATURE_COUNT + 4;
+  int SHORT_CLASS_SPECIFIER__DESCRIPTION = CLASS_NAME_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -738,7 +864,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__IS_ANNOTATION = CLASS_NAME_FEATURE_COUNT + 5;
+  int SHORT_CLASS_SPECIFIER__IS_ANNOTATION = CLASS_NAME_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -747,7 +873,25 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__ANNOTATIONS = CLASS_NAME_FEATURE_COUNT + 6;
+  int SHORT_CLASS_SPECIFIER__ANNOTATIONS = CLASS_NAME_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__IS_ANNOTATION_OVER = CLASS_NAME_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Is Short Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER = CLASS_NAME_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -756,7 +900,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__DIRECTION = CLASS_NAME_FEATURE_COUNT + 7;
+  int SHORT_CLASS_SPECIFIER__DIRECTION = CLASS_NAME_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -765,7 +909,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__IS_ENUMERATION = CLASS_NAME_FEATURE_COUNT + 8;
+  int SHORT_CLASS_SPECIFIER__IS_ENUMERATION = CLASS_NAME_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -774,7 +918,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__IS_COLON = CLASS_NAME_FEATURE_COUNT + 9;
+  int SHORT_CLASS_SPECIFIER__IS_COLON = CLASS_NAME_FEATURE_COUNT + 12;
 
   /**
    * The number of structural features of the '<em>short class specifier</em>' class.
@@ -783,7 +927,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 10;
+  int SHORT_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 13;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.der_class_specifierImpl <em>der class specifier</em>}' class.
@@ -841,13 +985,31 @@ public interface MOlocPackage extends EPackage
   int DER_CLASS_SPECIFIER__ANNOTATIONS = CLASS_NAME_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DER_CLASS_SPECIFIER__IS_ANNOTATION_OVER = CLASS_NAME_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Is Der Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER = CLASS_NAME_FEATURE_COUNT + 5;
+
+  /**
    * The feature id for the '<em><b>Is Der</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DER_CLASS_SPECIFIER__IS_DER = CLASS_NAME_FEATURE_COUNT + 4;
+  int DER_CLASS_SPECIFIER__IS_DER = CLASS_NAME_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Der Name</b></em>' attribute list.
@@ -856,7 +1018,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DER_CLASS_SPECIFIER__DER_NAME = CLASS_NAME_FEATURE_COUNT + 5;
+  int DER_CLASS_SPECIFIER__DER_NAME = CLASS_NAME_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>der class specifier</em>' class.
@@ -865,7 +1027,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DER_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 6;
+  int DER_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.class_modificationImpl <em>class modification</em>}' class.
@@ -887,13 +1049,22 @@ public interface MOlocPackage extends EPackage
   int CLASS_MODIFICATION__MODIFICATIONS = 0;
 
   /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_MODIFICATION__IS_MODIFICATION_OVER = 1;
+
+  /**
    * The number of structural features of the '<em>class modification</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_MODIFICATION_FEATURE_COUNT = 1;
+  int CLASS_MODIFICATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.annotation_modification_partImpl <em>annotation modification part</em>}' class.
@@ -924,13 +1095,22 @@ public interface MOlocPackage extends EPackage
   int ANNOTATION_MODIFICATION_PART__ANNOTATIONS = 1;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER = 2;
+
+  /**
    * The number of structural features of the '<em>annotation modification part</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION_PART_FEATURE_COUNT = 2;
+  int ANNOTATION_MODIFICATION_PART_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.description_stringImpl <em>description string</em>}' class.
@@ -1082,13 +1262,22 @@ public interface MOlocPackage extends EPackage
   int DESCRIPTION__ANNOTATIONS = DESCRIPTION_STRING_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DESCRIPTION__IS_ANNOTATION_OVER = DESCRIPTION_STRING_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>description</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DESCRIPTION_FEATURE_COUNT = DESCRIPTION_STRING_FEATURE_COUNT + 2;
+  int DESCRIPTION_FEATURE_COUNT = DESCRIPTION_STRING_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.EnumerationLiteralImpl <em>Enumeration Literal</em>}' class.
@@ -1128,6 +1317,15 @@ public interface MOlocPackage extends EPackage
   int ENUMERATION_LITERAL__ANNOTATIONS = DESCRIPTION__ANNOTATIONS;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION_LITERAL__IS_ANNOTATION_OVER = DESCRIPTION__IS_ANNOTATION_OVER;
+
+  /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1153,7 +1351,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getshort_class_definition()
    * @generated
    */
-  int SHORT_CLASS_DEFINITION = 19;
+  int SHORT_CLASS_DEFINITION = 20;
 
   /**
    * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
@@ -1246,13 +1444,22 @@ public interface MOlocPackage extends EPackage
   int SHORT_CLASS_DEFINITION__MODIFICATIONS = CLASS_PREFIXES_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_DEFINITION__IS_MODIFICATION_OVER = CLASS_PREFIXES_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__ENUMERATION_LITERAL = CLASS_PREFIXES_FEATURE_COUNT + 4;
+  int SHORT_CLASS_DEFINITION__ENUMERATION_LITERAL = CLASS_PREFIXES_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1261,7 +1468,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__DESCRIPTION = CLASS_PREFIXES_FEATURE_COUNT + 5;
+  int SHORT_CLASS_DEFINITION__DESCRIPTION = CLASS_PREFIXES_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -1270,7 +1477,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__IS_ANNOTATION = CLASS_PREFIXES_FEATURE_COUNT + 6;
+  int SHORT_CLASS_DEFINITION__IS_ANNOTATION = CLASS_PREFIXES_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1279,7 +1486,25 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__ANNOTATIONS = CLASS_PREFIXES_FEATURE_COUNT + 7;
+  int SHORT_CLASS_DEFINITION__ANNOTATIONS = CLASS_PREFIXES_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_DEFINITION__IS_ANNOTATION_OVER = CLASS_PREFIXES_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Is Short Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_DEFINITION__IS_SHORT_CLASS_SPECIFIER = CLASS_PREFIXES_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -1288,7 +1513,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 8;
+  int SHORT_CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -1297,7 +1522,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 9;
+  int SHORT_CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -1306,7 +1531,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 10;
+  int SHORT_CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 13;
 
   /**
    * The number of structural features of the '<em>short class definition</em>' class.
@@ -1315,7 +1540,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 11;
+  int SHORT_CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 14;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ModificationElementImpl <em>Modification Element</em>}' class.
@@ -1418,6 +1643,15 @@ public interface MOlocPackage extends EPackage
   int MODIFICATION_ELEMENT__MODIFICATIONS = SHORT_CLASS_DEFINITION__MODIFICATIONS;
 
   /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFICATION_ELEMENT__IS_MODIFICATION_OVER = SHORT_CLASS_DEFINITION__IS_MODIFICATION_OVER;
+
+  /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1452,6 +1686,24 @@ public interface MOlocPackage extends EPackage
    * @ordered
    */
   int MODIFICATION_ELEMENT__ANNOTATIONS = SHORT_CLASS_DEFINITION__ANNOTATIONS;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFICATION_ELEMENT__IS_ANNOTATION_OVER = SHORT_CLASS_DEFINITION__IS_ANNOTATION_OVER;
+
+  /**
+   * The feature id for the '<em><b>Is Short Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFICATION_ELEMENT__IS_SHORT_CLASS_SPECIFIER = SHORT_CLASS_DEFINITION__IS_SHORT_CLASS_SPECIFIER;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -1589,14 +1841,14 @@ public interface MOlocPackage extends EPackage
   int MODIFICATION_ELEMENT_FEATURE_COUNT = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 11;
 
   /**
-   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.AnnotationModificationImpl <em>Annotation Modification</em>}' class.
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.AnnotationModificationElementImpl <em>Annotation Modification Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.moloc.mOloc.impl.AnnotationModificationImpl
-   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAnnotationModification()
+   * @see dut.control.moloc.mOloc.impl.AnnotationModificationElementImpl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAnnotationModificationElement()
    * @generated
    */
-  int ANNOTATION_MODIFICATION = 17;
+  int ANNOTATION_MODIFICATION_ELEMENT = 17;
 
   /**
    * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
@@ -1605,7 +1857,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__IS_ENCAPSULATED = SHORT_CLASS_DEFINITION__IS_ENCAPSULATED;
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_ENCAPSULATED = SHORT_CLASS_DEFINITION__IS_ENCAPSULATED;
 
   /**
    * The feature id for the '<em><b>Is Partial</b></em>' attribute.
@@ -1614,7 +1866,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__IS_PARTIAL = SHORT_CLASS_DEFINITION__IS_PARTIAL;
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_PARTIAL = SHORT_CLASS_DEFINITION__IS_PARTIAL;
 
   /**
    * The feature id for the '<em><b>Is Expandable</b></em>' attribute.
@@ -1623,7 +1875,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__IS_EXPANDABLE = SHORT_CLASS_DEFINITION__IS_EXPANDABLE;
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_EXPANDABLE = SHORT_CLASS_DEFINITION__IS_EXPANDABLE;
 
   /**
    * The feature id for the '<em><b>Is Pure</b></em>' attribute.
@@ -1632,7 +1884,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__IS_PURE = SHORT_CLASS_DEFINITION__IS_PURE;
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_PURE = SHORT_CLASS_DEFINITION__IS_PURE;
 
   /**
    * The feature id for the '<em><b>Is Operator</b></em>' attribute.
@@ -1641,7 +1893,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__IS_OPERATOR = SHORT_CLASS_DEFINITION__IS_OPERATOR;
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_OPERATOR = SHORT_CLASS_DEFINITION__IS_OPERATOR;
 
   /**
    * The feature id for the '<em><b>Class Type</b></em>' attribute.
@@ -1650,7 +1902,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__CLASS_TYPE = SHORT_CLASS_DEFINITION__CLASS_TYPE;
+  int ANNOTATION_MODIFICATION_ELEMENT__CLASS_TYPE = SHORT_CLASS_DEFINITION__CLASS_TYPE;
 
   /**
    * The feature id for the '<em><b>Class Name</b></em>' attribute.
@@ -1659,7 +1911,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__CLASS_NAME = SHORT_CLASS_DEFINITION__CLASS_NAME;
+  int ANNOTATION_MODIFICATION_ELEMENT__CLASS_NAME = SHORT_CLASS_DEFINITION__CLASS_NAME;
 
   /**
    * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
@@ -1668,7 +1920,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__TYPE_SPECIFIER = SHORT_CLASS_DEFINITION__TYPE_SPECIFIER;
+  int ANNOTATION_MODIFICATION_ELEMENT__TYPE_SPECIFIER = SHORT_CLASS_DEFINITION__TYPE_SPECIFIER;
 
   /**
    * The feature id for the '<em><b>Subscripts</b></em>' attribute.
@@ -1677,7 +1929,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__SUBSCRIPTS = SHORT_CLASS_DEFINITION__SUBSCRIPTS;
+  int ANNOTATION_MODIFICATION_ELEMENT__SUBSCRIPTS = SHORT_CLASS_DEFINITION__SUBSCRIPTS;
 
   /**
    * The feature id for the '<em><b>Modifications</b></em>' containment reference list.
@@ -1686,7 +1938,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__MODIFICATIONS = SHORT_CLASS_DEFINITION__MODIFICATIONS;
+  int ANNOTATION_MODIFICATION_ELEMENT__MODIFICATIONS = SHORT_CLASS_DEFINITION__MODIFICATIONS;
+
+  /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_MODIFICATION_OVER = SHORT_CLASS_DEFINITION__IS_MODIFICATION_OVER;
 
   /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
@@ -1695,7 +1956,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__ENUMERATION_LITERAL = SHORT_CLASS_DEFINITION__ENUMERATION_LITERAL;
+  int ANNOTATION_MODIFICATION_ELEMENT__ENUMERATION_LITERAL = SHORT_CLASS_DEFINITION__ENUMERATION_LITERAL;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1704,7 +1965,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__DESCRIPTION = SHORT_CLASS_DEFINITION__DESCRIPTION;
+  int ANNOTATION_MODIFICATION_ELEMENT__DESCRIPTION = SHORT_CLASS_DEFINITION__DESCRIPTION;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -1713,7 +1974,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__IS_ANNOTATION = SHORT_CLASS_DEFINITION__IS_ANNOTATION;
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_ANNOTATION = SHORT_CLASS_DEFINITION__IS_ANNOTATION;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1722,7 +1983,25 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__ANNOTATIONS = SHORT_CLASS_DEFINITION__ANNOTATIONS;
+  int ANNOTATION_MODIFICATION_ELEMENT__ANNOTATIONS = SHORT_CLASS_DEFINITION__ANNOTATIONS;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_ANNOTATION_OVER = SHORT_CLASS_DEFINITION__IS_ANNOTATION_OVER;
+
+  /**
+   * The feature id for the '<em><b>Is Short Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_SHORT_CLASS_SPECIFIER = SHORT_CLASS_DEFINITION__IS_SHORT_CLASS_SPECIFIER;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -1731,7 +2010,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__DIRECTION = SHORT_CLASS_DEFINITION__DIRECTION;
+  int ANNOTATION_MODIFICATION_ELEMENT__DIRECTION = SHORT_CLASS_DEFINITION__DIRECTION;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -1740,7 +2019,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__IS_ENUMERATION = SHORT_CLASS_DEFINITION__IS_ENUMERATION;
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_ENUMERATION = SHORT_CLASS_DEFINITION__IS_ENUMERATION;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -1749,7 +2028,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__IS_COLON = SHORT_CLASS_DEFINITION__IS_COLON;
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_COLON = SHORT_CLASS_DEFINITION__IS_COLON;
 
   /**
    * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
@@ -1758,7 +2037,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__RELATIONSHIP_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 0;
+  int ANNOTATION_MODIFICATION_ELEMENT__RELATIONSHIP_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Parameter Type</b></em>' attribute.
@@ -1767,7 +2046,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__PARAMETER_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 1;
+  int ANNOTATION_MODIFICATION_ELEMENT__PARAMETER_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Direction Type</b></em>' attribute.
@@ -1776,7 +2055,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__DIRECTION_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 2;
+  int ANNOTATION_MODIFICATION_ELEMENT__DIRECTION_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1785,7 +2064,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__EXPRESSION = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 3;
+  int ANNOTATION_MODIFICATION_ELEMENT__EXPRESSION = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Declaration Name</b></em>' attribute.
@@ -1794,7 +2073,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__DECLARATION_NAME = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 4;
+  int ANNOTATION_MODIFICATION_ELEMENT__DECLARATION_NAME = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Element Name</b></em>' attribute.
@@ -1803,7 +2082,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__ELEMENT_NAME = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 5;
+  int ANNOTATION_MODIFICATION_ELEMENT__ELEMENT_NAME = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Constrain</b></em>' containment reference.
@@ -1812,7 +2091,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__CONSTRAIN = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 6;
+  int ANNOTATION_MODIFICATION_ELEMENT__CONSTRAIN = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Is Redeclare</b></em>' attribute.
@@ -1821,7 +2100,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__IS_REDECLARE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 7;
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_REDECLARE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Each</b></em>' attribute.
@@ -1830,7 +2109,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__IS_EACH = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 8;
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_EACH = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Isfinal</b></em>' attribute.
@@ -1839,7 +2118,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__ISFINAL = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 9;
+  int ANNOTATION_MODIFICATION_ELEMENT__ISFINAL = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Replaceable</b></em>' attribute.
@@ -1848,16 +2127,314 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION__IS_REPLACEABLE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 10;
+  int ANNOTATION_MODIFICATION_ELEMENT__IS_REPLACEABLE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 10;
 
   /**
-   * The number of structural features of the '<em>Annotation Modification</em>' class.
+   * The number of structural features of the '<em>Annotation Modification Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANNOTATION_MODIFICATION_FEATURE_COUNT = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 11;
+  int ANNOTATION_MODIFICATION_ELEMENT_FEATURE_COUNT = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 11;
+
+  /**
+   * The meta object id for the '{@link dut.control.moloc.mOloc.impl.AnnotationModificationElement2Impl <em>Annotation Modification Element2</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.moloc.mOloc.impl.AnnotationModificationElement2Impl
+   * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAnnotationModificationElement2()
+   * @generated
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2 = 18;
+
+  /**
+   * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_ENCAPSULATED = SHORT_CLASS_DEFINITION__IS_ENCAPSULATED;
+
+  /**
+   * The feature id for the '<em><b>Is Partial</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_PARTIAL = SHORT_CLASS_DEFINITION__IS_PARTIAL;
+
+  /**
+   * The feature id for the '<em><b>Is Expandable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_EXPANDABLE = SHORT_CLASS_DEFINITION__IS_EXPANDABLE;
+
+  /**
+   * The feature id for the '<em><b>Is Pure</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_PURE = SHORT_CLASS_DEFINITION__IS_PURE;
+
+  /**
+   * The feature id for the '<em><b>Is Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_OPERATOR = SHORT_CLASS_DEFINITION__IS_OPERATOR;
+
+  /**
+   * The feature id for the '<em><b>Class Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__CLASS_TYPE = SHORT_CLASS_DEFINITION__CLASS_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__CLASS_NAME = SHORT_CLASS_DEFINITION__CLASS_NAME;
+
+  /**
+   * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__TYPE_SPECIFIER = SHORT_CLASS_DEFINITION__TYPE_SPECIFIER;
+
+  /**
+   * The feature id for the '<em><b>Subscripts</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__SUBSCRIPTS = SHORT_CLASS_DEFINITION__SUBSCRIPTS;
+
+  /**
+   * The feature id for the '<em><b>Modifications</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__MODIFICATIONS = SHORT_CLASS_DEFINITION__MODIFICATIONS;
+
+  /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_MODIFICATION_OVER = SHORT_CLASS_DEFINITION__IS_MODIFICATION_OVER;
+
+  /**
+   * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__ENUMERATION_LITERAL = SHORT_CLASS_DEFINITION__ENUMERATION_LITERAL;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__DESCRIPTION = SHORT_CLASS_DEFINITION__DESCRIPTION;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_ANNOTATION = SHORT_CLASS_DEFINITION__IS_ANNOTATION;
+
+  /**
+   * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__ANNOTATIONS = SHORT_CLASS_DEFINITION__ANNOTATIONS;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_ANNOTATION_OVER = SHORT_CLASS_DEFINITION__IS_ANNOTATION_OVER;
+
+  /**
+   * The feature id for the '<em><b>Is Short Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_SHORT_CLASS_SPECIFIER = SHORT_CLASS_DEFINITION__IS_SHORT_CLASS_SPECIFIER;
+
+  /**
+   * The feature id for the '<em><b>Direction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__DIRECTION = SHORT_CLASS_DEFINITION__DIRECTION;
+
+  /**
+   * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_ENUMERATION = SHORT_CLASS_DEFINITION__IS_ENUMERATION;
+
+  /**
+   * The feature id for the '<em><b>Is Colon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_COLON = SHORT_CLASS_DEFINITION__IS_COLON;
+
+  /**
+   * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__RELATIONSHIP_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Parameter Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__PARAMETER_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Direction Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__DIRECTION_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__EXPRESSION = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declaration Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__DECLARATION_NAME = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Element Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__ELEMENT_NAME = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Constrain</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__CONSTRAIN = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Is Redeclare</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_REDECLARE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Is Each</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_EACH = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Isfinal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__ISFINAL = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Is Replaceable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2__IS_REPLACEABLE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 10;
+
+  /**
+   * The number of structural features of the '<em>Annotation Modification Element2</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_MODIFICATION_ELEMENT2_FEATURE_COUNT = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.modificationImpl <em>modification</em>}' class.
@@ -1867,7 +2444,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getmodification()
    * @generated
    */
-  int MODIFICATION = 25;
+  int MODIFICATION = 26;
 
   /**
    * The feature id for the '<em><b>Modifications</b></em>' containment reference list.
@@ -1877,6 +2454,15 @@ public interface MOlocPackage extends EPackage
    * @ordered
    */
   int MODIFICATION__MODIFICATIONS = CLASS_MODIFICATION__MODIFICATIONS;
+
+  /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFICATION__IS_MODIFICATION_OVER = CLASS_MODIFICATION__IS_MODIFICATION_OVER;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1904,7 +2490,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getelement_modification()
    * @generated
    */
-  int ELEMENT_MODIFICATION = 18;
+  int ELEMENT_MODIFICATION = 19;
 
   /**
    * The feature id for the '<em><b>Modifications</b></em>' containment reference list.
@@ -1914,6 +2500,15 @@ public interface MOlocPackage extends EPackage
    * @ordered
    */
   int ELEMENT_MODIFICATION__MODIFICATIONS = MODIFICATION__MODIFICATIONS;
+
+  /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_MODIFICATION__IS_MODIFICATION_OVER = MODIFICATION__IS_MODIFICATION_OVER;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1959,7 +2554,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#gettype_prefix()
    * @generated
    */
-  int TYPE_PREFIX = 21;
+  int TYPE_PREFIX = 22;
 
   /**
    * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
@@ -2005,7 +2600,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getcomponent_clause1()
    * @generated
    */
-  int COMPONENT_CLAUSE1 = 20;
+  int COMPONENT_CLAUSE1 = 21;
 
   /**
    * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
@@ -2062,13 +2657,22 @@ public interface MOlocPackage extends EPackage
   int COMPONENT_CLAUSE1__MODIFICATIONS = TYPE_PREFIX_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__IS_MODIFICATION_OVER = TYPE_PREFIX_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_CLAUSE1__EXPRESSION = TYPE_PREFIX_FEATURE_COUNT + 3;
+  int COMPONENT_CLAUSE1__EXPRESSION = TYPE_PREFIX_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Declaration Name</b></em>' attribute.
@@ -2077,7 +2681,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_CLAUSE1__DECLARATION_NAME = TYPE_PREFIX_FEATURE_COUNT + 4;
+  int COMPONENT_CLAUSE1__DECLARATION_NAME = TYPE_PREFIX_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2086,7 +2690,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_CLAUSE1__DESCRIPTION = TYPE_PREFIX_FEATURE_COUNT + 5;
+  int COMPONENT_CLAUSE1__DESCRIPTION = TYPE_PREFIX_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -2095,7 +2699,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_CLAUSE1__IS_ANNOTATION = TYPE_PREFIX_FEATURE_COUNT + 6;
+  int COMPONENT_CLAUSE1__IS_ANNOTATION = TYPE_PREFIX_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -2104,7 +2708,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_CLAUSE1__ANNOTATIONS = TYPE_PREFIX_FEATURE_COUNT + 7;
+  int COMPONENT_CLAUSE1__ANNOTATIONS = TYPE_PREFIX_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CLAUSE1__IS_ANNOTATION_OVER = TYPE_PREFIX_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>component clause1</em>' class.
@@ -2113,7 +2726,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_CLAUSE1_FEATURE_COUNT = TYPE_PREFIX_FEATURE_COUNT + 8;
+  int COMPONENT_CLAUSE1_FEATURE_COUNT = TYPE_PREFIX_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.array_subscriptsImpl <em>array subscripts</em>}' class.
@@ -2123,7 +2736,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getarray_subscripts()
    * @generated
    */
-  int ARRAY_SUBSCRIPTS = 24;
+  int ARRAY_SUBSCRIPTS = 25;
 
   /**
    * The feature id for the '<em><b>Subscripts</b></em>' attribute.
@@ -2151,7 +2764,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getdeclaration()
    * @generated
    */
-  int DECLARATION = 23;
+  int DECLARATION = 24;
 
   /**
    * The feature id for the '<em><b>Subscripts</b></em>' attribute.
@@ -2172,13 +2785,22 @@ public interface MOlocPackage extends EPackage
   int DECLARATION__MODIFICATIONS = ARRAY_SUBSCRIPTS_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__IS_MODIFICATION_OVER = ARRAY_SUBSCRIPTS_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECLARATION__EXPRESSION = ARRAY_SUBSCRIPTS_FEATURE_COUNT + 1;
+  int DECLARATION__EXPRESSION = ARRAY_SUBSCRIPTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Declaration Name</b></em>' attribute.
@@ -2187,7 +2809,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARATION__DECLARATION_NAME = ARRAY_SUBSCRIPTS_FEATURE_COUNT + 2;
+  int DECLARATION__DECLARATION_NAME = ARRAY_SUBSCRIPTS_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>declaration</em>' class.
@@ -2196,7 +2818,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECLARATION_FEATURE_COUNT = ARRAY_SUBSCRIPTS_FEATURE_COUNT + 3;
+  int DECLARATION_FEATURE_COUNT = ARRAY_SUBSCRIPTS_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.component_declaration1Impl <em>component declaration1</em>}' class.
@@ -2206,7 +2828,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getcomponent_declaration1()
    * @generated
    */
-  int COMPONENT_DECLARATION1 = 22;
+  int COMPONENT_DECLARATION1 = 23;
 
   /**
    * The feature id for the '<em><b>Subscripts</b></em>' attribute.
@@ -2225,6 +2847,15 @@ public interface MOlocPackage extends EPackage
    * @ordered
    */
   int COMPONENT_DECLARATION1__MODIFICATIONS = DECLARATION__MODIFICATIONS;
+
+  /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION1__IS_MODIFICATION_OVER = DECLARATION__IS_MODIFICATION_OVER;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -2272,13 +2903,22 @@ public interface MOlocPackage extends EPackage
   int COMPONENT_DECLARATION1__ANNOTATIONS = DECLARATION_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION1__IS_ANNOTATION_OVER = DECLARATION_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>component declaration1</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_DECLARATION1_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 3;
+  int COMPONENT_DECLARATION1_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.constrainingImpl <em>constraining</em>}' class.
@@ -2288,7 +2928,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getconstraining()
    * @generated
    */
-  int CONSTRAINING = 26;
+  int CONSTRAINING = 27;
 
   /**
    * The feature id for the '<em><b>Constrain</b></em>' containment reference.
@@ -2316,7 +2956,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getConstrainingClause()
    * @generated
    */
-  int CONSTRAINING_CLAUSE = 27;
+  int CONSTRAINING_CLAUSE = 28;
 
   /**
    * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
@@ -2337,13 +2977,22 @@ public interface MOlocPackage extends EPackage
   int CONSTRAINING_CLAUSE__MODIFICATIONS = TYPE_SPECIFIER_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINING_CLAUSE__IS_MODIFICATION_OVER = TYPE_SPECIFIER_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Constraining Clause</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTRAINING_CLAUSE_FEATURE_COUNT = TYPE_SPECIFIER_FEATURE_COUNT + 1;
+  int CONSTRAINING_CLAUSE_FEATURE_COUNT = TYPE_SPECIFIER_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ElementImpl <em>Element</em>}' class.
@@ -2353,7 +3002,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getElement()
    * @generated
    */
-  int ELEMENT = 28;
+  int ELEMENT = 29;
 
   /**
    * The number of structural features of the '<em>Element</em>' class.
@@ -2372,7 +3021,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getImportClause()
    * @generated
    */
-  int IMPORT_CLAUSE = 29;
+  int IMPORT_CLAUSE = 30;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2402,13 +3051,22 @@ public interface MOlocPackage extends EPackage
   int IMPORT_CLAUSE__ANNOTATIONS = ELEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_CLAUSE__IS_ANNOTATION_OVER = ELEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Is Public</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__IS_PUBLIC = ELEMENT_FEATURE_COUNT + 3;
+  int IMPORT_CLAUSE__IS_PUBLIC = ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Protected</b></em>' attribute.
@@ -2417,7 +3075,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__IS_PROTECTED = ELEMENT_FEATURE_COUNT + 4;
+  int IMPORT_CLAUSE__IS_PROTECTED = ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Self Name</b></em>' attribute.
@@ -2426,7 +3084,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__SELF_NAME = ELEMENT_FEATURE_COUNT + 5;
+  int IMPORT_CLAUSE__SELF_NAME = ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Import Name</b></em>' attribute.
@@ -2435,7 +3093,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__IMPORT_NAME = ELEMENT_FEATURE_COUNT + 6;
+  int IMPORT_CLAUSE__IMPORT_NAME = ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Import All</b></em>' attribute.
@@ -2444,7 +3102,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__IS_IMPORT_ALL = ELEMENT_FEATURE_COUNT + 7;
+  int IMPORT_CLAUSE__IS_IMPORT_ALL = ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Object Name</b></em>' attribute list.
@@ -2453,7 +3111,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE__OBJECT_NAME = ELEMENT_FEATURE_COUNT + 8;
+  int IMPORT_CLAUSE__OBJECT_NAME = ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Is Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_CLAUSE__IS_OVER = ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Import Clause</em>' class.
@@ -2462,7 +3129,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 9;
+  int IMPORT_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl <em>Extends Clause</em>}' class.
@@ -2472,7 +3139,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExtendsClause()
    * @generated
    */
-  int EXTENDS_CLAUSE = 30;
+  int EXTENDS_CLAUSE = 31;
 
   /**
    * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
@@ -2502,13 +3169,22 @@ public interface MOlocPackage extends EPackage
   int EXTENDS_CLAUSE__ANNOTATIONS = ELEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDS_CLAUSE__IS_ANNOTATION_OVER = ELEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Is Public</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE__IS_PUBLIC = ELEMENT_FEATURE_COUNT + 3;
+  int EXTENDS_CLAUSE__IS_PUBLIC = ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Protected</b></em>' attribute.
@@ -2517,7 +3193,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE__IS_PROTECTED = ELEMENT_FEATURE_COUNT + 4;
+  int EXTENDS_CLAUSE__IS_PROTECTED = ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Extends Modifications</b></em>' containment reference list.
@@ -2526,7 +3202,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE__EXTENDS_MODIFICATIONS = ELEMENT_FEATURE_COUNT + 5;
+  int EXTENDS_CLAUSE__EXTENDS_MODIFICATIONS = ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Breaks</b></em>' containment reference list.
@@ -2535,7 +3211,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE__BREAKS = ELEMENT_FEATURE_COUNT + 6;
+  int EXTENDS_CLAUSE__BREAKS = ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Is Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDS_CLAUSE__IS_OVER = ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Extends Clause</em>' class.
@@ -2544,7 +3229,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDS_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 7;
+  int EXTENDS_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.BreakImpl <em>Break</em>}' class.
@@ -2554,7 +3239,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getBreak()
    * @generated
    */
-  int BREAK = 31;
+  int BREAK = 32;
 
   /**
    * The feature id for the '<em><b>Connect Object</b></em>' containment reference.
@@ -2591,7 +3276,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getGeneralClause()
    * @generated
    */
-  int GENERAL_CLAUSE = 32;
+  int GENERAL_CLAUSE = 33;
 
   /**
    * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
@@ -2666,13 +3351,22 @@ public interface MOlocPackage extends EPackage
   int GENERAL_CLAUSE__MODIFICATIONS = ELEMENT_FEATURE_COUNT + 7;
 
   /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__IS_MODIFICATION_OVER = ELEMENT_FEATURE_COUNT + 8;
+
+  /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__DESCRIPTION = ELEMENT_FEATURE_COUNT + 8;
+  int GENERAL_CLAUSE__DESCRIPTION = ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -2681,7 +3375,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__ELEMENTS = ELEMENT_FEATURE_COUNT + 9;
+  int GENERAL_CLAUSE__ELEMENTS = ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Is Extends</b></em>' attribute.
@@ -2690,7 +3384,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_EXTENDS = ELEMENT_FEATURE_COUNT + 10;
+  int GENERAL_CLAUSE__IS_EXTENDS = ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Is Long Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER = ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Class Name End</b></em>' attribute.
@@ -2699,7 +3402,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__CLASS_NAME_END = ELEMENT_FEATURE_COUNT + 11;
+  int GENERAL_CLAUSE__CLASS_NAME_END = ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Type Specifier</b></em>' attribute.
@@ -2708,7 +3411,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__TYPE_SPECIFIER = ELEMENT_FEATURE_COUNT + 12;
+  int GENERAL_CLAUSE__TYPE_SPECIFIER = ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Subscripts</b></em>' attribute.
@@ -2717,7 +3420,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__SUBSCRIPTS = ELEMENT_FEATURE_COUNT + 13;
+  int GENERAL_CLAUSE__SUBSCRIPTS = ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
@@ -2726,7 +3429,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__ENUMERATION_LITERAL = ELEMENT_FEATURE_COUNT + 14;
+  int GENERAL_CLAUSE__ENUMERATION_LITERAL = ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -2735,7 +3438,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 15;
+  int GENERAL_CLAUSE__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -2744,7 +3447,25 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__ANNOTATIONS = ELEMENT_FEATURE_COUNT + 16;
+  int GENERAL_CLAUSE__ANNOTATIONS = ELEMENT_FEATURE_COUNT + 18;
+
+  /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__IS_ANNOTATION_OVER = ELEMENT_FEATURE_COUNT + 19;
+
+  /**
+   * The feature id for the '<em><b>Is Short Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER = ELEMENT_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -2753,7 +3474,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__DIRECTION = ELEMENT_FEATURE_COUNT + 17;
+  int GENERAL_CLAUSE__DIRECTION = ELEMENT_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -2762,7 +3483,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_ENUMERATION = ELEMENT_FEATURE_COUNT + 18;
+  int GENERAL_CLAUSE__IS_ENUMERATION = ELEMENT_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -2771,7 +3492,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_COLON = ELEMENT_FEATURE_COUNT + 19;
+  int GENERAL_CLAUSE__IS_COLON = ELEMENT_FEATURE_COUNT + 23;
+
+  /**
+   * The feature id for the '<em><b>Is Der Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER = ELEMENT_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Der</b></em>' attribute.
@@ -2780,7 +3510,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_DER = ELEMENT_FEATURE_COUNT + 20;
+  int GENERAL_CLAUSE__IS_DER = ELEMENT_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Der Name</b></em>' attribute list.
@@ -2789,7 +3519,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__DER_NAME = ELEMENT_FEATURE_COUNT + 21;
+  int GENERAL_CLAUSE__DER_NAME = ELEMENT_FEATURE_COUNT + 26;
 
   /**
    * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
@@ -2798,7 +3528,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__RELATIONSHIP_TYPE = ELEMENT_FEATURE_COUNT + 22;
+  int GENERAL_CLAUSE__RELATIONSHIP_TYPE = ELEMENT_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Parameter Type</b></em>' attribute.
@@ -2807,7 +3537,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__PARAMETER_TYPE = ELEMENT_FEATURE_COUNT + 23;
+  int GENERAL_CLAUSE__PARAMETER_TYPE = ELEMENT_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Direction Type</b></em>' attribute.
@@ -2816,7 +3546,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__DIRECTION_TYPE = ELEMENT_FEATURE_COUNT + 24;
+  int GENERAL_CLAUSE__DIRECTION_TYPE = ELEMENT_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Constrain</b></em>' containment reference.
@@ -2825,7 +3555,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__CONSTRAIN = ELEMENT_FEATURE_COUNT + 25;
+  int GENERAL_CLAUSE__CONSTRAIN = ELEMENT_FEATURE_COUNT + 30;
 
   /**
    * The feature id for the '<em><b>Is Public</b></em>' attribute.
@@ -2834,7 +3564,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_PUBLIC = ELEMENT_FEATURE_COUNT + 26;
+  int GENERAL_CLAUSE__IS_PUBLIC = ELEMENT_FEATURE_COUNT + 31;
 
   /**
    * The feature id for the '<em><b>Is Protected</b></em>' attribute.
@@ -2843,7 +3573,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_PROTECTED = ELEMENT_FEATURE_COUNT + 27;
+  int GENERAL_CLAUSE__IS_PROTECTED = ELEMENT_FEATURE_COUNT + 32;
 
   /**
    * The feature id for the '<em><b>Is Redeclare</b></em>' attribute.
@@ -2852,7 +3582,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_REDECLARE = ELEMENT_FEATURE_COUNT + 28;
+  int GENERAL_CLAUSE__IS_REDECLARE = ELEMENT_FEATURE_COUNT + 33;
 
   /**
    * The feature id for the '<em><b>Isfinal</b></em>' attribute.
@@ -2861,7 +3591,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__ISFINAL = ELEMENT_FEATURE_COUNT + 29;
+  int GENERAL_CLAUSE__ISFINAL = ELEMENT_FEATURE_COUNT + 34;
 
   /**
    * The feature id for the '<em><b>Is Inner</b></em>' attribute.
@@ -2870,7 +3600,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_INNER = ELEMENT_FEATURE_COUNT + 30;
+  int GENERAL_CLAUSE__IS_INNER = ELEMENT_FEATURE_COUNT + 35;
 
   /**
    * The feature id for the '<em><b>Is Outer</b></em>' attribute.
@@ -2879,7 +3609,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_OUTER = ELEMENT_FEATURE_COUNT + 31;
+  int GENERAL_CLAUSE__IS_OUTER = ELEMENT_FEATURE_COUNT + 36;
 
   /**
    * The feature id for the '<em><b>Is Replaceable</b></em>' attribute.
@@ -2888,7 +3618,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_REPLACEABLE = ELEMENT_FEATURE_COUNT + 32;
+  int GENERAL_CLAUSE__IS_REPLACEABLE = ELEMENT_FEATURE_COUNT + 37;
 
   /**
    * The feature id for the '<em><b>Component list</b></em>' containment reference list.
@@ -2897,7 +3627,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__COMPONENT_LIST = ELEMENT_FEATURE_COUNT + 33;
+  int GENERAL_CLAUSE__COMPONENT_LIST = ELEMENT_FEATURE_COUNT + 38;
+
+  /**
+   * The feature id for the '<em><b>Is Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__IS_OVER = ELEMENT_FEATURE_COUNT + 39;
 
   /**
    * The number of structural features of the '<em>General Clause</em>' class.
@@ -2906,7 +3645,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 34;
+  int GENERAL_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 40;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.Component_declarationImpl <em>Component declaration</em>}' class.
@@ -2916,7 +3655,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getComponent_declaration()
    * @generated
    */
-  int COMPONENT_DECLARATION = 33;
+  int COMPONENT_DECLARATION = 34;
 
   /**
    * The feature id for the '<em><b>Subscripts</b></em>' attribute.
@@ -2935,6 +3674,15 @@ public interface MOlocPackage extends EPackage
    * @ordered
    */
   int COMPONENT_DECLARATION__MODIFICATIONS = DECLARATION__MODIFICATIONS;
+
+  /**
+   * The feature id for the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION__IS_MODIFICATION_OVER = DECLARATION__IS_MODIFICATION_OVER;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -2982,13 +3730,22 @@ public interface MOlocPackage extends EPackage
   int COMPONENT_DECLARATION__ANNOTATIONS = DECLARATION_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DECLARATION__IS_ANNOTATION_OVER = DECLARATION_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Condition attribute</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_DECLARATION__CONDITION_ATTRIBUTE = DECLARATION_FEATURE_COUNT + 3;
+  int COMPONENT_DECLARATION__CONDITION_ATTRIBUTE = DECLARATION_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Component declaration</em>' class.
@@ -2997,7 +3754,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_DECLARATION_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 4;
+  int COMPONENT_DECLARATION_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ExternalElementImpl <em>External Element</em>}' class.
@@ -3007,7 +3764,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getExternalElement()
    * @generated
    */
-  int EXTERNAL_ELEMENT = 34;
+  int EXTERNAL_ELEMENT = 35;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -3028,13 +3785,22 @@ public interface MOlocPackage extends EPackage
   int EXTERNAL_ELEMENT__ANNOTATIONS = ELEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTERNAL_ELEMENT__IS_ANNOTATION_OVER = ELEMENT_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Language specification</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTERNAL_ELEMENT__LANGUAGE_SPECIFICATION = ELEMENT_FEATURE_COUNT + 2;
+  int EXTERNAL_ELEMENT__LANGUAGE_SPECIFICATION = ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' attribute.
@@ -3043,7 +3809,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTERNAL_ELEMENT__REF = ELEMENT_FEATURE_COUNT + 3;
+  int EXTERNAL_ELEMENT__REF = ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Ref Value</b></em>' attribute.
@@ -3052,7 +3818,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTERNAL_ELEMENT__REF_VALUE = ELEMENT_FEATURE_COUNT + 4;
+  int EXTERNAL_ELEMENT__REF_VALUE = ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Expression List</b></em>' attribute.
@@ -3061,7 +3827,16 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTERNAL_ELEMENT__EXPRESSION_LIST = ELEMENT_FEATURE_COUNT + 5;
+  int EXTERNAL_ELEMENT__EXPRESSION_LIST = ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Is Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTERNAL_ELEMENT__IS_OVER = ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>External Element</em>' class.
@@ -3070,7 +3845,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTERNAL_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 6;
+  int EXTERNAL_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.AnnotationClauseImpl <em>Annotation Clause</em>}' class.
@@ -3080,7 +3855,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAnnotationClause()
    * @generated
    */
-  int ANNOTATION_CLAUSE = 35;
+  int ANNOTATION_CLAUSE = 36;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -3101,13 +3876,31 @@ public interface MOlocPackage extends EPackage
   int ANNOTATION_CLAUSE__ANNOTATIONS = ELEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_CLAUSE__IS_ANNOTATION_OVER = ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_CLAUSE__IS_OVER = ELEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Annotation Clause</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANNOTATION_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+  int ANNOTATION_CLAUSE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.EquationSectionImpl <em>Equation Section</em>}' class.
@@ -3117,7 +3910,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEquationSection()
    * @generated
    */
-  int EQUATION_SECTION = 36;
+  int EQUATION_SECTION = 37;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -3154,7 +3947,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getEquation()
    * @generated
    */
-  int EQUATION = 37;
+  int EQUATION = 38;
 
   /**
    * The number of structural features of the '<em>Equation</em>' class.
@@ -3173,7 +3966,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getSimpleEquation()
    * @generated
    */
-  int SIMPLE_EQUATION = 38;
+  int SIMPLE_EQUATION = 39;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3203,13 +3996,22 @@ public interface MOlocPackage extends EPackage
   int SIMPLE_EQUATION__ANNOTATIONS = EQUATION_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EQUATION__IS_ANNOTATION_OVER = EQUATION_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_EQUATION__LEFT = EQUATION_FEATURE_COUNT + 3;
+  int SIMPLE_EQUATION__LEFT = EQUATION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' attribute.
@@ -3218,7 +4020,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIMPLE_EQUATION__RIGHT = EQUATION_FEATURE_COUNT + 4;
+  int SIMPLE_EQUATION__RIGHT = EQUATION_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Simple Equation</em>' class.
@@ -3227,7 +4029,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIMPLE_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 5;
+  int SIMPLE_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.IfEquationImpl <em>If Equation</em>}' class.
@@ -3237,7 +4039,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getIfEquation()
    * @generated
    */
-  int IF_EQUATION = 39;
+  int IF_EQUATION = 40;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3267,13 +4069,22 @@ public interface MOlocPackage extends EPackage
   int IF_EQUATION__ANNOTATIONS = EQUATION_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_EQUATION__IS_ANNOTATION_OVER = EQUATION_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Condition</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_EQUATION__CONDITION = EQUATION_FEATURE_COUNT + 3;
+  int IF_EQUATION__CONDITION = EQUATION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>If Equations</b></em>' containment reference list.
@@ -3282,7 +4093,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_EQUATION__IF_EQUATIONS = EQUATION_FEATURE_COUNT + 4;
+  int IF_EQUATION__IF_EQUATIONS = EQUATION_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Else Condition</b></em>' attribute list.
@@ -3291,7 +4102,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_EQUATION__ELSE_CONDITION = EQUATION_FEATURE_COUNT + 5;
+  int IF_EQUATION__ELSE_CONDITION = EQUATION_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Elseif Equations</b></em>' containment reference list.
@@ -3300,7 +4111,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_EQUATION__ELSEIF_EQUATIONS = EQUATION_FEATURE_COUNT + 6;
+  int IF_EQUATION__ELSEIF_EQUATIONS = EQUATION_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Else Equations</b></em>' containment reference list.
@@ -3309,7 +4120,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_EQUATION__ELSE_EQUATIONS = EQUATION_FEATURE_COUNT + 7;
+  int IF_EQUATION__ELSE_EQUATIONS = EQUATION_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>If Equation</em>' class.
@@ -3318,7 +4129,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 8;
+  int IF_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ForEquationImpl <em>For Equation</em>}' class.
@@ -3328,7 +4139,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getForEquation()
    * @generated
    */
-  int FOR_EQUATION = 40;
+  int FOR_EQUATION = 41;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3358,13 +4169,22 @@ public interface MOlocPackage extends EPackage
   int FOR_EQUATION__ANNOTATIONS = EQUATION_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_EQUATION__IS_ANNOTATION_OVER = EQUATION_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>For Indices</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR_EQUATION__FOR_INDICES = EQUATION_FEATURE_COUNT + 3;
+  int FOR_EQUATION__FOR_INDICES = EQUATION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>For Equations</b></em>' containment reference list.
@@ -3373,7 +4193,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_EQUATION__FOR_EQUATIONS = EQUATION_FEATURE_COUNT + 4;
+  int FOR_EQUATION__FOR_EQUATIONS = EQUATION_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>For Equation</em>' class.
@@ -3382,7 +4202,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 5;
+  int FOR_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ConnectEquationImpl <em>Connect Equation</em>}' class.
@@ -3392,7 +4212,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getConnectEquation()
    * @generated
    */
-  int CONNECT_EQUATION = 41;
+  int CONNECT_EQUATION = 42;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3422,13 +4242,22 @@ public interface MOlocPackage extends EPackage
   int CONNECT_EQUATION__ANNOTATIONS = EQUATION_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECT_EQUATION__IS_ANNOTATION_OVER = EQUATION_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONNECT_EQUATION__LEFT = EQUATION_FEATURE_COUNT + 3;
+  int CONNECT_EQUATION__LEFT = EQUATION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' attribute.
@@ -3437,7 +4266,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECT_EQUATION__RIGHT = EQUATION_FEATURE_COUNT + 4;
+  int CONNECT_EQUATION__RIGHT = EQUATION_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Connect Equation</em>' class.
@@ -3446,7 +4275,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECT_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 5;
+  int CONNECT_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.WhenEquationImpl <em>When Equation</em>}' class.
@@ -3456,7 +4285,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getWhenEquation()
    * @generated
    */
-  int WHEN_EQUATION = 42;
+  int WHEN_EQUATION = 43;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3486,13 +4315,22 @@ public interface MOlocPackage extends EPackage
   int WHEN_EQUATION__ANNOTATIONS = EQUATION_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_EQUATION__IS_ANNOTATION_OVER = EQUATION_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Condition</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHEN_EQUATION__CONDITION = EQUATION_FEATURE_COUNT + 3;
+  int WHEN_EQUATION__CONDITION = EQUATION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>When Equations</b></em>' containment reference list.
@@ -3501,7 +4339,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHEN_EQUATION__WHEN_EQUATIONS = EQUATION_FEATURE_COUNT + 4;
+  int WHEN_EQUATION__WHEN_EQUATIONS = EQUATION_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Else Condition</b></em>' attribute list.
@@ -3510,7 +4348,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHEN_EQUATION__ELSE_CONDITION = EQUATION_FEATURE_COUNT + 5;
+  int WHEN_EQUATION__ELSE_CONDITION = EQUATION_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Elsewhen Equations</b></em>' containment reference list.
@@ -3519,7 +4357,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHEN_EQUATION__ELSEWHEN_EQUATIONS = EQUATION_FEATURE_COUNT + 6;
+  int WHEN_EQUATION__ELSEWHEN_EQUATIONS = EQUATION_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>When Equation</em>' class.
@@ -3528,7 +4366,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHEN_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 7;
+  int WHEN_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.FunctionEquationImpl <em>Function Equation</em>}' class.
@@ -3538,7 +4376,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionEquation()
    * @generated
    */
-  int FUNCTION_EQUATION = 43;
+  int FUNCTION_EQUATION = 44;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3568,13 +4406,22 @@ public interface MOlocPackage extends EPackage
   int FUNCTION_EQUATION__ANNOTATIONS = EQUATION_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_EQUATION__IS_ANNOTATION_OVER = EQUATION_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Component</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_EQUATION__COMPONENT = EQUATION_FEATURE_COUNT + 3;
+  int FUNCTION_EQUATION__COMPONENT = EQUATION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -3583,7 +4430,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_EQUATION__FUNCTION = EQUATION_FEATURE_COUNT + 4;
+  int FUNCTION_EQUATION__FUNCTION = EQUATION_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Function Equation</em>' class.
@@ -3592,7 +4439,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 5;
+  int FUNCTION_EQUATION_FEATURE_COUNT = EQUATION_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.AlgorithmSectionImpl <em>Algorithm Section</em>}' class.
@@ -3602,7 +4449,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAlgorithmSection()
    * @generated
    */
-  int ALGORITHM_SECTION = 44;
+  int ALGORITHM_SECTION = 45;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -3639,7 +4486,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getStatement()
    * @generated
    */
-  int STATEMENT = 45;
+  int STATEMENT = 46;
 
   /**
    * The number of structural features of the '<em>Statement</em>' class.
@@ -3658,7 +4505,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getFunctionStatement()
    * @generated
    */
-  int FUNCTION_STATEMENT = 46;
+  int FUNCTION_STATEMENT = 47;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3688,13 +4535,22 @@ public interface MOlocPackage extends EPackage
   int FUNCTION_STATEMENT__ANNOTATIONS = STATEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_STATEMENT__IS_ANNOTATION_OVER = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Component</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_STATEMENT__COMPONENT = STATEMENT_FEATURE_COUNT + 3;
+  int FUNCTION_STATEMENT__COMPONENT = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -3703,7 +4559,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_STATEMENT__EXPRESSION = STATEMENT_FEATURE_COUNT + 4;
+  int FUNCTION_STATEMENT__EXPRESSION = STATEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -3712,7 +4568,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_STATEMENT__FUNCTION = STATEMENT_FEATURE_COUNT + 5;
+  int FUNCTION_STATEMENT__FUNCTION = STATEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Output</b></em>' attribute.
@@ -3721,7 +4577,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_STATEMENT__OUTPUT = STATEMENT_FEATURE_COUNT + 6;
+  int FUNCTION_STATEMENT__OUTPUT = STATEMENT_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Function Statement</em>' class.
@@ -3730,7 +4586,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 7;
+  int FUNCTION_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.BreakStatementImpl <em>Break Statement</em>}' class.
@@ -3740,7 +4596,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getBreakStatement()
    * @generated
    */
-  int BREAK_STATEMENT = 47;
+  int BREAK_STATEMENT = 48;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3770,13 +4626,22 @@ public interface MOlocPackage extends EPackage
   int BREAK_STATEMENT__ANNOTATIONS = STATEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BREAK_STATEMENT__IS_ANNOTATION_OVER = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Break Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BREAK_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
+  int BREAK_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ReturnStatementImpl <em>Return Statement</em>}' class.
@@ -3786,7 +4651,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getReturnStatement()
    * @generated
    */
-  int RETURN_STATEMENT = 48;
+  int RETURN_STATEMENT = 49;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3816,13 +4681,22 @@ public interface MOlocPackage extends EPackage
   int RETURN_STATEMENT__ANNOTATIONS = STATEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RETURN_STATEMENT__IS_ANNOTATION_OVER = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Return Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RETURN_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
+  int RETURN_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.IfStatementImpl <em>If Statement</em>}' class.
@@ -3832,7 +4706,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getIfStatement()
    * @generated
    */
-  int IF_STATEMENT = 49;
+  int IF_STATEMENT = 50;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3862,13 +4736,22 @@ public interface MOlocPackage extends EPackage
   int IF_STATEMENT__ANNOTATIONS = STATEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__IS_ANNOTATION_OVER = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Condition</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 3;
+  int IF_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>If Statements</b></em>' containment reference list.
@@ -3877,7 +4760,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_STATEMENT__IF_STATEMENTS = STATEMENT_FEATURE_COUNT + 4;
+  int IF_STATEMENT__IF_STATEMENTS = STATEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Else Condition</b></em>' attribute list.
@@ -3886,7 +4769,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_STATEMENT__ELSE_CONDITION = STATEMENT_FEATURE_COUNT + 5;
+  int IF_STATEMENT__ELSE_CONDITION = STATEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Elseif Statements</b></em>' containment reference list.
@@ -3895,7 +4778,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_STATEMENT__ELSEIF_STATEMENTS = STATEMENT_FEATURE_COUNT + 6;
+  int IF_STATEMENT__ELSEIF_STATEMENTS = STATEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Else Statements</b></em>' containment reference list.
@@ -3904,7 +4787,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_STATEMENT__ELSE_STATEMENTS = STATEMENT_FEATURE_COUNT + 7;
+  int IF_STATEMENT__ELSE_STATEMENTS = STATEMENT_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>If Statement</em>' class.
@@ -3913,7 +4796,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 8;
+  int IF_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ForStatementImpl <em>For Statement</em>}' class.
@@ -3923,7 +4806,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getForStatement()
    * @generated
    */
-  int FOR_STATEMENT = 50;
+  int FOR_STATEMENT = 51;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -3953,13 +4836,22 @@ public interface MOlocPackage extends EPackage
   int FOR_STATEMENT__ANNOTATIONS = STATEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__IS_ANNOTATION_OVER = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>For Indices</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR_STATEMENT__FOR_INDICES = STATEMENT_FEATURE_COUNT + 3;
+  int FOR_STATEMENT__FOR_INDICES = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>For Statements</b></em>' containment reference list.
@@ -3968,7 +4860,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_STATEMENT__FOR_STATEMENTS = STATEMENT_FEATURE_COUNT + 4;
+  int FOR_STATEMENT__FOR_STATEMENTS = STATEMENT_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>For Statement</em>' class.
@@ -3977,7 +4869,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 5;
+  int FOR_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.WhenStatementImpl <em>When Statement</em>}' class.
@@ -3987,7 +4879,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getWhenStatement()
    * @generated
    */
-  int WHEN_STATEMENT = 51;
+  int WHEN_STATEMENT = 52;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -4017,13 +4909,22 @@ public interface MOlocPackage extends EPackage
   int WHEN_STATEMENT__ANNOTATIONS = STATEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_STATEMENT__IS_ANNOTATION_OVER = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Condition</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHEN_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 3;
+  int WHEN_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>When Statements</b></em>' containment reference list.
@@ -4032,7 +4933,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHEN_STATEMENT__WHEN_STATEMENTS = STATEMENT_FEATURE_COUNT + 4;
+  int WHEN_STATEMENT__WHEN_STATEMENTS = STATEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Else Condition</b></em>' attribute list.
@@ -4041,7 +4942,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHEN_STATEMENT__ELSE_CONDITION = STATEMENT_FEATURE_COUNT + 5;
+  int WHEN_STATEMENT__ELSE_CONDITION = STATEMENT_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>When Statement</em>' class.
@@ -4050,7 +4951,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHEN_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 6;
+  int WHEN_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.WhileStatementImpl <em>While Statement</em>}' class.
@@ -4060,7 +4961,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getWhileStatement()
    * @generated
    */
-  int WHILE_STATEMENT = 52;
+  int WHILE_STATEMENT = 53;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -4090,13 +4991,22 @@ public interface MOlocPackage extends EPackage
   int WHILE_STATEMENT__ANNOTATIONS = STATEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__IS_ANNOTATION_OVER = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Condition</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHILE_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 3;
+  int WHILE_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>While Statements</b></em>' containment reference list.
@@ -4105,7 +5015,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHILE_STATEMENT__WHILE_STATEMENTS = STATEMENT_FEATURE_COUNT + 4;
+  int WHILE_STATEMENT__WHILE_STATEMENTS = STATEMENT_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>While Statement</em>' class.
@@ -4114,7 +5024,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHILE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 5;
+  int WHILE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.ClassType <em>Class Type</em>}' enum.
@@ -4124,7 +5034,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getClassType()
    * @generated
    */
-  int CLASS_TYPE = 53;
+  int CLASS_TYPE = 54;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.Direction <em>Direction</em>}' enum.
@@ -4134,7 +5044,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getDirection()
    * @generated
    */
-  int DIRECTION = 54;
+  int DIRECTION = 55;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.RelationshipType <em>Relationship Type</em>}' enum.
@@ -4144,7 +5054,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getRelationshipType()
    * @generated
    */
-  int RELATIONSHIP_TYPE = 55;
+  int RELATIONSHIP_TYPE = 56;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.ParameterType <em>Parameter Type</em>}' enum.
@@ -4154,7 +5064,7 @@ public interface MOlocPackage extends EPackage
    * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getParameterType()
    * @generated
    */
-  int PARAMETER_TYPE = 56;
+  int PARAMETER_TYPE = 57;
 
 
   /**
@@ -4220,6 +5130,17 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EAttribute getClass_definition_Isfinal();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.Class_definition#isIsOver <em>Is Over</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Over</em>'.
+   * @see dut.control.moloc.mOloc.Class_definition#isIsOver()
+   * @see #getClass_definition()
+   * @generated
+   */
+  EAttribute getClass_definition_IsOver();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.class_prefixes <em>class prefixes</em>}'.
@@ -4329,6 +5250,17 @@ public interface MOlocPackage extends EPackage
   EAttribute getlong_class_specifier_IsExtends();
 
   /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.long_class_specifier#isIsLongClassSpecifier <em>Is Long Class Specifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Long Class Specifier</em>'.
+   * @see dut.control.moloc.mOloc.long_class_specifier#isIsLongClassSpecifier()
+   * @see #getlong_class_specifier()
+   * @generated
+   */
+  EAttribute getlong_class_specifier_IsLongClassSpecifier();
+
+  /**
    * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.long_class_specifier#getClassNameEnd <em>Class Name End</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4348,6 +5280,17 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EClass getshort_class_specifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.short_class_specifier#isIsShortClassSpecifier <em>Is Short Class Specifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Short Class Specifier</em>'.
+   * @see dut.control.moloc.mOloc.short_class_specifier#isIsShortClassSpecifier()
+   * @see #getshort_class_specifier()
+   * @generated
+   */
+  EAttribute getshort_class_specifier_IsShortClassSpecifier();
 
   /**
    * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.short_class_specifier#getDirection <em>Direction</em>}'.
@@ -4391,6 +5334,17 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EClass getder_class_specifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.der_class_specifier#isIsDerClassSpecifier <em>Is Der Class Specifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Der Class Specifier</em>'.
+   * @see dut.control.moloc.mOloc.der_class_specifier#isIsDerClassSpecifier()
+   * @see #getder_class_specifier()
+   * @generated
+   */
+  EAttribute getder_class_specifier_IsDerClassSpecifier();
 
   /**
    * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.der_class_specifier#isIsDer <em>Is Der</em>}'.
@@ -4457,6 +5411,17 @@ public interface MOlocPackage extends EPackage
   EReference getclass_modification_Modifications();
 
   /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.class_modification#isIsModificationOver <em>Is Modification Over</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Modification Over</em>'.
+   * @see dut.control.moloc.mOloc.class_modification#isIsModificationOver()
+   * @see #getclass_modification()
+   * @generated
+   */
+  EAttribute getclass_modification_IsModificationOver();
+
+  /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.annotation_modification_part <em>annotation modification part</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4487,6 +5452,17 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EReference getannotation_modification_part_Annotations();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.annotation_modification_part#isIsAnnotationOver <em>Is Annotation Over</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Annotation Over</em>'.
+   * @see dut.control.moloc.mOloc.annotation_modification_part#isIsAnnotationOver()
+   * @see #getannotation_modification_part()
+   * @generated
+   */
+  EAttribute getannotation_modification_part_IsAnnotationOver();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.description_string <em>description string</em>}'.
@@ -4658,58 +5634,112 @@ public interface MOlocPackage extends EPackage
   EAttribute getModificationElement_IsReplaceable();
 
   /**
-   * Returns the meta object for class '{@link dut.control.moloc.mOloc.AnnotationModification <em>Annotation Modification</em>}'.
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.AnnotationModificationElement <em>Annotation Modification Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Annotation Modification</em>'.
-   * @see dut.control.moloc.mOloc.AnnotationModification
+   * @return the meta object for class '<em>Annotation Modification Element</em>'.
+   * @see dut.control.moloc.mOloc.AnnotationModificationElement
    * @generated
    */
-  EClass getAnnotationModification();
+  EClass getAnnotationModificationElement();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationModification#isIsRedeclare <em>Is Redeclare</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationModificationElement#isIsRedeclare <em>Is Redeclare</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Is Redeclare</em>'.
-   * @see dut.control.moloc.mOloc.AnnotationModification#isIsRedeclare()
-   * @see #getAnnotationModification()
+   * @see dut.control.moloc.mOloc.AnnotationModificationElement#isIsRedeclare()
+   * @see #getAnnotationModificationElement()
    * @generated
    */
-  EAttribute getAnnotationModification_IsRedeclare();
+  EAttribute getAnnotationModificationElement_IsRedeclare();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationModification#isIsEach <em>Is Each</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationModificationElement#isIsEach <em>Is Each</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Is Each</em>'.
-   * @see dut.control.moloc.mOloc.AnnotationModification#isIsEach()
-   * @see #getAnnotationModification()
+   * @see dut.control.moloc.mOloc.AnnotationModificationElement#isIsEach()
+   * @see #getAnnotationModificationElement()
    * @generated
    */
-  EAttribute getAnnotationModification_IsEach();
+  EAttribute getAnnotationModificationElement_IsEach();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationModification#isIsfinal <em>Isfinal</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationModificationElement#isIsfinal <em>Isfinal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Isfinal</em>'.
-   * @see dut.control.moloc.mOloc.AnnotationModification#isIsfinal()
-   * @see #getAnnotationModification()
+   * @see dut.control.moloc.mOloc.AnnotationModificationElement#isIsfinal()
+   * @see #getAnnotationModificationElement()
    * @generated
    */
-  EAttribute getAnnotationModification_Isfinal();
+  EAttribute getAnnotationModificationElement_Isfinal();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationModification#isIsReplaceable <em>Is Replaceable</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationModificationElement#isIsReplaceable <em>Is Replaceable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Is Replaceable</em>'.
-   * @see dut.control.moloc.mOloc.AnnotationModification#isIsReplaceable()
-   * @see #getAnnotationModification()
+   * @see dut.control.moloc.mOloc.AnnotationModificationElement#isIsReplaceable()
+   * @see #getAnnotationModificationElement()
    * @generated
    */
-  EAttribute getAnnotationModification_IsReplaceable();
+  EAttribute getAnnotationModificationElement_IsReplaceable();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.moloc.mOloc.AnnotationModificationElement2 <em>Annotation Modification Element2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Annotation Modification Element2</em>'.
+   * @see dut.control.moloc.mOloc.AnnotationModificationElement2
+   * @generated
+   */
+  EClass getAnnotationModificationElement2();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationModificationElement2#isIsRedeclare <em>Is Redeclare</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Redeclare</em>'.
+   * @see dut.control.moloc.mOloc.AnnotationModificationElement2#isIsRedeclare()
+   * @see #getAnnotationModificationElement2()
+   * @generated
+   */
+  EAttribute getAnnotationModificationElement2_IsRedeclare();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationModificationElement2#isIsEach <em>Is Each</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Each</em>'.
+   * @see dut.control.moloc.mOloc.AnnotationModificationElement2#isIsEach()
+   * @see #getAnnotationModificationElement2()
+   * @generated
+   */
+  EAttribute getAnnotationModificationElement2_IsEach();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationModificationElement2#isIsfinal <em>Isfinal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Isfinal</em>'.
+   * @see dut.control.moloc.mOloc.AnnotationModificationElement2#isIsfinal()
+   * @see #getAnnotationModificationElement2()
+   * @generated
+   */
+  EAttribute getAnnotationModificationElement2_Isfinal();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationModificationElement2#isIsReplaceable <em>Is Replaceable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Replaceable</em>'.
+   * @see dut.control.moloc.mOloc.AnnotationModificationElement2#isIsReplaceable()
+   * @see #getAnnotationModificationElement2()
+   * @generated
+   */
+  EAttribute getAnnotationModificationElement2_IsReplaceable();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.element_modification <em>element modification</em>}'.
@@ -4986,6 +6016,17 @@ public interface MOlocPackage extends EPackage
   EAttribute getImportClause_ObjectName();
 
   /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ImportClause#isIsOver <em>Is Over</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Over</em>'.
+   * @see dut.control.moloc.mOloc.ImportClause#isIsOver()
+   * @see #getImportClause()
+   * @generated
+   */
+  EAttribute getImportClause_IsOver();
+
+  /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.ExtendsClause <em>Extends Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5038,6 +6079,17 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EReference getExtendsClause_Breaks();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExtendsClause#isIsOver <em>Is Over</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Over</em>'.
+   * @see dut.control.moloc.mOloc.ExtendsClause#isIsOver()
+   * @see #getExtendsClause()
+   * @generated
+   */
+  EAttribute getExtendsClause_IsOver();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.Break <em>Break</em>}'.
@@ -5170,6 +6222,17 @@ public interface MOlocPackage extends EPackage
   EReference getGeneralClause_Component_list();
 
   /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.GeneralClause#isIsOver <em>Is Over</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Over</em>'.
+   * @see dut.control.moloc.mOloc.GeneralClause#isIsOver()
+   * @see #getGeneralClause()
+   * @generated
+   */
+  EAttribute getGeneralClause_IsOver();
+
+  /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.Component_declaration <em>Component declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5245,6 +6308,17 @@ public interface MOlocPackage extends EPackage
   EAttribute getExternalElement_ExpressionList();
 
   /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.ExternalElement#isIsOver <em>Is Over</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Over</em>'.
+   * @see dut.control.moloc.mOloc.ExternalElement#isIsOver()
+   * @see #getExternalElement()
+   * @generated
+   */
+  EAttribute getExternalElement_IsOver();
+
+  /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.AnnotationClause <em>Annotation Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5253,6 +6327,17 @@ public interface MOlocPackage extends EPackage
    * @generated
    */
   EClass getAnnotationClause();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.moloc.mOloc.AnnotationClause#isIsOver <em>Is Over</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Over</em>'.
+   * @see dut.control.moloc.mOloc.AnnotationClause#isIsOver()
+   * @see #getAnnotationClause()
+   * @generated
+   */
+  EAttribute getAnnotationClause_IsOver();
 
   /**
    * Returns the meta object for class '{@link dut.control.moloc.mOloc.EquationSection <em>Equation Section</em>}'.
@@ -5947,6 +7032,14 @@ public interface MOlocPackage extends EPackage
     EAttribute CLASS_DEFINITION__ISFINAL = eINSTANCE.getClass_definition_Isfinal();
 
     /**
+     * The meta object literal for the '<em><b>Is Over</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLASS_DEFINITION__IS_OVER = eINSTANCE.getClass_definition_IsOver();
+
+    /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.class_prefixesImpl <em>class prefixes</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6033,6 +7126,14 @@ public interface MOlocPackage extends EPackage
     EAttribute LONG_CLASS_SPECIFIER__IS_EXTENDS = eINSTANCE.getlong_class_specifier_IsExtends();
 
     /**
+     * The meta object literal for the '<em><b>Is Long Class Specifier</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER = eINSTANCE.getlong_class_specifier_IsLongClassSpecifier();
+
+    /**
      * The meta object literal for the '<em><b>Class Name End</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6049,6 +7150,14 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EClass SHORT_CLASS_SPECIFIER = eINSTANCE.getshort_class_specifier();
+
+    /**
+     * The meta object literal for the '<em><b>Is Short Class Specifier</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER = eINSTANCE.getshort_class_specifier_IsShortClassSpecifier();
 
     /**
      * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
@@ -6083,6 +7192,14 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EClass DER_CLASS_SPECIFIER = eINSTANCE.getder_class_specifier();
+
+    /**
+     * The meta object literal for the '<em><b>Is Der Class Specifier</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER = eINSTANCE.getder_class_specifier_IsDerClassSpecifier();
 
     /**
      * The meta object literal for the '<em><b>Is Der</b></em>' attribute feature.
@@ -6137,6 +7254,14 @@ public interface MOlocPackage extends EPackage
     EReference CLASS_MODIFICATION__MODIFICATIONS = eINSTANCE.getclass_modification_Modifications();
 
     /**
+     * The meta object literal for the '<em><b>Is Modification Over</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLASS_MODIFICATION__IS_MODIFICATION_OVER = eINSTANCE.getclass_modification_IsModificationOver();
+
+    /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.annotation_modification_partImpl <em>annotation modification part</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6161,6 +7286,14 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EReference ANNOTATION_MODIFICATION_PART__ANNOTATIONS = eINSTANCE.getannotation_modification_part_Annotations();
+
+    /**
+     * The meta object literal for the '<em><b>Is Annotation Over</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER = eINSTANCE.getannotation_modification_part_IsAnnotationOver();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.description_stringImpl <em>description string</em>}' class.
@@ -6305,14 +7438,14 @@ public interface MOlocPackage extends EPackage
     EAttribute MODIFICATION_ELEMENT__IS_REPLACEABLE = eINSTANCE.getModificationElement_IsReplaceable();
 
     /**
-     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.AnnotationModificationImpl <em>Annotation Modification</em>}' class.
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.AnnotationModificationElementImpl <em>Annotation Modification Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.moloc.mOloc.impl.AnnotationModificationImpl
-     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAnnotationModification()
+     * @see dut.control.moloc.mOloc.impl.AnnotationModificationElementImpl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAnnotationModificationElement()
      * @generated
      */
-    EClass ANNOTATION_MODIFICATION = eINSTANCE.getAnnotationModification();
+    EClass ANNOTATION_MODIFICATION_ELEMENT = eINSTANCE.getAnnotationModificationElement();
 
     /**
      * The meta object literal for the '<em><b>Is Redeclare</b></em>' attribute feature.
@@ -6320,7 +7453,7 @@ public interface MOlocPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ANNOTATION_MODIFICATION__IS_REDECLARE = eINSTANCE.getAnnotationModification_IsRedeclare();
+    EAttribute ANNOTATION_MODIFICATION_ELEMENT__IS_REDECLARE = eINSTANCE.getAnnotationModificationElement_IsRedeclare();
 
     /**
      * The meta object literal for the '<em><b>Is Each</b></em>' attribute feature.
@@ -6328,7 +7461,7 @@ public interface MOlocPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ANNOTATION_MODIFICATION__IS_EACH = eINSTANCE.getAnnotationModification_IsEach();
+    EAttribute ANNOTATION_MODIFICATION_ELEMENT__IS_EACH = eINSTANCE.getAnnotationModificationElement_IsEach();
 
     /**
      * The meta object literal for the '<em><b>Isfinal</b></em>' attribute feature.
@@ -6336,7 +7469,7 @@ public interface MOlocPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ANNOTATION_MODIFICATION__ISFINAL = eINSTANCE.getAnnotationModification_Isfinal();
+    EAttribute ANNOTATION_MODIFICATION_ELEMENT__ISFINAL = eINSTANCE.getAnnotationModificationElement_Isfinal();
 
     /**
      * The meta object literal for the '<em><b>Is Replaceable</b></em>' attribute feature.
@@ -6344,7 +7477,49 @@ public interface MOlocPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ANNOTATION_MODIFICATION__IS_REPLACEABLE = eINSTANCE.getAnnotationModification_IsReplaceable();
+    EAttribute ANNOTATION_MODIFICATION_ELEMENT__IS_REPLACEABLE = eINSTANCE.getAnnotationModificationElement_IsReplaceable();
+
+    /**
+     * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.AnnotationModificationElement2Impl <em>Annotation Modification Element2</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.moloc.mOloc.impl.AnnotationModificationElement2Impl
+     * @see dut.control.moloc.mOloc.impl.MOlocPackageImpl#getAnnotationModificationElement2()
+     * @generated
+     */
+    EClass ANNOTATION_MODIFICATION_ELEMENT2 = eINSTANCE.getAnnotationModificationElement2();
+
+    /**
+     * The meta object literal for the '<em><b>Is Redeclare</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ANNOTATION_MODIFICATION_ELEMENT2__IS_REDECLARE = eINSTANCE.getAnnotationModificationElement2_IsRedeclare();
+
+    /**
+     * The meta object literal for the '<em><b>Is Each</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ANNOTATION_MODIFICATION_ELEMENT2__IS_EACH = eINSTANCE.getAnnotationModificationElement2_IsEach();
+
+    /**
+     * The meta object literal for the '<em><b>Isfinal</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ANNOTATION_MODIFICATION_ELEMENT2__ISFINAL = eINSTANCE.getAnnotationModificationElement2_Isfinal();
+
+    /**
+     * The meta object literal for the '<em><b>Is Replaceable</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ANNOTATION_MODIFICATION_ELEMENT2__IS_REPLACEABLE = eINSTANCE.getAnnotationModificationElement2_IsReplaceable();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.element_modificationImpl <em>element modification</em>}' class.
@@ -6579,6 +7754,14 @@ public interface MOlocPackage extends EPackage
     EAttribute IMPORT_CLAUSE__OBJECT_NAME = eINSTANCE.getImportClause_ObjectName();
 
     /**
+     * The meta object literal for the '<em><b>Is Over</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_CLAUSE__IS_OVER = eINSTANCE.getImportClause_IsOver();
+
+    /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl <em>Extends Clause</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6619,6 +7802,14 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EReference EXTENDS_CLAUSE__BREAKS = eINSTANCE.getExtendsClause_Breaks();
+
+    /**
+     * The meta object literal for the '<em><b>Is Over</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXTENDS_CLAUSE__IS_OVER = eINSTANCE.getExtendsClause_IsOver();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.BreakImpl <em>Break</em>}' class.
@@ -6721,6 +7912,14 @@ public interface MOlocPackage extends EPackage
     EReference GENERAL_CLAUSE__COMPONENT_LIST = eINSTANCE.getGeneralClause_Component_list();
 
     /**
+     * The meta object literal for the '<em><b>Is Over</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GENERAL_CLAUSE__IS_OVER = eINSTANCE.getGeneralClause_IsOver();
+
+    /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.Component_declarationImpl <em>Component declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6781,6 +7980,14 @@ public interface MOlocPackage extends EPackage
     EAttribute EXTERNAL_ELEMENT__EXPRESSION_LIST = eINSTANCE.getExternalElement_ExpressionList();
 
     /**
+     * The meta object literal for the '<em><b>Is Over</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXTERNAL_ELEMENT__IS_OVER = eINSTANCE.getExternalElement_IsOver();
+
+    /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.AnnotationClauseImpl <em>Annotation Clause</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6789,6 +7996,14 @@ public interface MOlocPackage extends EPackage
      * @generated
      */
     EClass ANNOTATION_CLAUSE = eINSTANCE.getAnnotationClause();
+
+    /**
+     * The meta object literal for the '<em><b>Is Over</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ANNOTATION_CLAUSE__IS_OVER = eINSTANCE.getAnnotationClause_IsOver();
 
     /**
      * The meta object literal for the '{@link dut.control.moloc.mOloc.impl.EquationSectionImpl <em>Equation Section</em>}' class.

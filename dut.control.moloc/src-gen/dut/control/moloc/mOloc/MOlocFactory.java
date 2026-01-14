@@ -177,13 +177,22 @@ public interface MOlocFactory extends EFactory
   ModificationElement createModificationElement();
 
   /**
-   * Returns a new object of class '<em>Annotation Modification</em>'.
+   * Returns a new object of class '<em>Annotation Modification Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Annotation Modification</em>'.
+   * @return a new object of class '<em>Annotation Modification Element</em>'.
    * @generated
    */
-  AnnotationModification createAnnotationModification();
+  AnnotationModificationElement createAnnotationModificationElement();
+
+  /**
+   * Returns a new object of class '<em>Annotation Modification Element2</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotation Modification Element2</em>'.
+   * @generated
+   */
+  AnnotationModificationElement2 createAnnotationModificationElement2();
 
   /**
    * Returns a new object of class '<em>element modification</em>'.

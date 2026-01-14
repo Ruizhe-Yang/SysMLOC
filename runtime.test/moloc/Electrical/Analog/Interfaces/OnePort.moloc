@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Interfaces">
+  <classes isPartial="true" classType="model" className="OnePort" description="&quot;Component with two electrical pins p and n and current i from p to n&quot;" isLongClassSpecifier="true" classNameEnd="OnePort" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="TwoPin" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list declarationName="i" description="&quot;Current flowing from pin p to pin n&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="0" right="p.i + n.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i" right="p.i"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>Superclass of elements which have &lt;strong>two&lt;/strong> electrical pins: the positive pin connector &lt;em>p&lt;/em>, and the negative pin connector &lt;em>n&lt;/em>. It is assumed that the current flowing into pin p is identical to the current flowing out of pin n. This current is provided explicitly as current i.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em> 1998   &lt;/em>&#xA;       by Christoph Clauss&lt;br> initially implemented&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

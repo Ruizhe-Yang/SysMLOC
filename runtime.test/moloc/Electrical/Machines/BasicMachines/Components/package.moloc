@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.BasicMachines">
+  <classes classType="package" className="Components" description="&quot;Machine components like AirGaps&quot;" isLongClassSpecifier="true" classNameEnd="Components" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;This package contains components for modeling electrical machines, specially three-phase induction machines, based on space phasor theory.&#xA;These models use package SpacePhasors.&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;dl>&#xA;  &lt;dt>&lt;strong>Main Authors:&lt;/strong>&lt;/dt>&#xA;  &lt;dd>&#xA;  &lt;a href=\&quot;https://www.haumer.at/\&quot;>Anton Haumer&lt;/a>&lt;br>&#xA;  Technical Consulting &amp;amp; Electrical Engineering&lt;br>&#xA;  D-93049 Regensburg&lt;br>Germany&lt;br>&#xA;  email: &lt;a href=\&quot;mailto:a.haumer@haumer.at\&quot;>a.haumer@haumer.at&lt;/a>&#xA;  &lt;/dd>&#xA;&lt;/dl>&#xA;  &lt;ul>&#xA;  &lt;li> v1.00 2004/09/16 Anton Haumer&lt;/li>&#xA;  &lt;li> v1.02 2004/09/19 Anton Haumer&lt;br>&#xA;       added AirGapDC models&lt;/li>&#xA;  &lt;li> v1.2  2004/10/27 Anton Haumer&lt;br>&#xA;       fixed a bug with support (formerly bearing)&lt;/li>&#xA;  &lt;li> v1.52 2005/10/12 Anton Haumer&lt;br>&#xA;       added electrical excitation&lt;/li>&#xA;  &lt;li> v1.53 Beta 2005/10/14 Anton Haumer&lt;br>&#xA;       introduced unsymmetrical DamperCage for Synchronous Machines&lt;/li>&#xA;  &lt;li> v2.1.3 2010/02/10 Anton Haumer&lt;br>&#xA;       prepared ConditionalHeatPort of SquirrelCage and DamperCage&lt;/li>&#xA;  &lt;li> v2.2.0 2011/02/10 Anton Haumer&lt;br>&#xA;       conditional ThermalPort for all machines&lt;/li>&#xA;  &lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

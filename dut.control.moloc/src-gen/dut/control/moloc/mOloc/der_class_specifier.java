@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.der_class_specifier#isIsDerClassSpecifier <em>Is Der Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.der_class_specifier#isIsDer <em>Is Der</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.der_class_specifier#getDerName <em>Der Name</em>}</li>
  * </ul>
@@ -24,6 +25,28 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface der_class_specifier extends class_name, type_specifier, description, description_string, annotation_modification_part
 {
+  /**
+   * Returns the value of the '<em><b>Is Der Class Specifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Der Class Specifier</em>' attribute.
+   * @see #setIsDerClassSpecifier(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getder_class_specifier_IsDerClassSpecifier()
+   * @model
+   * @generated
+   */
+  boolean isIsDerClassSpecifier();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.der_class_specifier#isIsDerClassSpecifier <em>Is Der Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Der Class Specifier</em>' attribute.
+   * @see #isIsDerClassSpecifier()
+   * @generated
+   */
+  void setIsDerClassSpecifier(boolean value);
+
   /**
    * Returns the value of the '<em><b>Is Der</b></em>' attribute.
    * <!-- begin-user-doc -->

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Basic">
+  <classes classType="model" className="Admittance" description="&quot;Polyphase linear admittance&quot;" isLongClassSpecifier="true" classNameEnd="Admittance" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPlug" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexAdmittance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="Y_ref" description="&quot;Complex admittances G_ref + j*B_ref&quot;">
+        <modifications isModificationOver="true" elementName="re">
+          <modifications expression="fill(1,m)" elementName="start"/>
+        </modifications>
+        <modifications isModificationOver="true" elementName="im">
+          <modifications expression="fill(0,m)" elementName="start"/>
+        </modifications>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" expression="fill(293.15, m)" declarationName="T_ref" description="&quot;Reference temperatures&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" expression="zeros(m)" declarationName="alpha_ref" description="&quot;Temperature coefficient of resistance (R_actual = R_ref*(1 + alpha_ref*(heatPort.T - T_ref))&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="m" elementName="mh" isfinal="true"/>
+      <extendsModifications expression="T_ref" elementName="T"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="frequencyDependent" description="&quot;Consider frequency dependency, if true&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+        <annotations expression="true" elementName="HideResult"/>
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications expression="true" elementName="checkBox"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="f_ref" description="&quot;Reference frequency, if frequency dependency is considered&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="frequencyDependent" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Basic.Admittance" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="admittance" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Y_ref" elementName="Y_ref" isfinal="true"/>
+        <modifications expression="T_ref" elementName="T_ref" isfinal="true"/>
+        <modifications expression="alpha_ref" elementName="alpha_ref" isfinal="true"/>
+        <modifications expression="fill(useHeatPort, m)" elementName="useHeatPort" isfinal="true"/>
+        <modifications expression="T" elementName="T" isfinal="true"/>
+        <modifications expression="fill(frequencyDependent, m)" elementName="frequencyDependent" isfinal="true"/>
+        <modifications expression="fill(f_ref, m)" elementName="f_ref" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPins_p.pin_p" right="admittance.pin_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-68,0},{-53.5,0},{-39,0},{-10,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="admittance.pin_n" right="plugToPins_n.pin_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{39,0},{68,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="admittance.heatPort" right="heatPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-10},{0,-10},{0,-100}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Text( extent={{150,-80},{-150,-40}}, textString=&quot;m=%m&quot; ) , Line(points={{60,0},{90,0}}, color={85,170,255}), Line(points={{-90,0},{-60,0}}, color={85,170,255}), Rectangle( extent={{-70,30},{70,-30}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-70,-30},{70,30},{70,-30},{-70,-30}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&#xA;&lt;p>The admittance model represents a &lt;strong>parallel&lt;/strong> connection of a resistor and either a capacitor or inductor&#xA;in each phase.&lt;br>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/QuasiStatic/SinglePhase/Basic/GB_admittance.png\&quot;>&lt;/p>&#xA;&#xA;&lt;p>&#xA;The linear admittance connects the voltage &lt;code>&lt;u>v&lt;/u>&lt;/code> with the&#xA;current &lt;code>&lt;u>i&lt;/u>&lt;/code> by  &lt;code>&lt;u>i&lt;/u> = &lt;u>Y&lt;/u>*&lt;u>v&lt;/u>&lt;/code> in each phase, using &lt;code>m&lt;/code>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Admittance\&quot;>single-phase admittances&lt;/a>.&#xA;The resistive&#xA;components are modeled temperature dependent, so the real parts &lt;code>G_actual = real(&lt;u>Y&lt;/u>)&lt;/code> are determined from&#xA;the actual operating temperatures and the reference input conductances &lt;code>real(Y_ref)&lt;/code>.&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Polyphase.Interfaces.ConditionalHeatPort\&quot;>Conditional heat ports&lt;/a> are considered.&#xA;The reactive components&#xA;&lt;code>B_actual = imag(&lt;u>Y&lt;/u>)&lt;/code>&#xA;are equal to &lt;code>imag(Y_ref)&lt;/code> if &lt;code>frequencyDependent = false&lt;/code>.&#xA;Frequency dependency is considered by &lt;code>frequencyDependent = true&lt;/code>, distinguishing two cases:&#xA;&lt;/p>&#xA;&#xA;&lt;dl>&#xA;&lt;dt>(a) &lt;code>imag(Y_ref) &amp;gt; 0&lt;/code>: capacitive case&lt;/dt>&#xA;&lt;dd>The actual susceptances &lt;code>B_actual&lt;/code> are proportional to &lt;code>f/f_ref&lt;/code>&lt;/dd>&#xA;&lt;dt>(b) &lt;code>imag(Y_ref) &amp;lt; 0&lt;/code>: inductive case&lt;/dt>&#xA;&lt;dd>The actual susceptances &lt;code>B_actual&lt;/code> are proportional to &lt;code>f_ref/f&lt;/code>&lt;/dd>&#xA;&lt;/dl>&#xA;&#xA;&lt;h4>See also&lt;/h4>&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Admittance\&quot;>Admittance&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.Resistor\&quot;>Resistor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.Conductor\&quot;>Conductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.Capacitor\&quot;>Capacitor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.Impedance\&quot;>Impedance&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.VariableResistor\&quot;>Variable resistor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.VariableConductor\&quot;>Variable conductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.VariableCapacitor\&quot;>Variable capacitor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.VariableInductor\&quot;>Variable inductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.VariableImpedance\&quot;>Variable impedance&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.VariableAdmittance\&quot;>Variable admittance&lt;/a>&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

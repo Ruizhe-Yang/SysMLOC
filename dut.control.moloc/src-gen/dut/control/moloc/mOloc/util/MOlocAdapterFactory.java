@@ -161,9 +161,14 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
         return createModificationElementAdapter();
       }
       @Override
-      public Adapter caseAnnotationModification(AnnotationModification object)
+      public Adapter caseAnnotationModificationElement(AnnotationModificationElement object)
       {
-        return createAnnotationModificationAdapter();
+        return createAnnotationModificationElementAdapter();
+      }
+      @Override
+      public Adapter caseAnnotationModificationElement2(AnnotationModificationElement2 object)
+      {
+        return createAnnotationModificationElement2Adapter();
       }
       @Override
       public Adapter caseelement_modification(element_modification object)
@@ -618,16 +623,31 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.AnnotationModification <em>Annotation Modification</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.AnnotationModificationElement <em>Annotation Modification Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.moloc.mOloc.AnnotationModification
+   * @see dut.control.moloc.mOloc.AnnotationModificationElement
    * @generated
    */
-  public Adapter createAnnotationModificationAdapter()
+  public Adapter createAnnotationModificationElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.AnnotationModificationElement2 <em>Annotation Modification Element2</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.AnnotationModificationElement2
+   * @generated
+   */
+  public Adapter createAnnotationModificationElement2Adapter()
   {
     return null;
   }

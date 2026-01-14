@@ -24,7 +24,7 @@ public class MOLOC2MO {
         if (args.length > 0) {
             modelPath = args[0];
         } else {
-        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\modelica";
+        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\moloc";
         }
 //        Path out = convertModelToMO(modelPath);
 //        System.out.println("Done. Written to: " + out.toAbsolutePath());

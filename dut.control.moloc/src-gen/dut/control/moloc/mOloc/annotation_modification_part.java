@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.annotation_modification_part#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.annotation_modification_part#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.annotation_modification_part#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getannotation_modification_part()
@@ -50,7 +51,7 @@ public interface annotation_modification_part extends EObject
 
   /**
    * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.moloc.mOloc.AnnotationModification}.
+   * The list contents are of type {@link dut.control.moloc.mOloc.AnnotationModificationElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Annotations</em>' containment reference list.
@@ -58,6 +59,28 @@ public interface annotation_modification_part extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<AnnotationModification> getAnnotations();
+  EList<AnnotationModificationElement> getAnnotations();
+
+  /**
+   * Returns the value of the '<em><b>Is Annotation Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Annotation Over</em>' attribute.
+   * @see #setIsAnnotationOver(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getannotation_modification_part_IsAnnotationOver()
+   * @model
+   * @generated
+   */
+  boolean isIsAnnotationOver();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.annotation_modification_part#isIsAnnotationOver <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Annotation Over</em>' attribute.
+   * @see #isIsAnnotationOver()
+   * @generated
+   */
+  void setIsAnnotationOver(boolean value);
 
 } // annotation_modification_part

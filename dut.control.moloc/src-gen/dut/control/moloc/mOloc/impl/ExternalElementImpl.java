@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.ExternalElement;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.annotation_modification_part;
@@ -33,10 +33,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#getLanguage_specification <em>Language specification</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#getRef <em>Ref</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#getRefValue <em>Ref Value</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#getExpressionList <em>Expression List</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExternalElementImpl#isIsOver <em>Is Over</em>}</li>
  * </ul>
  *
  * @generated
@@ -71,7 +73,27 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getLanguage_specification() <em>Language specification</em>}' attribute.
@@ -154,6 +176,26 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
   protected String expressionList = EXPRESSION_LIST_EDEFAULT;
 
   /**
+   * The default value of the '{@link #isIsOver() <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsOver() <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isOver = IS_OVER_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -205,13 +247,38 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.EXTERNAL_ELEMENT__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.EXTERNAL_ELEMENT__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
   }
 
   /**
@@ -320,6 +387,31 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
    * @generated
    */
   @Override
+  public boolean isIsOver()
+  {
+    return isOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsOver(boolean newIsOver)
+  {
+    boolean oldIsOver = isOver;
+    isOver = newIsOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTERNAL_ELEMENT__IS_OVER, oldIsOver, isOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -344,6 +436,8 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
         return isIsAnnotation();
       case MOlocPackage.EXTERNAL_ELEMENT__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
       case MOlocPackage.EXTERNAL_ELEMENT__LANGUAGE_SPECIFICATION:
         return getLanguage_specification();
       case MOlocPackage.EXTERNAL_ELEMENT__REF:
@@ -352,6 +446,8 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
         return getRefValue();
       case MOlocPackage.EXTERNAL_ELEMENT__EXPRESSION_LIST:
         return getExpressionList();
+      case MOlocPackage.EXTERNAL_ELEMENT__IS_OVER:
+        return isIsOver();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -372,7 +468,10 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
         return;
       case MOlocPackage.EXTERNAL_ELEMENT__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
         return;
       case MOlocPackage.EXTERNAL_ELEMENT__LANGUAGE_SPECIFICATION:
         setLanguage_specification((String)newValue);
@@ -385,6 +484,9 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
         return;
       case MOlocPackage.EXTERNAL_ELEMENT__EXPRESSION_LIST:
         setExpressionList((String)newValue);
+        return;
+      case MOlocPackage.EXTERNAL_ELEMENT__IS_OVER:
+        setIsOver((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -406,6 +508,9 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
       case MOlocPackage.EXTERNAL_ELEMENT__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.EXTERNAL_ELEMENT__LANGUAGE_SPECIFICATION:
         setLanguage_specification(LANGUAGE_SPECIFICATION_EDEFAULT);
         return;
@@ -417,6 +522,9 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
         return;
       case MOlocPackage.EXTERNAL_ELEMENT__EXPRESSION_LIST:
         setExpressionList(EXPRESSION_LIST_EDEFAULT);
+        return;
+      case MOlocPackage.EXTERNAL_ELEMENT__IS_OVER:
+        setIsOver(IS_OVER_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -436,6 +544,8 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.EXTERNAL_ELEMENT__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
       case MOlocPackage.EXTERNAL_ELEMENT__LANGUAGE_SPECIFICATION:
         return LANGUAGE_SPECIFICATION_EDEFAULT == null ? language_specification != null : !LANGUAGE_SPECIFICATION_EDEFAULT.equals(language_specification);
       case MOlocPackage.EXTERNAL_ELEMENT__REF:
@@ -444,6 +554,8 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
         return REF_VALUE_EDEFAULT == null ? refValue != null : !REF_VALUE_EDEFAULT.equals(refValue);
       case MOlocPackage.EXTERNAL_ELEMENT__EXPRESSION_LIST:
         return EXPRESSION_LIST_EDEFAULT == null ? expressionList != null : !EXPRESSION_LIST_EDEFAULT.equals(expressionList);
+      case MOlocPackage.EXTERNAL_ELEMENT__IS_OVER:
+        return isOver != IS_OVER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -462,6 +574,7 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
       {
         case MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.EXTERNAL_ELEMENT__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -482,6 +595,7 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.EXTERNAL_ELEMENT__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.EXTERNAL_ELEMENT__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -501,6 +615,8 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
     result.append(", language_specification: ");
     result.append(language_specification);
     result.append(", ref: ");
@@ -509,6 +625,8 @@ public class ExternalElementImpl extends ElementImpl implements ExternalElement
     result.append(refValue);
     result.append(", expressionList: ");
     result.append(expressionList);
+    result.append(", isOver: ");
+    result.append(isOver);
     result.append(')');
     return result.toString();
   }

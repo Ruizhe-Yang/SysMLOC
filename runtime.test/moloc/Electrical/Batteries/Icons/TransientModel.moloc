@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.Icons">
+  <classes classType="class" className="TransientModel" description="&quot;Indicates transient model&quot;" isLongClassSpecifier="true" classNameEnd="TransientModel" isOver="true">
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+        </modifications>
+        <modifications expression="{ Line( points={{-70,20},{-6,20}}, color={255,215,136} ) , Line( origin={-40,-20}, points={{-30,0},{0,0}}, color={255,215,136} ) , Rectangle(extent={{-40,-8},{40,-32}}, lineColor={255,215,136}), Line( origin={70,-20}, points={{-30,0},{0,0}}, color={255,215,136} ) , Line( origin={6,15}, points={{0,21},{0,-11}}, color={255,215,136} ) , Line( points={{6,20},{70,20}}, color={255,215,136} ) , Line( origin={-6,15}, points={{0,21},{0,-11}}, color={255,215,136} ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

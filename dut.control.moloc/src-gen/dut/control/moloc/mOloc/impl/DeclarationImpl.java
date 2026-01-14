@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.declarationImpl#getModifications <em>Modifications</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.declarationImpl#isIsModificationOver <em>Is Modification Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.declarationImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.declarationImpl#getDeclarationName <em>Declaration Name</em>}</li>
  * </ul>
@@ -50,6 +51,26 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
    * @ordered
    */
   protected EList<ModificationElement> modifications;
+
+  /**
+   * The default value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_MODIFICATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isModificationOver = IS_MODIFICATION_OVER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
@@ -133,6 +154,31 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
    * @generated
    */
   @Override
+  public boolean isIsModificationOver()
+  {
+    return isModificationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsModificationOver(boolean newIsModificationOver)
+  {
+    boolean oldIsModificationOver = isModificationOver;
+    isModificationOver = newIsModificationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.DECLARATION__IS_MODIFICATION_OVER, oldIsModificationOver, isModificationOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getExpression()
   {
     return expression;
@@ -205,6 +251,8 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
     {
       case MOlocPackage.DECLARATION__MODIFICATIONS:
         return getModifications();
+      case MOlocPackage.DECLARATION__IS_MODIFICATION_OVER:
+        return isIsModificationOver();
       case MOlocPackage.DECLARATION__EXPRESSION:
         return getExpression();
       case MOlocPackage.DECLARATION__DECLARATION_NAME:
@@ -227,6 +275,9 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
       case MOlocPackage.DECLARATION__MODIFICATIONS:
         getModifications().clear();
         getModifications().addAll((Collection<? extends ModificationElement>)newValue);
+        return;
+      case MOlocPackage.DECLARATION__IS_MODIFICATION_OVER:
+        setIsModificationOver((Boolean)newValue);
         return;
       case MOlocPackage.DECLARATION__EXPRESSION:
         setExpression((String)newValue);
@@ -251,6 +302,9 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
       case MOlocPackage.DECLARATION__MODIFICATIONS:
         getModifications().clear();
         return;
+      case MOlocPackage.DECLARATION__IS_MODIFICATION_OVER:
+        setIsModificationOver(IS_MODIFICATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.DECLARATION__EXPRESSION:
         setExpression(EXPRESSION_EDEFAULT);
         return;
@@ -273,6 +327,8 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
     {
       case MOlocPackage.DECLARATION__MODIFICATIONS:
         return modifications != null && !modifications.isEmpty();
+      case MOlocPackage.DECLARATION__IS_MODIFICATION_OVER:
+        return isModificationOver != IS_MODIFICATION_OVER_EDEFAULT;
       case MOlocPackage.DECLARATION__EXPRESSION:
         return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
       case MOlocPackage.DECLARATION__DECLARATION_NAME:
@@ -294,6 +350,7 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
       switch (derivedFeatureID)
       {
         case MOlocPackage.DECLARATION__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
+        case MOlocPackage.DECLARATION__IS_MODIFICATION_OVER: return MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -321,6 +378,7 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
       switch (baseFeatureID)
       {
         case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.DECLARATION__MODIFICATIONS;
+        case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER: return MOlocPackage.DECLARATION__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -346,7 +404,9 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (expression: ");
+    result.append(" (isModificationOver: ");
+    result.append(isModificationOver);
+    result.append(", expression: ");
     result.append(expression);
     result.append(", declarationName: ");
     result.append(declarationName);

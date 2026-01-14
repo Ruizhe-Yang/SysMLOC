@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Thermal">
+  <classes classType="type" className="LinearTemperatureCoefficient20" description="&quot;Linear temperature coefficient with choices&quot;" typeSpecifier="SI.LinearTemperatureCoefficient" isAnnotation="true" isAnnotationOver="true" isShortClassSpecifier="true" isOver="true">
+    <annotations isModificationOver="true" elementName="choices">
+      <modifications description="&quot;Not temperature dependent&quot;" expression="Modelica.Electrical.Machines.Thermal.Constants.alpha20Zero" elementName="choice"/>
+      <modifications description="&quot;Aluminium&quot;" expression="Modelica.Electrical.Machines.Thermal.Constants.alpha20Aluminium" elementName="choice"/>
+      <modifications description="&quot;Brass&quot;" expression="Modelica.Electrical.Machines.Thermal.Constants.alpha20Brass" elementName="choice"/>
+      <modifications description="&quot;Bronze&quot;" expression="Modelica.Electrical.Machines.Thermal.Constants.alpha20Bronze" elementName="choice"/>
+      <modifications description="&quot;Copper&quot;" expression="Modelica.Electrical.Machines.Thermal.Constants.alpha20Copper" elementName="choice"/>
+    </annotations>
+  </classes>
+</mOloc:Stored_definition>

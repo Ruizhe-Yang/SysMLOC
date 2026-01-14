@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.Equation;
 import dut.control.moloc.mOloc.IfEquation;
 import dut.control.moloc.mOloc.MOlocPackage;
@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#getIfEquations <em>If Equations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfEquationImpl#getElseCondition <em>Else Condition</em>}</li>
@@ -97,7 +98,27 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
@@ -236,13 +257,38 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.IF_EQUATION__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.IF_EQUATION__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IF_EQUATION__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
   }
 
   /**
@@ -368,6 +414,8 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
         return isIsAnnotation();
       case MOlocPackage.IF_EQUATION__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.IF_EQUATION__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
       case MOlocPackage.IF_EQUATION__CONDITION:
         return getCondition();
       case MOlocPackage.IF_EQUATION__IF_EQUATIONS:
@@ -401,7 +449,10 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
         return;
       case MOlocPackage.IF_EQUATION__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.IF_EQUATION__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
         return;
       case MOlocPackage.IF_EQUATION__CONDITION:
         setCondition((String)newValue);
@@ -445,6 +496,9 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
       case MOlocPackage.IF_EQUATION__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.IF_EQUATION__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.IF_EQUATION__CONDITION:
         setCondition(CONDITION_EDEFAULT);
         return;
@@ -480,6 +534,8 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.IF_EQUATION__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.IF_EQUATION__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
       case MOlocPackage.IF_EQUATION__CONDITION:
         return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
       case MOlocPackage.IF_EQUATION__IF_EQUATIONS:
@@ -516,6 +572,7 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
       {
         case MOlocPackage.IF_EQUATION__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.IF_EQUATION__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.IF_EQUATION__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -551,6 +608,7 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.IF_EQUATION__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.IF_EQUATION__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.IF_EQUATION__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -579,6 +637,8 @@ public class IfEquationImpl extends EquationImpl implements IfEquation
     result.append(description);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
     result.append(", condition: ");
     result.append(condition);
     result.append(", elseCondition: ");

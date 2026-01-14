@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Basic">
+  <classes classType="model" className="M_Transformer" description="&quot;Generic transformer with free number of inductors&quot;" isLongClassSpecifier="true" classNameEnd="M_Transformer" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="N" description="&quot;Number of inductors&quot;">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isProtected="true" isOver="true">
+      <component_list expression="div(N*(N + 1), 2)" declarationName="dimL"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isPublic="true" isOver="true">
+      <component_list subscripts="[dimL]" expression="{1,0.1,0.2,2,0.3,3}" declarationName="L" description="&quot;Inductances and coupling inductances&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list subscripts="[N]" declarationName="p" description="&quot;Positive pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-70},{-90,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list subscripts="[N]" declarationName="n" description="&quot;Negative pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-70},{110,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list subscripts="[N]" declarationName="v" description="&quot;Voltage drop over inductors&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list subscripts="[N]" isModificationOver="true" declarationName="i" description="&quot;Current through inductors&quot;">
+        <modifications expression="0" elementName="start" isEach="true"/>
+        <modifications expression="true" elementName="fixed" isEach="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[N, N]" isModificationOver="true" declarationName="Lm" description="&quot;Complete symmetric inductance matrix, calculated internally&quot;">
+        <modifications expression="false" elementName="fixed" isEach="true" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection" isInitial="true">
+      <equations xsi:type="mOloc:ForEquation" forIndices="s in 1:N">
+        <forEquations xsi:type="mOloc:SimpleEquation" left="Lm[s,s]" right="L[(s - 1)*N - div((s - 1)*s, 2) + s]"/>
+        <forEquations xsi:type="mOloc:ForEquation" forIndices="z in s + 1:N">
+          <forEquations xsi:type="mOloc:SimpleEquation" left="Lm[s,z]" right="L[(s - 1)*N - div((s - 1)*s, 2) + z]"/>
+          <forEquations xsi:type="mOloc:SimpleEquation" left="Lm[z,s]" right="L[(s - 1)*N - div((s - 1)*s, 2) + z]"/>
+        </forEquations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ForEquation" forIndices="j in 1:N">
+        <forEquations xsi:type="mOloc:SimpleEquation" left="v[j]" right="p[j].v - n[j].v"/>
+        <forEquations xsi:type="mOloc:SimpleEquation" left="0" right="p[j].i + n[j].i"/>
+        <forEquations xsi:type="mOloc:SimpleEquation" left="i[j]" right="p[j].i"/>
+      </equations>
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="Lm*der(i)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;transformer&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Text( extent={{-150,120},{150,80}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text(extent={{-150,-80},{150,-120}}, textString=&quot;N=%N&quot;), Line(points={{60,-50},{90,-50}}, color={0,0,255} ) , Line(points={{-90,-50},{-60,-50}}, color={0,0,255} ) , Line( points={{-60,-50},{-59,-44},{-52,-36},{-38,-36},{-31,-44},{-30,-50}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-30,-50},{-29,-44},{-22,-36},{-8,-36},{-1,-44},{0,-50}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{0,-50},{1,-44},{8,-36},{22,-36},{29,-44},{30,-50}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{30,-50},{31,-44},{38,-36},{52,-36},{59,-44},{60,-50}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line(points={{60,20},{90,20}}, color={0,0,255} ) , Line(points={{-90,20},{-60,20}}, color={0,0,255} ) , Line( points={{-60,20},{-59,26},{-52,34},{-38,34},{-31,26},{-30,20}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-30,20},{-29,26},{-22,34},{-8,34},{-1,26},{0,20}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{0,20},{1,26},{8,34},{22,34},{29,26},{30,20}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{30,20},{31,26},{38,34},{52,34},{59,26},{60,20}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line(points={{60,50},{90,50}}, color={0,0,255} ) , Line(points={{-90,50},{-60,50}}, color={0,0,255} ) , Line( points={{-60,50},{-59,56},{-52,64},{-38,64},{-31,56},{-30,50}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-30,50},{-29,56},{-22,64},{-8,64},{-1,56},{0,50}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{0,50},{1,56},{8,64},{22,64},{29,56},{30,50}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{30,50},{31,56},{38,64},{52,64},{59,56},{60,50}}, color={0,0,255}, smooth=Smooth.Bezier ) , Ellipse( extent={{-2,6},{2,2}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) , Ellipse( extent={{-2,-22},{2,-26}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) , Ellipse( extent={{-2,-8},{2,-12}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>The model &lt;em>M_Transformer&lt;/em> is a model of a transformer with the possibility to choose the number of inductors. Inside the model, an inductance matrix is built based on the inductance of the inductors and the coupling inductances between the inductors given as a parameter vector from the user of the model.&lt;/p>&#xA;&#xA;&lt;p>An example shows that approach:&lt;br>&#xA;The user chooses a model with &lt;strong>three&lt;/strong> inductors, that means the parameter &lt;em>&lt;strong>N&lt;/strong>&lt;/em> has to be &lt;strong>3&lt;/strong>. Then he has to specify the inductances of the three inductors and the three coupling inductances. The coupling inductances are no real existing devices, but effects that occur between two inductors. The inductances (main diagonal of the inductance matrix) and the coupling inductances have to be specified in the parameter vector &lt;em>L&lt;/em>. The length &lt;em>dimL&lt;/em> of the parameter vector is calculated as follows: &lt;em>&lt;strong>dimL=(N*(N+1))/2&lt;/strong>&lt;/em>&lt;/p>&#xA;&#xA;&lt;p>The following example shows how the parameter vector is used to fill in the inductance matrix. To specify the inductance matrix of a three inductances transformer (&lt;em>N=3&lt;/em>):&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img&#xA; src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Basic/M_Transformer-eq.png\&quot;&#xA; alt=\&quot;L_m\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;the user has to allocate the parameter vector &lt;em>L[6] &lt;/em>, since &lt;em>Nv=(N*(N+1))/2=(3*(3+1))/2=6&lt;/em>. The parameter vector must be filled like this: &lt;em>L=[1,0.1,0.2,2,0.3,3] &lt;/em>.&lt;/p>&#xA;&lt;p>Inside the model, two loops are used to fill the inductance matrix to guarantee that it is filled in a symmetric way.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&#xA;    &lt;tr>&#xA;      &lt;th>Version&lt;/th>&#xA;      &lt;th>Revision&lt;/th>&#xA;      &lt;th>Date&lt;/th>&#xA;      &lt;th>Author&lt;/th>&#xA;      &lt;th>Comment&lt;/th>&#xA;    &lt;/tr>&#xA;   &lt;tr>&#xA;      &lt;td>&lt;/td>&#xA;      &lt;td>4163&lt;/td>&#xA;      &lt;td>2010-09-11&lt;/td>&#xA;      &lt;td>Dietmar Winkler&lt;/td>&#xA;      &lt;td>Documentation corrected according to documentation guidelines.&lt;/td>&#xA;    &lt;/tr>&#xA;    &lt;tr>&#xA;      &lt;td>&lt;/td>&#xA;      &lt;td>&lt;/td>&#xA;      &lt;td>2008-11-24&lt;/td>&#xA;      &lt;td>Kristin Majetta&lt;/td>&#xA;      &lt;td>Documentation added.&lt;/td>&#xA;    &lt;/tr>&#xA;    &lt;tr>&#xA;      &lt;td>&lt;/td>&#xA;      &lt;td>&lt;/td>&#xA;      &lt;td>2008-11-16&lt;/td>&#xA;      &lt;td>Kristin Majetta&lt;/td>&#xA;      &lt;td>Initially implemented&lt;/td>&#xA;    &lt;/tr>&#xA;&lt;/table>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Basic">
+  <classes classType="model" className="VariableInductor" description="&quot;Ideal linear electrical inductor with variable inductance&quot;" isLongClassSpecifier="true" classNameEnd="VariableInductor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="L" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;H&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,120}" elementName="origin"/>
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{0,120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.MagneticFlux" isOver="true">
+      <component_list declarationName="Psi"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="Modelica.Constants.eps" declarationName="Lmin" description="&quot;Lower bound for variable inductance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="IC" description="&quot;Initial Value&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="UIC" description="&quot;Decision if initial value IC shall be used&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection" isInitial="true">
+      <equations xsi:type="mOloc:IfEquation" condition="UIC">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="i" right="IC"/>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(L >= 0, &quot;Inductance L_ (= &quot; + String(L) + &quot;) has to be >= 0!&quot;)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="Psi" right="noEvent(max(L, Lmin))*i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="der(Psi)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;inductor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>The linear inductor connects the branch voltage &lt;em>v&lt;/em> with the branch current &lt;em>i&lt;/em> by&#xA;&lt;br>&lt;em>&lt;strong>v = d Psi/dt &lt;/strong>&lt;/em>with &lt;em>&lt;strong>Psi = L * i &lt;/strong>&lt;/em>.&#xA;&lt;br>The inductance &lt;em>L&lt;/em> is as input signal.&#xA;It is required that L &amp;ge; 0, otherwise an assertion is raised. To avoid a variable index system, L = Lmin, if 0 &amp;le; L &amp;lt; Lmin, where Lmin is a parameter with default value Modelica.Constants.eps.&lt;/p>&#xA;&lt;p>Besides the Lmin parameter the inductor model has got the two parameters IC and UIC that belong together. With the IC parameter the user can specify an initial value of the current that flows through the inductor.&lt;/p>&#xA;&lt;p>&lt;br>Hence the inductor has an initial current at the beginning of the simulation. The other parameter UIC is of type Boolean. If UIC is true, the simulation tool uses&lt;/p>&#xA;&lt;p>&lt;br>the IC value at the initial calculation by adding the equation i= IC. If UIC is false, the IC value can be used (but it does not need to!) to calculate the initial values in order to simplify the numerical algorithms of initial calculation.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>June 7, 2004   &lt;/em>&#xA;       by Christoph Clauss&lt;br>changed, docu added&lt;br>&#xA;       &lt;/li>&#xA;&lt;li>&lt;em>April 30, 2004&lt;/em>&#xA;       by Anton Haumer&lt;br>implemented.&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line(points={{-90,0},{-60,0}}, color={0,0,255}), Line(points={{60,0},{90,0}}, color={0,0,255}), Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Line( points={{-60,0},{-59,6},{-52,14},{-38,14},{-31,6},{-30,0}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-30,0},{-29,6},{-22,14},{-8,14},{-1,6},{0,0}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{0,0},{1,6},{8,14},{22,14},{29,6},{30,0}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{30,0},{31,6},{38,14},{52,14},{59,6},{60,0}}, color={0,0,255}, smooth=Smooth.Bezier ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

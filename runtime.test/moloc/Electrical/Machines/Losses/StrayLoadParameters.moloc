@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Losses">
+  <classes classType="record" className="StrayLoadParameters" description="&quot;Parameter record for stray load losses&quot;" isLongClassSpecifier="true" classNameEnd="StrayLoadParameters" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Record" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="0" declarationName="PRef" description="&quot;Reference stray load losses at IRef and wRef&quot;">
+        <modifications expression="0" elementName="min"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="IRef" description="&quot;Reference RMS current that PRef refers to&quot;">
+        <modifications expression="Modelica.Constants.small" elementName="min"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="wRef" description="&quot;Reference angular velocity that PRef refers to&quot;">
+        <modifications expression="&quot;rev/min&quot;" elementName="displayUnit"/>
+        <modifications expression="Modelica.Constants.small" elementName="min"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1" declarationName="power_w" description="&quot;Exponent of stray load loss torque w.r.t. angular velocity&quot;">
+        <modifications expression="Modelica.Constants.small" elementName="min"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Torque" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="if (PRef &lt;= 0) then 0 else PRef/wRef" declarationName="tauRef" description="&quot;Reference stray load torque at reference angular velocity and reference current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;parameter &quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Parameter record for &lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Losses.InductionMachines.StrayLoad\&quot;>three-phase&lt;/a> and&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Losses.DCMachines.StrayLoad\&quot;>DC&lt;/a> stray load losses.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

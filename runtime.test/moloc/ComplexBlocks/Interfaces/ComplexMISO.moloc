@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Interfaces">
-  <classes isPartial="true" classType="block" className="ComplexMISO" description="&quot;Multiple Input Single Output continuous control block&quot;" classNameEnd="ComplexMISO">
-    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Icons.ComplexBlock"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter">
+  <classes isPartial="true" classType="block" className="ComplexMISO" description="&quot;Multiple Input Single Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="ComplexMISO" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Icons.ComplexBlock" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list expression="1" declarationName="nin" description="&quot;Number of inputs&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexInput">
-      <component_list subscripts="[nin]" declarationName="u" description="&quot;Connector of Complex input signals&quot;" isAnnotation="true">
-        <annotations elementName="Placement">
-          <modifications elementName="transformation">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexInput" isOver="true">
+      <component_list subscripts="[nin]" declarationName="u" description="&quot;Connector of Complex input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
             <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
           </modifications>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexOutput">
-      <component_list declarationName="y" description="&quot;Connector of Complex output signal&quot;" isAnnotation="true">
-        <annotations elementName="Placement">
-          <modifications elementName="transformation">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexOutput" isOver="true">
+      <component_list declarationName="y" description="&quot;Connector of Complex output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
             <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
           </modifications>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list subscripts="[nin]" expression="fill(false, nin)" declarationName="useConjugateInput" description="&quot;If true, inputs are processed conjugate complex&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isProtected="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isProtected="true" isOver="true">
       <component_list subscripts="[nin]" expression="{if useConjugateInput[k] then Modelica.ComplexMath.conj(u[k]) else u[k] for k in 1:nin }" declarationName="uInternal" description="&quot;Equals either u or conjugate complex input u if useComplexInput = true&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-      <annotations elementName="Documentation">
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
         <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Block has a vector of continuous Complex input signals and&#xA;one continuous Complex output signal.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
       </annotations>
     </elements>

@@ -83,7 +83,8 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
       case MOlocPackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
       case MOlocPackage.DESCRIPTION: return createdescription();
       case MOlocPackage.MODIFICATION_ELEMENT: return createModificationElement();
-      case MOlocPackage.ANNOTATION_MODIFICATION: return createAnnotationModification();
+      case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT: return createAnnotationModificationElement();
+      case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT2: return createAnnotationModificationElement2();
       case MOlocPackage.ELEMENT_MODIFICATION: return createelement_modification();
       case MOlocPackage.SHORT_CLASS_DEFINITION: return createshort_class_definition();
       case MOlocPackage.COMPONENT_CLAUSE1: return createcomponent_clause1();
@@ -380,10 +381,22 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public AnnotationModification createAnnotationModification()
+  public AnnotationModificationElement createAnnotationModificationElement()
   {
-    AnnotationModificationImpl annotationModification = new AnnotationModificationImpl();
-    return annotationModification;
+    AnnotationModificationElementImpl annotationModificationElement = new AnnotationModificationElementImpl();
+    return annotationModificationElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AnnotationModificationElement2 createAnnotationModificationElement2()
+  {
+    AnnotationModificationElement2Impl annotationModificationElement2 = new AnnotationModificationElement2Impl();
+    return annotationModificationElement2;
   }
 
   /**

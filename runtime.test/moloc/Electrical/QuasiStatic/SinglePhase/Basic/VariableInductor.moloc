@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Basic">
+  <classes classType="model" className="VariableInductor" description="&quot;Single-phase variable inductor&quot;" isLongClassSpecifier="true" classNameEnd="VariableInductor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.j" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="L" description="&quot;Variable inductances&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;H&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,120}" elementName="origin"/>
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{0,120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="j*omega*L*i"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;inductor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line(points={{60,0},{90,0}}, color={85,170,255}), Line(points={{-90,0},{-60,0}}, color={85,170,255}), Line( points={{-60,0},{-59,6},{-52,14},{-38,14},{-31,6},{-30,0}}, color={85,170,255}, smooth=Smooth.Bezier ) , Line( points={{-30,0},{-29,6},{-22,14},{-8,14},{-1,6},{0,0}}, color={85,170,255}, smooth=Smooth.Bezier ) , Line( points={{0,0},{1,6},{8,14},{22,14},{29,6},{30,0}}, color={85,170,255}, smooth=Smooth.Bezier ) , Line( points={{30,0},{31,6},{38,14},{52,14},{59,6},{60,0}}, color={85,170,255}, smooth=Smooth.Bezier ) , Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&#xA;&lt;p>&#xA;The linear inductor connects the branch voltage &lt;code>&lt;u>v&lt;/u>&lt;/code> with the&#xA;branch current &lt;code>&lt;u>i&lt;/u>&lt;/code> by &lt;code>&lt;u>v&lt;/u> = j*&amp;omega;*L*&lt;u>i&lt;/u>&lt;/code>. The inductance &lt;code>L&lt;/code> is given as input signal.&#xA;&lt;/p>&#xA;&#xA;&lt;h4>Note&lt;/h4>&#xA;&lt;p>&#xA;The abstraction of a variable inductor at quasi-static operation assumes:&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/QuasiStatic/SinglePhase/Basic/dl_dt.png\&quot;&#xA;     alt=\&quot;dl_dt.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;h4>See also&lt;/h4>&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Resistor\&quot;>Resistor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Conductor\&quot;>Conductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Capacitor\&quot;>Capacitor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Inductor\&quot;>Inductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Impedance\&quot;>Impedance&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.Admittance\&quot;>Admittance&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.VariableResistor\&quot;>Variable resistor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.VariableConductor\&quot;>Variable conductor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.VariableCapacitor\&quot;>Variable capacitor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.VariableImpedance\&quot;>Variable impedance&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Basic.VariableAdmittance\&quot;>Variable admittance&lt;/a>,&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

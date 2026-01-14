@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.SpacePhasors.Functions">
+  <classes classType="function" className="quasiRMS" description="&quot;Calculate quasi-RMS value of input&quot;" isLongClassSpecifier="true" classNameEnd="quasiRMS" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+      <component_list subscripts="[3]" declarationName="x"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+      <component_list declarationName="y"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isProtected="true" isOver="true">
+      <component_list expression="size(x, 1)" declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+      <component_list subscripts="[m]" expression="Modelica.Electrical.Polyphase.Functions.symmetricOrientation(m)" declarationName="phi"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list subscripts="[2, m]" expression="2/m*{+cos(+phi),+sin(+phi)}" declarationName="TransformationMatrix"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list subscripts="[2]" expression="TransformationMatrix*x" declarationName="h"/>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:FunctionStatement" component="y" expression="sqrt(h[1]^2 + h[2]^2)/sqrt(2)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="true" elementName="Inline"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;  Transformation of m phase values (voltages or currents) to space phasor and calculate length of space phasor / sqrt(2).&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

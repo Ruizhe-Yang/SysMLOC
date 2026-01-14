@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.Icons">
+  <classes classType="model" className="BatteryIcon" description="&quot;Icon for cells and stacks&quot;" isLongClassSpecifier="true" classNameEnd="BatteryIcon" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+      <component_list declarationName="displaySOC" description="&quot;SOC for display&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="HideResult"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+        </modifications>
+        <modifications expression="{ Polygon( points={{-90,30},{-100,30},{-110,10},{-110,-10},{-100,-30},{-90,-30},{ -90,30} } , lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) , Rectangle( extent={{-90,60},{90,-60}}, lineColor={0,0,255}, radius=10 ) , Text( extent={{-150,70},{150,110}}, textColor={0,0,255}, textString=&quot;%name&quot; ) , Rectangle( extent={{90,40},{110,-40}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Rectangle( extent=DynamicSelect({{70,-40},{-70,40}},{{70,-40},{70-140*displaySOC,40}}), lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

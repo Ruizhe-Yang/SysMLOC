@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Utilities.ParameterRecords">
+  <classes classType="record" className="DcSeriesExcitedData" description="&quot;Common parameters for DC machines&quot;" isLongClassSpecifier="true" classNameEnd="DcSeriesExcitedData" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="DcPermanentMagnetData" isOver="true">
+      <extendsModifications expression="1410*2*pi/60" elementName="wNominal"/>
+    </elements>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="0.01" declarationName="Re" description="&quot;Series excitation resistance at TeRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Excitation&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="293.15" declarationName="TeRef" description="&quot;Reference temperature of excitation resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Excitation&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="alpha20e" description="&quot;Temperature coefficient of excitation resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Excitation&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="0.0005" declarationName="Le" description="&quot;Total field excitation inductance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Excitation&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="0" declarationName="sigmae" description="&quot;Stray fraction of total excitation inductance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="min"/>
+        <modifications expression="0.99" elementName="max"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Excitation&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="293.15" declarationName="TeNominal" description="&quot;Nominal series excitation temperature&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal parameters&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;dcseData&quot;" elementName="defaultComponentName"/>
+      <annotations expression="&quot;parameter&quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>Basic parameters of DC machines are predefined with default values.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

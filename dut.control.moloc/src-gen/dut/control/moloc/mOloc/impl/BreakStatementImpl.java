@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.BreakStatement;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.annotation_modification_part;
@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.BreakStatementImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.BreakStatementImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.BreakStatementImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.BreakStatementImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,7 +91,27 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -169,13 +190,38 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.BREAK_STATEMENT__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.BREAK_STATEMENT__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
   }
 
   /**
@@ -210,6 +256,8 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
         return isIsAnnotation();
       case MOlocPackage.BREAK_STATEMENT__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -233,7 +281,10 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
         return;
       case MOlocPackage.BREAK_STATEMENT__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -258,6 +309,9 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
       case MOlocPackage.BREAK_STATEMENT__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -278,6 +332,8 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.BREAK_STATEMENT__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -304,6 +360,7 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
       {
         case MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.BREAK_STATEMENT__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -339,6 +396,7 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.BREAK_STATEMENT__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -367,6 +425,8 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
     result.append(description);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
     result.append(')');
     return result.toString();
   }

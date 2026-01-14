@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Examples.InductionMachines">
+  <classes classType="model" className="IMC_withLosses" description="&quot;Test example: InductionMachineSquirrelCage with losses&quot;" isLongClassSpecifier="true" classNameEnd="IMC_withLosses" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="constant" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Units.Conversions.from_rpm" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Units.Conversions.to_rpm" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Units.Conversions.from_degC" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" parameterType="parameter" isProtected="true" isOver="true">
+      <component_list expression="18500" declarationName="PNominal" description="&quot;Nominal output&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="400" declarationName="VNominal" description="&quot;Nominal RMS voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="32.85" declarationName="INominal" description="&quot;Nominal RMS current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0.898" declarationName="pfNominal" description="&quot;Nominal power factor&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" parameterType="parameter" isOver="true">
+      <component_list expression="sqrt(3)*VNominal*INominal*pfNominal" declarationName="PsNominal" description="&quot;Nominal stator power&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" parameterType="parameter" isOver="true">
+      <component_list expression="PsNominal-PNominal" declarationName="lossNominal" description="&quot;Nominal losses&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0.9049" declarationName="etaNominal" description="&quot;Nominal efficiency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="50" declarationName="fNominal" description="&quot;Nominal frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isOver="true">
+      <component_list expression="from_rpm(1462.5)" declarationName="wNominal" description="&quot;Nominal speed&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Torque" parameterType="parameter" isOver="true">
+      <component_list expression="PNominal/wNominal" declarationName="TNominal" description="&quot;Nominal torque&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="from_degC(90)" declarationName="TempNominal" description="&quot;Nominal temperature&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" isOver="true">
+      <component_list expression="electricalPowerSensor.P" declarationName="Pel"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ReactivePower" isOver="true">
+      <component_list expression="electricalPowerSensor.Q" declarationName="Qel"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ApparentPower" isOver="true">
+      <component_list expression="sqrt(Pel^2 + Qel^2)" declarationName="Sel"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list subscripts="[:]" expression="{1E-6,1845,3549,5325,7521,9372,11010,12930, 14950,16360,18500,18560,20180,22170 }" declarationName="Ptable"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list subscripts="[:]" expression="{11.0,11.20,12.27,13.87,16.41,18.78,21.07, 23.92,27.05,29.40,32.85,32.95,35.92,39.35 }" declarationName="Itable"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list subscripts="[:]" expression="from_rpm({1500,1496,1493,1490,1486,1482,1479,1475,1471, 1467,1462,1462,1458,1453 } )" declarationName="wtable"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list subscripts="[:]" expression="{0.085,0.327,0.506,0.636,0.741,0.797,0.831, 0.857,0.875,0.887,0.896,0.896,0.902,0.906 }" declarationName="ctable"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list subscripts="[:]" expression="{0,0.7250,0.8268,0.8698,0.8929,0.9028,0.9064, 0.9088,0.9089,0.9070,0.9044,0.9043,0.9008,0.8972 }" declarationName="etable"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" directionType="output" isPublic="true" isOver="true">
+      <component_list expression="powerSensor.power" declarationName="Pmech" description="&quot;Mechanical output&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" directionType="output" isOver="true">
+      <component_list expression="sqrt(3)*VNominal*I_sim*pf_sim" declarationName="Ps_sim" description="&quot;Simulated stator power&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" directionType="output" isOver="true">
+      <component_list expression="sqrt(3)*VNominal*I_meas*pf_meas" declarationName="Ps_meas" description="&quot;Simulated stator power&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" directionType="output" isOver="true">
+      <component_list expression="Ps_sim-Pmech" declarationName="loss_sim" description="&quot;Simulated total losses&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" directionType="output" isOver="true">
+      <component_list expression="Ps_meas-Pmech" declarationName="loss_meas" description="&quot;Measured total losses&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
+      <component_list expression="currentQuasiRMSSensor.I" declarationName="I_sim" description="&quot;Simulated current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
+      <component_list expression="combiTable1Ds.y[1]" declarationName="I_meas" description="&quot;Measured current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularVelocity" directionType="output" isOver="true">
+      <component_list isModificationOver="true" expression="aimc.wMechanical" declarationName="w_sim" description="&quot;Simulated speed&quot;">
+        <modifications expression="&quot;rev/min&quot;" elementName="displayUnit"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularVelocity" directionType="output" isOver="true">
+      <component_list isModificationOver="true" expression="combiTable1Ds.y[2]" declarationName="w_meas" description="&quot;Measured speed&quot;">
+        <modifications expression="&quot;rev/min&quot;" elementName="displayUnit"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+      <component_list expression="if noEvent(Sel > Modelica.Constants.small) then Pel/Sel else 0" declarationName="pf_sim" description="&quot;Simulated power factor&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+      <component_list expression="combiTable1Ds.y[3]" declarationName="pf_meas" description="&quot;Measured power factor&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+      <component_list expression="if noEvent(abs(Pel) > Modelica.Constants.small) then Pmech/Pel else 0" declarationName="eff_sim" description="&quot;Simulated efficiency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+      <component_list expression="combiTable1Ds.y[4]" declarationName="eff_meas" description="&quot;Measured efficiency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.BasicMachines.InductionMachines.IM_SquirrelCage" isOver="true">
+      <component_list isModificationOver="true" declarationName="aimc" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="aimcData.p" elementName="p"/>
+        <modifications expression="aimcData.fsNominal" elementName="fsNominal"/>
+        <modifications expression="aimcData.Rs" elementName="Rs"/>
+        <modifications expression="aimcData.TsRef" elementName="TsRef"/>
+        <modifications isModificationOver="true" expression="aimcData.alpha20s" elementName="alpha20s">
+          <modifications expression="&quot;1/K&quot;" elementName="displayUnit"/>
+        </modifications>
+        <modifications expression="aimcData.Lszero" elementName="Lszero"/>
+        <modifications expression="aimcData.Lssigma" elementName="Lssigma"/>
+        <modifications expression="aimcData.Jr" elementName="Jr"/>
+        <modifications expression="aimcData.Js" elementName="Js"/>
+        <modifications expression="aimcData.frictionParameters" elementName="frictionParameters"/>
+        <modifications isModificationOver="true" elementName="phiMechanical">
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <modifications expression="aimcData.statorCoreParameters" elementName="statorCoreParameters"/>
+        <modifications expression="aimcData.strayLoadParameters" elementName="strayLoadParameters"/>
+        <modifications expression="aimcData.Lm" elementName="Lm"/>
+        <modifications expression="aimcData.Lrsigma" elementName="Lrsigma"/>
+        <modifications expression="aimcData.Rr" elementName="Rr"/>
+        <modifications expression="aimcData.TrRef" elementName="TrRef"/>
+        <modifications expression="TempNominal" elementName="TsOperational"/>
+        <modifications expression="TempNominal" elementName="TrOperational"/>
+        <modifications isModificationOver="true" elementName="wMechanical">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="2*pi*aimcData.fsNominal/aimcData.p" elementName="start"/>
+        </modifications>
+        <modifications expression="aimcData.alpha20r" elementName="alpha20r"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-40,0},{-20,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Utilities.TerminalBox" isOver="true">
+      <component_list isModificationOver="true" declarationName="terminalBox" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;D&quot;" elementName="terminalConnection"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-40,16},{-20,36}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Sensors.ElectricalPowerSensor" isOver="true">
+      <component_list declarationName="electricalPowerSensor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-30,40}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Sensors.CurrentQuasiRMSSensor" isOver="true">
+      <component_list declarationName="currentQuasiRMSSensor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-30,70}" elementName="origin"/>
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Sources.SineVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="sineVoltage" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="fill(fNominal, m)" elementName="f"/>
+        <modifications expression="fill(sqrt(2/3)*VNominal, m)" elementName="V"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-70,70}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
+      <component_list isModificationOver="true" declarationName="star" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-70,30}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-70,0}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Sensors.PowerSensor" isOver="true">
+      <component_list declarationName="powerSensor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,0},{10,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Components.Inertia" isOver="true">
+      <component_list isModificationOver="true" declarationName="loadInertia" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="aimcData.Jr" elementName="J"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,0},{40,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Sources.Torque" isOver="true">
+      <component_list declarationName="torque" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{70,0},{50,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+      <component_list isModificationOver="true" declarationName="gain" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="-1" elementName="k"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{50,-60},{70,-40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Continuous.PI" isOver="true">
+      <component_list isModificationOver="true" declarationName="PI" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0.01" elementName="k"/>
+        <modifications expression="0.01" elementName="T"/>
+        <modifications expression="Modelica.Blocks.Types.Init.InitialState" elementName="initType"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,-60},{40,-40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Feedback" isOver="true">
+      <component_list declarationName="feedback" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-40},{10,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Ramp" isOver="true">
+      <component_list isModificationOver="true" declarationName="ramp" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1.2*PNominal" elementName="height"/>
+        <modifications expression="0" elementName="offset"/>
+        <modifications expression="4.5" elementName="startTime"/>
+        <modifications expression="5.5" elementName="duration"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-40,-60},{-20,-40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Tables.CombiTable1Ds" isOver="true">
+      <component_list isModificationOver="true" declarationName="combiTable1Ds" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="{{Ptable[j], Itable[j],wtable[j],ctable[j],etable[j] } for j in 1:size(Ptable, 1 ) }" elementName="table"/>
+        <modifications expression="Modelica.Blocks.Types.Smoothness.ContinuousDerivative" elementName="smoothness"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,-30},{40,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.ParameterRecords.IM_SquirrelCageData" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="aimcData" description="&quot;Induction machine data&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="statorCoreParameters">
+          <modifications expression="410" elementName="PRef"/>
+          <modifications expression="387.9" elementName="VRef"/>
+        </modifications>
+        <modifications expression="0.12" elementName="Jr"/>
+        <modifications expression="0.56" elementName="Rs"/>
+        <modifications isModificationOver="true" expression="Modelica.Electrical.Machines.Thermal.Constants.alpha20Copper" elementName="alpha20s">
+          <modifications expression="&quot;1/K&quot;" elementName="displayUnit"/>
+        </modifications>
+        <modifications expression="1.52/(2*pi*fNominal)" elementName="Lssigma"/>
+        <modifications isModificationOver="true" elementName="frictionParameters">
+          <modifications expression="180" elementName="PRef"/>
+          <modifications expression="wNominal" elementName="wRef"/>
+        </modifications>
+        <modifications isModificationOver="true" elementName="strayLoadParameters">
+          <modifications expression="0.005*sqrt(3)*VNominal*INominal*pfNominal" elementName="PRef"/>
+          <modifications expression="INominal/sqrt(3)" elementName="IRef"/>
+          <modifications expression="wNominal" elementName="wRef"/>
+        </modifications>
+        <modifications expression="66.4/(2*pi*fNominal)" elementName="Lm"/>
+        <modifications expression="2.31/(2*pi*fNominal)" elementName="Lrsigma"/>
+        <modifications expression="0.42" elementName="Rr"/>
+        <modifications isModificationOver="true" expression="Modelica.Electrical.Machines.Thermal.Constants.alpha20Aluminium" elementName="alpha20r">
+          <modifications expression="&quot;1/K&quot;" elementName="displayUnit"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-40,-30},{-20,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection" isInitial="true">
+      <equations xsi:type="mOloc:SimpleEquation" left="aimc.i_0_s" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="der(aimc.idq_sr)" right="zeros(2)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="der(aimc.idq_rr)" right="zeros(2)"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="star.pin_n" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,20},{-70,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sineVoltage.plug_n" right="star.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,60},{-70,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="terminalBox.plug_sn" right="aimc.plug_sn">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-36,20},{-36,20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="terminalBox.plug_sp" right="aimc.plug_sp">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-24,20},{-24,20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="currentQuasiRMSSensor.plug_n" right="electricalPowerSensor.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,60},{-30,57.5},{-30,57.5},{-30,55},{-30,50},{-30,50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="electricalPowerSensor.plug_nv" right="star.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-40,40},{-70,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="electricalPowerSensor.plug_ni" right="terminalBox.plugSupply">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,30},{-30,22}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="aimc.flange" right="powerSensor.flange_a">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,10},{-10,10}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor.flange_b" right="loadInertia.flange_a">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,10},{20,10}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="torque.flange" right="loadInertia.flange_b">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,10},{40,10}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gain.y" right="torque.tau">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{71,-50},{80,-50},{80,10},{72,10}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sineVoltage.plug_p" right="currentQuasiRMSSensor.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,80},{-30,80}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor.power" right="feedback.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-8,-1},{-8,-20},{0,-20},{0,-42}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="feedback.y" right="PI.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{9,-50},{18,-50}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="PI.y" right="gain.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{41,-50},{48,-50}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ramp.y" right="feedback.u1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-19,-50},{-8,-50}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor.power" right="combiTable1Ds.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-8,-1},{-8,-20},{18,-20}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="5.0" elementName="StopTime"/>
+        <modifications expression="1E-4" elementName="Interval"/>
+        <modifications expression="1e-06" elementName="Tolerance"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>Simulate for 5 seconds: The machine is started at nominal speed, flux is build up in the machine.&lt;/li>&#xA;&lt;li>Continue the simulation for additional 5 seconds: Subsequently a load ramp is applied.&lt;/li>&#xA;&lt;li>Compare by plotting versus Pmech:&lt;/li>&#xA;&lt;/ul>&#xA;&lt;table>&#xA;&lt;tr>&lt;td>Current      &lt;/td>&lt;td>I_sim   &lt;/td>&lt;td>I_meas  &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Speed        &lt;/td>&lt;td>w_sim   &lt;/td>&lt;td>w_meas  &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Power factor &lt;/td>&lt;td>pf_sim  &lt;/td>&lt;td>pf_meas &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Efficiency   &lt;/td>&lt;td>eff_sim &lt;/td>&lt;td>eff_meas&lt;/td>&lt;/tr>&#xA;&lt;/table>&#xA;&lt;p>Machine parameters are taken from a standard 18.5 kW 400 V 50 Hz motor, simulation results are compared with measurements.&lt;/p>&#xA;&lt;table>&#xA;&lt;tr>&lt;td>Nominal stator current            &lt;/td>&lt;td>     32.85  &lt;/td>&lt;td>A      &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Power factor                      &lt;/td>&lt;td>      0.898 &lt;/td>&lt;td>       &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Speed                             &lt;/td>&lt;td>   1462.5   &lt;/td>&lt;td>rpm    &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Electrical input                  &lt;/td>&lt;td> 20,443.95  &lt;/td>&lt;td>W      &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Stator copper losses              &lt;/td>&lt;td>    770.13  &lt;/td>&lt;td>W      &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Stator core losses                &lt;/td>&lt;td>    410.00  &lt;/td>&lt;td>W      &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Rotor  copper losses              &lt;/td>&lt;td>    481.60  &lt;/td>&lt;td>W      &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Stray load losses                 &lt;/td>&lt;td>    102.22  &lt;/td>&lt;td>W      &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Friction losses                   &lt;/td>&lt;td>    180.00  &lt;/td>&lt;td>W      &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Mechanical output                 &lt;/td>&lt;td> 18,500.00  &lt;/td>&lt;td>W      &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Efficiency                        &lt;/td>&lt;td>     90.49  &lt;/td>&lt;td>%      &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Nominal torque                    &lt;/td>&lt;td>    120.79  &lt;/td>&lt;td>Nm     &lt;/td>&lt;/tr>&#xA;&lt;/table>&#xA;&lt;br>&#xA;&lt;table>&#xA;&lt;tr>&lt;td>Stator resistance per phase       &lt;/td>&lt;td>  0.56     &lt;/td>&lt;td>&amp;Omega;&lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Temperature coefficient           &lt;/td>&lt;td> copper    &lt;/td>&lt;td>       &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Reference temperature             &lt;/td>&lt;td> 20        &lt;/td>&lt;td>&amp;deg;C &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Operation temperature             &lt;/td>&lt;td> 90        &lt;/td>&lt;td>&amp;deg;C &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Stator leakage reactance at 50 Hz &lt;/td>&lt;td>  1.52     &lt;/td>&lt;td>&amp;Omega;&lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Main  field    reactance at 50 Hz &lt;/td>&lt;td> 66.40     &lt;/td>&lt;td>&amp;Omega;&lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Rotor  leakage reactance at 50 Hz &lt;/td>&lt;td>  2.31     &lt;/td>&lt;td>&amp;Omega;&lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Rotor  resistance per phase       &lt;/td>&lt;td>  0.42     &lt;/td>&lt;td>&amp;Omega;&lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Temperature coefficient           &lt;/td>&lt;td> aluminium &lt;/td>&lt;td>       &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Reference temperature             &lt;/td>&lt;td> 20        &lt;/td>&lt;td>&amp;deg;C &lt;/td>&lt;/tr>&#xA;&lt;tr>&lt;td>Operation temperature             &lt;/td>&lt;td> 90        &lt;/td>&lt;td>&amp;deg;C &lt;/td>&lt;/tr>&#xA;&lt;/table>&#xA;&lt;p>See:&lt;br>&#xA;Anton Haumer, Christian Kral, Hansj&amp;ouml;rg Kapeller, Thomas B&amp;auml;uml, Johannes V. Gragger&lt;br>&#xA;&lt;a href=\&quot;https://2009.international.conference.modelica.org/proceedings/pages/papers/0103/0103_FI.pdf\&quot;>&#xA;The AdvancedMachines Library: Loss Models for Electric Machines&lt;/a>&lt;br>&#xA;Modelica 2009, 7&lt;sup>th&lt;/sup> International Modelica Conference&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-72,100},{68,80}}, textColor={0,0,255}, textString= &quot;Simulate for 5 seconds for starting the machine.&quot; ) ,Text( extent={{-100,-80},{100,-100}}, textColor={0,0,255}, textString= &quot;Continue the simulation for additional 5 seconds: a load ramp is applied.&quot; ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

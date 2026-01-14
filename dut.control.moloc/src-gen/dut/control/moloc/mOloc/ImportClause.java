@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dut.control.moloc.mOloc.ImportClause#getImportName <em>Import Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.ImportClause#isIsImportAll <em>Is Import All</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.ImportClause#getObjectName <em>Object Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ImportClause#isIsOver <em>Is Over</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause()
@@ -149,5 +150,27 @@ public interface ImportClause extends Element, description
    * @generated
    */
   EList<String> getObjectName();
+
+  /**
+   * Returns the value of the '<em><b>Is Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Over</em>' attribute.
+   * @see #setIsOver(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getImportClause_IsOver()
+   * @model
+   * @generated
+   */
+  boolean isIsOver();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ImportClause#isIsOver <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Over</em>' attribute.
+   * @see #isIsOver()
+   * @generated
+   */
+  void setIsOver(boolean value);
 
 } // ImportClause

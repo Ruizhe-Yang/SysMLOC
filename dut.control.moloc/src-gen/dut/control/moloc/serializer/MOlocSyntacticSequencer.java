@@ -61,8 +61,8 @@ public class MOlocSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('(' ')')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     typeSpecifier=TypeSpecifier (ambiguity) ';' (rule end)
 	 *     typeSpecifier=TypeSpecifier (ambiguity) isAnnotation?='annotation'
+	 *     typeSpecifier=TypeSpecifier (ambiguity) isOver?=';'
 	 
 	 * </pre>
 	 */

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Sources">
+  <classes classType="model" className="SupplyVoltage" description="&quot;Supply voltage (positive and negative)&quot;" isLongClassSpecifier="true" classNameEnd="SupplyVoltage" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="+15" declarationName="Vps" description="&quot;Positive supply&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="-15" declarationName="Vns" description="&quot;Negative supply&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="pin_p" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="pin_n" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.ConstantVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="positiveSupply" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Vps" elementName="V" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-60,-10},{-40,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.ConstantVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="negativeSupply" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="- Vns" elementName="V" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,-10},{60,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="pin_p" right="positiveSupply.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-60,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="negativeSupply.n" right="pin_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="positiveSupply.n" right="ground">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-40,0},{0,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ground" right="negativeSupply.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,0},{40,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line( points={{-60,40},{-60,-40}}, color={0,0,255} ) , Line( points={{40,40},{40,-40}}, color={0,0,255} ) , Line( points={{-40,20},{-40,-20}}, color={0,0,255} ) , Line( points={{60,20},{60,-20}}, color={0,0,255} ) , Line( points={{-90,0},{-60,0}}, color={0,0,255} ) , Line( points={{60,0},{90,0}}, color={0,0,255} ) , Text( extent={{-150,110},{150,70}}, textColor={0,0,255}, textString=&quot;%name&quot; ) , Line( points={{-40,0},{-10,0}}, color={0,0,255} ) , Line( points={{10,0},{40,0}}, color={0,0,255} ) , Text( extent={{-100,40},{-80,20}}, textColor={0,0,255}, textString=&quot;+&quot; ) , Text( extent={{80,40},{100,20}}, textColor={0,0,255}, textString=&quot;-&quot; ) , Text( extent={{-10,40},{10,20}}, textColor={0,0,255}, textString=&quot;0&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;                       &lt;p>This is a simple model of a constant supply voltage with positive and negative supply, the potential between positive and negative supply is accessible.&lt;/p>&#xA;                       &lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

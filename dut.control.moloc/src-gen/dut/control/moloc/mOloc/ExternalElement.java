@@ -17,6 +17,7 @@ package dut.control.moloc.mOloc;
  *   <li>{@link dut.control.moloc.mOloc.ExternalElement#getRef <em>Ref</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.ExternalElement#getRefValue <em>Ref Value</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.ExternalElement#getExpressionList <em>Expression List</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ExternalElement#isIsOver <em>Is Over</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getExternalElement()
@@ -112,5 +113,27 @@ public interface ExternalElement extends Element, annotation_modification_part
    * @generated
    */
   void setExpressionList(String value);
+
+  /**
+   * Returns the value of the '<em><b>Is Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Over</em>' attribute.
+   * @see #setIsOver(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getExternalElement_IsOver()
+   * @model
+   * @generated
+   */
+  boolean isIsOver();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ExternalElement#isIsOver <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Over</em>' attribute.
+   * @see #isIsOver()
+   * @generated
+   */
+  void setIsOver(boolean value);
 
 } // ExternalElement

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.SpacePhasors">
+  <classes classType="package" className="Components" description="&quot;Basic space phasor models&quot;" isLongClassSpecifier="true" classNameEnd="Components" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;This package contains basic space phasor models.&lt;br>&#xA;Real and imaginary part of voltage space phasor are the potentials v_[2] of the space phasor connector; (implicit grounded).&lt;br>&#xA;Real and imaginary part of current space phasor are the currents i_[2] at the space phasor connector;&#xA;a ground has to be used where necessary for currents flowing back.&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;dl>&#xA;  &lt;dt>&lt;strong>Main Authors:&lt;/strong>&lt;/dt>&#xA;  &lt;dd>&#xA;  &lt;a href=\&quot;https://www.haumer.at/\&quot;>Anton Haumer&lt;/a>&lt;br>&#xA;  Technical Consulting &amp;amp; Electrical Engineering&lt;br>&#xA;  D-93049 Regensburg&lt;br>Germany&lt;br>&#xA;  email: &lt;a href=\&quot;mailto:a.haumer@haumer.at\&quot;>a.haumer@haumer.at&lt;/a>&#xA;  &lt;/dd>&#xA;&lt;/dl>&#xA;  &lt;ul>&#xA;  &lt;li> v1.00 2004/09/16 Anton Haumer&lt;/li>&#xA;  &lt;li> v1.60 2005/11/03 Anton Haumer&lt;br>&#xA;       added Rotator&lt;/li>&#xA;  &lt;li> v1.6.1 2005/11/10 Anton Haumer&lt;br>&#xA;       improved Transformation and Rotation&lt;/li>&#xA;  &lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples">
+  <classes classType="model" className="CharacteristicThyristors" description="&quot;Characteristic of ideal thyristors&quot;" isLongClassSpecifier="true" classNameEnd="CharacteristicThyristors" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealThyristor" isOver="true">
+      <component_list isModificationOver="true" declarationName="IdealThyristor1" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="off">
+          <modifications expression="true" elementName="start"/>
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <modifications expression="1" elementName="Vknee"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,30}, {0,50} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SineVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="SineVoltage1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="10" elementName="V"/>
+        <modifications expression="0" elementName="offset"/>
+        <modifications expression="1" elementName="f"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-40,-60}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="Ground1" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-50,-108},{-30,-88}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="R3" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1e-3" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,30},{60,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealGTOThyristor" isOver="true">
+      <component_list isModificationOver="true" declarationName="IdealGTOThyristor1" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="off">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="true" elementName="start"/>
+        </modifications>
+        <modifications expression="1" elementName="Vknee"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,0}, {0,20} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="R1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1e-3" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,0},{60,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Sources.BooleanTable" isOver="true">
+      <component_list isModificationOver="true" declarationName="booleanStep1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="{1.25,3.2,4.2,4.25,5.7,5.72}" elementName="table"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-68,44},{-48,64}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealThyristor" isOver="true">
+      <component_list isModificationOver="true" declarationName="IdealThyristor2" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="off">
+          <modifications expression="true" elementName="start"/>
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <modifications expression="1" elementName="Vknee"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-50}, {0,-30} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="R2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1e-3" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,-50},{60,-30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealGTOThyristor" isOver="true">
+      <component_list isModificationOver="true" declarationName="IdealGTOThyristor2" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="off">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="true" elementName="start"/>
+        </modifications>
+        <modifications expression="1" elementName="Vknee"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-80}, {0,-60} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="R4" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1e-3" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,-80},{60,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Sources.BooleanPulse" isOver="true">
+      <component_list isModificationOver="true" declarationName="booleanPulse" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="20" elementName="width"/>
+        <modifications expression="1" elementName="period"/>
+        <modifications expression="0.15" elementName="startTime"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-68,-30},{-48,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection" isInitial="true"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="IdealThyristor1.n" right="R3.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,40},{40,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Ground1.p" right="SineVoltage1.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-40,-88},{-40,-70}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="SineVoltage1.p" right="IdealThyristor1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-40,-50},{-40,40},{-20,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="IdealGTOThyristor1.n" right="R1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,10},{40,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="R3.n" right="R1.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,40},{60,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="IdealGTOThyristor1.p" right="IdealThyristor1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,10},{-20,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="IdealGTOThyristor1.fire" right="IdealThyristor1.fire">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,22},{0,36},{-2,36},{-2,44},{0,44},{0,52}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="IdealThyristor1.fire" right="booleanStep1.y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,52},{0,54},{-47,54}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="IdealThyristor2.n" right="R2. p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-40},{40,-40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="IdealGTOThyristor2.n" right="R4. p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-70},{40,-70}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="R2.n" right="R4. n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,-40},{60,-70}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="IdealGTOThyristor2.p" right="IdealThyristor2. p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,-70},{-20,-40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="IdealGTOThyristor2.fire" right="IdealThyristor2. fire">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-58},{0,-44},{-2,-44},{-2,-36},{0,-36},{0,-28}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="R4.n" right="Ground1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,-70},{60,-88},{-40,-88}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="R2.n" right="R1.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,-40},{60,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="SineVoltage1.p" right="IdealThyristor2.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-40,-50},{-40,-40},{-20,-40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="booleanPulse.y" right="IdealThyristor2.fire">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-47,-20},{0,-20},{0,-28}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-96,100},{98,60}}, textString=&quot;Characteristic Thyristors&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This example compares the behavior of the &lt;strong>ideal thyristor&lt;/strong> and the &lt;strong>ideal GTO thyristor&lt;/strong> with &lt;em>Vknee=1&lt;/em> both. The thyristors IdealThyristor1 and IdealGTOThyristor1 are controlled by an unregular Boolean fire signal. The aim is to show several cases for the fire signal in combination with the state (s&amp;lt;0 or s&amp;gt;0)of the thyristors. Please simulate until 6 seconds and compare IdealThyristor1.v with IdealGTOThyristor1.v, the same with IdealThyristor1.s and IdealGTOThyristor1.s (attention: s is a protected variable in each thyristor). Also compare IdealThyristor1.off and IdealGTOThyristor1.off and have a look at the fire signal (e.g. IdealThyristor1.fire). It can be seen that the IdealGTOThyristor1 reacts on switching off the fire signal whereas the IdealThyristor1 does not show this behavior.&lt;/p>&#xA;&lt;p>The other thyristors IdealThyristor2 and IdealGTOThyristor2 are controlled by an periodic Boolean fire signal to show a typical use case. Please compare IdealThyristor2.v with IdealGTOThyristor2.v&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&lt;strong>Release Notes:&lt;/strong>&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>Jan 23, 2013   &lt;/em>&#xA;       by Kristin Majetta and Christoph Clauss&lt;br> revised&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>Mai 7, 2004   &lt;/em>&#xA;       by Christoph Clauss&lt;br> realized&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="6" elementName="StopTime"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

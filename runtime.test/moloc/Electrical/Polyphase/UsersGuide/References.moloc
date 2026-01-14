@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.UsersGuide">
+  <classes classType="class" className="References" description="&quot;References&quot;" isLongClassSpecifier="true" classNameEnd="References" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.References" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;info&quot;" elementName="preferredView"/>
+      <annotations expression="true" elementName="DocumentationClass"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&#xA;&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&#xA;  &lt;tr>&#xA;    &lt;td>[Ceraolo2014]&lt;/td>&#xA;    &lt;td>M. Ceraolo and D. Poli; &lt;em>Fundamentals of Electric Power Engineering&lt;/em>, IEEE/Wiley 2014,&#xA;      &lt;a href=\&quot;https://www.wiley.com/en-us/Fundamentals+of+Electric+Power+Engineering:+From+Electromagnetics+to+Power+Systems-p-9781118679692\&quot;>ISBN 978-1-118-67969-2&lt;/a>.&lt;/td>&#xA;  &lt;/tr>&#xA;  &lt;tr>&#xA;    &lt;td>[M&amp;uuml;hl2017]&lt;/td>&#xA;    &lt;td>T. M&amp;uuml;hl,&#xA;      &lt;em>Elektrische Messtechnik&lt;/em> (in German),&#xA;      Springer Vieweg, 2017, &lt;a href=\&quot;https://doi.org/10.1007/978-3-658-15720-3\&quot;>DOI 10.1007/978-3-658-15720-3&lt;/a>.&lt;/td>&#xA;  &lt;/tr>&#xA;  &lt;tr>&#xA;    &lt;td>[Vaske1963]&lt;/td>&#xA;    &lt;td>P. Vaske,&#xA;      &amp;quot;&amp;Uuml;ber die Drehfelder und Drehmomente symmetrischer Komponenten in Induktionsmaschinen,&amp;quot;&#xA;      (in German), &lt;em>Archiv f&amp;uuml;r Elektrotechnik&lt;/em>&#xA;      vol 2, 1963, pp. 97-117.&lt;/td>&#xA;  &lt;/tr>&#xA;&lt;/table>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

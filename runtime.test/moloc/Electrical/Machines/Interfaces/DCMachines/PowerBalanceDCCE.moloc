@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Interfaces.DCMachines">
+  <classes classType="record" className="PowerBalanceDCCE" description="&quot;Power balance of DC machines with compound excitation&quot;" isLongClassSpecifier="true" classNameEnd="PowerBalanceDCCE" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.DCMachines.PartialPowerBalanceDCMachines" isOver="true">
+      <extendsModifications expression="lossPowerArmature + lossPowerCore + lossPowerStrayLoad + lossPowerFriction + lossPowerBrush + lossPowerShuntExcitation + lossPowerSeriesExcitation" elementName="lossPowerTotal" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" isOver="true">
+      <component_list declarationName="powerShuntExcitation" description="&quot;Electrical (shunt) excitation power&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" isOver="true">
+      <component_list declarationName="powerSeriesExcitation" description="&quot;Electrical series excitation power&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" isOver="true">
+      <component_list declarationName="lossPowerShuntExcitation" description="&quot;(Shunt) excitation losses&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" isOver="true">
+      <component_list declarationName="lossPowerSeriesExcitation" description="&quot;Series excitation losses&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;output&quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;Power balance of DC machines with compound excitation.&#xA; &lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

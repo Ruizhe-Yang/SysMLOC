@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.ACAC">
+  <classes classType="model" className="PolyphaseTriac" description="&quot;Triodes for alternating current&quot;" isLongClassSpecifier="true" classNameEnd="PolyphaseTriac" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.TwoPlug" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1e-5" declarationName="Ron" description="&quot;Forward state-on differential resistance (closed resistance)&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1e-5" declarationName="Goff" description="&quot;Backward state-off conductance (opened conductance)&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="0" declarationName="Vknee" description="&quot;Forward threshold voltage&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="m" elementName="mh" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <component_list subscripts="[m]" declarationName="fire1" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-60,-120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <component_list subscripts="[m]" declarationName="fire2" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{60,-120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.PlugToPins_p" isOver="true">
+      <component_list isModificationOver="true" declarationName="plugToPins_p" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-90,-10},{-70,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.PlugToPins_n" isOver="true">
+      <component_list isModificationOver="true" declarationName="plugToPins_n" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10},{70,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SinglePhaseTriac" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="triac" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="useHeatPort" elementName="useHeatPort" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_p" right="plugToPins_p.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-82,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPins_n.plug_n" right="plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{82,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="triac.heatPort" right="heatPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-10},{0,-100}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="fire1" right="triac.fire1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,-120},{-60,-20},{-6, -20 } ,{-6,-12} }" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="fire2" right="triac.fire2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,-120},{60,-20},{6,-20}, {6,-12} }" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPins_p.pin_p" right="triac.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-78,0},{-10,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="triac.n" right="plugToPins_n.pin_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{78,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;triac&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Text( extent={{-150,120},{150,80}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Line(points={{-60,-100},{-60,-40},{-40,-30}}, color={255,0,255} ) , Line(points={{60,-100},{60,20},{40,30}}, color={255,0,255}), Line(points={{-40,-70},{-40,70}}, color={0,0,255}), Line(points={{40,-72},{40,70}}, color={0,0,255}), Polygon(points={{-40,-70},{40,-30},{-40,10},{-40,-70}}, lineColor={0,0, 255 } , fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon(points={{40,-10},{-40,30},{40,70},{40,-10}}, lineColor={0,0, 255 } , fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-40,0},{-90,0}}, color={0,0,255}), Line(points={{90,0},{40,0}}, color={0,0,255}) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Simplified model of &lt;code>m&lt;/code>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.ACAC.SinglePhaseTriac\&quot;>triodes for alternating current&lt;/a>, each built from two antiparallel thyristors.&#xA;&lt;code>thyristor1&lt;/code> has to be fired during the positive halfwave of the voltage.&#xA;&lt;code>thyristor2&lt;/code> has to be fired during the negative halfwave of the voltage.&#xA;&lt;/p>&#xA;&lt;p>&#xA;Note: A real triac is fired in positive direction (&lt;code>thyristor1&lt;/code>) by a positive gate current and in negative direction (&lt;code>thyristor2&lt;/code>) by a negative gate current.&#xA;The triac goes in blocking condition when the current falls to zero.&#xA;&lt;/p>&#xA;&lt;p>&#xA;This behaviour is simulated by the two firing gates &lt;code>fire1&lt;/code> and &lt;code>fire2&lt;/code>:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;code>fire1=false&lt;/code> and &lt;code>fire2=false&lt;/code>: gate current = 0, stay in blocking condition&lt;/li>&#xA;&lt;li>&lt;code>fire1=true &lt;/code> and &lt;code>fire2=false&lt;/code>: gate current &amp;gt; 0, fire &lt;code>thyristor1&lt;/code>&lt;/li>&#xA;&lt;li>&lt;code>fire1=false&lt;/code> and &lt;code>fire2=true&lt;/code>: gate current &amp;lt; 0, fire &lt;code>thyristor2&lt;/code>&lt;/li>&#xA;&lt;li>&lt;code>fire1=true &lt;/code> and &lt;code>fire2=true&lt;/code>: forbidden&lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.annotation_modification_part;
 import dut.control.moloc.mOloc.der_class_specifier;
@@ -39,6 +39,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.der_class_specifierImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.der_class_specifierImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.der_class_specifierImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.der_class_specifierImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.der_class_specifierImpl#isIsDerClassSpecifier <em>Is Der Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.der_class_specifierImpl#isIsDer <em>Is Der</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.der_class_specifierImpl#getDerName <em>Der Name</em>}</li>
  * </ul>
@@ -115,7 +117,47 @@ public class der_class_specifierImpl extends class_nameImpl implements der_class
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsDerClassSpecifier() <em>Is Der Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_DER_CLASS_SPECIFIER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsDerClassSpecifier() <em>Is Der Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected boolean isDerClassSpecifier = IS_DER_CLASS_SPECIFIER_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsDer() <em>Is Der</em>}' attribute.
@@ -249,13 +291,63 @@ public class der_class_specifierImpl extends class_nameImpl implements der_class
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.DER_CLASS_SPECIFIER__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.DER_CLASS_SPECIFIER__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.DER_CLASS_SPECIFIER__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsDerClassSpecifier()
+  {
+    return isDerClassSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsDerClassSpecifier(boolean newIsDerClassSpecifier)
+  {
+    boolean oldIsDerClassSpecifier = isDerClassSpecifier;
+    isDerClassSpecifier = newIsDerClassSpecifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER, oldIsDerClassSpecifier, isDerClassSpecifier));
   }
 
   /**
@@ -332,6 +424,10 @@ public class der_class_specifierImpl extends class_nameImpl implements der_class
         return isIsAnnotation();
       case MOlocPackage.DER_CLASS_SPECIFIER__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.DER_CLASS_SPECIFIER__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
+      case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER:
+        return isIsDerClassSpecifier();
       case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER:
         return isIsDer();
       case MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME:
@@ -362,7 +458,13 @@ public class der_class_specifierImpl extends class_nameImpl implements der_class
         return;
       case MOlocPackage.DER_CLASS_SPECIFIER__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.DER_CLASS_SPECIFIER__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
+        return;
+      case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER:
+        setIsDerClassSpecifier((Boolean)newValue);
         return;
       case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER:
         setIsDer((Boolean)newValue);
@@ -397,6 +499,12 @@ public class der_class_specifierImpl extends class_nameImpl implements der_class
       case MOlocPackage.DER_CLASS_SPECIFIER__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.DER_CLASS_SPECIFIER__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
+      case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER:
+        setIsDerClassSpecifier(IS_DER_CLASS_SPECIFIER_EDEFAULT);
+        return;
       case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER:
         setIsDer(IS_DER_EDEFAULT);
         return;
@@ -425,6 +533,10 @@ public class der_class_specifierImpl extends class_nameImpl implements der_class
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.DER_CLASS_SPECIFIER__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.DER_CLASS_SPECIFIER__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
+      case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER:
+        return isDerClassSpecifier != IS_DER_CLASS_SPECIFIER_EDEFAULT;
       case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER:
         return isDer != IS_DER_EDEFAULT;
       case MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME:
@@ -463,6 +575,7 @@ public class der_class_specifierImpl extends class_nameImpl implements der_class
       {
         case MOlocPackage.DER_CLASS_SPECIFIER__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.DER_CLASS_SPECIFIER__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.DER_CLASS_SPECIFIER__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -506,6 +619,7 @@ public class der_class_specifierImpl extends class_nameImpl implements der_class
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.DER_CLASS_SPECIFIER__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.DER_CLASS_SPECIFIER__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.DER_CLASS_SPECIFIER__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -536,6 +650,10 @@ public class der_class_specifierImpl extends class_nameImpl implements der_class
     result.append(description);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
+    result.append(", isDerClassSpecifier: ");
+    result.append(isDerClassSpecifier);
     result.append(", isDer: ");
     result.append(isDer);
     result.append(", derName: ");

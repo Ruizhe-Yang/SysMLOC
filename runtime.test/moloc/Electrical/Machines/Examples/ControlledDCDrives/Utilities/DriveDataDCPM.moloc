@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Examples.ControlledDCDrives.Utilities">
+  <classes classType="record" className="DriveDataDCPM" description="&quot;Parameters of a controlled DC permanent magnet drive&quot;" isLongClassSpecifier="true" classNameEnd="DriveDataDCPM" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Record" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Electrical.Machines.Thermal.convertResistance" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Machines.Utilities.ParameterRecords.DcPermanentMagnetData" parameterType="parameter" isOver="true">
+      <component_list declarationName="motorData" description="&quot;Motor data&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Motor&quot;" elementName="group"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="convertResistance(motorData.Ra, motorData.TaRef,motorData.alpha20a,motorData.TaNominal )" declarationName="Ra" description="&quot;Armature resistance at nominal temperature&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Motor&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="motorData.La/Ra" declarationName="Ta" description="&quot;Armature time constant&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Motor&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" parameterType="parameter" isOver="true">
+      <component_list expression="motorData.ViNominal*motorData.IaNominal -motorData.frictionParameters.PRef -motorData.coreParameters.PRef -motorData.strayLoadParameters.PRef" declarationName="PNominal" description="&quot;Nominal mechanical output&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Motor&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Torque" parameterType="parameter" isOver="true">
+      <component_list expression="PNominal/motorData.wNominal" declarationName="tauNominal" description="&quot;Nominal torque&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Motor&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ElectricalTorqueConstant" parameterType="parameter" isOver="true">
+      <component_list expression="tauNominal/motorData.IaNominal" declarationName="kPhi" description="&quot;Torque constant&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Motor&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isOver="true">
+      <component_list expression="motorData.wNominal*motorData.VaNominal/motorData.ViNominal" declarationName="w0" description="&quot;No-load speed&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Motor&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="2e3" declarationName="fS" description="&quot;Switching frequency&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Inverter&quot;" elementName="tab"/>
+          <modifications expression="&quot;Armature inverter&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="VaMax" declarationName="VBat" description="&quot;DC no-load voltage&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Inverter&quot;" elementName="tab"/>
+          <modifications expression="&quot;Armature inverter&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="0.5/fS" declarationName="Td" description="&quot;Dead time of inverter&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Inverter&quot;" elementName="tab"/>
+          <modifications expression="&quot;Armature inverter&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="4*Td" declarationName="Tmf" description="&quot;Measurement filter time constant&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Inverter&quot;" elementName="tab"/>
+          <modifications expression="&quot;Armature inverter&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="Td + Tmf" declarationName="Tsigma" description="&quot;Sum of small time constants&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Inverter&quot;" elementName="tab"/>
+          <modifications expression="&quot;Armature inverter&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inertia" parameterType="parameter" isOver="true">
+      <component_list expression="motorData.Jr" declarationName="JL" description="&quot;Load inertia&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Load&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="1.2*motorData.VaNominal" declarationName="VaMax" description="&quot;Maximum Voltage&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Controller&quot;" elementName="tab"/>
+          <modifications expression="&quot;Limits&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="1.5*motorData.IaNominal" declarationName="IaMax" description="&quot;Maximum current&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Controller&quot;" elementName="tab"/>
+          <modifications expression="&quot;Limits&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Torque" parameterType="parameter" isOver="true">
+      <component_list expression="kPhi*IaMax" declarationName="tauMax" description="&quot;Maximum torque&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Controller&quot;" elementName="tab"/>
+          <modifications expression="&quot;Limits&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isOver="true">
+      <component_list expression="motorData.wNominal*motorData.VaNominal/motorData.ViNominal" declarationName="wMax" description="&quot;Maximum speed&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Controller&quot;" elementName="tab"/>
+          <modifications expression="&quot;Limits&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularAcceleration" parameterType="parameter" isOver="true">
+      <component_list expression="tauMax/(JL +motorData.Jr)" declarationName="aMax" description="&quot;Maximum acceleration&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Controller&quot;" elementName="tab"/>
+          <modifications expression="&quot;Limits&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="motorData.La/(2*Tsigma)" declarationName="kpI" description="&quot;Proportional gain&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Controller&quot;" elementName="tab"/>
+          <modifications expression="&quot;Current controller&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="Ta" declarationName="TiI" description="&quot;Integral time constant&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Controller&quot;" elementName="tab"/>
+          <modifications expression="&quot;Current controller&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="2*Tsigma" declarationName="Tsub" description="&quot;Substitute time constant&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Controller&quot;" elementName="tab"/>
+          <modifications expression="&quot;Current controller&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="(JL + motorData.Jr)/(2*Tsub)" declarationName="kpw" description="&quot;Proportional gain&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Controller&quot;" elementName="tab"/>
+          <modifications expression="&quot;Speed controller&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="4*Tsub" declarationName="Tiw" description="&quot;Integral time constant&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Controller&quot;" elementName="tab"/>
+          <modifications expression="&quot;Speed controller&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="Tiw" declarationName="Tfw" description="&quot;Filter time constant&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Controller&quot;" elementName="tab"/>
+          <modifications expression="&quot;Speed controller&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="1/(16*Tsub)" declarationName="kpP" description="&quot;Proportional gain&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Controller&quot;" elementName="tab"/>
+          <modifications expression="&quot;Position controller&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;dcpmDriveData&quot;" elementName="defaultComponentName"/>
+      <annotations expression="&quot;parameter&quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Calculates controller parameters of a DC permanent magnet drive:&#xA;Current controller according to absolute optimum, speed controller according to symmetric optimum.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

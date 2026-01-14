@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Sources">
+  <classes classType="model" className="SineVoltage" description="&quot;Sine voltage source&quot;" isLongClassSpecifier="true" classNameEnd="SineVoltage" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="V" description="&quot;Amplitude of sine wave&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="phase" description="&quot;Phase of sine wave&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="f" description="&quot;Frequency of sine wave&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.VoltageSource" isOver="true">
+      <extendsModifications typeSpecifier="Modelica.Blocks.Sources.Sine" isModificationOver="true" declarationName="signalSource" isRedeclare="true">
+        <modifications expression="V" elementName="amplitude" isfinal="true"/>
+        <modifications expression="f" elementName="f" isfinal="true"/>
+        <modifications expression="phase" elementName="phase" isfinal="true"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Line(points={{-66,0},{-56.2,29.9},{-49.8,46.5}, {-44.2,58.1},{-39.3,65.2},{-34.3,69.2},{-29.4,69.8},{-24.5,67}, {-19.6,61},{-14.6,52},{-9,38.6},{-1.98,18.6},{12.79,-26.9},{ 19.1,-44} ,{24.8,-56.2},{29.7,-64},{34.6,-68.6},{39.5,-70},{44.5, -67.9 } ,{49.4,-62.5},{54.3,-54.1},{59.9,-41.3},{67,-21.7},{74,0} } , color={192,192,192} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em> 1998   &lt;/em>&#xA;       by Christoph Clauss&lt;br> initially implemented&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This voltage source uses the corresponding signal source of the Modelica.Blocks.Sources package. Care for the meaning of the parameters in the Blocks package. Furthermore, an offset parameter is introduced, which is added to the value calculated by the blocks source. The startTime parameter allows to shift the blocks source behavior on the time axis.&lt;/p>&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Sources/SineVoltage.png\&quot;&#xA;     alt=\&quot;SineVoltage.png\&quot;>&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

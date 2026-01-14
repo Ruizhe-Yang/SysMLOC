@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Basic">
+  <classes classType="model" className="Transformer" description="&quot;Polyphase Transformer&quot;" isLongClassSpecifier="true" classNameEnd="Transformer" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.FourPlug" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="L1" description="&quot;Primary inductance&quot;">
+        <modifications expression="fill(1, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="L2" description="&quot;Secondary inductance&quot;">
+        <modifications expression="fill(1, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="M" description="&quot;Coupling inductance&quot;">
+        <modifications expression="fill(1, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Transformer" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="transformer" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="L1" elementName="L1" isfinal="true"/>
+        <modifications expression="L2" elementName="L2" isfinal="true"/>
+        <modifications expression="M" elementName="M" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10, 10 } }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_p1.pin" right="transformer.p1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,100},{-10,100},{-10,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_p2.pin" right="transformer.p2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{100,100},{10,100},{10,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_n1.pin" right="transformer.n1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,-100},{-10,-100},{-10,-10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_n2.pin" right="transformer.n2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{100,-100},{10,-100},{10,-10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Text( extent={{-100,20},{-58,-20}}, textString=&quot;L1&quot;, textColor={0,0,255} ) , Text( extent={{60,20},{100,-20}}, textString=&quot;L2&quot;, textColor={0,0,255} ) , Text( extent={{-20,-60},{20,-100}}, textString=&quot;M&quot;, textColor={0,0,255} ) , Text( extent={{-150,110},{150,150}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Line(points={{-40,60},{-40,100},{-90,100}}, color={0,0,255}), Line(points={{40,60},{40,100},{90,100}}, color={0,0,255}), Line(points={{-40,-60},{-40,-100},{-90,-100}}, color={0,0,255}), Line(points={{40,-60},{40,-100},{90,-100}}, color={0,0,255}), Text( extent={{-150,-150},{150,-110}}, textString=&quot;m=%m&quot; ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-33,45}, rotation=270 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-33,15}, rotation=270 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-33,-15}, rotation=270 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-33,-45}, rotation=270 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={33,45}, rotation=90 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={33,15}, rotation=90 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={33,-15}, rotation=90 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={33,-45}, rotation=90 ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Contains m transformers (Modelica.Electrical.Analog.Basic.Transformer)&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

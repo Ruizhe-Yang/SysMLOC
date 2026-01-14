@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.BasicMachines.Components">
+  <classes classType="model" className="SquirrelCage" description="&quot;Squirrel Cage&quot;" isLongClassSpecifier="true" classNameEnd="SquirrelCage" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list declarationName="Lrsigma" description="&quot;Rotor stray inductance per phase translated to stator&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list declarationName="Rr" description="&quot;Rotor resistance per phase translated to stator at T_ref&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="293.15" declarationName="T_ref" description="&quot;Reference temperature&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="alpha" description="&quot;Temperature coefficient of resistance at T_ref&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="T_ref" elementName="T"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" isOver="true">
+      <component_list declarationName="Rr_actual" description="&quot;Actual resistance = Rr*(1 + alpha*(T_heatPort - T_ref))&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Interfaces.SpacePhasor" isOver="true">
+      <component_list declarationName="spacePhasor_r" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,90},{-90,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list subscripts="[2]" isModificationOver="true" expression="-spacePhasor_r.i_" declarationName="i" description="&quot;Currents out from squirrel cage&quot;">
+        <modifications expression="&quot;ElectricCurrent&quot;" elementName="quantity" isEach="true" isfinal="true"/>
+        <modifications expression="&quot;A&quot;" elementName="unit" isEach="true" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="((1 + alpha*(T_heatPort - T_ref)) >= Modelica.Constants.eps, &quot;Temperature outside scope of model!&quot; )"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="Rr_actual" right="Rr*(1 + alpha*(T_heatPort - T_ref))"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="spacePhasor_r.v_" right="Rr_actual*spacePhasor_r.i_ + Lrsigma*der( spacePhasor_r.i_)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="2/3*LossPower" right="Rr_actual*(spacePhasor_r.i_[1]*spacePhasor_r.i_[1] + spacePhasor_r.i_[2]*spacePhasor_r.i_[2] )"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Line(points={{-100,60},{-60, 60 } } , color={0,0,255} ) ,Line(points={{60,60},{80,60},{80,40}}, color={0,0,255} ) ,Rectangle( extent={{60,40},{100,-40}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Line(points={{80,-40},{80, -60 } } , color={0,0,255} ) ,Line(points={{60,-60},{100,-60}}, color= {0,0,255} ) ,Line(points={{70,-80},{90,-80}}, color={0,0,255}), Line(points={{66,-70},{94,-70}}, color={0,0,255}),Text( extent={{-150,-148},{150,-110}}, textColor={0,0,255}, textString=&quot;%name&quot; ) ,Line(points={{-100,90},{-100,60}}, color={0,0,255} ) , Line( points={{-60,60},{-59,66},{-52,74},{-38,74},{-31,66},{-30,60}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-30,60},{-29,66},{-22,74},{-8,74},{-1,66},{0,60}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{0,60},{1,66},{8,74},{22,74},{29,66},{30,60}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{30,60},{31,66},{38,74},{52,74},{59,66},{60,60}}, color={0,0,255}, smooth=Smooth.Bezier ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Model of a squirrel cage / symmetrical damper cage in two axis.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The squirrel cage has an optional (conditional) HeatPort,&#xA;which can be enabled or disabled by the Boolean parameter useHeatPort.&#xA;Temperatures of both axis are the same, both losses are added.&#xA;Material properties alpha of both axis are the same.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

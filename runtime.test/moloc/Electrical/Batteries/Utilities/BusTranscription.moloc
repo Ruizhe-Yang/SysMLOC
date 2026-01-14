@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.Utilities">
+  <classes classType="block" className="BusTranscription" description="&quot;Transcribe bus signals&quot;" isLongClassSpecifier="true" classNameEnd="BusTranscription" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1" declarationName="Ns" description="&quot;Number of series connected cells&quot;">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1" declarationName="Np" description="&quot;Number of parallel connected cells&quot;">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Batteries.Interfaces.StackBus" isOver="true">
+      <component_list isModificationOver="true" declarationName="stackBus" description="&quot;Stack bus&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Np" elementName="Np"/>
+        <modifications expression="Ns" elementName="Ns"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-100,0}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Batteries.Interfaces.StackBusArrays" isOver="true">
+      <component_list isModificationOver="true" declarationName="stackBusArrays" description="&quot;Stack bus with signal arrays&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Np" elementName="Np"/>
+        <modifications expression="Ns" elementName="Ns"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{100,0}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isProtected="true" isOver="true">
+      <component_list subscripts="[Ns,Np]" isModificationOver="true" declarationName="gainV" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="k" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-8,70},{12,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+      <component_list subscripts="[Ns,Np]" isModificationOver="true" declarationName="gainI" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="k" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-8,40},{12,60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+      <component_list subscripts="[Ns,Np]" isModificationOver="true" declarationName="gainSOC" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="k" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-8,10},{12,30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+      <component_list subscripts="[Ns,Np]" isModificationOver="true" declarationName="gainP" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="k" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-8,-30},{12,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+      <component_list subscripts="[Ns,Np]" isModificationOver="true" declarationName="gainLosses" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="k" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-8,-60},{12,-40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+      <component_list subscripts="[Ns,Np]" isModificationOver="true" declarationName="gainT" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="k" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-8,-90},{12,-70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gainV.y" right="stackBusArrays.v">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{13,80},{80,80},{80, -0.1 } ,{100.1,-0.1} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gainI.y" right="stackBusArrays.i">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{13,50},{60,50},{60, -0.1 } ,{100.1,-0.1} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gainSOC.y" right="stackBusArrays.soc">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{13,20},{40,20}, {40,-0.1},{100.1,-0.1} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gainP.y" right="stackBusArrays.power">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{13,-20},{40,-20}, {40,-0.1},{100.1,-0.1} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gainLosses.y" right="stackBusArrays.lossPower">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{13,-50}, {60,-50},{60,-0.1},{100.1,-0.1} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gainT.y" right="stackBusArrays.T">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{13,-80},{80,-80}, {80,-0.1},{100.1,-0.1} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gainV.u" right="stackBus.cellBus.v">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,80},{ -80,80} ,{-80,0.1},{-100.1,0.1} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gainI.u" right="stackBus.cellBus.i">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,50},{ -60,50} ,{-60,0.1},{-100.1,0.1} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gainSOC.u" right="stackBus.cellBus.soc">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,20}, {-40,20},{-40,0.1},{-100.1,0.1} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gainP.u" right="stackBus.cellBus.power">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,-20}, {-40,-20},{-40,0.1},{-100.1,0.1} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gainLosses.u" right="stackBus.cellBus.lossPower">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{ {-10,-50},{-60,-50},{-60,0.1},{-100.1,0.1}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gainT.u" right="stackBus.cellBus.T">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,-80}, {-80,-80},{-80,0.1},{-100.1,0.1} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Polygon( points={{-80,0},{-40,20},{-40,8},{100,8},{100,-10},{-40,-10},{-40,-20}, {-80,0} } , lineColor={0,0,0}, origin={10,0}, rotation=180, fillColor={255,215,136}, fillPattern=FillPattern.Solid ) , Text( extent={{-100,42},{100,22}}, textColor={0,0,0}, horizontalAlignment=TextAlignment.Left, textString=&quot; cellBus[Ns,Np].v&quot; ) , Text( extent={{-100,-20},{100,-40}}, textColor={0,0,0}, horizontalAlignment=TextAlignment.Right, textString=&quot;v[Ns,Np] &quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Transfers the information from the &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.Interfaces.StackBus\&quot;>stackBus&lt;/a> to the &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.Interfaces.StackBusArrays\&quot;>stackBusArrays&lt;/a>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

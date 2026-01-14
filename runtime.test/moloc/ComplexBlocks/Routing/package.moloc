@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks">
-  <classes classType="package" className="Routing" description="&quot;Library of blocks to combine and extract signals&quot;" classNameEnd="Routing">
-    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package"/>
-    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-      <annotations elementName="Documentation">
+  <classes classType="package" className="Routing" description="&quot;Library of blocks to combine and extract signals&quot;" isLongClassSpecifier="true" classNameEnd="Routing" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
         <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This package contains blocks to combine and extract signals.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
       </annotations>
-      <annotations elementName="Icon">
+      <annotations isModificationOver="true" elementName="Icon">
         <modifications expression="{ Line(points={{-90,0},{4,0}}, color={95,95,95}), Line(points={{88,65},{48,65},{-8,0}}, color={95,95,95}), Line(points={{-8,0},{93,0}}, color={95,95,95}), Line(points={{87,-65},{48,-65},{-8,0}}, color={95,95,95}) }" elementName="graphics"/>
       </annotations>
     </elements>

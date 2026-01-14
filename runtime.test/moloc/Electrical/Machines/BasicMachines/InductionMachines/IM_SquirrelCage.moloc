@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.BasicMachines.InductionMachines">
+  <classes classType="model" className="IM_SquirrelCage" description="&quot;Induction machine with squirrel cage rotor&quot;" isLongClassSpecifier="true" classNameEnd="IM_SquirrelCage" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.PartialBasicInductionMachine" isOver="true">
+      <extendsModifications expression="airGap.i_ss" elementName="idq_ss" isfinal="true"/>
+      <extendsModifications expression="airGap.i_sr" elementName="idq_sr" isfinal="true"/>
+      <extendsModifications expression="airGap.i_rs" elementName="idq_rs" isfinal="true"/>
+      <extendsModifications expression="airGap.i_rr" elementName="idq_rr" isfinal="true"/>
+      <extendsModifications typeSpecifier="Machines.Thermal.InductionMachines.ThermalAmbientIMC" isModificationOver="true" declarationName="thermalAmbient" isRedeclare="true" isfinal="true">
+        <modifications expression="TrOperational" elementName="Tr" isfinal="true"/>
+      </extendsModifications>
+      <extendsModifications typeSpecifier="Machines.Interfaces.InductionMachines.ThermalPortIMC" declarationName="thermalPort" isRedeclare="true" isfinal="true"/>
+      <extendsModifications typeSpecifier="Machines.Interfaces.InductionMachines.ThermalPortIMC" declarationName="internalThermalPort" isRedeclare="true" isfinal="true"/>
+      <extendsModifications typeSpecifier="Machines.Interfaces.InductionMachines.PowerBalanceIMC" isModificationOver="true" declarationName="powerBalance" isRedeclare="true" isfinal="true">
+        <modifications expression="squirrelCageR.LossPower" elementName="lossPowerRotorWinding" isfinal="true"/>
+        <modifications expression="0" elementName="lossPowerRotorCore" isfinal="true"/>
+      </extendsModifications>
+      <extendsModifications isModificationOver="true" elementName="statorCore">
+        <modifications expression="statorCoreParameters.wRef" elementName="w" isfinal="true"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
+      <component_list subscripts="[2]" expression="squirrelCageR.i" declarationName="ir" description="&quot;Rotor cage currents&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.BasicMachines.Components.AirGapS" isOver="true">
+      <component_list isModificationOver="true" declarationName="airGap" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="p" elementName="p" isfinal="true"/>
+        <modifications expression="Lm" elementName="Lm" isfinal="true"/>
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Lm" description="&quot;Stator main field inductance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="3*sqrt(1 - 0.0667)/(2*pi *fsNominal )" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Lrsigma" description="&quot;Rotor stray inductance per phase (equivalent three-phase winding)&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="3*(1 - sqrt(1 - 0.0667 ) ) /(2*pi*fsNominal)" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Rr" description="&quot;Rotor resistance per phase (equivalent three-phase winding) at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0.04" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="TrRef" description="&quot;Reference temperature of rotor resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="alpha20r" description="&quot;Temperature coefficient of rotor resistance at 20 degC&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="TrOperational" description="&quot;Operational temperature of rotor resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Operational temperatures&quot;" elementName="group"/>
+          <modifications expression="not useThermalPort" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.BasicMachines.Components.SquirrelCage" isOver="true">
+      <component_list isModificationOver="true" declarationName="squirrelCageR" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Lrsigma" elementName="Lrsigma" isfinal="true"/>
+        <modifications expression="Rr" elementName="Rr" isfinal="true"/>
+        <modifications expression="true" elementName="useHeatPort" isfinal="true"/>
+        <modifications expression="TrRef" elementName="T_ref" isfinal="true"/>
+        <modifications expression="Machines.Thermal.convertAlpha(alpha20r, TrRef)" elementName="alpha" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,-40}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGap.spacePhasor_r" right="squirrelCageR.spacePhasor_r">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,-10},{10,-30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGap.flange" right="inertiaRotor.flange_a">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{36,0},{36,0},{70,0}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="lssigma.spacePhasor_b" right="airGap.spacePhasor_s">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,10},{10,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="squirrelCageR.heatPort" right="internalThermalPort.heatPortRotorWinding">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,-40},{-10,-60},{0,-60},{0,-80}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGap.support" right="internalSupport">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,0},{-40,0},{-40,-90},{60,-90},{60,-100}}" elementName="points"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;imc&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&lt;strong>Model of a three-phase induction machine with squirrel cage.&lt;/strong>&lt;br>&#xA;Resistance and stray inductance of stator is modeled directly in stator phases, then using space phasor transformation. Resistance and stray inductance of rotor's squirrel cage is modeled in two axis of the rotor-fixed coordinate system. Both together connected via a stator-fixed &lt;em>AirGap&lt;/em> model. The machine models take the following loss effects into account:&#xA;&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&lt;li>heat losses in the temperature dependent stator winding resistances&lt;/li>&#xA;&lt;li>heat losses in the temperature dependent cage resistances&lt;/li>&#xA;&lt;li>friction losses&lt;/li>&#xA;&lt;li>core losses (only eddy current losses, no hysteresis losses)&lt;/li>&#xA;&lt;li>stray load losses&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&lt;strong>Default values for machine's parameters (a realistic example) are:&lt;/strong>&lt;br>&lt;/p>&#xA;&lt;table>&#xA;&lt;tr>&#xA;&lt;td>number of pole pairs p&lt;/td>&#xA;&lt;td>2&lt;/td>&lt;td> &lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>stator's moment of inertia&lt;/td>&#xA;&lt;td>0.29&lt;/td>&lt;td>kg.m2&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>rotor's moment of inertia&lt;/td>&#xA;&lt;td>0.29&lt;/td>&lt;td>kg.m2&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>nominal frequency fNominal&lt;/td>&#xA;&lt;td>50&lt;/td>&lt;td>Hz&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>nominal voltage per phase&lt;/td>&#xA;&lt;td>100&lt;/td>&lt;td>V RMS&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>nominal current per phase&lt;/td>&#xA;&lt;td>100&lt;/td>&lt;td>A RMS&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>nominal torque&lt;/td>&#xA;&lt;td>161.4&lt;/td>&lt;td>Nm&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>nominal speed&lt;/td>&#xA;&lt;td>1440.45&lt;/td>&lt;td>rpm&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>nominal mechanical output&lt;/td>&#xA;&lt;td>24.346&lt;/td>&lt;td>kW&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>efficiency&lt;/td>&#xA;&lt;td>92.7&lt;/td>&lt;td>%&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>power factor&lt;/td>&#xA;&lt;td>0.875&lt;/td>&lt;td> &lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>stator resistance&lt;/td>&#xA;&lt;td>0.03&lt;/td>&lt;td>Ohm per phase at reference temperature&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>reference temperature TsRef&lt;/td>&#xA;&lt;td>20&lt;/td>&lt;td>&amp;deg;C&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>temperature coefficient alpha20s &lt;/td>&#xA;&lt;td>0&lt;/td>&lt;td>1/K&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>rotor resistance&lt;/td>&#xA;&lt;td>0.04&lt;/td>&lt;td>Ohm at reference temperature&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>reference temperature TrRef&lt;/td>&#xA;&lt;td>20&lt;/td>&lt;td>&amp;deg;C&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>temperature coefficient alpha20r &lt;/td>&#xA;&lt;td>0&lt;/td>&lt;td>1/K&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>stator reactance Xs&lt;/td>&#xA;&lt;td>3&lt;/td>&lt;td>Ohm per phase&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>rotor reactance Xr&lt;/td>&#xA;&lt;td>3&lt;/td>&lt;td>Ohm&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>total stray coefficient sigma&lt;/td>&#xA;&lt;td>0.0667&lt;/td>&lt;td> &lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>stator operational temperature TsOperational&lt;/td>&#xA;&lt;td>20&lt;/td>&lt;td>&amp;deg;C&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>rotor operational temperature TrOperational&lt;/td>&#xA;&lt;td>20&lt;/td>&lt;td>&amp;deg;C&lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>These values give the following inductances:&lt;/td>&#xA;&lt;td> &lt;/td>&lt;td> &lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>stator stray inductance per phase&lt;/td>&#xA;&lt;td>Xs * (1 - sqrt(1-sigma))/(2*pi*fNominal)&lt;/td>&lt;td> &lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>rotor stray inductance&lt;/td>&#xA;&lt;td>Xr * (1 - sqrt(1-sigma))/(2*pi*fNominal)&lt;/td>&lt;td> &lt;/td>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>main field inductance per phase&lt;/td>&#xA;&lt;td>sqrt(Xs*Xr * (1-sigma))/(2*pi*fNominal)&lt;/td>&lt;td> &lt;/td>&#xA;&lt;/tr>&#xA;&lt;/table>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

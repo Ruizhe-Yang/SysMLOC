@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical">
+  <classes classType="package" className="QuasiStatic" description="&quot;Library for quasi-static electrical single-phase and polyphase AC simulation&quot;" isLongClassSpecifier="true" classNameEnd="QuasiStatic" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;info&quot;" elementName="preferredView"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;dl>&#xA;  &lt;dt>&lt;strong>Main Authors:&lt;/strong>&lt;/dt>&#xA;  &lt;dd>&#xA;&lt;p>&#xA;  Anton Haumer&lt;br>&#xA;  &lt;a href=\&quot;https://www.haumer.at/\&quot;>Technical Consulting &amp;amp; Electrical Engineering&lt;/a>&lt;br>&#xA;  D-93049 Regensburg, Germany&lt;br>&#xA;  email: &lt;a href=\&quot;mailto:a.haumer@haumer.at\&quot;>a.haumer@haumer.at&lt;/a>&#xA;&lt;/p>&#xA;&lt;p>&#xA;  Dr. Christian Kral&lt;br>&#xA;  &lt;a href=\&quot;https://christiankral.net/\&quot;>Electric Machines, Drives and Systems&lt;/a>&lt;br>&#xA;  A-1060 Vienna, Austria&lt;br>&#xA;  email: &lt;a href=\&quot;mailto:dr.christian.kral@gmail.com\&quot;>dr.christian.kral@gmail.com&lt;/a> or &lt;a href=\&quot;mailto:mail@christiankral.net\&quot;>mail@christiankral.net&lt;/a>&#xA;&lt;/p>&#xA;&lt;/dd>&#xA;&lt;/dl>&#xA;&lt;p>&#xA;Copyright &amp;copy; 1998-2020, Modelica Association and contributors&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&#xA;    &lt;tr>&#xA;      &lt;th>Version&lt;/th>&#xA;      &lt;th>Revision&lt;/th>&#xA;      &lt;th>Date&lt;/th>&#xA;      &lt;th>Author&lt;/th>&#xA;      &lt;th>Comment&lt;/th>&#xA;    &lt;/tr>&#xA;    &lt;tr>&#xA;      &lt;td>1.0.0&lt;/td>&#xA;      &lt;td> &lt;/td>&#xA;      &lt;td>2010-01-30&lt;/td>&#xA;      &lt;td>A. Haumer&lt;br>C. Kral&lt;/td>&#xA;      &lt;td>&lt;/td>&#xA;    &lt;/tr>&#xA;&lt;/table>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+        </modifications>
+        <modifications expression="{Line( origin={10,20}, points={{-90,-20},{-78.7,14.2},{-71.5,33.1},{-65.1,46.4},{-59.4,54.6},{ -53.8,59.1} ,{-48.2,59.8},{-42.6,56.6},{-36.9,49.7},{-31.3,39.4},{-24.9, 24.1 } ,{-16.83,1.2},{0.1,-50.8},{7.3,-70.2},{13.7,-84.2},{19.3,-93.1}, {25,-98.4},{30.6,-100},{36.2,-97.6},{41.9,-91.5},{47.5,-81.9},{53.9, -67.2 } ,{62,-44.8},{70,-20} } , smooth=Smooth.Bezier ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

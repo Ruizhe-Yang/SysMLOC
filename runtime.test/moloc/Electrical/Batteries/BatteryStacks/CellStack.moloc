@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.BatteryStacks">
+  <classes classType="model" className="CellStack" description="&quot;Battery with open-circuit voltage dependent on state of charge, self-discharge and inner resistance&quot;" isLongClassSpecifier="true" classNameEnd="CellStack" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.BaseClasses.BaseCellStack" isOver="true">
+      <extendsModifications isModificationOver="true" elementName="r0">
+        <modifications expression="Ns*cellData.Ri/Np" elementName="R" isfinal="true"/>
+      </extendsModifications>
+      <extendsModifications typeSpecifier="Modelica.Electrical.Batteries.ParameterRecords.CellData" declarationName="cellData" isRedeclare="true"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="r0.n" right="n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The battery is modeled by open-circuit voltage (OCV) dependent on state of charge (SOC), self-discharge and inner resistance,&#xA;as implemented in partial &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.BaseClasses.BaseCellStack\&quot;>BaseCellStack&lt;/a>.&#xA;&lt;/p>&#xA;&lt;p>&#xA;This model can be used for a single cell &lt;code>Ns = Np = 1&lt;/code> as well as a stack built from identical cells.&#xA;&lt;/p>&#xA;&lt;p>&#xA;For details, see &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.UsersGuide.Concept\&quot;>concept&lt;/a> and &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.UsersGuide.Parameterization\&quot;>parameterization&lt;/a>.&#xA;&lt;/p>&#xA;&lt;h4>Note&lt;/h4>&#xA;&lt;p>&#xA;Parameter record array &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.ParameterRecords.TransientData.RCData\&quot;>rcData&lt;/a> contained in&#xA;parameter record &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.ParameterRecords.CellData\&quot;>cellData&lt;/a> is neglected.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Interfaces">
-  <classes isPartial="true" classType="block" className="ComplexSignalSource" description="&quot;Base class for continuous signal source&quot;" classNameEnd="ComplexSignalSource">
-    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="ComplexBlocks.Interfaces.ComplexSO"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" parameterType="parameter">
+  <classes isPartial="true" classType="block" className="ComplexSignalSource" description="&quot;Base class for continuous signal source&quot;" isLongClassSpecifier="true" classNameEnd="ComplexSignalSource" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="ComplexBlocks.Interfaces.ComplexSO" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" parameterType="parameter" isOver="true">
       <component_list expression="Complex(0)" declarationName="offset" description="&quot;Offset of output signal y&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="startTime" description="&quot;Output y = offset for time &lt; startTime&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
-      <annotations elementName="Documentation">
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
         <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Basic block for Complex sources.&#xA;This component has one continuous Complex output signal y&#xA;and two parameters (offset, startTime) to shift the&#xA;generated signal.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
       </annotations>
     </elements>

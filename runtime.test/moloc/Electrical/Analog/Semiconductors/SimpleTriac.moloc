@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Semiconductors">
+  <classes classType="model" className="SimpleTriac" description="&quot;Simple triac, based on Semiconductors.Thyristor model&quot;" isLongClassSpecifier="true" classNameEnd="SimpleTriac" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="100" declarationName="VDRM" description="&quot;Forward breakthrough voltage&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="100" declarationName="VRRM" description="&quot;Reverse breakthrough voltage&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="0.1" declarationName="IDRM" description="&quot;Saturation current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="1.7" declarationName="VTM" description="&quot;Conducting voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="6e-3" declarationName="IH" description="&quot;Holding current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="25" declarationName="ITM" description="&quot;Conducting current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="0.7" declarationName="VGT" description="&quot;Gate trigger voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="5e-3" declarationName="IGT" description="&quot;Gate trigger current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="1e-6" declarationName="TON" description="&quot;Switch on time&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="15e-6" declarationName="TOFF" description="&quot;Switch off time&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="0.04" declarationName="Vt" description="&quot;Voltage equivalent of temperature (kT/qn)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0.74" declarationName="Nbv" description="&quot;Reverse Breakthrough emission coefficient&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="n" description="&quot;Cathode&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="p" description="&quot;Anode&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="g" description="&quot;Gate&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Semiconductors.Thyristor" isOver="true">
+      <component_list isModificationOver="true" declarationName="thyristor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="VDRM" elementName="VDRM"/>
+        <modifications expression="VRRM" elementName="VRRM"/>
+        <modifications expression="IDRM" elementName="IDRM"/>
+        <modifications expression="VTM" elementName="VTM"/>
+        <modifications expression="IH" elementName="IH"/>
+        <modifications expression="ITM" elementName="ITM"/>
+        <modifications expression="VGT" elementName="VGT"/>
+        <modifications expression="IGT" elementName="IGT"/>
+        <modifications expression="TON" elementName="TON"/>
+        <modifications expression="TOFF" elementName="TOFF"/>
+        <modifications expression="Vt" elementName="Vt"/>
+        <modifications expression="Nbv" elementName="Nbv"/>
+        <modifications expression="useHeatPort" elementName="useHeatPort"/>
+        <modifications expression="T" elementName="T"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,30},{0,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Semiconductors.Thyristor" isOver="true">
+      <component_list isModificationOver="true" declarationName="thyristor1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="VDRM" elementName="VDRM"/>
+        <modifications expression="VRRM" elementName="VRRM"/>
+        <modifications expression="IDRM" elementName="IDRM"/>
+        <modifications expression="VTM" elementName="VTM"/>
+        <modifications expression="IH" elementName="IH"/>
+        <modifications expression="ITM" elementName="ITM"/>
+        <modifications expression="VGT" elementName="VGT"/>
+        <modifications expression="IGT" elementName="IGT"/>
+        <modifications expression="TON" elementName="TON"/>
+        <modifications expression="TOFF" elementName="TOFF"/>
+        <modifications expression="Vt" elementName="Vt"/>
+        <modifications expression="Nbv" elementName="Nbv"/>
+        <modifications expression="useHeatPort" elementName="useHeatPort"/>
+        <modifications expression="T" elementName="T"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+            <modifications expression="{-10,-40}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
+      <component_list isModificationOver="true" declarationName="idealDiode" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="Vknee"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-50,50},{-30,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
+      <component_list isModificationOver="true" declarationName="idealDiode1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="Vknee"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="{-40,-60}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:IfEquation" condition="useHeatPort">
+        <ifEquations xsi:type="mOloc:ConnectEquation" left="heatPort" right="thyristor.heatPort"/>
+        <ifEquations xsi:type="mOloc:ConnectEquation" left="heatPort" right="thyristor1.heatPort"/>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thyristor.Anode" right="n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,40},{-30,40},{-30,0},{-100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thyristor1.Anode" right="p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-40},{10,-40},{10,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thyristor1.Anode" right="thyristor.Cathode">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-40},{10,-40},{10,40},{0,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thyristor1.Cathode" right="thyristor.Anode">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,-40},{-30,-40},{-30,40},{-20,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thyristor.Gate" right="idealDiode.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,50},{0,60},{-30,60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealDiode.p" right="g">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,60},{-60,60},{-60,-100},{-100,-100}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealDiode1.n" right="thyristor1.Gate">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,-60},{-20,-60},{-20,-50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealDiode1.p" right="g">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,-60},{-60,-60},{-60,-100},{-100,-100}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:SimpleEquation" left="LossPower" right="p.i*p.v + n.i*n.v + g.i*g.v"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;triac&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Text( extent={{-150,120},{150,80}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Line(points={{-40,-70},{-40,70}}, color={0,0,255}), Line(points={{40,-72},{40,70}}, color={0,0,255}), Polygon(points={{-40,-70},{40,-30},{-40,10},{-40,-70}}, lineColor={0,0, 255 } , fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon(points={{40,-10},{-40,30},{40,70},{40,-10}}, lineColor={0,0, 255 } , fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-40,0},{-90,0}}, color={0,0,255}), Line(points={{90,0},{40,0}}, color={0,0,255}), Line(points={{-100,-100},{-100,-60},{-40,-30}}, color={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This is a simple TRIAC model based on the extended thyristor model Modelica.Electrical.Analog.Semiconductors.Thyristor.&#xA;&lt;br>Two thyristors are contrarily connected in parallel, whereas each transistor is connected with a diode.&#xA;&lt;br>Further information regarding the electrical component TRIAC can be detected in documentation of the ideal TRIAC model.&#xA;&lt;br>As an additional information: this model is based on the Modelica.Electrical.Analog.Semiconductors.Thyristor.&lt;/p>&#xA;&lt;p>&lt;strong>Attention:&lt;/strong> The model seems to be very sensitive with respect to the choice of some parameters (e.g., VDRM, VRRM). This is caused by the thyristor model. Further investigations are necessary.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>November 25, 2009   &lt;/em>&lt;br>&#xA;       by Susann Wolf&lt;br>&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Thermal">
+  <classes classType="model" className="ThermalAmbientTransformer" description="&quot;Thermal ambient for transformers&quot;" isLongClassSpecifier="true" classNameEnd="ThermalAmbientTransformer" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="useTemperatureInputs" description="&quot;If true, temperature inputs are used; else, temperatures are constant&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="constant" isOver="true">
+      <component_list expression="293.15" declarationName="TDefault" description="&quot;Default temperature&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="T1" description="&quot;Temperature of primary windings&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="TDefault" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="not useTemperatureInputs" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="T2" description="&quot;Temperature of secondary windings&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="TDefault" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="not useTemperatureInputs" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
+      <component_list expression="temperature1.port.Q_flow" declarationName="Q_flow1" description="&quot;Heat flow rate of primary windings&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
+      <component_list expression="temperature2.port.Q_flow" declarationName="Q_flow2" description="&quot;Heat flow rate of secondary windings&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
+      <component_list expression="temperatureCore.port.Q_flow" declarationName="Q_flowCore" description="&quot;Heat flow rate of core losses&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
+      <component_list expression="Q_flow1 + Q_flow2 + Q_flowCore" declarationName="Q_flowTotal"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Interfaces.ThermalPortTransformer" isOver="true">
+      <component_list isModificationOver="true" declarationName="thermalPort" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,90},{10,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.PrescribedTemperature" isOver="true">
+      <component_list declarationName="temperature1" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-80,30}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+      <component_list isModificationOver="true" declarationName="constT1" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useTemperatureInputs">
+        <modifications expression="T1" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-80,-10}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="TPrimary" description="&quot;Temperature of primary windings&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useTemperatureInputs">
+        <modifications expression="&quot;K&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-100,-120}" elementName="origin"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-100,-120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.PrescribedTemperature" isOver="true">
+      <component_list declarationName="temperature2" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{80,30}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+      <component_list isModificationOver="true" declarationName="constT2" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useTemperatureInputs">
+        <modifications expression="T2" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{80,-10}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="TSecondary" description="&quot;Temperature of secondary windings&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useTemperatureInputs">
+        <modifications expression="&quot;K&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,20},{20,-20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{100,-120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.FixedTemperature" isOver="true">
+      <component_list isModificationOver="true" declarationName="temperatureCore" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="TDefault" elementName="T" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{0,30}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Components.ThermalCollector" isOver="true">
+      <component_list isModificationOver="true" declarationName="thermalCollector1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-90,60},{-70,80}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Components.ThermalCollector" isOver="true">
+      <component_list isModificationOver="true" declarationName="thermalCollector2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{70,60},{90,80}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="TPrimary" right="temperature1.T">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,-120},{-100,-60},{-100,8},{-80,8},{-80,18}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="constT1.y" right="temperature1.T">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,1},{-80,18}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="TSecondary" right="temperature2.T">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{100,-120},{100,-60},{100,8},{80,8},{80,18}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="constT2.y" right="temperature2.T">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{80,1},{80,18}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="temperatureCore.port" right="thermalPort.heatPortCore">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,40},{0,70},{0,100},{1,100}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thermalCollector1.port_b" right="temperature1.port">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,60},{-80,40}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thermalCollector2.port_b" right="temperature2.port">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{80,60},{80,40}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thermalCollector1.port_a" right="thermalPort.heatPort1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,80},{-80,102},{-1,102}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thermalCollector2.port_a" right="thermalPort.heatPort2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{80,80},{80,98},{-1,98}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Rectangle( extent={{-100,100},{100,-100}}, pattern=LinePattern.None, fillColor={159,159,223}, fillPattern=FillPattern.Backward ) ,Line( points={{-14,0},{54,0}}, color={191,0,0}, thickness=0.5, origin={0,-6}, rotation=90 ) ,Polygon( points={{-20,-20},{-20,20},{20,0},{-20,-20}}, lineColor={191,0,0}, fillColor={191,0,0}, fillPattern=FillPattern.Solid, origin={0,68}, rotation=90 ) ,Text( extent={{-100,-20},{100,-80}}, textString=&quot;Trafo&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;Thermal ambient for transformers to prescribe winding temperatures either constant or via signal connectors.&#xA;Additionally, all losses = heat flows are recorded.&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

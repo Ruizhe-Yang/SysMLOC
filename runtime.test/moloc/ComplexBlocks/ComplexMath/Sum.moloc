@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.ComplexMath">
-  <classes classType="block" className="Sum" description="&quot;Output the sum of the elements of the input vector&quot;" classNameEnd="Sum">
-    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.ComplexMISO"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" parameterType="parameter">
+  <classes classType="block" className="Sum" description="&quot;Output the sum of the elements of the input vector&quot;" isLongClassSpecifier="true" classNameEnd="Sum" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.ComplexMISO" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" parameterType="parameter" isOver="true">
       <component_list subscripts="[nin]" expression="fill(Complex(1, 0), nin)" declarationName="k" description="&quot;Optional: sum coefficients&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">
       <equations xsi:type="mOloc:SimpleEquation" left="y" right="k*uInternal"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
       <annotations expression="&quot;sum1&quot;" elementName="defaultComponentName"/>
-      <annotations elementName="Documentation">
+      <annotations isModificationOver="true" elementName="Documentation">
         <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes output &lt;code>y&lt;/code> as&#xA;&lt;em>sum&lt;/em> of the elements of the input signal vector&#xA;&lt;code>u&lt;/code>:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u[1] + u[2] + ...;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;Example:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;  parameter:   nin = 3;&#xA;&#xA;results in the following equations:&#xA;&#xA;  y = u[1] + u[2] + u[3];&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
       </annotations>
-      <annotations elementName="Icon">
-        <modifications elementName="coordinateSystem">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
           <modifications expression="true" elementName="preserveAspectRatio"/>
           <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
         </modifications>

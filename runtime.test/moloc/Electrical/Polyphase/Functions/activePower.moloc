@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Functions">
+  <classes classType="function" className="activePower" description="&quot;Calculate active power of voltage and current input&quot;" isLongClassSpecifier="true" classNameEnd="activePower" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
+      <component_list subscripts="[:]" declarationName="v" description="&quot;Phase voltages&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" directionType="input" isOver="true">
+      <component_list subscripts="[size(v, 1)]" declarationName="i" description="&quot;Phase currents&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" directionType="output" isOver="true">
+      <component_list declarationName="p" description="&quot;Active power&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:FunctionStatement" component="p" expression="sum(v .* i)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="true" elementName="Inline"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Calculates instantaneous power from polyphase voltages and currents.&#xA;In quasi-static operation, instantaneous power equals active power;&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

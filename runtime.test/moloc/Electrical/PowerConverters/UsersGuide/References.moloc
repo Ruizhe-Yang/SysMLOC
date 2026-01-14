@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.UsersGuide">
+  <classes classType="class" className="References" description="&quot;References&quot;" isLongClassSpecifier="true" classNameEnd="References" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.References" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;h4>References&lt;/h4>&#xA;&#xA;&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&#xA;    &lt;tr>&#xA;      &lt;td>[Skvarenina01]&lt;/td>&#xA;      &lt;td>Timothy L. Skvarenina,&#xA;        &lt;a href=\&quot;http://www.crcpress.com/product/isbn/9780849373367\&quot;>&#xA;        &lt;em>The Power Electronics Handbook&lt;/em>&lt;/a>,&#xA;        CRC Press 2001, ISBN 9780849373367&lt;/td>&#xA;    &lt;/tr>&#xA;&#xA;    &lt;tr>&#xA;      &lt;td>[Luo05]&lt;/td>&#xA;      &lt;td>Fang Lin Luo, Hong Ye and Muhammad H. Rashid,&#xA;        &lt;a href=\&quot;http://store.elsevier.com/product.jsp?isbn=9780120887576&amp;amp;_requestid=1725\&quot;>&lt;em>Digital Power Electronics and Applications&lt;/em>&lt;/a>,&#xA;        Elsevier Academic Press, 2005, ISBN 978-0120887576&lt;/td>&#xA;    &lt;/tr>&#xA;&#xA;    &lt;tr>&#xA;      &lt;td>[Williams2006]&lt;/td>&#xA;      &lt;td>&lt;a href=\&quot;http://www.freescience.info/go.php?pagename=books&amp;amp;id=1732\&quot;>&#xA;&lt;em>Principles and Elements of Power Electronics: Devices, Drivers, Applications, and Passive Components&lt;/em>&lt;/a>, available at &lt;a href=\&quot;http://www.freescience.info/go.php?pagename=books&amp;amp;id=1732\&quot;>FreeScience&lt;/a>, ISBN 978-0-9553384-0-3&lt;/td>&#xA;    &lt;/tr>&#xA;&lt;/table>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

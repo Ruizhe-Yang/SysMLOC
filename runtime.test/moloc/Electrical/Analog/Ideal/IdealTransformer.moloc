@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Ideal">
+  <classes classType="model" className="IdealTransformer" description="&quot;Ideal transformer core with or without magnetization&quot;" isLongClassSpecifier="true" classNameEnd="IdealTransformer" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.TwoPort" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="n" description="&quot;Turns ratio primary:secondary voltage&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="considerMagnetization" description="&quot;Choice of considering magnetization&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Lm1" description="&quot;Magnetization inductance w.r.t. primary side&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="considerMagnetization" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isProtected="true" isOver="true">
+      <component_list declarationName="im1" description="&quot;Magnetization current w.r.t. primary side&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.MagneticFlux" isOver="true">
+      <component_list declarationName="psim1" description="&quot;Magnetic flux w.r.t. primary side&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="im1" right="i1 + i2/n"/>
+      <equations xsi:type="mOloc:IfEquation" condition="considerMagnetization">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="psim1" right="Lm1*im1"/>
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="v1" right="der(psim1)"/>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="psim1" right="0"/>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="im1" right="0"/>
+      </equations>
+      <equations xsi:type="mOloc:SimpleEquation" left="v1" right="n*v2"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;transformer&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The ideal transformer is a two-port circuit element;&#xA;in case of Boolean parameter &lt;code>considerMagnetization = false&lt;/code> it is characterized by the following equations:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;i2 = -i1*n;&#xA;v2 =  v1/n;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;where &lt;code>n&lt;/code> is a real number called the turns ratio.&#xA;Due to this equations, also DC voltages and currents are transformed - which is not the case for technical transformers.&#xA;&lt;/p>&#xA;&lt;p>&#xA;In case of Boolean parameter &lt;code>considerMagnetization = true&lt;/code> it is characterized by the following equations:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;im1  = i1 + i2/n \&quot;Magnetizing current w.r.t. primary side\&quot;;&#xA;psim1= Lm1*im1   \&quot;Magnetic flux w.r.t. primary side\&quot;;&#xA;v1 = der(psim1)  \&quot;Primary voltage\&quot;;&#xA;v2 = v1/n        \&quot;Secondary voltage\&quot;;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;where &lt;code>Lm&lt;/code> denotes the magnetizing inductance.&#xA;Due to this equations, the DC offset of secondary voltages and currents decrement according to the time constant defined by the connected circuit.&#xA;&lt;/p>&#xA;&lt;p>&#xA;Taking primary &lt;code>L1sigma&lt;/code> and secondary &lt;code>L2ssigma&lt;/code> leakage inductances into account,&#xA;compared with the &lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Basic.Transformer\&quot;>basic transformer&lt;/a>&#xA;the following parameter conversion can be applied (which leads to identical results):&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;L1 = L1sigma + M*n \&quot;Primary inductance at secondary no-load\&quot;;&#xA;L2 = L2sigma + M/n \&quot;Secondary inductance at primary no-load\&quot;;&#xA;M  = Lm1/n         \&quot;Mutual inductance\&quot;;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;For the backward conversion, one has to decide about the partitioning of the leakage to primary and secondary side.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>June 3, 2009   &lt;/em>&#xA;       magnetisation current added by Anton Haumer&lt;br>&#xA;       &lt;/li>&#xA;&lt;li>&lt;em>1998   &lt;/em>&#xA;       initially implemented by Christoph Clauss&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Text(extent={{-150,-110},{150,-150}},textString=&quot;n=%n&quot;), Text( extent={{-100,20},{-60,-20}}, textColor={0,0,255}, textString=&quot;1&quot; ) , Text( extent={{60,20},{100,-20}}, textColor={0,0,255}, textString=&quot;2&quot; ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Line(points={{-40,60},{-40,100},{-90,100}}, color={0,0,255}), Line(points={{40,60},{40,100},{90,100}}, color={0,0,255}), Line(points={{-40,-60},{-40,-100},{-90,-100}}, color={0,0,255}), Line(points={{40,-60},{40,-100},{90,-100}}, color={0,0,255}), Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-33,45}, rotation=270 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-33,15}, rotation=270 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-33,-15}, rotation=270 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={-33,-45}, rotation=270 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={33,45}, rotation=90 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={33,15}, rotation=90 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={33,-15}, rotation=90 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={0,0,255}, smooth=Smooth.Bezier, origin={33,-45}, rotation=90 ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

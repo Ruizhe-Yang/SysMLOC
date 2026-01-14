@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Ideal">
+  <classes classType="model" className="CloserWithArc" description="&quot;Ideal closing switch with simple arc model&quot;" isLongClassSpecifier="true" classNameEnd="CloserWithArc" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.IdealSwitchWithArc" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <component_list declarationName="control" description="&quot;true => p--n connected, false => switch open&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,110}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="off" right="not control"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;switch&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line(points={{40,40},{32,14},{48,22},{40,0}}, color={255,0,0})}" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This model is an extension to the &lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Ideal.IdealClosingSwitch\&quot;>IdealClosingSwitch&lt;/a>.&#xA;&lt;/p>&#xA;&lt;p>&#xA;For details of the arc effect, see partial model &lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Interfaces.IdealSwitchWithArc\&quot;>IdealSwitchWithArc&lt;/a>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>February 7, 2016   &lt;/em>&#xA;       by Anton Haumer&lt;br> extending from partial IdealSwitchWithArc&lt;br>&#xA;       &lt;/li>&#xA;&lt;li>&lt;em>May, 2009   &lt;/em>&#xA;       by Anton Haumer&lt;br> initially implemented&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

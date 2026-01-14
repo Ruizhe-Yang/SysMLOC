@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.EnumerationLiteral;
 import dut.control.moloc.mOloc.MOlocPackage;
@@ -43,10 +43,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getSubscripts <em>Subscripts</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getModifications <em>Modifications</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#isIsModificationOver <em>Is Modification Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#isIsShortClassSpecifier <em>Is Short Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#isIsEnumeration <em>Is Enumeration</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#isIsColon <em>Is Colon</em>}</li>
@@ -107,6 +110,26 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
   protected EList<ModificationElement> modifications;
 
   /**
+   * The default value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_MODIFICATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isModificationOver = IS_MODIFICATION_OVER_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getEnumerationLiteral() <em>Enumeration Literal</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -164,7 +187,47 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsShortClassSpecifier() <em>Is Short Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsShortClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_SHORT_CLASS_SPECIFIER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsShortClassSpecifier() <em>Is Short Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsShortClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected boolean isShortClassSpecifier = IS_SHORT_CLASS_SPECIFIER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -318,6 +381,31 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
    * @generated
    */
   @Override
+  public boolean isIsModificationOver()
+  {
+    return isModificationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsModificationOver(boolean newIsModificationOver)
+  {
+    boolean oldIsModificationOver = isModificationOver;
+    isModificationOver = newIsModificationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.SHORT_CLASS_SPECIFIER__IS_MODIFICATION_OVER, oldIsModificationOver, isModificationOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<EnumerationLiteral> getEnumerationLiteral()
   {
     if (enumerationLiteral == null)
@@ -383,13 +471,63 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsShortClassSpecifier()
+  {
+    return isShortClassSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsShortClassSpecifier(boolean newIsShortClassSpecifier)
+  {
+    boolean oldIsShortClassSpecifier = isShortClassSpecifier;
+    isShortClassSpecifier = newIsShortClassSpecifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER, oldIsShortClassSpecifier, isShortClassSpecifier));
   }
 
   /**
@@ -503,6 +641,8 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         return getSubscripts();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS:
         return getModifications();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_MODIFICATION_OVER:
+        return isIsModificationOver();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
         return getEnumerationLiteral();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__DESCRIPTION:
@@ -511,6 +651,10 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         return isIsAnnotation();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER:
+        return isIsShortClassSpecifier();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION:
         return getDirection();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION:
@@ -542,6 +686,9 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         getModifications().clear();
         getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_MODIFICATION_OVER:
+        setIsModificationOver((Boolean)newValue);
+        return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
         getEnumerationLiteral().addAll((Collection<? extends EnumerationLiteral>)newValue);
@@ -554,7 +701,13 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
+        return;
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER:
+        setIsShortClassSpecifier((Boolean)newValue);
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION:
         setDirection((Direction)newValue);
@@ -588,6 +741,9 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
       case MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS:
         getModifications().clear();
         return;
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_MODIFICATION_OVER:
+        setIsModificationOver(IS_MODIFICATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
         return;
@@ -599,6 +755,12 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS:
         getAnnotations().clear();
+        return;
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER:
+        setIsShortClassSpecifier(IS_SHORT_CLASS_SPECIFIER_EDEFAULT);
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
@@ -629,6 +791,8 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         return SUBSCRIPTS_EDEFAULT == null ? subscripts != null : !SUBSCRIPTS_EDEFAULT.equals(subscripts);
       case MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS:
         return modifications != null && !modifications.isEmpty();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_MODIFICATION_OVER:
+        return isModificationOver != IS_MODIFICATION_OVER_EDEFAULT;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
         return enumerationLiteral != null && !enumerationLiteral.isEmpty();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__DESCRIPTION:
@@ -637,6 +801,10 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER:
+        return isShortClassSpecifier != IS_SHORT_CLASS_SPECIFIER_EDEFAULT;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION:
@@ -676,6 +844,7 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
       switch (derivedFeatureID)
       {
         case MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_MODIFICATION_OVER: return MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -701,6 +870,7 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
       {
         case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -743,6 +913,7 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
       switch (baseFeatureID)
       {
         case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS;
+        case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -768,6 +939,7 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -796,10 +968,16 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     result.append(typeSpecifier);
     result.append(", subscripts: ");
     result.append(subscripts);
+    result.append(", isModificationOver: ");
+    result.append(isModificationOver);
     result.append(", description: ");
     result.append(description);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
+    result.append(", isShortClassSpecifier: ");
+    result.append(isShortClassSpecifier);
     result.append(", direction: ");
     result.append(direction);
     result.append(", isEnumeration: ");

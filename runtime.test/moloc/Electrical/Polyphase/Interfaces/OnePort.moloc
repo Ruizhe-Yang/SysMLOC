@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Interfaces">
+  <classes isPartial="true" classType="model" className="OnePort" description="&quot;Component with two electrical plugs and currents from plug_p to plug_n&quot;" isLongClassSpecifier="true" classNameEnd="OnePort" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="TwoPlug" isOver="true"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p.pin.i + plug_n.pin.i" right="zeros(m)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Superclass of elements which have &lt;strong>two&lt;/strong> electrical plugs:&#xA;the positive plug connector &lt;em>plug_p&lt;/em>, and the negative plug connector &lt;em>plug_n&lt;/em>.&#xA;The currents flowing into plug_p are provided explicitly as currents i[m].&#xA;It is assumed that the currents flowing into plug_p are identical to the currents flowing out of plug_n.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

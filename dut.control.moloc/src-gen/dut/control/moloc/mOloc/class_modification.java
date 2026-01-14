@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.class_modification#getModifications <em>Modifications</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.class_modification#isIsModificationOver <em>Is Modification Over</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getclass_modification()
@@ -36,5 +37,27 @@ public interface class_modification extends EObject
    * @generated
    */
   EList<ModificationElement> getModifications();
+
+  /**
+   * Returns the value of the '<em><b>Is Modification Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Modification Over</em>' attribute.
+   * @see #setIsModificationOver(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getclass_modification_IsModificationOver()
+   * @model
+   * @generated
+   */
+  boolean isIsModificationOver();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.class_modification#isIsModificationOver <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Modification Over</em>' attribute.
+   * @see #isIsModificationOver()
+   * @generated
+   */
+  void setIsModificationOver(boolean value);
 
 } // class_modification

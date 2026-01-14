@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationModification;
+import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.Class_definition;
 import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.Element;
@@ -50,21 +50,27 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getClassName <em>Class Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getModifications <em>Modifications</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsModificationOver <em>Is Modification Over</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsExtends <em>Is Extends</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsLongClassSpecifier <em>Is Long Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getClassNameEnd <em>Class Name End</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getSubscripts <em>Subscripts</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsShortClassSpecifier <em>Is Short Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsEnumeration <em>Is Enumeration</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsColon <em>Is Colon</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsDerClassSpecifier <em>Is Der Class Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsDer <em>Is Der</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getDerName <em>Der Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsfinal <em>Isfinal</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsOver <em>Is Over</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,6 +106,26 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
    * @ordered
    */
   protected EList<ModificationElement> modifications;
+
+  /**
+   * The default value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_MODIFICATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsModificationOver() <em>Is Modification Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsModificationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isModificationOver = IS_MODIFICATION_OVER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -150,6 +176,26 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
    * @ordered
    */
   protected boolean isExtends = IS_EXTENDS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsLongClassSpecifier() <em>Is Long Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsLongClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_LONG_CLASS_SPECIFIER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsLongClassSpecifier() <em>Is Long Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsLongClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected boolean isLongClassSpecifier = IS_LONG_CLASS_SPECIFIER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getClassNameEnd() <em>Class Name End</em>}' attribute.
@@ -249,7 +295,47 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
    * @generated
    * @ordered
    */
-  protected EList<AnnotationModification> annotations;
+  protected EList<AnnotationModificationElement> annotations;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver() <em>Is Annotation Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver = IS_ANNOTATION_OVER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsShortClassSpecifier() <em>Is Short Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsShortClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_SHORT_CLASS_SPECIFIER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsShortClassSpecifier() <em>Is Short Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsShortClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected boolean isShortClassSpecifier = IS_SHORT_CLASS_SPECIFIER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -312,6 +398,26 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
   protected boolean isColon = IS_COLON_EDEFAULT;
 
   /**
+   * The default value of the '{@link #isIsDerClassSpecifier() <em>Is Der Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_DER_CLASS_SPECIFIER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsDerClassSpecifier() <em>Is Der Class Specifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerClassSpecifier()
+   * @generated
+   * @ordered
+   */
+  protected boolean isDerClassSpecifier = IS_DER_CLASS_SPECIFIER_EDEFAULT;
+
+  /**
    * The default value of the '{@link #isIsDer() <em>Is Der</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -360,6 +466,26 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
    * @ordered
    */
   protected boolean isfinal = ISFINAL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsOver() <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOver()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_OVER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsOver() <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOver()
+   * @generated
+   * @ordered
+   */
+  protected boolean isOver = IS_OVER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -428,6 +554,31 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
    * @generated
    */
   @Override
+  public boolean isIsModificationOver()
+  {
+    return isModificationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsModificationOver(boolean newIsModificationOver)
+  {
+    boolean oldIsModificationOver = isModificationOver;
+    isModificationOver = newIsModificationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_DEFINITION__IS_MODIFICATION_OVER, oldIsModificationOver, isModificationOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getDescription()
   {
     return description;
@@ -485,6 +636,31 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
     isExtends = newIsExtends;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_DEFINITION__IS_EXTENDS, oldIsExtends, isExtends));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsLongClassSpecifier()
+  {
+    return isLongClassSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsLongClassSpecifier(boolean newIsLongClassSpecifier)
+  {
+    boolean oldIsLongClassSpecifier = isLongClassSpecifier;
+    isLongClassSpecifier = newIsLongClassSpecifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_DEFINITION__IS_LONG_CLASS_SPECIFIER, oldIsLongClassSpecifier, isLongClassSpecifier));
   }
 
   /**
@@ -608,13 +784,63 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
    * @generated
    */
   @Override
-  public EList<AnnotationModification> getAnnotations()
+  public EList<AnnotationModificationElement> getAnnotations()
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.CLASS_DEFINITION__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.CLASS_DEFINITION__ANNOTATIONS);
     }
     return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver()
+  {
+    return isAnnotationOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver(boolean newIsAnnotationOver)
+  {
+    boolean oldIsAnnotationOver = isAnnotationOver;
+    isAnnotationOver = newIsAnnotationOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsShortClassSpecifier()
+  {
+    return isShortClassSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsShortClassSpecifier(boolean newIsShortClassSpecifier)
+  {
+    boolean oldIsShortClassSpecifier = isShortClassSpecifier;
+    isShortClassSpecifier = newIsShortClassSpecifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_DEFINITION__IS_SHORT_CLASS_SPECIFIER, oldIsShortClassSpecifier, isShortClassSpecifier));
   }
 
   /**
@@ -698,6 +924,31 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
    * @generated
    */
   @Override
+  public boolean isIsDerClassSpecifier()
+  {
+    return isDerClassSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsDerClassSpecifier(boolean newIsDerClassSpecifier)
+  {
+    boolean oldIsDerClassSpecifier = isDerClassSpecifier;
+    isDerClassSpecifier = newIsDerClassSpecifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_DEFINITION__IS_DER_CLASS_SPECIFIER, oldIsDerClassSpecifier, isDerClassSpecifier));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsDer()
   {
     return isDer;
@@ -763,6 +1014,31 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
    * @generated
    */
   @Override
+  public boolean isIsOver()
+  {
+    return isOver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsOver(boolean newIsOver)
+  {
+    boolean oldIsOver = isOver;
+    isOver = newIsOver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_DEFINITION__IS_OVER, oldIsOver, isOver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -793,12 +1069,16 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return getClassName();
       case MOlocPackage.CLASS_DEFINITION__MODIFICATIONS:
         return getModifications();
+      case MOlocPackage.CLASS_DEFINITION__IS_MODIFICATION_OVER:
+        return isIsModificationOver();
       case MOlocPackage.CLASS_DEFINITION__DESCRIPTION:
         return getDescription();
       case MOlocPackage.CLASS_DEFINITION__ELEMENTS:
         return getElements();
       case MOlocPackage.CLASS_DEFINITION__IS_EXTENDS:
         return isIsExtends();
+      case MOlocPackage.CLASS_DEFINITION__IS_LONG_CLASS_SPECIFIER:
+        return isIsLongClassSpecifier();
       case MOlocPackage.CLASS_DEFINITION__CLASS_NAME_END:
         return getClassNameEnd();
       case MOlocPackage.CLASS_DEFINITION__TYPE_SPECIFIER:
@@ -811,18 +1091,26 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return isIsAnnotation();
       case MOlocPackage.CLASS_DEFINITION__ANNOTATIONS:
         return getAnnotations();
+      case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION_OVER:
+        return isIsAnnotationOver();
+      case MOlocPackage.CLASS_DEFINITION__IS_SHORT_CLASS_SPECIFIER:
+        return isIsShortClassSpecifier();
       case MOlocPackage.CLASS_DEFINITION__DIRECTION:
         return getDirection();
       case MOlocPackage.CLASS_DEFINITION__IS_ENUMERATION:
         return isIsEnumeration();
       case MOlocPackage.CLASS_DEFINITION__IS_COLON:
         return isIsColon();
+      case MOlocPackage.CLASS_DEFINITION__IS_DER_CLASS_SPECIFIER:
+        return isIsDerClassSpecifier();
       case MOlocPackage.CLASS_DEFINITION__IS_DER:
         return isIsDer();
       case MOlocPackage.CLASS_DEFINITION__DER_NAME:
         return getDerName();
       case MOlocPackage.CLASS_DEFINITION__ISFINAL:
         return isIsfinal();
+      case MOlocPackage.CLASS_DEFINITION__IS_OVER:
+        return isIsOver();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -845,6 +1133,9 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         getModifications().clear();
         getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
+      case MOlocPackage.CLASS_DEFINITION__IS_MODIFICATION_OVER:
+        setIsModificationOver((Boolean)newValue);
+        return;
       case MOlocPackage.CLASS_DEFINITION__DESCRIPTION:
         setDescription((String)newValue);
         return;
@@ -854,6 +1145,9 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return;
       case MOlocPackage.CLASS_DEFINITION__IS_EXTENDS:
         setIsExtends((Boolean)newValue);
+        return;
+      case MOlocPackage.CLASS_DEFINITION__IS_LONG_CLASS_SPECIFIER:
+        setIsLongClassSpecifier((Boolean)newValue);
         return;
       case MOlocPackage.CLASS_DEFINITION__CLASS_NAME_END:
         setClassNameEnd((String)newValue);
@@ -873,7 +1167,13 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return;
       case MOlocPackage.CLASS_DEFINITION__ANNOTATIONS:
         getAnnotations().clear();
-        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
+        getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION_OVER:
+        setIsAnnotationOver((Boolean)newValue);
+        return;
+      case MOlocPackage.CLASS_DEFINITION__IS_SHORT_CLASS_SPECIFIER:
+        setIsShortClassSpecifier((Boolean)newValue);
         return;
       case MOlocPackage.CLASS_DEFINITION__DIRECTION:
         setDirection((Direction)newValue);
@@ -884,6 +1184,9 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       case MOlocPackage.CLASS_DEFINITION__IS_COLON:
         setIsColon((Boolean)newValue);
         return;
+      case MOlocPackage.CLASS_DEFINITION__IS_DER_CLASS_SPECIFIER:
+        setIsDerClassSpecifier((Boolean)newValue);
+        return;
       case MOlocPackage.CLASS_DEFINITION__IS_DER:
         setIsDer((Boolean)newValue);
         return;
@@ -893,6 +1196,9 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return;
       case MOlocPackage.CLASS_DEFINITION__ISFINAL:
         setIsfinal((Boolean)newValue);
+        return;
+      case MOlocPackage.CLASS_DEFINITION__IS_OVER:
+        setIsOver((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -914,6 +1220,9 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       case MOlocPackage.CLASS_DEFINITION__MODIFICATIONS:
         getModifications().clear();
         return;
+      case MOlocPackage.CLASS_DEFINITION__IS_MODIFICATION_OVER:
+        setIsModificationOver(IS_MODIFICATION_OVER_EDEFAULT);
+        return;
       case MOlocPackage.CLASS_DEFINITION__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
@@ -922,6 +1231,9 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return;
       case MOlocPackage.CLASS_DEFINITION__IS_EXTENDS:
         setIsExtends(IS_EXTENDS_EDEFAULT);
+        return;
+      case MOlocPackage.CLASS_DEFINITION__IS_LONG_CLASS_SPECIFIER:
+        setIsLongClassSpecifier(IS_LONG_CLASS_SPECIFIER_EDEFAULT);
         return;
       case MOlocPackage.CLASS_DEFINITION__CLASS_NAME_END:
         setClassNameEnd(CLASS_NAME_END_EDEFAULT);
@@ -941,6 +1253,12 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       case MOlocPackage.CLASS_DEFINITION__ANNOTATIONS:
         getAnnotations().clear();
         return;
+      case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION_OVER:
+        setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
+        return;
+      case MOlocPackage.CLASS_DEFINITION__IS_SHORT_CLASS_SPECIFIER:
+        setIsShortClassSpecifier(IS_SHORT_CLASS_SPECIFIER_EDEFAULT);
+        return;
       case MOlocPackage.CLASS_DEFINITION__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
@@ -950,6 +1268,9 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       case MOlocPackage.CLASS_DEFINITION__IS_COLON:
         setIsColon(IS_COLON_EDEFAULT);
         return;
+      case MOlocPackage.CLASS_DEFINITION__IS_DER_CLASS_SPECIFIER:
+        setIsDerClassSpecifier(IS_DER_CLASS_SPECIFIER_EDEFAULT);
+        return;
       case MOlocPackage.CLASS_DEFINITION__IS_DER:
         setIsDer(IS_DER_EDEFAULT);
         return;
@@ -958,6 +1279,9 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return;
       case MOlocPackage.CLASS_DEFINITION__ISFINAL:
         setIsfinal(ISFINAL_EDEFAULT);
+        return;
+      case MOlocPackage.CLASS_DEFINITION__IS_OVER:
+        setIsOver(IS_OVER_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -977,12 +1301,16 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
       case MOlocPackage.CLASS_DEFINITION__MODIFICATIONS:
         return modifications != null && !modifications.isEmpty();
+      case MOlocPackage.CLASS_DEFINITION__IS_MODIFICATION_OVER:
+        return isModificationOver != IS_MODIFICATION_OVER_EDEFAULT;
       case MOlocPackage.CLASS_DEFINITION__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.CLASS_DEFINITION__ELEMENTS:
         return elements != null && !elements.isEmpty();
       case MOlocPackage.CLASS_DEFINITION__IS_EXTENDS:
         return isExtends != IS_EXTENDS_EDEFAULT;
+      case MOlocPackage.CLASS_DEFINITION__IS_LONG_CLASS_SPECIFIER:
+        return isLongClassSpecifier != IS_LONG_CLASS_SPECIFIER_EDEFAULT;
       case MOlocPackage.CLASS_DEFINITION__CLASS_NAME_END:
         return CLASS_NAME_END_EDEFAULT == null ? classNameEnd != null : !CLASS_NAME_END_EDEFAULT.equals(classNameEnd);
       case MOlocPackage.CLASS_DEFINITION__TYPE_SPECIFIER:
@@ -995,18 +1323,26 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
       case MOlocPackage.CLASS_DEFINITION__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
+      case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION_OVER:
+        return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
+      case MOlocPackage.CLASS_DEFINITION__IS_SHORT_CLASS_SPECIFIER:
+        return isShortClassSpecifier != IS_SHORT_CLASS_SPECIFIER_EDEFAULT;
       case MOlocPackage.CLASS_DEFINITION__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case MOlocPackage.CLASS_DEFINITION__IS_ENUMERATION:
         return isEnumeration != IS_ENUMERATION_EDEFAULT;
       case MOlocPackage.CLASS_DEFINITION__IS_COLON:
         return isColon != IS_COLON_EDEFAULT;
+      case MOlocPackage.CLASS_DEFINITION__IS_DER_CLASS_SPECIFIER:
+        return isDerClassSpecifier != IS_DER_CLASS_SPECIFIER_EDEFAULT;
       case MOlocPackage.CLASS_DEFINITION__IS_DER:
         return isDer != IS_DER_EDEFAULT;
       case MOlocPackage.CLASS_DEFINITION__DER_NAME:
         return derName != null && !derName.isEmpty();
       case MOlocPackage.CLASS_DEFINITION__ISFINAL:
         return isfinal != ISFINAL_EDEFAULT;
+      case MOlocPackage.CLASS_DEFINITION__IS_OVER:
+        return isOver != IS_OVER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -1032,6 +1368,7 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       switch (derivedFeatureID)
       {
         case MOlocPackage.CLASS_DEFINITION__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
+        case MOlocPackage.CLASS_DEFINITION__IS_MODIFICATION_OVER: return MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -1056,6 +1393,7 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       switch (derivedFeatureID)
       {
         case MOlocPackage.CLASS_DEFINITION__IS_EXTENDS: return MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS;
+        case MOlocPackage.CLASS_DEFINITION__IS_LONG_CLASS_SPECIFIER: return MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER;
         case MOlocPackage.CLASS_DEFINITION__CLASS_NAME_END: return MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END;
         default: return -1;
       }
@@ -1090,6 +1428,7 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       {
         case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
         case MOlocPackage.CLASS_DEFINITION__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -1104,6 +1443,7 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.CLASS_DEFINITION__IS_SHORT_CLASS_SPECIFIER: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER;
         case MOlocPackage.CLASS_DEFINITION__DIRECTION: return MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION;
         case MOlocPackage.CLASS_DEFINITION__IS_ENUMERATION: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION;
         case MOlocPackage.CLASS_DEFINITION__IS_COLON: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_COLON;
@@ -1114,6 +1454,7 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.CLASS_DEFINITION__IS_DER_CLASS_SPECIFIER: return MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER;
         case MOlocPackage.CLASS_DEFINITION__IS_DER: return MOlocPackage.DER_CLASS_SPECIFIER__IS_DER;
         case MOlocPackage.CLASS_DEFINITION__DER_NAME: return MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME;
         default: return -1;
@@ -1150,6 +1491,7 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       switch (baseFeatureID)
       {
         case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.CLASS_DEFINITION__MODIFICATIONS;
+        case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER: return MOlocPackage.CLASS_DEFINITION__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -1174,6 +1516,7 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       switch (baseFeatureID)
       {
         case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS: return MOlocPackage.CLASS_DEFINITION__IS_EXTENDS;
+        case MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER: return MOlocPackage.CLASS_DEFINITION__IS_LONG_CLASS_SPECIFIER;
         case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END: return MOlocPackage.CLASS_DEFINITION__CLASS_NAME_END;
         default: return -1;
       }
@@ -1208,6 +1551,7 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       {
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION;
         case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.CLASS_DEFINITION__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -1222,6 +1566,7 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER: return MOlocPackage.CLASS_DEFINITION__IS_SHORT_CLASS_SPECIFIER;
         case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION: return MOlocPackage.CLASS_DEFINITION__DIRECTION;
         case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION: return MOlocPackage.CLASS_DEFINITION__IS_ENUMERATION;
         case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_COLON: return MOlocPackage.CLASS_DEFINITION__IS_COLON;
@@ -1232,6 +1577,7 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER: return MOlocPackage.CLASS_DEFINITION__IS_DER_CLASS_SPECIFIER;
         case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER: return MOlocPackage.CLASS_DEFINITION__IS_DER;
         case MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME: return MOlocPackage.CLASS_DEFINITION__DER_NAME;
         default: return -1;
@@ -1260,10 +1606,14 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (className: ");
     result.append(className);
+    result.append(", isModificationOver: ");
+    result.append(isModificationOver);
     result.append(", description: ");
     result.append(description);
     result.append(", isExtends: ");
     result.append(isExtends);
+    result.append(", isLongClassSpecifier: ");
+    result.append(isLongClassSpecifier);
     result.append(", classNameEnd: ");
     result.append(classNameEnd);
     result.append(", typeSpecifier: ");
@@ -1272,18 +1622,26 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
     result.append(subscripts);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
+    result.append(", isAnnotationOver: ");
+    result.append(isAnnotationOver);
+    result.append(", isShortClassSpecifier: ");
+    result.append(isShortClassSpecifier);
     result.append(", direction: ");
     result.append(direction);
     result.append(", isEnumeration: ");
     result.append(isEnumeration);
     result.append(", isColon: ");
     result.append(isColon);
+    result.append(", isDerClassSpecifier: ");
+    result.append(isDerClassSpecifier);
     result.append(", isDer: ");
     result.append(isDer);
     result.append(", derName: ");
     result.append(derName);
     result.append(", isfinal: ");
     result.append(isfinal);
+    result.append(", isOver: ");
+    result.append(isOver);
     result.append(')');
     return result.toString();
   }

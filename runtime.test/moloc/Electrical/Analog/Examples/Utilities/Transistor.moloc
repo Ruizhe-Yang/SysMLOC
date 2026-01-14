@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples.Utilities">
+  <classes classType="model" className="Transistor" description="&quot;Transistor with resistance an capacitance&quot;" isLongClassSpecifier="true" classNameEnd="Transistor" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="rtb" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0.05" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-80, -10 } ,{-60,10} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="rtc" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0.1" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,0}, {60,20} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Capacitor" isOver="true">
+      <component_list isModificationOver="true" declarationName="ct" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1e-10" elementName="C"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-40,-30}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Semiconductors.NPN" isOver="true">
+      <component_list isModificationOver="true" declarationName="Tr" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="50" elementName="Bf"/>
+        <modifications expression="0.1" elementName="Br"/>
+        <modifications expression="1e-16" elementName="Is"/>
+        <modifications expression="0.02" elementName="Vak"/>
+        <modifications expression="0.12e-9" elementName="Tauf"/>
+        <modifications expression="5e-9" elementName="Taur"/>
+        <modifications expression="1e-12" elementName="Ccs"/>
+        <modifications expression="0.4e-12" elementName="Cje"/>
+        <modifications expression="0.5e-12" elementName="Cjc"/>
+        <modifications expression="0.8" elementName="Phie"/>
+        <modifications expression="0.4" elementName="Me"/>
+        <modifications expression="0.8" elementName="Phic"/>
+        <modifications expression="0.333" elementName="Mc"/>
+        <modifications expression="1e-15" elementName="Gbc"/>
+        <modifications expression="1e-15" elementName="Gbe"/>
+        <modifications expression="0.02585" elementName="Vt"/>
+        <modifications expression="true" elementName="UIC"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Ground" isOver="true">
+      <component_list declarationName="Ground1" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-50,-80},{ -30,-60} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Pin" isOver="true">
+      <component_list declarationName="c" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,50},{110,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Pin" isOver="true">
+      <component_list declarationName="b" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90, 10 } }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Pin" isOver="true">
+      <component_list declarationName="e" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-70},{110, -50 } }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="rtb.n" right="Tr.B">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,0},{-20,0}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="rtb.n" right="ct.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,0},{-40,0},{-40,-20}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ct.n" right="Ground1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-40,-40},{-40,-60}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Tr.C" right="rtc.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,10},{40,10}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="rtc.n" right="c">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,10},{80,10},{80,60},{100,60}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="b" right="rtb.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-80,0}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Tr.E" right="e">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,-10},{80,-10},{80,-60},{100,-60}}" elementName="points"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Rectangle(extent={{-80,80},{80,-80}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{80,60},{100,60}}, color={0,0,255}), Line(points={{80,-60},{100,-60}}, color={0,0,255}), Line(points={{-100,0},{-80,0}}, color={0,0,255}), Line(points={{-60,0},{-10,0}}, color={0,0,255}), Line(points={{-10,40},{-10,-40}}, color={0,0,255}), Line(points={{60,60},{40,60},{-10,10}}, color={0,0,255}), Line(points={{-10,-10},{40,-60},{60,-60}}, color={0,0,255}), Text( extent={{-150,130},{150,90}}, textColor={0,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>Since the simple bipolar transistor model does not have base or collector resistances both are added in this component. Additionally, a capacity is added to the base pin. See the schematic for more details.  In such a way the transistor model can be enhanced to become more common.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-76,82},{-2,54}}, textColor={0,0,255}, textString=&quot;Transistor&quot; ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

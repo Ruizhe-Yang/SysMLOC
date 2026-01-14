@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Functions">
+  <classes classType="function" className="symmetricBackTransformationMatrix" description="&quot;Back transformation matrix for symmetrical components&quot;" isLongClassSpecifier="true" classNameEnd="symmetricBackTransformationMatrix" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.fromPolar" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input" isOver="true">
+      <component_list declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" directionType="output" isOver="true">
+      <component_list subscripts="[m, m]" declarationName="bTM" description="&quot;Back transformation matrix for m phase symmetrical components&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isProtected="true" isOver="true">
+      <component_list expression="numberOfSymmetricBaseSystems(m)" declarationName="nBase"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+      <component_list expression="integer(m/nBase)" declarationName="mBase"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <component_list expression="1" declarationName="factor"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+      <component_list subscripts="[m,m]" expression="symmetricOrientationMatrix(m)" declarationName="oM"/>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:ForStatement" forIndices="i in 1:nBase">
+        <forStatements xsi:type="mOloc:ForStatement" forIndices="j in 1:nBase">
+          <forStatements xsi:type="mOloc:ForStatement" forIndices="ii in (i - 1)*mBase + 1:i*mBase">
+            <forStatements xsi:type="mOloc:ForStatement" forIndices="jj in (j - 1)*mBase + 1:j*mBase">
+              <forStatements xsi:type="mOloc:FunctionStatement" component="bTM[ii,jj]" expression="fromPolar(if i==j then factor else 0, -oM[jj,ii])"/>
+            </forStatements>
+          </forStatements>
+        </forStatements>
+      </statements>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This function determines the back transformation matrix of the symmetrical winding with m phases.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The back transformation matrix can be used to determine the time phasors from the symmetrical components.&#xA;&lt;/p>&#xA;&lt;h4>See also&lt;/h4>&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.Polyphase.UsersGuide.PhaseOrientation\&quot;>User's guide&lt;/a> on symmetrical components and orientation.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

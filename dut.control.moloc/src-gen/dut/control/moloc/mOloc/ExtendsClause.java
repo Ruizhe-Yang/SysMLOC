@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#isIsProtected <em>Is Protected</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#getExtendsModifications <em>Extends Modifications</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#getBreaks <em>Breaks</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#isIsOver <em>Is Over</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getExtendsClause()
@@ -93,5 +94,27 @@ public interface ExtendsClause extends Element, type_specifier, annotation_modif
    * @generated
    */
   EList<Break> getBreaks();
+
+  /**
+   * Returns the value of the '<em><b>Is Over</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Over</em>' attribute.
+   * @see #setIsOver(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getExtendsClause_IsOver()
+   * @model
+   * @generated
+   */
+  boolean isIsOver();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ExtendsClause#isIsOver <em>Is Over</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Over</em>' attribute.
+   * @see #isIsOver()
+   * @generated
+   */
+  void setIsOver(boolean value);
 
 } // ExtendsClause

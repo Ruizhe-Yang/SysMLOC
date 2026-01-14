@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Thermal">
+  <classes classType="function" className="convertAlpha" description="&quot;Converts alpha from temperature 1 (default 20 degC) to temperature 2&quot;" isLongClassSpecifier="true" classNameEnd="convertAlpha" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" directionType="input" isOver="true">
+      <component_list declarationName="alpha1" description="&quot;Temperature coefficient at temperature 1 (default: 20 degC)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" directionType="input" isOver="true">
+      <component_list declarationName="T2" description="&quot;Temperature 2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" directionType="input" isOver="true">
+      <component_list expression="293.15" declarationName="T1" description="&quot;Temperature 1 (default: 20 degC)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" directionType="output" isOver="true">
+      <component_list declarationName="alpha2" description="&quot;Temperature coefficient at TRef&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:FunctionStatement" component="alpha2" expression="alpha1/(1 + alpha1*(T2 - T1))"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="true" elementName="Inline"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;From the temperature coefficient &lt;code>alpha1&lt;/code> at temperature &lt;code>T1&lt;/code> (default 20 degC = 293.15 K)&#xA;the temperature coefficient &lt;code>alpha2&lt;/code> at temperature &lt;code>T2&lt;/code> is calculated:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;              alpha1&#xA;alpha2 = ------------------------&#xA;          1 + alpha1 * (T2 - T1)&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Sensors">
+  <classes classType="model" className="VoltageQuasiRMSSensor" description="&quot;Continuous quasi voltage RMS sensor for polyphase system&quot;" isLongClassSpecifier="true" classNameEnd="VoltageQuasiRMSSensor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.QuasiStatic.Polyphase.Interfaces.RelativeSensorElementary" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list declarationName="V" description="&quot;Continuous quasi average RMS of current&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,-110}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SinglePhase.Sensors.VoltageSensor" isOver="true">
+      <component_list subscripts="[m]" declarationName="voltageSensor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Blocks.QuasiRMS" isOver="true">
+      <component_list isModificationOver="true" declarationName="quasiRMS" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{0,-50}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
+      <component_list subscripts="[m]" expression="plug_p.pin.v - plug_n.pin.v" declarationName="v" description="&quot;Complex voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
+      <component_list subscripts="[m]" expression="plug_p.pin.i" declarationName="i" description="&quot;Complex current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="quasiRMS.y" right="V">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-61},{0,-110}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPins_p.pin_p" right="voltageSensor.pin_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-68,0},{-10,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltageSensor.pin_n" right="plugToPins_n.pin_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{68,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltageSensor.v" right="quasiRMS.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-11},{0,-38}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;voltageRMSSensor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Text( extent={{150,-100},{-150,-70}}, textString=&quot;m=%m&quot; ) , Line(points={{0,-70},{0,-100}}, color={0,0,127}), Text( extent={{-30,-10},{30,-70}}, textColor={64,64,64}, textString=&quot;V&quot; ) , Line(points={{70,0},{90,0}}, color={85,170,255}), Line(points={{-70,0},{-90,0}}, color={85,170,255}) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This sensor determines the continuous quasi &lt;a href=\&quot;Modelica://Modelica.Blocks.Math.RootMeanSquare\&quot;>RMS&lt;/a>&#xA;value of a polyphase voltage system, by averaging the phase RMS voltage phasors &lt;code>v&lt;/code>.&#xA;&lt;/p>&#xA;&lt;pre>&#xA;  V = sum({abs(v[k]) for k in 1:m})/m&#xA;&lt;/pre>&#xA;&#xA;&lt;h4>See also&lt;/h4>&#xA;&#xA;&lt;p>&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.ReferenceSensor\&quot;>ReferenceSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.FrequencySensor\&quot;>FrequencySensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.PotentialSensor\&quot;>PotentialSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.VoltageSensor\&quot;>VoltageSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.VoltageQuasiRMSSensor\&quot;>VoltageQuasiRMSSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.CurrentSensor\&quot;>CurrentSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.CurrentQuasiRMSSensor\&quot;>CurrentQuasiRMSSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.PowerSensor\&quot;>PowerSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.MultiSensor\&quot;>MultiSensor&lt;/a>&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

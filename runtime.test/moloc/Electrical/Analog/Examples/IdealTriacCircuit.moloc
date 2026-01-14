@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples">
+  <classes classType="model" className="IdealTriacCircuit" description="&quot;Ideal triac test circuit&quot;" isLongClassSpecifier="true" classNameEnd="IdealTriacCircuit" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-12,-40},{8,-20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="R" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="20" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{12,12}}" elementName="extent"/>
+            <modifications expression="{-44,32}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SineVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="V" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="5" elementName="V"/>
+        <modifications expression="2" elementName="f"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="{-42,-20}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.BooleanPulse" isOver="true">
+      <component_list isModificationOver="true" declarationName="booleanPulse" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="50" elementName="width"/>
+        <modifications expression="0.25" elementName="period"/>
+        <modifications expression="0.1" elementName="startTime"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-22,0},{-6,16}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealTriac" isOver="true">
+      <component_list isModificationOver="true" declarationName="idealTriac" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="capacitor">
+          <modifications isModificationOver="true" elementName="v">
+            <modifications expression="0" elementName="start"/>
+            <modifications expression="true" elementName="fixed"/>
+          </modifications>
+        </modifications>
+        <modifications isModificationOver="true" elementName="idealThyristor">
+          <modifications isModificationOver="true" elementName="off">
+            <modifications expression="true" elementName="start"/>
+            <modifications expression="true" elementName="fixed"/>
+          </modifications>
+        </modifications>
+        <modifications isModificationOver="true" elementName="idealThyristor1">
+          <modifications isModificationOver="true" elementName="off">
+            <modifications expression="true" elementName="start"/>
+            <modifications expression="true" elementName="fixed"/>
+          </modifications>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{6,20},{32,46}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="V.n" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-32,-20},{-2,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="R.p" right="V.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-54,33},{-60,33},{-60,-20},{-52,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="R.n" right="idealTriac.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-32,33},{6,33}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealTriac.p" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{32.52,33},{42,33},{42,-20},{-2,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealTriac.fire1" right="booleanPulse.y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{6,18.18},{0,18.18},{0,8},{-5.2,8}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="2" elementName="StopTime"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>November 25, 2009   &lt;/em>&lt;br>&#xA;&#xA;       by Susann Wolf&lt;br>&lt;br>&#xA;       &lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>The simple ideal TRIAC example shows how a triac is used within an alternating current circuit.&lt;/p>&#xA;&lt;p>The TRIAC is not conducting until the Boolean input becomes true (internally coded by 1, therefore the input is called fire&lt;strong>1&lt;/strong>). Then it becomes &amp;quot;conducting&amp;quot;, the knee voltage is reached. If the TRIAC voltage falls below the knee voltage, the TRIAC becomes blocking. Due to the antiparallel connection of the internal two thyristors the same behavior is repeated in the negative half-wave.&lt;/p>&#xA;&lt;p>Simulate until 2 seconds. Display V.p.v (input voltage), booleanPulse.y (fire1 input), and both idealTriac.n.v and idealTriac.n.i, which demonstrate the TRIAC behavior.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

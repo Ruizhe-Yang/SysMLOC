@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.BasicMachines">
+  <classes classType="package" className="DCMachines" description="&quot;Models of DC machines&quot;" isLongClassSpecifier="true" classNameEnd="DCMachines" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.VariantsPackage" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;This package contains models of DC machines:&#xA;&lt;ul>&#xA;&lt;li>DC_PermanentMagnet: DC machine with permanent magnet excitation&lt;/li>&#xA;&lt;li>DC_ElectricalExcited: DC machine with electrical shunt or separate excitation&lt;/li>&#xA;&lt;li>DC_SeriesExcited: DC machine with series excitation&lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;dl>&#xA;  &lt;dt>&lt;strong>Main Authors:&lt;/strong>&lt;/dt>&#xA;  &lt;dd>&#xA;  &lt;a href=\&quot;https://www.haumer.at/\&quot;>Anton Haumer&lt;/a>&lt;br>&#xA;  Technical Consulting &amp;amp; Electrical Engineering&lt;br>&#xA;  D-93049 Regensburg&lt;br>Germany&lt;br>&#xA;  email: &lt;a href=\&quot;mailto:a.haumer@haumer.at\&quot;>a.haumer@haumer.at&lt;/a>&#xA;  &lt;/dd>&#xA;&lt;/dl>&#xA;  &lt;ul>&#xA;  &lt;li> v1.02 2004/09/19 Anton Haumer&lt;/li>&#xA;  &lt;li> v1.03 2004/09/24 Anton Haumer&lt;br>&#xA;       added DC machine with series excitation&lt;/li>&#xA;  &lt;li> v1.1  2004/10/01 Anton Haumer&lt;br>&#xA;       changed naming and structure&lt;br>&#xA;       issued to Modelica Standard Library 2.1&lt;/li>&#xA;  &lt;li> v1.2  2004/10/27 Anton Haumer&lt;br>&#xA;       fixed a bug with support (formerly bearing)&lt;/li>&#xA;  &lt;li> v1.4   2004/11/11 Anton Haumer&lt;br>&#xA;       removed mechanical flange support&lt;br>&#xA;       to ease the implementation of a 3D-frame in a future release&lt;/li>&#xA;  &lt;li> v2.2.0 2011/02/10 Anton Haumer&lt;br>&#xA;       conditional ThermalPort for all machines&lt;/li>&#xA;  &lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.Interfaces.Enable">
+  <classes isPartial="true" classType="model" className="Enable" description="&quot;Partial model providing enable parameter and optional enable input&quot;" isLongClassSpecifier="true" classNameEnd="Enable" isOver="true">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="useConstantEnable" description="&quot;Disable boolean input and use constantEnable, if true&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Enable&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="constantEnable" description="&quot;Constant enabling of firing signals&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Enable&quot;" elementName="tab"/>
+          <modifications expression="useConstantEnable" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="PowerConverters.Enable.EnableLogic" isOver="true">
+      <component_list isModificationOver="true" declarationName="enableLogic" description="&quot;Enabling logic&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="useConstantEnable" elementName="useConstantEnable" isfinal="true"/>
+        <modifications expression="constantEnable" elementName="constantEnable" isfinal="true"/>
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{80,-90},{100,-70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <component_list declarationName="enable" description="&quot;Enables fire and notFire&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantEnable">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{100,-120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="enableLogic.enable" right="enable">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{100,-92},{100,-120}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This partial model provides parameters and the conditional input signal for the enabling models:&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.Interfaces.Enable.Enable1\&quot;>Enable1&lt;/a>&lt;/li>&#xA;&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.Interfaces.Enable.Enable2\&quot;>Enable2&lt;/a>&lt;/li>&#xA;&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.Interfaces.Enable.Enable1m\&quot;>Enable1m&lt;/a>&lt;/li>&#xA;&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.Interfaces.Enable.Enable2m\&quot;>Enable2m&lt;/a>&lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

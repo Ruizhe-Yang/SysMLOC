@@ -1964,10 +1964,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_TRUE_FALSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:6875:17: ( ( 'true' | 'false' ) )
-            // InternalMOloc.g:6875:19: ( 'true' | 'false' )
+            // InternalMOloc.g:6985:17: ( ( 'true' | 'false' ) )
+            // InternalMOloc.g:6985:19: ( 'true' | 'false' )
             {
-            // InternalMOloc.g:6875:19: ( 'true' | 'false' )
+            // InternalMOloc.g:6985:19: ( 'true' | 'false' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1985,7 +1985,7 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalMOloc.g:6875:20: 'true'
+                    // InternalMOloc.g:6985:20: 'true'
                     {
                     match("true"); 
 
@@ -1993,7 +1993,7 @@ public class InternalMOlocLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMOloc.g:6875:27: 'false'
+                    // InternalMOloc.g:6985:27: 'false'
                     {
                     match("false"); 
 
@@ -2019,10 +2019,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:6877:12: ( ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT ) )
-            // InternalMOloc.g:6877:14: ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT )
+            // InternalMOloc.g:6987:12: ( ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT ) )
+            // InternalMOloc.g:6987:14: ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT )
             {
-            // InternalMOloc.g:6877:14: ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT )
+            // InternalMOloc.g:6987:14: ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -2040,10 +2040,10 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalMOloc.g:6877:15: RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )*
+                    // InternalMOloc.g:6987:15: RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )*
                     {
                     mRULE_NON_DIGIT(); 
-                    // InternalMOloc.g:6877:30: ( RULE_DIGIT | RULE_NON_DIGIT )*
+                    // InternalMOloc.g:6987:30: ( RULE_DIGIT | RULE_NON_DIGIT )*
                     loop2:
                     do {
                         int alt2=2;
@@ -2080,7 +2080,7 @@ public class InternalMOlocLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMOloc.g:6877:59: RULE_Q_IDENT
+                    // InternalMOloc.g:6987:59: RULE_Q_IDENT
                     {
                     mRULE_Q_IDENT(); 
 
@@ -2105,11 +2105,11 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_UNSIGNED_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:6879:22: ( RULE_UNSIGNED_INTEGER ( '.' ( RULE_UNSIGNED_INTEGER )? )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )? )
-            // InternalMOloc.g:6879:24: RULE_UNSIGNED_INTEGER ( '.' ( RULE_UNSIGNED_INTEGER )? )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )?
+            // InternalMOloc.g:6989:22: ( RULE_UNSIGNED_INTEGER ( '.' ( RULE_UNSIGNED_INTEGER )? )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )? )
+            // InternalMOloc.g:6989:24: RULE_UNSIGNED_INTEGER ( '.' ( RULE_UNSIGNED_INTEGER )? )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )?
             {
             mRULE_UNSIGNED_INTEGER(); 
-            // InternalMOloc.g:6879:46: ( '.' ( RULE_UNSIGNED_INTEGER )? )?
+            // InternalMOloc.g:6989:46: ( '.' ( RULE_UNSIGNED_INTEGER )? )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2118,10 +2118,10 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalMOloc.g:6879:47: '.' ( RULE_UNSIGNED_INTEGER )?
+                    // InternalMOloc.g:6989:47: '.' ( RULE_UNSIGNED_INTEGER )?
                     {
                     match('.'); 
-                    // InternalMOloc.g:6879:51: ( RULE_UNSIGNED_INTEGER )?
+                    // InternalMOloc.g:6989:51: ( RULE_UNSIGNED_INTEGER )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -2130,7 +2130,7 @@ public class InternalMOlocLexer extends Lexer {
                     }
                     switch (alt4) {
                         case 1 :
-                            // InternalMOloc.g:6879:51: RULE_UNSIGNED_INTEGER
+                            // InternalMOloc.g:6989:51: RULE_UNSIGNED_INTEGER
                             {
                             mRULE_UNSIGNED_INTEGER(); 
 
@@ -2145,7 +2145,7 @@ public class InternalMOlocLexer extends Lexer {
 
             }
 
-            // InternalMOloc.g:6879:76: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )?
+            // InternalMOloc.g:6989:76: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2154,7 +2154,7 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalMOloc.g:6879:77: ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER
+                    // InternalMOloc.g:6989:77: ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2165,7 +2165,7 @@ public class InternalMOlocLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalMOloc.g:6879:87: ( '+' | '-' )?
+                    // InternalMOloc.g:6989:87: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2214,11 +2214,11 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:6881:13: ( '\"' ( RULE_S_CHAR | RULE_S_ESCAPE )* '\"' )
-            // InternalMOloc.g:6881:15: '\"' ( RULE_S_CHAR | RULE_S_ESCAPE )* '\"'
+            // InternalMOloc.g:6991:13: ( '\"' ( RULE_S_CHAR | RULE_S_ESCAPE )* '\"' )
+            // InternalMOloc.g:6991:15: '\"' ( RULE_S_CHAR | RULE_S_ESCAPE )* '\"'
             {
             match('\"'); 
-            // InternalMOloc.g:6881:19: ( RULE_S_CHAR | RULE_S_ESCAPE )*
+            // InternalMOloc.g:6991:19: ( RULE_S_CHAR | RULE_S_ESCAPE )*
             loop8:
             do {
                 int alt8=3;
@@ -2234,14 +2234,14 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalMOloc.g:6881:20: RULE_S_CHAR
+            	    // InternalMOloc.g:6991:20: RULE_S_CHAR
             	    {
             	    mRULE_S_CHAR(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // InternalMOloc.g:6881:32: RULE_S_ESCAPE
+            	    // InternalMOloc.g:6991:32: RULE_S_ESCAPE
             	    {
             	    mRULE_S_ESCAPE(); 
 
@@ -2270,12 +2270,12 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:6883:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalMOloc.g:6883:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalMOloc.g:6993:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalMOloc.g:6993:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalMOloc.g:6883:24: ( options {greedy=false; } : . )*
+            // InternalMOloc.g:6993:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -2300,7 +2300,7 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalMOloc.g:6883:52: .
+            	    // InternalMOloc.g:6993:52: .
             	    {
             	    matchAny(); 
 
@@ -2330,12 +2330,12 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:6885:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalMOloc.g:6885:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalMOloc.g:6995:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalMOloc.g:6995:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalMOloc.g:6885:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalMOloc.g:6995:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -2348,7 +2348,7 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalMOloc.g:6885:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalMOloc.g:6995:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2368,7 +2368,7 @@ public class InternalMOlocLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalMOloc.g:6885:40: ( ( '\\r' )? '\\n' )?
+            // InternalMOloc.g:6995:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2377,9 +2377,9 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalMOloc.g:6885:41: ( '\\r' )? '\\n'
+                    // InternalMOloc.g:6995:41: ( '\\r' )? '\\n'
                     {
-                    // InternalMOloc.g:6885:41: ( '\\r' )?
+                    // InternalMOloc.g:6995:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -2388,7 +2388,7 @@ public class InternalMOlocLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // InternalMOloc.g:6885:41: '\\r'
+                            // InternalMOloc.g:6995:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2420,10 +2420,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:6887:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalMOloc.g:6887:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMOloc.g:6997:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalMOloc.g:6997:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalMOloc.g:6887:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMOloc.g:6997:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -2475,8 +2475,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_DIGIT"
     public final void mRULE_DIGIT() throws RecognitionException {
         try {
-            // InternalMOloc.g:6889:21: ( '0' .. '9' )
-            // InternalMOloc.g:6889:23: '0' .. '9'
+            // InternalMOloc.g:6999:21: ( '0' .. '9' )
+            // InternalMOloc.g:6999:23: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -2491,10 +2491,10 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_UNSIGNED_INTEGER"
     public final void mRULE_UNSIGNED_INTEGER() throws RecognitionException {
         try {
-            // InternalMOloc.g:6891:32: ( ( RULE_DIGIT )+ )
-            // InternalMOloc.g:6891:34: ( RULE_DIGIT )+
+            // InternalMOloc.g:7001:32: ( ( RULE_DIGIT )+ )
+            // InternalMOloc.g:7001:34: ( RULE_DIGIT )+
             {
-            // InternalMOloc.g:6891:34: ( RULE_DIGIT )+
+            // InternalMOloc.g:7001:34: ( RULE_DIGIT )+
             int cnt14=0;
             loop14:
             do {
@@ -2508,7 +2508,7 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalMOloc.g:6891:34: RULE_DIGIT
+            	    // InternalMOloc.g:7001:34: RULE_DIGIT
             	    {
             	    mRULE_DIGIT(); 
 
@@ -2536,8 +2536,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_S_ESCAPE"
     public final void mRULE_S_ESCAPE() throws RecognitionException {
         try {
-            // InternalMOloc.g:6893:24: ( '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' ) )
-            // InternalMOloc.g:6893:26: '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' )
+            // InternalMOloc.g:7003:24: ( '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' ) )
+            // InternalMOloc.g:7003:26: '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' )
             {
             match('\\'); 
             if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='?'||input.LA(1)=='\\'||(input.LA(1)>='a' && input.LA(1)<='b')||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t'||input.LA(1)=='v' ) {
@@ -2561,11 +2561,11 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_Q_IDENT"
     public final void mRULE_Q_IDENT() throws RecognitionException {
         try {
-            // InternalMOloc.g:6895:23: ( '\\'' ( RULE_Q_CHAR | RULE_S_ESCAPE )* '\\'' )
-            // InternalMOloc.g:6895:25: '\\'' ( RULE_Q_CHAR | RULE_S_ESCAPE )* '\\''
+            // InternalMOloc.g:7005:23: ( '\\'' ( RULE_Q_CHAR | RULE_S_ESCAPE )* '\\'' )
+            // InternalMOloc.g:7005:25: '\\'' ( RULE_Q_CHAR | RULE_S_ESCAPE )* '\\''
             {
             match('\''); 
-            // InternalMOloc.g:6895:30: ( RULE_Q_CHAR | RULE_S_ESCAPE )*
+            // InternalMOloc.g:7005:30: ( RULE_Q_CHAR | RULE_S_ESCAPE )*
             loop15:
             do {
                 int alt15=3;
@@ -2581,14 +2581,14 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalMOloc.g:6895:31: RULE_Q_CHAR
+            	    // InternalMOloc.g:7005:31: RULE_Q_CHAR
             	    {
             	    mRULE_Q_CHAR(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // InternalMOloc.g:6895:43: RULE_S_ESCAPE
+            	    // InternalMOloc.g:7005:43: RULE_S_ESCAPE
             	    {
             	    mRULE_S_ESCAPE(); 
 
@@ -2613,8 +2613,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_NON_DIGIT"
     public final void mRULE_NON_DIGIT() throws RecognitionException {
         try {
-            // InternalMOloc.g:6897:25: ( ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) )
-            // InternalMOloc.g:6897:27: ( '_' | 'a' .. 'z' | 'A' .. 'Z' )
+            // InternalMOloc.g:7007:25: ( ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) )
+            // InternalMOloc.g:7007:27: ( '_' | 'a' .. 'z' | 'A' .. 'Z' )
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -2637,8 +2637,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_S_CHAR"
     public final void mRULE_S_CHAR() throws RecognitionException {
         try {
-            // InternalMOloc.g:6899:22: (~ ( ( '\"' | '\\\\' ) ) )
-            // InternalMOloc.g:6899:24: ~ ( ( '\"' | '\\\\' ) )
+            // InternalMOloc.g:7009:22: (~ ( ( '\"' | '\\\\' ) ) )
+            // InternalMOloc.g:7009:24: ~ ( ( '\"' | '\\\\' ) )
             {
             if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                 input.consume();
@@ -2661,8 +2661,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_Q_CHAR"
     public final void mRULE_Q_CHAR() throws RecognitionException {
         try {
-            // InternalMOloc.g:6901:22: ( ( RULE_NON_DIGIT | RULE_DIGIT | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '>' | '=' | '?' | '@' | '[' | ']' | '^' | '{' | '}' | '|' | '~' | ' ' ) )
-            // InternalMOloc.g:6901:24: ( RULE_NON_DIGIT | RULE_DIGIT | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '>' | '=' | '?' | '@' | '[' | ']' | '^' | '{' | '}' | '|' | '~' | ' ' )
+            // InternalMOloc.g:7011:22: ( ( RULE_NON_DIGIT | RULE_DIGIT | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '>' | '=' | '?' | '@' | '[' | ']' | '^' | '{' | '}' | '|' | '~' | ' ' ) )
+            // InternalMOloc.g:7011:24: ( RULE_NON_DIGIT | RULE_DIGIT | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '>' | '=' | '?' | '@' | '[' | ']' | '^' | '{' | '}' | '|' | '~' | ' ' )
             {
             if ( (input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='_')||(input.LA(1)>='a' && input.LA(1)<='~') ) {
                 input.consume();
