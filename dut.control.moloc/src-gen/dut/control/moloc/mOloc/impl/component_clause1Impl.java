@@ -3,8 +3,10 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
+import dut.control.moloc.mOloc.AnnotationModification;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.ModificationElement;
+import dut.control.moloc.mOloc.annotation_modification_part;
 import dut.control.moloc.mOloc.array_subscripts;
 import dut.control.moloc.mOloc.class_modification;
 import dut.control.moloc.mOloc.component_clause1;
@@ -40,11 +42,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getSubscripts <em>Subscripts</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getModifications <em>Modifications</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getExpression <em>Expression</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getDeclarationName <em>Declaration Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.component_clause1Impl#getAnnotations <em>Annotations</em>}</li>
  * </ul>
  *
  * @generated
@@ -92,14 +95,14 @@ public class component_clause1Impl extends type_prefixImpl implements component_
   protected String subscripts = SUBSCRIPTS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
+   * The cached value of the '{@link #getModifications() <em>Modifications</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArguments()
+   * @see #getModifications()
    * @generated
    * @ordered
    */
-  protected EList<Argument> arguments;
+  protected EList<ModificationElement> modifications;
 
   /**
    * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
@@ -182,6 +185,16 @@ public class component_clause1Impl extends type_prefixImpl implements component_
   protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotations()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationModification> annotations;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -258,13 +271,13 @@ public class component_clause1Impl extends type_prefixImpl implements component_
    * @generated
    */
   @Override
-  public EList<Argument> getArguments()
+  public EList<ModificationElement> getModifications()
   {
-    if (arguments == null)
+    if (modifications == null)
     {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.COMPONENT_CLAUSE1__ARGUMENTS);
+      modifications = new EObjectContainmentEList<ModificationElement>(ModificationElement.class, this, MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS);
     }
-    return arguments;
+    return modifications;
   }
 
   /**
@@ -373,12 +386,29 @@ public class component_clause1Impl extends type_prefixImpl implements component_
    * @generated
    */
   @Override
+  public EList<AnnotationModification> getAnnotations()
+  {
+    if (annotations == null)
+    {
+      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS);
+    }
+    return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case MOlocPackage.COMPONENT_CLAUSE1__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS:
+        return ((InternalEList<?>)getModifications()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -397,8 +427,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return getTypeSpecifier();
       case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPTS:
         return getSubscripts();
-      case MOlocPackage.COMPONENT_CLAUSE1__ARGUMENTS:
-        return getArguments();
+      case MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS:
+        return getModifications();
       case MOlocPackage.COMPONENT_CLAUSE1__EXPRESSION:
         return getExpression();
       case MOlocPackage.COMPONENT_CLAUSE1__DECLARATION_NAME:
@@ -407,6 +437,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return getDescription();
       case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION:
         return isIsAnnotation();
+      case MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS:
+        return getAnnotations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -428,9 +460,9 @@ public class component_clause1Impl extends type_prefixImpl implements component_
       case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPTS:
         setSubscripts((String)newValue);
         return;
-      case MOlocPackage.COMPONENT_CLAUSE1__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
+      case MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS:
+        getModifications().clear();
+        getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
       case MOlocPackage.COMPONENT_CLAUSE1__EXPRESSION:
         setExpression((String)newValue);
@@ -443,6 +475,10 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return;
       case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -464,8 +500,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
       case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPTS:
         setSubscripts(SUBSCRIPTS_EDEFAULT);
         return;
-      case MOlocPackage.COMPONENT_CLAUSE1__ARGUMENTS:
-        getArguments().clear();
+      case MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS:
+        getModifications().clear();
         return;
       case MOlocPackage.COMPONENT_CLAUSE1__EXPRESSION:
         setExpression(EXPRESSION_EDEFAULT);
@@ -478,6 +514,9 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return;
       case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS:
+        getAnnotations().clear();
         return;
     }
     super.eUnset(featureID);
@@ -497,8 +536,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
       case MOlocPackage.COMPONENT_CLAUSE1__SUBSCRIPTS:
         return SUBSCRIPTS_EDEFAULT == null ? subscripts != null : !SUBSCRIPTS_EDEFAULT.equals(subscripts);
-      case MOlocPackage.COMPONENT_CLAUSE1__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS:
+        return modifications != null && !modifications.isEmpty();
       case MOlocPackage.COMPONENT_CLAUSE1__EXPRESSION:
         return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
       case MOlocPackage.COMPONENT_CLAUSE1__DECLARATION_NAME:
@@ -507,6 +546,8 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -539,7 +580,7 @@ public class component_clause1Impl extends type_prefixImpl implements component_
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.COMPONENT_CLAUSE1__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        case MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
         default: return -1;
       }
     }
@@ -567,11 +608,19 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         default: return -1;
       }
     }
+    if (baseClass == annotation_modification_part.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
+        case MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == description.class)
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -613,7 +662,7 @@ public class component_clause1Impl extends type_prefixImpl implements component_
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.COMPONENT_CLAUSE1__ARGUMENTS;
+        case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.COMPONENT_CLAUSE1__MODIFICATIONS;
         default: return -1;
       }
     }
@@ -641,11 +690,19 @@ public class component_clause1Impl extends type_prefixImpl implements component_
         default: return -1;
       }
     }
+    if (baseClass == annotation_modification_part.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.COMPONENT_CLAUSE1__ANNOTATIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == description.class)
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.COMPONENT_CLAUSE1__IS_ANNOTATION;
         default: return -1;
       }
     }

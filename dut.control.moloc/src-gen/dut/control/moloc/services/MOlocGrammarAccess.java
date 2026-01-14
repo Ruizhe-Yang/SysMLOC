@@ -476,45 +476,99 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.class_modification");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cArgumentsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cArgumentsArgumentParserRuleCall_1_0 = (RuleCall)cArgumentsAssignment_1.eContents().get(0);
+		private final Assignment cModificationsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cModificationsModificationElementParserRuleCall_1_0 = (RuleCall)cModificationsAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cArgumentsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cArgumentsArgumentParserRuleCall_2_1_0 = (RuleCall)cArgumentsAssignment_2_1.eContents().get(0);
+		private final Assignment cModificationsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cModificationsModificationElementParserRuleCall_2_1_0 = (RuleCall)cModificationsAssignment_2_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//fragment class_modification:
-		//    '(' arguments+=Argument ( ',' arguments+=Argument )* ')'
+		//    '(' modifications+=ModificationElement ( ',' modifications+=ModificationElement )* ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' arguments+=Argument ( ',' arguments+=Argument )* ')'
+		//'(' modifications+=ModificationElement ( ',' modifications+=ModificationElement )* ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
 		
-		//arguments+=Argument
-		public Assignment getArgumentsAssignment_1() { return cArgumentsAssignment_1; }
+		//modifications+=ModificationElement
+		public Assignment getModificationsAssignment_1() { return cModificationsAssignment_1; }
 		
-		//Argument
-		public RuleCall getArgumentsArgumentParserRuleCall_1_0() { return cArgumentsArgumentParserRuleCall_1_0; }
+		//ModificationElement
+		public RuleCall getModificationsModificationElementParserRuleCall_1_0() { return cModificationsModificationElementParserRuleCall_1_0; }
 		
-		//( ',' arguments+=Argument )*
+		//( ',' modifications+=ModificationElement )*
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//','
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 		
-		//arguments+=Argument
-		public Assignment getArgumentsAssignment_2_1() { return cArgumentsAssignment_2_1; }
+		//modifications+=ModificationElement
+		public Assignment getModificationsAssignment_2_1() { return cModificationsAssignment_2_1; }
 		
-		//Argument
-		public RuleCall getArgumentsArgumentParserRuleCall_2_1_0() { return cArgumentsArgumentParserRuleCall_2_1_0; }
+		//ModificationElement
+		public RuleCall getModificationsModificationElementParserRuleCall_2_1_0() { return cModificationsModificationElementParserRuleCall_2_1_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class Annotation_modification_partElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.annotation_modification_part");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cIsAnnotationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cIsAnnotationAnnotationKeyword_0_0 = (Keyword)cIsAnnotationAssignment_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cAnnotationsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAnnotationsAnnotationModificationParserRuleCall_2_0 = (RuleCall)cAnnotationsAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cAnnotationsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cAnnotationsAnnotationModificationParserRuleCall_3_1_0 = (RuleCall)cAnnotationsAssignment_3_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//fragment annotation_modification_part:
+		//    isAnnotation?='annotation'
+		//    '(' annotations+=AnnotationModification ( ',' annotations+=AnnotationModification )* ')'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//isAnnotation?='annotation'
+		//'(' annotations+=AnnotationModification ( ',' annotations+=AnnotationModification )* ')'
+		public Group getGroup() { return cGroup; }
+		
+		//isAnnotation?='annotation'
+		public Assignment getIsAnnotationAssignment_0() { return cIsAnnotationAssignment_0; }
+		
+		//'annotation'
+		public Keyword getIsAnnotationAnnotationKeyword_0_0() { return cIsAnnotationAnnotationKeyword_0_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//annotations+=AnnotationModification
+		public Assignment getAnnotationsAssignment_2() { return cAnnotationsAssignment_2; }
+		
+		//AnnotationModification
+		public RuleCall getAnnotationsAnnotationModificationParserRuleCall_2_0() { return cAnnotationsAnnotationModificationParserRuleCall_2_0; }
+		
+		//( ',' annotations+=AnnotationModification )*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//','
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		
+		//annotations+=AnnotationModification
+		public Assignment getAnnotationsAssignment_3_1() { return cAnnotationsAssignment_3_1; }
+		
+		//AnnotationModification
+		public RuleCall getAnnotationsAnnotationModificationParserRuleCall_3_1_0() { return cAnnotationsAnnotationModificationParserRuleCall_3_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
 	public class Description_stringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.description_string");
@@ -678,36 +732,29 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.description");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cDescription_stringParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Assignment cIsAnnotationAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final Keyword cIsAnnotationAnnotationKeyword_1_0_0 = (Keyword)cIsAnnotationAssignment_1_0.eContents().get(0);
-		private final RuleCall cClass_modificationParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final RuleCall cAnnotation_modification_partParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//fragment description:
-		//    description_string ( isAnnotation?='annotation' class_modification)?
+		//    description_string
+		//    //    ( isAnnotation?='annotation' class_modification)?
+		//    annotation_modification_part?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//description_string ( isAnnotation?='annotation' class_modification)?
+		//description_string
+		////    ( isAnnotation?='annotation' class_modification)?
+		//annotation_modification_part?
 		public Group getGroup() { return cGroup; }
 		
 		//description_string
 		public RuleCall getDescription_stringParserRuleCall_0() { return cDescription_stringParserRuleCall_0; }
 		
-		//( isAnnotation?='annotation' class_modification)?
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//isAnnotation?='annotation'
-		public Assignment getIsAnnotationAssignment_1_0() { return cIsAnnotationAssignment_1_0; }
-		
-		//'annotation'
-		public Keyword getIsAnnotationAnnotationKeyword_1_0_0() { return cIsAnnotationAnnotationKeyword_1_0_0; }
-		
-		//class_modification
-		public RuleCall getClass_modificationParserRuleCall_1_1() { return cClass_modificationParserRuleCall_1_1; }
+		////    ( isAnnotation?='annotation' class_modification)?
+		//annotation_modification_part?
+		public RuleCall getAnnotation_modification_partParserRuleCall_1() { return cAnnotation_modification_partParserRuleCall_1; }
 	}
-	public class ArgumentElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.Argument");
+	public class ModificationElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.ModificationElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cIsRedeclareAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final Keyword cIsRedeclareRedeclareKeyword_0_0 = (Keyword)cIsRedeclareAssignment_0.eContents().get(0);
@@ -723,7 +770,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cElement_modificationParserRuleCall_4_2 = (RuleCall)cAlternatives_4.eContents().get(2);
 		private final RuleCall cConstrainingParserRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
 		
-		//Argument:
+		//ModificationElement: // Argument
 		//    ( isRedeclare ?= 'redeclare')?
 		//    ( isEach ?= 'each' )?
 		//    ( isfinal ?= 'final' )?
@@ -736,18 +783,105 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//( isRedeclare ?= 'redeclare')?
+		//// Argument
+		//   ( isRedeclare ?= 'redeclare')?
+		//   ( isEach ?= 'each' )?
+		//   ( isfinal ?= 'final' )?
+		//   ( isReplaceable ?= 'replaceable' )?
+		//   ( short_class_definition
+		//   | component_clause1
+		//   | element_modification
+		//   )
+		//   constraining?
+		public Group getGroup() { return cGroup; }
+		
+		//// Argument
+		//   ( isRedeclare ?= 'redeclare')?
+		public Assignment getIsRedeclareAssignment_0() { return cIsRedeclareAssignment_0; }
+		
+		//'redeclare'
+		public Keyword getIsRedeclareRedeclareKeyword_0_0() { return cIsRedeclareRedeclareKeyword_0_0; }
+		
 		//( isEach ?= 'each' )?
+		public Assignment getIsEachAssignment_1() { return cIsEachAssignment_1; }
+		
+		//'each'
+		public Keyword getIsEachEachKeyword_1_0() { return cIsEachEachKeyword_1_0; }
+		
 		//( isfinal ?= 'final' )?
+		public Assignment getIsfinalAssignment_2() { return cIsfinalAssignment_2; }
+		
+		//'final'
+		public Keyword getIsfinalFinalKeyword_2_0() { return cIsfinalFinalKeyword_2_0; }
+		
 		//( isReplaceable ?= 'replaceable' )?
+		public Assignment getIsReplaceableAssignment_3() { return cIsReplaceableAssignment_3; }
+		
+		//'replaceable'
+		public Keyword getIsReplaceableReplaceableKeyword_3_0() { return cIsReplaceableReplaceableKeyword_3_0; }
+		
 		//( short_class_definition
 		//| component_clause1
 		//| element_modification
 		//)
+		public Alternatives getAlternatives_4() { return cAlternatives_4; }
+		
+		//short_class_definition
+		public RuleCall getShort_class_definitionParserRuleCall_4_0() { return cShort_class_definitionParserRuleCall_4_0; }
+		
+		//component_clause1
+		public RuleCall getComponent_clause1ParserRuleCall_4_1() { return cComponent_clause1ParserRuleCall_4_1; }
+		
+		//element_modification
+		public RuleCall getElement_modificationParserRuleCall_4_2() { return cElement_modificationParserRuleCall_4_2; }
+		
 		//constraining?
+		public RuleCall getConstrainingParserRuleCall_5() { return cConstrainingParserRuleCall_5; }
+	}
+	public class AnnotationModificationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.AnnotationModification");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cIsRedeclareAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cIsRedeclareRedeclareKeyword_0_0 = (Keyword)cIsRedeclareAssignment_0.eContents().get(0);
+		private final Assignment cIsEachAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cIsEachEachKeyword_1_0 = (Keyword)cIsEachAssignment_1.eContents().get(0);
+		private final Assignment cIsfinalAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cIsfinalFinalKeyword_2_0 = (Keyword)cIsfinalAssignment_2.eContents().get(0);
+		private final Assignment cIsReplaceableAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cIsReplaceableReplaceableKeyword_3_0 = (Keyword)cIsReplaceableAssignment_3.eContents().get(0);
+		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
+		private final RuleCall cShort_class_definitionParserRuleCall_4_0 = (RuleCall)cAlternatives_4.eContents().get(0);
+		private final RuleCall cComponent_clause1ParserRuleCall_4_1 = (RuleCall)cAlternatives_4.eContents().get(1);
+		private final RuleCall cElement_modificationParserRuleCall_4_2 = (RuleCall)cAlternatives_4.eContents().get(2);
+		private final RuleCall cConstrainingParserRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		
+		//AnnotationModification: // Argument
+		//    ( isRedeclare ?= 'redeclare')?
+		//    ( isEach ?= 'each' )?
+		//    ( isfinal ?= 'final' )?
+		//    ( isReplaceable ?= 'replaceable' )?
+		//    ( short_class_definition
+		//    | component_clause1
+		//    | element_modification
+		//    )
+		//    constraining?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//// Argument
+		//   ( isRedeclare ?= 'redeclare')?
+		//   ( isEach ?= 'each' )?
+		//   ( isfinal ?= 'final' )?
+		//   ( isReplaceable ?= 'replaceable' )?
+		//   ( short_class_definition
+		//   | component_clause1
+		//   | element_modification
+		//   )
+		//   constraining?
 		public Group getGroup() { return cGroup; }
 		
-		//( isRedeclare ?= 'redeclare')?
+		//// Argument
+		//   ( isRedeclare ?= 'redeclare')?
 		public Assignment getIsRedeclareAssignment_0() { return cIsRedeclareAssignment_0; }
 		
 		//'redeclare'
@@ -956,7 +1090,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//fragment array_subscripts:
 		//    subscripts=ArraySubscripts
-		////    '[' subscript+=Subscript (',' subscript+=Subscript)* ']'
+		//    //    '[' subscript+=Subscript (',' subscript+=Subscript)* ']'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1387,21 +1521,19 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cLeftParenthesisKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Group cGroup_4_1 = (Group)cGroup_4.eContents().get(1);
 		private final Alternatives cAlternatives_4_1_0 = (Alternatives)cGroup_4_1.eContents().get(0);
-		private final Assignment cTargumentsAssignment_4_1_0_0 = (Assignment)cAlternatives_4_1_0.eContents().get(0);
-		private final RuleCall cTargumentsArgumentParserRuleCall_4_1_0_0_0 = (RuleCall)cTargumentsAssignment_4_1_0_0.eContents().get(0);
+		private final Assignment cExtendsModificationsAssignment_4_1_0_0 = (Assignment)cAlternatives_4_1_0.eContents().get(0);
+		private final RuleCall cExtendsModificationsModificationElementParserRuleCall_4_1_0_0_0 = (RuleCall)cExtendsModificationsAssignment_4_1_0_0.eContents().get(0);
 		private final Assignment cBreaksAssignment_4_1_0_1 = (Assignment)cAlternatives_4_1_0.eContents().get(1);
 		private final RuleCall cBreaksBreakParserRuleCall_4_1_0_1_0 = (RuleCall)cBreaksAssignment_4_1_0_1.eContents().get(0);
 		private final Group cGroup_4_1_1 = (Group)cGroup_4_1.eContents().get(1);
 		private final Keyword cCommaKeyword_4_1_1_0 = (Keyword)cGroup_4_1_1.eContents().get(0);
 		private final Alternatives cAlternatives_4_1_1_1 = (Alternatives)cGroup_4_1_1.eContents().get(1);
-		private final Assignment cTargumentsAssignment_4_1_1_1_0 = (Assignment)cAlternatives_4_1_1_1.eContents().get(0);
-		private final RuleCall cTargumentsArgumentParserRuleCall_4_1_1_1_0_0 = (RuleCall)cTargumentsAssignment_4_1_1_1_0.eContents().get(0);
+		private final Assignment cExtendsModificationsAssignment_4_1_1_1_0 = (Assignment)cAlternatives_4_1_1_1.eContents().get(0);
+		private final RuleCall cExtendsModificationsModificationElementParserRuleCall_4_1_1_1_0_0 = (RuleCall)cExtendsModificationsAssignment_4_1_1_1_0.eContents().get(0);
 		private final Assignment cBreaksAssignment_4_1_1_1_1 = (Assignment)cAlternatives_4_1_1_1.eContents().get(1);
 		private final RuleCall cBreaksBreakParserRuleCall_4_1_1_1_1_0 = (RuleCall)cBreaksAssignment_4_1_1_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cAnnotationKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final RuleCall cClass_modificationParserRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
+		private final RuleCall cAnnotation_modification_partParserRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
 		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ExtendsClause:
@@ -1409,8 +1541,9 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    ( isProtected ?= 'protected' )?
 		//    'extends'
 		//    type_specifier
-		//    ( '(' (( targuments+=Argument | breaks+=Break ) (',' ( targuments+=Argument | breaks+=Break ))* )? ')')?
-		//    ( 'annotation' class_modification )?
+		//    ( '(' (( extendsModifications+=ModificationElement | breaks+=Break ) (',' ( extendsModifications+=ModificationElement | breaks+=Break ))* )? ')')?
+		//    //    ( 'annotation' class_modification )?
+		//    annotation_modification_part?
 		//    ';'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -1419,8 +1552,9 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//( isProtected ?= 'protected' )?
 		//'extends'
 		//type_specifier
-		//( '(' (( targuments+=Argument | breaks+=Break ) (',' ( targuments+=Argument | breaks+=Break ))* )? ')')?
-		//( 'annotation' class_modification )?
+		//( '(' (( extendsModifications+=ModificationElement | breaks+=Break ) (',' ( extendsModifications+=ModificationElement | breaks+=Break ))* )? ')')?
+		////    ( 'annotation' class_modification )?
+		//annotation_modification_part?
 		//';'
 		public Group getGroup() { return cGroup; }
 		
@@ -1442,23 +1576,23 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//type_specifier
 		public RuleCall getType_specifierParserRuleCall_3() { return cType_specifierParserRuleCall_3; }
 		
-		//( '(' (( targuments+=Argument | breaks+=Break ) (',' ( targuments+=Argument | breaks+=Break ))* )? ')')?
+		//( '(' (( extendsModifications+=ModificationElement | breaks+=Break ) (',' ( extendsModifications+=ModificationElement | breaks+=Break ))* )? ')')?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_4_0() { return cLeftParenthesisKeyword_4_0; }
 		
-		//(( targuments+=Argument | breaks+=Break ) (',' ( targuments+=Argument | breaks+=Break ))* )?
+		//(( extendsModifications+=ModificationElement | breaks+=Break ) (',' ( extendsModifications+=ModificationElement | breaks+=Break ))* )?
 		public Group getGroup_4_1() { return cGroup_4_1; }
 		
-		//( targuments+=Argument | breaks+=Break )
+		//( extendsModifications+=ModificationElement | breaks+=Break )
 		public Alternatives getAlternatives_4_1_0() { return cAlternatives_4_1_0; }
 		
-		//targuments+=Argument
-		public Assignment getTargumentsAssignment_4_1_0_0() { return cTargumentsAssignment_4_1_0_0; }
+		//extendsModifications+=ModificationElement
+		public Assignment getExtendsModificationsAssignment_4_1_0_0() { return cExtendsModificationsAssignment_4_1_0_0; }
 		
-		//Argument
-		public RuleCall getTargumentsArgumentParserRuleCall_4_1_0_0_0() { return cTargumentsArgumentParserRuleCall_4_1_0_0_0; }
+		//ModificationElement
+		public RuleCall getExtendsModificationsModificationElementParserRuleCall_4_1_0_0_0() { return cExtendsModificationsModificationElementParserRuleCall_4_1_0_0_0; }
 		
 		//breaks+=Break
 		public Assignment getBreaksAssignment_4_1_0_1() { return cBreaksAssignment_4_1_0_1; }
@@ -1466,20 +1600,20 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//Break
 		public RuleCall getBreaksBreakParserRuleCall_4_1_0_1_0() { return cBreaksBreakParserRuleCall_4_1_0_1_0; }
 		
-		//(',' ( targuments+=Argument | breaks+=Break ))*
+		//(',' ( extendsModifications+=ModificationElement | breaks+=Break ))*
 		public Group getGroup_4_1_1() { return cGroup_4_1_1; }
 		
 		//','
 		public Keyword getCommaKeyword_4_1_1_0() { return cCommaKeyword_4_1_1_0; }
 		
-		//( targuments+=Argument | breaks+=Break )
+		//( extendsModifications+=ModificationElement | breaks+=Break )
 		public Alternatives getAlternatives_4_1_1_1() { return cAlternatives_4_1_1_1; }
 		
-		//targuments+=Argument
-		public Assignment getTargumentsAssignment_4_1_1_1_0() { return cTargumentsAssignment_4_1_1_1_0; }
+		//extendsModifications+=ModificationElement
+		public Assignment getExtendsModificationsAssignment_4_1_1_1_0() { return cExtendsModificationsAssignment_4_1_1_1_0; }
 		
-		//Argument
-		public RuleCall getTargumentsArgumentParserRuleCall_4_1_1_1_0_0() { return cTargumentsArgumentParserRuleCall_4_1_1_1_0_0; }
+		//ModificationElement
+		public RuleCall getExtendsModificationsModificationElementParserRuleCall_4_1_1_1_0_0() { return cExtendsModificationsModificationElementParserRuleCall_4_1_1_1_0_0; }
 		
 		//breaks+=Break
 		public Assignment getBreaksAssignment_4_1_1_1_1() { return cBreaksAssignment_4_1_1_1_1; }
@@ -1490,14 +1624,9 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//')'
 		public Keyword getRightParenthesisKeyword_4_2() { return cRightParenthesisKeyword_4_2; }
 		
-		//( 'annotation' class_modification )?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//'annotation'
-		public Keyword getAnnotationKeyword_5_0() { return cAnnotationKeyword_5_0; }
-		
-		//class_modification
-		public RuleCall getClass_modificationParserRuleCall_5_1() { return cClass_modificationParserRuleCall_5_1; }
+		////    ( 'annotation' class_modification )?
+		//annotation_modification_part?
+		public RuleCall getAnnotation_modification_partParserRuleCall_5() { return cAnnotation_modification_partParserRuleCall_5; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
@@ -1594,26 +1723,26 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//        component_list+=Component_declaration (',' component_list+=Component_declaration)*
 		//    )
 		//    constraining?
-		////    description?
+		//    //    description?
 		//    ';'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//    ( isPublic ?= 'public' )?
-		//    ( isProtected ?= 'protected' )?
-		//    ( isRedeclare ?= 'redeclare' )?
-		//    ( isfinal ?= 'final' )?
-		//    ( isInner ?= 'inner' )?
-		//    ( isOuter ?= 'outer' )?
-		//    ( isReplaceable ?= 'replaceable' )?
-		//    //[type_specifier]Decision can match input such as "'.' RULE_IDENT" using multiple alternatives: 1, 2
-		//    ( class_prefixes class_specifier
-		//    | type_prefix type_specifier array_subscripts?
-		//        component_list+=Component_declaration (',' component_list+=Component_declaration)*
-		//    )
-		//    constraining?
+		//( isPublic ?= 'public' )?
+		//( isProtected ?= 'protected' )?
+		//( isRedeclare ?= 'redeclare' )?
+		//( isfinal ?= 'final' )?
+		//( isInner ?= 'inner' )?
+		//( isOuter ?= 'outer' )?
+		//( isReplaceable ?= 'replaceable' )?
+		////[type_specifier]Decision can match input such as "'.' RULE_IDENT" using multiple alternatives: 1, 2
+		//( class_prefixes class_specifier
+		//| type_prefix type_specifier array_subscripts?
+		//    component_list+=Component_declaration (',' component_list+=Component_declaration)*
+		//)
+		//constraining?
 		////    description?
-		//    ';'
+		//';'
 		public Group getGroup() { return cGroup; }
 		
 		//( isPublic ?= 'public' )?
@@ -1709,7 +1838,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		public RuleCall getConstrainingParserRuleCall_8() { return cConstrainingParserRuleCall_8; }
 		
 		////    description?
-		//    ';'
+		//';'
 		public Keyword getSemicolonKeyword_9() { return cSemicolonKeyword_9; }
 	}
 	public class Component_declarationElements extends AbstractParserRuleElementFinder {
@@ -1770,10 +1899,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cExpressionListAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
 		private final RuleCall cExpressionListExpressionListParserRuleCall_3_3_0 = (RuleCall)cExpressionListAssignment_3_3.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cIsAnnotationAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final Keyword cIsAnnotationAnnotationKeyword_4_0_0 = (Keyword)cIsAnnotationAssignment_4_0.eContents().get(0);
-		private final RuleCall cClass_modificationParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final RuleCall cAnnotation_modification_partParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ExternalElement:
@@ -1782,7 +1908,8 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    (language_specification=STRING)?
 		//    //[fatal] rule ruleTerm has non-LL(*) decision due to recursive rule invocations reachable from alts 1,2.
 		//    ( (ref=Component_reference '=')? refValue=IDENT '(' (expressionList=ExpressionList)? ')')?
-		//    ( isAnnotation?='annotation' class_modification )?
+		//    //    ( isAnnotation?='annotation' class_modification )?
+		//    annotation_modification_part?
 		//    ';'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -1792,7 +1919,8 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//(language_specification=STRING)?
 		////[fatal] rule ruleTerm has non-LL(*) decision due to recursive rule invocations reachable from alts 1,2.
 		//( (ref=Component_reference '=')? refValue=IDENT '(' (expressionList=ExpressionList)? ')')?
-		//( isAnnotation?='annotation' class_modification )?
+		////    ( isAnnotation?='annotation' class_modification )?
+		//annotation_modification_part?
 		//';'
 		public Group getGroup() { return cGroup; }
 		
@@ -1842,17 +1970,9 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//')'
 		public Keyword getRightParenthesisKeyword_3_4() { return cRightParenthesisKeyword_3_4; }
 		
-		//( isAnnotation?='annotation' class_modification )?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//isAnnotation?='annotation'
-		public Assignment getIsAnnotationAssignment_4_0() { return cIsAnnotationAssignment_4_0; }
-		
-		//'annotation'
-		public Keyword getIsAnnotationAnnotationKeyword_4_0_0() { return cIsAnnotationAnnotationKeyword_4_0_0; }
-		
-		//class_modification
-		public RuleCall getClass_modificationParserRuleCall_4_1() { return cClass_modificationParserRuleCall_4_1; }
+		////    ( isAnnotation?='annotation' class_modification )?
+		//annotation_modification_part?
+		public RuleCall getAnnotation_modification_partParserRuleCall_4() { return cAnnotation_modification_partParserRuleCall_4; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
@@ -1860,30 +1980,27 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class AnnotationClauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.AnnotationClause");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAnnotationKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cClass_modificationParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cAnnotation_modification_partParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//AnnotationClause:
-		//    'annotation'
-		//    class_modification
+		//    //    'annotation' class_modification
+		//    annotation_modification_part
 		//    ';'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'annotation'
-		//class_modification
+		////    'annotation' class_modification
+		//annotation_modification_part
 		//';'
 		public Group getGroup() { return cGroup; }
 		
-		//'annotation'
-		public Keyword getAnnotationKeyword_0() { return cAnnotationKeyword_0; }
-		
-		//class_modification
-		public RuleCall getClass_modificationParserRuleCall_1() { return cClass_modificationParserRuleCall_1; }
+		////    'annotation' class_modification
+		//annotation_modification_part
+		public RuleCall getAnnotation_modification_partParserRuleCall_0() { return cAnnotation_modification_partParserRuleCall_0; }
 		
 		//';'
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
 	}
 	public class EquationSectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.moloc.MOloc.EquationSection");
@@ -4286,6 +4403,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final Der_class_specifierElements pDer_class_specifier;
 	private final Class_nameElements pClass_name;
 	private final Class_modificationElements pClass_modification;
+	private final Annotation_modification_partElements pAnnotation_modification_part;
 	private final Description_stringElements pDescription_string;
 	private final DescriptionStringElements pDescriptionString;
 	private final CompositionElements pComposition;
@@ -4295,7 +4413,8 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final Enum_listElements pEnum_list;
 	private final EnumerationLiteralElements pEnumerationLiteral;
 	private final DescriptionElements pDescription;
-	private final ArgumentElements pArgument;
+	private final ModificationElementElements pModificationElement;
+	private final AnnotationModificationElements pAnnotationModification;
 	private final Element_modificationElements pElement_modification;
 	private final Short_class_definitionElements pShort_class_definition;
 	private final Component_clause1Elements pComponent_clause1;
@@ -4392,6 +4511,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pDer_class_specifier = new Der_class_specifierElements();
 		this.pClass_name = new Class_nameElements();
 		this.pClass_modification = new Class_modificationElements();
+		this.pAnnotation_modification_part = new Annotation_modification_partElements();
 		this.pDescription_string = new Description_stringElements();
 		this.pDescriptionString = new DescriptionStringElements();
 		this.pComposition = new CompositionElements();
@@ -4401,7 +4521,8 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pEnum_list = new Enum_listElements();
 		this.pEnumerationLiteral = new EnumerationLiteralElements();
 		this.pDescription = new DescriptionElements();
-		this.pArgument = new ArgumentElements();
+		this.pModificationElement = new ModificationElementElements();
+		this.pAnnotationModification = new AnnotationModificationElements();
 		this.pElement_modification = new Element_modificationElements();
 		this.pShort_class_definition = new Short_class_definitionElements();
 		this.pComponent_clause1 = new Component_clause1Elements();
@@ -4633,7 +4754,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//fragment class_modification:
-	//    '(' arguments+=Argument ( ',' arguments+=Argument )* ')'
+	//    '(' modifications+=ModificationElement ( ',' modifications+=ModificationElement )* ')'
 	//;
 	public Class_modificationElements getClass_modificationAccess() {
 		return pClass_modification;
@@ -4641,6 +4762,18 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getClass_modificationRule() {
 		return getClass_modificationAccess().getRule();
+	}
+	
+	//fragment annotation_modification_part:
+	//    isAnnotation?='annotation'
+	//    '(' annotations+=AnnotationModification ( ',' annotations+=AnnotationModification )* ')'
+	//;
+	public Annotation_modification_partElements getAnnotation_modification_partAccess() {
+		return pAnnotation_modification_part;
+	}
+	
+	public ParserRule getAnnotation_modification_partRule() {
+		return getAnnotation_modification_partAccess().getRule();
 	}
 	
 	//fragment description_string:
@@ -4733,7 +4866,9 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//fragment description:
-	//    description_string ( isAnnotation?='annotation' class_modification)?
+	//    description_string
+	//    //    ( isAnnotation?='annotation' class_modification)?
+	//    annotation_modification_part?
 	//;
 	public DescriptionElements getDescriptionAccess() {
 		return pDescription;
@@ -4743,7 +4878,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getDescriptionAccess().getRule();
 	}
 	
-	//Argument:
+	//ModificationElement: // Argument
 	//    ( isRedeclare ?= 'redeclare')?
 	//    ( isEach ?= 'each' )?
 	//    ( isfinal ?= 'final' )?
@@ -4754,12 +4889,31 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    )
 	//    constraining?
 	//;
-	public ArgumentElements getArgumentAccess() {
-		return pArgument;
+	public ModificationElementElements getModificationElementAccess() {
+		return pModificationElement;
 	}
 	
-	public ParserRule getArgumentRule() {
-		return getArgumentAccess().getRule();
+	public ParserRule getModificationElementRule() {
+		return getModificationElementAccess().getRule();
+	}
+	
+	//AnnotationModification: // Argument
+	//    ( isRedeclare ?= 'redeclare')?
+	//    ( isEach ?= 'each' )?
+	//    ( isfinal ?= 'final' )?
+	//    ( isReplaceable ?= 'replaceable' )?
+	//    ( short_class_definition
+	//    | component_clause1
+	//    | element_modification
+	//    )
+	//    constraining?
+	//;
+	public AnnotationModificationElements getAnnotationModificationAccess() {
+		return pAnnotationModification;
+	}
+	
+	public ParserRule getAnnotationModificationRule() {
+		return getAnnotationModificationAccess().getRule();
 	}
 	
 	//fragment element_modification:
@@ -4854,7 +5008,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//fragment array_subscripts:
 	//    subscripts=ArraySubscripts
-	////    '[' subscript+=Subscript (',' subscript+=Subscript)* ']'
+	//    //    '[' subscript+=Subscript (',' subscript+=Subscript)* ']'
 	//;
 	public Array_subscriptsElements getArray_subscriptsAccess() {
 		return pArray_subscripts;
@@ -4974,8 +5128,9 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    ( isProtected ?= 'protected' )?
 	//    'extends'
 	//    type_specifier
-	//    ( '(' (( targuments+=Argument | breaks+=Break ) (',' ( targuments+=Argument | breaks+=Break ))* )? ')')?
-	//    ( 'annotation' class_modification )?
+	//    ( '(' (( extendsModifications+=ModificationElement | breaks+=Break ) (',' ( extendsModifications+=ModificationElement | breaks+=Break ))* )? ')')?
+	//    //    ( 'annotation' class_modification )?
+	//    annotation_modification_part?
 	//    ';'
 	//;
 	public ExtendsClauseElements getExtendsClauseAccess() {
@@ -5014,7 +5169,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//        component_list+=Component_declaration (',' component_list+=Component_declaration)*
 	//    )
 	//    constraining?
-	////    description?
+	//    //    description?
 	//    ';'
 	//;
 	public GeneralClauseElements getGeneralClauseAccess() {
@@ -5044,7 +5199,8 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    (language_specification=STRING)?
 	//    //[fatal] rule ruleTerm has non-LL(*) decision due to recursive rule invocations reachable from alts 1,2.
 	//    ( (ref=Component_reference '=')? refValue=IDENT '(' (expressionList=ExpressionList)? ')')?
-	//    ( isAnnotation?='annotation' class_modification )?
+	//    //    ( isAnnotation?='annotation' class_modification )?
+	//    annotation_modification_part?
 	//    ';'
 	//;
 	public ExternalElementElements getExternalElementAccess() {
@@ -5056,8 +5212,8 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//AnnotationClause:
-	//    'annotation'
-	//    class_modification
+	//    //    'annotation' class_modification
+	//    annotation_modification_part
 	//    ';'
 	//;
 	public AnnotationClauseElements getAnnotationClauseAccess() {
@@ -5676,6 +5832,7 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return tSTRING;
 	}
 	
+	////terminal ANY_OTHER: .;
 	//terminal ML_COMMENT: '/*'->'*/';
 	public TerminalRule getML_COMMENTRule() {
 		return tML_COMMENT;
@@ -5691,8 +5848,6 @@ public class MOlocGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return tWS;
 	}
 	
-	////terminal ANY_OTHER: .;
-	//// terminal fragments
 	//terminal DIGIT: "0".."9";
 	public TerminalRule getDIGITRule() {
 		return tDIGIT;

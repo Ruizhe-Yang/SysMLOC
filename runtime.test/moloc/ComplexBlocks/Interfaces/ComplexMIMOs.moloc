@@ -7,20 +7,20 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexInput">
       <component_list subscripts="[n]" declarationName="u" description="&quot;Connector of Complex input signals&quot;" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexOutput">
       <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Complex output signals&quot;" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
@@ -29,10 +29,10 @@
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isProtected="true">
       <component_list subscripts="[n]" expression="{if useConjugateInput[k] then Modelica.ComplexMath.conj(u[k]) else u[k] for k in 1:n }" declarationName="uInternal" description="&quot;Equals either u or conjugate complex input u if useComplexInput = true&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Block has a continuous Complex input vector and a continuous Complex output signal vector&#xA;where the signal sizes of the input and output vector are identical.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Block has a continuous Complex input vector and a continuous Complex output signal vector&#xA;where the signal sizes of the input and output vector are identical.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

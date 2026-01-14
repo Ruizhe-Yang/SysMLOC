@@ -3,9 +3,11 @@
  */
 package dut.control.moloc.mOloc.impl;
 
+import dut.control.moloc.mOloc.AnnotationModification;
 import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.EnumerationLiteral;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.annotation_modification_part;
 import dut.control.moloc.mOloc.array_subscripts;
 import dut.control.moloc.mOloc.class_specifier;
 import dut.control.moloc.mOloc.der_class_specifier;
@@ -42,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getSubscripts <em>Subscripts</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#isIsEnumeration <em>Is Enumeration</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#isIsColon <em>Is Colon</em>}</li>
@@ -122,6 +125,16 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
    * @ordered
    */
   protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotations()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationModification> annotations;
 
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -330,6 +343,21 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
    * @generated
    */
   @Override
+  public EList<AnnotationModification> getAnnotations()
+  {
+    if (annotations == null)
+    {
+      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS);
+    }
+    return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Direction getDirection()
   {
     return direction;
@@ -451,6 +479,8 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     {
       case MOlocPackage.CLASS_SPECIFIER__ENUMERATION_LITERAL:
         return ((InternalEList<?>)getEnumerationLiteral()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -473,6 +503,8 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
         return getEnumerationLiteral();
       case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION:
         return isIsAnnotation();
+      case MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS:
+        return getAnnotations();
       case MOlocPackage.CLASS_SPECIFIER__DIRECTION:
         return getDirection();
       case MOlocPackage.CLASS_SPECIFIER__IS_ENUMERATION:
@@ -510,6 +542,10 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
         return;
       case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
+        return;
+      case MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
         return;
       case MOlocPackage.CLASS_SPECIFIER__DIRECTION:
         setDirection((Direction)newValue);
@@ -553,6 +589,9 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
       case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
         return;
+      case MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS:
+        getAnnotations().clear();
+        return;
       case MOlocPackage.CLASS_SPECIFIER__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
@@ -590,6 +629,8 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
         return enumerationLiteral != null && !enumerationLiteral.isEmpty();
       case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
       case MOlocPackage.CLASS_SPECIFIER__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case MOlocPackage.CLASS_SPECIFIER__IS_ENUMERATION:
@@ -636,11 +677,19 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
         default: return -1;
       }
     }
+    if (baseClass == annotation_modification_part.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
+        case MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == description.class)
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -698,11 +747,19 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
         default: return -1;
       }
     }
+    if (baseClass == annotation_modification_part.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.CLASS_SPECIFIER__ANNOTATIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == description.class)
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION;
         default: return -1;
       }
     }

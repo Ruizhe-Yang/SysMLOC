@@ -7,18 +7,18 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1 and u2"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments expression="&quot;and1&quot;" elementName="defaultComponentName"/>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;and&quot; ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if all inputs are &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations expression="&quot;and1&quot;" elementName="defaultComponentName"/>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;and&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if all inputs are &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Or" description="&quot;Logical 'or': y = u1 or u2&quot;" classNameEnd="Or">
@@ -26,18 +26,18 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1 or u2"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments expression="&quot;or1&quot;" elementName="defaultComponentName"/>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;or&quot; ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if at least one input is &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations expression="&quot;or1&quot;" elementName="defaultComponentName"/>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;or&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if at least one input is &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Xor" description="&quot;Logical 'xor': y = u1 xor u2&quot;" classNameEnd="Xor">
@@ -45,17 +45,17 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not ((u1 and u2) or (not u1 and not u2))"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100}, {100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;xor&quot; ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if exactly one input is &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;xor&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if exactly one input is &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Nor" description="&quot;Logical 'nor': y = not (u1 or u2)&quot;" classNameEnd="Nor">
@@ -63,17 +63,17 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not (u1 or u2)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100}, {100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;nor&quot; ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if none of the inputs is &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;nor&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if none of the inputs is &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Nand" description="&quot;Logical 'nand': y = not (u1 and u2)&quot;" classNameEnd="Nand">
@@ -81,17 +81,17 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not (u1 and u2)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100}, {100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;nand&quot; ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if at least one input is &lt;strong>false&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;nand&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if at least one input is &lt;strong>false&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Not" description="&quot;Logical 'not': y = not u&quot;" classNameEnd="Not">
@@ -99,18 +99,18 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not u"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments expression="&quot;not1&quot;" elementName="defaultComponentName"/>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;not&quot; ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the input is &lt;strong>false&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations expression="&quot;not1&quot;" elementName="defaultComponentName"/>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;not&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the input is &lt;strong>false&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Pre" description="&quot;Breaks algebraic loops by an infinitesimal small time delay (y = pre(u): event iteration continues until u = pre(u))&quot;" classNameEnd="Pre">
@@ -124,18 +124,18 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="pre(u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments expression="&quot;pre1&quot;" elementName="defaultComponentName"/>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;pre&quot; ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This block delays the Boolean input by an infinitesimal small time delay and&#xA;therefore breaks algebraic loops. In a network of logical blocks, in every&#xA;\&quot;closed connection loop\&quot; at least one logical block must have a delay,&#xA;since algebraic systems of Boolean equations are not solvable.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The \&quot;Pre\&quot; block returns the value of the \&quot;input\&quot; signal from the&#xA;last \&quot;event iteration\&quot;. The \&quot;event iteration\&quot; stops, once both&#xA;values are identical (u = pre(u)).&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations expression="&quot;pre1&quot;" elementName="defaultComponentName"/>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;pre&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This block delays the Boolean input by an infinitesimal small time delay and&#xA;therefore breaks algebraic loops. In a network of logical blocks, in every&#xA;\&quot;closed connection loop\&quot; at least one logical block must have a delay,&#xA;since algebraic systems of Boolean equations are not solvable.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The \&quot;Pre\&quot; block returns the value of the \&quot;input\&quot; signal from the&#xA;last \&quot;event iteration\&quot;. The \&quot;event iteration\&quot; stops, once both&#xA;values are identical (u = pre(u)).&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Edge" description="&quot;Output y is true, if the input u has a rising edge (y = edge(u))&quot;" classNameEnd="Edge">
@@ -149,18 +149,18 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="edge(u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments expression="&quot;edge1&quot;" elementName="defaultComponentName"/>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;edge&quot; ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Boolean input has a rising edge&#xA;from &lt;strong>false&lt;/strong> to &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations expression="&quot;edge1&quot;" elementName="defaultComponentName"/>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;edge&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Boolean input has a rising edge&#xA;from &lt;strong>false&lt;/strong> to &lt;strong>true&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="FallingEdge" description="&quot;Output y is true, if the input u has a falling edge (y = edge(not u))&quot;" classNameEnd="FallingEdge">
@@ -177,17 +177,17 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="edge(not_u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100}, {100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;falling&quot; ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Boolean input has a falling edge&#xA;from &lt;strong>true&lt;/strong> to &lt;strong>false&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;falling&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Boolean input has a falling edge&#xA;from &lt;strong>true&lt;/strong> to &lt;strong>false&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Change" description="&quot;Output y is true, if the input u has a rising or falling edge (y = change(u))&quot;" classNameEnd="Change">
@@ -201,18 +201,18 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="change(u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments expression="&quot;change1&quot;" elementName="defaultComponentName"/>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;change&quot; ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Boolean input has either a rising edge&#xA;from &lt;strong>false&lt;/strong> to &lt;strong>true&lt;/strong> or a falling edge from&#xA;&lt;strong>true&lt;/strong> to &lt;strong>false&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations expression="&quot;change1&quot;" elementName="defaultComponentName"/>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Text( extent={{-90,40},{90,-40}}, textString=&quot;change&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Boolean input has either a rising edge&#xA;from &lt;strong>false&lt;/strong> to &lt;strong>true&lt;/strong> or a falling edge from&#xA;&lt;strong>true&lt;/strong> to &lt;strong>false&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="GreaterThreshold" description="&quot;Output y is true, if input u is greater than threshold&quot;" classNameEnd="GreaterThreshold">
@@ -220,17 +220,17 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u > threshold"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100}, {100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Line( points={{-54,20},{-8,0},{-54,-20}}, thickness=0.5 ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Real input is greater than&#xA;parameter &lt;strong>threshold&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line( points={{-54,20},{-8,0},{-54,-20}}, thickness=0.5 ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Real input is greater than&#xA;parameter &lt;strong>threshold&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="GreaterEqualThreshold" description="&quot;Output y is true, if input u is greater or equal than threshold&quot;" classNameEnd="GreaterEqualThreshold">
@@ -238,17 +238,17 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u >= threshold"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100}, {100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Line( points={{-54,20},{-8,0},{-54,-20}}, thickness=0.5 ) , Line(points={{-54,-30},{-8,-30}}, thickness=0.5) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Real input is greater than or equal to&#xA;parameter &lt;strong>threshold&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line( points={{-54,20},{-8,0},{-54,-20}}, thickness=0.5 ) , Line(points={{-54,-30},{-8,-30}}, thickness=0.5) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Real input is greater than or equal to&#xA;parameter &lt;strong>threshold&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="LessThreshold" description="&quot;Output y is true, if input u is less than threshold&quot;" classNameEnd="LessThreshold">
@@ -256,17 +256,17 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u &lt; threshold"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100}, {100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Line(points={{-8,20},{-54,0},{-8,-20}}, thickness=0.5)}" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Real input is less than&#xA;parameter &lt;strong>threshold&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line(points={{-8,20},{-54,0},{-8,-20}}, thickness=0.5)}" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Real input is less than&#xA;parameter &lt;strong>threshold&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="LessEqualThreshold" description="&quot;Output y is true, if input u is less or equal than threshold&quot;" classNameEnd="LessEqualThreshold">
@@ -274,17 +274,17 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u &lt;= threshold"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100}, {100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Line(points={{-8,20},{-54,0},{-8,-20}}, thickness=0.5), Line(points={{-54,-30},{-8,-30}}, thickness=0.5) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Real input is less than or equal to&#xA;parameter &lt;strong>threshold&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line(points={{-8,20},{-54,0},{-8,-20}}, thickness=0.5), Line(points={{-54,-30},{-8,-30}}, thickness=0.5) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if the Real input is less than or equal to&#xA;parameter &lt;strong>threshold&lt;/strong>, otherwise&#xA;the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Greater" description="&quot;Output y is true, if input u1 is greater than input u2&quot;" classNameEnd="Greater">
@@ -292,17 +292,17 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1 > u2"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="false" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Ellipse(extent={{32,10},{52,-10}}, lineColor={0,0,127}), Line(points={{-100,-80},{42,-80},{42,0}}, color={0,0,127}), Line( points={{-54,20},{-8,0},{-54,-20}}, thickness=0.5 ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if Real input u1 is greater than&#xA;Real input u2, otherwise the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Ellipse(extent={{32,10},{52,-10}}, lineColor={0,0,127}), Line(points={{-100,-80},{42,-80},{42,0}}, color={0,0,127}), Line( points={{-54,20},{-8,0},{-54,-20}}, thickness=0.5 ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if Real input u1 is greater than&#xA;Real input u2, otherwise the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="GreaterEqual" description="&quot;Output y is true, if input u1 is greater or equal than input u2&quot;" classNameEnd="GreaterEqual">
@@ -310,17 +310,17 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1 >= u2"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="false" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Ellipse(extent={{32,10},{52,-10}}, lineColor={0,0,127}), Line(points={{-100,-80},{42,-80},{42,0}}, color={0,0,127}), Line( points={{-54,20},{-8,0},{-54,-20}}, thickness=0.5 ) , Line(points={{-54,-30},{-8,-30}}, thickness=0.5) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if Real input u1 is greater than or equal to&#xA;Real input u2, otherwise the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Ellipse(extent={{32,10},{52,-10}}, lineColor={0,0,127}), Line(points={{-100,-80},{42,-80},{42,0}}, color={0,0,127}), Line( points={{-54,20},{-8,0},{-54,-20}}, thickness=0.5 ) , Line(points={{-54,-30},{-8,-30}}, thickness=0.5) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if Real input u1 is greater than or equal to&#xA;Real input u2, otherwise the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Less" description="&quot;Output y is true, if input u1 is less than input u2&quot;" classNameEnd="Less">
@@ -328,17 +328,17 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1 &lt; u2"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="false" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Ellipse(extent={{32,10},{52,-10}}, lineColor={0,0,127}), Line(points={{-100,-80},{42,-80},{42,0}}, color={0,0,127}), Line(points={{-8,20},{-54,0},{-8,-20}}, thickness=0.5) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if Real input u1 is less than&#xA;Real input u2, otherwise the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Ellipse(extent={{32,10},{52,-10}}, lineColor={0,0,127}), Line(points={{-100,-80},{42,-80},{42,0}}, color={0,0,127}), Line(points={{-8,20},{-54,0},{-8,-20}}, thickness=0.5) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if Real input u1 is less than&#xA;Real input u2, otherwise the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="LessEqual" description="&quot;Output y is true, if input u1 is less or equal than input u2&quot;" classNameEnd="LessEqual">
@@ -346,39 +346,39 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1 &lt;= u2"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="false" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Ellipse(extent={{32,10},{52,-10}}, lineColor={0,0,127}), Line(points={{-100,-80},{42,-80},{42,0}}, color={0,0,127}), Line(points={{-8,20},{-54,0},{-8,-20}}, thickness=0.5), Line(points={{-54,-30},{-8,-30}}, thickness=0.5) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if Real input u1 is less than or equal to&#xA;Real input u2, otherwise the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Ellipse(extent={{32,10},{52,-10}}, lineColor={0,0,127}), Line(points={{-100,-80},{42,-80},{42,0}}, color={0,0,127}), Line(points={{-8,20},{-54,0},{-8,-20}}, thickness=0.5), Line(points={{-54,-30},{-8,-30}}, thickness=0.5) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output is &lt;strong>true&lt;/strong> if Real input u1 is less than or equal to&#xA;Real input u2, otherwise the output is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="ZeroCrossing" description="&quot;Trigger zero crossing of input u&quot;" classNameEnd="ZeroCrossing">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSO"/>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput">
         <component_list declarationName="u" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{ {-140,-20},{-100,20}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{ {-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanInput">
         <component_list declarationName="enable" description="&quot;Zero input crossing is triggered if the enable input signal is true&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{0,-120}" elementName="origin"/>
-              <arguments expression="{{-20,-20},{20,20}}" elementName="extent"/>
-              <arguments expression="90" elementName="rotation"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{0,-120}" elementName="origin"/>
+              <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+              <modifications expression="90" elementName="rotation"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isProtected="true">
@@ -396,17 +396,17 @@
         <equations xsi:type="mOloc:SimpleEquation" left="u_pos" right="enable and u >= 0"/>
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="change(u_pos) and not edge(enable) and not edge(disable)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output \&quot;y\&quot; is &lt;strong>true&lt;/strong> at the&#xA;time instant when the input \&quot;u\&quot; becomes&#xA;zero, provided the input \&quot;enable\&quot; is&#xA;&lt;strong>true&lt;/strong>. At all other time instants, the output \&quot;y\&quot; is &lt;strong>false&lt;/strong>.&#xA;If the input \&quot;u\&quot; is zero at a time instant when the \&quot;enable\&quot;&#xA;input changes its value, then the output y is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;p>&#xA;Note, that in the plot window of a Modelica simulator, the output of&#xA;this block is usually identically to &lt;strong>false&lt;/strong>, because the output&#xA;may only be &lt;strong>true&lt;/strong> at an event instant, but not during&#xA;continuous integration. In order to check that this component is&#xA;actually working as expected, one should connect its output to, e.g.,&#xA;component &lt;em>&lt;a href=\&quot;modelica://Modelica.Blocks.Discrete.TriggeredSampler\&quot;>Modelica.Blocks.Discrete.TriggeredSampler&lt;/a>&lt;/em>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100}, {100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Line(points={{-78,68},{-78,-80}}, color={192,192,192}), Polygon( points={{-78,90},{-86,68},{-70,68},{-78,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-88,0},{70,0}}, color={192,192,192}), Line(points={{-78,0},{-73.2,32.3},{-70,50.3},{-66.7,64.5},{-63.5,74.2}, {-60.3,79.3},{-57.1,79.6},{-53.9,75.3},{-50.7,67.1},{-46.6,52.2}, {-41,25.8},{-33,-13.9},{-28.2,-33.7},{-24.1,-45.9},{-20.1,-53.2}, {-16.1,-55.3},{-12.1,-52.5},{-8.1,-45.3},{-3.23,-32.1},{10.44, 13.7 } ,{15.3,26.4},{20.1,34.8},{24.1,38},{28.9,37.2},{33.8,31.8}, {40.2,19.4},{53.1,-10.5},{59.5,-21.2},{65.1,-25.9},{70.7,-25.9}, {77.2,-20.5},{82,-13.8} } , color={192,192,192}, smooth = Smooth.Bezier ) , Polygon( points={{92,0},{70,8},{70,-8},{92,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-36,-59},{-36,81}}, color={255,0,255}), Line(points={{6,-59},{6,81}}, color={255,0,255}), Line(points={{49,-59},{49,81}}, color={255,0,255}), Line(points={{-78,0},{70,0}}, color={255,0,255}) }" elementName="graphics"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output \&quot;y\&quot; is &lt;strong>true&lt;/strong> at the&#xA;time instant when the input \&quot;u\&quot; becomes&#xA;zero, provided the input \&quot;enable\&quot; is&#xA;&lt;strong>true&lt;/strong>. At all other time instants, the output \&quot;y\&quot; is &lt;strong>false&lt;/strong>.&#xA;If the input \&quot;u\&quot; is zero at a time instant when the \&quot;enable\&quot;&#xA;input changes its value, then the output y is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;p>&#xA;Note, that in the plot window of a Modelica simulator, the output of&#xA;this block is usually identically to &lt;strong>false&lt;/strong>, because the output&#xA;may only be &lt;strong>true&lt;/strong> at an event instant, but not during&#xA;continuous integration. In order to check that this component is&#xA;actually working as expected, one should connect its output to, e.g.,&#xA;component &lt;em>&lt;a href=\&quot;modelica://Modelica.Blocks.Discrete.TriggeredSampler\&quot;>Modelica.Blocks.Discrete.TriggeredSampler&lt;/a>&lt;/em>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line(points={{-78,68},{-78,-80}}, color={192,192,192}), Polygon( points={{-78,90},{-86,68},{-70,68},{-78,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-88,0},{70,0}}, color={192,192,192}), Line(points={{-78,0},{-73.2,32.3},{-70,50.3},{-66.7,64.5},{-63.5,74.2}, {-60.3,79.3},{-57.1,79.6},{-53.9,75.3},{-50.7,67.1},{-46.6,52.2}, {-41,25.8},{-33,-13.9},{-28.2,-33.7},{-24.1,-45.9},{-20.1,-53.2}, {-16.1,-55.3},{-12.1,-52.5},{-8.1,-45.3},{-3.23,-32.1},{10.44, 13.7 } ,{15.3,26.4},{20.1,34.8},{24.1,38},{28.9,37.2},{33.8,31.8}, {40.2,19.4},{53.1,-10.5},{59.5,-21.2},{65.1,-25.9},{70.7,-25.9}, {77.2,-20.5},{82,-13.8} } , color={192,192,192}, smooth = Smooth.Bezier ) , Polygon( points={{92,0},{70,8},{70,-8},{92,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-36,-59},{-36,81}}, color={255,0,255}), Line(points={{6,-59},{6,81}}, color={255,0,255}), Line(points={{49,-59},{49,81}}, color={255,0,255}), Line(points={{-78,0},{70,0}}, color={255,0,255}) }" elementName="graphics"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="LogicalSwitch" description="&quot;Logical Switch&quot;" classNameEnd="LogicalSwitch">
@@ -414,84 +414,84 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="if u2 then u1 else u3"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>The LogicalSwitch switches, depending on the&#xA;Boolean u2 connector (the middle connector),&#xA;between the two possible input signals&#xA;u1 (upper connector) and u3 (lower connector).&lt;/p>&#xA;&lt;p>If u2 is true, connector y is set equal to&#xA;u1, else it is set equal to u3.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100,100}}" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Line( points={{12,0},{100,0}}, color={255,0,255} ) , Line( points={{-100,0},{-40,0}}, color={255,0,255} ) , Line( points={{-100,-80},{-40,-80},{-40,-80}}, color={255,0,255} ) , Line(points={{-40,12},{-40,-10}}, color={255,0,255}), Line(points={{-100,80},{-40,80}}, color={255,0,255}), Line( points=DynamicSelect({{-40,80},{8,2}}, if u2 then {{-40,80},{8,2}} else {{-40,-80},{8,2}}), color={255,0,255}, thickness=1 ) , Ellipse(lineColor={0,0,127}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, extent={{2,-6},{18,8}} ) }" elementName="graphics"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>The LogicalSwitch switches, depending on the&#xA;Boolean u2 connector (the middle connector),&#xA;between the two possible input signals&#xA;u1 (upper connector) and u3 (lower connector).&lt;/p>&#xA;&lt;p>If u2 is true, connector y is set equal to&#xA;u1, else it is set equal to u3.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line( points={{12,0},{100,0}}, color={255,0,255} ) , Line( points={{-100,0},{-40,0}}, color={255,0,255} ) , Line( points={{-100,-80},{-40,-80},{-40,-80}}, color={255,0,255} ) , Line(points={{-40,12},{-40,-10}}, color={255,0,255}), Line(points={{-100,80},{-40,80}}, color={255,0,255}), Line( points=DynamicSelect({{-40,80},{8,2}}, if u2 then {{-40,80},{8,2}} else {{-40,-80},{8,2}}), color={255,0,255}, thickness=1 ) , Ellipse(lineColor={0,0,127}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, extent={{2,-6},{18,8}} ) }" elementName="graphics"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Switch" description="&quot;Switch between two Real signals&quot;" classNameEnd="Switch">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock"/>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput">
         <component_list declarationName="u1" description="&quot;Connector of first Real input signal&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,60},{-100,100}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,60},{-100,100}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanInput">
         <component_list declarationName="u2" description="&quot;Connector of Boolean input signal&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput">
         <component_list declarationName="u3" description="&quot;Connector of second Real input signal&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,-100},{-100,-60}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,-100},{-100,-60}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput">
         <component_list declarationName="y" description="&quot;Connector of Real output signal&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="if u2 then u1 else u3"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments expression="&quot;switch1&quot;" elementName="defaultComponentName"/>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>The Logical.Switch switches, depending on the&#xA;logical connector u2 (the middle connector)&#xA;between the two possible input signals&#xA;u1 (upper connector) and u3 (lower connector).&lt;/p>&#xA;&lt;p>If u2 is &lt;strong>true&lt;/strong>, the output signal y is set equal to&#xA;u1, else it is set equal to u3.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100,100}}" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Line(points={{12,0},{100,0}}, color={0,0,127} ) , Line(points={{-100,0},{-40,0}}, color={255,0,255} ) , Line(points={{-100,-80},{-40,-80},{-40,-80}}, color={0,0,127} ) , Line(points={{-40,12},{-40,-12}}, color={255,0,255} ) , Line(points={{-100,80},{-38,80}}, color={0,0,127} ) , Line(points=DynamicSelect({{-38,80},{6,2}}, if u2 then {{-38,80},{6,2}} else {{-38,-80},{6,2}}), color={0,0,127}, thickness=1 ) , Ellipse(lineColor={0,0,255}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, extent={{2,-8},{18,8}} ) }" elementName="graphics"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations expression="&quot;switch1&quot;" elementName="defaultComponentName"/>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>The Logical.Switch switches, depending on the&#xA;logical connector u2 (the middle connector)&#xA;between the two possible input signals&#xA;u1 (upper connector) and u3 (lower connector).&lt;/p>&#xA;&lt;p>If u2 is &lt;strong>true&lt;/strong>, the output signal y is set equal to&#xA;u1, else it is set equal to u3.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line(points={{12,0},{100,0}}, color={0,0,127} ) , Line(points={{-100,0},{-40,0}}, color={255,0,255} ) , Line(points={{-100,-80},{-40,-80},{-40,-80}}, color={0,0,127} ) , Line(points={{-40,12},{-40,-12}}, color={255,0,255} ) , Line(points={{-100,80},{-38,80}}, color={0,0,127} ) , Line(points=DynamicSelect({{-38,80},{6,2}}, if u2 then {{-38,80},{6,2}} else {{-38,-80},{6,2}}), color={0,0,127}, thickness=1 ) , Ellipse(lineColor={0,0,255}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, extent={{2,-8},{18,8}} ) }" elementName="graphics"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Hysteresis" description="&quot;Transform Real to Boolean signal with Hysteresis&quot;" classNameEnd="Hysteresis">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock"/>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list declarationName="uLow" description="&quot;If y=true and u&lt;uLow, switch to y=false&quot;">
-          <arguments expression="0" elementName="start"/>
+          <modifications expression="0" elementName="start"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list declarationName="uHigh" description="&quot;If y=false and u>uHigh, switch to y=true&quot;">
-          <arguments expression="1" elementName="start"/>
+          <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
@@ -499,20 +499,20 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput">
         <component_list declarationName="u" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{ {-140,-20},{-100,20}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{ {-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanOutput">
         <component_list declarationName="y" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -522,58 +522,58 @@
         <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(uHigh > uLow,&quot;Hysteresis limits wrong (uHigh &lt;= uLow)&quot;)"/>
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not pre(y) and u > uHigh or pre(y) and u >= uLow"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Diagram">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{Polygon( points={{-65,89},{-73,67},{-57,67},{-65,89}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Line(points={{-65,67},{-65,-81}}, color={192,192,192} ) ,Line(points={{-90,-70},{82,-70}}, color={192,192,192}), Polygon( points={{90,-70},{68,-62},{68,-78},{90,-70}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Text( extent={{70,-80},{94,-100}}, textColor={160,160,164}, textString=&quot;u&quot; ) ,Text( extent={{-65,93},{-12,75}}, textColor={160,160,164}, textString=&quot;y&quot; ) ,Line( points={{-80,-70},{30,-70}}, thickness=0.5 ) ,Line( points={{-50,10},{80,10}}, thickness=0.5 ) ,Line( points={{-50,10},{-50,-70}}, thickness=0.5 ) ,Line( points={{30,10},{30,-70}}, thickness=0.5 ) ,Line( points={{-10,-65},{0,-70},{-10,-75}}, thickness=0.5 ) ,Line( points={{-10,15},{-20,10},{-10,5}}, thickness=0.5 ) ,Line( points={{-55,-20},{-50,-30},{-44,-20}}, thickness=0.5 ) ,Line( points={{25,-30},{30,-19},{35,-30}}, thickness=0.5 ) ,Text( extent={{-99,2},{-70,18}}, textColor={160,160,164}, textString=&quot;true&quot; ) ,Text( extent={{-98,-87},{-66,-73}}, textColor={160,160,164}, textString=&quot;false&quot; ) ,Text( extent={{19,-87},{44,-70}}, textString=&quot;uHigh&quot; ) ,Text( extent={{-63,-88},{-38,-71}}, textString=&quot;uLow&quot; ) ,Line(points={{-69,10},{-60,10}}, color={160, 160,164 } ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Polygon( points={{-80,90},{-88,68},{-72,68},{-80,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-80,68},{-80,-29}}, color={192,192,192}), Polygon( points={{92,-29},{70,-21},{70,-37},{92,-29}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-79,-29},{84,-29}}, color={192,192,192}), Line(points={{-79,-29},{41,-29}}), Line(points={{-15,-21},{1,-29},{-15,-36}}), Line(points={{41,51},{41,-29}}), Line(points={{33,3},{41,22},{50,3}}), Line(points={{-49,51},{81,51}}), Line(points={{-4,59},{-19,51},{-4,43}}), Line(points={{-59,29},{-49,11},{-39,29}}), Line(points={{-49,51},{-49,-29}}), Text( extent={{-92,-49},{-9,-92}}, textColor={192,192,192}, textString=&quot;%uLow&quot; ) , Text( extent={{2,-49},{91,-92}}, textColor={192,192,192}, textString=&quot;%uHigh&quot; ) , Rectangle(extent={{-91,-49},{-8,-92}}, lineColor={192,192,192}), Line(points={{-49,-29},{-49,-49}}, color={192,192,192}), Rectangle(extent={{2,-49},{91,-92}}, lineColor={192,192,192}), Line(points={{41,-29},{41,-49}}, color={192,192,192}) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This block transforms a &lt;strong>Real&lt;/strong> input signal &lt;strong>u&lt;/strong> into a &lt;strong>Boolean&lt;/strong>&#xA;output signal &lt;strong>y&lt;/strong>:&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Logical/Hysteresis.png\&quot;&#xA;     alt=\&quot;Hysteresis.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&lt;li> When the output was &lt;strong>false&lt;/strong> and the input becomes&#xA;     &lt;strong>greater&lt;/strong> than parameter &lt;strong>uHigh&lt;/strong>, the output&#xA;     switches to &lt;strong>true&lt;/strong>.&lt;/li>&#xA;&lt;li> When the output was &lt;strong>true&lt;/strong> and the input becomes&#xA;     &lt;strong>less&lt;/strong> than parameter &lt;strong>uLow&lt;/strong>, the output&#xA;     switches to &lt;strong>false&lt;/strong>.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;The start value of the output is defined via parameter&#xA;&lt;strong>pre_y_start&lt;/strong> (= value of pre(y) at initial time).&#xA;The default value of this parameter is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Diagram">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Polygon( points={{-65,89},{-73,67},{-57,67},{-65,89}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Line(points={{-65,67},{-65,-81}}, color={192,192,192} ) ,Line(points={{-90,-70},{82,-70}}, color={192,192,192}), Polygon( points={{90,-70},{68,-62},{68,-78},{90,-70}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Text( extent={{70,-80},{94,-100}}, textColor={160,160,164}, textString=&quot;u&quot; ) ,Text( extent={{-65,93},{-12,75}}, textColor={160,160,164}, textString=&quot;y&quot; ) ,Line( points={{-80,-70},{30,-70}}, thickness=0.5 ) ,Line( points={{-50,10},{80,10}}, thickness=0.5 ) ,Line( points={{-50,10},{-50,-70}}, thickness=0.5 ) ,Line( points={{30,10},{30,-70}}, thickness=0.5 ) ,Line( points={{-10,-65},{0,-70},{-10,-75}}, thickness=0.5 ) ,Line( points={{-10,15},{-20,10},{-10,5}}, thickness=0.5 ) ,Line( points={{-55,-20},{-50,-30},{-44,-20}}, thickness=0.5 ) ,Line( points={{25,-30},{30,-19},{35,-30}}, thickness=0.5 ) ,Text( extent={{-99,2},{-70,18}}, textColor={160,160,164}, textString=&quot;true&quot; ) ,Text( extent={{-98,-87},{-66,-73}}, textColor={160,160,164}, textString=&quot;false&quot; ) ,Text( extent={{19,-87},{44,-70}}, textString=&quot;uHigh&quot; ) ,Text( extent={{-63,-88},{-38,-71}}, textString=&quot;uLow&quot; ) ,Line(points={{-69,10},{-60,10}}, color={160, 160,164 } ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Polygon( points={{-80,90},{-88,68},{-72,68},{-80,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-80,68},{-80,-29}}, color={192,192,192}), Polygon( points={{92,-29},{70,-21},{70,-37},{92,-29}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-79,-29},{84,-29}}, color={192,192,192}), Line(points={{-79,-29},{41,-29}}), Line(points={{-15,-21},{1,-29},{-15,-36}}), Line(points={{41,51},{41,-29}}), Line(points={{33,3},{41,22},{50,3}}), Line(points={{-49,51},{81,51}}), Line(points={{-4,59},{-19,51},{-4,43}}), Line(points={{-59,29},{-49,11},{-39,29}}), Line(points={{-49,51},{-49,-29}}), Text( extent={{-92,-49},{-9,-92}}, textColor={192,192,192}, textString=&quot;%uLow&quot; ) , Text( extent={{2,-49},{91,-92}}, textColor={192,192,192}, textString=&quot;%uHigh&quot; ) , Rectangle(extent={{-91,-49},{-8,-92}}, lineColor={192,192,192}), Line(points={{-49,-29},{-49,-49}}, color={192,192,192}), Rectangle(extent={{2,-49},{91,-92}}, lineColor={192,192,192}), Line(points={{41,-29},{41,-49}}, color={192,192,192}) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This block transforms a &lt;strong>Real&lt;/strong> input signal &lt;strong>u&lt;/strong> into a &lt;strong>Boolean&lt;/strong>&#xA;output signal &lt;strong>y&lt;/strong>:&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Logical/Hysteresis.png\&quot;&#xA;     alt=\&quot;Hysteresis.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&lt;li> When the output was &lt;strong>false&lt;/strong> and the input becomes&#xA;     &lt;strong>greater&lt;/strong> than parameter &lt;strong>uHigh&lt;/strong>, the output&#xA;     switches to &lt;strong>true&lt;/strong>.&lt;/li>&#xA;&lt;li> When the output was &lt;strong>true&lt;/strong> and the input becomes&#xA;     &lt;strong>less&lt;/strong> than parameter &lt;strong>uLow&lt;/strong>, the output&#xA;     switches to &lt;strong>false&lt;/strong>.&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;The start value of the output is defined via parameter&#xA;&lt;strong>pre_y_start&lt;/strong> (= value of pre(y) at initial time).&#xA;The default value of this parameter is &lt;strong>false&lt;/strong>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="OnOffController" description="&quot;On-off controller&quot;" classNameEnd="OnOffController">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock"/>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput">
         <component_list declarationName="reference" description="&quot;Connector of Real input signal used as reference signal&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,80},{-100,40}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,80},{-100,40}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput">
         <component_list declarationName="u" description="&quot;Connector of Real input signal used as measurement signal&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,-40},{-100,-80}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,-40},{-100,-80}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanOutput">
         <component_list declarationName="y" description="&quot;Connector of Real output signal used as actuator signal&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list declarationName="bandwidth" description="&quot;Bandwidth around reference signal&quot;">
-          <arguments expression="0.1" elementName="start"/>
+          <modifications expression="0.1" elementName="start"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
@@ -585,17 +585,17 @@
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="pre(y) and (u &lt; reference + bandwidth/2) or (u &lt; reference - bandwidth/ 2 )"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Text( extent={{-92,74},{44,44}}, textString=&quot;reference&quot; ) , Text( extent={{-94,-52},{-34,-74}}, textString=&quot;u&quot; ) , Line(points={{-76,-32},{-68,-6},{-50,26},{-24,40},{-2,42},{16,36},{32,28},{48,12},{58,-6},{68,-28}}, color={0,0,127} ) , Line(points={{-78,-2},{-6,18},{82,-12}}, color={255,0,0} ) , Line(points={{-78,12},{-6,30},{82,0}}), Line(points={{-78,-16},{-6,4},{82,-26}}), Line(points={{-82,-18},{-56,-18},{-56,-40},{64,-40},{64,-20},{90,-20}}, color={255,0,255} ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>The block OnOffController sets the output signal &lt;strong>y&lt;/strong> to &lt;strong>true&lt;/strong> when&#xA;the input signal &lt;strong>u&lt;/strong> falls below the &lt;strong>reference&lt;/strong> signal minus half of&#xA;the bandwidth and sets the output signal &lt;strong>y&lt;/strong> to &lt;strong>false&lt;/strong> when the input&#xA;signal &lt;strong>u&lt;/strong> exceeds the &lt;strong>reference&lt;/strong> signal plus half of the bandwidth.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Text( extent={{-92,74},{44,44}}, textString=&quot;reference&quot; ) , Text( extent={{-94,-52},{-34,-74}}, textString=&quot;u&quot; ) , Line(points={{-76,-32},{-68,-6},{-50,26},{-24,40},{-2,42},{16,36},{32,28},{48,12},{58,-6},{68,-28}}, color={0,0,127} ) , Line(points={{-78,-2},{-6,18},{82,-12}}, color={255,0,0} ) , Line(points={{-78,12},{-6,30},{82,0}}), Line(points={{-78,-16},{-6,4},{82,-26}}), Line(points={{-82,-18},{-56,-18},{-56,-40},{64,-40},{64,-20},{90,-20}}, color={255,0,255} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>The block OnOffController sets the output signal &lt;strong>y&lt;/strong> to &lt;strong>true&lt;/strong> when&#xA;the input signal &lt;strong>u&lt;/strong> falls below the &lt;strong>reference&lt;/strong> signal minus half of&#xA;the bandwidth and sets the output signal &lt;strong>y&lt;/strong> to &lt;strong>false&lt;/strong> when the input&#xA;signal &lt;strong>u&lt;/strong> exceeds the &lt;strong>reference&lt;/strong> signal plus half of the bandwidth.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="TriggeredTrapezoid" description="&quot;Triggered trapezoid generator&quot;" classNameEnd="TriggeredTrapezoid">
@@ -605,12 +605,12 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter">
         <component_list expression="0" declarationName="rising" description="&quot;Rising duration of trapezoid&quot;">
-          <arguments expression="0" elementName="min" isfinal="true"/>
+          <modifications expression="0" elementName="min" isfinal="true"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter">
         <component_list expression="rising" declarationName="falling" description="&quot;Falling duration of trapezoid&quot;">
-          <arguments expression="0" elementName="min" isfinal="true"/>
+          <modifications expression="0" elementName="min" isfinal="true"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
@@ -618,20 +618,20 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanInput">
         <component_list declarationName="u" description="&quot;Connector of Boolean input signal&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput">
         <component_list declarationName="y" description="&quot;Connector of Real output signal&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" isProtected="true">
@@ -651,37 +651,37 @@
           <whenEquations xsi:type="mOloc:SimpleEquation" left="T" right="if u and not (rising > 0) or not u and not (falling > 0) or not abs( amplitude) > 0 or initial() then time else time + (endValue - pre(y))/ rate"/>
         </equations>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100,100}}" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Line(points={{-60,-70},{-60,-70},{-30,40},{8,40},{40,-70},{40,-70}}, color={0,0,127} ) , Line(points={{-90,-70},{82,-70}}, color={192,192,192} ) , Line(points={{-80,68},{-80,-80}}, color={192,192,192} ) , Polygon(lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{90,-70},{68,-62},{68,-78},{90,-70}} ) , Polygon(lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{-80,90},{-88,68},{-72,68},{-80,90}} ) , Line(points={{-80,-70},{-60,-70},{-60,24},{8,24},{8,-70},{60,-70}}, color={255,0,255} ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>The block TriggeredTrapezoid has a Boolean input and a real&#xA;output signal and requires the parameters &lt;em>amplitude&lt;/em>,&#xA;&lt;em>rising&lt;/em>, &lt;em>falling&lt;/em> and &lt;em>offset&lt;/em>. The&#xA;output signal &lt;strong>y&lt;/strong> represents a trapezoidal signal dependent on the&#xA;input signal &lt;strong>u&lt;/strong>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Logical/TriggeredTrapezoid.png\&quot;&#xA;     alt=\&quot;TriggeredTrapezoid.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;p>The behaviour is as follows: Assume the initial input to be false. In this&#xA;case, the output will be &lt;em>offset&lt;/em>. After a rising edge (i.e., the input&#xA;changes from false to true), the output is rising during &lt;em>rising&lt;/em> to the&#xA;sum of &lt;em>offset&lt;/em> and &lt;em>amplitude&lt;/em>. In contrast, after a falling&#xA;edge (i.e., the input changes from true to false), the output is falling&#xA;during &lt;em>falling&lt;/em> to a value of &lt;em>offset&lt;/em>.&#xA;&lt;/p>&#xA;&lt;p>Note, that the case of edges before expiration of rising or falling is&#xA;handled properly.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line(points={{-60,-70},{-60,-70},{-30,40},{8,40},{40,-70},{40,-70}}, color={0,0,127} ) , Line(points={{-90,-70},{82,-70}}, color={192,192,192} ) , Line(points={{-80,68},{-80,-80}}, color={192,192,192} ) , Polygon(lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{90,-70},{68,-62},{68,-78},{90,-70}} ) , Polygon(lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{-80,90},{-88,68},{-72,68},{-80,90}} ) , Line(points={{-80,-70},{-60,-70},{-60,24},{8,24},{8,-70},{60,-70}}, color={255,0,255} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>The block TriggeredTrapezoid has a Boolean input and a real&#xA;output signal and requires the parameters &lt;em>amplitude&lt;/em>,&#xA;&lt;em>rising&lt;/em>, &lt;em>falling&lt;/em> and &lt;em>offset&lt;/em>. The&#xA;output signal &lt;strong>y&lt;/strong> represents a trapezoidal signal dependent on the&#xA;input signal &lt;strong>u&lt;/strong>.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Logical/TriggeredTrapezoid.png\&quot;&#xA;     alt=\&quot;TriggeredTrapezoid.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;p>The behaviour is as follows: Assume the initial input to be false. In this&#xA;case, the output will be &lt;em>offset&lt;/em>. After a rising edge (i.e., the input&#xA;changes from false to true), the output is rising during &lt;em>rising&lt;/em> to the&#xA;sum of &lt;em>offset&lt;/em> and &lt;em>amplitude&lt;/em>. In contrast, after a falling&#xA;edge (i.e., the input changes from true to false), the output is falling&#xA;during &lt;em>falling&lt;/em> to a value of &lt;em>offset&lt;/em>.&#xA;&lt;/p>&#xA;&lt;p>Note, that the case of edges before expiration of rising or falling is&#xA;handled properly.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Timer" description="&quot;Timer measuring the time from the time instant where the Boolean input became true&quot;" classNameEnd="Timer">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock"/>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanInput">
         <component_list declarationName="u" description="&quot;Connector of Boolean input signal&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput">
         <component_list declarationName="y" description="&quot;Connector of Real output signal&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isProtected="true">
@@ -696,51 +696,51 @@
         </equations>
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="if u then time - entryTime else 0.0"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100,100}}" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Line(points={{-90,-70},{82,-70}}, color={192,192,192} ) , Line(points={{-80,68},{-80,-80}}, color={192,192,192} ) , Polygon(lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{90,-70},{68,-62},{68,-78},{90,-70}} ) , Polygon(lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{-80,90},{-88,68},{-72,68},{-80,90}} ) , Line(points={{-80,-70},{-60,-70},{-60,-26},{38,-26},{38,-70},{66,-70}}, color={255,0,255} ) , Line(points={{-80,0},{-62,0},{40,90},{40,0},{68,0}}, color={0,0,127} ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>When the Boolean input &lt;strong>u&lt;/strong> becomes &lt;strong>true&lt;/strong>, the timer starts&#xA;and the output &lt;strong>y&lt;/strong> is the time that has elapsed since &lt;strong>u&lt;/strong> became &lt;strong>true&lt;/strong>.&#xA;When the input becomes &lt;strong>false&lt;/strong>, the timer stops and the output is reset to zero.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Logical/Timer.png\&quot;&#xA;     alt=\&quot;Timer.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line(points={{-90,-70},{82,-70}}, color={192,192,192} ) , Line(points={{-80,68},{-80,-80}}, color={192,192,192} ) , Polygon(lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{90,-70},{68,-62},{68,-78},{90,-70}} ) , Polygon(lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{-80,90},{-88,68},{-72,68},{-80,90}} ) , Line(points={{-80,-70},{-60,-70},{-60,-26},{38,-26},{38,-70},{66,-70}}, color={255,0,255} ) , Line(points={{-80,0},{-62,0},{40,90},{40,0},{68,0}}, color={0,0,127} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>When the Boolean input &lt;strong>u&lt;/strong> becomes &lt;strong>true&lt;/strong>, the timer starts&#xA;and the output &lt;strong>y&lt;/strong> is the time that has elapsed since &lt;strong>u&lt;/strong> became &lt;strong>true&lt;/strong>.&#xA;When the input becomes &lt;strong>false&lt;/strong>, the timer stops and the output is reset to zero.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Logical/Timer.png\&quot;&#xA;     alt=\&quot;Timer.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="LogicalDelay" description="&quot;Delay boolean signal&quot;" classNameEnd="LogicalDelay">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Icons.PartialBooleanBlock"/>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter">
         <component_list expression="0" declarationName="delayTime" description="&quot;Time delay&quot;">
-          <arguments expression="0" elementName="min" isfinal="true"/>
+          <modifications expression="0" elementName="min" isfinal="true"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanInput">
         <component_list declarationName="u" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanOutput">
         <component_list declarationName="y1" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{100,50},{120,70}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{100,50},{120,70}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanOutput">
         <component_list declarationName="y2" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{100,-70},{120,-50}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{100,-70},{120,-50}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isProtected="true">
@@ -756,13 +756,13 @@
         <equations xsi:type="mOloc:SimpleEquation" left="y1" right="if u then true else not (time >= tSwitch + delayTime)"/>
         <equations xsi:type="mOloc:SimpleEquation" left="y2" right="if not u then false else (time >= tSwitch + delayTime)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;When input &lt;code>u&lt;/code> gets true, output &lt;code>y1&lt;/code> gets immediately true, whereas output &lt;code>y2&lt;/code> gets true after &lt;code>delayTime&lt;/code>.&#xA;&lt;/p>&#xA;&lt;p>&#xA;When input &lt;code>u&lt;/code> gets false, output &lt;code>y1&lt;/code> gets false after &lt;code>delayTime&lt;/code>, whereas output &lt;code>y2&lt;/code> gets immediately false.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
-        <arguments elementName="Icon">
-          <arguments expression="{ Polygon(lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{-80,90},{-88,68},{-72,68},{-80,90}} ) , Line(points={{-80,68},{-80,-80}}, color={192,192,192} ) , Line(points={{-90,-70},{82,-70}}, color={192,192,192} ) , Polygon(lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{90,-70},{68,-62},{68,-78},{90,-70}} ) , Line(points={{-80,-10},{-60,-10},{-60,10},{40,10},{40,-10},{80,-10}}, color={255,0,255} ) , Line(points={{-80,50},{-60,50},{-60,70},{50,70},{50,50},{80,50}}, color={255,0,255} ) , Line(points={{-80,-70},{-50,-70},{-50,-50},{40,-50},{40,-70},{80,-70}}, color={255,0,255} ) , Line( points={{-60,70},{-60,-70}}, color={192,192,192}, pattern=LinePattern.Dot ) , Line( points={{40,70},{40,-70}}, color={192,192,192}, pattern=LinePattern.Dot ) }" elementName="graphics"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;When input &lt;code>u&lt;/code> gets true, output &lt;code>y1&lt;/code> gets immediately true, whereas output &lt;code>y2&lt;/code> gets true after &lt;code>delayTime&lt;/code>.&#xA;&lt;/p>&#xA;&lt;p>&#xA;When input &lt;code>u&lt;/code> gets false, output &lt;code>y1&lt;/code> gets false after &lt;code>delayTime&lt;/code>, whereas output &lt;code>y2&lt;/code> gets immediately false.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+        <annotations elementName="Icon">
+          <modifications expression="{ Polygon(lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{-80,90},{-88,68},{-72,68},{-80,90}} ) , Line(points={{-80,68},{-80,-80}}, color={192,192,192} ) , Line(points={{-90,-70},{82,-70}}, color={192,192,192} ) , Polygon(lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{90,-70},{68,-62},{68,-78},{90,-70}} ) , Line(points={{-80,-10},{-60,-10},{-60,10},{40,10},{40,-10},{80,-10}}, color={255,0,255} ) , Line(points={{-80,50},{-60,50},{-60,70},{50,70},{50,50},{80,50}}, color={255,0,255} ) , Line(points={{-80,-70},{-50,-70},{-50,-50},{40,-50},{40,-70},{80,-70}}, color={255,0,255} ) , Line( points={{-60,70},{-60,-70}}, color={192,192,192}, pattern=LinePattern.Dot ) , Line( points={{40,70},{40,-70}}, color={192,192,192}, pattern=LinePattern.Dot ) }" elementName="graphics"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="RSFlipFlop" description="&quot;A basic RS Flip Flop&quot;" classNameEnd="RSFlipFlop">
@@ -772,130 +772,130 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput">
         <component_list declarationName="Q" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{100,50},{120,70}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{100,50},{120,70}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput">
         <component_list declarationName="QI" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{100,-70},{120,-50}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{100,-70},{120,-50}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Nor">
         <component_list declarationName="nor" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-20,20},{0,40}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-20,20},{0,40}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Nor">
         <component_list declarationName="nor1" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-20,-20},{0,0}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-20,-20},{0,0}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Pre">
         <component_list declarationName="pre" isAnnotation="true">
-          <arguments expression="not (Qini)" elementName="pre_u_start"/>
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{10,20},{30,40}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <modifications expression="not (Qini)" elementName="pre_u_start"/>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{10,20},{30,40}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput">
         <component_list declarationName="S" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,40},{-100,80}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,40},{-100,80}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput">
         <component_list declarationName="R" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="nor1.y" right="nor.u2">
-          <arguments elementName="Line">
-            <arguments expression="{{1,-10},{40,-10},{40,-40}, {-60,-40},{-60,22},{-22,22} }" elementName="points"/>
-            <arguments expression="{255,0,255}" elementName="color"/>
-          </arguments>
+          <annotations elementName="Line">
+            <modifications expression="{{1,-10},{40,-10},{40,-40}, {-60,-40},{-60,22},{-22,22} }" elementName="points"/>
+            <modifications expression="{255,0,255}" elementName="color"/>
+          </annotations>
         </equations>
         <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="nor1.y" right="Q">
-          <arguments elementName="Line">
-            <arguments expression="{{1,-10},{60,-10},{60,60},{110, 60 } }" elementName="points"/>
-            <arguments expression="{255,0,255}" elementName="color"/>
-          </arguments>
+          <annotations elementName="Line">
+            <modifications expression="{{1,-10},{60,-10},{60,60},{110, 60 } }" elementName="points"/>
+            <modifications expression="{255,0,255}" elementName="color"/>
+          </annotations>
         </equations>
         <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="nor.y" right="pre.u">
-          <arguments elementName="Line">
-            <arguments expression="{{1,30},{8,30}}" elementName="points"/>
-            <arguments expression="{255,0,255}" elementName="color"/>
-          </arguments>
+          <annotations elementName="Line">
+            <modifications expression="{{1,30},{8,30}}" elementName="points"/>
+            <modifications expression="{255,0,255}" elementName="color"/>
+          </annotations>
         </equations>
         <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="pre.y" right="nor1.u1">
-          <arguments elementName="Line">
-            <arguments expression="{{31,30},{40,30},{40,10},{-40, 10 } ,{-40,-10},{-22,-10} }" elementName="points"/>
-            <arguments expression="{255,0,255}" elementName="color"/>
-          </arguments>
+          <annotations elementName="Line">
+            <modifications expression="{{31,30},{40,30},{40,10},{-40, 10 } ,{-40,-10},{-22,-10} }" elementName="points"/>
+            <modifications expression="{255,0,255}" elementName="color"/>
+          </annotations>
         </equations>
         <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="pre.y" right="QI">
-          <arguments elementName="Line">
-            <arguments expression="{{31,30},{80,30},{80,-60},{110,-60}}" elementName="points"/>
-            <arguments expression="{255,0,255}" elementName="color"/>
-          </arguments>
+          <annotations elementName="Line">
+            <modifications expression="{{31,30},{80,30},{80,-60},{110,-60}}" elementName="points"/>
+            <modifications expression="{255,0,255}" elementName="color"/>
+          </annotations>
         </equations>
         <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="S" right="nor.u1">
-          <arguments elementName="Line">
-            <arguments expression="{{-120,60},{-40,60},{-40,30},{-22,30}}" elementName="points"/>
-            <arguments expression="{255,0,255}" elementName="color"/>
-          </arguments>
+          <annotations elementName="Line">
+            <modifications expression="{{-120,60},{-40,60},{-40,30},{-22,30}}" elementName="points"/>
+            <modifications expression="{255,0,255}" elementName="color"/>
+          </annotations>
         </equations>
         <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" left="R" right="nor1.u2">
-          <arguments elementName="Line">
-            <arguments expression="{{-120,-60},{-40,-60},{-40,-18},{-22,-18}}" elementName="points"/>
-            <arguments expression="{255,0,255}" elementName="color"/>
-          </arguments>
+          <annotations elementName="Line">
+            <modifications expression="{{-120,-60},{-40,-60},{-40,-18},{-22,-18}}" elementName="points"/>
+            <modifications expression="{255,0,255}" elementName="color"/>
+          </annotations>
         </equations>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments expression="{ Text( extent={{-60,-30},{-20,-90}}, textString=&quot;R&quot; ) , Text( extent={{-62,90},{-22,30}}, textString=&quot;S&quot; ) , Text( extent={{20,90},{60,30}}, textString=&quot;Q&quot; ) , Text( extent={{6,-30},{66,-90}}, textString=&quot;Q!&quot; ) , Ellipse( extent={{-73,54},{-87,68}}, lineColor=DynamicSelect({235,235,235}, if S then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if S then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse( extent={{83,-53},{69,-67}}, lineColor=DynamicSelect({235,235,235}, if QI then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if QI then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse( extent={{-71,-52},{-85,-66}}, lineColor=DynamicSelect({235,235,235}, if R then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if R then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse( extent={{71,67},{85,53}}, lineColor=DynamicSelect({235,235,235}, if Q then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if Q then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output &lt;code>Q&lt;/code> is set by the input &lt;code>S&lt;/code>, is reset by the input &lt;code>R&lt;/code>, and keeps its value in between. &lt;code>QI&lt;/code> is the inverse of &lt;code>Q&lt;/code>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications expression="{ Text( extent={{-60,-30},{-20,-90}}, textString=&quot;R&quot; ) , Text( extent={{-62,90},{-22,30}}, textString=&quot;S&quot; ) , Text( extent={{20,90},{60,30}}, textString=&quot;Q&quot; ) , Text( extent={{6,-30},{66,-90}}, textString=&quot;Q!&quot; ) , Ellipse( extent={{-73,54},{-87,68}}, lineColor=DynamicSelect({235,235,235}, if S then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if S then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse( extent={{83,-53},{69,-67}}, lineColor=DynamicSelect({235,235,235}, if QI then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if QI then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse( extent={{-71,-52},{-85,-66}}, lineColor=DynamicSelect({235,235,235}, if R then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if R then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse( extent={{71,67},{85,53}}, lineColor=DynamicSelect({235,235,235}, if Q then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if Q then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output &lt;code>Q&lt;/code> is set by the input &lt;code>S&lt;/code>, is reset by the input &lt;code>R&lt;/code>, and keeps its value in between. &lt;code>QI&lt;/code> is the inverse of &lt;code>Q&lt;/code>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="TerminateSimulation" description="&quot;Terminate simulation if condition is fulfilled&quot;" classNameEnd="TerminateSimulation">
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput">
         <component_list expression="false" declarationName="condition" description="&quot;Terminate simulation when condition becomes true&quot;" isAnnotation="true">
-          <arguments elementName="Dialog"/>
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{200,-10},{220,10}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Dialog"/>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{200,-10},{220,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter">
@@ -906,27 +906,27 @@
           <whenEquations xsi:type="mOloc:FunctionEquation" component="terminate" function="(terminationText)"/>
         </equations>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-200,-20},{200,20}}" elementName="extent"/>
-            <arguments expression="0.2" elementName="initialScale"/>
-          </arguments>
-          <arguments expression="{ Rectangle(fillColor={235,235,235}, fillPattern=FillPattern.Solid, lineThickness=5, borderPattern=BorderPattern.Raised, extent={{-200,-20},{200,20}} ) , Text(extent={{-166,-15},{194,15}}, textString=&quot;%condition&quot; ) , Rectangle(fillColor={161,35,41}, fillPattern=FillPattern.Solid, borderPattern=BorderPattern.Raised, extent={{-194,-14},{-168,14}} ) , Text(textColor={0,0,255}, extent={{-200,22},{200,46}}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;In the parameter menu, a &lt;strong>time varying&lt;/strong> expression can be defined&#xA;via variable &lt;strong>condition&lt;/strong>, for example \&quot;condition = x &amp;lt; 0\&quot;,&#xA;where \&quot;x\&quot; is a variable that is declared in the model in which the&#xA;\&quot;TerminateSimulation\&quot; block is present.&#xA;If this expression becomes &lt;strong>true&lt;/strong>,&#xA;the simulation is (successfully) terminated. A termination message&#xA;explaining the reason for the termination can be given via&#xA;parameter \&quot;terminationText\&quot;.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-200,-20},{200,20}}" elementName="extent"/>
+            <modifications expression="0.2" elementName="initialScale"/>
+          </modifications>
+          <modifications expression="{ Rectangle(fillColor={235,235,235}, fillPattern=FillPattern.Solid, lineThickness=5, borderPattern=BorderPattern.Raised, extent={{-200,-20},{200,20}} ) , Text(extent={{-166,-15},{194,15}}, textString=&quot;%condition&quot; ) , Rectangle(fillColor={161,35,41}, fillPattern=FillPattern.Solid, borderPattern=BorderPattern.Raised, extent={{-194,-14},{-168,14}} ) , Text(textColor={0,0,255}, extent={{-200,22},{200,46}}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;In the parameter menu, a &lt;strong>time varying&lt;/strong> expression can be defined&#xA;via variable &lt;strong>condition&lt;/strong>, for example \&quot;condition = x &amp;lt; 0\&quot;,&#xA;where \&quot;x\&quot; is a variable that is declared in the model in which the&#xA;\&quot;TerminateSimulation\&quot; block is present.&#xA;If this expression becomes &lt;strong>true&lt;/strong>,&#xA;the simulation is (successfully) terminated. A termination message&#xA;explaining the reason for the termination can be given via&#xA;parameter \&quot;terminationText\&quot;.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This package provides blocks with Boolean input and output signals&#xA;to describe logical networks. A typical example for a logical&#xA;network built with package Logical is shown in the next figure:&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Logical/LogicalNetwork1.png\&quot;&#xA;     alt=\&quot;LogicalNetwork1.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The actual value of Boolean input and/or output signals is displayed&#xA;in the respective block icon as \&quot;circle\&quot;, where \&quot;white\&quot; color means&#xA;value &lt;strong>false&lt;/strong> and \&quot;green\&quot; color means value &lt;strong>true&lt;/strong>. These&#xA;values are visualized in a diagram animation.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
-      <arguments elementName="Icon">
-        <arguments expression="{Line( points={{-86,-22},{-50,-22},{-50,22},{48,22},{48,-22},{88,-24}}, color={255,0,255} ) }" elementName="graphics"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This package provides blocks with Boolean input and output signals&#xA;to describe logical networks. A typical example for a logical&#xA;network built with package Logical is shown in the next figure:&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Logical/LogicalNetwork1.png\&quot;&#xA;     alt=\&quot;LogicalNetwork1.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The actual value of Boolean input and/or output signals is displayed&#xA;in the respective block icon as \&quot;circle\&quot;, where \&quot;white\&quot; color means&#xA;value &lt;strong>false&lt;/strong> and \&quot;green\&quot; color means value &lt;strong>true&lt;/strong>. These&#xA;values are visualized in a diagram animation.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations elementName="Icon">
+        <modifications expression="{Line( points={{-86,-22},{-50,-22},{-50,22},{48,22},{48,-22},{88,-24}}, color={255,0,255} ) }" elementName="graphics"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

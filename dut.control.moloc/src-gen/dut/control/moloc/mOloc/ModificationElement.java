@@ -6,24 +6,24 @@ package dut.control.moloc.mOloc;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Argument</b></em>'.
+ * A representation of the model object '<em><b>Modification Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.Argument#isIsRedeclare <em>Is Redeclare</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.Argument#isIsEach <em>Is Each</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.Argument#isIsfinal <em>Isfinal</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.Argument#isIsReplaceable <em>Is Replaceable</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ModificationElement#isIsRedeclare <em>Is Redeclare</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ModificationElement#isIsEach <em>Is Each</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ModificationElement#isIsfinal <em>Isfinal</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ModificationElement#isIsReplaceable <em>Is Replaceable</em>}</li>
  * </ul>
  *
- * @see dut.control.moloc.mOloc.MOlocPackage#getArgument()
+ * @see dut.control.moloc.mOloc.MOlocPackage#getModificationElement()
  * @model
  * @generated
  */
-public interface Argument extends short_class_definition, class_prefixes, short_class_specifier, component_clause1, type_prefix, component_declaration1, declaration, modification, element_modification, constraining
+public interface ModificationElement extends short_class_definition, class_prefixes, short_class_specifier, component_clause1, type_prefix, component_declaration1, declaration, modification, element_modification, constraining
 {
   /**
    * Returns the value of the '<em><b>Is Redeclare</b></em>' attribute.
@@ -31,14 +31,14 @@ public interface Argument extends short_class_definition, class_prefixes, short_
    * <!-- end-user-doc -->
    * @return the value of the '<em>Is Redeclare</em>' attribute.
    * @see #setIsRedeclare(boolean)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getArgument_IsRedeclare()
+   * @see dut.control.moloc.mOloc.MOlocPackage#getModificationElement_IsRedeclare()
    * @model
    * @generated
    */
   boolean isIsRedeclare();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Argument#isIsRedeclare <em>Is Redeclare</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ModificationElement#isIsRedeclare <em>Is Redeclare</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Is Redeclare</em>' attribute.
@@ -53,14 +53,14 @@ public interface Argument extends short_class_definition, class_prefixes, short_
    * <!-- end-user-doc -->
    * @return the value of the '<em>Is Each</em>' attribute.
    * @see #setIsEach(boolean)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getArgument_IsEach()
+   * @see dut.control.moloc.mOloc.MOlocPackage#getModificationElement_IsEach()
    * @model
    * @generated
    */
   boolean isIsEach();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Argument#isIsEach <em>Is Each</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ModificationElement#isIsEach <em>Is Each</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Is Each</em>' attribute.
@@ -75,14 +75,14 @@ public interface Argument extends short_class_definition, class_prefixes, short_
    * <!-- end-user-doc -->
    * @return the value of the '<em>Isfinal</em>' attribute.
    * @see #setIsfinal(boolean)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getArgument_Isfinal()
+   * @see dut.control.moloc.mOloc.MOlocPackage#getModificationElement_Isfinal()
    * @model
    * @generated
    */
   boolean isIsfinal();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Argument#isIsfinal <em>Isfinal</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ModificationElement#isIsfinal <em>Isfinal</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Isfinal</em>' attribute.
@@ -97,14 +97,14 @@ public interface Argument extends short_class_definition, class_prefixes, short_
    * <!-- end-user-doc -->
    * @return the value of the '<em>Is Replaceable</em>' attribute.
    * @see #setIsReplaceable(boolean)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getArgument_IsReplaceable()
+   * @see dut.control.moloc.mOloc.MOlocPackage#getModificationElement_IsReplaceable()
    * @model
    * @generated
    */
   boolean isIsReplaceable();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Argument#isIsReplaceable <em>Is Replaceable</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.ModificationElement#isIsReplaceable <em>Is Replaceable</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Is Replaceable</em>' attribute.
@@ -113,4 +113,4 @@ public interface Argument extends short_class_definition, class_prefixes, short_
    */
   void setIsReplaceable(boolean value);
 
-} // Argument
+} // ModificationElement

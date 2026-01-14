@@ -3,9 +3,9 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
+import dut.control.moloc.mOloc.AnnotationModification;
 import dut.control.moloc.mOloc.MOlocPackage;
-import dut.control.moloc.mOloc.class_modification;
+import dut.control.moloc.mOloc.annotation_modification_part;
 import dut.control.moloc.mOloc.description;
 
 import java.util.Collection;
@@ -31,24 +31,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.descriptionImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.descriptionImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.descriptionImpl#getAnnotations <em>Annotations</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class descriptionImpl extends description_stringImpl implements description
 {
-  /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getArguments()
-   * @generated
-   * @ordered
-   */
-  protected EList<Argument> arguments;
-
   /**
    * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -70,6 +60,16 @@ public class descriptionImpl extends description_stringImpl implements descripti
   protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotations()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationModification> annotations;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -88,21 +88,6 @@ public class descriptionImpl extends description_stringImpl implements descripti
   protected EClass eStaticClass()
   {
     return MOlocPackage.Literals.DESCRIPTION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Argument> getArguments()
-  {
-    if (arguments == null)
-    {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.DESCRIPTION__ARGUMENTS);
-    }
-    return arguments;
   }
 
   /**
@@ -136,12 +121,27 @@ public class descriptionImpl extends description_stringImpl implements descripti
    * @generated
    */
   @Override
+  public EList<AnnotationModification> getAnnotations()
+  {
+    if (annotations == null)
+    {
+      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.DESCRIPTION__ANNOTATIONS);
+    }
+    return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case MOlocPackage.DESCRIPTION__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.DESCRIPTION__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -156,10 +156,10 @@ public class descriptionImpl extends description_stringImpl implements descripti
   {
     switch (featureID)
     {
-      case MOlocPackage.DESCRIPTION__ARGUMENTS:
-        return getArguments();
       case MOlocPackage.DESCRIPTION__IS_ANNOTATION:
         return isIsAnnotation();
+      case MOlocPackage.DESCRIPTION__ANNOTATIONS:
+        return getAnnotations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -175,12 +175,12 @@ public class descriptionImpl extends description_stringImpl implements descripti
   {
     switch (featureID)
     {
-      case MOlocPackage.DESCRIPTION__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
-        return;
       case MOlocPackage.DESCRIPTION__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
+        return;
+      case MOlocPackage.DESCRIPTION__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -196,11 +196,11 @@ public class descriptionImpl extends description_stringImpl implements descripti
   {
     switch (featureID)
     {
-      case MOlocPackage.DESCRIPTION__ARGUMENTS:
-        getArguments().clear();
-        return;
       case MOlocPackage.DESCRIPTION__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
+      case MOlocPackage.DESCRIPTION__ANNOTATIONS:
+        getAnnotations().clear();
         return;
     }
     super.eUnset(featureID);
@@ -216,10 +216,10 @@ public class descriptionImpl extends description_stringImpl implements descripti
   {
     switch (featureID)
     {
-      case MOlocPackage.DESCRIPTION__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
       case MOlocPackage.DESCRIPTION__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.DESCRIPTION__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -232,11 +232,12 @@ public class descriptionImpl extends description_stringImpl implements descripti
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
-    if (baseClass == class_modification.class)
+    if (baseClass == annotation_modification_part.class)
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.DESCRIPTION__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
+        case MOlocPackage.DESCRIPTION__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
         default: return -1;
       }
     }
@@ -251,11 +252,12 @@ public class descriptionImpl extends description_stringImpl implements descripti
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
-    if (baseClass == class_modification.class)
+    if (baseClass == annotation_modification_part.class)
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.DESCRIPTION__ARGUMENTS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.DESCRIPTION__ANNOTATIONS;
         default: return -1;
       }
     }

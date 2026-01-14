@@ -838,18 +838,18 @@ ruleclass_modification[EObject in_current]  returns [EObject current=in_current]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getClass_modificationAccess().getArgumentsArgumentParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getClass_modificationAccess().getModificationsModificationElementParserRuleCall_1_0());
 				}
-				lv_arguments_1_0=ruleArgument
+				lv_modifications_1_0=ruleModificationElement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getClass_modificationRule());
 					}
 					add(
 						$current,
-						"arguments",
-						lv_arguments_1_0,
-						"dut.control.moloc.MOloc.Argument");
+						"modifications",
+						lv_modifications_1_0,
+						"dut.control.moloc.MOloc.ModificationElement");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -862,18 +862,18 @@ ruleclass_modification[EObject in_current]  returns [EObject current=in_current]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getClass_modificationAccess().getArgumentsArgumentParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getClass_modificationAccess().getModificationsModificationElementParserRuleCall_2_1_0());
 					}
-					lv_arguments_3_0=ruleArgument
+					lv_modifications_3_0=ruleModificationElement
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getClass_modificationRule());
 						}
 						add(
 							$current,
-							"arguments",
-							lv_arguments_3_0,
-							"dut.control.moloc.MOloc.Argument");
+							"modifications",
+							lv_modifications_3_0,
+							"dut.control.moloc.MOloc.ModificationElement");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -882,6 +882,85 @@ ruleclass_modification[EObject in_current]  returns [EObject current=in_current]
 		otherlv_4=')'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getClass_modificationAccess().getRightParenthesisKeyword_3());
+		}
+	)
+;
+
+
+// Rule annotation_modification_part
+ruleannotation_modification_part[EObject in_current]  returns [EObject current=in_current]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_isAnnotation_0_0='annotation'
+				{
+					newLeafNode(lv_isAnnotation_0_0, grammarAccess.getAnnotation_modification_partAccess().getIsAnnotationAnnotationKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAnnotation_modification_partRule());
+					}
+					setWithLastConsumed($current, "isAnnotation", lv_isAnnotation_0_0 != null, "annotation");
+				}
+			)
+		)
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getAnnotation_modification_partAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationParserRuleCall_2_0());
+				}
+				lv_annotations_2_0=ruleAnnotationModification
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAnnotation_modification_partRule());
+					}
+					add(
+						$current,
+						"annotations",
+						lv_annotations_2_0,
+						"dut.control.moloc.MOloc.AnnotationModification");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_3=','
+			{
+				newLeafNode(otherlv_3, grammarAccess.getAnnotation_modification_partAccess().getCommaKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAnnotation_modification_partAccess().getAnnotationsAnnotationModificationParserRuleCall_3_1_0());
+					}
+					lv_annotations_4_0=ruleAnnotationModification
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAnnotation_modification_partRule());
+						}
+						add(
+							$current,
+							"annotations",
+							lv_annotations_4_0,
+							"dut.control.moloc.MOloc.AnnotationModification");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_5=')'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getAnnotation_modification_partAccess().getRightParenthesisKeyword_4());
 		}
 	)
 ;
@@ -1185,20 +1264,6 @@ ruledescription[EObject in_current]  returns [EObject current=in_current]
 			afterParserOrEnumRuleCall();
 		}
 		(
-			(
-				(
-					lv_isAnnotation_1_0='annotation'
-					{
-						newLeafNode(lv_isAnnotation_1_0, grammarAccess.getDescriptionAccess().getIsAnnotationAnnotationKeyword_1_0_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getDescriptionRule());
-						}
-						setWithLastConsumed($current, "isAnnotation", lv_isAnnotation_1_0 != null, "annotation");
-					}
-				)
-			)
 			{
 				/* */
 			}
@@ -1206,26 +1271,26 @@ ruledescription[EObject in_current]  returns [EObject current=in_current]
 				if ($current==null) {
 					$current = createModelElement(grammarAccess.getDescriptionRule());
 				}
-				newCompositeNode(grammarAccess.getDescriptionAccess().getClass_modificationParserRuleCall_1_1());
+				newCompositeNode(grammarAccess.getDescriptionAccess().getAnnotation_modification_partParserRuleCall_1());
 			}
-			this_class_modification_2=ruleclass_modification[$current]
+			this_annotation_modification_part_1=ruleannotation_modification_part[$current]
 			{
-				$current = $this_class_modification_2.current;
+				$current = $this_annotation_modification_part_1.current;
 				afterParserOrEnumRuleCall();
 			}
 		)?
 	)
 ;
 
-// Entry rule entryRuleArgument
-entryRuleArgument returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getArgumentRule()); }
-	iv_ruleArgument=ruleArgument
-	{ $current=$iv_ruleArgument.current; }
+// Entry rule entryRuleModificationElement
+entryRuleModificationElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getModificationElementRule()); }
+	iv_ruleModificationElement=ruleModificationElement
+	{ $current=$iv_ruleModificationElement.current; }
 	EOF;
 
-// Rule Argument
-ruleArgument returns [EObject current=null]
+// Rule ModificationElement
+ruleModificationElement returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1237,11 +1302,11 @@ ruleArgument returns [EObject current=null]
 			(
 				lv_isRedeclare_0_0='redeclare'
 				{
-					newLeafNode(lv_isRedeclare_0_0, grammarAccess.getArgumentAccess().getIsRedeclareRedeclareKeyword_0_0());
+					newLeafNode(lv_isRedeclare_0_0, grammarAccess.getModificationElementAccess().getIsRedeclareRedeclareKeyword_0_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getArgumentRule());
+						$current = createModelElement(grammarAccess.getModificationElementRule());
 					}
 					setWithLastConsumed($current, "isRedeclare", lv_isRedeclare_0_0 != null, "redeclare");
 				}
@@ -1251,11 +1316,11 @@ ruleArgument returns [EObject current=null]
 			(
 				lv_isEach_1_0='each'
 				{
-					newLeafNode(lv_isEach_1_0, grammarAccess.getArgumentAccess().getIsEachEachKeyword_1_0());
+					newLeafNode(lv_isEach_1_0, grammarAccess.getModificationElementAccess().getIsEachEachKeyword_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getArgumentRule());
+						$current = createModelElement(grammarAccess.getModificationElementRule());
 					}
 					setWithLastConsumed($current, "isEach", lv_isEach_1_0 != null, "each");
 				}
@@ -1265,11 +1330,11 @@ ruleArgument returns [EObject current=null]
 			(
 				lv_isfinal_2_0='final'
 				{
-					newLeafNode(lv_isfinal_2_0, grammarAccess.getArgumentAccess().getIsfinalFinalKeyword_2_0());
+					newLeafNode(lv_isfinal_2_0, grammarAccess.getModificationElementAccess().getIsfinalFinalKeyword_2_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getArgumentRule());
+						$current = createModelElement(grammarAccess.getModificationElementRule());
 					}
 					setWithLastConsumed($current, "isfinal", lv_isfinal_2_0 != null, "final");
 				}
@@ -1279,11 +1344,11 @@ ruleArgument returns [EObject current=null]
 			(
 				lv_isReplaceable_3_0='replaceable'
 				{
-					newLeafNode(lv_isReplaceable_3_0, grammarAccess.getArgumentAccess().getIsReplaceableReplaceableKeyword_3_0());
+					newLeafNode(lv_isReplaceable_3_0, grammarAccess.getModificationElementAccess().getIsReplaceableReplaceableKeyword_3_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getArgumentRule());
+						$current = createModelElement(grammarAccess.getModificationElementRule());
 					}
 					setWithLastConsumed($current, "isReplaceable", lv_isReplaceable_3_0 != null, "replaceable");
 				}
@@ -1295,9 +1360,9 @@ ruleArgument returns [EObject current=null]
 			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getArgumentRule());
+					$current = createModelElement(grammarAccess.getModificationElementRule());
 				}
-				newCompositeNode(grammarAccess.getArgumentAccess().getShort_class_definitionParserRuleCall_4_0());
+				newCompositeNode(grammarAccess.getModificationElementAccess().getShort_class_definitionParserRuleCall_4_0());
 			}
 			this_short_class_definition_4=ruleshort_class_definition[$current]
 			{
@@ -1310,9 +1375,9 @@ ruleArgument returns [EObject current=null]
 			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getArgumentRule());
+					$current = createModelElement(grammarAccess.getModificationElementRule());
 				}
-				newCompositeNode(grammarAccess.getArgumentAccess().getComponent_clause1ParserRuleCall_4_1());
+				newCompositeNode(grammarAccess.getModificationElementAccess().getComponent_clause1ParserRuleCall_4_1());
 			}
 			this_component_clause1_5=rulecomponent_clause1[$current]
 			{
@@ -1325,9 +1390,9 @@ ruleArgument returns [EObject current=null]
 			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getArgumentRule());
+					$current = createModelElement(grammarAccess.getModificationElementRule());
 				}
-				newCompositeNode(grammarAccess.getArgumentAccess().getElement_modificationParserRuleCall_4_2());
+				newCompositeNode(grammarAccess.getModificationElementAccess().getElement_modificationParserRuleCall_4_2());
 			}
 			this_element_modification_6=ruleelement_modification[$current]
 			{
@@ -1341,9 +1406,146 @@ ruleArgument returns [EObject current=null]
 			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getArgumentRule());
+					$current = createModelElement(grammarAccess.getModificationElementRule());
 				}
-				newCompositeNode(grammarAccess.getArgumentAccess().getConstrainingParserRuleCall_5());
+				newCompositeNode(grammarAccess.getModificationElementAccess().getConstrainingParserRuleCall_5());
+			}
+			this_constraining_7=ruleconstraining[$current]
+			{
+				$current = $this_constraining_7.current;
+				afterParserOrEnumRuleCall();
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleAnnotationModification
+entryRuleAnnotationModification returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAnnotationModificationRule()); }
+	iv_ruleAnnotationModification=ruleAnnotationModification
+	{ $current=$iv_ruleAnnotationModification.current; }
+	EOF;
+
+// Rule AnnotationModification
+ruleAnnotationModification returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_isRedeclare_0_0='redeclare'
+				{
+					newLeafNode(lv_isRedeclare_0_0, grammarAccess.getAnnotationModificationAccess().getIsRedeclareRedeclareKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+					}
+					setWithLastConsumed($current, "isRedeclare", lv_isRedeclare_0_0 != null, "redeclare");
+				}
+			)
+		)?
+		(
+			(
+				lv_isEach_1_0='each'
+				{
+					newLeafNode(lv_isEach_1_0, grammarAccess.getAnnotationModificationAccess().getIsEachEachKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+					}
+					setWithLastConsumed($current, "isEach", lv_isEach_1_0 != null, "each");
+				}
+			)
+		)?
+		(
+			(
+				lv_isfinal_2_0='final'
+				{
+					newLeafNode(lv_isfinal_2_0, grammarAccess.getAnnotationModificationAccess().getIsfinalFinalKeyword_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+					}
+					setWithLastConsumed($current, "isfinal", lv_isfinal_2_0 != null, "final");
+				}
+			)
+		)?
+		(
+			(
+				lv_isReplaceable_3_0='replaceable'
+				{
+					newLeafNode(lv_isReplaceable_3_0, grammarAccess.getAnnotationModificationAccess().getIsReplaceableReplaceableKeyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+					}
+					setWithLastConsumed($current, "isReplaceable", lv_isReplaceable_3_0 != null, "replaceable");
+				}
+			)
+		)?
+		(
+			{
+				/* */
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+				}
+				newCompositeNode(grammarAccess.getAnnotationModificationAccess().getShort_class_definitionParserRuleCall_4_0());
+			}
+			this_short_class_definition_4=ruleshort_class_definition[$current]
+			{
+				$current = $this_short_class_definition_4.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				/* */
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+				}
+				newCompositeNode(grammarAccess.getAnnotationModificationAccess().getComponent_clause1ParserRuleCall_4_1());
+			}
+			this_component_clause1_5=rulecomponent_clause1[$current]
+			{
+				$current = $this_component_clause1_5.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				/* */
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+				}
+				newCompositeNode(grammarAccess.getAnnotationModificationAccess().getElement_modificationParserRuleCall_4_2());
+			}
+			this_element_modification_6=ruleelement_modification[$current]
+			{
+				$current = $this_element_modification_6.current;
+				afterParserOrEnumRuleCall();
+			}
+		)
+		(
+			{
+				/* */
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getAnnotationModificationRule());
+				}
+				newCompositeNode(grammarAccess.getAnnotationModificationAccess().getConstrainingParserRuleCall_5());
 			}
 			this_constraining_7=ruleconstraining[$current]
 			{
@@ -2431,18 +2633,18 @@ ruleExtendsClause returns [EObject current=null]
 					(
 						(
 							{
-								newCompositeNode(grammarAccess.getExtendsClauseAccess().getTargumentsArgumentParserRuleCall_4_1_0_0_0());
+								newCompositeNode(grammarAccess.getExtendsClauseAccess().getExtendsModificationsModificationElementParserRuleCall_4_1_0_0_0());
 							}
-							lv_targuments_5_0=ruleArgument
+							lv_extendsModifications_5_0=ruleModificationElement
 							{
 								if ($current==null) {
 									$current = createModelElementForParent(grammarAccess.getExtendsClauseRule());
 								}
 								add(
 									$current,
-									"targuments",
-									lv_targuments_5_0,
-									"dut.control.moloc.MOloc.Argument");
+									"extendsModifications",
+									lv_extendsModifications_5_0,
+									"dut.control.moloc.MOloc.ModificationElement");
 								afterParserOrEnumRuleCall();
 							}
 						)
@@ -2477,18 +2679,18 @@ ruleExtendsClause returns [EObject current=null]
 						(
 							(
 								{
-									newCompositeNode(grammarAccess.getExtendsClauseAccess().getTargumentsArgumentParserRuleCall_4_1_1_1_0_0());
+									newCompositeNode(grammarAccess.getExtendsClauseAccess().getExtendsModificationsModificationElementParserRuleCall_4_1_1_1_0_0());
 								}
-								lv_targuments_8_0=ruleArgument
+								lv_extendsModifications_8_0=ruleModificationElement
 								{
 									if ($current==null) {
 										$current = createModelElementForParent(grammarAccess.getExtendsClauseRule());
 									}
 									add(
 										$current,
-										"targuments",
-										lv_targuments_8_0,
-										"dut.control.moloc.MOloc.Argument");
+										"extendsModifications",
+										lv_extendsModifications_8_0,
+										"dut.control.moloc.MOloc.ModificationElement");
 									afterParserOrEnumRuleCall();
 								}
 							)
@@ -2522,10 +2724,6 @@ ruleExtendsClause returns [EObject current=null]
 			}
 		)?
 		(
-			otherlv_11='annotation'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getExtendsClauseAccess().getAnnotationKeyword_5_0());
-			}
 			{
 				/* */
 			}
@@ -2533,17 +2731,17 @@ ruleExtendsClause returns [EObject current=null]
 				if ($current==null) {
 					$current = createModelElement(grammarAccess.getExtendsClauseRule());
 				}
-				newCompositeNode(grammarAccess.getExtendsClauseAccess().getClass_modificationParserRuleCall_5_1());
+				newCompositeNode(grammarAccess.getExtendsClauseAccess().getAnnotation_modification_partParserRuleCall_5());
 			}
-			this_class_modification_12=ruleclass_modification[$current]
+			this_annotation_modification_part_11=ruleannotation_modification_part[$current]
 			{
-				$current = $this_class_modification_12.current;
+				$current = $this_annotation_modification_part_11.current;
 				afterParserOrEnumRuleCall();
 			}
 		)?
-		otherlv_13=';'
+		otherlv_12=';'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getExtendsClauseAccess().getSemicolonKeyword_6());
+			newLeafNode(otherlv_12, grammarAccess.getExtendsClauseAccess().getSemicolonKeyword_6());
 		}
 	)
 ;
@@ -3064,20 +3262,6 @@ ruleExternalElement returns [EObject current=null]
 			}
 		)?
 		(
-			(
-				(
-					lv_isAnnotation_9_0='annotation'
-					{
-						newLeafNode(lv_isAnnotation_9_0, grammarAccess.getExternalElementAccess().getIsAnnotationAnnotationKeyword_4_0_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getExternalElementRule());
-						}
-						setWithLastConsumed($current, "isAnnotation", lv_isAnnotation_9_0 != null, "annotation");
-					}
-				)
-			)
 			{
 				/* */
 			}
@@ -3085,17 +3269,17 @@ ruleExternalElement returns [EObject current=null]
 				if ($current==null) {
 					$current = createModelElement(grammarAccess.getExternalElementRule());
 				}
-				newCompositeNode(grammarAccess.getExternalElementAccess().getClass_modificationParserRuleCall_4_1());
+				newCompositeNode(grammarAccess.getExternalElementAccess().getAnnotation_modification_partParserRuleCall_4());
 			}
-			this_class_modification_10=ruleclass_modification[$current]
+			this_annotation_modification_part_9=ruleannotation_modification_part[$current]
 			{
-				$current = $this_class_modification_10.current;
+				$current = $this_annotation_modification_part_9.current;
 				afterParserOrEnumRuleCall();
 			}
 		)?
-		otherlv_11=';'
+		otherlv_10=';'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getExternalElementAccess().getSemicolonKeyword_5());
+			newLeafNode(otherlv_10, grammarAccess.getExternalElementAccess().getSemicolonKeyword_5());
 		}
 	)
 ;
@@ -3116,10 +3300,6 @@ ruleAnnotationClause returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='annotation'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getAnnotationClauseAccess().getAnnotationKeyword_0());
-		}
 		{
 			/* */
 		}
@@ -3127,16 +3307,16 @@ ruleAnnotationClause returns [EObject current=null]
 			if ($current==null) {
 				$current = createModelElement(grammarAccess.getAnnotationClauseRule());
 			}
-			newCompositeNode(grammarAccess.getAnnotationClauseAccess().getClass_modificationParserRuleCall_1());
+			newCompositeNode(grammarAccess.getAnnotationClauseAccess().getAnnotation_modification_partParserRuleCall_0());
 		}
-		this_class_modification_1=ruleclass_modification[$current]
+		this_annotation_modification_part_0=ruleannotation_modification_part[$current]
 		{
-			$current = $this_class_modification_1.current;
+			$current = $this_annotation_modification_part_0.current;
 			afterParserOrEnumRuleCall();
 		}
-		otherlv_2=';'
+		otherlv_1=';'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getAnnotationClauseAccess().getSemicolonKeyword_2());
+			newLeafNode(otherlv_1, grammarAccess.getAnnotationClauseAccess().getSemicolonKeyword_1());
 		}
 	)
 ;

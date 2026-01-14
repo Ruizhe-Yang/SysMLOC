@@ -9,39 +9,11 @@ package dut.control.moloc.mOloc;
  * A representation of the model object '<em><b>description</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link dut.control.moloc.mOloc.description#isIsAnnotation <em>Is Annotation</em>}</li>
- * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getdescription()
  * @model
  * @generated
  */
-public interface description extends description_string, class_modification
+public interface description extends description_string, annotation_modification_part
 {
-  /**
-   * Returns the value of the '<em><b>Is Annotation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Is Annotation</em>' attribute.
-   * @see #setIsAnnotation(boolean)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getdescription_IsAnnotation()
-   * @model
-   * @generated
-   */
-  boolean isIsAnnotation();
-
-  /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.description#isIsAnnotation <em>Is Annotation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Is Annotation</em>' attribute.
-   * @see #isIsAnnotation()
-   * @generated
-   */
-  void setIsAnnotation(boolean value);
-
 } // description

@@ -67,7 +67,12 @@ fragment class_name:
 ;
 
 fragment class_modification:
-	'(' arguments+=Argument ( ',' arguments+=Argument )* ')'
+	'(' modifications+=ModificationElement ( ',' modifications+=ModificationElement )* ')'
+;
+
+fragment annotation_modification_part:
+	isAnnotation?='annotation'
+	'(' annotations+=AnnotationModification ( ',' annotations+=AnnotationModification )* ')'
 ;
 
 fragment description_string:
@@ -103,10 +108,24 @@ EnumerationLiteral:
 ;
 
 fragment description:
-	description_string ( isAnnotation?='annotation' class_modification)?
+	description_string 
+	//	( isAnnotation?='annotation' class_modification)?
+	annotation_modification_part?
 ;
 
-Argument:
+ModificationElement: // Argument
+	( isRedeclare ?= 'redeclare')?
+	( isEach ?= 'each' )?
+	( isfinal ?= 'final' )?
+	( isReplaceable ?= 'replaceable' )? 
+	( short_class_definition 
+	| component_clause1 
+	| element_modification 
+	)
+	constraining?
+;
+
+AnnotationModification: // Argument
 	( isRedeclare ?= 'redeclare')?
 	( isEach ?= 'each' )?
 	( isfinal ?= 'final' )?
@@ -154,7 +173,7 @@ fragment declaration:
 
 fragment array_subscripts:
 	subscripts=ArraySubscripts
-//	'[' subscript+=Subscript (',' subscript+=Subscript)* ']'
+	//	'[' subscript+=Subscript (',' subscript+=Subscript)* ']'
 ;
 
 ArraySubscripts:
@@ -211,8 +230,9 @@ ExtendsClause:
 	( isProtected ?= 'protected' )?
 	'extends' 
 	type_specifier 
-	( '(' (( targuments+=Argument | breaks+=Break ) (',' ( targuments+=Argument | breaks+=Break ))* )? ')')?
-	( 'annotation' class_modification )?
+	( '(' (( extendsModifications+=ModificationElement | breaks+=Break ) (',' ( extendsModifications+=ModificationElement | breaks+=Break ))* )? ')')?
+	//	( 'annotation' class_modification )?
+	annotation_modification_part?
 	';'
 ;
 
@@ -237,7 +257,7 @@ GeneralClause:
 		component_list+=Component_declaration (',' component_list+=Component_declaration)*
 	)
 	constraining?
-//	description?
+	//	description?
 	';'
 ;
 
@@ -253,13 +273,14 @@ ExternalElement:
 	(language_specification=STRING)?
 	//[fatal] rule ruleTerm has non-LL(*) decision due to recursive rule invocations reachable from alts 1,2.
 	( (ref=Component_reference '=')? refValue=IDENT '(' (expressionList=ExpressionList)? ')')?
-	( isAnnotation?='annotation' class_modification )?
+	//	( isAnnotation?='annotation' class_modification )?
+	annotation_modification_part?
 	';'
 ;
 
 AnnotationClause:
-	'annotation' 
-	class_modification 
+	//	'annotation' class_modification 
+	annotation_modification_part
 	';'
 ;
 
@@ -558,12 +579,10 @@ terminal STRING returns Ecore::EString:
 	"\"" ( S_CHAR | S_ESCAPE )* "\""
 ;
 
+//terminal ANY_OTHER: .;
 terminal ML_COMMENT: '/*'->'*/';
 terminal SL_COMMENT: '//' !('\n'|'\r')* ('\r'? '\n')?;
 terminal WS: (' ' | '\t' | '\r' | '\n')+;
-//terminal ANY_OTHER: .;
-
-// terminal fragments
 terminal DIGIT: "0".."9";
 terminal UNSIGNED_INTEGER: DIGIT+;
 terminal S_ESCAPE: "\\" ("'" | "\"" | "?" | "\\" | "a" | "b" | "f" | "n" | "r" | "t" | "v");

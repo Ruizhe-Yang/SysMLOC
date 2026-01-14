@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.class_modification#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.class_modification#getModifications <em>Modifications</em>}</li>
  * </ul>
  *
  * @see dut.control.moloc.mOloc.MOlocPackage#getclass_modification()
@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface class_modification extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Arguments</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.moloc.mOloc.Argument}.
+   * Returns the value of the '<em><b>Modifications</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.moloc.mOloc.ModificationElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Arguments</em>' containment reference list.
-   * @see dut.control.moloc.mOloc.MOlocPackage#getclass_modification_Arguments()
+   * @return the value of the '<em>Modifications</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getclass_modification_Modifications()
    * @model containment="true"
    * @generated
    */
-  EList<Argument> getArguments();
+  EList<ModificationElement> getModifications();
 
 } // class_modification

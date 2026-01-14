@@ -6,7 +6,7 @@
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Limiter" description="&quot;Limit the range of a signal&quot;" classNameEnd="Limiter">
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list declarationName="uMax" description="&quot;Upper limits of input signals&quot;">
-          <arguments expression="1" elementName="start"/>
+          <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
@@ -14,21 +14,21 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
         <component_list expression="false" declarationName="strict" description="&quot;= true, if strict limits with noEvent(..)&quot;" isAnnotation="true">
-          <arguments expression="true" elementName="Evaluate"/>
-          <arguments elementName="choices">
-            <arguments expression="true" elementName="checkBox"/>
-          </arguments>
-          <arguments elementName="Dialog">
-            <arguments expression="&quot;Advanced&quot;" elementName="tab"/>
-          </arguments>
+          <annotations expression="true" elementName="Evaluate"/>
+          <annotations elementName="choices">
+            <modifications expression="true" elementName="checkBox"/>
+          </annotations>
+          <annotations elementName="Dialog">
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Types.LimiterHomotopy" parameterType="parameter">
         <component_list expression="Modelica.Blocks.Types.LimiterHomotopy.Linear" declarationName="homotopyType" description="&quot;Simplified model for homotopy-based initialization&quot;" isAnnotation="true">
-          <arguments expression="true" elementName="Evaluate"/>
-          <arguments elementName="Dialog">
-            <arguments expression="&quot;Initialization&quot;" elementName="group"/>
-          </arguments>
+          <annotations expression="true" elementName="Evaluate"/>
+          <annotations elementName="Dialog">
+            <modifications expression="&quot;Initialization&quot;" elementName="group"/>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO"/>
@@ -49,64 +49,64 @@
           </elseEquations>
         </equations>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The Limiter block passes its input signal as output signal&#xA;as long as the input is within the specified upper and lower&#xA;limits. If this is not the case, the corresponding limits are passed&#xA;as output.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The parameter &lt;code>homotopyType&lt;/code> in the Advanced tab specifies the&#xA;simplified behaviour if homotopy-based initialization is used:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;code>NoHomotopy&lt;/code>: the actual expression with limits is used&lt;/li>&#xA;&lt;li>&lt;code>Linear&lt;/code>: a linear behaviour y = u is assumed (default option)&lt;/li>&#xA;&lt;li>&lt;code>UpperLimit&lt;/code>: it is assumed that the output is stuck at the upper limit u = uMax&lt;/li>&#xA;&lt;li>&lt;code>LowerLimit&lt;/code>: it is assumed that the output is stuck at the lower limit u = uMin&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;If it is known a priori in which region the input signal will be located, this option can help&#xA;a lot by removing one strong nonlinearity from the initialization problem.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100,100}}" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Line(points={{0,-90},{0,68}}, color={192,192,192}), Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{68,0}}, color={192,192,192}), Polygon( points={{90,0},{68,-8},{68,8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-80,-70},{-50,-70},{50,70},{80,70}}), Text( extent={{-150,-150},{150,-110}}, textString=&quot;uMax=%uMax&quot; ) , Line( visible=strict, points={{50,70},{80,70}}, color={255,0,0} ) , Line( visible=strict, points={{-80,-70},{-50,-70}}, color={255,0,0} ) }" elementName="graphics"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The Limiter block passes its input signal as output signal&#xA;as long as the input is within the specified upper and lower&#xA;limits. If this is not the case, the corresponding limits are passed&#xA;as output.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The parameter &lt;code>homotopyType&lt;/code> in the Advanced tab specifies the&#xA;simplified behaviour if homotopy-based initialization is used:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;code>NoHomotopy&lt;/code>: the actual expression with limits is used&lt;/li>&#xA;&lt;li>&lt;code>Linear&lt;/code>: a linear behaviour y = u is assumed (default option)&lt;/li>&#xA;&lt;li>&lt;code>UpperLimit&lt;/code>: it is assumed that the output is stuck at the upper limit u = uMax&lt;/li>&#xA;&lt;li>&lt;code>LowerLimit&lt;/code>: it is assumed that the output is stuck at the lower limit u = uMin&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;If it is known a priori in which region the input signal will be located, this option can help&#xA;a lot by removing one strong nonlinearity from the initialization problem.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line(points={{0,-90},{0,68}}, color={192,192,192}), Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{68,0}}, color={192,192,192}), Polygon( points={{90,0},{68,-8},{68,8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-80,-70},{-50,-70},{50,70},{80,70}}), Text( extent={{-150,-150},{150,-110}}, textString=&quot;uMax=%uMax&quot; ) , Line( visible=strict, points={{50,70},{80,70}}, color={255,0,0} ) , Line( visible=strict, points={{-80,-70},{-50,-70}}, color={255,0,0} ) }" elementName="graphics"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="VariableLimiter" description="&quot;Limit the range of a signal with variable limits&quot;" classNameEnd="VariableLimiter">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO"/>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
         <component_list expression="false" declarationName="strict" description="&quot;= true, if strict limits with noEvent(..)&quot;" isAnnotation="true">
-          <arguments expression="true" elementName="Evaluate"/>
-          <arguments elementName="choices">
-            <arguments expression="true" elementName="checkBox"/>
-          </arguments>
-          <arguments elementName="Dialog">
-            <arguments expression="&quot;Advanced&quot;" elementName="tab"/>
-          </arguments>
+          <annotations expression="true" elementName="Evaluate"/>
+          <annotations elementName="choices">
+            <modifications expression="true" elementName="checkBox"/>
+          </annotations>
+          <annotations elementName="Dialog">
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Types.VariableLimiterHomotopy" parameterType="parameter">
         <component_list expression="Modelica.Blocks.Types.VariableLimiterHomotopy.Linear" declarationName="homotopyType" description="&quot;Simplified model for homotopy-based initialization&quot;" isAnnotation="true">
-          <arguments expression="true" elementName="Evaluate"/>
-          <arguments elementName="Dialog">
-            <arguments expression="&quot;Initialization&quot;" elementName="group"/>
-          </arguments>
+          <annotations expression="true" elementName="Evaluate"/>
+          <annotations elementName="Dialog">
+            <modifications expression="&quot;Initialization&quot;" elementName="group"/>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list expression="0" declarationName="ySimplified" description="&quot;Fixed value of output in simplified model&quot;" isAnnotation="true">
-          <arguments elementName="Dialog">
-            <arguments expression="&quot;Advanced&quot;" elementName="tab"/>
-            <arguments expression="homotopyType == Modelica.Blocks.Types.VariableLimiterHomotopy.Fixed" elementName="enable"/>
-          </arguments>
+          <annotations elementName="Dialog">
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+            <modifications expression="homotopyType == Modelica.Blocks.Types.VariableLimiterHomotopy.Fixed" elementName="enable"/>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.RealInput">
         <component_list declarationName="limit1" description="&quot;Connector of Real input signal used as maximum of input u&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,60},{-100,100}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,60},{-100,100}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.RealInput">
         <component_list declarationName="limit2" description="&quot;Connector of Real input signal used as minimum of input u&quot;" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,-100},{-100,-60}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,-100},{-100,-60}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isProtected="true">
@@ -126,17 +126,17 @@
           </elseEquations>
         </equations>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The Limiter block passes its input signal as output signal&#xA;as long as the input is within the upper and lower&#xA;limits specified by the two additional inputs limit1 and&#xA;limit2. If this is not the case, the corresponding limit&#xA;is passed as output.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The parameter &lt;code>homotopyType&lt;/code> in the Advanced tab specifies the&#xA;simplified behaviour if homotopy-based initialization is used:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;code>NoHomotopy&lt;/code>: the actual expression with limits is used&lt;/li>&#xA;&lt;li>&lt;code>Linear&lt;/code>: a linear behaviour y = u is assumed (default option)&lt;/li>&#xA;&lt;li>&lt;code>Fixed&lt;/code>: it is assumed that the output is fixed at the value &lt;code>ySimplified&lt;/code>&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;If it is known a priori in which region the input signal will be located, this option can help&#xA;a lot by removing one strong nonlinearity from the initialization problem.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Line(points={{0,-90},{0,68}}, color={192,192,192}), Line(points={{-90,0},{68,0}}, color={192,192,192}), Polygon( points={{90,0},{68,-8},{68,8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-80,-70},{-50,-70},{50,70},{80,70}}), Line(points={{-100,80},{66,80},{66,70}}, color={0,0,127}), Line(points={{-100,-80},{-64,-80},{-64,-70}}, color={0,0,127}), Polygon(points={{-64,-70},{-66,-74},{-62,-74},{-64,-70}}, lineColor={ 0,0,127} ) , Polygon(points={{66,70},{64,74},{68,74},{66,70}}, lineColor={0,0,127}), Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line( visible=strict, points={{50,70},{80,70}}, color={255,0,0} ) , Line( visible=strict, points={{-80,-70},{-50,-70}}, color={255,0,0} ) }" elementName="graphics"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The Limiter block passes its input signal as output signal&#xA;as long as the input is within the upper and lower&#xA;limits specified by the two additional inputs limit1 and&#xA;limit2. If this is not the case, the corresponding limit&#xA;is passed as output.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The parameter &lt;code>homotopyType&lt;/code> in the Advanced tab specifies the&#xA;simplified behaviour if homotopy-based initialization is used:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;code>NoHomotopy&lt;/code>: the actual expression with limits is used&lt;/li>&#xA;&lt;li>&lt;code>Linear&lt;/code>: a linear behaviour y = u is assumed (default option)&lt;/li>&#xA;&lt;li>&lt;code>Fixed&lt;/code>: it is assumed that the output is fixed at the value &lt;code>ySimplified&lt;/code>&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;If it is known a priori in which region the input signal will be located, this option can help&#xA;a lot by removing one strong nonlinearity from the initialization problem.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line(points={{0,-90},{0,68}}, color={192,192,192}), Line(points={{-90,0},{68,0}}, color={192,192,192}), Polygon( points={{90,0},{68,-8},{68,8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-80,-70},{-50,-70},{50,70},{80,70}}), Line(points={{-100,80},{66,80},{66,70}}, color={0,0,127}), Line(points={{-100,-80},{-64,-80},{-64,-70}}, color={0,0,127}), Polygon(points={{-64,-70},{-66,-74},{-62,-74},{-64,-70}}, lineColor={ 0,0,127} ) , Polygon(points={{66,70},{64,74},{68,74},{66,70}}, lineColor={0,0,127}), Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line( visible=strict, points={{50,70},{80,70}}, color={255,0,0} ) , Line( visible=strict, points={{-80,-70},{-50,-70}}, color={255,0,0} ) }" elementName="graphics"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="SlewRateLimiter" description="&quot;Limits the slew rate of a signal&quot;" classNameEnd="SlewRateLimiter">
@@ -144,43 +144,43 @@
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.small"/>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list expression="1" declarationName="Rising" description="&quot;Maximum rising slew rate [+small..+inf) [1/s]&quot;">
-          <arguments expression="small" elementName="min"/>
+          <modifications expression="small" elementName="min"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list expression="-Rising" declarationName="Falling" description="&quot;Maximum falling slew rate (-inf..-small] [1/s]&quot;">
-          <arguments expression="-small" elementName="max"/>
+          <modifications expression="-small" elementName="max"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter">
         <component_list expression="0.001" declarationName="Td" description="&quot;Derivative time constant&quot;">
-          <arguments expression="small" elementName="min"/>
+          <modifications expression="small" elementName="min"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Init" parameterType="parameter">
         <component_list expression="Modelica.Blocks.Types.Init.SteadyState" declarationName="initType" description="&quot;Type of initialization (SteadyState implies y = u)&quot;" isAnnotation="true">
-          <arguments expression="true" elementName="Evaluate"/>
-          <arguments elementName="Dialog">
-            <arguments expression="&quot;Initialization&quot;" elementName="group"/>
-          </arguments>
+          <annotations expression="true" elementName="Evaluate"/>
+          <annotations elementName="Dialog">
+            <modifications expression="&quot;Initialization&quot;" elementName="group"/>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list expression="0" declarationName="y_start" description="&quot;Initial or guess value of output (= state)&quot;" isAnnotation="true">
-          <arguments elementName="Dialog">
-            <arguments expression="&quot;Initialization&quot;" elementName="group"/>
-          </arguments>
+          <annotations elementName="Dialog">
+            <modifications expression="&quot;Initialization&quot;" elementName="group"/>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
         <component_list expression="false" declarationName="strict" description="&quot;= true, if strict limits with noEvent(..)&quot;" isAnnotation="true">
-          <arguments expression="true" elementName="Evaluate"/>
-          <arguments elementName="choices">
-            <arguments expression="true" elementName="checkBox"/>
-          </arguments>
-          <arguments elementName="Dialog">
-            <arguments expression="&quot;Advanced&quot;" elementName="tab"/>
-          </arguments>
+          <annotations expression="true" elementName="Evaluate"/>
+          <annotations elementName="choices">
+            <modifications expression="true" elementName="checkBox"/>
+          </annotations>
+          <annotations elementName="Dialog">
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isProtected="true">
@@ -199,20 +199,20 @@
           <elseEquations xsi:type="mOloc:SimpleEquation" left="der(y)" right="if val&lt;Falling then Falling else if val>Rising then Rising else val"/>
         </equations>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Icon">
-          <arguments expression="{ Line(points={{-90,0},{68,0}}, color={192,192,192}), Line(points={{0,-90},{0,68}}, color={192,192,192}), Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Polygon( points={{90,0},{68,-8},{68,8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line( points={{-50,-70},{50,70}}) , Line( visible=strict, points={{50,70},{-50,-70}}, color={255,0,0} ) }" elementName="graphics"/>
-        </arguments>
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>The &lt;code>SlewRateLimiter&lt;/code> block limits the slew rate of its input signal in the range of &lt;code>[Falling, Rising]&lt;/code>.&lt;/p>&#xA;&lt;p>To ensure this for arbitrary inputs and in order to produce a differential output, the input is numerically differentiated&#xA;with derivative time constant &lt;code>Td&lt;/code>. Smaller time constant &lt;code>Td&lt;/code> means nearer ideal derivative.&lt;/p>&#xA;&lt;p>&lt;em>Note: The user has to choose the derivative time constant according to the nature of the input signal.&lt;/em>&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-          <arguments expression="&quot;&lt;html>&#xA;&lt;table cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot; border=\&quot;1\&quot;>&lt;tr>&#xA;&lt;th>Revision&lt;/th>&#xA;&lt;th>Date&lt;/th>&#xA;&lt;th>Author&lt;/th>&#xA;&lt;th>Comment&lt;/th>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>4954&lt;/td>&#xA;&lt;td>2012-03-02&lt;/td>&#xA;&lt;td>A. Haumer &amp;amp; D. Winkler&lt;/td>&#xA;&lt;td>&lt;p>Initial version based on discussion in ticket &lt;a href=\&quot;https://github.com/modelica/ModelicaStandardLibrary/issues/529\&quot;>#529&lt;/a>&lt;/p>&lt;/td>&#xA;&lt;/tr>&#xA;&lt;/table>&#xA;&lt;/html>&quot;" elementName="revisions"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Icon">
+          <modifications expression="{ Line(points={{-90,0},{68,0}}, color={192,192,192}), Line(points={{0,-90},{0,68}}, color={192,192,192}), Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Polygon( points={{90,0},{68,-8},{68,8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line( points={{-50,-70},{50,70}}) , Line( visible=strict, points={{50,70},{-50,-70}}, color={255,0,0} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>The &lt;code>SlewRateLimiter&lt;/code> block limits the slew rate of its input signal in the range of &lt;code>[Falling, Rising]&lt;/code>.&lt;/p>&#xA;&lt;p>To ensure this for arbitrary inputs and in order to produce a differential output, the input is numerically differentiated&#xA;with derivative time constant &lt;code>Td&lt;/code>. Smaller time constant &lt;code>Td&lt;/code> means nearer ideal derivative.&lt;/p>&#xA;&lt;p>&lt;em>Note: The user has to choose the derivative time constant according to the nature of the input signal.&lt;/em>&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+          <modifications expression="&quot;&lt;html>&#xA;&lt;table cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot; border=\&quot;1\&quot;>&lt;tr>&#xA;&lt;th>Revision&lt;/th>&#xA;&lt;th>Date&lt;/th>&#xA;&lt;th>Author&lt;/th>&#xA;&lt;th>Comment&lt;/th>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>4954&lt;/td>&#xA;&lt;td>2012-03-02&lt;/td>&#xA;&lt;td>A. Haumer &amp;amp; D. Winkler&lt;/td>&#xA;&lt;td>&lt;p>Initial version based on discussion in ticket &lt;a href=\&quot;https://github.com/modelica/ModelicaStandardLibrary/issues/529\&quot;>#529&lt;/a>&lt;/p>&lt;/td>&#xA;&lt;/tr>&#xA;&lt;/table>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="DeadZone" description="&quot;Provide a region of zero output&quot;" classNameEnd="DeadZone">
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list declarationName="uMax" description="&quot;Upper limits of dead zones&quot;">
-          <arguments expression="1" elementName="start"/>
+          <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
@@ -223,65 +223,65 @@
         <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(uMax >= uMin, &quot;DeadZone: Limits must be consistent. However, uMax (=&quot; + String(uMax) + &quot;) &lt; uMin (=&quot; + String(uMin) + &quot;)&quot; )"/>
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="homotopy(actual=smooth(0,if u > uMax then u - uMax else if u &lt; uMin then u - uMin else 0), simplified=u)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The DeadZone block defines a region of zero output.&#xA;&lt;/p>&#xA;&lt;p>&#xA;If the input is within uMin ... uMax, the output&#xA;is zero. Outside of this zone, the output is a linear&#xA;function of the input with a slope of 1.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100,100}}" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Line(points={{0,-90},{0,68}}, color={192,192,192}), Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{68,0}}, color={192,192,192}), Polygon( points={{90,0},{68,-8},{68,8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-80,-60},{-20,0},{20,0},{80,60}}), Text( extent={{-150,-150},{150,-110}}, textColor={160,160,164}, textString=&quot;uMax=%uMax&quot; ) }" elementName="graphics"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The DeadZone block defines a region of zero output.&#xA;&lt;/p>&#xA;&lt;p>&#xA;If the input is within uMin ... uMax, the output&#xA;is zero. Outside of this zone, the output is a linear&#xA;function of the input with a slope of 1.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line(points={{0,-90},{0,68}}, color={192,192,192}), Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{68,0}}, color={192,192,192}), Polygon( points={{90,0},{68,-8},{68,8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-80,-60},{-20,0},{20,0},{80,60}}), Text( extent={{-150,-150},{150,-110}}, textColor={160,160,164}, textString=&quot;uMax=%uMax&quot; ) }" elementName="graphics"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="FixedDelay" description="&quot;Delay block with fixed DelayTime&quot;" classNameEnd="FixedDelay">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SISO"/>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter">
         <component_list declarationName="delayTime" description="&quot;Delay time of output with respect to input signal&quot;">
-          <arguments expression="1" elementName="start"/>
+          <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="delay(u, delayTime)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The Input signal is delayed by a given time instant, or more precisely:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u(time - delayTime) for time &amp;gt; time.start + delayTime&#xA;  = u(time.start)       for time &amp;le; time.start + delayTime&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Text( extent={{8.0,-142.0},{8.0,-102.0}}, textString=&quot;delayTime=%delayTime&quot; ) , Line( points={{-92.0,0.0},{-80.7,34.2},{-73.5,53.1},{-67.1,66.4},{-61.4,74.6},{-55.8,79.1},{-50.2,79.8},{-44.6,76.6},{-38.9,69.7},{-33.3,59.4},{-26.9,44.1},{-18.83,21.2},{-1.9,-30.8},{5.3,-50.2},{11.7,-64.2},{17.3,-73.1},{23.0,-78.4},{28.6,-80.0},{34.2,-77.6},{39.9,-71.5},{45.5,-61.9},{51.9,-47.2},{60.0,-24.8},{68.0,0.0}}, color={0,0,127}, smooth=Smooth.Bezier ) , Line( points={{-62.0,0.0},{-50.7,34.2},{-43.5,53.1},{-37.1,66.4},{-31.4,74.6},{-25.8,79.1},{-20.2,79.8},{-14.6,76.6},{-8.9,69.7},{-3.3,59.4},{3.1,44.1},{11.17,21.2},{28.1,-30.8},{35.3,-50.2},{41.7,-64.2},{47.3,-73.1},{53.0,-78.4},{58.6,-80.0},{64.2,-77.6},{69.9,-71.5},{75.5,-61.9},{81.9,-47.2},{90.0,-24.8},{98.0,0.0}}, color={160,160,164}, smooth=Smooth.Bezier ) }" elementName="graphics"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The Input signal is delayed by a given time instant, or more precisely:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u(time - delayTime) for time &amp;gt; time.start + delayTime&#xA;  = u(time.start)       for time &amp;le; time.start + delayTime&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Text( extent={{8.0,-142.0},{8.0,-102.0}}, textString=&quot;delayTime=%delayTime&quot; ) , Line( points={{-92.0,0.0},{-80.7,34.2},{-73.5,53.1},{-67.1,66.4},{-61.4,74.6},{-55.8,79.1},{-50.2,79.8},{-44.6,76.6},{-38.9,69.7},{-33.3,59.4},{-26.9,44.1},{-18.83,21.2},{-1.9,-30.8},{5.3,-50.2},{11.7,-64.2},{17.3,-73.1},{23.0,-78.4},{28.6,-80.0},{34.2,-77.6},{39.9,-71.5},{45.5,-61.9},{51.9,-47.2},{60.0,-24.8},{68.0,0.0}}, color={0,0,127}, smooth=Smooth.Bezier ) , Line( points={{-62.0,0.0},{-50.7,34.2},{-43.5,53.1},{-37.1,66.4},{-31.4,74.6},{-25.8,79.1},{-20.2,79.8},{-14.6,76.6},{-8.9,69.7},{-3.3,59.4},{3.1,44.1},{11.17,21.2},{28.1,-30.8},{35.3,-50.2},{41.7,-64.2},{47.3,-73.1},{53.0,-78.4},{58.6,-80.0},{64.2,-77.6},{69.9,-71.5},{75.5,-61.9},{81.9,-47.2},{90.0,-24.8},{98.0,0.0}}, color={160,160,164}, smooth=Smooth.Bezier ) }" elementName="graphics"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="PadeDelay" description="&quot;Pade approximation of delay block with fixed delayTime (use balance=true; this is not the default to be backwards compatible)&quot;" classNameEnd="PadeDelay">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SISO"/>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter">
         <component_list declarationName="delayTime" description="&quot;Delay time of output with respect to input signal&quot;">
-          <arguments expression="1" elementName="start"/>
+          <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter">
         <component_list expression="1" declarationName="n" description="&quot;Order of Pade delay&quot;">
-          <arguments expression="1" elementName="min"/>
+          <modifications expression="1" elementName="min"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter">
         <component_list expression="n" declarationName="m" description="&quot;Order of numerator (usually m=n, or m=n-1)&quot;">
-          <arguments expression="1" elementName="min"/>
-          <arguments expression="n" elementName="max"/>
+          <modifications expression="1" elementName="min"/>
+          <modifications expression="n" elementName="max"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
         <component_list expression="false" declarationName="balance" description="&quot;= true, if state space system is balanced (highly recommended), otherwise textbook version&quot;" isAnnotation="true">
-          <arguments elementName="choices">
-            <arguments expression="true" elementName="checkBox"/>
-          </arguments>
+          <annotations elementName="choices">
+            <modifications expression="true" elementName="checkBox"/>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isfinal="true">
@@ -289,27 +289,27 @@
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isProtected="true">
         <component_list subscripts="[n]" declarationName="a1" description="&quot;First row of A&quot;">
-          <arguments expression="false" elementName="fixed" isEach="true"/>
+          <modifications expression="false" elementName="fixed" isEach="true"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list declarationName="b11" description="&quot;= B[1,1]&quot;">
-          <arguments expression="false" elementName="fixed"/>
+          <modifications expression="false" elementName="fixed"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list subscripts="[n]" declarationName="c" description="&quot;C row matrix&quot;">
-          <arguments expression="false" elementName="fixed" isEach="true"/>
+          <modifications expression="false" elementName="fixed" isEach="true"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list declarationName="d" description="&quot;D matrix&quot;">
-          <arguments expression="false" elementName="fixed"/>
+          <modifications expression="false" elementName="fixed"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
         <component_list subscripts="[n-1]" declarationName="s" description="&quot;State scaling&quot;">
-          <arguments expression="false" elementName="fixed" isEach="true"/>
+          <modifications expression="false" elementName="fixed" isEach="true"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="function" className="padeCoefficients2" classNameEnd="padeCoefficients2">
@@ -429,61 +429,61 @@
           <elseEquations xsi:type="mOloc:SimpleEquation" left="x[n]" right="u"/>
         </equations>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The Input signal is delayed by a given time instant, or more precisely:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u(time - delayTime) for time &amp;gt; time.start + delayTime&#xA;  = u(time.start)       for time &amp;le; time.start + delayTime&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;The delay is approximated by a Pade approximation, i.e., by&#xA;a transfer function&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;        b[1]*s^m + b[2]*s^[m-1] + ... + b[m+1]&#xA;y(s) = --------------------------------------------- * u(s)&#xA;        a[1]*s^n + a[2]*s^[n-1] + ... + a[n+1]&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;where the coefficients b[:] and a[:] are calculated such that the&#xA;coefficients of the Taylor expansion of the delay exp(-T*s) around s=0&#xA;are identical up to order n+m.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The main advantage of this approach is that the delay is&#xA;approximated by a linear differential equation system, which&#xA;is continuous and continuously differentiable. For example, it&#xA;is uncritical to linearize a system containing a Pade-approximated&#xA;delay.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The standard text book version uses order \&quot;m=n\&quot;, which is&#xA;also the default setting of this block. The setting&#xA;\&quot;m=n-1\&quot; may yield a better approximation in certain cases.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;It is strongly recommended to always set parameter &lt;strong>balance&lt;/strong> = true,&#xA;in order to arrive at a much better reliable numerical computation.&#xA;This is not the default, in order to be backwards compatible, so you have&#xA;to explicitly set it. Besides better numerics, also all states are initialized&#xA;with &lt;strong>balance&lt;/strong> = true (in steady-state, so der(x)=0). Longer explanation:&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;By default the transfer function of the Pade approximation is implemented&#xA;in controller canonical form. This results in coefficients of the A-matrix in&#xA;the order of 1 up to the order of O(1/delayTime)^n. For already modest values&#xA;of delayTime and n, this gives largely varying coefficients (for example delayTime=0.001 and n=4&#xA;results in coefficients between 1 and 1e12). In turn, this results&#xA;in a large norm of the system matrix [A,B;C,D] and therefore in unreliable&#xA;numerical computations. When setting parameter &lt;strong>balance&lt;/strong> = true, a state&#xA;transformation is performed that considerably reduces the norm of the system matrix.&#xA;This is performed without introducing round-off errors. For details see&#xA;function &lt;a href=\&quot;modelica://Modelica.Math.Matrices.balanceABC\&quot;>balanceABC&lt;/a>.&#xA;As a result, both the simulation of the PadeDelay block, and especially&#xA;its linearization becomes more reliable.&#xA;&lt;/p>&#xA;&#xA;&lt;h5>Literature&lt;/h5>&#xA;&lt;p>Otto Foellinger: Regelungstechnik, 8. Auflage,&#xA;chapter 11.9, page 412-414, Huethig Verlag Heidelberg, 1994&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-          <arguments expression="&quot;&lt;html>&#xA;&lt;table cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot; border=\&quot;1\&quot;>&lt;tr>&#xA;&lt;th>Date&lt;/th>&#xA;&lt;th>Author&lt;/th>&#xA;&lt;th>Comment&lt;/th>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>2015-01-05&lt;/td>&#xA;&lt;td>Martin Otter (DLR-SR)&lt;/td>&#xA;&lt;td>Introduced parameter balance=true and a new implementation&#xA; of the PadeDelay block with an optional, more reliable numerics&lt;/td>&#xA;&lt;/tr>&#xA;&lt;/table>&#xA;&lt;/html>&quot;" elementName="revisions"/>
-        </arguments>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="false" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100,-100},{100,100}}" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Text(extent={{8.0,-142.0},{8.0,-102.0}}, textString=&quot;delayTime=%delayTime&quot; ) , Line(points={{-94.0,0.0},{-82.7,34.2},{-75.5,53.1},{-69.1,66.4},{-63.4,74.6},{-57.8,79.1},{-52.2,79.8},{-46.6,76.6},{-40.9,69.7},{-35.3,59.4},{-28.9,44.1},{-20.83,21.2},{-3.9,-30.8},{3.3,-50.2},{9.7,-64.2},{15.3,-73.1},{21.0,-78.4},{26.6,-80.0},{32.2,-77.6},{37.9,-71.5},{43.5,-61.9},{49.9,-47.2},{58.0,-24.8},{66.0,0.0}}, color={0,0,127}, smooth=Smooth.Bezier ) , Line(points={{-72.0,0.0},{-60.7,34.2},{-53.5,53.1},{-47.1,66.4},{-41.4,74.6},{-35.8,79.1},{-30.2,79.8},{-24.6,76.6},{-18.9,69.7},{-13.3,59.4},{-6.9,44.1},{1.17,21.2},{18.1,-30.8},{25.3,-50.2},{31.7,-64.2},{37.3,-73.1},{43.0,-78.4},{48.6,-80.0},{54.2,-77.6},{59.9,-71.5},{65.5,-61.9},{71.9,-47.2},{80.0,-24.8},{88.0,0.0}}, color={160,160,164}, smooth=Smooth.Bezier ) , Text(textColor={160,160,164}, extent={{-10.0,38.0},{100.0,100.0}}, textString=&quot;m=%m&quot; ) , Text(textColor={160,160,164}, extent={{-98.0,-96.0},{6.0,-34.0}}, textString=&quot;n=%n&quot; ) , Text(visible=balance, textColor={160,160,164}, extent={{-96,-20},{98,22}}, textString=&quot;balanced&quot; ) }" elementName="graphics"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The Input signal is delayed by a given time instant, or more precisely:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u(time - delayTime) for time &amp;gt; time.start + delayTime&#xA;  = u(time.start)       for time &amp;le; time.start + delayTime&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;The delay is approximated by a Pade approximation, i.e., by&#xA;a transfer function&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;        b[1]*s^m + b[2]*s^[m-1] + ... + b[m+1]&#xA;y(s) = --------------------------------------------- * u(s)&#xA;        a[1]*s^n + a[2]*s^[n-1] + ... + a[n+1]&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;where the coefficients b[:] and a[:] are calculated such that the&#xA;coefficients of the Taylor expansion of the delay exp(-T*s) around s=0&#xA;are identical up to order n+m.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The main advantage of this approach is that the delay is&#xA;approximated by a linear differential equation system, which&#xA;is continuous and continuously differentiable. For example, it&#xA;is uncritical to linearize a system containing a Pade-approximated&#xA;delay.&#xA;&lt;/p>&#xA;&lt;p>&#xA;The standard text book version uses order \&quot;m=n\&quot;, which is&#xA;also the default setting of this block. The setting&#xA;\&quot;m=n-1\&quot; may yield a better approximation in certain cases.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;It is strongly recommended to always set parameter &lt;strong>balance&lt;/strong> = true,&#xA;in order to arrive at a much better reliable numerical computation.&#xA;This is not the default, in order to be backwards compatible, so you have&#xA;to explicitly set it. Besides better numerics, also all states are initialized&#xA;with &lt;strong>balance&lt;/strong> = true (in steady-state, so der(x)=0). Longer explanation:&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;By default the transfer function of the Pade approximation is implemented&#xA;in controller canonical form. This results in coefficients of the A-matrix in&#xA;the order of 1 up to the order of O(1/delayTime)^n. For already modest values&#xA;of delayTime and n, this gives largely varying coefficients (for example delayTime=0.001 and n=4&#xA;results in coefficients between 1 and 1e12). In turn, this results&#xA;in a large norm of the system matrix [A,B;C,D] and therefore in unreliable&#xA;numerical computations. When setting parameter &lt;strong>balance&lt;/strong> = true, a state&#xA;transformation is performed that considerably reduces the norm of the system matrix.&#xA;This is performed without introducing round-off errors. For details see&#xA;function &lt;a href=\&quot;modelica://Modelica.Math.Matrices.balanceABC\&quot;>balanceABC&lt;/a>.&#xA;As a result, both the simulation of the PadeDelay block, and especially&#xA;its linearization becomes more reliable.&#xA;&lt;/p>&#xA;&#xA;&lt;h5>Literature&lt;/h5>&#xA;&lt;p>Otto Foellinger: Regelungstechnik, 8. Auflage,&#xA;chapter 11.9, page 412-414, Huethig Verlag Heidelberg, 1994&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+          <modifications expression="&quot;&lt;html>&#xA;&lt;table cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot; border=\&quot;1\&quot;>&lt;tr>&#xA;&lt;th>Date&lt;/th>&#xA;&lt;th>Author&lt;/th>&#xA;&lt;th>Comment&lt;/th>&#xA;&lt;/tr>&#xA;&lt;tr>&#xA;&lt;td>2015-01-05&lt;/td>&#xA;&lt;td>Martin Otter (DLR-SR)&lt;/td>&#xA;&lt;td>Introduced parameter balance=true and a new implementation&#xA; of the PadeDelay block with an optional, more reliable numerics&lt;/td>&#xA;&lt;/tr>&#xA;&lt;/table>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+        </annotations>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Text(extent={{8.0,-142.0},{8.0,-102.0}}, textString=&quot;delayTime=%delayTime&quot; ) , Line(points={{-94.0,0.0},{-82.7,34.2},{-75.5,53.1},{-69.1,66.4},{-63.4,74.6},{-57.8,79.1},{-52.2,79.8},{-46.6,76.6},{-40.9,69.7},{-35.3,59.4},{-28.9,44.1},{-20.83,21.2},{-3.9,-30.8},{3.3,-50.2},{9.7,-64.2},{15.3,-73.1},{21.0,-78.4},{26.6,-80.0},{32.2,-77.6},{37.9,-71.5},{43.5,-61.9},{49.9,-47.2},{58.0,-24.8},{66.0,0.0}}, color={0,0,127}, smooth=Smooth.Bezier ) , Line(points={{-72.0,0.0},{-60.7,34.2},{-53.5,53.1},{-47.1,66.4},{-41.4,74.6},{-35.8,79.1},{-30.2,79.8},{-24.6,76.6},{-18.9,69.7},{-13.3,59.4},{-6.9,44.1},{1.17,21.2},{18.1,-30.8},{25.3,-50.2},{31.7,-64.2},{37.3,-73.1},{43.0,-78.4},{48.6,-80.0},{54.2,-77.6},{59.9,-71.5},{65.5,-61.9},{71.9,-47.2},{80.0,-24.8},{88.0,0.0}}, color={160,160,164}, smooth=Smooth.Bezier ) , Text(textColor={160,160,164}, extent={{-10.0,38.0},{100.0,100.0}}, textString=&quot;m=%m&quot; ) , Text(textColor={160,160,164}, extent={{-98.0,-96.0},{6.0,-34.0}}, textString=&quot;n=%n&quot; ) , Text(visible=balance, textColor={160,160,164}, extent={{-96,-20},{98,22}}, textString=&quot;balanced&quot; ) }" elementName="graphics"/>
+        </annotations>
       </elements>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="VariableDelay" description="&quot;Delay block with variable DelayTime&quot;" classNameEnd="VariableDelay">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SISO"/>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Duration" parameterType="parameter">
         <component_list declarationName="delayMax" description="&quot;Maximum delay time&quot;">
-          <arguments expression="0" elementName="min"/>
-          <arguments expression="1" elementName="start"/>
+          <modifications expression="0" elementName="min"/>
+          <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput">
         <component_list declarationName="delayTime" isAnnotation="true">
-          <arguments elementName="Placement">
-            <arguments elementName="transformation">
-              <arguments expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
-            </arguments>
-          </arguments>
+          <annotations elementName="Placement">
+            <modifications elementName="transformation">
+              <modifications expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
+            </modifications>
+          </annotations>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="delay(u, delayTime, delayMax)"/>
       </elements>
-      <elements xsi:type="mOloc:AnnotationClause">
-        <arguments elementName="Documentation">
-          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The Input signal is delayed by a given time instant, or more precisely:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u(time - delayTime) for time &amp;gt; time.start + delayTime&#xA;  = u(time.start)       for time &amp;le; time.start + delayTime&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;where delayTime is an additional input signal which must follow&#xA;the following relationship:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;0 &amp;le; delayTime &amp;le; delayMax&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;/html>&quot;" elementName="info"/>
-        </arguments>
-        <arguments elementName="Icon">
-          <arguments elementName="coordinateSystem">
-            <arguments expression="true" elementName="preserveAspectRatio"/>
-            <arguments expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
-          </arguments>
-          <arguments expression="{ Text(extent={{-100.0,-148.0},{100.0,-108.0}}, textString=&quot;delayMax=%delayMax&quot; ) , Line(points={{-92.0,0.0},{-80.7,34.2},{-73.5,53.1},{-67.1,66.4},{-61.4,74.6},{-55.8,79.1},{-50.2,79.8},{-44.6,76.6},{-38.9,69.7},{-33.3,59.4},{-26.9,44.1},{-18.83,21.2},{-1.9,-30.8},{5.3,-50.2},{11.7,-64.2},{17.3,-73.1},{23.0,-78.4},{28.6,-80.0},{34.2,-77.6},{39.9,-71.5},{45.5,-61.9},{51.9,-47.2},{60.0,-24.8},{68.0,0.0}}, color={0,0,127}, smooth=Smooth.Bezier ) , Line(points={{-64.0,0.0},{-52.7,34.2},{-45.5,53.1},{-39.1,66.4},{-33.4,74.6},{-27.8,79.1},{-22.2,79.8},{-16.6,76.6},{-10.9,69.7},{-5.3,59.4},{1.1,44.1},{9.17,21.2},{26.1,-30.8},{33.3,-50.2},{39.7,-64.2},{45.3,-73.1},{51.0,-78.4},{56.6,-80.0},{62.2,-77.6},{67.9,-71.5},{73.5,-61.9},{79.9,-47.2},{88.0,-24.8},{96.0,0.0}}, smooth=Smooth.Bezier ) , Polygon(fillPattern=FillPattern.Solid, lineColor={0,0,127}, fillColor={0,0,127}, points={{6.0,4.0},{-14.0,-2.0},{-6.0,-12.0},{6.0,4.0}} ) , Line(color={0,0,127}, points={{-100.0,-60.0},{-76.0,-60.0},{-8.0,-6.0}} ) }" elementName="graphics"/>
-        </arguments>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+        <annotations elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The Input signal is delayed by a given time instant, or more precisely:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u(time - delayTime) for time &amp;gt; time.start + delayTime&#xA;  = u(time.start)       for time &amp;le; time.start + delayTime&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;where delayTime is an additional input signal which must follow&#xA;the following relationship:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;0 &amp;le; delayTime &amp;le; delayMax&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+        <annotations elementName="Icon">
+          <modifications elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Text(extent={{-100.0,-148.0},{100.0,-108.0}}, textString=&quot;delayMax=%delayMax&quot; ) , Line(points={{-92.0,0.0},{-80.7,34.2},{-73.5,53.1},{-67.1,66.4},{-61.4,74.6},{-55.8,79.1},{-50.2,79.8},{-44.6,76.6},{-38.9,69.7},{-33.3,59.4},{-26.9,44.1},{-18.83,21.2},{-1.9,-30.8},{5.3,-50.2},{11.7,-64.2},{17.3,-73.1},{23.0,-78.4},{28.6,-80.0},{34.2,-77.6},{39.9,-71.5},{45.5,-61.9},{51.9,-47.2},{60.0,-24.8},{68.0,0.0}}, color={0,0,127}, smooth=Smooth.Bezier ) , Line(points={{-64.0,0.0},{-52.7,34.2},{-45.5,53.1},{-39.1,66.4},{-33.4,74.6},{-27.8,79.1},{-22.2,79.8},{-16.6,76.6},{-10.9,69.7},{-5.3,59.4},{1.1,44.1},{9.17,21.2},{26.1,-30.8},{33.3,-50.2},{39.7,-64.2},{45.3,-73.1},{51.0,-78.4},{56.6,-80.0},{62.2,-77.6},{67.9,-71.5},{73.5,-61.9},{79.9,-47.2},{88.0,-24.8},{96.0,0.0}}, smooth=Smooth.Bezier ) , Polygon(fillPattern=FillPattern.Solid, lineColor={0,0,127}, fillColor={0,0,127}, points={{6.0,4.0},{-14.0,-2.0},{-6.0,-12.0},{6.0,4.0}} ) , Line(color={0,0,127}, points={{-100.0,-60.0},{-76.0,-60.0},{-8.0,-6.0}} ) }" elementName="graphics"/>
+        </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This package contains &lt;strong>discontinuous&lt;/strong> and&#xA;&lt;strong>non-differentiable, algebraic&lt;/strong> input/output blocks.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-        <arguments expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>October 21, 2002&lt;/em>&#xA;       by Christian Schweiger:&lt;br>&#xA;       New block VariableLimiter added.&lt;/li>&#xA;&lt;li>&lt;em>August 22, 1999&lt;/em>&#xA;       by &lt;a href=\&quot;http://www.robotic.dlr.de/Martin.Otter/\&quot;>Martin Otter&lt;/a>:&lt;br>&#xA;       Realized, based on an existing Dymola library&#xA;       of Dieter Moormann and Hilding Elmqvist.&#xA;&lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
-      </arguments>
-      <arguments elementName="Icon">
-        <arguments expression="{Line(points={{-80,-66},{-26,-66},{28,52},{88,52}}, color={95,95,95} ) }" elementName="graphics"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This package contains &lt;strong>discontinuous&lt;/strong> and&#xA;&lt;strong>non-differentiable, algebraic&lt;/strong> input/output blocks.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&#xA;&lt;ul>&#xA;&lt;li>&lt;em>October 21, 2002&lt;/em>&#xA;       by Christian Schweiger:&lt;br>&#xA;       New block VariableLimiter added.&lt;/li>&#xA;&lt;li>&lt;em>August 22, 1999&lt;/em>&#xA;       by &lt;a href=\&quot;http://www.robotic.dlr.de/Martin.Otter/\&quot;>Martin Otter&lt;/a>:&lt;br>&#xA;       Realized, based on an existing Dymola library&#xA;       of Dieter Moormann and Hilding Elmqvist.&#xA;&lt;/li>&#xA;&lt;/ul>&#xA;&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations elementName="Icon">
+        <modifications expression="{Line(points={{-80,-66},{-26,-66},{28,52},{88,52}}, color={95,95,95} ) }" elementName="graphics"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

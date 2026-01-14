@@ -3,10 +3,10 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
+import dut.control.moloc.mOloc.AnnotationModification;
 import dut.control.moloc.mOloc.BreakStatement;
 import dut.control.moloc.mOloc.MOlocPackage;
-import dut.control.moloc.mOloc.class_modification;
+import dut.control.moloc.mOloc.annotation_modification_part;
 import dut.control.moloc.mOloc.description;
 import dut.control.moloc.mOloc.description_string;
 
@@ -34,8 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.BreakStatementImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.BreakStatementImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.BreakStatementImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.BreakStatementImpl#getAnnotations <em>Annotations</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,16 +63,6 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getArguments()
-   * @generated
-   * @ordered
-   */
-  protected EList<Argument> arguments;
-
-  /**
    * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -91,6 +81,16 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
    * @ordered
    */
   protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotations()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationModification> annotations;
 
   /**
    * <!-- begin-user-doc -->
@@ -144,21 +144,6 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
    * @generated
    */
   @Override
-  public EList<Argument> getArguments()
-  {
-    if (arguments == null)
-    {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.BREAK_STATEMENT__ARGUMENTS);
-    }
-    return arguments;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsAnnotation()
   {
     return isAnnotation;
@@ -184,12 +169,27 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
    * @generated
    */
   @Override
+  public EList<AnnotationModification> getAnnotations()
+  {
+    if (annotations == null)
+    {
+      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.BREAK_STATEMENT__ANNOTATIONS);
+    }
+    return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case MOlocPackage.BREAK_STATEMENT__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.BREAK_STATEMENT__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -206,10 +206,10 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
     {
       case MOlocPackage.BREAK_STATEMENT__DESCRIPTION:
         return getDescription();
-      case MOlocPackage.BREAK_STATEMENT__ARGUMENTS:
-        return getArguments();
       case MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION:
         return isIsAnnotation();
+      case MOlocPackage.BREAK_STATEMENT__ANNOTATIONS:
+        return getAnnotations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -228,12 +228,12 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
       case MOlocPackage.BREAK_STATEMENT__DESCRIPTION:
         setDescription((String)newValue);
         return;
-      case MOlocPackage.BREAK_STATEMENT__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
-        return;
       case MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
+        return;
+      case MOlocPackage.BREAK_STATEMENT__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -252,11 +252,11 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
       case MOlocPackage.BREAK_STATEMENT__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
-      case MOlocPackage.BREAK_STATEMENT__ARGUMENTS:
-        getArguments().clear();
-        return;
       case MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
+      case MOlocPackage.BREAK_STATEMENT__ANNOTATIONS:
+        getAnnotations().clear();
         return;
     }
     super.eUnset(featureID);
@@ -274,10 +274,10 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
     {
       case MOlocPackage.BREAK_STATEMENT__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case MOlocPackage.BREAK_STATEMENT__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
       case MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.BREAK_STATEMENT__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -298,11 +298,12 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
         default: return -1;
       }
     }
-    if (baseClass == class_modification.class)
+    if (baseClass == annotation_modification_part.class)
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.BREAK_STATEMENT__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        case MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
+        case MOlocPackage.BREAK_STATEMENT__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
         default: return -1;
       }
     }
@@ -310,7 +311,6 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -333,11 +333,12 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
         default: return -1;
       }
     }
-    if (baseClass == class_modification.class)
+    if (baseClass == annotation_modification_part.class)
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.BREAK_STATEMENT__ARGUMENTS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.BREAK_STATEMENT__ANNOTATIONS;
         default: return -1;
       }
     }
@@ -345,7 +346,6 @@ public class BreakStatementImpl extends StatementImpl implements BreakStatement
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.BREAK_STATEMENT__IS_ANNOTATION;
         default: return -1;
       }
     }

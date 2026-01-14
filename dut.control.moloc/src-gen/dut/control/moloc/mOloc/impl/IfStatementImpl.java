@@ -3,11 +3,11 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
+import dut.control.moloc.mOloc.AnnotationModification;
 import dut.control.moloc.mOloc.IfStatement;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.Statement;
-import dut.control.moloc.mOloc.class_modification;
+import dut.control.moloc.mOloc.annotation_modification_part;
 import dut.control.moloc.mOloc.description;
 import dut.control.moloc.mOloc.description_string;
 
@@ -36,8 +36,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getIfStatements <em>If Statements</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.IfStatementImpl#getElseCondition <em>Else Condition</em>}</li>
@@ -70,16 +70,6 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getArguments()
-   * @generated
-   * @ordered
-   */
-  protected EList<Argument> arguments;
-
-  /**
    * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -98,6 +88,16 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
    * @ordered
    */
   protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotations()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationModification> annotations;
 
   /**
    * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
@@ -211,21 +211,6 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
    * @generated
    */
   @Override
-  public EList<Argument> getArguments()
-  {
-    if (arguments == null)
-    {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.IF_STATEMENT__ARGUMENTS);
-    }
-    return arguments;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsAnnotation()
   {
     return isAnnotation;
@@ -243,6 +228,21 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
     isAnnotation = newIsAnnotation;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.IF_STATEMENT__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<AnnotationModification> getAnnotations()
+  {
+    if (annotations == null)
+    {
+      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.IF_STATEMENT__ANNOTATIONS);
+    }
+    return annotations;
   }
 
   /**
@@ -340,8 +340,8 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
   {
     switch (featureID)
     {
-      case MOlocPackage.IF_STATEMENT__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.IF_STATEMENT__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
       case MOlocPackage.IF_STATEMENT__IF_STATEMENTS:
         return ((InternalEList<?>)getIfStatements()).basicRemove(otherEnd, msgs);
       case MOlocPackage.IF_STATEMENT__ELSEIF_STATEMENTS:
@@ -364,10 +364,10 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
     {
       case MOlocPackage.IF_STATEMENT__DESCRIPTION:
         return getDescription();
-      case MOlocPackage.IF_STATEMENT__ARGUMENTS:
-        return getArguments();
       case MOlocPackage.IF_STATEMENT__IS_ANNOTATION:
         return isIsAnnotation();
+      case MOlocPackage.IF_STATEMENT__ANNOTATIONS:
+        return getAnnotations();
       case MOlocPackage.IF_STATEMENT__CONDITION:
         return getCondition();
       case MOlocPackage.IF_STATEMENT__IF_STATEMENTS:
@@ -396,12 +396,12 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
       case MOlocPackage.IF_STATEMENT__DESCRIPTION:
         setDescription((String)newValue);
         return;
-      case MOlocPackage.IF_STATEMENT__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
-        return;
       case MOlocPackage.IF_STATEMENT__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
+        return;
+      case MOlocPackage.IF_STATEMENT__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
         return;
       case MOlocPackage.IF_STATEMENT__CONDITION:
         setCondition((String)newValue);
@@ -439,11 +439,11 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
       case MOlocPackage.IF_STATEMENT__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
-      case MOlocPackage.IF_STATEMENT__ARGUMENTS:
-        getArguments().clear();
-        return;
       case MOlocPackage.IF_STATEMENT__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
+      case MOlocPackage.IF_STATEMENT__ANNOTATIONS:
+        getAnnotations().clear();
         return;
       case MOlocPackage.IF_STATEMENT__CONDITION:
         setCondition(CONDITION_EDEFAULT);
@@ -476,10 +476,10 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
     {
       case MOlocPackage.IF_STATEMENT__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case MOlocPackage.IF_STATEMENT__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
       case MOlocPackage.IF_STATEMENT__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.IF_STATEMENT__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
       case MOlocPackage.IF_STATEMENT__CONDITION:
         return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
       case MOlocPackage.IF_STATEMENT__IF_STATEMENTS:
@@ -510,11 +510,12 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
         default: return -1;
       }
     }
-    if (baseClass == class_modification.class)
+    if (baseClass == annotation_modification_part.class)
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.IF_STATEMENT__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        case MOlocPackage.IF_STATEMENT__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
+        case MOlocPackage.IF_STATEMENT__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
         default: return -1;
       }
     }
@@ -522,7 +523,6 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.IF_STATEMENT__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -545,11 +545,12 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
         default: return -1;
       }
     }
-    if (baseClass == class_modification.class)
+    if (baseClass == annotation_modification_part.class)
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.IF_STATEMENT__ARGUMENTS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.IF_STATEMENT__IS_ANNOTATION;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.IF_STATEMENT__ANNOTATIONS;
         default: return -1;
       }
     }
@@ -557,7 +558,6 @@ public class IfStatementImpl extends StatementImpl implements IfStatement
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.IF_STATEMENT__IS_ANNOTATION;
         default: return -1;
       }
     }

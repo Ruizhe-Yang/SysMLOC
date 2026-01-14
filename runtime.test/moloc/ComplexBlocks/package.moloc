@@ -2,17 +2,17 @@
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica">
   <classes classType="package" className="ComplexBlocks" description="&quot;Library of basic input/output control blocks with Complex signals&quot;" classNameEnd="ComplexBlocks">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package"/>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>This library hosts blocks using Complex inputs and outputs.&lt;/p>&#xA;&lt;p>It depends on the implementation of Complex.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
-      <arguments elementName="Icon">
-        <arguments elementName="coordinateSystem">
-          <arguments expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
-          <arguments expression="true" elementName="preserveAspectRatio"/>
-        </arguments>
-        <arguments expression="{ Rectangle( origin={0.0,35.1488}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{-30.0,-20.1488},{30.0,20.1488}} ) , Rectangle( origin={0.0,-34.8512}, fillColor={128,128,128}, fillPattern=FillPattern.Solid, extent={{-30.0,-20.1488},{30.0,20.1488}} ) , Line(origin={-51.25,0.0}, points={{21.25,-35.0},{-13.75,-35.0},{-13.75, 35.0 } ,{6.25,35.0} } ) , Polygon( origin={-40.0,35.0}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{10.0,0.0},{-5.0,5.0},{-5.0,-5.0}} ) , Line(origin={51.25,0.0}, points={{-21.25,35.0},{13.75,35.0},{13.75,-35.0}, {-6.25,-35.0} } ) , Polygon( origin={40.0,-35.0}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{-10.0,0.0},{5.0,5.0},{5.0,-5.0}} ) }" elementName="graphics"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This library hosts blocks using Complex inputs and outputs.&lt;/p>&#xA;&lt;p>It depends on the implementation of Complex.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations elementName="Icon">
+        <modifications elementName="coordinateSystem">
+          <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+        </modifications>
+        <modifications expression="{ Rectangle( origin={0.0,35.1488}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{-30.0,-20.1488},{30.0,20.1488}} ) , Rectangle( origin={0.0,-34.8512}, fillColor={128,128,128}, fillPattern=FillPattern.Solid, extent={{-30.0,-20.1488},{30.0,20.1488}} ) , Line(origin={-51.25,0.0}, points={{21.25,-35.0},{-13.75,-35.0},{-13.75, 35.0 } ,{6.25,35.0} } ) , Polygon( origin={-40.0,35.0}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{10.0,0.0},{-5.0,5.0},{-5.0,-5.0}} ) , Line(origin={51.25,0.0}, points={{-21.25,35.0},{13.75,35.0},{13.75,-35.0}, {-6.25,-35.0} } ) , Polygon( origin={40.0,-35.0}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{-10.0,0.0},{5.0,5.0},{5.0,-5.0}} ) }" elementName="graphics"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

@@ -22,54 +22,54 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.ComplexInput">
       <component_list declarationName="u1" description="&quot;Connector 1 of Complex input signals&quot;" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{-140,60},{-100,100}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{-140,60},{-100,100}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.ComplexInput">
       <component_list declarationName="u2" description="&quot;Connector 2 of Complex input signals&quot;" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.ComplexInput">
       <component_list declarationName="u3" description="&quot;Connector 3 of Complex input signals&quot;" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{-140,-100},{-100,-60}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{-140,-100},{-100,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.ComplexOutput">
       <component_list declarationName="y" description="&quot;Connector of Complex output signals&quot;" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:EquationSection">
       <equations xsi:type="mOloc:SimpleEquation" left="y" right="k1*(if useConjugateInput1 then Modelica.ComplexMath.conj(u1) else u1) + k2*(if useConjugateInput2 then Modelica.ComplexMath.conj(u2) else u2) + k3*(if useConjugateInput3 then Modelica.ComplexMath.conj(u3) else u3)"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes output &lt;code>y&lt;/code> as &lt;em>sum&lt;/em> of the&#xA;three input signals &lt;code>u1&lt;/code>, &lt;code>u2&lt;/code> and &lt;code>u3&lt;/code>. Optionally, inputs &lt;code>u1&lt;/code> and &lt;code>u2&lt;/code> and &lt;code>u3&lt;/code> can be processed conjugate complex, when parameters &lt;code>useConjugateInput1&lt;/code> and &lt;code>useConjugateInput2&lt;/code> and &lt;code>useConjugateInput3&lt;/code> are &lt;code>true&lt;/code>, respectively.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = k1*(if useConjugateInput1 then Modelica.ComplexMath.conj(u1) else u1)&#xA;  + k2*(if useConjugateInput2 then Modelica.ComplexMath.conj(u2) else u2)&#xA;  + k3*(if useConjugateInput3 then Modelica.ComplexMath.conj(u3) else u3);&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;&lt;strong>Example&lt;/strong> parameters:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;code>k1 = +2&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>k2 = -3&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>k3 = +1&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>useConjugateInput1 = true&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>useConjugateInput2 = false&lt;/code>&lt;/li>&#xA;&lt;li>&lt;code>useConjugateInput3 = false&lt;/code>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&#xA;result in the following equation:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = 2 * Modelica.ComplexMath.conj(u1) - 3 * u2 + u3;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
-      <arguments elementName="Icon">
-        <arguments elementName="coordinateSystem">
-          <arguments expression="true" elementName="preserveAspectRatio"/>
-          <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
-        </arguments>
-        <arguments expression="{Text(extent={{-98,50},{5,90}}, textString=&quot;%k1&quot;), Text(extent={{-98,-20},{5,20}}, textString=&quot;%k2&quot;), Text(extent={{-98,-50},{5,-90}}, textString=&quot;%k3&quot;), Text(extent={{10,40},{90,-40}}, textColor={85,170,255}, textString=&quot;+&quot; ) }" elementName="graphics"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes output &lt;code>y&lt;/code> as &lt;em>sum&lt;/em> of the&#xA;three input signals &lt;code>u1&lt;/code>, &lt;code>u2&lt;/code> and &lt;code>u3&lt;/code>. Optionally, inputs &lt;code>u1&lt;/code> and &lt;code>u2&lt;/code> and &lt;code>u3&lt;/code> can be processed conjugate complex, when parameters &lt;code>useConjugateInput1&lt;/code> and &lt;code>useConjugateInput2&lt;/code> and &lt;code>useConjugateInput3&lt;/code> are &lt;code>true&lt;/code>, respectively.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = k1*(if useConjugateInput1 then Modelica.ComplexMath.conj(u1) else u1)&#xA;  + k2*(if useConjugateInput2 then Modelica.ComplexMath.conj(u2) else u2)&#xA;  + k3*(if useConjugateInput3 then Modelica.ComplexMath.conj(u3) else u3);&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;&lt;strong>Example&lt;/strong> parameters:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;code>k1 = +2&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>k2 = -3&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>k3 = +1&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>useConjugateInput1 = true&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>useConjugateInput2 = false&lt;/code>&lt;/li>&#xA;&lt;li>&lt;code>useConjugateInput3 = false&lt;/code>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&#xA;result in the following equation:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = 2 * Modelica.ComplexMath.conj(u1) - 3 * u2 + u3;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations elementName="Icon">
+        <modifications elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text(extent={{-98,50},{5,90}}, textString=&quot;%k1&quot;), Text(extent={{-98,-20},{5,20}}, textString=&quot;%k2&quot;), Text(extent={{-98,-50},{5,-90}}, textString=&quot;%k3&quot;), Text(extent={{10,40},{90,-40}}, textColor={85,170,255}, textString=&quot;+&quot; ) }" elementName="graphics"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

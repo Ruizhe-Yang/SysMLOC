@@ -14,6 +14,6 @@ package dut.control.moloc.mOloc;
  * @model
  * @generated
  */
-public interface AnnotationClause extends Element, class_modification
+public interface AnnotationClause extends Element, annotation_modification_part
 {
 } // AnnotationClause

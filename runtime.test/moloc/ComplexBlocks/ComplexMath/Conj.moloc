@@ -2,22 +2,22 @@
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.ComplexMath">
   <classes classType="block" className="Conj" description="&quot;Output is equal to the conjugate complex input signal&quot;" classNameEnd="Conj">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexSISO">
-      <targuments expression="true" elementName="useConjugateInput" isfinal="true"/>
+      <extendsModifications expression="true" elementName="useConjugateInput" isfinal="true"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">
       <equations xsi:type="mOloc:SimpleEquation" left="y" right="uInternal"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This block computes output &lt;code>y&lt;/code> as&#xA;&lt;em>conjugate complex&lt;/em> input &lt;code>u&lt;/code>.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = Modelica.ComplexMath.conj(u)&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
-      <arguments elementName="Icon">
-        <arguments elementName="coordinateSystem">
-          <arguments expression="true" elementName="preserveAspectRatio"/>
-          <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
-        </arguments>
-        <arguments expression="{Line( points={{-40,0},{40,0}}, color={85,170,255} ) , Line( points={{-40,0},{40,0}}, color={85,170,255}, rotation=60 ) ,Line( points={{-40,0},{40,0}}, color={85,170,255}, rotation=120 ) }" elementName="graphics"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This block computes output &lt;code>y&lt;/code> as&#xA;&lt;em>conjugate complex&lt;/em> input &lt;code>u&lt;/code>.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = Modelica.ComplexMath.conj(u)&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations elementName="Icon">
+        <modifications elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Line( points={{-40,0},{40,0}}, color={85,170,255} ) , Line( points={{-40,0},{40,0}}, color={85,170,255}, rotation=60 ) ,Line( points={{-40,0},{40,0}}, color={85,170,255}, rotation=120 ) }" elementName="graphics"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

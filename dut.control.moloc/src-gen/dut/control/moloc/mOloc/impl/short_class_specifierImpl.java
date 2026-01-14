@@ -3,10 +3,12 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
+import dut.control.moloc.mOloc.AnnotationModification;
 import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.EnumerationLiteral;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.ModificationElement;
+import dut.control.moloc.mOloc.annotation_modification_part;
 import dut.control.moloc.mOloc.array_subscripts;
 import dut.control.moloc.mOloc.class_modification;
 import dut.control.moloc.mOloc.description;
@@ -40,10 +42,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getSubscripts <em>Subscripts</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getModifications <em>Modifications</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#isIsEnumeration <em>Is Enumeration</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#isIsColon <em>Is Colon</em>}</li>
@@ -94,14 +97,14 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
   protected String subscripts = SUBSCRIPTS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
+   * The cached value of the '{@link #getModifications() <em>Modifications</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArguments()
+   * @see #getModifications()
    * @generated
    * @ordered
    */
-  protected EList<Argument> arguments;
+  protected EList<ModificationElement> modifications;
 
   /**
    * The cached value of the '{@link #getEnumerationLiteral() <em>Enumeration Literal</em>}' containment reference list.
@@ -152,6 +155,16 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
    * @ordered
    */
   protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotations()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationModification> annotations;
 
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -290,13 +303,13 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
    * @generated
    */
   @Override
-  public EList<Argument> getArguments()
+  public EList<ModificationElement> getModifications()
   {
-    if (arguments == null)
+    if (modifications == null)
     {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS);
+      modifications = new EObjectContainmentEList<ModificationElement>(ModificationElement.class, this, MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS);
     }
-    return arguments;
+    return modifications;
   }
 
   /**
@@ -362,6 +375,21 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     isAnnotation = newIsAnnotation;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<AnnotationModification> getAnnotations()
+  {
+    if (annotations == null)
+    {
+      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS);
+    }
+    return annotations;
   }
 
   /**
@@ -449,10 +477,12 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
   {
     switch (featureID)
     {
-      case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS:
+        return ((InternalEList<?>)getModifications()).basicRemove(otherEnd, msgs);
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
         return ((InternalEList<?>)getEnumerationLiteral()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -471,14 +501,16 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         return getTypeSpecifier();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPTS:
         return getSubscripts();
-      case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
-        return getArguments();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS:
+        return getModifications();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
         return getEnumerationLiteral();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__DESCRIPTION:
         return getDescription();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION:
         return isIsAnnotation();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS:
+        return getAnnotations();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION:
         return getDirection();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION:
@@ -506,9 +538,9 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
       case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPTS:
         setSubscripts((String)newValue);
         return;
-      case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS:
+        getModifications().clear();
+        getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
@@ -519,6 +551,10 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
+        return;
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION:
         setDirection((Direction)newValue);
@@ -549,8 +585,8 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
       case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPTS:
         setSubscripts(SUBSCRIPTS_EDEFAULT);
         return;
-      case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
-        getArguments().clear();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS:
+        getModifications().clear();
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
@@ -560,6 +596,9 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS:
+        getAnnotations().clear();
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
@@ -588,14 +627,16 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
       case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPTS:
         return SUBSCRIPTS_EDEFAULT == null ? subscripts != null : !SUBSCRIPTS_EDEFAULT.equals(subscripts);
-      case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS:
+        return modifications != null && !modifications.isEmpty();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
         return enumerationLiteral != null && !enumerationLiteral.isEmpty();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION:
@@ -634,7 +675,7 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
         default: return -1;
       }
     }
@@ -654,11 +695,19 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         default: return -1;
       }
     }
+    if (baseClass == annotation_modification_part.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == description.class)
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -693,7 +742,7 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS;
+        case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.SHORT_CLASS_SPECIFIER__MODIFICATIONS;
         default: return -1;
       }
     }
@@ -713,11 +762,19 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         default: return -1;
       }
     }
+    if (baseClass == annotation_modification_part.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.SHORT_CLASS_SPECIFIER__ANNOTATIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == description.class)
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ANNOTATION;
         default: return -1;
       }
     }

@@ -105,6 +105,15 @@ public interface MOlocFactory extends EFactory
   class_modification createclass_modification();
 
   /**
+   * Returns a new object of class '<em>annotation modification part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>annotation modification part</em>'.
+   * @generated
+   */
+  annotation_modification_part createannotation_modification_part();
+
+  /**
    * Returns a new object of class '<em>description string</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -159,13 +168,22 @@ public interface MOlocFactory extends EFactory
   description createdescription();
 
   /**
-   * Returns a new object of class '<em>Argument</em>'.
+   * Returns a new object of class '<em>Modification Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Argument</em>'.
+   * @return a new object of class '<em>Modification Element</em>'.
    * @generated
    */
-  Argument createArgument();
+  ModificationElement createModificationElement();
+
+  /**
+   * Returns a new object of class '<em>Annotation Modification</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotation Modification</em>'.
+   * @generated
+   */
+  AnnotationModification createAnnotationModification();
 
   /**
    * Returns a new object of class '<em>element modification</em>'.

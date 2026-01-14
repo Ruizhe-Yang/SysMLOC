@@ -4,35 +4,35 @@
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Icons.ComplexBlock"/>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput">
       <component_list declarationName="re" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{100,40},{140,80}}" elementName="extent"/>
-          </arguments>
-          <arguments elementName="iconTransformation">
-            <arguments expression="{{100,40}, {140,80} }" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{100,40},{140,80}}" elementName="extent"/>
+          </modifications>
+          <modifications elementName="iconTransformation">
+            <modifications expression="{{100,40}, {140,80} }" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput">
       <component_list declarationName="im" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{100,-80},{140,-40}}" elementName="extent"/>
-          </arguments>
-          <arguments elementName="iconTransformation">
-            <arguments expression="{{100,-80}, {140,-40} }" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{100,-80},{140,-40}}" elementName="extent"/>
+          </modifications>
+          <modifications elementName="iconTransformation">
+            <modifications expression="{{100,-80}, {140,-40} }" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.ComplexInput">
       <component_list declarationName="u" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{-140,-20},{-100,20}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
@@ -42,13 +42,13 @@
       <equations xsi:type="mOloc:SimpleEquation" left="re" right="u.re"/>
       <equations xsi:type="mOloc:SimpleEquation" left="im" right="(if useConjugateInput then -u.im else u.im)"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Icon">
-        <arguments expression="{Text( extent={{20,80},{100,40}}, textColor={0,0,127}, textString=&quot;re&quot; ) ,Text( extent={{20,-40},{100,-80}}, textColor={0,0,127}, textString=&quot;im&quot; ) ,Polygon( points={{40,0},{20,20},{20,10},{-10,10},{-10,-10},{20,-10},{ 20,-20} ,{40,0} } , lineColor={0,128,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) ,Text( extent={{-100,60},{-20,-60}}, textColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid, textString=&quot;C&quot; ) }" elementName="graphics"/>
-      </arguments>
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>Converts the Complex input &lt;em>u&lt;/em> to the Real outputs &lt;em>re&lt;/em> (real part) and &lt;em>im&lt;/em> (imaginary part).&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Icon">
+        <modifications expression="{Text( extent={{20,80},{100,40}}, textColor={0,0,127}, textString=&quot;re&quot; ) ,Text( extent={{20,-40},{100,-80}}, textColor={0,0,127}, textString=&quot;im&quot; ) ,Polygon( points={{40,0},{20,20},{20,10},{-10,10},{-10,-10},{20,-10},{ 20,-20} ,{40,0} } , lineColor={0,128,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) ,Text( extent={{-100,60},{-20,-60}}, textColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid, textString=&quot;C&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>Converts the Complex input &lt;em>u&lt;/em> to the Real outputs &lt;em>re&lt;/em> (real part) and &lt;em>im&lt;/em> (imaginary part).&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

@@ -3,9 +3,9 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.ConstrainingClause;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.ModificationElement;
 import dut.control.moloc.mOloc.class_modification;
 
 import java.util.Collection;
@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.ConstrainingClauseImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ConstrainingClauseImpl#getModifications <em>Modifications</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,14 +36,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ConstrainingClauseImpl extends type_specifierImpl implements ConstrainingClause
 {
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
+   * The cached value of the '{@link #getModifications() <em>Modifications</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArguments()
+   * @see #getModifications()
    * @generated
    * @ordered
    */
-  protected EList<Argument> arguments;
+  protected EList<ModificationElement> modifications;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +72,13 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
    * @generated
    */
   @Override
-  public EList<Argument> getArguments()
+  public EList<ModificationElement> getModifications()
   {
-    if (arguments == null)
+    if (modifications == null)
     {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.CONSTRAINING_CLAUSE__ARGUMENTS);
+      modifications = new EObjectContainmentEList<ModificationElement>(ModificationElement.class, this, MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS);
     }
-    return arguments;
+    return modifications;
   }
 
   /**
@@ -91,8 +91,8 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
   {
     switch (featureID)
     {
-      case MOlocPackage.CONSTRAINING_CLAUSE__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS:
+        return ((InternalEList<?>)getModifications()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +107,8 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
   {
     switch (featureID)
     {
-      case MOlocPackage.CONSTRAINING_CLAUSE__ARGUMENTS:
-        return getArguments();
+      case MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS:
+        return getModifications();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +124,9 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
   {
     switch (featureID)
     {
-      case MOlocPackage.CONSTRAINING_CLAUSE__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
+      case MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS:
+        getModifications().clear();
+        getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +142,8 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
   {
     switch (featureID)
     {
-      case MOlocPackage.CONSTRAINING_CLAUSE__ARGUMENTS:
-        getArguments().clear();
+      case MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS:
+        getModifications().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +159,8 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
   {
     switch (featureID)
     {
-      case MOlocPackage.CONSTRAINING_CLAUSE__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS:
+        return modifications != null && !modifications.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -177,7 +177,7 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.CONSTRAINING_CLAUSE__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        case MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
         default: return -1;
       }
     }
@@ -196,7 +196,7 @@ public class ConstrainingClauseImpl extends type_specifierImpl implements Constr
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.CONSTRAINING_CLAUSE__ARGUMENTS;
+        case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.CONSTRAINING_CLAUSE__MODIFICATIONS;
         default: return -1;
       }
     }

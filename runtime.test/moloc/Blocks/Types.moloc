@@ -22,35 +22,35 @@
       <enumerationLiteral description="&quot;No time events at interval boundaries&quot;" title="NoTimeEvents"/>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="type" className="Init" description="&quot;Enumeration defining initialization of a block&quot;" isAnnotation="true" isEnumeration="true">
-      <arguments expression="true" elementName="Evaluate"/>
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;  &lt;p>The following initialization alternatives are available:&lt;/p>&#xA;  &lt;dl>&#xA;    &lt;dt>&lt;code>&lt;strong>NoInit&lt;/strong>&lt;/code>&lt;/dt>&#xA;      &lt;dd>No initialization (start values are used as guess values with &lt;code>fixed=false&lt;/code>)&lt;/dd>&#xA;    &lt;dt>&lt;code>&lt;strong>SteadyState&lt;/strong>&lt;/code>&lt;/dt>&#xA;      &lt;dd>Steady state initialization (derivatives of states are zero)&lt;/dd>&#xA;    &lt;dt>&lt;code>&lt;strong>InitialState&lt;/strong>&lt;/code>&lt;/dt>&#xA;      &lt;dd>Initialization with initial states&lt;/dd>&#xA;    &lt;dt>&lt;code>&lt;strong>InitialOutput&lt;/strong>&lt;/code>&lt;/dt>&#xA;      &lt;dd>Initialization with initial outputs (and steady state of the states if possible)&lt;/dd>&#xA;  &lt;/dl>&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
       <enumerationLiteral description="&quot;No initialization (start values are used as guess values with fixed=false)&quot;" title="NoInit"/>
       <enumerationLiteral description="&quot;Steady state initialization (derivatives of states are zero)&quot;" title="SteadyState"/>
       <enumerationLiteral description="&quot;Initialization with initial states&quot;" title="InitialState"/>
       <enumerationLiteral description="&quot;Initialization with initial outputs (and steady state of the states if possible)&quot;" title="InitialOutput"/>
+      <annotations expression="true" elementName="Evaluate"/>
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;  &lt;p>The following initialization alternatives are available:&lt;/p>&#xA;  &lt;dl>&#xA;    &lt;dt>&lt;code>&lt;strong>NoInit&lt;/strong>&lt;/code>&lt;/dt>&#xA;      &lt;dd>No initialization (start values are used as guess values with &lt;code>fixed=false&lt;/code>)&lt;/dd>&#xA;    &lt;dt>&lt;code>&lt;strong>SteadyState&lt;/strong>&lt;/code>&lt;/dt>&#xA;      &lt;dd>Steady state initialization (derivatives of states are zero)&lt;/dd>&#xA;    &lt;dt>&lt;code>&lt;strong>InitialState&lt;/strong>&lt;/code>&lt;/dt>&#xA;      &lt;dd>Initialization with initial states&lt;/dd>&#xA;    &lt;dt>&lt;code>&lt;strong>InitialOutput&lt;/strong>&lt;/code>&lt;/dt>&#xA;      &lt;dd>Initialization with initial outputs (and steady state of the states if possible)&lt;/dd>&#xA;  &lt;/dl>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="type" className="SimpleController" description="&quot;Enumeration defining P, PI, PD, or PID simple controller type&quot;" isAnnotation="true" isEnumeration="true">
-      <arguments expression="true" elementName="Evaluate"/>
       <enumerationLiteral description="&quot;P controller&quot;" title="P"/>
       <enumerationLiteral description="&quot;PI controller&quot;" title="PI"/>
       <enumerationLiteral description="&quot;PD controller&quot;" title="PD"/>
       <enumerationLiteral description="&quot;PID controller&quot;" title="PID"/>
+      <annotations expression="true" elementName="Evaluate"/>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="type" className="AnalogFilter" description="&quot;Enumeration defining the method of filtering&quot;" isAnnotation="true" isEnumeration="true">
-      <arguments expression="true" elementName="Evaluate"/>
       <enumerationLiteral description="&quot;Filter with critical damping&quot;" title="CriticalDamping"/>
       <enumerationLiteral description="&quot;Bessel filter&quot;" title="Bessel"/>
       <enumerationLiteral description="&quot;Butterworth filter&quot;" title="Butterworth"/>
       <enumerationLiteral description="&quot;Chebyshev I filter&quot;" title="ChebyshevI"/>
+      <annotations expression="true" elementName="Evaluate"/>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="type" className="FilterType" description="&quot;Enumeration of analog filter types (low, high, band pass or band stop filter)&quot;" isAnnotation="true" isEnumeration="true">
-      <arguments expression="true" elementName="Evaluate"/>
       <enumerationLiteral description="&quot;Low pass filter&quot;" title="LowPass"/>
       <enumerationLiteral description="&quot;High pass filter&quot;" title="HighPass"/>
       <enumerationLiteral description="&quot;Band pass filter&quot;" title="BandPass"/>
       <enumerationLiteral description="&quot;Band stop / notch filter&quot;" title="BandStop"/>
+      <annotations expression="true" elementName="Evaluate"/>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="type" className="Regularization" description="&quot;Enumeration defining the regularization around zero&quot;" isEnumeration="true">
       <enumerationLiteral description="&quot;Exponential regularization (smooth)&quot;" title="Exp"/>
@@ -59,17 +59,17 @@
       <enumerationLiteral description="&quot;Cosine regularization&quot;" title="Cosine"/>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="type" className="LimiterHomotopy" description="&quot;Enumeration defining use of homotopy in limiter components&quot;" isAnnotation="true" isEnumeration="true">
-      <arguments expression="true" elementName="Evaluate"/>
       <enumerationLiteral description="&quot;Homotopy is not used&quot;" title="NoHomotopy"/>
       <enumerationLiteral description="&quot;Simplified model without limits&quot;" title="Linear"/>
       <enumerationLiteral description="&quot;Simplified model fixed at upper limit&quot;" title="UpperLimit"/>
       <enumerationLiteral description="&quot;Simplified model fixed at lower limit&quot;" title="LowerLimit"/>
+      <annotations expression="true" elementName="Evaluate"/>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="type" className="VariableLimiterHomotopy" description="&quot;Enumeration defining use of homotopy in variable limiter components&quot;" isAnnotation="true" isEnumeration="true">
-      <arguments expression="true" elementName="Evaluate"/>
       <enumerationLiteral description="&quot;Simplified model = actual model&quot;" title="NoHomotopy"/>
       <enumerationLiteral description="&quot;Simplified model: y = u&quot;" title="Linear"/>
       <enumerationLiteral description="&quot;Simplified model: y = ySimplified&quot;" title="Fixed"/>
+      <annotations expression="true" elementName="Evaluate"/>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="class" className="ExternalCombiTimeTable" description="&quot;External object of 1-dim. table where first column is time&quot;" classNameEnd="ExternalCombiTimeTable">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="ExternalObject"/>
@@ -108,9 +108,9 @@
         <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ExternalCombiTimeTable" directionType="output">
           <component_list declarationName="externalCombiTimeTable"/>
         </elements>
-        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="externalCombiTimeTable" refValue="ModelicaStandardTables_CombiTimeTable_init2" expressionList="fileName, tableName, table, size(table, 1), size(table, 2), startTime, columns, size(columns, 1), smoothness, extrapolation, shiftTime, timeEvents, verboseRead" isAnnotation="true">
-          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
-          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        <elements xsi:type="mOloc:ExternalElement" isAnnotation="true" language_specification="C" ref="externalCombiTimeTable" refValue="ModelicaStandardTables_CombiTimeTable_init2" expressionList="fileName, tableName, table, size(table, 1), size(table, 2), startTime, columns, size(columns, 1), smoothness, extrapolation, shiftTime, timeEvents, verboseRead">
+          <annotations expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <annotations expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
         </elements>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="function" className="destructor" description="&quot;Terminate 1-dim. table where first column is time&quot;" classNameEnd="destructor">
@@ -118,9 +118,9 @@
         <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ExternalCombiTimeTable" directionType="input">
           <component_list declarationName="externalCombiTimeTable"/>
         </elements>
-        <elements xsi:type="mOloc:ExternalElement" language_specification="C" refValue="ModelicaStandardTables_CombiTimeTable_close" expressionList="externalCombiTimeTable" isAnnotation="true">
-          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
-          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        <elements xsi:type="mOloc:ExternalElement" isAnnotation="true" language_specification="C" refValue="ModelicaStandardTables_CombiTimeTable_close" expressionList="externalCombiTimeTable">
+          <annotations expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <annotations expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
         </elements>
       </elements>
     </elements>
@@ -152,9 +152,9 @@
         <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ExternalCombiTable1D" directionType="output">
           <component_list declarationName="externalCombiTable1D"/>
         </elements>
-        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="externalCombiTable1D" refValue="ModelicaStandardTables_CombiTable1D_init2" expressionList="fileName, tableName, table, size(table, 1), size(table, 2), columns, size(columns, 1), smoothness, extrapolation, verboseRead" isAnnotation="true">
-          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
-          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        <elements xsi:type="mOloc:ExternalElement" isAnnotation="true" language_specification="C" ref="externalCombiTable1D" refValue="ModelicaStandardTables_CombiTable1D_init2" expressionList="fileName, tableName, table, size(table, 1), size(table, 2), columns, size(columns, 1), smoothness, extrapolation, verboseRead">
+          <annotations expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <annotations expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
         </elements>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="function" className="destructor" description="&quot;Terminate 1-dim. table defined by matrix&quot;" classNameEnd="destructor">
@@ -162,9 +162,9 @@
         <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ExternalCombiTable1D" directionType="input">
           <component_list declarationName="externalCombiTable1D"/>
         </elements>
-        <elements xsi:type="mOloc:ExternalElement" language_specification="C" refValue="ModelicaStandardTables_CombiTable1D_close" expressionList="externalCombiTable1D" isAnnotation="true">
-          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
-          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        <elements xsi:type="mOloc:ExternalElement" isAnnotation="true" language_specification="C" refValue="ModelicaStandardTables_CombiTable1D_close" expressionList="externalCombiTable1D">
+          <annotations expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <annotations expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
         </elements>
       </elements>
     </elements>
@@ -193,9 +193,9 @@
         <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ExternalCombiTable2D" directionType="output">
           <component_list declarationName="externalCombiTable2D"/>
         </elements>
-        <elements xsi:type="mOloc:ExternalElement" language_specification="C" ref="externalCombiTable2D" refValue="ModelicaStandardTables_CombiTable2D_init2" expressionList="fileName, tableName, table, size(table, 1), size(table, 2), smoothness, extrapolation, verboseRead" isAnnotation="true">
-          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
-          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        <elements xsi:type="mOloc:ExternalElement" isAnnotation="true" language_specification="C" ref="externalCombiTable2D" refValue="ModelicaStandardTables_CombiTable2D_init2" expressionList="fileName, tableName, table, size(table, 1), size(table, 2), smoothness, extrapolation, verboseRead">
+          <annotations expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <annotations expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
         </elements>
       </elements>
       <elements xsi:type="mOloc:GeneralClause" classType="function" className="destructor" description="&quot;Terminate 2-dim. table defined by matrix&quot;" classNameEnd="destructor">
@@ -203,16 +203,16 @@
         <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ExternalCombiTable2D" directionType="input">
           <component_list declarationName="externalCombiTable2D"/>
         </elements>
-        <elements xsi:type="mOloc:ExternalElement" language_specification="C" refValue="ModelicaStandardTables_CombiTable2D_close" expressionList="externalCombiTable2D" isAnnotation="true">
-          <arguments expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
-          <arguments expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
+        <elements xsi:type="mOloc:ExternalElement" isAnnotation="true" language_specification="C" refValue="ModelicaStandardTables_CombiTable2D_close" expressionList="externalCombiTable2D">
+          <annotations expression="&quot;modelica://Modelica/Resources/C-Sources&quot;" elementName="IncludeDirectory"/>
+          <annotations expression="{&quot;ModelicaStandardTables&quot;, &quot;ModelicaIO&quot;, &quot;ModelicaMatIO&quot;, &quot;zlib&quot;}" elementName="Library"/>
         </elements>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;In this package &lt;strong>types&lt;/strong>, &lt;strong>constants&lt;/strong> and &lt;strong>external objects&lt;/strong> are defined that are used&#xA;in library Modelica.Blocks. The types have additional annotation choices&#xA;definitions that define the menus to be built up in the graphical&#xA;user interface when the type is used as parameter in a declaration.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;In this package &lt;strong>types&lt;/strong>, &lt;strong>constants&lt;/strong> and &lt;strong>external objects&lt;/strong> are defined that are used&#xA;in library Modelica.Blocks. The types have additional annotation choices&#xA;definitions that define the menus to be built up in the graphical&#xA;user interface when the type is used as parameter in a declaration.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

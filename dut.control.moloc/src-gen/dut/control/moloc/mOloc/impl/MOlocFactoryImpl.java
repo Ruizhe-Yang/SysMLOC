@@ -75,13 +75,15 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
       case MOlocPackage.DER_CLASS_SPECIFIER: return createder_class_specifier();
       case MOlocPackage.CLASS_NAME: return createclass_name();
       case MOlocPackage.CLASS_MODIFICATION: return createclass_modification();
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART: return createannotation_modification_part();
       case MOlocPackage.DESCRIPTION_STRING: return createdescription_string();
       case MOlocPackage.COMPOSITION: return createcomposition();
       case MOlocPackage.TYPE_SPECIFIER: return createtype_specifier();
       case MOlocPackage.ENUM_LIST: return createenum_list();
       case MOlocPackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
       case MOlocPackage.DESCRIPTION: return createdescription();
-      case MOlocPackage.ARGUMENT: return createArgument();
+      case MOlocPackage.MODIFICATION_ELEMENT: return createModificationElement();
+      case MOlocPackage.ANNOTATION_MODIFICATION: return createAnnotationModification();
       case MOlocPackage.ELEMENT_MODIFICATION: return createelement_modification();
       case MOlocPackage.SHORT_CLASS_DEFINITION: return createshort_class_definition();
       case MOlocPackage.COMPONENT_CLAUSE1: return createcomponent_clause1();
@@ -282,6 +284,18 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
+  public annotation_modification_part createannotation_modification_part()
+  {
+    annotation_modification_partImpl annotation_modification_part = new annotation_modification_partImpl();
+    return annotation_modification_part;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public description_string createdescription_string()
   {
     description_stringImpl description_string = new description_stringImpl();
@@ -354,10 +368,22 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public Argument createArgument()
+  public ModificationElement createModificationElement()
   {
-    ArgumentImpl argument = new ArgumentImpl();
-    return argument;
+    ModificationElementImpl modificationElement = new ModificationElementImpl();
+    return modificationElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AnnotationModification createAnnotationModification()
+  {
+    AnnotationModificationImpl annotationModification = new AnnotationModificationImpl();
+    return annotationModification;
   }
 
   /**

@@ -3,11 +3,11 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
+import dut.control.moloc.mOloc.AnnotationModification;
 import dut.control.moloc.mOloc.Equation;
 import dut.control.moloc.mOloc.ForEquation;
 import dut.control.moloc.mOloc.MOlocPackage;
-import dut.control.moloc.mOloc.class_modification;
+import dut.control.moloc.mOloc.annotation_modification_part;
 import dut.control.moloc.mOloc.description;
 import dut.control.moloc.mOloc.description_string;
 
@@ -35,8 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.ForEquationImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ForEquationImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ForEquationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ForEquationImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ForEquationImpl#getForIndices <em>For Indices</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ForEquationImpl#getForEquations <em>For Equations</em>}</li>
  * </ul>
@@ -66,16 +66,6 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getArguments()
-   * @generated
-   * @ordered
-   */
-  protected EList<Argument> arguments;
-
-  /**
    * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,6 +84,16 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
    * @ordered
    */
   protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotations()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationModification> annotations;
 
   /**
    * The default value of the '{@link #getForIndices() <em>For Indices</em>}' attribute.
@@ -177,21 +177,6 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
    * @generated
    */
   @Override
-  public EList<Argument> getArguments()
-  {
-    if (arguments == null)
-    {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.FOR_EQUATION__ARGUMENTS);
-    }
-    return arguments;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsAnnotation()
   {
     return isAnnotation;
@@ -209,6 +194,21 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
     isAnnotation = newIsAnnotation;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.FOR_EQUATION__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<AnnotationModification> getAnnotations()
+  {
+    if (annotations == null)
+    {
+      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.FOR_EQUATION__ANNOTATIONS);
+    }
+    return annotations;
   }
 
   /**
@@ -261,8 +261,8 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
   {
     switch (featureID)
     {
-      case MOlocPackage.FOR_EQUATION__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.FOR_EQUATION__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
       case MOlocPackage.FOR_EQUATION__FOR_EQUATIONS:
         return ((InternalEList<?>)getForEquations()).basicRemove(otherEnd, msgs);
     }
@@ -281,10 +281,10 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
     {
       case MOlocPackage.FOR_EQUATION__DESCRIPTION:
         return getDescription();
-      case MOlocPackage.FOR_EQUATION__ARGUMENTS:
-        return getArguments();
       case MOlocPackage.FOR_EQUATION__IS_ANNOTATION:
         return isIsAnnotation();
+      case MOlocPackage.FOR_EQUATION__ANNOTATIONS:
+        return getAnnotations();
       case MOlocPackage.FOR_EQUATION__FOR_INDICES:
         return getForIndices();
       case MOlocPackage.FOR_EQUATION__FOR_EQUATIONS:
@@ -307,12 +307,12 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
       case MOlocPackage.FOR_EQUATION__DESCRIPTION:
         setDescription((String)newValue);
         return;
-      case MOlocPackage.FOR_EQUATION__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
-        return;
       case MOlocPackage.FOR_EQUATION__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
+        return;
+      case MOlocPackage.FOR_EQUATION__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
         return;
       case MOlocPackage.FOR_EQUATION__FOR_INDICES:
         setForIndices((String)newValue);
@@ -338,11 +338,11 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
       case MOlocPackage.FOR_EQUATION__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
-      case MOlocPackage.FOR_EQUATION__ARGUMENTS:
-        getArguments().clear();
-        return;
       case MOlocPackage.FOR_EQUATION__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
+      case MOlocPackage.FOR_EQUATION__ANNOTATIONS:
+        getAnnotations().clear();
         return;
       case MOlocPackage.FOR_EQUATION__FOR_INDICES:
         setForIndices(FOR_INDICES_EDEFAULT);
@@ -366,10 +366,10 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
     {
       case MOlocPackage.FOR_EQUATION__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case MOlocPackage.FOR_EQUATION__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
       case MOlocPackage.FOR_EQUATION__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.FOR_EQUATION__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
       case MOlocPackage.FOR_EQUATION__FOR_INDICES:
         return FOR_INDICES_EDEFAULT == null ? forIndices != null : !FOR_INDICES_EDEFAULT.equals(forIndices);
       case MOlocPackage.FOR_EQUATION__FOR_EQUATIONS:
@@ -394,11 +394,12 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
         default: return -1;
       }
     }
-    if (baseClass == class_modification.class)
+    if (baseClass == annotation_modification_part.class)
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.FOR_EQUATION__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        case MOlocPackage.FOR_EQUATION__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
+        case MOlocPackage.FOR_EQUATION__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
         default: return -1;
       }
     }
@@ -406,7 +407,6 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.FOR_EQUATION__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -429,11 +429,12 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
         default: return -1;
       }
     }
-    if (baseClass == class_modification.class)
+    if (baseClass == annotation_modification_part.class)
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.FOR_EQUATION__ARGUMENTS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.FOR_EQUATION__IS_ANNOTATION;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.FOR_EQUATION__ANNOTATIONS;
         default: return -1;
       }
     }
@@ -441,7 +442,6 @@ public class ForEquationImpl extends EquationImpl implements ForEquation
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.FOR_EQUATION__IS_ANNOTATION;
         default: return -1;
       }
     }

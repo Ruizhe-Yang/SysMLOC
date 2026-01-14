@@ -10,13 +10,13 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerInput">
       <component_list declarationName="index" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{0,-120}" elementName="origin"/>
-            <arguments expression="{{-20,-20},{20,20}}" elementName="extent"/>
-            <arguments expression="90" elementName="rotation"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{0,-120}" elementName="origin"/>
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isProtected="true">
@@ -30,17 +30,17 @@
       </equations>
       <equations xsi:type="mOloc:SimpleEquation" left="y" right="if not allowOutOfRange or index > 0 and index &lt;= nin then k*u else outOfRangeValue"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Icon">
-        <arguments elementName="coordinateSystem">
-          <arguments expression="true" elementName="preserveAspectRatio"/>
-          <arguments expression="{{-100,-100},{100,100}}" elementName="extent"/>
-        </arguments>
-        <arguments expression="{ Rectangle( extent={{-80,50},{-40,-50}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-84.4104,1.9079},{-84.4104,-2.09208},{-80.4104,-0.09208},{ -84.4104,1.9079} } , lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) , Line(points={{-62,2},{-50.1395,12.907},{-39.1395,12.907}}, color={85, 170,255 } ) , Line(points={{-63,4},{-49,40},{-39,40}}, color={85,170,255}), Line(points={{-102,0},{-65.0373,-0.01802}}, color={85,170,255}), Ellipse( extent={{-70.0437,4.5925},{-60.0437,-4.90745}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) , Line(points={{-63,-5},{-50,-40},{-39,-40}}, color={85,170,255}), Line(points={{-62,-2},{-50.0698,-12.907},{-39.0698,-12.907}}, color={85, 170,255 } ) , Polygon( points={{-38.8808,-11},{-38.8808,-15},{-34.8808,-13},{-38.8808,-11}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-39,42},{-39,38},{-35,40},{-39,42}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-38.8728,-38.0295},{-38.8728,-42.0295},{-34.8728,-40.0295}, {-38.8728,-38.0295} } , lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-38.9983,14.8801},{-38.9983,10.8801},{-34.9983,12.8801},{-38.9983, 14.8801 } } , lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Rectangle( extent={{-30,50},{30,-50}}, fillColor={235,235,235}, fillPattern=FillPattern.Solid, lineColor={85,170,255} ) , Line(points={{100,0},{0,0}}, color={85,170,255}), Line(points={{0,2},{0,-104}}, color={255,128,0}), Line(points={{-35,40},{-20,40}}, color={85,170,255}), Line(points={{-35,13},{-20,13}}, color={85,170,255}), Line(points={{-35,-13},{-20,-13}}, color={85,170,255}), Line(points={{-35,-40},{-20,-40}}, color={85,170,255}), Polygon(points={{0,0},{-20,13},{-20,13},{0,0},{0,0}}, lineColor={85, 170,255 } ) , Ellipse( extent={{-6,6},{6,-6}}, lineColor={255,128,0}, fillColor={255,128,0}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
-      </arguments>
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>This block extracts a scalar output signal out the&#xA;vector of input signals dependent on the Integer&#xA;value of the additional u index:&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u [ index ] ;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>where index is an additional Integer input signal.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Icon">
+        <modifications elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Rectangle( extent={{-80,50},{-40,-50}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-84.4104,1.9079},{-84.4104,-2.09208},{-80.4104,-0.09208},{ -84.4104,1.9079} } , lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) , Line(points={{-62,2},{-50.1395,12.907},{-39.1395,12.907}}, color={85, 170,255 } ) , Line(points={{-63,4},{-49,40},{-39,40}}, color={85,170,255}), Line(points={{-102,0},{-65.0373,-0.01802}}, color={85,170,255}), Ellipse( extent={{-70.0437,4.5925},{-60.0437,-4.90745}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) , Line(points={{-63,-5},{-50,-40},{-39,-40}}, color={85,170,255}), Line(points={{-62,-2},{-50.0698,-12.907},{-39.0698,-12.907}}, color={85, 170,255 } ) , Polygon( points={{-38.8808,-11},{-38.8808,-15},{-34.8808,-13},{-38.8808,-11}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-39,42},{-39,38},{-35,40},{-39,42}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-38.8728,-38.0295},{-38.8728,-42.0295},{-34.8728,-40.0295}, {-38.8728,-38.0295} } , lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Polygon( points={{-38.9983,14.8801},{-38.9983,10.8801},{-34.9983,12.8801},{-38.9983, 14.8801 } } , lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Rectangle( extent={{-30,50},{30,-50}}, fillColor={235,235,235}, fillPattern=FillPattern.Solid, lineColor={85,170,255} ) , Line(points={{100,0},{0,0}}, color={85,170,255}), Line(points={{0,2},{0,-104}}, color={255,128,0}), Line(points={{-35,40},{-20,40}}, color={85,170,255}), Line(points={{-35,13},{-20,13}}, color={85,170,255}), Line(points={{-35,-13},{-20,-13}}, color={85,170,255}), Line(points={{-35,-40},{-20,-40}}, color={85,170,255}), Polygon(points={{0,0},{-20,13},{-20,13},{0,0},{0,0}}, lineColor={85, 170,255 } ) , Ellipse( extent={{-6,6},{6,-6}}, lineColor={255,128,0}, fillColor={255,128,0}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This block extracts a scalar output signal out the&#xA;vector of input signals dependent on the Integer&#xA;value of the additional u index:&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u [ index ] ;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>where index is an additional Integer input signal.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

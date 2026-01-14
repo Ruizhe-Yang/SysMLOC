@@ -4,22 +4,22 @@
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Icons.ComplexBlock"/>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter">
       <component_list expression="1" declarationName="nout" description="&quot;Number of outputs&quot;">
-        <arguments expression="1" elementName="min"/>
+        <modifications expression="1" elementName="min"/>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexOutput">
       <component_list subscripts="[nout]" declarationName="y" description="&quot;Connector of Complex output signals&quot;" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Block has one continuous Complex output signal vector.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Block has one continuous Complex output signal vector.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

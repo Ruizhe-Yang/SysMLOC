@@ -3,16 +3,27 @@
  */
 package dut.control.moloc.mOloc.impl;
 
+import dut.control.moloc.mOloc.AnnotationModification;
 import dut.control.moloc.mOloc.Component_declaration;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.annotation_modification_part;
 import dut.control.moloc.mOloc.description;
 import dut.control.moloc.mOloc.description_string;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.Component_declarationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Component_declarationImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.Component_declarationImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Component_declarationImpl#getCondition_attribute <em>Condition attribute</em>}</li>
  * </ul>
  *
@@ -70,6 +82,16 @@ public class Component_declarationImpl extends declarationImpl implements Compon
    * @ordered
    */
   protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotations()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationModification> annotations;
 
   /**
    * The default value of the '{@link #getCondition_attribute() <em>Condition attribute</em>}' attribute.
@@ -168,6 +190,21 @@ public class Component_declarationImpl extends declarationImpl implements Compon
    * @generated
    */
   @Override
+  public EList<AnnotationModification> getAnnotations()
+  {
+    if (annotations == null)
+    {
+      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS);
+    }
+    return annotations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getCondition_attribute()
   {
     return condition_attribute;
@@ -193,6 +230,22 @@ public class Component_declarationImpl extends declarationImpl implements Compon
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -201,6 +254,8 @@ public class Component_declarationImpl extends declarationImpl implements Compon
         return getDescription();
       case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION:
         return isIsAnnotation();
+      case MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS:
+        return getAnnotations();
       case MOlocPackage.COMPONENT_DECLARATION__CONDITION_ATTRIBUTE:
         return getCondition_attribute();
     }
@@ -212,6 +267,7 @@ public class Component_declarationImpl extends declarationImpl implements Compon
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -222,6 +278,10 @@ public class Component_declarationImpl extends declarationImpl implements Compon
         return;
       case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
+        return;
+      case MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
         return;
       case MOlocPackage.COMPONENT_DECLARATION__CONDITION_ATTRIBUTE:
         setCondition_attribute((String)newValue);
@@ -246,6 +306,9 @@ public class Component_declarationImpl extends declarationImpl implements Compon
       case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
         return;
+      case MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS:
+        getAnnotations().clear();
+        return;
       case MOlocPackage.COMPONENT_DECLARATION__CONDITION_ATTRIBUTE:
         setCondition_attribute(CONDITION_ATTRIBUTE_EDEFAULT);
         return;
@@ -267,6 +330,8 @@ public class Component_declarationImpl extends declarationImpl implements Compon
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
       case MOlocPackage.COMPONENT_DECLARATION__CONDITION_ATTRIBUTE:
         return CONDITION_ATTRIBUTE_EDEFAULT == null ? condition_attribute != null : !CONDITION_ATTRIBUTE_EDEFAULT.equals(condition_attribute);
     }
@@ -289,11 +354,19 @@ public class Component_declarationImpl extends declarationImpl implements Compon
         default: return -1;
       }
     }
+    if (baseClass == annotation_modification_part.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
+        case MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == description.class)
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -316,11 +389,19 @@ public class Component_declarationImpl extends declarationImpl implements Compon
         default: return -1;
       }
     }
+    if (baseClass == annotation_modification_part.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.COMPONENT_DECLARATION__ANNOTATIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == description.class)
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.COMPONENT_DECLARATION__IS_ANNOTATION;
         default: return -1;
       }
     }

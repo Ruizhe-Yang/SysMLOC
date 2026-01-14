@@ -20,7 +20,7 @@ package dut.control.moloc.mOloc;
  * @model
  * @generated
  */
-public interface EnumerationLiteral extends description, description_string, class_modification
+public interface EnumerationLiteral extends description, description_string, annotation_modification_part
 {
   /**
    * Returns the value of the '<em><b>Title</b></em>' attribute.

@@ -22,7 +22,7 @@ package dut.control.moloc.mOloc;
  * @model
  * @generated
  */
-public interface short_class_specifier extends class_name, type_specifier, array_subscripts, class_modification, enum_list, description, description_string
+public interface short_class_specifier extends class_name, type_specifier, array_subscripts, class_modification, enum_list, description, description_string, annotation_modification_part
 {
   /**
    * Returns the value of the '<em><b>Direction</b></em>' attribute.

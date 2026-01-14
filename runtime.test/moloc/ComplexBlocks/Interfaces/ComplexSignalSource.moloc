@@ -8,10 +8,10 @@
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter">
       <component_list expression="0" declarationName="startTime" description="&quot;Output y = offset for time &lt; startTime&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Basic block for Complex sources.&#xA;This component has one continuous Complex output signal y&#xA;and two parameters (offset, startTime) to shift the&#xA;generated signal.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Basic block for Complex sources.&#xA;This component has one continuous Complex output signal y&#xA;and two parameters (offset, startTime) to shift the&#xA;generated signal.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

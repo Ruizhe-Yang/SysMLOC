@@ -3,8 +3,8 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.ModificationElement;
 import dut.control.moloc.mOloc.class_modification;
 
 import java.util.Collection;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.class_modificationImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.class_modificationImpl#getModifications <em>Modifications</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class class_modificationImpl extends MinimalEObjectImpl.Container implements class_modification
 {
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
+   * The cached value of the '{@link #getModifications() <em>Modifications</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArguments()
+   * @see #getModifications()
    * @generated
    * @ordered
    */
-  protected EList<Argument> arguments;
+  protected EList<ModificationElement> modifications;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +73,13 @@ public class class_modificationImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public EList<Argument> getArguments()
+  public EList<ModificationElement> getModifications()
   {
-    if (arguments == null)
+    if (modifications == null)
     {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.CLASS_MODIFICATION__ARGUMENTS);
+      modifications = new EObjectContainmentEList<ModificationElement>(ModificationElement.class, this, MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS);
     }
-    return arguments;
+    return modifications;
   }
 
   /**
@@ -92,8 +92,8 @@ public class class_modificationImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS:
+        return ((InternalEList<?>)getModifications()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class class_modificationImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS:
-        return getArguments();
+      case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS:
+        return getModifications();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class class_modificationImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
+      case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS:
+        getModifications().clear();
+        getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class class_modificationImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS:
-        getArguments().clear();
+      case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS:
+        getModifications().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +160,8 @@ public class class_modificationImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS:
+        return modifications != null && !modifications.isEmpty();
     }
     return super.eIsSet(featureID);
   }

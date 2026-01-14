@@ -90,13 +90,14 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseshort_class_specifier(class_definition);
         if (result == null) result = caseder_class_specifier(class_definition);
         if (result == null) result = caseclass_name(class_definition);
+        if (result == null) result = caseclass_modification(class_definition);
         if (result == null) result = casecomposition(class_definition);
         if (result == null) result = casetype_specifier(class_definition);
         if (result == null) result = casearray_subscripts(class_definition);
         if (result == null) result = caseenum_list(class_definition);
         if (result == null) result = casedescription(class_definition);
-        if (result == null) result = caseclass_modification(class_definition);
         if (result == null) result = casedescription_string(class_definition);
+        if (result == null) result = caseannotation_modification_part(class_definition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -115,13 +116,14 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseshort_class_specifier(class_specifier);
         if (result == null) result = caseder_class_specifier(class_specifier);
         if (result == null) result = caseclass_name(class_specifier);
+        if (result == null) result = caseclass_modification(class_specifier);
         if (result == null) result = casecomposition(class_specifier);
         if (result == null) result = casetype_specifier(class_specifier);
         if (result == null) result = casearray_subscripts(class_specifier);
         if (result == null) result = caseenum_list(class_specifier);
         if (result == null) result = casedescription(class_specifier);
-        if (result == null) result = caseclass_modification(class_specifier);
         if (result == null) result = casedescription_string(class_specifier);
+        if (result == null) result = caseannotation_modification_part(class_specifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -143,10 +145,11 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseclass_name(short_class_specifier);
         if (result == null) result = casetype_specifier(short_class_specifier);
         if (result == null) result = casearray_subscripts(short_class_specifier);
+        if (result == null) result = caseclass_modification(short_class_specifier);
         if (result == null) result = caseenum_list(short_class_specifier);
         if (result == null) result = casedescription(short_class_specifier);
-        if (result == null) result = caseclass_modification(short_class_specifier);
         if (result == null) result = casedescription_string(short_class_specifier);
+        if (result == null) result = caseannotation_modification_part(short_class_specifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -158,7 +161,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = casetype_specifier(der_class_specifier);
         if (result == null) result = casedescription(der_class_specifier);
         if (result == null) result = casedescription_string(der_class_specifier);
-        if (result == null) result = caseclass_modification(der_class_specifier);
+        if (result == null) result = caseannotation_modification_part(der_class_specifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -173,6 +176,13 @@ public class MOlocSwitch<T> extends Switch<T>
       {
         class_modification class_modification = (class_modification)theEObject;
         T result = caseclass_modification(class_modification);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART:
+      {
+        annotation_modification_part annotation_modification_part = (annotation_modification_part)theEObject;
+        T result = caseannotation_modification_part(annotation_modification_part);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -210,7 +220,7 @@ public class MOlocSwitch<T> extends Switch<T>
         T result = caseEnumerationLiteral(enumerationLiteral);
         if (result == null) result = casedescription(enumerationLiteral);
         if (result == null) result = casedescription_string(enumerationLiteral);
-        if (result == null) result = caseclass_modification(enumerationLiteral);
+        if (result == null) result = caseannotation_modification_part(enumerationLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -219,31 +229,57 @@ public class MOlocSwitch<T> extends Switch<T>
         description description = (description)theEObject;
         T result = casedescription(description);
         if (result == null) result = casedescription_string(description);
-        if (result == null) result = caseclass_modification(description);
+        if (result == null) result = caseannotation_modification_part(description);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MOlocPackage.ARGUMENT:
+      case MOlocPackage.MODIFICATION_ELEMENT:
       {
-        Argument argument = (Argument)theEObject;
-        T result = caseArgument(argument);
-        if (result == null) result = caseshort_class_definition(argument);
-        if (result == null) result = casecomponent_clause1(argument);
-        if (result == null) result = caseelement_modification(argument);
-        if (result == null) result = caseconstraining(argument);
-        if (result == null) result = caseclass_prefixes(argument);
-        if (result == null) result = caseshort_class_specifier(argument);
-        if (result == null) result = casetype_prefix(argument);
-        if (result == null) result = casecomponent_declaration1(argument);
-        if (result == null) result = caseclass_name(argument);
-        if (result == null) result = casetype_specifier(argument);
-        if (result == null) result = caseenum_list(argument);
-        if (result == null) result = casedescription(argument);
-        if (result == null) result = casedeclaration(argument);
-        if (result == null) result = casearray_subscripts(argument);
-        if (result == null) result = casedescription_string(argument);
-        if (result == null) result = casemodification(argument);
-        if (result == null) result = caseclass_modification(argument);
+        ModificationElement modificationElement = (ModificationElement)theEObject;
+        T result = caseModificationElement(modificationElement);
+        if (result == null) result = caseshort_class_definition(modificationElement);
+        if (result == null) result = casecomponent_clause1(modificationElement);
+        if (result == null) result = caseelement_modification(modificationElement);
+        if (result == null) result = caseconstraining(modificationElement);
+        if (result == null) result = caseclass_prefixes(modificationElement);
+        if (result == null) result = caseshort_class_specifier(modificationElement);
+        if (result == null) result = casetype_prefix(modificationElement);
+        if (result == null) result = casecomponent_declaration1(modificationElement);
+        if (result == null) result = caseclass_name(modificationElement);
+        if (result == null) result = casetype_specifier(modificationElement);
+        if (result == null) result = caseenum_list(modificationElement);
+        if (result == null) result = casedescription(modificationElement);
+        if (result == null) result = casedeclaration(modificationElement);
+        if (result == null) result = casearray_subscripts(modificationElement);
+        if (result == null) result = casedescription_string(modificationElement);
+        if (result == null) result = caseannotation_modification_part(modificationElement);
+        if (result == null) result = casemodification(modificationElement);
+        if (result == null) result = caseclass_modification(modificationElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MOlocPackage.ANNOTATION_MODIFICATION:
+      {
+        AnnotationModification annotationModification = (AnnotationModification)theEObject;
+        T result = caseAnnotationModification(annotationModification);
+        if (result == null) result = caseshort_class_definition(annotationModification);
+        if (result == null) result = casecomponent_clause1(annotationModification);
+        if (result == null) result = caseelement_modification(annotationModification);
+        if (result == null) result = caseconstraining(annotationModification);
+        if (result == null) result = caseclass_prefixes(annotationModification);
+        if (result == null) result = caseshort_class_specifier(annotationModification);
+        if (result == null) result = casetype_prefix(annotationModification);
+        if (result == null) result = casecomponent_declaration1(annotationModification);
+        if (result == null) result = caseclass_name(annotationModification);
+        if (result == null) result = casetype_specifier(annotationModification);
+        if (result == null) result = caseenum_list(annotationModification);
+        if (result == null) result = casedescription(annotationModification);
+        if (result == null) result = casedeclaration(annotationModification);
+        if (result == null) result = casearray_subscripts(annotationModification);
+        if (result == null) result = casedescription_string(annotationModification);
+        if (result == null) result = caseannotation_modification_part(annotationModification);
+        if (result == null) result = casemodification(annotationModification);
+        if (result == null) result = caseclass_modification(annotationModification);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -266,10 +302,11 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseclass_name(short_class_definition);
         if (result == null) result = casetype_specifier(short_class_definition);
         if (result == null) result = casearray_subscripts(short_class_definition);
+        if (result == null) result = caseclass_modification(short_class_definition);
         if (result == null) result = caseenum_list(short_class_definition);
         if (result == null) result = casedescription(short_class_definition);
-        if (result == null) result = caseclass_modification(short_class_definition);
         if (result == null) result = casedescription_string(short_class_definition);
+        if (result == null) result = caseannotation_modification_part(short_class_definition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -285,6 +322,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = casearray_subscripts(component_clause1);
         if (result == null) result = casemodification(component_clause1);
         if (result == null) result = casedescription_string(component_clause1);
+        if (result == null) result = caseannotation_modification_part(component_clause1);
         if (result == null) result = caseclass_modification(component_clause1);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -305,6 +343,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = casearray_subscripts(component_declaration1);
         if (result == null) result = casemodification(component_declaration1);
         if (result == null) result = casedescription_string(component_declaration1);
+        if (result == null) result = caseannotation_modification_part(component_declaration1);
         if (result == null) result = caseclass_modification(component_declaration1);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -364,7 +403,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseElement(importClause);
         if (result == null) result = casedescription(importClause);
         if (result == null) result = casedescription_string(importClause);
-        if (result == null) result = caseclass_modification(importClause);
+        if (result == null) result = caseannotation_modification_part(importClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -374,7 +413,7 @@ public class MOlocSwitch<T> extends Switch<T>
         T result = caseExtendsClause(extendsClause);
         if (result == null) result = caseElement(extendsClause);
         if (result == null) result = casetype_specifier(extendsClause);
-        if (result == null) result = caseclass_modification(extendsClause);
+        if (result == null) result = caseannotation_modification_part(extendsClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -398,13 +437,14 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseshort_class_specifier(generalClause);
         if (result == null) result = caseder_class_specifier(generalClause);
         if (result == null) result = caseclass_name(generalClause);
+        if (result == null) result = caseclass_modification(generalClause);
         if (result == null) result = casecomposition(generalClause);
         if (result == null) result = casetype_specifier(generalClause);
         if (result == null) result = casearray_subscripts(generalClause);
         if (result == null) result = caseenum_list(generalClause);
         if (result == null) result = casedescription(generalClause);
-        if (result == null) result = caseclass_modification(generalClause);
         if (result == null) result = casedescription_string(generalClause);
+        if (result == null) result = caseannotation_modification_part(generalClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -417,6 +457,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = casearray_subscripts(component_declaration);
         if (result == null) result = casemodification(component_declaration);
         if (result == null) result = casedescription_string(component_declaration);
+        if (result == null) result = caseannotation_modification_part(component_declaration);
         if (result == null) result = caseclass_modification(component_declaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -426,7 +467,7 @@ public class MOlocSwitch<T> extends Switch<T>
         ExternalElement externalElement = (ExternalElement)theEObject;
         T result = caseExternalElement(externalElement);
         if (result == null) result = caseElement(externalElement);
-        if (result == null) result = caseclass_modification(externalElement);
+        if (result == null) result = caseannotation_modification_part(externalElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -435,7 +476,7 @@ public class MOlocSwitch<T> extends Switch<T>
         AnnotationClause annotationClause = (AnnotationClause)theEObject;
         T result = caseAnnotationClause(annotationClause);
         if (result == null) result = caseElement(annotationClause);
-        if (result == null) result = caseclass_modification(annotationClause);
+        if (result == null) result = caseannotation_modification_part(annotationClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -461,7 +502,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseEquation(simpleEquation);
         if (result == null) result = casedescription(simpleEquation);
         if (result == null) result = casedescription_string(simpleEquation);
-        if (result == null) result = caseclass_modification(simpleEquation);
+        if (result == null) result = caseannotation_modification_part(simpleEquation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -472,7 +513,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseEquation(ifEquation);
         if (result == null) result = casedescription(ifEquation);
         if (result == null) result = casedescription_string(ifEquation);
-        if (result == null) result = caseclass_modification(ifEquation);
+        if (result == null) result = caseannotation_modification_part(ifEquation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -483,7 +524,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseEquation(forEquation);
         if (result == null) result = casedescription(forEquation);
         if (result == null) result = casedescription_string(forEquation);
-        if (result == null) result = caseclass_modification(forEquation);
+        if (result == null) result = caseannotation_modification_part(forEquation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -494,7 +535,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseEquation(connectEquation);
         if (result == null) result = casedescription(connectEquation);
         if (result == null) result = casedescription_string(connectEquation);
-        if (result == null) result = caseclass_modification(connectEquation);
+        if (result == null) result = caseannotation_modification_part(connectEquation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -505,7 +546,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseEquation(whenEquation);
         if (result == null) result = casedescription(whenEquation);
         if (result == null) result = casedescription_string(whenEquation);
-        if (result == null) result = caseclass_modification(whenEquation);
+        if (result == null) result = caseannotation_modification_part(whenEquation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -516,7 +557,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseEquation(functionEquation);
         if (result == null) result = casedescription(functionEquation);
         if (result == null) result = casedescription_string(functionEquation);
-        if (result == null) result = caseclass_modification(functionEquation);
+        if (result == null) result = caseannotation_modification_part(functionEquation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -542,7 +583,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseStatement(functionStatement);
         if (result == null) result = casedescription(functionStatement);
         if (result == null) result = casedescription_string(functionStatement);
-        if (result == null) result = caseclass_modification(functionStatement);
+        if (result == null) result = caseannotation_modification_part(functionStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -553,7 +594,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseStatement(breakStatement);
         if (result == null) result = casedescription(breakStatement);
         if (result == null) result = casedescription_string(breakStatement);
-        if (result == null) result = caseclass_modification(breakStatement);
+        if (result == null) result = caseannotation_modification_part(breakStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -564,7 +605,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseStatement(returnStatement);
         if (result == null) result = casedescription(returnStatement);
         if (result == null) result = casedescription_string(returnStatement);
-        if (result == null) result = caseclass_modification(returnStatement);
+        if (result == null) result = caseannotation_modification_part(returnStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -575,7 +616,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseStatement(ifStatement);
         if (result == null) result = casedescription(ifStatement);
         if (result == null) result = casedescription_string(ifStatement);
-        if (result == null) result = caseclass_modification(ifStatement);
+        if (result == null) result = caseannotation_modification_part(ifStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -586,7 +627,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseStatement(forStatement);
         if (result == null) result = casedescription(forStatement);
         if (result == null) result = casedescription_string(forStatement);
-        if (result == null) result = caseclass_modification(forStatement);
+        if (result == null) result = caseannotation_modification_part(forStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -597,7 +638,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseStatement(whenStatement);
         if (result == null) result = casedescription(whenStatement);
         if (result == null) result = casedescription_string(whenStatement);
-        if (result == null) result = caseclass_modification(whenStatement);
+        if (result == null) result = caseannotation_modification_part(whenStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -608,7 +649,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseStatement(whileStatement);
         if (result == null) result = casedescription(whileStatement);
         if (result == null) result = casedescription_string(whileStatement);
-        if (result == null) result = caseclass_modification(whileStatement);
+        if (result == null) result = caseannotation_modification_part(whileStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -761,6 +802,22 @@ public class MOlocSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>annotation modification part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>annotation modification part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseannotation_modification_part(annotation_modification_part object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>description string</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -857,17 +914,33 @@ public class MOlocSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Argument</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Modification Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Argument</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Modification Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseArgument(Argument object)
+  public T caseModificationElement(ModificationElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Annotation Modification</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Annotation Modification</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnnotationModification(AnnotationModification object)
   {
     return null;
   }

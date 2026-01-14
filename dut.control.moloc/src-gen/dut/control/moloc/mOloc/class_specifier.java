@@ -14,6 +14,6 @@ package dut.control.moloc.mOloc;
  * @model
  * @generated
  */
-public interface class_specifier extends long_class_specifier, class_name, class_modification, description_string, composition, short_class_specifier, type_specifier, array_subscripts, enum_list, description, der_class_specifier
+public interface class_specifier extends long_class_specifier, class_name, class_modification, description_string, composition, short_class_specifier, type_specifier, array_subscripts, enum_list, description, annotation_modification_part, der_class_specifier
 {
 } // class_specifier

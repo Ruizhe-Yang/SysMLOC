@@ -2,10 +2,10 @@
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.UsersGuide">
   <classes classType="class" className="ReleaseNotes" description="&quot;Release Notes&quot;" classNameEnd="ReleaseNotes">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.ReleaseNotes"/>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&#xA;&lt;h5>Version 4.0.0&lt;/h5>&#xA;&lt;ul>&#xA;&lt;li>Unify color scheme of icons, see&#xA;    &lt;a href=\&quot;https://github.com/modelica/ModelicaStandardLibrary/issues/2833\&quot;>#2833&lt;/a>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;h5>Version 3.2.2&lt;/h5>&#xA;&#xA;&lt;ul>&#xA;&lt;li>Added block&#xA;    &lt;a href=\&quot;modelica://Modelica.ComplexBlocks.ComplexMath.Conj\&quot;>Conj&lt;/a> for conjugate complex signal processing&#xA;    &lt;/li>&#xA;&lt;li>Added optional conjugate complex input processing to all partial interfaces and complex blocks&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;h5>Version 3.2&lt;/h5>&#xA;&#xA;&lt;ul>&#xA;&lt;li>Introduction of first version&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&#xA;&lt;h5>Version 4.0.0&lt;/h5>&#xA;&lt;ul>&#xA;&lt;li>Unify color scheme of icons, see&#xA;    &lt;a href=\&quot;https://github.com/modelica/ModelicaStandardLibrary/issues/2833\&quot;>#2833&lt;/a>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;h5>Version 3.2.2&lt;/h5>&#xA;&#xA;&lt;ul>&#xA;&lt;li>Added block&#xA;    &lt;a href=\&quot;modelica://Modelica.ComplexBlocks.ComplexMath.Conj\&quot;>Conj&lt;/a> for conjugate complex signal processing&#xA;    &lt;/li>&#xA;&lt;li>Added optional conjugate complex input processing to all partial interfaces and complex blocks&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;h5>Version 3.2&lt;/h5>&#xA;&#xA;&lt;ul>&#xA;&lt;li>Introduction of first version&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

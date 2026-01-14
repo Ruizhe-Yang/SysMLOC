@@ -5,17 +5,17 @@
     <elements xsi:type="mOloc:EquationSection">
       <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.ComplexMath.tanh(uInternal)"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Icon">
-        <arguments elementName="coordinateSystem">
-          <arguments expression="true" elementName="preserveAspectRatio"/>
-          <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
-        </arguments>
-        <arguments expression="{Line(points={{0,-90},{0,84}}, color={192,192,192}), Line(points={{-100,0},{84,0}}, color={192,192,192}), Line(points={{-80,-80},{-47.8,-78.7},{-35.8,-75.7},{-27.7,-70.6}, {-22.1,-64.2},{-17.3,-55.9},{-12.5,-44.3},{-7.64,-29.2},{-1.21,-4.82}, {6.83,26.3},{11.7,42},{16.5,54.2},{21.3,63.1},{26.9,69.9},{34.2, 75 } ,{45.4,78.4},{72,79.9},{80,80} } , color={85,170,255} ) , Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Text( extent={{-88,72},{-16,24}}, textColor={192,192,192}, textString=&quot;tanh&quot; ) ,Polygon( points={{90,0},{68,8},{68,-8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
-      </arguments>
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes the output &lt;code>y&lt;/code> as the&#xA;&lt;em>hyperbolic tangent&lt;/em> of the input &lt;code>u&lt;/code>. Optionally, the input &lt;code>u&lt;/code> can be processed conjugate complex, when parameter &lt;code>useConjugateInput&lt;/code> is &lt;code>true&lt;/code>. Depending on &lt;code>useConjugateInput&lt;/code> the internal signal &lt;code>uInternal&lt;/code> represents either the original or the conjugate complex input signal.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = &lt;strong>tanh&lt;/strong>(uInternal);&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Math/tanh.png\&quot;&#xA;     alt=\&quot;tanh.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Icon">
+        <modifications elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Line(points={{0,-90},{0,84}}, color={192,192,192}), Line(points={{-100,0},{84,0}}, color={192,192,192}), Line(points={{-80,-80},{-47.8,-78.7},{-35.8,-75.7},{-27.7,-70.6}, {-22.1,-64.2},{-17.3,-55.9},{-12.5,-44.3},{-7.64,-29.2},{-1.21,-4.82}, {6.83,26.3},{11.7,42},{16.5,54.2},{21.3,63.1},{26.9,69.9},{34.2, 75 } ,{45.4,78.4},{72,79.9},{80,80} } , color={85,170,255} ) , Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Text( extent={{-88,72},{-16,24}}, textColor={192,192,192}, textString=&quot;tanh&quot; ) ,Polygon( points={{90,0},{68,8},{68,-8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes the output &lt;code>y&lt;/code> as the&#xA;&lt;em>hyperbolic tangent&lt;/em> of the input &lt;code>u&lt;/code>. Optionally, the input &lt;code>u&lt;/code> can be processed conjugate complex, when parameter &lt;code>useConjugateInput&lt;/code> is &lt;code>true&lt;/code>. Depending on &lt;code>useConjugateInput&lt;/code> the internal signal &lt;code>uInternal&lt;/code> represents either the original or the conjugate complex input signal.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = &lt;strong>tanh&lt;/strong>(uInternal);&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Math/tanh.png\&quot;&#xA;     alt=\&quot;tanh.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

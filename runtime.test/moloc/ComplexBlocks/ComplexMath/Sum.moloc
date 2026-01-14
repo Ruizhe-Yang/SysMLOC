@@ -8,18 +8,18 @@
     <elements xsi:type="mOloc:EquationSection">
       <equations xsi:type="mOloc:SimpleEquation" left="y" right="k*uInternal"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments expression="&quot;sum1&quot;" elementName="defaultComponentName"/>
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes output &lt;code>y&lt;/code> as&#xA;&lt;em>sum&lt;/em> of the elements of the input signal vector&#xA;&lt;code>u&lt;/code>:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u[1] + u[2] + ...;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;Example:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;  parameter:   nin = 3;&#xA;&#xA;results in the following equations:&#xA;&#xA;  y = u[1] + u[2] + u[3];&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
-      <arguments elementName="Icon">
-        <arguments elementName="coordinateSystem">
-          <arguments expression="true" elementName="preserveAspectRatio"/>
-          <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
-        </arguments>
-        <arguments expression="{Line( points={{26,42},{-34,42},{6,2},{-34,-38},{26,-38}}, color={85, 170,255 } ) }" elementName="graphics"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations expression="&quot;sum1&quot;" elementName="defaultComponentName"/>
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes output &lt;code>y&lt;/code> as&#xA;&lt;em>sum&lt;/em> of the elements of the input signal vector&#xA;&lt;code>u&lt;/code>:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = u[1] + u[2] + ...;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;Example:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;  parameter:   nin = 3;&#xA;&#xA;results in the following equations:&#xA;&#xA;  y = u[1] + u[2] + u[3];&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations elementName="Icon">
+        <modifications elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Line( points={{26,42},{-34,42},{6,2},{-34,-38},{26,-38}}, color={85, 170,255 } ) }" elementName="graphics"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

@@ -9,23 +9,23 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real">
       <component_list declarationName="h" description="&quot;Height (m)&quot;">
-        <arguments expression="1.0" elementName="start"/>
-        <arguments expression="true" elementName="fixed"/>
+        <modifications expression="1.0" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real">
       <component_list declarationName="v" description="&quot;Velocity (m/s)&quot;">
-        <arguments expression="0.0" elementName="start"/>
-        <arguments expression="true" elementName="fixed"/>
+        <modifications expression="0.0" elementName="start"/>
+        <modifications expression="true" elementName="fixed"/>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" classType="block" className="Integrator" description="&quot;Output the integral of the input signal with optional reset&quot;" classNameEnd="Integrator">
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Blocks.Types.Init"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO">
-      <targuments elementName="y">
-        <arguments expression="y_start" elementName="start"/>
-      </targuments>
+      <extendsModifications elementName="y">
+        <modifications expression="y_start" elementName="start"/>
+      </extendsModifications>
     </elements>
     <elements xsi:type="mOloc:EquationSection">
       <equations xsi:type="mOloc:SimpleEquation" left="der(h)" right="v"/>
@@ -36,10 +36,10 @@
       <equations xsi:type="mOloc:SimpleEquation" left="der(x_scaled[2:nx])" right="zeros(nx-1)"/>
       <equations xsi:type="mOloc:SimpleEquation" left="der(x_scaled[1])" right="(-a[2:na]*x_scaled + a_end*u)/a[1]"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Icon">
-        <arguments expression="{ Line( points={{-80.0,78.0},{-80.0,-90.0}}, color={192,192,192} ) , Line2( points={{-80.0,78.0},{-80.0,-90.0}}, color={line(a),192,192} ) , Line3( points={{-80.0,78.0},{-80.0,-90.0}}, color={line(a),192,192} ) , Polygon( lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{-80.0,90.0},{-88.0,68.0},{-72.0,68.0},{-80.0,90.0}} ) }" elementName="graphics"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Icon">
+        <modifications expression="{ Line( points={{-80.0,78.0},{-80.0,-90.0}}, color={192,192,192} ) , Line2( points={{-80.0,78.0},{-80.0,-90.0}}, color={line(a),192,192} ) , Line3( points={{-80.0,78.0},{-80.0,-90.0}}, color={line(a),192,192} ) , Polygon( lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{-80.0,90.0},{-88.0,68.0},{-72.0,68.0},{-80.0,90.0}} ) }" elementName="graphics"/>
+      </annotations>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" isEncapsulated="true" classType="function" className="bandPassAlpha" description="&quot;Return alpha for band pass&quot;" classNameEnd="bandPassAlpha">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function"/>

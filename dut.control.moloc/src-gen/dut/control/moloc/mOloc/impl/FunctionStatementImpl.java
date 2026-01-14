@@ -3,10 +3,10 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
+import dut.control.moloc.mOloc.AnnotationModification;
 import dut.control.moloc.mOloc.FunctionStatement;
 import dut.control.moloc.mOloc.MOlocPackage;
-import dut.control.moloc.mOloc.class_modification;
+import dut.control.moloc.mOloc.annotation_modification_part;
 import dut.control.moloc.mOloc.description;
 import dut.control.moloc.mOloc.description_string;
 
@@ -34,8 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.FunctionStatementImpl#getFunction <em>Function</em>}</li>
@@ -67,16 +67,6 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getArguments()
-   * @generated
-   * @ordered
-   */
-  protected EList<Argument> arguments;
-
-  /**
    * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -95,6 +85,16 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
    * @ordered
    */
   protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotations()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationModification> annotations;
 
   /**
    * The default value of the '{@link #getComponent() <em>Component</em>}' attribute.
@@ -228,21 +228,6 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
    * @generated
    */
   @Override
-  public EList<Argument> getArguments()
-  {
-    if (arguments == null)
-    {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.FUNCTION_STATEMENT__ARGUMENTS);
-    }
-    return arguments;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsAnnotation()
   {
     return isAnnotation;
@@ -260,6 +245,21 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
     isAnnotation = newIsAnnotation;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<AnnotationModification> getAnnotations()
+  {
+    if (annotations == null)
+    {
+      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.FUNCTION_STATEMENT__ANNOTATIONS);
+    }
+    return annotations;
   }
 
   /**
@@ -372,8 +372,8 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
   {
     switch (featureID)
     {
-      case MOlocPackage.FUNCTION_STATEMENT__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.FUNCTION_STATEMENT__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -390,10 +390,10 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
     {
       case MOlocPackage.FUNCTION_STATEMENT__DESCRIPTION:
         return getDescription();
-      case MOlocPackage.FUNCTION_STATEMENT__ARGUMENTS:
-        return getArguments();
       case MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION:
         return isIsAnnotation();
+      case MOlocPackage.FUNCTION_STATEMENT__ANNOTATIONS:
+        return getAnnotations();
       case MOlocPackage.FUNCTION_STATEMENT__COMPONENT:
         return getComponent();
       case MOlocPackage.FUNCTION_STATEMENT__EXPRESSION:
@@ -420,12 +420,12 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
       case MOlocPackage.FUNCTION_STATEMENT__DESCRIPTION:
         setDescription((String)newValue);
         return;
-      case MOlocPackage.FUNCTION_STATEMENT__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
-        return;
       case MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
+        return;
+      case MOlocPackage.FUNCTION_STATEMENT__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
         return;
       case MOlocPackage.FUNCTION_STATEMENT__COMPONENT:
         setComponent((String)newValue);
@@ -456,11 +456,11 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
       case MOlocPackage.FUNCTION_STATEMENT__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
-      case MOlocPackage.FUNCTION_STATEMENT__ARGUMENTS:
-        getArguments().clear();
-        return;
       case MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
+      case MOlocPackage.FUNCTION_STATEMENT__ANNOTATIONS:
+        getAnnotations().clear();
         return;
       case MOlocPackage.FUNCTION_STATEMENT__COMPONENT:
         setComponent(COMPONENT_EDEFAULT);
@@ -490,10 +490,10 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
     {
       case MOlocPackage.FUNCTION_STATEMENT__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case MOlocPackage.FUNCTION_STATEMENT__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
       case MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.FUNCTION_STATEMENT__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
       case MOlocPackage.FUNCTION_STATEMENT__COMPONENT:
         return COMPONENT_EDEFAULT == null ? component != null : !COMPONENT_EDEFAULT.equals(component);
       case MOlocPackage.FUNCTION_STATEMENT__EXPRESSION:
@@ -522,11 +522,12 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
         default: return -1;
       }
     }
-    if (baseClass == class_modification.class)
+    if (baseClass == annotation_modification_part.class)
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.FUNCTION_STATEMENT__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        case MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
+        case MOlocPackage.FUNCTION_STATEMENT__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
         default: return -1;
       }
     }
@@ -534,7 +535,6 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -557,11 +557,12 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
         default: return -1;
       }
     }
-    if (baseClass == class_modification.class)
+    if (baseClass == annotation_modification_part.class)
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.FUNCTION_STATEMENT__ARGUMENTS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.FUNCTION_STATEMENT__ANNOTATIONS;
         default: return -1;
       }
     }
@@ -569,7 +570,6 @@ public class FunctionStatementImpl extends StatementImpl implements FunctionStat
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.FUNCTION_STATEMENT__IS_ANNOTATION;
         default: return -1;
       }
     }

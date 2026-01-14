@@ -20,7 +20,7 @@ package dut.control.moloc.mOloc;
  * @model
  * @generated
  */
-public interface Class_definition extends class_prefixes, class_specifier, long_class_specifier, class_name, class_modification, description_string, composition, short_class_specifier, type_specifier, array_subscripts, enum_list, description, der_class_specifier
+public interface Class_definition extends class_prefixes, class_specifier, long_class_specifier, class_name, class_modification, description_string, composition, short_class_specifier, type_specifier, array_subscripts, enum_list, description, annotation_modification_part, der_class_specifier
 {
   /**
    * Returns the value of the '<em><b>Isfinal</b></em>' attribute.

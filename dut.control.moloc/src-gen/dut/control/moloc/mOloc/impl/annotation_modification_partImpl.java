@@ -3,7 +3,6 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.AnnotationClause;
 import dut.control.moloc.mOloc.AnnotationModification;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.annotation_modification_part;
@@ -19,25 +18,26 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Annotation Clause</b></em>'.
+ * An implementation of the model object '<em><b>annotation modification part</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.AnnotationClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.AnnotationClauseImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.annotation_modification_partImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.annotation_modification_partImpl#getAnnotations <em>Annotations</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AnnotationClauseImpl extends ElementImpl implements AnnotationClause
+public class annotation_modification_partImpl extends MinimalEObjectImpl.Container implements annotation_modification_part
 {
   /**
    * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
@@ -74,7 +74,7 @@ public class AnnotationClauseImpl extends ElementImpl implements AnnotationClaus
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AnnotationClauseImpl()
+  protected annotation_modification_partImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class AnnotationClauseImpl extends ElementImpl implements AnnotationClaus
   @Override
   protected EClass eStaticClass()
   {
-    return MOlocPackage.Literals.ANNOTATION_CLAUSE;
+    return MOlocPackage.Literals.ANNOTATION_MODIFICATION_PART;
   }
 
   /**
@@ -112,7 +112,7 @@ public class AnnotationClauseImpl extends ElementImpl implements AnnotationClaus
     boolean oldIsAnnotation = isAnnotation;
     isAnnotation = newIsAnnotation;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ANNOTATION_CLAUSE__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
   }
 
   /**
@@ -125,7 +125,7 @@ public class AnnotationClauseImpl extends ElementImpl implements AnnotationClaus
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.ANNOTATION_CLAUSE__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS);
     }
     return annotations;
   }
@@ -140,7 +140,7 @@ public class AnnotationClauseImpl extends ElementImpl implements AnnotationClaus
   {
     switch (featureID)
     {
-      case MOlocPackage.ANNOTATION_CLAUSE__ANNOTATIONS:
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS:
         return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -156,9 +156,9 @@ public class AnnotationClauseImpl extends ElementImpl implements AnnotationClaus
   {
     switch (featureID)
     {
-      case MOlocPackage.ANNOTATION_CLAUSE__IS_ANNOTATION:
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION:
         return isIsAnnotation();
-      case MOlocPackage.ANNOTATION_CLAUSE__ANNOTATIONS:
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS:
         return getAnnotations();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -175,10 +175,10 @@ public class AnnotationClauseImpl extends ElementImpl implements AnnotationClaus
   {
     switch (featureID)
     {
-      case MOlocPackage.ANNOTATION_CLAUSE__IS_ANNOTATION:
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
         return;
-      case MOlocPackage.ANNOTATION_CLAUSE__ANNOTATIONS:
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS:
         getAnnotations().clear();
         getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
         return;
@@ -196,10 +196,10 @@ public class AnnotationClauseImpl extends ElementImpl implements AnnotationClaus
   {
     switch (featureID)
     {
-      case MOlocPackage.ANNOTATION_CLAUSE__IS_ANNOTATION:
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
         return;
-      case MOlocPackage.ANNOTATION_CLAUSE__ANNOTATIONS:
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS:
         getAnnotations().clear();
         return;
     }
@@ -216,52 +216,12 @@ public class AnnotationClauseImpl extends ElementImpl implements AnnotationClaus
   {
     switch (featureID)
     {
-      case MOlocPackage.ANNOTATION_CLAUSE__IS_ANNOTATION:
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
-      case MOlocPackage.ANNOTATION_CLAUSE__ANNOTATIONS:
+      case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == annotation_modification_part.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case MOlocPackage.ANNOTATION_CLAUSE__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
-        case MOlocPackage.ANNOTATION_CLAUSE__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == annotation_modification_part.class)
-    {
-      switch (baseFeatureID)
-      {
-        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.ANNOTATION_CLAUSE__IS_ANNOTATION;
-        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.ANNOTATION_CLAUSE__ANNOTATIONS;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**
@@ -281,4 +241,4 @@ public class AnnotationClauseImpl extends ElementImpl implements AnnotationClaus
     return result.toString();
   }
 
-} //AnnotationClauseImpl
+} //annotation_modification_partImpl

@@ -3,42 +3,42 @@
   <classes classType="block" className="Feedback" description="&quot;Output difference between commanded input 1 and feedback input 2&quot;" classNameEnd="Feedback">
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.ComplexInput">
       <component_list declarationName="u1" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{-100, -20 } ,{-60,20} }" elementName="extent"/>
-          </arguments>
-          <arguments elementName="iconTransformation">
-            <arguments expression="{{-100,-20},{-60,20}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{-100, -20 } ,{-60,20} }" elementName="extent"/>
+          </modifications>
+          <modifications elementName="iconTransformation">
+            <modifications expression="{{-100,-20},{-60,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.ComplexInput">
       <component_list declarationName="u2" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{0,-100}" elementName="origin"/>
-            <arguments expression="{{-20,-20},{20,20}}" elementName="extent"/>
-            <arguments expression="90" elementName="rotation"/>
-          </arguments>
-          <arguments elementName="iconTransformation">
-            <arguments expression="{{-20,-20},{20,20}}" elementName="extent"/>
-            <arguments expression="90" elementName="rotation"/>
-            <arguments expression="{0,-80}" elementName="origin"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{0,-100}" elementName="origin"/>
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+          <modifications elementName="iconTransformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{0,-80}" elementName="origin"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.ComplexOutput">
       <component_list declarationName="y" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{80,-10}, {100,10} }" elementName="extent"/>
-          </arguments>
-          <arguments elementName="iconTransformation">
-            <arguments expression="{{80,-10},{100,10}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{80,-10}, {100,10} }" elementName="extent"/>
+          </modifications>
+          <modifications elementName="iconTransformation">
+            <modifications expression="{{80,-10},{100,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
@@ -50,17 +50,17 @@
     <elements xsi:type="mOloc:EquationSection">
       <equations xsi:type="mOloc:SimpleEquation" left="y" right="(if useConjugateInput1 then Modelica.ComplexMath.conj(u1) else u1) - (if useConjugateInput2 then Modelica.ComplexMath.conj(u2) else u2)"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes output &lt;code>y&lt;/code> as &lt;em>difference&lt;/em> of the&#xA;commanded input &lt;code>u1&lt;/code> and the feedback&#xA;input &lt;code>u2&lt;/code>. Optionally, either input &lt;code>u1&lt;/code> or &lt;code>u2&lt;/code> or both inputs can be processed conjugate complex, when parameters &lt;code>useConjugateInput1&lt;/code> and &lt;code>useConjugateInput2&lt;/code> are &lt;code>true&lt;/code>, respectively.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = (if useConjugateInput1 then Modelica.ComplexMath.conj(u1) else u1)&#xA;  - (if useConjugateInput1 then Modelica.ComplexMath.conj(u2) else u2);&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;&lt;strong>Example&lt;/strong> parameters:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;code>useConjugateInput1 = true&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>useConjugateInput2 = false&lt;/code>&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;result in the following equation:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = Modelica.ComplexMath.conj(u1) - u2&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
-      <arguments elementName="Icon">
-        <arguments elementName="coordinateSystem">
-          <arguments expression="true" elementName="preserveAspectRatio"/>
-          <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
-        </arguments>
-        <arguments expression="{Ellipse( extent={{-20,20},{20,-20}}, lineColor={85,170,255}, fillColor={235,235,235}, fillPattern=FillPattern.Solid ) ,Line(points={{-60,0},{-20,0}}, color={85,170,255} ) , Line(points={{20,0},{80,0}}, color={85,170,255}), Line(points={{0,-20},{0,-60}}, color={85,170,255}), Text( extent={{-150,94},{150,44}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text( extent={{20,-20},{100,-100}}, textColor={85,170,255}, textString=&quot;-&quot; ) }" elementName="graphics"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes output &lt;code>y&lt;/code> as &lt;em>difference&lt;/em> of the&#xA;commanded input &lt;code>u1&lt;/code> and the feedback&#xA;input &lt;code>u2&lt;/code>. Optionally, either input &lt;code>u1&lt;/code> or &lt;code>u2&lt;/code> or both inputs can be processed conjugate complex, when parameters &lt;code>useConjugateInput1&lt;/code> and &lt;code>useConjugateInput2&lt;/code> are &lt;code>true&lt;/code>, respectively.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = (if useConjugateInput1 then Modelica.ComplexMath.conj(u1) else u1)&#xA;  - (if useConjugateInput1 then Modelica.ComplexMath.conj(u2) else u2);&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;&lt;strong>Example&lt;/strong> parameters:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;code>useConjugateInput1 = true&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>useConjugateInput2 = false&lt;/code>&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;result in the following equation:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = Modelica.ComplexMath.conj(u1) - u2&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations elementName="Icon">
+        <modifications elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Ellipse( extent={{-20,20},{20,-20}}, lineColor={85,170,255}, fillColor={235,235,235}, fillPattern=FillPattern.Solid ) ,Line(points={{-60,0},{-20,0}}, color={85,170,255} ) , Line(points={{20,0},{80,0}}, color={85,170,255}), Line(points={{0,-20},{0,-60}}, color={85,170,255}), Text( extent={{-150,94},{150,44}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text( extent={{20,-20},{100,-100}}, textColor={85,170,255}, textString=&quot;-&quot; ) }" elementName="graphics"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

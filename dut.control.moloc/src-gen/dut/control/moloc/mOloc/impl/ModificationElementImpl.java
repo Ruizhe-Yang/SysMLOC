@@ -3,10 +3,10 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.ConstrainingClause;
 import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.ModificationElement;
 import dut.control.moloc.mOloc.ParameterType;
 import dut.control.moloc.mOloc.RelationshipType;
 import dut.control.moloc.mOloc.component_clause1;
@@ -27,28 +27,28 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Argument</b></em>'.
+ * An implementation of the model object '<em><b>Modification Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getRelationshipType <em>Relationship Type</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getParameterType <em>Parameter Type</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getDirectionType <em>Direction Type</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getDeclarationName <em>Declaration Name</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getElementName <em>Element Name</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getConstrain <em>Constrain</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsRedeclare <em>Is Redeclare</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsEach <em>Is Each</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsfinal <em>Isfinal</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#isIsReplaceable <em>Is Replaceable</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ModificationElementImpl#getRelationshipType <em>Relationship Type</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ModificationElementImpl#getParameterType <em>Parameter Type</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ModificationElementImpl#getDirectionType <em>Direction Type</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ModificationElementImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ModificationElementImpl#getDeclarationName <em>Declaration Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ModificationElementImpl#getElementName <em>Element Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ModificationElementImpl#getConstrain <em>Constrain</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ModificationElementImpl#isIsRedeclare <em>Is Redeclare</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ModificationElementImpl#isIsEach <em>Is Each</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ModificationElementImpl#isIsfinal <em>Isfinal</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ModificationElementImpl#isIsReplaceable <em>Is Replaceable</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ArgumentImpl extends short_class_definitionImpl implements Argument
+public class ModificationElementImpl extends short_class_definitionImpl implements ModificationElement
 {
   /**
    * The default value of the '{@link #getRelationshipType() <em>Relationship Type</em>}' attribute.
@@ -265,7 +265,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ArgumentImpl()
+  protected ModificationElementImpl()
   {
     super();
   }
@@ -278,7 +278,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   @Override
   protected EClass eStaticClass()
   {
-    return MOlocPackage.Literals.ARGUMENT;
+    return MOlocPackage.Literals.MODIFICATION_ELEMENT;
   }
 
   /**
@@ -303,7 +303,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     RelationshipType oldRelationshipType = relationshipType;
     relationshipType = newRelationshipType == null ? RELATIONSHIP_TYPE_EDEFAULT : newRelationshipType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE, oldRelationshipType, relationshipType));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION_ELEMENT__RELATIONSHIP_TYPE, oldRelationshipType, relationshipType));
   }
 
   /**
@@ -328,7 +328,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     ParameterType oldParameterType = parameterType;
     parameterType = newParameterType == null ? PARAMETER_TYPE_EDEFAULT : newParameterType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__PARAMETER_TYPE, oldParameterType, parameterType));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION_ELEMENT__PARAMETER_TYPE, oldParameterType, parameterType));
   }
 
   /**
@@ -353,7 +353,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     Direction oldDirectionType = directionType;
     directionType = newDirectionType == null ? DIRECTION_TYPE_EDEFAULT : newDirectionType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__DIRECTION_TYPE, oldDirectionType, directionType));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION_ELEMENT__DIRECTION_TYPE, oldDirectionType, directionType));
   }
 
   /**
@@ -378,7 +378,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     String oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__EXPRESSION, oldExpression, expression));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION_ELEMENT__EXPRESSION, oldExpression, expression));
   }
 
   /**
@@ -403,7 +403,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     String oldDeclarationName = declarationName;
     declarationName = newDeclarationName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__DECLARATION_NAME, oldDeclarationName, declarationName));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION_ELEMENT__DECLARATION_NAME, oldDeclarationName, declarationName));
   }
 
   /**
@@ -428,7 +428,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     String oldElementName = elementName;
     elementName = newElementName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__ELEMENT_NAME, oldElementName, elementName));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION_ELEMENT__ELEMENT_NAME, oldElementName, elementName));
   }
 
   /**
@@ -453,7 +453,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     constrain = newConstrain;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__CONSTRAIN, oldConstrain, newConstrain);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION_ELEMENT__CONSTRAIN, oldConstrain, newConstrain);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -471,14 +471,14 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     {
       NotificationChain msgs = null;
       if (constrain != null)
-        msgs = ((InternalEObject)constrain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.ARGUMENT__CONSTRAIN, null, msgs);
+        msgs = ((InternalEObject)constrain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.MODIFICATION_ELEMENT__CONSTRAIN, null, msgs);
       if (newConstrain != null)
-        msgs = ((InternalEObject)newConstrain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.ARGUMENT__CONSTRAIN, null, msgs);
+        msgs = ((InternalEObject)newConstrain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.MODIFICATION_ELEMENT__CONSTRAIN, null, msgs);
       msgs = basicSetConstrain(newConstrain, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__CONSTRAIN, newConstrain, newConstrain));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION_ELEMENT__CONSTRAIN, newConstrain, newConstrain));
   }
 
   /**
@@ -503,7 +503,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     boolean oldIsRedeclare = isRedeclare;
     isRedeclare = newIsRedeclare;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__IS_REDECLARE, oldIsRedeclare, isRedeclare));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION_ELEMENT__IS_REDECLARE, oldIsRedeclare, isRedeclare));
   }
 
   /**
@@ -528,7 +528,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     boolean oldIsEach = isEach;
     isEach = newIsEach;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__IS_EACH, oldIsEach, isEach));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION_ELEMENT__IS_EACH, oldIsEach, isEach));
   }
 
   /**
@@ -553,7 +553,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     boolean oldIsfinal = isfinal;
     isfinal = newIsfinal;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__ISFINAL, oldIsfinal, isfinal));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION_ELEMENT__ISFINAL, oldIsfinal, isfinal));
   }
 
   /**
@@ -578,7 +578,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     boolean oldIsReplaceable = isReplaceable;
     isReplaceable = newIsReplaceable;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__IS_REPLACEABLE, oldIsReplaceable, isReplaceable));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.MODIFICATION_ELEMENT__IS_REPLACEABLE, oldIsReplaceable, isReplaceable));
   }
 
   /**
@@ -591,7 +591,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   {
     switch (featureID)
     {
-      case MOlocPackage.ARGUMENT__CONSTRAIN:
+      case MOlocPackage.MODIFICATION_ELEMENT__CONSTRAIN:
         return basicSetConstrain(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -607,27 +607,27 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   {
     switch (featureID)
     {
-      case MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE:
+      case MOlocPackage.MODIFICATION_ELEMENT__RELATIONSHIP_TYPE:
         return getRelationshipType();
-      case MOlocPackage.ARGUMENT__PARAMETER_TYPE:
+      case MOlocPackage.MODIFICATION_ELEMENT__PARAMETER_TYPE:
         return getParameterType();
-      case MOlocPackage.ARGUMENT__DIRECTION_TYPE:
+      case MOlocPackage.MODIFICATION_ELEMENT__DIRECTION_TYPE:
         return getDirectionType();
-      case MOlocPackage.ARGUMENT__EXPRESSION:
+      case MOlocPackage.MODIFICATION_ELEMENT__EXPRESSION:
         return getExpression();
-      case MOlocPackage.ARGUMENT__DECLARATION_NAME:
+      case MOlocPackage.MODIFICATION_ELEMENT__DECLARATION_NAME:
         return getDeclarationName();
-      case MOlocPackage.ARGUMENT__ELEMENT_NAME:
+      case MOlocPackage.MODIFICATION_ELEMENT__ELEMENT_NAME:
         return getElementName();
-      case MOlocPackage.ARGUMENT__CONSTRAIN:
+      case MOlocPackage.MODIFICATION_ELEMENT__CONSTRAIN:
         return getConstrain();
-      case MOlocPackage.ARGUMENT__IS_REDECLARE:
+      case MOlocPackage.MODIFICATION_ELEMENT__IS_REDECLARE:
         return isIsRedeclare();
-      case MOlocPackage.ARGUMENT__IS_EACH:
+      case MOlocPackage.MODIFICATION_ELEMENT__IS_EACH:
         return isIsEach();
-      case MOlocPackage.ARGUMENT__ISFINAL:
+      case MOlocPackage.MODIFICATION_ELEMENT__ISFINAL:
         return isIsfinal();
-      case MOlocPackage.ARGUMENT__IS_REPLACEABLE:
+      case MOlocPackage.MODIFICATION_ELEMENT__IS_REPLACEABLE:
         return isIsReplaceable();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -643,37 +643,37 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   {
     switch (featureID)
     {
-      case MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE:
+      case MOlocPackage.MODIFICATION_ELEMENT__RELATIONSHIP_TYPE:
         setRelationshipType((RelationshipType)newValue);
         return;
-      case MOlocPackage.ARGUMENT__PARAMETER_TYPE:
+      case MOlocPackage.MODIFICATION_ELEMENT__PARAMETER_TYPE:
         setParameterType((ParameterType)newValue);
         return;
-      case MOlocPackage.ARGUMENT__DIRECTION_TYPE:
+      case MOlocPackage.MODIFICATION_ELEMENT__DIRECTION_TYPE:
         setDirectionType((Direction)newValue);
         return;
-      case MOlocPackage.ARGUMENT__EXPRESSION:
+      case MOlocPackage.MODIFICATION_ELEMENT__EXPRESSION:
         setExpression((String)newValue);
         return;
-      case MOlocPackage.ARGUMENT__DECLARATION_NAME:
+      case MOlocPackage.MODIFICATION_ELEMENT__DECLARATION_NAME:
         setDeclarationName((String)newValue);
         return;
-      case MOlocPackage.ARGUMENT__ELEMENT_NAME:
+      case MOlocPackage.MODIFICATION_ELEMENT__ELEMENT_NAME:
         setElementName((String)newValue);
         return;
-      case MOlocPackage.ARGUMENT__CONSTRAIN:
+      case MOlocPackage.MODIFICATION_ELEMENT__CONSTRAIN:
         setConstrain((ConstrainingClause)newValue);
         return;
-      case MOlocPackage.ARGUMENT__IS_REDECLARE:
+      case MOlocPackage.MODIFICATION_ELEMENT__IS_REDECLARE:
         setIsRedeclare((Boolean)newValue);
         return;
-      case MOlocPackage.ARGUMENT__IS_EACH:
+      case MOlocPackage.MODIFICATION_ELEMENT__IS_EACH:
         setIsEach((Boolean)newValue);
         return;
-      case MOlocPackage.ARGUMENT__ISFINAL:
+      case MOlocPackage.MODIFICATION_ELEMENT__ISFINAL:
         setIsfinal((Boolean)newValue);
         return;
-      case MOlocPackage.ARGUMENT__IS_REPLACEABLE:
+      case MOlocPackage.MODIFICATION_ELEMENT__IS_REPLACEABLE:
         setIsReplaceable((Boolean)newValue);
         return;
     }
@@ -690,37 +690,37 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   {
     switch (featureID)
     {
-      case MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE:
+      case MOlocPackage.MODIFICATION_ELEMENT__RELATIONSHIP_TYPE:
         setRelationshipType(RELATIONSHIP_TYPE_EDEFAULT);
         return;
-      case MOlocPackage.ARGUMENT__PARAMETER_TYPE:
+      case MOlocPackage.MODIFICATION_ELEMENT__PARAMETER_TYPE:
         setParameterType(PARAMETER_TYPE_EDEFAULT);
         return;
-      case MOlocPackage.ARGUMENT__DIRECTION_TYPE:
+      case MOlocPackage.MODIFICATION_ELEMENT__DIRECTION_TYPE:
         setDirectionType(DIRECTION_TYPE_EDEFAULT);
         return;
-      case MOlocPackage.ARGUMENT__EXPRESSION:
+      case MOlocPackage.MODIFICATION_ELEMENT__EXPRESSION:
         setExpression(EXPRESSION_EDEFAULT);
         return;
-      case MOlocPackage.ARGUMENT__DECLARATION_NAME:
+      case MOlocPackage.MODIFICATION_ELEMENT__DECLARATION_NAME:
         setDeclarationName(DECLARATION_NAME_EDEFAULT);
         return;
-      case MOlocPackage.ARGUMENT__ELEMENT_NAME:
+      case MOlocPackage.MODIFICATION_ELEMENT__ELEMENT_NAME:
         setElementName(ELEMENT_NAME_EDEFAULT);
         return;
-      case MOlocPackage.ARGUMENT__CONSTRAIN:
+      case MOlocPackage.MODIFICATION_ELEMENT__CONSTRAIN:
         setConstrain((ConstrainingClause)null);
         return;
-      case MOlocPackage.ARGUMENT__IS_REDECLARE:
+      case MOlocPackage.MODIFICATION_ELEMENT__IS_REDECLARE:
         setIsRedeclare(IS_REDECLARE_EDEFAULT);
         return;
-      case MOlocPackage.ARGUMENT__IS_EACH:
+      case MOlocPackage.MODIFICATION_ELEMENT__IS_EACH:
         setIsEach(IS_EACH_EDEFAULT);
         return;
-      case MOlocPackage.ARGUMENT__ISFINAL:
+      case MOlocPackage.MODIFICATION_ELEMENT__ISFINAL:
         setIsfinal(ISFINAL_EDEFAULT);
         return;
-      case MOlocPackage.ARGUMENT__IS_REPLACEABLE:
+      case MOlocPackage.MODIFICATION_ELEMENT__IS_REPLACEABLE:
         setIsReplaceable(IS_REPLACEABLE_EDEFAULT);
         return;
     }
@@ -737,27 +737,27 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
   {
     switch (featureID)
     {
-      case MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE:
+      case MOlocPackage.MODIFICATION_ELEMENT__RELATIONSHIP_TYPE:
         return relationshipType != RELATIONSHIP_TYPE_EDEFAULT;
-      case MOlocPackage.ARGUMENT__PARAMETER_TYPE:
+      case MOlocPackage.MODIFICATION_ELEMENT__PARAMETER_TYPE:
         return parameterType != PARAMETER_TYPE_EDEFAULT;
-      case MOlocPackage.ARGUMENT__DIRECTION_TYPE:
+      case MOlocPackage.MODIFICATION_ELEMENT__DIRECTION_TYPE:
         return directionType != DIRECTION_TYPE_EDEFAULT;
-      case MOlocPackage.ARGUMENT__EXPRESSION:
+      case MOlocPackage.MODIFICATION_ELEMENT__EXPRESSION:
         return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
-      case MOlocPackage.ARGUMENT__DECLARATION_NAME:
+      case MOlocPackage.MODIFICATION_ELEMENT__DECLARATION_NAME:
         return DECLARATION_NAME_EDEFAULT == null ? declarationName != null : !DECLARATION_NAME_EDEFAULT.equals(declarationName);
-      case MOlocPackage.ARGUMENT__ELEMENT_NAME:
+      case MOlocPackage.MODIFICATION_ELEMENT__ELEMENT_NAME:
         return ELEMENT_NAME_EDEFAULT == null ? elementName != null : !ELEMENT_NAME_EDEFAULT.equals(elementName);
-      case MOlocPackage.ARGUMENT__CONSTRAIN:
+      case MOlocPackage.MODIFICATION_ELEMENT__CONSTRAIN:
         return constrain != null;
-      case MOlocPackage.ARGUMENT__IS_REDECLARE:
+      case MOlocPackage.MODIFICATION_ELEMENT__IS_REDECLARE:
         return isRedeclare != IS_REDECLARE_EDEFAULT;
-      case MOlocPackage.ARGUMENT__IS_EACH:
+      case MOlocPackage.MODIFICATION_ELEMENT__IS_EACH:
         return isEach != IS_EACH_EDEFAULT;
-      case MOlocPackage.ARGUMENT__ISFINAL:
+      case MOlocPackage.MODIFICATION_ELEMENT__ISFINAL:
         return isfinal != ISFINAL_EDEFAULT;
-      case MOlocPackage.ARGUMENT__IS_REPLACEABLE:
+      case MOlocPackage.MODIFICATION_ELEMENT__IS_REPLACEABLE:
         return isReplaceable != IS_REPLACEABLE_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -775,9 +775,9 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE: return MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE;
-        case MOlocPackage.ARGUMENT__PARAMETER_TYPE: return MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE;
-        case MOlocPackage.ARGUMENT__DIRECTION_TYPE: return MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE;
+        case MOlocPackage.MODIFICATION_ELEMENT__RELATIONSHIP_TYPE: return MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE;
+        case MOlocPackage.MODIFICATION_ELEMENT__PARAMETER_TYPE: return MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE;
+        case MOlocPackage.MODIFICATION_ELEMENT__DIRECTION_TYPE: return MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE;
         default: return -1;
       }
     }
@@ -785,7 +785,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.ARGUMENT__EXPRESSION: return MOlocPackage.MODIFICATION__EXPRESSION;
+        case MOlocPackage.MODIFICATION_ELEMENT__EXPRESSION: return MOlocPackage.MODIFICATION__EXPRESSION;
         default: return -1;
       }
     }
@@ -793,7 +793,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.ARGUMENT__DECLARATION_NAME: return MOlocPackage.DECLARATION__DECLARATION_NAME;
+        case MOlocPackage.MODIFICATION_ELEMENT__DECLARATION_NAME: return MOlocPackage.DECLARATION__DECLARATION_NAME;
         default: return -1;
       }
     }
@@ -815,7 +815,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.ARGUMENT__ELEMENT_NAME: return MOlocPackage.ELEMENT_MODIFICATION__ELEMENT_NAME;
+        case MOlocPackage.MODIFICATION_ELEMENT__ELEMENT_NAME: return MOlocPackage.ELEMENT_MODIFICATION__ELEMENT_NAME;
         default: return -1;
       }
     }
@@ -823,7 +823,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.ARGUMENT__CONSTRAIN: return MOlocPackage.CONSTRAINING__CONSTRAIN;
+        case MOlocPackage.MODIFICATION_ELEMENT__CONSTRAIN: return MOlocPackage.CONSTRAINING__CONSTRAIN;
         default: return -1;
       }
     }
@@ -842,9 +842,9 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE: return MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE;
-        case MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE: return MOlocPackage.ARGUMENT__PARAMETER_TYPE;
-        case MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE: return MOlocPackage.ARGUMENT__DIRECTION_TYPE;
+        case MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE: return MOlocPackage.MODIFICATION_ELEMENT__RELATIONSHIP_TYPE;
+        case MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE: return MOlocPackage.MODIFICATION_ELEMENT__PARAMETER_TYPE;
+        case MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE: return MOlocPackage.MODIFICATION_ELEMENT__DIRECTION_TYPE;
         default: return -1;
       }
     }
@@ -852,7 +852,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.MODIFICATION__EXPRESSION: return MOlocPackage.ARGUMENT__EXPRESSION;
+        case MOlocPackage.MODIFICATION__EXPRESSION: return MOlocPackage.MODIFICATION_ELEMENT__EXPRESSION;
         default: return -1;
       }
     }
@@ -860,7 +860,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DECLARATION__DECLARATION_NAME: return MOlocPackage.ARGUMENT__DECLARATION_NAME;
+        case MOlocPackage.DECLARATION__DECLARATION_NAME: return MOlocPackage.MODIFICATION_ELEMENT__DECLARATION_NAME;
         default: return -1;
       }
     }
@@ -882,7 +882,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.ELEMENT_MODIFICATION__ELEMENT_NAME: return MOlocPackage.ARGUMENT__ELEMENT_NAME;
+        case MOlocPackage.ELEMENT_MODIFICATION__ELEMENT_NAME: return MOlocPackage.MODIFICATION_ELEMENT__ELEMENT_NAME;
         default: return -1;
       }
     }
@@ -890,7 +890,7 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CONSTRAINING__CONSTRAIN: return MOlocPackage.ARGUMENT__CONSTRAIN;
+        case MOlocPackage.CONSTRAINING__CONSTRAIN: return MOlocPackage.MODIFICATION_ELEMENT__CONSTRAIN;
         default: return -1;
       }
     }
@@ -932,4 +932,4 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     return result.toString();
   }
 
-} //ArgumentImpl
+} //ModificationElementImpl

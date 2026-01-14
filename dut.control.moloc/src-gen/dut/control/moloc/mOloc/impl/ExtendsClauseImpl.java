@@ -3,11 +3,12 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
+import dut.control.moloc.mOloc.AnnotationModification;
 import dut.control.moloc.mOloc.Break;
 import dut.control.moloc.mOloc.ExtendsClause;
 import dut.control.moloc.mOloc.MOlocPackage;
-import dut.control.moloc.mOloc.class_modification;
+import dut.control.moloc.mOloc.ModificationElement;
+import dut.control.moloc.mOloc.annotation_modification_part;
 import dut.control.moloc.mOloc.type_specifier;
 
 import java.util.Collection;
@@ -34,10 +35,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsPublic <em>Is Public</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#isIsProtected <em>Is Protected</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getTarguments <em>Targuments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getExtendsModifications <em>Extends Modifications</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ExtendsClauseImpl#getBreaks <em>Breaks</em>}</li>
  * </ul>
  *
@@ -66,14 +68,34 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
   protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
+   * The default value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArguments()
+   * @see #isIsAnnotation()
    * @generated
    * @ordered
    */
-  protected EList<Argument> arguments;
+  protected static final boolean IS_ANNOTATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation() <em>Is Annotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotations()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationModification> annotations;
 
   /**
    * The default value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
@@ -116,14 +138,14 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
   protected boolean isProtected = IS_PROTECTED_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getTarguments() <em>Targuments</em>}' containment reference list.
+   * The cached value of the '{@link #getExtendsModifications() <em>Extends Modifications</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTarguments()
+   * @see #getExtendsModifications()
    * @generated
    * @ordered
    */
-  protected EList<Argument> targuments;
+  protected EList<ModificationElement> extendsModifications;
 
   /**
    * The cached value of the '{@link #getBreaks() <em>Breaks</em>}' containment reference list.
@@ -187,13 +209,38 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @generated
    */
   @Override
-  public EList<Argument> getArguments()
+  public boolean isIsAnnotation()
   {
-    if (arguments == null)
+    return isAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation(boolean newIsAnnotation)
+  {
+    boolean oldIsAnnotation = isAnnotation;
+    isAnnotation = newIsAnnotation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<AnnotationModification> getAnnotations()
+  {
+    if (annotations == null)
     {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS);
+      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS);
     }
-    return arguments;
+    return annotations;
   }
 
   /**
@@ -252,13 +299,13 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
    * @generated
    */
   @Override
-  public EList<Argument> getTarguments()
+  public EList<ModificationElement> getExtendsModifications()
   {
-    if (targuments == null)
+    if (extendsModifications == null)
     {
-      targuments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.EXTENDS_CLAUSE__TARGUMENTS);
+      extendsModifications = new EObjectContainmentEList<ModificationElement>(ModificationElement.class, this, MOlocPackage.EXTENDS_CLAUSE__EXTENDS_MODIFICATIONS);
     }
-    return targuments;
+    return extendsModifications;
   }
 
   /**
@@ -286,10 +333,10 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
   {
     switch (featureID)
     {
-      case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.EXTENDS_CLAUSE__TARGUMENTS:
-        return ((InternalEList<?>)getTarguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.EXTENDS_CLAUSE__EXTENDS_MODIFICATIONS:
+        return ((InternalEList<?>)getExtendsModifications()).basicRemove(otherEnd, msgs);
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         return ((InternalEList<?>)getBreaks()).basicRemove(otherEnd, msgs);
     }
@@ -308,14 +355,16 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
     {
       case MOlocPackage.EXTENDS_CLAUSE__TYPE_SPECIFIER:
         return getTypeSpecifier();
-      case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
-        return getArguments();
+      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION:
+        return isIsAnnotation();
+      case MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS:
+        return getAnnotations();
       case MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC:
         return isIsPublic();
       case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
         return isIsProtected();
-      case MOlocPackage.EXTENDS_CLAUSE__TARGUMENTS:
-        return getTarguments();
+      case MOlocPackage.EXTENDS_CLAUSE__EXTENDS_MODIFICATIONS:
+        return getExtendsModifications();
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         return getBreaks();
     }
@@ -336,9 +385,12 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
       case MOlocPackage.EXTENDS_CLAUSE__TYPE_SPECIFIER:
         setTypeSpecifier((String)newValue);
         return;
-      case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
+      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION:
+        setIsAnnotation((Boolean)newValue);
+        return;
+      case MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
         return;
       case MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC:
         setIsPublic((Boolean)newValue);
@@ -346,9 +398,9 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
       case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
         setIsProtected((Boolean)newValue);
         return;
-      case MOlocPackage.EXTENDS_CLAUSE__TARGUMENTS:
-        getTarguments().clear();
-        getTarguments().addAll((Collection<? extends Argument>)newValue);
+      case MOlocPackage.EXTENDS_CLAUSE__EXTENDS_MODIFICATIONS:
+        getExtendsModifications().clear();
+        getExtendsModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         getBreaks().clear();
@@ -371,8 +423,11 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
       case MOlocPackage.EXTENDS_CLAUSE__TYPE_SPECIFIER:
         setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
         return;
-      case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
-        getArguments().clear();
+      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION:
+        setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
+      case MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS:
+        getAnnotations().clear();
         return;
       case MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC:
         setIsPublic(IS_PUBLIC_EDEFAULT);
@@ -380,8 +435,8 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
       case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
         setIsProtected(IS_PROTECTED_EDEFAULT);
         return;
-      case MOlocPackage.EXTENDS_CLAUSE__TARGUMENTS:
-        getTarguments().clear();
+      case MOlocPackage.EXTENDS_CLAUSE__EXTENDS_MODIFICATIONS:
+        getExtendsModifications().clear();
         return;
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         getBreaks().clear();
@@ -402,14 +457,16 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
     {
       case MOlocPackage.EXTENDS_CLAUSE__TYPE_SPECIFIER:
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
-      case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION:
+        return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
       case MOlocPackage.EXTENDS_CLAUSE__IS_PUBLIC:
         return isPublic != IS_PUBLIC_EDEFAULT;
       case MOlocPackage.EXTENDS_CLAUSE__IS_PROTECTED:
         return isProtected != IS_PROTECTED_EDEFAULT;
-      case MOlocPackage.EXTENDS_CLAUSE__TARGUMENTS:
-        return targuments != null && !targuments.isEmpty();
+      case MOlocPackage.EXTENDS_CLAUSE__EXTENDS_MODIFICATIONS:
+        return extendsModifications != null && !extendsModifications.isEmpty();
       case MOlocPackage.EXTENDS_CLAUSE__BREAKS:
         return breaks != null && !breaks.isEmpty();
     }
@@ -432,11 +489,12 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         default: return -1;
       }
     }
-    if (baseClass == class_modification.class)
+    if (baseClass == annotation_modification_part.class)
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        case MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
+        case MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
         default: return -1;
       }
     }
@@ -459,11 +517,12 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
         default: return -1;
       }
     }
-    if (baseClass == class_modification.class)
+    if (baseClass == annotation_modification_part.class)
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.EXTENDS_CLAUSE__ARGUMENTS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.EXTENDS_CLAUSE__IS_ANNOTATION;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.EXTENDS_CLAUSE__ANNOTATIONS;
         default: return -1;
       }
     }
@@ -483,6 +542,8 @@ public class ExtendsClauseImpl extends ElementImpl implements ExtendsClause
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (typeSpecifier: ");
     result.append(typeSpecifier);
+    result.append(", isAnnotation: ");
+    result.append(isAnnotation);
     result.append(", isPublic: ");
     result.append(isPublic);
     result.append(", isProtected: ");

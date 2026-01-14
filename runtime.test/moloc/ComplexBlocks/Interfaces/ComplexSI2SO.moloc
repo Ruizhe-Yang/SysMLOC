@@ -4,29 +4,29 @@
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Icons.ComplexBlock"/>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexInput">
       <component_list declarationName="u1" description="&quot;Connector of Complex input signal 1&quot;" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{-140,40},{-100,80}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{-140,40},{-100,80}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexInput">
       <component_list declarationName="u2" description="&quot;Connector of Complex input signal 2&quot;" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexOutput">
       <component_list declarationName="y" description="&quot;Connector of Complex output signal&quot;" isAnnotation="true">
-        <arguments elementName="Placement">
-          <arguments elementName="transformation">
-            <arguments expression="{{100,-10},{120,10}}" elementName="extent"/>
-          </arguments>
-        </arguments>
+        <annotations elementName="Placement">
+          <modifications elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
@@ -41,10 +41,10 @@
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex">
       <component_list expression="(if useConjugateInput2 then Modelica.ComplexMath.conj( u2) else u2 )" declarationName="u2Internal" description="&quot;Equals either u2 or conjugate complex input u2 if useComplexInput2 = true&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Block has two continuous Complex input signals u1 and u2 and one&#xA;continuous Complex output signal y.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Block has two continuous Complex input signals u1 and u2 and one&#xA;continuous Complex output signal y.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

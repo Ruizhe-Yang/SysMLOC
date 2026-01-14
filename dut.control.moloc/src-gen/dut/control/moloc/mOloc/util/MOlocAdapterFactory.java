@@ -121,6 +121,11 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
         return createclass_modificationAdapter();
       }
       @Override
+      public Adapter caseannotation_modification_part(annotation_modification_part object)
+      {
+        return createannotation_modification_partAdapter();
+      }
+      @Override
       public Adapter casedescription_string(description_string object)
       {
         return createdescription_stringAdapter();
@@ -151,9 +156,14 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
         return createdescriptionAdapter();
       }
       @Override
-      public Adapter caseArgument(Argument object)
+      public Adapter caseModificationElement(ModificationElement object)
       {
-        return createArgumentAdapter();
+        return createModificationElementAdapter();
+      }
+      @Override
+      public Adapter caseAnnotationModification(AnnotationModification object)
+      {
+        return createAnnotationModificationAdapter();
       }
       @Override
       public Adapter caseelement_modification(element_modification object)
@@ -488,6 +498,21 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.annotation_modification_part <em>annotation modification part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.annotation_modification_part
+   * @generated
+   */
+  public Adapter createannotation_modification_partAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.description_string <em>description string</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -578,16 +603,31 @@ public class MOlocAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.Argument <em>Argument</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.ModificationElement <em>Modification Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.moloc.mOloc.Argument
+   * @see dut.control.moloc.mOloc.ModificationElement
    * @generated
    */
-  public Adapter createArgumentAdapter()
+  public Adapter createModificationElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.moloc.mOloc.AnnotationModification <em>Annotation Modification</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.moloc.mOloc.AnnotationModification
+   * @generated
+   */
+  public Adapter createAnnotationModificationAdapter()
   {
     return null;
   }

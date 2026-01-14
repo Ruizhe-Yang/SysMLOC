@@ -5,17 +5,17 @@
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps"/>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
       <component_list declarationName="magnitude1" description="&quot;Magnitude of complex phasor at startTime&quot;" isAnnotation="true">
-        <arguments expression="0" elementName="min" isfinal="true"/>
-        <arguments expression="1" elementName="start"/>
-        <arguments elementName="Dialog">
-          <arguments expression="&quot;modelica://Modelica/Resources/Images/ComplexBlocks/Sources/ComplexRampPhasor.png&quot;" elementName="groupImage"/>
-        </arguments>
+        <modifications expression="0" elementName="min" isfinal="true"/>
+        <modifications expression="1" elementName="start"/>
+        <annotations elementName="Dialog">
+          <modifications expression="&quot;modelica://Modelica/Resources/Images/ComplexBlocks/Sources/ComplexRampPhasor.png&quot;" elementName="groupImage"/>
+        </annotations>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
       <component_list declarationName="magnitude2" description="&quot;Magnitude of complex phasor at startTime+duration&quot;">
-        <arguments expression="0" elementName="min" isfinal="true"/>
-        <arguments expression="1" elementName="start"/>
+        <modifications expression="0" elementName="min" isfinal="true"/>
+        <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
@@ -23,7 +23,7 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Angle" parameterType="parameter">
       <component_list declarationName="phi" description="&quot;Angle of complex phasor&quot;">
-        <arguments expression="0" elementName="start"/>
+        <modifications expression="0" elementName="start"/>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter">
@@ -31,8 +31,8 @@
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter">
       <component_list declarationName="duration" description="&quot;Duration of ramp (= 0.0 gives a Step)&quot;">
-        <arguments expression="0.0" elementName="min"/>
-        <arguments expression="1" elementName="start"/>
+        <modifications expression="0.0" elementName="min"/>
+        <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
     <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real">
@@ -43,18 +43,18 @@
       <equations xsi:type="mOloc:SimpleEquation" left="magnitude" right="if not useLogRamp then magnitude1 + (if time &lt; startTime then 0 else if time &lt; (startTime + max(duration,eps)) then (time - startTime)*(magnitude2-magnitude1)/max(duration,eps) else magnitude2-magnitude1 ) else if time &lt; startTime then magnitude1 else if time &lt; (startTime + max(duration,eps)) then 10^(log10(magnitude1) + (log10(magnitude2) - log10(magnitude1))*min(1, (time-startTime)/max(duration,eps))) else magnitude2"/>
       <equations xsi:type="mOloc:SimpleEquation" left="y" right="magnitude*Modelica.ComplexMath.exp(Complex(0, phi))"/>
     </elements>
-    <elements xsi:type="mOloc:AnnotationClause">
-      <arguments expression="&quot;complexRamp&quot;" elementName="defaultComponentName"/>
-      <arguments elementName="Icon">
-        <arguments elementName="coordinateSystem">
-          <arguments expression="true" elementName="preserveAspectRatio"/>
-          <arguments expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
-        </arguments>
-        <arguments expression="{ Line( points={{0,-8},{24,12}}, color={85,170,255} ) , Polygon( points={{38,24},{17,15},{26,4},{38,24}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) ,Line( points={{0,8},{60,58}}, color={85,170,255} ) , Polygon( points={{76,72},{55,63},{64,52},{76,72}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{68,0}}, color={192,192,192}), Line(points={{0,-80},{0,68}}, color={192,192,192} ) , Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Polygon( points={{90,0},{68,8},{68,-8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
-      </arguments>
-      <arguments elementName="Documentation">
-        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output y is a complex phasor with constant angle and a ramped magnitude.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;In case of &lt;code>useLogRamp == false&lt;/code> the magnitude ramp is linear:&#xA;&lt;/p>&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/ComplexBlocks/Sources/ComplexRampPhasorLinear.png\&quot;&#xA;     alt=\&quot;ComplexRampPhasorLinear.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;In case of &lt;code>useLogRamp == true&lt;/code> the magnitude ramp appears linear on a logarithmic scale:&#xA;&lt;/p>&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/ComplexBlocks/Sources/ComplexRampPhasorLog.png\&quot;&#xA;     alt=\&quot;ComplexRampPhasorLog.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
-      </arguments>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true">
+      <annotations expression="&quot;complexRamp&quot;" elementName="defaultComponentName"/>
+      <annotations elementName="Icon">
+        <modifications elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line( points={{0,-8},{24,12}}, color={85,170,255} ) , Polygon( points={{38,24},{17,15},{26,4},{38,24}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) ,Line( points={{0,8},{60,58}}, color={85,170,255} ) , Polygon( points={{76,72},{55,63},{64,52},{76,72}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{68,0}}, color={192,192,192}), Line(points={{0,-80},{0,68}}, color={192,192,192} ) , Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Polygon( points={{90,0},{68,8},{68,-8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output y is a complex phasor with constant angle and a ramped magnitude.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;In case of &lt;code>useLogRamp == false&lt;/code> the magnitude ramp is linear:&#xA;&lt;/p>&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/ComplexBlocks/Sources/ComplexRampPhasorLinear.png\&quot;&#xA;     alt=\&quot;ComplexRampPhasorLinear.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;In case of &lt;code>useLogRamp == true&lt;/code> the magnitude ramp appears linear on a logarithmic scale:&#xA;&lt;/p>&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/ComplexBlocks/Sources/ComplexRampPhasorLog.png\&quot;&#xA;     alt=\&quot;ComplexRampPhasorLog.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
     </elements>
   </classes>
 </mOloc:Stored_definition>

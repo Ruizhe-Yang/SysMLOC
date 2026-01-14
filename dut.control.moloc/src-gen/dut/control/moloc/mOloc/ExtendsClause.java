@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#isIsPublic <em>Is Public</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#isIsProtected <em>Is Protected</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#getTarguments <em>Targuments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#getExtendsModifications <em>Extends Modifications</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.ExtendsClause#getBreaks <em>Breaks</em>}</li>
  * </ul>
  *
@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ExtendsClause extends Element, type_specifier, class_modification
+public interface ExtendsClause extends Element, type_specifier, annotation_modification_part
 {
   /**
    * Returns the value of the '<em><b>Is Public</b></em>' attribute.
@@ -71,16 +71,16 @@ public interface ExtendsClause extends Element, type_specifier, class_modificati
   void setIsProtected(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Targuments</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.moloc.mOloc.Argument}.
+   * Returns the value of the '<em><b>Extends Modifications</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.moloc.mOloc.ModificationElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Targuments</em>' containment reference list.
-   * @see dut.control.moloc.mOloc.MOlocPackage#getExtendsClause_Targuments()
+   * @return the value of the '<em>Extends Modifications</em>' containment reference list.
+   * @see dut.control.moloc.mOloc.MOlocPackage#getExtendsClause_ExtendsModifications()
    * @model containment="true"
    * @generated
    */
-  EList<Argument> getTarguments();
+  EList<ModificationElement> getExtendsModifications();
 
   /**
    * Returns the value of the '<em><b>Breaks</b></em>' containment reference list.

@@ -3,7 +3,7 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
+import dut.control.moloc.mOloc.AnnotationModification;
 import dut.control.moloc.mOloc.ClassType;
 import dut.control.moloc.mOloc.Component_declaration;
 import dut.control.moloc.mOloc.ConstrainingClause;
@@ -12,8 +12,10 @@ import dut.control.moloc.mOloc.Element;
 import dut.control.moloc.mOloc.EnumerationLiteral;
 import dut.control.moloc.mOloc.GeneralClause;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.ModificationElement;
 import dut.control.moloc.mOloc.ParameterType;
 import dut.control.moloc.mOloc.RelationshipType;
+import dut.control.moloc.mOloc.annotation_modification_part;
 import dut.control.moloc.mOloc.array_subscripts;
 import dut.control.moloc.mOloc.class_modification;
 import dut.control.moloc.mOloc.class_name;
@@ -61,7 +63,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsOperator <em>Is Operator</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassType <em>Class Type</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassName <em>Class Name</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getModifications <em>Modifications</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsExtends <em>Is Extends</em>}</li>
@@ -70,6 +72,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getSubscripts <em>Subscripts</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsEnumeration <em>Is Enumeration</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsColon <em>Is Colon</em>}</li>
@@ -234,14 +237,14 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   protected String className = CLASS_NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
+   * The cached value of the '{@link #getModifications() <em>Modifications</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArguments()
+   * @see #getModifications()
    * @generated
    * @ordered
    */
-  protected EList<Argument> arguments;
+  protected EList<ModificationElement> modifications;
 
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -382,6 +385,16 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @ordered
    */
   protected boolean isAnnotation = IS_ANNOTATION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotations()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationModification> annotations;
 
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -895,13 +908,13 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @generated
    */
   @Override
-  public EList<Argument> getArguments()
+  public EList<ModificationElement> getModifications()
   {
-    if (arguments == null)
+    if (modifications == null)
     {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.GENERAL_CLAUSE__ARGUMENTS);
+      modifications = new EObjectContainmentEList<ModificationElement>(ModificationElement.class, this, MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS);
     }
-    return arguments;
+    return modifications;
   }
 
   /**
@@ -1082,6 +1095,21 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     isAnnotation = newIsAnnotation;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<AnnotationModification> getAnnotations()
+  {
+    if (annotations == null)
+    {
+      annotations = new EObjectContainmentEList<AnnotationModification>(AnnotationModification.class, this, MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS);
+    }
+    return annotations;
   }
 
   /**
@@ -1524,12 +1552,14 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
-      case MOlocPackage.GENERAL_CLAUSE__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
+        return ((InternalEList<?>)getModifications()).basicRemove(otherEnd, msgs);
       case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
       case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
         return ((InternalEList<?>)getEnumerationLiteral()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
       case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
         return basicSetConstrain(null, msgs);
       case MOlocPackage.GENERAL_CLAUSE__COMPONENT_LIST:
@@ -1562,8 +1592,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return getClassType();
       case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME:
         return getClassName();
-      case MOlocPackage.GENERAL_CLAUSE__ARGUMENTS:
-        return getArguments();
+      case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
+        return getModifications();
       case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
         return getDescription();
       case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
@@ -1580,6 +1610,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return getEnumerationLiteral();
       case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
         return isIsAnnotation();
+      case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
+        return getAnnotations();
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
         return getDirection();
       case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION:
@@ -1650,9 +1682,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME:
         setClassName((String)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
+      case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
+        getModifications().clear();
+        getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
       case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
         setDescription((String)newValue);
@@ -1679,6 +1711,10 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return;
       case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends AnnotationModification>)newValue);
         return;
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
         setDirection((Direction)newValue);
@@ -1768,8 +1804,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME:
         setClassName(CLASS_NAME_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__ARGUMENTS:
-        getArguments().clear();
+      case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
+        getModifications().clear();
         return;
       case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
@@ -1794,6 +1830,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return;
       case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
+        return;
+      case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
+        getAnnotations().clear();
         return;
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
@@ -1874,8 +1913,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return classType != CLASS_TYPE_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME:
         return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
-      case MOlocPackage.GENERAL_CLAUSE__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
+        return modifications != null && !modifications.isEmpty();
       case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
@@ -1892,6 +1931,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return enumerationLiteral != null && !enumerationLiteral.isEmpty();
       case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
+      case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION:
@@ -1963,7 +2004,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
         default: return -1;
       }
     }
@@ -2016,11 +2057,19 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         default: return -1;
       }
     }
+    if (baseClass == annotation_modification_part.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
+        case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == description.class)
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION: return MOlocPackage.DESCRIPTION__IS_ANNOTATION;
         default: return -1;
       }
     }
@@ -2104,7 +2153,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.GENERAL_CLAUSE__ARGUMENTS;
+        case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS;
         default: return -1;
       }
     }
@@ -2157,11 +2206,19 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         default: return -1;
       }
     }
+    if (baseClass == annotation_modification_part.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == description.class)
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DESCRIPTION__IS_ANNOTATION: return MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION;
         default: return -1;
       }
     }

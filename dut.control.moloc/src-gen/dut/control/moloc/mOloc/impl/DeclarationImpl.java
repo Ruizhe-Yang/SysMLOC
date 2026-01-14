@@ -3,8 +3,8 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.ModificationElement;
 import dut.control.moloc.mOloc.class_modification;
 import dut.control.moloc.mOloc.declaration;
 import dut.control.moloc.mOloc.modification;
@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.declarationImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.declarationImpl#getModifications <em>Modifications</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.declarationImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.declarationImpl#getDeclarationName <em>Declaration Name</em>}</li>
  * </ul>
@@ -42,14 +42,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class declarationImpl extends array_subscriptsImpl implements declaration
 {
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
+   * The cached value of the '{@link #getModifications() <em>Modifications</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArguments()
+   * @see #getModifications()
    * @generated
    * @ordered
    */
-  protected EList<Argument> arguments;
+  protected EList<ModificationElement> modifications;
 
   /**
    * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
@@ -118,13 +118,13 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
    * @generated
    */
   @Override
-  public EList<Argument> getArguments()
+  public EList<ModificationElement> getModifications()
   {
-    if (arguments == null)
+    if (modifications == null)
     {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.DECLARATION__ARGUMENTS);
+      modifications = new EObjectContainmentEList<ModificationElement>(ModificationElement.class, this, MOlocPackage.DECLARATION__MODIFICATIONS);
     }
-    return arguments;
+    return modifications;
   }
 
   /**
@@ -187,8 +187,8 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
   {
     switch (featureID)
     {
-      case MOlocPackage.DECLARATION__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.DECLARATION__MODIFICATIONS:
+        return ((InternalEList<?>)getModifications()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -203,8 +203,8 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
   {
     switch (featureID)
     {
-      case MOlocPackage.DECLARATION__ARGUMENTS:
-        return getArguments();
+      case MOlocPackage.DECLARATION__MODIFICATIONS:
+        return getModifications();
       case MOlocPackage.DECLARATION__EXPRESSION:
         return getExpression();
       case MOlocPackage.DECLARATION__DECLARATION_NAME:
@@ -224,9 +224,9 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
   {
     switch (featureID)
     {
-      case MOlocPackage.DECLARATION__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
+      case MOlocPackage.DECLARATION__MODIFICATIONS:
+        getModifications().clear();
+        getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
       case MOlocPackage.DECLARATION__EXPRESSION:
         setExpression((String)newValue);
@@ -248,8 +248,8 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
   {
     switch (featureID)
     {
-      case MOlocPackage.DECLARATION__ARGUMENTS:
-        getArguments().clear();
+      case MOlocPackage.DECLARATION__MODIFICATIONS:
+        getModifications().clear();
         return;
       case MOlocPackage.DECLARATION__EXPRESSION:
         setExpression(EXPRESSION_EDEFAULT);
@@ -271,8 +271,8 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
   {
     switch (featureID)
     {
-      case MOlocPackage.DECLARATION__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.DECLARATION__MODIFICATIONS:
+        return modifications != null && !modifications.isEmpty();
       case MOlocPackage.DECLARATION__EXPRESSION:
         return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
       case MOlocPackage.DECLARATION__DECLARATION_NAME:
@@ -293,7 +293,7 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.DECLARATION__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        case MOlocPackage.DECLARATION__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
         default: return -1;
       }
     }
@@ -320,7 +320,7 @@ public class declarationImpl extends array_subscriptsImpl implements declaration
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.DECLARATION__ARGUMENTS;
+        case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.DECLARATION__MODIFICATIONS;
         default: return -1;
       }
     }

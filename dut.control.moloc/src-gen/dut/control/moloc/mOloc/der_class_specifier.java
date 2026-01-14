@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface der_class_specifier extends class_name, type_specifier, description, description_string, class_modification
+public interface der_class_specifier extends class_name, type_specifier, description, description_string, annotation_modification_part
 {
   /**
    * Returns the value of the '<em><b>Is Der</b></em>' attribute.

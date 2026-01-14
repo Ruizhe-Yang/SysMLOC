@@ -3,9 +3,9 @@
  */
 package dut.control.moloc.mOloc.impl;
 
-import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.Element;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.ModificationElement;
 import dut.control.moloc.mOloc.class_modification;
 import dut.control.moloc.mOloc.composition;
 import dut.control.moloc.mOloc.description_string;
@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#getModifications <em>Modifications</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.long_class_specifierImpl#isIsExtends <em>Is Extends</em>}</li>
@@ -46,14 +46,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class long_class_specifierImpl extends class_nameImpl implements long_class_specifier
 {
   /**
-   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
+   * The cached value of the '{@link #getModifications() <em>Modifications</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArguments()
+   * @see #getModifications()
    * @generated
    * @ordered
    */
-  protected EList<Argument> arguments;
+  protected EList<ModificationElement> modifications;
 
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -152,13 +152,13 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
    * @generated
    */
   @Override
-  public EList<Argument> getArguments()
+  public EList<ModificationElement> getModifications()
   {
-    if (arguments == null)
+    if (modifications == null)
     {
-      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, MOlocPackage.LONG_CLASS_SPECIFIER__ARGUMENTS);
+      modifications = new EObjectContainmentEList<ModificationElement>(ModificationElement.class, this, MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS);
     }
-    return arguments;
+    return modifications;
   }
 
   /**
@@ -261,8 +261,8 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
   {
     switch (featureID)
     {
-      case MOlocPackage.LONG_CLASS_SPECIFIER__ARGUMENTS:
-        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS:
+        return ((InternalEList<?>)getModifications()).basicRemove(otherEnd, msgs);
       case MOlocPackage.LONG_CLASS_SPECIFIER__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -279,8 +279,8 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
   {
     switch (featureID)
     {
-      case MOlocPackage.LONG_CLASS_SPECIFIER__ARGUMENTS:
-        return getArguments();
+      case MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS:
+        return getModifications();
       case MOlocPackage.LONG_CLASS_SPECIFIER__DESCRIPTION:
         return getDescription();
       case MOlocPackage.LONG_CLASS_SPECIFIER__ELEMENTS:
@@ -304,9 +304,9 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
   {
     switch (featureID)
     {
-      case MOlocPackage.LONG_CLASS_SPECIFIER__ARGUMENTS:
-        getArguments().clear();
-        getArguments().addAll((Collection<? extends Argument>)newValue);
+      case MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS:
+        getModifications().clear();
+        getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
       case MOlocPackage.LONG_CLASS_SPECIFIER__DESCRIPTION:
         setDescription((String)newValue);
@@ -335,8 +335,8 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
   {
     switch (featureID)
     {
-      case MOlocPackage.LONG_CLASS_SPECIFIER__ARGUMENTS:
-        getArguments().clear();
+      case MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS:
+        getModifications().clear();
         return;
       case MOlocPackage.LONG_CLASS_SPECIFIER__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
@@ -364,8 +364,8 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
   {
     switch (featureID)
     {
-      case MOlocPackage.LONG_CLASS_SPECIFIER__ARGUMENTS:
-        return arguments != null && !arguments.isEmpty();
+      case MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS:
+        return modifications != null && !modifications.isEmpty();
       case MOlocPackage.LONG_CLASS_SPECIFIER__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MOlocPackage.LONG_CLASS_SPECIFIER__ELEMENTS:
@@ -390,7 +390,7 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.LONG_CLASS_SPECIFIER__ARGUMENTS: return MOlocPackage.CLASS_MODIFICATION__ARGUMENTS;
+        case MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
         default: return -1;
       }
     }
@@ -425,7 +425,7 @@ public class long_class_specifierImpl extends class_nameImpl implements long_cla
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__ARGUMENTS: return MOlocPackage.LONG_CLASS_SPECIFIER__ARGUMENTS;
+        case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.LONG_CLASS_SPECIFIER__MODIFICATIONS;
         default: return -1;
       }
     }
