@@ -287,13 +287,22 @@ public interface MOlocPackage extends EPackage
   int CLASS_DEFINITION__TYPE_SPECIFIER = CLASS_PREFIXES_FEATURE_COUNT + 6;
 
   /**
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_DEFINITION__SUBSCRIPT = CLASS_PREFIXES_FEATURE_COUNT + 7;
+
+  /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__ENUMERATION_LITERAL = CLASS_PREFIXES_FEATURE_COUNT + 7;
+  int CLASS_DEFINITION__ENUMERATION_LITERAL = CLASS_PREFIXES_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -302,7 +311,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_ANNOTATION = CLASS_PREFIXES_FEATURE_COUNT + 8;
+  int CLASS_DEFINITION__IS_ANNOTATION = CLASS_PREFIXES_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -311,7 +320,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 9;
+  int CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -320,7 +329,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 10;
+  int CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -329,7 +338,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 11;
+  int CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Der</b></em>' attribute.
@@ -338,7 +347,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_DER = CLASS_PREFIXES_FEATURE_COUNT + 12;
+  int CLASS_DEFINITION__IS_DER = CLASS_PREFIXES_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Der Name</b></em>' attribute list.
@@ -347,7 +356,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__DER_NAME = CLASS_PREFIXES_FEATURE_COUNT + 13;
+  int CLASS_DEFINITION__DER_NAME = CLASS_PREFIXES_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Isfinal</b></em>' attribute.
@@ -356,7 +365,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__ISFINAL = CLASS_PREFIXES_FEATURE_COUNT + 14;
+  int CLASS_DEFINITION__ISFINAL = CLASS_PREFIXES_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Is Encapsulated</b></em>' attribute.
@@ -365,7 +374,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION__IS_ENCAPSULATED = CLASS_PREFIXES_FEATURE_COUNT + 15;
+  int CLASS_DEFINITION__IS_ENCAPSULATED = CLASS_PREFIXES_FEATURE_COUNT + 16;
 
   /**
    * The number of structural features of the '<em>Class definition</em>' class.
@@ -374,7 +383,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 16;
+  int CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 17;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.class_nameImpl <em>class name</em>}' class.
@@ -551,13 +560,22 @@ public interface MOlocPackage extends EPackage
   int CLASS_SPECIFIER__TYPE_SPECIFIER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SPECIFIER__SUBSCRIPT = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__ENUMERATION_LITERAL = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 1;
+  int CLASS_SPECIFIER__ENUMERATION_LITERAL = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -566,7 +584,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__IS_ANNOTATION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 2;
+  int CLASS_SPECIFIER__IS_ANNOTATION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -575,7 +593,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__DIRECTION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 3;
+  int CLASS_SPECIFIER__DIRECTION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -584,7 +602,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__IS_ENUMERATION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 4;
+  int CLASS_SPECIFIER__IS_ENUMERATION = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -593,7 +611,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__IS_COLON = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 5;
+  int CLASS_SPECIFIER__IS_COLON = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Is Der</b></em>' attribute.
@@ -602,7 +620,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__IS_DER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 6;
+  int CLASS_SPECIFIER__IS_DER = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Der Name</b></em>' attribute list.
@@ -611,7 +629,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER__DER_NAME = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 7;
+  int CLASS_SPECIFIER__DER_NAME = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>class specifier</em>' class.
@@ -620,7 +638,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLASS_SPECIFIER_FEATURE_COUNT = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 8;
+  int CLASS_SPECIFIER_FEATURE_COUNT = LONG_CLASS_SPECIFIER_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl <em>short class specifier</em>}' class.
@@ -651,13 +669,22 @@ public interface MOlocPackage extends EPackage
   int SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER = CLASS_NAME_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_SPECIFIER__SUBSCRIPT = CLASS_NAME_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__ARGUMENTS = CLASS_NAME_FEATURE_COUNT + 1;
+  int SHORT_CLASS_SPECIFIER__ARGUMENTS = CLASS_NAME_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
@@ -666,7 +693,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL = CLASS_NAME_FEATURE_COUNT + 2;
+  int SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL = CLASS_NAME_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -675,7 +702,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__DESCRIPTION = CLASS_NAME_FEATURE_COUNT + 3;
+  int SHORT_CLASS_SPECIFIER__DESCRIPTION = CLASS_NAME_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -684,7 +711,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__IS_ANNOTATION = CLASS_NAME_FEATURE_COUNT + 4;
+  int SHORT_CLASS_SPECIFIER__IS_ANNOTATION = CLASS_NAME_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -693,7 +720,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__DIRECTION = CLASS_NAME_FEATURE_COUNT + 5;
+  int SHORT_CLASS_SPECIFIER__DIRECTION = CLASS_NAME_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -702,7 +729,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__IS_ENUMERATION = CLASS_NAME_FEATURE_COUNT + 6;
+  int SHORT_CLASS_SPECIFIER__IS_ENUMERATION = CLASS_NAME_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -711,7 +738,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER__IS_COLON = CLASS_NAME_FEATURE_COUNT + 7;
+  int SHORT_CLASS_SPECIFIER__IS_COLON = CLASS_NAME_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>short class specifier</em>' class.
@@ -720,7 +747,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 8;
+  int SHORT_CLASS_SPECIFIER_FEATURE_COUNT = CLASS_NAME_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.der_class_specifierImpl <em>der class specifier</em>}' class.
@@ -1119,13 +1146,22 @@ public interface MOlocPackage extends EPackage
   int SHORT_CLASS_DEFINITION__TYPE_SPECIFIER = CLASS_PREFIXES_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_CLASS_DEFINITION__SUBSCRIPT = CLASS_PREFIXES_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__ARGUMENTS = CLASS_PREFIXES_FEATURE_COUNT + 2;
+  int SHORT_CLASS_DEFINITION__ARGUMENTS = CLASS_PREFIXES_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
@@ -1134,7 +1170,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__ENUMERATION_LITERAL = CLASS_PREFIXES_FEATURE_COUNT + 3;
+  int SHORT_CLASS_DEFINITION__ENUMERATION_LITERAL = CLASS_PREFIXES_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1143,7 +1179,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__DESCRIPTION = CLASS_PREFIXES_FEATURE_COUNT + 4;
+  int SHORT_CLASS_DEFINITION__DESCRIPTION = CLASS_PREFIXES_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -1152,7 +1188,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__IS_ANNOTATION = CLASS_PREFIXES_FEATURE_COUNT + 5;
+  int SHORT_CLASS_DEFINITION__IS_ANNOTATION = CLASS_PREFIXES_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -1161,7 +1197,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 6;
+  int SHORT_CLASS_DEFINITION__DIRECTION = CLASS_PREFIXES_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -1170,7 +1206,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 7;
+  int SHORT_CLASS_DEFINITION__IS_ENUMERATION = CLASS_PREFIXES_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -1179,7 +1215,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 8;
+  int SHORT_CLASS_DEFINITION__IS_COLON = CLASS_PREFIXES_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>short class definition</em>' class.
@@ -1188,7 +1224,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHORT_CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 9;
+  int SHORT_CLASS_DEFINITION_FEATURE_COUNT = CLASS_PREFIXES_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.ArgumentImpl <em>Argument</em>}' class.
@@ -1262,6 +1298,15 @@ public interface MOlocPackage extends EPackage
    * @ordered
    */
   int ARGUMENT__TYPE_SPECIFIER = SHORT_CLASS_DEFINITION__TYPE_SPECIFIER;
+
+  /**
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__SUBSCRIPT = SHORT_CLASS_DEFINITION__SUBSCRIPT;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -1354,22 +1399,13 @@ public interface MOlocPackage extends EPackage
   int ARGUMENT__DIRECTION_TYPE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARGUMENT__SUBSCRIPT = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 3;
-
-  /**
    * The feature id for the '<em><b>Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARGUMENT__EXPRESSION = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 4;
+  int ARGUMENT__EXPRESSION = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Declaration Name</b></em>' attribute.
@@ -1378,7 +1414,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARGUMENT__DECLARATION_NAME = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 5;
+  int ARGUMENT__DECLARATION_NAME = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Element Name</b></em>' attribute.
@@ -1387,7 +1423,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARGUMENT__ELEMENT_NAME = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 6;
+  int ARGUMENT__ELEMENT_NAME = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Constrain</b></em>' containment reference.
@@ -1396,7 +1432,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARGUMENT__CONSTRAIN = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 7;
+  int ARGUMENT__CONSTRAIN = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Is Redeclare</b></em>' attribute.
@@ -1405,7 +1441,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARGUMENT__IS_REDECLARE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 8;
+  int ARGUMENT__IS_REDECLARE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Each</b></em>' attribute.
@@ -1414,7 +1450,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARGUMENT__IS_EACH = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 9;
+  int ARGUMENT__IS_EACH = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Isfinal</b></em>' attribute.
@@ -1423,7 +1459,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARGUMENT__ISFINAL = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 10;
+  int ARGUMENT__ISFINAL = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Replaceable</b></em>' attribute.
@@ -1432,7 +1468,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARGUMENT__IS_REPLACEABLE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 11;
+  int ARGUMENT__IS_REPLACEABLE = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Argument</em>' class.
@@ -1441,7 +1477,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARGUMENT_FEATURE_COUNT = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 12;
+  int ARGUMENT_FEATURE_COUNT = SHORT_CLASS_DEFINITION_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link dut.control.moloc.mOloc.impl.modificationImpl <em>modification</em>}' class.
@@ -2232,13 +2268,22 @@ public interface MOlocPackage extends EPackage
   int GENERAL_CLAUSE__TYPE_SPECIFIER = ELEMENT_FEATURE_COUNT + 11;
 
   /**
+   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_CLAUSE__SUBSCRIPT = ELEMENT_FEATURE_COUNT + 12;
+
+  /**
    * The feature id for the '<em><b>Enumeration Literal</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__ENUMERATION_LITERAL = ELEMENT_FEATURE_COUNT + 12;
+  int GENERAL_CLAUSE__ENUMERATION_LITERAL = ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Is Annotation</b></em>' attribute.
@@ -2247,7 +2292,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 13;
+  int GENERAL_CLAUSE__IS_ANNOTATION = ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -2256,7 +2301,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__DIRECTION = ELEMENT_FEATURE_COUNT + 14;
+  int GENERAL_CLAUSE__DIRECTION = ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Is Enumeration</b></em>' attribute.
@@ -2265,7 +2310,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_ENUMERATION = ELEMENT_FEATURE_COUNT + 15;
+  int GENERAL_CLAUSE__IS_ENUMERATION = ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Is Colon</b></em>' attribute.
@@ -2274,7 +2319,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_COLON = ELEMENT_FEATURE_COUNT + 16;
+  int GENERAL_CLAUSE__IS_COLON = ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Is Der</b></em>' attribute.
@@ -2283,7 +2328,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__IS_DER = ELEMENT_FEATURE_COUNT + 17;
+  int GENERAL_CLAUSE__IS_DER = ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Der Name</b></em>' attribute list.
@@ -2292,7 +2337,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__DER_NAME = ELEMENT_FEATURE_COUNT + 18;
+  int GENERAL_CLAUSE__DER_NAME = ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Relationship Type</b></em>' attribute.
@@ -2301,7 +2346,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__RELATIONSHIP_TYPE = ELEMENT_FEATURE_COUNT + 19;
+  int GENERAL_CLAUSE__RELATIONSHIP_TYPE = ELEMENT_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Parameter Type</b></em>' attribute.
@@ -2310,7 +2355,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__PARAMETER_TYPE = ELEMENT_FEATURE_COUNT + 20;
+  int GENERAL_CLAUSE__PARAMETER_TYPE = ELEMENT_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Direction Type</b></em>' attribute.
@@ -2319,16 +2364,7 @@ public interface MOlocPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GENERAL_CLAUSE__DIRECTION_TYPE = ELEMENT_FEATURE_COUNT + 21;
-
-  /**
-   * The feature id for the '<em><b>Subscript</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GENERAL_CLAUSE__SUBSCRIPT = ELEMENT_FEATURE_COUNT + 22;
+  int GENERAL_CLAUSE__DIRECTION_TYPE = ELEMENT_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Constrain</b></em>' containment reference.

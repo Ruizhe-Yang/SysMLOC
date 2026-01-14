@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Sources">
+  <classes classType="block" className="ComplexExpression" description="&quot;Set output signal to a time varying Complex expression&quot;" classNameEnd="ComplexExpression">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexOutput">
+      <component_list expression="Complex(0)" declarationName="y" description="&quot;Value of Complex output&quot;" isAnnotation="true">
+        <arguments elementName="Dialog">
+          <arguments expression="&quot;Time varying output signal&quot;" elementName="group"/>
+        </arguments>
+        <arguments elementName="Placement">
+          <arguments elementName="transformation">
+            <arguments expression="{{ 100,-10} ,{120,10} }" elementName="extent"/>
+          </arguments>
+        </arguments>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments expression="&quot;complexExpr&quot;" elementName="defaultComponentName"/>
+      <arguments elementName="Icon">
+        <arguments elementName="coordinateSystem">
+          <arguments expression="false" elementName="preserveAspectRatio"/>
+          <arguments expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </arguments>
+        <arguments expression="{Rectangle( extent={{-100,40},{100,-40}}, lineThickness=5.0, fillColor={235,235,235}, fillPattern=FillPattern.Solid, borderPattern=BorderPattern.Raised ) ,Text( extent={{-96,15},{96,-15}}, textString=&quot;%y&quot; ) ,Text( extent={{-150,90},{140,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </arguments>
+      <arguments elementName="Documentation">
+        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The (time varying) Complex output signal of this block can be defined in its&#xA;parameter menu via variable &lt;strong>y&lt;/strong>. The purpose is to support the&#xA;easy definition of Complex expressions in a block diagram.&#xA;Note, that \&quot;time\&quot; is a built-in variable that is always&#xA;accessible and represents the \&quot;model time\&quot; and that&#xA;Variable &lt;strong>y&lt;/strong> is both a variable and a connector.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

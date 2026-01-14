@@ -7,6 +7,7 @@ import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.EnumerationLiteral;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.array_subscripts;
 import dut.control.moloc.mOloc.class_modification;
 import dut.control.moloc.mOloc.class_name;
 import dut.control.moloc.mOloc.description;
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -41,6 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#getClassName <em>Class Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#getSubscript <em>Subscript</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_definitionImpl#getDescription <em>Description</em>}</li>
@@ -93,6 +96,16 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
    * @ordered
    */
   protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubscript()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> subscript;
 
   /**
    * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
@@ -291,6 +304,21 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
    * @generated
    */
   @Override
+  public EList<String> getSubscript()
+  {
+    if (subscript == null)
+    {
+      subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.SHORT_CLASS_DEFINITION__SUBSCRIPT);
+    }
+    return subscript;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Argument> getArguments()
   {
     if (arguments == null)
@@ -472,6 +500,8 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
         return getClassName();
       case MOlocPackage.SHORT_CLASS_DEFINITION__TYPE_SPECIFIER:
         return getTypeSpecifier();
+      case MOlocPackage.SHORT_CLASS_DEFINITION__SUBSCRIPT:
+        return getSubscript();
       case MOlocPackage.SHORT_CLASS_DEFINITION__ARGUMENTS:
         return getArguments();
       case MOlocPackage.SHORT_CLASS_DEFINITION__ENUMERATION_LITERAL:
@@ -506,6 +536,10 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
         return;
       case MOlocPackage.SHORT_CLASS_DEFINITION__TYPE_SPECIFIER:
         setTypeSpecifier((String)newValue);
+        return;
+      case MOlocPackage.SHORT_CLASS_DEFINITION__SUBSCRIPT:
+        getSubscript().clear();
+        getSubscript().addAll((Collection<? extends String>)newValue);
         return;
       case MOlocPackage.SHORT_CLASS_DEFINITION__ARGUMENTS:
         getArguments().clear();
@@ -550,6 +584,9 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
       case MOlocPackage.SHORT_CLASS_DEFINITION__TYPE_SPECIFIER:
         setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
         return;
+      case MOlocPackage.SHORT_CLASS_DEFINITION__SUBSCRIPT:
+        getSubscript().clear();
+        return;
       case MOlocPackage.SHORT_CLASS_DEFINITION__ARGUMENTS:
         getArguments().clear();
         return;
@@ -589,6 +626,8 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
         return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
       case MOlocPackage.SHORT_CLASS_DEFINITION__TYPE_SPECIFIER:
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
+      case MOlocPackage.SHORT_CLASS_DEFINITION__SUBSCRIPT:
+        return subscript != null && !subscript.isEmpty();
       case MOlocPackage.SHORT_CLASS_DEFINITION__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
       case MOlocPackage.SHORT_CLASS_DEFINITION__ENUMERATION_LITERAL:
@@ -628,6 +667,14 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
       switch (derivedFeatureID)
       {
         case MOlocPackage.SHORT_CLASS_DEFINITION__TYPE_SPECIFIER: return MOlocPackage.TYPE_SPECIFIER__TYPE_SPECIFIER;
+        default: return -1;
+      }
+    }
+    if (baseClass == array_subscripts.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.SHORT_CLASS_DEFINITION__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
         default: return -1;
       }
     }
@@ -700,6 +747,14 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
         default: return -1;
       }
     }
+    if (baseClass == array_subscripts.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.SHORT_CLASS_DEFINITION__SUBSCRIPT;
+        default: return -1;
+      }
+    }
     if (baseClass == class_modification.class)
     {
       switch (baseFeatureID)
@@ -760,6 +815,8 @@ public class short_class_definitionImpl extends class_prefixesImpl implements sh
     result.append(className);
     result.append(", typeSpecifier: ");
     result.append(typeSpecifier);
+    result.append(", subscript: ");
+    result.append(subscript);
     result.append(", description: ");
     result.append(description);
     result.append(", isAnnotation: ");

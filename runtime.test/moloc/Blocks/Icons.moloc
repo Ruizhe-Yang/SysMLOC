@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Blocks">
+  <classes classType="package" className="Icons" description="&quot;Icons for Blocks&quot;" classNameEnd="Icons">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.IconsPackage"/>
+    <elements xsi:type="mOloc:GeneralClause" isPartial="true" classType="block" className="Block" description="&quot;Basic graphical layout of input/output block&quot;" classNameEnd="Block">
+      <elements xsi:type="mOloc:AnnotationClause">
+        <arguments elementName="Icon">
+          <arguments elementName="coordinateSystem">
+            <arguments expression="true" elementName="preserveAspectRatio"/>
+            <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+          </arguments>
+          <arguments expression="{Rectangle( extent={{-100,-100},{100,100}}, lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </arguments>
+        <arguments elementName="Documentation">
+          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Block that has only the basic icon for an input/output&#xA;block (no declarations, no equations). Most blocks&#xA;of package Modelica.Blocks inherit directly or indirectly&#xA;from this block.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </arguments>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" isPartial="true" classType="block" className="BooleanBlock" description="&quot;Basic graphical layout of Boolean block&quot;" classNameEnd="BooleanBlock">
+      <elements xsi:type="mOloc:AnnotationClause">
+        <arguments elementName="Icon">
+          <arguments elementName="coordinateSystem">
+            <arguments expression="true" elementName="preserveAspectRatio"/>
+            <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+          </arguments>
+          <arguments expression="{Rectangle( extent={{-100,-100},{100,100}}, lineColor={255,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </arguments>
+        <arguments elementName="Documentation">
+          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Block that has only the basic icon for an input/output,&#xA;Boolean block (no declarations, no equations).&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </arguments>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" isPartial="true" classType="block" className="DiscreteBlock" description="&quot;Graphical layout of discrete block component icon&quot;" classNameEnd="DiscreteBlock">
+      <elements xsi:type="mOloc:AnnotationClause">
+        <arguments elementName="Icon">
+          <arguments elementName="coordinateSystem">
+            <arguments expression="true" elementName="preserveAspectRatio"/>
+            <arguments expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </arguments>
+          <arguments expression="{Rectangle( extent={{-100,-100},{100,100}}, lineColor={0,0,127}, fillColor={223,211,169}, borderPattern=BorderPattern.Raised, fillPattern=FillPattern.Solid ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </arguments>
+        <arguments elementName="Documentation">
+          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Block that has only the basic icon for an input/output,&#xA;discrete block (no declarations, no equations), e.g.,&#xA;from Blocks.Discrete.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </arguments>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" isPartial="true" classType="block" className="IntegerBlock" description="&quot;Basic graphical layout of Integer block&quot;" classNameEnd="IntegerBlock">
+      <elements xsi:type="mOloc:AnnotationClause">
+        <arguments elementName="Icon">
+          <arguments elementName="coordinateSystem">
+            <arguments expression="true" elementName="preserveAspectRatio"/>
+            <arguments expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </arguments>
+          <arguments expression="{Rectangle( extent={{-100,-100},{100,100}}, lineColor={255,127,0}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </arguments>
+        <arguments elementName="Documentation">
+          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Block that has only the basic icon for an input/output,&#xA;Integer block (no declarations, no equations).&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </arguments>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" isPartial="true" classType="block" className="PartialBooleanBlock" description="&quot;Basic graphical layout of logical block&quot;" classNameEnd="PartialBooleanBlock">
+      <elements xsi:type="mOloc:AnnotationClause">
+        <arguments elementName="Icon">
+          <arguments elementName="coordinateSystem">
+            <arguments expression="true" elementName="preserveAspectRatio"/>
+            <arguments expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </arguments>
+          <arguments expression="{Rectangle( extent={{-100,100},{100,-100}}, fillColor={210,210,210}, fillPattern=FillPattern.Solid, borderPattern=BorderPattern.Raised ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </arguments>
+        <arguments elementName="Documentation">
+          <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;Block that has only the basic icon for an input/output,&#xA;Boolean block (no declarations, no equations) used especially&#xA;in the Blocks.Logical library.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        </arguments>
+      </elements>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

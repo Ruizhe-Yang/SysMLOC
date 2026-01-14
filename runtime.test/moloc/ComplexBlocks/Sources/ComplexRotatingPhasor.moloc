@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Sources">
+  <classes classType="block" className="ComplexRotatingPhasor" description="&quot;Generate a phasor with constant magnitude and constant angular velocity of type Complex&quot;" classNameEnd="ComplexRotatingPhasor">
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter">
+      <component_list expression="1" declarationName="magnitude" description="&quot;Magnitude of complex phasor&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.AngularVelocity" parameterType="parameter">
+      <component_list expression="1" declarationName="w" description="&quot;Constant angular velocity of complex phasor&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Angle" parameterType="parameter">
+      <component_list expression="0" declarationName="phi0" description="&quot;Initial angle of complex phasor at time = 0&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexSO"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Angle">
+      <component_list declarationName="phi" description="&quot;Angle&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="phi" right="w*time + phi0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="y" right="magnitude*Modelica.ComplexMath.exp(Complex(0, phi))"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments expression="&quot;complexRotating&quot;" elementName="defaultComponentName"/>
+      <arguments elementName="Icon">
+        <arguments elementName="coordinateSystem">
+          <arguments expression="true" elementName="preserveAspectRatio"/>
+          <arguments expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </arguments>
+        <arguments expression="{ Line( points={{0,0},{60,50}}, color={85,170,255} ) , Polygon( points={{60,50},{39,41},{48,30},{60,50}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) ,Line(points={{-37,35},{-30,40}, {-22,44},{-10,47},{3,46},{15,42},{28,34},{36,23},{41,10} } , color={192,192,192}, smooth=Smooth.Bezier ) , Polygon( points={{-42,29},{-22,36},{-32,47},{-42,29}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Line(points={{0,-80},{0,68}}, color={192,192,192} ) , Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{68,0}}, color={192,192,192}),Polygon( points={{90,0},{68,8},{68,-8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </arguments>
+      <arguments elementName="Documentation">
+        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;The output y is a complex phasor with constant magnitude, spinning with constant angular velocity.&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -9,7 +9,6 @@ import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.ParameterType;
 import dut.control.moloc.mOloc.RelationshipType;
-import dut.control.moloc.mOloc.array_subscripts;
 import dut.control.moloc.mOloc.component_clause1;
 import dut.control.moloc.mOloc.component_declaration1;
 import dut.control.moloc.mOloc.constraining;
@@ -18,19 +17,13 @@ import dut.control.moloc.mOloc.element_modification;
 import dut.control.moloc.mOloc.modification;
 import dut.control.moloc.mOloc.type_prefix;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +36,6 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getRelationshipType <em>Relationship Type</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getParameterType <em>Parameter Type</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getDirectionType <em>Direction Type</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getSubscript <em>Subscript</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getDeclarationName <em>Declaration Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.ArgumentImpl#getElementName <em>Element Name</em>}</li>
@@ -117,16 +109,6 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
    * @ordered
    */
   protected Direction directionType = DIRECTION_TYPE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSubscript()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> subscript;
 
   /**
    * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
@@ -372,21 +354,6 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     directionType = newDirectionType == null ? DIRECTION_TYPE_EDEFAULT : newDirectionType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ARGUMENT__DIRECTION_TYPE, oldDirectionType, directionType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<String> getSubscript()
-  {
-    if (subscript == null)
-    {
-      subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.ARGUMENT__SUBSCRIPT);
-    }
-    return subscript;
   }
 
   /**
@@ -646,8 +613,6 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
         return getParameterType();
       case MOlocPackage.ARGUMENT__DIRECTION_TYPE:
         return getDirectionType();
-      case MOlocPackage.ARGUMENT__SUBSCRIPT:
-        return getSubscript();
       case MOlocPackage.ARGUMENT__EXPRESSION:
         return getExpression();
       case MOlocPackage.ARGUMENT__DECLARATION_NAME:
@@ -673,7 +638,6 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -687,10 +651,6 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
         return;
       case MOlocPackage.ARGUMENT__DIRECTION_TYPE:
         setDirectionType((Direction)newValue);
-        return;
-      case MOlocPackage.ARGUMENT__SUBSCRIPT:
-        getSubscript().clear();
-        getSubscript().addAll((Collection<? extends String>)newValue);
         return;
       case MOlocPackage.ARGUMENT__EXPRESSION:
         setExpression((String)newValue);
@@ -739,9 +699,6 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
       case MOlocPackage.ARGUMENT__DIRECTION_TYPE:
         setDirectionType(DIRECTION_TYPE_EDEFAULT);
         return;
-      case MOlocPackage.ARGUMENT__SUBSCRIPT:
-        getSubscript().clear();
-        return;
       case MOlocPackage.ARGUMENT__EXPRESSION:
         setExpression(EXPRESSION_EDEFAULT);
         return;
@@ -786,8 +743,6 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
         return parameterType != PARAMETER_TYPE_EDEFAULT;
       case MOlocPackage.ARGUMENT__DIRECTION_TYPE:
         return directionType != DIRECTION_TYPE_EDEFAULT;
-      case MOlocPackage.ARGUMENT__SUBSCRIPT:
-        return subscript != null && !subscript.isEmpty();
       case MOlocPackage.ARGUMENT__EXPRESSION:
         return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
       case MOlocPackage.ARGUMENT__DECLARATION_NAME:
@@ -823,14 +778,6 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
         case MOlocPackage.ARGUMENT__RELATIONSHIP_TYPE: return MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE;
         case MOlocPackage.ARGUMENT__PARAMETER_TYPE: return MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE;
         case MOlocPackage.ARGUMENT__DIRECTION_TYPE: return MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE;
-        default: return -1;
-      }
-    }
-    if (baseClass == array_subscripts.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case MOlocPackage.ARGUMENT__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
         default: return -1;
       }
     }
@@ -901,14 +848,6 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
         default: return -1;
       }
     }
-    if (baseClass == array_subscripts.class)
-    {
-      switch (baseFeatureID)
-      {
-        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.ARGUMENT__SUBSCRIPT;
-        default: return -1;
-      }
-    }
     if (baseClass == modification.class)
     {
       switch (baseFeatureID)
@@ -975,8 +914,6 @@ public class ArgumentImpl extends short_class_definitionImpl implements Argument
     result.append(parameterType);
     result.append(", directionType: ");
     result.append(directionType);
-    result.append(", subscript: ");
-    result.append(subscript);
     result.append(", expression: ");
     result.append(expression);
     result.append(", declarationName: ");

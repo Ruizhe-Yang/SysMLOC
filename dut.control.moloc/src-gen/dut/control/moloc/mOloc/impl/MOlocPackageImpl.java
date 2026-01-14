@@ -2363,6 +2363,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     class_definitionEClass.getESuperTypes().add(this.getcomposition());
     class_definitionEClass.getESuperTypes().add(this.getshort_class_specifier());
     class_definitionEClass.getESuperTypes().add(this.gettype_specifier());
+    class_definitionEClass.getESuperTypes().add(this.getarray_subscripts());
     class_definitionEClass.getESuperTypes().add(this.getenum_list());
     class_definitionEClass.getESuperTypes().add(this.getdescription());
     class_definitionEClass.getESuperTypes().add(this.getder_class_specifier());
@@ -2373,6 +2374,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     class_specifierEClass.getESuperTypes().add(this.getcomposition());
     class_specifierEClass.getESuperTypes().add(this.getshort_class_specifier());
     class_specifierEClass.getESuperTypes().add(this.gettype_specifier());
+    class_specifierEClass.getESuperTypes().add(this.getarray_subscripts());
     class_specifierEClass.getESuperTypes().add(this.getenum_list());
     class_specifierEClass.getESuperTypes().add(this.getdescription());
     class_specifierEClass.getESuperTypes().add(this.getder_class_specifier());
@@ -2382,6 +2384,7 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     long_class_specifierEClass.getESuperTypes().add(this.getcomposition());
     short_class_specifierEClass.getESuperTypes().add(this.getclass_name());
     short_class_specifierEClass.getESuperTypes().add(this.gettype_specifier());
+    short_class_specifierEClass.getESuperTypes().add(this.getarray_subscripts());
     short_class_specifierEClass.getESuperTypes().add(this.getclass_modification());
     short_class_specifierEClass.getESuperTypes().add(this.getenum_list());
     short_class_specifierEClass.getESuperTypes().add(this.getdescription());
@@ -2403,7 +2406,6 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     argumentEClass.getESuperTypes().add(this.gettype_prefix());
     argumentEClass.getESuperTypes().add(this.getcomponent_declaration1());
     argumentEClass.getESuperTypes().add(this.getdeclaration());
-    argumentEClass.getESuperTypes().add(this.getarray_subscripts());
     argumentEClass.getESuperTypes().add(this.getmodification());
     argumentEClass.getESuperTypes().add(this.getelement_modification());
     argumentEClass.getESuperTypes().add(this.getconstraining());
@@ -2440,7 +2442,6 @@ public class MOlocPackageImpl extends EPackageImpl implements MOlocPackage
     generalClauseEClass.getESuperTypes().add(this.getclass_prefixes());
     generalClauseEClass.getESuperTypes().add(this.getclass_specifier());
     generalClauseEClass.getESuperTypes().add(this.gettype_prefix());
-    generalClauseEClass.getESuperTypes().add(this.getarray_subscripts());
     generalClauseEClass.getESuperTypes().add(this.getconstraining());
     component_declarationEClass.getESuperTypes().add(this.getdeclaration());
     component_declarationEClass.getESuperTypes().add(this.getdescription());

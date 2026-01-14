@@ -66,6 +66,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsExtends <em>Is Extends</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassNameEnd <em>Class Name End</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getSubscript <em>Subscript</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDirection <em>Direction</em>}</li>
@@ -76,7 +77,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getRelationshipType <em>Relationship Type</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getParameterType <em>Parameter Type</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDirectionType <em>Direction Type</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getSubscript <em>Subscript</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getConstrain <em>Constrain</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsPublic <em>Is Public</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsProtected <em>Is Protected</em>}</li>
@@ -313,6 +313,16 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubscript()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> subscript;
+
+  /**
    * The cached value of the '{@link #getEnumerationLiteral() <em>Enumeration Literal</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -491,16 +501,6 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @ordered
    */
   protected Direction directionType = DIRECTION_TYPE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSubscript()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> subscript;
 
   /**
    * The cached value of the '{@link #getConstrain() <em>Constrain</em>}' containment reference.
@@ -969,6 +969,21 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * @generated
    */
   @Override
+  public EList<String> getSubscript()
+  {
+    if (subscript == null)
+    {
+      subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT);
+    }
+    return subscript;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<EnumerationLiteral> getEnumerationLiteral()
   {
     if (enumerationLiteral == null)
@@ -1191,21 +1206,6 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     directionType = newDirectionType == null ? DIRECTION_TYPE_EDEFAULT : newDirectionType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE, oldDirectionType, directionType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<String> getSubscript()
-  {
-    if (subscript == null)
-    {
-      subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT);
-    }
-    return subscript;
   }
 
   /**
@@ -1506,6 +1506,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return getClassNameEnd();
       case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
         return getTypeSpecifier();
+      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
+        return getSubscript();
       case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
         return getEnumerationLiteral();
       case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
@@ -1526,8 +1528,6 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return getParameterType();
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE:
         return getDirectionType();
-      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
-        return getSubscript();
       case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
         return getConstrain();
       case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
@@ -1599,6 +1599,10 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
         setTypeSpecifier((String)newValue);
         return;
+      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
+        getSubscript().clear();
+        getSubscript().addAll((Collection<? extends String>)newValue);
+        return;
       case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
         getEnumerationLiteral().addAll((Collection<? extends EnumerationLiteral>)newValue);
@@ -1630,10 +1634,6 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return;
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE:
         setDirectionType((Direction)newValue);
-        return;
-      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
-        getSubscript().clear();
-        getSubscript().addAll((Collection<? extends String>)newValue);
         return;
       case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
         setConstrain((ConstrainingClause)newValue);
@@ -1713,6 +1713,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
       case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
         setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
         return;
+      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
+        getSubscript().clear();
+        return;
       case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
         return;
@@ -1742,9 +1745,6 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return;
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE:
         setDirectionType(DIRECTION_TYPE_EDEFAULT);
-        return;
-      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
-        getSubscript().clear();
         return;
       case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
         setConstrain((ConstrainingClause)null);
@@ -1811,6 +1811,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return CLASS_NAME_END_EDEFAULT == null ? classNameEnd != null : !CLASS_NAME_END_EDEFAULT.equals(classNameEnd);
       case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
+      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
+        return subscript != null && !subscript.isEmpty();
       case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
         return enumerationLiteral != null && !enumerationLiteral.isEmpty();
       case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
@@ -1831,8 +1833,6 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         return parameterType != PARAMETER_TYPE_EDEFAULT;
       case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE:
         return directionType != DIRECTION_TYPE_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT:
-        return subscript != null && !subscript.isEmpty();
       case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
         return constrain != null;
       case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
@@ -1924,6 +1924,14 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         default: return -1;
       }
     }
+    if (baseClass == array_subscripts.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
+        default: return -1;
+      }
+    }
     if (baseClass == enum_list.class)
     {
       switch (derivedFeatureID)
@@ -1973,14 +1981,6 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         case MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE: return MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE;
         case MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE: return MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE;
         case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE: return MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE;
-        default: return -1;
-      }
-    }
-    if (baseClass == array_subscripts.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
         default: return -1;
       }
     }
@@ -2064,6 +2064,14 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         default: return -1;
       }
     }
+    if (baseClass == array_subscripts.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT;
+        default: return -1;
+      }
+    }
     if (baseClass == enum_list.class)
     {
       switch (baseFeatureID)
@@ -2116,14 +2124,6 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
         default: return -1;
       }
     }
-    if (baseClass == array_subscripts.class)
-    {
-      switch (baseFeatureID)
-      {
-        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.GENERAL_CLAUSE__SUBSCRIPT;
-        default: return -1;
-      }
-    }
     if (baseClass == constraining.class)
     {
       switch (baseFeatureID)
@@ -2166,6 +2166,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     result.append(classNameEnd);
     result.append(", typeSpecifier: ");
     result.append(typeSpecifier);
+    result.append(", subscript: ");
+    result.append(subscript);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
     result.append(", direction: ");
@@ -2184,8 +2186,6 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     result.append(parameterType);
     result.append(", directionType: ");
     result.append(directionType);
-    result.append(", subscript: ");
-    result.append(subscript);
     result.append(", isPublic: ");
     result.append(isPublic);
     result.append(", isProtected: ");

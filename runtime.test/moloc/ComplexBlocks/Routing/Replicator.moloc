@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Routing">
+  <classes classType="block" className="Replicator" description="&quot;Signal replicator&quot;" classNameEnd="Replicator">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexSIMO"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="y" right="fill(u, nout)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments elementName="Icon">
+        <arguments elementName="coordinateSystem">
+          <arguments expression="false" elementName="preserveAspectRatio"/>
+          <arguments expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </arguments>
+        <arguments expression="{ Line(points={{-100,0},{-6,0}}, color={85,170,255}), Line(points={{100,0},{10,0}}, color={85,170,255}), Line(points={{0,0},{100,10}}, color={85,170,255}), Line(points={{0,0},{100,-10}}, color={85,170,255}), Ellipse( extent={{-14,16},{16,-14}}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </arguments>
+      <arguments elementName="Documentation">
+        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This block replicates the input signal to an array of &lt;code>nout&lt;/code> identical output signals.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

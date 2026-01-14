@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.ComplexMath">
+  <classes classType="block" className="Add" description="&quot;Output the sum of the two inputs&quot;" classNameEnd="Add">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.ComplexSI2SO"/>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" parameterType="parameter">
+      <component_list expression="Complex(1, 0)" declarationName="k1" description="&quot;Gain of input 1&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" parameterType="parameter">
+      <component_list expression="Complex(1, 0)" declarationName="k2" description="&quot;Gain of input 2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="y" right="k1*u1Internal + k2*u2Internal"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments elementName="Documentation">
+        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes output &lt;code>y&lt;/code> as &lt;em>sum&lt;/em> of the&#xA;two input signals &lt;code>u1&lt;/code> and &lt;code>u2&lt;/code>. Optionally, either input &lt;code>u1&lt;/code> or &lt;code>u2&lt;/code> or both inputs can be processed conjugate complex, when parameters &lt;code>useConjugateInput1&lt;/code> and &lt;code>useConjugateInput2&lt;/code> are &lt;code>true&lt;/code>, respectively.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = k1*u1Internal + k2*u2Internal;&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;&lt;strong>Example&lt;/strong> parameters:&#xA;&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>&lt;code>k1 = +2&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>k2 = -3&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>useConjugateInput1 = true&lt;/code>,&lt;/li>&#xA;&lt;li>&lt;code>useConjugateInput2 = false&lt;/code>&lt;/li>&#xA;&lt;/ul>&#xA;&lt;p>&#xA;result in the following equation:&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = 2 * Modelica.ComplexMath.conj(u1) - 3 * u2&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </arguments>
+      <arguments elementName="Icon">
+        <arguments elementName="coordinateSystem">
+          <arguments expression="true" elementName="preserveAspectRatio"/>
+          <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </arguments>
+        <arguments expression="{Text(extent={{-98,-52},{5,-92}}, textString=&quot;%k2&quot; ) , Text(extent={{-98,92},{5,52}}, textString=&quot;%k1&quot;), Line(points={{50,0},{100,0}},color={0,0,255}), Line(points={{-100,60},{-74,24},{-44,24}},color={85,170,255}), Line(points={{-100,-60},{-74,-24},{-44,-24}},color={85,170,255}), Ellipse(extent={{-50,50},{50,-50}}, lineColor={85,170,255}), Line(points={{50,0},{100,0}}, color={85,170,255}), Text(extent={{-40,40},{40,-40}}, textColor={85,170,255}, textString=&quot;+&quot; ) }" elementName="graphics"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

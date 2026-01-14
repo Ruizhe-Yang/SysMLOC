@@ -9,6 +9,7 @@ import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.Element;
 import dut.control.moloc.mOloc.EnumerationLiteral;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.array_subscripts;
 import dut.control.moloc.mOloc.class_modification;
 import dut.control.moloc.mOloc.class_name;
 import dut.control.moloc.mOloc.class_specifier;
@@ -52,6 +53,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsExtends <em>Is Extends</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getClassNameEnd <em>Class Name End</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getSubscript <em>Subscript</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Class_definitionImpl#getDirection <em>Direction</em>}</li>
@@ -186,6 +188,16 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
    * @ordered
    */
   protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubscript()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> subscript;
 
   /**
    * The cached value of the '{@link #getEnumerationLiteral() <em>Enumeration Literal</em>}' containment reference list.
@@ -529,6 +541,21 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
    * @generated
    */
   @Override
+  public EList<String> getSubscript()
+  {
+    if (subscript == null)
+    {
+      subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.CLASS_DEFINITION__SUBSCRIPT);
+    }
+    return subscript;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<EnumerationLiteral> getEnumerationLiteral()
   {
     if (enumerationLiteral == null)
@@ -772,6 +799,8 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return getClassNameEnd();
       case MOlocPackage.CLASS_DEFINITION__TYPE_SPECIFIER:
         return getTypeSpecifier();
+      case MOlocPackage.CLASS_DEFINITION__SUBSCRIPT:
+        return getSubscript();
       case MOlocPackage.CLASS_DEFINITION__ENUMERATION_LITERAL:
         return getEnumerationLiteral();
       case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION:
@@ -827,6 +856,10 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return;
       case MOlocPackage.CLASS_DEFINITION__TYPE_SPECIFIER:
         setTypeSpecifier((String)newValue);
+        return;
+      case MOlocPackage.CLASS_DEFINITION__SUBSCRIPT:
+        getSubscript().clear();
+        getSubscript().addAll((Collection<? extends String>)newValue);
         return;
       case MOlocPackage.CLASS_DEFINITION__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
@@ -892,6 +925,9 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       case MOlocPackage.CLASS_DEFINITION__TYPE_SPECIFIER:
         setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
         return;
+      case MOlocPackage.CLASS_DEFINITION__SUBSCRIPT:
+        getSubscript().clear();
+        return;
       case MOlocPackage.CLASS_DEFINITION__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
         return;
@@ -947,6 +983,8 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         return CLASS_NAME_END_EDEFAULT == null ? classNameEnd != null : !CLASS_NAME_END_EDEFAULT.equals(classNameEnd);
       case MOlocPackage.CLASS_DEFINITION__TYPE_SPECIFIER:
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
+      case MOlocPackage.CLASS_DEFINITION__SUBSCRIPT:
+        return subscript != null && !subscript.isEmpty();
       case MOlocPackage.CLASS_DEFINITION__ENUMERATION_LITERAL:
         return enumerationLiteral != null && !enumerationLiteral.isEmpty();
       case MOlocPackage.CLASS_DEFINITION__IS_ANNOTATION:
@@ -1023,6 +1061,14 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
       switch (derivedFeatureID)
       {
         case MOlocPackage.CLASS_DEFINITION__TYPE_SPECIFIER: return MOlocPackage.TYPE_SPECIFIER__TYPE_SPECIFIER;
+        default: return -1;
+      }
+    }
+    if (baseClass == array_subscripts.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.CLASS_DEFINITION__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
         default: return -1;
       }
     }
@@ -1128,6 +1174,14 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
         default: return -1;
       }
     }
+    if (baseClass == array_subscripts.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.CLASS_DEFINITION__SUBSCRIPT;
+        default: return -1;
+      }
+    }
     if (baseClass == enum_list.class)
     {
       switch (baseFeatureID)
@@ -1194,6 +1248,8 @@ public class Class_definitionImpl extends class_prefixesImpl implements Class_de
     result.append(classNameEnd);
     result.append(", typeSpecifier: ");
     result.append(typeSpecifier);
+    result.append(", subscript: ");
+    result.append(subscript);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
     result.append(", direction: ");

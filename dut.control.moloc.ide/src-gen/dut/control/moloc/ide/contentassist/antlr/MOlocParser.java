@@ -59,6 +59,7 @@ public class MOlocParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
 			builder.put(grammarAccess.getPrimaryAccess().getAlternatives_3_0(), "rule__Primary__Alternatives_3_0");
 			builder.put(grammarAccess.getArrayArgumentsAccess().getAlternatives_1(), "rule__ArrayArguments__Alternatives_1");
+			builder.put(grammarAccess.getResultReferenceAccess().getAlternatives(), "rule__ResultReference__Alternatives");
 			builder.put(grammarAccess.getFunctionArgumentsAccess().getAlternatives(), "rule__FunctionArguments__Alternatives");
 			builder.put(grammarAccess.getFunctionArgumentsAccess().getAlternatives_0_1(), "rule__FunctionArguments__Alternatives_0_1");
 			builder.put(grammarAccess.getFunctionArgumentsNonFirstAccess().getAlternatives(), "rule__FunctionArgumentsNonFirst__Alternatives");
@@ -169,6 +170,8 @@ public class MOlocParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPrimaryAccess().getGroup_7(), "rule__Primary__Group_7__0");
 			builder.put(grammarAccess.getOutputExpressionListAccess().getGroup(), "rule__OutputExpressionList__Group__0");
 			builder.put(grammarAccess.getOutputExpressionListAccess().getGroup_1(), "rule__OutputExpressionList__Group_1__0");
+			builder.put(grammarAccess.getExpressionListAccess().getGroup(), "rule__ExpressionList__Group__0");
+			builder.put(grammarAccess.getExpressionListAccess().getGroup_1(), "rule__ExpressionList__Group_1__0");
 			builder.put(grammarAccess.getArrayArgumentsAccess().getGroup(), "rule__ArrayArguments__Group__0");
 			builder.put(grammarAccess.getArrayArgumentsAccess().getGroup_1_0(), "rule__ArrayArguments__Group_1_0__0");
 			builder.put(grammarAccess.getArrayArgumentsAccess().getGroup_1_1(), "rule__ArrayArguments__Group_1_1__0");
@@ -184,6 +187,8 @@ public class MOlocParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComponent_referenceAccess().getGroup_3(), "rule__Component_reference__Group_3__0");
 			builder.put(grammarAccess.getComponent_referenceAccess().getGroup_3_2(), "rule__Component_reference__Group_3_2__0");
 			builder.put(grammarAccess.getComponent_referenceAccess().getGroup_3_2_2(), "rule__Component_reference__Group_3_2_2__0");
+			builder.put(grammarAccess.getResultReferenceAccess().getGroup_1(), "rule__ResultReference__Group_1__0");
+			builder.put(grammarAccess.getResultReferenceAccess().getGroup_1_3(), "rule__ResultReference__Group_1_3__0");
 			builder.put(grammarAccess.getFunctionCallArgsAccess().getGroup(), "rule__FunctionCallArgs__Group__0");
 			builder.put(grammarAccess.getFunctionArgumentsAccess().getGroup_0(), "rule__FunctionArguments__Group_0__0");
 			builder.put(grammarAccess.getFunctionArgumentsAccess().getGroup_0_1_0(), "rule__FunctionArguments__Group_0_1_0__0");

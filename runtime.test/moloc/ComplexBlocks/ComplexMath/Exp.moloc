@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.ComplexMath">
+  <classes classType="block" className="Exp" description="&quot;Output the exponential (base e) of the input&quot;" classNameEnd="Exp">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.ComplexSISO"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.ComplexMath.exp(uInternal)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments elementName="Icon">
+        <arguments elementName="coordinateSystem">
+          <arguments expression="true" elementName="preserveAspectRatio"/>
+          <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </arguments>
+        <arguments expression="{Line(points={{0,-80},{0,68}}, color={192,192,192}), Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Text( extent={{-86,50},{-14,2}}, textColor={192,192,192}, textString=&quot;exp&quot; ) ,Line(points={{-80,-80},{-31,-77.9},{-6.03,-74}, {10.9,-68.4},{23.7,-61},{34.2,-51.6},{43,-40.3},{50.3,-27.8},{ 56.7,-13.5} ,{62.3,2.23},{67.1,18.6},{72,38.2},{76,57.6},{80,80} } , color= {85,170,255} ) , Line(points={{-90,-80.3976},{68,-80.3976}}, color= {192,192,192} ) ,Polygon( points={{90,-80.3976},{68,-72.3976},{68,-88.3976},{90,-80.3976}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </arguments>
+      <arguments elementName="Documentation">
+        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes the output &lt;code>y&lt;/code> as the&#xA;&lt;em>exponential&lt;/em> (of base e) of the input &lt;code>u&lt;/code>. Optionally, the input &lt;code>u&lt;/code> can be processed conjugate complex, when parameter &lt;code>useConjugateInput&lt;/code> is &lt;code>true&lt;/code>. Depending on &lt;code>useConjugateInput&lt;/code> the internal signal &lt;code>uInternal&lt;/code> represents either the original or the conjugate complex input signal.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = &lt;strong>exp&lt;/strong>(uInternal);&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Math/exp.png\&quot;&#xA;     alt=\&quot;exp.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

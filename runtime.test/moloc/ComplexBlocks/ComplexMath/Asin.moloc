@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.ComplexMath">
+  <classes classType="block" className="Asin" description="&quot;Output the arc sine of the input&quot;" classNameEnd="Asin">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.ComplexSISO"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.ComplexMath.asin(uInternal)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments elementName="Icon">
+        <arguments elementName="coordinateSystem">
+          <arguments expression="true" elementName="preserveAspectRatio"/>
+          <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </arguments>
+        <arguments expression="{Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Line(points={{0,-80},{0,68}}, color={192,192,192} ) ,Line(points={{-80,-80},{-79.2,-72.8},{-77.6, -67.5 } ,{-73.6,-59.4},{-66.3,-49.8},{-53.5,-37.3},{-30.2,-19.7},{ 37.4,24.8} ,{57.5,40.8},{68.7,52.7},{75.2,62.2},{77.6,67.5},{80,80} } , color= {85,170,255} ) , Line(points={{-90,0},{68,0}}, color={192,192,192}), Polygon( points={{90,0},{68,8},{68,-8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Text( extent={{-88,78},{-16,30}}, textColor={192,192,192}, textString=&quot;asin&quot; ) }" elementName="graphics"/>
+      </arguments>
+      <arguments elementName="Documentation">
+        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes the output &lt;code>y&lt;/code> as the&#xA;&lt;em>sine-inverse&lt;/em> of the input &lt;code>u&lt;/code>. Optionally, the input &lt;code>u&lt;/code> can be processed conjugate complex, when parameter &lt;code>useConjugateInput&lt;/code> is &lt;code>true&lt;/code>. Depending on &lt;code>useConjugateInput&lt;/code> the internal signal &lt;code>uInternal&lt;/code> represents either the original or the conjugate complex input signal.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = &lt;strong>asin&lt;/strong>(uInternal);&#xA;&lt;/pre>&lt;/blockquote>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Math/asin.png\&quot;&#xA;     alt=\&quot;asin.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

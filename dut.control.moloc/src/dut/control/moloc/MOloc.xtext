@@ -48,8 +48,8 @@ fragment long_class_specifier:
 fragment short_class_specifier:
 	class_name 
 	'=' 
-	( direction=Direction type_specifier class_modification? 
-	 | (isEnumeration ?= 'enumeration')? '(' ( enum_list? | isColon ?= ':') ')'
+	( (direction=Direction)? type_specifier array_subscripts? class_modification? 
+	 | isEnumeration ?= 'enumeration' '(' ( enum_list? | isColon ?= ':') ')'
 	)
 	description
 ;
@@ -145,8 +145,7 @@ enum ParameterType:
 ;
 
 fragment component_declaration1:
-	declaration 
-	description
+	declaration description
 ;
 
 fragment declaration:
@@ -460,15 +459,19 @@ Primary:
 	| STRING
 	| TRUE_FALSE
 	| ( Component_reference | 'der' | 'initial' | 'pure' ) FunctionCallArgs
-	| Component_reference
+	| ResultReference
 	| '(' OutputExpressionList ')'
-	| '[' Expression (',' Expression) ']'
+	| '[' ExpressionList ( ';' ExpressionList )* ']'
 	| '{' ArrayArguments '}'
 	| 'end'
 ;
 
 OutputExpressionList:
 	Expression? (',' Expression? )*
+;
+
+ExpressionList:
+	Expression (',' Expression)*
 ;
 
 ArrayArguments:
@@ -491,8 +494,13 @@ Component_reference:
 	'.'? IDENT ('[' Subscript (',' Subscript)* ']')? ('.' IDENT ('[' Subscript (',' Subscript)* ']')?)*
 ;
 
+ResultReference:
+	Component_reference
+	| 'der' '(' Component_reference (',' UNSIGNED_NUMBER)? ')'
+;
+
 FunctionCallArgs:
-	'(' (FunctionArguments)? ')'
+	'(' FunctionArguments? ')'
 ;
 
 FunctionArguments:
@@ -511,7 +519,7 @@ FunctionPartialApplication:
 ;
 
 NamedArguments:
-	NamedArgument (',' NamedArgument)
+	NamedArgument (',' NamedArguments)?
 ;
 
 NamedArgument:

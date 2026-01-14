@@ -28,7 +28,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface GeneralClause extends Element, class_prefixes, class_specifier, type_prefix, array_subscripts, constraining
+public interface GeneralClause extends Element, class_prefixes, class_specifier, type_prefix, constraining
 {
   /**
    * Returns the value of the '<em><b>Is Public</b></em>' attribute.

@@ -6,6 +6,7 @@ package dut.control.moloc.mOloc.impl;
 import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.EnumerationLiteral;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.array_subscripts;
 import dut.control.moloc.mOloc.class_specifier;
 import dut.control.moloc.mOloc.der_class_specifier;
 import dut.control.moloc.mOloc.description;
@@ -38,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getSubscript <em>Subscript</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#isIsAnnotation <em>Is Annotation</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.class_specifierImpl#getDirection <em>Direction</em>}</li>
@@ -70,6 +72,16 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
    * @ordered
    */
   protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubscript()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> subscript;
 
   /**
    * The cached value of the '{@link #getEnumerationLiteral() <em>Enumeration Literal</em>}' containment reference list.
@@ -235,6 +247,21 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     typeSpecifier = newTypeSpecifier;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CLASS_SPECIFIER__TYPE_SPECIFIER, oldTypeSpecifier, typeSpecifier));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getSubscript()
+  {
+    if (subscript == null)
+    {
+      subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT);
+    }
+    return subscript;
   }
 
   /**
@@ -420,6 +447,8 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     {
       case MOlocPackage.CLASS_SPECIFIER__TYPE_SPECIFIER:
         return getTypeSpecifier();
+      case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT:
+        return getSubscript();
       case MOlocPackage.CLASS_SPECIFIER__ENUMERATION_LITERAL:
         return getEnumerationLiteral();
       case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION:
@@ -451,6 +480,10 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     {
       case MOlocPackage.CLASS_SPECIFIER__TYPE_SPECIFIER:
         setTypeSpecifier((String)newValue);
+        return;
+      case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT:
+        getSubscript().clear();
+        getSubscript().addAll((Collection<? extends String>)newValue);
         return;
       case MOlocPackage.CLASS_SPECIFIER__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
@@ -492,6 +525,9 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
       case MOlocPackage.CLASS_SPECIFIER__TYPE_SPECIFIER:
         setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
         return;
+      case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT:
+        getSubscript().clear();
+        return;
       case MOlocPackage.CLASS_SPECIFIER__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
         return;
@@ -529,6 +565,8 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     {
       case MOlocPackage.CLASS_SPECIFIER__TYPE_SPECIFIER:
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
+      case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT:
+        return subscript != null && !subscript.isEmpty();
       case MOlocPackage.CLASS_SPECIFIER__ENUMERATION_LITERAL:
         return enumerationLiteral != null && !enumerationLiteral.isEmpty();
       case MOlocPackage.CLASS_SPECIFIER__IS_ANNOTATION:
@@ -560,6 +598,14 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
       switch (derivedFeatureID)
       {
         case MOlocPackage.CLASS_SPECIFIER__TYPE_SPECIFIER: return MOlocPackage.TYPE_SPECIFIER__TYPE_SPECIFIER;
+        default: return -1;
+      }
+    }
+    if (baseClass == array_subscripts.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
         default: return -1;
       }
     }
@@ -617,6 +663,14 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
         default: return -1;
       }
     }
+    if (baseClass == array_subscripts.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.CLASS_SPECIFIER__SUBSCRIPT;
+        default: return -1;
+      }
+    }
     if (baseClass == enum_list.class)
     {
       switch (baseFeatureID)
@@ -668,6 +722,8 @@ public class class_specifierImpl extends long_class_specifierImpl implements cla
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (typeSpecifier: ");
     result.append(typeSpecifier);
+    result.append(", subscript: ");
+    result.append(subscript);
     result.append(", isAnnotation: ");
     result.append(isAnnotation);
     result.append(", direction: ");

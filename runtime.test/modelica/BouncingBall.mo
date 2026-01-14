@@ -16,12 +16,21 @@ equation
   when h <= 0 then
     reinit(v, -e * v);
   end when;
+  
+  der(x_scaled[2:nx]) = zeros(nx-1);
+  
   annotation (
        Icon(
           graphics={
             Line(
               points={{-80.0,78.0},{-80.0,-90.0}},
               color={192,192,192}),
+            Line2(
+              points={{-80.0,78.0},{-80.0,-90.0}},
+              color={line(a),192,192}),
+            Line3(
+              points={{-80.0,78.0},{-80.0,-90.0}},
+              color={line(a),192,192}),
             Polygon(
               lineColor={192,192,192},
               fillColor={192,192,192},

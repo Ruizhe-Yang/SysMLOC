@@ -7,6 +7,7 @@ import dut.control.moloc.mOloc.Argument;
 import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.EnumerationLiteral;
 import dut.control.moloc.mOloc.MOlocPackage;
+import dut.control.moloc.mOloc.array_subscripts;
 import dut.control.moloc.mOloc.class_modification;
 import dut.control.moloc.mOloc.description;
 import dut.control.moloc.mOloc.description_string;
@@ -26,6 +27,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -38,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getSubscript <em>Subscript</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.short_class_specifierImpl#getDescription <em>Description</em>}</li>
@@ -70,6 +73,16 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
    * @ordered
    */
   protected String typeSpecifier = TYPE_SPECIFIER_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSubscript() <em>Subscript</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubscript()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> subscript;
 
   /**
    * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
@@ -235,6 +248,21 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     typeSpecifier = newTypeSpecifier;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER, oldTypeSpecifier, typeSpecifier));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getSubscript()
+  {
+    if (subscript == null)
+    {
+      subscript = new EDataTypeEList<String>(String.class, this, MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT);
+    }
+    return subscript;
   }
 
   /**
@@ -422,6 +450,8 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     {
       case MOlocPackage.SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER:
         return getTypeSpecifier();
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT:
+        return getSubscript();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
         return getArguments();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
@@ -453,6 +483,10 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     {
       case MOlocPackage.SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER:
         setTypeSpecifier((String)newValue);
+        return;
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT:
+        getSubscript().clear();
+        getSubscript().addAll((Collection<? extends String>)newValue);
         return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
         getArguments().clear();
@@ -494,6 +528,9 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
       case MOlocPackage.SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER:
         setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
         return;
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT:
+        getSubscript().clear();
+        return;
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
         getArguments().clear();
         return;
@@ -531,6 +568,8 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     {
       case MOlocPackage.SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER:
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
+      case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT:
+        return subscript != null && !subscript.isEmpty();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ARGUMENTS:
         return arguments != null && !arguments.isEmpty();
       case MOlocPackage.SHORT_CLASS_SPECIFIER__ENUMERATION_LITERAL:
@@ -562,6 +601,14 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
       switch (derivedFeatureID)
       {
         case MOlocPackage.SHORT_CLASS_SPECIFIER__TYPE_SPECIFIER: return MOlocPackage.TYPE_SPECIFIER__TYPE_SPECIFIER;
+        default: return -1;
+      }
+    }
+    if (baseClass == array_subscripts.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT;
         default: return -1;
       }
     }
@@ -616,6 +663,14 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
         default: return -1;
       }
     }
+    if (baseClass == array_subscripts.class)
+    {
+      switch (baseFeatureID)
+      {
+        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPT: return MOlocPackage.SHORT_CLASS_SPECIFIER__SUBSCRIPT;
+        default: return -1;
+      }
+    }
     if (baseClass == class_modification.class)
     {
       switch (baseFeatureID)
@@ -664,6 +719,8 @@ public class short_class_specifierImpl extends class_nameImpl implements short_c
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (typeSpecifier: ");
     result.append(typeSpecifier);
+    result.append(", subscript: ");
+    result.append(subscript);
     result.append(", description: ");
     result.append(description);
     result.append(", isAnnotation: ");

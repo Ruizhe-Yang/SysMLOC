@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Blocks">
+  <classes classType="package" className="Interaction" description="&quot;Library of user interaction blocks to input and to show variables in a diagram animation&quot;" classNameEnd="Interaction">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package"/>
+    <elements xsi:type="mOloc:GeneralClause" classType="package" className="Show" description="&quot;Library of blocks to show variables in a diagram animation&quot;" classNameEnd="Show">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package"/>
+      <elements xsi:type="mOloc:GeneralClause" classType="block" className="RealValue" description="&quot;Show Real value from numberPort or from number input field in diagram layer dynamically&quot;" classNameEnd="RealValue">
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+          <component_list expression="true" declarationName="use_numberPort" description="&quot;= true, if numberPort enabled&quot;" isAnnotation="true">
+            <arguments expression="true" elementName="Evaluate"/>
+            <arguments expression="true" elementName="HideResult"/>
+            <arguments elementName="choices">
+              <arguments expression="true" elementName="checkBox"/>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input">
+          <component_list expression="0.0" declarationName="number" description="&quot;Number to visualize if use_numberPort=false (time varying)&quot;" isAnnotation="true">
+            <arguments elementName="Dialog">
+              <arguments expression="not use_numberPort" elementName="enable"/>
+            </arguments>
+            <arguments expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter">
+          <component_list expression="2" declarationName="significantDigits" description="&quot;Number of significant digits to be shown&quot;">
+            <arguments expression="1" elementName="min"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput">
+          <component_list declarationName="numberPort" description="&quot;Number to be shown in diagram layer if use_numberPort = true&quot;" isAnnotation="true" condition_attribute="use_numberPort">
+            <arguments expression="true" elementName="HideResult"/>
+            <arguments elementName="Placement">
+              <arguments elementName="transformation">
+                <arguments expression="{{-130,-15},{-100,15}}" elementName="extent"/>
+              </arguments>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput">
+          <component_list declarationName="showNumber"/>
+        </elements>
+        <elements xsi:type="mOloc:EquationSection">
+          <equations xsi:type="mOloc:IfEquation" condition="use_numberPort">
+            <equations xsi:type="mOloc:ConnectEquation" left="numberPort" right="showNumber"/>
+            <equations xsi:type="mOloc:SimpleEquation" left="showNumber" right="number"/>
+          </equations>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments elementName="Icon">
+            <arguments elementName="coordinateSystem">
+              <arguments expression="false" elementName="preserveAspectRatio"/>
+              <arguments expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+            </arguments>
+            <arguments expression="{ Rectangle(lineColor={0,0,127}, fillColor={236,233,216}, fillPattern=FillPattern.Solid, lineThickness=5.0, borderPattern=BorderPattern.Raised, extent={{-100.0,-40.0},{100.0,40.0}} ) , Text(extent={{-94.0,-34.0},{96.0,34.0}}, textString=DynamicSelect(&quot;0.0&quot;, String(showNumber, significantDigits=significantDigits)) ) , Text(visible=not use_numberPort, extent={{-150.0,-70.0},{150.0,-50.0}}, textString=&quot;%number&quot; ) }" elementName="graphics"/>
+          </arguments>
+          <arguments elementName="Documentation">
+            <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This block visualizes a Real number in a diagram animation.&#xA;The number to be visualized can be defined in the following ways:&#xA;&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&lt;li> If useNumberPort = &lt;strong>true&lt;/strong> (which is the default), a Real&#xA;     input is present and this input variable is shown.&lt;/li>&#xA;&#xA;&lt;li> If useNumberPort = &lt;strong>false&lt;/strong> no input connector is present.&#xA;     Instead, a Real input field is activated in the parameter menu&#xA;     and the Real expression from this input menu is shown.&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&#xA;The two versions of the block are shown in the following image (in the right variant, the&#xA;name of the variable value that is displayed is also shown below the icon):&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Interaction/Show/RealValue.png\&quot;&#xA;     alt=\&quot;RealValue.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.RealNetwork1\&quot;>Modelica.Blocks.Examples.RealNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+          </arguments>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" classType="block" className="IntegerValue" description="&quot;Show Integer value from numberPort or from number input field in diagram layer dynamically&quot;" classNameEnd="IntegerValue">
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+          <component_list expression="true" declarationName="use_numberPort" description="&quot;= true, if numberPort enabled&quot;" isAnnotation="true">
+            <arguments expression="true" elementName="Evaluate"/>
+            <arguments expression="true" elementName="HideResult"/>
+            <arguments elementName="choices">
+              <arguments expression="true" elementName="checkBox"/>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input">
+          <component_list expression="0" declarationName="number" description="&quot;Number to visualize if use_numberPort=false (time varying)&quot;" isAnnotation="true">
+            <arguments elementName="Dialog">
+              <arguments expression="not use_numberPort" elementName="enable"/>
+            </arguments>
+            <arguments expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerInput">
+          <component_list declarationName="numberPort" description="&quot;Number to be shown in diagram layer if use_numberPort = true&quot;" isAnnotation="true" condition_attribute="use_numberPort">
+            <arguments expression="true" elementName="HideResult"/>
+            <arguments elementName="Placement">
+              <arguments elementName="transformation">
+                <arguments expression="{{-130,-15},{-100,15}}" elementName="extent"/>
+              </arguments>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerOutput">
+          <component_list declarationName="showNumber"/>
+        </elements>
+        <elements xsi:type="mOloc:EquationSection">
+          <equations xsi:type="mOloc:IfEquation" condition="use_numberPort">
+            <equations xsi:type="mOloc:ConnectEquation" left="numberPort" right="showNumber"/>
+            <equations xsi:type="mOloc:SimpleEquation" left="showNumber" right="number"/>
+          </equations>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments elementName="Icon">
+            <arguments elementName="coordinateSystem">
+              <arguments expression="false" elementName="preserveAspectRatio"/>
+              <arguments expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+            </arguments>
+            <arguments expression="{ Rectangle(lineColor={0,0,127}, fillColor={236,233,216}, fillPattern=FillPattern.Solid, lineThickness=5.0, borderPattern=BorderPattern.Raised, extent={{-100.0,-40.0},{100.0,40.0}} ) , Text(extent={{-94.0,-34.0},{96.0,34.0}}, textString=DynamicSelect(&quot;0&quot;, String(showNumber)) ) , Text(visible=not use_numberPort, extent={{-150.0,-70.0},{150.0,-50.0}}, textString=&quot;%number&quot; ) }" elementName="graphics"/>
+          </arguments>
+          <arguments elementName="Documentation">
+            <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This block visualizes an Integer number in a diagram animation.&#xA;The number to be visualized can be defined in the following ways:&#xA;&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&lt;li> If useNumberPort = &lt;strong>true&lt;/strong> (which is the default), an Integer&#xA;     input is present and this input variable is shown.&lt;/li>&#xA;&#xA;&lt;li> If useNumberPort = &lt;strong>false&lt;/strong> no input connector is present.&#xA;     Instead, an Integer input field is activated in the parameter menu&#xA;     and the Integer expression from this input menu is shown.&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&#xA;The two versions of the block are shown in the following image (in the right variant, the&#xA;name of the variable value that is displayed is also shown below the icon):&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Interaction/Show/IntegerValue.png\&quot;&#xA;     alt=\&quot;IntegerValue.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.IntegerNetwork1\&quot;>Modelica.Blocks.Examples.IntegerNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+          </arguments>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:GeneralClause" classType="block" className="BooleanValue" description="&quot;Show Boolean value from numberPort or from number input field in diagram layer dynamically&quot;" classNameEnd="BooleanValue">
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter">
+          <component_list expression="true" declarationName="use_activePort" description="&quot;= true, if activePort enabled&quot;" isAnnotation="true">
+            <arguments expression="true" elementName="Evaluate"/>
+            <arguments expression="true" elementName="HideResult"/>
+            <arguments elementName="choices">
+              <arguments expression="true" elementName="checkBox"/>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input">
+          <component_list expression="false" declarationName="active" description="&quot;Boolean variable to visualize if use_activePort=false (time varying)&quot;" isAnnotation="true">
+            <arguments elementName="Dialog">
+              <arguments expression="not use_activePort" elementName="enable"/>
+            </arguments>
+            <arguments expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput">
+          <component_list declarationName="activePort" description="&quot;Boolean variable to be shown in diagram layer if use_activePort = true&quot;" isAnnotation="true" condition_attribute="use_activePort">
+            <arguments expression="true" elementName="HideResult"/>
+            <arguments elementName="Placement">
+              <arguments elementName="transformation">
+                <arguments expression="{{-130,-15},{-100,15}}" elementName="extent"/>
+              </arguments>
+            </arguments>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput">
+          <component_list declarationName="showActive"/>
+        </elements>
+        <elements xsi:type="mOloc:EquationSection">
+          <equations xsi:type="mOloc:IfEquation" condition="use_activePort">
+            <equations xsi:type="mOloc:ConnectEquation" left="activePort" right="showActive"/>
+            <equations xsi:type="mOloc:SimpleEquation" left="showActive" right="active"/>
+          </equations>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause">
+          <arguments elementName="Icon">
+            <arguments elementName="coordinateSystem">
+              <arguments expression="false" elementName="preserveAspectRatio"/>
+              <arguments expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+            </arguments>
+            <arguments expression="{ Text(visible=not use_activePort, extent={{-188.0,-80.0},{62.0,-60.0}}, textString=&quot;%active&quot; ) , Ellipse(lineColor={64,64,64}, fillColor=DynamicSelect({192,192,192}, if showActive then {0,255,0} else {235,235,235}), pattern=LinePattern.None, fillPattern=FillPattern.Sphere, extent={{-100.0,-40.0},{-20.0,40.0}} ) }" elementName="graphics"/>
+          </arguments>
+          <arguments elementName="Documentation">
+            <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This block visualizes a Boolean variable in a diagram animation.&#xA;The Boolean variable to be visualized can be defined in the following ways:&#xA;&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&lt;li> If useActivePort = &lt;strong>true&lt;/strong> (which is the default), a Boolean&#xA;     input is present and this input variable is shown.&lt;/li>&#xA;&#xA;&lt;li> If useActivePort = &lt;strong>false&lt;/strong> no input connector is present.&#xA;     Instead, a Boolean input field is activated in the parameter menu&#xA;     and the Boolean expression from this input menu is shown.&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&#xA;If the Boolean variable is &lt;strong>false&lt;/strong> the block is \&quot;grey\&quot;, otherwise, it is \&quot;green\&quot;.&#xA;The two versions of the block are shown in the following image (in the right variant, the&#xA;name of the variable value that is displayed is also shown below the icon):&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Interaction/Show/BooleanValue.png\&quot;&#xA;     alt=\&quot;BooleanValue.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;The usage is demonstrated, e.g., in example&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.BooleanNetwork1\&quot;>Modelica.Blocks.Examples.BooleanNetwork1&lt;/a>.&#xA;&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+          </arguments>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments elementName="Icon">
+        <arguments expression="{Text( extent={{-98,-30},{96,34}}, textString=&quot;0&quot; ) }" elementName="graphics"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

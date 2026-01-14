@@ -92,6 +92,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseclass_name(class_definition);
         if (result == null) result = casecomposition(class_definition);
         if (result == null) result = casetype_specifier(class_definition);
+        if (result == null) result = casearray_subscripts(class_definition);
         if (result == null) result = caseenum_list(class_definition);
         if (result == null) result = casedescription(class_definition);
         if (result == null) result = caseclass_modification(class_definition);
@@ -116,6 +117,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseclass_name(class_specifier);
         if (result == null) result = casecomposition(class_specifier);
         if (result == null) result = casetype_specifier(class_specifier);
+        if (result == null) result = casearray_subscripts(class_specifier);
         if (result == null) result = caseenum_list(class_specifier);
         if (result == null) result = casedescription(class_specifier);
         if (result == null) result = caseclass_modification(class_specifier);
@@ -140,6 +142,7 @@ public class MOlocSwitch<T> extends Switch<T>
         T result = caseshort_class_specifier(short_class_specifier);
         if (result == null) result = caseclass_name(short_class_specifier);
         if (result == null) result = casetype_specifier(short_class_specifier);
+        if (result == null) result = casearray_subscripts(short_class_specifier);
         if (result == null) result = caseenum_list(short_class_specifier);
         if (result == null) result = casedescription(short_class_specifier);
         if (result == null) result = caseclass_modification(short_class_specifier);
@@ -237,8 +240,8 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseenum_list(argument);
         if (result == null) result = casedescription(argument);
         if (result == null) result = casedeclaration(argument);
-        if (result == null) result = casedescription_string(argument);
         if (result == null) result = casearray_subscripts(argument);
+        if (result == null) result = casedescription_string(argument);
         if (result == null) result = casemodification(argument);
         if (result == null) result = caseclass_modification(argument);
         if (result == null) result = defaultCase(theEObject);
@@ -262,6 +265,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseshort_class_specifier(short_class_definition);
         if (result == null) result = caseclass_name(short_class_definition);
         if (result == null) result = casetype_specifier(short_class_definition);
+        if (result == null) result = casearray_subscripts(short_class_definition);
         if (result == null) result = caseenum_list(short_class_definition);
         if (result == null) result = casedescription(short_class_definition);
         if (result == null) result = caseclass_modification(short_class_definition);
@@ -389,7 +393,6 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseclass_prefixes(generalClause);
         if (result == null) result = caseclass_specifier(generalClause);
         if (result == null) result = casetype_prefix(generalClause);
-        if (result == null) result = casearray_subscripts(generalClause);
         if (result == null) result = caseconstraining(generalClause);
         if (result == null) result = caselong_class_specifier(generalClause);
         if (result == null) result = caseshort_class_specifier(generalClause);
@@ -397,6 +400,7 @@ public class MOlocSwitch<T> extends Switch<T>
         if (result == null) result = caseclass_name(generalClause);
         if (result == null) result = casecomposition(generalClause);
         if (result == null) result = casetype_specifier(generalClause);
+        if (result == null) result = casearray_subscripts(generalClause);
         if (result == null) result = caseenum_list(generalClause);
         if (result == null) result = casedescription(generalClause);
         if (result == null) result = caseclass_modification(generalClause);

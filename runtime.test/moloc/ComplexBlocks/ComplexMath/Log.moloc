@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.ComplexMath">
+  <classes classType="block" className="Log" description="&quot;Output the natural (base e) logarithm of the input (input &lt;> '0' required)&quot;" classNameEnd="Log">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.ComplexSISO"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.ComplexMath.log(uInternal)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause">
+      <arguments elementName="Icon">
+        <arguments elementName="coordinateSystem">
+          <arguments expression="true" elementName="preserveAspectRatio"/>
+          <arguments expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </arguments>
+        <arguments expression="{Line(points={{-80,-80},{-80,68}}, color={ 192,192,192} ) ,Polygon( points={{-80,90},{-88,68},{-72,68},{-80,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Line(points={{-80,-80},{-79.2, -50.6 } ,{-78.4,-37},{-77.6,-28},{-76.8,-21.3},{-75.2,-11.4},{-72.8, -1.31 } ,{-69.5,8.08},{-64.7,17.9},{-57.5,28},{-47,38.1},{-31.8, 48.1 } ,{-10.1,58},{22.1,68},{68.7,78.1},{80,80} } , color={85,170, 255 } ) , Line(points={{-90,0},{68,0}}, color={192,192,192}),Polygon( points={{90,0},{68,8},{68,-8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Text( extent={{-6,-24},{66,-72}}, textColor={192,192,192}, textString=&quot;log&quot; ) }" elementName="graphics"/>
+      </arguments>
+      <arguments elementName="Documentation">
+        <arguments expression="&quot;&lt;html>&#xA;&lt;p>&#xA;This blocks computes the output &lt;code>y&lt;/code> as the&#xA;&lt;em>natural (base e) logarithm&lt;/em> of the input &lt;code>u&lt;/code>. Optionally, the input &lt;code>u&lt;/code> can be processed conjugate complex, when parameter &lt;code>useConjugateInput&lt;/code> is &lt;code>true&lt;/code>. Depending on &lt;code>useConjugateInput&lt;/code> the internal signal &lt;code>uInternal&lt;/code> represents either the original or the conjugate complex input signal.&#xA;&lt;/p>&#xA;&lt;blockquote>&lt;pre>&#xA;y = &lt;strong>log&lt;/strong>(uInternal);&#xA;&lt;/pre>&lt;/blockquote>&#xA;&lt;p>&#xA;An error occurs if the elements of the input &lt;code>u&lt;/code> is zero.&#xA;&lt;/p>&#xA;&#xA;&lt;p>&#xA;&lt;img src=\&quot;modelica://Modelica/Resources/Images/Math/log.png\&quot;&#xA;     alt=\&quot;log.png\&quot;>&#xA;&lt;/p>&#xA;&#xA;&lt;/html>&quot;" elementName="info"/>
+      </arguments>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>
