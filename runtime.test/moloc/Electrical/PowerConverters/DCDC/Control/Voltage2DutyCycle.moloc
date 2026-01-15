@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.DCDC.Control">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.DCDC.Control"/>
   <classes classType="block" className="Voltage2DutyCycle" description="&quot;Linearly transforms voltage to duty cycle&quot;" isLongClassSpecifier="true" classNameEnd="Voltage2DutyCycle" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="reciprocal" description="&quot;Enables reciprocal formula between voltage and duty cycle&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="true" declarationName="useBipolarVoltage" description="&quot;Enables bipolar input voltage range&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="not reciprocal" elementName="enable"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="true" declarationName="useConstantVoltageLimit" description="&quot;Enables constant voltage limit&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="VLim" description="&quot;Voltage range limit mapped to dutyCycle = 1 resp. 0&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -22,7 +23,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list isModificationOver="true" declarationName="v" description="&quot;Voltage&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;V&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -35,7 +36,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
       <component_list declarationName="dutyCycle" description="&quot;Duty cycle&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -47,7 +48,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list isModificationOver="true" declarationName="vLim" description="&quot;Voltage limit&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantVoltageLimit">
         <modifications expression="&quot;V&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -64,7 +65,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="vLimConst" description="&quot;Constant voltage limit&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useConstantVoltageLimit">
         <modifications expression="VLim" elementName="k" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -74,7 +75,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isProtected="true" isOver="true">
       <component_list isModificationOver="true" declarationName="vLimInt" description="&quot;Internal voltage limit&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;V&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">

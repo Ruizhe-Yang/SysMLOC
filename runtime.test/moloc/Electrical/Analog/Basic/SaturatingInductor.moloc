@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Basic">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Basic"/>
   <classes classType="model" className="SaturatingInductor" description="&quot;Simple model of an inductor with saturation&quot;" isLongClassSpecifier="true" classNameEnd="SaturatingInductor" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true">
       <extendsModifications isModificationOver="true" elementName="i">
@@ -10,7 +11,7 @@
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.small" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Math.atan" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="Inom" description="&quot;Nominal current&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="start"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -18,30 +19,30 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="Lnom" description="&quot;Nominal inductance at Nominal current&quot;">
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="Lzer" description="&quot;Inductance near current=0&quot;">
         <modifications expression="2*Lnom" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="Linf" description="&quot;Inductance at large currents&quot;">
         <modifications expression="Lnom/2" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" isOver="true">
       <component_list isModificationOver="true" declarationName="Lact" description="&quot;Present inductance&quot;">
         <modifications expression="Lzer" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.MagneticFlux" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.MagneticFlux" isOver="true">
       <component_list declarationName="Psi" description="&quot;Present flux&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isProtected="true" isOver="true">
       <component_list isModificationOver="true" declarationName="Ipar">
         <modifications expression="Inom/10" elementName="start"/>
         <modifications expression="false" elementName="fixed"/>

@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Examples.DCMachines">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Examples.DCMachines"/>
   <classes classType="model" className="DCSE_Start" description="&quot;Test example: DC with serial excitation starting with voltage ramp&quot;" isLongClassSpecifier="true" classNameEnd="DCSE_Start" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="100" declarationName="Va" description="&quot;Actual armature voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
       <component_list expression="0.1" declarationName="tStart" description="&quot;Start of resistance ramp&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
       <component_list expression="0.9" declarationName="tRamp" description="&quot;Resistance ramp&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Torque" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Torque" parameterType="parameter" isOver="true">
       <component_list expression="63.66" declarationName="TLoad" description="&quot;Nominal load torque&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1410*2*Modelica.Constants.pi/60" declarationName="wLoad" description="&quot;Nominal load speed&quot;">
         <modifications expression="&quot;rev/min&quot;" elementName="displayUnit"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inertia" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inertia" parameterType="parameter" isOver="true">
       <component_list expression="0.15" declarationName="JLoad" description="&quot;Load's moment of inertia&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.BasicMachines.DCMachines.DC_SeriesExcited" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.BasicMachines.DCMachines.DC_SeriesExcited" isOver="true">
       <component_list isModificationOver="true" declarationName="dcse" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="dcseData.VaNominal" elementName="VaNominal"/>
         <modifications expression="dcseData.IaNominal" elementName="IaNominal"/>
@@ -63,7 +64,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Ramp" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Ramp" isOver="true">
       <component_list isModificationOver="true" declarationName="ramp" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="tRamp" elementName="duration"/>
         <modifications expression="tStart" elementName="startTime"/>
@@ -76,7 +77,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.ConstantVoltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.ConstantVoltage" isOver="true">
       <component_list isModificationOver="true" declarationName="constantVoltage" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Va" elementName="V"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -86,7 +87,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
       <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -97,7 +98,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Components.Inertia" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Components.Inertia" isOver="true">
       <component_list isModificationOver="true" declarationName="loadInertia" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="JLoad" elementName="J"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -107,7 +108,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Sources.QuadraticSpeedDependentTorque" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Sources.QuadraticSpeedDependentTorque" isOver="true">
       <component_list isModificationOver="true" declarationName="quadraticLoadTorque" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="wLoad" elementName="w_nominal"/>
         <modifications expression="false" elementName="TorqueDirection"/>
@@ -120,7 +121,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.VariableResistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.VariableResistor" isOver="true">
       <component_list declarationName="variableResistor" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -131,7 +132,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.ParameterRecords.DcSeriesExcitedData" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.ParameterRecords.DcSeriesExcitedData" parameterType="parameter" isOver="true">
       <component_list declarationName="dcseData" description="&quot;DC machine data&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

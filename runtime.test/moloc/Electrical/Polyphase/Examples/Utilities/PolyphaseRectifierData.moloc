@@ -1,60 +1,61 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Examples.Utilities">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Examples.Utilities"/>
   <classes classType="record" className="PolyphaseRectifierData" description="&quot;Data record for polyphase rectifier&quot;" isLongClassSpecifier="true" classNameEnd="PolyphaseRectifierData" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Icons.Record" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Electrical.Polyphase.Functions.numberOfSymmetricBaseSystems" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Math.isPowerOf2" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="6" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="2" elementName="min" isfinal="true"/>
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list expression="numberOfSymmetricBaseSystems(m)" declarationName="mSystems" description="&quot;Number of base systems&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="false" elementName="enable"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list expression="integer(m/mSystems)" declarationName="mBasic" description="&quot;Number of phases per base system&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="false" elementName="enable"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="max(1, integer((mBasic - 1)/2))" declarationName="kPolygon" description="&quot;Alternative of largest polygon voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="mSystems" declarationName="ParDesired" description="&quot;Desired parallel subsystems&quot;">
         <modifications expression="1" elementName="min" isfinal="true"/>
         <modifications expression="mSystems" elementName="max" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="if isPowerOf2(ParDesired) then ParDesired else mSystems" declarationName="Par" description="&quot;Parallel connected subsystems&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="integer(mSystems/Par)" declarationName="Ser" description="&quot;Series connected subsystems&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="100" declarationName="VrmsY" description="&quot;RMS voltage line to starpoint&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
       <component_list expression="50" declarationName="f" description="&quot;Source frequency&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="2*Ser/Par" declarationName="RLoad" description="&quot;Load resistance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="1e-3" declarationName="RDC" description="&quot;DC resistance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list expression="3e-3" declarationName="LDC" description="&quot;DC inductance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="1e5" declarationName="RGnd" description="&quot;Resistance to ground&quot;"/>
     </elements>
     <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">

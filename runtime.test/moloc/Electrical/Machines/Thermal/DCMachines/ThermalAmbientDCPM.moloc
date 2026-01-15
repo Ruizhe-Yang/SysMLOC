@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Thermal.DCMachines">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Thermal.DCMachines"/>
   <classes classType="model" className="ThermalAmbientDCPM" description="&quot;Thermal ambient for DC machine with permanent magnets&quot;" isLongClassSpecifier="true" classNameEnd="ThermalAmbientDCPM" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.DCMachines.PartialThermalAmbientDCMachines" isOver="true">
       <extendsModifications typeSpecifier="Machines.Interfaces.DCMachines.ThermalPortDCPM" declarationName="thermalPort" isRedeclare="true" isfinal="true"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="Tpm" description="&quot;Temperature of permanent magnet&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="TDefault" elementName="start"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -12,13 +13,13 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
       <component_list expression="temperaturePermanentMagnet.port.Q_flow" declarationName="Q_flowPermanentMagnet" description="&quot;Heat flow rate of permanent magnets&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
       <component_list expression="Q_flowArmature + Q_flowCore + Q_flowStrayLoad + Q_flowFriction + Q_flowBrush + Q_flowPermanentMagnet" declarationName="Q_flowTotal"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.PrescribedTemperature" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.PrescribedTemperature" isOver="true">
       <component_list declarationName="temperaturePermanentMagnet" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -29,7 +30,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="constTpm" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useTemperatureInputs">
         <modifications expression="Tpm" elementName="k" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -41,7 +42,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list isModificationOver="true" declarationName="TPermanentMagnet" description="&quot;Temperature of permanent magnet&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useTemperatureInputs">
         <modifications expression="&quot;K&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">

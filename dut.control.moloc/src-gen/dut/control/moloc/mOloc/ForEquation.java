@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ForEquation extends Equation, description
+public interface ForEquation extends Equation, description, description_string, annotation_modification_part
 {
   /**
    * Returns the value of the '<em><b>For Indices</b></em>' attribute.

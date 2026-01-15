@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Functions">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Functions"/>
   <classes classType="function" className="indexNonPositiveSequence" description="&quot;Determines the indices of all non positive sequences&quot;" isLongClassSpecifier="true" classNameEnd="indexNonPositiveSequence" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="input" isOver="true">
       <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="output" isOver="true">
       <component_list subscripts="[numberOfSymmetricBaseSystems(m)*(integer(m/ numberOfSymmetricBaseSystems(m) ) - 1 ) ]" declarationName="ind" description="&quot;Indices of non positive sequences&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isProtected="true" isOver="true">
       <component_list expression="numberOfSymmetricBaseSystems(m)" declarationName="nBase" description="&quot;Number of base systems&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
       <component_list expression="integer(m/nBase)" declarationName="mBase" description="&quot;Number of phases of base system&quot;"/>
     </elements>
     <elements xsi:type="mOloc:AlgorithmSection">

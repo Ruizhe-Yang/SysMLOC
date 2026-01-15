@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Sources">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.ComplexBlocks.Sources"/>
   <classes classType="block" className="ComplexRotatingPhasor" description="&quot;Generate a phasor with constant magnitude and constant angular velocity of type Complex&quot;" isLongClassSpecifier="true" classNameEnd="ComplexRotatingPhasor" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="1" declarationName="magnitude" description="&quot;Magnitude of complex phasor&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.AngularVelocity" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Units.SI.AngularVelocity" parameterType="parameter" isOver="true">
       <component_list expression="1" declarationName="w" description="&quot;Constant angular velocity of complex phasor&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Angle" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Units.SI.Angle" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="phi0" description="&quot;Initial angle of complex phasor at time = 0&quot;"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexSO" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Units.SI.Angle" isOver="true">
       <component_list declarationName="phi" description="&quot;Angle&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

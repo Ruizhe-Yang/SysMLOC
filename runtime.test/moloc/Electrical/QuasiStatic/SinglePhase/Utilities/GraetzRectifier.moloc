@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Utilities">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Utilities"/>
   <classes classType="model" className="GraetzRectifier" description="&quot;Graetz rectifier bridge&quot;" isLongClassSpecifier="true" classNameEnd="GraetzRectifier" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list expression="pin_pAC.v - pin_nAC.v" declarationName="vAC" description="&quot;AC voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list expression="pin_pAC.i" declarationName="iAC" description="&quot;AC current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ActivePower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ActivePower" isOver="true">
       <component_list expression="vAC*iAC" declarationName="pAC" description="&quot;AC power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list expression="pin_pDC.v - pin_nDC.v" declarationName="vDC" description="&quot;DC voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list expression="pin_pDC.i" declarationName="iDC" description="&quot;DC current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" isOver="true">
       <component_list expression="vDC*iDC" declarationName="pDC" description="&quot;DC power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="pin_pAC" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -31,7 +32,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
       <component_list declarationName="pin_nAC" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -43,7 +44,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="pin_pDC" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -55,7 +56,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
       <component_list declarationName="pin_nDC" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -67,7 +68,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
       <component_list isModificationOver="true" declarationName="idealDiode1" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0" elementName="Vknee"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -79,7 +80,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
       <component_list isModificationOver="true" declarationName="idealDiode2" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0" elementName="Vknee"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -91,7 +92,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
       <component_list isModificationOver="true" declarationName="idealDiode3" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0" elementName="Vknee"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -103,7 +104,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
       <component_list isModificationOver="true" declarationName="idealDiode4" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0" elementName="Vknee"/>
         <annotations isModificationOver="true" elementName="Placement">

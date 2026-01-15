@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica"/>
   <classes classType="package" className="StateGraph" description="&quot;Library of hierarchical state machine components to model discrete event and reactive systems&quot;" isLongClassSpecifier="true" classNameEnd="StateGraph" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Units.SI" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" classType="package" className="UsersGuide" description="&quot;User's Guide of StateGraph Library&quot;" isLongClassSpecifier="true" classNameEnd="UsersGuide" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="package" className="UsersGuide" description="&quot;User's Guide of StateGraph Library&quot;" isLongClassSpecifier="true" classNameEnd="UsersGuide" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Information" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" classType="class" className="OverView" description="&quot;Overview of library&quot;" isLongClassSpecifier="true" classNameEnd="OverView" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="class" className="OverView" description="&quot;Overview of library&quot;" isLongClassSpecifier="true" classNameEnd="OverView" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Information" isOver="true"/>
         <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
           <annotations isModificationOver="true" elementName="Documentation">
@@ -13,7 +14,7 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="class" className="FirstExample" description="&quot;A first example&quot;" isLongClassSpecifier="true" classNameEnd="FirstExample" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="class" className="FirstExample" description="&quot;A first example&quot;" isLongClassSpecifier="true" classNameEnd="FirstExample" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Information" isOver="true"/>
         <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
           <annotations isModificationOver="true" elementName="Documentation">
@@ -21,7 +22,7 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="class" className="ApplicationExample" description="&quot;An application example&quot;" isLongClassSpecifier="true" classNameEnd="ApplicationExample" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="class" className="ApplicationExample" description="&quot;An application example&quot;" isLongClassSpecifier="true" classNameEnd="ApplicationExample" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Information" isOver="true"/>
         <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
           <annotations isModificationOver="true" elementName="Documentation">
@@ -29,7 +30,7 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="class" className="ComparisonWithStateGraph2" description="&quot;Comparison with StateGraph2&quot;" isLongClassSpecifier="true" classNameEnd="ComparisonWithStateGraph2" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="class" className="ComparisonWithStateGraph2" description="&quot;Comparison with StateGraph2&quot;" isLongClassSpecifier="true" classNameEnd="ComparisonWithStateGraph2" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Information" isOver="true"/>
         <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
           <annotations isModificationOver="true" elementName="Documentation">
@@ -37,7 +38,7 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="class" className="ReleaseNotes" description="&quot;Release notes&quot;" isLongClassSpecifier="true" classNameEnd="ReleaseNotes" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="class" className="ReleaseNotes" description="&quot;Release notes&quot;" isLongClassSpecifier="true" classNameEnd="ReleaseNotes" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.ReleaseNotes" isOver="true"/>
         <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
           <annotations isModificationOver="true" elementName="Documentation">
@@ -45,7 +46,7 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="class" className="Literature" description="&quot;Literature&quot;" isLongClassSpecifier="true" classNameEnd="Literature" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="class" className="Literature" description="&quot;Literature&quot;" isLongClassSpecifier="true" classNameEnd="Literature" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.References" isOver="true"/>
         <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
           <annotations isModificationOver="true" elementName="Documentation">
@@ -53,7 +54,7 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="class" className="Contact" description="&quot;Contact&quot;" isLongClassSpecifier="true" classNameEnd="Contact" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="class" className="Contact" description="&quot;Contact&quot;" isLongClassSpecifier="true" classNameEnd="Contact" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Contact" isOver="true"/>
         <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
           <annotations isModificationOver="true" elementName="Documentation">
@@ -68,11 +69,11 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="package" className="Examples" description="&quot;Examples to demonstrate the usage of the components of the StateGraph library&quot;" isLongClassSpecifier="true" classNameEnd="Examples" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="package" className="Examples" description="&quot;Examples to demonstrate the usage of the components of the StateGraph library&quot;" isLongClassSpecifier="true" classNameEnd="Examples" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.ExamplesPackage" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" classType="model" className="FirstExample" description="&quot;A first simple StateGraph example&quot;" isLongClassSpecifier="true" classNameEnd="FirstExample" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="model" className="FirstExample" description="&quot;A first simple StateGraph example&quot;" isLongClassSpecifier="true" classNameEnd="FirstExample" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="InitialStep" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="InitialStep" isOver="true">
           <component_list isModificationOver="true" declarationName="initialStep" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -83,7 +84,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition1" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -94,7 +95,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
           <component_list isModificationOver="true" declarationName="step" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -105,7 +106,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition2" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -116,7 +117,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
           <component_list declarationName="stateGraphRoot" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -153,9 +154,9 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="model" className="FirstExample_Variant2" description="&quot;A variant of the first simple StateGraph example&quot;" isLongClassSpecifier="true" classNameEnd="FirstExample_Variant2" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="model" className="FirstExample_Variant2" description="&quot;A variant of the first simple StateGraph example&quot;" isLongClassSpecifier="true" classNameEnd="FirstExample_Variant2" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="InitialStep" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="InitialStep" isOver="true">
           <component_list isModificationOver="true" declarationName="initialStep" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -166,7 +167,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition1" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -177,7 +178,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StepWithSignal" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StepWithSignal" isOver="true">
           <component_list isModificationOver="true" declarationName="step" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -188,7 +189,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="TransitionWithSignal" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="TransitionWithSignal" isOver="true">
           <component_list declarationName="transition2" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -197,7 +198,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Timer" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Logical.Timer" isOver="true">
           <component_list declarationName="timer" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -206,7 +207,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.GreaterEqualThreshold" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Logical.GreaterEqualThreshold" isOver="true">
           <component_list isModificationOver="true" declarationName="greaterEqual" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="threshold"/>
             <annotations isModificationOver="true" elementName="Placement">
@@ -216,7 +217,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
           <component_list declarationName="stateGraphRoot" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -271,9 +272,9 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="model" className="FirstExample_Variant3" description="&quot;A variant of the first simple StateGraph example&quot;" isLongClassSpecifier="true" classNameEnd="FirstExample_Variant3" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="model" className="FirstExample_Variant3" description="&quot;A variant of the first simple StateGraph example&quot;" isLongClassSpecifier="true" classNameEnd="FirstExample_Variant3" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="InitialStep" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="InitialStep" isOver="true">
           <component_list isModificationOver="true" declarationName="initialStep" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -284,7 +285,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition1" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -295,7 +296,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StepWithSignal" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StepWithSignal" isOver="true">
           <component_list isModificationOver="true" declarationName="step" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -306,7 +307,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="TransitionWithSignal" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="TransitionWithSignal" isOver="true">
           <component_list declarationName="transition2" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -315,7 +316,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Timer" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Logical.Timer" isOver="true">
           <component_list declarationName="timer" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -326,7 +327,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
           <component_list isModificationOver="true" declarationName="SetBoolean1" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="timer.y > 1" elementName="y"/>
             <annotations isModificationOver="true" elementName="Placement">
@@ -336,7 +337,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
           <component_list isModificationOver="true" declarationName="SetBoolean2" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="step.active" elementName="y"/>
             <annotations isModificationOver="true" elementName="Placement">
@@ -346,7 +347,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
           <component_list declarationName="stateGraphRoot" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -395,9 +396,9 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="model" className="ExecutionPaths" description="&quot;Example to demonstrate parallel and alternative execution paths&quot;" isLongClassSpecifier="true" classNameEnd="ExecutionPaths" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="model" className="ExecutionPaths" description="&quot;Example to demonstrate parallel and alternative execution paths&quot;" isLongClassSpecifier="true" classNameEnd="ExecutionPaths" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="InitialStep" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="InitialStep" isOver="true">
           <component_list isModificationOver="true" declarationName="step0" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -408,7 +409,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition1" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -419,7 +420,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
           <component_list isModificationOver="true" declarationName="step1" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -430,7 +431,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition2" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -441,7 +442,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
           <component_list isModificationOver="true" declarationName="step6" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -452,7 +453,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
           <component_list isModificationOver="true" declarationName="step2" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -463,7 +464,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition3" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -474,7 +475,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition4" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -485,7 +486,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
           <component_list isModificationOver="true" declarationName="step3" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -496,7 +497,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
           <component_list isModificationOver="true" declarationName="step4" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -507,7 +508,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition5" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -518,7 +519,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition6" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -529,7 +530,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
           <component_list isModificationOver="true" declarationName="step5" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -540,7 +541,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.RealExpression" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.RealExpression" isOver="true">
           <component_list isModificationOver="true" declarationName="setReal" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="time" elementName="y"/>
             <annotations isModificationOver="true" elementName="Placement">
@@ -550,7 +551,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="TransitionWithSignal" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="TransitionWithSignal" isOver="true">
           <component_list declarationName="transition7" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -559,7 +560,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
           <component_list isModificationOver="true" declarationName="setCondition" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="time >= 7" elementName="y"/>
             <annotations isModificationOver="true" elementName="Placement">
@@ -569,7 +570,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition4a" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -580,7 +581,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
           <component_list isModificationOver="true" declarationName="step4a" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -591,7 +592,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition6a" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="2" elementName="waitTime"/>
@@ -602,7 +603,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interaction.Show.RealValue" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interaction.Show.RealValue" isOver="true">
           <component_list isModificationOver="true" declarationName="NumericValue1" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="3" elementName="significantDigits"/>
             <annotations isModificationOver="true" elementName="Placement">
@@ -612,7 +613,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Alternative" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Alternative" isOver="true">
           <component_list isModificationOver="true" declarationName="alternative" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="3" elementName="nBranches"/>
             <annotations isModificationOver="true" elementName="Placement">
@@ -622,7 +623,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Parallel" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Parallel" isOver="true">
           <component_list declarationName="Parallel1" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -631,7 +632,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
           <component_list declarationName="stateGraphRoot" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -788,9 +789,9 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="model" className="ShowCompositeStep" description="&quot;Example to demonstrate parallel activities described by a StateGraph&quot;" isLongClassSpecifier="true" classNameEnd="ShowCompositeStep" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="model" className="ShowCompositeStep" description="&quot;Example to demonstrate parallel activities described by a StateGraph&quot;" isLongClassSpecifier="true" classNameEnd="ShowCompositeStep" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.CompositeStep" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.CompositeStep" isOver="true">
           <component_list declarationName="compositeStep" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -799,7 +800,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="InitialStep" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="InitialStep" isOver="true">
           <component_list isModificationOver="true" declarationName="step0" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -810,7 +811,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition1" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -821,7 +822,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
           <component_list isModificationOver="true" declarationName="step1" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -832,7 +833,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition2" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -843,7 +844,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
           <component_list isModificationOver="true" declarationName="step6" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -854,7 +855,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="TransitionWithSignal" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="TransitionWithSignal" isOver="true">
           <component_list declarationName="transition7" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -863,7 +864,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Parallel" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Parallel" isOver="true">
           <component_list declarationName="Parallel1" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -872,7 +873,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
           <component_list isModificationOver="true" declarationName="setCondition" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="time >= 7" elementName="y"/>
             <annotations isModificationOver="true" elementName="Placement">
@@ -882,7 +883,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
           <component_list declarationName="stateGraphRoot" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -958,9 +959,9 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="model" className="ShowExceptions" description="&quot;Example to demonstrate how a hierarchically structured StateGraph can suspend and resume actions on different levels&quot;" isLongClassSpecifier="true" classNameEnd="ShowExceptions" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="model" className="ShowExceptions" description="&quot;Example to demonstrate how a hierarchically structured StateGraph can suspend and resume actions on different levels&quot;" isLongClassSpecifier="true" classNameEnd="ShowExceptions" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.CompositeStep1" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.CompositeStep1" isOver="true">
           <component_list declarationName="compositeStep" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -969,7 +970,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="InitialStep" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="InitialStep" isOver="true">
           <component_list isModificationOver="true" declarationName="initialStep" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -980,7 +981,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition1" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -991,7 +992,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition2" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -1002,7 +1003,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition3" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="2" elementName="waitTime"/>
@@ -1013,7 +1014,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
           <component_list isModificationOver="true" declarationName="step1" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="1" elementName="nIn"/>
             <modifications expression="1" elementName="nOut"/>
@@ -1024,7 +1025,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
           <component_list isModificationOver="true" declarationName="transition4" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="true" elementName="enableTimer"/>
             <modifications expression="1" elementName="waitTime"/>
@@ -1035,7 +1036,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
           <component_list declarationName="stateGraphRoot" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -1095,9 +1096,9 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="model" className="ControlledTanks" description="&quot;Demonstrating the controller of a tank filling/emptying system&quot;" isLongClassSpecifier="true" classNameEnd="ControlledTanks" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="model" className="ControlledTanks" description="&quot;Demonstrating the controller of a tank filling/emptying system&quot;" isLongClassSpecifier="true" classNameEnd="ControlledTanks" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.TankController" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.TankController" isOver="true">
           <component_list declarationName="tankController" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -1106,7 +1107,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.RadioButtonSource" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.RadioButtonSource" isOver="true">
           <component_list isModificationOver="true" declarationName="start" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="{stop.on,shut.on}" elementName="reset"/>
             <modifications expression="{1,13,15,19}" elementName="buttonTimeTable"/>
@@ -1117,7 +1118,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.RadioButtonSource" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.RadioButtonSource" isOver="true">
           <component_list isModificationOver="true" declarationName="stop" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="{start.on,shut.on}" elementName="reset"/>
             <modifications expression="{13,15,19,21}" elementName="buttonTimeTable"/>
@@ -1128,7 +1129,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.RadioButtonSource" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.RadioButtonSource" isOver="true">
           <component_list isModificationOver="true" declarationName="shut" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="{start.on,stop.on}" elementName="reset"/>
             <modifications expression="{21,100}" elementName="buttonTimeTable"/>
@@ -1139,7 +1140,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.Tank" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.Tank" isOver="true">
           <component_list declarationName="tank1" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -1148,7 +1149,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.Tank" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.Tank" isOver="true">
           <component_list declarationName="tank2" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -1157,7 +1158,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.valve" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.valve" isOver="true">
           <component_list declarationName="valve1" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -1168,7 +1169,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.Source" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.Source" isOver="true">
           <component_list declarationName="source" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -1177,7 +1178,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.valve" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.valve" isOver="true">
           <component_list declarationName="valve2" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -1188,7 +1189,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.valve" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.valve" isOver="true">
           <component_list declarationName="valve3" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -1199,7 +1200,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraphRoot" isInner="true" isOver="true">
           <component_list declarationName="stateGraphRoot" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -1297,17 +1298,17 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="package" className="Utilities" description="&quot;Utility components for the examples&quot;" isLongClassSpecifier="true" classNameEnd="Utilities" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="package" className="Utilities" description="&quot;Utility components for the examples&quot;" isLongClassSpecifier="true" classNameEnd="Utilities" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.UtilitiesPackage" isOver="true"/>
-        <elements xsi:type="mOloc:GeneralClause" classType="model" className="TankController" description="&quot;Controller for tank system&quot;" isLongClassSpecifier="true" classNameEnd="TankController" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="model" className="TankController" description="&quot;Controller for tank system&quot;" isLongClassSpecifier="true" classNameEnd="TankController" isOver="true">
           <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="StateGraph.Interfaces.PartialStateGraphIcon" isOver="true"/>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
             <component_list expression="0.98" declarationName="limit" description="&quot;Limit level of tank 1&quot;"/>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
             <component_list expression="3" declarationName="waitTime" description="&quot;Wait time&quot;"/>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="InitialStep" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="InitialStep" isOver="true">
             <component_list isModificationOver="true" declarationName="s1" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="2" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -1318,7 +1319,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="MakeProduct" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="MakeProduct" isOver="true">
             <component_list isModificationOver="true" declarationName="makeProduct" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="limit" elementName="limit"/>
               <modifications expression="waitTime" elementName="waitTime"/>
@@ -1329,7 +1330,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="T1" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="start" elementName="condition"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -1339,7 +1340,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="T2" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="level2&lt;0.001" elementName="condition"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -1349,7 +1350,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="T3" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="stop" elementName="condition"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -1361,7 +1362,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="s2" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="2" elementName="nOut"/>
@@ -1372,7 +1373,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="T4" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="start" elementName="condition"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -1384,7 +1385,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="T5" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="shut" elementName="condition"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -1394,7 +1395,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="emptyTanks" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -1405,7 +1406,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="T6" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="level1+level2&lt;0.001" elementName="condition"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -1415,7 +1416,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
             <component_list declarationName="start" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1424,7 +1425,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
             <component_list declarationName="stop" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1433,7 +1434,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
             <component_list declarationName="shut" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1442,7 +1443,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
             <component_list declarationName="level1" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1453,7 +1454,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
             <component_list declarationName="level2" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1464,7 +1465,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
             <component_list declarationName="valve1" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1473,7 +1474,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
             <component_list declarationName="valve2" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1482,7 +1483,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
             <component_list declarationName="valve3" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1491,7 +1492,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
             <component_list isModificationOver="true" declarationName="setValve1" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="makeProduct.fillTank1.active" elementName="y"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -1501,7 +1502,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
             <component_list isModificationOver="true" declarationName="setValve2" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="makeProduct.fillTank2.active or emptyTanks.active" elementName="y"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -1511,7 +1512,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
             <component_list isModificationOver="true" declarationName="setValve3" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="makeProduct.emptyTank2.active or emptyTanks.active" elementName="y"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -1624,15 +1625,15 @@
             </annotations>
           </elements>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" classType="model" className="MakeProduct" description="&quot;State machine defining the time instants when to fill or empty a tank&quot;" isLongClassSpecifier="true" classNameEnd="MakeProduct" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="model" className="MakeProduct" description="&quot;State machine defining the time instants when to fill or empty a tank&quot;" isLongClassSpecifier="true" classNameEnd="MakeProduct" isOver="true">
           <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="StateGraph.PartialCompositeStep" isOver="true"/>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
             <component_list expression="0.98" declarationName="limit" description="&quot;Limit level of tank 1&quot;"/>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
             <component_list expression="3" declarationName="waitTime" description="&quot;Wait time&quot;"/>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
             <component_list declarationName="level1" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1641,7 +1642,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="fillTank1" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -1652,7 +1653,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="T1" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="level1 > limit" elementName="condition"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -1662,7 +1663,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="fillTank2" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -1673,7 +1674,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="T3" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="level1 &lt; 0.001" elementName="condition"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -1683,7 +1684,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="emptyTank2" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -1694,7 +1695,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="wait1" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -1705,7 +1706,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="T2" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="true" elementName="enableTimer"/>
               <modifications expression="waitTime" elementName="waitTime"/>
@@ -1716,7 +1717,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="wait2" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -1727,7 +1728,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="T4" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="true" elementName="enableTimer"/>
               <modifications expression="waitTime" elementName="waitTime"/>
@@ -1791,8 +1792,8 @@
             </equations>
           </elements>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" classType="connector" className="Inflow1" description="&quot;Inflow connector (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="Inflow1" isOver="true">
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.VolumeFlowRate" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="connector" className="Inflow1" description="&quot;Inflow connector (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="Inflow1" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.VolumeFlowRate" directionType="input" isOver="true">
             <component_list declarationName="Fi" description="&quot;Inflow&quot;"/>
           </elements>
           <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
@@ -1805,8 +1806,8 @@
             </annotations>
           </elements>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" classType="connector" className="Inflow2" description="&quot;Inflow connector (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="Inflow2" isOver="true">
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.VolumeFlowRate" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="connector" className="Inflow2" description="&quot;Inflow connector (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="Inflow2" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.VolumeFlowRate" directionType="output" isOver="true">
             <component_list declarationName="Fi" description="&quot;Inflow&quot;"/>
           </elements>
           <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
@@ -1819,11 +1820,11 @@
             </annotations>
           </elements>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" classType="connector" className="Outflow1" description="&quot;Outflow connector (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="Outflow1" isOver="true">
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.VolumeFlowRate" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="connector" className="Outflow1" description="&quot;Outflow connector (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="Outflow1" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.VolumeFlowRate" directionType="output" isOver="true">
             <component_list declarationName="Fo" description="&quot;Outflow&quot;"/>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
             <component_list declarationName="open" description="&quot;Valve open&quot;"/>
           </elements>
           <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
@@ -1836,11 +1837,11 @@
             </annotations>
           </elements>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" classType="connector" className="Outflow2" description="&quot;Outflow connector (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="Outflow2" isOver="true">
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.VolumeFlowRate" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="connector" className="Outflow2" description="&quot;Outflow connector (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="Outflow2" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.VolumeFlowRate" directionType="input" isOver="true">
             <component_list declarationName="Fo" description="&quot;Outflow&quot;"/>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
             <component_list declarationName="open" description="&quot;Valve open&quot;"/>
           </elements>
           <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
@@ -1853,8 +1854,8 @@
             </annotations>
           </elements>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" classType="model" className="valve" description="&quot;Simple valve model (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="valve" isOver="true">
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="model" className="valve" description="&quot;Simple valve model (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="valve" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
             <component_list declarationName="valveControl" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1865,7 +1866,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.StateGraph.Examples.Utilities.Inflow2" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.StateGraph.Examples.Utilities.Inflow2" isOver="true">
             <component_list declarationName="inflow1" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1876,7 +1877,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.StateGraph.Examples.Utilities.Outflow2" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.StateGraph.Examples.Utilities.Outflow2" isOver="true">
             <component_list declarationName="outflow1" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1908,8 +1909,8 @@
             </annotations>
           </elements>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" classType="model" className="Tank" description="&quot;Simple tank model (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="Tank" isOver="true">
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="model" className="Tank" description="&quot;Simple tank model (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="Tank" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
             <component_list declarationName="levelSensor" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1918,7 +1919,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.StateGraph.Examples.Utilities.Inflow1" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.StateGraph.Examples.Utilities.Inflow1" isOver="true">
             <component_list declarationName="inflow1" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1927,7 +1928,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.StateGraph.Examples.Utilities.Outflow1" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.StateGraph.Examples.Utilities.Outflow1" isOver="true">
             <component_list declarationName="outflow1" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1936,22 +1937,22 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
             <component_list isModificationOver="true" declarationName="level" description="&quot;Tank level in % of max height&quot;">
               <modifications expression="0" elementName="start"/>
               <modifications expression="true" elementName="fixed"/>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
             <component_list expression="1" declarationName="A" description="&quot;Ground area of tank in m^2&quot;"/>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
             <component_list expression="0.2" declarationName="a" description="&quot;Area of drain hole in m^2&quot;"/>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
             <component_list expression="1" declarationName="hmax" description="&quot;Max height of tank in m&quot;"/>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="constant" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="constant" isOver="true">
             <component_list expression="Modelica.Constants.g_n" declarationName="g"/>
           </elements>
           <elements xsi:type="mOloc:EquationSection">
@@ -1972,8 +1973,8 @@
             </annotations>
           </elements>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" classType="model" className="Source" description="&quot;Simple source model (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="Source" isOver="true">
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.StateGraph.Examples.Utilities.Outflow1" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="model" className="Source" description="&quot;Simple source model (this is a copy from Isolde Dressler's master thesis project)&quot;" isLongClassSpecifier="true" classNameEnd="Source" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.StateGraph.Examples.Utilities.Outflow1" isOver="true">
             <component_list declarationName="outflow1" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -1982,7 +1983,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
             <component_list expression="1" declarationName="maxflow" description="&quot;Maximal flow out of source&quot;"/>
           </elements>
           <elements xsi:type="mOloc:EquationSection">
@@ -2001,9 +2002,9 @@
             </annotations>
           </elements>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" classType="model" className="CompositeStep" description="&quot;State machine demonstrating a composite step (used in StateGraph.Examples.ShowCompositeStep)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStep" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="model" className="CompositeStep" description="&quot;State machine demonstrating a composite step (used in StateGraph.Examples.ShowCompositeStep)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStep" isOver="true">
           <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="StateGraph.PartialCompositeStep" isOver="true"/>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="transition3" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="true" elementName="enableTimer"/>
               <modifications expression="1" elementName="waitTime"/>
@@ -2014,7 +2015,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="transition4" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="true" elementName="enableTimer"/>
               <modifications expression="1" elementName="waitTime"/>
@@ -2025,7 +2026,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="step3" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -2036,7 +2037,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="step4" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -2047,7 +2048,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="transition5" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="true" elementName="enableTimer"/>
               <modifications expression="2" elementName="waitTime"/>
@@ -2058,7 +2059,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="transition6" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="true" elementName="enableTimer"/>
               <modifications expression="2" elementName="waitTime"/>
@@ -2069,7 +2070,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="transition4a" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="true" elementName="enableTimer"/>
               <modifications expression="1" elementName="waitTime"/>
@@ -2080,7 +2081,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="step4a" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -2091,7 +2092,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="transition6a" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="true" elementName="enableTimer"/>
               <modifications expression="2" elementName="waitTime"/>
@@ -2102,7 +2103,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="initStep" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -2113,7 +2114,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="exitStep" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -2124,7 +2125,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Alternative" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Alternative" isOver="true">
             <component_list isModificationOver="true" declarationName="Alternative1" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="3" elementName="nBranches"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -2217,9 +2218,9 @@
             </equations>
           </elements>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" classType="model" className="CompositeStep1" description="&quot;Composite step used to demonstrate exceptions (in StateGraph.Examples.ShowExceptions)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStep1" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="model" className="CompositeStep1" description="&quot;Composite step used to demonstrate exceptions (in StateGraph.Examples.ShowExceptions)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStep1" isOver="true">
           <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PartialCompositeStep" isOver="true"/>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="transition1" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="false" elementName="enableTimer"/>
               <modifications expression="0" elementName="waitTime"/>
@@ -2231,7 +2232,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="initStep" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -2242,7 +2243,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="exitStep" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -2253,7 +2254,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="CompositeStep2" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="CompositeStep2" isOver="true">
             <component_list isModificationOver="true" declarationName="compositeStep11" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="3" elementName="waitTime"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -2263,7 +2264,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="CompositeStep2" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="CompositeStep2" isOver="true">
             <component_list isModificationOver="true" declarationName="compositeStep12" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="2" elementName="waitTime"/>
               <annotations isModificationOver="true" elementName="Placement">
@@ -2273,7 +2274,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="transition2" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="time >= 4" elementName="condition"/>
               <modifications expression="false" elementName="enableTimer"/>
@@ -2285,7 +2286,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="transition3" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="false" elementName="enableTimer"/>
               <modifications expression="0" elementName="waitTime"/>
@@ -2296,7 +2297,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="transition4" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="false" elementName="enableTimer"/>
               <modifications expression="0" elementName="waitTime"/>
@@ -2307,7 +2308,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Alternative" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Alternative" isOver="true">
             <component_list declarationName="Alternative1" isAnnotation="true" isAnnotationOver="true">
               <annotations isModificationOver="true" elementName="Placement">
                 <modifications isModificationOver="true" elementName="transformation">
@@ -2379,9 +2380,9 @@
             </equations>
           </elements>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" classType="model" className="CompositeStep2" description="&quot;Composite step used to demonstrate exceptions (in StateGraph.Examples.ShowExceptions)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStep2" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="model" className="CompositeStep2" description="&quot;Composite step used to demonstrate exceptions (in StateGraph.Examples.ShowExceptions)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStep2" isOver="true">
           <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PartialCompositeStep" isOver="true"/>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition" isOver="true">
             <component_list isModificationOver="true" declarationName="transition" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="true" elementName="enableTimer"/>
               <modifications expression="waitTime" elementName="waitTime"/>
@@ -2392,7 +2393,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="initStep" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -2403,7 +2404,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step" isOver="true">
             <component_list isModificationOver="true" declarationName="exitStep" isAnnotation="true" isAnnotationOver="true">
               <modifications expression="1" elementName="nIn"/>
               <modifications expression="1" elementName="nOut"/>
@@ -2414,7 +2415,7 @@
               </annotations>
             </component_list>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
             <component_list expression="2" declarationName="waitTime" description="&quot;Waiting time in this composite step&quot;"/>
           </elements>
           <elements xsi:type="mOloc:EquationSection">
@@ -2442,15 +2443,15 @@
         </elements>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="package" className="Interfaces" description="&quot;Connectors and partial models&quot;" isLongClassSpecifier="true" classNameEnd="Interfaces" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="package" className="Interfaces" description="&quot;Connectors and partial models&quot;" isLongClassSpecifier="true" classNameEnd="Interfaces" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.InterfacesPackage" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" classType="connector" className="Step_in" description="&quot;Input port of a step&quot;" isLongClassSpecifier="true" classNameEnd="Step_in" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="connector" className="Step_in" description="&quot;Input port of a step&quot;" isLongClassSpecifier="true" classNameEnd="Step_in" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="occupied" description="&quot;= true, if step is active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="set" description="&quot;= true, if transition fires and step is activated&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
@@ -2472,13 +2473,13 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="connector" className="Step_out" description="&quot;Output port of a step&quot;" isLongClassSpecifier="true" classNameEnd="Step_out" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="connector" className="Step_out" description="&quot;Output port of a step&quot;" isLongClassSpecifier="true" classNameEnd="Step_out" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="available" description="&quot;= true, if step is active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="reset" description="&quot;= true, if transition fires and step is deactivated&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
@@ -2500,13 +2501,13 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="connector" className="Transition_in" description="&quot;Input port of a transition&quot;" isLongClassSpecifier="true" classNameEnd="Transition_in" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="connector" className="Transition_in" description="&quot;Input port of a transition&quot;" isLongClassSpecifier="true" classNameEnd="Transition_in" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="available" description="&quot;= true, if step connected to the transition input is active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="reset" description="&quot;= true, if transition fires and the step connected to the transition input is deactivated&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
@@ -2528,13 +2529,13 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="connector" className="Transition_out" description="&quot;Output port of a transition&quot;" isLongClassSpecifier="true" classNameEnd="Transition_out" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="connector" className="Transition_out" description="&quot;Output port of a transition&quot;" isLongClassSpecifier="true" classNameEnd="Transition_out" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="occupied" description="&quot;= true, if step connected to the transition output is active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="set" description="&quot;= true, if transition fires and step connected to the transition output becomes active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
@@ -2556,13 +2557,13 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="connector" className="CompositeStep_resume" description="&quot;Input port of a step (used for resume connector of a CompositeStep)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStep_resume" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="connector" className="CompositeStep_resume" description="&quot;Input port of a step (used for resume connector of a CompositeStep)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStep_resume" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="occupied" description="&quot;= true, if step is active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="set" description="&quot;= true, if transition fires and step is activated&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
@@ -2577,13 +2578,13 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="connector" className="CompositeStep_suspend" description="&quot;Output port of a step (used for suspend connector of a CompositeStep)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStep_suspend" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="connector" className="CompositeStep_suspend" description="&quot;Output port of a step (used for suspend connector of a CompositeStep)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStep_suspend" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="available" description="&quot;= true, if step is active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="reset" description="&quot;= true, if transition fires and step is deactivated&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
@@ -2598,40 +2599,40 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="connector" className="CompositeStepStatePort_in" description="&quot;Communication port between a CompositeStep and the ordinary steps within the CompositeStep (suspend/resume are inputs)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStepStatePort_in" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="connector" className="CompositeStepStatePort_in" description="&quot;Communication port between a CompositeStep and the ordinary steps within the CompositeStep (suspend/resume are inputs)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStepStatePort_in" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="suspend" description="&quot;= true, if suspend transition of CompositeStep fires&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="resume" description="&quot;= true, if resume transition of CompositeStep fires&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list declarationName="activeStepsDummy" description="&quot;Dummy variable in order that connector fulfills restriction of connector&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" relationshipType="flow" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" relationshipType="flow" isOver="true">
           <component_list declarationName="activeSteps" description="&quot;Number of active steps in the CompositeStep&quot;"/>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="connector" className="CompositeStepStatePort_out" description="&quot;Communication port between a CompositeStep and the ordinary steps within the CompositeStep (suspend/resume are outputs)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStepStatePort_out" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="connector" className="CompositeStepStatePort_out" description="&quot;Communication port between a CompositeStep and the ordinary steps within the CompositeStep (suspend/resume are outputs)&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStepStatePort_out" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="suspend" description="&quot;= true, if suspend transition of CompositeStep fires&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="resume" description="&quot;= true, if resume transition of CompositeStep fires&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list declarationName="activeStepsDummy" description="&quot;Dummy variable in order that connector fulfills restriction of connector&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" relationshipType="flow" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" relationshipType="flow" isOver="true">
           <component_list declarationName="activeSteps" description="&quot;Number of active steps in the CompositeStep&quot;"/>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" isPartial="true" classType="block" className="PartialStep" description="&quot;Partial step with one input and one output transition port&quot;" isLongClassSpecifier="true" classNameEnd="PartialStep" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="PartialStep" description="&quot;Partial step with one input and one output transition port&quot;" isLongClassSpecifier="true" classNameEnd="PartialStep" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
           <component_list isModificationOver="true" expression="0" declarationName="nIn" description="&quot;Number of input connections&quot;" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="0" elementName="min"/>
             <annotations isModificationOver="true" elementName="Dialog">
@@ -2640,7 +2641,7 @@
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
           <component_list isModificationOver="true" expression="0" declarationName="nOut" description="&quot;Number of output connections&quot;" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="0" elementName="min"/>
             <annotations isModificationOver="true" elementName="Dialog">
@@ -2649,12 +2650,12 @@
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="localActive" description="&quot;= true, if step is active, otherwise the step is not active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Step_in" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.Step_in" isOver="true">
           <component_list subscripts="[nIn]" declarationName="inPort" description="&quot;Vector of step input connectors&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -2663,7 +2664,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Step_out" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.Step_out" isOver="true">
           <component_list subscripts="[nOut]" declarationName="outPort" description="&quot;Vector of step output connectors&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -2672,31 +2673,31 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.CompositeStepState" isProtected="true" isOuter="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.CompositeStepState" isProtected="true" isOuter="true" isOver="true">
           <component_list declarationName="stateGraphRoot"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" classType="model" className="OuterStatePort" isLongClassSpecifier="true" classNameEnd="OuterStatePort" isOver="true">
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="CompositeStepStatePort_in" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" classType="model" className="OuterStatePort" isLongClassSpecifier="true" classNameEnd="OuterStatePort" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="CompositeStepStatePort_in" isOver="true">
             <component_list declarationName="subgraphStatePort"/>
           </elements>
-          <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
             <component_list declarationName="localActive"/>
           </elements>
           <elements xsi:type="mOloc:EquationSection">
             <equations xsi:type="mOloc:SimpleEquation" left="subgraphStatePort.activeSteps" right="if localActive then 1.0 else 0.0"/>
           </elements>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="OuterStatePort" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="OuterStatePort" isOver="true">
           <component_list isModificationOver="true" declarationName="outerStatePort">
             <modifications expression="localActive" elementName="localActive"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isOver="true">
           <component_list declarationName="newActive" description="&quot;Value of active in the next iteration&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isOver="true">
           <component_list declarationName="oldActive" description="&quot;Value of active when CompositeStep was aborted&quot;"/>
         </elements>
         <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -2734,13 +2735,13 @@
           </equations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" isPartial="true" classType="block" className="PartialTransition" description="&quot;Partial transition with input and output connections&quot;" isLongClassSpecifier="true" classNameEnd="PartialTransition" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="PartialTransition" description="&quot;Partial transition with input and output connections&quot;" isLongClassSpecifier="true" classNameEnd="PartialTransition" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="localCondition" description="&quot;= true, if transition may fire&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
           <component_list expression="false" declarationName="enableTimer" description="&quot;= true, if timer is enabled&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="Evaluate"/>
             <annotations isModificationOver="true" elementName="Dialog">
@@ -2748,7 +2749,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
           <component_list isModificationOver="true" expression="0" declarationName="waitTime" description="&quot;Wait time before transition fires&quot;" isAnnotation="true" isAnnotationOver="true">
             <modifications expression="0" elementName="min"/>
             <annotations isModificationOver="true" elementName="Dialog">
@@ -2757,18 +2758,18 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" directionType="output" isOver="true">
           <component_list declarationName="t" description="&quot;Actual waiting time (transition will fire when t > waitTime)&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="enableFire" description="&quot;= true, if all firing conditions are true&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="fire" description="&quot;= true, if transition fires&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraph.Interfaces.Transition_in" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraph.Interfaces.Transition_in" isOver="true">
           <component_list declarationName="inPort" description="&quot;Vector of transition input connectors&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -2777,7 +2778,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraph.Interfaces.Transition_out" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraph.Interfaces.Transition_out" isOver="true">
           <component_list declarationName="outPort" description="&quot;Vector of transition output connectors&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Placement">
               <modifications isModificationOver="true" elementName="transformation">
@@ -2786,10 +2787,10 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isProtected="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="discrete" isProtected="true" isOver="true">
           <component_list declarationName="t_start" description="&quot;Time instant at which the transition would fire, if waitTime would be zero&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list declarationName="t_dummy"/>
         </elements>
         <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -2818,7 +2819,7 @@
           <equations xsi:type="mOloc:SimpleEquation" left="outPort.set" right="fire"/>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" isPartial="true" classType="block" className="PartialStateGraphIcon" description="&quot;Icon for a StateGraph object&quot;" isLongClassSpecifier="true" classNameEnd="PartialStateGraphIcon" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="PartialStateGraphIcon" description="&quot;Icon for a StateGraph object&quot;" isLongClassSpecifier="true" classNameEnd="PartialStateGraphIcon" isOver="true">
         <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
           <annotations isModificationOver="true" elementName="Icon">
             <modifications isModificationOver="true" elementName="coordinateSystem">
@@ -2829,14 +2830,14 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="model" className="CompositeStepState" description="&quot;Communication channel between CompositeSteps and steps in the CompositeStep&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStepState" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="model" className="CompositeStepState" description="&quot;Communication channel between CompositeSteps and steps in the CompositeStep&quot;" isLongClassSpecifier="true" classNameEnd="CompositeStepState" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list expression="false" declarationName="suspend" description="&quot;= true, if suspend transition of CompositeStep fires&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list expression="false" declarationName="resume" description="&quot;= true, if resume transition of CompositeStep fires&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="CompositeStepStatePort_out" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="CompositeStepStatePort_out" isOver="true">
           <component_list declarationName="subgraphStatePort"/>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
@@ -2851,8 +2852,8 @@
         </elements>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="InitialStep" description="&quot;Initial step (= step that is active when simulation starts)&quot;" isLongClassSpecifier="true" classNameEnd="InitialStep" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="InitialStep" description="&quot;Initial step (= step that is active when simulation starts)&quot;" isLongClassSpecifier="true" classNameEnd="InitialStep" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
         <component_list declarationName="active" description="&quot;= true, if step is active, otherwise the step is not active&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.PartialStep" isOver="true"/>
@@ -2879,9 +2880,9 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="InitialStepWithSignal" description="&quot;Initial step (= step that is active when simulation starts). Connector 'active' is true when the step is active&quot;" isLongClassSpecifier="true" classNameEnd="InitialStepWithSignal" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="InitialStepWithSignal" description="&quot;Initial step (= step that is active when simulation starts). Connector 'active' is true when the step is active&quot;" isLongClassSpecifier="true" classNameEnd="InitialStepWithSignal" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.PartialStep" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list declarationName="active" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -2915,8 +2916,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Step" description="&quot;Ordinary step (= step that is not active when simulation starts)&quot;" isLongClassSpecifier="true" classNameEnd="Step" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Step" description="&quot;Ordinary step (= step that is not active when simulation starts)&quot;" isLongClassSpecifier="true" classNameEnd="Step" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
         <component_list declarationName="active" description="&quot;= true, if step is active, otherwise the step is not active&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.PartialStep" isOver="true"/>
@@ -2943,9 +2944,9 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="StepWithSignal" description="&quot;Ordinary step (= step that is not active when simulation starts). Connector 'active' is true when the step is active&quot;" isLongClassSpecifier="true" classNameEnd="StepWithSignal" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="StepWithSignal" description="&quot;Ordinary step (= step that is not active when simulation starts). Connector 'active' is true when the step is active&quot;" isLongClassSpecifier="true" classNameEnd="StepWithSignal" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.PartialStep" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list declarationName="active" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -2979,8 +2980,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Transition" description="&quot;Transition where the fire condition is set by a modification of variable condition&quot;" isLongClassSpecifier="true" classNameEnd="Transition" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Transition" description="&quot;Transition where the fire condition is set by a modification of variable condition&quot;" isLongClassSpecifier="true" classNameEnd="Transition" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
         <component_list expression="true" declarationName="condition" description="&quot;= true, if transition may fire (time varying expression)&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Fire condition&quot;" elementName="group"/>
@@ -3007,8 +3008,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="TransitionWithSignal" description="&quot;Transition where the fire condition is set by a Boolean input signal&quot;" isLongClassSpecifier="true" classNameEnd="TransitionWithSignal" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="TransitionWithSignal" description="&quot;Transition where the fire condition is set by a Boolean input signal&quot;" isLongClassSpecifier="true" classNameEnd="TransitionWithSignal" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
         <component_list declarationName="condition" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3039,13 +3040,13 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Alternative" description="&quot;Alternative splitting of execution path (use component between two steps)&quot;" isLongClassSpecifier="true" classNameEnd="Alternative" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Alternative" description="&quot;Alternative splitting of execution path (use component between two steps)&quot;" isLongClassSpecifier="true" classNameEnd="Alternative" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="2" declarationName="nBranches" description="&quot;Number of alternative branches&quot;">
           <modifications expression="1" elementName="min"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Transition_in" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.Transition_in" isOver="true">
         <component_list declarationName="inPort" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3054,7 +3055,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Transition_out" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.Transition_out" isOver="true">
         <component_list declarationName="outPort" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3063,7 +3064,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step_in_forAlternative" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step_in_forAlternative" isOver="true">
         <component_list subscripts="[nBranches]" declarationName="join" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3072,7 +3073,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Step_out_forAlternative" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Step_out_forAlternative" isOver="true">
         <component_list subscripts="[nBranches]" declarationName="split" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3081,13 +3082,13 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="connector" className="Step_in_forAlternative" description="&quot;Input port of a step (has special icon for usage in component 'Alternative')&quot;" isLongClassSpecifier="true" classNameEnd="Step_in_forAlternative" isProtected="true" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="connector" className="Step_in_forAlternative" description="&quot;Input port of a step (has special icon for usage in component 'Alternative')&quot;" isLongClassSpecifier="true" classNameEnd="Step_in_forAlternative" isProtected="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="occupied" description="&quot;= true, if step is active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="set" description="&quot;= true, if transition fires and step is activated&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
@@ -3107,13 +3108,13 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="connector" className="Step_out_forAlternative" description="&quot;Output port of a step (has special icon for usage in component 'Alternative')&quot;" isLongClassSpecifier="true" classNameEnd="Step_out_forAlternative" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="connector" className="Step_out_forAlternative" description="&quot;Output port of a step (has special icon for usage in component 'Alternative')&quot;" isLongClassSpecifier="true" classNameEnd="Step_out_forAlternative" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="available" description="&quot;= true, if step is active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="reset" description="&quot;= true, if transition fires and step is deactivated&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
@@ -3164,13 +3165,13 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Parallel" description="&quot;Parallel splitting of execution path (use component between two transitions)&quot;" isLongClassSpecifier="true" classNameEnd="Parallel" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Parallel" description="&quot;Parallel splitting of execution path (use component between two transitions)&quot;" isLongClassSpecifier="true" classNameEnd="Parallel" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="2" declarationName="nBranches" description="&quot;Number of parallel branches that are executed in parallel&quot;">
           <modifications expression="1" elementName="min"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Step_in" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.Step_in" isOver="true">
         <component_list declarationName="inPort" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3179,7 +3180,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Step_out" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.Step_out" isOver="true">
         <component_list declarationName="outPort" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3188,7 +3189,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition_in_forParallel" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition_in_forParallel" isOver="true">
         <component_list subscripts="[nBranches]" declarationName="join" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3197,7 +3198,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Transition_out_forParallel" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Transition_out_forParallel" isOver="true">
         <component_list subscripts="[nBranches]" declarationName="split" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3206,13 +3207,13 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="connector" className="Transition_in_forParallel" description="&quot;Input port of a transition (has special icon for usage in component 'Parallel')&quot;" isLongClassSpecifier="true" classNameEnd="Transition_in_forParallel" isProtected="true" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="connector" className="Transition_in_forParallel" description="&quot;Input port of a transition (has special icon for usage in component 'Parallel')&quot;" isLongClassSpecifier="true" classNameEnd="Transition_in_forParallel" isProtected="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="available" description="&quot;= true, if step connected to the transition input is active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="reset" description="&quot;= true, if transition fires and the step connected to the transition input is deactivated&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
@@ -3232,13 +3233,13 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="connector" className="Transition_out_forParallel" description="&quot;Output port of a transition (has special icon for usage in component 'Parallel')&quot;" isLongClassSpecifier="true" classNameEnd="Transition_out_forParallel" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="connector" className="Transition_out_forParallel" description="&quot;Output port of a transition (has special icon for usage in component 'Parallel')&quot;" isLongClassSpecifier="true" classNameEnd="Transition_out_forParallel" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="occupied" description="&quot;= true, if step connected to the transition output is active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
           <component_list declarationName="set" description="&quot;= true, if transition fires and step connected to the transition output becomes active&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
@@ -3287,31 +3288,31 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" isPartial="true" classType="model" className="PartialCompositeStep" description="&quot;Superclass of a subgraph, i.e., a composite step that has internally a StateGraph&quot;" isLongClassSpecifier="true" classNameEnd="PartialCompositeStep" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="model" className="PartialCompositeStep" description="&quot;Superclass of a subgraph, i.e., a composite step that has internally a StateGraph&quot;" isLongClassSpecifier="true" classNameEnd="PartialCompositeStep" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="nSuspend" description="&quot;Number of suspend ports&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Exception connections&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="nResume" description="&quot;Number of resume ports&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Exception connections&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraph.Interfaces.CompositeStepState" isInner="true" isOuter="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraph.Interfaces.CompositeStepState" isInner="true" isOuter="true" isOver="true">
         <component_list isModificationOver="true" declarationName="stateGraphRoot" description="&quot;Communication port between the CompositeStep and the steps within the CompositeStep&quot;">
           <modifications expression="Modelica.Math.BooleanVectors.anyTrue(suspend.reset) or outerState.subgraphStatePort.suspend" elementName="suspend"/>
           <modifications expression="Modelica.Math.BooleanVectors.anyTrue(resume.set) or outerState.subgraphStatePort.resume" elementName="resume"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
         <component_list declarationName="active" description="&quot;= true, if step is active, otherwise the step is not active&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraph.Interfaces.Step_in" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraph.Interfaces.Step_in" isOver="true">
         <component_list declarationName="inPort" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3320,7 +3321,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraph.Interfaces.Step_out" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraph.Interfaces.Step_out" isOver="true">
         <component_list declarationName="outPort" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3329,7 +3330,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraph.Interfaces.CompositeStep_suspend" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraph.Interfaces.CompositeStep_suspend" isOver="true">
         <component_list subscripts="[nSuspend]" declarationName="suspend" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3340,7 +3341,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="StateGraph.Interfaces.CompositeStep_resume" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="StateGraph.Interfaces.CompositeStep_resume" isOver="true">
         <component_list subscripts="[nResume]" declarationName="resume" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -3351,36 +3352,36 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="model" className="OuterState" description="&quot;Block containing the port that is connected to the outer stateGraphRoot&quot;" isLongClassSpecifier="true" classNameEnd="OuterState" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.CompositeStepStatePort_in" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="model" className="OuterState" description="&quot;Block containing the port that is connected to the outer stateGraphRoot&quot;" isLongClassSpecifier="true" classNameEnd="OuterState" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.CompositeStepStatePort_in" isOver="true">
           <component_list declarationName="subgraphStatePort" description="&quot;Port connected to outer stateGraphRoot&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list declarationName="active"/>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
           <equations xsi:type="mOloc:SimpleEquation" left="subgraphStatePort.activeSteps" right="if active then 1.0 else 0.0"/>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="OuterState" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="OuterState" isOver="true">
         <component_list isModificationOver="true" declarationName="outerState">
           <modifications expression="active" elementName="active"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="model" className="InnerState" isLongClassSpecifier="true" classNameEnd="InnerState" isProtected="true" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.CompositeStepState" isOuter="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="model" className="InnerState" isLongClassSpecifier="true" classNameEnd="InnerState" isProtected="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.CompositeStepState" isOuter="true" isOver="true">
           <component_list declarationName="stateGraphRoot"/>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="InnerState" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="InnerState" isOver="true">
         <component_list declarationName="innerState"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isOver="true">
         <component_list declarationName="newActive" description="&quot;Value of active in the next iteration&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="HideResult"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
         <component_list declarationName="activeSteps" description="&quot;Number of active steps within the CompositeStep&quot;"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -3437,9 +3438,9 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="model" className="StateGraphRoot" description="&quot;Root of a StateGraph (has to be present on the highest level of a StateGraph)&quot;" isLongClassSpecifier="true" classNameEnd="StateGraphRoot" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="model" className="StateGraphRoot" description="&quot;Root of a StateGraph (has to be present on the highest level of a StateGraph)&quot;" isLongClassSpecifier="true" classNameEnd="StateGraphRoot" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="StateGraph.Interfaces.CompositeStepState" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="output" isOver="true">
         <component_list declarationName="activeSteps" description="&quot;Number of active steps within the stategraph&quot;"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.Interfaces.Enable">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.Interfaces.Enable"/>
   <classes isPartial="true" classType="model" className="Enable2" description="&quot;Partial model providing enable parameter and optional enable input for two firing signals&quot;" isLongClassSpecifier="true" classNameEnd="Enable2" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PowerConverters.Interfaces.Enable.Enable1" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.And" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Logical.And" isOver="true">
       <component_list declarationName="andCondition_n" description="&quot;And condition for negative firing signal&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -13,7 +14,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
       <component_list declarationName="fire_n" description="&quot;Firing signal of negative potential transistor&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

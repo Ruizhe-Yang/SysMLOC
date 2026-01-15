@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Semiconductors">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Semiconductors"/>
   <classes classType="model" className="ZDiode" description="&quot;Zener diode with 3 working areas&quot;" isLongClassSpecifier="true" classNameEnd="ZDiode" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
       <component_list expression="1e-6" declarationName="Ids" description="&quot;Saturation current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="0.04" declarationName="Vt" description="&quot;Voltage equivalent of temperature (kT/qn)&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="30" declarationName="Maxexp" description="&quot;Max. exponent for linear continuation&quot;">
         <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="1e8" declarationName="R" description="&quot;Parallel ohmic resistance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="5.1" declarationName="Bv" description="&quot;Breakthrough voltage = Zener- or Z-voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
       <component_list expression="0.7" declarationName="Ibv" description="&quot;Breakthrough knee current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="0.74" declarationName="Nbv" description="&quot;Breakthrough emission coefficient&quot;"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">

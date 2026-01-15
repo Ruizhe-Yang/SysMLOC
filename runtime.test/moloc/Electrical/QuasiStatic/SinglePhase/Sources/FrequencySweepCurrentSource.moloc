@@ -1,45 +1,46 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Sources">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Sources"/>
   <classes classType="model" className="FrequencySweepCurrentSource" description="&quot;Current source with integrated frequency sweep&quot;" isLongClassSpecifier="true" classNameEnd="FrequencySweepCurrentSource" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPin" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
       <component_list isModificationOver="true" expression="pin_p.reference.gamma" declarationName="gamma">
         <modifications expression="0" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="fStart" description="&quot;Start sweep frequency&quot;">
         <modifications expression="eps" elementName="min" isfinal="true"/>
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="fStop" description="&quot;Stop sweep frequency&quot;">
         <modifications expression="eps" elementName="min" isfinal="true"/>
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="startTime" description="&quot;Start time of frequency sweep&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="duration" description="&quot;Duration of frequency sweep&quot;">
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="I" description="&quot;RMS current of the source&quot;">
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="phi" description="&quot;Phase shift of the source&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" isOver="true">
       <component_list expression="currentSource.f" declarationName="f" description="&quot;Actual frequency&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.LogFrequencySweep" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.LogFrequencySweep" isOver="true">
       <component_list isModificationOver="true" declarationName="logFrequencySweep" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="fStart" elementName="wMin" isfinal="true"/>
         <modifications expression="fStop" elementName="wMax" isfinal="true"/>
@@ -52,7 +53,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="VariableCurrentSource" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="VariableCurrentSource" isOver="true">
       <component_list declarationName="currentSource" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -61,7 +62,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.Sources.ComplexConstant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.ComplexBlocks.Sources.ComplexConstant" isOver="true">
       <component_list isModificationOver="true" declarationName="const" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Modelica.ComplexMath.fromPolar(len=I, phi=phi)" elementName="k" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">

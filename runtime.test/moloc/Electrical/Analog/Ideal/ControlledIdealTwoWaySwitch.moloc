@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Ideal">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Ideal"/>
   <classes classType="model" className="ControlledIdealTwoWaySwitch" description="&quot;Controlled ideal two-way switch&quot;" isLongClassSpecifier="true" classNameEnd="ControlledIdealTwoWaySwitch" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="0.5" declarationName="level" description="&quot;Switch level&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1e-5" declarationName="Ron" description="&quot;Closed switch resistance&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1e-5" declarationName="Goff" description="&quot;Opened switch conductance&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
       </component_list>
@@ -17,7 +18,7 @@
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
       <extendsModifications expression="293.15" elementName="T" isfinal="true"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.PositivePin" isOver="true">
       <component_list declarationName="p" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -26,7 +27,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.NegativePin" isOver="true">
       <component_list declarationName="n2" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -35,7 +36,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.NegativePin" isOver="true">
       <component_list declarationName="n1" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -47,7 +48,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Pin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.Pin" isOver="true">
       <component_list declarationName="control" description="&quot;Control pin: if control.v > level p--n2 connected, otherwise p--n1 connected&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -58,22 +59,22 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isProtected="true" isOver="true">
       <component_list isModificationOver="true" declarationName="s1">
         <modifications expression="&quot;1&quot;" elementName="unit" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
       <component_list isModificationOver="true" declarationName="s2" description="&quot;Auxiliary variables&quot;">
         <modifications expression="&quot;1&quot;" elementName="unit" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="constant" isOver="true">
       <component_list expression="1" declarationName="unitVoltage" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="HideResult"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="constant" isOver="true">
       <component_list expression="1" declarationName="unitCurrent" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="HideResult"/>
       </component_list>

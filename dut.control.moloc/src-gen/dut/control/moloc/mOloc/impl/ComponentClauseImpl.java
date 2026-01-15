@@ -5,12 +5,12 @@ package dut.control.moloc.mOloc.impl;
 
 import dut.control.moloc.mOloc.AnnotationModificationElement;
 import dut.control.moloc.mOloc.ClassType;
+import dut.control.moloc.mOloc.ComponentClause;
 import dut.control.moloc.mOloc.Component_declaration;
 import dut.control.moloc.mOloc.ConstrainingClause;
 import dut.control.moloc.mOloc.Direction;
 import dut.control.moloc.mOloc.Element;
 import dut.control.moloc.mOloc.EnumerationLiteral;
-import dut.control.moloc.mOloc.GeneralClause;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.ModificationElement;
 import dut.control.moloc.mOloc.ParameterType;
@@ -50,57 +50,62 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>General Clause</b></em>'.
+ * An implementation of the model object '<em><b>Component Clause</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsEncapsulated <em>Is Encapsulated</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsPartial <em>Is Partial</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsExpandable <em>Is Expandable</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsPure <em>Is Pure</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsOperator <em>Is Operator</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassType <em>Class Type</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassName <em>Class Name</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getModifications <em>Modifications</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsModificationOver <em>Is Modification Over</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getElements <em>Elements</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsExtends <em>Is Extends</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsLongClassSpecifier <em>Is Long Class Specifier</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getClassNameEnd <em>Class Name End</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getSubscripts <em>Subscripts</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsShortClassSpecifier <em>Is Short Class Specifier</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDirection <em>Direction</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsEnumeration <em>Is Enumeration</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsColon <em>Is Colon</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsDerClassSpecifier <em>Is Der Class Specifier</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsDer <em>Is Der</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDerName <em>Der Name</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getRelationshipType <em>Relationship Type</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getParameterType <em>Parameter Type</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getDirectionType <em>Direction Type</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getConstrain <em>Constrain</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsPublic <em>Is Public</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsProtected <em>Is Protected</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsRedeclare <em>Is Redeclare</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsfinal <em>Isfinal</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsInner <em>Is Inner</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsOuter <em>Is Outer</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsReplaceable <em>Is Replaceable</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#getComponent_list <em>Component list</em>}</li>
- *   <li>{@link dut.control.moloc.mOloc.impl.GeneralClauseImpl#isIsOver <em>Is Over</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsEncapsulated <em>Is Encapsulated</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsPartial <em>Is Partial</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsExpandable <em>Is Expandable</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsPure <em>Is Pure</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsOperator <em>Is Operator</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getClassType <em>Class Type</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getClassName <em>Class Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getModifications <em>Modifications</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsModificationOver <em>Is Modification Over</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsExtends <em>Is Extends</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsLongClassSpecifier <em>Is Long Class Specifier</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getClassNameEnd <em>Class Name End</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getSubscripts <em>Subscripts</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getEnumerationLiteral <em>Enumeration Literal</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsAnnotation <em>Is Annotation</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getAnnotations <em>Annotations</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsAnnotationOver <em>Is Annotation Over</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsShortClassSpecifier <em>Is Short Class Specifier</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getDirection <em>Direction</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsEnumeration <em>Is Enumeration</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsColon <em>Is Colon</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsDerClassSpecifier <em>Is Der Class Specifier</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsDer <em>Is Der</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getDerName <em>Der Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getRelationshipType <em>Relationship Type</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getParameterType <em>Parameter Type</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getDirectionType <em>Direction Type</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsConstrainedby <em>Is Constrainedby</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getConstrain <em>Constrain</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsPublic <em>Is Public</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsProtected <em>Is Protected</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsRedeclare <em>Is Redeclare</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsfinal <em>Isfinal</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsInner <em>Is Inner</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsOuter <em>Is Outer</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsReplaceable <em>Is Replaceable</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getComponent_list <em>Component list</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getDescription1 <em>Description1</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsAnnotation1 <em>Is Annotation1</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#getAnnotations1 <em>Annotations1</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsAnnotationOver1 <em>Is Annotation Over1</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.ComponentClauseImpl#isIsOver <em>Is Over</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GeneralClauseImpl extends ElementImpl implements GeneralClause
+public class ComponentClauseImpl extends ElementImpl implements ComponentClause
 {
   /**
    * The default value of the '{@link #isIsEncapsulated() <em>Is Encapsulated</em>}' attribute.
@@ -653,6 +658,26 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   protected Direction directionType = DIRECTION_TYPE_EDEFAULT;
 
   /**
+   * The default value of the '{@link #isIsConstrainedby() <em>Is Constrainedby</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstrainedby()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_CONSTRAINEDBY_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsConstrainedby() <em>Is Constrainedby</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstrainedby()
+   * @generated
+   * @ordered
+   */
+  protected boolean isConstrainedby = IS_CONSTRAINEDBY_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getConstrain() <em>Constrain</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -813,6 +838,76 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   protected EList<Component_declaration> component_list;
 
   /**
+   * The default value of the '{@link #getDescription1() <em>Description1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription1()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESCRIPTION1_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDescription1() <em>Description1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription1()
+   * @generated
+   * @ordered
+   */
+  protected String description1 = DESCRIPTION1_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsAnnotation1() <em>Is Annotation1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation1()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION1_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotation1() <em>Is Annotation1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotation1()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotation1 = IS_ANNOTATION1_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotations1() <em>Annotations1</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotations1()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationModificationElement> annotations1;
+
+  /**
+   * The default value of the '{@link #isIsAnnotationOver1() <em>Is Annotation Over1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver1()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ANNOTATION_OVER1_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAnnotationOver1() <em>Is Annotation Over1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAnnotationOver1()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAnnotationOver1 = IS_ANNOTATION_OVER1_EDEFAULT;
+
+  /**
    * The default value of the '{@link #isIsOver() <em>Is Over</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -837,7 +932,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GeneralClauseImpl()
+  protected ComponentClauseImpl()
   {
     super();
   }
@@ -850,7 +945,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   @Override
   protected EClass eStaticClass()
   {
-    return MOlocPackage.Literals.GENERAL_CLAUSE;
+    return MOlocPackage.Literals.COMPONENT_CLAUSE;
   }
 
   /**
@@ -875,7 +970,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsEncapsulated = isEncapsulated;
     isEncapsulated = newIsEncapsulated;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED, oldIsEncapsulated, isEncapsulated));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_ENCAPSULATED, oldIsEncapsulated, isEncapsulated));
   }
 
   /**
@@ -900,7 +995,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsPartial = isPartial;
     isPartial = newIsPartial;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL, oldIsPartial, isPartial));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_PARTIAL, oldIsPartial, isPartial));
   }
 
   /**
@@ -925,7 +1020,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsExpandable = isExpandable;
     isExpandable = newIsExpandable;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE, oldIsExpandable, isExpandable));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_EXPANDABLE, oldIsExpandable, isExpandable));
   }
 
   /**
@@ -950,7 +1045,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsPure = isPure;
     isPure = newIsPure;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_PURE, oldIsPure, isPure));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_PURE, oldIsPure, isPure));
   }
 
   /**
@@ -975,7 +1070,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsOperator = isOperator;
     isOperator = newIsOperator;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR, oldIsOperator, isOperator));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_OPERATOR, oldIsOperator, isOperator));
   }
 
   /**
@@ -1000,7 +1095,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     ClassType oldClassType = classType;
     classType = newClassType == null ? CLASS_TYPE_EDEFAULT : newClassType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE, oldClassType, classType));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__CLASS_TYPE, oldClassType, classType));
   }
 
   /**
@@ -1025,7 +1120,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     String oldClassName = className;
     className = newClassName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__CLASS_NAME, oldClassName, className));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME, oldClassName, className));
   }
 
   /**
@@ -1038,7 +1133,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     if (modifications == null)
     {
-      modifications = new EObjectContainmentEList<ModificationElement>(ModificationElement.class, this, MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS);
+      modifications = new EObjectContainmentEList<ModificationElement>(ModificationElement.class, this, MOlocPackage.COMPONENT_CLAUSE__MODIFICATIONS);
     }
     return modifications;
   }
@@ -1065,7 +1160,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsModificationOver = isModificationOver;
     isModificationOver = newIsModificationOver;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER, oldIsModificationOver, isModificationOver));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_MODIFICATION_OVER, oldIsModificationOver, isModificationOver));
   }
 
   /**
@@ -1090,7 +1185,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     String oldDescription = description;
     description = newDescription;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__DESCRIPTION, oldDescription, description));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -1103,7 +1198,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<Element>(Element.class, this, MOlocPackage.GENERAL_CLAUSE__ELEMENTS);
+      elements = new EObjectContainmentEList<Element>(Element.class, this, MOlocPackage.COMPONENT_CLAUSE__ELEMENTS);
     }
     return elements;
   }
@@ -1130,7 +1225,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsExtends = isExtends;
     isExtends = newIsExtends;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS, oldIsExtends, isExtends));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_EXTENDS, oldIsExtends, isExtends));
   }
 
   /**
@@ -1155,7 +1250,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsLongClassSpecifier = isLongClassSpecifier;
     isLongClassSpecifier = newIsLongClassSpecifier;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER, oldIsLongClassSpecifier, isLongClassSpecifier));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_LONG_CLASS_SPECIFIER, oldIsLongClassSpecifier, isLongClassSpecifier));
   }
 
   /**
@@ -1180,7 +1275,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     String oldClassNameEnd = classNameEnd;
     classNameEnd = newClassNameEnd;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END, oldClassNameEnd, classNameEnd));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME_END, oldClassNameEnd, classNameEnd));
   }
 
   /**
@@ -1205,7 +1300,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     String oldTypeSpecifier = typeSpecifier;
     typeSpecifier = newTypeSpecifier;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER, oldTypeSpecifier, typeSpecifier));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__TYPE_SPECIFIER, oldTypeSpecifier, typeSpecifier));
   }
 
   /**
@@ -1230,7 +1325,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     String oldSubscripts = subscripts;
     subscripts = newSubscripts;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS, oldSubscripts, subscripts));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__SUBSCRIPTS, oldSubscripts, subscripts));
   }
 
   /**
@@ -1243,7 +1338,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     if (enumerationLiteral == null)
     {
-      enumerationLiteral = new EObjectContainmentEList<EnumerationLiteral>(EnumerationLiteral.class, this, MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL);
+      enumerationLiteral = new EObjectContainmentEList<EnumerationLiteral>(EnumerationLiteral.class, this, MOlocPackage.COMPONENT_CLAUSE__ENUMERATION_LITERAL);
     }
     return enumerationLiteral;
   }
@@ -1270,7 +1365,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsAnnotation = isAnnotation;
     isAnnotation = newIsAnnotation;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION, oldIsAnnotation, isAnnotation));
   }
 
   /**
@@ -1283,7 +1378,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     if (annotations == null)
     {
-      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS);
+      annotations = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS);
     }
     return annotations;
   }
@@ -1310,7 +1405,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsAnnotationOver = isAnnotationOver;
     isAnnotationOver = newIsAnnotationOver;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION_OVER, oldIsAnnotationOver, isAnnotationOver));
   }
 
   /**
@@ -1335,7 +1430,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsShortClassSpecifier = isShortClassSpecifier;
     isShortClassSpecifier = newIsShortClassSpecifier;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER, oldIsShortClassSpecifier, isShortClassSpecifier));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_SHORT_CLASS_SPECIFIER, oldIsShortClassSpecifier, isShortClassSpecifier));
   }
 
   /**
@@ -1360,7 +1455,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     Direction oldDirection = direction;
     direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__DIRECTION, oldDirection, direction));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__DIRECTION, oldDirection, direction));
   }
 
   /**
@@ -1385,7 +1480,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsEnumeration = isEnumeration;
     isEnumeration = newIsEnumeration;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION, oldIsEnumeration, isEnumeration));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_ENUMERATION, oldIsEnumeration, isEnumeration));
   }
 
   /**
@@ -1410,7 +1505,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsColon = isColon;
     isColon = newIsColon;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_COLON, oldIsColon, isColon));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_COLON, oldIsColon, isColon));
   }
 
   /**
@@ -1435,7 +1530,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsDerClassSpecifier = isDerClassSpecifier;
     isDerClassSpecifier = newIsDerClassSpecifier;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER, oldIsDerClassSpecifier, isDerClassSpecifier));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_DER_CLASS_SPECIFIER, oldIsDerClassSpecifier, isDerClassSpecifier));
   }
 
   /**
@@ -1460,7 +1555,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsDer = isDer;
     isDer = newIsDer;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_DER, oldIsDer, isDer));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_DER, oldIsDer, isDer));
   }
 
   /**
@@ -1473,7 +1568,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     if (derName == null)
     {
-      derName = new EDataTypeEList<String>(String.class, this, MOlocPackage.GENERAL_CLAUSE__DER_NAME);
+      derName = new EDataTypeEList<String>(String.class, this, MOlocPackage.COMPONENT_CLAUSE__DER_NAME);
     }
     return derName;
   }
@@ -1500,7 +1595,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     RelationshipType oldRelationshipType = relationshipType;
     relationshipType = newRelationshipType == null ? RELATIONSHIP_TYPE_EDEFAULT : newRelationshipType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE, oldRelationshipType, relationshipType));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__RELATIONSHIP_TYPE, oldRelationshipType, relationshipType));
   }
 
   /**
@@ -1525,7 +1620,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     ParameterType oldParameterType = parameterType;
     parameterType = newParameterType == null ? PARAMETER_TYPE_EDEFAULT : newParameterType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE, oldParameterType, parameterType));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__PARAMETER_TYPE, oldParameterType, parameterType));
   }
 
   /**
@@ -1550,7 +1645,32 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     Direction oldDirectionType = directionType;
     directionType = newDirectionType == null ? DIRECTION_TYPE_EDEFAULT : newDirectionType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE, oldDirectionType, directionType));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__DIRECTION_TYPE, oldDirectionType, directionType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsConstrainedby()
+  {
+    return isConstrainedby;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsConstrainedby(boolean newIsConstrainedby)
+  {
+    boolean oldIsConstrainedby = isConstrainedby;
+    isConstrainedby = newIsConstrainedby;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_CONSTRAINEDBY, oldIsConstrainedby, isConstrainedby));
   }
 
   /**
@@ -1575,7 +1695,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     constrain = newConstrain;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__CONSTRAIN, oldConstrain, newConstrain);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__CONSTRAIN, oldConstrain, newConstrain);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -1593,14 +1713,14 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       NotificationChain msgs = null;
       if (constrain != null)
-        msgs = ((InternalEObject)constrain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.GENERAL_CLAUSE__CONSTRAIN, null, msgs);
+        msgs = ((InternalEObject)constrain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.COMPONENT_CLAUSE__CONSTRAIN, null, msgs);
       if (newConstrain != null)
-        msgs = ((InternalEObject)newConstrain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.GENERAL_CLAUSE__CONSTRAIN, null, msgs);
+        msgs = ((InternalEObject)newConstrain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.COMPONENT_CLAUSE__CONSTRAIN, null, msgs);
       msgs = basicSetConstrain(newConstrain, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__CONSTRAIN, newConstrain, newConstrain));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__CONSTRAIN, newConstrain, newConstrain));
   }
 
   /**
@@ -1625,7 +1745,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsPublic = isPublic;
     isPublic = newIsPublic;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC, oldIsPublic, isPublic));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_PUBLIC, oldIsPublic, isPublic));
   }
 
   /**
@@ -1650,7 +1770,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsProtected = isProtected;
     isProtected = newIsProtected;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_PROTECTED, oldIsProtected, isProtected));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_PROTECTED, oldIsProtected, isProtected));
   }
 
   /**
@@ -1675,7 +1795,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsRedeclare = isRedeclare;
     isRedeclare = newIsRedeclare;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_REDECLARE, oldIsRedeclare, isRedeclare));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_REDECLARE, oldIsRedeclare, isRedeclare));
   }
 
   /**
@@ -1700,7 +1820,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsfinal = isfinal;
     isfinal = newIsfinal;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__ISFINAL, oldIsfinal, isfinal));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__ISFINAL, oldIsfinal, isfinal));
   }
 
   /**
@@ -1725,7 +1845,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsInner = isInner;
     isInner = newIsInner;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_INNER, oldIsInner, isInner));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_INNER, oldIsInner, isInner));
   }
 
   /**
@@ -1750,7 +1870,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsOuter = isOuter;
     isOuter = newIsOuter;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_OUTER, oldIsOuter, isOuter));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_OUTER, oldIsOuter, isOuter));
   }
 
   /**
@@ -1775,7 +1895,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsReplaceable = isReplaceable;
     isReplaceable = newIsReplaceable;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_REPLACEABLE, oldIsReplaceable, isReplaceable));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_REPLACEABLE, oldIsReplaceable, isReplaceable));
   }
 
   /**
@@ -1788,9 +1908,99 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     if (component_list == null)
     {
-      component_list = new EObjectContainmentEList<Component_declaration>(Component_declaration.class, this, MOlocPackage.GENERAL_CLAUSE__COMPONENT_LIST);
+      component_list = new EObjectContainmentEList<Component_declaration>(Component_declaration.class, this, MOlocPackage.COMPONENT_CLAUSE__COMPONENT_LIST);
     }
     return component_list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDescription1()
+  {
+    return description1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDescription1(String newDescription1)
+  {
+    String oldDescription1 = description1;
+    description1 = newDescription1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__DESCRIPTION1, oldDescription1, description1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotation1()
+  {
+    return isAnnotation1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotation1(boolean newIsAnnotation1)
+  {
+    boolean oldIsAnnotation1 = isAnnotation1;
+    isAnnotation1 = newIsAnnotation1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION1, oldIsAnnotation1, isAnnotation1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<AnnotationModificationElement> getAnnotations1()
+  {
+    if (annotations1 == null)
+    {
+      annotations1 = new EObjectContainmentEList<AnnotationModificationElement>(AnnotationModificationElement.class, this, MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS1);
+    }
+    return annotations1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAnnotationOver1()
+  {
+    return isAnnotationOver1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAnnotationOver1(boolean newIsAnnotationOver1)
+  {
+    boolean oldIsAnnotationOver1 = isAnnotationOver1;
+    isAnnotationOver1 = newIsAnnotationOver1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION_OVER1, oldIsAnnotationOver1, isAnnotationOver1));
   }
 
   /**
@@ -1815,7 +2025,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     boolean oldIsOver = isOver;
     isOver = newIsOver;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.GENERAL_CLAUSE__IS_OVER, oldIsOver, isOver));
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.COMPONENT_CLAUSE__IS_OVER, oldIsOver, isOver));
   }
 
   /**
@@ -1828,18 +2038,20 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
-      case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
+      case MOlocPackage.COMPONENT_CLAUSE__MODIFICATIONS:
         return ((InternalEList<?>)getModifications()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
+      case MOlocPackage.COMPONENT_CLAUSE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
+      case MOlocPackage.COMPONENT_CLAUSE__ENUMERATION_LITERAL:
         return ((InternalEList<?>)getEnumerationLiteral()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
+      case MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS:
         return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-      case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
+      case MOlocPackage.COMPONENT_CLAUSE__CONSTRAIN:
         return basicSetConstrain(null, msgs);
-      case MOlocPackage.GENERAL_CLAUSE__COMPONENT_LIST:
+      case MOlocPackage.COMPONENT_CLAUSE__COMPONENT_LIST:
         return ((InternalEList<?>)getComponent_list()).basicRemove(otherEnd, msgs);
+      case MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS1:
+        return ((InternalEList<?>)getAnnotations1()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -1854,85 +2066,95 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
-      case MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ENCAPSULATED:
         return isIsEncapsulated();
-      case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PARTIAL:
         return isIsPartial();
-      case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_EXPANDABLE:
         return isIsExpandable();
-      case MOlocPackage.GENERAL_CLAUSE__IS_PURE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PURE:
         return isIsPure();
-      case MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_OPERATOR:
         return isIsOperator();
-      case MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__CLASS_TYPE:
         return getClassType();
-      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME:
+      case MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME:
         return getClassName();
-      case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
+      case MOlocPackage.COMPONENT_CLAUSE__MODIFICATIONS:
         return getModifications();
-      case MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_MODIFICATION_OVER:
         return isIsModificationOver();
-      case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
+      case MOlocPackage.COMPONENT_CLAUSE__DESCRIPTION:
         return getDescription();
-      case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
+      case MOlocPackage.COMPONENT_CLAUSE__ELEMENTS:
         return getElements();
-      case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_EXTENDS:
         return isIsExtends();
-      case MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_LONG_CLASS_SPECIFIER:
         return isIsLongClassSpecifier();
-      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END:
+      case MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME_END:
         return getClassNameEnd();
-      case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__TYPE_SPECIFIER:
         return getTypeSpecifier();
-      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS:
+      case MOlocPackage.COMPONENT_CLAUSE__SUBSCRIPTS:
         return getSubscripts();
-      case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
+      case MOlocPackage.COMPONENT_CLAUSE__ENUMERATION_LITERAL:
         return getEnumerationLiteral();
-      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION:
         return isIsAnnotation();
-      case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
+      case MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS:
         return getAnnotations();
-      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION_OVER:
         return isIsAnnotationOver();
-      case MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_SHORT_CLASS_SPECIFIER:
         return isIsShortClassSpecifier();
-      case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
+      case MOlocPackage.COMPONENT_CLAUSE__DIRECTION:
         return getDirection();
-      case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ENUMERATION:
         return isIsEnumeration();
-      case MOlocPackage.GENERAL_CLAUSE__IS_COLON:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_COLON:
         return isIsColon();
-      case MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_DER_CLASS_SPECIFIER:
         return isIsDerClassSpecifier();
-      case MOlocPackage.GENERAL_CLAUSE__IS_DER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_DER:
         return isIsDer();
-      case MOlocPackage.GENERAL_CLAUSE__DER_NAME:
+      case MOlocPackage.COMPONENT_CLAUSE__DER_NAME:
         return getDerName();
-      case MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__RELATIONSHIP_TYPE:
         return getRelationshipType();
-      case MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__PARAMETER_TYPE:
         return getParameterType();
-      case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__DIRECTION_TYPE:
         return getDirectionType();
-      case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_CONSTRAINEDBY:
+        return isIsConstrainedby();
+      case MOlocPackage.COMPONENT_CLAUSE__CONSTRAIN:
         return getConstrain();
-      case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PUBLIC:
         return isIsPublic();
-      case MOlocPackage.GENERAL_CLAUSE__IS_PROTECTED:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PROTECTED:
         return isIsProtected();
-      case MOlocPackage.GENERAL_CLAUSE__IS_REDECLARE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_REDECLARE:
         return isIsRedeclare();
-      case MOlocPackage.GENERAL_CLAUSE__ISFINAL:
+      case MOlocPackage.COMPONENT_CLAUSE__ISFINAL:
         return isIsfinal();
-      case MOlocPackage.GENERAL_CLAUSE__IS_INNER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_INNER:
         return isIsInner();
-      case MOlocPackage.GENERAL_CLAUSE__IS_OUTER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_OUTER:
         return isIsOuter();
-      case MOlocPackage.GENERAL_CLAUSE__IS_REPLACEABLE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_REPLACEABLE:
         return isIsReplaceable();
-      case MOlocPackage.GENERAL_CLAUSE__COMPONENT_LIST:
+      case MOlocPackage.COMPONENT_CLAUSE__COMPONENT_LIST:
         return getComponent_list();
-      case MOlocPackage.GENERAL_CLAUSE__IS_OVER:
+      case MOlocPackage.COMPONENT_CLAUSE__DESCRIPTION1:
+        return getDescription1();
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION1:
+        return isIsAnnotation1();
+      case MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS1:
+        return getAnnotations1();
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION_OVER1:
+        return isIsAnnotationOver1();
+      case MOlocPackage.COMPONENT_CLAUSE__IS_OVER:
         return isIsOver();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -1949,130 +2171,146 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
-      case MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ENCAPSULATED:
         setIsEncapsulated((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PARTIAL:
         setIsPartial((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_EXPANDABLE:
         setIsExpandable((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_PURE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PURE:
         setIsPure((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_OPERATOR:
         setIsOperator((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__CLASS_TYPE:
         setClassType((ClassType)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME:
+      case MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME:
         setClassName((String)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
+      case MOlocPackage.COMPONENT_CLAUSE__MODIFICATIONS:
         getModifications().clear();
         getModifications().addAll((Collection<? extends ModificationElement>)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_MODIFICATION_OVER:
         setIsModificationOver((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
+      case MOlocPackage.COMPONENT_CLAUSE__DESCRIPTION:
         setDescription((String)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
+      case MOlocPackage.COMPONENT_CLAUSE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends Element>)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_EXTENDS:
         setIsExtends((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_LONG_CLASS_SPECIFIER:
         setIsLongClassSpecifier((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END:
+      case MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME_END:
         setClassNameEnd((String)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__TYPE_SPECIFIER:
         setTypeSpecifier((String)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS:
+      case MOlocPackage.COMPONENT_CLAUSE__SUBSCRIPTS:
         setSubscripts((String)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
+      case MOlocPackage.COMPONENT_CLAUSE__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
         getEnumerationLiteral().addAll((Collection<? extends EnumerationLiteral>)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION:
         setIsAnnotation((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
+      case MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS:
         getAnnotations().clear();
         getAnnotations().addAll((Collection<? extends AnnotationModificationElement>)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION_OVER:
         setIsAnnotationOver((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_SHORT_CLASS_SPECIFIER:
         setIsShortClassSpecifier((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
+      case MOlocPackage.COMPONENT_CLAUSE__DIRECTION:
         setDirection((Direction)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ENUMERATION:
         setIsEnumeration((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_COLON:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_COLON:
         setIsColon((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_DER_CLASS_SPECIFIER:
         setIsDerClassSpecifier((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_DER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_DER:
         setIsDer((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__DER_NAME:
+      case MOlocPackage.COMPONENT_CLAUSE__DER_NAME:
         getDerName().clear();
         getDerName().addAll((Collection<? extends String>)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__RELATIONSHIP_TYPE:
         setRelationshipType((RelationshipType)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__PARAMETER_TYPE:
         setParameterType((ParameterType)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__DIRECTION_TYPE:
         setDirectionType((Direction)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_CONSTRAINEDBY:
+        setIsConstrainedby((Boolean)newValue);
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE__CONSTRAIN:
         setConstrain((ConstrainingClause)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PUBLIC:
         setIsPublic((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_PROTECTED:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PROTECTED:
         setIsProtected((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_REDECLARE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_REDECLARE:
         setIsRedeclare((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__ISFINAL:
+      case MOlocPackage.COMPONENT_CLAUSE__ISFINAL:
         setIsfinal((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_INNER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_INNER:
         setIsInner((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_OUTER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_OUTER:
         setIsOuter((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_REPLACEABLE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_REPLACEABLE:
         setIsReplaceable((Boolean)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__COMPONENT_LIST:
+      case MOlocPackage.COMPONENT_CLAUSE__COMPONENT_LIST:
         getComponent_list().clear();
         getComponent_list().addAll((Collection<? extends Component_declaration>)newValue);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_OVER:
+      case MOlocPackage.COMPONENT_CLAUSE__DESCRIPTION1:
+        setDescription1((String)newValue);
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION1:
+        setIsAnnotation1((Boolean)newValue);
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS1:
+        getAnnotations1().clear();
+        getAnnotations1().addAll((Collection<? extends AnnotationModificationElement>)newValue);
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION_OVER1:
+        setIsAnnotationOver1((Boolean)newValue);
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE__IS_OVER:
         setIsOver((Boolean)newValue);
         return;
     }
@@ -2089,124 +2327,139 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
-      case MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ENCAPSULATED:
         setIsEncapsulated(IS_ENCAPSULATED_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PARTIAL:
         setIsPartial(IS_PARTIAL_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_EXPANDABLE:
         setIsExpandable(IS_EXPANDABLE_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_PURE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PURE:
         setIsPure(IS_PURE_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_OPERATOR:
         setIsOperator(IS_OPERATOR_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__CLASS_TYPE:
         setClassType(CLASS_TYPE_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME:
+      case MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME:
         setClassName(CLASS_NAME_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
+      case MOlocPackage.COMPONENT_CLAUSE__MODIFICATIONS:
         getModifications().clear();
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_MODIFICATION_OVER:
         setIsModificationOver(IS_MODIFICATION_OVER_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
+      case MOlocPackage.COMPONENT_CLAUSE__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
+      case MOlocPackage.COMPONENT_CLAUSE__ELEMENTS:
         getElements().clear();
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_EXTENDS:
         setIsExtends(IS_EXTENDS_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_LONG_CLASS_SPECIFIER:
         setIsLongClassSpecifier(IS_LONG_CLASS_SPECIFIER_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END:
+      case MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME_END:
         setClassNameEnd(CLASS_NAME_END_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__TYPE_SPECIFIER:
         setTypeSpecifier(TYPE_SPECIFIER_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS:
+      case MOlocPackage.COMPONENT_CLAUSE__SUBSCRIPTS:
         setSubscripts(SUBSCRIPTS_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
+      case MOlocPackage.COMPONENT_CLAUSE__ENUMERATION_LITERAL:
         getEnumerationLiteral().clear();
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION:
         setIsAnnotation(IS_ANNOTATION_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
+      case MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS:
         getAnnotations().clear();
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION_OVER:
         setIsAnnotationOver(IS_ANNOTATION_OVER_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_SHORT_CLASS_SPECIFIER:
         setIsShortClassSpecifier(IS_SHORT_CLASS_SPECIFIER_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
+      case MOlocPackage.COMPONENT_CLAUSE__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ENUMERATION:
         setIsEnumeration(IS_ENUMERATION_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_COLON:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_COLON:
         setIsColon(IS_COLON_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_DER_CLASS_SPECIFIER:
         setIsDerClassSpecifier(IS_DER_CLASS_SPECIFIER_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_DER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_DER:
         setIsDer(IS_DER_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__DER_NAME:
+      case MOlocPackage.COMPONENT_CLAUSE__DER_NAME:
         getDerName().clear();
         return;
-      case MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__RELATIONSHIP_TYPE:
         setRelationshipType(RELATIONSHIP_TYPE_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__PARAMETER_TYPE:
         setParameterType(PARAMETER_TYPE_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__DIRECTION_TYPE:
         setDirectionType(DIRECTION_TYPE_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_CONSTRAINEDBY:
+        setIsConstrainedby(IS_CONSTRAINEDBY_EDEFAULT);
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE__CONSTRAIN:
         setConstrain((ConstrainingClause)null);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PUBLIC:
         setIsPublic(IS_PUBLIC_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_PROTECTED:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PROTECTED:
         setIsProtected(IS_PROTECTED_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_REDECLARE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_REDECLARE:
         setIsRedeclare(IS_REDECLARE_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__ISFINAL:
+      case MOlocPackage.COMPONENT_CLAUSE__ISFINAL:
         setIsfinal(ISFINAL_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_INNER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_INNER:
         setIsInner(IS_INNER_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_OUTER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_OUTER:
         setIsOuter(IS_OUTER_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_REPLACEABLE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_REPLACEABLE:
         setIsReplaceable(IS_REPLACEABLE_EDEFAULT);
         return;
-      case MOlocPackage.GENERAL_CLAUSE__COMPONENT_LIST:
+      case MOlocPackage.COMPONENT_CLAUSE__COMPONENT_LIST:
         getComponent_list().clear();
         return;
-      case MOlocPackage.GENERAL_CLAUSE__IS_OVER:
+      case MOlocPackage.COMPONENT_CLAUSE__DESCRIPTION1:
+        setDescription1(DESCRIPTION1_EDEFAULT);
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION1:
+        setIsAnnotation1(IS_ANNOTATION1_EDEFAULT);
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS1:
+        getAnnotations1().clear();
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION_OVER1:
+        setIsAnnotationOver1(IS_ANNOTATION_OVER1_EDEFAULT);
+        return;
+      case MOlocPackage.COMPONENT_CLAUSE__IS_OVER:
         setIsOver(IS_OVER_EDEFAULT);
         return;
     }
@@ -2223,85 +2476,95 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
   {
     switch (featureID)
     {
-      case MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ENCAPSULATED:
         return isEncapsulated != IS_ENCAPSULATED_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PARTIAL:
         return isPartial != IS_PARTIAL_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_EXPANDABLE:
         return isExpandable != IS_EXPANDABLE_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_PURE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PURE:
         return isPure != IS_PURE_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_OPERATOR:
         return isOperator != IS_OPERATOR_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__CLASS_TYPE:
         return classType != CLASS_TYPE_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME:
+      case MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME:
         return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
-      case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS:
+      case MOlocPackage.COMPONENT_CLAUSE__MODIFICATIONS:
         return modifications != null && !modifications.isEmpty();
-      case MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_MODIFICATION_OVER:
         return isModificationOver != IS_MODIFICATION_OVER_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION:
+      case MOlocPackage.COMPONENT_CLAUSE__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case MOlocPackage.GENERAL_CLAUSE__ELEMENTS:
+      case MOlocPackage.COMPONENT_CLAUSE__ELEMENTS:
         return elements != null && !elements.isEmpty();
-      case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_EXTENDS:
         return isExtends != IS_EXTENDS_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_LONG_CLASS_SPECIFIER:
         return isLongClassSpecifier != IS_LONG_CLASS_SPECIFIER_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END:
+      case MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME_END:
         return CLASS_NAME_END_EDEFAULT == null ? classNameEnd != null : !CLASS_NAME_END_EDEFAULT.equals(classNameEnd);
-      case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__TYPE_SPECIFIER:
         return TYPE_SPECIFIER_EDEFAULT == null ? typeSpecifier != null : !TYPE_SPECIFIER_EDEFAULT.equals(typeSpecifier);
-      case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS:
+      case MOlocPackage.COMPONENT_CLAUSE__SUBSCRIPTS:
         return SUBSCRIPTS_EDEFAULT == null ? subscripts != null : !SUBSCRIPTS_EDEFAULT.equals(subscripts);
-      case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL:
+      case MOlocPackage.COMPONENT_CLAUSE__ENUMERATION_LITERAL:
         return enumerationLiteral != null && !enumerationLiteral.isEmpty();
-      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION:
         return isAnnotation != IS_ANNOTATION_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS:
+      case MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS:
         return annotations != null && !annotations.isEmpty();
-      case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION_OVER:
         return isAnnotationOver != IS_ANNOTATION_OVER_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_SHORT_CLASS_SPECIFIER:
         return isShortClassSpecifier != IS_SHORT_CLASS_SPECIFIER_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__DIRECTION:
+      case MOlocPackage.COMPONENT_CLAUSE__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ENUMERATION:
         return isEnumeration != IS_ENUMERATION_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_COLON:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_COLON:
         return isColon != IS_COLON_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_DER_CLASS_SPECIFIER:
         return isDerClassSpecifier != IS_DER_CLASS_SPECIFIER_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_DER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_DER:
         return isDer != IS_DER_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__DER_NAME:
+      case MOlocPackage.COMPONENT_CLAUSE__DER_NAME:
         return derName != null && !derName.isEmpty();
-      case MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__RELATIONSHIP_TYPE:
         return relationshipType != RELATIONSHIP_TYPE_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__PARAMETER_TYPE:
         return parameterType != PARAMETER_TYPE_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE:
+      case MOlocPackage.COMPONENT_CLAUSE__DIRECTION_TYPE:
         return directionType != DIRECTION_TYPE_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_CONSTRAINEDBY:
+        return isConstrainedby != IS_CONSTRAINEDBY_EDEFAULT;
+      case MOlocPackage.COMPONENT_CLAUSE__CONSTRAIN:
         return constrain != null;
-      case MOlocPackage.GENERAL_CLAUSE__IS_PUBLIC:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PUBLIC:
         return isPublic != IS_PUBLIC_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_PROTECTED:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_PROTECTED:
         return isProtected != IS_PROTECTED_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_REDECLARE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_REDECLARE:
         return isRedeclare != IS_REDECLARE_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__ISFINAL:
+      case MOlocPackage.COMPONENT_CLAUSE__ISFINAL:
         return isfinal != ISFINAL_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_INNER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_INNER:
         return isInner != IS_INNER_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_OUTER:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_OUTER:
         return isOuter != IS_OUTER_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__IS_REPLACEABLE:
+      case MOlocPackage.COMPONENT_CLAUSE__IS_REPLACEABLE:
         return isReplaceable != IS_REPLACEABLE_EDEFAULT;
-      case MOlocPackage.GENERAL_CLAUSE__COMPONENT_LIST:
+      case MOlocPackage.COMPONENT_CLAUSE__COMPONENT_LIST:
         return component_list != null && !component_list.isEmpty();
-      case MOlocPackage.GENERAL_CLAUSE__IS_OVER:
+      case MOlocPackage.COMPONENT_CLAUSE__DESCRIPTION1:
+        return DESCRIPTION1_EDEFAULT == null ? description1 != null : !DESCRIPTION1_EDEFAULT.equals(description1);
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION1:
+        return isAnnotation1 != IS_ANNOTATION1_EDEFAULT;
+      case MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS1:
+        return annotations1 != null && !annotations1.isEmpty();
+      case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION_OVER1:
+        return isAnnotationOver1 != IS_ANNOTATION_OVER1_EDEFAULT;
+      case MOlocPackage.COMPONENT_CLAUSE__IS_OVER:
         return isOver != IS_OVER_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -2319,12 +2582,12 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED: return MOlocPackage.CLASS_PREFIXES__IS_ENCAPSULATED;
-        case MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL: return MOlocPackage.CLASS_PREFIXES__IS_PARTIAL;
-        case MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE: return MOlocPackage.CLASS_PREFIXES__IS_EXPANDABLE;
-        case MOlocPackage.GENERAL_CLAUSE__IS_PURE: return MOlocPackage.CLASS_PREFIXES__IS_PURE;
-        case MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR: return MOlocPackage.CLASS_PREFIXES__IS_OPERATOR;
-        case MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE: return MOlocPackage.CLASS_PREFIXES__CLASS_TYPE;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_ENCAPSULATED: return MOlocPackage.CLASS_PREFIXES__IS_ENCAPSULATED;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_PARTIAL: return MOlocPackage.CLASS_PREFIXES__IS_PARTIAL;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_EXPANDABLE: return MOlocPackage.CLASS_PREFIXES__IS_EXPANDABLE;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_PURE: return MOlocPackage.CLASS_PREFIXES__IS_PURE;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_OPERATOR: return MOlocPackage.CLASS_PREFIXES__IS_OPERATOR;
+        case MOlocPackage.COMPONENT_CLAUSE__CLASS_TYPE: return MOlocPackage.CLASS_PREFIXES__CLASS_TYPE;
         default: return -1;
       }
     }
@@ -2332,7 +2595,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME: return MOlocPackage.CLASS_NAME__CLASS_NAME;
+        case MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME: return MOlocPackage.CLASS_NAME__CLASS_NAME;
         default: return -1;
       }
     }
@@ -2340,8 +2603,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
-        case MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER: return MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER;
+        case MOlocPackage.COMPONENT_CLAUSE__MODIFICATIONS: return MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_MODIFICATION_OVER: return MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -2349,7 +2612,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__DESCRIPTION: return MOlocPackage.DESCRIPTION_STRING__DESCRIPTION;
+        case MOlocPackage.COMPONENT_CLAUSE__DESCRIPTION: return MOlocPackage.DESCRIPTION_STRING__DESCRIPTION;
         default: return -1;
       }
     }
@@ -2357,7 +2620,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__ELEMENTS: return MOlocPackage.COMPOSITION__ELEMENTS;
+        case MOlocPackage.COMPONENT_CLAUSE__ELEMENTS: return MOlocPackage.COMPOSITION__ELEMENTS;
         default: return -1;
       }
     }
@@ -2365,9 +2628,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS: return MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS;
-        case MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER: return MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER;
-        case MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END: return MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_EXTENDS: return MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_LONG_CLASS_SPECIFIER: return MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER;
+        case MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME_END: return MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END;
         default: return -1;
       }
     }
@@ -2375,7 +2638,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER: return MOlocPackage.TYPE_SPECIFIER__TYPE_SPECIFIER;
+        case MOlocPackage.COMPONENT_CLAUSE__TYPE_SPECIFIER: return MOlocPackage.TYPE_SPECIFIER__TYPE_SPECIFIER;
         default: return -1;
       }
     }
@@ -2383,7 +2646,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS;
+        case MOlocPackage.COMPONENT_CLAUSE__SUBSCRIPTS: return MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS;
         default: return -1;
       }
     }
@@ -2391,7 +2654,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL: return MOlocPackage.ENUM_LIST__ENUMERATION_LITERAL;
+        case MOlocPackage.COMPONENT_CLAUSE__ENUMERATION_LITERAL: return MOlocPackage.ENUM_LIST__ENUMERATION_LITERAL;
         default: return -1;
       }
     }
@@ -2399,9 +2662,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
-        case MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
-        case MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION;
+        case MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS: return MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION_OVER: return MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -2416,10 +2679,10 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER;
-        case MOlocPackage.GENERAL_CLAUSE__DIRECTION: return MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION;
-        case MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION;
-        case MOlocPackage.GENERAL_CLAUSE__IS_COLON: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_COLON;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_SHORT_CLASS_SPECIFIER: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER;
+        case MOlocPackage.COMPONENT_CLAUSE__DIRECTION: return MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_ENUMERATION: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_COLON: return MOlocPackage.SHORT_CLASS_SPECIFIER__IS_COLON;
         default: return -1;
       }
     }
@@ -2427,9 +2690,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER: return MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER;
-        case MOlocPackage.GENERAL_CLAUSE__IS_DER: return MOlocPackage.DER_CLASS_SPECIFIER__IS_DER;
-        case MOlocPackage.GENERAL_CLAUSE__DER_NAME: return MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_DER_CLASS_SPECIFIER: return MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_DER: return MOlocPackage.DER_CLASS_SPECIFIER__IS_DER;
+        case MOlocPackage.COMPONENT_CLAUSE__DER_NAME: return MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME;
         default: return -1;
       }
     }
@@ -2444,9 +2707,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE: return MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE;
-        case MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE: return MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE;
-        case MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE: return MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE;
+        case MOlocPackage.COMPONENT_CLAUSE__RELATIONSHIP_TYPE: return MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE;
+        case MOlocPackage.COMPONENT_CLAUSE__PARAMETER_TYPE: return MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE;
+        case MOlocPackage.COMPONENT_CLAUSE__DIRECTION_TYPE: return MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE;
         default: return -1;
       }
     }
@@ -2454,7 +2717,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (derivedFeatureID)
       {
-        case MOlocPackage.GENERAL_CLAUSE__CONSTRAIN: return MOlocPackage.CONSTRAINING__CONSTRAIN;
+        case MOlocPackage.COMPONENT_CLAUSE__IS_CONSTRAINEDBY: return MOlocPackage.CONSTRAINING__IS_CONSTRAINEDBY;
+        case MOlocPackage.COMPONENT_CLAUSE__CONSTRAIN: return MOlocPackage.CONSTRAINING__CONSTRAIN;
         default: return -1;
       }
     }
@@ -2473,12 +2737,12 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_PREFIXES__IS_ENCAPSULATED: return MOlocPackage.GENERAL_CLAUSE__IS_ENCAPSULATED;
-        case MOlocPackage.CLASS_PREFIXES__IS_PARTIAL: return MOlocPackage.GENERAL_CLAUSE__IS_PARTIAL;
-        case MOlocPackage.CLASS_PREFIXES__IS_EXPANDABLE: return MOlocPackage.GENERAL_CLAUSE__IS_EXPANDABLE;
-        case MOlocPackage.CLASS_PREFIXES__IS_PURE: return MOlocPackage.GENERAL_CLAUSE__IS_PURE;
-        case MOlocPackage.CLASS_PREFIXES__IS_OPERATOR: return MOlocPackage.GENERAL_CLAUSE__IS_OPERATOR;
-        case MOlocPackage.CLASS_PREFIXES__CLASS_TYPE: return MOlocPackage.GENERAL_CLAUSE__CLASS_TYPE;
+        case MOlocPackage.CLASS_PREFIXES__IS_ENCAPSULATED: return MOlocPackage.COMPONENT_CLAUSE__IS_ENCAPSULATED;
+        case MOlocPackage.CLASS_PREFIXES__IS_PARTIAL: return MOlocPackage.COMPONENT_CLAUSE__IS_PARTIAL;
+        case MOlocPackage.CLASS_PREFIXES__IS_EXPANDABLE: return MOlocPackage.COMPONENT_CLAUSE__IS_EXPANDABLE;
+        case MOlocPackage.CLASS_PREFIXES__IS_PURE: return MOlocPackage.COMPONENT_CLAUSE__IS_PURE;
+        case MOlocPackage.CLASS_PREFIXES__IS_OPERATOR: return MOlocPackage.COMPONENT_CLAUSE__IS_OPERATOR;
+        case MOlocPackage.CLASS_PREFIXES__CLASS_TYPE: return MOlocPackage.COMPONENT_CLAUSE__CLASS_TYPE;
         default: return -1;
       }
     }
@@ -2486,7 +2750,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_NAME__CLASS_NAME: return MOlocPackage.GENERAL_CLAUSE__CLASS_NAME;
+        case MOlocPackage.CLASS_NAME__CLASS_NAME: return MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME;
         default: return -1;
       }
     }
@@ -2494,8 +2758,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.GENERAL_CLAUSE__MODIFICATIONS;
-        case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER: return MOlocPackage.GENERAL_CLAUSE__IS_MODIFICATION_OVER;
+        case MOlocPackage.CLASS_MODIFICATION__MODIFICATIONS: return MOlocPackage.COMPONENT_CLAUSE__MODIFICATIONS;
+        case MOlocPackage.CLASS_MODIFICATION__IS_MODIFICATION_OVER: return MOlocPackage.COMPONENT_CLAUSE__IS_MODIFICATION_OVER;
         default: return -1;
       }
     }
@@ -2503,7 +2767,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DESCRIPTION_STRING__DESCRIPTION: return MOlocPackage.GENERAL_CLAUSE__DESCRIPTION;
+        case MOlocPackage.DESCRIPTION_STRING__DESCRIPTION: return MOlocPackage.COMPONENT_CLAUSE__DESCRIPTION;
         default: return -1;
       }
     }
@@ -2511,7 +2775,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.COMPOSITION__ELEMENTS: return MOlocPackage.GENERAL_CLAUSE__ELEMENTS;
+        case MOlocPackage.COMPOSITION__ELEMENTS: return MOlocPackage.COMPONENT_CLAUSE__ELEMENTS;
         default: return -1;
       }
     }
@@ -2519,9 +2783,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS: return MOlocPackage.GENERAL_CLAUSE__IS_EXTENDS;
-        case MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER: return MOlocPackage.GENERAL_CLAUSE__IS_LONG_CLASS_SPECIFIER;
-        case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END: return MOlocPackage.GENERAL_CLAUSE__CLASS_NAME_END;
+        case MOlocPackage.LONG_CLASS_SPECIFIER__IS_EXTENDS: return MOlocPackage.COMPONENT_CLAUSE__IS_EXTENDS;
+        case MOlocPackage.LONG_CLASS_SPECIFIER__IS_LONG_CLASS_SPECIFIER: return MOlocPackage.COMPONENT_CLAUSE__IS_LONG_CLASS_SPECIFIER;
+        case MOlocPackage.LONG_CLASS_SPECIFIER__CLASS_NAME_END: return MOlocPackage.COMPONENT_CLAUSE__CLASS_NAME_END;
         default: return -1;
       }
     }
@@ -2529,7 +2793,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.TYPE_SPECIFIER__TYPE_SPECIFIER: return MOlocPackage.GENERAL_CLAUSE__TYPE_SPECIFIER;
+        case MOlocPackage.TYPE_SPECIFIER__TYPE_SPECIFIER: return MOlocPackage.COMPONENT_CLAUSE__TYPE_SPECIFIER;
         default: return -1;
       }
     }
@@ -2537,7 +2801,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS: return MOlocPackage.GENERAL_CLAUSE__SUBSCRIPTS;
+        case MOlocPackage.ARRAY_SUBSCRIPTS__SUBSCRIPTS: return MOlocPackage.COMPONENT_CLAUSE__SUBSCRIPTS;
         default: return -1;
       }
     }
@@ -2545,7 +2809,7 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.ENUM_LIST__ENUMERATION_LITERAL: return MOlocPackage.GENERAL_CLAUSE__ENUMERATION_LITERAL;
+        case MOlocPackage.ENUM_LIST__ENUMERATION_LITERAL: return MOlocPackage.COMPONENT_CLAUSE__ENUMERATION_LITERAL;
         default: return -1;
       }
     }
@@ -2553,9 +2817,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION;
-        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.GENERAL_CLAUSE__ANNOTATIONS;
-        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.GENERAL_CLAUSE__IS_ANNOTATION_OVER;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION: return MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__ANNOTATIONS: return MOlocPackage.COMPONENT_CLAUSE__ANNOTATIONS;
+        case MOlocPackage.ANNOTATION_MODIFICATION_PART__IS_ANNOTATION_OVER: return MOlocPackage.COMPONENT_CLAUSE__IS_ANNOTATION_OVER;
         default: return -1;
       }
     }
@@ -2570,10 +2834,10 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER: return MOlocPackage.GENERAL_CLAUSE__IS_SHORT_CLASS_SPECIFIER;
-        case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION: return MOlocPackage.GENERAL_CLAUSE__DIRECTION;
-        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION: return MOlocPackage.GENERAL_CLAUSE__IS_ENUMERATION;
-        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_COLON: return MOlocPackage.GENERAL_CLAUSE__IS_COLON;
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_SHORT_CLASS_SPECIFIER: return MOlocPackage.COMPONENT_CLAUSE__IS_SHORT_CLASS_SPECIFIER;
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__DIRECTION: return MOlocPackage.COMPONENT_CLAUSE__DIRECTION;
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_ENUMERATION: return MOlocPackage.COMPONENT_CLAUSE__IS_ENUMERATION;
+        case MOlocPackage.SHORT_CLASS_SPECIFIER__IS_COLON: return MOlocPackage.COMPONENT_CLAUSE__IS_COLON;
         default: return -1;
       }
     }
@@ -2581,9 +2845,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER: return MOlocPackage.GENERAL_CLAUSE__IS_DER_CLASS_SPECIFIER;
-        case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER: return MOlocPackage.GENERAL_CLAUSE__IS_DER;
-        case MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME: return MOlocPackage.GENERAL_CLAUSE__DER_NAME;
+        case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER_CLASS_SPECIFIER: return MOlocPackage.COMPONENT_CLAUSE__IS_DER_CLASS_SPECIFIER;
+        case MOlocPackage.DER_CLASS_SPECIFIER__IS_DER: return MOlocPackage.COMPONENT_CLAUSE__IS_DER;
+        case MOlocPackage.DER_CLASS_SPECIFIER__DER_NAME: return MOlocPackage.COMPONENT_CLAUSE__DER_NAME;
         default: return -1;
       }
     }
@@ -2598,9 +2862,9 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE: return MOlocPackage.GENERAL_CLAUSE__RELATIONSHIP_TYPE;
-        case MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE: return MOlocPackage.GENERAL_CLAUSE__PARAMETER_TYPE;
-        case MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE: return MOlocPackage.GENERAL_CLAUSE__DIRECTION_TYPE;
+        case MOlocPackage.TYPE_PREFIX__RELATIONSHIP_TYPE: return MOlocPackage.COMPONENT_CLAUSE__RELATIONSHIP_TYPE;
+        case MOlocPackage.TYPE_PREFIX__PARAMETER_TYPE: return MOlocPackage.COMPONENT_CLAUSE__PARAMETER_TYPE;
+        case MOlocPackage.TYPE_PREFIX__DIRECTION_TYPE: return MOlocPackage.COMPONENT_CLAUSE__DIRECTION_TYPE;
         default: return -1;
       }
     }
@@ -2608,7 +2872,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     {
       switch (baseFeatureID)
       {
-        case MOlocPackage.CONSTRAINING__CONSTRAIN: return MOlocPackage.GENERAL_CLAUSE__CONSTRAIN;
+        case MOlocPackage.CONSTRAINING__IS_CONSTRAINEDBY: return MOlocPackage.COMPONENT_CLAUSE__IS_CONSTRAINEDBY;
+        case MOlocPackage.CONSTRAINING__CONSTRAIN: return MOlocPackage.COMPONENT_CLAUSE__CONSTRAIN;
         default: return -1;
       }
     }
@@ -2678,6 +2943,8 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     result.append(parameterType);
     result.append(", directionType: ");
     result.append(directionType);
+    result.append(", isConstrainedby: ");
+    result.append(isConstrainedby);
     result.append(", isPublic: ");
     result.append(isPublic);
     result.append(", isProtected: ");
@@ -2692,10 +2959,16 @@ public class GeneralClauseImpl extends ElementImpl implements GeneralClause
     result.append(isOuter);
     result.append(", isReplaceable: ");
     result.append(isReplaceable);
+    result.append(", description1: ");
+    result.append(description1);
+    result.append(", isAnnotation1: ");
+    result.append(isAnnotation1);
+    result.append(", isAnnotationOver1: ");
+    result.append(isAnnotationOver1);
     result.append(", isOver: ");
     result.append(isOver);
     result.append(')');
     return result.toString();
   }
 
-} //GeneralClauseImpl
+} //ComponentClauseImpl

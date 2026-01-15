@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Basic">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Polyphase.Basic"/>
   <classes classType="model" className="MultiStarResistance" description="&quot;Resistance connection of star points&quot;" isLongClassSpecifier="true" classNameEnd="MultiStarResistance" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="3" elementName="min" isfinal="true"/>
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="Modelica.Electrical.Polyphase.Functions.numberOfSymmetricBaseSystems( m)" declarationName="mBasic" description="&quot;Number of symmetric base systems&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="1e6" declarationName="R" description="&quot;Insulation resistance between base systems&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.PositivePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.PositivePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="plug" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -23,7 +24,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="MultiStar" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="MultiStar" isOver="true">
       <component_list isModificationOver="true" declarationName="multiStar" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -34,7 +35,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="mBasic" elementName="m"/>
         <modifications expression="fill(R, mBasic)" elementName="R_ref" isfinal="true"/>
@@ -45,7 +46,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Star" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Star" isOver="true">
       <component_list isModificationOver="true" declarationName="star" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="mBasic" elementName="m"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -56,7 +57,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SinglePhase.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SinglePhase.Interfaces.NegativePin" isOver="true">
       <component_list declarationName="pin" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

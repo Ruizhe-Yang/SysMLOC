@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Ideal">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Ideal"/>
   <classes classType="model" className="IdealTriac" description="&quot;Ideal triac, based on ideal thyristors&quot;" isLongClassSpecifier="true" classNameEnd="IdealTriac" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1e-5" declarationName="Ron" description="&quot;Closed triac resistance&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1e-5" declarationName="Goff" description="&quot;Opened triac conductance&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="0.8" declarationName="Vknee" description="&quot;Threshold voltage for positive and negative phase&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
         <modifications expression="0" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="100" declarationName="Rdis" description="&quot;Resistance of disturbance elimination&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Capacitance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Capacitance" parameterType="parameter" isOver="true">
       <component_list expression="0.005" declarationName="Cdis" description="&quot;Capacity of disturbance elimination&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealThyristor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealThyristor" isOver="true">
       <component_list isModificationOver="true" declarationName="idealThyristor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Ron" elementName="Ron"/>
         <modifications expression="Goff" elementName="Goff"/>
@@ -36,7 +37,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealThyristor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealThyristor" isOver="true">
       <component_list isModificationOver="true" declarationName="idealThyristor1" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Ron" elementName="Ron"/>
         <modifications expression="Goff" elementName="Goff"/>
@@ -50,7 +51,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Rdis" elementName="R"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -60,7 +61,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Capacitor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Capacitor" isOver="true">
       <component_list isModificationOver="true" declarationName="capacitor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Cdis" elementName="C"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -70,7 +71,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
       <component_list declarationName="fire1" description="&quot;Gate&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -86,7 +87,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
       <component_list declarationName="n" description="&quot;Cathode&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -95,7 +96,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="p" description="&quot;Anode&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

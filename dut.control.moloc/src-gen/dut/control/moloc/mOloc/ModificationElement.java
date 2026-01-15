@@ -23,7 +23,7 @@ package dut.control.moloc.mOloc;
  * @model
  * @generated
  */
-public interface ModificationElement extends short_class_definition, class_prefixes, short_class_specifier, component_clause1, type_prefix, component_declaration1, declaration, modification, element_modification, constraining
+public interface ModificationElement extends short_class_definition, class_prefixes, short_class_specifier, class_name, type_specifier, array_subscripts, class_modification, enum_list, description, description_string, annotation_modification_part, component_clause1, type_prefix, component_declaration1, declaration, modification, element_modification, constraining
 {
   /**
    * Returns the value of the '<em><b>Is Redeclare</b></em>' attribute.

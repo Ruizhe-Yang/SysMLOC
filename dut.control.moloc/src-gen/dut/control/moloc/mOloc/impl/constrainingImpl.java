@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.impl.constrainingImpl#isIsConstrainedby <em>Is Constrainedby</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.constrainingImpl#getConstrain <em>Constrain</em>}</li>
  * </ul>
  *
@@ -31,6 +32,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class constrainingImpl extends MinimalEObjectImpl.Container implements constraining
 {
+  /**
+   * The default value of the '{@link #isIsConstrainedby() <em>Is Constrainedby</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstrainedby()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_CONSTRAINEDBY_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsConstrainedby() <em>Is Constrainedby</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstrainedby()
+   * @generated
+   * @ordered
+   */
+  protected boolean isConstrainedby = IS_CONSTRAINEDBY_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getConstrain() <em>Constrain</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -60,6 +81,31 @@ public class constrainingImpl extends MinimalEObjectImpl.Container implements co
   protected EClass eStaticClass()
   {
     return MOlocPackage.Literals.CONSTRAINING;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsConstrainedby()
+  {
+    return isConstrainedby;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsConstrainedby(boolean newIsConstrainedby)
+  {
+    boolean oldIsConstrainedby = isConstrainedby;
+    isConstrainedby = newIsConstrainedby;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.CONSTRAINING__IS_CONSTRAINEDBY, oldIsConstrainedby, isConstrainedby));
   }
 
   /**
@@ -138,6 +184,8 @@ public class constrainingImpl extends MinimalEObjectImpl.Container implements co
   {
     switch (featureID)
     {
+      case MOlocPackage.CONSTRAINING__IS_CONSTRAINEDBY:
+        return isIsConstrainedby();
       case MOlocPackage.CONSTRAINING__CONSTRAIN:
         return getConstrain();
     }
@@ -154,6 +202,9 @@ public class constrainingImpl extends MinimalEObjectImpl.Container implements co
   {
     switch (featureID)
     {
+      case MOlocPackage.CONSTRAINING__IS_CONSTRAINEDBY:
+        setIsConstrainedby((Boolean)newValue);
+        return;
       case MOlocPackage.CONSTRAINING__CONSTRAIN:
         setConstrain((ConstrainingClause)newValue);
         return;
@@ -171,6 +222,9 @@ public class constrainingImpl extends MinimalEObjectImpl.Container implements co
   {
     switch (featureID)
     {
+      case MOlocPackage.CONSTRAINING__IS_CONSTRAINEDBY:
+        setIsConstrainedby(IS_CONSTRAINEDBY_EDEFAULT);
+        return;
       case MOlocPackage.CONSTRAINING__CONSTRAIN:
         setConstrain((ConstrainingClause)null);
         return;
@@ -188,10 +242,29 @@ public class constrainingImpl extends MinimalEObjectImpl.Container implements co
   {
     switch (featureID)
     {
+      case MOlocPackage.CONSTRAINING__IS_CONSTRAINEDBY:
+        return isConstrainedby != IS_CONSTRAINEDBY_EDEFAULT;
       case MOlocPackage.CONSTRAINING__CONSTRAIN:
         return constrain != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (isConstrainedby: ");
+    result.append(isConstrainedby);
+    result.append(')');
+    return result.toString();
   }
 
 } //constrainingImpl

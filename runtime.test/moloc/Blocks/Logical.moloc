@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Blocks">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Blocks"/>
   <classes classType="package" className="Logical" description="&quot;Library of components with Boolean input and output signals&quot;" isLongClassSpecifier="true" classNameEnd="Logical" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="And" description="&quot;Logical 'and': y = u1 and u2&quot;" isLongClassSpecifier="true" classNameEnd="And" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="And" description="&quot;Logical 'and': y = u1 and u2&quot;" isLongClassSpecifier="true" classNameEnd="And" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSI2SO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1 and u2"/>
@@ -21,7 +22,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Or" description="&quot;Logical 'or': y = u1 or u2&quot;" isLongClassSpecifier="true" classNameEnd="Or" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Or" description="&quot;Logical 'or': y = u1 or u2&quot;" isLongClassSpecifier="true" classNameEnd="Or" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSI2SO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1 or u2"/>
@@ -40,7 +41,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Xor" description="&quot;Logical 'xor': y = u1 xor u2&quot;" isLongClassSpecifier="true" classNameEnd="Xor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Xor" description="&quot;Logical 'xor': y = u1 xor u2&quot;" isLongClassSpecifier="true" classNameEnd="Xor" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSI2SO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not ((u1 and u2) or (not u1 and not u2))"/>
@@ -58,7 +59,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Nor" description="&quot;Logical 'nor': y = not (u1 or u2)&quot;" isLongClassSpecifier="true" classNameEnd="Nor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Nor" description="&quot;Logical 'nor': y = not (u1 or u2)&quot;" isLongClassSpecifier="true" classNameEnd="Nor" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSI2SO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not (u1 or u2)"/>
@@ -76,7 +77,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Nand" description="&quot;Logical 'nand': y = not (u1 and u2)&quot;" isLongClassSpecifier="true" classNameEnd="Nand" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Nand" description="&quot;Logical 'nand': y = not (u1 and u2)&quot;" isLongClassSpecifier="true" classNameEnd="Nand" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSI2SO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not (u1 and u2)"/>
@@ -94,7 +95,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Not" description="&quot;Logical 'not': y = not u&quot;" isLongClassSpecifier="true" classNameEnd="Not" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Not" description="&quot;Logical 'not': y = not u&quot;" isLongClassSpecifier="true" classNameEnd="Not" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not u"/>
@@ -113,8 +114,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Pre" description="&quot;Breaks algebraic loops by an infinitesimal small time delay (y = pre(u): event iteration continues until u = pre(u))&quot;" isLongClassSpecifier="true" classNameEnd="Pre" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Pre" description="&quot;Breaks algebraic loops by an infinitesimal small time delay (y = pre(u): event iteration continues until u = pre(u))&quot;" isLongClassSpecifier="true" classNameEnd="Pre" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="pre_u_start" description="&quot;Start value of pre(u) at initial time&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSISO" isOver="true"/>
@@ -138,8 +139,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Edge" description="&quot;Output y is true, if the input u has a rising edge (y = edge(u))&quot;" isLongClassSpecifier="true" classNameEnd="Edge" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Edge" description="&quot;Output y is true, if the input u has a rising edge (y = edge(u))&quot;" isLongClassSpecifier="true" classNameEnd="Edge" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="pre_u_start" description="&quot;Start value of pre(u) at initial time&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSISO" isOver="true"/>
@@ -163,12 +164,12 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="FallingEdge" description="&quot;Output y is true, if the input u has a falling edge (y = edge(not u))&quot;" isLongClassSpecifier="true" classNameEnd="FallingEdge" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="FallingEdge" description="&quot;Output y is true, if the input u has a falling edge (y = edge(not u))&quot;" isLongClassSpecifier="true" classNameEnd="FallingEdge" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="pre_u_start" description="&quot;Start value of pre(u) at initial time&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSISO" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
         <component_list expression="not u" declarationName="not_u"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -190,8 +191,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Change" description="&quot;Output y is true, if the input u has a rising or falling edge (y = change(u))&quot;" isLongClassSpecifier="true" classNameEnd="Change" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Change" description="&quot;Output y is true, if the input u has a rising or falling edge (y = change(u))&quot;" isLongClassSpecifier="true" classNameEnd="Change" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="pre_u_start" description="&quot;Start value of pre(u) at initial time&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSISO" isOver="true"/>
@@ -215,7 +216,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="GreaterThreshold" description="&quot;Output y is true, if input u is greater than threshold&quot;" isLongClassSpecifier="true" classNameEnd="GreaterThreshold" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="GreaterThreshold" description="&quot;Output y is true, if input u is greater than threshold&quot;" isLongClassSpecifier="true" classNameEnd="GreaterThreshold" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanThresholdComparison" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u > threshold"/>
@@ -233,7 +234,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="GreaterEqualThreshold" description="&quot;Output y is true, if input u is greater or equal than threshold&quot;" isLongClassSpecifier="true" classNameEnd="GreaterEqualThreshold" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="GreaterEqualThreshold" description="&quot;Output y is true, if input u is greater or equal than threshold&quot;" isLongClassSpecifier="true" classNameEnd="GreaterEqualThreshold" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanThresholdComparison" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u >= threshold"/>
@@ -251,7 +252,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="LessThreshold" description="&quot;Output y is true, if input u is less than threshold&quot;" isLongClassSpecifier="true" classNameEnd="LessThreshold" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="LessThreshold" description="&quot;Output y is true, if input u is less than threshold&quot;" isLongClassSpecifier="true" classNameEnd="LessThreshold" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanThresholdComparison" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u &lt; threshold"/>
@@ -269,7 +270,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="LessEqualThreshold" description="&quot;Output y is true, if input u is less or equal than threshold&quot;" isLongClassSpecifier="true" classNameEnd="LessEqualThreshold" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="LessEqualThreshold" description="&quot;Output y is true, if input u is less or equal than threshold&quot;" isLongClassSpecifier="true" classNameEnd="LessEqualThreshold" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanThresholdComparison" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u &lt;= threshold"/>
@@ -287,7 +288,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Greater" description="&quot;Output y is true, if input u1 is greater than input u2&quot;" isLongClassSpecifier="true" classNameEnd="Greater" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Greater" description="&quot;Output y is true, if input u1 is greater than input u2&quot;" isLongClassSpecifier="true" classNameEnd="Greater" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanComparison" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1 > u2"/>
@@ -305,7 +306,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="GreaterEqual" description="&quot;Output y is true, if input u1 is greater or equal than input u2&quot;" isLongClassSpecifier="true" classNameEnd="GreaterEqual" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="GreaterEqual" description="&quot;Output y is true, if input u1 is greater or equal than input u2&quot;" isLongClassSpecifier="true" classNameEnd="GreaterEqual" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanComparison" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1 >= u2"/>
@@ -323,7 +324,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Less" description="&quot;Output y is true, if input u1 is less than input u2&quot;" isLongClassSpecifier="true" classNameEnd="Less" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Less" description="&quot;Output y is true, if input u1 is less than input u2&quot;" isLongClassSpecifier="true" classNameEnd="Less" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanComparison" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1 &lt; u2"/>
@@ -341,7 +342,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="LessEqual" description="&quot;Output y is true, if input u1 is less or equal than input u2&quot;" isLongClassSpecifier="true" classNameEnd="LessEqual" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="LessEqual" description="&quot;Output y is true, if input u1 is less or equal than input u2&quot;" isLongClassSpecifier="true" classNameEnd="LessEqual" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanComparison" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="u1 &lt;= u2"/>
@@ -359,9 +360,9 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="ZeroCrossing" description="&quot;Trigger zero crossing of input u&quot;" isLongClassSpecifier="true" classNameEnd="ZeroCrossing" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="ZeroCrossing" description="&quot;Trigger zero crossing of input u&quot;" isLongClassSpecifier="true" classNameEnd="ZeroCrossing" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSO" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
         <component_list declarationName="u" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -370,7 +371,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
         <component_list declarationName="enable" description="&quot;Zero input crossing is triggered if the enable input signal is true&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -381,10 +382,10 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
         <component_list expression="not enable" declarationName="disable"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isOver="true">
         <component_list declarationName="u_pos"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -409,7 +410,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="LogicalSwitch" description="&quot;Logical Switch&quot;" isLongClassSpecifier="true" classNameEnd="LogicalSwitch" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="LogicalSwitch" description="&quot;Logical Switch&quot;" isLongClassSpecifier="true" classNameEnd="LogicalSwitch" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Interfaces.partialBooleanSI3SO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="if u2 then u1 else u3"/>
@@ -427,9 +428,9 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Switch" description="&quot;Switch between two Real signals&quot;" isLongClassSpecifier="true" classNameEnd="Switch" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Switch" description="&quot;Switch between two Real signals&quot;" isLongClassSpecifier="true" classNameEnd="Switch" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
         <component_list declarationName="u1" description="&quot;Connector of first Real input signal&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -438,7 +439,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
         <component_list declarationName="u2" description="&quot;Connector of Boolean input signal&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -447,7 +448,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
         <component_list declarationName="u3" description="&quot;Connector of second Real input signal&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -456,7 +457,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
         <component_list declarationName="y" description="&quot;Connector of Real output signal&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -482,22 +483,22 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Hysteresis" description="&quot;Transform Real to Boolean signal with Hysteresis&quot;" isLongClassSpecifier="true" classNameEnd="Hysteresis" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Hysteresis" description="&quot;Transform Real to Boolean signal with Hysteresis&quot;" isLongClassSpecifier="true" classNameEnd="Hysteresis" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="uLow" description="&quot;If y=true and u&lt;uLow, switch to y=false&quot;">
           <modifications expression="0" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="uHigh" description="&quot;If y=false and u>uHigh, switch to y=true&quot;">
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="pre_y_start" description="&quot;Value of pre(y) at initial time&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
         <component_list declarationName="u" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -506,7 +507,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list declarationName="y" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -542,9 +543,9 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="OnOffController" description="&quot;On-off controller&quot;" isLongClassSpecifier="true" classNameEnd="OnOffController" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="OnOffController" description="&quot;On-off controller&quot;" isLongClassSpecifier="true" classNameEnd="OnOffController" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
         <component_list declarationName="reference" description="&quot;Connector of Real input signal used as reference signal&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -553,7 +554,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
         <component_list declarationName="u" description="&quot;Connector of Real input signal used as measurement signal&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -562,7 +563,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list declarationName="y" description="&quot;Connector of Real output signal used as actuator signal&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -571,12 +572,12 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="bandwidth" description="&quot;Bandwidth around reference signal&quot;">
           <modifications expression="0.1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="pre_y_start" description="&quot;Value of pre(y) at initial time&quot;"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -598,25 +599,25 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="TriggeredTrapezoid" description="&quot;Triggered trapezoid generator&quot;" isLongClassSpecifier="true" classNameEnd="TriggeredTrapezoid" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="TriggeredTrapezoid" description="&quot;Triggered trapezoid generator&quot;" isLongClassSpecifier="true" classNameEnd="TriggeredTrapezoid" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="amplitude" description="&quot;Amplitude of trapezoid&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="0" declarationName="rising" description="&quot;Rising duration of trapezoid&quot;">
           <modifications expression="0" elementName="min" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="rising" declarationName="falling" description="&quot;Falling duration of trapezoid&quot;">
           <modifications expression="0" elementName="min" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="offset" description="&quot;Offset of output signal&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
         <component_list declarationName="u" description="&quot;Connector of Boolean input signal&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -625,7 +626,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
         <component_list declarationName="y" description="&quot;Connector of Real output signal&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -634,13 +635,13 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="discrete" isProtected="true" isOver="true">
         <component_list declarationName="endValue" description="&quot;Value of y at time of recent edge&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
         <component_list declarationName="rate" description="&quot;Current rising/falling rate&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
         <component_list declarationName="T" description="&quot;Predicted time of output reaching endValue&quot;"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
@@ -664,9 +665,9 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Timer" description="&quot;Timer measuring the time from the time instant where the Boolean input became true&quot;" isLongClassSpecifier="true" classNameEnd="Timer" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Timer" description="&quot;Timer measuring the time from the time instant where the Boolean input became true&quot;" isLongClassSpecifier="true" classNameEnd="Timer" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
         <component_list declarationName="u" description="&quot;Connector of Boolean input signal&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -675,7 +676,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
         <component_list declarationName="y" description="&quot;Connector of Real output signal&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -684,7 +685,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="discrete" isProtected="true" isOver="true">
         <component_list declarationName="entryTime" description="&quot;Time instant when u became true&quot;"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -709,14 +710,14 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="LogicalDelay" description="&quot;Delay boolean signal&quot;" isLongClassSpecifier="true" classNameEnd="LogicalDelay" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="LogicalDelay" description="&quot;Delay boolean signal&quot;" isLongClassSpecifier="true" classNameEnd="LogicalDelay" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Icons.PartialBooleanBlock" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="0" declarationName="delayTime" description="&quot;Time delay&quot;">
           <modifications expression="0" elementName="min" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
         <component_list declarationName="u" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -725,7 +726,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list declarationName="y1" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -734,7 +735,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list declarationName="y2" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -743,7 +744,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="discrete" isProtected="true" isOver="true">
         <component_list declarationName="tSwitch"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -765,12 +766,12 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="RSFlipFlop" description="&quot;A basic RS Flip Flop&quot;" isLongClassSpecifier="true" classNameEnd="RSFlipFlop" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="RSFlipFlop" description="&quot;A basic RS Flip Flop&quot;" isLongClassSpecifier="true" classNameEnd="RSFlipFlop" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="Qini" description="&quot;Start value of Q at initial time&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list declarationName="Q" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -779,7 +780,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list declarationName="QI" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -788,7 +789,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Nor" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Logical.Nor" isOver="true">
         <component_list declarationName="nor" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -797,7 +798,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Nor" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Logical.Nor" isOver="true">
         <component_list declarationName="nor1" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -806,7 +807,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Pre" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Logical.Pre" isOver="true">
         <component_list isModificationOver="true" declarationName="pre" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="not (Qini)" elementName="pre_u_start"/>
           <annotations isModificationOver="true" elementName="Placement">
@@ -816,7 +817,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
         <component_list declarationName="S" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -825,7 +826,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
         <component_list declarationName="R" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -887,8 +888,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="TerminateSimulation" description="&quot;Terminate simulation if condition is fulfilled&quot;" isLongClassSpecifier="true" classNameEnd="TerminateSimulation" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="TerminateSimulation" description="&quot;Terminate simulation if condition is fulfilled&quot;" isLongClassSpecifier="true" classNameEnd="TerminateSimulation" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list expression="false" declarationName="condition" description="&quot;Terminate simulation when condition becomes true&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations elementName="Dialog"/>
           <annotations isModificationOver="true" elementName="Placement">
@@ -898,7 +899,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
         <component_list expression="&quot;... End condition reached&quot;" declarationName="terminationText" description="&quot;Text that will be displayed when simulation is terminated&quot;"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">

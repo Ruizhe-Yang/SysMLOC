@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces"/>
   <classes classType="connector" className="Pin" description="&quot;Quasi-static single-phase pin&quot;" isLongClassSpecifier="true" classNameEnd="Pin" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexElectricPotential" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexElectricPotential" isOver="true">
       <component_list declarationName="v" description="&quot;Complex potential at the quasi-static single-phase pin&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexCurrent" relationshipType="flow" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" relationshipType="flow" isOver="true">
       <component_list declarationName="i" description="&quot;Complex current flowing into the quasi-static single-phase pin&quot;"/>
     </elements>
     <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">

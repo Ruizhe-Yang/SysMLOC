@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Examples.ControlledDCDrives.Utilities">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Examples.ControlledDCDrives.Utilities"/>
   <classes classType="block" className="LimitedPI" description="&quot;Limited PI-controller with anti-windup and feed-forward&quot;" isLongClassSpecifier="true" classNameEnd="LimitedPI" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SISO" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Blocks.Types.Init" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.inf" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list declarationName="u_m" description="&quot;Connector of measured signal&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -15,7 +16,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list declarationName="feedForward" description="&quot;Connector of feed-forward signal&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useFF">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -31,7 +32,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list declarationName="kFF" description="&quot;Connector of feed-forward factor&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useFF and not useConstantKFF">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -47,7 +48,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list declarationName="yMaxVar" description="&quot;Connector of yMax input signal&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not constantLimits">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -57,7 +58,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list declarationName="yMinVar" description="&quot;Connector of yMin input signal&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not constantLimits and not symmetricLimits">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -67,20 +68,20 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
       <component_list expression="u - u_m" declarationName="controlError" description="&quot;Control error (set point - measurement)&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1" declarationName="k" description="&quot;Gain&quot;">
         <modifications expression="&quot;1&quot;" elementName="unit"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="true" declarationName="useI" description="&quot;PI else P&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1" declarationName="Ti" description="&quot;Integral time constant (T>0 required)&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Modelica.Constants.small" elementName="min"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -88,14 +89,14 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useFF" description="&quot;Use feed-forward?&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="&quot;Feed-forward&quot;" elementName="group"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="true" declarationName="useConstantKFF" description="&quot;Use constant feed-forward factor?&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="&quot;Feed-forward&quot;" elementName="group"/>
@@ -103,7 +104,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1" declarationName="KFF" description="&quot;Feed-forward gain&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;1&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -112,21 +113,21 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="true" declarationName="constantLimits" description="&quot;Use constant limits?&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="&quot;Limitation&quot;" elementName="group"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="true" declarationName="symmetricLimits" description="&quot;Use symmetric limits?&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="&quot;Limitation&quot;" elementName="group"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="inf" declarationName="yMax" description="&quot;Upper limit of output&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="&quot;Limitation&quot;" elementName="group"/>
@@ -134,7 +135,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="-yMax" declarationName="yMin" description="&quot;Lower limit of output&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="&quot;Limitation&quot;" elementName="group"/>
@@ -142,7 +143,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Init" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Types.Init" parameterType="parameter" isOver="true">
       <component_list expression="Modelica.Blocks.Types.Init.NoInit" declarationName="initType" description="&quot;Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output)&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -150,14 +151,14 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="x_start" description="&quot;Initial or guess value of state&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="&quot;Initialization&quot;" elementName="group"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="y_start" description="&quot;Initial value of output&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="initType == Init.SteadyState or initType == Init.InitialOutput" elementName="enable"/>
@@ -165,7 +166,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Feedback" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Feedback" isOver="true">
       <component_list declarationName="feedback" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -175,7 +176,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Add" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Add" isOver="true">
       <component_list isModificationOver="true" declarationName="addAntiWindup" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="k1"/>
         <modifications expression="-1/k" elementName="k2"/>
@@ -186,7 +187,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Continuous.Integrator" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Continuous.Integrator" isOver="true">
       <component_list isModificationOver="true" declarationName="integrator" isAnnotation="true" isAnnotationOver="true" condition_attribute="useI">
         <modifications expression="1/Ti" elementName="k"/>
         <modifications expression="Modelica.Blocks.Types.Init.NoInit" elementName="initType"/>
@@ -197,7 +198,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Add3" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Add3" isOver="true">
       <component_list isModificationOver="true" declarationName="add3" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="k" elementName="k1"/>
         <modifications expression="k" elementName="k2"/>
@@ -209,7 +210,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Nonlinear.VariableLimiter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Nonlinear.VariableLimiter" isOver="true">
       <component_list declarationName="variableLimiter" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -218,7 +219,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Feedback" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Feedback" isOver="true">
       <component_list declarationName="addSat" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -229,7 +230,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Product" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Product" isOver="true">
       <component_list declarationName="product" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -240,7 +241,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isProtected="true" isOver="true">
       <component_list isModificationOver="true" declarationName="zeroI" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useI">
         <modifications expression="0" elementName="k"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -250,7 +251,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="zeroFF" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useFF">
         <modifications expression="0" elementName="k"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -260,7 +261,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="constantKFF" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useFF or useConstantKFF">
         <modifications expression="KFF" elementName="k"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -270,7 +271,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="yMaxConst" isAnnotation="true" isAnnotationOver="true" condition_attribute="constantLimits">
         <modifications expression="yMax" elementName="k"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -280,7 +281,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="yMinConst" isAnnotation="true" isAnnotationOver="true" condition_attribute="constantLimits and not symmetricLimits">
         <modifications expression="yMin" elementName="k"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -290,7 +291,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
       <component_list isModificationOver="true" declarationName="gain" isAnnotation="true" isAnnotationOver="true" condition_attribute="symmetricLimits">
         <modifications expression="-1" elementName="k"/>
         <annotations isModificationOver="true" elementName="Placement">

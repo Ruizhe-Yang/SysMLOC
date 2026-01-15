@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Examples"/>
   <classes classType="model" className="ShowSaturatingInductor" description="&quot;Simple demo to show behaviour of SaturatingInductor component&quot;" isLongClassSpecifier="true" classNameEnd="ShowSaturatingInductor" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list expression="2" declarationName="Lzer" description="&quot;Inductance near current=0&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list expression="1" declarationName="Lnom" description="&quot;Nominal inductance at Nominal current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
       <component_list expression="1" declarationName="Inom" description="&quot;Nominal current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list expression="0.5" declarationName="Linf" description="&quot;Inductance at large currents&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="1.25" declarationName="U" description="&quot;Source voltage (peak)&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
       <component_list expression="1/(2*Modelica.Constants.pi)" declarationName="f" description="&quot;Source frequency&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
       <component_list expression="Modelica.Constants.pi/2" declarationName="phase" description="&quot;Source voltage phase shift&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SineVoltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SineVoltage" isOver="true">
       <component_list isModificationOver="true" declarationName="SineVoltage1" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="U" elementName="V"/>
         <modifications expression="phase" elementName="phase"/>
@@ -37,7 +38,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
       <component_list declarationName="Ground1" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -46,7 +47,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.SaturatingInductor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.SaturatingInductor" isOver="true">
       <component_list isModificationOver="true" declarationName="SaturatingInductance1" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Lzer" elementName="Lzer"/>
         <modifications expression="Lnom" elementName="Lnom"/>
@@ -64,7 +65,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Inductor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.Inductor" isOver="true">
       <component_list isModificationOver="true" declarationName="Inductance1" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Lnom" elementName="L"/>
         <modifications isModificationOver="true" elementName="i">

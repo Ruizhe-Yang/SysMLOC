@@ -14,6 +14,6 @@ package dut.control.moloc.mOloc;
  * @model
  * @generated
  */
-public interface BreakStatement extends Statement, description
+public interface BreakStatement extends Statement, description, description_string, annotation_modification_part
 {
 } // BreakStatement

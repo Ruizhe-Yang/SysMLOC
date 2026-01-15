@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.Stored_definition#isIsWithin <em>Is Within</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.Stored_definition#getWithin <em>Within</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.Stored_definition#getClasses <em>Classes</em>}</li>
  * </ul>
@@ -28,48 +27,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface Stored_definition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Is Within</b></em>' attribute.
+   * Returns the value of the '<em><b>Within</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Is Within</em>' attribute.
-   * @see #setIsWithin(boolean)
-   * @see dut.control.moloc.mOloc.MOlocPackage#getStored_definition_IsWithin()
-   * @model
-   * @generated
-   */
-  boolean isIsWithin();
-
-  /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Stored_definition#isIsWithin <em>Is Within</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Is Within</em>' attribute.
-   * @see #isIsWithin()
-   * @generated
-   */
-  void setIsWithin(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Within</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Within</em>' attribute.
-   * @see #setWithin(String)
+   * @return the value of the '<em>Within</em>' containment reference.
+   * @see #setWithin(Within)
    * @see dut.control.moloc.mOloc.MOlocPackage#getStored_definition_Within()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getWithin();
+  Within getWithin();
 
   /**
-   * Sets the value of the '{@link dut.control.moloc.mOloc.Stored_definition#getWithin <em>Within</em>}' attribute.
+   * Sets the value of the '{@link dut.control.moloc.mOloc.Stored_definition#getWithin <em>Within</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Within</em>' attribute.
+   * @param value the new value of the '<em>Within</em>' containment reference.
    * @see #getWithin()
    * @generated
    */
-  void setWithin(String value);
+  void setWithin(Within value);
 
   /**
    * Returns the value of the '<em><b>Classes</b></em>' containment reference list.

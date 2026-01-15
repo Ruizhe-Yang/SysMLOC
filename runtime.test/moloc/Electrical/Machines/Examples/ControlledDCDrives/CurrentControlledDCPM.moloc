@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Examples.ControlledDCDrives">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Examples.ControlledDCDrives"/>
   <classes classType="model" className="CurrentControlledDCPM" description="&quot;Current controlled DC PM drive with H-bridge from battery&quot;" isLongClassSpecifier="true" classNameEnd="CurrentControlledDCPM" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Utilities.PartialControlledDCPM" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Sources.QuadraticSpeedDependentTorque" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Sources.QuadraticSpeedDependentTorque" isOver="true">
       <component_list isModificationOver="true" declarationName="loadTorque" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="-driveData.tauNominal" elementName="tau_nominal"/>
         <modifications expression="false" elementName="TorqueDirection"/>
@@ -14,7 +15,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Step" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Step" isOver="true">
       <component_list isModificationOver="true" declarationName="step" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0" elementName="offset"/>
         <modifications expression="0.2" elementName="startTime"/>

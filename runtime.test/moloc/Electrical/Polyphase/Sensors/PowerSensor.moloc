@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Sensors">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Sensors"/>
   <classes classType="model" className="PowerSensor" description="&quot;Polyphase instantaneous power sensor&quot;" isLongClassSpecifier="true" classNameEnd="PowerSensor" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.RoundSensor" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="min"/>
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Polyphase.Interfaces.PositivePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Polyphase.Interfaces.PositivePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="pc" description="&quot;Positive plug, current path&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -18,7 +19,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Polyphase.Interfaces.NegativePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Polyphase.Interfaces.NegativePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="nc" description="&quot;Negative plug, current path&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -28,7 +29,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Polyphase.Interfaces.PositivePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Polyphase.Interfaces.PositivePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="pv" description="&quot;Positive plug, voltage path&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -38,7 +39,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Polyphase.Interfaces.NegativePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Polyphase.Interfaces.NegativePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="nv" description="&quot;Negative plug, voltage path&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -48,7 +49,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
       <component_list isModificationOver="true" declarationName="power" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;W&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -65,7 +66,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Polyphase.Sensors.VoltageSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Polyphase.Sensors.VoltageSensor" isOver="true">
       <component_list isModificationOver="true" declarationName="voltageSensor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -77,7 +78,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Polyphase.Sensors.CurrentSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Polyphase.Sensors.CurrentSensor" isOver="true">
       <component_list isModificationOver="true" declarationName="currentSensor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -87,7 +88,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Product" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Product" isOver="true">
       <component_list subscripts="[m]" declarationName="product" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -98,7 +99,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Sum" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Sum" isOver="true">
       <component_list isModificationOver="true" declarationName="sum" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="nin" isfinal="true"/>
         <modifications expression="ones(m)" elementName="k" isfinal="true"/>

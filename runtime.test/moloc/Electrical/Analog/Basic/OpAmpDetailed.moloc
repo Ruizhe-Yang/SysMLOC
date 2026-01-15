@@ -1,101 +1,102 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Basic">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Basic"/>
   <classes classType="model" className="OpAmpDetailed" description="&quot;Detailed model of an operational amplifier&quot;" isLongClassSpecifier="true" classNameEnd="OpAmpDetailed" isOver="true">
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="2.0e6" declarationName="Rdm" description="&quot;Input resistance (differential input mode)&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="2.0e9" declarationName="Rcm" description="&quot;Input resistance (common mode)&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Capacitance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Capacitance" parameterType="parameter" isOver="true">
       <component_list expression="1.4e-12" declarationName="Cin" description="&quot;Input capacitance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="1.0e-3" declarationName="Vos" description="&quot;Input offset voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
       <component_list expression="80.0e-9" declarationName="Ib" description="&quot;Input bias current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
       <component_list expression="20.0e-9" declarationName="Ios" description="&quot;Input offset current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="0.0" declarationName="vcp" description="&quot;Correction value for limiting by p_supply&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="0.0" declarationName="vcm" description="&quot;Correction value for limiting by msupply&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="106.0" declarationName="Avd0" description="&quot;Differential amplifier [dB]&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="90.0" declarationName="CMRR" description="&quot;Common-mode rejection [dB]&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
       <component_list expression="5.0" declarationName="fp1" description="&quot;Dominant pole&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
       <component_list expression="2.0e6" declarationName="fp2" description="&quot;Pole frequency&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
       <component_list expression="20.0e6" declarationName="fp3" description="&quot;Pole frequency&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
       <component_list expression="100.0e6" declarationName="fp4" description="&quot;Pole frequency&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
       <component_list expression="5.0e6" declarationName="fz" description="&quot;Zero frequency&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.VoltageSlope" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.VoltageSlope" parameterType="parameter" isOver="true">
       <component_list expression="0.5e6" declarationName="sr_p" description="&quot;Slew rate for increase&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.VoltageSlope" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.VoltageSlope" parameterType="parameter" isOver="true">
       <component_list expression="0.5e6" declarationName="sr_m" description="&quot;Slew rate for decrease&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="75.0" declarationName="Rout" description="&quot;Output resistance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
       <component_list expression="25.0e-3" declarationName="Imaxso" description="&quot;Maximal output current (source current)&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
       <component_list expression="25.0e-3" declarationName="Imaxsi" description="&quot;Maximal output current (sink current)&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
       <component_list expression="0.0000012" declarationName="Ts" description="&quot;Sampling time&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="abs(vcp)" declarationName="vcp_abs" description="&quot;Positive correction value for limiting by p_supply&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="abs(vcm)" declarationName="vcm_abs" description="&quot;Positive correction value for limiting by msupply&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="Ib + Ios/2.0" declarationName="I1" description="&quot;Current of internal source I1&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="Ib - Ios/2.0" declarationName="I2" description="&quot;Current of internal source I2&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="10.0^(Avd0/20.0)" declarationName="Avd0_val" description="&quot;Differential mode gain&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="(Avd0_val/(10.0^(CMRR/20.0)))/2.0" declarationName="Avcm_val" description="&quot;Common mode gain&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.VoltageSlope" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.VoltageSlope" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="abs(sr_p)" declarationName="sr_p_val" description="&quot;Value of slew rate for increase&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.VoltageSlope" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.VoltageSlope" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="-abs(sr_m)" declarationName="sr_m_val" description="&quot;Negative value of slew rate for increase&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="abs(Imaxso)" declarationName="Imaxso_val" description="&quot;Orientation out outp&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="abs(Imaxsi)" declarationName="Imaxsi_val" description="&quot;Orientation into outp&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="p" description="&quot;Positive pin of the input port&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -107,7 +108,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
       <component_list declarationName="m" description="&quot;Negative pin of the input port&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -119,7 +120,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="outp" description="&quot;Output pin&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -131,7 +132,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="p_supply" description="&quot;Positive output voltage limitation&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -143,7 +144,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
       <component_list declarationName="m_supply" description="&quot;Negative output voltage limitation&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -155,87 +156,87 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="v_pos"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="v_neg"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="v_vos"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="v_3"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="v_in"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="v_4"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list declarationName="i_vos"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list declarationName="i_3"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list declarationName="i_r2"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list declarationName="i_c3"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list declarationName="i_4"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
       <component_list declarationName="q_fr1"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
       <component_list declarationName="q_fr2"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
       <component_list declarationName="q_fr3"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="q_sum"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="q_sum_help"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="q_fp1"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="v_source"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="x" description="&quot;Auxiliary variable for slew rate&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="v_out"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list declarationName="i_out"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="function" className="FCNiout_limit" description="&quot;Internal limitation function&quot;" isLongClassSpecifier="true" classNameEnd="FCNiout_limit" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="function" className="FCNiout_limit" description="&quot;Internal limitation function&quot;" isLongClassSpecifier="true" classNameEnd="FCNiout_limit" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
         <component_list declarationName="v_source"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
         <component_list declarationName="v_out"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" directionType="input" isOver="true">
         <component_list declarationName="Rout"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" directionType="input" isOver="true">
         <component_list declarationName="Imaxsi_val"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" directionType="input" isOver="true">
         <component_list declarationName="Imaxso_val"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
         <component_list declarationName="result"/>
       </elements>
       <elements xsi:type="mOloc:AlgorithmSection">
@@ -253,27 +254,27 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="function" className="FCNq_sum_limit" description="&quot;Internal limitation function&quot;" isLongClassSpecifier="true" classNameEnd="FCNq_sum_limit" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="function" className="FCNq_sum_limit" description="&quot;Internal limitation function&quot;" isLongClassSpecifier="true" classNameEnd="FCNq_sum_limit" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
         <component_list declarationName="q_sum"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
         <component_list declarationName="q_sum_ltf"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
         <component_list declarationName="v_pos"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
         <component_list declarationName="v_neg"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
         <component_list declarationName="vcp"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
         <component_list declarationName="vcm"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="output" isOver="true">
         <component_list declarationName="result"/>
       </elements>
       <elements xsi:type="mOloc:AlgorithmSection">

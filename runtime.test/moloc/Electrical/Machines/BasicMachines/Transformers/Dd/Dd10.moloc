@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.BasicMachines.Transformers.Dd">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.BasicMachines.Transformers.Dd"/>
   <classes classType="model" className="Dd10" description="&quot;Transformer Dd10&quot;" isLongClassSpecifier="true" classNameEnd="Dd10" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.PartialBasicTransformer" isOver="true">
       <extendsModifications expression="&quot;Dd10&quot;" elementName="VectorGroup" isfinal="true"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Delta" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Delta" isOver="true">
       <component_list isModificationOver="true" declarationName="Delta1" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -14,7 +15,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Delta" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Delta" isOver="true">
       <component_list isModificationOver="true" declarationName="Delta2" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">

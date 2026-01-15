@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples.Utilities">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Examples.Utilities"/>
   <classes classType="model" className="RealSwitch" description="&quot;Ideal switch with resistance&quot;" isLongClassSpecifier="true" classNameEnd="RealSwitch" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Ideal.ControlledIdealTwoWaySwitch" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Ideal.ControlledIdealTwoWaySwitch" isOver="true">
       <component_list isModificationOver="true" declarationName="S" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="2.5" elementName="level"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -11,7 +12,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="R" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0.01" elementName="R"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -21,7 +22,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Pin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.Pin" isOver="true">
       <component_list declarationName="p" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -30,7 +31,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Pin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.Pin" isOver="true">
       <component_list declarationName="n1" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -39,7 +40,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Pin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.Pin" isOver="true">
       <component_list declarationName="n2" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -48,7 +49,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.Pin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.Pin" isOver="true">
       <component_list declarationName="control" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

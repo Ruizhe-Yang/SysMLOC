@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Basic">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Basic"/>
   <classes classType="model" className="MultiDelta" description="&quot;Delta (polygon) connection of polyphase systems consisting of multiple base systems&quot;" isLongClassSpecifier="true" classNameEnd="MultiDelta" isOver="true">
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Electrical.Polyphase.Functions.numberOfSymmetricBaseSystems" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="2" elementName="min" isfinal="true"/>
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1" declarationName="kPolygon" description="&quot;Alternative of polygon&quot;">
         <modifications expression="1" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="numberOfSymmetricBaseSystems(m)" declarationName="mSystems" description="&quot;Number of base systems&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="integer(m/mSystems)" declarationName="mBasic" description="&quot;Phase number of base systems&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Polyphase.Interfaces.PositivePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Polyphase.Interfaces.PositivePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="plug_p" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -29,7 +30,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Polyphase.Interfaces.NegativePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Polyphase.Interfaces.NegativePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="plug_n" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -39,7 +40,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isProtected="true" isOver="true">
       <component_list expression="if (mBasic&lt;=2 or kPolygon&lt;1 or kPolygon>integer(mBasic - 1)/2) then 1 else kPolygon" declarationName="kP"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

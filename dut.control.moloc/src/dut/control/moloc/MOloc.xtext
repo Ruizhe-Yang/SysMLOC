@@ -5,8 +5,15 @@ generate mOloc "http://www.control.dut/moloc/MOloc"
 import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
 
 Stored_definition:
-	( isWithin?='within' within=Name ';')?
+	( within=Within )?
 	( classes += Class_definition )*
+;
+
+// TODO --------------------------------- Element Level ---------------------------------//
+Within:
+	'within'
+	withName=Name
+	';'
 ;
 
 Class_definition:
@@ -16,101 +23,9 @@ Class_definition:
 	isOver?=';'
 ;
 
-fragment class_prefixes :
-	( isEncapsulated ?= 'encapsulated' )?
-	( isPartial ?= 'partial')? 
-	( isExpandable ?= 'expandable' )?
-	( isPure ?= 'pure' | isPure ?= 'impure' )?
-	( isOperator ?= 'operator' )?
-	classType=ClassType
-;
-
-enum ClassType:
-	null='NULLClassType' | Class='class' | Model='model' | Record='record' | Block='block' | Connector='connector' | Type='type' 
-	| Package='package' | Function='function'
-;
-
-fragment class_specifier:
-	long_class_specifier 
-	| short_class_specifier 
-	| der_class_specifier
-;
-
-fragment long_class_specifier:
-	( isExtends ?= 'extends' )?
-	class_name
-	class_modification? 
-	description_string
-	composition 
-	isLongClassSpecifier?='end' classNameEnd=IDENT
-;
-
-fragment short_class_specifier:
-	class_name 
-	isShortClassSpecifier?='=' 
-	( (direction=Direction)? type_specifier array_subscripts? class_modification? 
-	 | isEnumeration?='enumeration' '(' ( enum_list? | isColon ?= ':') ')'
-	)
-	description
-;
-
-fragment der_class_specifier:
-	class_name
-	isDerClassSpecifier?='='
-	isDer?='der'
-	'(' type_specifier ',' derName+=IDENT (',' derName+=IDENT)* ')'
-	description
-;
-
-fragment class_name:
-	className=IDENT 
-;
-
-fragment class_modification:
-	'(' modifications+=ModificationElement ( ',' modifications+=ModificationElement )* isModificationOver?=')'
-;
-
-fragment annotation_modification_part:
-	isAnnotation?='annotation'
-	'(' annotations+=AnnotationModificationElement ( ',' annotations+=AnnotationModificationElement )* isAnnotationOver?=')'
-;
-
-fragment description_string:
-	( description = DescriptionString )?
-;
-
-DescriptionString:
-	STRING ( '+' STRING )*
-;
-
-fragment composition:
-	( elements += Element )* 
-;
-
-enum Direction:
-	null='NULLDirection'| input='input' | output='output'
-;
-
-fragment type_specifier:
-	typeSpecifier = TypeSpecifier
-;
-
-TypeSpecifier:
-	('.')? Name
-;
-fragment enum_list:
-	enumerationLiteral+=EnumerationLiteral (',' enumerationLiteral+=EnumerationLiteral)*
-;
-
-EnumerationLiteral:
-	title=IDENT
-	description
-;
-
-fragment description:
-	description_string 
-	//	( isAnnotation?='annotation' class_modification)?
-	annotation_modification_part?
+ConstrainingClause:
+	type_specifier
+	class_modification?
 ;
 
 ModificationElement: // Argument
@@ -137,93 +52,47 @@ AnnotationModificationElement: // Argument
 	constraining?
 ;
 
-AnnotationModificationElement2: // Argument
-	( isRedeclare ?= 'redeclare')?
-	( isEach ?= 'each' )?
-	( isfinal ?= 'final' )?
-	( isReplaceable ?= 'replaceable' )? 
-	( short_class_definition 
-	| component_clause1 
-	| element_modification 
-	)
-	constraining?
-;
-
-fragment element_modification:
-	elementName=Name modification? description_string
-;
-
-fragment short_class_definition:
-	class_prefixes short_class_specifier
-;
-
-fragment component_clause1:
-	type_prefix type_specifier component_declaration1
-;
-
-fragment type_prefix:
-	( relationshipType = RelationshipType )?
-	( parameterType = ParameterType )?
-	( directionType = Direction )?
-;
-
-enum RelationshipType:
-	null='NULLRelationshipType' | flow = 'flow' | stream  = 'stream'
-;
-
-enum ParameterType:
-	null='NULLParameterType' | discrete = 'discrete' | parameter = 'parameter' | constant = 'constant'
-;
-
-fragment component_declaration1:
-	declaration description
-;
-
-fragment declaration:
-	declarationName=IDENT array_subscripts? modification?
-;
-
-fragment array_subscripts:
-	subscripts=ArraySubscripts
-	//	'[' subscript+=Subscript (',' subscript+=Subscript)* ']'
-;
-
-ArraySubscripts:
-	'[' Subscript ( ',' Subscript )* ']'
-;
-
-Subscript:
-	':' | Expression
-;
-
-fragment modification:
-	class_modification ('=' expression=Modification_expression)?
-	| '=' expression=Modification_expression
-	| ':=' expression=Modification_expression
-;
-
-Modification_expression:
-	Expression | 'break'
-;
-
-fragment constraining:
-	constrain=ConstrainingClause
-;
-
-ConstrainingClause:
-	'constrainedby'
-	type_specifier
-	class_modification
-;
-
 Element:
 	ImportClause 
 	| ExtendsClause 
-	| GeneralClause 
+	| ComponentClause 
 	| ExternalElement 
 	| AnnotationClause
 	| EquationSection
 	| AlgorithmSection
+;
+
+EquationSection:
+	{EquationSection} 
+	( isInitial ?= 'initial' )?
+	'equation'
+	( equations += Equation )*
+;
+
+Equation:
+	SimpleEquation
+	| IfEquation
+	| ForEquation
+	| ConnectEquation
+	| WhenEquation
+	| FunctionEquation
+;
+
+AlgorithmSection:
+	{AlgorithmSection} 
+	( isInitial ?= 'initial' )?
+	'algorithm'
+	( statements += Statement )*
+;
+
+Statement:
+	FunctionStatement
+	| BreakStatement
+	| ReturnStatement
+	| IfStatement
+	| ForStatement
+	| WhenStatement
+	| WhileStatement
 ;
 
 ImportClause:
@@ -248,14 +117,7 @@ ExtendsClause:
 	isOver?=';'
 ;
 
-Break:
-	'break'
-	( connectObject=ConnectEquation
-	| breakObject=IDENT
-	)
-;
-
-GeneralClause:
+ComponentClause:
 	( isPublic ?= 'public' )?
 	( isProtected ?= 'protected' )?
 	( isRedeclare ?= 'redeclare' )?
@@ -268,11 +130,10 @@ GeneralClause:
 	| type_prefix type_specifier array_subscripts?
 		component_list+=Component_declaration (',' component_list+=Component_declaration)*
 	)
-	constraining?
-	//	description?
-//	( description2 = DescriptionString )? 
-	//	( isAnnotation?='annotation' class_modification)?
-//	( isAnnotation2?='annotation' '(' annotations2+=AnnotationModificationElement2 ( ',' annotations2+=AnnotationModificationElement2 )* isAnnotationOver2?=')')?
+	( constraining 
+	 ( description1 = DescriptionString )? 
+	 ( isAnnotation1 ?= 'annotation' '(' annotations1+=AnnotationModificationElement ( ',' annotations1+=AnnotationModificationElement )* isAnnotationOver1?=')')?
+	)?	
 	isOver?=';'
 ;
 
@@ -297,22 +158,6 @@ AnnotationClause:
 	//	'annotation' class_modification 
 	annotation_modification_part
 	isOver?=';'
-;
-
-EquationSection:
-	{EquationSection} 
-	( isInitial ?= 'initial' )?
-	'equation'
-	( equations += Equation )*
-;
-
-Equation:
-	SimpleEquation
-	| IfEquation
-	| ForEquation
-	| ConnectEquation
-	| WhenEquation
-	| FunctionEquation
 ;
 
 SimpleEquation:
@@ -372,23 +217,6 @@ FunctionEquation:
 	function=FunctionCallArgs
 	description
 	';'
-;
-
-AlgorithmSection:
-	{AlgorithmSection} 
-	( isInitial ?= 'initial' )?
-	'algorithm'
-	( statements += Statement )*
-;
-
-Statement:
-	FunctionStatement
-	| BreakStatement
-	| ReturnStatement
-	| IfStatement
-	| ForStatement
-	| WhenStatement
-	| WhileStatement
 ;
 
 FunctionStatement:
@@ -456,6 +284,176 @@ WhileStatement:
 	'end' 'while' 
 	description
 	';'
+;
+
+// TODO --------------------------------- Secondary Element Level ---------------------------------//
+EnumerationLiteral:
+	title=IDENT
+	description
+;
+
+Break:
+	'break'
+	( connectObject=ConnectEquation
+	| breakObject=IDENT
+	)
+;
+
+// TODO --------------------------------- Fragment Level ---------------------------------//
+fragment class_prefixes :
+	( isEncapsulated ?= 'encapsulated' )?
+	( isPartial ?= 'partial')? 
+	( isExpandable ?= 'expandable' )?
+	( isPure ?= 'pure' | isPure ?= 'impure' )?
+	( isOperator ?= 'operator' )?
+	classType=ClassType
+;
+
+fragment class_specifier:
+	long_class_specifier 
+	| short_class_specifier 
+	| der_class_specifier
+;
+
+fragment long_class_specifier:
+	( isExtends ?= 'extends' )?
+	class_name
+	class_modification? 
+	description_string
+	composition 
+	isLongClassSpecifier?='end' classNameEnd=IDENT
+;
+
+fragment short_class_specifier:
+	class_name 
+	isShortClassSpecifier?='=' 
+	( (direction=Direction)? type_specifier array_subscripts? class_modification? 
+	 | isEnumeration?='enumeration' '(' ( enum_list? | isColon ?= ':') ')'
+	)
+	description
+;
+
+fragment der_class_specifier:
+	class_name
+	isDerClassSpecifier?='='
+	isDer?='der'
+	'(' type_specifier ',' derName+=IDENT (',' derName+=IDENT)* ')'
+	description
+;
+
+fragment class_name:
+	className=IDENT 
+;
+
+fragment class_modification:
+	'(' modifications+=ModificationElement ( ',' modifications+=ModificationElement )* isModificationOver?=')'
+;
+
+fragment annotation_modification_part:
+	isAnnotation?='annotation'
+	'(' annotations+=AnnotationModificationElement ( ',' annotations+=AnnotationModificationElement )* isAnnotationOver?=')'
+;
+
+fragment description_string:
+	( description = DescriptionString )?
+;
+
+fragment composition:
+	( elements += Element )* 
+;
+
+fragment type_specifier:
+	typeSpecifier = TypeSpecifier
+;
+
+fragment enum_list:
+	enumerationLiteral+=EnumerationLiteral (',' enumerationLiteral+=EnumerationLiteral)*
+;
+
+fragment description:
+	description_string 
+	//	( isAnnotation?='annotation' class_modification)?
+	annotation_modification_part?
+;
+
+fragment element_modification:
+	elementName=Name modification? description_string
+;
+
+fragment short_class_definition:
+	class_prefixes short_class_specifier
+;
+
+fragment component_clause1:
+	type_prefix type_specifier component_declaration1
+;
+
+fragment type_prefix:
+	( relationshipType = RelationshipType )?
+	( parameterType = ParameterType )?
+	( directionType = Direction )?
+;
+
+fragment component_declaration1:
+	declaration description
+;
+
+fragment declaration:
+	declarationName=IDENT array_subscripts? modification?
+;
+
+fragment array_subscripts:
+	subscripts=ArraySubscripts
+	//	'[' subscript+=Subscript (',' subscript+=Subscript)* ']'
+;
+
+fragment modification:
+	class_modification ('=' expression=Modification_expression)?
+	| '=' expression=Modification_expression
+	| ':=' expression=Modification_expression
+;
+
+fragment constraining:
+	isConstrainedby?='constrainedby' constrain=ConstrainingClause
+;
+
+// TODO --------------------------------- Enum Level ---------------------------------//
+enum ClassType:
+	null='NULLClassType' | Class='class' | Model='model' | Record='record' | Block='block' | Connector='connector' | Type='type' 
+	| Package='package' | Function='function'
+;
+
+enum RelationshipType:
+	null='NULLRelationshipType' | flow = 'flow' | stream  = 'stream'
+;
+
+enum ParameterType:
+	null='NULLParameterType' | discrete = 'discrete' | parameter = 'parameter' | constant = 'constant'
+;
+
+enum Direction:
+	null='NULLDirection'| input='input' | output='output'
+;
+
+// TODO --------------------------------- String Level ---------------------------------//
+DescriptionString:
+	STRING ( '+' STRING )*
+;
+
+TypeSpecifier:
+	('.')? Name
+;
+
+ArraySubscripts:
+	'[' Subscript ( ',' Subscript )* ']'
+;
+
+Subscript:
+	':' | Expression
+;
+
+Modification_expression:
+	Expression | 'break'
 ;
 
 Expression:
@@ -576,7 +574,7 @@ Name:
 	IDENT ("." IDENT)*
 ;
 
-// terminals
+// TODO --------------------------------- Terminal Level ---------------------------------//
 terminal TRUE_FALSE returns Ecore::EBoolean:
 	'true' | 'false'
 ;
@@ -594,16 +592,48 @@ terminal STRING returns Ecore::EString:
 	"\"" ( S_CHAR | S_ESCAPE )* "\""
 ;
 
-//terminal ANY_OTHER: .;
-terminal ML_COMMENT: '/*'->'*/';
-terminal SL_COMMENT: '//' !('\n'|'\r')* ('\r'? '\n')?;
-terminal WS: (' ' | '\t' | '\r' | '\n')+;
-terminal DIGIT: "0".."9";
-terminal UNSIGNED_INTEGER: DIGIT+;
-terminal S_ESCAPE: "\\" ("'" | "\"" | "?" | "\\" | "a" | "b" | "f" | "n" | "r" | "t" | "v");
-terminal Q_IDENT: "'" ( Q_CHAR | S_ESCAPE )* "'";
-terminal NON_DIGIT: "_" | "a".."z" | "A".."Z";
-terminal S_CHAR: !( "\"" | "\\");
-terminal Q_CHAR: NON_DIGIT | DIGIT | "!" | "#" | "$" | "%" | "&" | "(" | ")" | "*" | "+" | "," |
+//terminal ANY_OTHER: 
+//	.
+//;
+
+terminal ML_COMMENT:
+	'/*'->'*/'
+;
+
+terminal SL_COMMENT:
+	'//' !('\n'|'\r')* ('\r'? '\n')?
+;
+
+terminal WS: 
+	(' ' | '\t' | '\r' | '\n')+
+;
+
+terminal DIGIT: 
+	"0".."9"
+;
+
+terminal UNSIGNED_INTEGER: 
+	DIGIT+
+;
+
+terminal S_ESCAPE: 
+	"\\" ("'" | "\"" | "?" | "\\" | "a" | "b" | "f" | "n" | "r" | "t" | "v")
+;
+
+terminal Q_IDENT: 
+	"'" ( Q_CHAR | S_ESCAPE )* "'"
+;
+
+terminal NON_DIGIT: 
+	"_" | "a".."z" | "A".."Z"
+;
+
+terminal S_CHAR: 
+	!( "\"" | "\\")
+;
+
+terminal Q_CHAR: 
+	NON_DIGIT | DIGIT | "!" | "#" | "$" | "%" | "&" | "(" | ")" | "*" | "+" | "," |
 	"-" | "." | "/" | ":" | ";" | "<" | ">" | "=" | "?" | "@" | "[" | "]" | "^" |
-	"{" | "}" | "|" | "~" | " ";
+	"{" | "}" | "|" | "~" | " "
+;

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Examples.Transformers">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Examples.Transformers"/>
   <classes classType="model" className="TransformerTestbench" description="&quot;Transformer test bench&quot;" isLongClassSpecifier="true" classNameEnd="TransformerTestbench" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list subscripts="[3]" expression="fill(1/3, 3)" declarationName="RL" description="&quot;Load resistance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Sources.SineVoltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Sources.SineVoltage" isOver="true">
       <component_list isModificationOver="true" declarationName="source" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="fill( 50, 3)" elementName="f"/>
         <modifications expression="fill(sqrt(2/3)*100, 3)" elementName="V"/>
@@ -18,7 +19,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
       <component_list declarationName="starS" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -29,7 +30,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
       <component_list declarationName="groundS" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -38,7 +39,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Sensors.ElectricalPowerSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Sensors.ElectricalPowerSensor" isOver="true">
       <component_list declarationName="electricalPowerSensorS" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -47,7 +48,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Sensors.CurrentQuasiRMSSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Sensors.CurrentQuasiRMSSensor" isOver="true">
       <component_list declarationName="currentQuasiRMSSensorS" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -56,7 +57,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Sensors.VoltageQuasiRMSSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Sensors.VoltageQuasiRMSSensor" isOver="true">
       <component_list declarationName="voltageQuasiRMSSensorS" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -67,7 +68,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Delta" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Delta" isOver="true">
       <component_list declarationName="deltaS" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -77,7 +78,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="earth" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1e6" elementName="R"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -89,7 +90,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
       <component_list declarationName="groundT" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -98,7 +99,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Sensors.VoltageQuasiRMSSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Sensors.VoltageQuasiRMSSensor" isOver="true">
       <component_list declarationName="voltageRMSSensorL" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -108,7 +109,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Delta" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Delta" isOver="true">
       <component_list declarationName="deltaL" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -119,7 +120,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Sensors.CurrentQuasiRMSSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Sensors.CurrentQuasiRMSSensor" isOver="true">
       <component_list declarationName="currentQuasiRMSSensorL" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -128,7 +129,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Sensors.ElectricalPowerSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Sensors.ElectricalPowerSensor" isOver="true">
       <component_list declarationName="electricalPowerSensorL" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -137,7 +138,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="load" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="RL" elementName="R"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -149,7 +150,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
       <component_list declarationName="starL" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -160,7 +161,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
       <component_list declarationName="groundL" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -169,7 +170,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Utilities.TransformerData" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Utilities.TransformerData" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="transformerData" description="&quot;Transformer data&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Modelica.Utilities.Strings.substring( transformer.VectorGroup, 1, 1 )" elementName="C1"/>
         <modifications expression="Modelica.Utilities.Strings.substring( transformer.VectorGroup, 2, 2 )" elementName="C2"/>
@@ -186,7 +187,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="BasicMachines.Transformers.Dy.Dy01" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BasicMachines.Transformers.Dy.Dy01" isOver="true">
       <component_list isModificationOver="true" declarationName="transformer" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="transformerData.n" elementName="n"/>
         <modifications expression="transformerData.R1" elementName="R1"/>

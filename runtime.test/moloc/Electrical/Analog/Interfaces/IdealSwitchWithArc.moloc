@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Interfaces">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Interfaces"/>
   <classes isPartial="true" classType="model" className="IdealSwitchWithArc" description="&quot;Ideal switch with simple arc model&quot;" isLongClassSpecifier="true" classNameEnd="IdealSwitchWithArc" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="1E-5" declarationName="Ron" description="&quot;Closed switch resistance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
       <component_list expression="1E-5" declarationName="Goff" description="&quot;Opened switch conductance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="V0" description="&quot;Initial arc voltage&quot;">
         <modifications expression="30" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.VoltageSlope" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.VoltageSlope" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="dVdt" description="&quot;Arc voltage slope&quot;">
         <modifications expression="10E3" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="Vmax" description="&quot;Max. arc voltage&quot;">
         <modifications expression="60" elementName="start"/>
       </component_list>
@@ -26,18 +27,18 @@
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
       <extendsModifications expression="293.15" elementName="T" isfinal="true"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isOver="true">
       <component_list isModificationOver="true" declarationName="off" description="&quot;Indicates off-state (but maybe not quenched)&quot;">
         <modifications expression="true" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
       <component_list isModificationOver="true" declarationName="quenched" description="&quot;Indicating quenched arc (if switch is off)&quot;">
         <modifications expression="true" elementName="start"/>
         <modifications expression="true" elementName="fixed"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
       <component_list isModificationOver="true" declarationName="tSwitch" description="&quot;Last switch off time instant&quot;">
         <modifications expression="-Modelica.Constants.inf" elementName="start"/>
         <modifications expression="true" elementName="fixed"/>

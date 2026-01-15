@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.DCAC.Control">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.DCAC.Control"/>
   <classes classType="block" className="IntersectivePWM" description="&quot;Intersective PWM&quot;" isLongClassSpecifier="true" classNameEnd="IntersectivePWM" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Electrical.PowerConverters.Types.ReferenceType" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="constant" isOver="true">
       <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
       <component_list declarationName="f" description="&quot;Switching frequency&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="startTime" description="&quot;Start time of PWM&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list declarationName="uMax" description="&quot;Maximum amplitude of signal&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="PowerConverters.Types.ReferenceType" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="PowerConverters.Types.ReferenceType" parameterType="parameter" isOver="true">
       <component_list expression="PowerConverters.Types.ReferenceType.Triangle3" declarationName="refType" description="&quot;Type of reference signal&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list subscripts="[2]" declarationName="u" description="&quot;Reference space phasor&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -29,7 +30,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
       <component_list subscripts="[m]" declarationName="fire_p" description="&quot;Positive fire signal&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -38,7 +39,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
       <component_list subscripts="[m]" declarationName="fire_n" description="&quot;Negative fire signal&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -47,7 +48,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Machines.SpacePhasors.Blocks.FromSpacePhasor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Machines.SpacePhasors.Blocks.FromSpacePhasor" isOver="true">
       <component_list isModificationOver="true" declarationName="fromSpacePhasor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -57,7 +58,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="zero" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0" elementName="k" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -69,7 +70,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.SawTooth" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.SawTooth" isOver="true">
       <component_list subscripts="[m]" isModificationOver="true" declarationName="sawTooth" isAnnotation="true" isAnnotationOver="true" condition_attribute="(refType==ReferenceType.Sawtooth1 or refType==ReferenceType.Sawtooth3)">
         <modifications expression="-1" elementName="nperiod" isEach="true" isfinal="true"/>
         <modifications expression="uMax" elementName="amplitude" isEach="true" isfinal="true"/>
@@ -83,7 +84,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Trapezoid" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Trapezoid" isOver="true">
       <component_list subscripts="[3]" isModificationOver="true" declarationName="trapezoid" isAnnotation="true" isAnnotationOver="true" condition_attribute="(refType==ReferenceType.Triangle1 or refType==ReferenceType.Triangle3)">
         <modifications expression="uMax" elementName="amplitude" isEach="true" isfinal="true"/>
         <modifications expression="0" elementName="width" isEach="true" isfinal="true"/>
@@ -100,7 +101,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.GreaterEqual" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Logical.GreaterEqual" isOver="true">
       <component_list subscripts="[m]" declarationName="greaterEqual" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -109,7 +110,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Not" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Logical.Not" isOver="true">
       <component_list subscripts="[m]" declarationName="negation" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -118,7 +119,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Switch" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Logical.Switch" isOver="true">
       <component_list subscripts="[m]" declarationName="switch1" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -127,7 +128,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list subscripts="[m]" isModificationOver="true" declarationName="const" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="-uMax" elementName="k" isEach="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -139,7 +140,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.BooleanExpression" isOver="true">
       <component_list isModificationOver="true" declarationName="booleanExpression" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="time >= startTime" elementName="y"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -149,7 +150,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Routing.BooleanReplicator" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Routing.BooleanReplicator" isOver="true">
       <component_list isModificationOver="true" declarationName="booleanReplicator" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="nout"/>
         <annotations isModificationOver="true" elementName="Placement">

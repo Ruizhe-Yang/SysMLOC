@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Interfaces">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Interfaces"/>
   <classes isPartial="true" classType="model" className="ConditionalHeatPort" description="&quot;Partial model to include a conditional HeatPort in order to describe the power loss via a thermal network&quot;" isLongClassSpecifier="true" classNameEnd="ConditionalHeatPort" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useHeatPort" description="&quot;= true, if heatPort is enabled&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
         <annotations expression="true" elementName="HideResult"/>
@@ -10,14 +11,14 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
       <component_list expression="293.15" declarationName="T" description="&quot;Fixed device temperature if useHeatPort = false&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="not useHeatPort" elementName="enable"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
       <component_list isModificationOver="true" declarationName="heatPort" description="&quot;Conditional heat port&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useHeatPort">
         <modifications expression="T_heatPort" elementName="T" isfinal="true"/>
         <modifications expression="-LossPower" elementName="Q_flow" isfinal="true"/>
@@ -31,10 +32,10 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" isOver="true">
       <component_list declarationName="LossPower" description="&quot;Loss power leaving component via heatPort&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" isOver="true">
       <component_list declarationName="T_heatPort" description="&quot;Temperature of heatPort&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

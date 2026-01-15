@@ -20,7 +20,7 @@ package dut.control.moloc.mOloc;
  * @model
  * @generated
  */
-public interface Component_declaration extends declaration, description
+public interface Component_declaration extends declaration, array_subscripts, modification, class_modification, description, description_string, annotation_modification_part
 {
   /**
    * Returns the value of the '<em><b>Condition attribute</b></em>' attribute.

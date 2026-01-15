@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Interfaces.DCMachines">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Interfaces.DCMachines"/>
   <classes classType="connector" className="PartialThermalPortDCMachines" description="&quot;Partial thermal port of DC machines&quot;" isLongClassSpecifier="true" classNameEnd="PartialThermalPortDCMachines" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
       <component_list declarationName="heatPortArmature" description="&quot;Heat port of armature&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -10,7 +11,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
       <component_list declarationName="heatPortCore" description="&quot;Heat port of (optional) core losses&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -19,7 +20,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
       <component_list declarationName="heatPortStrayLoad" description="&quot;Heat port of (optional) stray losses&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -28,7 +29,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
       <component_list declarationName="heatPortFriction" description="&quot;Heat port of (optional) friction losses&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -37,7 +38,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
       <component_list declarationName="heatPortBrush" description="&quot;Heat port of (optional) brush losses&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

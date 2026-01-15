@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.Examples.DCDC.ChopperStepDown">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.Examples.DCDC.ChopperStepDown"/>
   <classes classType="model" className="ChopperStepDown_R" description="&quot;Step down chopper with resistive load&quot;" isLongClassSpecifier="true" classNameEnd="ChopperStepDown_R" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="ExampleTemplates.ChopperStepDown" isOver="true">
       <extendsModifications isModificationOver="true" elementName="signalPWM">
@@ -7,7 +8,7 @@
       </extendsModifications>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="loadResistor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="RLoad" elementName="R"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -19,7 +20,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="PowerConverters.DCDC.Control.Voltage2DutyCycle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="PowerConverters.DCDC.Control.Voltage2DutyCycle" isOver="true">
       <component_list isModificationOver="true" declarationName="adaptor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="false" elementName="reciprocal"/>
         <modifications expression="false" elementName="useBipolarVoltage"/>
@@ -33,7 +34,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Ramp" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Ramp" isOver="true">
       <component_list isModificationOver="true" declarationName="vRef" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="V0" elementName="height"/>
         <modifications expression="0.05" elementName="duration"/>

@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples.OpAmps.OpAmpCircuits">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Examples.OpAmps.OpAmpCircuits"/>
   <classes classType="model" className="Gain" description="&quot;Inverting operational amplifier circuit&quot;" isLongClassSpecifier="true" classNameEnd="Gain" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PartialOpAmp" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1" declarationName="k" description="&quot;Desired amplification&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="1000" declarationName="R1" description="&quot;Resistance at negative input of OpAmp&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="k*R1" declarationName="R2" description="&quot;Calculated resistance to reach desired amplification k&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="r1" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="R1" elementName="R" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -23,7 +24,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="r2" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="R2" elementName="R" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">

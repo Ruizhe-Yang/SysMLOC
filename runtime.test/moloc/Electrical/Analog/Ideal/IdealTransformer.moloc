@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Ideal">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Ideal"/>
   <classes classType="model" className="IdealTransformer" description="&quot;Ideal transformer core with or without magnetization&quot;" isLongClassSpecifier="true" classNameEnd="IdealTransformer" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.TwoPort" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="n" description="&quot;Turns ratio primary:secondary voltage&quot;">
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="considerMagnetization" description="&quot;Choice of considering magnetization&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="Lm1" description="&quot;Magnetization inductance w.r.t. primary side&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="start"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -18,10 +19,10 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isProtected="true" isOver="true">
       <component_list declarationName="im1" description="&quot;Magnetization current w.r.t. primary side&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.MagneticFlux" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.MagneticFlux" isOver="true">
       <component_list declarationName="psim1" description="&quot;Magnetic flux w.r.t. primary side&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

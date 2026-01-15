@@ -756,10 +756,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:41:7: ( 'NULLDirection' )
-            // InternalMOloc.g:41:9: 'NULLDirection'
+            // InternalMOloc.g:41:7: ( 'NULLRelationshipType' )
+            // InternalMOloc.g:41:9: 'NULLRelationshipType'
             {
-            match("NULLDirection"); 
+            match("NULLRelationshipType"); 
 
 
             }
@@ -777,10 +777,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:42:7: ( 'input' )
-            // InternalMOloc.g:42:9: 'input'
+            // InternalMOloc.g:42:7: ( 'flow' )
+            // InternalMOloc.g:42:9: 'flow'
             {
-            match("input"); 
+            match("flow"); 
 
 
             }
@@ -798,10 +798,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:43:7: ( 'output' )
-            // InternalMOloc.g:43:9: 'output'
+            // InternalMOloc.g:43:7: ( 'stream' )
+            // InternalMOloc.g:43:9: 'stream'
             {
-            match("output"); 
+            match("stream"); 
 
 
             }
@@ -819,10 +819,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:44:7: ( 'NULLRelationshipType' )
-            // InternalMOloc.g:44:9: 'NULLRelationshipType'
+            // InternalMOloc.g:44:7: ( 'NULLParameterType' )
+            // InternalMOloc.g:44:9: 'NULLParameterType'
             {
-            match("NULLRelationshipType"); 
+            match("NULLParameterType"); 
 
 
             }
@@ -840,10 +840,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:45:7: ( 'flow' )
-            // InternalMOloc.g:45:9: 'flow'
+            // InternalMOloc.g:45:7: ( 'discrete' )
+            // InternalMOloc.g:45:9: 'discrete'
             {
-            match("flow"); 
+            match("discrete"); 
 
 
             }
@@ -861,10 +861,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:46:7: ( 'stream' )
-            // InternalMOloc.g:46:9: 'stream'
+            // InternalMOloc.g:46:7: ( 'parameter' )
+            // InternalMOloc.g:46:9: 'parameter'
             {
-            match("stream"); 
+            match("parameter"); 
 
 
             }
@@ -882,10 +882,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:47:7: ( 'NULLParameterType' )
-            // InternalMOloc.g:47:9: 'NULLParameterType'
+            // InternalMOloc.g:47:7: ( 'constant' )
+            // InternalMOloc.g:47:9: 'constant'
             {
-            match("NULLParameterType"); 
+            match("constant"); 
 
 
             }
@@ -903,10 +903,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:48:7: ( 'discrete' )
-            // InternalMOloc.g:48:9: 'discrete'
+            // InternalMOloc.g:48:7: ( 'NULLDirection' )
+            // InternalMOloc.g:48:9: 'NULLDirection'
             {
-            match("discrete"); 
+            match("NULLDirection"); 
 
 
             }
@@ -924,10 +924,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:49:7: ( 'parameter' )
-            // InternalMOloc.g:49:9: 'parameter'
+            // InternalMOloc.g:49:7: ( 'input' )
+            // InternalMOloc.g:49:9: 'input'
             {
-            match("parameter"); 
+            match("input"); 
 
 
             }
@@ -945,10 +945,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:50:7: ( 'constant' )
-            // InternalMOloc.g:50:9: 'constant'
+            // InternalMOloc.g:50:7: ( 'output' )
+            // InternalMOloc.g:50:9: 'output'
             {
-            match("constant"); 
+            match("output"); 
 
 
             }
@@ -966,10 +966,11 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:51:7: ( ';' )
-            // InternalMOloc.g:51:9: ';'
+            // InternalMOloc.g:51:7: ( 'within' )
+            // InternalMOloc.g:51:9: 'within'
             {
-            match(';'); 
+            match("within"); 
+
 
             }
 
@@ -986,10 +987,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:52:7: ( '(' )
-            // InternalMOloc.g:52:9: '('
+            // InternalMOloc.g:52:7: ( ';' )
+            // InternalMOloc.g:52:9: ';'
             {
-            match('('); 
+            match(';'); 
 
             }
 
@@ -1006,10 +1007,11 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:53:7: ( ')' )
-            // InternalMOloc.g:53:9: ')'
+            // InternalMOloc.g:53:7: ( 'equation' )
+            // InternalMOloc.g:53:9: 'equation'
             {
-            match(')'); 
+            match("equation"); 
+
 
             }
 
@@ -1026,10 +1028,11 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:54:7: ( ',' )
-            // InternalMOloc.g:54:9: ','
+            // InternalMOloc.g:54:7: ( 'algorithm' )
+            // InternalMOloc.g:54:9: 'algorithm'
             {
-            match(','); 
+            match("algorithm"); 
+
 
             }
 
@@ -1046,10 +1049,11 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:55:7: ( '.' )
-            // InternalMOloc.g:55:9: '.'
+            // InternalMOloc.g:55:7: ( 'import' )
+            // InternalMOloc.g:55:9: 'import'
             {
-            match('.'); 
+            match("import"); 
+
 
             }
 
@@ -1066,10 +1070,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:56:7: ( '[' )
-            // InternalMOloc.g:56:9: '['
+            // InternalMOloc.g:56:7: ( '=' )
+            // InternalMOloc.g:56:9: '='
             {
-            match('['); 
+            match('='); 
 
             }
 
@@ -1086,10 +1090,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:57:7: ( ']' )
-            // InternalMOloc.g:57:9: ']'
+            // InternalMOloc.g:57:7: ( '.' )
+            // InternalMOloc.g:57:9: '.'
             {
-            match(']'); 
+            match('.'); 
 
             }
 
@@ -1106,10 +1110,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:58:7: ( '=' )
-            // InternalMOloc.g:58:9: '='
+            // InternalMOloc.g:58:7: ( '{' )
+            // InternalMOloc.g:58:9: '{'
             {
-            match('='); 
+            match('{'); 
 
             }
 
@@ -1126,11 +1130,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:59:7: ( ':=' )
-            // InternalMOloc.g:59:9: ':='
+            // InternalMOloc.g:59:7: ( '}' )
+            // InternalMOloc.g:59:9: '}'
             {
-            match(":="); 
-
+            match('}'); 
 
             }
 
@@ -1147,11 +1150,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:60:7: ( 'constrainedby' )
-            // InternalMOloc.g:60:9: 'constrainedby'
+            // InternalMOloc.g:60:7: ( ',' )
+            // InternalMOloc.g:60:9: ','
             {
-            match("constrainedby"); 
-
+            match(','); 
 
             }
 
@@ -1168,10 +1170,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:61:7: ( 'import' )
-            // InternalMOloc.g:61:9: 'import'
+            // InternalMOloc.g:61:7: ( 'extends' )
+            // InternalMOloc.g:61:9: 'extends'
             {
-            match("import"); 
+            match("extends"); 
 
 
             }
@@ -1189,10 +1191,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:62:7: ( '{' )
-            // InternalMOloc.g:62:9: '{'
+            // InternalMOloc.g:62:7: ( '(' )
+            // InternalMOloc.g:62:9: '('
             {
-            match('{'); 
+            match('('); 
 
             }
 
@@ -1209,10 +1211,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:63:7: ( '}' )
-            // InternalMOloc.g:63:9: '}'
+            // InternalMOloc.g:63:7: ( ')' )
+            // InternalMOloc.g:63:9: ')'
             {
-            match('}'); 
+            match(')'); 
 
             }
 
@@ -1229,10 +1231,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:64:7: ( 'extends' )
-            // InternalMOloc.g:64:9: 'extends'
+            // InternalMOloc.g:64:7: ( 'if' )
+            // InternalMOloc.g:64:9: 'if'
             {
-            match("extends"); 
+            match("if"); 
 
 
             }
@@ -1250,10 +1252,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:65:7: ( 'if' )
-            // InternalMOloc.g:65:9: 'if'
+            // InternalMOloc.g:65:7: ( 'external' )
+            // InternalMOloc.g:65:9: 'external'
             {
-            match("if"); 
+            match("external"); 
 
 
             }
@@ -1271,10 +1273,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:66:7: ( 'external' )
-            // InternalMOloc.g:66:9: 'external'
+            // InternalMOloc.g:66:7: ( 'then' )
+            // InternalMOloc.g:66:9: 'then'
             {
-            match("external"); 
+            match("then"); 
 
 
             }
@@ -1292,10 +1294,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:67:7: ( 'equation' )
-            // InternalMOloc.g:67:9: 'equation'
+            // InternalMOloc.g:67:7: ( 'elseif' )
+            // InternalMOloc.g:67:9: 'elseif'
             {
-            match("equation"); 
+            match("elseif"); 
 
 
             }
@@ -1313,10 +1315,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:68:7: ( 'then' )
-            // InternalMOloc.g:68:9: 'then'
+            // InternalMOloc.g:68:7: ( 'else' )
+            // InternalMOloc.g:68:9: 'else'
             {
-            match("then"); 
+            match("else"); 
 
 
             }
@@ -1334,10 +1336,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:69:7: ( 'elseif' )
-            // InternalMOloc.g:69:9: 'elseif'
+            // InternalMOloc.g:69:7: ( 'for' )
+            // InternalMOloc.g:69:9: 'for'
             {
-            match("elseif"); 
+            match("for"); 
 
 
             }
@@ -1355,10 +1357,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:70:7: ( 'else' )
-            // InternalMOloc.g:70:9: 'else'
+            // InternalMOloc.g:70:7: ( 'loop' )
+            // InternalMOloc.g:70:9: 'loop'
             {
-            match("else"); 
+            match("loop"); 
 
 
             }
@@ -1376,10 +1378,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:71:7: ( 'for' )
-            // InternalMOloc.g:71:9: 'for'
+            // InternalMOloc.g:71:7: ( 'connect' )
+            // InternalMOloc.g:71:9: 'connect'
             {
-            match("for"); 
+            match("connect"); 
 
 
             }
@@ -1397,10 +1399,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:72:7: ( 'loop' )
-            // InternalMOloc.g:72:9: 'loop'
+            // InternalMOloc.g:72:7: ( 'when' )
+            // InternalMOloc.g:72:9: 'when'
             {
-            match("loop"); 
+            match("when"); 
 
 
             }
@@ -1418,10 +1420,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:73:7: ( 'connect' )
-            // InternalMOloc.g:73:9: 'connect'
+            // InternalMOloc.g:73:7: ( 'elsewhen' )
+            // InternalMOloc.g:73:9: 'elsewhen'
             {
-            match("connect"); 
+            match("elsewhen"); 
 
 
             }
@@ -1439,10 +1441,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:74:7: ( 'when' )
-            // InternalMOloc.g:74:9: 'when'
+            // InternalMOloc.g:74:7: ( ':=' )
+            // InternalMOloc.g:74:9: ':='
             {
-            match("when"); 
+            match(":="); 
 
 
             }
@@ -1460,10 +1462,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:75:7: ( 'elsewhen' )
-            // InternalMOloc.g:75:9: 'elsewhen'
+            // InternalMOloc.g:75:7: ( 'return' )
+            // InternalMOloc.g:75:9: 'return'
             {
-            match("elsewhen"); 
+            match("return"); 
 
 
             }
@@ -1481,10 +1483,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:76:7: ( 'algorithm' )
-            // InternalMOloc.g:76:9: 'algorithm'
+            // InternalMOloc.g:76:7: ( 'while' )
+            // InternalMOloc.g:76:9: 'while'
             {
-            match("algorithm"); 
+            match("while"); 
 
 
             }
@@ -1502,11 +1504,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:77:7: ( 'return' )
-            // InternalMOloc.g:77:9: 'return'
+            // InternalMOloc.g:77:7: ( '[' )
+            // InternalMOloc.g:77:9: '['
             {
-            match("return"); 
-
+            match('['); 
 
             }
 
@@ -1523,11 +1524,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:78:7: ( 'while' )
-            // InternalMOloc.g:78:9: 'while'
+            // InternalMOloc.g:78:7: ( ']' )
+            // InternalMOloc.g:78:9: ']'
             {
-            match("while"); 
-
+            match(']'); 
 
             }
 
@@ -1628,10 +1628,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:83:7: ( 'within' )
-            // InternalMOloc.g:83:9: 'within'
+            // InternalMOloc.g:83:7: ( 'final' )
+            // InternalMOloc.g:83:9: 'final'
             {
-            match("within"); 
+            match("final"); 
 
 
             }
@@ -1649,10 +1649,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:84:7: ( 'final' )
-            // InternalMOloc.g:84:9: 'final'
+            // InternalMOloc.g:84:7: ( 'redeclare' )
+            // InternalMOloc.g:84:9: 'redeclare'
             {
-            match("final"); 
+            match("redeclare"); 
 
 
             }
@@ -1670,10 +1670,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:85:7: ( 'encapsulated' )
-            // InternalMOloc.g:85:9: 'encapsulated'
+            // InternalMOloc.g:85:7: ( 'each' )
+            // InternalMOloc.g:85:9: 'each'
             {
-            match("encapsulated"); 
+            match("each"); 
 
 
             }
@@ -1691,10 +1691,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:86:7: ( 'partial' )
-            // InternalMOloc.g:86:9: 'partial'
+            // InternalMOloc.g:86:7: ( 'replaceable' )
+            // InternalMOloc.g:86:9: 'replaceable'
             {
-            match("partial"); 
+            match("replaceable"); 
 
 
             }
@@ -1712,10 +1712,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:87:7: ( 'expandable' )
-            // InternalMOloc.g:87:9: 'expandable'
+            // InternalMOloc.g:87:7: ( 'public' )
+            // InternalMOloc.g:87:9: 'public'
             {
-            match("expandable"); 
+            match("public"); 
 
 
             }
@@ -1733,10 +1733,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:88:7: ( 'impure' )
-            // InternalMOloc.g:88:9: 'impure'
+            // InternalMOloc.g:88:7: ( 'protected' )
+            // InternalMOloc.g:88:9: 'protected'
             {
-            match("impure"); 
+            match("protected"); 
 
 
             }
@@ -1754,10 +1754,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:89:7: ( 'operator' )
-            // InternalMOloc.g:89:9: 'operator'
+            // InternalMOloc.g:89:7: ( 'inner' )
+            // InternalMOloc.g:89:9: 'inner'
             {
-            match("operator"); 
+            match("inner"); 
 
 
             }
@@ -1775,10 +1775,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:90:7: ( 'enumeration' )
-            // InternalMOloc.g:90:9: 'enumeration'
+            // InternalMOloc.g:90:7: ( 'outer' )
+            // InternalMOloc.g:90:9: 'outer'
             {
-            match("enumeration"); 
+            match("outer"); 
 
 
             }
@@ -1817,10 +1817,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:92:7: ( 'redeclare' )
-            // InternalMOloc.g:92:9: 'redeclare'
+            // InternalMOloc.g:92:7: ( 'encapsulated' )
+            // InternalMOloc.g:92:9: 'encapsulated'
             {
-            match("redeclare"); 
+            match("encapsulated"); 
 
 
             }
@@ -1838,10 +1838,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:93:8: ( 'each' )
-            // InternalMOloc.g:93:10: 'each'
+            // InternalMOloc.g:93:8: ( 'partial' )
+            // InternalMOloc.g:93:10: 'partial'
             {
-            match("each"); 
+            match("partial"); 
 
 
             }
@@ -1859,10 +1859,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:94:8: ( 'replaceable' )
-            // InternalMOloc.g:94:10: 'replaceable'
+            // InternalMOloc.g:94:8: ( 'expandable' )
+            // InternalMOloc.g:94:10: 'expandable'
             {
-            match("replaceable"); 
+            match("expandable"); 
 
 
             }
@@ -1880,10 +1880,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:95:8: ( 'public' )
-            // InternalMOloc.g:95:10: 'public'
+            // InternalMOloc.g:95:8: ( 'impure' )
+            // InternalMOloc.g:95:10: 'impure'
             {
-            match("public"); 
+            match("impure"); 
 
 
             }
@@ -1901,10 +1901,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:96:8: ( 'protected' )
-            // InternalMOloc.g:96:10: 'protected'
+            // InternalMOloc.g:96:8: ( 'operator' )
+            // InternalMOloc.g:96:10: 'operator'
             {
-            match("protected"); 
+            match("operator"); 
 
 
             }
@@ -1922,10 +1922,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:97:8: ( 'inner' )
-            // InternalMOloc.g:97:10: 'inner'
+            // InternalMOloc.g:97:8: ( 'enumeration' )
+            // InternalMOloc.g:97:10: 'enumeration'
             {
-            match("inner"); 
+            match("enumeration"); 
 
 
             }
@@ -1943,10 +1943,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:98:8: ( 'outer' )
-            // InternalMOloc.g:98:10: 'outer'
+            // InternalMOloc.g:98:8: ( 'constrainedby' )
+            // InternalMOloc.g:98:10: 'constrainedby'
             {
-            match("outer"); 
+            match("constrainedby"); 
 
 
             }
@@ -1964,10 +1964,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_TRUE_FALSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:17458:17: ( ( 'true' | 'false' ) )
-            // InternalMOloc.g:17458:19: ( 'true' | 'false' )
+            // InternalMOloc.g:17878:17: ( ( 'true' | 'false' ) )
+            // InternalMOloc.g:17878:19: ( 'true' | 'false' )
             {
-            // InternalMOloc.g:17458:19: ( 'true' | 'false' )
+            // InternalMOloc.g:17878:19: ( 'true' | 'false' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1985,7 +1985,7 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalMOloc.g:17458:20: 'true'
+                    // InternalMOloc.g:17878:20: 'true'
                     {
                     match("true"); 
 
@@ -1993,7 +1993,7 @@ public class InternalMOlocLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMOloc.g:17458:27: 'false'
+                    // InternalMOloc.g:17878:27: 'false'
                     {
                     match("false"); 
 
@@ -2019,10 +2019,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:17460:12: ( ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT ) )
-            // InternalMOloc.g:17460:14: ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT )
+            // InternalMOloc.g:17880:12: ( ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT ) )
+            // InternalMOloc.g:17880:14: ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT )
             {
-            // InternalMOloc.g:17460:14: ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT )
+            // InternalMOloc.g:17880:14: ( RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )* | RULE_Q_IDENT )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -2040,10 +2040,10 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalMOloc.g:17460:15: RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )*
+                    // InternalMOloc.g:17880:15: RULE_NON_DIGIT ( RULE_DIGIT | RULE_NON_DIGIT )*
                     {
                     mRULE_NON_DIGIT(); 
-                    // InternalMOloc.g:17460:30: ( RULE_DIGIT | RULE_NON_DIGIT )*
+                    // InternalMOloc.g:17880:30: ( RULE_DIGIT | RULE_NON_DIGIT )*
                     loop2:
                     do {
                         int alt2=2;
@@ -2080,7 +2080,7 @@ public class InternalMOlocLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMOloc.g:17460:59: RULE_Q_IDENT
+                    // InternalMOloc.g:17880:59: RULE_Q_IDENT
                     {
                     mRULE_Q_IDENT(); 
 
@@ -2105,11 +2105,11 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_UNSIGNED_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:17462:22: ( RULE_UNSIGNED_INTEGER ( '.' ( RULE_UNSIGNED_INTEGER )? )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )? )
-            // InternalMOloc.g:17462:24: RULE_UNSIGNED_INTEGER ( '.' ( RULE_UNSIGNED_INTEGER )? )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )?
+            // InternalMOloc.g:17882:22: ( RULE_UNSIGNED_INTEGER ( '.' ( RULE_UNSIGNED_INTEGER )? )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )? )
+            // InternalMOloc.g:17882:24: RULE_UNSIGNED_INTEGER ( '.' ( RULE_UNSIGNED_INTEGER )? )? ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )?
             {
             mRULE_UNSIGNED_INTEGER(); 
-            // InternalMOloc.g:17462:46: ( '.' ( RULE_UNSIGNED_INTEGER )? )?
+            // InternalMOloc.g:17882:46: ( '.' ( RULE_UNSIGNED_INTEGER )? )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2118,10 +2118,10 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalMOloc.g:17462:47: '.' ( RULE_UNSIGNED_INTEGER )?
+                    // InternalMOloc.g:17882:47: '.' ( RULE_UNSIGNED_INTEGER )?
                     {
                     match('.'); 
-                    // InternalMOloc.g:17462:51: ( RULE_UNSIGNED_INTEGER )?
+                    // InternalMOloc.g:17882:51: ( RULE_UNSIGNED_INTEGER )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -2130,7 +2130,7 @@ public class InternalMOlocLexer extends Lexer {
                     }
                     switch (alt4) {
                         case 1 :
-                            // InternalMOloc.g:17462:51: RULE_UNSIGNED_INTEGER
+                            // InternalMOloc.g:17882:51: RULE_UNSIGNED_INTEGER
                             {
                             mRULE_UNSIGNED_INTEGER(); 
 
@@ -2145,7 +2145,7 @@ public class InternalMOlocLexer extends Lexer {
 
             }
 
-            // InternalMOloc.g:17462:76: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )?
+            // InternalMOloc.g:17882:76: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2154,7 +2154,7 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalMOloc.g:17462:77: ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER
+                    // InternalMOloc.g:17882:77: ( 'e' | 'E' ) ( '+' | '-' )? RULE_UNSIGNED_INTEGER
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2165,7 +2165,7 @@ public class InternalMOlocLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalMOloc.g:17462:87: ( '+' | '-' )?
+                    // InternalMOloc.g:17882:87: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2214,11 +2214,11 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:17464:13: ( '\"' ( RULE_S_CHAR | RULE_S_ESCAPE )* '\"' )
-            // InternalMOloc.g:17464:15: '\"' ( RULE_S_CHAR | RULE_S_ESCAPE )* '\"'
+            // InternalMOloc.g:17884:13: ( '\"' ( RULE_S_CHAR | RULE_S_ESCAPE )* '\"' )
+            // InternalMOloc.g:17884:15: '\"' ( RULE_S_CHAR | RULE_S_ESCAPE )* '\"'
             {
             match('\"'); 
-            // InternalMOloc.g:17464:19: ( RULE_S_CHAR | RULE_S_ESCAPE )*
+            // InternalMOloc.g:17884:19: ( RULE_S_CHAR | RULE_S_ESCAPE )*
             loop8:
             do {
                 int alt8=3;
@@ -2234,14 +2234,14 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalMOloc.g:17464:20: RULE_S_CHAR
+            	    // InternalMOloc.g:17884:20: RULE_S_CHAR
             	    {
             	    mRULE_S_CHAR(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // InternalMOloc.g:17464:32: RULE_S_ESCAPE
+            	    // InternalMOloc.g:17884:32: RULE_S_ESCAPE
             	    {
             	    mRULE_S_ESCAPE(); 
 
@@ -2270,12 +2270,12 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:17466:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalMOloc.g:17466:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalMOloc.g:17886:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalMOloc.g:17886:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalMOloc.g:17466:24: ( options {greedy=false; } : . )*
+            // InternalMOloc.g:17886:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -2300,7 +2300,7 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalMOloc.g:17466:52: .
+            	    // InternalMOloc.g:17886:52: .
             	    {
             	    matchAny(); 
 
@@ -2330,12 +2330,12 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:17468:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalMOloc.g:17468:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalMOloc.g:17888:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalMOloc.g:17888:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalMOloc.g:17468:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalMOloc.g:17888:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -2348,7 +2348,7 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalMOloc.g:17468:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalMOloc.g:17888:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2368,7 +2368,7 @@ public class InternalMOlocLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalMOloc.g:17468:40: ( ( '\\r' )? '\\n' )?
+            // InternalMOloc.g:17888:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2377,9 +2377,9 @@ public class InternalMOlocLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalMOloc.g:17468:41: ( '\\r' )? '\\n'
+                    // InternalMOloc.g:17888:41: ( '\\r' )? '\\n'
                     {
-                    // InternalMOloc.g:17468:41: ( '\\r' )?
+                    // InternalMOloc.g:17888:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -2388,7 +2388,7 @@ public class InternalMOlocLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // InternalMOloc.g:17468:41: '\\r'
+                            // InternalMOloc.g:17888:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2420,10 +2420,10 @@ public class InternalMOlocLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMOloc.g:17470:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalMOloc.g:17470:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMOloc.g:17890:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalMOloc.g:17890:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalMOloc.g:17470:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMOloc.g:17890:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -2475,8 +2475,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_DIGIT"
     public final void mRULE_DIGIT() throws RecognitionException {
         try {
-            // InternalMOloc.g:17472:21: ( '0' .. '9' )
-            // InternalMOloc.g:17472:23: '0' .. '9'
+            // InternalMOloc.g:17892:21: ( '0' .. '9' )
+            // InternalMOloc.g:17892:23: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -2491,10 +2491,10 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_UNSIGNED_INTEGER"
     public final void mRULE_UNSIGNED_INTEGER() throws RecognitionException {
         try {
-            // InternalMOloc.g:17474:32: ( ( RULE_DIGIT )+ )
-            // InternalMOloc.g:17474:34: ( RULE_DIGIT )+
+            // InternalMOloc.g:17894:32: ( ( RULE_DIGIT )+ )
+            // InternalMOloc.g:17894:34: ( RULE_DIGIT )+
             {
-            // InternalMOloc.g:17474:34: ( RULE_DIGIT )+
+            // InternalMOloc.g:17894:34: ( RULE_DIGIT )+
             int cnt14=0;
             loop14:
             do {
@@ -2508,7 +2508,7 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalMOloc.g:17474:34: RULE_DIGIT
+            	    // InternalMOloc.g:17894:34: RULE_DIGIT
             	    {
             	    mRULE_DIGIT(); 
 
@@ -2536,8 +2536,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_S_ESCAPE"
     public final void mRULE_S_ESCAPE() throws RecognitionException {
         try {
-            // InternalMOloc.g:17476:24: ( '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' ) )
-            // InternalMOloc.g:17476:26: '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' )
+            // InternalMOloc.g:17896:24: ( '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' ) )
+            // InternalMOloc.g:17896:26: '\\\\' ( '\\'' | '\"' | '?' | '\\\\' | 'a' | 'b' | 'f' | 'n' | 'r' | 't' | 'v' )
             {
             match('\\'); 
             if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='?'||input.LA(1)=='\\'||(input.LA(1)>='a' && input.LA(1)<='b')||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t'||input.LA(1)=='v' ) {
@@ -2561,11 +2561,11 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_Q_IDENT"
     public final void mRULE_Q_IDENT() throws RecognitionException {
         try {
-            // InternalMOloc.g:17478:23: ( '\\'' ( RULE_Q_CHAR | RULE_S_ESCAPE )* '\\'' )
-            // InternalMOloc.g:17478:25: '\\'' ( RULE_Q_CHAR | RULE_S_ESCAPE )* '\\''
+            // InternalMOloc.g:17898:23: ( '\\'' ( RULE_Q_CHAR | RULE_S_ESCAPE )* '\\'' )
+            // InternalMOloc.g:17898:25: '\\'' ( RULE_Q_CHAR | RULE_S_ESCAPE )* '\\''
             {
             match('\''); 
-            // InternalMOloc.g:17478:30: ( RULE_Q_CHAR | RULE_S_ESCAPE )*
+            // InternalMOloc.g:17898:30: ( RULE_Q_CHAR | RULE_S_ESCAPE )*
             loop15:
             do {
                 int alt15=3;
@@ -2581,14 +2581,14 @@ public class InternalMOlocLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalMOloc.g:17478:31: RULE_Q_CHAR
+            	    // InternalMOloc.g:17898:31: RULE_Q_CHAR
             	    {
             	    mRULE_Q_CHAR(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // InternalMOloc.g:17478:43: RULE_S_ESCAPE
+            	    // InternalMOloc.g:17898:43: RULE_S_ESCAPE
             	    {
             	    mRULE_S_ESCAPE(); 
 
@@ -2613,8 +2613,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_NON_DIGIT"
     public final void mRULE_NON_DIGIT() throws RecognitionException {
         try {
-            // InternalMOloc.g:17480:25: ( ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) )
-            // InternalMOloc.g:17480:27: ( '_' | 'a' .. 'z' | 'A' .. 'Z' )
+            // InternalMOloc.g:17900:25: ( ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) )
+            // InternalMOloc.g:17900:27: ( '_' | 'a' .. 'z' | 'A' .. 'Z' )
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -2637,8 +2637,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_S_CHAR"
     public final void mRULE_S_CHAR() throws RecognitionException {
         try {
-            // InternalMOloc.g:17482:22: (~ ( ( '\"' | '\\\\' ) ) )
-            // InternalMOloc.g:17482:24: ~ ( ( '\"' | '\\\\' ) )
+            // InternalMOloc.g:17902:22: (~ ( ( '\"' | '\\\\' ) ) )
+            // InternalMOloc.g:17902:24: ~ ( ( '\"' | '\\\\' ) )
             {
             if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                 input.consume();
@@ -2661,8 +2661,8 @@ public class InternalMOlocLexer extends Lexer {
     // $ANTLR start "RULE_Q_CHAR"
     public final void mRULE_Q_CHAR() throws RecognitionException {
         try {
-            // InternalMOloc.g:17484:22: ( ( RULE_NON_DIGIT | RULE_DIGIT | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '>' | '=' | '?' | '@' | '[' | ']' | '^' | '{' | '}' | '|' | '~' | ' ' ) )
-            // InternalMOloc.g:17484:24: ( RULE_NON_DIGIT | RULE_DIGIT | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '>' | '=' | '?' | '@' | '[' | ']' | '^' | '{' | '}' | '|' | '~' | ' ' )
+            // InternalMOloc.g:17904:22: ( ( RULE_NON_DIGIT | RULE_DIGIT | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '>' | '=' | '?' | '@' | '[' | ']' | '^' | '{' | '}' | '|' | '~' | ' ' ) )
+            // InternalMOloc.g:17904:24: ( RULE_NON_DIGIT | RULE_DIGIT | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '-' | '.' | '/' | ':' | ';' | '<' | '>' | '=' | '?' | '@' | '[' | ']' | '^' | '{' | '}' | '|' | '~' | ' ' )
             {
             if ( (input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='_')||(input.LA(1)>='a' && input.LA(1)<='~') ) {
                 input.consume();
@@ -3360,19 +3360,19 @@ public class InternalMOlocLexer extends Lexer {
 
     protected DFA16 dfa16 = new DFA16(this);
     static final String DFA16_eotS =
-        "\1\uffff\1\51\1\44\1\56\1\60\1\62\2\uffff\1\67\1\uffff\1\72\1\uffff\14\44\10\uffff\4\44\6\uffff\2\44\17\uffff\7\44\1\156\1\44\1\160\21\44\1\u0087\12\44\1\u0094\7\44\1\u009c\4\44\1\uffff\1\44\1\uffff\22\44\1\u00b7\3\44\1\uffff\7\44\1\u00c3\1\44\1\u00c5\2\44\1\uffff\5\44\1\u00d0\1\u00d1\1\uffff\6\44\1\u00d8\16\44\1\u00ea\1\u00eb\1\u00ec\1\44\1\u00ee\1\uffff\6\44\1\u00f5\1\u00f6\3\44\1\uffff\1\44\1\uffff\1\u00fb\1\u00fc\10\44\2\uffff\2\44\1\u0107\1\u0108\2\44\1\uffff\11\44\1\u0114\2\44\1\u0118\4\44\3\uffff\1\44\1\uffff\1\u011e\1\u00ec\1\44\1\u0120\2\44\2\uffff\1\u0123\3\44\2\uffff\6\44\1\u012d\3\44\2\uffff\1\u0131\1\u0132\1\u0133\10\44\1\uffff\3\44\1\uffff\1\u013f\1\u0140\3\44\1\uffff\1\u0144\1\uffff\1\44\1\u0146\1\uffff\1\u0147\4\44\1\u014c\3\44\1\uffff\2\44\1\u0152\3\uffff\1\u0153\1\44\1\u0155\5\44\1\u015c\2\44\2\uffff\3\44\1\uffff\1\44\2\uffff\4\44\1\uffff\1\u0167\1\44\1\u0169\1\u016a\1\u016b\2\uffff\1\44\1\uffff\6\44\1\uffff\1\u0173\3\44\1\u0177\1\u0178\4\44\1\uffff\1\44\3\uffff\1\u017e\1\u017f\4\44\1\u0184\1\uffff\1\44\1\u0186\1\44\2\uffff\1\u0188\3\44\1\u018c\2\uffff\4\44\1\uffff\1\44\1\uffff\1\44\1\uffff\1\u0193\1\44\1\u0195\1\uffff\5\44\1\u019b\1\uffff\1\u019c\1\uffff\5\44\2\uffff\1\u01a2\1\u01a3\2\44\1\u01a6\2\uffff\2\44\1\uffff\5\44\1\u01ae\1\44\1\uffff\1\44\1\u01b1\1\uffff";
+        "\1\uffff\1\51\1\44\1\56\1\60\1\62\2\uffff\1\67\1\uffff\1\72\1\uffff\15\44\1\uffff\1\44\5\uffff\1\44\2\uffff\1\44\6\uffff\2\44\17\uffff\7\44\1\156\1\44\1\160\22\44\1\u0088\11\44\1\u0094\7\44\1\u009c\4\44\1\uffff\1\44\1\uffff\22\44\1\u00b7\4\44\1\uffff\5\44\1\u00c2\2\44\1\u00c5\2\44\1\uffff\5\44\1\u00d0\1\u00d1\1\uffff\6\44\1\u00d8\16\44\1\u00ea\1\u00eb\1\u00ec\1\44\1\u00ee\1\uffff\7\44\1\u00f6\2\44\1\uffff\1\44\1\u00fa\1\uffff\1\u00fb\1\u00fc\10\44\2\uffff\2\44\1\u0107\1\u0108\2\44\1\uffff\11\44\1\u0114\2\44\1\u0118\4\44\3\uffff\1\44\1\uffff\1\u011e\1\u00ec\2\44\1\u0121\2\44\1\uffff\1\u0124\2\44\3\uffff\6\44\1\u012d\3\44\2\uffff\1\u0131\1\u0132\1\u0133\10\44\1\uffff\3\44\1\uffff\1\u013f\1\u0140\3\44\1\uffff\1\u0144\1\u0145\1\uffff\1\44\1\u0147\1\uffff\5\44\1\u014d\2\44\1\uffff\2\44\1\u0152\3\uffff\1\u0153\1\44\1\u0155\5\44\1\u015c\2\44\2\uffff\3\44\2\uffff\1\44\1\uffff\4\44\1\u0167\1\uffff\1\u0168\1\44\1\u016a\1\u016b\2\uffff\1\44\1\uffff\6\44\1\uffff\1\u0173\3\44\1\u0177\1\u0178\4\44\2\uffff\1\44\2\uffff\1\u017e\1\u017f\4\44\1\u0184\1\uffff\1\44\1\u0186\1\44\2\uffff\1\u0188\3\44\1\u018c\2\uffff\4\44\1\uffff\1\44\1\uffff\1\44\1\uffff\1\u0193\1\44\1\u0195\1\uffff\5\44\1\u019b\1\uffff\1\u019c\1\uffff\5\44\2\uffff\1\u01a2\2\44\1\u01a5\1\u01a6\1\uffff\2\44\2\uffff\5\44\1\u01ae\1\44\1\uffff\1\44\1\u01b1\1\uffff";
     static final String DFA16_eofS =
         "\u01b2\uffff";
     static final String DFA16_minS =
-        "\1\11\1\75\1\154\3\75\2\uffff\1\52\1\uffff\1\52\1\uffff\1\141\1\145\1\146\1\141\1\125\1\154\1\157\1\145\1\150\1\141\1\160\1\164\10\uffff\1\157\1\150\1\154\1\157\6\uffff\1\145\1\157\17\uffff\1\143\1\160\1\165\1\163\1\143\1\162\1\163\1\60\1\160\1\60\1\142\1\143\1\157\1\114\1\141\1\156\1\144\1\143\1\160\1\145\1\165\1\156\1\157\1\162\1\156\1\154\1\164\1\60\1\145\1\162\1\157\1\145\1\164\1\147\1\144\1\164\1\141\1\143\1\60\1\141\1\155\1\145\2\141\1\145\1\150\1\60\1\143\1\164\1\165\1\145\1\uffff\1\157\1\uffff\1\145\1\154\1\153\1\141\1\164\1\114\1\163\1\156\1\145\1\157\1\165\1\145\1\154\1\145\1\156\1\145\1\143\1\167\1\60\1\141\1\163\1\145\1\uffff\1\162\1\145\1\160\1\156\1\154\1\150\1\157\1\60\1\157\1\60\2\153\1\uffff\1\160\1\145\2\156\1\164\2\60\1\uffff\1\162\1\151\1\164\3\162\1\60\1\151\1\141\1\155\1\151\1\145\1\103\1\163\1\145\1\164\1\154\2\162\1\143\1\141\3\60\1\164\1\60\1\uffff\1\154\1\145\1\165\1\162\2\141\2\60\1\145\1\151\1\162\1\uffff\1\164\1\uffff\2\60\1\163\1\162\1\144\1\156\1\144\1\151\1\146\1\150\2\uffff\1\145\1\141\2\60\1\164\1\145\1\uffff\1\143\1\147\1\145\1\141\1\143\1\154\1\151\1\145\1\141\1\60\1\143\1\141\1\60\1\144\1\156\1\154\1\143\3\uffff\1\151\1\uffff\2\60\1\164\1\60\1\164\1\155\2\uffff\1\60\1\156\1\151\1\141\2\uffff\1\165\1\141\1\163\2\141\1\157\1\60\1\145\1\164\1\154\2\uffff\3\60\1\145\1\164\1\154\1\164\1\141\1\162\1\154\1\162\1\uffff\1\164\1\156\1\141\1\uffff\2\60\1\141\1\145\1\157\1\uffff\1\60\1\uffff\1\157\1\60\1\uffff\1\60\2\164\1\154\1\164\1\60\1\154\1\142\1\156\1\uffff\1\156\1\145\1\60\3\uffff\1\60\1\145\1\60\1\145\1\163\1\145\2\141\1\60\1\164\1\151\2\uffff\1\162\1\141\1\156\1\uffff\1\162\2\uffff\1\150\1\151\1\141\1\151\1\uffff\1\60\1\154\3\60\2\uffff\1\162\1\uffff\1\144\1\163\1\143\1\164\1\155\1\162\1\uffff\1\60\1\156\1\145\1\142\2\60\1\155\1\157\1\164\1\157\1\uffff\1\145\3\uffff\2\60\1\124\1\164\1\151\1\145\1\60\1\uffff\1\145\1\60\1\154\2\uffff\1\60\1\156\1\145\1\156\1\60\2\uffff\1\171\1\151\1\157\1\164\1\uffff\1\144\1\uffff\1\145\1\uffff\1\60\1\144\1\60\1\uffff\1\160\1\157\1\156\1\145\1\142\1\60\1\uffff\1\60\1\uffff\1\145\1\156\1\163\1\162\1\171\2\uffff\2\60\1\150\1\124\1\60\2\uffff\1\151\1\171\1\uffff\2\160\1\124\1\145\1\171\1\60\1\160\1\uffff\1\145\1\60\1\uffff";
+        "\1\11\1\75\1\154\3\75\2\uffff\1\52\1\uffff\1\52\1\uffff\1\141\1\145\1\146\1\141\1\125\1\154\1\157\1\145\1\150\1\141\1\164\1\160\1\150\1\uffff\1\154\5\uffff\1\157\2\uffff\1\157\6\uffff\1\145\1\157\17\uffff\1\143\1\165\1\160\1\163\1\143\1\162\1\163\1\60\1\160\1\60\1\142\1\143\1\157\1\114\1\141\1\156\1\144\1\143\1\160\1\145\1\165\1\156\1\157\1\162\1\156\1\154\1\162\1\164\1\60\1\145\1\164\1\145\1\147\1\144\1\157\1\164\1\141\1\143\1\60\1\141\1\155\1\141\1\145\1\141\1\145\1\150\1\60\1\143\1\164\1\165\1\145\1\uffff\1\157\1\uffff\1\145\1\154\1\153\1\141\1\164\1\114\1\163\1\156\1\145\1\157\1\165\1\145\1\154\1\145\1\156\1\145\1\143\1\167\1\60\1\141\1\163\2\145\1\uffff\1\162\1\150\1\156\1\154\1\157\1\60\1\157\1\160\1\60\2\153\1\uffff\1\160\1\145\1\164\2\156\2\60\1\uffff\1\162\1\151\1\164\3\162\1\60\1\151\1\141\1\155\1\151\1\145\1\103\1\163\1\145\1\164\1\154\2\162\1\143\1\141\3\60\1\164\1\60\1\uffff\1\154\1\145\1\141\1\165\1\162\1\141\1\151\1\60\1\145\1\162\1\uffff\1\164\1\60\1\uffff\2\60\1\163\1\162\1\151\1\144\1\156\1\144\1\146\1\150\2\uffff\1\145\1\141\2\60\1\164\1\145\1\uffff\1\143\1\147\1\145\1\141\1\143\1\154\1\145\1\141\1\151\1\60\1\143\1\141\1\60\1\144\1\156\1\154\1\143\3\uffff\1\151\1\uffff\2\60\1\155\1\164\1\60\1\164\1\156\1\uffff\1\60\1\151\1\141\3\uffff\1\165\1\141\1\157\1\163\2\141\1\60\1\145\1\164\1\154\2\uffff\3\60\1\145\1\164\1\154\1\164\1\141\1\154\2\162\1\uffff\1\164\1\156\1\141\1\uffff\2\60\1\141\1\145\1\157\1\uffff\2\60\1\uffff\1\157\1\60\1\uffff\2\164\1\154\1\164\1\156\1\60\1\154\1\142\1\uffff\1\156\1\145\1\60\3\uffff\1\60\1\145\1\60\1\145\1\163\2\141\1\145\1\60\1\164\1\151\2\uffff\1\162\1\141\1\156\2\uffff\1\162\1\uffff\1\150\1\151\1\141\1\151\1\60\1\uffff\1\60\1\154\2\60\2\uffff\1\162\1\uffff\1\144\1\163\1\164\1\155\1\143\1\162\1\uffff\1\60\1\156\1\145\1\142\2\60\1\155\1\157\1\164\1\157\2\uffff\1\145\2\uffff\2\60\1\124\1\151\1\145\1\164\1\60\1\uffff\1\145\1\60\1\154\2\uffff\1\60\1\156\1\145\1\156\1\60\2\uffff\1\171\1\157\1\164\1\151\1\uffff\1\144\1\uffff\1\145\1\uffff\1\60\1\144\1\60\1\uffff\1\160\1\156\1\145\1\157\1\142\1\60\1\uffff\1\60\1\uffff\1\145\1\163\1\162\1\156\1\171\2\uffff\1\60\1\150\1\124\2\60\1\uffff\1\151\1\171\2\uffff\2\160\1\124\1\145\1\171\1\60\1\160\1\uffff\1\145\1\60\1\uffff";
     static final String DFA16_maxS =
-        "\1\175\1\75\1\162\1\76\2\75\2\uffff\1\136\1\uffff\1\57\1\uffff\1\170\1\151\1\156\1\165\1\125\2\157\1\145\1\171\2\165\1\164\10\uffff\1\157\1\151\1\156\1\157\6\uffff\1\145\1\157\17\uffff\1\165\1\164\1\165\1\163\1\143\1\162\1\163\1\172\1\160\1\172\2\162\1\157\1\114\1\141\1\156\1\144\1\164\1\160\1\145\1\165\1\156\1\157\1\162\1\156\1\154\1\164\1\172\1\145\1\162\1\157\1\151\1\164\1\147\1\156\1\164\1\141\1\143\1\172\1\141\1\155\1\145\2\141\1\145\1\150\1\172\1\143\1\164\1\165\1\145\1\uffff\1\165\1\uffff\1\145\1\154\1\153\2\164\1\114\2\163\1\145\1\157\1\165\1\145\1\154\1\145\1\156\1\145\1\143\1\167\1\172\1\141\1\163\1\160\1\uffff\1\162\1\145\1\160\1\156\1\154\1\150\1\157\1\172\1\157\1\172\2\153\1\uffff\1\160\1\145\1\162\1\156\1\164\2\172\1\uffff\1\162\1\151\1\164\3\162\1\172\1\151\1\141\1\155\1\151\1\145\1\122\1\163\1\145\1\164\1\154\2\162\1\143\1\141\3\172\1\164\1\172\1\uffff\1\154\1\145\1\165\1\162\2\141\2\172\1\145\1\151\1\162\1\uffff\1\164\1\uffff\2\172\1\163\1\162\1\144\1\156\1\144\1\151\1\146\1\150\2\uffff\1\145\1\141\2\172\1\164\1\145\1\uffff\1\143\1\147\1\145\1\141\1\143\1\154\1\151\1\145\1\141\1\172\1\143\1\162\1\172\1\144\1\156\1\154\1\143\3\uffff\1\151\1\uffff\2\172\1\164\1\172\1\164\1\155\2\uffff\1\172\1\156\1\151\1\141\2\uffff\1\165\1\141\1\163\2\141\1\157\1\172\1\145\1\164\1\154\2\uffff\3\172\1\145\1\164\1\154\1\164\1\141\1\162\1\154\1\162\1\uffff\1\164\1\156\1\141\1\uffff\2\172\1\141\1\145\1\157\1\uffff\1\172\1\uffff\1\157\1\172\1\uffff\1\172\2\164\1\154\1\164\1\172\1\154\1\142\1\156\1\uffff\1\156\1\145\1\172\3\uffff\1\172\1\145\1\172\1\145\1\163\1\145\2\141\1\172\1\164\1\151\2\uffff\1\162\1\141\1\156\1\uffff\1\162\2\uffff\1\150\1\151\1\141\1\151\1\uffff\1\172\1\154\3\172\2\uffff\1\162\1\uffff\1\144\1\163\1\143\1\164\1\155\1\162\1\uffff\1\172\1\156\1\145\1\142\2\172\1\155\1\157\1\164\1\157\1\uffff\1\145\3\uffff\2\172\1\124\1\164\1\151\1\145\1\172\1\uffff\1\145\1\172\1\154\2\uffff\1\172\1\156\1\145\1\156\1\172\2\uffff\1\171\1\151\1\157\1\164\1\uffff\1\144\1\uffff\1\145\1\uffff\1\172\1\144\1\172\1\uffff\1\160\1\157\1\156\1\145\1\142\1\172\1\uffff\1\172\1\uffff\1\145\1\156\1\163\1\162\1\171\2\uffff\2\172\1\150\1\124\1\172\2\uffff\1\151\1\171\1\uffff\2\160\1\124\1\145\1\171\1\172\1\160\1\uffff\1\145\1\172\1\uffff";
+        "\1\175\1\75\1\162\1\76\2\75\2\uffff\1\136\1\uffff\1\57\1\uffff\1\170\1\151\1\156\1\165\1\125\2\157\1\145\1\171\1\165\1\164\1\165\1\151\1\uffff\1\156\5\uffff\1\157\2\uffff\1\157\6\uffff\1\145\1\157\17\uffff\2\165\1\164\1\163\1\143\1\162\1\163\1\172\1\160\1\172\2\162\1\157\1\114\1\141\1\156\1\144\1\164\1\160\1\145\1\165\1\156\1\157\1\162\1\156\1\154\1\162\1\164\1\172\1\145\1\164\1\151\1\147\1\156\1\157\1\164\1\141\1\143\1\172\1\141\1\155\1\141\1\145\1\141\1\145\1\150\1\172\1\143\1\164\1\165\1\145\1\uffff\1\165\1\uffff\1\145\1\154\1\153\2\164\1\114\2\163\1\145\1\157\1\165\1\145\1\154\1\145\1\156\1\145\1\143\1\167\1\172\1\141\1\163\1\145\1\160\1\uffff\1\162\1\150\1\156\1\154\1\157\1\172\1\157\1\160\1\172\2\153\1\uffff\1\160\1\145\1\164\1\162\1\156\2\172\1\uffff\1\162\1\151\1\164\3\162\1\172\1\151\1\141\1\155\1\151\1\145\1\122\1\163\1\145\1\164\1\154\2\162\1\143\1\141\3\172\1\164\1\172\1\uffff\1\154\1\145\1\141\1\165\1\162\1\141\1\151\1\172\1\145\1\162\1\uffff\1\164\1\172\1\uffff\2\172\1\163\1\162\1\151\1\144\1\156\1\144\1\146\1\150\2\uffff\1\145\1\141\2\172\1\164\1\145\1\uffff\1\143\1\147\1\145\1\141\1\143\1\154\1\145\1\141\1\151\1\172\1\143\1\162\1\172\1\144\1\156\1\154\1\143\3\uffff\1\151\1\uffff\2\172\1\155\1\164\1\172\1\164\1\156\1\uffff\1\172\1\151\1\141\3\uffff\1\165\1\141\1\157\1\163\2\141\1\172\1\145\1\164\1\154\2\uffff\3\172\1\145\1\164\1\154\1\164\1\141\1\154\2\162\1\uffff\1\164\1\156\1\141\1\uffff\2\172\1\141\1\145\1\157\1\uffff\2\172\1\uffff\1\157\1\172\1\uffff\2\164\1\154\1\164\1\156\1\172\1\154\1\142\1\uffff\1\156\1\145\1\172\3\uffff\1\172\1\145\1\172\1\145\1\163\2\141\1\145\1\172\1\164\1\151\2\uffff\1\162\1\141\1\156\2\uffff\1\162\1\uffff\1\150\1\151\1\141\1\151\1\172\1\uffff\1\172\1\154\2\172\2\uffff\1\162\1\uffff\1\144\1\163\1\164\1\155\1\143\1\162\1\uffff\1\172\1\156\1\145\1\142\2\172\1\155\1\157\1\164\1\157\2\uffff\1\145\2\uffff\2\172\1\124\1\151\1\145\1\164\1\172\1\uffff\1\145\1\172\1\154\2\uffff\1\172\1\156\1\145\1\156\1\172\2\uffff\1\171\1\157\1\164\1\151\1\uffff\1\144\1\uffff\1\145\1\uffff\1\172\1\144\1\172\1\uffff\1\160\1\156\1\145\1\157\1\142\1\172\1\uffff\1\172\1\uffff\1\145\1\163\1\162\1\156\1\171\2\uffff\1\172\1\150\1\124\2\172\1\uffff\1\151\1\171\2\uffff\2\160\1\124\1\145\1\171\1\172\1\160\1\uffff\1\145\1\172\1\uffff";
     static final String DFA16_acceptS =
-        "\6\uffff\1\11\1\12\1\uffff\1\15\1\uffff\1\20\14\uffff\1\51\1\52\1\53\1\54\1\56\1\57\1\64\1\65\4\uffff\1\132\1\133\1\134\1\137\1\61\1\1\2\uffff\1\4\1\10\1\3\1\6\1\5\1\7\1\60\1\13\1\14\1\17\1\21\1\55\1\135\1\136\1\16\63\uffff\1\110\1\uffff\1\67\26\uffff\1\105\14\uffff\1\22\7\uffff\1\23\32\uffff\1\75\13\uffff\1\106\1\uffff\1\107\12\uffff\1\74\1\123\6\uffff\1\25\21\uffff\1\34\1\72\1\131\1\uffff\1\43\6\uffff\1\76\1\100\4\uffff\1\2\1\32\12\uffff\1\40\1\127\13\uffff\1\27\3\uffff\1\30\5\uffff\1\112\1\uffff\1\130\2\uffff\1\104\11\uffff\1\73\3\uffff\1\63\1\116\1\125\13\uffff\1\31\1\103\3\uffff\1\41\1\uffff\1\44\1\111\4\uffff\1\66\5\uffff\1\24\1\35\1\uffff\1\114\6\uffff\1\77\12\uffff\1\70\1\uffff\1\71\1\101\1\46\7\uffff\1\50\3\uffff\1\36\1\117\5\uffff\1\47\1\126\4\uffff\1\33\1\uffff\1\122\1\uffff\1\102\3\uffff\1\115\6\uffff\1\121\1\uffff\1\120\5\uffff\1\124\1\113\5\uffff\1\26\1\37\2\uffff\1\62\7\uffff\1\45\2\uffff\1\42";
+        "\6\uffff\1\11\1\12\1\uffff\1\15\1\uffff\1\20\15\uffff\1\52\1\uffff\1\60\1\61\1\62\1\64\1\65\1\uffff\1\103\1\104\1\uffff\1\132\1\133\1\134\1\137\1\100\1\1\2\uffff\1\4\1\10\1\3\1\6\1\5\1\7\1\56\1\13\1\14\1\17\1\21\1\57\1\135\1\136\1\16\63\uffff\1\110\1\uffff\1\66\27\uffff\1\105\13\uffff\1\22\7\uffff\1\23\32\uffff\1\73\12\uffff\1\106\2\uffff\1\107\12\uffff\1\72\1\113\6\uffff\1\25\21\uffff\1\34\1\70\1\131\1\uffff\1\40\7\uffff\1\76\3\uffff\1\74\1\2\1\32\12\uffff\1\47\1\117\13\uffff\1\27\3\uffff\1\30\5\uffff\1\111\2\uffff\1\120\2\uffff\1\102\10\uffff\1\71\3\uffff\1\55\1\125\1\115\13\uffff\1\31\1\101\3\uffff\1\41\1\50\1\uffff\1\51\5\uffff\1\63\4\uffff\1\24\1\35\1\uffff\1\123\6\uffff\1\75\12\uffff\1\53\1\67\1\uffff\1\77\1\43\7\uffff\1\45\3\uffff\1\36\1\126\5\uffff\1\44\1\116\4\uffff\1\33\1\uffff\1\112\1\uffff\1\54\3\uffff\1\124\6\uffff\1\121\1\uffff\1\127\5\uffff\1\114\1\122\5\uffff\1\26\2\uffff\1\46\1\130\7\uffff\1\42\2\uffff\1\37";
     static final String DFA16_specialS =
         "\u01b2\uffff}>";
     static final String[] DFA16_transitionS = {
-            "\2\47\2\uffff\1\47\22\uffff\1\47\1\uffff\1\46\4\uffff\1\44\1\31\1\32\1\11\1\6\1\33\1\7\1\10\1\12\12\45\1\1\1\30\1\3\1\5\1\4\2\uffff\15\44\1\20\14\44\1\34\1\uffff\1\35\1\13\1\44\1\uffff\1\42\1\2\1\21\1\15\1\14\1\25\2\44\1\16\2\44\1\40\1\22\1\43\1\26\1\17\1\44\1\23\1\27\1\24\2\44\1\41\3\44\1\36\1\uffff\1\37",
+            "\2\47\2\uffff\1\47\22\uffff\1\47\1\uffff\1\46\4\uffff\1\44\1\36\1\37\1\11\1\6\1\35\1\7\1\10\1\12\12\45\1\1\1\31\1\3\1\5\1\4\2\uffff\15\44\1\20\14\44\1\41\1\uffff\1\42\1\13\1\44\1\uffff\1\32\1\2\1\21\1\15\1\14\1\25\2\44\1\16\2\44\1\40\1\22\1\43\1\27\1\17\1\44\1\23\1\26\1\24\2\44\1\30\3\44\1\33\1\uffff\1\34",
             "\1\50",
             "\1\53\5\uffff\1\52",
             "\1\54\1\55",
@@ -3384,7 +3384,7 @@ public class InternalMOlocLexer extends Lexer {
             "",
             "\1\70\4\uffff\1\71",
             "",
-            "\1\77\12\uffff\1\76\1\uffff\1\73\2\uffff\1\75\6\uffff\1\74",
+            "\1\77\12\uffff\1\76\1\uffff\1\73\2\uffff\1\74\6\uffff\1\75",
             "\1\100\3\uffff\1\101",
             "\1\104\6\uffff\1\103\1\102",
             "\1\106\20\uffff\1\107\2\uffff\1\105",
@@ -3394,19 +3394,19 @@ public class InternalMOlocLexer extends Lexer {
             "\1\114",
             "\1\116\11\uffff\1\117\6\uffff\1\115",
             "\1\124\7\uffff\1\123\2\uffff\1\121\2\uffff\1\122\5\uffff\1\120",
-            "\1\127\1\uffff\1\126\2\uffff\1\125",
-            "\1\130",
+            "\1\125",
+            "\1\130\1\uffff\1\127\2\uffff\1\126",
+            "\1\132\1\131",
+            "",
+            "\1\133\1\uffff\1\134",
             "",
             "",
             "",
             "",
             "",
+            "\1\135",
             "",
             "",
-            "",
-            "\1\131",
-            "\1\132\1\133",
-            "\1\134\1\uffff\1\135",
             "\1\136",
             "",
             "",
@@ -3432,8 +3432,8 @@ public class InternalMOlocLexer extends Lexer {
             "",
             "",
             "\1\142\1\141\20\uffff\1\143",
-            "\1\145\3\uffff\1\144",
-            "\1\146",
+            "\1\144",
+            "\1\146\3\uffff\1\145",
             "\1\147",
             "\1\150",
             "\1\151",
@@ -3458,14 +3458,14 @@ public class InternalMOlocLexer extends Lexer {
             "\1\u0084",
             "\1\u0085",
             "\1\u0086",
+            "\1\u0087",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\u0088",
             "\1\u0089",
             "\1\u008a",
             "\1\u008b\3\uffff\1\u008c",
             "\1\u008d",
-            "\1\u008e",
-            "\1\u008f\11\uffff\1\u0090",
+            "\1\u008e\11\uffff\1\u008f",
+            "\1\u0090",
             "\1\u0091",
             "\1\u0092",
             "\1\u0093",
@@ -3506,16 +3506,16 @@ public class InternalMOlocLexer extends Lexer {
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00b8",
             "\1\u00b9",
-            "\1\u00bb\12\uffff\1\u00ba",
+            "\1\u00ba",
+            "\1\u00bc\12\uffff\1\u00bb",
             "",
-            "\1\u00bc",
             "\1\u00bd",
             "\1\u00be",
             "\1\u00bf",
             "\1\u00c0",
             "\1\u00c1",
-            "\1\u00c2",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u00c3",
             "\1\u00c4",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00c6",
@@ -3523,8 +3523,8 @@ public class InternalMOlocLexer extends Lexer {
             "",
             "\1\u00c8",
             "\1\u00c9",
-            "\1\u00ca\3\uffff\1\u00cb",
-            "\1\u00cc",
+            "\1\u00ca",
+            "\1\u00cb\3\uffff\1\u00cc",
             "\1\u00cd",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\10\44\1\u00ce\15\44\1\u00cf\3\44",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
@@ -3541,7 +3541,7 @@ public class InternalMOlocLexer extends Lexer {
             "\1\u00db",
             "\1\u00dc",
             "\1\u00dd",
-            "\1\u00de\1\u00df\13\uffff\1\u00e1\1\uffff\1\u00e0",
+            "\1\u00de\1\u00e1\13\uffff\1\u00e0\1\uffff\1\u00df",
             "\1\u00e2",
             "\1\u00e3",
             "\1\u00e4",
@@ -3562,13 +3562,13 @@ public class InternalMOlocLexer extends Lexer {
             "\1\u00f2",
             "\1\u00f3",
             "\1\u00f4",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u00f5",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00f7",
             "\1\u00f8",
-            "\1\u00f9",
             "",
-            "\1\u00fa",
+            "\1\u00f9",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
@@ -3614,15 +3614,15 @@ public class InternalMOlocLexer extends Lexer {
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u011f",
+            "\1\u0120",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\u0121",
             "\1\u0122",
-            "",
+            "\1\u0123",
             "",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\u0124",
             "\1\u0125",
             "\1\u0126",
+            "",
             "",
             "",
             "\1\u0127",
@@ -3660,17 +3660,17 @@ public class InternalMOlocLexer extends Lexer {
             "\1\u0143",
             "",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "",
-            "\1\u0145",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
+            "\1\u0146",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "",
             "\1\u0148",
             "\1\u0149",
             "\1\u014a",
             "\1\u014b",
+            "\1\u014c",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\u014d",
             "\1\u014e",
             "\1\u014f",
             "",
@@ -3697,17 +3697,17 @@ public class InternalMOlocLexer extends Lexer {
             "\1\u0160",
             "\1\u0161",
             "",
-            "\1\u0162",
             "",
+            "\1\u0162",
             "",
             "\1\u0163",
             "\1\u0164",
             "\1\u0165",
             "\1\u0166",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\u0168",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u0169",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
@@ -3732,8 +3732,8 @@ public class InternalMOlocLexer extends Lexer {
             "\1\u017b",
             "\1\u017c",
             "",
-            "\1\u017d",
             "",
+            "\1\u017d",
             "",
             "",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
@@ -3786,14 +3786,14 @@ public class InternalMOlocLexer extends Lexer {
             "",
             "",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u01a3",
             "\1\u01a4",
-            "\1\u01a5",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
             "\1\u01a7",
             "\1\u01a8",
+            "",
             "",
             "\1\u01a9",
             "\1\u01aa",

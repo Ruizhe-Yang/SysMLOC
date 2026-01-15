@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Ideal">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Ideal"/>
   <classes classType="model" className="IdealizedOpAmpLimited" description="&quot;Idealized operational amplifier with limitation&quot;" isLongClassSpecifier="true" classNameEnd="IdealizedOpAmpLimited" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="15000.0" declarationName="V0" description="&quot;No-load amplification&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useSupply" description="&quot;Use supply pins (otherwise constant supply)&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="+15" declarationName="Vps" description="&quot;Positive supply voltage&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="not useSupply" elementName="enable"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="-15" declarationName="Vns" description="&quot;Negative supply voltage&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="not useSupply" elementName="enable"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="true" declarationName="strict" description="&quot;= true, if strict limits with noEvent(..)&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
         <annotations isModificationOver="true" elementName="choices">
@@ -34,7 +35,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.LimiterHomotopy" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Types.LimiterHomotopy" parameterType="parameter" isOver="true">
       <component_list expression="Modelica.Blocks.Types.LimiterHomotopy.NoHomotopy" declarationName="homotopyType" description="&quot;Simplified model for homotopy-based initialization&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -42,31 +43,31 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="vps" description="&quot;Positive supply voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="vns" description="&quot;Negative supply voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list expression="in_p.v - in_n.v" declarationName="v_in" description="&quot;Input voltage difference&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list expression="out.v" declarationName="v_out" description="&quot;Output voltage to ground&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" isOver="true">
       <component_list expression="in_p.v*in_p.i + in_n.v*in_n.i" declarationName="p_in" description="&quot;Input power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" isOver="true">
       <component_list expression="out.v*out.i" declarationName="p_out" description="&quot;Output power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" isOver="true">
       <component_list expression="-(p_in + p_out)" declarationName="p_s" description="&quot;Supply power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list expression="p_s/(vps - vns)" declarationName="i_s" description="&quot;Supply current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="in_p" description="&quot;Positive pin of the input port&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -75,7 +76,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
       <component_list declarationName="in_n" description="&quot;Negative pin of the input port&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -84,7 +85,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="out" description="&quot;Pin of the output port&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -96,7 +97,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
       <component_list isModificationOver="true" declarationName="s_p" description="&quot;Optional positive supply pin&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useSupply">
         <modifications expression="+i_s" elementName="i" isfinal="true"/>
         <modifications expression="vps" elementName="v" isfinal="true"/>
@@ -107,7 +108,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
       <component_list isModificationOver="true" declarationName="s_n" description="&quot;Optional negative supply pin&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useSupply">
         <modifications expression="-i_s" elementName="i" isfinal="true"/>
         <modifications expression="vns" elementName="v" isfinal="true"/>
@@ -118,7 +119,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isProtected="true" isOver="true">
       <component_list declarationName="simplifiedExpr" description="&quot;Simplified expression for homotopy-based initialization&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.moloc.mOloc.constraining#isIsConstrainedby <em>Is Constrainedby</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.constraining#getConstrain <em>Constrain</em>}</li>
  * </ul>
  *
@@ -23,6 +24,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface constraining extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Is Constrainedby</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Constrainedby</em>' attribute.
+   * @see #setIsConstrainedby(boolean)
+   * @see dut.control.moloc.mOloc.MOlocPackage#getconstraining_IsConstrainedby()
+   * @model
+   * @generated
+   */
+  boolean isIsConstrainedby();
+
+  /**
+   * Sets the value of the '{@link dut.control.moloc.mOloc.constraining#isIsConstrainedby <em>Is Constrainedby</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Constrainedby</em>' attribute.
+   * @see #isIsConstrainedby()
+   * @generated
+   */
+  void setIsConstrainedby(boolean value);
+
   /**
    * Returns the value of the '<em><b>Constrain</b></em>' containment reference.
    * <!-- begin-user-doc -->

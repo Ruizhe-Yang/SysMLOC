@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Sources">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Sources"/>
   <classes classType="model" className="CosineVoltageVariableFrequencyAndAmplitude" description="&quot;Cosine voltage source with variable frequency and amplitude&quot;" isLongClassSpecifier="true" classNameEnd="CosineVoltageVariableFrequencyAndAmplitude" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Icons.VoltageSource" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useConstantAmplitude" description="&quot;Enable constant amplitude&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="1" declarationName="constantAmplitude" description="&quot;Constant amplitude&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="useConstantAmplitude" elementName="enable"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useConstantFrequency" description="&quot;Enable constant frequency&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
       <component_list expression="1" declarationName="constantFrequency" description="&quot;Constant frequency&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="useConstantFrequency" elementName="enable"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="offset" description="&quot;Offset of the sine wave&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
       <component_list isModificationOver="true" declarationName="phi" description="&quot;Phase of the sine wave&quot;">
         <modifications expression="0" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
       <component_list isModificationOver="true" declarationName="V" description="&quot;Amplitude&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantAmplitude">
         <modifications expression="&quot;V&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -44,7 +45,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
       <component_list isModificationOver="true" declarationName="f" description="&quot;Frequency&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantFrequency">
         <modifications expression="&quot;Hz&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -56,7 +57,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isProtected="true" isOver="true">
       <component_list isModificationOver="true" declarationName="V_internal" description="&quot;Amplitude&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;V&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -68,7 +69,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
       <component_list isModificationOver="true" declarationName="f_internal" description="&quot;Frequency&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;Hz&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -80,7 +81,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="V_constant" isAnnotation="true" isAnnotationOver="true" condition_attribute="useConstantAmplitude">
         <modifications expression="constantAmplitude" elementName="k" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -90,7 +91,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="f_constant" isAnnotation="true" isAnnotationOver="true" condition_attribute="useConstantFrequency">
         <modifications expression="constantFrequency" elementName="k" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">

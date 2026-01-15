@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Blocks">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Blocks"/>
   <classes classType="package" className="MathInteger" description="&quot;Library of Integer mathematical functions as input/output blocks&quot;" isLongClassSpecifier="true" classNameEnd="MathInteger" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="MultiSwitch" description="&quot;Set Integer expression that is associated with the first active input signal&quot;" isLongClassSpecifier="true" classNameEnd="MultiSwitch" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="MultiSwitch" description="&quot;Set Integer expression that is associated with the first active input signal&quot;" isLongClassSpecifier="true" classNameEnd="MultiSwitch" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="input" isOver="true">
         <component_list subscripts="[nu]" expression="fill(0, nu)" declarationName="expr" description="&quot;y = if u[i] then expr[i] elseif use_pre_as_default then pre(y) else y_default&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations elementName="Dialog"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="y_default" description="&quot;Default value of output y if use_pre_as_default=false, as well as pre(y) at initial time&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="true" declarationName="use_pre_as_default" description="&quot;= true, y holds its last value if all u[i]=false, otherwise y=y_default&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="HideResult"/>
           <annotations isModificationOver="true" elementName="choices">
@@ -19,7 +20,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="0" declarationName="nu" description="&quot;Number of input connections&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="0" elementName="min"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -28,7 +29,7 @@
           <annotations expression="true" elementName="HideResult"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanVectorInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanVectorInput" isOver="true">
         <component_list subscripts="[nu]" declarationName="u" description="&quot;Set y = expr[i], if u[i] = true&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -37,7 +38,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerOutput" isOver="true">
         <component_list declarationName="y" description="&quot;Output depending on expression&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -46,7 +47,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isProtected="true" isOver="true">
         <component_list declarationName="firstActiveIndex"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -70,9 +71,9 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Sum" description="&quot;Sum of Integers: y = k[1]*u[1] + k[2]*u[2] + ... + k[n]*u[n]&quot;" isLongClassSpecifier="true" classNameEnd="Sum" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Sum" description="&quot;Sum of Integers: y = k[1]*u[1] + k[2]*u[2] + ... + k[n]*u[n]&quot;" isLongClassSpecifier="true" classNameEnd="Sum" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialIntegerMISO" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list subscripts="[nu]" expression="fill(1,nu)" declarationName="k" description="&quot;Input gains&quot;"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
@@ -90,7 +91,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Product" description="&quot;Product of Integer: y = u[1]*u[2]* ... *u[n]&quot;" isLongClassSpecifier="true" classNameEnd="Product" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Product" description="&quot;Product of Integer: y = u[1]*u[2]* ... *u[n]&quot;" isLongClassSpecifier="true" classNameEnd="Product" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialIntegerMISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:IfEquation" condition="size(u,1) > 0">
@@ -107,9 +108,9 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="TriggeredAdd" description="&quot;Add input to previous value of output, if rising edge of trigger port&quot;" isLongClassSpecifier="true" classNameEnd="TriggeredAdd" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="TriggeredAdd" description="&quot;Add input to previous value of output, if rising edge of trigger port&quot;" isLongClassSpecifier="true" classNameEnd="TriggeredAdd" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialIntegerSISO" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="use_reset" description="&quot;= true, if reset port enabled&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="Evaluate"/>
           <annotations expression="true" elementName="HideResult"/>
@@ -118,7 +119,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="use_set" description="&quot;= true, if set port enabled and used as default value when reset&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="use_reset" elementName="enable"/>
@@ -130,10 +131,10 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="y_start" description="&quot;Initial and reset value of y if set port is not used&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
         <component_list declarationName="trigger" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -144,7 +145,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
         <component_list declarationName="reset" isAnnotation="true" isAnnotationOver="true" condition_attribute="use_reset">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -155,7 +156,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerInput" isOver="true">
         <component_list declarationName="set" isAnnotation="true" isAnnotationOver="true" condition_attribute="use_set">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -171,12 +172,12 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isProtected="true" isOver="true">
         <component_list declarationName="local_reset" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="HideResult"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerOutput" isOver="true">
         <component_list declarationName="local_set"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">

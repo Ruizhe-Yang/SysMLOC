@@ -1,46 +1,47 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.BasicMachines.Components">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.BasicMachines.Components"/>
   <classes classType="model" className="DamperCage" description="&quot;Squirrel Cage&quot;" isLongClassSpecifier="true" classNameEnd="DamperCage" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list declarationName="Lrsigmad" description="&quot;Stray inductance in d-axis per phase translated to stator&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list declarationName="Lrsigmaq" description="&quot;Stray inductance in q-axis per phase translated to stator&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list declarationName="Rrd" description="&quot;Resistance in d-axis per phase translated to stator at T_ref&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list declarationName="Rrq" description="&quot;Resistance in q-axis per phase translated to stator at T_ref&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
       <component_list expression="293.15" declarationName="T_ref" description="&quot;Reference temperature of both resistances in d- and q-axis&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="alpha" description="&quot;Temperature coefficient of both resistances in d- and q-axis at T_ref&quot;"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
       <extendsModifications expression="T_ref" elementName="T"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" isOver="true">
       <component_list declarationName="Rrd_actual" description="&quot;Actual resistance = Rrd*(1 + alpha*(T_heatPort - T_ref))&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" isOver="true">
       <component_list declarationName="Rrq_actual" description="&quot;Actual resistance = Rrq*(1 + alpha*(T_heatPort - T_ref))&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
       <component_list subscripts="[2]" isModificationOver="true" expression="-spacePhasor_r.i_" declarationName="i" description="&quot;Currents out from damper&quot;">
         <modifications expression="&quot;ElectricCurrent&quot;" elementName="quantity" isEach="true" isfinal="true"/>
         <modifications expression="&quot;A&quot;" elementName="unit" isEach="true" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
       <component_list isModificationOver="true" expression="LossPower" declarationName="lossPower" description="&quot;Damper losses&quot;">
         <modifications expression="&quot;Power&quot;" elementName="quantity" isfinal="true"/>
         <modifications expression="&quot;W&quot;" elementName="unit" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Interfaces.SpacePhasor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Interfaces.SpacePhasor" isOver="true">
       <component_list declarationName="spacePhasor_r" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

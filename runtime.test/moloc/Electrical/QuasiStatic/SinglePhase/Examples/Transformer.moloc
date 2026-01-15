@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Examples">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Examples"/>
   <classes classType="model" className="Transformer" description="&quot;Example of transformer with short circuit impedance, transmission resistances and load&quot;" isLongClassSpecifier="true" classNameEnd="Transformer" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Sources.VoltageSource" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Sources.VoltageSource" isOver="true">
       <component_list isModificationOver="true" declarationName="voltageSource" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="50" elementName="f"/>
         <modifications expression="1000" elementName="V"/>
@@ -20,7 +21,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Ideal.IdealTransformer" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Ideal.IdealTransformer" isOver="true">
       <component_list isModificationOver="true" declarationName="idealTransformer" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="5" elementName="n"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -30,7 +31,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Sensors.PowerSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Sensors.PowerSensor" isOver="true">
       <component_list declarationName="sensor0" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -39,7 +40,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Impedance" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.Impedance" isOver="true">
       <component_list isModificationOver="true" declarationName="zk" isAnnotation="true" isAnnotationOver="true">
         <modifications isModificationOver="true" elementName="Z_ref">
           <modifications expression="0.72" elementName="re"/>
@@ -53,7 +54,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Sources.VariableCurrentSource" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Sources.VariableCurrentSource" isOver="true">
       <component_list isModificationOver="true" declarationName="load" isAnnotation="true" isAnnotationOver="true">
         <modifications isModificationOver="true" elementName="gamma">
           <modifications expression="true" elementName="fixed"/>
@@ -68,7 +69,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Sensors.PowerSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Sensors.PowerSensor" isOver="true">
       <component_list declarationName="sensorL" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -77,7 +78,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Ground" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.Ground" isOver="true">
       <component_list declarationName="ground1" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -86,7 +87,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Ground" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.Ground" isOver="true">
       <component_list declarationName="ground2" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -95,7 +96,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Sensors.VoltageSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Sensors.VoltageSensor" isOver="true">
       <component_list declarationName="v2" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -106,7 +107,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.ComplexMath.PolarToComplex" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.ComplexBlocks.ComplexMath.PolarToComplex" isOver="true">
       <component_list declarationName="polarToComplex" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -115,7 +116,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="const" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="250" elementName="k"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -125,7 +126,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Ramp" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Ramp" isOver="true">
       <component_list isModificationOver="true" declarationName="ramp" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="duration"/>
         <modifications expression="0" elementName="offset"/>
@@ -138,7 +139,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="constFrequency" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="50" elementName="k"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -148,7 +149,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Sensors.CurrentSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Sensors.CurrentSensor" isOver="true">
       <component_list declarationName="i2" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -157,7 +158,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Sensors.CurrentSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Sensors.CurrentSensor" isOver="true">
       <component_list declarationName="i1" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

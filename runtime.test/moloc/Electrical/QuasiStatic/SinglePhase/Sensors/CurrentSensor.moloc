@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Sensors">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Sensors"/>
   <classes classType="model" className="CurrentSensor" description="&quot;Current sensor&quot;" isLongClassSpecifier="true" classNameEnd="CurrentSensor" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.RelativeSensorElementary" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
       <component_list isModificationOver="true" declarationName="i" description="&quot;Complex current&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications isModificationOver="true" elementName="re">
           <modifications expression="&quot;A&quot;" elementName="unit"/>
@@ -24,13 +25,13 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list expression="Modelica.ComplexMath.abs(i)" declarationName="abs_i" description="&quot;Magnitude of complex current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
       <component_list expression="Modelica.ComplexMath.arg(i)" declarationName="arg_i" description="&quot;Argument of complex current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
       <component_list declarationName="v" description="&quot;Complex voltage&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

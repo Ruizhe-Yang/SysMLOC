@@ -29,7 +29,6 @@ public class MOLOC2MO {
 //        Path out = convertModelToMO(modelPath);
 //        System.out.println("Done. Written to: " + out.toAbsolutePath());
         convertAllModelsInFolder(modelPath);
-        
     }
     public static void convertAllModelsInFolder(String folderPath) throws Exception {
         Path dir = Paths.get(folderPath).toAbsolutePath();

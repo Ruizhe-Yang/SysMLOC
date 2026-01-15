@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Losses">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Losses"/>
   <classes classType="record" className="PermanentMagnetLossParameters" description="&quot;Parameter record for permanent magnet losses&quot;" isLongClassSpecifier="true" classNameEnd="PermanentMagnetLossParameters" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Record" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="0" declarationName="PRef" description="&quot;Reference permanent magnet losses at IRef and wRef&quot;">
         <modifications expression="0" elementName="min"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="0" declarationName="c" description="&quot;Part of permanent magnet losses at current = 0, i.e. independent of current&quot;">
         <modifications expression="0" elementName="min"/>
         <modifications expression="1" elementName="max"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="IRef" description="&quot;Reference stator RMS current that PRef refers to&quot;">
         <modifications expression="Modelica.Constants.small" elementName="min"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="2" declarationName="power_I" description="&quot;Exponent of permanent magnet loss torque w.r.t. stator current&quot;">
         <modifications expression="Modelica.Constants.small" elementName="min"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="wRef" description="&quot;Reference angular velocity that PRef refers to&quot;">
         <modifications expression="&quot;rev/min&quot;" elementName="displayUnit"/>
         <modifications expression="Modelica.Constants.small" elementName="min"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1" declarationName="power_w" description="&quot;Exponent of permanent magnet loss torque w.r.t. angular velocity&quot;">
         <modifications expression="Modelica.Constants.small" elementName="min"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Torque" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Torque" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="if (PRef &lt;= 0) then 0 else PRef/wRef" declarationName="tauRef" description="&quot;Reference permanent magnet loss torque at reference angular velocity and reference current&quot;"/>
     </elements>
     <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">

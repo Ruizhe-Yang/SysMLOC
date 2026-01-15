@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.ComplexMath">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.ComplexBlocks.ComplexMath"/>
   <classes classType="block" className="TransferFunction" description="&quot;Complex Transfer Function&quot;" isLongClassSpecifier="true" classNameEnd="TransferFunction" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexSISO" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.j" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list subscripts="[:]" expression="{1}" declarationName="b" description="&quot;Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list subscripts="[:]" expression="{1}" declarationName="a" description="&quot;Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6})&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list isModificationOver="true" declarationName="w" description="&quot;Angular frequency input&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;rad/s&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -21,16 +22,16 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Complex" isProtected="true" isOver="true">
       <component_list subscripts="[size(b,1)]" declarationName="bw"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Complex" isOver="true">
       <component_list subscripts="[size(a,1)]" declarationName="aw"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Complex" isOver="true">
       <component_list declarationName="bSum"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Complex" isOver="true">
       <component_list declarationName="aSum"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

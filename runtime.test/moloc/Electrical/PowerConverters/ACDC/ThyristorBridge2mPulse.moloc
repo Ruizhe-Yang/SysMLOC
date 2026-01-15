@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.ACDC">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.ACDC"/>
   <classes classType="model" className="ThyristorBridge2mPulse" description="&quot;2*m pulse thyristor rectifier bridge&quot;" isLongClassSpecifier="true" classNameEnd="ThyristorBridge2mPulse" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Icons.Converter" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1e-05" declarationName="RonThyristor" description="&quot;Closed thyristor resistance&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1e-05" declarationName="GoffThyristor" description="&quot;Opened thyristor conductance&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="0" declarationName="VkneeThyristor" description="&quot;Thyristor forward threshold voltage&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list subscripts="[m]" expression="fill(true, m)" declarationName="offStart_p" description="&quot;Boolean start value of variable thyristor_p[:].off&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="choices">
           <modifications expression="true" elementName="checkBox"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list subscripts="[m]" expression="fill(true, m)" declarationName="offStart_n" description="&quot;Boolean start value of variable thyristor_n[:].off&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="choices">
           <modifications expression="true" elementName="checkBox"/>
@@ -38,7 +39,7 @@
       <extendsModifications expression="293.15" elementName="T" isfinal="true"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.Enable.Enable2m" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Ideal.IdealThyristor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Ideal.IdealThyristor" isOver="true">
       <component_list isModificationOver="true" declarationName="thyristor_p" description="&quot;Thyristors connected to positive DC potential&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <modifications expression="fill(RonThyristor, m)" elementName="Ron" isfinal="true"/>
@@ -60,7 +61,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Ideal.IdealThyristor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Ideal.IdealThyristor" isOver="true">
       <component_list isModificationOver="true" declarationName="thyristor_n" description="&quot;Thyristors connected to negative DC potential&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <modifications expression="fill(RonThyristor, m)" elementName="Ron" isfinal="true"/>
@@ -82,7 +83,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
       <component_list isModificationOver="true" declarationName="star_p" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -92,7 +93,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
       <component_list isModificationOver="true" declarationName="star_n" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -102,7 +103,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Components.ThermalCollector" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Components.ThermalCollector" isOver="true">
       <component_list isModificationOver="true" declarationName="thermalConnector" isAnnotation="true" isAnnotationOver="true" condition_attribute="useHeatPort">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -112,7 +113,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Pre" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Logical.Pre" isOver="true">
       <component_list subscripts="[m]" declarationName="pre_p" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -123,7 +124,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Logical.Pre" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Logical.Pre" isOver="true">
       <component_list subscripts="[m]" declarationName="pre_n" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

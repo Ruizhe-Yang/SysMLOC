@@ -1,70 +1,71 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Ideal">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Ideal"/>
   <classes classType="model" className="IdealTransformer" description="&quot;Ideal transformer&quot;" isLongClassSpecifier="true" classNameEnd="IdealTransformer" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="1" declarationName="n" description="&quot;Ratio of primary to secondary voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
       <component_list expression="pin_p1.v - pin_n1.v" declarationName="v1" description="&quot;Voltage drop of side 1&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
       <component_list expression="pin_p1.i" declarationName="i1" description="&quot;Current into side 1&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
       <component_list expression="pin_p2.v - pin_n2.v" declarationName="v2" description="&quot;Voltage drop of side 2&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
       <component_list expression="pin_p2.i" declarationName="i2" description="&quot;Current into side 2&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list expression="Modelica.ComplexMath.abs(v1)" declarationName="abs_v1" description="&quot;Magnitude of complex voltage v1&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
       <component_list expression="Modelica.ComplexMath.arg(v1)" declarationName="arg_v1" description="&quot;Argument of complex voltage v1&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list expression="Modelica.ComplexMath.abs(i1)" declarationName="abs_i1" description="&quot;Magnitude of complex current i1&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
       <component_list expression="Modelica.ComplexMath.arg(i1)" declarationName="arg_i1" description="&quot;Argument of complex current i1&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ActivePower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ActivePower" isOver="true">
       <component_list expression="Modelica.ComplexMath.real(v1* Modelica.ComplexMath.conj(i1) )" declarationName="P1" description="&quot;Active power, side 1&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ReactivePower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ReactivePower" isOver="true">
       <component_list expression="Modelica.ComplexMath.imag(v1* Modelica.ComplexMath.conj(i1) )" declarationName="Q1" description="&quot;Reactive power, side 1&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ApparentPower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ApparentPower" isOver="true">
       <component_list expression="Modelica.ComplexMath.abs(v1* Modelica.ComplexMath.conj(i1) )" declarationName="S1" description="&quot;Magnitude of complex apparent power, side 1&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
       <component_list expression="cos(Modelica.ComplexMath.arg(Complex(P1, Q1)))" declarationName="pf1" description="&quot;Power factor, side 1&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list expression="Modelica.ComplexMath.abs(v2)" declarationName="abs_v2" description="&quot;Magnitude of complex voltage v2&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
       <component_list expression="Modelica.ComplexMath.arg(v2)" declarationName="arg_v2" description="&quot;Argument of complex voltage v2&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list expression="Modelica.ComplexMath.abs(i2)" declarationName="abs_i2" description="&quot;Magnitude of complex current i2&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
       <component_list expression="Modelica.ComplexMath.arg(i2)" declarationName="arg_i2" description="&quot;Argument of complex current i2&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ActivePower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ActivePower" isOver="true">
       <component_list expression="Modelica.ComplexMath.real(v2* Modelica.ComplexMath.conj(i2) )" declarationName="P2" description="&quot;Active power, side 2&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ReactivePower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ReactivePower" isOver="true">
       <component_list expression="Modelica.ComplexMath.imag(v2* Modelica.ComplexMath.conj(i2) )" declarationName="Q2" description="&quot;Reactive power, side 2&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ApparentPower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ApparentPower" isOver="true">
       <component_list expression="Modelica.ComplexMath.abs(v2* Modelica.ComplexMath.conj(i2) )" declarationName="S2" description="&quot;Magnitude of complex apparent power, side 2&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
       <component_list expression="cos(Modelica.ComplexMath.arg(Complex(P2, Q2)))" declarationName="pf2" description="&quot;Power factor, side 2&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="pin_p1" description="&quot;Primary positive pin&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -76,7 +77,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="pin_p2" description="&quot;Secondary positive pin&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -88,7 +89,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
       <component_list declarationName="pin_n1" description="&quot;Primary negative pin&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -100,7 +101,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
       <component_list declarationName="pin_n2" description="&quot;Secondary negative pin&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

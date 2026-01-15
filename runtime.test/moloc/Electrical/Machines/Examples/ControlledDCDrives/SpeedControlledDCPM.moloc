@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Examples.ControlledDCDrives">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Examples.ControlledDCDrives"/>
   <classes classType="model" className="SpeedControlledDCPM" description="&quot;Speed controlled DC PM drive with H-bridge from battery&quot;" isLongClassSpecifier="true" classNameEnd="SpeedControlledDCPM" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Utilities.PartialControlledDCPM" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Sources.TorqueStep" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Sources.TorqueStep" isOver="true">
       <component_list isModificationOver="true" declarationName="loadTorque" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="-driveData.tauNominal" elementName="stepTorque"/>
         <modifications expression="0" elementName="offsetTorque"/>
@@ -14,7 +15,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.LimitedPI" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.LimitedPI" isOver="true">
       <component_list isModificationOver="true" declarationName="speedController" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Modelica.Blocks.Types.Init.InitialOutput" elementName="initType"/>
         <modifications expression="driveData.kpw" elementName="k"/>
@@ -28,7 +29,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Continuous.FirstOrder" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Continuous.FirstOrder" isOver="true">
       <component_list isModificationOver="true" declarationName="preFilter" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="k"/>
         <modifications expression="driveData.Tfw" elementName="T"/>
@@ -40,7 +41,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Step" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Step" isOver="true">
       <component_list isModificationOver="true" declarationName="step" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0" elementName="offset"/>
         <modifications expression="driveData.motorData.wNominal" elementName="height"/>
@@ -54,7 +55,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Nonlinear.SlewRateLimiter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Nonlinear.SlewRateLimiter" isOver="true">
       <component_list isModificationOver="true" declarationName="slewRateLimiter" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Modelica.Blocks.Types.Init.InitialOutput" elementName="initType"/>
         <modifications expression="driveData.aMax" elementName="Rising"/>

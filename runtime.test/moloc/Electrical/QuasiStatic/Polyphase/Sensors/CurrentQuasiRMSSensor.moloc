@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Sensors">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Polyphase.Sensors"/>
   <classes classType="model" className="CurrentQuasiRMSSensor" description="&quot;Continuous quasi current RMS sensor for polyphase system&quot;" isLongClassSpecifier="true" classNameEnd="CurrentQuasiRMSSensor" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.QuasiStatic.Polyphase.Interfaces.RelativeSensorElementary" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="min"/>
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
       <component_list isModificationOver="true" declarationName="I" description="&quot;Continuous quasi average RMS of current&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;A&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -25,7 +26,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Sensors.CurrentSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Sensors.CurrentSensor" isOver="true">
       <component_list subscripts="[m]" declarationName="currentSensor" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -34,7 +35,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Blocks.QuasiRMS" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Blocks.QuasiRMS" isOver="true">
       <component_list isModificationOver="true" declarationName="quasiRMS" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -46,10 +47,10 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
       <component_list subscripts="[m]" expression="plug_p.pin.v - plug_n.pin.v" declarationName="v" description="&quot;Complex voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
       <component_list subscripts="[m]" expression="plug_p.pin.i" declarationName="i" description="&quot;Complex current&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

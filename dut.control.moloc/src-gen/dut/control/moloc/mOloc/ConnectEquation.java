@@ -21,7 +21,7 @@ package dut.control.moloc.mOloc;
  * @model
  * @generated
  */
-public interface ConnectEquation extends Equation, description
+public interface ConnectEquation extends Equation, description, description_string, annotation_modification_part
 {
   /**
    * Returns the value of the '<em><b>Left</b></em>' attribute.

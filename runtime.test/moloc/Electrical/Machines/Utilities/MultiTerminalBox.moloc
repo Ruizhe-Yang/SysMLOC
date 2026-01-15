@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Utilities">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Utilities"/>
   <classes classType="model" className="MultiTerminalBox" description="&quot;Terminal box Y/D-connection&quot;" isLongClassSpecifier="true" classNameEnd="MultiTerminalBox" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="min"/>
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="Modelica.Electrical.Polyphase.Functions.numberOfSymmetricBaseSystems( m)" declarationName="mSystems" description="&quot;Number of symmetric base systems&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="integer(m/mSystems)" declarationName="mBasic" description="&quot;Number of phases of basic system&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="terminalConnection" description="&quot;Choose \&quot;Y\&quot; for star or \&quot;D\&quot; for delta connection&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;Y&quot;" elementName="start"/>
         <annotations isModificationOver="true" elementName="choices">
@@ -22,7 +23,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.PositivePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.PositivePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="plug_sp" description="&quot;To be connected with positive stator plug&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -35,7 +36,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.NegativePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.NegativePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="plug_sn" description="&quot;To be connected with negative stator plug&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -48,7 +49,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Polyphase.Basic.MultiStar" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Polyphase.Basic.MultiStar" isOver="true">
       <component_list isModificationOver="true" declarationName="multiStar" isAnnotation="true" isAnnotationOver="true" condition_attribute="(terminalConnection &lt;> &quot;D&quot; )">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -60,7 +61,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Polyphase.Basic.MultiDelta" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Polyphase.Basic.MultiDelta" isOver="true">
       <component_list isModificationOver="true" declarationName="multiDelta" isAnnotation="true" isAnnotationOver="true" condition_attribute="(terminalConnection == &quot;D&quot; )">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -70,7 +71,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.PositivePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.PositivePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="plugSupply" description="&quot;To be connected with grid&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -83,7 +84,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.NegativePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.NegativePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="starpoint" description="&quot;Star point&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="(terminalConnection &lt;> &quot;D&quot;)">
         <modifications expression="mSystems" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">

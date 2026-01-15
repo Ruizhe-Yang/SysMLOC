@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Functions">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Functions"/>
   <classes classType="function" className="symmetricOrientationMatrix" description="&quot;Matrix symmetric orientation angles for creating the symmetric transformation matrix&quot;" isLongClassSpecifier="true" classNameEnd="symmetricOrientationMatrix" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="input" isOver="true">
       <component_list declarationName="m" description="&quot;Number of phases&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
       <component_list subscripts="[m, m]" declarationName="oM" description="&quot;Angles of symmetric transformation matrix&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isProtected="true" isOver="true">
       <component_list expression="numberOfSymmetricBaseSystems(m)" declarationName="nBase"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
       <component_list expression="integer(m/nBase)" declarationName="mBase"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
       <component_list subscripts="[m]" expression="symmetricOrientation(m)" declarationName="o"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
       <component_list subscripts="[numberOfSymmetricBaseSystems(m)]" expression="o[1:mBase:m]" declarationName="oBase"/>
     </elements>
     <elements xsi:type="mOloc:AlgorithmSection">

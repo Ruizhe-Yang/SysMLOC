@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.ComplexMath">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.ComplexBlocks.ComplexMath"/>
   <classes classType="block" className="Division" description="&quot;Output first input divided by second input&quot;" isLongClassSpecifier="true" classNameEnd="Division" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.ComplexSI2SO" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useConjugateInput1" description="&quot;If true, input 1 is processed conjugate complex&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useConjugateInput2" description="&quot;If true, input 2 is processed conjugate complex&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

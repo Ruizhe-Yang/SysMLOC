@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Basic">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Basic"/>
   <classes classType="model" className="Transformer" description="&quot;Transformer with two ports&quot;" isLongClassSpecifier="true" classNameEnd="Transformer" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPort" isOver="true">
       <extendsModifications isModificationOver="true" elementName="i1">
@@ -9,22 +10,22 @@
         <modifications expression="0" elementName="start"/>
       </extendsModifications>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="L1" description="&quot;Primary inductance&quot;">
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="L2" description="&quot;Secondary inductance&quot;">
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="M" description="&quot;Coupling inductance&quot;">
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
       <component_list declarationName="dv" description="&quot;Difference between voltage drop over primary inductor and voltage drop over secondary inductor&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

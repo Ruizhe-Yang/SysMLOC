@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Blocks">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Blocks"/>
   <classes classType="package" className="Sources" description="&quot;Library of signal source blocks generating Real, Integer and Boolean signals&quot;" isLongClassSpecifier="true" classNameEnd="Sources" isOver="true">
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Blocks.Interfaces" isOver="true"/>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.SourcesPackage" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="RealExpression" description="&quot;Set output signal to a time varying Real expression&quot;" isLongClassSpecifier="true" classNameEnd="RealExpression" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="RealExpression" description="&quot;Set output signal to a time varying Real expression&quot;" isLongClassSpecifier="true" classNameEnd="RealExpression" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
         <component_list expression="0.0" declarationName="y" description="&quot;Value of Real output&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Time varying output signal&quot;" elementName="group"/>
@@ -29,8 +30,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="IntegerExpression" description="&quot;Set output signal to a time varying Integer expression&quot;" isLongClassSpecifier="true" classNameEnd="IntegerExpression" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="IntegerExpression" description="&quot;Set output signal to a time varying Integer expression&quot;" isLongClassSpecifier="true" classNameEnd="IntegerExpression" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerOutput" isOver="true">
         <component_list expression="0" declarationName="y" description="&quot;Value of Integer output&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Time varying output signal&quot;" elementName="group"/>
@@ -55,8 +56,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="BooleanExpression" description="&quot;Set output signal to a time varying Boolean expression&quot;" isLongClassSpecifier="true" classNameEnd="BooleanExpression" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="BooleanExpression" description="&quot;Set output signal to a time varying Boolean expression&quot;" isLongClassSpecifier="true" classNameEnd="BooleanExpression" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list expression="false" declarationName="y" description="&quot;Value of Boolean output&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Time varying output signal&quot;" elementName="group"/>
@@ -81,7 +82,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="ContinuousClock" description="&quot;Generate current time signal&quot;" isLongClassSpecifier="true" classNameEnd="ContinuousClock" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="ContinuousClock" description="&quot;Generate current time signal&quot;" isLongClassSpecifier="true" classNameEnd="ContinuousClock" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SignalSource" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="offset + (if time &lt; startTime then 0 else time - startTime)"/>
@@ -99,8 +100,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Constant" description="&quot;Generate constant signal of type Real&quot;" isLongClassSpecifier="true" classNameEnd="Constant" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Constant" description="&quot;Generate constant signal of type Real&quot;" isLongClassSpecifier="true" classNameEnd="Constant" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="k" description="&quot;Constant output value&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="1" elementName="start"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -126,8 +127,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Step" description="&quot;Generate step signal of type Real&quot;" isLongClassSpecifier="true" classNameEnd="Step" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Step" description="&quot;Generate step signal of type Real&quot;" isLongClassSpecifier="true" classNameEnd="Step" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="height" description="&quot;Height of step&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/Step.png&quot;" elementName="groupImage"/>
@@ -151,15 +152,15 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Ramp" description="&quot;Generate ramp signal&quot;" isLongClassSpecifier="true" classNameEnd="Ramp" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Ramp" description="&quot;Generate ramp signal&quot;" isLongClassSpecifier="true" classNameEnd="Ramp" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="height" description="&quot;Height of ramps&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/Ramp.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="duration" description="&quot;Duration of ramp (= 0.0 gives a Step)&quot;">
           <modifications expression="0.0" elementName="min"/>
           <modifications expression="2" elementName="start"/>
@@ -182,21 +183,21 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Sine" description="&quot;Generate sine signal&quot;" isLongClassSpecifier="true" classNameEnd="Sine" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Sine" description="&quot;Generate sine signal&quot;" isLongClassSpecifier="true" classNameEnd="Sine" isOver="true">
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="amplitude" description="&quot;Amplitude of sine wave&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/Sine.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="f" description="&quot;Frequency of sine wave&quot;">
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="phase" description="&quot;Phase of sine wave&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SignalSource" isOver="true"/>
@@ -216,21 +217,21 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Cosine" description="&quot;Generate cosine signal&quot;" isLongClassSpecifier="true" classNameEnd="Cosine" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Cosine" description="&quot;Generate cosine signal&quot;" isLongClassSpecifier="true" classNameEnd="Cosine" isOver="true">
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="amplitude" description="&quot;Amplitude of cosine wave&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/Cosine.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="f" description="&quot;Frequency of cosine wave&quot;">
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="phase" description="&quot;Phase of cosine wave&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SignalSource" isOver="true"/>
@@ -250,42 +251,42 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="SineVariableFrequencyAndAmplitude" description="&quot;Generate sine signal with variable frequency and amplitude&quot;" isLongClassSpecifier="true" classNameEnd="SineVariableFrequencyAndAmplitude" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="SineVariableFrequencyAndAmplitude" description="&quot;Generate sine signal with variable frequency and amplitude&quot;" isLongClassSpecifier="true" classNameEnd="SineVariableFrequencyAndAmplitude" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SO" isOver="true"/>
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="useConstantAmplitude" description="&quot;Enable constant amplitude&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="constantAmplitude" description="&quot;Constant amplitude&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="useConstantAmplitude" elementName="enable"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="useConstantFrequency" description="&quot;Enable constant frequency&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="constantFrequency" description="&quot;Constant frequency&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="useConstantFrequency" elementName="enable"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="offset" description="&quot;Offset of the sine wave&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/SineVariableFrequencyAndAmplitude.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
         <component_list isModificationOver="true" declarationName="phi" description="&quot;Phase of the sine wave&quot;">
           <modifications expression="0" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
         <component_list declarationName="amplitude" description="&quot;Amplitude&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantAmplitude">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -295,7 +296,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
         <component_list isModificationOver="true" declarationName="f" description="&quot;Frequency&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantFrequency">
           <modifications expression="&quot;Hz&quot;" elementName="unit"/>
           <annotations isModificationOver="true" elementName="Placement">
@@ -306,7 +307,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isProtected="true" isOver="true">
         <component_list declarationName="amplitude_internal" description="&quot;Amplitude&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -316,7 +317,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
         <component_list isModificationOver="true" declarationName="f_internal" description="&quot;Frequency&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="&quot;Hz&quot;" elementName="unit"/>
           <annotations isModificationOver="true" elementName="Placement">
@@ -327,7 +328,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
         <component_list isModificationOver="true" declarationName="amplitude_constant" isAnnotation="true" isAnnotationOver="true" condition_attribute="useConstantAmplitude">
           <modifications expression="constantAmplitude" elementName="k" isfinal="true"/>
           <annotations isModificationOver="true" elementName="Placement">
@@ -339,7 +340,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
         <component_list isModificationOver="true" declarationName="f_constant" isAnnotation="true" isAnnotationOver="true" condition_attribute="useConstantFrequency">
           <modifications expression="constantFrequency" elementName="k" isfinal="true"/>
           <annotations isModificationOver="true" elementName="Placement">
@@ -393,42 +394,42 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="CosineVariableFrequencyAndAmplitude" description="&quot;Generate cosine signal with variable frequency and amplitude&quot;" isLongClassSpecifier="true" classNameEnd="CosineVariableFrequencyAndAmplitude" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="CosineVariableFrequencyAndAmplitude" description="&quot;Generate cosine signal with variable frequency and amplitude&quot;" isLongClassSpecifier="true" classNameEnd="CosineVariableFrequencyAndAmplitude" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SO" isOver="true"/>
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="useConstantAmplitude" description="&quot;Enable constant amplitude&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="constantAmplitude" description="&quot;Constant amplitude&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="useConstantAmplitude" elementName="enable"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="useConstantFrequency" description="&quot;Enable constant frequency&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="constantFrequency" description="&quot;Constant frequency&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="useConstantFrequency" elementName="enable"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="offset" description="&quot;Offset of the sine wave&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/CosineVariableFrequencyAndAmplitude.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
         <component_list isModificationOver="true" declarationName="phi" description="&quot;Phase of the sine wave&quot;">
           <modifications expression="0" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
         <component_list declarationName="amplitude" description="&quot;Amplitude&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantAmplitude">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -438,7 +439,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
         <component_list isModificationOver="true" declarationName="f" description="&quot;Frequency&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantFrequency">
           <modifications expression="&quot;Hz&quot;" elementName="unit"/>
           <annotations isModificationOver="true" elementName="Placement">
@@ -449,7 +450,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isProtected="true" isOver="true">
         <component_list declarationName="amplitude_internal" description="&quot;Amplitude&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -459,7 +460,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
         <component_list isModificationOver="true" declarationName="f_internal" description="&quot;Frequency&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="&quot;Hz&quot;" elementName="unit"/>
           <annotations isModificationOver="true" elementName="Placement">
@@ -470,7 +471,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
         <component_list isModificationOver="true" declarationName="amplitude_constant" isAnnotation="true" isAnnotationOver="true" condition_attribute="useConstantAmplitude">
           <modifications expression="constantAmplitude" elementName="k" isfinal="true"/>
           <annotations isModificationOver="true" elementName="Placement">
@@ -482,7 +483,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
         <component_list isModificationOver="true" declarationName="f_constant" isAnnotation="true" isAnnotationOver="true" condition_attribute="useConstantFrequency">
           <modifications expression="constantFrequency" elementName="k" isfinal="true"/>
           <annotations isModificationOver="true" elementName="Placement">
@@ -536,23 +537,23 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Sinc" description="&quot;Generate sinc signal&quot;" isLongClassSpecifier="true" classNameEnd="Sinc" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Sinc" description="&quot;Generate sinc signal&quot;" isLongClassSpecifier="true" classNameEnd="Sinc" isOver="true">
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="amplitude" description="&quot;Amplitude of sine wave&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/Sinc.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="f" description="&quot;Frequency of sine wave&quot;">
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SignalSource" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isProtected="true" isOver="true">
         <component_list expression="2*pi*f*(time - startTime)" declarationName="x"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
@@ -571,24 +572,24 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="ExpSine" description="&quot;Generate exponentially damped sine signal&quot;" isLongClassSpecifier="true" classNameEnd="ExpSine" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="ExpSine" description="&quot;Generate exponentially damped sine signal&quot;" isLongClassSpecifier="true" classNameEnd="ExpSine" isOver="true">
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="amplitude" description="&quot;Amplitude of sine wave&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/ExpSine.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="f" description="&quot;Frequency of sine wave&quot;">
           <modifications expression="2" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="phase" description="&quot;Phase of sine wave&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Damping" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Damping" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="damping" description="&quot;Damping coefficient of sine wave&quot;">
           <modifications expression="1" elementName="start"/>
         </component_list>
@@ -610,32 +611,32 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Exponentials" description="&quot;Generate a rising and falling exponential signal&quot;" isLongClassSpecifier="true" classNameEnd="Exponentials" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Exponentials" description="&quot;Generate a rising and falling exponential signal&quot;" isLongClassSpecifier="true" classNameEnd="Exponentials" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="outMax" description="&quot;Height of output for infinite riseTime&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/Exponentials.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="riseTime" description="&quot;Rise time&quot;">
           <modifications expression="0" elementName="min"/>
           <modifications expression="0.5" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="0.1" declarationName="riseTimeConst" description="&quot;Rise time constant; rising is defined as outMax*(1-exp(-riseTime/riseTimeConst))&quot;">
           <modifications expression="Modelica.Constants.small" elementName="min"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="riseTimeConst" declarationName="fallTimeConst" description="&quot;Fall time constant&quot;">
           <modifications expression="Modelica.Constants.small" elementName="min"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SignalSource" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isProtected="true" isOver="true">
         <component_list declarationName="y_riseTime"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
@@ -655,37 +656,37 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Pulse" description="&quot;Generate pulse signal of type Real&quot;" isLongClassSpecifier="true" classNameEnd="Pulse" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Pulse" description="&quot;Generate pulse signal of type Real&quot;" isLongClassSpecifier="true" classNameEnd="Pulse" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="amplitude" description="&quot;Amplitude of pulse&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/Pulse.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="50" declarationName="width" description="&quot;Width of pulse in % of period&quot;">
           <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
           <modifications expression="100" elementName="max" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="period" description="&quot;Time for one period&quot;">
           <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="-1" declarationName="nperiod" description="&quot;Number of periods (&lt; 0 means infinite number of periods)&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SignalSource" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isProtected="true" isOver="true">
         <component_list expression="period*width/100" declarationName="T_width"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="T_start" description="&quot;Start time of current period&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
         <component_list declarationName="count" description="&quot;Period count&quot;"/>
       </elements>
       <elements xsi:type="mOloc:AlgorithmSection" isInitial="true">
@@ -712,30 +713,30 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="SawTooth" description="&quot;Generate saw tooth signal&quot;" isLongClassSpecifier="true" classNameEnd="SawTooth" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="SawTooth" description="&quot;Generate saw tooth signal&quot;" isLongClassSpecifier="true" classNameEnd="SawTooth" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="amplitude" description="&quot;Amplitude of saw tooth&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/SawTooth.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="period" description="&quot;Time for one period&quot;">
           <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="-1" declarationName="nperiod" description="&quot;Number of periods (&lt; 0 means infinite number of periods)&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SignalSource" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isProtected="true" isOver="true">
         <component_list isModificationOver="true" declarationName="T_start" description="&quot;Start time of current period&quot;">
           <modifications expression="startTime" elementName="start" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
         <component_list declarationName="count" description="&quot;Period count&quot;"/>
       </elements>
       <elements xsi:type="mOloc:AlgorithmSection" isInitial="true">
@@ -762,52 +763,52 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Trapezoid" description="&quot;Generate trapezoidal signal of type Real&quot;" isLongClassSpecifier="true" classNameEnd="Trapezoid" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Trapezoid" description="&quot;Generate trapezoidal signal of type Real&quot;" isLongClassSpecifier="true" classNameEnd="Trapezoid" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="amplitude" description="&quot;Amplitude of trapezoid&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/Trapezoid.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="0" declarationName="rising" description="&quot;Rising duration of trapezoid&quot;">
           <modifications expression="0" elementName="min" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="0.5" declarationName="width" description="&quot;Width duration of trapezoid&quot;">
           <modifications expression="0" elementName="min" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="0" declarationName="falling" description="&quot;Falling duration of trapezoid&quot;">
           <modifications expression="0" elementName="min" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="period" description="&quot;Time for one period&quot;">
           <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="-1" declarationName="nperiod" description="&quot;Number of periods (&lt; 0 means infinite number of periods)&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SignalSource" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isProtected="true" isOver="true">
         <component_list expression="rising" declarationName="T_rising" description="&quot;End time of rising phase within one period&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="T_rising + width" declarationName="T_width" description="&quot;End time of width phase within one period&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="T_width + falling" declarationName="T_falling" description="&quot;End time of falling phase within one period&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="T_start" description="&quot;Start time of current period&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
         <component_list declarationName="count" description="&quot;Period count&quot;"/>
       </elements>
       <elements xsi:type="mOloc:AlgorithmSection" isInitial="true">
@@ -834,10 +835,10 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="LogFrequencySweep" description="&quot;Logarithmic frequency sweep&quot;" isLongClassSpecifier="true" classNameEnd="LogFrequencySweep" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="LogFrequencySweep" description="&quot;Logarithmic frequency sweep&quot;" isLongClassSpecifier="true" classNameEnd="LogFrequencySweep" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SO" isOver="true"/>
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="wMin" description="&quot;Start frequency&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="eps" elementName="min" isfinal="true"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -845,15 +846,15 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="wMax" description="&quot;End frequency&quot;">
           <modifications expression="eps" elementName="min" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="startTime" description="&quot;Start time of frequency sweep&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="duration" description="&quot;Duration of ramp (= 0.0 gives a Step)&quot;">
           <modifications expression="0.0" elementName="min"/>
           <modifications expression="1" elementName="start"/>
@@ -872,67 +873,67 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="KinematicPTP" description="&quot;Move as fast as possible along a distance within given kinematic constraints&quot;" isLongClassSpecifier="true" classNameEnd="KinematicPTP" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="KinematicPTP" description="&quot;Move as fast as possible along a distance within given kinematic constraints&quot;" isLongClassSpecifier="true" classNameEnd="KinematicPTP" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" expression="{1}" declarationName="deltaq" description="&quot;Distance to move&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/KinematicPTP.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" isModificationOver="true" expression="{1}" declarationName="qd_max" description="&quot;Maximum velocities der(q)&quot;">
           <modifications expression="Modelica.Constants.small" elementName="min" isEach="true" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" isModificationOver="true" expression="{1}" declarationName="qdd_max" description="&quot;Maximum accelerations der(qd)&quot;">
           <modifications expression="Modelica.Constants.small" elementName="min" isEach="true" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="startTime" description="&quot;Time instant at which movement starts&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.MO" isOver="true">
         <extendsModifications expression="max([size(deltaq, 1); size(qd_max, 1); size(qdd_max, 1)])" elementName="nout" isfinal="true"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isOver="true">
         <component_list subscripts="[nout]" expression="(if size(deltaq, 1) == 1 then ones(nout)* deltaq[1] else deltaq )" declarationName="p_deltaq"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[nout]" expression="(if size(qd_max, 1) == 1 then ones(nout)* qd_max[1] else qd_max )" declarationName="p_qd_max"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[nout]" expression="(if size(qdd_max, 1) == 1 then ones(nout)* qdd_max[1] else qdd_max )" declarationName="p_qdd_max"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="sd_max"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="sdd_max"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="sdd"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list subscripts="[nout]" declarationName="aux1"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list subscripts="[nout]" declarationName="aux2"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="Ta1"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="Ta2"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="Tv"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="Te"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isOver="true">
         <component_list declarationName="noWphase"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
@@ -964,38 +965,38 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="KinematicPTP2" description="&quot;Move as fast as possible from start to end position within given kinematic constraints with output signals q, qd=der(q), qdd=der(qd)&quot;" isLongClassSpecifier="true" classNameEnd="KinematicPTP2" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="KinematicPTP2" description="&quot;Move as fast as possible from start to end position within given kinematic constraints with output signals q, qd=der(q), qdd=der(qd)&quot;" isLongClassSpecifier="true" classNameEnd="KinematicPTP2" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" expression="{0}" declarationName="q_begin" description="&quot;Start position&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/KinematicPTP2.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" expression="{1}" declarationName="q_end" description="&quot;End position&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" isModificationOver="true" expression="{1}" declarationName="qd_max" description="&quot;Maximum velocities der(q)&quot;">
           <modifications expression="Modelica.Constants.small" elementName="min" isEach="true" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" isModificationOver="true" expression="{1}" declarationName="qdd_max" description="&quot;Maximum accelerations der(qd)&quot;">
           <modifications expression="Modelica.Constants.small" elementName="min" isEach="true" isfinal="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="startTime" description="&quot;Time instant at which movement starts&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
         <component_list expression="max([size(q_begin, 1); size(q_end, 1); size(qd_max, 1); size(qdd_max, 1)])" declarationName="nout" description="&quot;Number of output signals (= dimension of q, qd, qdd, moving)&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" directionType="output" isOver="true">
         <component_list declarationName="endTime" description="&quot;Time instant at which movement stops&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
         <component_list subscripts="[nout]" declarationName="q" description="&quot;Reference position of path planning&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -1004,7 +1005,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
         <component_list subscripts="[nout]" declarationName="qd" description="&quot;Reference speed of path planning&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -1013,7 +1014,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
         <component_list subscripts="[nout]" declarationName="qdd" description="&quot;Reference acceleration of path planning&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -1022,7 +1023,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list subscripts="[nout]" declarationName="moving" description="&quot;= true, if end position not yet reached; = false, if end position reached or axis is completely at rest&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -1031,91 +1032,91 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isOver="true">
         <component_list subscripts="[nout]" expression="(if size(q_begin, 1) == 1 then ones(nout)* q_begin[1] else q_begin )" declarationName="p_q_begin"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[nout]" expression="(if size(q_end, 1) == 1 then ones(nout)*q_end[ 1] else q_end )" declarationName="p_q_end"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[nout]" expression="(if size(qd_max, 1) == 1 then ones(nout)* qd_max[1] else qd_max )" declarationName="p_qd_max"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[nout]" expression="(if size(qdd_max, 1) == 1 then ones(nout)* qdd_max[1] else qdd_max )" declarationName="p_qdd_max"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[nout]" expression="p_q_end - p_q_begin" declarationName="p_deltaq"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="constant" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="constant" isOver="true">
         <component_list expression="10*Modelica.Constants.eps" declarationName="eps"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isOver="true">
         <component_list declarationName="motion_ref"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="sd_max_inv"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="sdd_max_inv"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="sd_max"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="sdd_max"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="sdd"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list subscripts="[nout]" declarationName="aux1"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list subscripts="[nout]" declarationName="aux2"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="Ta1"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="Ta2"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="Tv"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="Te"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isOver="true">
         <component_list declarationName="noWphase"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="Ta1s"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="Ta2s"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="Tvs"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isOver="true">
         <component_list declarationName="Tes"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="sd_max2"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="s1"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="s2"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="s3"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="s"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="sd"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
@@ -1201,101 +1202,101 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="TimeTable" description="&quot;Generate a (possibly discontinuous) signal by linear interpolation in a table&quot;" isLongClassSpecifier="true" classNameEnd="TimeTable" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="TimeTable" description="&quot;Generate a (possibly discontinuous) signal by linear interpolation in a table&quot;" isLongClassSpecifier="true" classNameEnd="TimeTable" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:, 2]" expression="fill(0.0, 0, 2)" declarationName="table" description="&quot;Table matrix (time = first column; e.g., table=[0, 0; 1, 1; 2, 4])&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/TimeTable.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="1" declarationName="timeScale" description="&quot;Time scale of first table column&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="Modelica.Constants.eps" elementName="min"/>
           <annotations expression="true" elementName="Evaluate"/>
         </component_list>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SignalSource" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="startTime" declarationName="shiftTime" description="&quot;Shift time of first table column&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="discrete" isProtected="true" isOver="true">
         <component_list declarationName="a" description="&quot;Interpolation coefficient a of actual interval (y=a*x+b)&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
         <component_list declarationName="b" description="&quot;Interpolation coefficient b of actual interval (y=a*x+b)&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
         <component_list isModificationOver="true" declarationName="last" description="&quot;Last used lower grid index&quot;">
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
         <component_list isModificationOver="true" declarationName="nextEvent" description="&quot;Next event instant&quot;">
           <modifications expression="0" elementName="start"/>
           <modifications expression="true" elementName="fixed"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
         <component_list isModificationOver="true" declarationName="nextEventScaled" description="&quot;Next scaled event instant&quot;">
           <modifications expression="0" elementName="start"/>
           <modifications expression="true" elementName="fixed"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="timeScaled" description="&quot;Scaled time&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="function" className="getInterpolationCoefficients" description="&quot;Determine interpolation coefficients and next time event&quot;" isLongClassSpecifier="true" classNameEnd="getInterpolationCoefficients" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="function" className="getInterpolationCoefficients" description="&quot;Determine interpolation coefficients and next time event&quot;" isLongClassSpecifier="true" classNameEnd="getInterpolationCoefficients" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
           <component_list subscripts="[:, 2]" declarationName="table" description="&quot;Table for interpolation&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
           <component_list declarationName="offset" description="&quot;y-offset&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
           <component_list declarationName="startTimeScaled" description="&quot;Scaled time-offset&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
           <component_list declarationName="timeScaled" description="&quot;Actual scaled time instant&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="input" isOver="true">
           <component_list declarationName="last" description="&quot;Last used lower grid index&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
           <component_list declarationName="TimeEps" description="&quot;Relative epsilon to check for identical time instants&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
           <component_list declarationName="shiftTimeScaled" description="&quot;Time shift&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
           <component_list declarationName="a" description="&quot;Interpolation coefficient a (y=a*x + b)&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
           <component_list declarationName="b" description="&quot;Interpolation coefficient b (y=a*x + b)&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
           <component_list declarationName="nextEventScaled" description="&quot;Next scaled event instant&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="output" isOver="true">
           <component_list declarationName="next" description="&quot;New lower grid index&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isProtected="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isProtected="true" isOver="true">
           <component_list expression="2" declarationName="columns" description="&quot;Column to be interpolated&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
           <component_list expression="2" declarationName="ncol" description="&quot;Number of columns to be interpolated&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
           <component_list expression="size(table, 1)" declarationName="nrow" description="&quot;Number of table rows&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
           <component_list declarationName="next0"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list declarationName="tp"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list declarationName="dt"/>
         </elements>
         <elements xsi:type="mOloc:AlgorithmSection">
@@ -1359,19 +1360,19 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="CombiTimeTable" description="&quot;Table look-up with respect to time and linear/periodic extrapolation methods (data from matrix/file)&quot;" isLongClassSpecifier="true" classNameEnd="CombiTimeTable" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="CombiTimeTable" description="&quot;Table look-up with respect to time and linear/periodic extrapolation methods (data from matrix/file)&quot;" isLongClassSpecifier="true" classNameEnd="CombiTimeTable" isOver="true">
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Blocks.Tables.Internal" isOver="true"/>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.MO" isOver="true">
         <extendsModifications expression="max([size(columns, 1); size(offset, 1)])" elementName="nout" isfinal="true"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="tableOnFile" description="&quot;= true, if table is defined on file or in function usertab&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data definition&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:, :]" expression="fill(0.0, 0, 2)" declarationName="table" description="&quot;Table matrix (time = first column; e.g., table=[0, 0; 1, 1; 2, 4])&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data definition&quot;" elementName="group"/>
@@ -1379,7 +1380,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
         <component_list expression="&quot;NoName&quot;" declarationName="tableName" description="&quot;Table name on file or in function usertab (see docu)&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data definition&quot;" elementName="group"/>
@@ -1387,7 +1388,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
         <component_list expression="&quot;NoName&quot;" declarationName="fileName" description="&quot;File where matrix is stored&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data definition&quot;" elementName="group"/>
@@ -1399,7 +1400,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="true" declarationName="verboseRead" description="&quot;= true, if info message that file is loading is to be printed&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data definition&quot;" elementName="group"/>
@@ -1407,7 +1408,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" expression="2:size(table, 2)" declarationName="columns" description="&quot;Columns of table to be interpolated&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
@@ -1415,21 +1416,21 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Smoothness" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Types.Smoothness" parameterType="parameter" isOver="true">
         <component_list expression="Modelica.Blocks.Types.Smoothness.LinearSegments" declarationName="smoothness" description="&quot;Smoothness of table interpolation&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Extrapolation" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Types.Extrapolation" parameterType="parameter" isOver="true">
         <component_list expression="Modelica.Blocks.Types.Extrapolation.LastTwoPoints" declarationName="extrapolation" description="&quot;Extrapolation of data outside the definition range&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="1" declarationName="timeScale" description="&quot;Time scale of first table column&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="Modelica.Constants.eps" elementName="min"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -1438,28 +1439,28 @@
           <annotations expression="true" elementName="Evaluate"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" expression="{0}" declarationName="offset" description="&quot;Offsets of output signals&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="startTime" description="&quot;Output = offset for time &lt; startTime&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="startTime" declarationName="shiftTime" description="&quot;Shift time of first table column&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.TimeEvents" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Types.TimeEvents" parameterType="parameter" isOver="true">
         <component_list expression="Modelica.Blocks.Types.TimeEvents.Always" declarationName="timeEvents" description="&quot;Time event handling of table interpolation&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
@@ -1467,7 +1468,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="verboseExtrapolation" description="&quot;= true, if warning messages are to be printed if time is outside the table definition range&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
@@ -1475,37 +1476,37 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isfinal="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isfinal="true" isOver="true">
         <component_list expression="t_minScaled*timeScale" declarationName="t_min" description="&quot;Minimum abscissa value defined in table&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isfinal="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isfinal="true" isOver="true">
         <component_list expression="t_maxScaled*timeScale" declarationName="t_max" description="&quot;Maximum abscissa value defined in table&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
         <component_list expression="Internal.getTimeTableTmin(tableID)" declarationName="t_minScaled" description="&quot;Minimum (scaled) abscissa value defined in table&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
         <component_list expression="Internal.getTimeTableTmax(tableID)" declarationName="t_maxScaled" description="&quot;Maximum (scaled) abscissa value defined in table&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isfinal="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isfinal="true" isOver="true">
         <component_list subscripts="[nout]" expression="(if size(offset, 1) == 1 then ones(nout)*offset[1] else offset)" declarationName="p_offset" description="&quot;Offsets of output signals&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTimeTable" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Types.ExternalCombiTimeTable" parameterType="parameter" isOver="true">
         <component_list expression="Modelica.Blocks.Types.ExternalCombiTimeTable( if tableOnFile then tableName else &quot;NoName&quot;, if tableOnFile and fileName &lt;> &quot;NoName&quot; and not Modelica.Utilities.Strings.isEmpty(fileName) then fileName else &quot;NoName&quot;, table, startTime/timeScale, columns, smoothness, extrapolation, shiftTime/timeScale, if smoothness == Modelica.Blocks.Types.Smoothness.LinearSegments then timeEvents elseif smoothness == Modelica.Blocks.Types.Smoothness.ConstantSegments then Modelica.Blocks.Types.TimeEvents.Always else Modelica.Blocks.Types.TimeEvents.NoTimeEvents, if tableOnFile then verboseRead else false )" declarationName="tableID" description="&quot;External table object&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
         <component_list isModificationOver="true" declarationName="nextTimeEvent" description="&quot;Next time event instant&quot;">
           <modifications expression="0" elementName="start"/>
           <modifications expression="true" elementName="fixed"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
         <component_list isModificationOver="true" declarationName="nextTimeEventScaled" description="&quot;Next scaled time event instant&quot;">
           <modifications expression="0" elementName="start"/>
           <modifications expression="true" elementName="fixed"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
         <component_list declarationName="timeScaled" description="&quot;Scaled time&quot;"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
@@ -1549,8 +1550,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="BooleanConstant" description="&quot;Generate constant signal of type Boolean&quot;" isLongClassSpecifier="true" classNameEnd="BooleanConstant" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="BooleanConstant" description="&quot;Generate constant signal of type Boolean&quot;" isLongClassSpecifier="true" classNameEnd="BooleanConstant" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="true" declarationName="k" description="&quot;Constant output value&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/BooleanConstant.png&quot;" elementName="groupImage"/>
@@ -1574,15 +1575,15 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="BooleanStep" description="&quot;Generate step signal of type Boolean&quot;" isLongClassSpecifier="true" classNameEnd="BooleanStep" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="BooleanStep" description="&quot;Generate step signal of type Boolean&quot;" isLongClassSpecifier="true" classNameEnd="BooleanStep" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="startTime" description="&quot;Time instant of step start&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;modelica://Modelica/Resources/Images/Blocks/Sources/BooleanStep.png&quot;" elementName="groupImage"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="startValue" description="&quot;Output before startTime&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.partialBooleanSource" isOver="true"/>
@@ -1602,8 +1603,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="BooleanPulse" description="&quot;Generate pulse signal of type Boolean&quot;" isLongClassSpecifier="true" classNameEnd="BooleanPulse" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="BooleanPulse" description="&quot;Generate pulse signal of type Boolean&quot;" isLongClassSpecifier="true" classNameEnd="BooleanPulse" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="50" declarationName="width" description="&quot;Width of pulse in % of period&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
           <modifications expression="100" elementName="max" isfinal="true"/>
@@ -1612,22 +1613,22 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="period" description="&quot;Time for one period&quot;">
           <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="startTime" description="&quot;Time instant of first pulse&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.partialBooleanSource" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isProtected="true" isOver="true">
         <component_list expression="period*width/100" declarationName="Twidth" description="&quot;Width of one pulse&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="HideResult"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
         <component_list declarationName="pulseStart" description="&quot;Start time of pulse&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="HideResult"/>
         </component_list>
@@ -1654,8 +1655,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="SampleTrigger" description="&quot;Generate sample trigger signal&quot;" isLongClassSpecifier="true" classNameEnd="SampleTrigger" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="SampleTrigger" description="&quot;Generate sample trigger signal&quot;" isLongClassSpecifier="true" classNameEnd="SampleTrigger" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="period" description="&quot;Sample period&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
           <modifications expression="0.01" elementName="start"/>
@@ -1664,7 +1665,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="startTime" description="&quot;Time instant of first sample trigger&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.partialBooleanSource" isOver="true"/>
@@ -1684,15 +1685,15 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="BooleanTable" description="&quot;Generate a Boolean output signal based on a vector of time instants&quot;" isLongClassSpecifier="true" classNameEnd="BooleanTable" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="BooleanTable" description="&quot;Generate a Boolean output signal based on a vector of time instants&quot;" isLongClassSpecifier="true" classNameEnd="BooleanTable" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" expression="{0,1}" declarationName="table" description="&quot;Vector of time points. At every time point, the output y gets its opposite value (e.g., table={0,1})&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data definition&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="startValue" description="&quot;Start value of y. At time = table[1], y changes to 'not startValue'&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
@@ -1700,21 +1701,21 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Extrapolation" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Types.Extrapolation" parameterType="parameter" isOver="true">
         <component_list expression="Modelica.Blocks.Types.Extrapolation.HoldLastPoint" declarationName="extrapolation" description="&quot;Extrapolation of data outside the definition range&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="-Modelica.Constants.inf" declarationName="startTime" description="&quot;Output = false for time &lt; startTime&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="shiftTime" description="&quot;Shift time of table&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
@@ -1722,7 +1723,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.partialBooleanSO" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="CombiTimeTable" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="CombiTimeTable" isOver="true">
         <component_list isModificationOver="true" declarationName="combiTimeTable" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="if n > 0 then if startValue then [table[1], 1.0; table, {mod(i + 1, 2.0) for i in 1:n}] else [table[1], 0.0; table, {mod(i, 2.0) for i in 1:n}] else if startValue then [0.0, 1.0] else [0.0, 0.0]" elementName="table" isfinal="true"/>
           <modifications expression="Modelica.Blocks.Types.Smoothness.ConstantSegments" elementName="smoothness" isfinal="true"/>
@@ -1737,7 +1738,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.RealToBoolean" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.RealToBoolean" isOver="true">
         <component_list declarationName="realToBoolean" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -1746,12 +1747,12 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="function" className="isValidTable" description="&quot;Check if table is valid&quot;" isLongClassSpecifier="true" classNameEnd="isValidTable" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="function" className="isValidTable" description="&quot;Check if table is valid&quot;" isLongClassSpecifier="true" classNameEnd="isValidTable" isProtected="true" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
           <component_list subscripts="[:]" declarationName="table" description="&quot;Vector of time instants&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isProtected="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isProtected="true" isOver="true">
           <component_list expression="size(table, 1)" declarationName="n" description="&quot;Number of table points&quot;"/>
         </elements>
         <elements xsi:type="mOloc:AlgorithmSection">
@@ -1762,7 +1763,7 @@
           </statements>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="size(table, 1)" declarationName="n" description="&quot;Number of table points&quot;"/>
       </elements>
       <elements xsi:type="mOloc:AlgorithmSection" isInitial="true">
@@ -1796,18 +1797,18 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="RadioButtonSource" description="&quot;Boolean signal source that mimics a radio button&quot;" isLongClassSpecifier="true" classNameEnd="RadioButtonSource" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="RadioButtonSource" description="&quot;Boolean signal source that mimics a radio button&quot;" isLongClassSpecifier="true" classNameEnd="RadioButtonSource" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list subscripts="[:]" expression="{0,1}" declarationName="buttonTimeTable" description="&quot;Time instants where button is pressed&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
         <component_list subscripts="[:]" expression="{false}" declarationName="reset" description="&quot;Reset button to false, if an element of reset becomes true&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Time varying expressions&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list isModificationOver="true" declarationName="on" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="false" elementName="start"/>
           <modifications expression="true" elementName="fixed"/>
@@ -1818,7 +1819,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.BooleanTable" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.BooleanTable" isProtected="true" isOver="true">
         <component_list isModificationOver="true" declarationName="table">
           <modifications expression="buttonTimeTable" elementName="table"/>
           <modifications isModificationOver="true" elementName="y">
@@ -1827,10 +1828,10 @@
           </modifications>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="size(reset, 1)" declarationName="nReset"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isOver="true">
         <component_list subscripts="[nReset]" declarationName="pre_reset"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -1861,8 +1862,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="IntegerConstant" description="&quot;Generate constant signal of type Integer&quot;" isLongClassSpecifier="true" classNameEnd="IntegerConstant" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="IntegerConstant" description="&quot;Generate constant signal of type Integer&quot;" isLongClassSpecifier="true" classNameEnd="IntegerConstant" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="k" description="&quot;Constant output value&quot;">
           <modifications expression="1" elementName="start"/>
         </component_list>
@@ -1884,8 +1885,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="IntegerStep" description="&quot;Generate step signal of type Integer&quot;" isLongClassSpecifier="true" classNameEnd="IntegerStep" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="IntegerStep" description="&quot;Generate step signal of type Integer&quot;" isLongClassSpecifier="true" classNameEnd="IntegerStep" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="height" description="&quot;Height of step&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.IntegerSignalSource" isOver="true"/>
@@ -1905,29 +1906,29 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="IntegerTable" description="&quot;Generate an Integer output signal based on a table matrix with [time, yi] values&quot;" isLongClassSpecifier="true" classNameEnd="IntegerTable" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="IntegerTable" description="&quot;Generate an Integer output signal based on a table matrix with [time, yi] values&quot;" isLongClassSpecifier="true" classNameEnd="IntegerTable" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[:, 2]" expression="fill(0,0,2)" declarationName="table" description="&quot;Table matrix (first column: time; second column: y)&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data definition&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Extrapolation" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Types.Extrapolation" parameterType="parameter" isOver="true">
         <component_list expression="Modelica.Blocks.Types.Extrapolation.HoldLastPoint" declarationName="extrapolation" description="&quot;Extrapolation of data outside the definition range&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="-Modelica.Constants.inf" declarationName="startTime" description="&quot;Output = 0 for time &lt; startTime&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="shiftTime" description="&quot;Shift time of first table column&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Table data interpretation&quot;" elementName="group"/>
@@ -1935,7 +1936,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.IntegerSO" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="CombiTimeTable" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="CombiTimeTable" isOver="true">
         <component_list isModificationOver="true" declarationName="combiTimeTable" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="table" elementName="table" isfinal="true"/>
           <modifications expression="Modelica.Blocks.Types.Smoothness.ConstantSegments" elementName="smoothness" isfinal="true"/>
@@ -1950,7 +1951,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.RealToInteger" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.RealToInteger" isOver="true">
         <component_list declarationName="realToInteger" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -1959,15 +1960,15 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="function" className="isValidTable" description="&quot;Check if table is valid&quot;" isLongClassSpecifier="true" classNameEnd="isValidTable" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="function" className="isValidTable" description="&quot;Check if table is valid&quot;" isLongClassSpecifier="true" classNameEnd="isValidTable" isProtected="true" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
           <component_list subscripts="[:, 2]" declarationName="table" description="&quot;Table matrix&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" isProtected="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" isProtected="true" isOver="true">
           <component_list declarationName="t_last"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
           <component_list expression="size(table, 1)" declarationName="n" description="&quot;Number of table points&quot;"/>
         </elements>
         <elements xsi:type="mOloc:AlgorithmSection">
@@ -1982,7 +1983,7 @@
           </statements>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="size(table, 1)" declarationName="n" description="&quot;Number of table points&quot;"/>
       </elements>
       <elements xsi:type="mOloc:AlgorithmSection" isInitial="true">

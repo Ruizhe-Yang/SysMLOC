@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Basic">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Basic"/>
   <classes classType="model" className="VariableInductor" description="&quot;Ideal linear electrical inductors with variable inductance&quot;" isLongClassSpecifier="true" classNameEnd="VariableInductor" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPlug" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list subscripts="[m]" expression="fill(Modelica.Constants.eps, m )" declarationName="Lmin" description="&quot;Minimum inductance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list subscripts="[m]" isModificationOver="true" declarationName="L" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;H&quot;" elementName="unit" isEach="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -22,7 +23,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.VariableInductor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.VariableInductor" isOver="true">
       <component_list subscripts="[m]" isModificationOver="true" declarationName="variableInductor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Lmin" elementName="Lmin" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">

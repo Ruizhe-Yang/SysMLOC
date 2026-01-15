@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Basic">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Basic"/>
   <classes classType="model" className="TranslationalEMF" description="&quot;Electromotoric force (electric/mechanic transformer)&quot;" isLongClassSpecifier="true" classNameEnd="TranslationalEMF" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useSupport" description="&quot;= true, if support flange enabled, otherwise implicitly grounded&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
         <annotations expression="true" elementName="HideResult"/>
@@ -10,30 +11,30 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ElectricalForceConstant" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ElectricalForceConstant" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="k" description="&quot;Transformation coefficient&quot;">
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list declarationName="v" description="&quot;Voltage drop between the two pins&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list declarationName="i" description="&quot;Current flowing from positive to negative pin&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Position" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Position" isOver="true">
       <component_list declarationName="s" description="&quot;Position of flange relative to support&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Velocity" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Velocity" isOver="true">
       <component_list declarationName="vel" description="&quot;Velocity of flange relative to support&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Force" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Force" isOver="true">
       <component_list declarationName="f" description="&quot;Force of flange&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Force" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Force" isOver="true">
       <component_list declarationName="fElectrical" description="&quot;Electrical force&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="p" description="&quot;Positive electrical pin&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -44,7 +45,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
       <component_list declarationName="n" description="&quot;Negative electrical pin&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -55,7 +56,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Translational.Interfaces.Flange_b" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Translational.Interfaces.Flange_b" isOver="true">
       <component_list declarationName="flange" description="&quot;Flange&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -64,7 +65,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Translational.Interfaces.Support" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Translational.Interfaces.Support" isOver="true">
       <component_list declarationName="support" description="&quot;Support/housing&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useSupport">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -73,7 +74,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Translational.Components.Fixed" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Translational.Components.Fixed" isProtected="true" isOver="true">
       <component_list declarationName="fixed" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useSupport">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -82,7 +83,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Translational.Interfaces.InternalSupport" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Translational.Interfaces.InternalSupport" isOver="true">
       <component_list isModificationOver="true" declarationName="internalSupport" description="&quot;Internal support&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="-f" elementName="f"/>
         <annotations isModificationOver="true" elementName="Placement">

@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Interfaces.InductionMachines">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Interfaces.InductionMachines"/>
   <classes classType="model" className="PartialThermalAmbientInductionMachines" description="&quot;Partial thermal ambience for induction machines&quot;" isLongClassSpecifier="true" classNameEnd="PartialThermalAmbientInductionMachines" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list expression="3" declarationName="m" description="&quot;Number of stator phases&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useTemperatureInputs" description="&quot;If true, temperature inputs are used; else, temperatures are constant&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="constant" isOver="true">
       <component_list expression="293.15" declarationName="TDefault" description="&quot;Default temperature&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="Ts" description="&quot;Temperature of stator windings&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="TDefault" elementName="start"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -22,22 +23,22 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
       <component_list expression="temperatureStatorWinding.port.Q_flow" declarationName="Q_flowStatorWinding" description="&quot;Heat flow rate of stator windings&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
       <component_list expression="temperatureStatorCore.port.Q_flow" declarationName="Q_flowStatorCore" description="&quot;Heat flow rate of stator core losses&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
       <component_list expression="temperatureRotorCore.port.Q_flow" declarationName="Q_flowRotorCore" description="&quot;Heat flow rate of stator core losses&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
       <component_list expression="temperatureStrayLoad.port.Q_flow" declarationName="Q_flowStrayLoad" description="&quot;Heat flow rate of stray load losses&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.HeatFlowRate" directionType="output" isOver="true">
       <component_list expression="temperatureFriction.port.Q_flow" declarationName="Q_flowFriction" description="&quot;Heat flow rate of friction losses&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Interfaces.InductionMachines.PartialThermalPortInductionMachines" isReplaceable="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Interfaces.InductionMachines.PartialThermalPortInductionMachines" isReplaceable="true" isOver="true">
       <component_list isModificationOver="true" declarationName="thermalPort" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -47,7 +48,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.PrescribedTemperature" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.PrescribedTemperature" isOver="true">
       <component_list declarationName="temperatureStatorWinding" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -58,7 +59,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.FixedTemperature" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.FixedTemperature" isOver="true">
       <component_list isModificationOver="true" declarationName="temperatureStatorCore" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="TDefault" elementName="T" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -70,7 +71,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.FixedTemperature" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.FixedTemperature" isOver="true">
       <component_list isModificationOver="true" declarationName="temperatureRotorCore" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="TDefault" elementName="T" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -82,7 +83,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.FixedTemperature" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.FixedTemperature" isOver="true">
       <component_list isModificationOver="true" declarationName="temperatureStrayLoad" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="TDefault" elementName="T" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -94,7 +95,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.FixedTemperature" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.FixedTemperature" isOver="true">
       <component_list isModificationOver="true" declarationName="temperatureFriction" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="TDefault" elementName="T" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -106,7 +107,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list isModificationOver="true" declarationName="TStatorWinding" description="&quot;Temperature of stator windings&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useTemperatureInputs">
         <modifications expression="&quot;K&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -123,7 +124,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="constTs" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useTemperatureInputs">
         <modifications expression="Ts" elementName="k" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -135,7 +136,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Components.ThermalCollector" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Components.ThermalCollector" isOver="true">
       <component_list isModificationOver="true" declarationName="thermalCollectorStator" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">

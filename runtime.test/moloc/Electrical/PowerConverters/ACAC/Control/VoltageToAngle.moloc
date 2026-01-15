@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.ACAC.Control">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.ACAC.Control"/>
   <classes classType="block" className="VoltageToAngle" description="&quot;Reference voltage to firing angle converter&quot;" isLongClassSpecifier="true" classNameEnd="VoltageToAngle" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list declarationName="VNominal" description="&quot;Nominal voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="PowerConverters.Types.Voltage2AngleType" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="PowerConverters.Types.Voltage2AngleType" parameterType="parameter" isOver="true">
       <component_list expression="PowerConverters.Types.Voltage2AngleType.Lin" declarationName="voltage2Angle" description="&quot;Select type of calculation&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list declarationName="vRef" description="&quot;Reference voltage&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -18,7 +19,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
       <component_list isModificationOver="true" declarationName="firingAngle" description="&quot;Firing angle&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;rad&quot;" elementName="unit"/>
         <modifications expression="&quot;deg&quot;" elementName="displayUnit"/>
@@ -32,7 +33,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
       <component_list isModificationOver="true" declarationName="gain_v" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1/VNominal" elementName="k" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -42,7 +43,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Nonlinear.Limiter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Nonlinear.Limiter" isOver="true">
       <component_list isModificationOver="true" declarationName="limiter" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="uMax" isfinal="true"/>
         <modifications expression="0" elementName="uMin" isfinal="true"/>
@@ -53,7 +54,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Tables.CombiTable1Ds" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Tables.CombiTable1Ds" isOver="true">
       <component_list isModificationOver="true" declarationName="combiTable1Ds" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="if voltage2Angle ==PowerConverters.Types.Voltage2AngleType.Lin then Lin elseif voltage2Angle ==PowerConverters.Types.Voltage2AngleType.H01 then H01 else RMS" elementName="table" isfinal="true"/>
         <modifications expression="Modelica.Blocks.Types.Extrapolation.HoldLastPoint" elementName="extrapolation" isfinal="true"/>
@@ -64,7 +65,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
       <component_list isModificationOver="true" declarationName="gain_alpha" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="pi" elementName="k" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -74,13 +75,13 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="constant" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="constant" isProtected="true" isOver="true">
       <component_list subscripts="[:,2]" expression="[0,1; 1,0]" declarationName="Lin"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="constant" isOver="true">
       <component_list subscripts="[:,2]" expression="[0,1; 7.85377E-05,0.995; 0.000314125,0.99; 0.000706684,0.985; 0.001256086,0.98; 0.00196215,0.975; 0.007832473,0.95; 0.017562721,0.925; 0.031072921,0.9; 0.048252035,0.875; 0.068958879,0.85; 0.093023287,0.825; 0.120247535,0.8; 0.150407987,0.775; 0.183256979,0.75; 0.218524917,0.725; 0.255922582,0.7; 0.295143624,0.675; 0.33586724,0.65; 0.377761016,0.625; 0.420483922,0.6; 0.463689446,0.575; 0.507028849,0.55; 0.550154538,0.525; 0.592723531,0.5; 0.634401018,0.475; 0.674864,0.45; 0.713804992,0.425; 0.750935807,0.4; 0.785991389,0.375; 0.818733724,0.35; 0.848955796,0.325; 0.87648563,0.3; 0.901190381,0.275; 0.922980502,0.25; 0.941813955,0.225; 0.957700455,0.2; 0.97070568,0.175; 0.980955368,0.15; 0.988639134,0.125; 0.994013774,0.1; 0.997405692,0.075; 0.999211945,0.05; 0.999899238,0.025; 0.999948191,0.02; 0.999978053,0.015; 0.999993471,0.01; 0.999999181,0.005; 1,0]" declarationName="H01"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="constant" isOver="true">
       <component_list subscripts="[:,2]" expression="[0,1; 0.000906877,0.995; 0.002564847,0.99; 0.004711343,0.985; 0.007252334,0.98; 0.010133194,0.975; 0.028608003,0.95; 0.052394349,0.925; 0.080318563,0.9; 0.111626433,0.875; 0.14574274,0.85; 0.182186463,0.825; 0.22053266,0.8; 0.260393008,0.775; 0.301405137,0.75; 0.343226628,0.725; 0.385531651,0.7; 0.428009237,0.675; 0.470362569,0.65; 0.51230895,0.625; 0.553580231,0.6; 0.593923537,0.575; 0.633102218,0.55; 0.670896923,0.525; 0.707106781,0.5; 0.741550618,0.475; 0.774068203,0.45; 0.804521493,0.425; 0.83279585,0.4; 0.858801222,0.375; 0.882473259,0.35; 0.903774359,0.325; 0.922694611,0.3; 0.939252619,0.275; 0.953496168,0.25; 0.965502709,0.225; 0.975379591,0.2; 0.983263999,0.175; 0.989322523,0.15; 0.99375024,0.125; 0.996769245,0.1; 0.998626473,0.075; 0.999590707,0.05; 0.999948658,0.025; 0.999973701,0.02; 0.999988902,0.015; 0.999996711,0.01; 0.999999589,0.005; 1,0]" declarationName="RMS"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

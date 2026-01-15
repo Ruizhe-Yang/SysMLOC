@@ -1,53 +1,54 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Interfaces">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Interfaces"/>
   <classes isPartial="true" classType="model" className="PartialBasicMachine" description="&quot;Partial model for all machines&quot;" isLongClassSpecifier="true" classNameEnd="PartialBasicMachine" isOver="true">
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Icons.TransientMachine" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inertia" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inertia" parameterType="parameter" isOver="true">
       <component_list declarationName="Jr" description="&quot;Rotor's moment of inertia&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useSupport" description="&quot;Enable / disable (=fixed stator) support&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inertia" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inertia" parameterType="parameter" isOver="true">
       <component_list expression="Jr" declarationName="Js" description="&quot;Stator's moment of inertia&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="useSupport" elementName="enable"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useThermalPort" description="&quot;Enable / disable (=fixed temperatures) thermal port&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Losses.FrictionParameters" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Losses.FrictionParameters" parameterType="parameter" isOver="true">
       <component_list declarationName="frictionParameters" description="&quot;Friction loss parameter record&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="&quot;Losses&quot;" elementName="tab"/>
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
       <component_list isModificationOver="true" expression="flange.phi - internalSupport.phi" declarationName="phiMechanical" description="&quot;Mechanical angle of rotor against stator&quot;">
         <modifications expression="0" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularVelocity" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" directionType="output" isOver="true">
       <component_list isModificationOver="true" expression="der(phiMechanical)" declarationName="wMechanical" description="&quot;Mechanical angular velocity of rotor against stator&quot;">
         <modifications expression="&quot;rev/min&quot;" elementName="displayUnit"/>
         <modifications expression="0" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Torque" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Torque" directionType="output" isOver="true">
       <component_list expression="inertiaRotor.flange_a.tau" declarationName="tauElectrical" description="&quot;Electromagnetic torque&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Torque" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Torque" directionType="output" isOver="true">
       <component_list expression="-flange.tau" declarationName="tauShaft" description="&quot;Shaft torque&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.Flange_a" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.Flange_a" isOver="true">
       <component_list declarationName="flange" description="&quot;Shaft&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -56,7 +57,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Components.Inertia" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Components.Inertia" isOver="true">
       <component_list isModificationOver="true" declarationName="inertiaRotor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Jr" elementName="J" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -68,7 +69,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.Flange_a" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.Flange_a" isOver="true">
       <component_list declarationName="support" description="&quot;Support at which the reaction torque is acting&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useSupport">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -77,7 +78,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Components.Inertia" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Components.Inertia" isOver="true">
       <component_list isModificationOver="true" declarationName="inertiaStator" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Js" elementName="J" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -89,7 +90,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Components.Fixed" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Components.Fixed" isOver="true">
       <component_list declarationName="fixed" isAnnotation="true" isAnnotationOver="true" condition_attribute="(not useSupport)">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -100,7 +101,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Losses.Friction" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Losses.Friction" isOver="true">
       <component_list isModificationOver="true" declarationName="friction" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="frictionParameters" elementName="frictionParameters" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -111,7 +112,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.Support" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.Support" isProtected="true" isOver="true">
       <component_list declarationName="internalSupport" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Blocks">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Blocks"/>
   <classes classType="package" className="Nonlinear" description="&quot;Library of discontinuous or non-differentiable algebraic control blocks&quot;" isLongClassSpecifier="true" classNameEnd="Nonlinear" isOver="true">
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Blocks.Interfaces" isOver="true"/>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Limiter" description="&quot;Limit the range of a signal&quot;" isLongClassSpecifier="true" classNameEnd="Limiter" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Limiter" description="&quot;Limit the range of a signal&quot;" isLongClassSpecifier="true" classNameEnd="Limiter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="uMax" description="&quot;Upper limits of input signals&quot;">
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="-uMax" declarationName="uMin" description="&quot;Lower limits of input signals&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="strict" description="&quot;= true, if strict limits with noEvent(..)&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="Evaluate"/>
           <annotations isModificationOver="true" elementName="choices">
@@ -23,7 +24,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Types.LimiterHomotopy" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Types.LimiterHomotopy" parameterType="parameter" isOver="true">
         <component_list expression="Modelica.Blocks.Types.LimiterHomotopy.Linear" declarationName="homotopyType" description="&quot;Simplified model for homotopy-based initialization&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="Evaluate"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -32,7 +33,7 @@
         </component_list>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isProtected="true" isOver="true">
         <component_list declarationName="simplifiedExpr" description="&quot;Simplified expression for homotopy-based initialization&quot;"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
@@ -62,9 +63,9 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="VariableLimiter" description="&quot;Limit the range of a signal with variable limits&quot;" isLongClassSpecifier="true" classNameEnd="VariableLimiter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="VariableLimiter" description="&quot;Limit the range of a signal with variable limits&quot;" isLongClassSpecifier="true" classNameEnd="VariableLimiter" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="strict" description="&quot;= true, if strict limits with noEvent(..)&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="Evaluate"/>
           <annotations isModificationOver="true" elementName="choices">
@@ -75,7 +76,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Types.VariableLimiterHomotopy" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Types.VariableLimiterHomotopy" parameterType="parameter" isOver="true">
         <component_list expression="Modelica.Blocks.Types.VariableLimiterHomotopy.Linear" declarationName="homotopyType" description="&quot;Simplified model for homotopy-based initialization&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="Evaluate"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -83,7 +84,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="ySimplified" description="&quot;Fixed value of output in simplified model&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
@@ -91,7 +92,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.RealInput" isOver="true">
         <component_list declarationName="limit1" description="&quot;Connector of Real input signal used as maximum of input u&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -100,7 +101,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.RealInput" isOver="true">
         <component_list declarationName="limit2" description="&quot;Connector of Real input signal used as minimum of input u&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -109,7 +110,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isProtected="true" isOver="true">
         <component_list declarationName="simplifiedExpr" description="&quot;Simplified expression for homotopy-based initialization&quot;"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection">
@@ -139,25 +140,25 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="SlewRateLimiter" description="&quot;Limits the slew rate of a signal&quot;" isLongClassSpecifier="true" classNameEnd="SlewRateLimiter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="SlewRateLimiter" description="&quot;Limits the slew rate of a signal&quot;" isLongClassSpecifier="true" classNameEnd="SlewRateLimiter" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SISO" isOver="true"/>
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.small" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="1" declarationName="Rising" description="&quot;Maximum rising slew rate [+small..+inf) [1/s]&quot;">
           <modifications expression="small" elementName="min"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="-Rising" declarationName="Falling" description="&quot;Maximum falling slew rate (-inf..-small] [1/s]&quot;">
           <modifications expression="-small" elementName="max"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="0.001" declarationName="Td" description="&quot;Derivative time constant&quot;">
           <modifications expression="small" elementName="min"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Types.Init" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Types.Init" parameterType="parameter" isOver="true">
         <component_list expression="Modelica.Blocks.Types.Init.SteadyState" declarationName="initType" description="&quot;Type of initialization (SteadyState implies y = u)&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="Evaluate"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -165,14 +166,14 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="y_start" description="&quot;Initial or guess value of output (= state)&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="&quot;Initialization&quot;" elementName="group"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="strict" description="&quot;= true, if strict limits with noEvent(..)&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="Evaluate"/>
           <annotations isModificationOver="true" elementName="choices">
@@ -183,7 +184,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isProtected="true" isOver="true">
         <component_list expression="(u-y)/Td" declarationName="val"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -209,13 +210,13 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="DeadZone" description="&quot;Provide a region of zero output&quot;" isLongClassSpecifier="true" classNameEnd="DeadZone" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="DeadZone" description="&quot;Provide a region of zero output&quot;" isLongClassSpecifier="true" classNameEnd="DeadZone" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="uMax" description="&quot;Upper limits of dead zones&quot;">
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="-uMax" declarationName="uMin" description="&quot;Lower limits of dead zones&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO" isOver="true"/>
@@ -236,9 +237,9 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="FixedDelay" description="&quot;Delay block with fixed DelayTime&quot;" isLongClassSpecifier="true" classNameEnd="FixedDelay" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="FixedDelay" description="&quot;Delay block with fixed DelayTime&quot;" isLongClassSpecifier="true" classNameEnd="FixedDelay" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SISO" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="delayTime" description="&quot;Delay time of output with respect to input signal&quot;">
           <modifications expression="1" elementName="start"/>
         </component_list>
@@ -259,125 +260,125 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="PadeDelay" description="&quot;Pade approximation of delay block with fixed delayTime (use balance=true; this is not the default to be backwards compatible)&quot;" isLongClassSpecifier="true" classNameEnd="PadeDelay" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="PadeDelay" description="&quot;Pade approximation of delay block with fixed delayTime (use balance=true; this is not the default to be backwards compatible)&quot;" isLongClassSpecifier="true" classNameEnd="PadeDelay" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SISO" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="delayTime" description="&quot;Delay time of output with respect to input signal&quot;">
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="1" declarationName="n" description="&quot;Order of Pade delay&quot;">
           <modifications expression="1" elementName="min"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="n" declarationName="m" description="&quot;Order of numerator (usually m=n, or m=n-1)&quot;">
           <modifications expression="1" elementName="min"/>
           <modifications expression="n" elementName="max"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="balance" description="&quot;= true, if state space system is balanced (highly recommended), otherwise textbook version&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="choices">
             <modifications expression="true" elementName="checkBox"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isfinal="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isfinal="true" isOver="true">
         <component_list subscripts="[n]" declarationName="x" description="&quot;State of transfer function from controller canonical form (balance=false), or balanced controller canonical form (balance=true)&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isOver="true">
         <component_list subscripts="[n]" isModificationOver="true" declarationName="a1" description="&quot;First row of A&quot;">
           <modifications expression="false" elementName="fixed" isEach="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="b11" description="&quot;= B[1,1]&quot;">
           <modifications expression="false" elementName="fixed"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[n]" isModificationOver="true" declarationName="c" description="&quot;C row matrix&quot;">
           <modifications expression="false" elementName="fixed" isEach="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="d" description="&quot;D matrix&quot;">
           <modifications expression="false" elementName="fixed"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list subscripts="[n-1]" isModificationOver="true" declarationName="s" description="&quot;State scaling&quot;">
           <modifications expression="false" elementName="fixed" isEach="true"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="function" className="padeCoefficients2" isLongClassSpecifier="true" classNameEnd="padeCoefficients2" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="function" className="padeCoefficients2" isLongClassSpecifier="true" classNameEnd="padeCoefficients2" isOver="true">
         <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
           <component_list declarationName="T" description="&quot;Delay time&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="input" isOver="true">
           <component_list declarationName="n" description="&quot;Order of denominator&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="input" isOver="true">
           <component_list declarationName="m" description="&quot;Order of numerator&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list expression="false" declarationName="balance"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
           <component_list subscripts="[n]" declarationName="a1" description="&quot;First row of A&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
           <component_list declarationName="b11" description="&quot;= B[1,1]&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
           <component_list subscripts="[n]" declarationName="c" description="&quot;C row matrix&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
           <component_list declarationName="d" description="&quot;D matrix&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
           <component_list subscripts="[n-1]" declarationName="s" description="&quot;Scaling such that x[i] = s[i-1]*x[i-1], i > 1&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isProtected="true" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isProtected="true" isOver="true">
           <component_list subscripts="[m + 1]" declarationName="b" description="&quot;Numerator coefficients of transfer function&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list subscripts="[n + 1]" declarationName="a" description="&quot;Denominator coefficients of transfer function&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list declarationName="nm"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list subscripts="[n + 1]" declarationName="bb"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list subscripts="[n,n]" declarationName="A"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list subscripts="[n,1]" declarationName="B"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list subscripts="[1,n]" declarationName="C"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list subscripts="[n,n]" expression="zeros(n,n)" declarationName="A2"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list subscripts="[n,1]" expression="zeros(n,1)" declarationName="B2"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list subscripts="[1,n]" declarationName="C2" description="&quot;C matrix&quot;"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
           <component_list expression="m+1" declarationName="nb"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
           <component_list expression="n+1" declarationName="na"/>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
           <component_list subscripts="[n]" declarationName="sx"/>
         </elements>
         <elements xsi:type="mOloc:AlgorithmSection">
@@ -443,15 +444,15 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="VariableDelay" description="&quot;Delay block with variable DelayTime&quot;" isLongClassSpecifier="true" classNameEnd="VariableDelay" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="VariableDelay" description="&quot;Delay block with variable DelayTime&quot;" isLongClassSpecifier="true" classNameEnd="VariableDelay" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SISO" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Duration" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Duration" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="delayMax" description="&quot;Maximum delay time&quot;">
           <modifications expression="0" elementName="min"/>
           <modifications expression="1" elementName="start"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
         <component_list declarationName="delayTime" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">

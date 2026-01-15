@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples.OpAmps">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Examples.OpAmps"/>
   <classes classType="model" className="ControlCircuit" description="&quot;Control circuit&quot;" isLongClassSpecifier="true" classNameEnd="ControlCircuit" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
       <component_list expression="0.01" declarationName="T1" description="&quot;Small time constant&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
       <component_list expression="0.01" declarationName="T2" description="&quot;Large time constant&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
       <component_list expression="T2" declarationName="Ti" description="&quot;Integral time constant&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="T2/(2*T1)" declarationName="kp" description="&quot;Proportional gain&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
       <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -23,7 +24,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Sources.StepVoltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Sources.StepVoltage" isOver="true">
       <component_list isModificationOver="true" declarationName="stepA" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="10" elementName="V"/>
         <modifications expression="0.1" elementName="startTime"/>
@@ -36,7 +37,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="OpAmpCircuits.Feedback" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="OpAmpCircuits.Feedback" isOver="true">
       <component_list isModificationOver="true" declarationName="feedbackA" isAnnotation="true" isAnnotationOver="true">
         <modifications isModificationOver="true" elementName="p1">
           <modifications isModificationOver="true" elementName="i">
@@ -50,7 +51,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="OpAmpCircuits.PI" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="OpAmpCircuits.PI" isOver="true">
       <component_list isModificationOver="true" declarationName="PIA" isAnnotation="true" isAnnotationOver="true">
         <modifications isModificationOver="true" elementName="v2">
           <modifications expression="true" elementName="fixed"/>
@@ -69,7 +70,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="OpAmpCircuits.FirstOrder" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="OpAmpCircuits.FirstOrder" isOver="true">
       <component_list isModificationOver="true" declarationName="firstOrder1A" isAnnotation="true" isAnnotationOver="true">
         <modifications isModificationOver="true" elementName="v2">
           <modifications expression="true" elementName="fixed"/>
@@ -87,7 +88,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="OpAmpCircuits.Add" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="OpAmpCircuits.Add" isOver="true">
       <component_list isModificationOver="true" declarationName="addA" isAnnotation="true" isAnnotationOver="true">
         <modifications isModificationOver="true" elementName="i1_2">
           <modifications expression="0" elementName="start"/>
@@ -104,7 +105,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Sources.StepVoltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Sources.StepVoltage" isOver="true">
       <component_list isModificationOver="true" declarationName="step1A" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="V"/>
         <modifications expression="0.5" elementName="startTime"/>
@@ -117,7 +118,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="OpAmpCircuits.FirstOrder" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="OpAmpCircuits.FirstOrder" isOver="true">
       <component_list isModificationOver="true" declarationName="firstOrder2A" isAnnotation="true" isAnnotationOver="true">
         <modifications isModificationOver="true" elementName="v2">
           <modifications expression="true" elementName="fixed"/>
@@ -135,7 +136,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Sources.Step" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Sources.Step" isOver="true">
       <component_list isModificationOver="true" declarationName="stepB" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="10" elementName="height"/>
         <modifications expression="0.1" elementName="startTime"/>
@@ -146,7 +147,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Math.Feedback" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Math.Feedback" isOver="true">
       <component_list declarationName="feedbackB" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -155,7 +156,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Continuous.PI" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Continuous.PI" isOver="true">
       <component_list isModificationOver="true" declarationName="PIB" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="kp" elementName="k"/>
         <modifications expression="Ti" elementName="T"/>
@@ -167,7 +168,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Continuous.FirstOrder" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Continuous.FirstOrder" isOver="true">
       <component_list isModificationOver="true" declarationName="firstOrder1B" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="T1" elementName="T"/>
         <modifications expression="Modelica.Blocks.Types.Init.InitialOutput" elementName="initType"/>
@@ -178,7 +179,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Math.Add" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Math.Add" isOver="true">
       <component_list declarationName="addB" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -187,7 +188,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Sources.Step" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Sources.Step" isOver="true">
       <component_list isModificationOver="true" declarationName="step1B" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="height"/>
         <modifications expression="0.5" elementName="startTime"/>
@@ -200,7 +201,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Continuous.FirstOrder" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Continuous.FirstOrder" isOver="true">
       <component_list isModificationOver="true" declarationName="firstOrder2B" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="T2" elementName="T"/>
         <modifications expression="Modelica.Blocks.Types.Init.InitialOutput" elementName="initType"/>

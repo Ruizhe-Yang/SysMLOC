@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Functions">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Polyphase.Functions"/>
   <classes classType="function" className="quasiRMS" description="&quot;Overall quasi-RMS value of complex input (current or voltage)&quot;" isLongClassSpecifier="true" classNameEnd="quasiRMS" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.abs" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" directionType="input" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Complex" directionType="input" isOver="true">
       <component_list subscripts="[:]" declarationName="u"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
       <component_list declarationName="y"/>
     </elements>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isProtected="true" isOver="true">
       <component_list expression="size(u, 1)" declarationName="m" description="&quot;Number of phases&quot;"/>
     </elements>
     <elements xsi:type="mOloc:AlgorithmSection">

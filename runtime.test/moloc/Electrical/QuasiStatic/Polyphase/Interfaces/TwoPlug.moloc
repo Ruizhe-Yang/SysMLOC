@@ -1,44 +1,45 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Interfaces">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Polyphase.Interfaces"/>
   <classes isPartial="true" classType="model" className="TwoPlug" description="&quot;Two plugs with pin-adapter, reference connection and declaration of voltage and current&quot;" isLongClassSpecifier="true" classNameEnd="TwoPlug" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.QuasiStatic.Polyphase.Interfaces.TwoPlugElementary" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
       <component_list subscripts="[m]" declarationName="v" description="&quot;Complex voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list subscripts="[m]" expression="Modelica.ComplexMath.abs(v)" declarationName="abs_v" description="&quot;Magnitude of complex voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
       <component_list subscripts="[m]" expression="Modelica.ComplexMath.arg(v)" declarationName="arg_v" description="&quot;Argument of complex voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
       <component_list subscripts="[m]" declarationName="i" description="&quot;Complex current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list subscripts="[m]" expression="Modelica.ComplexMath.abs(i)" declarationName="abs_i" description="&quot;Magnitude of complex current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
       <component_list subscripts="[m]" expression="Modelica.ComplexMath.arg(i)" declarationName="arg_i" description="&quot;Argument of complex current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ActivePower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ActivePower" isOver="true">
       <component_list subscripts="[m]" expression="{Modelica.ComplexMath.real(v[k]* Modelica.ComplexMath.conj(i[k]) ) for k in 1:m }" declarationName="P" description="&quot;Active power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ActivePower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ActivePower" isOver="true">
       <component_list expression="sum(P)" declarationName="P_total" description="&quot;Total active power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ReactivePower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ReactivePower" isOver="true">
       <component_list subscripts="[m]" expression="{Modelica.ComplexMath.imag(v[k]* Modelica.ComplexMath.conj(i[k]) ) for k in 1:m }" declarationName="Q" description="&quot;Reactive power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ReactivePower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ReactivePower" isOver="true">
       <component_list expression="sum(Q)" declarationName="Q_total" description="&quot;Total reactive power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ApparentPower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ApparentPower" isOver="true">
       <component_list subscripts="[m]" expression="{Modelica.ComplexMath.abs(v[k]* Modelica.ComplexMath.conj(i[k]) ) for k in 1:m }" declarationName="S" description="&quot;Magnitude of complex apparent power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ApparentPower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ApparentPower" isOver="true">
       <component_list expression="sqrt(P_total^2 + Q_total^2)" declarationName="S_total" description="&quot;Magnitude of total complex apparent power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
       <component_list subscripts="[m]" expression="{cos(Modelica.ComplexMath.arg(Complex(P[k], Q[k]))) for k in 1 :m }" declarationName="pf" description="&quot;Power factor&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

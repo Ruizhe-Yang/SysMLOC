@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.Types">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.Types"/>
   <classes classType="type" className="PWMType" description="&quot;Enumeration defining the PWM type&quot;" isShortClassSpecifier="true" isEnumeration="true" isOver="true">
     <enumerationLiteral description="&quot;SpaceVector PWM&quot;" title="SVPWM"/>
     <enumerationLiteral description="&quot;Intersective PWM&quot;" title="Intersective"/>

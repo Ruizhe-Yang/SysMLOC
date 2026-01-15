@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.DCDC">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.DCDC"/>
   <classes classType="model" className="HBridge" description="&quot;H bridge (four quadrant converter)&quot;" isLongClassSpecifier="true" classNameEnd="HBridge" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Icons.Converter" isOver="true"/>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PowerConverters.Interfaces.DCDC.DCtwoPin1" isOver="true"/>
@@ -7,26 +8,26 @@
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
       <extendsModifications expression="293.15" elementName="T" isfinal="true"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="1e-05" declarationName="RonTransistor" description="&quot;Transistor closed resistance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
       <component_list expression="1e-05" declarationName="GoffTransistor" description="&quot;Transistor opened conductance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="VkneeTransistor" description="&quot;Transistor threshold voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="1e-05" declarationName="RonDiode" description="&quot;Diode closed resistance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
       <component_list expression="1e-05" declarationName="GoffDiode" description="&quot;Diode opened conductance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="VkneeDiode" description="&quot;Diode threshold voltage&quot;"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.Enable.Enable2" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="DCAC.SinglePhase2Level" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="DCAC.SinglePhase2Level" isOver="true">
       <component_list isModificationOver="true" declarationName="inverter_p" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="RonTransistor" elementName="RonTransistor" isfinal="true"/>
         <modifications expression="GoffTransistor" elementName="GoffTransistor" isfinal="true"/>
@@ -42,7 +43,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="DCAC.SinglePhase2Level" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="DCAC.SinglePhase2Level" isOver="true">
       <component_list isModificationOver="true" declarationName="inverter_n" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="RonTransistor" elementName="RonTransistor" isfinal="true"/>
         <modifications expression="GoffTransistor" elementName="GoffTransistor" isfinal="true"/>
@@ -58,7 +59,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
       <component_list declarationName="fire_p" description="&quot;Firing signals of positive potential leg&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -69,7 +70,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
       <component_list declarationName="fire_n" description="&quot;Firing signals of negative potential leg&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

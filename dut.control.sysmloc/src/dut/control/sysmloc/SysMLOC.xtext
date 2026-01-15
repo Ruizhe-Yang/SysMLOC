@@ -1127,7 +1127,7 @@ ViewRenderingUsage:
 	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
-// TODO --------------------------------- Secondary Instance Level ---------------------------------//
+// TODO --------------------------------- Secondary Element Level ---------------------------------//
 
 ResultExpression:
 	MemberPrefix resultExpression=Expression

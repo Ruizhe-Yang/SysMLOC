@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.Utilities">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.Utilities"/>
   <classes classType="block" className="BusTranscription" description="&quot;Transcribe bus signals&quot;" isLongClassSpecifier="true" classNameEnd="BusTranscription" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1" declarationName="Ns" description="&quot;Number of series connected cells&quot;">
         <modifications expression="1" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1" declarationName="Np" description="&quot;Number of parallel connected cells&quot;">
         <modifications expression="1" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Batteries.Interfaces.StackBus" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Batteries.Interfaces.StackBus" isOver="true">
       <component_list isModificationOver="true" declarationName="stackBus" description="&quot;Stack bus&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Np" elementName="Np"/>
         <modifications expression="Ns" elementName="Ns"/>
@@ -25,7 +26,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Batteries.Interfaces.StackBusArrays" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Batteries.Interfaces.StackBusArrays" isOver="true">
       <component_list isModificationOver="true" declarationName="stackBusArrays" description="&quot;Stack bus with signal arrays&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Np" elementName="Np"/>
         <modifications expression="Ns" elementName="Ns"/>
@@ -38,7 +39,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Gain" isProtected="true" isOver="true">
       <component_list subscripts="[Ns,Np]" isModificationOver="true" declarationName="gainV" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="k" isEach="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -48,7 +49,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
       <component_list subscripts="[Ns,Np]" isModificationOver="true" declarationName="gainI" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="k" isEach="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -58,7 +59,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
       <component_list subscripts="[Ns,Np]" isModificationOver="true" declarationName="gainSOC" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="k" isEach="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -68,7 +69,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
       <component_list subscripts="[Ns,Np]" isModificationOver="true" declarationName="gainP" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="k" isEach="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -78,7 +79,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
       <component_list subscripts="[Ns,Np]" isModificationOver="true" declarationName="gainLosses" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="k" isEach="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -88,7 +89,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
       <component_list subscripts="[Ns,Np]" isModificationOver="true" declarationName="gainT" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="k" isEach="true"/>
         <annotations isModificationOver="true" elementName="Placement">

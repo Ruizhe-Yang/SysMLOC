@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.Examples">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.Examples"/>
   <classes classType="model" className="ShowImpedance" description="&quot;Show complex cell impedance&quot;" isLongClassSpecifier="true" classNameEnd="ShowImpedance" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Sources.LogFrequencySweep" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Sources.LogFrequencySweep" isOver="true">
       <component_list isModificationOver="true" declarationName="logSweep" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1e-6" elementName="wMin"/>
         <modifications expression="1e3" elementName="wMax"/>
@@ -14,7 +15,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Utilities.Impedance" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.Impedance" isOver="true">
       <component_list isModificationOver="true" declarationName="impedance" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="cellData" elementName="cellData"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -24,7 +25,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ParameterRecords.TransientData.ExampleData" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="ParameterRecords.TransientData.ExampleData" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="cellData" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="3600" elementName="Qnom"/>
         <modifications expression="0.01" elementName="Ri"/>

@@ -67,7 +67,37 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
     switch (eClass.getClassifierID())
     {
       case MOlocPackage.STORED_DEFINITION: return createStored_definition();
+      case MOlocPackage.WITHIN: return createWithin();
       case MOlocPackage.CLASS_DEFINITION: return createClass_definition();
+      case MOlocPackage.CONSTRAINING_CLAUSE: return createConstrainingClause();
+      case MOlocPackage.MODIFICATION_ELEMENT: return createModificationElement();
+      case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT: return createAnnotationModificationElement();
+      case MOlocPackage.ELEMENT: return createElement();
+      case MOlocPackage.EQUATION_SECTION: return createEquationSection();
+      case MOlocPackage.EQUATION: return createEquation();
+      case MOlocPackage.ALGORITHM_SECTION: return createAlgorithmSection();
+      case MOlocPackage.STATEMENT: return createStatement();
+      case MOlocPackage.IMPORT_CLAUSE: return createImportClause();
+      case MOlocPackage.EXTENDS_CLAUSE: return createExtendsClause();
+      case MOlocPackage.COMPONENT_CLAUSE: return createComponentClause();
+      case MOlocPackage.COMPONENT_DECLARATION: return createComponent_declaration();
+      case MOlocPackage.EXTERNAL_ELEMENT: return createExternalElement();
+      case MOlocPackage.ANNOTATION_CLAUSE: return createAnnotationClause();
+      case MOlocPackage.SIMPLE_EQUATION: return createSimpleEquation();
+      case MOlocPackage.IF_EQUATION: return createIfEquation();
+      case MOlocPackage.FOR_EQUATION: return createForEquation();
+      case MOlocPackage.CONNECT_EQUATION: return createConnectEquation();
+      case MOlocPackage.WHEN_EQUATION: return createWhenEquation();
+      case MOlocPackage.FUNCTION_EQUATION: return createFunctionEquation();
+      case MOlocPackage.FUNCTION_STATEMENT: return createFunctionStatement();
+      case MOlocPackage.BREAK_STATEMENT: return createBreakStatement();
+      case MOlocPackage.RETURN_STATEMENT: return createReturnStatement();
+      case MOlocPackage.IF_STATEMENT: return createIfStatement();
+      case MOlocPackage.FOR_STATEMENT: return createForStatement();
+      case MOlocPackage.WHEN_STATEMENT: return createWhenStatement();
+      case MOlocPackage.WHILE_STATEMENT: return createWhileStatement();
+      case MOlocPackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
+      case MOlocPackage.BREAK: return createBreak();
       case MOlocPackage.CLASS_PREFIXES: return createclass_prefixes();
       case MOlocPackage.CLASS_SPECIFIER: return createclass_specifier();
       case MOlocPackage.LONG_CLASS_SPECIFIER: return createlong_class_specifier();
@@ -80,11 +110,7 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
       case MOlocPackage.COMPOSITION: return createcomposition();
       case MOlocPackage.TYPE_SPECIFIER: return createtype_specifier();
       case MOlocPackage.ENUM_LIST: return createenum_list();
-      case MOlocPackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
       case MOlocPackage.DESCRIPTION: return createdescription();
-      case MOlocPackage.MODIFICATION_ELEMENT: return createModificationElement();
-      case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT: return createAnnotationModificationElement();
-      case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT2: return createAnnotationModificationElement2();
       case MOlocPackage.ELEMENT_MODIFICATION: return createelement_modification();
       case MOlocPackage.SHORT_CLASS_DEFINITION: return createshort_class_definition();
       case MOlocPackage.COMPONENT_CLAUSE1: return createcomponent_clause1();
@@ -94,32 +120,6 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
       case MOlocPackage.ARRAY_SUBSCRIPTS: return createarray_subscripts();
       case MOlocPackage.MODIFICATION: return createmodification();
       case MOlocPackage.CONSTRAINING: return createconstraining();
-      case MOlocPackage.CONSTRAINING_CLAUSE: return createConstrainingClause();
-      case MOlocPackage.ELEMENT: return createElement();
-      case MOlocPackage.IMPORT_CLAUSE: return createImportClause();
-      case MOlocPackage.EXTENDS_CLAUSE: return createExtendsClause();
-      case MOlocPackage.BREAK: return createBreak();
-      case MOlocPackage.GENERAL_CLAUSE: return createGeneralClause();
-      case MOlocPackage.COMPONENT_DECLARATION: return createComponent_declaration();
-      case MOlocPackage.EXTERNAL_ELEMENT: return createExternalElement();
-      case MOlocPackage.ANNOTATION_CLAUSE: return createAnnotationClause();
-      case MOlocPackage.EQUATION_SECTION: return createEquationSection();
-      case MOlocPackage.EQUATION: return createEquation();
-      case MOlocPackage.SIMPLE_EQUATION: return createSimpleEquation();
-      case MOlocPackage.IF_EQUATION: return createIfEquation();
-      case MOlocPackage.FOR_EQUATION: return createForEquation();
-      case MOlocPackage.CONNECT_EQUATION: return createConnectEquation();
-      case MOlocPackage.WHEN_EQUATION: return createWhenEquation();
-      case MOlocPackage.FUNCTION_EQUATION: return createFunctionEquation();
-      case MOlocPackage.ALGORITHM_SECTION: return createAlgorithmSection();
-      case MOlocPackage.STATEMENT: return createStatement();
-      case MOlocPackage.FUNCTION_STATEMENT: return createFunctionStatement();
-      case MOlocPackage.BREAK_STATEMENT: return createBreakStatement();
-      case MOlocPackage.RETURN_STATEMENT: return createReturnStatement();
-      case MOlocPackage.IF_STATEMENT: return createIfStatement();
-      case MOlocPackage.FOR_STATEMENT: return createForStatement();
-      case MOlocPackage.WHEN_STATEMENT: return createWhenStatement();
-      case MOlocPackage.WHILE_STATEMENT: return createWhileStatement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -137,12 +137,12 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
     {
       case MOlocPackage.CLASS_TYPE:
         return createClassTypeFromString(eDataType, initialValue);
-      case MOlocPackage.DIRECTION:
-        return createDirectionFromString(eDataType, initialValue);
       case MOlocPackage.RELATIONSHIP_TYPE:
         return createRelationshipTypeFromString(eDataType, initialValue);
       case MOlocPackage.PARAMETER_TYPE:
         return createParameterTypeFromString(eDataType, initialValue);
+      case MOlocPackage.DIRECTION:
+        return createDirectionFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -160,12 +160,12 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
     {
       case MOlocPackage.CLASS_TYPE:
         return convertClassTypeToString(eDataType, instanceValue);
-      case MOlocPackage.DIRECTION:
-        return convertDirectionToString(eDataType, instanceValue);
       case MOlocPackage.RELATIONSHIP_TYPE:
         return convertRelationshipTypeToString(eDataType, instanceValue);
       case MOlocPackage.PARAMETER_TYPE:
         return convertParameterTypeToString(eDataType, instanceValue);
+      case MOlocPackage.DIRECTION:
+        return convertDirectionToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -189,10 +189,370 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
+  public Within createWithin()
+  {
+    WithinImpl within = new WithinImpl();
+    return within;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Class_definition createClass_definition()
   {
     Class_definitionImpl class_definition = new Class_definitionImpl();
     return class_definition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConstrainingClause createConstrainingClause()
+  {
+    ConstrainingClauseImpl constrainingClause = new ConstrainingClauseImpl();
+    return constrainingClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ModificationElement createModificationElement()
+  {
+    ModificationElementImpl modificationElement = new ModificationElementImpl();
+    return modificationElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AnnotationModificationElement createAnnotationModificationElement()
+  {
+    AnnotationModificationElementImpl annotationModificationElement = new AnnotationModificationElementImpl();
+    return annotationModificationElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Element createElement()
+  {
+    ElementImpl element = new ElementImpl();
+    return element;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EquationSection createEquationSection()
+  {
+    EquationSectionImpl equationSection = new EquationSectionImpl();
+    return equationSection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Equation createEquation()
+  {
+    EquationImpl equation = new EquationImpl();
+    return equation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AlgorithmSection createAlgorithmSection()
+  {
+    AlgorithmSectionImpl algorithmSection = new AlgorithmSectionImpl();
+    return algorithmSection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Statement createStatement()
+  {
+    StatementImpl statement = new StatementImpl();
+    return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ImportClause createImportClause()
+  {
+    ImportClauseImpl importClause = new ImportClauseImpl();
+    return importClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExtendsClause createExtendsClause()
+  {
+    ExtendsClauseImpl extendsClause = new ExtendsClauseImpl();
+    return extendsClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComponentClause createComponentClause()
+  {
+    ComponentClauseImpl componentClause = new ComponentClauseImpl();
+    return componentClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Component_declaration createComponent_declaration()
+  {
+    Component_declarationImpl component_declaration = new Component_declarationImpl();
+    return component_declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExternalElement createExternalElement()
+  {
+    ExternalElementImpl externalElement = new ExternalElementImpl();
+    return externalElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AnnotationClause createAnnotationClause()
+  {
+    AnnotationClauseImpl annotationClause = new AnnotationClauseImpl();
+    return annotationClause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SimpleEquation createSimpleEquation()
+  {
+    SimpleEquationImpl simpleEquation = new SimpleEquationImpl();
+    return simpleEquation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IfEquation createIfEquation()
+  {
+    IfEquationImpl ifEquation = new IfEquationImpl();
+    return ifEquation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ForEquation createForEquation()
+  {
+    ForEquationImpl forEquation = new ForEquationImpl();
+    return forEquation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConnectEquation createConnectEquation()
+  {
+    ConnectEquationImpl connectEquation = new ConnectEquationImpl();
+    return connectEquation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WhenEquation createWhenEquation()
+  {
+    WhenEquationImpl whenEquation = new WhenEquationImpl();
+    return whenEquation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FunctionEquation createFunctionEquation()
+  {
+    FunctionEquationImpl functionEquation = new FunctionEquationImpl();
+    return functionEquation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FunctionStatement createFunctionStatement()
+  {
+    FunctionStatementImpl functionStatement = new FunctionStatementImpl();
+    return functionStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BreakStatement createBreakStatement()
+  {
+    BreakStatementImpl breakStatement = new BreakStatementImpl();
+    return breakStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ReturnStatement createReturnStatement()
+  {
+    ReturnStatementImpl returnStatement = new ReturnStatementImpl();
+    return returnStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IfStatement createIfStatement()
+  {
+    IfStatementImpl ifStatement = new IfStatementImpl();
+    return ifStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ForStatement createForStatement()
+  {
+    ForStatementImpl forStatement = new ForStatementImpl();
+    return forStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WhenStatement createWhenStatement()
+  {
+    WhenStatementImpl whenStatement = new WhenStatementImpl();
+    return whenStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WhileStatement createWhileStatement()
+  {
+    WhileStatementImpl whileStatement = new WhileStatementImpl();
+    return whileStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EnumerationLiteral createEnumerationLiteral()
+  {
+    EnumerationLiteralImpl enumerationLiteral = new EnumerationLiteralImpl();
+    return enumerationLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Break createBreak()
+  {
+    BreakImpl break_ = new BreakImpl();
+    return break_;
   }
 
   /**
@@ -345,58 +705,10 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   @Override
-  public EnumerationLiteral createEnumerationLiteral()
-  {
-    EnumerationLiteralImpl enumerationLiteral = new EnumerationLiteralImpl();
-    return enumerationLiteral;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public description createdescription()
   {
     descriptionImpl description = new descriptionImpl();
     return description;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ModificationElement createModificationElement()
-  {
-    ModificationElementImpl modificationElement = new ModificationElementImpl();
-    return modificationElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AnnotationModificationElement createAnnotationModificationElement()
-  {
-    AnnotationModificationElementImpl annotationModificationElement = new AnnotationModificationElementImpl();
-    return annotationModificationElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AnnotationModificationElement2 createAnnotationModificationElement2()
-  {
-    AnnotationModificationElement2Impl annotationModificationElement2 = new AnnotationModificationElement2Impl();
-    return annotationModificationElement2;
   }
 
   /**
@@ -512,318 +824,6 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public ConstrainingClause createConstrainingClause()
-  {
-    ConstrainingClauseImpl constrainingClause = new ConstrainingClauseImpl();
-    return constrainingClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Element createElement()
-  {
-    ElementImpl element = new ElementImpl();
-    return element;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ImportClause createImportClause()
-  {
-    ImportClauseImpl importClause = new ImportClauseImpl();
-    return importClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ExtendsClause createExtendsClause()
-  {
-    ExtendsClauseImpl extendsClause = new ExtendsClauseImpl();
-    return extendsClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Break createBreak()
-  {
-    BreakImpl break_ = new BreakImpl();
-    return break_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public GeneralClause createGeneralClause()
-  {
-    GeneralClauseImpl generalClause = new GeneralClauseImpl();
-    return generalClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Component_declaration createComponent_declaration()
-  {
-    Component_declarationImpl component_declaration = new Component_declarationImpl();
-    return component_declaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ExternalElement createExternalElement()
-  {
-    ExternalElementImpl externalElement = new ExternalElementImpl();
-    return externalElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AnnotationClause createAnnotationClause()
-  {
-    AnnotationClauseImpl annotationClause = new AnnotationClauseImpl();
-    return annotationClause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EquationSection createEquationSection()
-  {
-    EquationSectionImpl equationSection = new EquationSectionImpl();
-    return equationSection;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Equation createEquation()
-  {
-    EquationImpl equation = new EquationImpl();
-    return equation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SimpleEquation createSimpleEquation()
-  {
-    SimpleEquationImpl simpleEquation = new SimpleEquationImpl();
-    return simpleEquation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public IfEquation createIfEquation()
-  {
-    IfEquationImpl ifEquation = new IfEquationImpl();
-    return ifEquation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ForEquation createForEquation()
-  {
-    ForEquationImpl forEquation = new ForEquationImpl();
-    return forEquation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ConnectEquation createConnectEquation()
-  {
-    ConnectEquationImpl connectEquation = new ConnectEquationImpl();
-    return connectEquation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public WhenEquation createWhenEquation()
-  {
-    WhenEquationImpl whenEquation = new WhenEquationImpl();
-    return whenEquation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public FunctionEquation createFunctionEquation()
-  {
-    FunctionEquationImpl functionEquation = new FunctionEquationImpl();
-    return functionEquation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AlgorithmSection createAlgorithmSection()
-  {
-    AlgorithmSectionImpl algorithmSection = new AlgorithmSectionImpl();
-    return algorithmSection;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Statement createStatement()
-  {
-    StatementImpl statement = new StatementImpl();
-    return statement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public FunctionStatement createFunctionStatement()
-  {
-    FunctionStatementImpl functionStatement = new FunctionStatementImpl();
-    return functionStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public BreakStatement createBreakStatement()
-  {
-    BreakStatementImpl breakStatement = new BreakStatementImpl();
-    return breakStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ReturnStatement createReturnStatement()
-  {
-    ReturnStatementImpl returnStatement = new ReturnStatementImpl();
-    return returnStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public IfStatement createIfStatement()
-  {
-    IfStatementImpl ifStatement = new IfStatementImpl();
-    return ifStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ForStatement createForStatement()
-  {
-    ForStatementImpl forStatement = new ForStatementImpl();
-    return forStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public WhenStatement createWhenStatement()
-  {
-    WhenStatementImpl whenStatement = new WhenStatementImpl();
-    return whenStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public WhileStatement createWhileStatement()
-  {
-    WhileStatementImpl whileStatement = new WhileStatementImpl();
-    return whileStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public ClassType createClassTypeFromString(EDataType eDataType, String initialValue)
   {
     ClassType result = ClassType.get(initialValue);
@@ -837,28 +837,6 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   public String convertClassTypeToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Direction createDirectionFromString(EDataType eDataType, String initialValue)
-  {
-    Direction result = Direction.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertDirectionToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }
@@ -903,6 +881,28 @@ public class MOlocFactoryImpl extends EFactoryImpl implements MOlocFactory
    * @generated
    */
   public String convertParameterTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Direction createDirectionFromString(EDataType eDataType, String initialValue)
+  {
+    Direction result = Direction.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertDirectionToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

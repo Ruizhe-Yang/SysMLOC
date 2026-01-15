@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="ASCII"?>
 <mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
   <classes classType="model" className="BouncingBall" isLongClassSpecifier="true" classNameEnd="BouncingBall" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="9.81" declarationName="g" description="&quot;Gravity acceleration (m/s^2)&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="0.8" declarationName="e" description="&quot;Coefficient of restitution&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
       <component_list isModificationOver="true" declarationName="h" description="&quot;Height (m)&quot;">
         <modifications expression="1.0" elementName="start"/>
         <modifications expression="true" elementName="fixed"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
       <component_list isModificationOver="true" declarationName="v" description="&quot;Velocity (m/s)&quot;">
         <modifications expression="0.0" elementName="start"/>
         <modifications expression="true" elementName="fixed"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Integrator" description="&quot;Output the integral of the input signal with optional reset&quot;" isLongClassSpecifier="true" classNameEnd="Integrator" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Integrator" description="&quot;Output the integral of the input signal with optional reset&quot;" isLongClassSpecifier="true" classNameEnd="Integrator" isOver="true">
       <elements xsi:type="mOloc:ImportClause" importName="Modelica.Blocks.Types.Init" isOver="true"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.SISO" isOver="true">
@@ -41,19 +41,19 @@
         <modifications expression="{ Line( points={{-80.0,78.0},{-80.0,-90.0}}, color={192,192,192} ) , Line2( points={{-80.0,78.0},{-80.0,-90.0}}, color={line(a),192,192} ) , Line3( points={{-80.0,78.0},{-80.0,-90.0}}, color={line(a),192,192} ) , Polygon( lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid, points={{-80.0,90.0},{-88.0,68.0},{-72.0,68.0},{-80.0,90.0}} ) }" elementName="graphics"/>
       </annotations>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" isEncapsulated="true" classType="function" className="bandPassAlpha" description="&quot;Return alpha for band pass&quot;" isLongClassSpecifier="true" classNameEnd="bandPassAlpha" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" isEncapsulated="true" classType="function" className="bandPassAlpha" description="&quot;Return alpha for band pass&quot;" isLongClassSpecifier="true" classNameEnd="bandPassAlpha" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
       <elements xsi:type="mOloc:ImportClause" importName="Modelica" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
         <component_list declarationName="a" description="&quot;Coefficient of s^1&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
         <component_list declarationName="b" description="&quot;Coefficient of s^0&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.AngularVelocity" directionType="input" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Units.SI.AngularVelocity" directionType="input" isOver="true">
         <component_list declarationName="w" description="&quot;Bandwidth angular frequency&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
         <component_list declarationName="alpha" description="&quot;Alpha factor to build up band pass&quot;"/>
       </elements>
     </elements>

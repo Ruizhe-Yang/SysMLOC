@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Ideal">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Polyphase.Ideal"/>
   <classes classType="model" className="IdealIntermediateSwitch" description="&quot;Polyphase ideal intermediate switch&quot;" isLongClassSpecifier="true" classNameEnd="IdealIntermediateSwitch" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="min" isfinal="true"/>
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list subscripts="[m]" isModificationOver="true" declarationName="Ron" description="&quot;Closed switch resistance&quot;">
         <modifications expression="zeros(m)" elementName="min" isfinal="true"/>
         <modifications expression="fill(1e-5, m)" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
       <component_list subscripts="[m]" isModificationOver="true" declarationName="Goff" description="&quot;Opened switch conductance&quot;">
         <modifications expression="zeros(m)" elementName="min" isfinal="true"/>
         <modifications expression="fill(1e-5, m)" elementName="start"/>
@@ -23,7 +24,7 @@
       <extendsModifications expression="m" elementName="mh" isfinal="true"/>
       <extendsModifications expression="fill(293.15, m)" elementName="T" isfinal="true"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
       <component_list subscripts="[m]" declarationName="control" description="&quot;true => p1--n2, p2--n1 connected, otherwise p1--n1, p2--n2 connected&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -34,7 +35,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.PositivePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.PositivePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="plug_p1" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -47,7 +48,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.PositivePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.PositivePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="plug_p2" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -57,7 +58,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.NegativePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.NegativePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="plug_n2" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -67,7 +68,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.NegativePlug" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.NegativePlug" isOver="true">
       <component_list isModificationOver="true" declarationName="plug_n1" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -80,7 +81,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Ideal.IdealIntermediateSwitch" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Ideal.IdealIntermediateSwitch" isOver="true">
       <component_list subscripts="[m]" isModificationOver="true" declarationName="idealIntermediateSwitch" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Ron" elementName="Ron" isfinal="true"/>
         <modifications expression="Goff" elementName="Goff" isfinal="true"/>
@@ -92,7 +93,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Basic.PlugToPins_p" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Basic.PlugToPins_p" isOver="true">
       <component_list isModificationOver="true" declarationName="plugToPins_p1" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -102,7 +103,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Basic.PlugToPins_n" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Basic.PlugToPins_n" isOver="true">
       <component_list isModificationOver="true" declarationName="plugToPins_n1" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -114,7 +115,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Basic.PlugToPins_p" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Basic.PlugToPins_p" isOver="true">
       <component_list isModificationOver="true" declarationName="plugToPins_p2" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -124,7 +125,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.Polyphase.Basic.PlugToPins_n" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Basic.PlugToPins_n" isOver="true">
       <component_list isModificationOver="true" declarationName="plugToPins_n2" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="m" elementName="m" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">

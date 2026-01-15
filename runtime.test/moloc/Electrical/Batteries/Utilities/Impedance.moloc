@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.Utilities">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.Utilities"/>
   <classes classType="block" className="Impedance" description="&quot;Calculate complex impedance&quot;" isLongClassSpecifier="true" classNameEnd="Impedance" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Blocks.Icons.Block" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.sum" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Batteries.ParameterRecords.TransientData.CellData" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Batteries.ParameterRecords.TransientData.CellData" parameterType="parameter" isOver="true">
       <component_list declarationName="cellData" description="&quot;Transient cell data&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
       <component_list isModificationOver="true" declarationName="f" description="&quot;Frequency&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;Hz&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -17,7 +18,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
       <component_list isModificationOver="true" declarationName="z" description="&quot;Complex impedance&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications isModificationOver="true" elementName="re">
           <modifications expression="&quot;Ohm&quot;" elementName="unit"/>

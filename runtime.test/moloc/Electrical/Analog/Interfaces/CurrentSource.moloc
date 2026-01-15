@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Interfaces">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Interfaces"/>
   <classes isPartial="true" classType="model" className="CurrentSource" description="&quot;Interface for current sources&quot;" isLongClassSpecifier="true" classNameEnd="CurrentSource" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Icons.CurrentSource" isOver="true"/>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="OnePort" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.SignalSource" isReplaceable="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.SignalSource" isReplaceable="true" isOver="true">
       <component_list isModificationOver="true" declarationName="signalSource" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="offset" elementName="offset" isfinal="true"/>
         <modifications expression="startTime" elementName="startTime" isfinal="true"/>
@@ -14,10 +15,10 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="offset" description="&quot;Current offset&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="startTime" description="&quot;Time offset&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

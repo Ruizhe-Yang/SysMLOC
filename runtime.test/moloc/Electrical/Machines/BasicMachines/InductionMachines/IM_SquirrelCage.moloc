@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.BasicMachines.InductionMachines">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.BasicMachines.InductionMachines"/>
   <classes classType="model" className="IM_SquirrelCage" description="&quot;Induction machine with squirrel cage rotor&quot;" isLongClassSpecifier="true" classNameEnd="IM_SquirrelCage" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.PartialBasicInductionMachine" isOver="true">
       <extendsModifications expression="airGap.i_ss" elementName="idq_ss" isfinal="true"/>
@@ -19,10 +20,10 @@
         <modifications expression="statorCoreParameters.wRef" elementName="w" isfinal="true"/>
       </extendsModifications>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
       <component_list subscripts="[2]" expression="squirrelCageR.i" declarationName="ir" description="&quot;Rotor cage currents&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.BasicMachines.Components.AirGapS" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.BasicMachines.Components.AirGapS" isOver="true">
       <component_list isModificationOver="true" declarationName="airGap" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="p" elementName="p" isfinal="true"/>
         <modifications expression="Lm" elementName="Lm" isfinal="true"/>
@@ -35,7 +36,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="Lm" description="&quot;Stator main field inductance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="3*sqrt(1 - 0.0667)/(2*pi *fsNominal )" elementName="start"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -43,7 +44,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="Lrsigma" description="&quot;Rotor stray inductance per phase (equivalent three-phase winding)&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="3*(1 - sqrt(1 - 0.0667 ) ) /(2*pi*fsNominal)" elementName="start"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -51,7 +52,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="Rr" description="&quot;Rotor resistance per phase (equivalent three-phase winding) at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0.04" elementName="start"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -59,7 +60,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="TrRef" description="&quot;Reference temperature of rotor resistance&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="293.15" elementName="start"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -67,7 +68,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="alpha20r" description="&quot;Temperature coefficient of rotor resistance at 20 degC&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0" elementName="start"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -75,7 +76,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="TrOperational" description="&quot;Operational temperature of rotor resistance&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="293.15" elementName="start"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -84,7 +85,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.BasicMachines.Components.SquirrelCage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.BasicMachines.Components.SquirrelCage" isOver="true">
       <component_list isModificationOver="true" declarationName="squirrelCageR" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Lrsigma" elementName="Lrsigma" isfinal="true"/>
         <modifications expression="Rr" elementName="Rr" isfinal="true"/>

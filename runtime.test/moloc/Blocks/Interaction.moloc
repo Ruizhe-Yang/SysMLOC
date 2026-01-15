@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Blocks">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Blocks"/>
   <classes classType="package" className="Interaction" description="&quot;Library of user interaction blocks to input and to show variables in a diagram animation&quot;" isLongClassSpecifier="true" classNameEnd="Interaction" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" classType="package" className="Show" description="&quot;Library of blocks to show variables in a diagram animation&quot;" isLongClassSpecifier="true" classNameEnd="Show" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="package" className="Show" description="&quot;Library of blocks to show variables in a diagram animation&quot;" isLongClassSpecifier="true" classNameEnd="Show" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" classType="block" className="RealValue" description="&quot;Show Real value from numberPort or from number input field in diagram layer dynamically&quot;" isLongClassSpecifier="true" classNameEnd="RealValue" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="block" className="RealValue" description="&quot;Show Real value from numberPort or from number input field in diagram layer dynamically&quot;" isLongClassSpecifier="true" classNameEnd="RealValue" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
           <component_list expression="true" declarationName="use_numberPort" description="&quot;= true, if numberPort enabled&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="Evaluate"/>
             <annotations expression="true" elementName="HideResult"/>
@@ -14,7 +15,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
           <component_list expression="0.0" declarationName="number" description="&quot;Number to visualize if use_numberPort=false (time varying)&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Dialog">
               <modifications expression="not use_numberPort" elementName="enable"/>
@@ -22,12 +23,12 @@
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
           <component_list isModificationOver="true" expression="2" declarationName="significantDigits" description="&quot;Number of significant digits to be shown&quot;">
             <modifications expression="1" elementName="min"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
           <component_list declarationName="numberPort" description="&quot;Number to be shown in diagram layer if use_numberPort = true&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="use_numberPort">
             <annotations expression="true" elementName="HideResult"/>
             <annotations isModificationOver="true" elementName="Placement">
@@ -37,7 +38,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
           <component_list declarationName="showNumber"/>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
@@ -59,8 +60,8 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="block" className="IntegerValue" description="&quot;Show Integer value from numberPort or from number input field in diagram layer dynamically&quot;" isLongClassSpecifier="true" classNameEnd="IntegerValue" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="block" className="IntegerValue" description="&quot;Show Integer value from numberPort or from number input field in diagram layer dynamically&quot;" isLongClassSpecifier="true" classNameEnd="IntegerValue" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
           <component_list expression="true" declarationName="use_numberPort" description="&quot;= true, if numberPort enabled&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="Evaluate"/>
             <annotations expression="true" elementName="HideResult"/>
@@ -69,7 +70,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="input" isOver="true">
           <component_list expression="0" declarationName="number" description="&quot;Number to visualize if use_numberPort=false (time varying)&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Dialog">
               <modifications expression="not use_numberPort" elementName="enable"/>
@@ -77,7 +78,7 @@
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerInput" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerInput" isOver="true">
           <component_list declarationName="numberPort" description="&quot;Number to be shown in diagram layer if use_numberPort = true&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="use_numberPort">
             <annotations expression="true" elementName="HideResult"/>
             <annotations isModificationOver="true" elementName="Placement">
@@ -87,7 +88,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerOutput" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerOutput" isOver="true">
           <component_list declarationName="showNumber"/>
         </elements>
         <elements xsi:type="mOloc:EquationSection">
@@ -109,8 +110,8 @@
           </annotations>
         </elements>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" classType="block" className="BooleanValue" description="&quot;Show Boolean value from numberPort or from number input field in diagram layer dynamically&quot;" isLongClassSpecifier="true" classNameEnd="BooleanValue" isOver="true">
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" classType="block" className="BooleanValue" description="&quot;Show Boolean value from numberPort or from number input field in diagram layer dynamically&quot;" isLongClassSpecifier="true" classNameEnd="BooleanValue" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
           <component_list expression="true" declarationName="use_activePort" description="&quot;= true, if activePort enabled&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations expression="true" elementName="Evaluate"/>
             <annotations expression="true" elementName="HideResult"/>
@@ -119,7 +120,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
           <component_list expression="false" declarationName="active" description="&quot;Boolean variable to visualize if use_activePort=false (time varying)&quot;" isAnnotation="true" isAnnotationOver="true">
             <annotations isModificationOver="true" elementName="Dialog">
               <modifications expression="not use_activePort" elementName="enable"/>
@@ -127,7 +128,7 @@
             <annotations expression="true" elementName="HideResult"/>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
           <component_list declarationName="activePort" description="&quot;Boolean variable to be shown in diagram layer if use_activePort = true&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="use_activePort">
             <annotations expression="true" elementName="HideResult"/>
             <annotations isModificationOver="true" elementName="Placement">
@@ -137,7 +138,7 @@
             </annotations>
           </component_list>
         </elements>
-        <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
           <component_list declarationName="showActive"/>
         </elements>
         <elements xsi:type="mOloc:EquationSection">

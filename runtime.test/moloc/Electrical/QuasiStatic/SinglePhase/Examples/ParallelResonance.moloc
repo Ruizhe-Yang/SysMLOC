@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Examples">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Examples"/>
   <classes classType="model" className="ParallelResonance" description="&quot;Parallel resonance circuit&quot;" isLongClassSpecifier="true" classNameEnd="ParallelResonance" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="output" isOver="true">
       <component_list expression="complexToPolar.len" declarationName="V_abs" description="&quot;Voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
       <component_list expression="complexToPolar.phi" declarationName="V_arg" description="&quot;Voltage phase&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="I" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1" elementName="k"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -20,7 +21,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
       <component_list isModificationOver="true" declarationName="phi" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0" elementName="k"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -32,7 +33,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Sources.Ramp" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Ramp" isOver="true">
       <component_list isModificationOver="true" declarationName="f" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="2" elementName="height"/>
         <modifications expression="1" elementName="duration"/>
@@ -46,7 +47,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Sources.VariableCurrentSource" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Sources.VariableCurrentSource" isOver="true">
       <component_list isModificationOver="true" declarationName="currentSource" isAnnotation="true" isAnnotationOver="true">
         <modifications isModificationOver="true" elementName="gamma">
           <modifications expression="true" elementName="fixed"/>
@@ -61,7 +62,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Basic.Ground" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Basic.Ground" isOver="true">
       <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -70,7 +71,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="10" elementName="R_ref"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -82,7 +83,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Basic.Inductor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Basic.Inductor" isOver="true">
       <component_list isModificationOver="true" declarationName="inductor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1/(2*Modelica.Constants.pi)" elementName="L"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -94,7 +95,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Basic.Capacitor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Basic.Capacitor" isOver="true">
       <component_list isModificationOver="true" declarationName="capacitor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1/(2*Modelica.Constants.pi)" elementName="C"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -106,7 +107,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Sensors.VoltageSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Sensors.VoltageSensor" isOver="true">
       <component_list declarationName="voltageSensor" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -117,7 +118,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.ComplexMath.PolarToComplex" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.ComplexBlocks.ComplexMath.PolarToComplex" isOver="true">
       <component_list declarationName="polarToComplex" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -128,7 +129,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.ComplexMath.ComplexToPolar" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.ComplexBlocks.ComplexMath.ComplexToPolar" isOver="true">
       <component_list declarationName="complexToPolar" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">

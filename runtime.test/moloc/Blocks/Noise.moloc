@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Blocks">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Blocks"/>
   <classes classType="package" className="Noise" description="&quot;Library of noise blocks&quot;" isLongClassSpecifier="true" classNameEnd="Noise" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" classType="model" className="GlobalSeed" description="&quot;Defines global settings for the blocks of sublibrary Noise, especially a global seed value is defined&quot;" isLongClassSpecifier="true" classNameEnd="GlobalSeed" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="model" className="GlobalSeed" description="&quot;Defines global settings for the blocks of sublibrary Noise, especially a global seed value is defined&quot;" isLongClassSpecifier="true" classNameEnd="GlobalSeed" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="true" declarationName="enableNoise" description="&quot;= true, if noise blocks generate noise as output; = false, if they generate a constant output&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="choices">
             <modifications expression="true" elementName="checkBox"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="useAutomaticSeed" description="&quot;= true, choose a seed by system time and process id; = false, use fixedSeed&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="choices">
             <modifications expression="true" elementName="checkBox"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list expression="67867967" declarationName="fixedSeed" description="&quot;Fixed global seed for random number generators (if useAutomaticSeed = false)&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="not useAutomaticSeed" elementName="enable"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
         <component_list isModificationOver="true" declarationName="seed" description="&quot;Actually used global seed&quot;">
           <modifications expression="false" elementName="fixed"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
         <component_list isModificationOver="true" declarationName="id_impure" description="&quot;ID for impure random number generators Modelica.Math.Random.Utilities.impureXXX&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="false" elementName="fixed"/>
           <annotations expression="true" elementName="HideResult"/>
@@ -56,10 +57,10 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="UniformNoise" description="&quot;Noise generator with uniform distribution&quot;" isLongClassSpecifier="true" classNameEnd="UniformNoise" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="UniformNoise" description="&quot;Noise generator with uniform distribution&quot;" isLongClassSpecifier="true" classNameEnd="UniformNoise" isOver="true">
       <elements xsi:type="mOloc:ImportClause" selfName="distribution" importName="Modelica.Math.Distributions.Uniform.quantile" isOver="true"/>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialNoise" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="y_min" description="&quot;Lower limit of y&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="0" elementName="start"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -67,7 +68,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="y_max" description="&quot;Upper limit of y&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="1" elementName="start"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -97,17 +98,17 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="NormalNoise" description="&quot;Noise generator with normal distribution&quot;" isLongClassSpecifier="true" classNameEnd="NormalNoise" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="NormalNoise" description="&quot;Noise generator with normal distribution&quot;" isLongClassSpecifier="true" classNameEnd="NormalNoise" isOver="true">
       <elements xsi:type="mOloc:ImportClause" selfName="distribution" importName="Modelica.Math.Distributions.Normal.quantile" isOver="true"/>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialNoise" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="0" declarationName="mu" description="&quot;Expectation (mean) value of the normal distribution&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="enableNoise" elementName="enable"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="sigma" description="&quot;Standard deviation of the normal distribution&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="1" elementName="start"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -137,10 +138,10 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="TruncatedNormalNoise" description="&quot;Noise generator with truncated normal distribution&quot;" isLongClassSpecifier="true" classNameEnd="TruncatedNormalNoise" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="TruncatedNormalNoise" description="&quot;Noise generator with truncated normal distribution&quot;" isLongClassSpecifier="true" classNameEnd="TruncatedNormalNoise" isOver="true">
       <elements xsi:type="mOloc:ImportClause" selfName="distribution" importName="Modelica.Math.Distributions.TruncatedNormal.quantile" isOver="true"/>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialNoise" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="y_min" description="&quot;Lower limit of y&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="0" elementName="start"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -148,7 +149,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" declarationName="y_max" description="&quot;Upper limit of y&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="1" elementName="start"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -156,7 +157,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="(y_max + y_min)/2" declarationName="mu" description="&quot;Expectation (mean) value of the normal distribution&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="enableNoise" elementName="enable"/>
@@ -165,7 +166,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="(y_max - y_min)/6" declarationName="sigma" description="&quot;Standard deviation of the normal distribution&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="enableNoise" elementName="enable"/>
@@ -196,20 +197,20 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="BandLimitedWhiteNoise" description="&quot;Noise generator to produce band-limited white noise with normal distribution&quot;" isLongClassSpecifier="true" classNameEnd="BandLimitedWhiteNoise" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="BandLimitedWhiteNoise" description="&quot;Noise generator to produce band-limited white noise with normal distribution&quot;" isLongClassSpecifier="true" classNameEnd="BandLimitedWhiteNoise" isOver="true">
       <elements xsi:type="mOloc:ImportClause" selfName="distribution" importName="Modelica.Math.Distributions.Normal.quantile" isOver="true"/>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialNoise" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="1" declarationName="noisePower" description="&quot;Power of white noise signal&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="enableNoise" elementName="enable"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isOver="true">
         <component_list expression="0" declarationName="mu"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
         <component_list expression="sqrt(noisePower/samplePeriod)" declarationName="sigma"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">

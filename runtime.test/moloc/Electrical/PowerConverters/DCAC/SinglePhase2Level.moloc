@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.DCAC">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.DCAC"/>
   <classes classType="model" className="SinglePhase2Level" description="&quot;Single-phase DC to AC converter&quot;" isLongClassSpecifier="true" classNameEnd="SinglePhase2Level" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="1e-05" declarationName="RonTransistor" description="&quot;Transistor closed resistance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
       <component_list expression="1e-05" declarationName="GoffTransistor" description="&quot;Transistor opened conductance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="VkneeTransistor" description="&quot;Transistor threshold voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="1e-05" declarationName="RonDiode" description="&quot;Diode closed resistance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
       <component_list expression="1e-05" declarationName="GoffDiode" description="&quot;Diode opened conductance&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="VkneeDiode" description="&quot;Diode threshold voltage&quot;"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PowerConverters.Interfaces.DCAC.DCtwoPin" isOver="true"/>
@@ -26,7 +27,7 @@
       <extendsModifications expression="293.15" elementName="T" isfinal="true"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.Enable.Enable2" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealGTOThyristor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealGTOThyristor" isOver="true">
       <component_list isModificationOver="true" declarationName="transistor_p" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="RonTransistor" elementName="Ron" isfinal="true"/>
         <modifications expression="GoffTransistor" elementName="Goff" isfinal="true"/>
@@ -41,7 +42,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
       <component_list isModificationOver="true" declarationName="diode_p" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="RonDiode" elementName="Ron" isfinal="true"/>
         <modifications expression="GoffDiode" elementName="Goff" isfinal="true"/>
@@ -56,7 +57,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealGTOThyristor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealGTOThyristor" isOver="true">
       <component_list isModificationOver="true" declarationName="transistor_n" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="RonTransistor" elementName="Ron" isfinal="true"/>
         <modifications expression="GoffTransistor" elementName="Goff" isfinal="true"/>
@@ -71,7 +72,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealDiode" isOver="true">
       <component_list isModificationOver="true" declarationName="diode_n" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="RonDiode" elementName="Ron" isfinal="true"/>
         <modifications expression="GoffDiode" elementName="Goff" isfinal="true"/>

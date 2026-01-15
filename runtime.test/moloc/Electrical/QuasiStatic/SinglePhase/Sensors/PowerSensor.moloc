@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Sensors">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Sensors"/>
   <classes classType="model" className="PowerSensor" description="&quot;Power sensor&quot;" isLongClassSpecifier="true" classNameEnd="PowerSensor" isOver="true">
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.conj" isOver="true"/>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.RoundSensor" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.PositivePin" isOver="true">
       <component_list declarationName="currentP" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -12,7 +13,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.NegativePin" isOver="true">
       <component_list declarationName="currentN" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -21,7 +22,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.PositivePin" isOver="true">
       <component_list declarationName="voltageP" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -30,7 +31,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.NegativePin" isOver="true">
       <component_list declarationName="voltageN" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -39,13 +40,13 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexCurrent" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" directionType="output" isOver="true">
       <component_list declarationName="i"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexVoltage" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" directionType="output" isOver="true">
       <component_list declarationName="v"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
       <component_list isModificationOver="true" declarationName="apparentPower" description="&quot;Complex apparent power = active power + j * reactive power&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications isModificationOver="true" elementName="re">
           <modifications expression="&quot;W&quot;" elementName="unit"/>
@@ -67,10 +68,10 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ApparentPower" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ApparentPower" isOver="true">
       <component_list expression="Modelica.ComplexMath.abs(apparentPower)" declarationName="abs_apparentPower" description="&quot;Magnitude of complex apparent power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
       <component_list expression="Modelica.ComplexMath.arg(apparentPower)" declarationName="arg_apparentPower" description="&quot;Argument of complex apparent power&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

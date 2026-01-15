@@ -23,7 +23,7 @@ package dut.control.moloc.mOloc;
  * @model
  * @generated
  */
-public interface FunctionStatement extends Statement, description
+public interface FunctionStatement extends Statement, description, description_string, annotation_modification_part
 {
   /**
    * Returns the value of the '<em><b>Component</b></em>' attribute.

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Sources">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.ComplexBlocks.Sources"/>
   <classes classType="block" className="ComplexRampPhasor" description="&quot;Generate a phasor with ramped magnitude and constant angle&quot;" isLongClassSpecifier="true" classNameEnd="ComplexRampPhasor" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexSO" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="magnitude1" description="&quot;Magnitude of complex phasor at startTime&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="0" elementName="min" isfinal="true"/>
         <modifications expression="1" elementName="start"/>
@@ -12,30 +13,30 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="magnitude2" description="&quot;Magnitude of complex phasor at startTime+duration&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="false" declarationName="useLogRamp" description="&quot;Ramp appears linear on a logarithmic scale, if true&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Angle" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Units.SI.Angle" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="phi" description="&quot;Angle of complex phasor&quot;">
         <modifications expression="0" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter" isOver="true">
       <component_list expression="0" declarationName="startTime" description="&quot;Start time of frequency sweep&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Units.SI.Time" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="duration" description="&quot;Duration of ramp (= 0.0 gives a Step)&quot;">
         <modifications expression="0.0" elementName="min"/>
         <modifications expression="1" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
       <component_list declarationName="magnitude" description="&quot;Actual magnitude of complex phasor&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

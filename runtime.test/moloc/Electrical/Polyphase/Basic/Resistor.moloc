@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Polyphase.Basic">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Basic"/>
   <classes classType="model" className="Resistor" description="&quot;Ideal linear electrical resistors&quot;" isLongClassSpecifier="true" classNameEnd="Resistor" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPlug" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list subscripts="[m]" isModificationOver="true" declarationName="R" description="&quot;Resistances R_ref at temperatures T_ref&quot;">
         <modifications expression="fill(1, m)" elementName="start"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
       <component_list subscripts="[m]" expression="fill(300.15, m)" declarationName="T_ref" description="&quot;Reference temperatures&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
       <component_list subscripts="[m]" expression="zeros(m)" declarationName="alpha" description="&quot;Temperature coefficients of resistances at reference temperatures&quot;"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Polyphase.Interfaces.ConditionalHeatPort" isOver="true">
       <extendsModifications expression="m" elementName="mh" isfinal="true"/>
       <extendsModifications expression="T_ref" elementName="T"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
       <component_list subscripts="[m]" isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="R" elementName="R" isfinal="true"/>
         <modifications expression="T_ref" elementName="T_ref" isfinal="true"/>

@@ -33,6 +33,15 @@ public interface MOlocFactory extends EFactory
   Stored_definition createStored_definition();
 
   /**
+   * Returns a new object of class '<em>Within</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Within</em>'.
+   * @generated
+   */
+  Within createWithin();
+
+  /**
    * Returns a new object of class '<em>Class definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -40,6 +49,267 @@ public interface MOlocFactory extends EFactory
    * @generated
    */
   Class_definition createClass_definition();
+
+  /**
+   * Returns a new object of class '<em>Constraining Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Constraining Clause</em>'.
+   * @generated
+   */
+  ConstrainingClause createConstrainingClause();
+
+  /**
+   * Returns a new object of class '<em>Modification Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Modification Element</em>'.
+   * @generated
+   */
+  ModificationElement createModificationElement();
+
+  /**
+   * Returns a new object of class '<em>Annotation Modification Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotation Modification Element</em>'.
+   * @generated
+   */
+  AnnotationModificationElement createAnnotationModificationElement();
+
+  /**
+   * Returns a new object of class '<em>Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element</em>'.
+   * @generated
+   */
+  Element createElement();
+
+  /**
+   * Returns a new object of class '<em>Equation Section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Equation Section</em>'.
+   * @generated
+   */
+  EquationSection createEquationSection();
+
+  /**
+   * Returns a new object of class '<em>Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Equation</em>'.
+   * @generated
+   */
+  Equation createEquation();
+
+  /**
+   * Returns a new object of class '<em>Algorithm Section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Algorithm Section</em>'.
+   * @generated
+   */
+  AlgorithmSection createAlgorithmSection();
+
+  /**
+   * Returns a new object of class '<em>Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Statement</em>'.
+   * @generated
+   */
+  Statement createStatement();
+
+  /**
+   * Returns a new object of class '<em>Import Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Import Clause</em>'.
+   * @generated
+   */
+  ImportClause createImportClause();
+
+  /**
+   * Returns a new object of class '<em>Extends Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Extends Clause</em>'.
+   * @generated
+   */
+  ExtendsClause createExtendsClause();
+
+  /**
+   * Returns a new object of class '<em>Component Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component Clause</em>'.
+   * @generated
+   */
+  ComponentClause createComponentClause();
+
+  /**
+   * Returns a new object of class '<em>Component declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component declaration</em>'.
+   * @generated
+   */
+  Component_declaration createComponent_declaration();
+
+  /**
+   * Returns a new object of class '<em>External Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>External Element</em>'.
+   * @generated
+   */
+  ExternalElement createExternalElement();
+
+  /**
+   * Returns a new object of class '<em>Annotation Clause</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotation Clause</em>'.
+   * @generated
+   */
+  AnnotationClause createAnnotationClause();
+
+  /**
+   * Returns a new object of class '<em>Simple Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Equation</em>'.
+   * @generated
+   */
+  SimpleEquation createSimpleEquation();
+
+  /**
+   * Returns a new object of class '<em>If Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Equation</em>'.
+   * @generated
+   */
+  IfEquation createIfEquation();
+
+  /**
+   * Returns a new object of class '<em>For Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Equation</em>'.
+   * @generated
+   */
+  ForEquation createForEquation();
+
+  /**
+   * Returns a new object of class '<em>Connect Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connect Equation</em>'.
+   * @generated
+   */
+  ConnectEquation createConnectEquation();
+
+  /**
+   * Returns a new object of class '<em>When Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>When Equation</em>'.
+   * @generated
+   */
+  WhenEquation createWhenEquation();
+
+  /**
+   * Returns a new object of class '<em>Function Equation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Equation</em>'.
+   * @generated
+   */
+  FunctionEquation createFunctionEquation();
+
+  /**
+   * Returns a new object of class '<em>Function Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Statement</em>'.
+   * @generated
+   */
+  FunctionStatement createFunctionStatement();
+
+  /**
+   * Returns a new object of class '<em>Break Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Break Statement</em>'.
+   * @generated
+   */
+  BreakStatement createBreakStatement();
+
+  /**
+   * Returns a new object of class '<em>Return Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return Statement</em>'.
+   * @generated
+   */
+  ReturnStatement createReturnStatement();
+
+  /**
+   * Returns a new object of class '<em>If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Statement</em>'.
+   * @generated
+   */
+  IfStatement createIfStatement();
+
+  /**
+   * Returns a new object of class '<em>For Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Statement</em>'.
+   * @generated
+   */
+  ForStatement createForStatement();
+
+  /**
+   * Returns a new object of class '<em>When Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>When Statement</em>'.
+   * @generated
+   */
+  WhenStatement createWhenStatement();
+
+  /**
+   * Returns a new object of class '<em>While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>While Statement</em>'.
+   * @generated
+   */
+  WhileStatement createWhileStatement();
+
+  /**
+   * Returns a new object of class '<em>Enumeration Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enumeration Literal</em>'.
+   * @generated
+   */
+  EnumerationLiteral createEnumerationLiteral();
+
+  /**
+   * Returns a new object of class '<em>Break</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Break</em>'.
+   * @generated
+   */
+  Break createBreak();
 
   /**
    * Returns a new object of class '<em>class prefixes</em>'.
@@ -150,15 +420,6 @@ public interface MOlocFactory extends EFactory
   enum_list createenum_list();
 
   /**
-   * Returns a new object of class '<em>Enumeration Literal</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Enumeration Literal</em>'.
-   * @generated
-   */
-  EnumerationLiteral createEnumerationLiteral();
-
-  /**
    * Returns a new object of class '<em>description</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -166,33 +427,6 @@ public interface MOlocFactory extends EFactory
    * @generated
    */
   description createdescription();
-
-  /**
-   * Returns a new object of class '<em>Modification Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Modification Element</em>'.
-   * @generated
-   */
-  ModificationElement createModificationElement();
-
-  /**
-   * Returns a new object of class '<em>Annotation Modification Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Annotation Modification Element</em>'.
-   * @generated
-   */
-  AnnotationModificationElement createAnnotationModificationElement();
-
-  /**
-   * Returns a new object of class '<em>Annotation Modification Element2</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Annotation Modification Element2</em>'.
-   * @generated
-   */
-  AnnotationModificationElement2 createAnnotationModificationElement2();
 
   /**
    * Returns a new object of class '<em>element modification</em>'.
@@ -274,240 +508,6 @@ public interface MOlocFactory extends EFactory
    * @generated
    */
   constraining createconstraining();
-
-  /**
-   * Returns a new object of class '<em>Constraining Clause</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Constraining Clause</em>'.
-   * @generated
-   */
-  ConstrainingClause createConstrainingClause();
-
-  /**
-   * Returns a new object of class '<em>Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Element</em>'.
-   * @generated
-   */
-  Element createElement();
-
-  /**
-   * Returns a new object of class '<em>Import Clause</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import Clause</em>'.
-   * @generated
-   */
-  ImportClause createImportClause();
-
-  /**
-   * Returns a new object of class '<em>Extends Clause</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Extends Clause</em>'.
-   * @generated
-   */
-  ExtendsClause createExtendsClause();
-
-  /**
-   * Returns a new object of class '<em>Break</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Break</em>'.
-   * @generated
-   */
-  Break createBreak();
-
-  /**
-   * Returns a new object of class '<em>General Clause</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>General Clause</em>'.
-   * @generated
-   */
-  GeneralClause createGeneralClause();
-
-  /**
-   * Returns a new object of class '<em>Component declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component declaration</em>'.
-   * @generated
-   */
-  Component_declaration createComponent_declaration();
-
-  /**
-   * Returns a new object of class '<em>External Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>External Element</em>'.
-   * @generated
-   */
-  ExternalElement createExternalElement();
-
-  /**
-   * Returns a new object of class '<em>Annotation Clause</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Annotation Clause</em>'.
-   * @generated
-   */
-  AnnotationClause createAnnotationClause();
-
-  /**
-   * Returns a new object of class '<em>Equation Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Equation Section</em>'.
-   * @generated
-   */
-  EquationSection createEquationSection();
-
-  /**
-   * Returns a new object of class '<em>Equation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Equation</em>'.
-   * @generated
-   */
-  Equation createEquation();
-
-  /**
-   * Returns a new object of class '<em>Simple Equation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Simple Equation</em>'.
-   * @generated
-   */
-  SimpleEquation createSimpleEquation();
-
-  /**
-   * Returns a new object of class '<em>If Equation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>If Equation</em>'.
-   * @generated
-   */
-  IfEquation createIfEquation();
-
-  /**
-   * Returns a new object of class '<em>For Equation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>For Equation</em>'.
-   * @generated
-   */
-  ForEquation createForEquation();
-
-  /**
-   * Returns a new object of class '<em>Connect Equation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Connect Equation</em>'.
-   * @generated
-   */
-  ConnectEquation createConnectEquation();
-
-  /**
-   * Returns a new object of class '<em>When Equation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>When Equation</em>'.
-   * @generated
-   */
-  WhenEquation createWhenEquation();
-
-  /**
-   * Returns a new object of class '<em>Function Equation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Equation</em>'.
-   * @generated
-   */
-  FunctionEquation createFunctionEquation();
-
-  /**
-   * Returns a new object of class '<em>Algorithm Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Algorithm Section</em>'.
-   * @generated
-   */
-  AlgorithmSection createAlgorithmSection();
-
-  /**
-   * Returns a new object of class '<em>Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Statement</em>'.
-   * @generated
-   */
-  Statement createStatement();
-
-  /**
-   * Returns a new object of class '<em>Function Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Statement</em>'.
-   * @generated
-   */
-  FunctionStatement createFunctionStatement();
-
-  /**
-   * Returns a new object of class '<em>Break Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Break Statement</em>'.
-   * @generated
-   */
-  BreakStatement createBreakStatement();
-
-  /**
-   * Returns a new object of class '<em>Return Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Return Statement</em>'.
-   * @generated
-   */
-  ReturnStatement createReturnStatement();
-
-  /**
-   * Returns a new object of class '<em>If Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>If Statement</em>'.
-   * @generated
-   */
-  IfStatement createIfStatement();
-
-  /**
-   * Returns a new object of class '<em>For Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>For Statement</em>'.
-   * @generated
-   */
-  ForStatement createForStatement();
-
-  /**
-   * Returns a new object of class '<em>When Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>When Statement</em>'.
-   * @generated
-   */
-  WhenStatement createWhenStatement();
-
-  /**
-   * Returns a new object of class '<em>While Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>While Statement</em>'.
-   * @generated
-   */
-  WhileStatement createWhileStatement();
 
   /**
    * Returns the package supported by this factory.

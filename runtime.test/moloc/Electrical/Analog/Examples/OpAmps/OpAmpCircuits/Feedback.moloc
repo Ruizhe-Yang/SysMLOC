@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Analog.Examples.OpAmps.OpAmpCircuits">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Examples.OpAmps.OpAmpCircuits"/>
   <classes classType="model" className="Feedback" description="&quot;Subtracting operational amplifier circuit&quot;" isLongClassSpecifier="true" classNameEnd="Feedback" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PartialOpAmp" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
       <component_list expression="p1_2.v - n1.v" declarationName="v1_2" description="&quot;Voltage drop of port 1_2 (= p1_2.v - n1.v)&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list expression="p1_2.i" declarationName="i1_2" description="&quot;Current flowing from pos. to neg. pin of port 1_2&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1" declarationName="k" description="&quot;Desired amplification&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="1000" declarationName="R1" description="&quot;Resistance at inputs of OpAmp&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list expression="R1/k" declarationName="R3" description="&quot;Calculated resistance to reach desired amplification k&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="r1" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="R1" elementName="R" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -30,7 +31,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="r2" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="R1" elementName="R" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -42,7 +43,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.PositivePin" isOver="true">
       <component_list declarationName="p1_2" description="&quot;Positive electrical pin 1.2&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -54,7 +55,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="r3" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="R3" elementName="R" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -65,7 +66,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="r4" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="R3" elementName="R" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">

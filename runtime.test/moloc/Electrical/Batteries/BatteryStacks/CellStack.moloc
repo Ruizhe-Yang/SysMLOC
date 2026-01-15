@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.BatteryStacks">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.BatteryStacks"/>
   <classes classType="model" className="CellStack" description="&quot;Battery with open-circuit voltage dependent on state of charge, self-discharge and inner resistance&quot;" isLongClassSpecifier="true" classNameEnd="CellStack" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.BaseClasses.BaseCellStack" isOver="true">
       <extendsModifications isModificationOver="true" elementName="r0">

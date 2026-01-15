@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Losses">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Losses"/>
   <classes classType="record" className="FrictionParameters" description="&quot;Parameter record for friction losses&quot;" isLongClassSpecifier="true" classNameEnd="FrictionParameters" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Record" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="0" declarationName="PRef" description="&quot;Reference friction losses at wRef&quot;">
         <modifications expression="0" elementName="min"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" declarationName="wRef" description="&quot;Reference angular velocity that the PRef refer to&quot;">
         <modifications expression="&quot;rev/min&quot;" elementName="displayUnit"/>
         <modifications expression="Modelica.Constants.small" elementName="min"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="2" declarationName="power_w" description="&quot;Exponent of friction torque w.r.t. angular velocity&quot;">
         <modifications expression="Modelica.Constants.small" elementName="min"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Torque" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Torque" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="if (PRef &lt;= 0) then 0 else PRef/wRef" declarationName="tauRef" description="&quot;Reference friction torque at reference angular velocity&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="0.001" declarationName="linear" description="&quot;Linear angular velocity range with respect to reference angular velocity&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="linear*wRef" declarationName="wLinear" description="&quot;Linear angular velocity range&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Torque" parameterType="parameter" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Torque" parameterType="parameter" isfinal="true" isOver="true">
       <component_list expression="if (PRef &lt;= 0) then 0 else tauRef*(wLinear/wRef)^power_w" declarationName="tauLinear" description="&quot;Torque corresponding with linear angular velocity range&quot;"/>
     </elements>
     <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">

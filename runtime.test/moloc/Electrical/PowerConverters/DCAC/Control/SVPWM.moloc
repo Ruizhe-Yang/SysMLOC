@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.DCAC.Control">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.DCAC.Control"/>
   <classes classType="block" className="SVPWM" description="&quot;SpaceVector Pulse Width Modulation&quot;" isLongClassSpecifier="true" classNameEnd="SVPWM" isOver="true">
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
       <component_list declarationName="f" description="&quot;Switching frequency&quot;"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.DiscreteBlock" isOver="true">
@@ -11,16 +12,16 @@
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.Math.atan2" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="constant" isOver="true">
       <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list declarationName="uMax" description="&quot;Maximum length of space vector = half diagonal of hexagon&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="constant" isOver="true">
       <component_list subscripts="[6,m]" expression="[true, false,false; true, true, false; false,true, false; false,true, true; false,false,true; true, false,true]" declarationName="fire" description="&quot;Switching patterns&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
       <component_list subscripts="[2]" declarationName="u" description="&quot;Reference space phasor&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -29,7 +30,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
       <component_list subscripts="[m]" declarationName="fire_p" description="&quot;Positive fire signal&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -38,7 +39,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
       <component_list subscripts="[m]" declarationName="fire_n" description="&quot;Negative fire signal&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -47,25 +48,25 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="discrete" isProtected="true" isOver="true">
       <component_list isModificationOver="true" declarationName="uRef" description="&quot;Length of reference vector&quot;">
         <modifications expression="0" elementName="start"/>
         <modifications expression="true" elementName="fixed"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="discrete" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" parameterType="discrete" isOver="true">
       <component_list isModificationOver="true" declarationName="phiRef" description="&quot;Angle of reference vector within (-pi, +pi]&quot;">
         <modifications expression="0" elementName="start"/>
         <modifications expression="true" elementName="fixed"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="discrete" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" parameterType="discrete" isOver="true">
       <component_list isModificationOver="true" declarationName="phiPos" description="&quot;Angle of reference vector within [0, 2*pi)&quot;">
         <modifications expression="0" elementName="start"/>
         <modifications expression="true" elementName="fixed"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
       <component_list isModificationOver="true" declarationName="ka">
         <modifications expression="0" elementName="start"/>
         <modifications expression="true" elementName="fixed"/>
@@ -75,13 +76,13 @@
         <modifications expression="true" elementName="fixed"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" parameterType="discrete" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" parameterType="discrete" isOver="true">
       <component_list isModificationOver="true" declarationName="phiSec" description="&quot;Angle of reference vector within sector within [0, pi/m)&quot;">
         <modifications expression="0" elementName="start"/>
         <modifications expression="true" elementName="fixed"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
       <component_list isModificationOver="true" declarationName="ta">
         <modifications expression="0" elementName="start"/>
         <modifications expression="true" elementName="fixed"/>
@@ -95,7 +96,7 @@
         <modifications expression="true" elementName="fixed"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
       <component_list isModificationOver="true" declarationName="T0" description="&quot;Start time of switching interval&quot;">
         <modifications expression="startTime" elementName="start"/>
         <modifications expression="true" elementName="fixed"/>

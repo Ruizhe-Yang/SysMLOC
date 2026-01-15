@@ -17,11 +17,6 @@
       <genEnumLiterals ecoreEnumLiteral="MOloc.ecore#//ClassType/Package"/>
       <genEnumLiterals ecoreEnumLiteral="MOloc.ecore#//ClassType/Function"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MOloc.ecore#//Direction">
-      <genEnumLiterals ecoreEnumLiteral="MOloc.ecore#//Direction/null"/>
-      <genEnumLiterals ecoreEnumLiteral="MOloc.ecore#//Direction/input"/>
-      <genEnumLiterals ecoreEnumLiteral="MOloc.ecore#//Direction/output"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="MOloc.ecore#//RelationshipType">
       <genEnumLiterals ecoreEnumLiteral="MOloc.ecore#//RelationshipType/null"/>
       <genEnumLiterals ecoreEnumLiteral="MOloc.ecore#//RelationshipType/flow"/>
@@ -33,14 +28,153 @@
       <genEnumLiterals ecoreEnumLiteral="MOloc.ecore#//ParameterType/parameter"/>
       <genEnumLiterals ecoreEnumLiteral="MOloc.ecore#//ParameterType/constant"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MOloc.ecore#//Direction">
+      <genEnumLiterals ecoreEnumLiteral="MOloc.ecore#//Direction/null"/>
+      <genEnumLiterals ecoreEnumLiteral="MOloc.ecore#//Direction/input"/>
+      <genEnumLiterals ecoreEnumLiteral="MOloc.ecore#//Direction/output"/>
+    </genEnums>
     <genClasses ecoreClass="MOloc.ecore#//Stored_definition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//Stored_definition/isWithin"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//Stored_definition/within"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//Stored_definition/within"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//Stored_definition/classes"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//Within">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//Within/withName"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//Class_definition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//Class_definition/isfinal"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//Class_definition/isOver"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//ConstrainingClause"/>
+    <genClasses ecoreClass="MOloc.ecore#//ModificationElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ModificationElement/isRedeclare"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ModificationElement/isEach"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ModificationElement/isfinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ModificationElement/isReplaceable"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//AnnotationModificationElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement/isRedeclare"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement/isEach"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement/isfinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement/isReplaceable"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//Element"/>
+    <genClasses ecoreClass="MOloc.ecore#//EquationSection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//EquationSection/isInitial"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//EquationSection/equations"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//Equation"/>
+    <genClasses ecoreClass="MOloc.ecore#//AlgorithmSection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AlgorithmSection/isInitial"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//AlgorithmSection/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//Statement"/>
+    <genClasses ecoreClass="MOloc.ecore#//ImportClause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/isPublic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/isProtected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/selfName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/importName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/isImportAll"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/objectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/isOver"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//ExtendsClause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExtendsClause/isPublic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExtendsClause/isProtected"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ExtendsClause/extendsModifications"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ExtendsClause/breaks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExtendsClause/isOver"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//ComponentClause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ComponentClause/isPublic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ComponentClause/isProtected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ComponentClause/isRedeclare"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ComponentClause/isfinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ComponentClause/isInner"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ComponentClause/isOuter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ComponentClause/isReplaceable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ComponentClause/component_list"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ComponentClause/description1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ComponentClause/isAnnotation1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ComponentClause/annotations1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ComponentClause/isAnnotationOver1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ComponentClause/isOver"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//Component_declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//Component_declaration/condition_attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//ExternalElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/language_specification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/ref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/refValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/expressionList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/isOver"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//AnnotationClause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationClause/isOver"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//SimpleEquation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//SimpleEquation/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//SimpleEquation/right"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//IfEquation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//IfEquation/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//IfEquation/ifEquations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//IfEquation/elseCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//IfEquation/elseifEquations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//IfEquation/elseEquations"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//ForEquation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ForEquation/forIndices"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ForEquation/forEquations"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//ConnectEquation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ConnectEquation/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ConnectEquation/right"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//WhenEquation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//WhenEquation/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//WhenEquation/whenEquations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//WhenEquation/elseCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//WhenEquation/elsewhenEquations"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//FunctionEquation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionEquation/component"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionEquation/function"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//FunctionStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionStatement/component"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionStatement/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionStatement/function"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionStatement/output"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//BreakStatement"/>
+    <genClasses ecoreClass="MOloc.ecore#//ReturnStatement"/>
+    <genClasses ecoreClass="MOloc.ecore#//IfStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//IfStatement/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//IfStatement/ifStatements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//IfStatement/elseCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//IfStatement/elseifStatements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//IfStatement/elseStatements"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//ForStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ForStatement/forIndices"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ForStatement/forStatements"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//WhenStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//WhenStatement/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//WhenStatement/whenStatements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//WhenStatement/elseCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//WhileStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//WhileStatement/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//WhileStatement/whileStatements"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//EnumerationLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//EnumerationLiteral/title"/>
+    </genClasses>
+    <genClasses ecoreClass="MOloc.ecore#//Break">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//Break/connectObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//Break/breakObject"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//class_prefixes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//class_prefixes/isEncapsulated"/>
@@ -91,28 +225,7 @@
     <genClasses ecoreClass="MOloc.ecore#//enum_list">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//enum_list/enumerationLiteral"/>
     </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//EnumerationLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//EnumerationLiteral/title"/>
-    </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//description"/>
-    <genClasses ecoreClass="MOloc.ecore#//ModificationElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ModificationElement/isRedeclare"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ModificationElement/isEach"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ModificationElement/isfinal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ModificationElement/isReplaceable"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//AnnotationModificationElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement/isRedeclare"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement/isEach"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement/isfinal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement/isReplaceable"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//AnnotationModificationElement2">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement2/isRedeclare"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement2/isEach"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement2/isfinal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationModificationElement2/isReplaceable"/>
-    </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//element_modification">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//element_modification/elementName"/>
     </genClasses>
@@ -134,120 +247,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//modification/expression"/>
     </genClasses>
     <genClasses ecoreClass="MOloc.ecore#//constraining">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//constraining/isConstrainedby"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//constraining/constrain"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//ConstrainingClause"/>
-    <genClasses ecoreClass="MOloc.ecore#//Element"/>
-    <genClasses ecoreClass="MOloc.ecore#//ImportClause">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/isPublic"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/isProtected"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/selfName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/importName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/isImportAll"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/objectName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ImportClause/isOver"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//ExtendsClause">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExtendsClause/isPublic"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExtendsClause/isProtected"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ExtendsClause/extendsModifications"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ExtendsClause/breaks"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExtendsClause/isOver"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//Break">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//Break/connectObject"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//Break/breakObject"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//GeneralClause">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//GeneralClause/isPublic"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//GeneralClause/isProtected"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//GeneralClause/isRedeclare"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//GeneralClause/isfinal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//GeneralClause/isInner"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//GeneralClause/isOuter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//GeneralClause/isReplaceable"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//GeneralClause/component_list"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//GeneralClause/isOver"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//Component_declaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//Component_declaration/condition_attribute"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//ExternalElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/language_specification"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/ref"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/refValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/expressionList"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ExternalElement/isOver"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//AnnotationClause">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AnnotationClause/isOver"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//EquationSection">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//EquationSection/isInitial"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//EquationSection/equations"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//Equation"/>
-    <genClasses ecoreClass="MOloc.ecore#//SimpleEquation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//SimpleEquation/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//SimpleEquation/right"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//IfEquation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//IfEquation/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//IfEquation/ifEquations"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//IfEquation/elseCondition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//IfEquation/elseifEquations"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//IfEquation/elseEquations"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//ForEquation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ForEquation/forIndices"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ForEquation/forEquations"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//ConnectEquation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ConnectEquation/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ConnectEquation/right"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//WhenEquation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//WhenEquation/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//WhenEquation/whenEquations"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//WhenEquation/elseCondition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//WhenEquation/elsewhenEquations"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//FunctionEquation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionEquation/component"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionEquation/function"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//AlgorithmSection">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//AlgorithmSection/isInitial"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//AlgorithmSection/statements"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//Statement"/>
-    <genClasses ecoreClass="MOloc.ecore#//FunctionStatement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionStatement/component"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionStatement/expression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionStatement/function"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//FunctionStatement/output"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//BreakStatement"/>
-    <genClasses ecoreClass="MOloc.ecore#//ReturnStatement"/>
-    <genClasses ecoreClass="MOloc.ecore#//IfStatement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//IfStatement/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//IfStatement/ifStatements"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//IfStatement/elseCondition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//IfStatement/elseifStatements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//IfStatement/elseStatements"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//ForStatement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//ForStatement/forIndices"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//ForStatement/forStatements"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//WhenStatement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//WhenStatement/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//WhenStatement/whenStatements"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//WhenStatement/elseCondition"/>
-    </genClasses>
-    <genClasses ecoreClass="MOloc.ecore#//WhileStatement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MOloc.ecore#//WhileStatement/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MOloc.ecore#//WhileStatement/whileStatements"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

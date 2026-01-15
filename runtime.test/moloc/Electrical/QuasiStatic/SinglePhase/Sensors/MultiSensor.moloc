@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Sensors">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Sensors"/>
   <classes classType="model" className="MultiSensor" description="&quot;Sensor to measure current, voltage and power&quot;" isLongClassSpecifier="true" classNameEnd="MultiSensor" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.RoundSensor" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.conj" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.abs" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.arg" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="pc" description="&quot;Positive pin, current path&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -14,7 +15,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
       <component_list declarationName="nc" description="&quot;Negative pin, current path&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -23,7 +24,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.PositivePin" isOver="true">
       <component_list declarationName="pv" description="&quot;Positive pin, voltage path&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -32,7 +33,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
       <component_list declarationName="nv" description="&quot;Negative pin, voltage path&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -41,7 +42,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
       <component_list isModificationOver="true" declarationName="i" description="&quot;Current as complex output signal&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications typeSpecifier="SI.Current" declarationName="re" isRedeclare="true" isfinal="true"/>
         <modifications typeSpecifier="SI.Current" declarationName="im" isRedeclare="true" isfinal="true"/>
@@ -59,7 +60,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
       <component_list isModificationOver="true" declarationName="v" description="&quot;Voltage as complex output signal&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications typeSpecifier="SI.Voltage" declarationName="re" isRedeclare="true" isfinal="true"/>
         <modifications typeSpecifier="SI.Voltage" declarationName="im" isRedeclare="true" isfinal="true"/>
@@ -77,7 +78,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
       <component_list isModificationOver="true" declarationName="apparentPower" description="&quot;Instantaneous apparent power as complex output signal&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications typeSpecifier="SI.ActivePower" declarationName="re" isRedeclare="true" isfinal="true"/>
         <modifications typeSpecifier="SI.ReactivePower" declarationName="im" isRedeclare="true" isfinal="true"/>
@@ -95,22 +96,22 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
       <component_list expression="abs(i)" declarationName="abs_i" description="&quot;Absolute of complex current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
       <component_list expression="arg(i)" declarationName="arg_i" description="&quot;Argument of complex current&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Voltage" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="output" isOver="true">
       <component_list expression="abs(v)" declarationName="abs_v" description="&quot;Absolute of complex voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
       <component_list expression="arg(v)" declarationName="arg_v" description="&quot;Argument of complex voltage&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ApparentPower" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ApparentPower" directionType="output" isOver="true">
       <component_list expression="abs(apparentPower)" declarationName="abs_apparentPower" description="&quot;Absolute of complex apparent power&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
       <component_list expression="arg(apparentPower)" declarationName="arg_apparentPower" description="&quot;Argument of complex apparent power&quot;"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

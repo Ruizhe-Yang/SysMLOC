@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.PowerConverters.Types">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.Types"/>
   <classes classType="type" className="SoftStarterModeOfOperation" description="&quot;Enumeration defining the internal mode of operation of the soft start controller&quot;" isShortClassSpecifier="true" isEnumeration="true" isOver="true">
     <enumerationLiteral description="&quot;v = 0&quot;" title="Off"/>
     <enumerationLiteral description="&quot;v = 0 -> 1&quot;" title="Up"/>

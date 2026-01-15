@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link dut.control.moloc.mOloc.impl.AnnotationModificationElementImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.AnnotationModificationElementImpl#getDeclarationName <em>Declaration Name</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.AnnotationModificationElementImpl#getElementName <em>Element Name</em>}</li>
+ *   <li>{@link dut.control.moloc.mOloc.impl.AnnotationModificationElementImpl#isIsConstrainedby <em>Is Constrainedby</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.AnnotationModificationElementImpl#getConstrain <em>Constrain</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.AnnotationModificationElementImpl#isIsRedeclare <em>Is Redeclare</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.AnnotationModificationElementImpl#isIsEach <em>Is Each</em>}</li>
@@ -169,6 +170,26 @@ public class AnnotationModificationElementImpl extends short_class_definitionImp
    * @ordered
    */
   protected String elementName = ELEMENT_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsConstrainedby() <em>Is Constrainedby</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstrainedby()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_CONSTRAINEDBY_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsConstrainedby() <em>Is Constrainedby</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstrainedby()
+   * @generated
+   * @ordered
+   */
+  protected boolean isConstrainedby = IS_CONSTRAINEDBY_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getConstrain() <em>Constrain</em>}' containment reference.
@@ -437,6 +458,31 @@ public class AnnotationModificationElementImpl extends short_class_definitionImp
    * @generated
    */
   @Override
+  public boolean isIsConstrainedby()
+  {
+    return isConstrainedby;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsConstrainedby(boolean newIsConstrainedby)
+  {
+    boolean oldIsConstrainedby = isConstrainedby;
+    isConstrainedby = newIsConstrainedby;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__IS_CONSTRAINEDBY, oldIsConstrainedby, isConstrainedby));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ConstrainingClause getConstrain()
   {
     return constrain;
@@ -619,6 +665,8 @@ public class AnnotationModificationElementImpl extends short_class_definitionImp
         return getDeclarationName();
       case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__ELEMENT_NAME:
         return getElementName();
+      case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__IS_CONSTRAINEDBY:
+        return isIsConstrainedby();
       case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__CONSTRAIN:
         return getConstrain();
       case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__IS_REDECLARE:
@@ -660,6 +708,9 @@ public class AnnotationModificationElementImpl extends short_class_definitionImp
         return;
       case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__ELEMENT_NAME:
         setElementName((String)newValue);
+        return;
+      case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__IS_CONSTRAINEDBY:
+        setIsConstrainedby((Boolean)newValue);
         return;
       case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__CONSTRAIN:
         setConstrain((ConstrainingClause)newValue);
@@ -708,6 +759,9 @@ public class AnnotationModificationElementImpl extends short_class_definitionImp
       case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__ELEMENT_NAME:
         setElementName(ELEMENT_NAME_EDEFAULT);
         return;
+      case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__IS_CONSTRAINEDBY:
+        setIsConstrainedby(IS_CONSTRAINEDBY_EDEFAULT);
+        return;
       case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__CONSTRAIN:
         setConstrain((ConstrainingClause)null);
         return;
@@ -749,6 +803,8 @@ public class AnnotationModificationElementImpl extends short_class_definitionImp
         return DECLARATION_NAME_EDEFAULT == null ? declarationName != null : !DECLARATION_NAME_EDEFAULT.equals(declarationName);
       case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__ELEMENT_NAME:
         return ELEMENT_NAME_EDEFAULT == null ? elementName != null : !ELEMENT_NAME_EDEFAULT.equals(elementName);
+      case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__IS_CONSTRAINEDBY:
+        return isConstrainedby != IS_CONSTRAINEDBY_EDEFAULT;
       case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__CONSTRAIN:
         return constrain != null;
       case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__IS_REDECLARE:
@@ -823,6 +879,7 @@ public class AnnotationModificationElementImpl extends short_class_definitionImp
     {
       switch (derivedFeatureID)
       {
+        case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__IS_CONSTRAINEDBY: return MOlocPackage.CONSTRAINING__IS_CONSTRAINEDBY;
         case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__CONSTRAIN: return MOlocPackage.CONSTRAINING__CONSTRAIN;
         default: return -1;
       }
@@ -890,6 +947,7 @@ public class AnnotationModificationElementImpl extends short_class_definitionImp
     {
       switch (baseFeatureID)
       {
+        case MOlocPackage.CONSTRAINING__IS_CONSTRAINEDBY: return MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__IS_CONSTRAINEDBY;
         case MOlocPackage.CONSTRAINING__CONSTRAIN: return MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT__CONSTRAIN;
         default: return -1;
       }
@@ -920,6 +978,8 @@ public class AnnotationModificationElementImpl extends short_class_definitionImp
     result.append(declarationName);
     result.append(", elementName: ");
     result.append(elementName);
+    result.append(", isConstrainedby: ");
+    result.append(isConstrainedby);
     result.append(", isRedeclare: ");
     result.append(isRedeclare);
     result.append(", isEach: ");

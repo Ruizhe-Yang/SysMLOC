@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ForStatement extends Statement, description
+public interface ForStatement extends Statement, description, description_string, annotation_modification_part
 {
   /**
    * Returns the value of the '<em><b>For Indices</b></em>' attribute.

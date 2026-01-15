@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Blocks">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Blocks"/>
   <classes classType="package" className="MathBoolean" description="&quot;Library of Boolean mathematical functions as input/output blocks&quot;" isLongClassSpecifier="true" classNameEnd="MathBoolean" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="MultiSwitch" description="&quot;Set Boolean expression that is associated with the first active input signal&quot;" isLongClassSpecifier="true" classNameEnd="MultiSwitch" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" directionType="input" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="MultiSwitch" description="&quot;Set Boolean expression that is associated with the first active input signal&quot;" isLongClassSpecifier="true" classNameEnd="MultiSwitch" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="input" isOver="true">
         <component_list subscripts="[nu]" expression="fill(false, nu)" declarationName="expr" description="&quot;Sets y = if u[i] then expr[i] else y_default (time varying)&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations elementName="Dialog"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="true" declarationName="use_pre_as_default" description="&quot;Set true to hold last value as default (y_default = pre(y))&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="HideResult"/>
           <annotations isModificationOver="true" elementName="choices">
@@ -16,14 +17,14 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="y_default" description="&quot;Default value of output y if all u[i] = false&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Dialog">
             <modifications expression="not use_pre_as_default" elementName="enable"/>
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
         <component_list isModificationOver="true" expression="0" declarationName="nu" description="&quot;Number of input connections&quot;" isAnnotation="true" isAnnotationOver="true">
           <modifications expression="0" elementName="min"/>
           <annotations isModificationOver="true" elementName="Dialog">
@@ -32,7 +33,7 @@
           <annotations expression="true" elementName="HideResult"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanVectorInput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanVectorInput" isOver="true">
         <component_list subscripts="[nu]" declarationName="u" description="&quot;Set y = expr[i], if u[i] = true&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -41,7 +42,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
         <component_list declarationName="y" description="&quot;Output depending on expression&quot;" isAnnotation="true" isAnnotationOver="true">
           <annotations isModificationOver="true" elementName="Placement">
             <modifications isModificationOver="true" elementName="transformation">
@@ -50,7 +51,7 @@
           </annotations>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isProtected="true" isOver="true">
         <component_list declarationName="firstActiveIndex"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">
@@ -74,7 +75,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="And" description="&quot;Logical 'and': y = u[1] and u[2] and ... and u[nu]&quot;" isLongClassSpecifier="true" classNameEnd="And" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="And" description="&quot;Logical 'and': y = u[1] and u[2] and ... and u[nu]&quot;" isLongClassSpecifier="true" classNameEnd="And" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.BooleanVectors.andTrue( u)"/>
@@ -89,7 +90,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Or" description="&quot;Logical 'or': y = u[1] or u[2] or ... or u[nu]&quot;" isLongClassSpecifier="true" classNameEnd="Or" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Or" description="&quot;Logical 'or': y = u[1] or u[2] or ... or u[nu]&quot;" isLongClassSpecifier="true" classNameEnd="Or" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.BooleanVectors.anyTrue( u)"/>
@@ -104,7 +105,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Xor" description="&quot;Logical 'xor': y = oneTrue(u)  (y is true, if exactly one element of u is true, otherwise it is false)&quot;" isLongClassSpecifier="true" classNameEnd="Xor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Xor" description="&quot;Logical 'xor': y = oneTrue(u)  (y is true, if exactly one element of u is true, otherwise it is false)&quot;" isLongClassSpecifier="true" classNameEnd="Xor" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.Math.BooleanVectors.oneTrue( u)"/>
@@ -119,7 +120,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Nand" description="&quot;Logical 'nand': y = not ( u[1] and u[2] and ... and u[nu] )&quot;" isLongClassSpecifier="true" classNameEnd="Nand" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Nand" description="&quot;Logical 'nand': y = not ( u[1] and u[2] and ... and u[nu] )&quot;" isLongClassSpecifier="true" classNameEnd="Nand" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not Modelica.Math.BooleanVectors.andTrue( u)"/>
@@ -134,7 +135,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Nor" description="&quot;Logical 'nor': y = not ( u[1] or u[2] or ... or u[nu] )&quot;" isLongClassSpecifier="true" classNameEnd="Nor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Nor" description="&quot;Logical 'nor': y = not ( u[1] or u[2] or ... or u[nu] )&quot;" isLongClassSpecifier="true" classNameEnd="Nor" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanMISO" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not Modelica.Math.BooleanVectors.anyTrue( u)"/>
@@ -149,7 +150,7 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="Not" description="&quot;Logical 'not': y = not u&quot;" isLongClassSpecifier="true" classNameEnd="Not" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="Not" description="&quot;Logical 'not': y = not u&quot;" isLongClassSpecifier="true" classNameEnd="Not" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small" isOver="true"/>
       <elements xsi:type="mOloc:EquationSection">
         <equations xsi:type="mOloc:SimpleEquation" left="y" right="not u"/>
@@ -164,8 +165,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="RisingEdge" description="&quot;Output y is true, if the input u has a rising edge, otherwise it is false (y = edge(u))&quot;" isLongClassSpecifier="true" classNameEnd="RisingEdge" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="RisingEdge" description="&quot;Output y is true, if the input u has a rising edge, otherwise it is false (y = edge(u))&quot;" isLongClassSpecifier="true" classNameEnd="RisingEdge" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="pre_u_start" description="&quot;Value of pre(u) at initial time&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small" isOver="true"/>
@@ -185,12 +186,12 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="FallingEdge" description="&quot;Output y is true, if the input u has a falling edge, otherwise it is false (y = edge(not u))&quot;" isLongClassSpecifier="true" classNameEnd="FallingEdge" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="FallingEdge" description="&quot;Output y is true, if the input u has a falling edge, otherwise it is false (y = edge(not u))&quot;" isLongClassSpecifier="true" classNameEnd="FallingEdge" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="pre_u_start" description="&quot;Value of pre(u) at initial time&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
         <component_list expression="not u" declarationName="not_u" isAnnotation="true" isAnnotationOver="true">
           <annotations expression="true" elementName="HideResult"/>
         </component_list>
@@ -211,8 +212,8 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="ChangingEdge" description="&quot;Output y is true, if the input u has either a rising or a falling edge and otherwise it is false (y=change(u))&quot;" isLongClassSpecifier="true" classNameEnd="ChangingEdge" isOver="true">
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="ChangingEdge" description="&quot;Output y is true, if the input u has either a rising or a falling edge and otherwise it is false (y=change(u))&quot;" isLongClassSpecifier="true" classNameEnd="ChangingEdge" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
         <component_list expression="false" declarationName="pre_u_start" description="&quot;Value of pre(u) at initial time&quot;"/>
       </elements>
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small" isOver="true"/>
@@ -232,18 +233,18 @@
         </annotations>
       </elements>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" classType="block" className="OnDelay" description="&quot;Delay a rising edge of the input, but do not delay a falling edge.&quot;" isLongClassSpecifier="true" classNameEnd="OnDelay" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="OnDelay" description="&quot;Delay a rising edge of the input, but do not delay a falling edge.&quot;" isLongClassSpecifier="true" classNameEnd="OnDelay" isOver="true">
       <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialBooleanSISO_small" isOver="true"/>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
         <component_list declarationName="delayTime" description="&quot;Delay time&quot;"/>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isProtected="true" isOver="true">
         <component_list isModificationOver="true" declarationName="delaySignal">
           <modifications expression="false" elementName="start"/>
           <modifications expression="true" elementName="fixed"/>
         </component_list>
       </elements>
-      <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="discrete" isOver="true">
         <component_list declarationName="t_next"/>
       </elements>
       <elements xsi:type="mOloc:EquationSection" isInitial="true">

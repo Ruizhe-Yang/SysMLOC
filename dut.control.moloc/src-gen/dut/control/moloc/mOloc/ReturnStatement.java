@@ -14,6 +14,6 @@ package dut.control.moloc.mOloc;
  * @model
  * @generated
  */
-public interface ReturnStatement extends Statement, description
+public interface ReturnStatement extends Statement, description, description_string, annotation_modification_part
 {
 } // ReturnStatement

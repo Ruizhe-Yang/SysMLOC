@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.Interfaces">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.ComplexBlocks.Interfaces"/>
   <classes isPartial="true" classType="block" className="ComplexMI2MO" description="&quot;2 Multiple Input / Multiple Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="ComplexMI2MO" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Icons.ComplexBlock" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list expression="1" declarationName="n" description="&quot;Dimension of input and output vectors.&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="ComplexInput" isOver="true">
       <component_list subscripts="[n]" declarationName="u1" description="&quot;Connector 1 of Complex input signals&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -14,7 +15,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="ComplexInput" isOver="true">
       <component_list subscripts="[n]" declarationName="u2" description="&quot;Connector 2 of Complex input signals&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -23,7 +24,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="ComplexOutput" isOver="true">
       <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Complex output signals&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -32,16 +33,16 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list subscripts="[n]" expression="fill(false, n)" declarationName="useConjugateInput1" description="&quot;If true, inputs 1 are processed conjugate complex&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list subscripts="[n]" expression="fill(false, n)" declarationName="useConjugateInput2" description="&quot;If true, inputs 2 are processed conjugate complex&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Complex" isProtected="true" isOver="true">
       <component_list subscripts="[n]" expression="{if useConjugateInput1[k] then Modelica.ComplexMath.conj(u1[k]) else u1[k] for k in 1:n }" declarationName="u1Internal" description="&quot;Equals either u1 or conjugate complex input u1 if useComplexInput = true&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Complex" isOver="true">
       <component_list subscripts="[n]" expression="{if useConjugateInput2[k] then Modelica.ComplexMath.conj(u2[k]) else u2[k] for k in 1:n }" declarationName="u2Internal" description="&quot;Equals either u1 or conjugate complex input u1 if useComplexInput = true&quot;"/>
     </elements>
     <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.Polyphase.Blocks">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Polyphase.Blocks"/>
   <classes classType="block" className="SymmetricalComponents" description="&quot;Creates symmetrical components from signals representing quasi-static phasors&quot;" isLongClassSpecifier="true" classNameEnd="SymmetricalComponents" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Interfaces.ComplexMIMOs" isOver="true">
       <extendsModifications expression="m" elementName="n" isfinal="true"/>
@@ -7,28 +8,28 @@
     </elements>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.abs" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.arg" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
       <component_list subscripts="[m]" expression="abs(u)" declarationName="abs_u" description="&quot;Absolute of input&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
       <component_list subscripts="[m]" isModificationOver="true" expression="arg(u)" declarationName="arg_u" description="&quot;Argument of input&quot;">
         <modifications expression="&quot;deg&quot;" elementName="displayUnit" isEach="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
       <component_list subscripts="[m]" expression="abs(y)" declarationName="abs_y" description="&quot;Absolute of output&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" directionType="output" isOver="true">
       <component_list subscripts="[m]" isModificationOver="true" expression="arg(y)" declarationName="arg_y" description="&quot;Argument of output&quot;">
         <modifications expression="&quot;deg&quot;" elementName="displayUnit" isEach="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" parameterType="parameter" isProtected="true" isfinal="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Complex" parameterType="parameter" isProtected="true" isfinal="true" isOver="true">
       <component_list subscripts="[m,m]" expression="Modelica.Electrical.Polyphase.Functions.symmetricTransformationMatrix( m)" declarationName="sTM"/>
     </elements>
     <elements xsi:type="mOloc:EquationSection">

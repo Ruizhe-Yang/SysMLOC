@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.ComplexBlocks.ComplexMath">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.ComplexBlocks.ComplexMath"/>
   <classes classType="block" className="Bode" description="&quot;Calculate quantities to plot Bode diagram&quot;" isLongClassSpecifier="true" classNameEnd="Bode" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Icons.ComplexBlock" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
       <component_list expression="true" declarationName="useDivisor" description="&quot;Use divisor input, if true&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="Evaluate"/>
         <annotations expression="true" elementName="HideResult"/>
@@ -11,10 +12,10 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Units.SI.AmplitudeLevelDifference" parameterType="constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Units.SI.AmplitudeLevelDifference" parameterType="constant" isOver="true">
       <component_list expression="20" declarationName="dB" description="&quot;Amplitude level difference&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.ComplexInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.ComplexInput" isOver="true">
       <component_list declarationName="u" description="&quot;Dividend if useDivisor == true&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -26,7 +27,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.ComplexInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.ComplexInput" isOver="true">
       <component_list declarationName="divisor" description="&quot;Divisor&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useDivisor">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -38,7 +39,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
       <component_list declarationName="abs_y" description="&quot;Absolute value of ratio u / divisor&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -54,7 +55,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
       <component_list isModificationOver="true" declarationName="arg_y" description="&quot;Angle of ratio u / divisor&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;rad&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -71,7 +72,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Interfaces.ComplexOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.ComplexOutput" isOver="true">
       <component_list declarationName="y" description="&quot;Quotient y = u / divisor&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -83,7 +84,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Sources.ComplexConstant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Sources.ComplexConstant" isOver="true">
       <component_list isModificationOver="true" declarationName="complexOne" description="&quot;Complex(1,0)&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useDivisor">
         <modifications expression="Complex(1, 0)" elementName="k" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -93,7 +94,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Division" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Division" isOver="true">
       <component_list isModificationOver="true" declarationName="division" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="false" elementName="useConjugateInput1" isfinal="true"/>
         <modifications expression="false" elementName="useConjugateInput2" isfinal="true"/>
@@ -104,7 +105,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ComplexToPolar" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="ComplexToPolar" isOver="true">
       <component_list isModificationOver="true" declarationName="complexToPolar" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="false" elementName="useConjugateInput" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -116,7 +117,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
       <component_list isModificationOver="true" declarationName="dB_y" description="&quot;Log10 of absolute value of ratio u / divisor in dB&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="&quot;dB&quot;" elementName="unit"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -133,7 +134,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Math.Log10" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Math.Log10" isOver="true">
       <component_list declarationName="log10_y" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -143,7 +144,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Math.Gain" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Math.Gain" isOver="true">
       <component_list isModificationOver="true" declarationName="gain" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="dB" elementName="k" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -153,7 +154,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Nonlinear.Limiter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Nonlinear.Limiter" isOver="true">
       <component_list isModificationOver="true" declarationName="limiter" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Modelica.Constants.inf" elementName="uMax" isfinal="true"/>
         <modifications expression="Modelica.Constants.eps" elementName="uMin" isfinal="true"/>

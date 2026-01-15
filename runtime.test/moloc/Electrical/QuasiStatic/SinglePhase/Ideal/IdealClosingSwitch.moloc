@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.QuasiStatic.SinglePhase.Ideal">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Ideal"/>
   <classes classType="model" className="IdealClosingSwitch" description="&quot;Ideal electrical closer&quot;" isLongClassSpecifier="true" classNameEnd="IdealClosingSwitch" isOver="true">
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.real" isOver="true"/>
     <elements xsi:type="mOloc:ImportClause" importName="Modelica.ComplexMath.conj" isOver="true"/>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.OnePort" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1e-5" declarationName="Ron" description="&quot;Closed switch resistance&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1e-5" declarationName="Goff" description="&quot;Opened switch conductance&quot;">
         <modifications expression="0" elementName="min" isfinal="true"/>
       </component_list>
@@ -17,7 +18,7 @@
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
       <extendsModifications expression="293.15" elementName="T" isfinal="true"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
       <component_list declarationName="control" description="&quot;true => p--n connected, false => switch open&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -28,7 +29,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Complex" isProtected="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Complex" isProtected="true" isOver="true">
       <component_list isModificationOver="true" declarationName="s" description="&quot;Auxiliary variable&quot;">
         <modifications isModificationOver="true" elementName="re">
           <modifications expression="&quot;1&quot;" elementName="unit" isfinal="true"/>
@@ -38,12 +39,12 @@
         </modifications>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexVoltage" parameterType="constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" parameterType="constant" isOver="true">
       <component_list expression="Complex(1, 0)" declarationName="unitVoltage" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="HideResult"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.ComplexCurrent" parameterType="constant" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" parameterType="constant" isOver="true">
       <component_list expression="Complex(1, 0)" declarationName="unitCurrent" isAnnotation="true" isAnnotationOver="true">
         <annotations expression="true" elementName="HideResult"/>
       </component_list>

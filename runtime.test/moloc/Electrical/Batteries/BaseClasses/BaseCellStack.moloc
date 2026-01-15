@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Batteries.BaseClasses">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.BaseClasses"/>
   <classes isPartial="true" classType="model" className="BaseCellStack" description="&quot;Battery with open-circuit voltage dependent on state of charge, self-discharge and inner resistance&quot;" isLongClassSpecifier="true" classNameEnd="BaseCellStack" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.Icons.BatteryIcon" isOver="true">
       <extendsModifications expression="SOC" elementName="displaySOC" isfinal="true"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1" declarationName="Ns" description="&quot;Number of serial connected cells&quot;">
         <modifications expression="1" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
       <component_list isModificationOver="true" expression="1" declarationName="Np" description="&quot;Number of parallel connected cells&quot;">
         <modifications expression="1" elementName="min" isfinal="true"/>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="ParameterRecords.CellData" parameterType="parameter" isReplaceable="true" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="ParameterRecords.CellData" parameterType="parameter" isReplaceable="true" isOver="true">
       <component_list declarationName="cellData" description="&quot;Cell parameters&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -23,7 +24,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
       <component_list expression="1e-9" declarationName="SOCtolerance" description="&quot;Tolerance to detect depleted of overcharged battery&quot;" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Dialog">
           <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
@@ -31,13 +32,13 @@
       </component_list>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.TwoPin" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Current" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
       <component_list expression="p.i" declarationName="i" description="&quot;Current into the battery&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="SI.Power" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" isOver="true">
       <component_list expression="v*i" declarationName="power" description="&quot;Power to the battery&quot;"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Real" directionType="output" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
       <component_list isModificationOver="true" expression="limIntegrator.y" declarationName="SOC" description="&quot;State of charge&quot;" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="cellData.SOCmax" elementName="start"/>
         <annotations isModificationOver="true" elementName="Dialog">
@@ -45,7 +46,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sensors.CurrentSensor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sensors.CurrentSensor" isOver="true">
       <component_list declarationName="currentSensor" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -54,7 +55,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Blocks.Continuous.LimIntegrator" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Continuous.LimIntegrator" isOver="true">
       <component_list isModificationOver="true" declarationName="limIntegrator" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="1/(Np*cellData.Qnom)" elementName="k" isfinal="true"/>
         <modifications expression="1 - SOCtolerance" elementName="outMax"/>
@@ -69,7 +70,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Tables.CombiTable1Ds" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Tables.CombiTable1Ds" isOver="true">
       <component_list isModificationOver="true" declarationName="ocv_soc" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="cellData.OCV_SOC_internal" elementName="table" isfinal="true"/>
         <modifications expression="cellData.smoothness" elementName="smoothness" isfinal="true"/>
@@ -81,7 +82,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
       <component_list isModificationOver="true" declarationName="gainV" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Ns*cellData.OCVmax" elementName="k" isfinal="true"/>
         <annotations isModificationOver="true" elementName="Placement">
@@ -93,7 +94,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SignalVoltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SignalVoltage" isOver="true">
       <component_list declarationName="ocv" isAnnotation="true" isAnnotationOver="true">
         <annotations isModificationOver="true" elementName="Placement">
           <modifications isModificationOver="true" elementName="transformation">
@@ -102,7 +103,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Conductor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Conductor" isOver="true">
       <component_list isModificationOver="true" declarationName="selfDischarge" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="Np*cellData.Idis/(Ns*cellData.OCVmax)" elementName="G" isfinal="true"/>
         <modifications expression="293.15" elementName="T_ref"/>
@@ -114,7 +115,7 @@
         </annotations>
       </component_list>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
       <component_list isModificationOver="true" declarationName="r0" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="cellData.T_ref" elementName="T_ref" isfinal="true"/>
         <modifications expression="cellData.alpha" elementName="alpha" isfinal="true"/>

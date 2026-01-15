@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
-<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc" isWithin="true" within="Modelica.Electrical.Machines.Losses.InductionMachines">
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Losses.InductionMachines"/>
   <classes classType="model" className="Brush" description="&quot;Model considering voltage drop of carbon brushes&quot;" isLongClassSpecifier="true" classNameEnd="Brush" isOver="true">
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.TwoPlug" isOver="true"/>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="Machines.Losses.BrushParameters" parameterType="parameter" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Losses.BrushParameters" parameterType="parameter" isOver="true">
       <component_list declarationName="brushParameters" description="&quot;Brush loss parameters&quot;"/>
     </elements>
     <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.PartialConditionalHeatPort" isOver="true">
       <extendsModifications expression="false" elementName="useHeatPort"/>
       <extendsModifications expression="293.15" elementName="T" isfinal="true"/>
     </elements>
-    <elements xsi:type="mOloc:GeneralClause" typeSpecifier="DCMachines.Brush" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="DCMachines.Brush" isOver="true">
       <component_list subscripts="[3]" isModificationOver="true" declarationName="brush" isAnnotation="true" isAnnotationOver="true">
         <modifications expression="brushParameters" elementName="brushParameters" isEach="true" isfinal="true"/>
         <modifications expression="true" elementName="useHeatPort" isEach="true" isfinal="true"/>

@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ImportClause extends Element, description
+public interface ImportClause extends Element, description, description_string, annotation_modification_part
 {
   /**
    * Returns the value of the '<em><b>Is Public</b></em>' attribute.

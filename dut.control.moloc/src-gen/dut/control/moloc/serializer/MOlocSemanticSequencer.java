@@ -7,10 +7,10 @@ import com.google.inject.Inject;
 import dut.control.moloc.mOloc.AlgorithmSection;
 import dut.control.moloc.mOloc.AnnotationClause;
 import dut.control.moloc.mOloc.AnnotationModificationElement;
-import dut.control.moloc.mOloc.AnnotationModificationElement2;
 import dut.control.moloc.mOloc.Break;
 import dut.control.moloc.mOloc.BreakStatement;
 import dut.control.moloc.mOloc.Class_definition;
+import dut.control.moloc.mOloc.ComponentClause;
 import dut.control.moloc.mOloc.Component_declaration;
 import dut.control.moloc.mOloc.ConnectEquation;
 import dut.control.moloc.mOloc.ConstrainingClause;
@@ -22,7 +22,6 @@ import dut.control.moloc.mOloc.ForEquation;
 import dut.control.moloc.mOloc.ForStatement;
 import dut.control.moloc.mOloc.FunctionEquation;
 import dut.control.moloc.mOloc.FunctionStatement;
-import dut.control.moloc.mOloc.GeneralClause;
 import dut.control.moloc.mOloc.IfEquation;
 import dut.control.moloc.mOloc.IfStatement;
 import dut.control.moloc.mOloc.ImportClause;
@@ -34,6 +33,7 @@ import dut.control.moloc.mOloc.Stored_definition;
 import dut.control.moloc.mOloc.WhenEquation;
 import dut.control.moloc.mOloc.WhenStatement;
 import dut.control.moloc.mOloc.WhileStatement;
+import dut.control.moloc.mOloc.Within;
 import dut.control.moloc.services.MOlocGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -42,7 +42,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -67,9 +69,6 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT:
 				sequence_AnnotationModificationElement_annotation_modification_part_array_subscripts_class_modification_class_name_class_prefixes_constraining_declaration_description_string_element_modification_enum_list_modification_short_class_specifier_type_prefix_type_specifier(context, (AnnotationModificationElement) semanticObject); 
 				return; 
-			case MOlocPackage.ANNOTATION_MODIFICATION_ELEMENT2:
-				sequence_AnnotationModificationElement2_annotation_modification_part_array_subscripts_class_modification_class_name_class_prefixes_constraining_declaration_description_string_element_modification_enum_list_modification_short_class_specifier_type_prefix_type_specifier(context, (AnnotationModificationElement2) semanticObject); 
-				return; 
 			case MOlocPackage.BREAK:
 				sequence_Break(context, (Break) semanticObject); 
 				return; 
@@ -79,6 +78,16 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MOlocPackage.CLASS_DEFINITION:
 				sequence_Class_definition_annotation_modification_part_array_subscripts_class_modification_class_name_class_prefixes_composition_der_class_specifier_description_string_enum_list_long_class_specifier_short_class_specifier_type_specifier(context, (Class_definition) semanticObject); 
 				return; 
+			case MOlocPackage.COMPONENT_CLAUSE:
+				if (rule == grammarAccess.getElementRule()) {
+					sequence_ComponentClause_annotation_modification_part_array_subscripts_class_modification_class_name_class_prefixes_composition_constraining_der_class_specifier_description_string_enum_list_long_class_specifier_short_class_specifier_type_prefix_type_specifier(context, (ComponentClause) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getComponentClauseRule()) {
+					sequence_ComponentClause_annotation_modification_part_array_subscripts_class_modification_class_name_class_prefixes_composition_constraining_der_class_specifier_description_string_enum_list_long_class_specifier_short_class_specifier_type_prefix_type_specifier(context, (ComponentClause) semanticObject); 
+					return; 
+				}
+				else break;
 			case MOlocPackage.COMPONENT_DECLARATION:
 				sequence_Component_declaration_annotation_modification_part_array_subscripts_class_modification_declaration_description_string_modification(context, (Component_declaration) semanticObject); 
 				return; 
@@ -112,16 +121,6 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MOlocPackage.FUNCTION_STATEMENT:
 				sequence_FunctionStatement_annotation_modification_part_description_string(context, (FunctionStatement) semanticObject); 
 				return; 
-			case MOlocPackage.GENERAL_CLAUSE:
-				if (rule == grammarAccess.getElementRule()) {
-					sequence_GeneralClause_annotation_modification_part_array_subscripts_class_modification_class_name_class_prefixes_composition_constraining_der_class_specifier_description_string_enum_list_long_class_specifier_short_class_specifier_type_prefix_type_specifier(context, (GeneralClause) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getGeneralClauseRule()) {
-					sequence_GeneralClause_annotation_modification_part_array_subscripts_class_modification_class_name_class_prefixes_composition_constraining_der_class_specifier_description_string_enum_list_long_class_specifier_short_class_specifier_type_prefix_type_specifier(context, (GeneralClause) semanticObject); 
-					return; 
-				}
-				else break;
 			case MOlocPackage.IF_EQUATION:
 				sequence_IfEquation_annotation_modification_part_description_string(context, (IfEquation) semanticObject); 
 				return; 
@@ -151,6 +150,9 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case MOlocPackage.WHILE_STATEMENT:
 				sequence_WhileStatement_annotation_modification_part_description_string(context, (WhileStatement) semanticObject); 
+				return; 
+			case MOlocPackage.WITHIN:
+				sequence_Within(context, (Within) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -189,84 +191,6 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * </pre>
 	 */
 	protected void sequence_AnnotationClause_annotation_modification_part(ISerializationContext context, AnnotationClause semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     AnnotationModificationElement2 returns AnnotationModificationElement2
-	 *
-	 * Constraint:
-	 *     (
-	 *         isRedeclare?='redeclare'? 
-	 *         isEach?='each'? 
-	 *         isfinal?='final'? 
-	 *         isReplaceable?='replaceable'? 
-	 *         (
-	 *             (
-	 *                 (
-	 *                     (
-	 *                         isEncapsulated?='encapsulated'? 
-	 *                         isPartial?='partial'? 
-	 *                         isExpandable?='expandable'? 
-	 *                         (isPure?='pure' | isPure?='impure')? 
-	 *                         isOperator?='operator'? 
-	 *                         classType=ClassType 
-	 *                         className=IDENT 
-	 *                         isShortClassSpecifier?='=' 
-	 *                         direction=Direction?
-	 *                     ) | 
-	 *                     (relationshipType=RelationshipType? parameterType=ParameterType? directionType=Direction?)
-	 *                 ) 
-	 *                 typeSpecifier=TypeSpecifier 
-	 *                 ((declarationName=IDENT subscripts=ArraySubscripts) | subscripts=ArraySubscripts)? 
-	 *                 (
-	 *                     (modifications+=ModificationElement modifications+=ModificationElement* isModificationOver?=')' expression=Modification_expression?) | 
-	 *                     expression=Modification_expression | 
-	 *                     expression=Modification_expression
-	 *                 )?
-	 *             ) | 
-	 *             (
-	 *                 isEncapsulated?='encapsulated'? 
-	 *                 isPartial?='partial'? 
-	 *                 isExpandable?='expandable'? 
-	 *                 (isPure?='pure' | isPure?='impure')? 
-	 *                 isOperator?='operator'? 
-	 *                 classType=ClassType 
-	 *                 className=IDENT 
-	 *                 isShortClassSpecifier?='=' 
-	 *                 (
-	 *                     (
-	 *                         direction=Direction? 
-	 *                         typeSpecifier=TypeSpecifier 
-	 *                         modifications+=ModificationElement 
-	 *                         modifications+=ModificationElement* 
-	 *                         isModificationOver?=')' 
-	 *                         expression=Modification_expression?
-	 *                     ) | 
-	 *                     (direction=Direction? typeSpecifier=TypeSpecifier) | 
-	 *                     (isEnumeration?='enumeration' (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))?)
-	 *                 )
-	 *             ) | 
-	 *             (
-	 *                 (elementName=Name | (relationshipType=RelationshipType? parameterType=ParameterType? directionType=Direction? typeSpecifier=TypeSpecifier)) 
-	 *                 modifications+=ModificationElement 
-	 *                 modifications+=ModificationElement* 
-	 *                 isModificationOver?=')' 
-	 *                 expression=Modification_expression?
-	 *             ) | 
-	 *             (elementName=Name (expression=Modification_expression | expression=Modification_expression)?) | 
-	 *             (relationshipType=RelationshipType? parameterType=ParameterType? directionType=Direction? typeSpecifier=TypeSpecifier)
-	 *         ) 
-	 *         description=DescriptionString? 
-	 *         (isAnnotation?='annotation' annotations+=AnnotationModificationElement annotations+=AnnotationModificationElement* isAnnotationOver?=')')? 
-	 *         constrain=ConstrainingClause?
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_AnnotationModificationElement2_annotation_modification_part_array_subscripts_class_modification_class_name_class_prefixes_constraining_declaration_description_string_element_modification_enum_list_modification_short_class_specifier_type_prefix_type_specifier(ISerializationContext context, AnnotationModificationElement2 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -340,7 +264,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         ) 
 	 *         description=DescriptionString? 
 	 *         (isAnnotation?='annotation' annotations+=AnnotationModificationElement annotations+=AnnotationModificationElement* isAnnotationOver?=')')? 
-	 *         constrain=ConstrainingClause?
+	 *         (isConstrainedby?='constrainedby' constrain=ConstrainingClause)?
 	 *     )
 	 * </pre>
 	 */
@@ -408,6 +332,282 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Element returns ComponentClause
+	 *
+	 * Constraint:
+	 *     (
+	 *         isPublic?='public'? 
+	 *         isProtected?='protected'? 
+	 *         isRedeclare?='redeclare'? 
+	 *         isfinal?='final'? 
+	 *         isInner?='inner'? 
+	 *         isOuter?='outer'? 
+	 *         isReplaceable?='replaceable'? 
+	 *         (
+	 *             (
+	 *                 isEncapsulated?='encapsulated'? 
+	 *                 isPartial?='partial'? 
+	 *                 isExpandable?='expandable'? 
+	 *                 (isPure?='pure' | isPure?='impure')? 
+	 *                 isOperator?='operator'? 
+	 *                 classType=ClassType 
+	 *                 isExtends?='extends'? 
+	 *                 className=IDENT 
+	 *                 (
+	 *                     (
+	 *                         ((isShortClassSpecifier?='=' direction=Direction?) | (isDerClassSpecifier?='=' isDer?='der')) 
+	 *                         typeSpecifier=TypeSpecifier 
+	 *                         (
+	 *                             (derName+=IDENT derName+=IDENT* description=DescriptionString) | 
+	 *                             (subscripts=ArraySubscripts (component_list+=Component_declaration component_list+=Component_declaration*)?)
+	 *                         )
+	 *                     ) | 
+	 *                     (
+	 *                         isShortClassSpecifier?='=' 
+	 *                         isEnumeration?='enumeration' 
+	 *                         (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))? 
+	 *                         (
+	 *                             (
+	 *                                 description=DescriptionString 
+	 *                                 isAnnotation?='annotation' 
+	 *                                 annotations+=AnnotationModificationElement 
+	 *                                 annotations+=AnnotationModificationElement* 
+	 *                                 isAnnotationOver?=')'
+	 *                             ) | 
+	 *                             description=DescriptionString | 
+	 *                             (description=DescriptionString (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT))
+	 *                         )
+	 *                     ) | 
+	 *                     (
+	 *                         ((isShortClassSpecifier?='=' direction=Direction?) | (isDerClassSpecifier?='=' isDer?='der')) 
+	 *                         typeSpecifier=TypeSpecifier 
+	 *                         (
+	 *                             (
+	 *                                 (
+	 *                                     (derName+=IDENT derName+=IDENT* description=DescriptionString) | 
+	 *                                     subscripts=ArraySubscripts | 
+	 *                                     (subscripts=ArraySubscripts description=DescriptionString)
+	 *                                 )? 
+	 *                                 isAnnotation?='annotation' 
+	 *                                 annotations+=AnnotationModificationElement 
+	 *                                 annotations+=AnnotationModificationElement* 
+	 *                                 isAnnotationOver?=')'
+	 *                             ) | 
+	 *                             (
+	 *                                 ((derName+=IDENT derName+=IDENT* description=DescriptionString) | (subscripts=ArraySubscripts description=DescriptionString)) 
+	 *                                 (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT)
+	 *                             ) | 
+	 *                             (
+	 *                                 subscripts=ArraySubscripts 
+	 *                                 modifications+=ModificationElement 
+	 *                                 modifications+=ModificationElement* 
+	 *                                 isModificationOver?=')' 
+	 *                                 description=DescriptionString 
+	 *                                 (
+	 *                                     (isAnnotation?='annotation' annotations+=AnnotationModificationElement annotations+=AnnotationModificationElement* isAnnotationOver?=')') | 
+	 *                                     (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT)
+	 *                                 )?
+	 *                             ) | 
+	 *                             (subscripts=ArraySubscripts description=DescriptionString)
+	 *                         )
+	 *                     ) | 
+	 *                     (
+	 *                         (
+	 *                             (modifications+=ModificationElement modifications+=ModificationElement* isModificationOver?=')' description=DescriptionString) | 
+	 *                             description=DescriptionString
+	 *                         ) 
+	 *                         isAnnotation?='annotation' 
+	 *                         annotations+=AnnotationModificationElement 
+	 *                         annotations+=AnnotationModificationElement* 
+	 *                         isAnnotationOver?=')'
+	 *                     ) | 
+	 *                     (
+	 *                         modifications+=ModificationElement 
+	 *                         modifications+=ModificationElement* 
+	 *                         isModificationOver?=')' 
+	 *                         description=DescriptionString 
+	 *                         (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT)
+	 *                     ) | 
+	 *                     description=DescriptionString | 
+	 *                     (description=DescriptionString (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT))
+	 *                 )?
+	 *             ) | 
+	 *             (
+	 *                 relationshipType=RelationshipType? 
+	 *                 parameterType=ParameterType? 
+	 *                 directionType=Direction? 
+	 *                 typeSpecifier=TypeSpecifier 
+	 *                 (
+	 *                     (derName+=IDENT derName+=IDENT* description=DescriptionString) | 
+	 *                     (subscripts=ArraySubscripts (component_list+=Component_declaration component_list+=Component_declaration*)?)
+	 *                 )
+	 *             ) | 
+	 *             (
+	 *                 relationshipType=RelationshipType? 
+	 *                 parameterType=ParameterType? 
+	 *                 directionType=Direction? 
+	 *                 typeSpecifier=TypeSpecifier 
+	 *                 subscripts=ArraySubscripts 
+	 *                 modifications+=ModificationElement 
+	 *                 modifications+=ModificationElement* 
+	 *                 isModificationOver?=')' 
+	 *                 description=DescriptionString 
+	 *                 (
+	 *                     (isAnnotation?='annotation' annotations+=AnnotationModificationElement annotations+=AnnotationModificationElement* isAnnotationOver?=')') | 
+	 *                     (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT)
+	 *                 )
+	 *             ) | 
+	 *             (
+	 *                 relationshipType=RelationshipType? 
+	 *                 parameterType=ParameterType? 
+	 *                 directionType=Direction? 
+	 *                 typeSpecifier=TypeSpecifier 
+	 *                 (
+	 *                     (derName+=IDENT derName+=IDENT* description=DescriptionString) | 
+	 *                     subscripts=ArraySubscripts | 
+	 *                     (subscripts=ArraySubscripts description=DescriptionString)
+	 *                 ) 
+	 *                 isAnnotation?='annotation' 
+	 *                 annotations+=AnnotationModificationElement 
+	 *                 annotations+=AnnotationModificationElement* 
+	 *                 isAnnotationOver?=')'
+	 *             ) | 
+	 *             (
+	 *                 relationshipType=RelationshipType? 
+	 *                 parameterType=ParameterType? 
+	 *                 directionType=Direction? 
+	 *                 typeSpecifier=TypeSpecifier 
+	 *                 (
+	 *                     (
+	 *                         ((derName+=IDENT derName+=IDENT* description=DescriptionString) | (subscripts=ArraySubscripts description=DescriptionString)) 
+	 *                         (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT)
+	 *                     ) | 
+	 *                     (subscripts=ArraySubscripts description=DescriptionString)
+	 *                 )
+	 *             )
+	 *         ) 
+	 *         (
+	 *             isConstrainedby?='constrainedby' 
+	 *             constrain=ConstrainingClause 
+	 *             description1=DescriptionString? 
+	 *             (isAnnotation1?='annotation' annotations1+=AnnotationModificationElement annotations1+=AnnotationModificationElement* isAnnotationOver1?=')')?
+	 *         )? 
+	 *         isOver?=';'
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ComponentClause_annotation_modification_part_array_subscripts_class_modification_class_name_class_prefixes_composition_constraining_der_class_specifier_description_string_enum_list_long_class_specifier_short_class_specifier_type_prefix_type_specifier(ISerializationContext context, ComponentClause semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     ComponentClause returns ComponentClause
+	//
+	// Constraint:
+	//     (
+	//         isPublic?='public'? 
+	//         isProtected?='protected'? 
+	//         isRedeclare?='redeclare'? 
+	//         isfinal?='final'? 
+	//         isInner?='inner'? 
+	//         isOuter?='outer'? 
+	//         isReplaceable?='replaceable'? 
+	//         (
+	//             (
+	//                 isEncapsulated?='encapsulated'? 
+	//                 isPartial?='partial'? 
+	//                 isExpandable?='expandable'? 
+	//                 (isPure?='pure' | isPure?='impure')? 
+	//                 isOperator?='operator'? 
+	//                 classType=ClassType 
+	//                 isExtends?='extends'? 
+	//                 className=IDENT 
+	//                 ((isShortClassSpecifier?='=' direction=Direction?) | (isDerClassSpecifier?='=' isDer?='der')) 
+	//                 typeSpecifier=TypeSpecifier 
+	//                 subscripts=ArraySubscripts? 
+	//                 component_list+=Component_declaration 
+	//                 component_list+=Component_declaration*
+	//             ) | 
+	//             (
+	//                 (
+	//                     (
+	//                         isEncapsulated?='encapsulated'? 
+	//                         isPartial?='partial'? 
+	//                         isExpandable?='expandable'? 
+	//                         (isPure?='pure' | isPure?='impure')? 
+	//                         isOperator?='operator'? 
+	//                         classType=ClassType 
+	//                         isExtends?='extends'? 
+	//                         className=IDENT 
+	//                         (
+	//                             (
+	//                                 isShortClassSpecifier?='=' 
+	//                                 isEnumeration?='enumeration' 
+	//                                 (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))?
+	//                             ) | 
+	//                             (
+	//                                 ((isShortClassSpecifier?='=' direction=Direction?) | (isDerClassSpecifier?='=' isDer?='der')) 
+	//                                 (
+	//                                     (
+	//                                         typeSpecifier=TypeSpecifier 
+	//                                         subscripts=ArraySubscripts? 
+	//                                         (modifications+=ModificationElement modifications+=ModificationElement* isModificationOver?=')')
+	//                                     ) | 
+	//                                     (typeSpecifier=TypeSpecifier derName+=IDENT derName+=IDENT*)
+	//                                 )
+	//                             ) | 
+	//                             (modifications+=ModificationElement modifications+=ModificationElement* isModificationOver?=')')
+	//                         )?
+	//                     ) | 
+	//                     (
+	//                         relationshipType=RelationshipType? 
+	//                         parameterType=ParameterType? 
+	//                         directionType=Direction? 
+	//                         (
+	//                             (
+	//                                 typeSpecifier=TypeSpecifier 
+	//                                 subscripts=ArraySubscripts? 
+	//                                 (modifications+=ModificationElement modifications+=ModificationElement* isModificationOver?=')')
+	//                             ) | 
+	//                             (typeSpecifier=TypeSpecifier derName+=IDENT derName+=IDENT*)
+	//                         )
+	//                     )
+	//                 ) 
+	//                 description=DescriptionString? 
+	//                 (
+	//                     (isAnnotation?='annotation' annotations+=AnnotationModificationElement annotations+=AnnotationModificationElement* isAnnotationOver?=')') | 
+	//                     (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT)
+	//                 )?
+	//             ) | 
+	//             (
+	//                 relationshipType=RelationshipType? 
+	//                 parameterType=ParameterType? 
+	//                 directionType=Direction? 
+	//                 typeSpecifier=TypeSpecifier 
+	//                 subscripts=ArraySubscripts? 
+	//                 component_list+=Component_declaration 
+	//                 component_list+=Component_declaration*
+	//             )
+	//         ) 
+	//         (
+	//             isConstrainedby?='constrainedby' 
+	//             constrain=ConstrainingClause 
+	//             description1=DescriptionString? 
+	//             (isAnnotation1?='annotation' annotations1+=AnnotationModificationElement annotations1+=AnnotationModificationElement* isAnnotationOver1?=')')?
+	//         )? 
+	//         isOver?=';'
+	//     )
+	//
+	// protected void sequence_ComponentClause_annotation_modification_part_array_subscripts_class_modification_class_name_class_prefixes_composition_constraining_der_class_specifier_description_string_enum_list_long_class_specifier_short_class_specifier_type_prefix_type_specifier(ISerializationContext context, ComponentClause semanticObject) { }
 	
 	/**
 	 * <pre>
@@ -618,272 +818,6 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Element returns GeneralClause
-	 *
-	 * Constraint:
-	 *     (
-	 *         isPublic?='public'? 
-	 *         isProtected?='protected'? 
-	 *         isRedeclare?='redeclare'? 
-	 *         isfinal?='final'? 
-	 *         isInner?='inner'? 
-	 *         isOuter?='outer'? 
-	 *         isReplaceable?='replaceable'? 
-	 *         (
-	 *             (
-	 *                 isEncapsulated?='encapsulated'? 
-	 *                 isPartial?='partial'? 
-	 *                 isExpandable?='expandable'? 
-	 *                 (isPure?='pure' | isPure?='impure')? 
-	 *                 isOperator?='operator'? 
-	 *                 classType=ClassType 
-	 *                 isExtends?='extends'? 
-	 *                 className=IDENT 
-	 *                 (
-	 *                     (
-	 *                         ((isShortClassSpecifier?='=' direction=Direction?) | (isDerClassSpecifier?='=' isDer?='der')) 
-	 *                         typeSpecifier=TypeSpecifier 
-	 *                         (
-	 *                             (derName+=IDENT derName+=IDENT* description=DescriptionString) | 
-	 *                             (subscripts=ArraySubscripts (component_list+=Component_declaration component_list+=Component_declaration*)?)
-	 *                         )
-	 *                     ) | 
-	 *                     (
-	 *                         isShortClassSpecifier?='=' 
-	 *                         isEnumeration?='enumeration' 
-	 *                         (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))? 
-	 *                         (
-	 *                             (
-	 *                                 description=DescriptionString 
-	 *                                 isAnnotation?='annotation' 
-	 *                                 annotations+=AnnotationModificationElement 
-	 *                                 annotations+=AnnotationModificationElement* 
-	 *                                 isAnnotationOver?=')'
-	 *                             ) | 
-	 *                             description=DescriptionString | 
-	 *                             (description=DescriptionString (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT))
-	 *                         )
-	 *                     ) | 
-	 *                     (
-	 *                         ((isShortClassSpecifier?='=' direction=Direction?) | (isDerClassSpecifier?='=' isDer?='der')) 
-	 *                         typeSpecifier=TypeSpecifier 
-	 *                         (
-	 *                             (
-	 *                                 (
-	 *                                     (derName+=IDENT derName+=IDENT* description=DescriptionString) | 
-	 *                                     subscripts=ArraySubscripts | 
-	 *                                     (subscripts=ArraySubscripts description=DescriptionString)
-	 *                                 )? 
-	 *                                 isAnnotation?='annotation' 
-	 *                                 annotations+=AnnotationModificationElement 
-	 *                                 annotations+=AnnotationModificationElement* 
-	 *                                 isAnnotationOver?=')'
-	 *                             ) | 
-	 *                             (
-	 *                                 ((derName+=IDENT derName+=IDENT* description=DescriptionString) | (subscripts=ArraySubscripts description=DescriptionString)) 
-	 *                                 (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT)
-	 *                             ) | 
-	 *                             (
-	 *                                 subscripts=ArraySubscripts 
-	 *                                 modifications+=ModificationElement 
-	 *                                 modifications+=ModificationElement* 
-	 *                                 isModificationOver?=')' 
-	 *                                 description=DescriptionString 
-	 *                                 (
-	 *                                     (isAnnotation?='annotation' annotations+=AnnotationModificationElement annotations+=AnnotationModificationElement* isAnnotationOver?=')') | 
-	 *                                     (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT)
-	 *                                 )?
-	 *                             ) | 
-	 *                             (subscripts=ArraySubscripts description=DescriptionString)
-	 *                         )
-	 *                     ) | 
-	 *                     (
-	 *                         (
-	 *                             (modifications+=ModificationElement modifications+=ModificationElement* isModificationOver?=')' description=DescriptionString) | 
-	 *                             description=DescriptionString
-	 *                         ) 
-	 *                         isAnnotation?='annotation' 
-	 *                         annotations+=AnnotationModificationElement 
-	 *                         annotations+=AnnotationModificationElement* 
-	 *                         isAnnotationOver?=')'
-	 *                     ) | 
-	 *                     (
-	 *                         modifications+=ModificationElement 
-	 *                         modifications+=ModificationElement* 
-	 *                         isModificationOver?=')' 
-	 *                         description=DescriptionString 
-	 *                         (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT)
-	 *                     ) | 
-	 *                     description=DescriptionString | 
-	 *                     (description=DescriptionString (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT))
-	 *                 )?
-	 *             ) | 
-	 *             (
-	 *                 relationshipType=RelationshipType? 
-	 *                 parameterType=ParameterType? 
-	 *                 directionType=Direction? 
-	 *                 typeSpecifier=TypeSpecifier 
-	 *                 (
-	 *                     (derName+=IDENT derName+=IDENT* description=DescriptionString) | 
-	 *                     (subscripts=ArraySubscripts (component_list+=Component_declaration component_list+=Component_declaration*)?)
-	 *                 )
-	 *             ) | 
-	 *             (
-	 *                 relationshipType=RelationshipType? 
-	 *                 parameterType=ParameterType? 
-	 *                 directionType=Direction? 
-	 *                 typeSpecifier=TypeSpecifier 
-	 *                 subscripts=ArraySubscripts 
-	 *                 modifications+=ModificationElement 
-	 *                 modifications+=ModificationElement* 
-	 *                 isModificationOver?=')' 
-	 *                 description=DescriptionString 
-	 *                 (
-	 *                     (isAnnotation?='annotation' annotations+=AnnotationModificationElement annotations+=AnnotationModificationElement* isAnnotationOver?=')') | 
-	 *                     (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT)
-	 *                 )
-	 *             ) | 
-	 *             (
-	 *                 relationshipType=RelationshipType? 
-	 *                 parameterType=ParameterType? 
-	 *                 directionType=Direction? 
-	 *                 typeSpecifier=TypeSpecifier 
-	 *                 (
-	 *                     (derName+=IDENT derName+=IDENT* description=DescriptionString) | 
-	 *                     subscripts=ArraySubscripts | 
-	 *                     (subscripts=ArraySubscripts description=DescriptionString)
-	 *                 ) 
-	 *                 isAnnotation?='annotation' 
-	 *                 annotations+=AnnotationModificationElement 
-	 *                 annotations+=AnnotationModificationElement* 
-	 *                 isAnnotationOver?=')'
-	 *             ) | 
-	 *             (
-	 *                 relationshipType=RelationshipType? 
-	 *                 parameterType=ParameterType? 
-	 *                 directionType=Direction? 
-	 *                 typeSpecifier=TypeSpecifier 
-	 *                 (
-	 *                     (
-	 *                         ((derName+=IDENT derName+=IDENT* description=DescriptionString) | (subscripts=ArraySubscripts description=DescriptionString)) 
-	 *                         (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT)
-	 *                     ) | 
-	 *                     (subscripts=ArraySubscripts description=DescriptionString)
-	 *                 )
-	 *             )
-	 *         ) 
-	 *         constrain=ConstrainingClause? 
-	 *         isOver?=';'
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_GeneralClause_annotation_modification_part_array_subscripts_class_modification_class_name_class_prefixes_composition_constraining_der_class_specifier_description_string_enum_list_long_class_specifier_short_class_specifier_type_prefix_type_specifier(ISerializationContext context, GeneralClause semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	// This method is commented out because it has the same signature as another method in this class.
-	// This is probably a bug in Xtext's serializer, please report it here: 
-	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
-	//
-	// Contexts:
-	//     GeneralClause returns GeneralClause
-	//
-	// Constraint:
-	//     (
-	//         isPublic?='public'? 
-	//         isProtected?='protected'? 
-	//         isRedeclare?='redeclare'? 
-	//         isfinal?='final'? 
-	//         isInner?='inner'? 
-	//         isOuter?='outer'? 
-	//         isReplaceable?='replaceable'? 
-	//         (
-	//             (
-	//                 isEncapsulated?='encapsulated'? 
-	//                 isPartial?='partial'? 
-	//                 isExpandable?='expandable'? 
-	//                 (isPure?='pure' | isPure?='impure')? 
-	//                 isOperator?='operator'? 
-	//                 classType=ClassType 
-	//                 isExtends?='extends'? 
-	//                 className=IDENT 
-	//                 ((isShortClassSpecifier?='=' direction=Direction?) | (isDerClassSpecifier?='=' isDer?='der')) 
-	//                 typeSpecifier=TypeSpecifier 
-	//                 subscripts=ArraySubscripts? 
-	//                 component_list+=Component_declaration 
-	//                 component_list+=Component_declaration*
-	//             ) | 
-	//             (
-	//                 (
-	//                     (
-	//                         isEncapsulated?='encapsulated'? 
-	//                         isPartial?='partial'? 
-	//                         isExpandable?='expandable'? 
-	//                         (isPure?='pure' | isPure?='impure')? 
-	//                         isOperator?='operator'? 
-	//                         classType=ClassType 
-	//                         isExtends?='extends'? 
-	//                         className=IDENT 
-	//                         (
-	//                             (
-	//                                 isShortClassSpecifier?='=' 
-	//                                 isEnumeration?='enumeration' 
-	//                                 (isColon?=':' | (enumerationLiteral+=EnumerationLiteral enumerationLiteral+=EnumerationLiteral*))?
-	//                             ) | 
-	//                             (
-	//                                 ((isShortClassSpecifier?='=' direction=Direction?) | (isDerClassSpecifier?='=' isDer?='der')) 
-	//                                 (
-	//                                     (
-	//                                         typeSpecifier=TypeSpecifier 
-	//                                         subscripts=ArraySubscripts? 
-	//                                         (modifications+=ModificationElement modifications+=ModificationElement* isModificationOver?=')')
-	//                                     ) | 
-	//                                     (typeSpecifier=TypeSpecifier derName+=IDENT derName+=IDENT*)
-	//                                 )
-	//                             ) | 
-	//                             (modifications+=ModificationElement modifications+=ModificationElement* isModificationOver?=')')
-	//                         )?
-	//                     ) | 
-	//                     (
-	//                         relationshipType=RelationshipType? 
-	//                         parameterType=ParameterType? 
-	//                         directionType=Direction? 
-	//                         (
-	//                             (
-	//                                 typeSpecifier=TypeSpecifier 
-	//                                 subscripts=ArraySubscripts? 
-	//                                 (modifications+=ModificationElement modifications+=ModificationElement* isModificationOver?=')')
-	//                             ) | 
-	//                             (typeSpecifier=TypeSpecifier derName+=IDENT derName+=IDENT*)
-	//                         )
-	//                     )
-	//                 ) 
-	//                 description=DescriptionString? 
-	//                 (
-	//                     (isAnnotation?='annotation' annotations+=AnnotationModificationElement annotations+=AnnotationModificationElement* isAnnotationOver?=')') | 
-	//                     (elements+=Element* isLongClassSpecifier?='end' classNameEnd=IDENT)
-	//                 )?
-	//             ) | 
-	//             (
-	//                 relationshipType=RelationshipType? 
-	//                 parameterType=ParameterType? 
-	//                 directionType=Direction? 
-	//                 typeSpecifier=TypeSpecifier 
-	//                 subscripts=ArraySubscripts? 
-	//                 component_list+=Component_declaration 
-	//                 component_list+=Component_declaration*
-	//             )
-	//         ) 
-	//         constrain=ConstrainingClause? 
-	//         isOver?=';'
-	//     )
-	//
-	// protected void sequence_GeneralClause_annotation_modification_part_array_subscripts_class_modification_class_name_class_prefixes_composition_constraining_der_class_specifier_description_string_enum_list_long_class_specifier_short_class_specifier_type_prefix_type_specifier(ISerializationContext context, GeneralClause semanticObject) { }
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     Equation returns IfEquation
 	 *     IfEquation returns IfEquation
 	 *
@@ -1016,7 +950,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         ) 
 	 *         description=DescriptionString? 
 	 *         (isAnnotation?='annotation' annotations+=AnnotationModificationElement annotations+=AnnotationModificationElement* isAnnotationOver?=')')? 
-	 *         constrain=ConstrainingClause?
+	 *         (isConstrainedby?='constrainedby' constrain=ConstrainingClause)?
 	 *     )
 	 * </pre>
 	 */
@@ -1051,7 +985,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Stored_definition returns Stored_definition
 	 *
 	 * Constraint:
-	 *     ((isWithin?='within' within=Name classes+=Class_definition+) | classes+=Class_definition+)?
+	 *     ((within=Within classes+=Class_definition+) | classes+=Class_definition+)?
 	 * </pre>
 	 */
 	protected void sequence_Stored_definition(ISerializationContext context, Stored_definition semanticObject) {
@@ -1124,6 +1058,26 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Within returns Within
+	 *
+	 * Constraint:
+	 *     withName=Name
+	 * </pre>
+	 */
+	protected void sequence_Within(ISerializationContext context, Within semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MOlocPackage.Literals.WITHIN__WITH_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MOlocPackage.Literals.WITHIN__WITH_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWithinAccess().getWithNameNameParserRuleCall_1_0(), semanticObject.getWithName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Statement returns BreakStatement
 	 *     BreakStatement returns BreakStatement
 	 *
@@ -1163,7 +1117,7 @@ public class MOlocSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ConstrainingClause returns ConstrainingClause
 	 *
 	 * Constraint:
-	 *     (typeSpecifier=TypeSpecifier modifications+=ModificationElement modifications+=ModificationElement* isModificationOver?=')')
+	 *     (typeSpecifier=TypeSpecifier (modifications+=ModificationElement modifications+=ModificationElement* isModificationOver?=')')?)
 	 * </pre>
 	 */
 	protected void sequence_class_modification_type_specifier(ISerializationContext context, ConstrainingClause semanticObject) {

@@ -6,6 +6,7 @@ package dut.control.moloc.mOloc.impl;
 import dut.control.moloc.mOloc.Class_definition;
 import dut.control.moloc.mOloc.MOlocPackage;
 import dut.control.moloc.mOloc.Stored_definition;
+import dut.control.moloc.mOloc.Within;
 
 import java.util.Collection;
 
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.moloc.mOloc.impl.Stored_definitionImpl#isIsWithin <em>Is Within</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Stored_definitionImpl#getWithin <em>Within</em>}</li>
  *   <li>{@link dut.control.moloc.mOloc.impl.Stored_definitionImpl#getClasses <em>Classes</em>}</li>
  * </ul>
@@ -41,44 +41,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class Stored_definitionImpl extends MinimalEObjectImpl.Container implements Stored_definition
 {
   /**
-   * The default value of the '{@link #isIsWithin() <em>Is Within</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsWithin()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean IS_WITHIN_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isIsWithin() <em>Is Within</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsWithin()
-   * @generated
-   * @ordered
-   */
-  protected boolean isWithin = IS_WITHIN_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getWithin() <em>Within</em>}' attribute.
+   * The cached value of the '{@link #getWithin() <em>Within</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getWithin()
    * @generated
    * @ordered
    */
-  protected static final String WITHIN_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getWithin() <em>Within</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getWithin()
-   * @generated
-   * @ordered
-   */
-  protected String within = WITHIN_EDEFAULT;
+  protected Within within;
 
   /**
    * The cached value of the '{@link #getClasses() <em>Classes</em>}' containment reference list.
@@ -117,32 +87,7 @@ public class Stored_definitionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public boolean isIsWithin()
-  {
-    return isWithin;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setIsWithin(boolean newIsWithin)
-  {
-    boolean oldIsWithin = isWithin;
-    isWithin = newIsWithin;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.STORED_DEFINITION__IS_WITHIN, oldIsWithin, isWithin));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getWithin()
+  public Within getWithin()
   {
     return within;
   }
@@ -152,13 +97,38 @@ public class Stored_definitionImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setWithin(String newWithin)
+  public NotificationChain basicSetWithin(Within newWithin, NotificationChain msgs)
   {
-    String oldWithin = within;
+    Within oldWithin = within;
     within = newWithin;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.STORED_DEFINITION__WITHIN, oldWithin, within));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MOlocPackage.STORED_DEFINITION__WITHIN, oldWithin, newWithin);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setWithin(Within newWithin)
+  {
+    if (newWithin != within)
+    {
+      NotificationChain msgs = null;
+      if (within != null)
+        msgs = ((InternalEObject)within).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.STORED_DEFINITION__WITHIN, null, msgs);
+      if (newWithin != null)
+        msgs = ((InternalEObject)newWithin).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MOlocPackage.STORED_DEFINITION__WITHIN, null, msgs);
+      msgs = basicSetWithin(newWithin, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MOlocPackage.STORED_DEFINITION__WITHIN, newWithin, newWithin));
   }
 
   /**
@@ -186,6 +156,8 @@ public class Stored_definitionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case MOlocPackage.STORED_DEFINITION__WITHIN:
+        return basicSetWithin(null, msgs);
       case MOlocPackage.STORED_DEFINITION__CLASSES:
         return ((InternalEList<?>)getClasses()).basicRemove(otherEnd, msgs);
     }
@@ -202,8 +174,6 @@ public class Stored_definitionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case MOlocPackage.STORED_DEFINITION__IS_WITHIN:
-        return isIsWithin();
       case MOlocPackage.STORED_DEFINITION__WITHIN:
         return getWithin();
       case MOlocPackage.STORED_DEFINITION__CLASSES:
@@ -223,11 +193,8 @@ public class Stored_definitionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case MOlocPackage.STORED_DEFINITION__IS_WITHIN:
-        setIsWithin((Boolean)newValue);
-        return;
       case MOlocPackage.STORED_DEFINITION__WITHIN:
-        setWithin((String)newValue);
+        setWithin((Within)newValue);
         return;
       case MOlocPackage.STORED_DEFINITION__CLASSES:
         getClasses().clear();
@@ -247,11 +214,8 @@ public class Stored_definitionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case MOlocPackage.STORED_DEFINITION__IS_WITHIN:
-        setIsWithin(IS_WITHIN_EDEFAULT);
-        return;
       case MOlocPackage.STORED_DEFINITION__WITHIN:
-        setWithin(WITHIN_EDEFAULT);
+        setWithin((Within)null);
         return;
       case MOlocPackage.STORED_DEFINITION__CLASSES:
         getClasses().clear();
@@ -270,33 +234,12 @@ public class Stored_definitionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case MOlocPackage.STORED_DEFINITION__IS_WITHIN:
-        return isWithin != IS_WITHIN_EDEFAULT;
       case MOlocPackage.STORED_DEFINITION__WITHIN:
-        return WITHIN_EDEFAULT == null ? within != null : !WITHIN_EDEFAULT.equals(within);
+        return within != null;
       case MOlocPackage.STORED_DEFINITION__CLASSES:
         return classes != null && !classes.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (isWithin: ");
-    result.append(isWithin);
-    result.append(", within: ");
-    result.append(within);
-    result.append(')');
-    return result.toString();
   }
 
 } //Stored_definitionImpl
