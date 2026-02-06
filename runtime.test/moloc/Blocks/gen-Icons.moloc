@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Blocks"/>
+  <classes classType="package" className="Icons" description="&quot;Icons for Blocks&quot;" isLongClassSpecifier="true" classNameEnd="Icons" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.IconsPackage" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="Block" description="&quot;Basic graphical layout of input/output block&quot;" isLongClassSpecifier="true" classNameEnd="Block" isOver="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Rectangle( extent={{-100,-100},{100,100}}, lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block that has only the basic icon for an input/outputblock (no declarations, no equations). Most blocksof package Modelica.Blocks inherit directly or indirectlyfrom this block.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="BooleanBlock" description="&quot;Basic graphical layout of Boolean block&quot;" isLongClassSpecifier="true" classNameEnd="BooleanBlock" isOver="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Rectangle( extent={{-100,-100},{100,100}}, lineColor={255,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block that has only the basic icon for an input/output,Boolean block (no declarations, no equations).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="DiscreteBlock" description="&quot;Graphical layout of discrete block component icon&quot;" isLongClassSpecifier="true" classNameEnd="DiscreteBlock" isOver="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Rectangle( extent={{-100,-100},{100,100}}, lineColor={0,0,127}, fillColor={223,211,169}, borderPattern=BorderPattern.Raised, fillPattern=FillPattern.Solid ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block that has only the basic icon for an input/output,discrete block (no declarations, no equations), e.g.,from Blocks.Discrete.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="IntegerBlock" description="&quot;Basic graphical layout of Integer block&quot;" isLongClassSpecifier="true" classNameEnd="IntegerBlock" isOver="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Rectangle( extent={{-100,-100},{100,100}}, lineColor={255,127,0}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block that has only the basic icon for an input/output,Integer block (no declarations, no equations).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="PartialBooleanBlock" description="&quot;Basic graphical layout of logical block&quot;" isLongClassSpecifier="true" classNameEnd="PartialBooleanBlock" isOver="true">
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Rectangle( extent={{-100,100},{100,-100}}, fillColor={210,210,210}, fillPattern=FillPattern.Solid, borderPattern=BorderPattern.Raised ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block that has only the basic icon for an input/output,Boolean block (no declarations, no equations) used especiallyin the Blocks.Logical library.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog"/>
+  <classes classType="package" className="Sources" description="&quot;Time-dependent and controlled voltage and current sources&quot;" isLongClassSpecifier="true" classNameEnd="Sources" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.SourcesPackage" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This package contains time-dependent and controlled voltage and current sources. Most of the sources use the behavior modeled in the Modelica.Blocks.Sources package. All sources are ideal in the sense that &lt;strong>no&lt;/strong> internal resistances are included.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;dl>&lt;dt>&lt;strong>Main Authors:&lt;/strong>&lt;/dt>&lt;dd>Christoph Clau&amp;szlig;&#xA;&amp;lt;&#xA;&lt;a href=\&quot;mailto:christoph@clauss-it.com\&quot;>christoph@clauss-it.com&lt;/a>&amp;gt;&#xA;&lt;br> Andr&amp;eacute;&#xA;Schneider &amp;lt;&#xA;&lt;a href=\&quot;mailto:Andre.Schneider@eas.iis.fraunhofer.de\&quot;>Andre.Schneider@eas.iis.fraunhofer.de&lt;/a>&amp;gt;&#xA;&lt;br> Fraunhofer Institute for Integrated Circuits&lt;br> Design Automation Department&lt;br> Zeunerstra&amp;szlig;&#xA;e 38&lt;br> D-01069 Dresden&lt;/dd>&lt;/dl>&lt;p>Copyright &amp;copy;&#xA;1998-2020, Modelica Association and contributors&lt;/p>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

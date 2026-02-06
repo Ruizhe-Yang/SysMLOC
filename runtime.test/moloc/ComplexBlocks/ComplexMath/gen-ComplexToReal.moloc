@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.ComplexBlocks.ComplexMath"/>
+  <classes classType="block" className="ComplexToReal" description="&quot;Converts complex to Cartesian representation&quot;" isLongClassSpecifier="true" classNameEnd="ComplexToReal" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Icons.ComplexBlock" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list declarationName="re" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,40},{140,80}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{100,40}, {140,80} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list declarationName="im" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-80},{140,-40}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{100,-80}, {140,-40} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.ComplexInput" isOver="true">
+      <component_list declarationName="u" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="useConjugateInput" description="&quot;If true, input is processed conjugate complex&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="re" right="u.re"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="im" right="(if useConjugateInput then -u.im else u.im)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Text( extent={{20,80},{100,40}}, textColor={0,0,127}, textString=&quot;re&quot; ) ,Text( extent={{20,-40},{100,-80}}, textColor={0,0,127}, textString=&quot;im&quot; ) ,Polygon( points={{40,0},{20,20},{20,10},{-10,10},{-10,-10},{20,-10},{ 20,-20} ,{40,0} } , lineColor={0,128,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) ,Text( extent={{-100,60},{-20,-60}}, textColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid, textString=&quot;C&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Converts the Complex input &lt;em>u&lt;/em> to the Real outputs &lt;em>re&lt;/em> (real part) and &lt;em>im&lt;/em> (imaginary part).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

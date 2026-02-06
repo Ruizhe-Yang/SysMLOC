@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Interfaces"/>
+  <classes isPartial="true" classType="model" className="PartialBasicTransformer" description="&quot;Partial model of three-phase transformer&quot;" isLongClassSpecifier="true" classNameEnd="PartialBasicTransformer" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Icons.TransientTransformer" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="constant" isOver="true">
+      <component_list expression="&quot;Yy00&quot;" declarationName="VectorGroup"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="n" description="&quot;Ratio primary voltage (line-to-line) / secondary voltage (line-to-line)&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="R1" description="&quot;Primary resistance per phase at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="5E-3/(if C1 == &quot;D&quot; then 1 else 3 )" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="T1Ref" description="&quot;Reference temperature of primary resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="alpha20_1" description="&quot;Temperature coefficient of primary resistance at 20 degC&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="L1sigma" description="&quot;Primary stray inductance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="78E-6/(if C1 == &quot;D&quot; then 1 else 3 )" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="R2" description="&quot;Secondary resistance per phase at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="5E-3/(if C2 == &quot;d&quot; then 1 else 3 )" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="T2Ref" description="&quot;Reference temperature of secondary resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="alpha20_2" description="&quot;Temperature coefficient of secondary resistance at 20 degC&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="L2sigma" description="&quot;Secondary stray inductance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="78E-6/(if C2 == &quot;d&quot; then 1 else 3 )" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="useThermalPort" description="&quot;Enable / disable (=fixed temperatures) thermal port&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="T1Operational" description="&quot;Operational temperature of primary resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Operational temperatures&quot;" elementName="group"/>
+          <modifications expression="not useThermalPort" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="T2Operational" description="&quot;Operational temperature of secondary resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Operational temperatures&quot;" elementName="group"/>
+          <modifications expression="not useThermalPort" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Interfaces.PowerBalanceTransformer" directionType="output" isOver="true">
+      <component_list isModificationOver="true" declarationName="powerBalance" description="&quot;Power balance&quot;">
+        <modifications expression="Machines.SpacePhasors.Functions.activePower(v1, i1)" elementName="power1" isfinal="true"/>
+        <modifications expression="Machines.SpacePhasors.Functions.activePower(v2, i2)" elementName="power2" isfinal="true"/>
+        <modifications expression="sum(r1.resistor.LossPower)" elementName="lossPower1" isfinal="true"/>
+        <modifications expression="sum(r2.resistor.LossPower)" elementName="lossPower2" isfinal="true"/>
+        <modifications expression="0" elementName="lossPowerCore" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="output" isOver="true">
+      <component_list subscripts="[m]" expression="plug1.pin.v" declarationName="v1" description="&quot;Primary voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
+      <component_list subscripts="[m]" expression="plug1.pin.i" declarationName="i1" description="&quot;Primary current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="output" isOver="true">
+      <component_list subscripts="[m]" expression="plug2.pin.v" declarationName="v2" description="&quot;Secondary voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
+      <component_list subscripts="[m]" expression="plug2.pin.i" declarationName="i2" description="&quot;Secondary current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="constant" isProtected="true" isOver="true">
+      <component_list expression="Modelica.Utilities.Strings.substring( VectorGroup, 1, 1 )" declarationName="C1"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="constant" isOver="true">
+      <component_list expression="Modelica.Utilities.Strings.substring( VectorGroup, 2, 2 )" declarationName="C2"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="n*(if C2 == &quot;z&quot; then sqrt(3) else 2)*(if C2 == &quot;d&quot; then 1 else sqrt(3) ) /(if C1 == &quot;D&quot; then 1 else sqrt(3))" declarationName="ni"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.PositivePlug" isPublic="true" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug1" description="&quot;Primary plug&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10}, {-90,10} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.NegativePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug2" description="&quot;Secondary plug&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10}, {110,10} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="r1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="fill(R1, m)" elementName="R" isfinal="true"/>
+        <modifications expression="fill(T1Ref, m)" elementName="T_ref" isfinal="true"/>
+        <modifications expression="fill(Machines.Thermal.convertAlpha(alpha20_1, T1Ref), m)" elementName="alpha" isfinal="true"/>
+        <modifications expression="true" elementName="useHeatPort" isfinal="true"/>
+        <modifications expression="fill(T1Ref, m)" elementName="T" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-90, 10 } ,{-70,-10} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Inductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="l1sigma" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="fill(L1sigma, m)" elementName="L" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-70, -10 } ,{-50,10} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="r2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="fill(R2, m)" elementName="R" isfinal="true"/>
+        <modifications expression="fill(T2Ref, m)" elementName="T_ref" isfinal="true"/>
+        <modifications expression="fill(Machines.Thermal.convertAlpha(alpha20_2, T2Ref), m)" elementName="alpha" isfinal="true"/>
+        <modifications expression="true" elementName="useHeatPort" isfinal="true"/>
+        <modifications expression="fill(T2Ref, m)" elementName="T" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{ 90,10} ,{70,-10} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Inductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="l2sigma" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="fill(L2sigma, m)" elementName="L" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{70, -10 } ,{50,10} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.BasicMachines.Components.IdealCore" isOver="true">
+      <component_list isModificationOver="true" declarationName="core" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <modifications expression="ni" elementName="n12" isfinal="true"/>
+        <modifications expression="ni" elementName="n13" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Interfaces.ThermalPortTransformer" isOver="true">
+      <component_list isModificationOver="true" declarationName="thermalPort" isAnnotation="true" isAnnotationOver="true" condition_attribute="useThermalPort">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,90},{10,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Thermal.ThermalAmbientTransformer" isOver="true">
+      <component_list isModificationOver="true" declarationName="thermalAmbient" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useThermalPort">
+        <modifications expression="false" elementName="useTemperatureInputs" isfinal="true"/>
+        <modifications expression="T1Operational" elementName="T1" isfinal="true"/>
+        <modifications expression="T2Operational" elementName="T2" isfinal="true"/>
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-30,80}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Interfaces.ThermalPortTransformer" isProtected="true" isOver="true">
+      <component_list isModificationOver="true" declarationName="internalThermalPort" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-4,76},{4,84}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="r1.plug_n" right="l1sigma.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,0},{-70,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug1" right="r1.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-90,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thermalPort" right="internalThermalPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,100},{0,80}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="thermalAmbient.thermalPort" right="internalThermalPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,80},{0,80}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="r1.heatPort" right="internalThermalPort.heatPort1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,10},{-80,60},{-0.4,60},{-0.4,80.8}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="r2.heatPort" right="internalThermalPort.heatPort2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{80,10},{80,60},{-0.4,60},{-0.4,79.2}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="r2.plug_p" right="plug2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{90,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="l2sigma.plug_p" right="r2.plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{70,0},{70,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{150,-60},{-150,-100}}, textString=&quot;%VectorGroup&quot; ) ,Text( extent={{150,100},{-150,60}}, textColor={0,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>Partial model of a three-phase transformer, containing primary and secondary resistances and stray inductances, as well as the iron core.Circuit layout (vector group) of primary and secondary windings have to be defined.&lt;br>&lt;strong>Default values for transformer's parameters (a realistic example) are:&lt;/strong>&lt;br>&lt;table>&lt;tr>&lt;td>turns ratio n&lt;/td>&lt;td>1&lt;/td>&lt;td> &lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal frequency fNominal&lt;/td>&lt;td>50&lt;/td>&lt;td>Hz&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal voltage per phase&lt;/td>&lt;td>100&lt;/td>&lt;td>V RMS&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal current per phase&lt;/td>&lt;td>100&lt;/td>&lt;td>A RMS&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal apparent power&lt;/td>&lt;td>30&lt;/td>&lt;td>kVA&lt;/td>&lt;/tr>&lt;tr>&lt;td>primary resistance R1&lt;/td>&lt;td>0.005&lt;/td>&lt;td>Ohm per phase at reference temperature&lt;/td>&lt;/tr>&lt;tr>&lt;td>reference temperature T1Ref&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;tr>&lt;td>temperature coefficient alpha20_1 &lt;/td>&lt;td>0&lt;/td>&lt;td>1/K&lt;/td>&lt;/tr>&lt;tr>&lt;td>primary stray inductance L1sigma&lt;/td>&lt;td>78E-6&lt;/td>&lt;td>H per phase&lt;/td>&lt;/tr>&lt;tr>&lt;td>secondary resistance R2&lt;/td>&lt;td>0.005&lt;/td>&lt;td>Ohm per phase at reference temperature&lt;/td>&lt;/tr>&lt;tr>&lt;td>reference temperature T2Ref&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;tr>&lt;td>temperature coefficient alpha20_2 &lt;/td>&lt;td>0&lt;/td>&lt;td>1/K&lt;/td>&lt;/tr>&lt;tr>&lt;td>secondary stray inductance L2sigma&lt;/td>&lt;td>78E-6&lt;/td>&lt;td>H per phase&lt;/td>&lt;/tr>&lt;tr>&lt;td>operational temperature T1Operational&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;tr>&lt;td>operational temperature T2Operational&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;tr>&lt;td>These values give the operational parameters:&lt;/td>&lt;td> &lt;/td>&lt;td> &lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal voltage drop&lt;/td>&lt;td>0.05&lt;/td>&lt;td>p.u.&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal copper losses&lt;/td>&lt;td>300&lt;/td>&lt;td>W&lt;/td>&lt;/tr>&lt;/table>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

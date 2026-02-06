@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Losses.DCMachines"/>
+  <classes classType="model" className="Brush" description="&quot;Model considering voltage drop of carbon brushes&quot;" isLongClassSpecifier="true" classNameEnd="Brush" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Losses.BrushParameters" parameterType="parameter" isOver="true">
+      <component_list declarationName="brushParameters" description="&quot;Brush loss parameters&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.PartialElementaryConditionalHeatPortWithoutT" isOver="true">
+      <extendsModifications expression="false" elementName="useHeatPort"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:IfEquation" condition="(brushParameters.V &lt;= 0)">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="v" right="0"/>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="v" right="smooth(0, if (i > +brushParameters.ILinear) then +brushParameters.V else if (i &lt; -brushParameters.ILinear) then -brushParameters.V else brushParameters.V*i/brushParameters.ILinear )"/>
+      </equations>
+      <equations xsi:type="mOloc:SimpleEquation" left="lossPower" right="v*i"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line(points={{-100,-100},{-92,-80},{-80,-60},{-60,-40},{-40,-28}, {-20,-22},{0,-20},{20,-22},{40,-28},{60,-40},{80,-60},{92,-80}, {100,-100} } , color={0,0,255} ) , Polygon( points={{-20,-22},{-40,-28},{-40,20},{40,20},{40,-28},{20,-22}, {0,-20},{-20,-22} } , lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{-40,0}}, color={0,0,255}), Line(points={{40,0},{90,0}}, color={0,0,255}), Text( extent={{-150,80},{150,40}}, textColor={0,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Model of voltage drop and losses of carbon brushes. For currents between &lt;code>-ILinear&lt;/code> and &lt;code>ILinear&lt;/code> the voltage drop shows a linear behavior as depicted in Fig. 1. For positive currents greater or equal than &lt;code>ILinear&lt;/code> the voltage drop equals &lt;code>V&lt;/code>. For negative currents less or equal than &lt;code>-ILinear&lt;/code> the voltage drop equals &lt;code>-V&lt;/code>.&lt;/p>&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;1\&quot;> &lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Machines/brush.png\&quot;&#xA;alt=\&quot;brush.png\&quot;> &lt;/td> &lt;/tr> &lt;tr>&lt;td> &lt;strong> Fig. 1: &lt;/strong>Model of voltage drop of carbon brushes&lt;/td> &lt;/tr>&lt;/table>&lt;h4>Note&lt;/h4>&lt;p>The voltage drop &lt;code>v&lt;/code> is the total voltage drop of all series connected brushes.&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Losses.BrushParameters\&quot;>BrushParameters&lt;/a>&#xA;&lt;/p>&lt;p>If it is desired to neglect brush losses, set &lt;code>brushParameters.V = 0&lt;/code> (this is the default).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

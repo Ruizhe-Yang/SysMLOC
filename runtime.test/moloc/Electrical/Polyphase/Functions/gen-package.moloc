@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase"/>
+  <classes classType="package" className="Functions" description="&quot;Functions for polyphase systems&quot;" isLongClassSpecifier="true" classNameEnd="Functions" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.FunctionsPackage" isOver="true"/>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.UsersGuide"/>
+  <classes classType="class" className="ACDCConcept" description="&quot;AC/DC converter concept&quot;" isLongClassSpecifier="true" classNameEnd="ACDCConcept" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Information" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="true" elementName="DocumentationClass"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>AC/DC converters are also called rectifiers&lt;/p>&lt;h4>Component classification&lt;/h4>&lt;p>Conventional AC/DC converters contain diodes and thyristors. If thyristors are used, the output voltage of the rectifier can be controlled. If only diodes are used, the output voltages is solely dependent on the input voltage and the characteristic of applied diodes.&lt;/p>&lt;ul> &lt;li>Diode rectifiers&lt;/li> &lt;li>Thyristor rectifiers&lt;/li> &lt;li>Half controlled rectifiers;&#xA;half of the semiconductors are diodes and the others are thyristors, respectively&lt;/li>&lt;/ul>&lt;h4>Topology classification&lt;/h4>&lt;p>The PowerConverters library provides bridge and center tap rectifiers for single and polyphase supply, see&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.ACDC\&quot;>AC/DC converters&lt;/a>.&lt;/p>&#xA;&lt;h4>Control&lt;/h4>&lt;p>For each of the provided rectifiers a&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.ACDC.Control\&quot;>control model&lt;/a> is available.&#xA;These control models have electrical connectors to be connected with the AC supply.The firing angle of thyristor rectifiers can either be set by a parameter or a signal input.&lt;/p>&lt;h4>Examples&lt;/h4>&lt;p>A variety of examples is provided at&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.Examples.ACDC\&quot;>Examples.ACDC&lt;/a>.&#xA;These examples include different kinds of DC loads. Even the control characteristicsof the rectifiers can be obtained experimentally;&#xA;the names of these modelscontain &lt;code>_Characteristic&lt;/code>.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

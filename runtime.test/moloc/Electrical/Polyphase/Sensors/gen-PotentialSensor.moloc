@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Sensors"/>
+  <classes classType="model" className="PotentialSensor" description="&quot;Polyphase potential sensor&quot;" isLongClassSpecifier="true" classNameEnd="PotentialSensor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.RoundSensor" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_p" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="phi" description="&quot;Absolute voltage potential as output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;V&quot;" elementName="unit" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sensors.PotentialSensor" isOver="true">
+      <component_list subscripts="[m]" declarationName="potentialSensor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="potentialSensor.p" right="plug_p.pin">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,0},{-100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="potentialSensor.phi" right="phi">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{11,0},{110,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Line(points={{70,0},{100,0}}, color={0,0,127}), Line(points={{-70,0},{-90,0}}, color={0,0,255}), Text( extent={{150,-100},{-150,-70}}, textString=&quot;m=%m&quot; ) , Text( extent={{-150,80},{150,120}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text( extent={{-30,-10},{30,-70}}, textString=&quot;V&quot;, textColor={64,64,64} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Contains m potential sensors (Modelica.Electrical.Analog.Sensors.PotentialSensor),thus measuring the m potentials &lt;em>phi[m]&lt;/em> of the m pins of plug_p.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

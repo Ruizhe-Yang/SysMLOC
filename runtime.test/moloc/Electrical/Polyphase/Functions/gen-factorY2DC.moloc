@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Functions"/>
+  <classes classType="function" className="factorY2DC" description="&quot;Calculates factor of DC-voltage from RMS Y-voltage&quot;" isLongClassSpecifier="true" classNameEnd="factorY2DC" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Electrical.Polyphase.Functions.numberOfSymmetricBaseSystems" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="input" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
+      <component_list declarationName="y" description="&quot;Factor Yrms to DC&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isProtected="true" isOver="true">
+      <component_list expression="integer(m/numberOfSymmetricBaseSystems(m))" declarationName="mBasic"/>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:IfStatement" condition="mBasic==2">
+        <ifStatements xsi:type="mOloc:FunctionStatement" component="y" expression="4/pi"/>
+        <elseStatements xsi:type="mOloc:FunctionStatement" component="y" expression="2*sin((mBasic - 1)/2*pi/mBasic)*sqrt(2)*sin(pi/(2*m))/(pi/(2*m))"/>
+      </statements>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.SpacePhasors.Blocks"/>
+  <classes classType="block" className="ToPolar" description="&quot;Converts a space phasor to polar coordinates&quot;" isLongClassSpecifier="true" classNameEnd="ToPolar" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.MIMOs" isOver="true">
+      <extendsModifications expression="2" elementName="n" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="constant" isOver="true">
+      <component_list expression="Modelica.Constants.small" declarationName="small"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="y[1]" right="sqrt(u[1]^2 + u[2]^2)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="y[2]" right="if noEvent(y[1] &lt;= small) then 0 else Modelica.Math.atan2(u[2], u[1] )"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Line(points={{-60,60},{-60,-60}, {60,-60} } , color={0,0,255} ) ,Line(points={{-100,-100},{100,100}}, color={0,0,255} ) ,Polygon(points={{26,26},{14,20},{20,14},{26,26}}, lineColor={0,0,255} ) ,Line( points={{-18,-18},{-14,-22},{-10,-28},{-6,-34},{-2,-44},{ 0,-52} ,{0,-60} } , color={0,0,255}, smooth=Smooth.Bezier ) ,Polygon(points={{-18,-18},{-14,-26}, {-10,-22},{-18,-18} } , lineColor={0,0,255} ) ,Text( extent={{-100,100},{-6,-6}}, textColor={0,0,255}, textString=&quot;R&quot; ) ,Text( extent={{6,6},{100,-100}}, textColor={0,0,255}, textString=&quot;P&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>Converts a space phasor from rectangular coordinates to polar coordinates.&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

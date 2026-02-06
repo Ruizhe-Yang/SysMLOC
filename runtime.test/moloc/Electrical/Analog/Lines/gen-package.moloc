@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog"/>
+  <classes classType="package" className="Lines" description="&quot;Lossy and lossless segmented transmission lines, and LC distributed line models&quot;" isLongClassSpecifier="true" classNameEnd="Lines" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This package contains lossy and lossless segmented transmission lines, and LC distributed line models. The line models do not yet possess a conditional heating port.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;dl>&lt;dt>&lt;strong>Main Authors:&lt;/strong>&lt;/dt>&lt;dd>Christoph Clau&amp;szlig;&#xA;&amp;lt;&#xA;&lt;a href=\&quot;mailto:christoph@clauss-it.com\&quot;>christoph@clauss-it.com&lt;/a>&amp;gt;&#xA;&lt;br> Joachim Haase;&#xA;&amp;lt;&#xA;&lt;a href=\&quot;mailto:haase@eas.iis.fhg.de\&quot;>haase@eas.iis.fhg.de&lt;/a>&amp;gt;&#xA;&lt;br> Andr&amp;eacute;&#xA;Schneider &amp;lt;&#xA;&lt;a href=\&quot;mailto:Andre.Schneider@eas.iis.fraunhofer.de\&quot;>Andre.Schneider@eas.iis.fraunhofer.de&lt;/a>&amp;gt;&#xA;&lt;br> Fraunhofer Institute for Integrated Circuits&lt;br> Design Automation Department&lt;br> Zeunerstra&amp;szlig;&#xA;e 38&lt;br> D-01069 Dresden&lt;/dd>&lt;/dl>&lt;p>Copyright &amp;copy;&#xA;1998-2020, Modelica Association and contributors&lt;/p>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line(points={{-60,50},{-90,50}}), Rectangle( extent={{-60,60},{60,-60}}) , Line(points={{-60,-50},{-90,-50}}), Line(points={{36,20},{-36,20}}), Line(points={{-36,40},{-36,0}}), Line(points={{36,40},{36,0}}), Line(points={{60,50},{90,50}}), Line(points={{60,-50},{90,-50}}) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

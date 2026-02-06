@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Examples.SynchronousMachines"/>
+  <classes classType="model" className="SMPM_NoLoad" description="&quot;SMPM at no-load&quot;" isLongClassSpecifier="true" classNameEnd="SMPM_NoLoad" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="constant" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Machines.Utilities.ParameterRecords.SM_PermanentMagnetData" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="smpmData" description="&quot;Synchronous machine data&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="false" elementName="useDamperCage"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-40},{10,-20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Machines.BasicMachines.SynchronousMachines.SM_PermanentMagnet" isOver="true">
+      <component_list isModificationOver="true" declarationName="smpm" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="smpmData.p" elementName="p"/>
+        <modifications expression="smpmData.fsNominal" elementName="fsNominal"/>
+        <modifications expression="smpmData.Rs" elementName="Rs"/>
+        <modifications expression="smpmData.TsRef" elementName="TsRef"/>
+        <modifications expression="smpmData.Lszero" elementName="Lszero"/>
+        <modifications expression="smpmData.Lssigma" elementName="Lssigma"/>
+        <modifications expression="smpmData.Jr" elementName="Jr"/>
+        <modifications expression="smpmData.VsOpenCircuit" elementName="VsOpenCircuit"/>
+        <modifications expression="smpmData.Lmd" elementName="Lmd"/>
+        <modifications expression="smpmData.Lmq" elementName="Lmq"/>
+        <modifications expression="smpmData.useDamperCage" elementName="useDamperCage"/>
+        <modifications expression="smpmData.Lrsigmad" elementName="Lrsigmad"/>
+        <modifications expression="smpmData.Lrsigmaq" elementName="Lrsigmaq"/>
+        <modifications expression="smpmData.Rrd" elementName="Rrd"/>
+        <modifications expression="smpmData.Rrq" elementName="Rrq"/>
+        <modifications expression="smpmData.TrRef" elementName="TrRef"/>
+        <modifications expression="smpmData.frictionParameters" elementName="frictionParameters"/>
+        <modifications expression="smpmData.statorCoreParameters" elementName="statorCoreParameters"/>
+        <modifications expression="smpmData.strayLoadParameters" elementName="strayLoadParameters"/>
+        <modifications expression="smpmData.permanentMagnetLossParameters" elementName="permanentMagnetLossParameters"/>
+        <modifications expression="293.15" elementName="TsOperational"/>
+        <modifications expression="smpmData.alpha20s" elementName="alpha20s"/>
+        <modifications isModificationOver="true" elementName="phiMechanical">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="(pi + 0*2*pi/m)/smpmData.p" elementName="start"/>
+        </modifications>
+        <modifications expression="293.15" elementName="TrOperational"/>
+        <modifications expression="smpmData.alpha20r" elementName="alpha20r"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Machines.Utilities.TerminalBox" isOver="true">
+      <component_list isModificationOver="true" declarationName="terminalBox" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;Y&quot;" elementName="terminalConnection"/>
+        <modifications expression="m" elementName="m"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,6},{10,26}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-30,-10},{-10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Sensors.PotentialSensor" isOver="true">
+      <component_list isModificationOver="true" declarationName="potentialSensor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{0,30}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Machines.SpacePhasors.Blocks.ToSpacePhasor" isOver="true">
+      <component_list isModificationOver="true" declarationName="toSpacePhasor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,40},{30,60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SpacePhasors.Blocks.ToPolar" isOver="true">
+      <component_list declarationName="toPolar" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,40},{60,60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Math.Gain" isOver="true">
+      <component_list isModificationOver="true" declarationName="toDeg" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="180/pi" elementName="k"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{70,40},{90,60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Sensors.HallSensor" isOver="true">
+      <component_list isModificationOver="true" declarationName="hallSensor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="smpmData.p" elementName="p"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="{40,-30}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Sources.ConstantSpeed" isOver="true">
+      <component_list isModificationOver="true" declarationName="constantSpeed" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="2* pi*smpmData.fsNominal/smpmData.p" elementName="w_fixed"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{52,-10},{32,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="terminalBox.plug_sn" right="smpm.plug_sn">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-6,10},{-6,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="terminalBox.plug_sp" right="smpm.plug_sp">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{6,10},{6,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ground.p" right="terminalBox.starpoint">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,10},{-20,12},{-10,12}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="potentialSensor.plug_p" right="terminalBox.plugSupply">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,20},{0,12}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="potentialSensor.phi" right="toSpacePhasor.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{8.88178e-16, 41 } ,{8.88178e-16,50},{8,50} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="constantSpeed.flange" right="smpm.flange">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{32,0},{10,0}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="smpm.flange" right="hallSensor.flange">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{20,0},{20,-30},{30,-30}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="toSpacePhasor.y" right="toPolar.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{31,50},{38,50}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="toPolar.y[2]" right="toDeg.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{61,50},{68,50}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="0.04" elementName="StopTime"/>
+        <modifications expression="0.0001" elementName="Interval"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Synchronous machine with permanent magnets at no-load, driven with constant nominal speed.&lt;/p>&lt;p>You may check the terminal voltage = VsOpenCircuit (shown by the length of the space phasor) and the frequency = fsNominal.&lt;/p>&lt;p>Additionally, you may check the phase shift of the stator voltages with respect to the mechanical shaft angle:&lt;/p>&lt;ul>&lt;li>If the shaft angle starts at (pi + 0*pi/3)/p, the flux linkage through phase 1 is at the maximum and therefore this phase voltage starts at 0.&lt;/li>&lt;li>If the shaft angle starts at (pi + 2*pi/3)/p, the flux linkage through phase 2 is at the maximum and therefore this phase voltage starts at 0.&lt;/li>&lt;li>If the shaft angle starts at (pi + 4*pi/3)/p, the flux linkage through phase 3 is at the maximum and therefore this phase voltage starts at 0.&lt;/li>&lt;/ul>&lt;p>Note that the angle of the voltage space phasor is pi/2 behind the angle of the hall sensor,i.e. after a rotation of the shaft by pi/2/p the flux linkage of phase 1 is zero and the induced voltage a maximum.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

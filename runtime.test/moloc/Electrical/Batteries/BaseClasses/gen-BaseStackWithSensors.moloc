@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.BaseClasses"/>
+  <classes isPartial="true" classType="model" className="BaseStackWithSensors" description="&quot;Partial stack with sensors&quot;" isLongClassSpecifier="true" classNameEnd="BaseStackWithSensors" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.Icons.BatteryIcon" isOver="true">
+      <extendsModifications expression="SOC" elementName="displaySOC" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BaseStackData" parameterType="parameter" isReplaceable="true" isOver="true">
+      <component_list declarationName="stackData" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,40},{10,60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="useAllParallelConnections" description="&quot;= true, if all parallel connections are used&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list subscripts="[stackData.Ns, stackData.Np]" expression="fill(0.1, stackData.Ns, stackData.Np)" declarationName="SOC0" description="&quot;Initial SOC&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="1e-9" declarationName="SOCtolerance" description="&quot;SOC tolerance for detection of depleted or overcharged cell&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.TwoPin" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
+      <component_list expression="p.i" declarationName="i" description="&quot;Current into the stack&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" directionType="output" isOver="true">
+      <component_list expression="v*i" declarationName="power" description="&quot;Power to the stack&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
+      <component_list expression="socTotal.y" declarationName="SOC" description="&quot;Overall State of charge&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="useHeatPort" description="&quot;=true, if HeatPort is enabled&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+        <annotations expression="true" elementName="HideResult"/>
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications expression="true" elementName="checkBox"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="293.15" declarationName="T" description="&quot;Fixed device temperature if useHeatPort = false&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="not useHeatPort" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Batteries.BaseClasses.BaseCellWithSensors" isReplaceable="true" isOver="true">
+      <component_list subscripts="[stackData.Ns,stackData.Np]" isModificationOver="true" declarationName="cell" description="&quot;Matrix of cells&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="SOCtolerance" elementName="SOCtolerance" isEach="true"/>
+        <modifications expression="false" elementName="useHeatPort" isEach="true"/>
+        <modifications expression="T" elementName="T" isEach="true"/>
+        <modifications expression="stackData.cellData" elementName="cellData"/>
+        <modifications expression="SOC0" elementName="SOC0"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sensors.MultiSensor" isOver="true">
+      <component_list declarationName="multiSensor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-70,-10},{-50,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Batteries.Interfaces.StackBus" isOver="true">
+      <component_list isModificationOver="true" declarationName="stackBus" description="&quot;Stack bus&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="stackData.Ns" elementName="Ns"/>
+        <modifications expression="stackData.Np" elementName="Np"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,-100},{80,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Batteries.Interfaces.CellBus" isOver="true">
+      <component_list declarationName="batteryBus" description="&quot;Battery bus (average / sum over all cells)&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-70,-90},{-50,-70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.RealExpression" isOver="true">
+      <component_list isModificationOver="true" declarationName="socTotal" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="sum(stackBus.cellBus.soc.*stackData.cellData.Qnom)/sum(stackData.cellData.Qnom)" elementName="y"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-70,-50}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.RealExpression" isOver="true">
+      <component_list isModificationOver="true" declarationName="lossesTotal" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="sum(stackBus.cellBus.lossPower)" elementName="y"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-70},{-40,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.RealExpression" isOver="true">
+      <component_list isModificationOver="true" declarationName="temperatureTotal" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="sum(stackBus.cellBus.T)/(stackData.Ns*stackData.Np)" elementName="y"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-50},{-40,-30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a" isOver="true">
+      <component_list subscripts="[stackData.Ns, stackData.Np]" declarationName="heatPort" description="&quot;Optional port to which dissipated losses are transported in form of heat&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useHeatPort">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-110},{10,-90}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-10,-110},{10,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="multiSensor.nc" right="cell[1, 1].p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,0},{-10,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="cell[stackData.Ns, 1].n" right="n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="cell.cellBus" right="stackBus.cellBus">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-6,-8},{-6,-14},{60,-14},{60,-44},{60.1,-44},{60.1,-79.9}}" elementName="points"/>
+          <modifications expression="{255,204,51}" elementName="color"/>
+          <modifications expression="0.5" elementName="thickness"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:IfEquation" condition="useAllParallelConnections">
+        <ifEquations xsi:type="mOloc:ForEquation" forIndices="ks in 1:stackData.Ns">
+          <forEquations xsi:type="mOloc:ForEquation" forIndices="kp in 1:stackData.Np-1">
+            <forEquations xsi:type="mOloc:ConnectEquation" left="cell[ks, kp].p" right="cell[ks, kp + 1].p"/>
+            <forEquations xsi:type="mOloc:ConnectEquation" left="cell[ks, kp].n" right="cell[ks, kp + 1].n"/>
+          </forEquations>
+        </ifEquations>
+        <ifEquations xsi:type="mOloc:ForEquation" forIndices="ks in 1:stackData.Ns-1">
+          <forEquations xsi:type="mOloc:ConnectEquation" left="cell[ks, 1].n" right="cell[ks + 1, 1].p"/>
+        </ifEquations>
+        <elseEquations xsi:type="mOloc:ForEquation" forIndices="kp in 1:stackData.Np">
+          <forEquations xsi:type="mOloc:ForEquation" forIndices="ks in 1:stackData.Ns-1">
+            <forEquations xsi:type="mOloc:ConnectEquation" left="cell[ks, kp].n" right="cell[ks + 1, kp].p"/>
+          </forEquations>
+        </elseEquations>
+        <elseEquations xsi:type="mOloc:ForEquation" forIndices="kp in 1:stackData.Np-1">
+          <forEquations xsi:type="mOloc:ConnectEquation" left="cell[1, kp].p" right="cell[1, kp + 1].p"/>
+          <forEquations xsi:type="mOloc:ConnectEquation" left="cell[stackData.Ns, kp].n" right="cell[stackData.Ns, kp + 1].n"/>
+        </elseEquations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="p" right="multiSensor.pc">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-70,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="multiSensor.pc" right="multiSensor.pv">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,0},{-70,10},{-60,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="n" right="multiSensor.nv">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{100,0},{20,0},{20,-20},{-60,-20},{-60,-10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="multiSensor.i" right="batteryBus.i">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-66,-11},{-66,-20}, {-80,-20},{-80,-79.95},{-59.95,-79.95} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="multiSensor.power" right="batteryBus.power">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-71,-6}, {-80,-6},{-80,-79.95},{-59.95,-79.95} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="multiSensor.v" right="batteryBus.v">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-54,-11},{-54,-46}, {-54,-79.95},{-59.95,-79.95} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="socTotal.y" right="batteryBus.soc">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,-61},{-70,-79.95}, {-59.95,-79.95} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="temperatureTotal.y" right="batteryBus.T">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-41,-40},{ -54,-40} ,{-54,-79.95},{-59.95,-79.95} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="lossesTotal.y" right="batteryBus.lossPower">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-41,-60}, {-54,-60},{-54,-79.95},{-59.95,-79.95} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="cell.heatPort" right="heatPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-10},{0,-100}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Ellipse( visible=useHeatPort, extent={{-14,-86},{14,-114}}, lineColor={191,0,0}, fillColor={191,0,0}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This is a stack of &lt;code>Ns&lt;/code> x &lt;code>Np&lt;/code> &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.BatteryStacksWithSensors.Cell\&quot;>cell[Np=1, Ns=1]&lt;/a> with measurement, arranged in a matrix.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

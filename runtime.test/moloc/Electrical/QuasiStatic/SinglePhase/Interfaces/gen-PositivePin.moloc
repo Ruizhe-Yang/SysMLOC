@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces"/>
+  <classes classType="connector" className="PositivePin" description="&quot;Positive quasi-static single-phase pin&quot;" isLongClassSpecifier="true" classNameEnd="PositivePin" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Pin" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Types.Reference" isOver="true">
+      <component_list declarationName="reference" description="&quot;Reference&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications expression="{Text( extent={{-100,100},{100,60}}, textColor={0,0,255}, textString=&quot;%name&quot; ) , Rectangle( extent={{-40,40},{40,-40}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Rectangle( extent={{-100,100},{100,-100}}, lineColor={85,170,255}, fillColor={85,170,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The positive pin is based on &lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.Pin\&quot;>Pin&lt;/a>.&#xA;Additionally the reference angle is specified in the connector. The time derivative of the reference angle is the actual angular velocity of the quasi-static voltage and current. The symbol is also designed such way to look different than the &lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.NegativePin\&quot;>negative pin&lt;/a>.&#xA;&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.Pin\&quot;>Pin&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.NegativePin\&quot;>NegativePin&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Interfaces.Plug\&quot;>Plug&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Interfaces.PositivePlug\&quot;>PositivePlug&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Interfaces.NegativePlug\&quot;>NegativePlug&lt;/a>&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Examples.ControlledDCDrives.Utilities"/>
+  <classes classType="block" className="LimitedPI" description="&quot;Limited PI-controller with anti-windup and feed-forward&quot;" isLongClassSpecifier="true" classNameEnd="LimitedPI" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SISO" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Blocks.Types.Init" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.inf" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list declarationName="u_m" description="&quot;Connector of measured signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-60,-120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list declarationName="feedForward" description="&quot;Connector of feed-forward signal&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useFF">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{0,-120}" elementName="origin"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{0,-120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list declarationName="kFF" description="&quot;Connector of feed-forward factor&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useFF and not useConstantKFF">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{60,-120}" elementName="origin"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{60,-120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list declarationName="yMaxVar" description="&quot;Connector of yMax input signal&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not constantLimits">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{120,60}" elementName="origin"/>
+            <modifications expression="{{20,-20},{-20,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list declarationName="yMinVar" description="&quot;Connector of yMin input signal&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not constantLimits and not symmetricLimits">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{120,-60}" elementName="origin"/>
+            <modifications expression="{{20,-20},{-20,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
+      <component_list expression="u - u_m" declarationName="controlError" description="&quot;Control error (set point - measurement)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1" declarationName="k" description="&quot;Gain&quot;">
+        <modifications expression="&quot;1&quot;" elementName="unit"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="useI" description="&quot;PI else P&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1" declarationName="Ti" description="&quot;Integral time constant (T>0 required)&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Modelica.Constants.small" elementName="min"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="useI" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="useFF" description="&quot;Use feed-forward?&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Feed-forward&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="useConstantKFF" description="&quot;Use constant feed-forward factor?&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Feed-forward&quot;" elementName="group"/>
+          <modifications expression="useFF" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1" declarationName="KFF" description="&quot;Feed-forward gain&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;1&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Feed-forward&quot;" elementName="group"/>
+          <modifications expression="useFF and useConstantKFF" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="constantLimits" description="&quot;Use constant limits?&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Limitation&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="symmetricLimits" description="&quot;Use symmetric limits?&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Limitation&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="inf" declarationName="yMax" description="&quot;Upper limit of output&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Limitation&quot;" elementName="group"/>
+          <modifications expression="constantLimits" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="-yMax" declarationName="yMin" description="&quot;Lower limit of output&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Limitation&quot;" elementName="group"/>
+          <modifications expression="constantLimits and not symmetricLimits" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Types.Init" parameterType="parameter" isOver="true">
+      <component_list expression="Modelica.Blocks.Types.Init.NoInit" declarationName="initType" description="&quot;Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output)&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Initialization&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="x_start" description="&quot;Initial or guess value of state&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Initialization&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="y_start" description="&quot;Initial value of output&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="initType == Init.SteadyState or initType == Init.InitialOutput" elementName="enable"/>
+          <modifications expression="&quot;Initialization&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Feedback" isOver="true">
+      <component_list declarationName="feedback" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="{-80,0}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Add" isOver="true">
+      <component_list isModificationOver="true" declarationName="addAntiWindup" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="k1"/>
+        <modifications expression="-1/k" elementName="k2"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-50,-30},{-30,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Continuous.Integrator" isOver="true">
+      <component_list isModificationOver="true" declarationName="integrator" isAnnotation="true" isAnnotationOver="true" condition_attribute="useI">
+        <modifications expression="1/Ti" elementName="k"/>
+        <modifications expression="Modelica.Blocks.Types.Init.NoInit" elementName="initType"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-30},{0,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Add3" isOver="true">
+      <component_list isModificationOver="true" declarationName="add3" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="k" elementName="k1"/>
+        <modifications expression="k" elementName="k2"/>
+        <modifications expression="1" elementName="k3"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,-10},{40,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Nonlinear.VariableLimiter" isOver="true">
+      <component_list declarationName="variableLimiter" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{70,-10},{90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Feedback" isOver="true">
+      <component_list declarationName="addSat" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{50,-20}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Product" isOver="true">
+      <component_list declarationName="product" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{10,-70}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isProtected="true" isOver="true">
+      <component_list isModificationOver="true" declarationName="zeroI" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useI">
+        <modifications expression="0" elementName="k"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,20},{0,40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+      <component_list isModificationOver="true" declarationName="zeroFF" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useFF">
+        <modifications expression="0" elementName="k"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-30,-100},{-10,-80}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+      <component_list isModificationOver="true" declarationName="constantKFF" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useFF or useConstantKFF">
+        <modifications expression="KFF" elementName="k"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-100},{70,-80}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+      <component_list isModificationOver="true" declarationName="yMaxConst" isAnnotation="true" isAnnotationOver="true" condition_attribute="constantLimits">
+        <modifications expression="yMax" elementName="k"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,50},{60,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+      <component_list isModificationOver="true" declarationName="yMinConst" isAnnotation="true" isAnnotationOver="true" condition_attribute="constantLimits and not symmetricLimits">
+        <modifications expression="yMin" elementName="k"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,-70},{60,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+      <component_list isModificationOver="true" declarationName="gain" isAnnotation="true" isAnnotationOver="true" condition_attribute="symmetricLimits">
+        <modifications expression="-1" elementName="k"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-4,-4},{4,4}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{58,10}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection" isInitial="true">
+      <equations xsi:type="mOloc:IfEquation" condition="initType == Init.SteadyState and useI">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="der(add3.u2)" right="0"/>
+        <elseCondition>initType == Init.InitialState and useI</elseCondition>
+        <elseCondition>initType == Init.InitialOutput</elseCondition>
+        <elseifEquations xsi:type="mOloc:SimpleEquation" left="add3.u2" right="x_start"/>
+        <elseifEquations xsi:type="mOloc:SimpleEquation" left="add3.y" right="y_start"/>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="addAntiWindup.y" right="integrator.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-29,-20}, {-22,-20} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="integrator.y" right="add3.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{1,-20},{6,-20},{ 6,0} ,{18,0} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="add3.y" right="variableLimiter.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{41,0},{68,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="variableLimiter.y" right="y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{91,0},{110,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="add3.y" right="addSat.u1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{41,0},{50,0},{50,-12}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="variableLimiter.y" right="addSat.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{91,0},{94, 0 } ,{94,-20},{58,-20} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="add3.u2" right="zeroI.y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{18,0},{6,0},{6,30},{1,30}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u" right="feedback.u1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-120,0},{-88,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="feedback.y" right="add3.u1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-71,0},{-60,0},{ -60,8} ,{18,8} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="feedback.y" right="addAntiWindup.u1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-71,0},{ -60,0} ,{-60,-14},{-52,-14} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u_m" right="feedback.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,-120},{-60,-90},{ -80,-90} ,{-80,-8} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="addSat.y" right="addAntiWindup.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,-29},{50, -40 } ,{-60,-40},{-60,-26},{-52,-26} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="yMinVar" right="variableLimiter.limit2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{120, -60 } ,{64,-60},{64,-8},{68,-8} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="variableLimiter.limit2" right="yMinConst.y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{68, -8 } ,{64,-8},{64,-60},{61,-60} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="yMaxVar" right="variableLimiter.limit1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{120,60}, {64,60},{64,8},{68,8} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="variableLimiter.limit1" right="yMaxConst.y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{68, 8 } ,{64,8},{64,60},{61,60} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="variableLimiter.limit2" right="gain.y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{68,-8},{58,-8},{58,5.6}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="variableLimiter.limit1" right="gain.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{68,8},{ 64,8} ,{64,20},{58,20},{58,14.8} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="product.y" right="add3.u3">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,-59},{10,-8},{18,-8}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="feedForward" right="product.u1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-120},{0,-90},{4, -90 } ,{4,-82} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="product.u1" right="zeroFF.y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{4,-82},{4,-90},{-9,-90}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="constantKFF.y" right="product.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{69,-90},{16,-90},{16,-82}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="product.u2" right="kFF">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{16,-82},{16,-90},{60,-90},{ 60,-120} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+        </modifications>
+        <modifications expression="{ Polygon( points={{-80,90},{-88,68},{-72,68},{-80,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-80,78},{-80,-90}}, color={192,192,192}), Line(visible=useI, points={{-80,-80},{-80,-20},{40.8594,66.3281}, {60,66} } , color = {0,0,127} ) , Line(points={{-90,-80},{82,-80}}, color={192,192,192}), Polygon( points={{90,-80},{68,-72},{68,-88},{90,-80}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Text( extent={{0,6},{60,-56}}, textColor={192,192,192}, textString=&quot;PI&quot;, visible=useI ) , Text( extent={{0,6},{60,-56}}, textColor={192,192,192}, textString=&quot;P&quot;, visible=not useI ) , Line(visible=not useI, points={{-80,-80},{-80,24},{56,24}}, color = {0,0,127} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Proportional - Integral - controller with optional feed-forward and limitation at the output.&lt;/p>&lt;p>The integral part can be switched off to obtain a limited P-controller.&lt;/p>&lt;p>The feed-forward gain can either be constant or given by the optional input kFF.&lt;/p>&lt;p>When the output is limited, the controller cannot bring the control error to zero and the integrator will not stop integrating.To avoid this &lt;strong>WindUp&lt;/strong> - effect, an &lt;strong>Anti-WindUp&lt;/strong> loop is implemented:The difference between unlimited and limited output is fed back to the integrator's input.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

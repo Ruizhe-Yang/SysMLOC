@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase"/>
+  <classes classType="package" className="UsersGuide" description="&quot;User's Guide&quot;" isLongClassSpecifier="true" classNameEnd="UsersGuide" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Information" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;info&quot;" elementName="preferredView"/>
+      <annotations expression="true" elementName="DocumentationClass"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This library contains components for modelling of polyphase electrical circuits.The number of phases m is not restricted to three.The connector (named plug) contains an array of m single-phase &lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Interfaces.Pin\&quot;>pins&lt;/a>.&#xA;Most of the components use an array of single-phase components from &lt;a href=\&quot;modelica://Modelica.Electrical.Analog\&quot;>Modelica.Electrical.Analog&lt;/a>.&#xA;&lt;/p>&lt;h4>Note&lt;/h4>&lt;p>For the orientation of an arbitrary number of phases m &amp;gt;&#xA;3, see the &lt;a href=\&quot;modelica://Modelica.Electrical.Polyphase.UsersGuide.PhaseOrientation\&quot;>phase orientation concept&lt;/a>.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

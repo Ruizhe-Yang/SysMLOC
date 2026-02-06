@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.Types"/>
+  <classes classType="type" className="Voltage2AngleType" description="&quot;Enumeration defining the type of voltage to angle conversion&quot;" isShortClassSpecifier="true" isEnumeration="true" isOver="true">
+    <enumerationLiteral description="&quot;Linear&quot;" title="Lin"/>
+    <enumerationLiteral description="&quot;First harmonic&quot;" title="H01"/>
+    <enumerationLiteral description="&quot;Root mean square&quot;" title="RMS"/>
+  </classes>
+</mOloc:Stored_definition>

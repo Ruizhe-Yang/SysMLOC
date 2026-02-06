@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Sensors"/>
+  <classes classType="model" className="AronSensor" description="&quot;Three-phase Aron sensor for active power&quot;" isLongClassSpecifier="true" classNameEnd="AronSensor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.RoundSensor" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_p" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.NegativePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_n" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="power" description="&quot;Active power&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;W&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,-110}" elementName="origin"/>
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.PlugToPins_p" isOver="true">
+      <component_list isModificationOver="true" declarationName="plugToPins_p" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-80,-10},{-60,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Basic.PlugToPins_n" isOver="true">
+      <component_list isModificationOver="true" declarationName="plugToPins_n" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{80,-10},{60,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sensors.PowerSensor" isOver="true">
+      <component_list declarationName="powerSensor1" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-40,30},{-20,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sensors.PowerSensor" isOver="true">
+      <component_list declarationName="powerSensor3" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,-30},{40,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Add" isOver="true">
+      <component_list declarationName="add" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{0,-70}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_p" right="plugToPins_p.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-72,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPins_n.plug_n" right="plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{72,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPins_p.pin_p[1]" right="powerSensor1.pc">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-68,0}, {-68,40},{-40,40} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor1.pc" right="powerSensor1.pv">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-40,40},{-40,50},{-30,50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor1.nc" right="plugToPins_n.pin_n[1]">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,40}, {68,40},{68,0} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPins_p.pin_p[2]" right="plugToPins_n.pin_n[2]">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-68,0},{68,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPins_p.pin_p[3]" right="powerSensor3.pc">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-68,0}, {-68,-40},{20,-40} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor3.pc" right="powerSensor3.pv">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,-40},{20,-50},{30,-50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor3.nc" right="plugToPins_n.pin_n[3]">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,-40}, {68,-40},{68,0} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor1.nv" right="plugToPins_p.pin_p[2]">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,30},{-30,0},{-68,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor3.nv" right="plugToPins_p.pin_p[2]">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{30,-30},{30,0},{-68,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="add.y" right="power">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-81},{0,-110}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor1.power" right="add.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-40,29},{-40,-50}, {-6,-50},{-6,-58} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor3.power" right="add.u1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,-29},{20,-20}, {6,-20},{6,-58} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line(points={{100,0},{-100,0}}, color={0,0,255}), Line(points={{0,-100}, {0,-70} } , color={0,0,127} ) , Text( extent={{150,-100},{-150,-70}}, textString=&quot;m=%m&quot; ) , Text( extent={{-150,80},{150,120}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text( extent={{-30,-10},{30,-70}}, textColor={64,64,64}, textString=&quot;W&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Contains two &lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Sensors.PowerSensor\&quot;>power meters&lt;/a> to measure total active power in a three-phase system.&lt;/p>&#xA;&lt;p>This device works only in three-phase systems without neutral.&lt;/p>&lt;p>The rationale behind this sensor is that power exchanged between two parts of a circuit is the sum of the products of currents in the &lt;em>m&lt;/em> wires connecting the two parts times wires&amp;apos;&#xA;potentials evaluated with reference to an arbitrary potential &lt;em>v&lt;/em>&lt;sub>ref&lt;/sub>:&lt;/p>&lt;p>&lt;em>P&lt;/em>=(&lt;em>v&lt;/em>&lt;sub>1&lt;/sub>-&lt;em>v&lt;/em>&lt;sub>ref&lt;/sub>)*&lt;em>i&lt;/em>&lt;sub>1&lt;/sub>+(&lt;em>v&lt;/em>&lt;sub>2&lt;/sub>-&lt;em>v&lt;/em>&lt;sub>ref&lt;/sub>)*&lt;em>i&lt;/em>&lt;sub>2&lt;/sub>+&amp;hellip;&#xA;+(&lt;em>v&lt;/em>&lt;sub>m&lt;/sub>-&lt;em>v&lt;/em>&lt;sub>ref&lt;/sub>)*&lt;em>i&lt;/em>&lt;sub>m&lt;/sub>&lt;/p>&lt;p>In case of a three-phase system without neutral we may want to measure power flowing in a line, connecting, say, the left part of the circuit to its right part. The wires connecting the two parts are only three (i.e., &lt;em>m&lt;/em>=3)and therefore all currents between these two parts are &lt;em>i&lt;/em>&lt;sub>1&lt;/sub>, &lt;em>i&lt;/em>&lt;sub>2&lt;/sub>, &lt;em>i&lt;/em>&lt;sub>3&lt;/sub>.&amp;nbsp;&#xA;&lt;/p>&lt;p>Since the voltage to be taken as reference is arbitrary, we can take the voltage of conductor 2. Therefore our power becomes:&lt;/p>&lt;p>&lt;em>P&lt;/em>=(&lt;em>v&lt;/em>&lt;sub>1&lt;/sub>-&lt;em>v&lt;/em>&lt;sub>2&lt;/sub>)*&lt;em>i&lt;/em>&lt;sub>1&lt;/sub>+(&lt;em>v&lt;/em>&lt;sub>2&lt;/sub>-&lt;em>v&lt;/em>&lt;sub>2&lt;/sub>)*&lt;em>i&lt;/em>&lt;sub>2&lt;/sub>+(&lt;em>v&lt;/em>&lt;sub>3&lt;/sub>-&lt;em>v&lt;/em>&lt;sub>2)&lt;/sub>*&lt;em>i&lt;/em>&lt;sub>3 &lt;/sub>=(&lt;em>v&lt;/em>&lt;sub>1&lt;/sub>-&lt;em>v&lt;/em>&lt;sub>2&lt;/sub>)*i&lt;sub>1&lt;/sub>+(&lt;em>v&lt;/em>&lt;sub>3&lt;/sub>-&lt;em>v&lt;/em>&lt;sub>2&lt;/sub>)* i&lt;sub>3&lt;/sub>&lt;/p>&lt;p>In this way, we can just sum up the power from two wattmeters to get the three-phase power.&lt;/p>&lt;p>Note, that this formula does not work if there are additional current paths between the left and right parts of our circuits, e.g., if both have grounds (and current flows through it).&lt;/p>&lt;p>For more information on why power flowing in a circuit between two subcircuits is the sum of products of voltages times currents, the voltages being measured to an arbitrary reference potential, see[&lt;a href=\&quot;modelica://Modelica.Electrical.Polyphase.UsersGuide.References\&quot;>Ceraolo2014&lt;/a>, par. 3.8.1].&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

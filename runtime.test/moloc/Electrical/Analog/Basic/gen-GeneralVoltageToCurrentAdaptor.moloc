@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Basic"/>
+  <classes classType="model" className="GeneralVoltageToCurrentAdaptor" description="&quot;Signal adaptor for an Electrical OnePort with current and derivative of current as output and voltage and derivative of voltage as input (especially useful for FMUs)&quot;" isLongClassSpecifier="true" classNameEnd="GeneralVoltageToCurrentAdaptor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.Adaptors.PotentialToFlowAdaptor" isOver="true">
+      <extendsModifications expression="&quot;v&quot;" elementName="Name_p" isfinal="true"/>
+      <extendsModifications expression="&quot;dv&quot;" elementName="Name_pder" isfinal="true"/>
+      <extendsModifications expression="&quot;d2v&quot;" elementName="Name_pder2" isfinal="true"/>
+      <extendsModifications expression="&quot;i&quot;" elementName="Name_f" isfinal="true"/>
+      <extendsModifications expression="&quot;di&quot;" elementName="Name_fder" isfinal="true"/>
+      <extendsModifications expression="&quot;d2i&quot;" elementName="Name_fder2" isfinal="true"/>
+      <extendsModifications expression="false" elementName="use_pder2" isfinal="true"/>
+      <extendsModifications expression="false" elementName="use_fder2" isfinal="true"/>
+      <extendsModifications isModificationOver="true" elementName="p" isfinal="true">
+        <modifications expression="&quot;V&quot;" elementName="unit"/>
+      </extendsModifications>
+      <extendsModifications isModificationOver="true" elementName="pder" isfinal="true">
+        <modifications expression="&quot;V/s&quot;" elementName="unit"/>
+      </extendsModifications>
+      <extendsModifications isModificationOver="true" elementName="pder2" isfinal="true">
+        <modifications expression="&quot;V/s2&quot;" elementName="unit"/>
+      </extendsModifications>
+      <extendsModifications isModificationOver="true" elementName="f" isfinal="true">
+        <modifications expression="&quot;A&quot;" elementName="unit"/>
+      </extendsModifications>
+      <extendsModifications isModificationOver="true" elementName="fder" isfinal="true">
+        <modifications expression="&quot;A/s&quot;" elementName="unit"/>
+      </extendsModifications>
+      <extendsModifications isModificationOver="true" elementName="fder2" isfinal="true">
+        <modifications expression="&quot;A/s2&quot;" elementName="unit"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list declarationName="v" description="&quot;Voltage drop between the two pins (= p.v - n.v)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list declarationName="i" description="&quot;Current flowing from pin p to pin n&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="pin_p" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,70},{30,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="pin_n" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-90},{30,-70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="pin_p.v - pin_n.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i" right="pin_p.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="pin_p.i + pin_n.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" description="&quot;output = flow = current&quot;" left="y" right="i"/>
+      <equations xsi:type="mOloc:SimpleEquation" description="&quot;input = potential = voltage&quot;" left="u" right="v"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;voltageToCurrentAdaptor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Adaptor between an electrical openport and a signal representation of the oneport.This component is used to provide a pure signal interface around an Electrical modeland export this model in form of an input/output block,especially as FMU (&lt;a href=\&quot;https://fmi-standard.org\&quot;>Functional Mock-up Unit&lt;/a>).&#xA;Examples of the usage of this adaptor are provided in&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Examples.GenerationOfFMUs\&quot;>Electrical.Analog.Examples.GenerationOfFMUs&lt;/a>.&#xA;This adaptor has voltage and derivative of voltage as input signals and current and derivative of current as output signal.&lt;/p>&lt;p>Note, the input signals must be consistent to each other(dv=der(v)).&lt;/p>&lt;p>Note, the adaptor contains &lt;strong>no ground&lt;/strong>.Bear in mind that separating physical components and connecting them via adaptor signals requires to place appropriate&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Basic.Ground\&quot;>ground components&lt;/a> to define electric potential within the subcircuits.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Rectangle( extent={{-20,100},{20,-100}}, lineColor={0,0,255}, radius=10, lineThickness=0.5 ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

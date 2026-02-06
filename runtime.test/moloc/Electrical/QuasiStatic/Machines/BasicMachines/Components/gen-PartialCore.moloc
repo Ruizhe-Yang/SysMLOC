@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Machines.BasicMachines.Components"/>
+  <classes isPartial="true" classType="model" className="PartialCore" description="&quot;Partial model of transformer core with 3 windings&quot;" isLongClassSpecifier="true" classNameEnd="PartialCore" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="n12" description="&quot;Turns ratio 1:2&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="n13" description="&quot;Turns ratio 1:3&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
+      <component_list subscripts="[m]" declarationName="v1"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
+      <component_list subscripts="[m]" declarationName="i1"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
+      <component_list subscripts="[m]" declarationName="v2"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
+      <component_list subscripts="[m]" declarationName="i2"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
+      <component_list subscripts="[m]" declarationName="v3"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
+      <component_list subscripts="[m]" declarationName="i3"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
+      <component_list subscripts="[m]" declarationName="im" description="&quot;Magnetizing current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_p1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,90},{-90,110}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-110,90},{-90,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.NegativePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_n1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_p2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,90},{110,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.NegativePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_n2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,30},{110,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_p3" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-30},{110,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.NegativePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_n3" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-90},{110,-110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="v1" right="plug_p1.pin.v - plug_n1.pin.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i1" right="plug_p1.pin.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="v2" right="plug_p2.pin.v - plug_n2.pin.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i2" right="plug_p2.pin.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="v3" right="plug_p3.pin.v - plug_n3.pin.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i3" right="plug_p3.pin.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="im" right="i1 + i2/n12 + i3/n13"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.branch" function="(plug_p1.reference, plug_n1.reference)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p1.reference.gamma" right="plug_n1.reference.gamma"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.branch" function="(plug_p2.reference, plug_n2.reference)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p2.reference.gamma" right="plug_n2.reference.gamma"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.branch" function="(plug_p3.reference, plug_n3.reference)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p3.reference.gamma" right="plug_n3.reference.gamma"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.branch" function="(plug_p1.reference, plug_p2.reference)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p1.reference.gamma" right="plug_p2.reference.gamma"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.branch" function="(plug_p1.reference, plug_p3.reference)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p1.reference.gamma" right="plug_p3.reference.gamma"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p1.pin.i + plug_n1.pin.i" right="fill(Complex(0), m)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p2.pin.i + plug_n2.pin.i" right="fill(Complex(0), m)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p3.pin.i + plug_n3.pin.i" right="fill(Complex(0), m)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Line(points={{-90,100},{-30,100}}, color={85,170,255} ) , Line(points={{-90,-100},{-30,-100}}, color={85,170,255} ) , Line(points={{30,100},{90,100}}, color={85,170,255} ) , Line(points={{30,40},{92,40}}, color={85,170,255}), Line(points={{30,-40},{90,-40}}, color={85,170,255} ) , Line(points={{30,-100},{90,-100}}, color={85,170,255} ) , Line( points={{-10,-5},{-9,0},{-4,5},{4,5},{9,0},{10,-5}}, color={85,170,255}, smooth=Smooth.Bezier, origin={25,90}, rotation=90 ) , Line( points={{-10,-5},{-9,0},{-4,5},{4,5},{9,0},{10,-5}}, color={85,170,255}, smooth=Smooth.Bezier, origin={25,70}, rotation=90 ) , Line( points={{-10,-5},{-9,0},{-4,5},{4,5},{9,0},{10,-5}}, color={85,170,255}, smooth=Smooth.Bezier, origin={25,50}, rotation=90 ) , Line( points={{-10,-5},{-9,0},{-4,5},{4,5},{9,0},{10,-5}}, color={85,170,255}, smooth=Smooth.Bezier, origin={25,-50}, rotation=90 ) , Line( points={{-10,-5},{-9,0},{-4,5},{4,5},{9,0},{10,-5}}, color={85,170,255}, smooth=Smooth.Bezier, origin={25,-70}, rotation=90 ) , Line( points={{-10,-5},{-9,0},{-4,5},{4,5},{9,0},{10,-5}}, color={85,170,255}, smooth=Smooth.Bezier, origin={25,-90}, rotation=90 ) , Line( points={{-5,-10},{0,-9},{5,-4},{5,4},{0,9},{-5,10}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-25,90}, rotation=360 ) , Line( points={{-5,-10},{0,-9},{5,-4},{5,4},{0,9},{-5,10}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-25,70}, rotation=360 ) , Line( points={{-5,-10},{0,-9},{5,-4},{5,4},{0,9},{-5,10}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-25,50}, rotation=360 ) , Line( points={{-5,-10},{0,-9},{5,-4},{5,4},{0,9},{-5,10}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-25,30}, rotation=360 ) , Line( points={{-5,-10},{0,-9},{5,-4},{5,4},{0,9},{-5,10}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-25,10}, rotation=360 ) , Line( points={{-5,-10},{0,-9},{5,-4},{5,4},{0,9},{-5,10}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-25,-10}, rotation=360 ) , Line( points={{-5,-10},{0,-9},{5,-4},{5,4},{0,9},{-5,10}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-25,-30}, rotation=360 ) , Line( points={{-5,-10},{0,-9},{5,-4},{5,4},{0,9},{-5,10}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-25,-50}, rotation=360 ) , Line( points={{-5,-10},{0,-9},{5,-4},{5,4},{0,9},{-5,10}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-25,-70}, rotation=360 ) , Line( points={{-5,-10},{0,-9},{5,-4},{5,4},{0,9},{-5,10}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-25,-90}, rotation=360 ) , Text( extent={{-150,-110},{150,-150}}, textString=&quot;m=%m&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>Partial model of transformer core with 3 windings;&#xA;saturation function flux versus magnetizing current has to be defined.&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

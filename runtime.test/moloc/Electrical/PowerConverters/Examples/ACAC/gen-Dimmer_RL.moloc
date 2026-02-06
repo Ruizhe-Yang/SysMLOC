@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.Examples.ACAC"/>
+  <classes classType="model" className="Dimmer_RL" description="&quot;Dimmer with resistive-inductive load&quot;" isLongClassSpecifier="true" classNameEnd="Dimmer_RL" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="PowerConverters.Examples.ACAC.ExampleTemplates.Dimmer" isOver="true">
+      <extendsModifications expression="0.87" elementName="powerFactor"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="loadResistor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="RLoad" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{50,30}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Inductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="loadInductor" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="i">
+          <modifications expression="0" elementName="start"/>
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <modifications expression="LLoad" elementName="L"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{50,-10}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="loadResistor.p" right="multiSensor.nc">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,40},{30,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ground.p" right="loadInductor.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,-20},{50,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="loadInductor.p" right="loadResistor.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,0},{50,20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="8" elementName="StopTime"/>
+        <modifications expression="0.0001" elementName="Interval"/>
+        <modifications expression="1e-06" elementName="Tolerance"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This model demonstrates the behaviour of a dimmer with phase-angle control with resistive-inductive load.Note that due to the inductance the current is not zero at the points in time wehre zero-crossing of the voltage occurs,and the triac stays conducting until the current becomes zero.&lt;/p>&lt;p>The reference voltage is prescribed by a trapezoid between zero and full voltage.The &lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.ACAC.Control.VoltageToAngle\&quot;>voltageToAngle block&lt;/a>&#xA;calculates the necessary phase angle, which is processed bythe &lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.ACDC.Control.Signal2mPulse\&quot;>Signal2mPulse adaptor&lt;/a>,&#xA;applying the firing signals to the&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.ACAC.SinglePhaseTriac\&quot;>triac&lt;/a>.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

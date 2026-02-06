@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.BasicMachines.Components"/>
+  <classes isPartial="true" classType="model" className="PartialAirGapDC" description="&quot;Partial airgap model of a DC machine&quot;" isLongClassSpecifier="true" classNameEnd="PartialAirGapDC" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="quasiStatic" description="&quot;No electrical transients if true&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="false" elementName="start"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list declarationName="turnsRatio" description="&quot;Ratio of armature turns over number of turns of the excitation winding&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" directionType="output" isOver="true">
+      <component_list declarationName="w" description="&quot;Angular velocity&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list declarationName="vei" description="&quot;Voltage drop across field excitation inductance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list declarationName="ie" description="&quot;Excitation current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.MagneticFlux" isOver="true">
+      <component_list declarationName="psi_e" description="&quot;Excitation flux&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list declarationName="vai" description="&quot;Induced armature voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list declarationName="ia" description="&quot;Armature current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Torque" directionType="output" isOver="true">
+      <component_list declarationName="tauElectrical"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.Flange_a" isOver="true">
+      <component_list declarationName="flange" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,110},{10,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.Flange_a" isOver="true">
+      <component_list declarationName="support" description="&quot;Support at which the reaction torque is acting&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-110},{10,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="pin_ap" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,110},{-90,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="pin_ep" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,110},{110,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="pin_an" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="pin_en" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-110},{110,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="vai" right="pin_ap.v - pin_an.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="ia" right="+pin_ap.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="ia" right="-pin_an.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="vei" right="pin_ep.v - pin_en.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="ie" right="+pin_ep.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="ie" right="-pin_en.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="vei" right="if quasiStatic then 0 else der(psi_e)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="w" right="der(flange.phi) - der(support.phi)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="vai" right="turnsRatio*psi_e*w"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="tauElectrical" right="turnsRatio*psi_e*ia"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="flange.tau" right="-tauElectrical"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="support.tau" right="tauElectrical"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Ellipse( extent={{-90,90},{90,-92}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Ellipse( extent={{-80,80},{80,-80}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Rectangle( extent={{-10,90},{10,-80}}, fillPattern=FillPattern.VerticalCylinder, fillColor={128,128,128} ) ,Text( extent={{0,40},{80,-40}}, textString=&quot;E&quot; ) ,Text( extent={{-150,-160},{150,-120}}, textColor={0,0,255}, textString=&quot;%name&quot; ) ,Text( extent={{-80,40},{0,-40}}, textString=&quot;A&quot; ) ,Rectangle( visible=quasiStatic, extent={{-10,90},{10,-80}}, lineColor={170,213,255}, fillPattern=FillPattern.VerticalCylinder, fillColor={170,213,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>Linear model of the airgap (without saturation effects) of a DC machine, using only equations.&lt;br>Induced excitation voltage is calculated from der(flux), where flux is defined by excitation inductance times excitation current.If &lt;code>quasiStatic == false&lt;/code>, the electrical transients are neglected, i.e., the induced excitation voltage is zero.&lt;br>Induced armature voltage is calculated from flux times angular velocity.&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

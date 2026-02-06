@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Losses"/>
+  <classes classType="record" className="CoreParameters" description="&quot;Parameter record for core losses&quot;" isLongClassSpecifier="true" classNameEnd="CoreParameters" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Record" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list declarationName="m" description="&quot;Number of phases (1 for DC, 3 for induction machines)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="0" declarationName="PRef" description="&quot;Reference core losses at reference inner voltage VRef&quot;">
+        <modifications expression="0" elementName="min"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="VRef" description="&quot;Reference inner RMS voltage that reference core losses PRef refer to&quot;">
+        <modifications expression="Modelica.Constants.small" elementName="min"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="wRef" description="&quot;Reference angular velocity that reference core losses PRef refer to&quot;">
+        <modifications expression="Modelica.Constants.small" elementName="min"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list isModificationOver="true" expression="0" declarationName="ratioHysteresis" description="&quot;Ratio of hysteresis losses with respect to the total core losses at VRef and fRef&quot;">
+        <modifications expression="0" elementName="min"/>
+        <modifications expression="1" elementName="max"/>
+        <modifications expression="0.775" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="if (PRef &lt;= 0) then 0 else PRef/VRef^2/m" declarationName="GcRef" description="&quot;Reference conductance at reference frequency and voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="1e-6*wRef" declarationName="wMin" description="&quot;Angular velocity limit&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;parameter &quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Parameter record for &lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Losses.InductionMachines.Core\&quot;>core losses of induction machines&lt;/a>&#xA;and &lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Losses.DCMachines.Core\&quot;>core losses of DC machines&lt;/a>.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

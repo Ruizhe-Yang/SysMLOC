@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Examples"/>
+  <classes classType="model" className="NandGate" description="&quot;CMOS NAND Gate (see Tietze/Schenk, page 157)&quot;" isLongClassSpecifier="true" classNameEnd="NandGate" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.TrapezoidVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="VIN1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="3.5" elementName="V"/>
+        <modifications expression="20e-9" elementName="startTime"/>
+        <modifications expression="1e-9" elementName="rising"/>
+        <modifications expression="19e-9" elementName="width"/>
+        <modifications expression="1e-9" elementName="falling"/>
+        <modifications expression="40e-9" elementName="period"/>
+        <modifications expression="-1" elementName="nperiod"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-70,20}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.TrapezoidVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="VIN2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="3.5" elementName="V"/>
+        <modifications expression="10e-9" elementName="startTime"/>
+        <modifications expression="1e-9" elementName="rising"/>
+        <modifications expression="19e-9" elementName="width"/>
+        <modifications expression="1e-9" elementName="falling"/>
+        <modifications expression="40e-9" elementName="period"/>
+        <modifications expression="-1" elementName="nperiod"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-70,-30}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.RampVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="VDD" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="5" elementName="V"/>
+        <modifications expression="1e-9" elementName="duration"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{50,70}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="Gnd1" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{45,43},{55,53}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="Gnd4" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-75,-5},{-65, 5 } }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="Gnd5" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-75,-55},{-65, -45 } }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Examples.Utilities.Nand" isOver="true">
+      <component_list isModificationOver="true" declarationName="Nand" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="C4">
+          <modifications isModificationOver="true" elementName="v">
+            <modifications expression="0" elementName="start"/>
+            <modifications expression="true" elementName="fixed"/>
+          </modifications>
+        </modifications>
+        <modifications isModificationOver="true" elementName="C7">
+          <modifications isModificationOver="true" elementName="v">
+            <modifications expression="0" elementName="start"/>
+            <modifications expression="true" elementName="fixed"/>
+          </modifications>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-40,-45},{ 40,55} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="VDD.n" right="Gnd1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,60},{50,53}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="VIN1.n" right="Gnd4.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,10},{-70,5}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="VIN2.n" right="Gnd5.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,-40},{-70,-45}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Nand.Vdd" right="VDD.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,55},{0,90},{50,90},{50, 80 } }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="VIN1.p" right="Nand.x1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,30},{-40,30}}" elementName="points"/>
+          <modifications expression="{0, 0,255 }" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="VIN2.p" right="Nand.x2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,-20},{-40,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The nand gate is a basic CMOS building block. It consists of four CMOS transistors. The output voltage Nand.y.v is low if and only if the two input voltages at Nand.x1.v and Nand.x2.v are both high. In this way the nand functionality is realized.&lt;/p>&lt;p>The simulation end time should be set to 1e-7. Please plot the input voltages Nand.x1.v, d Nand.x2.v, and the output voltage Nand.y.v.&lt;/p>&lt;p>&lt;strong>Reference:&lt;/strong>&lt;/p>&lt;p>Tietze, U.;&#xA;Schenk, Ch.: Halbleiter-Schaltungstechnik. Springer-Verlag Berlin Heidelberg NewYork 1980, p. 157&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;dl>&lt;dt>&lt;strong>Main Authors:&lt;/strong>&lt;/dt>&lt;dd>Christoph Clau&amp;szlig;&#xA;&amp;lt;&#xA;&lt;a href=\&quot;mailto:christoph@clauss-it.com\&quot;>christoph@clauss-it.com&lt;/a>&amp;gt;&#xA;&lt;br> Andr&amp;eacute;&#xA;Schneider &amp;lt;&#xA;&lt;a href=\&quot;mailto:Andre.Schneider@eas.iis.fraunhofer.de\&quot;>Andre.Schneider@eas.iis.fraunhofer.de&lt;/a>&amp;gt;&#xA;&lt;br> Fraunhofer Institute for Integrated Circuits&lt;br> Design Automation Department&lt;br> Zeunerstra&amp;szlig;&#xA;e 38&lt;br> D-01069 Dresden&lt;/dd>&lt;/dl>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="1e-007" elementName="StopTime"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-90,98},{-12,66}}, textColor={0,0,255}, textString=&quot;NAND Gate&quot; ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

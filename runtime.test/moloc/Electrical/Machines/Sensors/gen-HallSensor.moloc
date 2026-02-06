@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Sensors"/>
+  <classes classType="model" className="HallSensor" description="&quot;Hall sensor&quot;" isLongClassSpecifier="true" classNameEnd="HallSensor" isOver="true">
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.PartialElementaryOneFlangeAndSupport2" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="p" description="&quot;Number of pole pairs&quot;">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+        <modifications expression="2" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+      <component_list expression="-pi/p" declarationName="phi0" description="&quot;Initial mechanical angle&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="y" description="&quot;\&quot;Electrical angle\&quot;&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;Angle&quot;" elementName="quantity"/>
+        <modifications expression="&quot;rad&quot;" elementName="unit" isfinal="true"/>
+        <modifications expression="&quot;deg&quot;" elementName="displayUnit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-100,-10},{-120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="flange.tau" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="y" right="rem((flange.phi - phi_support - phi0)*p, 2*pi)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+        </modifications>
+        <modifications expression="{ Ellipse(extent={{-70,70},{70,-70}}, lineColor={95,95,95}, fillColor={215,215,215}, fillPattern=FillPattern.Solid ) , Line(points={{0,0},{0,70}}, color={95,95,95} ), Line(points={{0,-70},{0,0}}, color={95,95,95}), Line(points={{-70,0},{-100,0}}, color={95,95,95}), Line(points={{100,0},{70,0}}, color={95,95,95}), Text( extent={{-150,120},{150,80}}, textColor={0,0,255}, fillColor={255,255,255}, textString=&quot;%name&quot; ) , Line(points={{0,-30},{-0.545517,38.9449}}, color={95,95,95}, origin={-26,15}, rotation=60 ) , Line(points={{0,-30},{-0.545517,38.9449}}, color={95,95,95}, origin={34,-19}, rotation=60 ) , Line(points={{0,-30},{0.545517,38.9449}}, color={95,95,95}, origin={26,15}, rotation=-60 ) , Line(points={{0,-30},{0.545517,38.9449}}, color={95,95,95}, origin={-34,-19}, rotation=-60 ) , Ellipse(extent={{-20,20},{20,-20}}, lineColor={95,95,95}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-30,-10},{30,-70}}, textColor={64,64,64}, textString=&quot;rad&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Simple model of a hall sensor, i.e. measuring the angle of the flange (w.r.t. the optional support), multiplying by the number of phases p to obtain the electrical angle,and adding a correction term i.e. the initial angle of the flange phi0.&lt;/p>&lt;p>Note that phi0 has to be set that way, that in shaft position phi0 the flux linkage of phase 1 is a maximum.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

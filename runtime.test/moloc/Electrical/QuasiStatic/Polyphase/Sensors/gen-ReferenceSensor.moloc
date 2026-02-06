@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Polyphase.Sensors"/>
+  <classes classType="model" className="ReferenceSensor" description="&quot;Sensor of reference angle gamma&quot;" isLongClassSpecifier="true" classNameEnd="ReferenceSensor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.AbsoluteSensor" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list declarationName="gamma" description="&quot;Reference angle&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="gamma" right="plug_p.reference.gamma"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p.pin.i" right="fill(Complex(0), m)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This sensor can be used to measure the reference angle.&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sensors.ReferenceSensor\&quot;>SinglePhase.Sensors.ReferenceSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.FrequencySensor\&quot;>FrequencySensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.PotentialSensor\&quot;>PotentialSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.VoltageSensor\&quot;>VoltageSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.VoltageQuasiRMSSensor\&quot;>VoltageQuasiRMSSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.CurrentSensor\&quot;>CurrentSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.CurrentQuasiRMSSensor\&quot;>CurrentQuasiRMSSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.PowerSensor\&quot;>PowerSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.MultiSensor\&quot;>MultiSensor&lt;/a>&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Text( extent={{-30,-10},{30,-70}}, textColor={64,64,64}, textString=&quot;rad&quot; ) , Line(points={{70,0},{100,0}}, color={0,0,127}) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

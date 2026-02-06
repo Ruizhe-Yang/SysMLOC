@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica"/>
+  <classes classType="package" className="ComplexBlocks" description="&quot;Library of basic input/output control blocks with Complex signals&quot;" isLongClassSpecifier="true" classNameEnd="ComplexBlocks" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This library hosts blocks using Complex inputs and outputs.&lt;/p>&lt;p>It depends on the implementation of Complex.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+        </modifications>
+        <modifications expression="{ Rectangle( origin={0.0,35.1488}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{-30.0,-20.1488},{30.0,20.1488}} ) , Rectangle( origin={0.0,-34.8512}, fillColor={128,128,128}, fillPattern=FillPattern.Solid, extent={{-30.0,-20.1488},{30.0,20.1488}} ) , Line(origin={-51.25,0.0}, points={{21.25,-35.0},{-13.75,-35.0},{-13.75, 35.0 } ,{6.25,35.0} } ) , Polygon( origin={-40.0,35.0}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{10.0,0.0},{-5.0,5.0},{-5.0,-5.0}} ) , Line(origin={51.25,0.0}, points={{-21.25,35.0},{13.75,35.0},{13.75,-35.0}, {-6.25,-35.0} } ) , Polygon( origin={40.0,-35.0}, pattern=LinePattern.None, fillPattern=FillPattern.Solid, points={{-10.0,0.0},{5.0,5.0},{5.0,-5.0}} ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

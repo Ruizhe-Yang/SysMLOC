@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Sources"/>
+  <classes classType="model" className="TrapezoidVoltage" description="&quot;Trapezoidal voltage source&quot;" isLongClassSpecifier="true" classNameEnd="TrapezoidVoltage" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="V" description="&quot;Amplitude of trapezoid&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="rising" description="&quot;Rising duration of trapezoid&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+        <modifications expression="0" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="width" description="&quot;Width duration of trapezoid&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+        <modifications expression="0.5" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="falling" description="&quot;Falling duration of trapezoid&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+        <modifications expression="0" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="period" description="&quot;Time for one period&quot;">
+        <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="nperiod" description="&quot;Number of periods (&lt; 0 means infinite number of periods)&quot;">
+        <modifications expression="-1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.VoltageSource" isOver="true">
+      <extendsModifications typeSpecifier="Modelica.Blocks.Sources.Trapezoid" isModificationOver="true" declarationName="signalSource" isRedeclare="true">
+        <modifications expression="V" elementName="amplitude" isfinal="true"/>
+        <modifications expression="rising" elementName="rising" isfinal="true"/>
+        <modifications expression="width" elementName="width" isfinal="true"/>
+        <modifications expression="falling" elementName="falling" isfinal="true"/>
+        <modifications expression="period" elementName="period" isfinal="true"/>
+        <modifications expression="nperiod" elementName="nperiod" isfinal="true"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Line(points={{-81,-70},{-60,-70},{-30,70},{1,70}, {30,-70},{51,-70},{80,70} } , color={192,192,192} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line( points={{60,81},{60,-30}}, color={192,192,192}, pattern=LinePattern.Dash ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em> 1998 &lt;/em> by Christoph Clauss&lt;br> initially implemented&lt;br> &lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+        <modifications expression="&quot;&lt;html>&lt;p>This voltage source uses the corresponding signal source of the Modelica.Blocks.Sources package. Care for the meaning of the parameters in the Blocks package. Furthermore, an offset parameter is introduced, which is added to the value calculated by the blocks source. The startTime parameter allows to shift the blocks source behavior on the time axis.&lt;/p>&lt;p>&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Sources/TrapezoidVoltage.png\&quot;&#xA;alt=\&quot;TrapezoidVoltage.png\&quot;>&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.UsersGuide"/>
+  <classes classType="class" className="Contact" description="&quot;Contact&quot;" isLongClassSpecifier="true" classNameEnd="Contact" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Contact" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;info&quot;" elementName="preferredView"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;dl>&lt;dt>&lt;strong>Main Authors:&lt;/strong>&lt;/dt>&lt;dd>Christoph Clau&amp;szlig;&#xA;&amp;lt;&#xA;&lt;a href=\&quot;mailto:christoph@clauss-it.com\&quot;>christoph@clauss-it.com&lt;/a>&amp;gt;&#xA;&lt;br> Andr&amp;eacute;&#xA;Schneider &amp;lt;&#xA;&lt;a href=\&quot;mailto:Andre.Schneider@eas.iis.fraunhofer.de\&quot;>Andre.Schneider@eas.iis.fraunhofer.de&lt;/a>&amp;gt;&#xA;&lt;br> Fraunhofer Institute for Integrated Circuits&lt;br> Design Automation Department&lt;br> Zeunerstra&amp;szlig;&#xA;e 38&lt;br> D-01069 Dresden, Germany&lt;/dd>&lt;/dl>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

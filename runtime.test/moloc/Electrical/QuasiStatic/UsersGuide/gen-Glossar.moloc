@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.UsersGuide"/>
+  <classes classType="class" className="Glossar" description="&quot;Glossar&quot;" isLongClassSpecifier="true" classNameEnd="Glossar" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Information" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;> &lt;tr> &lt;th>Abbreviation&lt;/th> &lt;th>Comment&lt;/th> &lt;/tr> &lt;tr> &lt;td>AC&lt;/td> &lt;td>alternating current&lt;/td> &lt;/tr> &lt;tr> &lt;td>RMS&lt;/td> &lt;td>root mean square&lt;/td> &lt;/tr>&lt;/table>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Types"/>
+  <classes classType="record" className="Reference" description="&quot;Reference angle&quot;" isLongClassSpecifier="true" classNameEnd="Reference" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
+      <component_list declarationName="gamma"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="function" className="equalityConstraint" description="&quot;Equality constraint for reference angle&quot;" isLongClassSpecifier="true" classNameEnd="equalityConstraint" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Reference" directionType="input" isOver="true">
+        <component_list declarationName="reference1"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Reference" directionType="input" isOver="true">
+        <component_list declarationName="reference2"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
+        <component_list subscripts="[0]" declarationName="residue"/>
+      </elements>
+      <elements xsi:type="mOloc:AlgorithmSection">
+        <statements xsi:type="mOloc:FunctionStatement" component="assert" function="(abs(reference1.gamma - reference2.gamma) &lt; 1E-6*2*Modelica.Constants.pi, &quot;Reference angles should be equal!&quot; )"/>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>Equality constraint for the reference angle, according to the &lt;a href=\&quot;https://specification.modelica.org/v3.4/Ch9.html#equation-operators-for-overconstrained-connection-based-equation-systems1\&quot;>Section 9.4 (Equation Operators for Overconstrained Connection-Based Equation Systems) of the Modelica 3.4 specification&lt;/a>.&#xA;&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>Reference angle, used in the quasi-static AC connectors.&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

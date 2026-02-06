@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.Interfaces"/>
+  <classes isExpandable="true" classType="connector" className="StackBusArrays" description="&quot;Measurement signal bus for a stack, arranged as matrices&quot;" isLongClassSpecifier="true" classNameEnd="StackBusArrays" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.SignalBus" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1" declarationName="Ns" description="&quot;Number of series connected cells&quot;">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1" declarationName="Np" description="&quot;Number of parallel connected cells&quot;">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list subscripts="[Ns, Np]" declarationName="v" description="&quot;Cell voltages&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list subscripts="[Ns, Np]" declarationName="i" description="&quot;Cell currents&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
+      <component_list subscripts="[Ns, Np]" declarationName="soc" description="&quot;States of charge of cells&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" isOver="true">
+      <component_list subscripts="[Ns, Np]" declarationName="power" description="&quot;Cells powers&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" isOver="true">
+      <component_list subscripts="[Ns, Np]" declarationName="lossPower" description="&quot;Cells losses&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" isOver="true">
+      <component_list subscripts="[Ns, Np]" declarationName="T" description="&quot;Cells temperatures&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Measurement bus of a stack, containing arrays of measured values, arranged in a matrix &lt;code>Ns&lt;/code> x &lt;code>Np&lt;/code>the same way as the stack is built from cells.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

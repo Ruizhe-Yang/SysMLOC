@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.ComplexBlocks.ComplexMath"/>
+  <classes classType="block" className="Sinh" description="&quot;Output the hyperbolic sine of the input&quot;" isLongClassSpecifier="true" classNameEnd="Sinh" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.ComplexSISO" isOver="true"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="y" right="Modelica.ComplexMath.sinh(uInternal)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Polygon( points={{0,90},{-8,68},{8,68},{0,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Text( extent={{-86,80},{-14,32}}, textColor={192,192,192}, textString=&quot;sinh&quot; ) ,Line(points={{0,-80},{0,68}}, color={192,192,192}), Line(points={{-90,0},{68,0}}, color={192,192,192}),Line( points={{-80,-80},{-76,-65.4},{-71.2,-51.4},{-65.5,-38.8},{-59.1, -28.1 } ,{-51.1,-18.7},{-41.4,-11.4},{-27.7,-5.5},{-4.42,-0.653},{ 24.5,4.57} ,{39,10.1},{49.4,17.2},{57.5,25.9},{63.9,35.8},{69.5, 47.4 } ,{74.4,60.4},{78.4,73.8},{80,80} } , color={85,170,255} ) , Polygon( points={{90,0},{68,8},{68,-8},{90,0}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This blocks computes the output &lt;code>y&lt;/code> as the&lt;em>hyperbolic sine&lt;/em> of the input &lt;code>u&lt;/code>. Optionally, the input &lt;code>u&lt;/code> can be processed conjugate complex, when parameter &lt;code>useConjugateInput&lt;/code> is &lt;code>true&lt;/code>. Depending on &lt;code>useConjugateInput&lt;/code> the internal signal &lt;code>uInternal&lt;/code> represents either the original or the conjugate complex input signal.&lt;/p>&lt;blockquote>&lt;pre>y = &lt;strong>sinh&lt;/strong>(uInternal);&#xA;&lt;/pre>&lt;/blockquote>&lt;p>&lt;img src=\&quot;modelica://Modelica/Resources/Images/Math/sinh.png\&quot;&#xA;alt=\&quot;sinh.png\&quot;>&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

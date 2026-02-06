@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.UsersGuide"/>
+  <classes classType="class" className="References" description="&quot;References&quot;" isLongClassSpecifier="true" classNameEnd="References" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.References" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;> &lt;tr> &lt;td>[Dorf1993]&lt;/td> &lt;td>R. C. Dorf &lt;em>The Electrical Engineering&lt;/em>, VDE, 1993.&lt;/td> &lt;/tr> &lt;tr> &lt;td>[Boas1966]&lt;/td> &lt;td>M. L. Boas &lt;em>Mathematical Methods in the Physical Sciences&lt;/em>, J. Wiley &amp;amp;&#xA;Sons, New York, 1966.&lt;/td> &lt;/tr> &lt;tr> &lt;td>[Burton1994]&lt;/td> &lt;td>T. Burton &lt;em>Introduction to Dynamic Systems Analysis&lt;/em>, McGraw Hill, New York, 1994.&lt;/td> &lt;/tr> &lt;tr> &lt;td>[Landolt1936]&lt;/td> &lt;td>M. Landolt &lt;em>Komplexe Zahlen und Zeiger in der Wechselstromlehre&lt;/em>, Springer Verlag, Berlin, 1936&lt;/td> &lt;/tr> &lt;tr> &lt;td>[Philippow1967]&lt;/td> &lt;td>E. Philippow &lt;em>Grundlagen der Elektrotechnik&lt;/em>, Akademischer Verlag, Leipzig, 1967.&lt;/td> &lt;/tr> &lt;tr> &lt;td>[Weyh1967]&lt;/td> &lt;td>Weyh and Benzinger &lt;em>Die Grundlagen der Wechselstromlehre&lt;/em>, R. Oldenbourg Verlag, 1967.&lt;/td> &lt;/tr> &lt;tr> &lt;td>[Vaske1973]&lt;/td> &lt;td>P. Vaske &lt;em>Berechnung von Drehstromschaltungen&lt;/em>, B.G. Teubner Verlag, 1973.&lt;/td> &lt;/tr>&lt;/table>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

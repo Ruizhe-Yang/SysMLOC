@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Functions"/>
+  <classes classType="function" className="indexNonPositiveSequence" description="&quot;Determines the indices of all non positive sequences&quot;" isLongClassSpecifier="true" classNameEnd="indexNonPositiveSequence" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="input" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="output" isOver="true">
+      <component_list subscripts="[numberOfSymmetricBaseSystems(m)*(integer(m/ numberOfSymmetricBaseSystems(m) ) - 1 ) ]" declarationName="ind" description="&quot;Indices of non positive sequences&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isProtected="true" isOver="true">
+      <component_list expression="numberOfSymmetricBaseSystems(m)" declarationName="nBase" description="&quot;Number of base systems&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
+      <component_list expression="integer(m/nBase)" declarationName="mBase" description="&quot;Number of phases of base system&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:IfStatement" condition="mBase == 1">
+        <ifStatements xsi:type="mOloc:FunctionStatement" component="ind" expression="fill(0, 0)"/>
+        <elseCondition>mBase == 2</elseCondition>
+        <elseifStatements xsi:type="mOloc:ForStatement" forIndices="k in 1:nBase">
+          <forStatements xsi:type="mOloc:FunctionStatement" component="ind[k]" expression="2 + 2*(k - 1)"/>
+        </elseifStatements>
+        <elseStatements xsi:type="mOloc:ForStatement" forIndices="k in 1:nBase">
+          <forStatements xsi:type="mOloc:FunctionStatement" component="ind[(mBase - 1)*(k - 1) + 1:(mBase - 1)*k]" expression="(2:mBase) + mBase*(k - 1)*ones(mBase - 1)"/>
+        </elseStatements>
+      </statements>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This function determines the indices of non-positive sequence of the symmetrical winding with m phases.&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.Polyphase.UsersGuide.PhaseOrientation\&quot;>User's guide&lt;/a> on symmetrical components and orientation.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

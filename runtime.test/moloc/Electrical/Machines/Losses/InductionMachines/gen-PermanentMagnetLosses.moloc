@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Losses.InductionMachines"/>
+  <classes classType="model" className="PermanentMagnetLosses" description="&quot;Model of permanent magnet losses dependent on current and speed&quot;" isLongClassSpecifier="true" classNameEnd="PermanentMagnetLosses" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.FlangeSupport" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Electrical.Polyphase.Functions.quasiRMS" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Losses.PermanentMagnetLossParameters" parameterType="parameter" isOver="true">
+      <component_list declarationName="permanentMagnetLossParameters" description="&quot;Permanent magnet loss parameters&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.PartialElementaryConditionalHeatPortWithoutT" isOver="true">
+      <extendsModifications expression="false" elementName="useHeatPort"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" directionType="input" isOver="true">
+      <component_list subscripts="[m]" declarationName="is" description="&quot;Instantaneous stator currents&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list expression="quasiRMS(is)" declarationName="iRMS"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:IfEquation" condition="(permanentMagnetLossParameters.PRef &lt;= 0)">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="tau" right="0"/>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="tau" right="-permanentMagnetLossParameters.tauRef*(permanentMagnetLossParameters.c + (1 - permanentMagnetLossParameters.c)* (iRMS/permanentMagnetLossParameters.IRef)^permanentMagnetLossParameters.power_I ) * sign(w)*(abs(w)/permanentMagnetLossParameters.wRef)^permanentMagnetLossParameters.power_w"/>
+      </equations>
+      <equations xsi:type="mOloc:SimpleEquation" left="lossPower" right="-tau*w"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;magnetLoss&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Ellipse(extent={{-40,-40},{40,40}}, lineColor={200,0,0} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Permanent magnet losses are modeled dependent on current and speed.&lt;/p>&lt;p>The permanent magnet losses are modeled such way that they do not cause a voltage drop in the electric circuit.Instead, the dissipated losses are considered through an equivalent braking torque at the shaft.&lt;/p>&lt;p>The permanent magnet loss torque is&lt;/p>&lt;blockquote>&lt;pre>tau = PRef/wRef * (c + (1 - c) * (i/IRef)^power_I) * (w/wRef)^power_w&lt;/pre>&lt;/blockquote>&lt;p>where &lt;code>i&lt;/code> is the current of the machine and &lt;code>w&lt;/code> is the actual angular velocity.The parameter &lt;code>c&lt;/code> designates the part of the permanent magnet losses that are present even at current = 0, i.e. independent of current.The dependency of the permanent magnet loss torque on the stator current is modeled by the exponent &lt;code>power_I&lt;/code>.The dependency of the permanent magnet loss torque on the angular velocity is modeled by the exponent &lt;code>power_w&lt;/code>.&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Losses.PermanentMagnetLossParameters\&quot;>Permanent magnet loss parameters&lt;/a>&#xA;&lt;/p>&lt;p>If it is desired to neglect permanent magnet losses, set &lt;code>strayLoadParameters.PRef = 0&lt;/code> (this is the default).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

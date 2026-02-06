@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Machines"/>
+  <classes classType="package" className="BasicMachines" description="&quot;Basic machine models&quot;" isLongClassSpecifier="true" classNameEnd="BasicMachines" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Rectangle( origin={0,14.817}, fillColor={170,213,255}, fillPattern=FillPattern.HorizontalCylinder, extent={{-54.179,-59.817},{65.821,60.183}} ) , Rectangle( origin={5.821,15}, fillColor={128,128,128}, fillPattern=FillPattern.HorizontalCylinder, extent={{-80,-60},{-60,60}} ) , Rectangle( origin={5.821,15}, fillColor={95,95,95}, fillPattern=FillPattern.HorizontalCylinder, extent={{60,-10},{80,10}} ) , Rectangle( origin={5.821,15}, lineColor={95,95,95}, fillColor={95,95,95}, fillPattern=FillPattern.Solid, extent={{-60,50},{20,70}} ) , Polygon( origin={5.821,15}, fillPattern=FillPattern.Solid, points={{-70,-90},{-60,-90},{-30,-20},{20,-20},{50,-90},{60,-90},{ 60,-100} ,{-70,-100},{-70,-90} } ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>This package contains components for modeling quasi-static electrical induction machines, based on space phasor theory:&lt;ul>&lt;li>package InductionMachines: quasi-static models of three-phase induction machines&lt;/li>&lt;li>package SynchronousMachines: quasi-static models of three-phase synchronous machines&lt;/li>&lt;li>package Transformers: quasi-static three-phase transformers (see detailed documentation in subpackage)&lt;/li>&lt;li>package Components: components for quasi-static modeling machines and transformers&lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

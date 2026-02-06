@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic"/>
+  <classes classType="package" className="Polyphase" description="&quot;Polyphase AC components&quot;" isLongClassSpecifier="true" classNameEnd="Polyphase" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Ellipse( origin={14,56}, lineColor={0,0,255}, extent={{-84,-126},{56,14}} ) , Ellipse( origin={-0,40}, lineColor={0,0,255}, fillColor={170,213,255}, fillPattern=FillPattern.Solid, extent={{-40,-34},{-20,-14}} ) , Ellipse( origin={20,40}, lineColor={0,0,255}, fillColor={170,213,255}, fillPattern=FillPattern.Solid, extent={{0,-34},{20,-14}} ) , Ellipse( origin={10,34}, lineColor={0,0,255}, fillColor={170,213,255}, fillPattern=FillPattern.Solid, extent={{-20,-74},{0,-54}} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This package hosts models for quasi-static polyphase circuits.Quasi-static theory can be found in[&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.UsersGuide.References\&quot;>Vaske1973&lt;/a>]&#xA;and other&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.UsersGuide.References\&quot;>references&lt;/a>.&#xA;&lt;/p>&lt;h4>See also&lt;/h4>&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase\&quot;>SinglePhase&lt;/a>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

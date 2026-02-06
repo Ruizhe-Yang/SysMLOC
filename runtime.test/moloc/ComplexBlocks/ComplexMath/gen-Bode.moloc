@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.ComplexBlocks.ComplexMath"/>
+  <classes classType="block" className="Bode" description="&quot;Calculate quantities to plot Bode diagram&quot;" isLongClassSpecifier="true" classNameEnd="Bode" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Icons.ComplexBlock" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="true" declarationName="useDivisor" description="&quot;Use divisor input, if true&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+        <annotations expression="true" elementName="HideResult"/>
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications expression="true" elementName="checkBox"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Units.SI.AmplitudeLevelDifference" parameterType="constant" isOver="true">
+      <component_list expression="20" declarationName="dB" description="&quot;Amplitude level difference&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.ComplexInput" isOver="true">
+      <component_list declarationName="u" description="&quot;Dividend if useDivisor == true&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-140,40},{-100,80}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-140,40},{-100,80}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.ComplexInput" isOver="true">
+      <component_list declarationName="divisor" description="&quot;Divisor&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useDivisor">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list declarationName="abs_y" description="&quot;Absolute value of ratio u / divisor&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-60,-110}" elementName="origin"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-60,-110}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="arg_y" description="&quot;Angle of ratio u / divisor&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;rad&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{60,-110}" elementName="origin"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{60,-110}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.ComplexOutput" isOver="true">
+      <component_list declarationName="y" description="&quot;Quotient y = u / divisor&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Sources.ComplexConstant" isOver="true">
+      <component_list isModificationOver="true" declarationName="complexOne" description="&quot;Complex(1,0)&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useDivisor">
+        <modifications expression="Complex(1, 0)" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-100,-50},{-80,-30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Division" isOver="true">
+      <component_list isModificationOver="true" declarationName="division" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="false" elementName="useConjugateInput1" isfinal="true"/>
+        <modifications expression="false" elementName="useConjugateInput2" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-60,-10},{-40,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="ComplexToPolar" isOver="true">
+      <component_list isModificationOver="true" declarationName="complexToPolar" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="false" elementName="useConjugateInput" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{0,-20}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="dB_y" description="&quot;Log10 of absolute value of ratio u / divisor in dB&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;dB&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{0,-110}" elementName="origin"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{0,-110}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Math.Log10" isOver="true">
+      <component_list declarationName="log10_y" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="{-10,-70}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Math.Gain" isOver="true">
+      <component_list isModificationOver="true" declarationName="gain" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="dB" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-80},{30,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Nonlinear.Limiter" isOver="true">
+      <component_list isModificationOver="true" declarationName="limiter" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Modelica.Constants.inf" elementName="uMax" isfinal="true"/>
+        <modifications expression="Modelica.Constants.eps" elementName="uMin" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-50,-80},{-30,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="complexOne.y" right="division.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-79,-40},{-70,-40},{-70,-6},{-62,-6}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="divisor" right="division.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-120,-60},{-70,-60},{-70,-6},{-62,-6}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="division.u1" right="u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-62,6},{-70,6},{-70,60},{-120,60}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="division.y" right="y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-39,0},{110,0},{110,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="complexToPolar.u" right="y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-8},{0,0},{110,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="complexToPolar.phi" right="arg_y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{6,-32},{6,-40},{60,-40},{60,-110}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="complexToPolar.len" right="abs_y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-6,-32},{-6,-40},{-60,-40},{-60,-110}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="log10_y.y" right="gain.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{1,-70},{8,-70}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gain.y" right="dB_y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{31,-70},{40,-70},{40,-90},{0,-90},{0,-110}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="limiter.y" right="log10_y.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-29,-70},{-22,-70}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="complexToPolar.len" right="limiter.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-6,-32},{-6,-40},{-60,-40},{-60,-70},{-52,-70}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line(points={{-78,44},{80,44}}, color={192,192,192}), Line(points={{-78,34},{80,34}}, color={192,192,192}), Line(points={{-78,20},{80,20}}, color={192,192,192}), Line(points={{-78,-2},{80,-2}}, color={192,192,192}), Line(points={{-78,-48},{80,-48}}, color={192,192,192}), Line(points={{-50,-48},{-50,44}}, color={192,192,192}), Line(points={{50,-48},{50,44}}, color={192,192,192}), Line(points={{-78,40},{80,40}}, color={192,192,192}), Polygon( points={{90,-48},{68,-40},{68,-56},{90,-48}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Polygon( points={{-70,90},{-78,68},{-62,68},{-70,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-70,-56},{-70,68}}, color={135,135,135}), Line( points={{-78,44},{-50,44},{70,-66}}, color={85,170,255}, thickness=0.5 ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text( extent={{-80,-90},{-40,-70}}, lineThickness=0.5, fillColor={192,192,192}, fillPattern=FillPattern.Solid, textString=&quot;|y|&quot;, textColor={128,128,128} ) , Text( extent={{-20,-90},{20,-70}}, lineThickness=0.5, fillColor={192,192,192}, fillPattern=FillPattern.Solid, textString=&quot;dB&quot;, textColor={128,128,128} ) , Text( extent={{40,-90},{80,-70}}, lineThickness=0.5, fillColor={192,192,192}, fillPattern=FillPattern.Solid, textString=&quot;&#x2220;&quot;, textColor={128,128,128} ) , Text( visible = useDivisor, extent={{-56,94},{94,54}}, textColor={128,128,128}, textString=&quot;u / divisor&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This complex block is used to determine variables of a Bode diagram for the output &lt;code>y&lt;/code>.The output &lt;code>y&lt;/code> is calculated by &lt;code>u / divisor&lt;/code> if &lt;code>useDivisor == true&lt;/code>.Otherwise the output &lt;code>y = u&lt;/code>.&lt;/p>&lt;ul>&lt;li>&lt;code>abs_y&lt;/code> Absolute value of &lt;code>y&lt;/code>&lt;/li>&lt;li>&lt;code>arg_y&lt;/code> Angle of &lt;code>y&lt;/code>&lt;/li>&lt;li>&lt;code>dB_y&lt;/code> Logarithm to the base 10 of the absolute value of &lt;code>y&lt;/code> in dB&lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

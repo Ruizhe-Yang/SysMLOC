@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Losses.InductionMachines"/>
+  <classes classType="model" className="Core" description="&quot;Model of core losses&quot;" isLongClassSpecifier="true" classNameEnd="Core" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Losses.CoreParameters" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="coreParameters" description="&quot;Core parameters&quot;">
+        <modifications expression="3" elementName="m"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="coreParameters.m" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="turnsRatio" description="&quot;Effective number of stator turns / effective number of rotor turns (if used as rotor core)&quot;">
+        <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.PartialElementaryConditionalHeatPortWithoutT" isOver="true">
+      <extendsModifications expression="false" elementName="useHeatPort"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Interfaces.SpacePhasor" isOver="true">
+      <component_list declarationName="spacePhasor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" directionType="input" isOver="true">
+      <component_list declarationName="w" description="&quot;Remagnetization angular velocity&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Losses&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" isOver="true">
+      <component_list declarationName="Gc" description="&quot;Variable core loss conductance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" isProtected="true" isOver="true">
+      <component_list expression="noEvent(max(noEvent(abs(w)), coreParameters.wMin ) )" declarationName="wLimit" description="&quot;Limited angular velocity&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:IfEquation" condition="(coreParameters.PRef &lt;= 0)">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="Gc" right="0"/>
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="spacePhasor.i_" right="zeros(2)"/>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="Gc" right="coreParameters.GcRef"/>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="spacePhasor.i_" right="Gc*spacePhasor.v_"/>
+      </equations>
+      <equations xsi:type="mOloc:SimpleEquation" left="lossPower" right="3/2*(+spacePhasor.v_[1]*spacePhasor.i_[1] + spacePhasor.v_[2]*spacePhasor.i_[2])"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Rectangle( extent={{-70,30},{70,-30}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{-70,0}}), Line(points={{-70,10},{70,10}}, color={0,0,255}), Line(points={{-70,-30},{70,-30}}, color={0,0,255}), Line(points={{-70,-10},{70,-10}}, color={0,0,255}), Line( points={{70,0},{80,0}}, color={0,0,255} ) , Line( points={{80,20},{80,-20}}, color={0,0,255} ) , Line( points={{90,14},{90,-14}}, color={0,0,255} ) , Line( points={{100,8},{100,-8}}, color={0,0,255} ) , Text( extent={{-150,90},{150,50}}, textColor={0,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Core losses can be separated into &lt;strong>eddy current&lt;/strong> and &lt;strong>hysteresis&lt;/strong> losses. The total core lossescan thus be expressed as&lt;/p>&lt;blockquote>&lt;pre>P = PRef * (ratioHysteresis * (wRef / w) + 1 - ratioHysteresis) * (V / VRef)^2&lt;/pre>&lt;/blockquote>&lt;p>where &lt;code>w&lt;/code> is the actual angular remagnetization velocity and &lt;code>V&lt;/code> is the actual voltage.The term &lt;code>ratioHysteresis&lt;/code> is the ratio of the hysteresis losses with respect to the total core losses for the reference voltage and frequency.&lt;/p>&lt;p>In the current implementation hysteresis losses are &lt;strong>not considered&lt;/strong> since complex numbers are not provided in Modelica.Therefore, implicitly &lt;code>ratioHysteresis = 0&lt;/code> is set. For the voltage and frequency range with respect to Fig.&amp;nbsp;&#xA;1,the dependency of total core losses on the parameter &lt;code>ratioHysteresis&lt;/code> is depicted in Fig.&amp;nbsp;&#xA;2.The current implementation has thus the drawback over a model that considers &lt;code>ratioHysteresis &amp;gt;&#xA;0&lt;/code>:&lt;/p>&lt;ul>&lt;li>underestimation of the losses in the constant field region (&lt;code>w&lt;/code> &amp;lt;&#xA;&lt;code>wRef&lt;/code>)&lt;/li>&lt;li>overestimation of the losses in the field weakening region (&lt;code>w&lt;/code> &amp;gt;&#xA;&lt;code>wRef&lt;/code>)&lt;/li>&lt;/ul>&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;1\&quot;> &lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Machines/corelossesVw.png\&quot;&#xA;alt=\&quot;corelossesVw.png\&quot;> &lt;/td> &lt;/tr> &lt;tr>&lt;td> &lt;strong> Fig. 1: &lt;/strong>Voltage versus angular velocity&lt;/td> &lt;/tr>&lt;/table>&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;1\&quot;> &lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Machines/corelossesPcw.png\&quot;&#xA;alt=\&quot;corelossesPcw.png\&quot;> &lt;/td> &lt;/tr> &lt;tr>&lt;td> &lt;strong> Fig. 2: &lt;/strong>Core losses versus angular velocity with parameter &lt;code>ratioHysteresis&lt;/code>&lt;/td> &lt;/tr>&lt;/table>&lt;h4>Note&lt;/h4>&lt;p>In the current implementation it is assumed that &lt;code>ratioHysteresis = 0&lt;/code>. This parameter cannot be changed due to compatibility reasons.&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Losses.CoreParameters\&quot;>Core loss parameters&lt;/a>&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

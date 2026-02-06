@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Thermal"/>
+  <classes classType="function" className="convertResistance" description="&quot;Converts resistance from reference temperature to an actual temperature&quot;" isLongClassSpecifier="true" classNameEnd="convertResistance" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" directionType="input" isOver="true">
+      <component_list declarationName="RRef" description="&quot;Resistance at TRef&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" directionType="input" isOver="true">
+      <component_list declarationName="TRef" description="&quot;Reference temperature&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.LinearTemperatureCoefficient" directionType="input" isOver="true">
+      <component_list declarationName="alpha20" description="&quot;Temperature coefficient at 20 degC&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" directionType="input" isOver="true">
+      <component_list declarationName="T" description="&quot;Actual temperature&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" directionType="output" isOver="true">
+      <component_list declarationName="R" description="&quot;Actual resistance at T&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:FunctionStatement" component="R" expression="RRef*(1 + Machines.Thermal.convertAlpha(alpha20, TRef)*(T - TRef))"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="true" elementName="Inline"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>From the temperature coefficient &lt;code>alpha20&lt;/code> at 20 degC (equals to 293.15 K) the parameter &lt;code>alphaRef&lt;/code> at &lt;code>TRef&lt;/code>&lt;/p>&lt;blockquote>&lt;pre> alpha20alphaRef = ------------------------------- 1 + alpha20 * (TRef - 293.15)&lt;/pre>&lt;/blockquote>&lt;p>is determined;&#xA;using this value, actual resistance &lt;code>R&lt;/code> with respect to the actual temperature &lt;code>T&lt;/code> is calculated by&lt;/p>&lt;blockquote>&lt;pre> R------ = 1 + alphaRef * (T - TRef) RRef&lt;/pre>&lt;/blockquote>&lt;p>where &lt;code>RRef&lt;/code> is the resistance at the reference temperature &lt;code>TRef&lt;/code>.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

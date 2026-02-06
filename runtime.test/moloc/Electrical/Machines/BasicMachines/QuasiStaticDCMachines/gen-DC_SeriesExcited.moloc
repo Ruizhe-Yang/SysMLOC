@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.BasicMachines.QuasiStaticDCMachines"/>
+  <classes classType="model" className="DC_SeriesExcited" description="&quot;Quasi-static series excited linear DC machine&quot;" isLongClassSpecifier="true" classNameEnd="DC_SeriesExcited" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.BasicMachines.DCMachines.DC_SeriesExcited" isOver="true">
+      <extendsModifications expression="true" elementName="quasiStatic" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Icons.QuasiStaticMachine" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;dcse&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;strong>Quasi-static model of a DC Machine with Series excitation.&lt;/strong>&lt;br>This model is fully compatible with the&lt;a href=\&quot;modelica://Modelica.Electrical.Machines.BasicMachines.DCMachines.DC_SeriesExcited\&quot;>transient machine model of a DC machine with series excitation&lt;/a>;&#xA;the only difference is that electrical transients are neglected.&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

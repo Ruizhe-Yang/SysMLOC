@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Examples"/>
+  <classes classType="model" className="AD_DA_conversion" description="&quot;Conversion circuit&quot;" isLongClassSpecifier="true" classNameEnd="AD_DA_conversion" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list expression="7" declarationName="N" description="&quot;Digital signal width&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.AD_Converter" isOver="true">
+      <component_list isModificationOver="true" declarationName="aD_Converter" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="N" elementName="N"/>
+        <modifications expression="1000000" elementName="Rin"/>
+        <modifications expression="0" elementName="VRefLow"/>
+        <modifications expression="10" elementName="VRefHigh"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-14,-10},{12,16}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Digital.Sources.Pulse" isOver="true">
+      <component_list isModificationOver="true" declarationName="pulse" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Modelica.Electrical.Digital.Interfaces.Logic.'1'" elementName="pulse"/>
+        <modifications expression="Modelica.Electrical.Digital.Interfaces.Logic.'0'" elementName="quiet"/>
+        <modifications expression="-1" elementName="nperiod"/>
+        <modifications expression="1" elementName="width"/>
+        <modifications expression="0.001" elementName="period"/>
+        <modifications expression="0" elementName="startTime"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-32,32},{-12,52}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.DA_Converter" isOver="true">
+      <component_list isModificationOver="true" declarationName="dA_Converter" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="N" elementName="N"/>
+        <modifications expression="10" elementName="Vref"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{18,-10},{44,16}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{44,-40},{64,-20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SineVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="sineVoltage" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="5" elementName="V"/>
+        <modifications expression="10" elementName="f"/>
+        <modifications expression="5" elementName="offset"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-80,4}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-28,68},{-8,88}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="pulse.y" right="aD_Converter.trig">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-12,42},{-1,42},{-1,14.7}}" elementName="points"/>
+          <modifications expression="{127,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sineVoltage.p" right="aD_Converter.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,14},{-38.5,14},{-38.5,12.1},{-10.1,12.1}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sineVoltage.n" right="aD_Converter.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,-6},{-38,-6},{-38,-6.1},{-10.1,-6.1}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ground.p" right="sineVoltage.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{54,-20},{-80,-20},{-80,-6}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sineVoltage.p" right="resistor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,14},{-80,78},{-28,78}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="dA_Converter.trig" right="pulse.y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{31,14.7},{31,42},{-12,42}}" elementName="points"/>
+          <modifications expression="{127,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="aD_Converter.y" right="dA_Converter.x">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{8.1,3},{21.9,3}}" elementName="points"/>
+          <modifications expression="{127,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="dA_Converter.p" right="resistor.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40.1,12.1},{40.1,78},{-8,78}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="dA_Converter.n" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40.1,-6.1},{54,-6.1},{54,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="0.2" elementName="StopTime"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The simple converter circuit converts an analog sine signal into a N-bit (by default a 4 bit) logic signal, which is converted backward into an analog signal.&lt;/p>&lt;ul>&lt;li>Simulate for 0.2 s.&lt;/li>&lt;/ul>&lt;p>Compare the input voltage (aD_Converter.p.v) with the output voltage (dA_Converter.p.v). By changing N the influence of the digital signal width can be studied. Otherwise the trigger frequency pulse.period can be changed to see its influence.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em>October 13, 2009 &lt;/em>by Matthias Franke&lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.Examples"/>
+  <classes classType="model" className="SuperCapDischargeCharge" description="&quot;Discharge and charge idealized supercap&quot;" isLongClassSpecifier="true" classNameEnd="SuperCapDischargeCharge" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Batteries.Utilities.PulseSeries" isOver="true">
+      <component_list isModificationOver="true" declarationName="pulseSeries" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="5" elementName="n1"/>
+        <modifications expression="10" elementName="T1"/>
+        <modifications expression="10" elementName="Tp1"/>
+        <modifications expression="5" elementName="n2"/>
+        <modifications expression="10" elementName="Tp"/>
+        <modifications expression="10" elementName="startTime"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-80,-10},{-60,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Batteries.BatteryStacks.SuperCap" isOver="true">
+      <component_list isModificationOver="true" declarationName="superCap" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="48" elementName="Vnom"/>
+        <modifications expression="500" elementName="C"/>
+        <modifications expression="0.002" elementName="Rs"/>
+        <modifications expression="0.05" elementName="Idis"/>
+        <modifications expression="false" elementName="useHeatPort"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{40,0}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-40},{30,-20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SignalCurrent" isOver="true">
+      <component_list declarationName="signalCurrent" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sensors.PowerSensor" isOver="true">
+      <component_list declarationName="powerSensor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,30},{30,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Continuous.Integrator" isOver="true">
+      <component_list isModificationOver="true" declarationName="energy" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="u">
+          <modifications expression="&quot;W&quot;" elementName="unit"/>
+        </modifications>
+        <modifications isModificationOver="true" elementName="y">
+          <modifications expression="&quot;J&quot;" elementName="unit"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{60,10},{80,30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Gain" isOver="true">
+      <component_list isModificationOver="true" declarationName="gain" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="300" elementName="k"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-50,-10},{-30,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="superCap.n" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,-10},{40,-20}, {20,-20} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="signalCurrent.n" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-10},{0,-20},{20,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="signalCurrent.p" right="powerSensor.pc">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,10},{0,40},{10,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor.nc" right="superCap.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{30,40},{40,40},{40,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor.nv" right="ground.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,30},{20,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor.pc" right="powerSensor.pv">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,40},{10,50},{20,50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="powerSensor.power" right="energy.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,29},{10,20},{58,20}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="gain.y" right="signalCurrent.i">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-29,0},{-12,0}, {-12,6.66134e-16} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="pulseSeries.y" right="gain.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-59,0},{-52,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="720" elementName="StopTime"/>
+        <modifications expression="0.01" elementName="Interval"/>
+        <modifications expression="1e-06" elementName="Tolerance"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>A supercap with a capacitance of 500 F, starting initially at nominal voltage 48 V,is discharged with 5 current pulses of 240 A for 10 seconds, and breaks between the pulses of 10 seconds.Subsequently, the supercap is charged again with 5 current pulses of 240 A for 10 seconds, and breaks between the pulses of 10 seconds.In the end, the supercap is in no-load condition to reveal self-discharge effects.&lt;/p>&lt;p>Note that self-discharge is set to an unrealistic high value, to show self-discharge within a rather short time span.&lt;br>The other parameters of the supercap is set to estimated but realistic values:&lt;/p>&lt;ul>&lt;li>&lt;code>C = 500 F&lt;/code>&lt;/li>&lt;li>&lt;code>Vnom = 48 V&lt;/code>&lt;/li>&lt;li>&lt;code>Qnom = C*Vnom = 24,000 As&lt;/code>&lt;/li>&lt;li>&lt;code>Ri = 2 m&amp;Omega;&#xA;&lt;/code>&lt;/li>&lt;/ul>&lt;p>Simulate and plot terminal voltage &lt;code>supercap.v&lt;/code>.&lt;/p>&lt;p>Plotting &lt;code>energy.y&lt;/code>, it is remarkable that first energy is delivered by the supercap,but then due to the losses more energy is consumed to recharge the supercap.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

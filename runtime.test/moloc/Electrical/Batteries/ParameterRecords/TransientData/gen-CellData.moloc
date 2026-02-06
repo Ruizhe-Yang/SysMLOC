@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.ParameterRecords.TransientData"/>
+  <classes classType="record" className="CellData" description="&quot;Parameters of a transient battery cell&quot;" isLongClassSpecifier="true" classNameEnd="CellData" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.ParameterRecords.CellData" isOver="true">
+      <extendsModifications expression="Ri - sum(rcData.R)" elementName="R0"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.Icons.TransientCellRecord" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="nRC" description="&quot;Number of RC-elements&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;RC-elements&quot;" elementName="group"/>
+        </annotations>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RCData" parameterType="parameter" isOver="true">
+      <component_list subscripts="[nRC]" expression="{Modelica.Electrical.Batteries.ParameterRecords.TransientData.RCData(R=0, C=0)}" declarationName="rcData" description="&quot;Parameters of RC-elements&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;RC-elements&quot;" elementName="group"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,0},{10,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;parameter&quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Collects parameters of battery cells:&lt;/p>&lt;ul>&lt;li>Nominal charge&lt;/li>&lt;li>OCV versus SOC characteristic&lt;/li>&lt;li>Inner resistance;&#xA;can be calculated from OCVmax / short-circuit current (at OCVmax)&lt;/li>&lt;li>Array of records &lt;code>rcData&lt;/code> for battery models comprising RC-elements&lt;/li>&lt;/ul>&lt;h4>Note&lt;/h4>&lt;p>If &lt;code>useLinearSOCDependency=true&lt;/code>, the OCV versus SOC table is built up internally from &lt;code>OCVmax, OCVmin, SOCmax, SOCmin&lt;/code>.&lt;br>Otherwise, the OCV versus SOC table has to be specified: 1st column = SOC values in ascending order, 2nd column = corresponding OCV values with respect to OCVmax.&lt;/p>&lt;p>The size of the array &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.ParameterRecords.TransientData.RCData\&quot;>rcData&lt;/a> has to be defined as parameter &lt;code>nRC&lt;/code>.&#xA;The sum of the resistances &lt;code>rcData.R&lt;/code> must not exceed the total inner resistance &lt;code>Ri&lt;/code>.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

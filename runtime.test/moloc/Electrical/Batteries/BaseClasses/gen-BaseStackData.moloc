@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.BaseClasses"/>
+  <classes classType="record" className="BaseStackData" description="&quot;Parameters for stacks including degradation&quot;" isLongClassSpecifier="true" classNameEnd="BaseStackData" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.Icons.BaseStackRecord" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Math.BooleanVectors.anyTrue" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Ns" description="&quot;Number of series connected cells&quot;">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Np" description="&quot;Number of parallel connected cells&quot;">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list subscripts="[:,2]" expression="{{0,0}}" declarationName="kDegraded" description="&quot;Indices of degraded cells [series index, parallel index]&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Batteries.ParameterRecords.CellData" parameterType="parameter" isReplaceable="true" isOver="true">
+      <component_list declarationName="cellDataOriginal" description="&quot;Original cell data&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-40,-10},{-20,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Batteries.ParameterRecords.CellData" parameterType="parameter" isReplaceable="true" isOver="true">
+      <component_list declarationName="cellDataDegraded" description="&quot;Degraded cell data&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,-10},{40,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Batteries.ParameterRecords.CellData" parameterType="parameter" isReplaceable="true" isOver="true">
+      <component_list subscripts="[Ns, Np]" expression="{{if anyTrue({ks==kDegraded[i,1] and kp==kDegraded[i,2] for i in 1:size(kDegraded,1)}) then cellDataDegraded else cellDataOriginal for kp in 1:Np } for ks in 1:Ns }" declarationName="cellData" description="&quot;Matrix of cell data&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="group"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-30},{10,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;parameter&quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html> &lt;p>This record contains the base cell data definition of original and degraded cell data.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

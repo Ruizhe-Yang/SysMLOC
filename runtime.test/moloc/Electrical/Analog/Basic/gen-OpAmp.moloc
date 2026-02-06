@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Basic"/>
+  <classes classType="model" className="OpAmp" description="&quot;Simple nonideal model of an OpAmp with limitation&quot;" isLongClassSpecifier="true" classNameEnd="OpAmp" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Slope" description="&quot;Slope of the out.v/vin characteristic at vin=0&quot;">
+        <modifications expression="10000" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="in_p" description="&quot;Positive pin of the input port&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-70},{-90,-50}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-110,-70},{-90,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="in_n" description="&quot;Negative pin of the input port&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-90,50},{-110,70}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-90,50},{-110,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="out" description="&quot;Output pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{110,-10},{90,10}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{110,-10},{90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="VMax" description="&quot;Positive output voltage limitation&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,90},{10,110}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-10,90},{10,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="VMin" description="&quot;Negative output voltage limitation&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-110},{10,-90}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-10,-110},{10,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list declarationName="vin" description="&quot;Input voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isProtected="true" isOver="true">
+      <component_list declarationName="f" description="&quot;Auxiliary variable&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
+      <component_list declarationName="absSlope"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="in_p.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="in_n.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="VMax.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="VMin.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="vin" right="in_p.v - in_n.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="f" right="2/(VMax.v - VMin.v)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="absSlope" right="if (Slope &lt; 0) then -Slope else Slope"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="out.v" right="(VMax.v + VMin.v)/2 + absSlope*vin/(1 + absSlope*smooth(0, (if (f* vin &lt; 0 ) then -f*vin else f*vin ) ) )"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The OpAmp is a simple nonideal model with a smooth out.v = f(vin) characteristic, where &amp;quot;&#xA;vin = in_p.v - in_n.v&amp;quot;&#xA;. The characteristic is limited by VMax.v and VMin.v. Its slope at vin=0 is the parameter Slope, which must be positive. (Therefore, the absolute value of Slope is taken into calculation.)&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em> 2000 &lt;/em> by Christoph Clauss&lt;br> initially implemented&lt;br> &lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Polygon( points={{70,0},{-70,80},{-70,-80},{70,0}}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, lineColor={0,0,255} ) , Line(points={{-45,-10},{-20,-10},{-14,-9},{-11,-7},{-9,7},{-6,9},{0, 10 } ,{20,10} } , color={0,0,255} ) , Line(points={{0,40},{0,100}}, color={0,0,255}), Line(points={{0,-40},{0,-100}}, color={0,0,255}), Line(points={{-100,60},{-70,60}}, color={0,0,255}), Line(points={{-100,-60},{-70,-60}}, color={0,0,255}), Line(points={{70,0},{100,0}}, color={0,0,255}), Line(points={{-58,50},{-38,50}}, color={0,0,255}), Line(points={{-49,-40},{-49,-61}}, color={0,0,255}), Line(points={{-60,-51},{-38,-51}}, color={0,0,255}), Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

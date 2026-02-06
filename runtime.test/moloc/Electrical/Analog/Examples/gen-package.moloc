@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog"/>
+  <classes classType="package" className="Examples" description="&quot;Examples that demonstrate the usage of the Analog electrical components&quot;" isLongClassSpecifier="true" classNameEnd="Examples" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.ExamplesPackage" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This package contains examples that demonstrate the usage of the components of the Electrical.Analog library.&lt;/p>&lt;p>The examples are simple to understand. They will show a typical behavior of the components, and they will give hints to users.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;dl>&lt;dt>&lt;strong>Main Authors:&lt;/strong>&lt;/dt>&lt;dd>Christoph Clau&amp;szlig;&#xA;&amp;lt;&#xA;&lt;a href=\&quot;mailto:christoph@clauss-it.com\&quot;>christoph@clauss-it.com&lt;/a>&amp;gt;&#xA;&lt;br> Andr&amp;eacute;&#xA;Schneider &amp;lt;&#xA;&lt;a href=\&quot;mailto:Andre.Schneider@eas.iis.fraunhofer.de\&quot;>Andre.Schneider@eas.iis.fraunhofer.de&lt;/a>&amp;gt;&#xA;&lt;br> Fraunhofer Institute for Integrated Circuits&lt;br> Design Automation Department&lt;br> Zeunerstra&amp;szlig;&#xA;e 38&lt;br> D-01069 Dresden&lt;/dd>&lt;/dl>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

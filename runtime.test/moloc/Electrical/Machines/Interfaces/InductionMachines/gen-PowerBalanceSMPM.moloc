@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Interfaces.InductionMachines"/>
+  <classes classType="record" className="PowerBalanceSMPM" description="&quot;Power balance of synchronous machines with permanent magnet&quot;" isLongClassSpecifier="true" classNameEnd="PowerBalanceSMPM" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.InductionMachines.PartialPowerBalanceInductionMachines" isOver="true">
+      <extendsModifications expression="lossPowerStatorWinding + lossPowerStatorCore + lossPowerRotorCore + lossPowerStrayLoad + lossPowerFriction + lossPowerRotorWinding + lossPowerPermanentMagnet" elementName="lossPowerTotal" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" isOver="true">
+      <component_list declarationName="lossPowerRotorWinding" description="&quot;Rotor copper losses&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" isOver="true">
+      <component_list declarationName="lossPowerPermanentMagnet" description="&quot;Permanent magnet losses&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;output&quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>Power balance of synchronous machines with permanent magnet. &lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

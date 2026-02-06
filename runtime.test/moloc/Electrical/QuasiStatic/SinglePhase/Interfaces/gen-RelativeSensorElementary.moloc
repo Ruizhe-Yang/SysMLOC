@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces"/>
+  <classes isPartial="true" classType="model" className="RelativeSensorElementary" description="&quot;Elementary partial voltage / current sensor&quot;" isLongClassSpecifier="true" classNameEnd="RelativeSensorElementary" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.RoundSensor" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="TwoPinElementary" isOver="true"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" description="&quot;Current balance&quot;" left="Complex(0,0)" right="pin_p.i + pin_n.i"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line(points={{-70,0},{-94,0}}, color={85,170,255}), Line(points={{70,0},{94,0}}, color={85,170,255}), Text( extent={{-150,120},{150,80}}, textColor={0,0,255}, textString=&quot;%name&quot; ) , Line(points={{0,-100},{0,-70}}, color={85,170,255}) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The relative sensor partial model relies on the&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.TwoPinElementary\&quot;>TwoPinElementary&lt;/a>&#xA;to measure the complex voltage or current. Additionally this model contains a proper icon and a definition of the angular velocity.&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.AbsoluteSensor\&quot;>AbsoluteSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sensors.VoltageSensor\&quot;>VoltageSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sensors.CurrentSensor\&quot;>CurrentSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sensors.PowerSensor\&quot;>PowerSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Interfaces.AbsoluteSensor\&quot;>Polyphase.Interfaces.AbsoluteSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Interfaces.RelativeSensorElementary\&quot;>Polyphase.Interfaces.RelativeSensorElementary&lt;/a>&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

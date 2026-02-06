@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Basic"/>
+  <classes classType="model" className="SaturatingInductor" description="&quot;Simple model of an inductor with saturation&quot;" isLongClassSpecifier="true" classNameEnd="SaturatingInductor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true">
+      <extendsModifications isModificationOver="true" elementName="i">
+        <modifications expression="0" elementName="start"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.small" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Math.atan" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Inom" description="&quot;Nominal current&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Basic/SaturatingInductor_Lact_i_tight.png&quot;" elementName="groupImage"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Lnom" description="&quot;Nominal inductance at Nominal current&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Lzer" description="&quot;Inductance near current=0&quot;">
+        <modifications expression="2*Lnom" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Linf" description="&quot;Inductance at large currents&quot;">
+        <modifications expression="Lnom/2" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" isOver="true">
+      <component_list isModificationOver="true" declarationName="Lact" description="&quot;Present inductance&quot;">
+        <modifications expression="Lzer" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.MagneticFlux" isOver="true">
+      <component_list declarationName="Psi" description="&quot;Present flux&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isProtected="true" isOver="true">
+      <component_list isModificationOver="true" declarationName="Ipar">
+        <modifications expression="Inom/10" elementName="start"/>
+        <modifications expression="false" elementName="fixed"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection" isInitial="true">
+      <equations xsi:type="mOloc:SimpleEquation" left="(Lnom - Linf)/(Lzer - Linf)" right="Ipar/Inom*(pi/2 - atan(Ipar/Inom))"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(Lzer > Lnom*(1 + eps), &quot;Lzer (= &quot; + String(Lzer) + &quot;) has to be > Lnom (= &quot; + String(Lnom) + &quot;)&quot; )"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(Linf &lt; Lnom*(1 - eps), &quot;Linf (= &quot; + String(Linf) + &quot;) has to be &lt; Lnom (= &quot; + String(Lnom) + &quot;)&quot; )"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="Lact" right="Linf + (Lzer - Linf)*(if noEvent(abs(i)/Ipar&lt;small) then 1 else atan(i/Ipar)/(i/Ipar))"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="Psi" right="Linf*i + (Lzer - Linf)*Ipar*atan(i/Ipar)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="der(Psi)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;inductor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line(points={{60,0},{90,0}}, color={0,0,255}), Line(points={{-90,0},{-60,0}}, color={0,0,255}), Text( extent={{-150,-40},{150,-80}}, textString=&quot;Lnom=%Lnom&quot; ) , Line( points={{-60,0},{-59,6},{-52,14},{-38,14},{-31,6},{-30,0}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-30,0},{-29,6},{-22,14},{-8,14},{-1,6},{0,0}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{0,0},{1,6},{8,14},{22,14},{29,6},{30,0}}, color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{30,0},{31,6},{38,14},{52,14},{59,6},{60,0}}, color={0,0,255}, smooth=Smooth.Bezier ) , Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Line(points={{-60,-20},{60,-20}}, color={0,0,255}) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&#xA;&lt;p>This model approximates the behaviour of an inductor with the influence of saturation, i.e.,the value of the inductance depends on the current flowing through the inductor (&lt;strong>Fig.&amp;nbsp;&#xA;1&lt;/strong>).The inductance decreases as current increases. Note, that hysteresis is not taken into account.&lt;/p>&lt;p>The approximation of the flux linkage is based on the &lt;code>atan&lt;/code> function with an additional linear term,as shown in &lt;strong>Fig.&amp;nbsp;&#xA;2&lt;/strong>:&lt;/p>&lt;blockquote>&lt;pre>Psi = Linf*i + (Lzer - Linf)*Ipar*atan(i/Ipar)L = Psi/i = Linf + (Lzer - Linf)*atan(i/Ipar)/(i/Ipar)&lt;/pre>&lt;/blockquote>&lt;p>This approximation is with good performance and easy to adjust to a given characteristic with only four parameters (&lt;strong>Tab.&amp;nbsp;&#xA;1&lt;/strong>).&lt;/p>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;> &lt;caption align=\&quot;bottom\&quot;>&lt;strong>Tab.&amp;nbsp;&#xA;1:&lt;/strong> Characteristic parameters of the saturating inductor model&lt;/caption> &lt;tr> &lt;th>Variable&lt;/th> &lt;th>Description&lt;/th> &lt;/tr> &lt;tr> &lt;td>&lt;code>Inom&lt;/code>.&lt;/td> &lt;td>Nominal current&lt;/td> &lt;/tr> &lt;tr> &lt;td>&lt;code>Lnom&lt;/code>&lt;/td> &lt;td>Nominal inductance at nominal current&lt;/td> &lt;/tr> &lt;tr> &lt;td>&lt;code>Lzer&lt;/code>&lt;/td> &lt;td>Inductance near current = 0;&#xA;&lt;code>Lzer&lt;/code> has to be greater than &lt;code>Lnom&lt;/code>&lt;/td> &lt;/tr> &lt;tr> &lt;td>&lt;code>Linf&lt;/code>&lt;/td> &lt;td>Inductance at large currents;&#xA;&lt;code>Linf&lt;/code> has to be less than &lt;code>Lnom&lt;/code>&lt;/td> &lt;/tr>&lt;/table>&lt;p>The parameter &lt;code>Ipar&lt;/code> is calculated internally from the relationship:&lt;/p>&lt;blockquote>&lt;pre>Lnom = Linf + (Lzer - Linf)*atan(Inom/Ipar)/(Inom/Ipar)&lt;/pre>&lt;/blockquote>&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;> &lt;caption align=\&quot;bottom\&quot;>&lt;strong>Fig.&amp;nbsp;&#xA;1:&lt;/strong> Actual inductance &lt;code>Lact&lt;/code> versus current &lt;code>i&lt;/code>&lt;/caption> &lt;tr> &lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Basic/SaturatingInductor_Lact_i.png\&quot; alt=\&quot;Lact vs. i\&quot;>&#xA;&lt;/td> &lt;/tr>&lt;/table>&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;> &lt;caption align=\&quot;bottom\&quot;>&lt;strong>Fig.&amp;nbsp;&#xA;2:&lt;/strong> Actual flux linkage &lt;code>Psi&lt;/code> versus current &lt;code>i&lt;/code>&lt;/caption> &lt;tr> &lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/Analog/Basic/SaturatingInductor_Psi_i.png\&quot; alt=\&quot;Psi vs. i\&quot;>&#xA;&lt;/td> &lt;/tr>&lt;/table>&lt;p>The flux slope in &lt;strong>Fig.&amp;nbsp;&#xA;2&lt;/strong> is equal to &lt;code>Lzer&lt;/code> for small currents.The limit of the flux slope is &lt;code>Linf&lt;/code> as the current &lt;code>i&lt;/code> approaches infinity.The nominal flux is indicated by the product of the nominal inductance &lt;code>Lnom&lt;/code> and the nominal current &lt;code>Inom&lt;/code>.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;dl> &lt;dt>&lt;strong>Main Author:&lt;/strong>&lt;/dt> &lt;dd> &lt;a href=\&quot;https://www.haumer.at/\&quot;>Anton Haumer&lt;/a>&lt;br>&#xA;Technical Consulting &amp;amp;&#xA;Electrical Engineering&lt;br> D-93049 Regensburg&lt;br>Germany&lt;br> email: &lt;a href=\&quot;mailto:a.haumer@haumer.at\&quot;>a.haumer@haumer.at&lt;/a> &lt;/dd> &lt;dt>&lt;strong>Release Notes:&lt;/strong>&lt;/dt> &lt;dd>Jul 23, 2019: Improved by Anton Haumer&lt;/dd> &lt;dd>May 27, 2004: Implemented by Anton Haumer&lt;/dd> &lt;/dl>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

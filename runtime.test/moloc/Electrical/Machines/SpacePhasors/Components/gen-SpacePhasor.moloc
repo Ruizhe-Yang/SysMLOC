@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.SpacePhasors.Components"/>
+  <classes classType="model" className="SpacePhasor" description="&quot;Physical transformation: three-phase &lt;-> space phasors&quot;" isLongClassSpecifier="true" classNameEnd="SpacePhasor" isOver="true">
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="constant" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="turnsRatio" description="&quot;Turns ratio&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list subscripts="[m]" declarationName="v" description="&quot;Instantaneous phase voltages&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list subscripts="[m]" declarationName="i" description="&quot;Instantaneous phase currents&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isOver="true">
+      <component_list subscripts="[2, m]" expression="2/m*{{cos(+(k - 1)/m*2*pi) for k in 1:m } ,{+sin(+(k - 1)/m*2*pi) for k in 1:m} }" declarationName="TransformationMatrix"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m, 2]" expression="{{cos(-(k - 1)/m*2*pi),-sin( -(k - 1)/m*2*pi) } for k in 1:m }" declarationName="InverseTransformation"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.PositivePlug" isPublic="true" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_p" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,90},{-90,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.NegativePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_n" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="zero" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-110},{110,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Interfaces.SpacePhasor" isOver="true">
+      <component_list declarationName="spacePhasor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,90},{110,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="v/turnsRatio" right="plug_p.pin.v - plug_n.pin.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i*turnsRatio" right="+plug_p.pin.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i*turnsRatio" right="-plug_n.pin.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="m*zero.v" right="sum(v)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="spacePhasor.v_" right="TransformationMatrix*v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="-m*zero.i" right="sum(i)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="-spacePhasor.i_" right="TransformationMatrix*i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="ground.v" right="0"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line(points={{0,0},{80,80},{60,72},{72,60},{80,80}}, color={0,0,255}), Line(points={{0,0},{80,-80},{72,-60},{60,-72},{80,-80}}, color={0,0,255}), Line( points={{-80,0},{-73.33,10},{-66.67,17.32},{-60,20},{-53.33, 17.32 } ,{-46.67,10},{-40,0},{-33.33,-10},{-26.67,-17.32},{-20, -20 } ,{-13.33,-17.32},{-6.67,-10},{0,0} } , color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-90,0},{-83.33,10},{-76.67,17.32},{-70,20},{-63.33, 17.32 } ,{-56.67,10},{-50,0},{-43.33,-10},{-36.67,-17.32},{-30, -20 } ,{-23.33,-17.32},{-16.67,-10},{-10,0} } , color={0,0,255}, smooth=Smooth.Bezier ) , Line( points={{-70,0},{-63.33,10},{-56.67,17.32},{-50,20},{-43.33, 17.32 } ,{-36.67,10},{-30,0},{-23.33,-10},{-16.67,-17.32},{-10, -20 } ,{-3.33,-17.32},{3.33,-10},{10,0} } , color={0,0,255}, smooth=Smooth.Bezier ) , Text( extent={{-150,-120},{150,-160}}, textColor={0,0,255}, textString=&quot;%name&quot; ) , Text( extent={{40,10},{90,-10}}, textColor={0,0,255}, textString=&quot;zero&quot; ) , Line(points={{90,-100},{60,-100}}, color={0,0,255}), Line(points={{60,-84},{60,-116}}, color={0,0,255}), Line(points={{50,-90},{50,-110}}, color={0,0,255}), Line(points={{40,-96},{40,-104}}, color={0,0,255}) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>Physical transformation of voltages and currents: three-phases &amp;lt;&#xA;-&amp;gt;&#xA;space phasors:&lt;br>x[k] = X0 + {cos(-(k - 1)/m*2*pi),-sin(-(k - 1)/m*2*pi)}*X[Re,Im]&lt;br>and vice versa:&lt;br>X0 = sum(x[k])/m&lt;br>X[Re,Im] = sum(2/m*{cos((k - 1)/m*2*pi),sin((k - 1)/m*2*pi)}*x[k])&lt;br>were x designates three-phase values, X[Re,Im] designates the space phasor and X0 designates the zero sequence system.&lt;br>&lt;em>Physical transformation&lt;/em> means that both voltages and currents are transformed in both directions.&lt;br>Zero-sequence voltage and current are present at pin zero. An additional zero-sequence impedance could be connected between pin zero and pin ground.&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

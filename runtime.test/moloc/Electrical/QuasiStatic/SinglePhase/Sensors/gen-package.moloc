@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase"/>
+  <classes classType="package" className="Sensors" description="&quot;AC single-phase sensors&quot;" isLongClassSpecifier="true" classNameEnd="Sensors" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.SensorsPackage" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This package hosts sensors for quasi-static single-phase circuits.Quasi-static theory for single-phase circuits can be found in the&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.UsersGuide.References\&quot;>references&lt;/a>.&#xA;&lt;/p>&lt;h4>See also&lt;/h4>&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors\&quot;>Polyphase.Sensors&lt;/a>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

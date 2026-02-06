@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.BatteryStacks"/>
+  <classes classType="model" className="SuperCap" description="&quot;Simple model of a supercapacitor&quot;" isLongClassSpecifier="true" classNameEnd="SuperCap" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.TwoPin" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list expression="p.i" declarationName="i" description="&quot;Current into the supercap&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list declarationName="Vnom" description="&quot;Nominal voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="Vnom" declarationName="V0" description="&quot;Initial voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Capacitance" parameterType="parameter" isOver="true">
+      <component_list declarationName="C" description="&quot;Capacitance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ElectricCharge" parameterType="parameter" isOver="true">
+      <component_list expression="C*Vnom" declarationName="Qnom" description="&quot;Nominal charge&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list declarationName="Rs" description="&quot;Series resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="293.15" declarationName="T_ref" description="&quot;Reference temperature&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="alpha" description="&quot;Temperature coefficient of resistance at T_ref&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="Idis" description="&quot;Self-discharge current at nominal voltage&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PartialConditionalHeatPort" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Rs" elementName="R" isfinal="true"/>
+        <modifications expression="T_ref" elementName="T_ref" isfinal="true"/>
+        <modifications expression="alpha" elementName="alpha" isfinal="true"/>
+        <modifications expression="true" elementName="useHeatPort" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-50,-10},{-30,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Conductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="conductor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Idis/Vnom" elementName="G" isfinal="true"/>
+        <modifications expression="293.15" elementName="T_ref"/>
+        <modifications expression="true" elementName="useHeatPort" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{30,-40},{50,-20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Capacitor" isOver="true">
+      <component_list isModificationOver="true" declarationName="capacitor" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="v">
+          <modifications expression="V0" elementName="start"/>
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <modifications expression="C" elementName="C" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{30,-10},{50,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="p" right="resistor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-50,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor.n" right="capacitor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,0},{30,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="capacitor.n" right="n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="capacitor.p" right="conductor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{30,0},{30,-30},{30,-30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="capacitor.n" right="conductor.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,0},{50,-30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="internalHeatPort" right="conductor.heatPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-80}, {0,-60},{40,-60},{40,-40} }" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="internalHeatPort" right="resistor.heatPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-80}, {0,-60},{-40,-60},{-40,-10} }" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Text( extent={{-150,60},{150,100}}, textColor={0,0,255}, textString=&quot;%name&quot; ) , Text( extent={{-150,-90},{150,-50}}, textColor={0,0,0}, textString=&quot;C=%C&quot; ) , Rectangle( extent={{-20,40},{-10,-40}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) , Rectangle( extent={{10,40},{20,-40}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{-20,0}}, color={0,0,255}), Line(points={{20,0},{90,0}}, color={0,0,255}) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This is a simple model of a supercapacitor, comprising:&lt;/p>&lt;ul>&lt;li>an ideal capacitance&lt;/li>&lt;li>a series resistance&lt;/li>&lt;li>a self-discharge conductor&lt;/li>&lt;/ul>&lt;h4>Note&lt;/h4>&lt;p>There is no limit included against too high charging and too low discharging or even charging in the opposite direction.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

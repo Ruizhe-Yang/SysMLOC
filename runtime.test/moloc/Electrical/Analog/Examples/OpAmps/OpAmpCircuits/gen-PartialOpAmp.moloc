@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Examples.OpAmps.OpAmpCircuits"/>
+  <classes isPartial="true" classType="model" className="PartialOpAmp" description="&quot;Partial circuit of operational amplifiers&quot;" isLongClassSpecifier="true" classNameEnd="PartialOpAmp" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.FourPin" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="+15" declarationName="Vps" description="&quot;Positive supply&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="-15" declarationName="Vns" description="&quot;Negative supply&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="15000.0" declarationName="V0" description="&quot;No-load amplification&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Ideal.IdealizedOpAmpLimited" isOver="true">
+      <component_list isModificationOver="true" declarationName="opAmp" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="V0" elementName="V0"/>
+        <modifications expression="false" elementName="useSupply" isfinal="true"/>
+        <modifications expression="Vps" elementName="Vps" isfinal="true"/>
+        <modifications expression="Vns" elementName="Vns" isfinal="true"/>
+        <modifications isModificationOver="true" elementName="out">
+          <modifications isModificationOver="true" elementName="i">
+            <modifications expression="0" elementName="start"/>
+            <modifications expression="false" elementName="fixed"/>
+          </modifications>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+        </modifications>
+        <modifications expression="{ Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Polygon( points={{-60,70},{70,0},{-60,-72},{-60,70}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Partial model for operational amplifier circuits, based on the &lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Ideal.IdealizedOpAmpLimited\&quot;>IdealizedOpAmpLimited&lt;/a> model.&#xA;Different functionality is achieved by different circuits.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

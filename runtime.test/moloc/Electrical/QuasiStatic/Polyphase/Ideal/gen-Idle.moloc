@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Polyphase.Ideal"/>
+  <classes classType="model" className="Idle" description="&quot;Idle branch&quot;" isLongClassSpecifier="true" classNameEnd="Idle" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPlug" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Ideal.Idle" isOver="true">
+      <component_list subscripts="[m]" declarationName="idle" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPins_p.pin_p" right="idle.pin_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-68,0},{-10,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idle.pin_n" right="plugToPins_n.pin_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{ 39,0} ,{39,0},{68,0} }" elementName="points"/>
+          <modifications expression="{0,127,0}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Rectangle( extent={{-80,80},{80,-80}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Line(points={{-90,0},{-41,0}}, color={85,170,255} ) ,Line(points={{91,0},{40,0}}, color={85,170,255}), Text( extent={{-150,130},{150,90}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text( extent={{-150,-90},{150,-130}}, textString=&quot;m=%m&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This model describes &lt;em>m&lt;/em> simple idle branches considering the complex currents &lt;em>&lt;u>i&lt;/u>&lt;/em> = 0;&#xA;it uses &lt;em>m&lt;/em> &lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Ideal.Idle\&quot;>single-phase idle branches&lt;/a>.&#xA;&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Ideal.Idle\&quot;>Idle&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Ideal.Short\&quot;>Short&lt;/a>&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

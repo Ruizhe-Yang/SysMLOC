@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.UsersGuide"/>
+  <classes classType="class" className="References" description="&quot;References&quot;" isLongClassSpecifier="true" classNameEnd="References" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.References" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;info&quot;" elementName="preferredView"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;> &lt;tr> &lt;td>[Lang1984]&lt;/td> &lt;td>W. Lang, &amp;quot;&#xA;&amp;Uuml;&#xA;ber die Bemessung verlustarmer Asynchronmotoren mit K&amp;auml;&#xA;figl&amp;auml;&#xA;ufer f&amp;uuml;&#xA;r Pulsumrichterspeisung,&amp;quot;&#xA;Doctoral Thesis, Technical University of Vienna, 1984.&lt;/td> &lt;/tr>&lt;/table>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

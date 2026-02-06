@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.ACAC.Control"/>
+  <classes classType="block" className="SoftStartControl" isLongClassSpecifier="true" classNameEnd="SoftStartControl" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" selfName="ModeOfOperation" importName="Modelica.Electrical.PowerConverters.Types.SoftStarterModeOfOperation" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list declarationName="tRampUp" description="&quot;Start ramp duration&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="vStart" description="&quot;Start voltage / nominal voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list declarationName="iMax" description="&quot;Maximum current / nominal current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0.9*iMax" declarationName="iMin" description="&quot;Lower threshold of current control&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list declarationName="INominal" description="&quot;Nominal current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list declarationName="tRampDown" description="&quot;Stop ramp duration&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="iRMS" description="&quot;Measured RMS current&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;A&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="vRef" description="&quot;Reference voltage&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="min"/>
+        <modifications expression="1" elementName="max"/>
+        <modifications expression="0" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <component_list declarationName="start" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{0,-120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="PowerConverters.Types.SoftStarterModeOfOperation" isProtected="true" isOver="true">
+      <component_list declarationName="modeOfOperation"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
+      <component_list expression="iRMS/INominal" declarationName="i" description="&quot;Measured current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isOver="true">
+      <component_list declarationName="limit" description="&quot;Indicates current limitation&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection" isInitial="true">
+      <equations xsi:type="mOloc:IfEquation" condition="start">
+        <ifEquations xsi:type="mOloc:IfEquation" condition="vRef&lt;1">
+          <ifEquations xsi:type="mOloc:SimpleEquation" left="modeOfOperation" right="ModeOfOperation.Up"/>
+          <elseEquations xsi:type="mOloc:SimpleEquation" left="modeOfOperation" right="ModeOfOperation.On"/>
+        </ifEquations>
+        <elseEquations xsi:type="mOloc:IfEquation" condition="vRef>0">
+          <ifEquations xsi:type="mOloc:SimpleEquation" left="modeOfOperation" right="ModeOfOperation.Down"/>
+          <elseEquations xsi:type="mOloc:SimpleEquation" left="modeOfOperation" right="ModeOfOperation.Off"/>
+        </elseEquations>
+      </equations>
+      <equations xsi:type="mOloc:SimpleEquation" left="limit" right="i>=iMax"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(iMax>iMin, &quot;iMax has to be greater than iMin&quot;)"/>
+      <equations xsi:type="mOloc:WhenEquation" condition="start">
+        <whenEquations xsi:type="mOloc:SimpleEquation" left="modeOfOperation" right="ModeOfOperation.Up"/>
+        <elseCondition>vRef>=1</elseCondition>
+        <elseCondition>not start</elseCondition>
+        <elseCondition>vRef&lt;=0</elseCondition>
+        <elsewhenEquations xsi:type="mOloc:SimpleEquation" left="modeOfOperation" right="ModeOfOperation.On"/>
+        <elsewhenEquations xsi:type="mOloc:SimpleEquation" left="modeOfOperation" right="ModeOfOperation.Down"/>
+        <elsewhenEquations xsi:type="mOloc:SimpleEquation" left="modeOfOperation" right="ModeOfOperation.Off"/>
+      </equations>
+      <equations xsi:type="mOloc:WhenEquation" condition="start and vRef&lt;vStart">
+        <whenEquations xsi:type="mOloc:FunctionEquation" component="reinit" function="(vRef, vStart)"/>
+      </equations>
+      <equations xsi:type="mOloc:WhenEquation" condition="i>=iMax">
+        <whenEquations xsi:type="mOloc:SimpleEquation" left="limit" right="true"/>
+        <elseCondition>i&lt;=iMin</elseCondition>
+        <elsewhenEquations xsi:type="mOloc:SimpleEquation" left="limit" right="false"/>
+      </equations>
+      <equations xsi:type="mOloc:IfEquation" condition="modeOfOperation==ModeOfOperation.Up and not limit">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="der(vRef)" right="(1 - vStart)/tRampUp"/>
+        <elseCondition>modeOfOperation==ModeOfOperation.Down and not limit</elseCondition>
+        <elseifEquations xsi:type="mOloc:SimpleEquation" left="der(vRef)" right="-1/tRampDown"/>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="der(vRef)" right="0"/>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This block models the functionality of a soft starter controller, controlling the output &lt;code>vRef&lt;/code> in the range [0,1] with respect to nominal voltage.&lt;/p>&lt;p>Boolean input &lt;code>start = true&lt;/code> causes the output &lt;code>vRef&lt;/code> to be risen according to a ramp: &lt;code>vRef = vStart + (1 - vStart)*(time - t0)/tRampUp&lt;/code>.&lt;/p>&lt;p>In case the current exceeds the specified maximum current &lt;code>iMax&lt;/code> during the starting ramp, the ramp is stopped.When the current falls below the lower threshold of current control &lt;code>iMin &amp;lt;&#xA;iMax&lt;/code>, the ramp is continued.&lt;/p>&lt;p>Note: It is recommended to filter the measured current, e.g. using &lt;a href=\&quot;modelica://Modelica.Blocks.Continuous.Filter\&quot;>Modelica.Blocks.Continuous.Filter&lt;/a>&#xA;&lt;/p>&lt;p>Boolean input &lt;code>start = false&lt;/code> causes the output &lt;code>vRef&lt;/code> to be lowered according to a ramp: &lt;code>vRef = -(time - t0)/tRampDown&lt;/code>.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Polygon( points={{-12,20},{-12,-4},{12,8},{-12,20}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-12,20},{-12,-20}}, color={0,0,255}), Line(points={{12,20},{12,-20}}, color={0,0,255}), Polygon( points={{-12,12},{-12,-12},{12,0},{-12,12}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, origin={0,-8}, rotation=180 ) , Line(points={{-40,0},{-12,0}}, color={0,0,255}), Line(points={{12,0},{40,0}}, color={0,0,255}), Polygon( points={{-12,80},{-12,56},{12,68},{-12,80}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-12,80},{-12,40}}, color={0,0,255}), Line(points={{12,80},{12,40}}, color={0,0,255}), Polygon( points={{-12,12},{-12,-12},{12,0},{-12,12}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, origin={0,52}, rotation=180 ) , Line(points={{-40,60},{-12,60}}, color={0,0,255}), Line(points={{12,60},{40,60}}, color={0,0,255}), Polygon( points={{-12,-40},{-12,-64},{12,-52},{-12,-40}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-12,-40},{-12,-80}}, color={0,0,255}), Line(points={{12,-40},{12,-80}}, color={0,0,255}), Polygon( points={{-12,12},{-12,-12},{12,0},{-12,12}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, origin={0,-68}, rotation=180 ) , Line(points={{-40,-60},{-12,-60}}, color={0,0,255}), Line(points={{12,-60},{40,-60}}, color={0,0,255}) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Polyphase.Interfaces"/>
+  <classes isPartial="true" classType="model" className="ReferenceSource" description="&quot;Partial of voltage or current source with reference input&quot;" isLongClassSpecifier="true" classNameEnd="ReferenceSource" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="QuasiStatic.Polyphase.Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.root" function="(plug_p.reference)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Ellipse( extent={{-50,50},{50,-50}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{-50,0}}, color={85,170,255}), Line(points={{50,0},{90,0}}, color={85,170,255}), Text( extent={{160,-100},{-160,-60}}, textString=&quot;m=%m&quot; ) , Text( extent={{-150,60},{150,100}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The source partial model relies on the&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Interfaces.TwoPlug\&quot;>TwoPlug&lt;/a> and contains a proper icon.&#xA;&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sources.VoltageSource\&quot;>VoltageSource&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sources.VariableVoltageSource\&quot;>VariableVoltageSource&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sources.CurrentSource\&quot;>CurrentSource&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sources.VariableCurrentSource\&quot;>VariableCurrentSource&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.Source\&quot;>SinglePhase.Interfaces.Source&lt;/a>.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

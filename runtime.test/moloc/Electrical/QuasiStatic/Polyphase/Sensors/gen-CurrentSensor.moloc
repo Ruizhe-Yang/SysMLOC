@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Polyphase.Sensors"/>
+  <classes classType="model" className="CurrentSensor" description="&quot;Current Sensor&quot;" isLongClassSpecifier="true" classNameEnd="CurrentSensor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.QuasiStatic.Polyphase.Interfaces.RelativeSensorElementary" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Sensors.CurrentSensor" isOver="true">
+      <component_list subscripts="[m]" declarationName="currentSensor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list subscripts="[m]" expression="Modelica.ComplexMath.abs(i)" declarationName="abs_i" description="&quot;Magnitude of complex current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
+      <component_list subscripts="[m]" expression="Modelica.ComplexMath.arg(i)" declarationName="arg_i" description="&quot;Argument of complex current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="ComplexBlocks.Interfaces.ComplexOutput" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="i" description="&quot;Current as complex output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications typeSpecifier="SI.Current" declarationName="re" isRedeclare="true" isEach="true" isfinal="true"/>
+        <modifications typeSpecifier="SI.Current" declarationName="im" isRedeclare="true" isEach="true" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,-110}" elementName="origin"/>
+            <modifications expression="{{10,10},{-10,-10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plugToPins_p.pin_p" right="currentSensor.pin_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-68,0},{-53.5,0},{-53.5,0},{-39,0},{-39,0},{-10,0}}" elementName="points"/>
+          <modifications expression="{85, 170,255 }" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="currentSensor.pin_n" right="plugToPins_n.pin_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{39,0},{39,0},{68,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="currentSensor.i" right="i">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-11},{0,-35.75},{ 0,-35.75} ,{0,-60.5},{0,-60.5},{0,-110} }" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This sensor can be used to measure &lt;em>m&lt;/em> complex currents, using &lt;em>m&lt;/em>&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sensors.CurrentSensor\&quot;>single-phase CurrentSensors&lt;/a>.&#xA;&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Sensors.CurrentSensor\&quot;>SinglePhase.Sensors.CurrentSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.ReferenceSensor\&quot;>ReferenceSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.FrequencySensor\&quot;>FrequencySensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.PotentialSensor\&quot;>PotentialSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.VoltageSensor\&quot;>VoltageSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.VoltageQuasiRMSSensor\&quot;>VoltageQuasiRMSSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.CurrentQuasiRMSSensor\&quot;>CurrentQuasiRMSSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.PowerSensor\&quot;>PowerSensor&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Sensors.MultiSensor\&quot;>MultiSensor&lt;/a>&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Text( extent={{-30,-10},{30,-70}}, textColor={64,64,64}, textString=&quot;A&quot; ) , Line(points={{70,0},{90,0}}, color={85,170,255}), Line(points={{-70,0},{-90,0}}, color={85,170,255}), Line(points={{100,0},{-100,0}},color={85,170,255}) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

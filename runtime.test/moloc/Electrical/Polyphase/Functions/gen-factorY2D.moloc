@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Functions"/>
+  <classes classType="function" className="factorY2D" description="&quot;Calculates factor Y voltage to polygon (delta) voltage&quot;" isLongClassSpecifier="true" classNameEnd="factorY2D" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Electrical.Polyphase.Functions.numberOfSymmetricBaseSystems" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="input" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="input" isOver="true">
+      <component_list expression="1" declarationName="kPolygon" description="&quot;Alternative of polygon&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
+      <component_list declarationName="y" description="&quot;Factor Y to D&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isProtected="true" isOver="true">
+      <component_list expression="integer(m/numberOfSymmetricBaseSystems(m))" declarationName="mBasic"/>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:IfStatement" condition="mBasic==2">
+        <ifStatements xsi:type="mOloc:FunctionStatement" component="y" expression="sqrt(2)"/>
+        <elseStatements xsi:type="mOloc:IfStatement" condition="kPolygon&lt;1 or kPolygon>(mBasic - 1)/2">
+          <ifStatements xsi:type="mOloc:FunctionStatement" component="y" expression="2*sin(pi/mBasic)"/>
+          <elseStatements xsi:type="mOloc:FunctionStatement" component="y" expression="2*sin(kPolygon*pi/mBasic)"/>
+        </elseStatements>
+      </statements>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Calculates line-to-line voltage from line-to-neutral voltage.&lt;/p>&lt;h4>Note&lt;/h4>&lt;p>For m&amp;gt;&#xA;3 phases, more than one variant exists for the choice of the line-to-line voltage.If input kPolygon is not in the range of 1 &amp;le;&#xA;kPolygon &amp;le;&#xA;(mBasic - 1)/2, the function is evaluated for kPolygon = 1.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Sources"/>
+  <classes classType="model" className="FrequencySweepVoltageSource" description="&quot;Voltage source with integrated frequency sweep&quot;" isLongClassSpecifier="true" classNameEnd="FrequencySweepVoltageSource" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPin" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
+      <component_list isModificationOver="true" expression="pin_p.reference.gamma" declarationName="gamma">
+        <modifications expression="0" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="fStart" description="&quot;Start sweep frequency&quot;">
+        <modifications expression="eps" elementName="min" isfinal="true"/>
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="fStop" description="&quot;Stop sweep frequency&quot;">
+        <modifications expression="eps" elementName="min" isfinal="true"/>
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="startTime" description="&quot;Start time of frequency sweep&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="duration" description="&quot;Duration of frequency sweep&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="V" description="&quot;RMS voltage of the source&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="phi" description="&quot;Phase shift of the source&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" isOver="true">
+      <component_list expression="voltageSource.f" declarationName="f" description="&quot;Actual frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.LogFrequencySweep" isOver="true">
+      <component_list isModificationOver="true" declarationName="logFrequencySweep" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="fStart" elementName="wMin" isfinal="true"/>
+        <modifications expression="fStop" elementName="wMax" isfinal="true"/>
+        <modifications expression="startTime" elementName="startTime" isfinal="true"/>
+        <modifications expression="duration" elementName="duration" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,-60},{20,-40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="VariableVoltageSource" isOver="true">
+      <component_list declarationName="voltageSource" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,10},{0,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.ComplexBlocks.Sources.ComplexConstant" isOver="true">
+      <component_list isModificationOver="true" declarationName="const" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Modelica.ComplexMath.fromPolar(len=V, phi=phi)" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-60,-60},{-40,-40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="logFrequencySweep.y" right="voltageSource.f">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{19,-50},{-4,-50},{-4,-12}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="const.y" right="voltageSource.V">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-39,-50},{-16,-50},{-16,-12}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="pin_p" right="voltageSource.pin_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-20,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltageSource.pin_n" right="pin_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,0},{100,0}}" elementName="points"/>
+          <modifications expression="{85,170,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;voltageSource&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+        </modifications>
+        <modifications expression="{ Ellipse( extent={{-50,50},{50,-50}}, lineColor={85,170,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{-50,0}}, color={85,170,255}), Line(points={{50,0},{90,0}}, color={85,170,255}), Line(points={{-50,0},{50,0}}, color={85,170,255}), Line(points={{-70,30},{-70,10}}, color={85,170,255}), Line(points={{-80,20},{-60,20}}, color={85,170,255}), Line(points={{60,20},{80,20}}, color={85,170,255}), Text( extent={{150,60},{-150,100}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Line( points={{-44,0},{-32,14},{-20,32},{-12,42},{-6,30},{0,0},{4,-28},{8,-40},{12,-20},{14,2},{16,30},{18,42},{20,28},{24,-32},{26,-40},{28,0}}, color={192,192,192}, smooth=Smooth.Bezier ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This source provides a constant RMS phase voltage &lt;code>V&lt;/code> and phase angle &lt;code>phi&lt;/code>,whereas the frequency sweeps from&lt;code>fStart&lt;/code> to &lt;code>fStop&lt;/code> with &lt;code>duration&lt;/code>. The frequency sweeps suchway that on a logarithmic frequency scale, the frequency curve appears linear.&lt;/p>&lt;p>&lt;img src=\&quot;modelica://Modelica/Resources/Images/Electrical/QuasiStatic/SinglePhase/Sources/FrequencySweepSource.png\&quot;&#xA;alt=\&quot;FrequencySweepSource.png\&quot;>&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

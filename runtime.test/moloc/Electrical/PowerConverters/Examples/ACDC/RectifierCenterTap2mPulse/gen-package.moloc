@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.Examples.ACDC"/>
+  <classes classType="package" className="RectifierCenterTap2mPulse" description="&quot;2*m pulse rectifier with center tap&quot;" isLongClassSpecifier="true" classNameEnd="RectifierCenterTap2mPulse" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.ExamplesPackage" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This package includes polyphase center tap rectifiers. The number of phases, &lt;code>m&lt;/code>, determines the number of pulses, &lt;code>2*m&lt;/code>. The examples show uncontrolled and controlled rectifiers with constant and variable firing angle.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

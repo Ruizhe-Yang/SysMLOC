@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.BasicMachines.DCMachines"/>
+  <classes classType="model" className="DC_PermanentMagnet" description="&quot;Permanent magnet DC machine&quot;" isLongClassSpecifier="true" classNameEnd="DC_PermanentMagnet" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.PartialBasicDCMachine" isOver="true">
+      <extendsModifications expression="VaNominal - Machines.Thermal.convertResistance( Ra, TaRef, alpha20a, TaNominal ) *IaNominal - Machines.Losses.DCMachines.brushVoltageDrop( brushParameters, IaNominal)" elementName="ViNominal" isfinal="true"/>
+      <extendsModifications expression="Lme*IeNominal" elementName="psi_eNominal" isfinal="true"/>
+      <extendsModifications typeSpecifier="Machines.Thermal.DCMachines.ThermalAmbientDCPM" isModificationOver="true" declarationName="thermalAmbient" isRedeclare="true" isfinal="true">
+        <modifications expression="TpmOperational" elementName="Tpm" isfinal="true"/>
+      </extendsModifications>
+      <extendsModifications typeSpecifier="Machines.Interfaces.DCMachines.ThermalPortDCPM" declarationName="thermalPort" isRedeclare="true" isfinal="true"/>
+      <extendsModifications typeSpecifier="Machines.Interfaces.DCMachines.ThermalPortDCPM" declarationName="internalThermalPort" isRedeclare="true" isfinal="true"/>
+      <extendsModifications typeSpecifier="Machines.Interfaces.DCMachines.PowerBalanceDCPM" isModificationOver="true" declarationName="powerBalance" isRedeclare="true" isfinal="true">
+        <modifications expression="0" elementName="lossPowerPermanentMagnet" isfinal="true"/>
+      </extendsModifications>
+      <extendsModifications isModificationOver="true" elementName="core">
+        <modifications expression="airGapDC.w" elementName="w" isfinal="true"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="293.15" declarationName="TpmOperational" description="&quot;Operational temperature of permanent magnet&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Operational temperatures&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.BasicMachines.Components.AirGapDC" isOver="true">
+      <component_list isModificationOver="true" declarationName="airGapDC" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="turnsRatio" elementName="turnsRatio" isfinal="true"/>
+        <modifications expression="Lme" elementName="Le" isfinal="true"/>
+        <modifications expression="quasiStatic" elementName="quasiStatic" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="eGround" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-20,-30}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.ConstantCurrent" isOver="true">
+      <component_list isModificationOver="true" declarationName="ie" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="IeNominal" elementName="I"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,-40}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="constant" isProtected="true" isOver="true">
+      <component_list expression="1" declarationName="Lme" description="&quot;Field excitation inductance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="constant" isOver="true">
+      <component_list expression="1" declarationName="IeNominal" description="&quot;Equivalent excitation current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="eGround.p" right="ie.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,-30},{-10,-30},{ -10,-40} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGapDC.pin_ep" right="ie.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,-10},{10,-40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGapDC.pin_en" right="eGround.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,-10}, {-10,-20},{-10,-30} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGapDC.pin_ap" right="la.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,10},{10,60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGapDC.support" right="internalSupport">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,0},{-40,0},{-40,-90},{60,-90},{60,-100}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGapDC.flange" right="inertiaRotor.flange_a">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{36,0},{36,0},{70,0}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGapDC.pin_an" right="brush.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,10},{-10,60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;dcpm&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Rectangle( extent={{-130,10},{-100,-10}}, fillColor={0,255,0}, fillPattern=FillPattern.Solid ) , Rectangle( extent={{-100,10},{-70,-10}}, fillColor={255,0,0}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>&lt;strong>Model of a DC Machine with permanent magnets.&lt;/strong>&lt;br>Armature resistance and inductance are modeled directly after the armature pins, then using a &lt;em>AirGapDC&lt;/em> model. Permanent magnet excitation is modelled by a constant equivalent excitation current feeding AirGapDC. The machine models take the following loss effects into account:&lt;/p>&lt;ul>&lt;li>heat losses in the temperature dependent armature winding resistance&lt;/li>&lt;li>brush losses in the armature circuit&lt;/li>&lt;li>friction losses&lt;/li>&lt;li>core losses (only eddy current losses, no hysteresis losses)&lt;/li>&lt;li>stray load losses&lt;/li>&lt;/ul>&lt;p>No saturation is modelled.&lt;br>&lt;strong>Default values for machine's parameters (a realistic example) are:&lt;/strong>&lt;br>&lt;/p>&lt;table>&lt;tr>&lt;td>stator's moment of inertia&lt;/td>&lt;td>0.29&lt;/td>&lt;td>kg.m2&lt;/td>&lt;/tr>&lt;tr>&lt;td>rotor's moment of inertia&lt;/td>&lt;td>0.15&lt;/td>&lt;td>kg.m2&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal armature voltage&lt;/td>&lt;td>100&lt;/td>&lt;td>V&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal armature current&lt;/td>&lt;td>100&lt;/td>&lt;td>A&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal speed&lt;/td>&lt;td>1425&lt;/td>&lt;td>rpm&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal torque&lt;/td>&lt;td>63.66&lt;/td>&lt;td>Nm&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal mechanical output&lt;/td>&lt;td>9.5&lt;/td>&lt;td>kW&lt;/td>&lt;/tr>&lt;tr>&lt;td>efficiency&lt;/td>&lt;td>95.0&lt;/td>&lt;td>%&lt;/td>&lt;/tr>&lt;tr>&lt;td>armature resistance&lt;/td>&lt;td>0.05&lt;/td>&lt;td>Ohm at reference temperature&lt;/td>&lt;/tr>&lt;tr>&lt;td>reference temperature TaRef&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;tr>&lt;td>temperature coefficient alpha20a &lt;/td>&lt;td>0&lt;/td>&lt;td>1/K&lt;/td>&lt;/tr>&lt;tr>&lt;td>armature inductance&lt;/td>&lt;td>0.0015&lt;/td>&lt;td>H&lt;/td>&lt;/tr>&lt;tr>&lt;td>armature nominal temperature TaNominal&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;tr>&lt;td>armature operational temperature TaOperational&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;/table>Armature resistance resp. inductance include resistance resp. inductance of commutating pole winding and compensation winding, if present.&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

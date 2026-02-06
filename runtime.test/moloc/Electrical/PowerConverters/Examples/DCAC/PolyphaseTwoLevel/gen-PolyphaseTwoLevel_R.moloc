@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.Examples.DCAC.PolyphaseTwoLevel"/>
+  <classes classType="model" className="PolyphaseTwoLevel_R" description="&quot;Polyphase DC to AC converter with R load&quot;" isLongClassSpecifier="true" classNameEnd="PolyphaseTwoLevel_R" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="1000" declarationName="f" description="&quot;Switching frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="50" declarationName="f1" description="&quot;Fundamental wave AC frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="100" declarationName="R" description="&quot;Resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.ConstantVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="constantVoltage_n" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="50" elementName="V"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-70,10}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="PowerConverters.DCAC.Polyphase2Level" isOver="true">
+      <component_list isModificationOver="true" declarationName="inverter" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="false" elementName="useHeatPort"/>
+        <modifications expression="m" elementName="m"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-50,20},{-30,40}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Sensors.CurrentSensor" isOver="true">
+      <component_list isModificationOver="true" declarationName="currentSensor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{40,-50}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Sensors.VoltageSensor" isOver="true">
+      <component_list isModificationOver="true" declarationName="voltageSensor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{70,-10}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+            <modifications expression="{-90,40}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="PowerConverters.DCDC.Control.SignalPWM" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="signalPWM" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="false" elementName="useConstantDutyCycle" isEach="true"/>
+        <modifications expression="f" elementName="f" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10}, {10,10} }" elementName="extent"/>
+            <modifications expression="{-40,-20}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.ConstantVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="constantVoltage_p" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="50" elementName="V"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-70,50}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Sine" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="sine" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="- Modelica.Electrical.Polyphase.Functions.symmetricOrientation(m)" elementName="phase"/>
+        <modifications expression="zeros(m)" elementName="startTime"/>
+        <modifications expression="fill(0.5, m)" elementName="amplitude"/>
+        <modifications expression="fill(0.5, m)" elementName="offset"/>
+        <modifications expression="fill(f1, m)" elementName="f"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-30, -64 } ,{-50,-44} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Harmonic" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="fundamentalWaveCurrent" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="k" isEach="true"/>
+        <modifications expression="0" elementName="x0Cos" isEach="true"/>
+        <modifications expression="0" elementName="x0Sin" isEach="true"/>
+        <modifications expression="f1" elementName="f" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="{90,-50}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Harmonic" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="fundamentalWaveVoltage" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="k" isEach="true"/>
+        <modifications expression="0" elementName="x0Cos" isEach="true"/>
+        <modifications expression="0" elementName="x0Sin" isEach="true"/>
+        <modifications expression="f1" elementName="f" isEach="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{90,50}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m"/>
+        <modifications expression="fill(R, m )" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{40,10}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Basic.Star" isOver="true">
+      <component_list isModificationOver="true" declarationName="star" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{40,-90}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="constantVoltage_p.n" right="constantVoltage_n.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,40},{-70,20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="constantVoltage_p.p" right="inverter.dc_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,60},{-60,60},{-60,36},{-50,36}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="constantVoltage_n.n" right="inverter.dc_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,0},{-60,0},{-60,24},{-54,24},{-50,24}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ground.p" right="constantVoltage_p.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-90,30},{-70,30},{-70,40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sine.y" right="signalPWM.dutyCycle">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-51,-54},{-60,-54},{-60,-20},{-52,-20}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltageSensor.v" right="fundamentalWaveVoltage.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{81,-10},{90,-10},{90,38}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="fundamentalWaveCurrent.u" right="currentSensor.i">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{78,-50},{51,-50}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="signalPWM.fire" right="inverter.fire_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-46,-9},{-46,18}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="signalPWM.notFire" right="inverter.fire_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-34,-9},{-34,18}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="inverter.ac" right="resistor.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,30},{40,30},{40,20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltageSensor.plug_p" right="inverter.ac">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{70,0},{70,30},{-30,30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltageSensor.plug_n" right="currentSensor.plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{70,-20},{70,-70},{40,-70},{40,-60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="currentSensor.plug_n" right="star.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,-60},{40,-80}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor.plug_n" right="currentSensor.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,0},{40,-40},{40,-40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="0" elementName="StartTime"/>
+        <modifications expression="0.1" elementName="StopTime"/>
+        <modifications expression="1e-06" elementName="Tolerance"/>
+        <modifications expression="0.00002" elementName="Interval"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Plot current &lt;code>currentSensor.i[:]&lt;/code>, harmonic current magnitude &lt;code>fundamentalWaveCurrent[:].y_RMS&lt;/code>, harmonic voltage magnitude &lt;code>fundamentalWaveVoltage[:].y_RMS&lt;/code>. The instantaneous voltages &lt;code>voltageSensor.i[:]&lt;/code> and currents &lt;code>currentSensor.i[:]&lt;/code> directly show the switching pattern of the inverter. There is not smoothing effect due to an inductance in this example;&#xA;see &lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.Examples.DCAC.PolyphaseTwoLevel.PolyphaseTwoLevel_RL\&quot;>PolyphaseTwoLevel_RL&lt;/a>.&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

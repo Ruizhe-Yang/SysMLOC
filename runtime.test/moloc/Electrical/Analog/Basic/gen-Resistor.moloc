@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Basic"/>
+  <classes classType="model" className="Resistor" description="&quot;Ideal linear electrical resistor&quot;" isLongClassSpecifier="true" classNameEnd="Resistor" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="R" description="&quot;Resistance at temperature T_ref&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list expression="300.15" declarationName="T_ref" description="&quot;Reference temperature&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.LinearTemperatureCoefficient" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="alpha" description="&quot;Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="T_ref" elementName="T"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" isOver="true">
+      <component_list declarationName="R_actual" description="&quot;Actual resistance = R*(1 + alpha*(T_heatPort - T_ref))&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="((1 + alpha*(T_heatPort - T_ref)) >= Modelica.Constants.eps, &quot;Temperature outside scope of model!&quot; )"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="R_actual" right="R*(1 + alpha*(T_heatPort - T_ref))"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="R_actual*i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="LossPower" right="v*i"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The linear resistor connects the branch voltage &lt;em>v&lt;/em> with the branch current &lt;em>i&lt;/em> by &lt;em>i*R = v&lt;/em>. The Resistance &lt;em>R&lt;/em> is allowed to be positive, zero, or negative.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em> August 07, 2009 &lt;/em> by Anton Haumer&lt;br> temperature dependency of resistance added&lt;br> &lt;/li>&lt;li>&lt;em> March 11, 2009 &lt;/em> by Christoph Clauss&lt;br> conditional heat port added&lt;br> &lt;/li>&lt;li>&lt;em> 1998 &lt;/em> by Christoph Clauss&lt;br> initially implemented&lt;br> &lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Rectangle( extent={{-70,30},{70,-30}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{-70,0}}, color={0,0,255}), Line(points={{70,0},{90,0}}, color={0,0,255}), Text( extent={{-150,-40},{150,-80}}, textString=&quot;R=%R&quot; ) , Line( visible=useHeatPort, points={{0,-100},{0,-30}}, color={127,0,0}, pattern=LinePattern.Dot ) , Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

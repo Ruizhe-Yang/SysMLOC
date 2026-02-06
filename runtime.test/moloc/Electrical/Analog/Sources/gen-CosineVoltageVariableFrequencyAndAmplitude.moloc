@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Sources"/>
+  <classes classType="model" className="CosineVoltageVariableFrequencyAndAmplitude" description="&quot;Cosine voltage source with variable frequency and amplitude&quot;" isLongClassSpecifier="true" classNameEnd="CosineVoltageVariableFrequencyAndAmplitude" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Icons.VoltageSource" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="useConstantAmplitude" description="&quot;Enable constant amplitude&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="constantAmplitude" description="&quot;Constant amplitude&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="useConstantAmplitude" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="useConstantFrequency" description="&quot;Enable constant frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="constantFrequency" description="&quot;Constant frequency&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="useConstantFrequency" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="offset" description="&quot;Offset of the sine wave&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
+      <component_list isModificationOver="true" declarationName="phi" description="&quot;Phase of the sine wave&quot;">
+        <modifications expression="0" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="V" description="&quot;Amplitude&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantAmplitude">
+        <modifications expression="&quot;V&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{60,120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="f" description="&quot;Frequency&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useConstantFrequency">
+        <modifications expression="&quot;Hz&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-60,120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isProtected="true" isOver="true">
+      <component_list isModificationOver="true" declarationName="V_internal" description="&quot;Amplitude&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;V&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-2,-2},{2,2}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{60,80}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+      <component_list isModificationOver="true" declarationName="f_internal" description="&quot;Frequency&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;Hz&quot;" elementName="unit"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-2,-2},{2,2}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-60,80}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
+      <component_list isModificationOver="true" declarationName="V_constant" isAnnotation="true" isAnnotationOver="true" condition_attribute="useConstantAmplitude">
+        <modifications expression="constantAmplitude" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,70},{40,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Sources.Constant" isOver="true">
+      <component_list isModificationOver="true" declarationName="f_constant" isAnnotation="true" isAnnotationOver="true" condition_attribute="useConstantFrequency">
+        <modifications expression="constantFrequency" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,70},{-40,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="der(phi)" right="2*pi*f_internal"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="offset + V_internal*cos(phi)"/>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="f" right="f_internal">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,120},{-60,80}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="V" right="V_internal">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,120},{60,80}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="f_constant.y" right="f_internal">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-41,80},{-60,80}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="V_constant.y" right="V_internal">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{41,80},{60,80}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;cosineVoltage&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line( points={{-80,80},{-78.4,79.6},{-76.8,79.2},{-75.2,78.8},{-73.6,78.4},{ -72,78} ,{-70.4,77.5},{-68.8,77.1},{-67.2,76.6},{-65.6,76.1},{-64,75.6}, {-62.4,75},{-60.8,74.4},{-59.2,73.7},{-57.6,73},{-56,72.2},{-54.4, 71.3 } ,{-52.8,70.3},{-51.2,69.2},{-49.6,68},{-48,66.6},{-46.4,65.2}, {-44.8,63.6},{-43.2,61.8},{-41.6,59.9},{-40,57.7},{-38.4,55.5},{-36.8, 53 } ,{-35.2,50.3},{-33.6,47.5},{-32,44.4},{-30.4,41.1},{-28.8,37.7}, {-27.2,34},{-25.6,30.1},{-24,26.1},{-22.4,21.9},{-20.8,17.5},{-19.2, 13 } ,{-17.6,8.3},{-16,3.5},{-14.4,-1.3},{-12.8,-6.2},{-11.2,-11.1}, {-9.6,-16},{-8,-20.8},{-6.4,-25.5},{-4.8,-30.1},{-3.2,-34.5},{-1.6, -38.6 } ,{0,-42.4},{1.6,-45.9},{3.2,-49},{4.8,-51.7},{6.4,-53.9},{8, -55.5 } ,{9.6,-56.5},{11.2,-57},{12.8,-56.8},{14.4,-55.9},{16,-54.4}, {17.6,-52.2},{19.2,-49.3},{20.8,-45.7},{22.4,-41.5},{24,-36.7},{25.6, -31.4 } ,{27.2,-25.6},{28.8,-19.4},{30.4,-12.9},{32,-6.2},{33.6,0.6}, {35.2,7.4},{36.8,14},{38.4,20.4},{40,26.3},{41.6,31.8},{43.2,36.5}, {44.8,40.6},{46.4,43.7},{48,45.9},{49.6,47.1},{51.2,47.2},{52.8,46.2}, {54.4,44.1},{56,41},{57.6,36.8},{59.2,31.8},{60.8,25.9},{62.4,19.4}, {64,12.4},{65.6,5.1},{67.2,-2.2},{68.8,-9.5},{70.4,-16.4},{72,-22.8}, {73.6,-28.4},{75.2,-33},{76.8,-36.6},{78.4,-38.9},{80,-39.8} } , smooth=Smooth.Bezier, color={192,192,192} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em> 1998 &lt;/em> by Christoph Clauss&lt;br> initially implemented&lt;br> &lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+        <modifications expression="&quot;&lt;html>&lt;p>This voltage source provides a cosine voltage with variable frequency &lt;code>f&lt;/code> and variable amplitude &lt;code>V&lt;/code>,i.e. the phase angle of the sine wave is integrated from 2*&amp;pi;&#xA;*f.&lt;/p>&lt;p>Note that the initial value of the phase angle &lt;code>phi&lt;/code> defines the initial phase shift,and that the parameter &lt;code>startTime&lt;/code> is omitted since the voltage can be kept equal to offset with setting the input &lt;code>V&lt;/code> to zero.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

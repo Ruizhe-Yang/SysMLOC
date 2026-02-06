@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.BatteryStacksWithSensors"/>
+  <classes classType="model" className="StackRC" description="&quot;Stack with sensors&quot;" isLongClassSpecifier="true" classNameEnd="StackRC" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.BaseClasses.BaseStackWithSensors" isOver="true">
+      <extendsModifications typeSpecifier="Modelica.Electrical.Batteries.ParameterRecords.TransientData.StackData" declarationName="stackData" isRedeclare="true"/>
+      <extendsModifications typeSpecifier="Modelica.Electrical.Batteries.BatteryStacksWithSensors.CellRC" isModificationOver="true" declarationName="cell" isRedeclare="true">
+        <modifications expression="stackData.cellData" elementName="cellData"/>
+        <modifications expression="SOC0" elementName="SOC0"/>
+        <modifications expression="SOCtolerance" elementName="SOCtolerance" isEach="true"/>
+        <modifications expression="useHeatPort" elementName="useHeatPort" isEach="true"/>
+        <modifications expression="T" elementName="T" isEach="true"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.Icons.TransientModel" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This is a stack of &lt;code>Ns&lt;/code> x &lt;code>Np&lt;/code> transient &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.BatteryStacksWithSensors.CellRC\&quot;>cellRC[Np=1, Ns=1]&lt;/a> (with RC-elements) with measurement, arranged in a matrix.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

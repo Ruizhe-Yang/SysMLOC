@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Utilities"/>
+  <classes classType="model" className="MultiTerminalBox" description="&quot;Terminal box Y/D-connection&quot;" isLongClassSpecifier="true" classNameEnd="MultiTerminalBox" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="Modelica.Electrical.Polyphase.Functions.numberOfSymmetricBaseSystems( m)" declarationName="mSystems" description="&quot;Number of symmetric base systems&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="integer(m/mSystems)" declarationName="mBasic" description="&quot;Number of phases of basic system&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="terminalConnection" description="&quot;Choose \&quot;Y\&quot; for star or \&quot;D\&quot; for delta connection&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;Y&quot;" elementName="start"/>
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications description="&quot;Star connection&quot;" expression="&quot;Y&quot;" elementName="choice"/>
+          <modifications description="&quot;Delta connection&quot;" expression="&quot;D&quot;" elementName="choice"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_sp" description="&quot;To be connected with positive stator plug&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{50,-50}, {70,-70} }" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{ 50,-50} ,{70,-70} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.NegativePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_sn" description="&quot;To be connected with negative stator plug&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-70,-50}, {-50,-70} }" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{ {-70,-50},{-50,-70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Polyphase.Basic.MultiStar" isOver="true">
+      <component_list isModificationOver="true" declarationName="multiStar" isAnnotation="true" isAnnotationOver="true" condition_attribute="(terminalConnection &lt;> &quot;D&quot; )">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-70,-80}" elementName="origin"/>
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Polyphase.Basic.MultiDelta" isOver="true">
+      <component_list isModificationOver="true" declarationName="multiDelta" isAnnotation="true" isAnnotationOver="true" condition_attribute="(terminalConnection == &quot;D&quot; )">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,-70},{-40,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plugSupply" description="&quot;To be connected with grid&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-30}, {10,-50} }" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-10,-30},{ 10,-50} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.NegativePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="starpoint" description="&quot;Star point&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="(terminalConnection &lt;> &quot;D&quot;)">
+        <modifications expression="mSystems" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-50},{-90,-30}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-110,-50},{-90,-30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_sn" right="multiStar.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,-60},{-60,-80}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_sn" right="multiDelta.plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-60,-60},{ -40,-60} ,{-40,-60} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="multiDelta.plug_p" right="plug_sp">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,-60},{ 60,-60} ,{60,-60} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_sp" right="plugSupply">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{60,-60},{0,-60},{0, -40 } }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="starpoint" right="multiStar.starpoints">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,-40},{-86,-40},{-86,-80},{-80,-80}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;terminalBox&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Polygon( points={{-74,-40},{-80,-46},{-80,-80},{-40,-100},{40,-100},{80,-70},{80,-44},{76,-40},{-74,-40}}, lineColor={95,95,95}, fillColor={135,135,135}, fillPattern=FillPattern.CrossDiag ) , Text( extent={{-40,-50},{40,-90}}, textString=&quot;%terminalConnection&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This model represents the internal connections of the terminal box of an electric machine.The parameter &lt;code>terminalConnection&lt;/code> is used to switch between star(&lt;code>terminalConnection = \&quot;Y\&quot;&lt;/code>) and delta (&lt;code>terminalConnection = \&quot;D\&quot;&lt;/code>) connection.The star point is a plug with&lt;code>mSystem = Electrical.Polyphase.Functions.numberOfSymmetricBaseSystems(m)&lt;/code> phases,representing the star points of each base system;&#xA;see&lt;a href=\&quot;modelica://Modelica.Magnetic.FundamentalWave.UsersGuide.Polyphase\&quot;>Modelica.Magnetic.FundamentalWave.UsersGuide.Polyphase&lt;/a>.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

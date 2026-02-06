@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Utilities"/>
+  <classes classType="record" className="SynchronousMachineData" description="&quot;Computes machine parameter from usual datasheet&quot;" isLongClassSpecifier="true" classNameEnd="SynchronousMachineData" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Record" isOver="true"/>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ApparentPower" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="SNominal" description="&quot;Nominal apparent power&quot;">
+        <modifications expression="30E3" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="VsNominal" description="&quot;Nominal stator voltage per phase&quot;">
+        <modifications expression="100" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="SNominal/(3*VsNominal)" declarationName="IsNominal" description="&quot;Nominal stator current per phase&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Impedance" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="VsNominal/IsNominal" declarationName="ZReference" description="&quot;Reference impedance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="fsNominal" description="&quot;Nominal stator frequency&quot;">
+        <modifications expression="50" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="2*pi*fsNominal" declarationName="omega" description="&quot;Nominal angular frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="IeOpenCircuit" description="&quot;Open circuit excitation current @ nominal voltage and frequency&quot;">
+        <modifications expression="10" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="effectiveStatorTurns" description="&quot;Effective number of stator turns&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="sqrt(2)*VsNominal/(omega*Lmd* IeOpenCircuit )" declarationName="turnsRatio" description="&quot;Stator current / excitation current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="x0" description="&quot;Stator stray inductance per phase (approximately zero impedance) [pu]&quot;">
+        <modifications expression="0.1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="xd" description="&quot;Synchronous reactance per phase, d-axis [pu]&quot;">
+        <modifications expression="1.6" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="xq" description="&quot;Synchronous reactance per phase, q-axis [pu]&quot;">
+        <modifications expression="1.6" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="xdTransient" description="&quot;Transient reactance per phase, d-axis [pu]&quot;">
+        <modifications expression="0.1375" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="xdSubtransient" description="&quot;Subtransient reactance per phase, d-axis [pu]&quot;">
+        <modifications expression="0.121428571" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="xqSubtransient" description="&quot;Subtransient reactance per phase, q-axis [pu]&quot;">
+        <modifications expression="0.148387097" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Ta" description="&quot;Armature time constant&quot;">
+        <modifications expression="0.014171268" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Td0Transient" description="&quot;Open circuit field time constant Td0'&quot;">
+        <modifications expression="0.261177343" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Td0Subtransient" description="&quot;Open circuit subtransient time constant Td0'', d-axis&quot;">
+        <modifications expression="0.006963029" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Tq0Subtransient" description="&quot;Open circuit subtransient time constant Tq0'', q-axis&quot;">
+        <modifications expression="0.123345081" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="TsSpecification" description="&quot;Specification temperature of stator resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Material&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="TsRef" description="&quot;Reference temperature of stator resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Material&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="alpha20s" description="&quot;Temperature coefficient of stator resistance at 20 degC&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Material&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="TrSpecification" description="&quot;Specification temperature of (optional) damper cage&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Material&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="TrRef" description="&quot;Reference temperature of damper resistances in d- and q-axis&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Material&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="alpha20r" description="&quot;Temperature coefficient of damper resistances in d- and q-axis&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Material&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="TeSpecification" description="&quot;Specification excitation temperature&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Material&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="TeRef" description="&quot;Reference temperature of excitation resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Material&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="alpha20e" description="&quot;Temperature coefficient of excitation resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Material&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="xd - x0" declarationName="xmd" description="&quot;Main field reactance per phase, d-axis [pu]&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="xq - x0" declarationName="xmq" description="&quot;Main field reactance per phase, q-axis [pu]&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="xmd^2/(xd - xdTransient)" declarationName="xe" description="&quot;Excitation reactance [pu]&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="xmd^2/(xdTransient - xdSubtransient)*(1 - (xmd/ xe ) ) ^2 + xmd^2/xe" declarationName="xrd" description="&quot;Damper reactance per phase, d-axis [pu]&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="xmq^2/(xq - xqSubtransient)" declarationName="xrq" description="&quot;Damper reactance per phase, d-axis [pu]&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="2/(1/xdSubtransient + 1/xqSubtransient)/(omega*Ta)" declarationName="rs" description="&quot;Stator resistance per phase at specification temperature [pu]&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="(xrd - xmd^2/xe)/(omega*Td0Subtransient)" declarationName="rrd" description="&quot;Damper resistance per phase at specification temperature, d-axis [pu]&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="xrq/(omega*Tq0Subtransient)" declarationName="rrq" description="&quot;Damper resistance per phase at specification temperature, q-axis [pu]&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="xe/(omega*Td0Transient)" declarationName="re" description="&quot;Excitation resistance per phase at specification temperature [pu]&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="Machines.Thermal.convertResistance( rs*ZReference, TsSpecification, alpha20s, TsRef )" declarationName="Rs" description="&quot;Stator resistance per phase at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="x0*ZReference/omega" declarationName="Lssigma" description="&quot;Stator stray inductance per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="xmd*ZReference/omega" declarationName="Lmd" description="&quot;Main field inductance per phase in d-axis&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="xmq*ZReference/omega" declarationName="Lmq" description="&quot;Main field inductance per phase in q-axis&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="(xrd - xmd)*ZReference/ omega" declarationName="Lrsigmad" description="&quot;Damper stray inductance in d-axis&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="(xrq - xmq)*ZReference/ omega" declarationName="Lrsigmaq" description="&quot;Damper stray inductance in q-axis&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="Machines.Thermal.convertResistance( rrd*ZReference, TrSpecification, alpha20r, TrRef )" declarationName="Rrd" description="&quot;Damper resistance in d-axis at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="Machines.Thermal.convertResistance( rrq*ZReference, TrSpecification, alpha20r, TrRef )" declarationName="Rrq" description="&quot;Damper resistance in q-axis at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="3/2*turnsRatio^2* Machines.Thermal.convertResistance( re*ZReference, TeSpecification, alpha20e, TeRef )" declarationName="Re" description="&quot;Excitation resistance at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="1 - xmd/xe" declarationName="sigmae" description="&quot;Stray fraction of total excitation inductance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Result&quot;" elementName="tab"/>
+          <modifications expression="false" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;smeeData&quot;" elementName="defaultComponentName"/>
+      <annotations expression="&quot;parameter&quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The parameters of the&lt;a href=\&quot;modelica://Modelica.Electrical.Machines.BasicMachines.SynchronousMachines.SM_ElectricalExcited\&quot;>&#xA;synchronous machine model with electrical excitation (and damper)&lt;/a> are calculated from parametersnormally given in a technical description, according to the standard EN&amp;nbsp;&#xA;60034-4:2008&amp;nbsp;&#xA;Appendix&amp;nbsp;&#xA;C.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.SpacePhasors.Functions"/>
+  <classes classType="function" className="FromPolar" description="&quot;Converts a space phasor from polar coordinates&quot;" isLongClassSpecifier="true" classNameEnd="FromPolar" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+      <component_list declarationName="absolute" description="&quot;Magnitude of space phasor&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" directionType="input" isOver="true">
+      <component_list declarationName="angle" description="&quot;Angle of space phasor&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
+      <component_list subscripts="[2]" declarationName="x" description="&quot;Real and imaginary part of space phasor&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="constant" isProtected="true" isOver="true">
+      <component_list expression="Modelica.Constants.small" declarationName="small"/>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:FunctionStatement" component="x" expression="absolute*{cos(angle),sin(angle)}"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="true" elementName="Inline"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>Converts a space phasor from polar coordinates to rectangular coordinates.&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

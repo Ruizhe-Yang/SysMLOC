@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Interfaces"/>
+  <classes isPartial="true" classType="model" className="FlangeSupport" description="&quot;Shaft and support&quot;" isLongClassSpecifier="true" classNameEnd="FlangeSupport" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.Flange_a" isOver="true">
+      <component_list declarationName="flange" description="&quot;Shaft end&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,110},{10,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.Flange_a" isOver="true">
+      <component_list declarationName="support" description="&quot;Housing and support&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10, -110 } ,{10,-90} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
+      <component_list declarationName="phi" description="&quot;Angle between shaft and support&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Torque" isOver="true">
+      <component_list declarationName="tau" description="&quot;Torque&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" isOver="true">
+      <component_list declarationName="w" description="&quot;Relative angular velocity of flange and support&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="phi" right="flange.phi - support.phi"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="w" right="der(phi)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="tau" right="-flange.tau"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="tau" right="support.tau"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This partial model defines shaft and housing connector for loss models.Positive torque &lt;code>tau&lt;/code> acts as braking torque.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Rectangle( extent={{-20,-80},{20,-120}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

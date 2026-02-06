@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Sensors"/>
+  <classes classType="model" className="RotorDisplacementAngle" description="&quot;Rotor lagging angle&quot;" isLongClassSpecifier="true" classNameEnd="RotorDisplacementAngle" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="p" description="&quot;Number of pole pairs&quot;">
+        <modifications expression="1" elementName="min"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="positiveRange" description="&quot;Use only positive output range, if true&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="0" declarationName="threshold" description="&quot;Below threshold the voltage is considered as zero&quot;">
+        <modifications expression="0" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="useSupport" description="&quot;Use support or fixed housing&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="rotorDisplacementAngle" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;Angle&quot;" elementName="quantity" isfinal="true"/>
+        <modifications expression="&quot;rad&quot;" elementName="unit" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.PositivePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_p" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,50},{-90,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Interfaces.NegativePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_n" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-70},{-90,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Polyphase.Sensors.VoltageSensor" isOver="true">
+      <component_list isModificationOver="true" declarationName="VoltageSensor1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-80,0}" elementName="origin"/>
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SpacePhasors.Blocks.ToSpacePhasor" isOver="true">
+      <component_list isModificationOver="true" declarationName="ToSpacePhasorVS" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-50,-10},{-30,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.Flange_a" isOver="true">
+      <component_list declarationName="flange" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,90},{10,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Sensors.RelAngleSensor" isOver="true">
+      <component_list declarationName="relativeAngleSensor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,70},{20,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Constant" isOver="true">
+      <component_list isModificationOver="true" declarationName="constant_" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Modelica.Constants.pi/ 2" elementName="k" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-50,40},{-30,60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Math.Add" isOver="true">
+      <component_list isModificationOver="true" declarationName="add" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="k2" isfinal="true"/>
+        <modifications expression="p" elementName="k1" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-10,30}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Machines.SpacePhasors.Blocks.Rotator" isOver="true">
+      <component_list declarationName="rotatorVS2R" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-20,10},{0,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Machines.SpacePhasors.Blocks.ToPolar" isOver="true">
+      <component_list declarationName="ToPolarVSR" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{30,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Interfaces.Flange_a" isOver="true">
+      <component_list declarationName="support" description="&quot;Support at which the reaction torque is acting&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useSupport">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,90},{110,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Components.Fixed" isOver="true">
+      <component_list declarationName="fixed" isAnnotation="true" isAnnotationOver="true" condition_attribute="(not useSupport)">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,70},{110,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Math.WrapAngle" isOver="true">
+      <component_list isModificationOver="true" declarationName="wrapAngle" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="positiveRange" elementName="positiveRange" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{70,-10},{90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SpacePhasors.Blocks.LessThreshold" isOver="true">
+      <component_list isModificationOver="true" declarationName="lessThreshold" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="threshold" elementName="threshold" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,-10},{60,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_p" right="VoltageSensor1.plug_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,60},{-80, 60 } ,{-80,10} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_n" right="VoltageSensor1.plug_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,-60},{-80, -60 } ,{-80,-10} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="relativeAngleSensor.flange_b" right="flange">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,80},{0,80},{0,100}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="relativeAngleSensor.flange_a" right="support">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,80},{60,80},{60,100},{100,100}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="relativeAngleSensor.flange_a" right="fixed.flange">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,80},{100,80}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="relativeAngleSensor.phi_rel" right="add.u1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{30,69},{30,50},{-4,50},{-4,42}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="constant_.y" right="add.u2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-29,50},{-16,50},{-16,42}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="VoltageSensor1.v" right="ToSpacePhasorVS.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-69,0},{-52,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ToSpacePhasorVS.y" right="rotatorVS2R.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-29,0},{-22,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="rotatorVS2R.y" right="ToPolarVSR.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{1,0},{8,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="add.y" right="rotatorVS2R.angle">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,19},{-10,12}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="wrapAngle.y" right="rotorDisplacementAngle">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{91,0},{ 110,0} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ToPolarVSR.y" right="lessThreshold.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{31,0},{38,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="lessThreshold.y" right="wrapAngle.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{61,0},{68,0}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;angleSensor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Ellipse( extent={{-60,80},{60,40}}, lineColor={0,255,0}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Ellipse( extent={{-60,-40},{60,-80}}, lineColor={0,255,0}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Rectangle( extent={{-60,60},{60,40}}, lineColor={0,255,0}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Rectangle( extent={{-60,-40},{60,-60}}, lineColor={0,255,0}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Rectangle( extent={{-40,40},{40,-40}}, lineColor={0,255,0}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Line(points={{0,0},{-80,80}}, color={0,0,255} ) ,Polygon( points={{-80,80},{-68,76},{-76,68},{-80,80}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Line(points={{0,0},{0,80}}, color={0,255,0} ) ,Polygon( points={{0,84},{4,72},{-4,72},{0,84}}, lineColor={0,255,0}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Rectangle( extent={{80,120},{120,80}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) ,Line( visible=not useSupport, points={{80,100},{120,100}} ) ,Line( visible=not useSupport, points={{90,120},{80,100}} ) ,Line( visible=not useSupport, points={{100,120},{90,100}} ) ,Line( visible=not useSupport, points={{110,120},{100,100}} ) ,Line( visible=not useSupport, points={{120,120},{110,100}} ) , Text( extent={{-30,-10},{30,-70}}, textColor={64,64,64}, textString=&quot;rad&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>Calculates rotor lagging angle by measuring the stator phase voltages, transforming them to the corresponding space phasor in stator-fixed coordinate system,&lt;br>rotating the space phasor to the rotor-fixed coordinate system and calculating the angle of this space phasor.&lt;p>The sensor's housing can be implicitly fixed (useSupport=false).&lt;br>If the machine's stator also implicitly fixed (useSupport=false), the angle at the flangeis equal to the angle of the machine's rotor against the stator.&lt;br>Otherwise, the sensor's support has to be connected to the machine's support.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

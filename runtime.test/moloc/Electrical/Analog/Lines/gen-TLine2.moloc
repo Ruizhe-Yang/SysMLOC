@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Lines"/>
+  <classes classType="model" className="TLine2" description="&quot;Lossless transmission line with characteristic impedance Z0, frequency F and normalized length NL&quot;" isLongClassSpecifier="true" classNameEnd="TLine2" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.TwoPort" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Z0" description="&quot;Characteristic impedance&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="F" description="&quot;Frequency&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="NL" description="&quot;Normalized length&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="es" description="&quot;Voltage source of forward travelling wave&quot;">
+        <modifications expression="0" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="er" description="&quot;Voltage source of reflected wave&quot;">
+        <modifications expression="0" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isProtected="true" isOver="true">
+      <component_list expression="NL/F" declarationName="TD"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(Z0 > 0, &quot;Z0 has to be positive&quot;)"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(NL > 0, &quot;NL has to be positive&quot;)"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(F > 0, &quot;F has to be positive&quot;)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i1" right="(v1 - es)/Z0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i2" right="(v2 - er)/Z0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="es" right="2*delay(v2, TD) - delay(er, TD)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="er" right="2*delay(v1, TD) - delay(es, TD)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;line&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Lossless transmission line with characteristic impedance Z0, frequency F and normalized length NL The lossless transmission line TLine2 is a two Port. Both port branches consist of a resistor with the value of the characteristic impedance Z0 and a controlled voltage source that takes into consideration the transmission delay. For further details see [&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.UsersGuide.References\&quot;>Branin1967&lt;/a>]. Resistance R&amp;#39; and conductance C&amp;#39; per meter are assumed to be zero. The characteristic impedance Z0 can be derived from inductance and capacitance per length (L&amp;#39; resp. C&amp;#39;), i. e. Z0 = sqrt(L&amp;#39;/C&amp;#39;). The normalized length NL is equal to the length of the line divided by the wavelength corresponding to the frequency F, i. e. the transmission delay TD is the quotient of NL and F.&lt;/p>&#xA;&lt;p>&lt;strong>References:&lt;/strong> [&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.UsersGuide.References\&quot;>Branin1967&lt;/a>],&#xA;[&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.UsersGuide.References\&quot;>Hoefer1985&lt;/a>]&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;dl>&lt;dt>&lt;em>1998&lt;/em>&lt;/dt>&lt;dd>by Joachim Haase initially implemented&lt;/dd>&lt;/dl>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Rectangle( extent={{-80,80},{80,-80}}, lineColor={0,0,255}, fillPattern=FillPattern.Solid, fillColor={255,255,255} ) , Line(points={{60,-100},{90,-100}}, color={0,0,255}), Line(points={{60,100},{90,100}}, color={0,0,255}), Line(points={{-60,100},{-90,100}}, color={0,0,255}), Line(points={{-60,-100},{-90,-100}}, color={0,0,255}), Text( extent={{-70,-10},{70,-50}}, textString=&quot;TLine2&quot; ) , Line(points={{-40,40},{-40,20}}), Line(points={{40,30},{-40,30}}), Line(points={{40,40},{40,20}}), Line(points={{-60,100},{-60,80}}, color={0,0,255}), Line(points={{60,100},{60,80}}, color={0,0,255}), Line(points={{60,-80},{60,-100}}, color={0,0,255}), Line(points={{-60,-80},{-60,-100}}, color={0,0,255}) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

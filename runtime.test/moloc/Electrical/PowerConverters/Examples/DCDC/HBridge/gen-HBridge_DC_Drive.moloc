@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.Examples.DCDC.HBridge"/>
+  <classes classType="model" className="HBridge_DC_Drive" description="&quot;H bridge DC/DC converter with DC drive&quot;" isLongClassSpecifier="true" classNameEnd="HBridge_DC_Drive" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="ExampleTemplates.HBridge" isOver="true">
+      <extendsModifications isModificationOver="true" elementName="signalPWM">
+        <modifications expression="false" elementName="useConstantDutyCycle"/>
+      </extendsModifications>
+      <extendsModifications isModificationOver="true" elementName="constantVoltage">
+        <modifications expression="120" elementName="V"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="3*dcpmData.La" declarationName="Ld" description="&quot;Smoothing inductance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Torque" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="dcpmData.ViNominal *dcpmData.IaNominal/dcpmData.wNominal" declarationName="tauNominal" description="&quot;Nominal torque&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0.2" declarationName="dMin" description="&quot;Minimum duty cycle&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="1 - dMin" declarationName="dMax" description="&quot;Maximum duty cycle&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Machines.BasicMachines.DCMachines.DC_PermanentMagnet" isOver="true">
+      <component_list isModificationOver="true" declarationName="dcpm" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="dcpmData.VaNominal" elementName="VaNominal"/>
+        <modifications expression="dcpmData.IaNominal" elementName="IaNominal"/>
+        <modifications expression="dcpmData.wNominal" elementName="wNominal"/>
+        <modifications expression="dcpmData.TaNominal" elementName="TaNominal"/>
+        <modifications expression="dcpmData.Ra" elementName="Ra"/>
+        <modifications expression="dcpmData.TaRef" elementName="TaRef"/>
+        <modifications expression="dcpmData.La" elementName="La"/>
+        <modifications expression="dcpmData.Jr" elementName="Jr"/>
+        <modifications expression="false" elementName="useSupport"/>
+        <modifications expression="dcpmData.Js" elementName="Js"/>
+        <modifications expression="dcpmData.frictionParameters" elementName="frictionParameters"/>
+        <modifications expression="dcpmData.coreParameters" elementName="coreParameters"/>
+        <modifications expression="dcpmData.strayLoadParameters" elementName="strayLoadParameters"/>
+        <modifications expression="dcpmData.brushParameters" elementName="brushParameters"/>
+        <modifications isModificationOver="true" elementName="ia">
+          <modifications expression="0" elementName="start"/>
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <modifications expression="293.15" elementName="TaOperational"/>
+        <modifications expression="dcpmData.alpha20a" elementName="alpha20a"/>
+        <modifications isModificationOver="true" elementName="phiMechanical">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="0" elementName="start"/>
+        </modifications>
+        <modifications isModificationOver="true" elementName="wMechanical">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="0" elementName="start"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,-80},{40,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Machines.Utilities.ParameterRecords.DcPermanentMagnetData" parameterType="parameter" isOver="true">
+      <component_list declarationName="dcpmData" description="&quot;Data record of PM excited DC machine&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-80},{10,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Sources.Torque" isOver="true">
+      <component_list declarationName="torque" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{70,-80},{50,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.TimeTable" isOver="true">
+      <component_list isModificationOver="true" declarationName="torqueTable" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="[0, 0; 6, 0; 7, - tauNominal; 9, -tauNominal; 10, +tauNominal; 15, tauNominal; 16, -tauNominal; 18, -tauNominal; 19, 0; 24, 0]" elementName="table"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-80},{80,-60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.TimeTable" isOver="true">
+      <component_list isModificationOver="true" declarationName="dutyCycleTable" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="[0, 0.5; 3, 0.5; 4, dMax; 12, dMax; 13, dMin; 21, dMin; 22, 0.5; 24, 0.5]" elementName="table"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-100,-70},{-80,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Inductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="inductor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Ld" elementName="L"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{40,30}" elementName="origin"/>
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="inductor.n" right="dcpm.pin_ap">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,20},{40,-60},{36,-60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="dcpm.pin_an" right="currentSensor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{24,-60},{24,-6},{0,-6}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="dcpm.flange" right="torque.flange">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,-70},{50,-70}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="torque.tau" right="torqueTable.y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{72,-70},{79,-70}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="inductor.p" right="hbridge.dc_p2">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,40},{40,70},{-30,70},{-30,6},{-40,6}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="dutyCycleTable.y" right="signalPWM.dutyCycle">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-79,-60},{-62,-60}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="24" elementName="StopTime"/>
+        <modifications expression="0.0002" elementName="Interval"/>
+        <modifications expression="1e-06" elementName="Tolerance"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This example of an H bridge with DC drive demonstrates the operation of the DC machine in four quadrants.The DC output voltage is equal to &lt;code>2 * (dutyCycle - 0.5)&lt;/code> times the input voltage.&lt;/p>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;> &lt;tr> &lt;th>&lt;strong>start time (s)&lt;/strong>&lt;/th> &lt;th>&lt;strong>machine speed&lt;/strong>&lt;/th> &lt;th>&lt;strong>machine torque&lt;/strong>&lt;/th> &lt;th>&lt;strong>mode&lt;/strong>&lt;/th> &lt;/tr> &lt;tr> &lt;td>0&lt;/td> &lt;td>zero&lt;/td> &lt;td>zero&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;tr> &lt;td>3&lt;/td> &lt;td>positive&lt;/td> &lt;td>zero&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;tr> &lt;td>6&lt;/td> &lt;td>positive&lt;/td> &lt;td>positive&lt;/td> &lt;td>motor&lt;/td> &lt;/tr> &lt;tr> &lt;td>9.5&lt;/td> &lt;td>positive&lt;/td> &lt;td>negative&lt;/td> &lt;td>generator&lt;/td> &lt;/tr> &lt;tr> &lt;td>12.5&lt;/td> &lt;td>negative&lt;/td> &lt;td>negative&lt;/td> &lt;td>motor&lt;/td> &lt;/tr> &lt;tr> &lt;td>15.5&lt;/td> &lt;td>negative&lt;/td> &lt;td>positive&lt;/td> &lt;td>generator&lt;/td> &lt;/tr> &lt;tr> &lt;td>19&lt;/td> &lt;td>negative&lt;/td> &lt;td>zero&lt;/td> &lt;td>&lt;/td> &lt;/tr> &lt;tr> &lt;td>22&lt;/td> &lt;td>zero&lt;/td> &lt;td>zero&lt;/td> &lt;td>&lt;/td> &lt;/tr>&lt;/table>&lt;p>Plot machine current &lt;code>dcpm.ia&lt;/code>, averaged current &lt;code>meanCurrent.y&lt;/code>, machine speed &lt;code>dcpm.wMechanical&lt;/code>, averaged machine speed &lt;code>dcpm.va&lt;/code> and torque &lt;code>dcpm.tauElectrical&lt;/code>.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

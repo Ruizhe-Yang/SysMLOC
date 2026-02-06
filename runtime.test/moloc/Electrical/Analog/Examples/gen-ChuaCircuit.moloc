@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Examples"/>
+  <classes classType="model" className="ChuaCircuit" description="&quot;Chua's circuit, ns, V, A&quot;" isLongClassSpecifier="true" classNameEnd="ChuaCircuit" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Inductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="L" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="18" elementName="L"/>
+        <modifications isModificationOver="true" elementName="i">
+          <modifications expression="0" elementName="start"/>
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-75,38}" elementName="origin"/>
+            <modifications expression="{{-25,-25},{25,25}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="Ro" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="12.5e-3" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-75,-17}" elementName="origin"/>
+            <modifications expression="{{-25,-25},{25,25}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Conductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="G" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0.565" elementName="G"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-25,38}, {25,88} }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Capacitor" isOver="true">
+      <component_list isModificationOver="true" declarationName="C1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="10" elementName="C"/>
+        <modifications isModificationOver="true" elementName="v">
+          <modifications expression="4" elementName="start"/>
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{25,3}" elementName="origin"/>
+            <modifications expression="{{-25,-25},{25,25}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Capacitor" isOver="true">
+      <component_list isModificationOver="true" declarationName="C2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="100" elementName="C"/>
+        <modifications isModificationOver="true" elementName="v">
+          <modifications expression="0" elementName="start"/>
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-25,3}" elementName="origin"/>
+            <modifications expression="{{-25,-25},{25,25}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Examples.Utilities.NonlinearResistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="Nr" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" expression="-0.757576" elementName="Ga">
+          <modifications expression="-1" elementName="min"/>
+        </modifications>
+        <modifications isModificationOver="true" expression="-0.409091" elementName="Gb">
+          <modifications expression="-1" elementName="min"/>
+        </modifications>
+        <modifications expression="1" elementName="Ve"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{75,3}" elementName="origin"/>
+            <modifications expression="{{-25,-25},{25,25}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="Gnd" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-25,-112},{25, -62 } }" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="L.n" right="Ro.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-75,13},{-75,8}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="C2.p" right="G.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-25,28},{-25,45.5},{-25,45.5},{-25,63}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="L.p" right="G.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-75,63},{-25,63}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="G.n" right="Nr.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{25,63},{75,63},{75,28}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="C1.p" right="G.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{25,28},{25,45.5},{25,45.5},{25,63}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Ro.n" right="Gnd.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-75,-42},{-75,-62},{0,-62}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="C2.n" right="Gnd.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-25,-22},{-24,-22},{-24,-62},{0,-62}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Gnd.p" right="C1.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-62},{25,-62},{25,-22}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Gnd.p" right="Nr.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-62},{75,-62},{75,-22}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Chua&amp;#39;&#xA;s circuit is the most simple nonlinear circuit which shows chaotic behaviour. The circuit consists of linear basic elements (capacitors, resistor, conductor, inductor), and one nonlinear element, which is called Chua&amp;#39;&#xA;s diode. The chaotic behaviour is simulated.&lt;/p>&lt;p>The simulation end time should be set to 5e4. To get the chaotic behaviour please plot C1.v. Choose C2.v as the independent variable .&lt;/p>&lt;p>&lt;strong>Reference:&lt;/strong>&lt;/p>&lt;p>Kennedy, M.P.: Three Steps to Chaos - Part I: Evolution. IEEE Transactions on CAS I 40 (1993)10, 640-656&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;dl>&lt;dt>&lt;strong>Main Authors:&lt;/strong>&lt;/dt>&lt;dd>Christoph Clau&amp;szlig;&#xA;&amp;lt;&#xA;&lt;a href=\&quot;mailto:christoph@clauss-it.com\&quot;>christoph@clauss-it.com&lt;/a>&amp;gt;&#xA;&lt;br> Andr&amp;eacute;&#xA;Schneider &amp;lt;&#xA;&lt;a href=\&quot;mailto:Andre.Schneider@eas.iis.fraunhofer.de\&quot;>Andre.Schneider@eas.iis.fraunhofer.de&lt;/a>&amp;gt;&#xA;&lt;br> Fraunhofer Institute for Integrated Circuits&lt;br> Design Automation Department&lt;br> Zeunerstra&amp;szlig;&#xA;e 38&lt;br> D-01069 Dresden&lt;br>&lt;/dd>&lt;/dl>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="5e4" elementName="StopTime"/>
+        <modifications expression="1" elementName="Interval"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-98,104},{-32,72}}, textColor={0,0,255}, textString=&quot;Chua Circuit&quot; ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

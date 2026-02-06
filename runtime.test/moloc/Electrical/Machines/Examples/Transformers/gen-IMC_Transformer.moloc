@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Examples.Transformers"/>
+  <classes classType="model" className="IMC_Transformer" description="&quot;Test example: InductionMachineSquirrelCage transformer starting&quot;" isLongClassSpecifier="true" classNameEnd="IMC_Transformer" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Examples.InductionMachines.IMC_Transformer" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="2.5" elementName="StopTime"/>
+        <modifications expression="1E-4" elementName="Interval"/>
+        <modifications expression="1E-6" elementName="Tolerance"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;strong>Test example: Induction machine with squirrel cage - transformer starting&lt;/strong>&lt;br>At start time tStart1 three-phase voltage is supplied to the induction machine with squirrel cage via the transformer;&#xA;the machine starts from standstill, accelerating inertias against load torque quadratic dependent on speed;&#xA;at start time tStart2 the machine is fed directly from the voltage source, finally reaching nominal speed.&lt;br>Simulate for 2.5 seconds and plot (versus time):&lt;ul>&lt;li>currentQuasiRMSSensor.I: stator current RMS&lt;/li>&lt;li>aimc.wMechanical: motor's speed&lt;/li>&lt;li>aimc.tauElectrical: motor's torque&lt;/li>&lt;/ul>Default machine parameters of model &lt;em>IM_SquirrelCage&lt;/em> are used.&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

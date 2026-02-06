@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.BasicMachines.SynchronousMachines"/>
+  <classes classType="model" className="SM_ElectricalExcited" description="&quot;Electrical excited synchronous machine with damper cage&quot;" isLongClassSpecifier="true" classNameEnd="SM_ElectricalExcited" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.PartialBasicInductionMachine" isOver="true">
+      <extendsModifications isModificationOver="true" elementName="Lssigma">
+        <modifications expression="0.1/(2*pi*fsNominal)" elementName="start"/>
+      </extendsModifications>
+      <extendsModifications expression="airGap.i_ss" elementName="idq_ss" isfinal="true"/>
+      <extendsModifications expression="airGap.i_sr" elementName="idq_sr" isfinal="true"/>
+      <extendsModifications expression="airGap.i_rs" elementName="idq_rs" isfinal="true"/>
+      <extendsModifications expression="airGap.i_rr" elementName="idq_rr" isfinal="true"/>
+      <extendsModifications typeSpecifier="Machines.Thermal.SynchronousMachines.ThermalAmbientSMEE" isModificationOver="true" declarationName="thermalAmbient" isRedeclare="true" isfinal="true">
+        <modifications expression="useDamperCage" elementName="useDamperCage" isfinal="true"/>
+        <modifications expression="TeOperational" elementName="Te" isfinal="true"/>
+        <modifications expression="TrOperational" elementName="Tr" isfinal="true"/>
+      </extendsModifications>
+      <extendsModifications typeSpecifier="Machines.Interfaces.InductionMachines.ThermalPortSMEE" isModificationOver="true" declarationName="thermalPort" isRedeclare="true" isfinal="true">
+        <modifications expression="useDamperCage" elementName="useDamperCage" isfinal="true"/>
+      </extendsModifications>
+      <extendsModifications typeSpecifier="Machines.Interfaces.InductionMachines.ThermalPortSMEE" isModificationOver="true" declarationName="internalThermalPort" isRedeclare="true" isfinal="true">
+        <modifications expression="useDamperCage" elementName="useDamperCage" isfinal="true"/>
+      </extendsModifications>
+      <extendsModifications typeSpecifier="Machines.Interfaces.InductionMachines.PowerBalanceSMEE" isModificationOver="true" declarationName="powerBalance" isRedeclare="true" isfinal="true">
+        <modifications expression="damperCageLossPower" elementName="lossPowerRotorWinding" isfinal="true"/>
+        <modifications expression="ve*ie" elementName="powerExcitation" isfinal="true"/>
+        <modifications expression="re.LossPower" elementName="lossPowerExcitation" isfinal="true"/>
+        <modifications expression="brush.lossPower" elementName="lossPowerBrush" isfinal="true"/>
+        <modifications expression="0" elementName="lossPowerRotorCore" isfinal="true"/>
+      </extendsModifications>
+      <extendsModifications isModificationOver="true" elementName="statorCore">
+        <modifications expression="statorCoreParameters.wRef" elementName="w" isfinal="true"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list subscripts="[2]" isModificationOver="true" declarationName="ir" description="&quot;Damper cage currents&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useDamperCage">
+        <modifications expression="zeros(2)" elementName="start"/>
+        <modifications expression="&quot;ElectricCurrent&quot;" elementName="quantity" isEach="true" isfinal="true"/>
+        <modifications expression="&quot;A&quot;" elementName="unit" isEach="true" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications expression="false" elementName="visible"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="true" elementName="showStartAttribute"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list subscripts="[2]" isModificationOver="true" declarationName="idq_dr" description="&quot;Damper space phasor current / rotor fixed frame&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useDamperCage">
+        <modifications expression="StateSelect.prefer" elementName="stateSelect" isEach="true"/>
+        <modifications expression="&quot;ElectricCurrent&quot;" elementName="quantity" isEach="true" isfinal="true"/>
+        <modifications expression="&quot;A&quot;" elementName="unit" isEach="true" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications expression="false" elementName="visible"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.BasicMachines.Components.AirGapR" isOver="true">
+      <component_list isModificationOver="true" declarationName="airGap" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="p" elementName="p" isfinal="true"/>
+        <modifications expression="Lmd" elementName="Lmd" isfinal="true"/>
+        <modifications expression="Lmq" elementName="Lmq" isfinal="true"/>
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="TrOperational" description="&quot;Operational temperature of (optional) damper cage&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Operational temperatures&quot;" elementName="group"/>
+          <modifications expression="not useThermalPort and useDamperCage" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Lmd" description="&quot;Stator main field inductance per phase in d-axis&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1.5/(2*pi*fsNominal)" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Lmq" description="&quot;Stator main field inductance per phase in q-axis&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1.5/(2*pi*fsNominal)" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="useDamperCage" description="&quot;Enable / disable damper cage&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="true" elementName="start"/>
+        <annotations expression="true" elementName="Evaluate"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+          <modifications expression="&quot;Damper cage&quot;" elementName="group"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Lrsigmad" description="&quot;Damper stray inductance in d-axis&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0.05/(2*pi* fsNominal )" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+          <modifications expression="&quot;Damper cage&quot;" elementName="group"/>
+          <modifications expression="useDamperCage" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="Lrsigmad" declarationName="Lrsigmaq" description="&quot;Damper stray inductance in q-axis&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+          <modifications expression="&quot;Damper cage&quot;" elementName="group"/>
+          <modifications expression="useDamperCage" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Rrd" description="&quot;Damper resistance in d-axis at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0.04" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+          <modifications expression="&quot;Damper cage&quot;" elementName="group"/>
+          <modifications expression="useDamperCage" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="Rrd" declarationName="Rrq" description="&quot;Damper resistance in q-axis at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+          <modifications expression="&quot;Damper cage&quot;" elementName="group"/>
+          <modifications expression="useDamperCage" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="TrRef" description="&quot;Reference temperature of damper resistances in d- and q-axis&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+          <modifications expression="&quot;Damper cage&quot;" elementName="group"/>
+          <modifications expression="useDamperCage" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="alpha20r" description="&quot;Temperature coefficient of damper resistances in d- and q-axis&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Nominal resistances and inductances&quot;" elementName="tab"/>
+          <modifications expression="&quot;Damper cage&quot;" elementName="group"/>
+          <modifications expression="useDamperCage" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="VsNominal" description="&quot;Nominal stator RMS voltage per phase&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="100" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Excitation&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="IeOpenCircuit" description="&quot;Open circuit excitation current @ nominal voltage and frequency&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="10" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Excitation&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="Re" description="&quot;Excitation resistance at TRef&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="2.5" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Excitation&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="TeRef" description="&quot;Reference temperature of excitation resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Excitation&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Thermal.LinearTemperatureCoefficient20" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="alpha20e" description="&quot;Temperature coefficient of excitation resistance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Excitation&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="sigmae" description="&quot;Stray fraction of total excitation inductance&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="min"/>
+        <modifications expression="0.99" elementName="max"/>
+        <modifications expression="0.025" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Excitation&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Temperature" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="TeOperational" description="&quot;Operational excitation temperature&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="293.15" elementName="start"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Operational temperatures&quot;" elementName="group"/>
+          <modifications expression="not useThermalPort" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Losses.BrushParameters" parameterType="parameter" isOver="true">
+      <component_list declarationName="brushParameters" description="&quot;Brush loss parameter record&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Losses&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="output" isOver="true">
+      <component_list expression="pin_ep.v - pin_en.v" declarationName="ve" description="&quot;Excitation voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" directionType="output" isOver="true">
+      <component_list expression="pin_ep.i" declarationName="ie" description="&quot;Excitation current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.BasicMachines.Components.DamperCage" isOver="true">
+      <component_list isModificationOver="true" declarationName="damperCage" isAnnotation="true" isAnnotationOver="true" condition_attribute="useDamperCage">
+        <modifications expression="Lrsigmad" elementName="Lrsigmad" isfinal="true"/>
+        <modifications expression="Lrsigmaq" elementName="Lrsigmaq" isfinal="true"/>
+        <modifications expression="Rrd" elementName="Rrd" isfinal="true"/>
+        <modifications expression="Rrq" elementName="Rrq" isfinal="true"/>
+        <modifications expression="TrRef" elementName="T_ref" isfinal="true"/>
+        <modifications expression="Machines.Thermal.convertAlpha(alpha20r, TrRef)" elementName="alpha" isfinal="true"/>
+        <modifications expression="true" elementName="useHeatPort" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,-40}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.BasicMachines.Components.ElectricalExcitation" isOver="true">
+      <component_list isModificationOver="true" declarationName="electricalExcitation" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="turnsRatio" elementName="turnsRatio" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-70,-50}" elementName="origin"/>
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="re" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Re" elementName="R" isfinal="true"/>
+        <modifications expression="TeRef" elementName="T_ref" isfinal="true"/>
+        <modifications expression="Machines.Thermal.convertAlpha(alpha20e, TeRef)" elementName="alpha" isfinal="true"/>
+        <modifications expression="true" elementName="useHeatPort" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-80,10}" elementName="origin"/>
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Inductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="lesigma" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Lesigma" elementName="L" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-80,-20}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="pin_ep" description="&quot;Positive excitation pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,70},{-90,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="pin_en" description="&quot;Negative excitation pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-90,-50},{-110,-70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Losses.DCMachines.Brush" isOver="true">
+      <component_list isModificationOver="true" declarationName="brush" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="brushParameters" elementName="brushParameters" isfinal="true"/>
+        <modifications expression="true" elementName="useHeatPort" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-80,40}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isfinal="true" isOver="true">
+      <component_list expression="sqrt(2)*VsNominal/(2*pi*fsNominal*Lmd* IeOpenCircuit )" declarationName="turnsRatio" description="&quot;Stator current / excitation current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isfinal="true" isOver="true">
+      <component_list expression="Lmd*turnsRatio^2*3/ 2*sigmae/(1 - sigmae)" declarationName="Lesigma"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="damperCageLossPower" description="&quot;Damper losses&quot;">
+        <modifications expression="&quot;Power&quot;" elementName="quantity" isfinal="true"/>
+        <modifications expression="&quot;W&quot;" elementName="unit" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" left="ir" right="damperCage.i"/>
+      <equations xsi:type="mOloc:ConnectEquation" left="idq_dr" right="damperCage.i"/>
+      <equations xsi:type="mOloc:ConnectEquation" left="damperCageLossPower" right="damperCage.lossPower"/>
+      <equations xsi:type="mOloc:IfEquation" condition="not useDamperCage">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="damperCageLossPower" right="0"/>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGap.spacePhasor_r" right="damperCage.spacePhasor_r">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,-10},{10,-30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGap.spacePhasor_r" right="electricalExcitation.spacePhasor_r">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,-10},{10,-10},{10,-20},{-60,-20},{-60,-40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="electricalExcitation.pin_en" right="pin_en">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,-60},{-100,-60}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="pin_ep" right="brush.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,60},{-80,60},{-80,50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="brush.n" right="re.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,30},{-80,20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="re.n" right="lesigma.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,0},{-80,-10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="lesigma.n" right="electricalExcitation.pin_ep">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,-30},{-80,-40}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="lssigma.spacePhasor_b" right="airGap.spacePhasor_s">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,10},{10,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="brush.heatPort" right="internalThermalPort.heatPortBrush">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,50},{-60,50},{-60,40},{50,40},{50,-80},{0,-80}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="re.heatPort" right="internalThermalPort.heatPortExcitation">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,10},{-60,10},{-60,40},{50,40},{50,-80},{0,-80}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGap.flange" right="inertiaRotor.flange_a">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{70,0}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="airGap.support" right="internalSupport">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,0},{-26,0},{-40,0},{-40,-90},{60,-90},{60,-100}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="damperCage.heatPort" right="internalThermalPort.heatPortRotorWinding">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-10,-40},{-10,-80},{0,-80},{0,-80}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;smee&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Ellipse(extent={{-134,34},{-66,-34}}, lineColor={0,0,255}), Line(points={{-100,50},{-100,20},{-130,20},{-130,-4}}, color={0,0,255}), Line(points={{-130,-4},{-129,1},{-125,5},{-120,6},{-115,5},{-111, 1 } ,{-110,-4} } , color={0,0,255} ) , Line(points={{-110,-4},{-109,1},{-105,5},{-100,6},{-95,5},{-91,1}, {-90,-4} } , color={0,0,255} ) , Line(points={{-90,-4},{-89,1},{-85,5},{-80,6},{-75,5},{-71,1},{-70, -4 } } , color={0,0,255} ) , Line(points={{-100,-50},{-100,-20},{-70,-20},{-70,-2}}, color={0, 0,255 } ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>&lt;strong>Model of a three-phase electrical excited synchronous machine with damper cage.&lt;/strong>&lt;br>Resistance and stray inductance of stator is modeled directly in stator phases, then using space phasor transformation and a rotor-fixed &lt;em>AirGap&lt;/em> model. Resistance and stray inductance of rotor's squirrel cage is modeled in two axis of the rotor-fixed coordinate system. Electrical excitation is modelled by converting excitation current and voltage to d-axis space phasors. The machine models take the following loss effects into account:&lt;/p>&lt;ul>&lt;li>heat losses in the temperature dependent stator winding resistances&lt;/li>&lt;li>heat losses in the temperature dependent excitation winding resistance&lt;/li>&lt;li>optional, when enabled: heat losses in the temperature dependent damper cage resistances&lt;/li>&lt;li>brush losses in the excitation circuit&lt;/li>&lt;li>friction losses&lt;/li>&lt;li>core losses (only eddy current losses, no hysteresis losses)&lt;/li>&lt;li>stray load losses&lt;/li>&lt;/ul>&lt;p>Whether a damper cage is present or not, can be selected with Boolean parameter useDamperCage (default = true).&lt;br>&lt;strong>Default values for machine's parameters (a realistic example) are:&lt;/strong>&lt;br>&lt;/p>&lt;table>&lt;tr>&lt;td>number of pole pairs p&lt;/td>&lt;td>2&lt;/td>&lt;td> &lt;/td>&lt;/tr>&lt;tr>&lt;td>stator's moment of inertia&lt;/td>&lt;td>0.29&lt;/td>&lt;td>kg.m2&lt;/td>&lt;/tr>&lt;tr>&lt;td>rotor's moment of inertia&lt;/td>&lt;td>0.29&lt;/td>&lt;td>kg.m2&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal frequency fNominal&lt;/td>&lt;td>50&lt;/td>&lt;td>Hz&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal voltage per phase&lt;/td>&lt;td>100&lt;/td>&lt;td>V RMS&lt;/td>&lt;/tr>&lt;tr>&lt;td>no-load excitation current&lt;br> @ nominal voltage and frequency&lt;/td>&lt;td>10&lt;/td>&lt;td>A DC&lt;/td>&lt;/tr>&lt;tr>&lt;td>warm excitation resistance&lt;/td>&lt;td>2.5&lt;/td>&lt;td>Ohm&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal current per phase&lt;/td>&lt;td>100&lt;/td>&lt;td>A RMS&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal apparent power&lt;/td>&lt;td>-30000&lt;/td>&lt;td>VA&lt;/td>&lt;/tr>&lt;tr>&lt;td>power factor&lt;/td>&lt;td>-1.0&lt;/td>&lt;td>ind./cap.&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal excitation current&lt;/td>&lt;td>19&lt;/td>&lt;td>A&lt;/td>&lt;/tr>&lt;tr>&lt;td>efficiency w/o excitation&lt;/td>&lt;td>97.1&lt;/td>&lt;td>%&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal torque&lt;/td>&lt;td>-196.7&lt;/td>&lt;td>Nm&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal speed&lt;/td>&lt;td>1500&lt;/td>&lt;td>rpm&lt;/td>&lt;/tr>&lt;tr>&lt;td>nominal rotor angle&lt;/td>&lt;td>-57.23&lt;/td>&lt;td>degree&lt;/td>&lt;/tr>&lt;tr>&lt;td>stator resistance&lt;/td>&lt;td>0.03&lt;/td>&lt;td>Ohm per phase at reference temperature&lt;/td>&lt;/tr>&lt;tr>&lt;td>reference temperature TsRef&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;tr>&lt;td>temperature coefficient alpha20s &lt;/td>&lt;td>0&lt;/td>&lt;td>1/K&lt;/td>&lt;/tr>&lt;tr>&lt;td>stator reactance Xd&lt;/td>&lt;td>1.6&lt;/td>&lt;td>Ohm per phase in d-axis&lt;/td>&lt;/tr>&lt;tr>&lt;td>giving Kc&lt;/td>&lt;td>0.625&lt;/td>&lt;td> &lt;/td>&lt;/tr>&lt;tr>&lt;td>stator reactance Xq&lt;/td>&lt;td>1.6&lt;/td>&lt;td>Ohm per phase in q-axis&lt;/td>&lt;/tr>&lt;tr>&lt;td>stator stray reactance Xss&lt;/td>&lt;td>0.1&lt;/td>&lt;td>Ohm per phase&lt;/td>&lt;/tr>&lt;tr>&lt;td>damper resistance in d-axis&lt;/td>&lt;td>0.04&lt;/td>&lt;td>Ohm at reference temperature&lt;/td>&lt;/tr>&lt;tr>&lt;td>damper resistance in q-axis&lt;/td>&lt;td>same as d-axis&lt;/td>&lt;td> &lt;/td>&lt;/tr>&lt;tr>&lt;td>reference temperature TrRef&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;tr>&lt;td>temperature coefficient alpha20r &lt;/td>&lt;td>0&lt;/td>&lt;td>1/K&lt;/td>&lt;/tr>&lt;tr>&lt;td>damper stray reactance in d-axis XDds&lt;/td>&lt;td>0.05&lt;/td>&lt;td>Ohm&lt;/td>&lt;/tr>&lt;tr>&lt;td>damper stray reactance in q-axis XDqs&lt;/td>&lt;td>same as d-axis&lt;/td>&lt;td> &lt;/td>&lt;/tr>&lt;tr>&lt;td>excitation resistance&lt;/td>&lt;td>2.5&lt;/td>&lt;td>Ohm at reference temperature&lt;/td>&lt;/tr>&lt;tr>&lt;td>reference temperature TeRef&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;tr>&lt;td>temperature coefficient alpha20e &lt;/td>&lt;td>0&lt;/td>&lt;td>1/K&lt;/td>&lt;/tr>&lt;tr>&lt;td>excitation stray inductance&lt;/td>&lt;td>2.5&lt;/td>&lt;td>% of total excitation inductance&lt;/td>&lt;/tr>&lt;tr>&lt;td>stator operational temperature TsOperational&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;tr>&lt;td>damper operational temperature TrOperational&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;tr>&lt;td>excitation operational temperature TeOperational&lt;/td>&lt;td>20&lt;/td>&lt;td>&amp;deg;&#xA;C&lt;/td>&lt;/tr>&lt;tr>&lt;td>These values give the following inductances:&lt;/td>&lt;td> &lt;/td>&lt;td> &lt;/td>&lt;/tr>&lt;tr>&lt;td>main field inductance in d-axis&lt;/td>&lt;td>(Xd - Xss)/(2*pi*fNominal)&lt;/td>&lt;td> &lt;/td>&lt;/tr>&lt;tr>&lt;td>main field inductance in q-axis&lt;/td>&lt;td>(Xq - Xss)/(2*pi*fNominal)&lt;/td>&lt;td> &lt;/td>&lt;/tr>&lt;tr>&lt;td>stator stray inductance per phase&lt;/td>&lt;td>Xss/(2*pi*fNominal)&lt;/td>&lt;td> &lt;/td>&lt;/tr>&lt;tr>&lt;td>damper stray inductance in d-axis&lt;/td>&lt;td>XDds/(2*pi*fNominal)&lt;/td>&lt;td> &lt;/td>&lt;/tr>&lt;tr>&lt;td>damper stray inductance in q-axis&lt;/td>&lt;td>XDqs/(2*pi*fNominal)&lt;/td>&lt;td> &lt;/td>&lt;/tr>&lt;/table>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

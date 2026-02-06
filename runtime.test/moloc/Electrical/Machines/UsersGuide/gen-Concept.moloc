@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.UsersGuide"/>
+  <classes classType="class" className="Concept" description="&quot;Concept&quot;" isLongClassSpecifier="true" classNameEnd="Concept" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Information" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;info&quot;" elementName="preferredView"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This package contains electric machine models and components for modeling these machines.&lt;/p>&lt;strong>Limitations and assumptions:&lt;/strong>&lt;ul>&lt;li>number of phases (of induction machines) is limited to 3, therefore definition as a constant m=3&lt;/li>&lt;li>phase symmetric windings as well as symmetry of the whole machine structure&lt;/li>&lt;li>all values are used in physical units, no scaling to p.u. is done&lt;/li>&lt;li>only basic harmonics (in space) are taken into account&lt;/li>&lt;li>waveform (with respect to time) of voltages and currents is not restricted&lt;/li>&lt;li>constant parameters, i.e., no saturation, no skin effect&lt;/li>&lt;/ul>&lt;p>You may have a look at a short summary of space phasor theory at &lt;a href=\&quot;https://www.haumer.at/refimg/SpacePhasors.pdf\&quot;>https://www.haumer.at/refimg/SpacePhasors.pdf&lt;/a>&#xA;&lt;/p>&lt;strong>Further development:&lt;/strong>&lt;ul>&lt;li>generalizing space phasor theory to m phases with arbitrary spatial angle of the coils&lt;/li>&lt;li>generalizing space phasor theory to arbitrary number of windings and winding factor of the coils&lt;/li>&lt;li>MachineModels: other machine types&lt;/li>&lt;li>effects: saturation, skin-effect, ...&lt;/li>&lt;/ul>&lt;p>&lt;strong>In memoriam Prof. Hans Kleinrath (1928-03-07 - 2010-04-05)&lt;/strong>&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

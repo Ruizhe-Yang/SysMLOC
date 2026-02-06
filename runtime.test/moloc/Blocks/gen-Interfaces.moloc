@@ -1,0 +1,2211 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Blocks"/>
+  <classes classType="package" className="Interfaces" description="&quot;Library of connectors and partial models for input/output blocks&quot;" isLongClassSpecifier="true" classNameEnd="Interfaces" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.InterfacesPackage" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" classType="connector" className="RealInput" description="&quot;'input Real' as connector&quot;" typeSpecifier="Real" isAnnotation="true" isAnnotationOver="true" isShortClassSpecifier="true" direction="input" isOver="true">
+      <annotations expression="&quot;u&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Polygon( lineColor={0,0,127}, fillColor={0,0,127}, fillPattern=FillPattern.Solid, points={{-100.0,100.0},{100.0,0.0},{-100.0,-100.0}} ) }" elementName="graphics"/>
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+        </modifications>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+          <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Polygon( lineColor={0,0,127}, fillColor={0,0,127}, fillPattern=FillPattern.Solid, points={{0.0,50.0},{100.0,0.0},{0.0,-50.0},{0.0,50.0}} ) , Text( textColor={0,0,127}, extent={{-10.0,60.0},{-10.0,85.0}}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Connector with one input signal of type Real.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="connector" className="RealOutput" description="&quot;'output Real' as connector&quot;" typeSpecifier="Real" isAnnotation="true" isAnnotationOver="true" isShortClassSpecifier="true" direction="output" isOver="true">
+      <annotations expression="&quot;y&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Polygon( lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, points={{-100.0,100.0},{100.0,0.0},{-100.0,-100.0}} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Polygon( lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, points={{-100.0,50.0},{0.0,0.0},{-100.0,-50.0}} ) , Text( textColor={0,0,127}, extent={{30.0,60.0},{30.0,110.0}}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Connector with one output signal of type Real.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="connector" className="BooleanInput" description="&quot;'input Boolean' as connector&quot;" typeSpecifier="Boolean" isAnnotation="true" isAnnotationOver="true" isShortClassSpecifier="true" direction="input" isOver="true">
+      <annotations expression="&quot;u&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Polygon( points={{-100,100},{100,0},{-100,-100},{-100,100}}, lineColor={255,0,255}, fillColor={255,0,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+        </modifications>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Polygon( points={{0,50},{100,0},{0,-50},{0,50}}, lineColor={255,0,255}, fillColor={255,0,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-10,85},{-10,60}}, textColor={255,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Connector with one input signal of type Boolean.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="connector" className="BooleanOutput" description="&quot;'output Boolean' as connector&quot;" typeSpecifier="Boolean" isAnnotation="true" isAnnotationOver="true" isShortClassSpecifier="true" direction="output" isOver="true">
+      <annotations expression="&quot;y&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Polygon( points={{-100,100},{100,0},{-100,-100},{-100,100}}, lineColor={255,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Polygon( points={{-100,50},{0,0},{-100,-50},{-100,50}}, lineColor={255,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{30,110},{30,60}}, textColor={255,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Connector with one output signal of type Boolean.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="connector" className="IntegerInput" description="&quot;'input Integer' as connector&quot;" typeSpecifier="Integer" isAnnotation="true" isAnnotationOver="true" isShortClassSpecifier="true" direction="input" isOver="true">
+      <annotations expression="&quot;u&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Polygon( points={{-100,100},{100,0},{-100,-100},{-100,100}}, lineColor={255,127,0}, fillColor={255,127,0}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+        </modifications>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Polygon( points={{0,50},{100,0},{0,-50},{0,50}}, lineColor={255,127,0}, fillColor={255,127,0}, fillPattern=FillPattern.Solid ) , Text( extent={{-10,85},{-10,60}}, textColor={255,127,0}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Connector with one input signal of type Integer.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="connector" className="IntegerOutput" description="&quot;'output Integer' as connector&quot;" typeSpecifier="Integer" isAnnotation="true" isAnnotationOver="true" isShortClassSpecifier="true" direction="output" isOver="true">
+      <annotations expression="&quot;y&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Polygon( points={{-100,100},{100,0},{-100,-100},{-100,100}}, lineColor={255,127,0}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Polygon( points={{-100,50},{0,0},{-100,-50},{-100,50}}, lineColor={255,127,0}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{30,110},{30,60}}, textColor={255,127,0}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Connector with one output signal of type Integer.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="connector" className="RealVectorInput" description="&quot;Real input connector used for vector of connectors&quot;" typeSpecifier="Real" isAnnotation="true" isAnnotationOver="true" isShortClassSpecifier="true" direction="input" isOver="true">
+      <annotations expression="&quot;u&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Ellipse( extent={{-100,100},{100,-100}}, lineColor={0,0,127}, fillColor={0,0,127}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+        </modifications>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-10,85},{-10,60}}, textColor={0,0,127}, textString=&quot;%name&quot; ) , Ellipse( extent={{-50,50},{50,-50}}, lineColor={0,0,127}, fillColor={0,0,127}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Real input connector that is used for a vector of connectors,for example &lt;a href=\&quot;modelica://Modelica.Blocks.Interfaces.PartialRealMISO\&quot;>PartialRealMISO&lt;/a>,&#xA;and has therefore a different icon as RealInput connector.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="connector" className="IntegerVectorInput" description="&quot;Integer input connector used for vector of connectors&quot;" typeSpecifier="Integer" isAnnotation="true" isAnnotationOver="true" isShortClassSpecifier="true" direction="input" isOver="true">
+      <annotations expression="&quot;u&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Ellipse( extent={{-100,100},{100,-100}}, lineColor={255,128,0}, fillColor={255,128,0}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+        </modifications>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-10,85},{-10,60}}, textColor={255,128,0}, textString=&quot;%name&quot; ) , Ellipse( extent={{-50,50},{50,-50}}, lineColor={255,128,0}, fillColor={255,128,0}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Integer input connector that is used for a vector of connectors,for example &lt;a href=\&quot;modelica://Modelica.Blocks.Interfaces.PartialIntegerMISO\&quot;>PartialIntegerMISO&lt;/a>,&#xA;and has therefore a different icon as IntegerInput connector.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="connector" className="BooleanVectorInput" description="&quot;Boolean input connector used for vector of connectors&quot;" typeSpecifier="Boolean" isAnnotation="true" isAnnotationOver="true" isShortClassSpecifier="true" direction="input" isOver="true">
+      <annotations expression="&quot;u&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Ellipse( extent={{-100,-100},{100,100}}, lineColor={255,0,255}, fillColor={255,0,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+        </modifications>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-10,85},{-10,60}}, textColor={255,0,255}, textString=&quot;%name&quot; ) , Ellipse( extent={{-50,50},{50,-50}}, lineColor={255,0,255}, fillColor={255,0,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Boolean input connector that is used for a vector of connectors,for example &lt;a href=\&quot;modelica://Modelica.Blocks.Interfaces.PartialBooleanMISO\&quot;>PartialBooleanMISO&lt;/a>,&#xA;and has therefore a different icon as BooleanInput connector.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="connector" className="RealVectorOutput" description="&quot;Real output connector used for vector of connectors&quot;" typeSpecifier="Real" isAnnotation="true" isAnnotationOver="true" isShortClassSpecifier="true" direction="output" isOver="true">
+      <annotations expression="&quot;y&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Ellipse( extent={{-100,100},{100,-100}}, lineColor={0,0,127}, fillColor={0,0,127}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+        </modifications>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="0.2" elementName="initialScale"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-10,85},{-10,60}}, textColor={0,0,127}, textString=&quot;%name&quot; ) , Ellipse( extent={{-50,50},{50,-50}}, lineColor={0,0,127}, fillColor={0,0,127}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Real output connector that is used for a vector of connectors,for example &lt;a href=\&quot;modelica://Modelica.Blocks.Routing.DeMultiplex\&quot;>DeMultiplex&lt;/a>,&#xA;and has therefore a different icon as RealOutput connector.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="SO" description="&quot;Single Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="SO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Real output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has one continuous Real output signal.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="MO" description="&quot;Multiple Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="MO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" expression="1" declarationName="nout" description="&quot;Number of outputs&quot;">
+          <modifications expression="1" elementName="min"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealOutput" isOver="true">
+        <component_list subscripts="[nout]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has one continuous Real output signal vector.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="SISO" description="&quot;Single Input Single Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="SISO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list declarationName="u" description="&quot;Connector of Real input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Real output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has one continuous Real input and one continuous Real output signal.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="SI2SO" description="&quot;2 Single Input / 1 Single Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="SI2SO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list declarationName="u1" description="&quot;Connector of Real input signal 1&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,40},{-100,80}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list declarationName="u2" description="&quot;Connector of Real input signal 2&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Real output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has two continuous Real input signals u1 and u2 and onecontinuous Real output signal y.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="SIMO" description="&quot;Single Input Multiple Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="SIMO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="nout" description="&quot;Number of outputs&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list declarationName="u" description="&quot;Connector of Real input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealOutput" isOver="true">
+        <component_list subscripts="[nout]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p> Block has one continuous Real input signal and a vector of continuous Real output signals.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="MISO" description="&quot;Multiple Input Single Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="MISO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="nin" description="&quot;Number of inputs&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list subscripts="[nin]" declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Real output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has a vector of continuous Real input signals andone continuous Real output signal.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="PartialRealMISO" description="&quot;Partial block with a RealVectorInput and a RealOutput signal&quot;" isLongClassSpecifier="true" classNameEnd="PartialRealMISO" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" expression="3" declarationName="significantDigits" description="&quot;Number of significant digits to be shown in dynamic diagram layer for y&quot;" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="1" elementName="min"/>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" expression="0" declarationName="nu" description="&quot;Number of input connections&quot;" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="0" elementName="min"/>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="true" elementName="connectorSizing"/>
+          </annotations>
+          <annotations expression="true" elementName="HideResult"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealVectorInput" isOver="true">
+        <component_list subscripts="[nu]" declarationName="u" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-120,70},{-80,-70}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+        <component_list declarationName="y" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-17},{134,17}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+            <modifications expression="0.06" elementName="initialScale"/>
+          </modifications>
+          <modifications expression="{ Text( extent={{110,-50},{300,-70}}, textString=DynamicSelect(&quot; &quot;, String(y, significantDigits= significantDigits ) ) ) , Text( extent={{-250,170},{250,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Rectangle( extent={{-100,100},{100,-100}}, lineColor={255,137,0}, fillColor={255,255,255}, borderPattern=BorderPattern.Raised, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="MIMO" description="&quot;Multiple Input Multiple Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="MIMO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="nin" description="&quot;Number of inputs&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="nout" description="&quot;Number of outputs&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list subscripts="[nin]" declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealOutput" isOver="true">
+        <component_list subscripts="[nout]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has a continuous Real input and a continuous Real output signal vector.The signal sizes of the input and output vector may be different.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="MIMOs" description="&quot;Multiple Input Multiple Output continuous control block with same number of inputs and outputs&quot;" isLongClassSpecifier="true" classNameEnd="MIMOs" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="n" description="&quot;Number of inputs (= number of outputs)&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list subscripts="[n]" declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealOutput" isOver="true">
+        <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has a continuous Real input and a continuous Real output signal vectorwhere the signal sizes of the input and output vector are identical.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="MI2MO" description="&quot;2 Multiple Input / Multiple Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="MI2MO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="n" description="&quot;Dimension of input and output vectors.&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list subscripts="[n]" declarationName="u1" description="&quot;Connector 1 of Real input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,40},{-100,80}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list subscripts="[n]" declarationName="u2" description="&quot;Connector 2 of Real input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealOutput" isOver="true">
+        <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has two continuous Real input vectors u1 and u2 and onecontinuous Real output vector y.All vectors have the same number of elements.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="SignalSource" description="&quot;Base class for continuous signal source&quot;" isLongClassSpecifier="true" classNameEnd="SignalSource" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="SO" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list expression="0" declarationName="offset" description="&quot;Offset of output signal y&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+        <component_list expression="0" declarationName="startTime" description="&quot;Output y = offset for time &lt; startTime&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Basic block for Real sources of package Blocks.Sources.This component has one continuous Real output signal yand two parameters (offset, startTime) to shift thegenerated signal.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="SVcontrol" description="&quot;Single-Variable continuous controller&quot;" isLongClassSpecifier="true" classNameEnd="SVcontrol" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list declarationName="u_s" description="&quot;Connector of setpoint input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list declarationName="u_m" description="&quot;Connector of measurement input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{0,-120}" elementName="origin"/>
+              <modifications expression="{{20,-20},{-20,20}}" elementName="extent"/>
+              <modifications expression="270" elementName="rotation"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of actuator output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has two continuous Real input signals and onecontinuous Real output signal. The block is designedto be used as base class for a corresponding controller.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="MVcontrol" description="&quot;Multi-Variable continuous controller&quot;" isLongClassSpecifier="true" classNameEnd="MVcontrol" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="nu_s" description="&quot;Number of setpoint inputs&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="nu_m" description="&quot;Number of measurement inputs&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="ny" description="&quot;Number of actuator outputs&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list subscripts="[nu_s]" declarationName="u_s" description="&quot;Connector of setpoint input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list subscripts="[nu_m]" declarationName="u_m" description="&quot;Connector of measurement input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{0,-120}" elementName="origin"/>
+              <modifications expression="{{20,-20},{-20,20}}" elementName="extent"/>
+              <modifications expression="270" elementName="rotation"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealOutput" isOver="true">
+        <component_list subscripts="[ny]" declarationName="y" description="&quot;Connector of actuator output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has two continuous Real input signal vectors and onecontinuous Real output signal vector. The block is designedto be used as base class for a corresponding controller.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="DiscreteBlock" description="&quot;Base class of discrete control blocks&quot;" isLongClassSpecifier="true" classNameEnd="DiscreteBlock" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.DiscreteBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" declarationName="samplePeriod" description="&quot;Sample period of component&quot;">
+          <modifications expression="100*Modelica.Constants.eps" elementName="min"/>
+          <modifications expression="0.1" elementName="start"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+        <component_list expression="0" declarationName="startTime" description="&quot;First sample time instant&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isProtected="true" isOver="true">
+        <component_list declarationName="sampleTrigger" description="&quot;True, if sample time instant&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" directionType="output" isOver="true">
+        <component_list isModificationOver="true" declarationName="firstTrigger" description="&quot;Rising edge signals first sample instant&quot;">
+          <modifications expression="false" elementName="start"/>
+          <modifications expression="true" elementName="fixed"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:SimpleEquation" left="sampleTrigger" right="sample(startTime, samplePeriod)"/>
+        <equations xsi:type="mOloc:WhenEquation" condition="sampleTrigger">
+          <whenEquations xsi:type="mOloc:SimpleEquation" left="firstTrigger" right="time &lt;= startTime + samplePeriod/2"/>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Basic definitions of a discrete block of libraryBlocks.Discrete.The output(s) will only change at events, but are not formally a discrete variable(s) in Modelica.The input(s) will be sampled, and can thus be continuous variable(s).&lt;/p>&lt;p>&lt;strong>Important&lt;/strong>: If you connect several discrete blocks you should normally ensure that &lt;strong>samplePeriod (and startTime)are exactly identical&lt;/strong> for all blocks, since otherwise the output from one block will be transformed into a continuous signaland sampled, which can cause a variable delay of up to one sample period leading to unexpected results.&lt;/p>&lt;p>Modelica 3.3 introduced synchronous operators that avoid the need to manually propagate samplePeriod to each block.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="DiscreteSISO" description="&quot;Single Input Single Output discrete control block&quot;" isLongClassSpecifier="true" classNameEnd="DiscreteSISO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="DiscreteBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+        <component_list declarationName="u" description="&quot;Connector of Real input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Real output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has one input and one output signalwhich are sampled due to the defined &lt;strong>samplePeriod&lt;/strong> parameter.See the base-class &lt;a href=\&quot;modelica://Modelica.Blocks.Interfaces.DiscreteBlock\&quot;>DiscreteBlock&lt;/a> for more information.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="DiscreteMIMO" description="&quot;Multiple Input Multiple Output discrete control block&quot;" isLongClassSpecifier="true" classNameEnd="DiscreteMIMO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="DiscreteBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="nin" description="&quot;Number of inputs&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="nout" description="&quot;Number of outputs&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+        <component_list subscripts="[nin]" declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+        <component_list subscripts="[nout]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has a input and a output signal vectorwhich are sampled due to the defined &lt;strong>samplePeriod&lt;/strong> parameter.See the base-class &lt;a href=\&quot;modelica://Modelica.Blocks.Interfaces.DiscreteBlock\&quot;>DiscreteBlock&lt;/a> for more information.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="DiscreteMIMOs" description="&quot;Multiple Input Multiple Output discrete control block&quot;" isLongClassSpecifier="true" classNameEnd="DiscreteMIMOs" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="n" description="&quot;Number of inputs (= number of outputs)&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="DiscreteBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+        <component_list subscripts="[n]" declarationName="u" description="&quot;Connector of Real input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+        <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Real output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has a input and a output signal vectorwhere the signal sizes of the input and output vector are identical.These signals are sampled due to the defined &lt;strong>samplePeriod&lt;/strong> parameter.See the base-class &lt;a href=\&quot;modelica://Modelica.Blocks.Interfaces.DiscreteBlock\&quot;>DiscreteBlock&lt;/a> for more information.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="SVdiscrete" description="&quot;Discrete Single-Variable controller&quot;" isLongClassSpecifier="true" classNameEnd="SVdiscrete" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="DiscreteBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Discrete.Sampler" isOver="true">
+        <component_list isModificationOver="true" declarationName="sampler_s" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="samplePeriod" elementName="samplePeriod" isfinal="true"/>
+          <modifications expression="startTime" elementName="startTime" isfinal="true"/>
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-100,-10},{-80, 10 } }" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Discrete.Sampler" isOver="true">
+        <component_list isModificationOver="true" declarationName="sampler_m" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="samplePeriod" elementName="samplePeriod" isfinal="true"/>
+          <modifications expression="startTime" elementName="startTime" isfinal="true"/>
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{0,-90}" elementName="origin"/>
+              <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+              <modifications expression="90" elementName="rotation"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+        <component_list declarationName="u_s" description="&quot;Scalar setpoint input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+        <component_list declarationName="u_m" description="&quot;Scalar measurement input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{0,-120}" elementName="origin"/>
+              <modifications expression="{{20,-20},{-20,20}}" elementName="extent"/>
+              <modifications expression="270" elementName="rotation"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Scalar actuator output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u_s" right="sampler_s.u">
+          <annotations isModificationOver="true" elementName="Line">
+            <modifications expression="{{-120,0},{-102,0}}" elementName="points"/>
+          </annotations>
+        </equations>
+        <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u_m" right="sampler_m.u">
+          <annotations isModificationOver="true" elementName="Line">
+            <modifications expression="{{0,-120},{0,-111},{0,-102}}" elementName="points"/>
+          </annotations>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has two Real input signals and oneReal output signalthat are sampled due to the defined &lt;strong>samplePeriod&lt;/strong> parameter.The block is designedto be used as base class for a corresponding controller.See the base-class &lt;a href=\&quot;modelica://Modelica.Blocks.Interfaces.DiscreteBlock\&quot;>DiscreteBlock&lt;/a> for more information.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="MVdiscrete" description="&quot;Discrete Multi-Variable controller&quot;" isLongClassSpecifier="true" classNameEnd="MVdiscrete" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="DiscreteBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="nu_s" description="&quot;Number of setpoint inputs&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="nu_m" description="&quot;Number of measurement inputs&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="ny" description="&quot;Number of actuator outputs&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Discrete.Sampler" isOver="true">
+        <component_list subscripts="[nu_s]" isModificationOver="true" declarationName="sampler_s" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="samplePeriod" elementName="samplePeriod" isEach="true" isfinal="true"/>
+          <modifications expression="startTime" elementName="startTime" isEach="true" isfinal="true"/>
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-90,-10},{-70,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Discrete.Sampler" isOver="true">
+        <component_list subscripts="[nu_m]" isModificationOver="true" declarationName="sampler_m" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="samplePeriod" elementName="samplePeriod" isEach="true" isfinal="true"/>
+          <modifications expression="startTime" elementName="startTime" isEach="true" isfinal="true"/>
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{0,-80}" elementName="origin"/>
+              <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+              <modifications expression="90" elementName="rotation"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+        <component_list subscripts="[nu_s]" declarationName="u_s" description="&quot;Setpoint input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+        <component_list subscripts="[nu_m]" declarationName="u_m" description="&quot;Measurement input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{0,-120}" elementName="origin"/>
+              <modifications expression="{{20,-20},{-20,20}}" elementName="extent"/>
+              <modifications expression="270" elementName="rotation"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+        <component_list subscripts="[ny]" declarationName="y" description="&quot;Actuator output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u_s" right="sampler_s.u">
+          <annotations isModificationOver="true" elementName="Line">
+            <modifications expression="{{-120,0},{-92,0}}" elementName="points"/>
+          </annotations>
+        </equations>
+        <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u_m" right="sampler_m.u">
+          <annotations isModificationOver="true" elementName="Line">
+            <modifications expression="{{0,-120},{0,-106},{0,-92}}" elementName="points"/>
+          </annotations>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Diagram">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Text( extent={{-100,-10},{-80,-30}}, textString=&quot;u_s&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has two Real input signal vectors and oneReal output signal vector. The vector signalsare sampled due to the defined &lt;strong>samplePeriod&lt;/strong> parameter.The block is designedto be used as base class for a corresponding controller.See the base-class &lt;a href=\&quot;modelica://Modelica.Blocks.Interfaces.DiscreteBlock\&quot;>DiscreteBlock&lt;/a> for more information.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="BooleanSISO" description="&quot;Single Input Single Output control block with signals of type Boolean&quot;" isLongClassSpecifier="true" classNameEnd="BooleanSISO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.BooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BooleanInput" isPublic="true" isOver="true">
+        <component_list declarationName="u" description="&quot;Connector of Boolean input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Boolean output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has one continuous Boolean input and one continuous Boolean output signal.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="BooleanMIMOs" description="&quot;Multiple Input Multiple Output continuous control block with same number of inputs and outputs of Boolean type&quot;" isLongClassSpecifier="true" classNameEnd="BooleanMIMOs" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.BooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="n" description="&quot;Number of inputs (= number of outputs)&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BooleanInput" isOver="true">
+        <component_list subscripts="[n]" declarationName="u" description="&quot;Connector of Boolean input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BooleanOutput" isOver="true">
+        <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Boolean output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has a continuous Boolean input and a continuous Boolean output signal vectorwhere the signal sizes of the input and output vector are identical.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="MI2BooleanMOs" description="&quot;2 Multiple Input / Boolean Multiple Output block with same signal lengths&quot;" isLongClassSpecifier="true" classNameEnd="MI2BooleanMOs" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.BooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="n" description="&quot;Dimension of input and output vectors.&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list subscripts="[n]" declarationName="u1" description="&quot;Connector 1 of Boolean input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,40},{-100,80}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list subscripts="[n]" declarationName="u2" description="&quot;Connector 2 of Boolean input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BooleanOutput" isOver="true">
+        <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Boolean output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has two Boolean input vectors u1 and u2 and one Boolean outputvector y. All vectors have the same number of elements.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="SI2BooleanSO" description="&quot;2 Single Input / Boolean Single Output block&quot;" isLongClassSpecifier="true" classNameEnd="SI2BooleanSO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.BooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BooleanInput" isOver="true">
+        <component_list declarationName="u1" description="&quot;Connector 1 of Boolean input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,40},{-100,80}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BooleanInput" isOver="true">
+        <component_list declarationName="u2" description="&quot;Connector 2 of Boolean input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-80},{-100,-40}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Boolean output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has two Boolean input signals u1 and u2 and one Boolean output signal y.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="BooleanSignalSource" description="&quot;Base class for Boolean signal sources&quot;" isLongClassSpecifier="true" classNameEnd="BooleanSignalSource" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.BooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Boolean output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line(points={{-80,68},{-80,-80}}, color={192,192,192}), Polygon( points={{-80,90},{-88,68},{-72,68},{-80,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-90,-70},{68,-70}}, color={192,192,192}), Polygon( points={{90,-70},{68,-62},{68,-78},{90,-70}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Basic block for Boolean sources of package Blocks.Sources.This component has one continuous Boolean output signal y.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="IntegerSO" description="&quot;Single Integer Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="IntegerSO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.IntegerBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="IntegerOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Integer output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has one continuous Integer output signal.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="IntegerMO" description="&quot;Multiple Integer Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="IntegerMO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.IntegerBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" expression="1" declarationName="nout" description="&quot;Number of outputs&quot;">
+          <modifications expression="1" elementName="min"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="IntegerOutput" isOver="true">
+        <component_list subscripts="[nout]" declarationName="y" description="&quot;Connector of Integer output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has one continuous Integer output signal vector.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="IntegerSignalSource" description="&quot;Base class for continuous Integer signal source&quot;" isLongClassSpecifier="true" classNameEnd="IntegerSignalSource" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="IntegerSO" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="0" declarationName="offset" description="&quot;Offset of output signal y&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+        <component_list expression="0" declarationName="startTime" description="&quot;Output y = offset for time &lt; startTime&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Basic block for Integer sources of package Blocks.Sources.This component has one continuous Integer output signal yand two parameters (offset, startTime) to shift thegenerated signal.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="IntegerSIBooleanSO" description="&quot;Integer Input Boolean Output continuous control block&quot;" isLongClassSpecifier="true" classNameEnd="IntegerSIBooleanSO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.BooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="IntegerInput" isOver="true">
+        <component_list declarationName="u" description="&quot;Connector of Integer input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Boolean output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has a continuous Integer input and a continuous Boolean output signal.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="IntegerMIBooleanMOs" description="&quot;Multiple Integer Input Multiple Boolean Output continuous control block with same number of inputs and outputs&quot;" isLongClassSpecifier="true" classNameEnd="IntegerMIBooleanMOs" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.BooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="n" description="&quot;Number of inputs (= number of outputs)&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="IntegerInput" isOver="true">
+        <component_list subscripts="[n]" declarationName="u" description="&quot;Connector of Integer input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="BooleanOutput" isOver="true">
+        <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Boolean output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has a continuous Integer input and a continuous Boolean output signal vectorwhere the signal sizes of the input and output vector are identical.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="PartialIntegerSISO" description="&quot;Partial block with a IntegerInput and an IntegerOutput signal&quot;" isLongClassSpecifier="true" classNameEnd="PartialIntegerSISO" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerInput" isOver="true">
+        <component_list declarationName="u" description="&quot;Integer input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-180,-40},{-100,40}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Integer output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-20},{140,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+            <modifications expression="0.06" elementName="initialScale"/>
+          </modifications>
+          <modifications expression="{ Text( extent={{110,-50},{250,-70}}, textString=DynamicSelect(&quot; &quot;, String( y, minimumLength=1, significantDigits=0 ) ) ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Rectangle( extent={{-100,100},{100,-100}}, fillColor={255,213,170}, fillPattern=FillPattern.Solid, borderPattern=BorderPattern.Raised ) }" elementName="graphics"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="PartialIntegerMISO" description="&quot;Partial block with an IntegerVectorInput and an IntegerOutput signal&quot;" isLongClassSpecifier="true" classNameEnd="PartialIntegerMISO" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" expression="0" declarationName="nu" description="&quot;Number of input connections&quot;" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="0" elementName="min"/>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="true" elementName="connectorSizing"/>
+          </annotations>
+          <annotations expression="true" elementName="HideResult"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerVectorInput" isOver="true">
+        <component_list subscripts="[nu]" declarationName="u" description="&quot;Vector of Integer input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-120,70},{-80,-70}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.IntegerOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Integer output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-15},{130,15}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+            <modifications expression="0.06" elementName="initialScale"/>
+          </modifications>
+          <modifications expression="{ Text( extent={{110,-50},{250,-70}}, textString=DynamicSelect(&quot; &quot;, String( y, minimumLength=1, significantDigits=0 ) ) ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Rectangle( extent={{-100,100},{100,-100}}, lineColor={255,137,0}, fillColor={255,213,170}, borderPattern=BorderPattern.Raised, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="partialBooleanSISO" description="&quot;Partial block with 1 input and 1 output Boolean signal&quot;" isLongClassSpecifier="true" classNameEnd="partialBooleanSISO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
+        <component_list declarationName="u" description="&quot;Connector of Boolean input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Boolean output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Ellipse( extent={{-71,7},{-85,-7}}, lineColor=DynamicSelect({235,235,235}, if u then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if u then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse( extent={{71,7},{85,-7}}, lineColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has one continuous Boolean input and one continuous Boolean output signalwith a 3D icon (e.g., used in Blocks.Logical library).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="partialBooleanSI2SO" description="&quot;Partial block with 2 input and 1 output Boolean signal&quot;" isLongClassSpecifier="true" classNameEnd="partialBooleanSI2SO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
+        <component_list declarationName="u1" description="&quot;Connector of first Boolean input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
+        <component_list declarationName="u2" description="&quot;Connector of second Boolean input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-100},{-100,-60}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Boolean output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Ellipse( extent={{-71,7},{-85,-7}}, lineColor=DynamicSelect({235,235,235}, if u1 then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if u1 then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse( extent={{-71,-74},{-85,-88}}, lineColor=DynamicSelect({235,235,235}, if u2 then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if u2 then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse( extent={{71,7},{85,-7}}, lineColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has two continuous Boolean input and one continuous Boolean output signalwith a 3D icon (e.g., used in Blocks.Logical library).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="partialBooleanSI3SO" description="&quot;Partial block with 3 input and 1 output Boolean signal&quot;" isLongClassSpecifier="true" classNameEnd="partialBooleanSI3SO" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
+        <component_list declarationName="u1" description="&quot;Connector of first Boolean input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,60},{-100,100}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
+        <component_list declarationName="u2" description="&quot;Connector of second Boolean input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
+        <component_list declarationName="u3" description="&quot;Connector of third Boolean input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-100},{-100,-60}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Boolean output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Ellipse( extent={{-71,74},{-85,88}}, lineColor=DynamicSelect({235,235,235}, if u1 then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if u1 then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse( extent={{-71,7},{-85,-7}}, lineColor=DynamicSelect({235,235,235}, if u2 then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if u2 then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse( extent={{-71,-74},{-85,-88}}, lineColor=DynamicSelect({235,235,235}, if u3 then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if u3 then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse( extent={{71,7},{85,-7}}, lineColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has three continuous Boolean input and one continuous Boolean output signalwith a 3D icon (e.g., used in Blocks.Logical library).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="partialBooleanSI" description="&quot;Partial block with 1 input Boolean signal&quot;" isLongClassSpecifier="true" classNameEnd="partialBooleanSI" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanInput" isOver="true">
+        <component_list declarationName="u" description="&quot;Connector of Boolean input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Ellipse( extent={{-71,7},{-85,-7}}, lineColor=DynamicSelect({235,235,235}, if u then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if u then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has one continuous Boolean input signalwith a 3D icon (e.g., used in Blocks.Logical library).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="partialBooleanSO" description="&quot;Partial block with 1 output Boolean signal&quot;" isLongClassSpecifier="true" classNameEnd="partialBooleanSO" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Boolean output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Ellipse( extent={{71,7},{85,-7}}, lineColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has one continuous Boolean output signalwith a 3D icon (e.g., used in Blocks.Logical library).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="partialBooleanSource" description="&quot;Partial source block (has 1 output Boolean signal and an appropriate default icon)&quot;" isLongClassSpecifier="true" classNameEnd="partialBooleanSource" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.PartialBooleanBlock" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Boolean output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Polygon( points={{-80,88},{-88,66},{-72,66},{-80,88}}, lineColor={255,0,255}, fillColor={255,0,255}, fillPattern=FillPattern.Solid ) , Line(points={{-80,66},{-80,-82}}, color={255,0,255}), Line(points={{-90,-70},{72,-70}}, color={255,0,255}), Polygon( points={{90,-70},{68,-62},{68,-78},{90,-70}}, lineColor={255,0,255}, fillColor={255,0,255}, fillPattern=FillPattern.Solid ) , Ellipse( extent={{71,7},{85,-7}}, lineColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Basic block for Boolean sources of package Blocks.Sources.This component has one continuous Boolean output signal yand a 3D icon (e.g., used in Blocks.Logical library).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="partialBooleanThresholdComparison" description="&quot;Partial block to compare the Real input u with a threshold and provide the result as 1 Boolean output signal&quot;" isLongClassSpecifier="true" classNameEnd="partialBooleanThresholdComparison" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list expression="0" declarationName="threshold" description="&quot;Comparison with respect to threshold&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+        <component_list declarationName="u" description="&quot;Connector of Real input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Boolean output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Rectangle( extent={{-100,100},{100,-100}}, fillColor={210,210,210}, fillPattern=FillPattern.Solid, borderPattern=BorderPattern.Raised ) , Text( extent={{-150,-140},{150,-110}}, textString=&quot;%threshold&quot; ) , Ellipse( extent={{71,7},{85,-7}}, lineColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has one continuous Real input and one continuous Boolean output signalas well as a 3D icon (e.g., used in Blocks.Logical library).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="partialBooleanComparison" description="&quot;Partial block with 2 Real input and 1 Boolean output signal (the result of a comparison of the two Real inputs)&quot;" isLongClassSpecifier="true" classNameEnd="partialBooleanComparison" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+        <component_list declarationName="u1" description="&quot;Connector of first Real input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.RealInput" isOver="true">
+        <component_list declarationName="u2" description="&quot;Connector of second Real input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-100},{-100,-60}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Blocks.Interfaces.BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Boolean output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Rectangle( extent={{-100,100},{100,-100}}, fillColor={210,210,210}, fillPattern=FillPattern.Solid, borderPattern=BorderPattern.Raised ) , Ellipse( extent={{73,7},{87,-7}}, lineColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) , Ellipse(extent={{32,10},{52,-10}}, lineColor={0,0,127}), Line(points={{-100,-80},{42,-80},{42,0}}, color={0,0,127}), Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Block has two continuous Real input and one continuous Boolean output signalas a result of the comparison of the two input signals. The blockhas a 3D icon (e.g., used in Blocks.Logical library).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="PartialBooleanSISO_small" description="&quot;Partial block with a BooleanInput and a BooleanOutput signal and a small block icon&quot;" isLongClassSpecifier="true" classNameEnd="PartialBooleanSISO_small" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+        <component_list declarationName="u" description="&quot;Boolean input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-180,-40},{-100,40}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Boolean output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-20},{140,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+            <modifications expression="0.04" elementName="initialScale"/>
+          </modifications>
+          <modifications expression="{ Text( extent={{-300,200},{300,120}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Rectangle( extent={{-100,100},{100,-100}}, fillColor={215,215,215}, fillPattern=FillPattern.Solid, borderPattern=BorderPattern.Raised ) , Ellipse( extent={{60,10},{80,-10}}, lineColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="PartialBooleanMISO" description="&quot;Partial block with a BooleanVectorInput and a BooleanOutput signal&quot;" isLongClassSpecifier="true" classNameEnd="PartialBooleanMISO" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" expression="0" declarationName="nu" description="&quot;Number of input connections&quot;" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="0" elementName="min"/>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="true" elementName="connectorSizing"/>
+          </annotations>
+          <annotations expression="true" elementName="HideResult"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanVectorInput" isOver="true">
+        <component_list subscripts="[nu]" declarationName="u" description="&quot;Vector of Boolean input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-120,70},{-80,-70}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Boolean output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-15},{130,15}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+            <modifications expression="0.06" elementName="initialScale"/>
+          </modifications>
+          <modifications expression="{ Text( extent={{-250,170},{250,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Rectangle( extent={{-100,100},{100,-100}}, fillColor={215,215,215}, fillPattern=FillPattern.Solid, borderPattern=BorderPattern.Raised ) , Ellipse( extent={{60,10},{80,-10}}, lineColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillColor=DynamicSelect({235,235,235}, if y then {0,255,0} else {235,235,235}), fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="PartialConversionBlock" description="&quot;Partial block defining the interface for conversion blocks&quot;" isLongClassSpecifier="true" classNameEnd="PartialConversionBlock" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealInput" isOver="true">
+        <component_list declarationName="u" description="&quot;Connector of Real input signal to be converted&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="RealOutput" isOver="true">
+        <component_list declarationName="y" description="&quot;Connector of Real output signal containing input signal u in another unit&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Placement">
+            <modifications isModificationOver="true" elementName="transformation">
+              <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+            </modifications>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="true" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100.0,-100.0},{100.0,100.0}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Rectangle( lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{-100.0,-100.0},{100.0,100.0}} ) , Line( points={{-90.0,0.0},{30.0,0.0}}, color={191,0,0} ) , Polygon( lineColor={191,0,0}, fillColor={191,0,0}, fillPattern=FillPattern.Solid, points={{90.0,0.0},{30.0,20.0},{30.0,-20.0},{90.0,0.0}} ) , Text( textColor={0,0,255}, extent={{-150,110},{150,150}}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>This block defines the interface of a conversion block thatconverts from one unit into another one.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="block" className="PartialNoise" description="&quot;Partial noise generator&quot;" isLongClassSpecifier="true" classNameEnd="PartialNoise" isOver="true">
+      <elements xsi:type="mOloc:ImportClause" selfName="generator" importName="Modelica.Math.Random.Generators.Xorshift128plus" isOver="true"/>
+      <elements xsi:type="mOloc:ImportClause" importName="Modelica.Math.Random.Utilities.automaticLocalSeed" isOver="true"/>
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.SO" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Period" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" declarationName="samplePeriod" description="&quot;Period for sampling the raw random numbers&quot;" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="0.01" elementName="start"/>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="enableNoise" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+        <component_list expression="globalSeed.enableNoise" declarationName="enableNoise" description="&quot;= true: y = noise, otherwise y = y_off&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="choices">
+            <modifications expression="true" elementName="checkBox"/>
+          </annotations>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+            <modifications expression="&quot;Noise generation&quot;" elementName="group"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list expression="0.0" declarationName="y_off" description="&quot;Sets y = y_off if enableNoise=false (or time&lt;startTime, see below)&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+            <modifications expression="&quot;Noise generation&quot;" elementName="group"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+        <component_list expression="true" declarationName="useGlobalSeed" description="&quot;= true: use global seed, otherwise ignore it&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="choices">
+            <modifications expression="true" elementName="checkBox"/>
+          </annotations>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+            <modifications expression="&quot;Initialization&quot;" elementName="group"/>
+            <modifications expression="enableNoise" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+        <component_list expression="true" declarationName="useAutomaticLocalSeed" description="&quot;= true: use automatic local seed, otherwise use fixedLocalSeed&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="choices">
+            <modifications expression="true" elementName="checkBox"/>
+          </annotations>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+            <modifications expression="&quot;Initialization&quot;" elementName="group"/>
+            <modifications expression="enableNoise" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="fixedLocalSeed" description="&quot;Local seed (any Integer number)&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+            <modifications expression="&quot;Initialization&quot;" elementName="group"/>
+            <modifications expression="enableNoise and not useAutomaticLocalSeed" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+        <component_list expression="0.0" declarationName="startTime" description="&quot;Start time for sampling the raw random numbers&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+            <modifications expression="&quot;Initialization&quot;" elementName="group"/>
+            <modifications expression="enableNoise" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+        <component_list isModificationOver="true" declarationName="localSeed" description="&quot;The actual localSeed&quot;">
+          <modifications expression="false" elementName="fixed"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Noise.GlobalSeed" isProtected="true" isOuter="true" isOver="true">
+        <component_list declarationName="globalSeed" description="&quot;Definition of global seed via inner/outer&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="if useGlobalSeed then globalSeed.seed else 0" declarationName="actualGlobalSeed" description="&quot;The global seed, which is actually used&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+        <component_list expression="enableNoise and globalSeed.enableNoise" declarationName="generateNoise" description="&quot;= true, if noise shall be generated, otherwise no noise&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isOver="true">
+        <component_list subscripts="[generator.nState]" declarationName="state" description="&quot;Internal state of random number generator&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
+        <component_list declarationName="r" description="&quot;Random number according to the desired distribution&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="discrete" isOver="true">
+        <component_list declarationName="r_raw" description="&quot;Uniform random number in the range (0,1]&quot;"/>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection" isInitial="true">
+        <equations xsi:type="mOloc:SimpleEquation" left="localSeed" right="if useAutomaticLocalSeed then automaticLocalSeed(getInstanceName()) else fixedLocalSeed"/>
+        <equations xsi:type="mOloc:SimpleEquation" left="pre(state)" right="generator.initialState(localSeed, actualGlobalSeed)"/>
+        <equations xsi:type="mOloc:SimpleEquation" left="r_raw" right="generator.random(pre(state))"/>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:WhenEquation" condition="generateNoise and sample(startTime, samplePeriod)">
+          <whenEquations xsi:type="mOloc:SimpleEquation" left="(r_raw, state)" right="generator.random(pre(state))"/>
+        </equations>
+        <equations xsi:type="mOloc:SimpleEquation" left="y" right="if not generateNoise or time &lt; startTime then y_off else r"/>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Polygon( points={{-76,90},{-84,68},{-68,68},{-76,90}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(points={{-76,68},{-76,-80}}, color={192,192,192}), Line(points={{-86,-14},{72,-14}}, color={192,192,192} ) , Polygon( points={{94,-14},{72,-6},{72,-22},{94,-14}}, lineColor={192,192,192}, fillColor={192,192,192}, fillPattern=FillPattern.Solid ) , Line(visible = enableNoise, points={{-76,-19},{-62,-19},{-62,-3},{-54,-3},{-54,-51},{-46,-51},{-46, -29 } ,{-38,-29},{-38,55},{-30,55},{-30,23},{-30,23},{-30,-37},{-20, -37 } ,{-20,-19},{-10,-19},{-10,-47},{0,-47},{0,35},{6,35},{6,49},{12, 49 } ,{12,-7},{22,-7},{22,5},{28,5},{28,-25},{38,-25},{38,47},{48,47}, {48,13},{56,13},{56,-53},{66,-53} } ) , Text( extent={{-150,-110},{150,-150}}, textString=&quot;%samplePeriod s&quot; ) , Line(visible=not enableNoise, points={{-76,48},{72,48}} ) , Text(visible=not enableNoise, extent={{-75,42},{95,2}}, textString=&quot;%y_off&quot; ) , Text(visible=enableNoise and not useAutomaticLocalSeed, extent={{-92,20},{98,-22}}, textColor={238,46,47}, textString=&quot;%fixedLocalSeed&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>Partial base class of noise generators defining the common featuresof noise blocks.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+          <modifications expression="&quot;&lt;html>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&lt;tr>&lt;th>Date&lt;/th> &lt;th align=\&quot;left\&quot;>Description&lt;/th>&lt;/tr>&lt;tr>&lt;td> June 22, 2015 &lt;/td> &lt;td>&lt;table border=\&quot;0\&quot;>&lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Logos/dlr_logo.png\&quot; alt=\&quot;DLR logo\&quot;>&#xA;&lt;/td>&lt;td valign=\&quot;bottom\&quot;> Initial version implemented by A. Kl&amp;ouml;&#xA;ckner, F. v.d. Linden, D. Zimmer, M. Otter.&lt;br> &lt;a href=\&quot;http://www.dlr.de/rmc/sr/en\&quot;>DLR Institute of System Dynamics and Control&lt;/a>&#xA;&lt;/td>&lt;/tr>&lt;/table>&lt;/td>&lt;/tr>&lt;/table>&lt;/html>&quot;" elementName="revisions"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="package" className="Adaptors" description="&quot;Package with adaptors (especially useful for FMUs)&quot;" isLongClassSpecifier="true" classNameEnd="Adaptors" isOver="true">
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.InterfacesPackage" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="model" className="FlowToPotentialAdaptor" description="&quot;Signal adaptor for a connector with flow, 1st derivative of flow, and 2nd derivative of flow as inputs and potential, 1st derivative of potential, and 2nd derivative of potential as outputs (especially useful for FMUs)&quot;" isLongClassSpecifier="true" classNameEnd="FlowToPotentialAdaptor" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+          <component_list expression="true" declarationName="use_pder" description="&quot;Use output for 1st derivative of potential&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="Evaluate"/>
+            <annotations expression="true" elementName="HideResult"/>
+            <annotations isModificationOver="true" elementName="choices">
+              <modifications expression="true" elementName="checkBox"/>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+          <component_list expression="true" declarationName="use_pder2" description="&quot;Use output for 2nd derivative of potential (only if 1st derivative is used, too)&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="Evaluate"/>
+            <annotations expression="true" elementName="HideResult"/>
+            <annotations isModificationOver="true" elementName="choices">
+              <modifications expression="true" elementName="checkBox"/>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+          <component_list expression="true" declarationName="use_fder" description="&quot;Use input for 1st derivative of flow&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="Evaluate"/>
+            <annotations expression="true" elementName="HideResult"/>
+            <annotations isModificationOver="true" elementName="choices">
+              <modifications expression="true" elementName="checkBox"/>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+          <component_list expression="true" declarationName="use_fder2" description="&quot;Use input for 2nd derivative of flow (only if 1st derivative is used, too)&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="Evaluate"/>
+            <annotations expression="true" elementName="HideResult"/>
+            <annotations isModificationOver="true" elementName="choices">
+              <modifications expression="true" elementName="checkBox"/>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+          <component_list declarationName="p" description="&quot;Output for potential&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations isModificationOver="true" elementName="Placement">
+              <modifications isModificationOver="true" elementName="transformation">
+                <modifications expression="{{20,70},{40,90}}" elementName="extent"/>
+              </modifications>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+          <component_list declarationName="pder" description="&quot;Optional output for der(potential)&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="use_pder">
+            <annotations isModificationOver="true" elementName="Placement">
+              <modifications isModificationOver="true" elementName="transformation">
+                <modifications expression="{{20,40},{40,60}}" elementName="extent"/>
+              </modifications>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+          <component_list declarationName="pder2" description="&quot;Optional output for der2(potential)&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="(use_pder and use_pder2)">
+            <annotations isModificationOver="true" elementName="Placement">
+              <modifications isModificationOver="true" elementName="transformation">
+                <modifications expression="{{20,10},{40,30}}" elementName="extent"/>
+              </modifications>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <component_list declarationName="f" description="&quot;Input for flow&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations isModificationOver="true" elementName="Placement">
+              <modifications isModificationOver="true" elementName="transformation">
+                <modifications expression="{{40,-90},{20,-70}}" elementName="extent"/>
+              </modifications>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <component_list declarationName="fder" description="&quot;Optional input for der(flow)&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="use_fder">
+            <annotations isModificationOver="true" elementName="Placement">
+              <modifications isModificationOver="true" elementName="transformation">
+                <modifications expression="{{40,-60},{20,-40}}" elementName="extent"/>
+              </modifications>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <component_list declarationName="fder2" description="&quot;Optional input for der2(flow)&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="(use_fder and use_fder2)">
+            <annotations isModificationOver="true" elementName="Placement">
+              <modifications isModificationOver="true" elementName="transformation">
+                <modifications expression="{{40,-30},{20,-10}}" elementName="extent"/>
+              </modifications>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isProtected="true" isOver="true">
+          <component_list expression="&quot;p&quot;" declarationName="Name_p" description="&quot;Name of potential variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+          <component_list expression="&quot;der(p)&quot;" declarationName="Name_pder" description="&quot;Name of 1st derivative of potential variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+          <component_list expression="&quot;der2(p)&quot;" declarationName="Name_pder2" description="&quot;Name of 2nd derivative of potential variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+          <component_list expression="&quot;f&quot;" declarationName="Name_f" description="&quot;Name of flow variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+          <component_list expression="&quot;der(f)&quot;" declarationName="Name_fder" description="&quot;Name of 1st derivative of flow variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+          <component_list expression="&quot;der2(f)&quot;" declarationName="Name_fder2" description="&quot;Name of 2nd derivative of flow variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
+          <component_list declarationName="y" description="&quot;Output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+          <component_list declarationName="y1" description="&quot;Optional 1st derivative of output&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+          <component_list declarationName="y2" description="&quot;Optional 2nd derivative of output&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
+          <component_list declarationName="u" description="&quot;Input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <component_list declarationName="u1" description="&quot;Optional 1st derivative of input&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <component_list declarationName="u2" description="&quot;Optional 2nd derivative of input&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:EquationSection">
+          <equations xsi:type="mOloc:SimpleEquation" left="y" right="p"/>
+          <equations xsi:type="mOloc:SimpleEquation" left="y1" right="if use_pder then der(y) else 0"/>
+          <equations xsi:type="mOloc:SimpleEquation" left="y2" right="if (use_pder and use_pder2) then der(y1) else 0"/>
+          <equations xsi:type="mOloc:ConnectEquation" left="y1" right="pder"/>
+          <equations xsi:type="mOloc:ConnectEquation" left="y2" right="pder2"/>
+          <equations xsi:type="mOloc:IfEquation" condition="use_fder">
+            <ifEquations xsi:type="mOloc:ConnectEquation" left="fder" right="u1"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="u1" right="0"/>
+          </equations>
+          <equations xsi:type="mOloc:IfEquation" condition="(use_fder and use_fder2)">
+            <ifEquations xsi:type="mOloc:ConnectEquation" left="fder2" right="u2"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="u2" right="0"/>
+          </equations>
+          <equations xsi:type="mOloc:IfEquation" condition="(use_fder and use_fder2)">
+            <ifEquations xsi:type="mOloc:SimpleEquation" left="u" right="Functions.state2({f, u1, u2}, time)"/>
+            <elseCondition>(use_fder and not use_fder2)</elseCondition>
+            <elseifEquations xsi:type="mOloc:SimpleEquation" left="u" right="Functions.state1({f, u1}, time)"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="u" right="f"/>
+          </equations>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+          <annotations isModificationOver="true" elementName="Icon">
+            <modifications isModificationOver="true" elementName="coordinateSystem">
+              <modifications expression="false" elementName="preserveAspectRatio"/>
+            </modifications>
+            <modifications expression="{ Text( extent={{-150,150},{150,110}}, textColor={0,0,255}, textString=&quot;%name&quot; ) , Rectangle( extent={{-20,100},{20,-100}}, lineColor={0,0,127}, radius=10 ) , Text( extent={{-18,90},{18,70}}, textString=&quot;%Name_p&quot; ) , Text( extent={{-18,60},{18,40}}, textString=&quot;%Name_pder&quot;, visible=use_pder ) , Text( extent={{-18,30},{18,10}}, textString=&quot;%Name_pder2&quot;, visible=(use_pder and use_pder2) ) , Text( extent={{-18,-70},{18,-90}}, textString=&quot;%Name_f&quot; ) , Text( extent={{-18,-40},{18,-60}}, textString=&quot;%Name_fder&quot;, visible=use_fder ) , Text( extent={{-18,-10},{18,-30}}, textString=&quot;%Name_fder2&quot;, visible=(use_fder and use_fder2) ) }" elementName="graphics"/>
+          </annotations>
+          <annotations isModificationOver="true" elementName="Diagram">
+            <modifications isModificationOver="true" elementName="coordinateSystem">
+              <modifications expression="false" elementName="preserveAspectRatio"/>
+            </modifications>
+          </annotations>
+          <annotations isModificationOver="true" elementName="Documentation">
+            <modifications expression="&quot;&lt;html>&lt;p>Adaptor between a physical connector and a signal representation of the connector signals.This component is used to provide a pure signal interface around a physical modeland export this model in form of an input/output block,especially as FMU (&lt;a href=\&quot;https://fmi-standard.org\&quot;>Functional Mock-up Unit&lt;/a>).&#xA;&lt;/p>&lt;p>This adaptor has flow, optional 1st derivative of flow, and optional 2nd derivative of flow as input andpotential, optional 1st derivative of potential, and optional 2nd derivative of potential as output signals.&lt;/p>&lt;p>Note, the input signals must be consistent to each other(fder=der(f), fder2=der(fder)).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+          </annotations>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" isPartial="true" classType="model" className="PotentialToFlowAdaptor" description="&quot;Signal adaptor for a connector with potential, 1st derivative of potential, and 2nd derivative of potential as inputs and flow, 1st derivative of flow, and 2nd derivative of flow as outputs (especially useful for FMUs)&quot;" isLongClassSpecifier="true" classNameEnd="PotentialToFlowAdaptor" isOver="true">
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+          <component_list expression="true" declarationName="use_pder" description="&quot;Use input for 1st derivative of potential&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="Evaluate"/>
+            <annotations expression="true" elementName="HideResult"/>
+            <annotations isModificationOver="true" elementName="choices">
+              <modifications expression="true" elementName="checkBox"/>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+          <component_list expression="true" declarationName="use_pder2" description="&quot;Use input for 2nd derivative of potential (only if 1st derivative is used, too)&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="Evaluate"/>
+            <annotations expression="true" elementName="HideResult"/>
+            <annotations isModificationOver="true" elementName="choices">
+              <modifications expression="true" elementName="checkBox"/>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+          <component_list expression="true" declarationName="use_fder" description="&quot;Use output for 1st derivative of flow&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="Evaluate"/>
+            <annotations expression="true" elementName="HideResult"/>
+            <annotations isModificationOver="true" elementName="choices">
+              <modifications expression="true" elementName="checkBox"/>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+          <component_list expression="true" declarationName="use_fder2" description="&quot;Use output for 2nd derivative of flow (only if 1st derivative is used, too)&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="Evaluate"/>
+            <annotations expression="true" elementName="HideResult"/>
+            <annotations isModificationOver="true" elementName="choices">
+              <modifications expression="true" elementName="checkBox"/>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <component_list declarationName="p" description="&quot;Input for potential&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations isModificationOver="true" elementName="Placement">
+              <modifications isModificationOver="true" elementName="transformation">
+                <modifications expression="{{-40,70},{-20,90}}" elementName="extent"/>
+              </modifications>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <component_list declarationName="pder" description="&quot;Optional input for der(potential)&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="use_pder">
+            <annotations isModificationOver="true" elementName="Placement">
+              <modifications isModificationOver="true" elementName="transformation">
+                <modifications expression="{{-40,40},{-20,60}}" elementName="extent"/>
+              </modifications>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <component_list declarationName="pder2" description="&quot;Optional input for der2(potential)&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="(use_pder and use_pder2)">
+            <annotations isModificationOver="true" elementName="Placement">
+              <modifications isModificationOver="true" elementName="transformation">
+                <modifications expression="{{-40,10},{-20,30}}" elementName="extent"/>
+              </modifications>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+          <component_list declarationName="f" description="&quot;Output for flow&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations isModificationOver="true" elementName="Placement">
+              <modifications isModificationOver="true" elementName="transformation">
+                <modifications expression="{{-20,-90},{-40,-70}}" elementName="extent"/>
+              </modifications>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+          <component_list declarationName="fder" description="&quot;Optional output for der(flow)&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="use_fder">
+            <annotations isModificationOver="true" elementName="Placement">
+              <modifications isModificationOver="true" elementName="transformation">
+                <modifications expression="{{-20,-60},{-40,-40}}" elementName="extent"/>
+              </modifications>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+          <component_list declarationName="fder2" description="&quot;Optional output for der2(flow)&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="(use_fder and use_fder2)">
+            <annotations isModificationOver="true" elementName="Placement">
+              <modifications isModificationOver="true" elementName="transformation">
+                <modifications expression="{{-20,-30},{-40,-10}}" elementName="extent"/>
+              </modifications>
+            </annotations>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isProtected="true" isOver="true">
+          <component_list expression="&quot;p&quot;" declarationName="Name_p" description="&quot;Name of potential variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+          <component_list expression="&quot;der(p)&quot;" declarationName="Name_pder" description="&quot;Name of 1st derivative of potential variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+          <component_list expression="&quot;der2(p)&quot;" declarationName="Name_pder2" description="&quot;Name of 2nd derivative of potential variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+          <component_list expression="&quot;f&quot;" declarationName="Name_f" description="&quot;Name of flow variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+          <component_list expression="&quot;der(f)&quot;" declarationName="Name_fder" description="&quot;Name of 1st derivative of flow variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="String" parameterType="parameter" isOver="true">
+          <component_list expression="&quot;der2(f)&quot;" declarationName="Name_fder2" description="&quot;Name of 2nd derivative of flow variable&quot;"/>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
+          <component_list declarationName="y" description="&quot;Output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+          <component_list declarationName="y1" description="&quot;Optional 1st derivative of output&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+          <component_list declarationName="y2" description="&quot;Optional 2nd derivative of output&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
+          <component_list declarationName="u" description="&quot;Input signal&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <component_list declarationName="u1" description="&quot;Optional 1st derivative of input&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+          <component_list declarationName="u2" description="&quot;Optional 2nd derivative of input&quot;" isAnnotation="true" isAnnotationOver="true">
+            <annotations expression="true" elementName="HideResult"/>
+          </component_list>
+        </elements>
+        <elements xsi:type="mOloc:EquationSection">
+          <equations xsi:type="mOloc:SimpleEquation" left="y" right="-f"/>
+          <equations xsi:type="mOloc:SimpleEquation" left="y1" right="if use_fder then -der(y) else 0"/>
+          <equations xsi:type="mOloc:SimpleEquation" left="y2" right="if (use_fder and use_fder2) then -der(y1) else 0"/>
+          <equations xsi:type="mOloc:ConnectEquation" left="y1" right="fder"/>
+          <equations xsi:type="mOloc:ConnectEquation" left="y2" right="fder2"/>
+          <equations xsi:type="mOloc:IfEquation" condition="use_pder">
+            <ifEquations xsi:type="mOloc:ConnectEquation" left="pder" right="u1"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="u1" right="0"/>
+          </equations>
+          <equations xsi:type="mOloc:IfEquation" condition="(use_pder and use_pder2)">
+            <ifEquations xsi:type="mOloc:ConnectEquation" left="pder2" right="u2"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="u2" right="0"/>
+          </equations>
+          <equations xsi:type="mOloc:IfEquation" condition="(use_pder and use_pder2)">
+            <ifEquations xsi:type="mOloc:SimpleEquation" left="u" right="Functions.state2({p, u1, u2}, time)"/>
+            <elseCondition>(use_pder and not use_pder2)</elseCondition>
+            <elseifEquations xsi:type="mOloc:SimpleEquation" left="u" right="Functions.state1({p, u1}, time)"/>
+            <elseEquations xsi:type="mOloc:SimpleEquation" left="u" right="p"/>
+          </equations>
+        </elements>
+        <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+          <annotations isModificationOver="true" elementName="Icon">
+            <modifications isModificationOver="true" elementName="coordinateSystem">
+              <modifications expression="false" elementName="preserveAspectRatio"/>
+            </modifications>
+            <modifications expression="{ Text( extent={{-150,150},{150,110}}, textColor={0,0,255}, textString=&quot;%name&quot; ) , Rectangle( extent={{-20,100},{20,-100}}, lineColor={0,0,127}, radius=10 ) , Text( extent={{-18,90},{18,70}}, textString=&quot;%Name_p&quot; ) , Text( extent={{-18,60},{18,40}}, textString=&quot;%Name_pder&quot;, visible=use_pder ) , Text( extent={{-18,30},{18,10}}, textString=&quot;%Name_pder2&quot;, visible=(use_pder and use_pder2) ) , Text( extent={{-18,-70},{18,-90}}, textString=&quot;%Name_f&quot; ) , Text( extent={{-18,-40},{18,-60}}, textString=&quot;%Name_fder&quot;, visible=use_fder ) , Text( extent={{-18,-10},{18,-30}}, textString=&quot;%Name_fder2&quot;, visible=(use_fder and use_fder2) ) }" elementName="graphics"/>
+          </annotations>
+          <annotations isModificationOver="true" elementName="Diagram">
+            <modifications isModificationOver="true" elementName="coordinateSystem">
+              <modifications expression="false" elementName="preserveAspectRatio"/>
+            </modifications>
+          </annotations>
+          <annotations isModificationOver="true" elementName="Documentation">
+            <modifications expression="&quot;&lt;html>&lt;p>Adaptor between a physical connector and a signal representation of the connector signals.This component is used to provide a pure signal interface around a physical modeland export this model in form of an input/output block,especially as FMU (&lt;a href=\&quot;https://fmi-standard.org\&quot;>Functional Mock-up Unit&lt;/a>).&#xA;&lt;/p>&lt;p>This adaptor has potential, optional 1st derivative of potential, and optional 2nd derivative of potential as input andflow, optional 1st derivative of flow, and optional 2nd derivative of flow as output signals.&lt;/p>&lt;p>Note, the input signals must be consistent to each other(pder=der(p), pder2=der(pder)).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+          </annotations>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" classType="package" className="Functions" description="&quot;Functions for adaptors&quot;" isLongClassSpecifier="true" classNameEnd="Functions" isOver="true">
+        <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.FunctionsPackage" isOver="true"/>
+        <elements xsi:type="mOloc:ComponentClause" classType="function" className="state1" description="&quot;Return state (with one derivative)&quot;" isLongClassSpecifier="true" classNameEnd="state1" isOver="true">
+          <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list subscripts="[2]" declarationName="u" description="&quot;Required values for state and der(s)&quot;"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list declarationName="dummy" description="&quot;Just to have one input signal that should be differentiated to avoid possible problems in the Modelica tool (is not used)&quot;"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
+            <component_list declarationName="s"/>
+          </elements>
+          <elements xsi:type="mOloc:AlgorithmSection">
+            <statements xsi:type="mOloc:FunctionStatement" component="s" expression="u[1]"/>
+          </elements>
+          <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+            <annotations isModificationOver="true" expression="state1der1" elementName="derivative">
+              <modifications expression="u" elementName="noDerivative"/>
+            </annotations>
+            <annotations expression="true" elementName="InlineAfterIndexReduction"/>
+          </elements>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" classType="function" className="state1der1" description="&quot;Return 1st derivative (der of state1)&quot;" isLongClassSpecifier="true" classNameEnd="state1der1" isOver="true">
+          <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list subscripts="[2]" declarationName="u" description="&quot;Required values for state and der(s)&quot;"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list declarationName="dummy" description="&quot;Just to have one input signal that should be differentiated to avoid possible problems in the Modelica tool (is not used)&quot;"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list declarationName="dummy_der"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
+            <component_list declarationName="sder1"/>
+          </elements>
+          <elements xsi:type="mOloc:AlgorithmSection">
+            <statements xsi:type="mOloc:FunctionStatement" component="sder1" expression="u[2]"/>
+          </elements>
+          <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+            <annotations expression="true" elementName="InlineAfterIndexReduction"/>
+          </elements>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" classType="function" className="state2" description="&quot;Return state (with two derivatives)&quot;" isLongClassSpecifier="true" classNameEnd="state2" isOver="true">
+          <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list subscripts="[3]" declarationName="u" description="&quot;Required values for state and der(s)&quot;"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list declarationName="dummy" description="&quot;Just to have one input signal that should be differentiated to avoid possible problems in the Modelica tool (is not used)&quot;"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
+            <component_list declarationName="s"/>
+          </elements>
+          <elements xsi:type="mOloc:AlgorithmSection">
+            <statements xsi:type="mOloc:FunctionStatement" component="s" expression="u[1]"/>
+          </elements>
+          <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+            <annotations isModificationOver="true" expression="state2der1" elementName="derivative">
+              <modifications expression="u" elementName="noDerivative"/>
+            </annotations>
+            <annotations expression="true" elementName="InlineAfterIndexReduction"/>
+          </elements>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" classType="function" className="state2der1" description="&quot;Return 1st derivative (der of state2)&quot;" isLongClassSpecifier="true" classNameEnd="state2der1" isOver="true">
+          <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list subscripts="[3]" declarationName="u" description="&quot;Required values for state and der(s)&quot;"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list declarationName="dummy" description="&quot;Just to have one input signal that should be differentiated to avoid possible problems in the Modelica tool (is not used)&quot;"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list declarationName="dummy_der"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
+            <component_list declarationName="sder1"/>
+          </elements>
+          <elements xsi:type="mOloc:AlgorithmSection">
+            <statements xsi:type="mOloc:FunctionStatement" component="sder1" expression="u[2]"/>
+          </elements>
+          <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+            <annotations isModificationOver="true" expression="state2der2" elementName="derivative">
+              <modifications expression="u" elementName="noDerivative"/>
+              <modifications expression="2" elementName="order"/>
+            </annotations>
+            <annotations expression="true" elementName="InlineAfterIndexReduction"/>
+          </elements>
+        </elements>
+        <elements xsi:type="mOloc:ComponentClause" classType="function" className="state2der2" description="&quot;Return 2nd derivative (der of state2der1)&quot;" isLongClassSpecifier="true" classNameEnd="state2der2" isOver="true">
+          <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list subscripts="[3]" declarationName="u" description="&quot;Required values for state and der(s)&quot;"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list declarationName="dummy" description="&quot;Just to have one input signal that should be differentiated to avoid possible problems in the Modelica tool (is not used)&quot;"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list declarationName="dummy_der"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="input" isOver="true">
+            <component_list declarationName="dummy_der2"/>
+          </elements>
+          <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" directionType="output" isOver="true">
+            <component_list declarationName="sder2"/>
+          </elements>
+          <elements xsi:type="mOloc:AlgorithmSection">
+            <statements xsi:type="mOloc:FunctionStatement" component="sder2" expression="u[3]"/>
+          </elements>
+          <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+            <annotations expression="true" elementName="InlineAfterIndexReduction"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>This package contains partial adaptors to implement adaptors in various domainsbetween a physical connector and a signal representation of the connector signals.This component is used to provide a pure signal interface around a physical modeland export this model in form of an input/output block,especially as FMU (&lt;a href=\&quot;https://fmi-standard.org\&quot;>Functional Mock-up Unit&lt;/a>).&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This package contains interface definitions for&lt;strong>continuous&lt;/strong> input/output blocks with Real,Integer and Boolean signals. Furthermore, it containspartial models for continuous and discrete blocks.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em>June 28, 2019&lt;/em> by Thomas Beutlich:&lt;br> Removed obsolete blocks.&lt;/li>&lt;li>&lt;em>Oct. 21, 2002&lt;/em> by &lt;a href=\&quot;http://www.robotic.dlr.de/Martin.Otter/\&quot;>Martin Otter&lt;/a>&#xA;and Christian Schweiger:&lt;br> Added several new interfaces.&lt;/li>&lt;li>&lt;em>Oct. 24, 1999&lt;/em> by &lt;a href=\&quot;http://www.robotic.dlr.de/Martin.Otter/\&quot;>Martin Otter&lt;/a>:&lt;br>&#xA;RealInputSignal renamed to RealInput. RealOutputSignal renamed to output RealOutput. GraphBlock renamed to BlockIcon. SISOreal renamed to SISO. SOreal renamed to SO. I2SOreal renamed to M2SO. SignalGenerator renamed to SignalSource. Introduced the following new models: MIMO, MIMOs, SVcontrol, MVcontrol, DiscreteBlockIcon, DiscreteBlock, DiscreteSISO, DiscreteMIMO, DiscreteMIMOs, BooleanBlockIcon, BooleanSISO, BooleanSignalSource, MI2BooleanMOs.&lt;/li>&lt;li>&lt;em>June 30, 1999&lt;/em> by &lt;a href=\&quot;http://www.robotic.dlr.de/Martin.Otter/\&quot;>Martin Otter&lt;/a>:&lt;br>&#xA;Realized a first version, based on an existing Dymola library of Dieter Moormann and Hilding Elmqvist.&lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

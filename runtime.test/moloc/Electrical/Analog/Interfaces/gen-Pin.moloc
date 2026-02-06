@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Interfaces"/>
+  <classes classType="connector" className="Pin" description="&quot;Pin of an electrical component&quot;" isLongClassSpecifier="true" classNameEnd="Pin" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ElectricPotential" isOver="true">
+      <component_list declarationName="v" description="&quot;Potential at the pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="&quot;An electrical potential cannot be uniquely calculated.The reason could be that- a ground object is missing (Modelica.Electrical.Analog.Basic.Ground) to define the zero potential of the electrical circuit, or- a connector of an electrical component is not connected.&quot;" elementName="unassignedMessage"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" relationshipType="flow" isOver="true">
+      <component_list declarationName="i" description="&quot;Current flowing into the pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="&quot;An electrical current cannot be uniquely calculated.The reason could be that- a ground object is missing (Modelica.Electrical.Analog.Basic.Ground) to define the zero potential of the electrical circuit, or- a connector of an electrical component is not connected.&quot;" elementName="unassignedMessage"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;pin&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Rectangle( extent={{-100,100},{100,-100}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Rectangle( extent={{-40,40},{40,-40}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-160,110},{40,50}}, textColor={0,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em> 1998 &lt;/em> by Christoph Clauss&lt;br> initially implemented&lt;br> &lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+        <modifications expression="&quot;&lt;html>&lt;p>Pin is the basic electric connector. It includes the voltage which consists between the pin and the ground node. The ground node is the node of (any) ground device (Modelica.Electrical.Basic.Ground). Furthermore, the pin includes the current, which is considered to be &lt;strong>positive&lt;/strong> if it is flowing at the pin &lt;strong>into the device&lt;/strong>.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

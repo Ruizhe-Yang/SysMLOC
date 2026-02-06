@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.DCAC.Control"/>
+  <classes classType="block" className="PWM" description="&quot;PulseWidthModulation&quot;" isLongClassSpecifier="true" classNameEnd="PWM" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Icons.Block" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="constant" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="PowerConverters.Types.PWMType" parameterType="parameter" isOver="true">
+      <component_list expression="PowerConverters.Types.PWMType.SVPWM" declarationName="pwmType" description="&quot;PWM Type&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Frequency" parameterType="parameter" isOver="true">
+      <component_list declarationName="f" description="&quot;Switching frequency&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Time" parameterType="parameter" isOver="true">
+      <component_list expression="0" declarationName="startTime" description="&quot;Start time of PWM&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list declarationName="uMax" description="&quot;Maximum amplitude of signal&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="PowerConverters.Types.ReferenceType" parameterType="parameter" isOver="true">
+      <component_list expression="PowerConverters.Types.ReferenceType.Triangle3" declarationName="refType" description="&quot;Type of reference signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="pwmType == PowerConverters.Types.PWMType.Intersective" elementName="enable"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealInput" isOver="true">
+      <component_list subscripts="[2]" declarationName="u" description="&quot;Reference space phasor&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <component_list subscripts="[m]" declarationName="fire_p" description="&quot;Positive fire signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,50},{120,70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanOutput" isOver="true">
+      <component_list subscripts="[m]" declarationName="fire_n" description="&quot;Negative fire signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-70},{120,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="PowerConverters.DCAC.Control.SVPWM" isOver="true">
+      <component_list isModificationOver="true" declarationName="svPWM" isAnnotation="true" isAnnotationOver="true" condition_attribute="pwmType == PowerConverters.Types.PWMType.SVPWM">
+        <modifications expression="f" elementName="f"/>
+        <modifications expression="startTime" elementName="startTime"/>
+        <modifications expression="uMax" elementName="uMax"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,30},{10,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="PowerConverters.DCAC.Control.IntersectivePWM" isOver="true">
+      <component_list isModificationOver="true" declarationName="intersectivePWM" isAnnotation="true" isAnnotationOver="true" condition_attribute="pwmType == PowerConverters.Types.PWMType.Intersective">
+        <modifications expression="f" elementName="f"/>
+        <modifications expression="startTime" elementName="startTime"/>
+        <modifications expression="uMax" elementName="uMax"/>
+        <modifications expression="refType" elementName="refType"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-50},{10,-30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u" right="svPWM.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-120,0},{-60,0},{-60,40},{-12,40}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="u" right="intersectivePWM.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-120,0},{-60,0},{-60,-40}, {-12,-40} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="svPWM.fire_p" right="fire_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{11,46},{40,46},{40,60}, {110,60} }" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="intersectivePWM.fire_p" right="fire_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{11,-34},{40, -34 } ,{40,60},{110,60} }" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="svPWM.fire_n" right="fire_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{11,34},{60,34},{60,-60}, {110,-60} }" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="intersectivePWM.fire_n" right="fire_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{11,-46},{60, -46 } ,{60,-60},{110,-60} }" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;pwm&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-70,80},{70,40}}, textString=&quot;P W M&quot; ) , Text( extent={{-70,-40},{70,-80}}, textString=&quot;f=%f&quot; ) , Text( extent={{-70,20},{70,-20}}, textString=&quot;%pwmType&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Let the user choose the PWM type from:&lt;/p>&lt;ul>&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.DCAC.Control.SVPWM\&quot;>Space Vector pulse width modulation&lt;/a>&lt;/li>&#xA;&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.DCAC.Control.IntersectivePWM\&quot;>Intersective pulse width modulation&lt;/a>&lt;/li>&#xA;&lt;/ul>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Basic"/>
+  <classes classType="model" className="CCC" description="&quot;Linear current-controlled current source&quot;" isLongClassSpecifier="true" classNameEnd="CCC" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPort" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="gain" description="&quot;Current gain&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="i2" right="i1*gain"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="v1" right="0"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;ccc&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The linear current-controlled current source is a TwoPort. The right port current i2 is controlled by the left port current i1 via&lt;/p>&lt;blockquote>&lt;pre>i2 = i1 * gain.&lt;/pre>&lt;/blockquote>&lt;p>The left port voltage is zero. Any current gain can be chosen.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em> 1998 &lt;/em> by Christoph Clauss&lt;br> initially implemented&lt;br> &lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Rectangle( extent={{-80,80},{80,-80}}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, lineColor={0,0,255} ) , Line(points={{-90,100},{-40,100},{-40,-100},{-90,-100}}, color={0,0,255} ) , Ellipse(extent={{20,20},{60,-20}}, lineColor={0,0,255}), Line(points={{-20,60},{20,60}}, color={0,0,255}), Polygon( points={{20,60},{10,63},{10,57},{20,60}}, fillColor={0,0,255}, fillPattern=FillPattern.Solid, lineColor={0,0,255} ) , Line(points={{90,100},{40,100},{40,20}}, color={0,0,255} ) , Line(points={{90,-100},{40,-100},{40,-20}}, color={0,0,255} ) , Line(points={{20,0},{60,0}}, color={0,0,255}), Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

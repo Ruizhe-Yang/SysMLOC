@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Functions"/>
+  <classes classType="function" className="indexPositiveSequence" description="&quot;Determines the indices of all positive sequences&quot;" isLongClassSpecifier="true" classNameEnd="indexPositiveSequence" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="input" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" directionType="output" isOver="true">
+      <component_list subscripts="[numberOfSymmetricBaseSystems(m)]" declarationName="ind" description="&quot;Number of symmetric base systems&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" isProtected="true" isOver="true">
+      <component_list expression="numberOfSymmetricBaseSystems(m)" declarationName="n"/>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:IfStatement" condition="n == 1">
+        <ifStatements xsi:type="mOloc:FunctionStatement" component="ind[1]" expression="1"/>
+        <elseStatements xsi:type="mOloc:FunctionStatement" component="ind" expression="(0:n - 1)*integer(m/n) + ones(n)"/>
+      </statements>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This function determines the indices of positive sequence of the symmetrical winding with m phases.&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.Polyphase.UsersGuide.PhaseOrientation\&quot;>User's guide&lt;/a> on symmetrical components and orientation.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

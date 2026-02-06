@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.SpacePhasors.Functions"/>
+  <classes classType="function" className="activePower" description="&quot;Calculate active power of voltage and current input&quot;" isLongClassSpecifier="true" classNameEnd="activePower" isOver="true">
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" directionType="input" isOver="true">
+      <component_list subscripts="[m]" declarationName="v" description="&quot;Phase voltages&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" directionType="input" isOver="true">
+      <component_list subscripts="[m]" declarationName="i" description="&quot;Phase currents&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" directionType="output" isOver="true">
+      <component_list declarationName="p" description="&quot;Active power&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="constant" isProtected="true" isOver="true">
+      <component_list expression="3" declarationName="m" description="&quot;Number of phases&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list subscripts="[2]" declarationName="v_" description="&quot;Voltage space phasor&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list subscripts="[2]" declarationName="i_" description="&quot;Current space phasor&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:FunctionStatement" component="v_" expression="zeros(2)"/>
+      <statements xsi:type="mOloc:FunctionStatement" component="i_" expression="zeros(2)"/>
+      <statements xsi:type="mOloc:ForStatement" forIndices="k in 1:m">
+        <forStatements xsi:type="mOloc:FunctionStatement" component="v_" expression="v_ + 2/m*{+cos((k - 1)/m*2*pi),+sin(+(k - 1)/m*2*pi)}*v[k]"/>
+        <forStatements xsi:type="mOloc:FunctionStatement" component="i_" expression="i_ + 2/m*{+cos((k - 1)/m*2*pi),+sin(+(k - 1)/m*2*pi)}*i[k]"/>
+      </statements>
+      <statements xsi:type="mOloc:FunctionStatement" component="p" expression="m/2*(+v_[1]*i_[1] + v_[2]*i_[2])"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="true" elementName="Inline"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>Transformation of three-phase voltages and currents to space phasors and calculate active power.&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

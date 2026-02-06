@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Ideal"/>
+  <classes classType="model" className="IdealDiode" description="&quot;Ideal diode&quot;" isLongClassSpecifier="true" classNameEnd="IdealDiode" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.IdealSemiconductor" isOver="true"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="off" right="s &lt; 0"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;diode&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This is an ideal diode, for details see partial model &lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Interfaces.IdealSemiconductor\&quot;>IdealSemiconductor&lt;/a>&lt;br>&#xA;The diode is conducting if voltage &amp;gt;&#xA;Vknee.&lt;br>The diode is locking if current &amp;lt;&#xA;Vknee*Goff.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em>February 7, 2016 &lt;/em> by Anton Haumer&lt;br> extending from partial IdealSemiconductor&lt;br> &lt;/li>&lt;li>&lt;em> March 11, 2009 &lt;/em> by Christoph Clauss&lt;br> conditional heat port added&lt;br> &lt;/li>&lt;li>&lt;em>Mai 7, 2004 &lt;/em> by Christoph Clauss and Anton Haumer&lt;br> Vknee added&lt;br> &lt;/li>&lt;li>&lt;em>some years ago &lt;/em> by Christoph Clauss&lt;br> realized&lt;br> &lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

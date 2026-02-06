@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog"/>
+  <classes classType="package" className="UsersGuide" description="&quot;User's Guide&quot;" isLongClassSpecifier="true" classNameEnd="UsersGuide" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Information" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;info&quot;" elementName="preferredView"/>
+      <annotations expression="true" elementName="DocumentationClass"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The Analog package contains the following components:&lt;/p>&lt;ul>&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Basic\&quot;>Basic&lt;/a>: basic components (ground, resistor, capacitor, conductor, inductor, transformer, gyrator)&lt;/li>&#xA;&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Ideal\&quot;>Ideal&lt;/a>: ideal elements (switches, diode, transformer, idle, short, ...)&lt;/li>&#xA;&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Lines\&quot;>Lines&lt;/a>: transmission lines (lossy and lossless)&lt;/li>&#xA;&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Semiconductors\&quot;>Semiconductors&lt;/a>: semiconductor devices (diode, bipolar and MOS transistors)&lt;/li>&#xA;&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Interfaces\&quot;>Interfaces&lt;/a>: ideal elements (switches, diode, transformer, idle, short, ...)&lt;/li>&#xA;&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Sensors\&quot;>Sensors&lt;/a>: sensors to measure potential, voltage, current and power&lt;/li>&#xA;&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Sources\&quot;>Sources&lt;/a>: time-dependent and controlled voltage and current sources&lt;/li>&#xA;&lt;li>&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Icons\&quot;>Icons&lt;/a>: domain specific icons&lt;/li>&#xA;&lt;/ul>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

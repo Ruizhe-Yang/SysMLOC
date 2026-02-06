@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Polyphase.Basic"/>
+  <classes classType="model" className="PlugToPin_n" description="&quot;Connect one (negative) pin&quot;" isLongClassSpecifier="true" classNameEnd="PlugToPin_n" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="3" declarationName="m" description="&quot;Number of phases&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="1" declarationName="k" description="&quot;Phase index&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1" elementName="min" isfinal="true"/>
+        <modifications expression="m" elementName="max" isfinal="true"/>
+        <annotations expression="true" elementName="Evaluate"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Interfaces.NegativePlug" isOver="true">
+      <component_list isModificationOver="true" declarationName="plug_n" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="m" elementName="m" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-30,-10},{-10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="pin_n" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{30,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.branch" function="(plug_n.reference, pin_n.reference)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_n.reference.gamma" right="pin_n.reference.gamma"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="pin_n.v" right="plug_n.pin[k].v"/>
+      <equations xsi:type="mOloc:ForEquation" forIndices="j in 1:m">
+        <forEquations xsi:type="mOloc:SimpleEquation" left="plug_n.pin[j].i" right="if j == k then -pin_n.i else Complex(0)"/>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;plugToPin&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Rectangle( extent={{-20,20},{40,-20}}, fillColor={215,215,215}, fillPattern=FillPattern.Solid ) ,Ellipse( extent={{-40,20},{0,-20}}, fillColor={215,215,215}, fillPattern=FillPattern.Solid ) , Text( extent={{-150,50},{150,90}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text( extent={{-150,-40},{150,-80}}, textString=&quot;k = %k&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Connects the single-phase (negative) pin &lt;code>k&lt;/code> of the polyphase (negative) plug to a single-phase (negative) pin.&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.PlugToPin_p\&quot;>PlugToPin_p&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.PlugToPins_p\&quot;>PlutToPins_p&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.Polyphase.Basic.PlugToPins_n\&quot;>PlugToPins_n&lt;/a>&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

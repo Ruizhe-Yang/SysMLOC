@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.Icons"/>
+  <classes isPartial="true" classType="model" className="ExampleTemplate" description="&quot;Example template&quot;" isLongClassSpecifier="true" classNameEnd="ExampleTemplate" isOver="true">
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Ellipse( extent={{-100,100},{100,-100}}, lineColor={175,175,175}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) ,Polygon( points={{-36,-60},{-36,60},{64,0},{-36,-60}}, lineColor={175,175,175}, fillColor={175,175,175}, fillPattern=FillPattern.Solid ) ,Rectangle( extent={{-4,46},{14,-44}}, lineColor={255,255,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

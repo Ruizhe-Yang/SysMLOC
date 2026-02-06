@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Sensors"/>
+  <classes classType="model" className="MultiSensor" description="&quot;Sensor to measure current, voltage and power&quot;" isLongClassSpecifier="true" classNameEnd="MultiSensor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.RoundSensor" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="pc" description="&quot;Positive pin, current path&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-90,-10},{-110,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="nc" description="&quot;Negative pin, current path&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{110,-10},{90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="pv" description="&quot;Positive pin, voltage path&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,110},{10,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="nv" description="&quot;Negative pin, voltage path&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-110},{-10,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="i" description="&quot;Current as output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;ElectricCurrent&quot;" elementName="quantity" isfinal="true"/>
+        <modifications expression="&quot;A&quot;" elementName="unit" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-60,-110}" elementName="origin"/>
+            <modifications expression="{{10,10},{-10,-10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="v" description="&quot;Voltage as output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;ElectricPotential&quot;" elementName="quantity" isfinal="true"/>
+        <modifications expression="&quot;V&quot;" elementName="unit" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{60,-110}" elementName="origin"/>
+            <modifications expression="{{10,10},{-10,-10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.RealOutput" isOver="true">
+      <component_list isModificationOver="true" declarationName="power" description="&quot;Instantaneous power as output signal&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="&quot;Power&quot;" elementName="quantity" isfinal="true"/>
+        <modifications expression="&quot;W&quot;" elementName="unit" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-110,-60}" elementName="origin"/>
+            <modifications expression="{{-10,10},{10,-10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="pc.i + nc.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="pc.v - nc.v" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="pv.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="nv.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i" right="pc.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="pv.v - nv.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="power" right="v*i"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line(points = {{0,100},{0,70}}, color = {0,0,255}), Line(points = {{0,-70},{0,-100}}, color = {0,0,255}), Line(points = {{-100,0},{100,0}}, color = {0,0,255}), Line(points = {{0,70},{0,40}}), Line(points={{-100,-60},{-80,-60},{-56,-42}}, color={0,0,127} ) , Line(points={{-60,-100},{-60,-80},{-42,-56}}, color={0,0,127} ) , Line(points={{60,-100},{60,-80},{42,-56}}, color={0,0,127} ) , Text( extent={{-100,-40},{-60,-80}}, textColor={64,64,64}, textString=&quot;W&quot; ) , Text( extent={{-80,-60},{-40,-100}}, textColor={64,64,64}, textString=&quot;A&quot; ) , Text( extent={{40,-60},{80,-100}}, textColor={64,64,64}, textString=&quot;V&quot; ) , Text(textColor = {0,0,255}, extent = {{-150,120},{150,160}}, textString = &quot;%name&quot;) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This multi sensor measures current, voltage and instantaneous electrical power of a single-phase system and has a separated voltage and current path.The pins of the voltage path are pv and nv, the pins of the current path are pc and nc.The internal resistance of the current path is zero, the internal resistance of the voltage path is infinite.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em>20170306&lt;/em> first implementation by Anton Haumer&lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

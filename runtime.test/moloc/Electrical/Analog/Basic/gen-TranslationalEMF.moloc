@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Basic"/>
+  <classes classType="model" className="TranslationalEMF" description="&quot;Electromotoric force (electric/mechanic transformer)&quot;" isLongClassSpecifier="true" classNameEnd="TranslationalEMF" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list expression="false" declarationName="useSupport" description="&quot;= true, if support flange enabled, otherwise implicitly grounded&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations expression="true" elementName="Evaluate"/>
+        <annotations expression="true" elementName="HideResult"/>
+        <annotations isModificationOver="true" elementName="choices">
+          <modifications expression="true" elementName="checkBox"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ElectricalForceConstant" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="k" description="&quot;Transformation coefficient&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list declarationName="v" description="&quot;Voltage drop between the two pins&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list declarationName="i" description="&quot;Current flowing from positive to negative pin&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Position" isOver="true">
+      <component_list declarationName="s" description="&quot;Position of flange relative to support&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Velocity" isOver="true">
+      <component_list declarationName="vel" description="&quot;Velocity of flange relative to support&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Force" isOver="true">
+      <component_list declarationName="f" description="&quot;Force of flange&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Force" isOver="true">
+      <component_list declarationName="fElectrical" description="&quot;Electrical force&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="p" description="&quot;Positive electrical pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,100}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="n" description="&quot;Negative electrical pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,-100}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Translational.Interfaces.Flange_b" isOver="true">
+      <component_list declarationName="flange" description="&quot;Flange&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Translational.Interfaces.Support" isOver="true">
+      <component_list declarationName="support" description="&quot;Support/housing&quot;" isAnnotation="true" isAnnotationOver="true" condition_attribute="useSupport">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Translational.Components.Fixed" isProtected="true" isOver="true">
+      <component_list declarationName="fixed" isAnnotation="true" isAnnotationOver="true" condition_attribute="not useSupport">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-90,-20},{-70,0}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Translational.Interfaces.InternalSupport" isOver="true">
+      <component_list isModificationOver="true" declarationName="internalSupport" description="&quot;Internal support&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="-f" elementName="f"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-90,-10},{-70,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="p.v - n.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="0" right="p.i + n.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i" right="p.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="s" right="flange.s - internalSupport.s"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="vel" right="der(s)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="k*vel" right="v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="f" right="-k*i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="fElectrical" right="-f"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="f" right="flange.f"/>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="internalSupport.flange" right="support">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,0},{-90,0},{-90,0},{-100,0}}" elementName="points"/>
+          <modifications expression="{0,127,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="internalSupport.flange" right="fixed.flange">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-80,0},{-80,-10}}" elementName="points"/>
+          <modifications expression="{0,127,0}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;emf&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Rectangle( extent={{-90,51},{-40,-50}}, fillColor={135,135,135}, fillPattern=FillPattern.HorizontalCylinder ) , Rectangle( extent={{-21,20},{90,-20}}, lineColor={135,135,135}, fillColor={135,135,135}, fillPattern=FillPattern.Solid ) , Text( extent={{40,-40},{200,-80}}, textString=&quot;k=%k&quot; ) , Line(points={{-30,49},{-30,80},{0,80},{0,91}}, color={0,0,255}), Line(points={{20,-49},{20,-80},{0,-80},{0,-89},{0,-90}}, color={0,0,255}), Ellipse(extent={{-21,50},{9,-50}}, lineColor={0,0,255}), Ellipse(extent={{2,50},{32,-50}}, lineColor={0,0,255}), Ellipse(extent={{-43,50},{-13,-50}}, lineColor={0,0,255}), Rectangle( extent={{-4,20},{-1,-20}}, lineColor={135,135,135}, fillColor={135,135,135}, fillPattern=FillPattern.Solid ) , Rectangle( extent={{7,20},{10,-20}}, lineColor={135,135,135}, fillColor={135,135,135}, fillPattern=FillPattern.Solid ) , Rectangle( extent={{-14,20},{-11,-20}}, lineColor={135,135,135}, fillColor={135,135,135}, fillPattern=FillPattern.Solid ) , Rectangle( extent={{19,20},{44,-20}}, lineColor={135,135,135}, fillColor={135,135,135}, fillPattern=FillPattern.Solid ) , Line( visible=not useSupport, points={{-100,-70},{-40,-70}} ) , Line( visible=not useSupport, points={{-100,-90},{-80,-70}} ) , Line( visible=not useSupport, points={{-80,-90},{-60,-70}} ) , Line( visible=not useSupport, points={{-60,-90},{-40,-70}} ) , Line( visible=not useSupport, points={{-70,-70},{-70,-50}} ) , Text( extent={{20,80},{220,40}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Polygon( points={{-17,95},{-20,85},{-23,95},{-17,95}}, lineColor={160,160,164}, fillColor={160,160,164}, fillPattern=FillPattern.Solid ) ,Line(points={{-20,110},{-20,85}}, color={160,160,164} ) ,Text( extent={{-40,110},{-30,90}}, textColor={160,160,164}, textString=&quot;i&quot; ) ,Line(points={{9,75},{19,75}}, color={192,192,192}), Line(points={{-20,-110},{-20,-85}}, color={160,160,164}),Polygon( points={{-17,-100},{-20,-110},{-23,-100},{-17,-100}}, lineColor={160,160,164}, fillColor={160,160,164}, fillPattern=FillPattern.Solid ) ,Text( extent={{-40,-110},{-30,-90}}, textColor={160,160,164}, textString=&quot;i&quot; ) ,Line(points={{8,-79},{18,-79}}, color={192,192,192}), Line(points={{14,80},{14,70}}, color={192,192,192}),Polygon( points={{140,3},{150,0},{140,-3},{140,3},{140,3}}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>EMF transforms electrical energy into translational mechanical energy. It is used as basic building block of an electrical linear motor. The mechanical connector flange can be connected to elements of the Modelica.Mechanics.Translational library. flange.f is the cut-force, flange.s is the distance at the translational connection.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;dl>&lt;dt>2009&lt;/dt>&lt;dd>by Anton Haumer&lt;br> initially implemented&lt;/dd>&lt;/dl>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

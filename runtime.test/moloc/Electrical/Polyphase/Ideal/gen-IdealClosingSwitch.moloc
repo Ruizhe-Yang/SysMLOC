@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Ideal"/>
+  <classes classType="model" className="IdealClosingSwitch" description="&quot;Polyphase ideal closer&quot;" isLongClassSpecifier="true" classNameEnd="IdealClosingSwitch" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPlug" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="Ron" description="&quot;Closed switch resistance&quot;">
+        <modifications expression="zeros(m)" elementName="min" isfinal="true"/>
+        <modifications expression="fill(1e-5, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="Goff" description="&quot;Opened switch conductance&quot;">
+        <modifications expression="zeros(m)" elementName="min" isfinal="true"/>
+        <modifications expression="fill(1e-5, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Polyphase.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="m" elementName="mh" isfinal="true"/>
+      <extendsModifications expression="fill( 293.15, m)" elementName="T" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <component_list subscripts="[m]" declarationName="control" description="&quot;true => p--n connected, false => switch open&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{0,120}" elementName="origin"/>
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealClosingSwitch" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="idealClosingSwitch" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Ron" elementName="Ron" isfinal="true"/>
+        <modifications expression="Goff" elementName="Goff" isfinal="true"/>
+        <modifications expression="useHeatPort" elementName="useHeatPort" isEach="true" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_p.pin" right="idealClosingSwitch.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{-10,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealClosingSwitch.n" right="plug_n.pin">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="control" right="idealClosingSwitch.control">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,120},{0,48},{0,12}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealClosingSwitch.heatPort" right="heatPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-10},{0,-100}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;switch&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line(points={{-90,0},{-44,0}}, color={0,0,255}), Ellipse(extent={{-44,4},{-36,-4}}, lineColor={0,0,255}), Line(points={{-37,2},{40,40}}, color={0,0,255}), Line(points={{40,0},{90,0}}, color={0,0,255}), Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Text( extent={{-150,-80},{150,-40}}, textString=&quot;m=%m&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Contains m ideal closing switches (Modelica.Electrical.Analog.Ideal.IdealClosingSwitch).&lt;/p>&lt;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

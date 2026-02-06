@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Interfaces"/>
+  <classes isPartial="true" classType="model" className="TwoPort" description="&quot;Component with two polyphase electrical ports, including currents&quot;" isLongClassSpecifier="true" classNameEnd="TwoPort" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="FourPlug" isOver="true"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p1.pin.i + plug_n1.pin.i" right="zeros(m)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="plug_p2.pin.i + plug_n2.pin.i" right="zeros(m)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Superclass of elements which have &lt;strong>four&lt;/strong> electrical plugs.It is assumed that the currents flowing into plug_p1 are identical to the currents flowing out of plug_n1,and that the currents flowing into plug_p2 are identical to the currents flowing out of plug_n2.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

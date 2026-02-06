@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Batteries.BatteryStacks"/>
+  <classes classType="model" className="CellRCStack" description="&quot;Battery with open-circuit voltage dependent on state of charge, self-discharge, inner resistance and a series of RC-elements&quot;" isLongClassSpecifier="true" classNameEnd="CellRCStack" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.BaseClasses.BaseCellStack" isOver="true">
+      <extendsModifications isModificationOver="true" elementName="r0">
+        <modifications expression="Ns*cellData.R0/Np" elementName="R" isfinal="true"/>
+      </extendsModifications>
+      <extendsModifications typeSpecifier="Modelica.Electrical.Batteries.ParameterRecords.TransientData.CellData" declarationName="cellData" isRedeclare="true"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Batteries.Icons.TransientModel" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list subscripts="[cellData.nRC]" isModificationOver="true" declarationName="resistor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Ns*cellData.rcData.R/Np" elementName="R" isfinal="true"/>
+        <modifications expression="cellData.rcData.T_ref" elementName="T_ref" isfinal="true"/>
+        <modifications expression="cellData.rcData.alpha" elementName="alpha" isfinal="true"/>
+        <modifications expression="true" elementName="useHeatPort" isEach="true" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{30,-30},{50,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Capacitor" isOver="true">
+      <component_list subscripts="[cellData.nRC]" isModificationOver="true" declarationName="capacitor" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="v" isEach="true">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="0" elementName="start" isEach="true"/>
+        </modifications>
+        <modifications expression="Np*cellData.rcData.C/Ns" elementName="C" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{30,30},{50,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(cellData.R0 > 0, &quot;Ri has to be greater than sum(rcParameters.R)&quot;)"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="assert" function="(cellData.rcData[1].R > 0, &quot;Parameters of RC-elements undefined!&quot;)"/>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor[1].p" right="r0.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{30,-20},{30,0},{10,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ForEquation" forIndices="k in 1:cellData.nRC">
+        <forEquations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="capacitor[k].p" right="resistor[k].p">
+          <annotations isModificationOver="true" elementName="Line">
+            <modifications expression="{{30,20},{30,-20}}" elementName="points"/>
+            <modifications expression="{0,0,255}" elementName="color"/>
+          </annotations>
+        </forEquations>
+        <forEquations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="capacitor[k].n" right="resistor[k].n">
+          <annotations isModificationOver="true" elementName="Line">
+            <modifications expression="{{50,20},{50,-20}}" elementName="points"/>
+            <modifications expression="{0,0,255}" elementName="color"/>
+          </annotations>
+        </forEquations>
+        <forEquations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="internalHeatPort" right="resistor[k].heatPort">
+          <annotations isModificationOver="true" elementName="Line">
+            <modifications expression="{{0,-80},{0,-40},{40,-40},{40,-30}}" elementName="points"/>
+            <modifications expression="{191,0,0}" elementName="color"/>
+          </annotations>
+        </forEquations>
+        <forEquations xsi:type="mOloc:IfEquation" condition="k &lt; cellData.nRC">
+          <ifEquations xsi:type="mOloc:ConnectEquation" left="resistor[k].n" right="resistor[k + 1].p"/>
+        </forEquations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor[cellData.nRC].n" right="n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,-20},{50,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Extends the model &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.BatteryStacks.CellStack\&quot;>CellStack&lt;/a> by a series of RC-elements, describing the transient behaviour of the battery.&#xA;&lt;/p>&lt;p>This model can be used for a single cell &lt;code>Ns = Np = 1&lt;/code> as well as a stack built from identical cells.&lt;/p>&lt;p>For details, see &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.UsersGuide.Concept\&quot;>concept&lt;/a> and &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.UsersGuide.Parameterization\&quot;>parameterization&lt;/a>.&#xA;&lt;/p>&lt;h4>Note&lt;/h4>&lt;p>Parameter record array &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.ParameterRecords.TransientData.RCData\&quot;>rcData&lt;/a> contained in&#xA;parameter record &lt;a href=\&quot;modelica://Modelica.Electrical.Batteries.ParameterRecords.TransientData.CellData\&quot;>cellData&lt;/a> has to be specified.&#xA;&lt;/p>&lt;p>The total inner resistance is the sum of the resistance of resistor &lt;code>r0&lt;/code> and the sum of the resistances of the resistors of the RC-elements.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

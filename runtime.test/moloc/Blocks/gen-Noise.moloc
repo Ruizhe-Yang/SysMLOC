@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Blocks"/>
+  <classes classType="package" className="Noise" description="&quot;Library of noise blocks&quot;" isLongClassSpecifier="true" classNameEnd="Noise" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" classType="model" className="GlobalSeed" description="&quot;Defines global settings for the blocks of sublibrary Noise, especially a global seed value is defined&quot;" isLongClassSpecifier="true" classNameEnd="GlobalSeed" isOver="true">
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+        <component_list expression="true" declarationName="enableNoise" description="&quot;= true, if noise blocks generate noise as output;&#xA;= false, if they generate a constant output&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="choices">
+            <modifications expression="true" elementName="checkBox"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+        <component_list expression="false" declarationName="useAutomaticSeed" description="&quot;= true, choose a seed by system time and process id;&#xA;= false, use fixedSeed&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="choices">
+            <modifications expression="true" elementName="checkBox"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+        <component_list expression="67867967" declarationName="fixedSeed" description="&quot;Fixed global seed for random number generators (if useAutomaticSeed = false)&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="not useAutomaticSeed" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+        <component_list isModificationOver="true" declarationName="seed" description="&quot;Actually used global seed&quot;">
+          <modifications expression="false" elementName="fixed"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isfinal="true" isOver="true">
+        <component_list isModificationOver="true" declarationName="id_impure" description="&quot;ID for impure random number generators Modelica.Math.Random.Utilities.impureXXX&quot;" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="false" elementName="fixed"/>
+          <annotations expression="true" elementName="HideResult"/>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection" isInitial="true">
+        <equations xsi:type="mOloc:SimpleEquation" left="seed" right="if useAutomaticSeed then Modelica.Math.Random.Utilities.automaticGlobalSeed() else fixedSeed"/>
+        <equations xsi:type="mOloc:SimpleEquation" left="id_impure" right="Modelica.Math.Random.Utilities.initializeImpureRandom(seed)"/>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations expression="&quot;globalSeed&quot;" elementName="defaultComponentName"/>
+        <annotations expression="&quot;inner&quot;" elementName="defaultComponentPrefixes"/>
+        <annotations expression="&quot;Your model is using an outer \&quot;globalSeed\&quot; component butan inner \&quot;globalSeed\&quot; component is not defined and thereforea default inner \&quot;globalSeed\&quot; component is introduced by the tool.To change the default setting, drag Noise.GlobalSeedinto your model and specify the seed.&quot;" elementName="missingInnerMessage"/>
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          </modifications>
+          <modifications expression="{Ellipse( extent={{-100,100},{100,-100}}, lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Text( extent={{-150,150},{150,110}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Line(visible = enableNoise, points={{-73,-15},{-59,-15},{-59,1},{-51,1},{-51,-47},{-43,-47},{-43, -25 } ,{-35,-25},{-35,59},{-27,59},{-27,27},{-27,27},{-27,-33},{-17,-33},{-17,-15},{-7,-15},{-7,-43},{3, -43 } ,{3,39},{9,39},{9,53},{15,53},{15,-3},{25,-3},{25,9},{31,9},{31, -21 } ,{41,-21},{41,51},{51,51},{51,17},{59,17},{59,-49},{69,-49} } , color={215,215,215} ) , Text(visible=enableNoise and not useAutomaticSeed, extent={{-90,-4},{88,-30}}, textColor={255,0,0}, textString=&quot;%fixedSeed&quot; ) , Line(visible = not enableNoise, points={{-80,-4},{84,-4}}, color={215,215,215} ) , Text(visible=enableNoise and not useAutomaticSeed, extent={{-84,34},{94,8}}, textColor={255,0,0}, textString=&quot;fixedSeed =&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&lt;tr>&lt;th>Date&lt;/th> &lt;th align=\&quot;left\&quot;>Description&lt;/th>&lt;/tr>&lt;tr>&lt;td> June 22, 2015 &lt;/td> &lt;td>&lt;table border=\&quot;0\&quot;>&lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Logos/dlr_logo.png\&quot; alt=\&quot;DLR logo\&quot;>&#xA;&lt;/td>&lt;td valign=\&quot;bottom\&quot;> Initial version implemented by A. Kl&amp;ouml;&#xA;ckner, F. v.d. Linden, D. Zimmer, M. Otter.&lt;br> &lt;a href=\&quot;http://www.dlr.de/rmc/sr/en\&quot;>DLR Institute of System Dynamics and Control&lt;/a>&#xA;&lt;/td>&lt;/tr>&lt;/table>&lt;/td>&lt;/tr>&lt;/table>&lt;/html>&quot;" elementName="revisions"/>
+          <modifications expression="&quot;&lt;html>&lt;p>When using one of the blocks of sublibrary &lt;a href=\&quot;modelica://Modelica.Blocks.Noise\&quot;>Noise&lt;/a>,&#xA;on the same or a higher hierarchical level, Noise.GlobalSeedmust be dragged resulting in a declaration&lt;/p>&lt;blockquote>&lt;pre>&lt;strong>inner&lt;/strong> Modelica.Blocks.Noise.GlobalSeed globalSeed;&#xA;&lt;/pre>&lt;/blockquote>&lt;p>The GlobalSeed block provides global options for all Noise blocks of the same or a lowerhierarchical level. The following options can be selected:&lt;/p>&lt;blockquote>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&lt;tr>&lt;th>Icon&lt;/th> &lt;th>Description&lt;/th>&lt;/tr>&lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Noise/GlobalSeed_FixedSeed.png\&quot;> &lt;/td>&#xA;&lt;td> &lt;strong>useAutomaticSeed=false&lt;/strong> (= default):&lt;br> A fixed global seed is defined with Integer parameter fixedSeed. The value of fixedSeed is displayed in the icon. By default all Noise blocks use fixedSeed for initialization of their pseudo random number generators, in combination with a local seed defined for every instance separately. Therefore, whenever a simulation is performed with the same fixedSeed exactly the same noise is generated in all instances of the Noise blocks (provided the settings of these blocks are not changed as well).&lt;br> This option can be used (a) to design a control system (e.g. by parameter optimization) and keep the same noise for all simulations, or (b) perform Monte Carlo Simulations where fixedSeed is changed from the environment for every simulation, in order to produce different noise at every simulation run.&lt;/td>&lt;/tr>&lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Noise/GlobalSeed_AutomaticSeed.png\&quot;> &lt;/td>&#xA;&lt;td> &lt;strong>useAutomaticSeed=true&lt;/strong>:&lt;br> An automatic global seed is computed by using the ID of the process in which the simulation takes place and the current local time. As a result, the global seed is changed automatically for every new simulation, including parallelized simulation runs. This option can be used to perform Monte Carlo Simulations with minimal effort (just performing many simulation runs) where every simulation run uses a different noise.&lt;/td>&lt;/tr>&lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Noise/GlobalSeed_NoNoise.png\&quot;> &lt;/td>&#xA;&lt;td> &lt;strong>enableNoise=false&lt;/strong>:&lt;br> The noise in all Noise instances is switched off and the blocks output a constant signal all the time (usually zero). This option is useful, if a model shall be tested without noise and the noise shall be quickly turned off or on.&lt;/td>&lt;/tr>&lt;/table>&lt;/blockquote>&lt;p>Additionally, the globalSeed instance calls function&lt;a href=\&quot;modelica://Modelica.Math.Random.Utilities.initializeImpureRandom\&quot;>initializeImpureRandom&lt;/a>&#xA;to initialize the impure random number generators(&lt;a href=\&quot;modelica://Modelica.Math.Random.Utilities.impureRandom\&quot;>impureRandom&lt;/a> and&#xA;&lt;a href=\&quot;modelica://Modelica.Math.Random.Utilities.impureRandomInteger\&quot;>impureRandomInteger&lt;/a>).&#xA;The return value of this function is stored in parameter &lt;strong>id_impure&lt;/strong>. Whenever one of the impurerandom number generators need to be called, \&quot;globalSeed.id_impure\&quot; has to be given as input argument.&lt;/p>&lt;p>Note, the usage of this block is demonstrated with examples&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.Noise.AutomaticSeed\&quot;>AutomaticSeed&lt;/a> and&#xA;&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.Noise.ImpureGenerator\&quot;>ImpureGenerator&lt;/a>.&#xA;&lt;/p>&lt;p>Please note that only one globalSeed instance may be defined in the model due to the initializationof the impure random number generators with &lt;a href=\&quot;modelica://Modelica.Math.Random.Utilities.initializeImpureRandom\&quot;>initializeImpureRandom&lt;/a>!&#xA;So, the block will usually reside on the top level of the model.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="UniformNoise" description="&quot;Noise generator with uniform distribution&quot;" isLongClassSpecifier="true" classNameEnd="UniformNoise" isOver="true">
+      <elements xsi:type="mOloc:ImportClause" selfName="distribution" importName="Modelica.Math.Distributions.Uniform.quantile" isOver="true"/>
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialNoise" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" declarationName="y_min" description="&quot;Lower limit of y&quot;" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="0" elementName="start"/>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="enableNoise" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" declarationName="y_max" description="&quot;Upper limit of y&quot;" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="1" elementName="start"/>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="enableNoise" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection" isInitial="true">
+        <equations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, y_min, y_max)"/>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:WhenEquation" condition="generateNoise and sample(startTime, samplePeriod)">
+          <whenEquations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, y_min, y_max)"/>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line(visible=enableNoise, points={{-76,60},{78,60}}, color={95,95,95}, pattern=LinePattern.Dot ) , Line(visible=enableNoise, points={{-76,-60},{78,-60}}, color={95,95,95}, pattern=LinePattern.Dot ) , Text(visible=enableNoise, extent={{-70,94},{95,64}}, textColor={175,175,175}, textString=&quot;%y_max&quot; ) , Text(visible=enableNoise, extent={{-70,-64},{95,-94}}, textColor={175,175,175}, textString=&quot;%y_min&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>A summary of the common properties of the noise blocks is provided in the documentation of package&lt;a href=\&quot;modelica://Modelica.Blocks.Noise\&quot;>Blocks.Noise&lt;/a>.&#xA;This UniformNoise block generates reproducible, random noise at its output according to a uniform distribution.This means that random values are uniformly distributed within the range defined by parametersy_min and y_max (see example &lt;a href=\&quot;modelica://Modelica.Blocks.Examples.Noise.UniformNoiseProperties\&quot;>Noise.UniformNoiseProperties&lt;/a>).&#xA;By default, two or more instances produce different, uncorrelated noise at the same time instant.The block can only be used if on the same or a higher hierarchical level,model &lt;a href=\&quot;modelica://Modelica.Blocks.Noise.GlobalSeed\&quot;>Blocks.Noise.GlobalSeed&lt;/a>&#xA;is dragged to provide global settings for all instances.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+          <modifications expression="&quot;&lt;html>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&lt;tr>&lt;th>Date&lt;/th> &lt;th align=\&quot;left\&quot;>Description&lt;/th>&lt;/tr>&lt;tr>&lt;td> June 22, 2015 &lt;/td> &lt;td>&lt;table border=\&quot;0\&quot;>&lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Logos/dlr_logo.png\&quot; alt=\&quot;DLR logo\&quot;>&#xA;&lt;/td>&lt;td valign=\&quot;bottom\&quot;> Initial version implemented by A. Kl&amp;ouml;&#xA;ckner, F. v.d. Linden, D. Zimmer, M. Otter.&lt;br> &lt;a href=\&quot;http://www.dlr.de/rmc/sr/en\&quot;>DLR Institute of System Dynamics and Control&lt;/a>&#xA;&lt;/td>&lt;/tr>&lt;/table>&lt;/td>&lt;/tr>&lt;/table>&lt;/html>&quot;" elementName="revisions"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="NormalNoise" description="&quot;Noise generator with normal distribution&quot;" isLongClassSpecifier="true" classNameEnd="NormalNoise" isOver="true">
+      <elements xsi:type="mOloc:ImportClause" selfName="distribution" importName="Modelica.Math.Distributions.Normal.quantile" isOver="true"/>
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialNoise" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list expression="0" declarationName="mu" description="&quot;Expectation (mean) value of the normal distribution&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="enableNoise" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" declarationName="sigma" description="&quot;Standard deviation of the normal distribution&quot;" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="1" elementName="start"/>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="enableNoise" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection" isInitial="true">
+        <equations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, mu, sigma)"/>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:WhenEquation" condition="generateNoise and sample(startTime, samplePeriod)">
+          <whenEquations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, mu, sigma)"/>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Text(visible=enableNoise, extent={{-66,92},{94,66}}, textColor={175,175,175}, textString=&quot;mu=%mu&quot; ) , Text(visible=enableNoise, extent={{-70,-68},{94,-96}}, textColor={175,175,175}, textString=&quot;sigma=%sigma&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>A summary of the common properties of the noise blocks is provided in the documentation of package&lt;a href=\&quot;modelica://Modelica.Blocks.Noise\&quot;>Blocks.Noise&lt;/a>.&#xA;This NormalNoise block generates reproducible, random noise at its output according to a normal distribution.This means that random values are normally distributed with expectation value mu and standard deviation sigma.(see example &lt;a href=\&quot;modelica://Modelica.Blocks.Examples.Noise.NormalNoiseProperties\&quot;>Examples.Noise.NormalNoiseProperties&lt;/a>).&#xA;By default, two or more instances produce different, uncorrelated noise at the same time instant.The block can only be used if on the same or a higher hierarchical level,model &lt;a href=\&quot;modelica://Modelica.Blocks.Noise.GlobalSeed\&quot;>Blocks.Noise.GlobalSeed&lt;/a>&#xA;is dragged to provide global settings for all instances.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+          <modifications expression="&quot;&lt;html>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&lt;tr>&lt;th>Date&lt;/th> &lt;th align=\&quot;left\&quot;>Description&lt;/th>&lt;/tr>&lt;tr>&lt;td> June 22, 2015 &lt;/td> &lt;td>&lt;table border=\&quot;0\&quot;>&lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Logos/dlr_logo.png\&quot; alt=\&quot;DLR logo\&quot;>&#xA;&lt;/td>&lt;td valign=\&quot;bottom\&quot;> Initial version implemented by A. Kl&amp;ouml;&#xA;ckner, F. v.d. Linden, D. Zimmer, M. Otter.&lt;br> &lt;a href=\&quot;http://www.dlr.de/rmc/sr/en\&quot;>DLR Institute of System Dynamics and Control&lt;/a>&#xA;&lt;/td>&lt;/tr>&lt;/table>&lt;/td>&lt;/tr>&lt;/table>&lt;/html>&quot;" elementName="revisions"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="TruncatedNormalNoise" description="&quot;Noise generator with truncated normal distribution&quot;" isLongClassSpecifier="true" classNameEnd="TruncatedNormalNoise" isOver="true">
+      <elements xsi:type="mOloc:ImportClause" selfName="distribution" importName="Modelica.Math.Distributions.TruncatedNormal.quantile" isOver="true"/>
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialNoise" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" declarationName="y_min" description="&quot;Lower limit of y&quot;" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="0" elementName="start"/>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="enableNoise" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list isModificationOver="true" declarationName="y_max" description="&quot;Upper limit of y&quot;" isAnnotation="true" isAnnotationOver="true">
+          <modifications expression="1" elementName="start"/>
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="enableNoise" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list expression="(y_max + y_min)/2" declarationName="mu" description="&quot;Expectation (mean) value of the normal distribution&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="enableNoise" elementName="enable"/>
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+            <modifications expression="&quot;Noise generation&quot;" elementName="group"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list expression="(y_max - y_min)/6" declarationName="sigma" description="&quot;Standard deviation of the normal distribution&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="enableNoise" elementName="enable"/>
+            <modifications expression="&quot;Advanced&quot;" elementName="tab"/>
+            <modifications expression="&quot;Noise generation&quot;" elementName="group"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection" isInitial="true">
+        <equations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, y_min, y_max, mu, sigma)"/>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:WhenEquation" condition="generateNoise and sample(startTime, samplePeriod)">
+          <whenEquations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, y_min, y_max, mu, sigma)"/>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications isModificationOver="true" elementName="coordinateSystem">
+            <modifications expression="false" elementName="preserveAspectRatio"/>
+            <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+          </modifications>
+          <modifications expression="{ Line(visible=enableNoise, points={{-76,60},{78,60}}, color={95,95,95}, pattern=LinePattern.Dot ) , Line(visible=enableNoise, points={{-76,-60},{78,-60}}, color={95,95,95}, pattern=LinePattern.Dot ) , Text(visible=enableNoise, extent={{-70,94},{95,64}}, textColor={175,175,175}, textString=&quot;%y_max&quot; ) , Text(visible=enableNoise, extent={{-70,-64},{95,-94}}, textColor={175,175,175}, textString=&quot;%y_min&quot; ) , Text( extent={{-71,12},{71,-12}}, textColor={175,175,175}, origin={-88,-11}, rotation=90, textString=&quot;normal&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>A summary of the common properties of the noise blocks is provided in the documentation of package&lt;a href=\&quot;modelica://Modelica.Blocks.Noise\&quot;>Blocks.Noise&lt;/a>.&#xA;This TruncatedNormalNoise block generates reproducible, random noise at its output according to a truncated normal distribution.This means that normally distributed random values are truncated to the band y_min ... y_max.Measurement noise has often this distribution form.By default, the standard parameters of the truncated normal distribution are derived fromy_min ... y_max:&lt;/p>&lt;blockquote>&lt;p>mean value = (y_max + y_min)/2,&lt;br>standard deviation = (y_max - y_min)/6 (= 99.7 % of the non-truncated normal distribution are within y_min ... y_max).&lt;/p>&lt;/blockquote>&lt;p>For an example see &lt;a href=\&quot;modelica://Modelica.Blocks.Examples.Noise.Distributions\&quot;>Examples.Noise.Distributions&lt;/a>.&#xA;By default, two or more instances produce different, uncorrelated noise at the same time instant.The block can only be used if on the same or a higher hierarchical level,model &lt;a href=\&quot;modelica://Modelica.Blocks.Noise.GlobalSeed\&quot;>Blocks.Noise.GlobalSeed&lt;/a>&#xA;is dragged to provide global settings for all instances.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+          <modifications expression="&quot;&lt;html>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&lt;tr>&lt;th>Date&lt;/th> &lt;th align=\&quot;left\&quot;>Description&lt;/th>&lt;/tr>&lt;tr>&lt;td> June 22, 2015 &lt;/td> &lt;td>&lt;table border=\&quot;0\&quot;>&lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Logos/dlr_logo.png\&quot; alt=\&quot;DLR logo\&quot;>&#xA;&lt;/td>&lt;td valign=\&quot;bottom\&quot;> Initial version implemented by A. Kl&amp;ouml;&#xA;ckner, F. v.d. Linden, D. Zimmer, M. Otter.&lt;br> &lt;a href=\&quot;http://www.dlr.de/rmc/sr/en\&quot;>DLR Institute of System Dynamics and Control&lt;/a>&#xA;&lt;/td>&lt;/tr>&lt;/table>&lt;/td>&lt;/tr>&lt;/table>&lt;/html>&quot;" elementName="revisions"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" classType="block" className="BandLimitedWhiteNoise" description="&quot;Noise generator to produce band-limited white noise with normal distribution&quot;" isLongClassSpecifier="true" classNameEnd="BandLimitedWhiteNoise" isOver="true">
+      <elements xsi:type="mOloc:ImportClause" selfName="distribution" importName="Modelica.Math.Distributions.Normal.quantile" isOver="true"/>
+      <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Blocks.Interfaces.PartialNoise" isOver="true"/>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list expression="1" declarationName="noisePower" description="&quot;Power of white noise signal&quot;" isAnnotation="true" isAnnotationOver="true">
+          <annotations isModificationOver="true" elementName="Dialog">
+            <modifications expression="enableNoise" elementName="enable"/>
+          </annotations>
+        </component_list>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isProtected="true" isOver="true">
+        <component_list expression="0" declarationName="mu"/>
+      </elements>
+      <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+        <component_list expression="sqrt(noisePower/samplePeriod)" declarationName="sigma"/>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection" isInitial="true">
+        <equations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, mu, sigma)"/>
+      </elements>
+      <elements xsi:type="mOloc:EquationSection">
+        <equations xsi:type="mOloc:WhenEquation" condition="generateNoise and sample(startTime, samplePeriod)">
+          <whenEquations xsi:type="mOloc:SimpleEquation" left="r" right="distribution(r_raw, mu, sigma)"/>
+        </equations>
+      </elements>
+      <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="enableNoise" elementName="enable"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Icon">
+          <modifications expression="{Text( extent={{-70,96},{92,60}}, textColor={175,175,175}, textString=&quot;%noisePower&quot; ) , Text( extent={{-96,11},{96,-11}}, textColor={175,175,175}, origin={-87,0}, rotation=90, textString=&quot;white noise&quot; ) }" elementName="graphics"/>
+        </annotations>
+        <annotations isModificationOver="true" elementName="Documentation">
+          <modifications expression="&quot;&lt;html>&lt;p>A summary of the common properties of the noise blocks is provided in the documentation of package&lt;a href=\&quot;modelica://Modelica.Blocks.Noise\&quot;>Blocks.Noise&lt;/a>.&#xA;This BandLimitedWhiteNoise block generates reproducible, random noise at its output according to aband-limited white noise distribution. This is performed by using a normal distribution with mu=0 andsigma = sqrt(noisePower/samplePeriod).&lt;/p>&lt;p>In order for this block to produce meaningful results, you should set the followingparameters:&lt;/p>&lt;ul>&lt;li> The &lt;strong>samplePeriod&lt;/strong> of the block should be much faster (say by a factor of 100) than the fastest dynamics of the system fed by the block&amp;#39;&#xA;s outputs.&lt;/li>&lt;li> The &lt;strong>noisePower&lt;/strong> of the signal should be set to the expected power per frequency of the white noise. Since many system models assume a noise power of 1, this preset may be a reasonable first choice (= default).&lt;/li>&lt;/ul>&lt;h4>About sampling frequencies&lt;/h4>&lt;p>Ideal white noise contains all frequencies, including infinitely high ones.However, these usually cannot be observed in physical systems, since all physical systems inone way or the other contain low-pass filters. It is thus sufficient to generate alimited range of frequency content in the noise signal, as long as it exceeds the frequencies ofthe subsequent dynamics by a sufficiently high factor (of e.g. 100).&lt;/p>&lt;h4>About noise power&lt;/h4>&lt;p>Ideal white noise has a flat, i.e. constant, power spectral density for all frequencies.It has thus infinitely high power, because the total power of a signal can be obtained byintegrating the power spectral density over all frequencies. The following three ways tothink of the power of a signal may be helpful:&lt;/p>&lt;ul>&lt;li> The energy of a signal is the integral of its squared absolute value over time. The signal&amp;#39;&#xA;s power is this integral divided by the time span of the integral.&lt;/li>&lt;li> The total power of a signal can also be obtained by integrating its (two-sided) power spectral density over all frequencies.&lt;/li>&lt;li> The total power of a signal is finally also equal to its variance.&lt;/li>&lt;/ul>&lt;p>In order to set the correct level of the band-limited white noise power spectral density,the variance of its normal distribution can thus be influenced directly.Recalling that the samplePeriod of the noise signal generates frequency content in therange &amp;plusmn;&#xA;0.5/samplePeriod, the variance must be increased to generate sufficienttotal signal power. The total power must match the product of the noisePower and itsfrequency bandwidth 1/samplePeriod: &lt;code>signal power = signal variance = noisePower / samplePeriod&lt;/code>.&lt;/p>&lt;p>Example &lt;a href=\&quot;modelica://Modelica.Blocks.Examples.Noise.DrydenContinuousTurbulence\&quot;>Examples.Noise.DrydenContinuousTurbulence&lt;/a>&#xA;demonstrates how to utilize this block to model wind gust.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        </annotations>
+      </elements>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Line( points={{-84,0},{-54,0},{-54,40},{-24,40},{-24,-70},{6,-70},{6,80}, {36,80},{36,-20},{66,-20},{66,60} } ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This sublibrary contains blocks that generate &lt;strong>reproducible noise&lt;/strong> with pseudo randomnumbers. Reproducibility is important when designing control systems,either manually or with optimization methods (for example when changing a parameter or a componentof a control system and re-simulating, it is important that the noise does not change, becauseotherwise it is hard to determine whether the changed control system or the differentlycomputed noise has changed the behaviour of the controlled system).Many examples how to use the Noise blocks are provided in sublibrary&lt;a href=\&quot;modelica://Modelica.Blocks.Examples.Noise\&quot;>Blocks.Examples.Noise&lt;/a>.&#xA;&lt;/p>&lt;h4>Global Options&lt;/h4>&lt;p>When using one of the blocks of this sublibrary, on the same or a higher level,block &lt;a href=\&quot;modelica://Modelica.Blocks.Noise.GlobalSeed\&quot;>Noise.GlobalSeed&lt;/a>&#xA;must be dragged resulting in a declaration&lt;/p>&lt;blockquote>&lt;pre>&lt;strong>inner&lt;/strong> Modelica.Blocks.Noise.GlobalSeed globalSeed;&#xA;&lt;/pre>&lt;/blockquote>&lt;p>This block is used to define global options that hold for all Noise blockinstances (such as a global seed for initializing the random number generators,and a flag to switch off noise). Furthermore, the impure random number generator&lt;a href=\&quot;modelica://Modelica.Math.Random.Utilities.impureRandom\&quot;>impureRandom&lt;/a> is initialized here.&#xA;&lt;/p>&lt;p>Please note that only one globalSeed instance may be defined in the model due to the initializationof the impureRandom(..) random number generator! So, the block will usually reside on the top level of the model.&lt;/p>&lt;h4>Parameters that need to be defined&lt;/h4>&lt;p>When using a noise block of this package, at a minimum the following parameters must be defined:&lt;/p>&lt;blockquote>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&lt;tr>&lt;th>Parameter&lt;/th> &lt;th>Description&lt;/th>&lt;/tr>&lt;tr>&lt;td> samplePeriod &lt;/td> &lt;td> Random values are drawn periodically at the sample rate in [s] defined with this parameter (time events are generated at the sample instants). Between sample instants, the output y is kept constant.&lt;/td>&lt;/tr>&lt;tr>&lt;td> distribution data &lt;/td> &lt;td> Every noise block in this package needs additional data to describe the respective distribution. A random number distribution maps the drawn random numbers from the range 0.0 ... 1.0, to the desired range and distribution. &lt;/td>&lt;/tr>&lt;/table>&lt;/blockquote>&lt;p>As a simple demonstration, see example &lt;a href=\&quot;modelica://Modelica.Blocks.Examples.Noise.UniformNoise\&quot;>Blocks.Examples.Noise.UniformNoise&lt;/a>.&#xA;In the next diagram, a simulation result is shown for samplePeriod=0.02 s and uniform distribution withy_min=-1, y_max=3:&lt;/p>&lt;blockquote>&lt;img src=\&quot;modelica://Modelica/Resources/Images/Blocks/Examples/Noise/UniformNoise.png\&quot;>&#xA;&lt;/blockquote>&lt;h4>Advanced tab: General settings&lt;/h4>&lt;p>In the &lt;strong>Advanced&lt;/strong> tab of the parameter menu, further options can be set in the noise blocksas shown in the next table:&lt;/p>&lt;blockquote>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&lt;tr>&lt;th>Parameter&lt;/th> &lt;th>Description&lt;/th>&lt;/tr>&lt;tr>&lt;td> enableNoise &lt;/td> &lt;td> = true, if noise is generated at the output of the block (this is the default).&lt;br> = false, if noise generation is switched off and the constant value y_off is provided as output.&lt;/td>&lt;/tr>&lt;tr>&lt;td> y_off &lt;/td> &lt;td> If enableNoise = false, the output of the block instance has the value y_off. Default is y_off = 0.0. Furthermore, if enableNoise = true and time&amp;lt;&#xA;startTime, the output of the block is also y_off (see description of parameter startTime below).&lt;/td>&lt;/tr>&lt;/table>&lt;/blockquote>&lt;h4>Advanced tab: Initialization&lt;/h4>&lt;p>For every block instance, the internally used pseudo random number generatorhas its own state. This state must be properly initialized, depending onthe desired situation. For this purpose the following parameters can be defined:&lt;/p>&lt;blockquote>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&lt;tr>&lt;th>Parameter&lt;/th> &lt;th>Description&lt;/th>&lt;/tr>&lt;tr>&lt;td> useGlobalSeed &lt;/td> &lt;td> = true, if the seed (= Integer number) defined in the \&quot;inner GlobalSeed globalSeed\&quot; component is used for the initialization of the random number generator used in this instance of the noise block. Therefore, whenever the globalSeed defines a different number, the noise at every instance is changing. This is the default setting and therefore the globalSeed component defines whether every new simulation run shall provide the same noise (e.g. for a parameter optimization of controller parameters), or whether every new simulation run shall provide different noise (e.g. for a Monte Carlo simulation).&lt;br> = false, if the seed defined by globalSeed is ignored. For example, if aerodynamic turbulence is modelled with a noise block and this turbulence model shall be used for all simulation runs of a Monte Carlo simulation, then useGlobalSeed has to be set to false.&lt;/td>&lt;/tr>&lt;tr>&lt;td> useAutomaticLocalSeed &lt;/td> &lt;td> An Integer number, called local seed, is needed to initialize the random number generator for a specific block instance. Instances using the same local seed produce exactly the same random number values (so the same noise, if the other settings of the instances are the same).&lt;br> If &lt;strong>useAutomaticLocalSeed = true&lt;/strong>, the local seed is determined automatically using a hash value of the instance name of the model that is inquired with the Modelica built-in operator &lt;a href=\&quot;https://specification.modelica.org/v3.4/Ch3.html#getinstancename\&quot;>getInstanceName()&lt;/a>.&#xA;Note, this means that the noise changes if the component is renamed.&lt;br> If &lt;strong>useAutomaticLocalSeed = false&lt;/strong>, the local seed is defined explicitly by parameter fixedLocalSeed. It is then guaranteed that the generated noise remains always the same (provided the other parameter values are the same).&lt;/td>&lt;/tr>&lt;tr>&lt;td> fixedLocalSeed &lt;/td> &lt;td> If useAutomaticLocalSeed = false, the local seed to be used. fixedLocalSeed can be any Integer number (including zero or a negative number). The initialization algorithm produces a meaningful initial state of the random number generator from fixedLocalSeed and (if useAutomaticGlobalSeed=true) from globalSeed even for bad seeds such as 0 or 1, so the subsequently drawing of random numbers produces always statistically meaningful numbers.&lt;/td>&lt;/tr>&lt;tr>&lt;td> startTime &lt;/td> &lt;td> The time instant at which noise shall be generated at the output y. The default startTime = 0. For time&amp;lt;&#xA;startTime, y = y_off. In some cases it is meaningful to simulate a certain duration until an approximate steady-state is reached. In such a case startTime should be set to a time instant after this duration.&lt;/td>&lt;/tr>&lt;/table>&lt;/blockquote>&lt;h4>Random Number Generators&lt;/h4>&lt;p>The core of the noise generation is the computation of uniform randomnumbers in the range 0.0 .. 1.0 (and these random numbers are transformedafterwards, see below). This sublibrary uses the xorshift random number generationsuite developed in 2014 by Sebastiano Vigna (for details see&lt;a href=\&quot;http://xorshift.di.unimi.it\&quot;>http://xorshift.di.unimi.it&lt;/a> and&#xA;&lt;a href=\&quot;modelica://Modelica.Math.Random.Generators\&quot;>Math.Random.Generators&lt;/a>).&#xA;These random number generators have excellentstatistical properties, produce quickly statistically relevant random numbers, even ifstarting from a bad initial seed, and have a reasonable length of the internal statevector of 2, 4, and 33 Integer elements. The random number generator with an internalstate vector of length 2 is used to initialize the other two random number generators.The length 4 random number generator is used in the noise blocks of this package, and everysuch block has its own internal state vector, as needed for reproducible noise blocks.The random number generator with a length of 33 Integer is used from the impure random numbergenerator. It is suited even for massively parallel simulations where every simulationcomputes a large number of random values. More details of the random numbergenerators are described in the documentation of package&lt;a href=\&quot;modelica://Modelica.Math.Random.Generators\&quot;>Math.Random.Generators&lt;/a>.&#xA;&lt;/p>&lt;h4>Distributions&lt;/h4>&lt;p>The uniform random numbers in the range 0.0 .. 1.0 are transformed to a desiredrandom number distribution by selecting an appropriate &lt;strong>distribution&lt;/strong> or&lt;strong>truncated distribution&lt;/strong>. For an example of a truncated distribution, see the followingdiagram of the probability density function of a normal distributioncompared with its truncated version:&lt;/p>&lt;blockquote>&lt;img src=\&quot;modelica://Modelica/Resources/Images/Math/Distributions/TruncatedNormal.density.png\&quot;>&#xA;&lt;/blockquote>&lt;p>The corresponding inverse cumulative distribution functions are shown in the next diagram:&lt;/p>&lt;blockquote>&lt;img src=\&quot;modelica://Modelica/Resources/Images/Math/Distributions/TruncatedNormal.quantile.png\&quot;>&#xA;&lt;/blockquote>&lt;p>When providing an x-value between 0.0 .. 1.0 from a random number generator, then the truncatedinverse cumulative probability density function of a normal distribution transforms this value into thedesired band (in the diagram above to the range: -1.5 .. 1.5). Contrary to a standard distribution,truncated distributions have the advantage that the resulting random values are guaranteedto be in the defined band (whereas a standard normal distribution might also result in any value;&#xA;when modeling noise that is known to be in a particular range, say &amp;plusmn;&#xA;0.1 Volt,then with the TruncatedNormal distribution it is guaranteed that random values are onlygenerated in this band). More details of truncateddistributions are given in the documentation of package&lt;a href=\&quot;modelica://Modelica.Math.Distributions\&quot;>Math.Distributions&lt;/a>.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;table border=\&quot;1\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;>&lt;tr>&lt;th>Date&lt;/th> &lt;th align=\&quot;left\&quot;>Description&lt;/th>&lt;/tr>&lt;tr>&lt;td> June 22, 2015 &lt;/td> &lt;td>&lt;table border=\&quot;0\&quot;>&lt;tr>&lt;td> &lt;img src=\&quot;modelica://Modelica/Resources/Images/Logos/dlr_logo.png\&quot; alt=\&quot;DLR logo\&quot;>&#xA;&lt;/td>&lt;td valign=\&quot;bottom\&quot;> Initial version implemented by A. Kl&amp;ouml;&#xA;ckner, F. v.d. Linden, D. Zimmer, M. Otter.&lt;br> &lt;a href=\&quot;http://www.dlr.de/rmc/sr/en\&quot;>DLR Institute of System Dynamics and Control&lt;/a>&#xA;&lt;/td>&lt;/tr>&lt;/table>&lt;/td>&lt;/tr>&lt;/table>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

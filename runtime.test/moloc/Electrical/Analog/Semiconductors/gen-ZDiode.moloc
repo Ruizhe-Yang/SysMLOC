@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Semiconductors"/>
+  <classes classType="model" className="ZDiode" description="&quot;Zener diode with 3 working areas&quot;" isLongClassSpecifier="true" classNameEnd="ZDiode" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="1e-6" declarationName="Ids" description="&quot;Saturation current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="0.04" declarationName="Vt" description="&quot;Voltage equivalent of temperature (kT/qn)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" expression="30" declarationName="Maxexp" description="&quot;Max. exponent for linear continuation&quot;">
+        <modifications expression="Modelica.Constants.small" elementName="min" isfinal="true"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list expression="1e8" declarationName="R" description="&quot;Parallel ohmic resistance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="5.1" declarationName="Bv" description="&quot;Breakthrough voltage = Zener- or Z-voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" parameterType="parameter" isOver="true">
+      <component_list expression="0.7" declarationName="Ibv" description="&quot;Breakthrough knee current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="0.74" declarationName="Nbv" description="&quot;Breakthrough emission coefficient&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="293.15" elementName="T"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="i" right="smooth(1, if (v>Maxexp*Vt) then Ids*( exp(Maxexp)*(1 + v/Vt - Maxexp)-1) + v/R else if ( (v+Bv)&lt;-Maxexp*(Nbv*Vt)) then -Ids -Ibv* exp(Maxexp)*(1 - (v+Bv)/(Nbv*Vt) - Maxexp) +v/R else Ids*(exp(v/Vt)-1) - Ibv*exp(-(v+Bv)/(Nbv*Vt)) + v/R )"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="LossPower" right="v*i"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;diode&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The simple Zener diode is a one port. It consists of the diode itself and an parallel ohmic resistance &lt;em>R&lt;/em>. The diode formula is:&lt;/p>&lt;blockquote>&lt;pre> v/Vt -(v+Bv)/(Nbv*Vt)i = Ids ( e - 1) - Ibv ( e ).&lt;/pre>&lt;/blockquote>&lt;p>If the exponent in one of the two branches reaches the limit &lt;em>Maxexp&lt;/em>, the diode characteristic is linearly continued to avoid overflow.&lt;/p>&lt;p>&lt;br>The Zener diode model permits (in contrast to the simple diode model) current in reverse direction if the breakdown voltage Bv (also known Zener knee voltage) is exceeded.&lt;/p>&lt;p>The thermal power is calculated by &lt;em>i*v&lt;/em>.&lt;/p>&lt;p>&lt;strong>Please note:&lt;/strong> In case of useHeatPort=true the temperature dependence of the electrical behavior is &lt;strong>not&lt;/strong> modelled yet. The parameters are not temperature dependent.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em> March 11, 2009 &lt;/em> by Christoph Clauss&lt;br> conditional heat port added&lt;br> &lt;/li>&lt;li>&lt;em>April 5, 2004 &lt;/em> by Christoph Clauss&lt;br> implemented&lt;br> &lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Polygon( points={{30,0},{-30,40},{-30,-40},{30,0}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{40,0}}, color={0,0,255}), Line(points={{40,0},{90,0}}, color={0,0,255}), Line(points={{30,40},{30,-40}}, color={0,0,255}), Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Line( visible=useHeatPort, points={{0,-101},{0,-20}}, color={127,0,0}, pattern=LinePattern.Dot ) , Line(points={{30,-40},{20,-40}}, color={28,108,200}) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

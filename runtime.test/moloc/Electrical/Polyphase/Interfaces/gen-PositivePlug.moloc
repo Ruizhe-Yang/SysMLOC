@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Interfaces"/>
+  <classes classType="connector" className="PositivePlug" description="&quot;Positive polyphase electrical plug with m pins&quot;" isLongClassSpecifier="true" classNameEnd="PositivePlug" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Plug" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Ellipse( extent={{-100,100},{100,-100}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Ellipse( extent={{-40,40},{40,-40}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Connectors PositivePlug and NegativePlug are nearly identical.The only difference is that the icons are different in orderto identify more easily the plugs of a component.Usually, connector PositivePlug is used for the positive andconnector NegativePlug for the negative plug of an electrical component.&lt;br>Connector Plug is a composite connector containing m Pins (Modelica.Electrical.Analog.Interfaces.Pin).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces"/>
+  <classes isPartial="true" classType="model" className="TwoPinElementary" description="&quot;Elementary two pins with reference connection, without declaration of voltage and current&quot;" isLongClassSpecifier="true" classNameEnd="TwoPinElementary" isOver="true">
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.eps" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.AngularVelocity" isOver="true">
+      <component_list declarationName="omega" description="&quot;Angular velocity of reference frame&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="PositivePin" isOver="true">
+      <component_list declarationName="pin_p" description="&quot;Positive quasi-static single-phase pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-10},{-90,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="NegativePin" isOver="true">
+      <component_list declarationName="pin_n" description="&quot;Negative quasi-static single-phase pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-10},{110,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.branch" function="(pin_p.reference, pin_n.reference)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="pin_p.reference.gamma" right="pin_n.reference.gamma"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="omega" right="der(pin_p.reference.gamma)"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This partial model uses a &lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.PositivePin\&quot;>positive&lt;/a>&#xA;and &lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.NegativePin\&quot;>negative pin&lt;/a>,&#xA;but no complex voltage, current, power, etc. Additionally, the angular velocity of the quasi-static systemis explicitly defined as variable. This model is mainly intended to be used with graphical representation of user models.&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.PositivePin\&quot;>PositivePin&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.NegativePin\&quot;>NegativePin&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.TwoPin\&quot;>TwoPin&lt;/a>,&#xA;&lt;a href=\&quot;modelica://Modelica.Electrical.QuasiStatic.SinglePhase.Interfaces.OnePort\&quot;>OnePort&lt;/a>&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

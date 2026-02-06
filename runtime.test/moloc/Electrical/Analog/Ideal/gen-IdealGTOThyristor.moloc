@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Ideal"/>
+  <classes classType="model" className="IdealGTOThyristor" description="&quot;Ideal GTO thyristor&quot;" isLongClassSpecifier="true" classNameEnd="IdealGTOThyristor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.IdealSemiconductor" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <component_list declarationName="fire" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{100,120}" elementName="origin"/>
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{100,120}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="off" right="s &lt; 0 or not fire"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;gto&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This is an ideal GTO thyristor or switching transistor, for details see partial model &lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Interfaces.IdealSemiconductor\&quot;>IdealSemiconductor&lt;/a>&lt;br>&#xA;The GTO thyristor is conducting if voltage &amp;gt;&#xA;Vknee AND fire = true.&lt;br>Otherwise, the GTO thyristor is locking.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em>February 7, 2016 &lt;/em> by Anton Haumer&lt;br> extending from partial IdealSemiconductor&lt;br> &lt;/li>&lt;li>&lt;em> March 11, 2009 &lt;/em> by Christoph Clauss&lt;br> conditional heat port added&lt;br> &lt;/li>&lt;li>&lt;em>Mai 7, 2004 &lt;/em> by Christoph Clauss and Anton Haumer&lt;br> Vknee added&lt;br> &lt;/li>&lt;li>&lt;em>some years ago &lt;/em> by Christoph Clauss&lt;br> realized&lt;br> &lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100, 100 } }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line(points={{48,52},{64,36}}, color={0,0,255}), Line( visible=useHeatPort, points={{0,-100},{0,-20}}, color={127,0,0}, pattern=LinePattern.Dot ) , Polygon( points={{42,45},{42,38},{49,38},{42,45}}, lineColor={0,0,255}, fillPattern=FillPattern.Solid, fillColor={0,0,255} ) , Polygon( points={{46,33},{53,33},{53,26},{46,33}}, lineColor={0,0,255}, fillPattern=FillPattern.Solid, fillColor={0,0,255} ) , Line(points={{30,10},{60,40}}, color={0,0,255}), Line(points={{30,26},{52,48}}, color={0,0,255}), Line( points={{100,100},{100,88},{62,50}}, color={255,0,255}, pattern=LinePattern.Dash ) , Line( points={{58,44}}, color={255,0,255}, pattern=LinePattern.Dash ) , Line(points={{62,50},{56,44}}, color={0,0,255}) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line( points={{20,10},{70,40}}, thickness=0.5 ) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

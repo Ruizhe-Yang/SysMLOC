@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Examples.ControlledDCDrives"/>
+  <classes classType="model" className="PositionControlledDCPM" description="&quot;Position controlled DC PM drive with H-bridge from battery&quot;" isLongClassSpecifier="true" classNameEnd="PositionControlledDCPM" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Utilities.PartialControlledDCPM" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Sources.TorqueStep" isOver="true">
+      <component_list isModificationOver="true" declarationName="loadTorque" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="-driveData.tauNominal" elementName="stepTorque"/>
+        <modifications expression="0" elementName="offsetTorque"/>
+        <modifications expression="2.3" elementName="startTime"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-50},{80,-30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.LimitedPI" isOver="true">
+      <component_list isModificationOver="true" declarationName="speedController" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Modelica.Blocks.Types.Init.InitialOutput" elementName="initType"/>
+        <modifications expression="driveData.kpw" elementName="k"/>
+        <modifications expression="driveData.Tiw" elementName="Ti"/>
+        <modifications expression="true" elementName="constantLimits"/>
+        <modifications expression="driveData.tauMax" elementName="yMax"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-120,-20},{-100,0}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Utilities.LimitedPI" isOver="true">
+      <component_list isModificationOver="true" declarationName="positionController" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="true" elementName="constantLimits"/>
+        <modifications expression="driveData.kpP" elementName="k"/>
+        <modifications expression="false" elementName="useI"/>
+        <modifications expression="driveData.wMax" elementName="yMax"/>
+        <modifications expression="Modelica.Blocks.Types.Init.SteadyState" elementName="initType"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-150,-20},{-130,0}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Mechanics.Rotational.Sensors.AngleSensor" isOver="true">
+      <component_list declarationName="angleSensor" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{70,-70}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.KinematicPTP2" isOver="true">
+      <component_list isModificationOver="true" declarationName="kinematicPTP" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="{driveData.wMax}" elementName="qd_max"/>
+        <modifications expression="{driveData.aMax}" elementName="qdd_max"/>
+        <modifications expression="{200}" elementName="q_end"/>
+        <modifications expression="0.2" elementName="startTime"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,10},{-10,-10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+            <modifications expression="{-180,-10}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="positionController.y" right="speedController.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-129,-10},{-122,-10}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="angleSensor.phi" right="positionController.u_m">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{70,-81},{70,-100},{-146,-100},{-146,-22}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="kinematicPTP.q[1]" right="positionController.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-169,-2},{-160,-2},{-160,-10},{-152,-10}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="speedSensor.flange" right="angleSensor.flange">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,-60},{70,-60}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="speedSensor.w" right="speedController.u_m">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,-81}, {50,-90},{-116,-90},{-116,-22} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="loadInertia.flange_b" right="loadTorque.flange">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{70,-40},{80,-40}}" elementName="points"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="speedController.y" right="tau2i.u">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-99,-10},{-82,-10}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="2.5" elementName="StopTime"/>
+        <modifications expression="0.0001" elementName="Interval"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This model demonstrates how a position controller for a speed controlled DC PM drive works.&lt;/p>&lt;p>The inner current controller is parameterized according to the absolute optimum.The middle control loop is formed by the speed controller which is parameterized according to the symmetrical optimum.The outer control loop is formed by the position controller which is parameterized to avoid an overshot in the position.&lt;/p>&lt;p>At time=0.2 s the kinematicPTP starts to prescribe the reference position with limited speed and limited acceleration.At time=2.3 s a load torque step is applied, causing the drive to slightly leave the end position until the position controller brings the drive back to the desired position.&lt;/p>&lt;p>Further reading:&lt;a href=\&quot;modelica://Modelica/Resources/Documentation/Electrical/Machines/DriveControl.pdf\&quot;>Tutorial at the Modelica Conference 2017&lt;/a>&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="{{-200,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.UsersGuide"/>
+  <classes classType="class" className="ReleaseNotes" description="&quot;Release Notes&quot;" isLongClassSpecifier="true" classNameEnd="ReleaseNotes" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.ReleaseNotes" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;info&quot;" elementName="preferredView"/>
+      <annotations expression="true" elementName="DocumentationClass"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;h5>Version 3.2.3, 2019-01-23 (Anton Haumer, Christian Kral)&lt;/h5>&lt;ul> &lt;li>Shortened default component names, see &lt;a href=\&quot;https://github.com/modelica/ModelicaStandardLibrary/issues/2301\&quot;>#2301&lt;/a>&lt;/li>&#xA;&lt;li>Removed redundant (and not identical) parameter m from &lt;a href=\&quot;modelica://Modelica.Electrical.Polyphase.Basic.MutualInductor\&quot;>MutualInductor&lt;/a>,&#xA;see &lt;a href=\&quot;https://github.com/modelica/ModelicaStandardLibrary/issues/2202\&quot;>#2202&lt;/a>&lt;/li>&#xA;&lt;li>Changed epsilon from constant to parameter in &lt;a href=\&quot;modelica://Modelica.Electrical.Polyphase.Basic.MutualInductor\&quot;>MutualInductor&lt;/a>,&#xA;see &lt;a href=\&quot;https://github.com/modelica/ModelicaStandardLibrary/issues/2200\&quot;>#2200&lt;/a>&lt;/li>&#xA;&lt;li>Added User's Guide&lt;/li>&lt;li>Added blocks and functions for multiple base systems&lt;/li>&lt;/ul>&lt;h5>Version 1.4.0, 2009-08-26 (Anton Haumer)&lt;/h5>&lt;ul>&lt;li>Added conditional HeatPorts as in Electrical.Analog&lt;/li>&lt;li>Added switches with arc as in Electrical.Analog&lt;/li>&lt;/ul>&lt;h5>Version 1.3.2, 2007-08-24 (Anton Haumer)&lt;/h5>&lt;ul>&lt;li>Removed redeclare type SignalType&lt;/li>&lt;/ul>&lt;h5>Version 1.3.1, 2007-08-12 (Anton Haumer)&lt;/h5>&lt;ul>&lt;li>Improved documentation&lt;/li>&lt;/ul>&lt;h5>Version 1.3.0, 2007-01-23 (Anton Haumer)&lt;/h5>&lt;ul>&lt;li>Improved some icons&lt;/li>&lt;/ul>&lt;h5>Version 1.2, 2006-07-05 (Anton Haumer)&lt;/h5>&lt;ul>&lt;li>Removed annotation from pin of Interfaces.Plug&lt;/li>&lt;li>Corrected usage of resistance/conductance&lt;/li>&lt;/ul>&lt;h5>Version 1.1, 2006-01-12 (Anton Haumer)&lt;/h5>&lt;ul>&lt;li>Added Sensors.PowerSensor&lt;/li>&lt;/ul>&lt;h5>Version 1.0, 2004-10-01 (Anton Haumer)&lt;/h5>&lt;ul> &lt;li>Initial release version&lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

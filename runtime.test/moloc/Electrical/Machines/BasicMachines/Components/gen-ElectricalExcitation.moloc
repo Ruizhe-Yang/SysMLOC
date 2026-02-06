@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.BasicMachines.Components"/>
+  <classes classType="model" className="ElectricalExcitation" description="&quot;Electrical excitation&quot;" isLongClassSpecifier="true" classNameEnd="ElectricalExcitation" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="turnsRatio" description="&quot;Ratio stator current / excitation current&quot;">
+        <modifications expression="1" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list declarationName="ie" description="&quot;Excitation current&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list declarationName="ve" description="&quot;Excitation voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Interfaces.SpacePhasor" isOver="true">
+      <component_list declarationName="spacePhasor_r" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,90},{-90,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="pin_ep" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,110},{110,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="pin_en" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{110,-110},{90,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="pin_ep.i + pin_en.i" right="0"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="ie" right="+pin_ep.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="ve" right="pin_ep.v - pin_en.v"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="spacePhasor_r.i_" right="{-ie*turnsRatio,0}"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="ve" right="spacePhasor_r.v_[1]*turnsRatio*3/2"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;excitation&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Polygon( points={{-90,100},{-70,106},{-70,94},{-90,100}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Solid ) ,Ellipse(extent={{-70,40},{ 10,-40} } , lineColor={0,0,255} ) ,Ellipse(extent={{-10,40},{70,-40}}, lineColor={0,0,255} ) ,Line(points={{-30,0},{-54,32},{-50,20},{-44, 26 } ,{-54,32} } , color={0,0,255} ) ,Line(points={{-30,0},{-54,-32}, {-50,-20},{-44,-26},{-54,-32} } , color={0,0,255} ) ,Line(points={{ -54,32} ,{-54,100},{-70,100} } , color={0,0,255} ) ,Line(points={{90, 100 } ,{30,100},{30,40} } , color={0,0,255} ) ,Line(points={{30,-40}, {30,-100},{90,-100} } , color={0,0,255} ) , Text( extent={{-150,-148},{150,-110}}, textColor={0,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>Model of an electrical excitation, converting excitation to space phasor.&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

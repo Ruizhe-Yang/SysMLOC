@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.UsersGuide"/>
+  <classes classType="class" className="ACACConcept" description="&quot;AC/AC converter concept&quot;" isLongClassSpecifier="true" classNameEnd="ACACConcept" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Information" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="true" elementName="DocumentationClass"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The following AC/AC converter topologies are currently included in the PowerConverters library.&lt;/p>&lt;ul>&lt;li>Single-phase dimmer with &lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.ACAC.SinglePhaseTriac\&quot;>triac&lt;/a>&lt;/li>&#xA;&lt;li>Polyphase induction machine soft starter with &lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.ACAC.PolyphaseTriac\&quot;>triac&lt;/a>&lt;/li>&#xA;&lt;/ul>&lt;h4>Control&lt;/h4>&lt;p>To apply firing signals to the triac, the&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.DCDC.Control.SignalPWM\&quot;>SignalPWM model&lt;/a> is provided.&#xA;&lt;/p>&lt;p>The &lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.ACAC.Control.VoltageToAngle\&quot;>Voltage2Angle block&lt;/a>&#xA;calculates phase angle from reference voltage.&lt;/p>&lt;p>To control the soft start of an induction machine,the &lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.ACAC.Control.SoftStartControl\&quot;>SoftStartControl block&lt;/a>&#xA;is provided. It applies a voltage ramp during start, setting the ramp on hold whenever the measured current exceeds the maximum current.Furthermore, a ramp down can be applied for stopping the drive.&lt;/p>&lt;h4>Examples&lt;/h4>&lt;p>Some examples are provided at&lt;a href=\&quot;modelica://Modelica.Electrical.PowerConverters.Examples.ACAC\&quot;>Examples.ACAC&lt;/a>.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

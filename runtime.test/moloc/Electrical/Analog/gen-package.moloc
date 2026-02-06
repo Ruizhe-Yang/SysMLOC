@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical"/>
+  <classes classType="package" className="Analog" description="&quot;Library for analog electrical models&quot;" isLongClassSpecifier="true" classNameEnd="Analog" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Package" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This package contains packages for single-phase electrical components, see&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.UsersGuide\&quot;>User&amp;#39;s Guide&lt;/a>&lt;/p>&#xA;&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{ Line( points={{12,60},{12,-60}}) , Line( points={{-12,60},{-12,-60}}) , Line(points={{-80,0},{-12,0}}), Line(points={{12,0},{80,0}}) }" elementName="graphics"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.SinglePhase.Ideal"/>
+  <classes classType="model" className="IdealTransformer" description="&quot;Ideal transformer&quot;" isLongClassSpecifier="true" classNameEnd="IdealTransformer" isOver="true">
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="n" description="&quot;Ratio of primary to secondary voltage&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
+      <component_list expression="pin_p1.v - pin_n1.v" declarationName="v1" description="&quot;Voltage drop of side 1&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
+      <component_list expression="pin_p1.i" declarationName="i1" description="&quot;Current into side 1&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" isOver="true">
+      <component_list expression="pin_p2.v - pin_n2.v" declarationName="v2" description="&quot;Voltage drop of side 2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" isOver="true">
+      <component_list expression="pin_p2.i" declarationName="i2" description="&quot;Current into side 2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list expression="Modelica.ComplexMath.abs(v1)" declarationName="abs_v1" description="&quot;Magnitude of complex voltage v1&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
+      <component_list expression="Modelica.ComplexMath.arg(v1)" declarationName="arg_v1" description="&quot;Argument of complex voltage v1&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list expression="Modelica.ComplexMath.abs(i1)" declarationName="abs_i1" description="&quot;Magnitude of complex current i1&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
+      <component_list expression="Modelica.ComplexMath.arg(i1)" declarationName="arg_i1" description="&quot;Argument of complex current i1&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ActivePower" isOver="true">
+      <component_list expression="Modelica.ComplexMath.real(v1* Modelica.ComplexMath.conj(i1) )" declarationName="P1" description="&quot;Active power, side 1&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ReactivePower" isOver="true">
+      <component_list expression="Modelica.ComplexMath.imag(v1* Modelica.ComplexMath.conj(i1) )" declarationName="Q1" description="&quot;Reactive power, side 1&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ApparentPower" isOver="true">
+      <component_list expression="Modelica.ComplexMath.abs(v1* Modelica.ComplexMath.conj(i1) )" declarationName="S1" description="&quot;Magnitude of complex apparent power, side 1&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
+      <component_list expression="cos(Modelica.ComplexMath.arg(Complex(P1, Q1)))" declarationName="pf1" description="&quot;Power factor, side 1&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" isOver="true">
+      <component_list expression="Modelica.ComplexMath.abs(v2)" declarationName="abs_v2" description="&quot;Magnitude of complex voltage v2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
+      <component_list expression="Modelica.ComplexMath.arg(v2)" declarationName="arg_v2" description="&quot;Argument of complex voltage v2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Current" isOver="true">
+      <component_list expression="Modelica.ComplexMath.abs(i2)" declarationName="abs_i2" description="&quot;Magnitude of complex current i2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Angle" isOver="true">
+      <component_list expression="Modelica.ComplexMath.arg(i2)" declarationName="arg_i2" description="&quot;Argument of complex current i2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ActivePower" isOver="true">
+      <component_list expression="Modelica.ComplexMath.real(v2* Modelica.ComplexMath.conj(i2) )" declarationName="P2" description="&quot;Active power, side 2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ReactivePower" isOver="true">
+      <component_list expression="Modelica.ComplexMath.imag(v2* Modelica.ComplexMath.conj(i2) )" declarationName="Q2" description="&quot;Reactive power, side 2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ApparentPower" isOver="true">
+      <component_list expression="Modelica.ComplexMath.abs(v2* Modelica.ComplexMath.conj(i2) )" declarationName="S2" description="&quot;Magnitude of complex apparent power, side 2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Real" isOver="true">
+      <component_list expression="cos(Modelica.ComplexMath.arg(Complex(P2, Q2)))" declarationName="pf2" description="&quot;Power factor, side 2&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="pin_p1" description="&quot;Primary positive pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,90},{-90,110}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-110,90},{-90,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.PositivePin" isOver="true">
+      <component_list declarationName="pin_p2" description="&quot;Secondary positive pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90, 90 } ,{110,110} }" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{90,90},{110,110}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="pin_n1" description="&quot;Primary negative pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-110,-110},{-90,-90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="QuasiStatic.SinglePhase.Interfaces.NegativePin" isOver="true">
+      <component_list declarationName="pin_n2" description="&quot;Secondary negative pin&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{90,-108}, {110,-88} }" elementName="extent"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{90,-108},{110,-88}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="pin_p1.i + pin_n1.i" right="Complex(0, 0)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="pin_p2.i + pin_n2.i" right="Complex(0, 0)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="v1" right="Complex(+n, 0)*v2"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="i2" right="Complex(-n, 0)*i1"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.branch" function="(pin_p1.reference, pin_n1.reference)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="pin_p1.reference.gamma" right="pin_n1.reference.gamma"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.branch" function="(pin_n1.reference, pin_n2.reference)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="pin_p2.reference.gamma" right="pin_n2.reference.gamma"/>
+      <equations xsi:type="mOloc:FunctionEquation" component="Connections.branch" function="(pin_p1.reference, pin_p2.reference)"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="pin_p1.reference.gamma" right="pin_p2.reference.gamma"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;transformer&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100}, {100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Text( extent={{-100,10},{0,-10}}, textColor={0,0,255}, textString=&quot;1=primary&quot; ) , Text( extent={{0,10},{100,-10}}, textColor={0,0,255}, textString=&quot;2=secondary&quot; ) , Polygon( points={{-120,53},{-110,50},{-120,47},{-120,53}}, lineColor={160,160,164}, fillColor={160,160,164}, fillPattern=FillPattern.Solid ) , Line(points={{-136,50},{-111,50}}, color={160,160,164}), Text( extent={{-136,53},{-119,68}}, textColor={160,160,164}, textString=&quot;i1&quot; ) , Line(points={{-136,-49},{-111,-49}}, color={160,160,164}), Polygon( points={{-126,-46},{-136,-49},{-126,-52},{-126,-46}}, lineColor={160,160,164}, fillColor={160,160,164}, fillPattern=FillPattern.Solid ) , Text( extent={{-127,-46},{-110,-31}}, textColor={160,160,164}, textString=&quot;i1&quot; ) , Polygon( points={{127,-47},{137,-50},{127,-53},{127,-47}}, lineColor={160,160,164}, fillColor={160,160,164}, fillPattern=FillPattern.Solid ) , Line(points={{111,-50},{136,-50}}, color={160,160,164}), Text( extent={{112,-44},{128,-29}}, textColor={160,160,164}, textString=&quot;i2&quot; ) , Text( extent={{118,52},{135,67}}, textString=&quot;i2&quot; ) , Polygon( points={{120,53},{110,50},{120,47},{120,53}}, fillPattern=FillPattern.HorizontalCylinder, fillColor={160,160,164} ) , Line(points={{111,50},{136,50}}) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{ 100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Text( extent={{-100,20},{-60,-20}}, textColor={85,170,255}, textString=&quot;1&quot; ) , Text( extent={{60,20},{100,-20}}, textColor={85,170,255}, textString=&quot;2&quot; ) , Line(points={{-40,60},{-40,100},{-90,100}}, color={85,170,255}), Line(points={{40,60},{40,100},{90,100}}, color={85,170,255}), Line(points={{-40,-60},{-40,-100},{-90,-100}}, color={85,170,255}), Line(points={{40,-60},{40,-100},{90,-100}}, color={85,170,255}), Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-33,45}, rotation=270 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-33,15}, rotation=270 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-33,-15}, rotation=270 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={85,170,255}, smooth=Smooth.Bezier, origin={-33,-45}, rotation=270 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={85,170,255}, smooth=Smooth.Bezier, origin={33,45}, rotation=90 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={85,170,255}, smooth=Smooth.Bezier, origin={33,15}, rotation=90 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={85,170,255}, smooth=Smooth.Bezier, origin={33,-15}, rotation=90 ) , Line( points={{-15,-7},{-14,-1},{-7,7},{7,7},{14,-1},{15,-7}}, color={85,170,255}, smooth=Smooth.Bezier, origin={33,-45}, rotation=90 ) , Text( extent={{-150,149},{150,109}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The ideal transformer is a two-port circuit element without magnetization. Voltages and currents are ideally transformed:&lt;/p>&lt;blockquote>&lt;pre>v1 = v2*n;&#xA;i2 = -i1*n;&#xA;&lt;/pre>&lt;/blockquote>&lt;p>where &lt;code>n&lt;/code> is a real number called the turns ratio.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;h5>2014-01-02, Christian Kral&lt;/h5>&lt;ul>&lt;li>Initial implementation of ideal transformer model&lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Examples"/>
+  <classes classType="model" className="GenerationOfFMUs" description="&quot;Example to demonstrate variants to generate FMUs (Functional Mock-up Units)&quot;" isLongClassSpecifier="true" classNameEnd="GenerationOfFMUs" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Sine" isOver="true">
+      <component_list isModificationOver="true" declarationName="sine12" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="2" elementName="f"/>
+        <modifications expression="1" elementName="amplitude"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-100,70},{-80,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Examples.Utilities.DirectCapacitor" isOver="true">
+      <component_list isModificationOver="true" declarationName="directCapacitor1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1e-3" elementName="C"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{0,70},{20,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Examples.Utilities.InverseCapacitor" isOver="true">
+      <component_list isModificationOver="true" declarationName="inverseCapacitor1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="2e-3" elementName="C"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,70},{60,90}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Examples.Utilities.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="resistor2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="10" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,30},{40,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Capacitor" isOver="true">
+      <component_list isModificationOver="true" declarationName="capacitor2a" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="v">
+          <modifications expression="0" elementName="start"/>
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <modifications expression="1e-3" elementName="C"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{-20,40}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SignalCurrent" isOver="true">
+      <component_list declarationName="current2" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-50,40}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.GeneralCurrentToVoltageAdaptor" isOver="true">
+      <component_list isModificationOver="true" declarationName="currentToVoltage2a" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="false" elementName="use_pder"/>
+        <modifications expression="false" elementName="use_fder"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,30},{10,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Capacitor" isOver="true">
+      <component_list isModificationOver="true" declarationName="capacitor2b" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="v">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="0" elementName="start"/>
+        </modifications>
+        <modifications expression="2e-3" elementName="C"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{80,40}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.GeneralCurrentToVoltageAdaptor" isOver="true">
+      <component_list isModificationOver="true" declarationName="currentToVoltage2b" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="false" elementName="use_pder"/>
+        <modifications expression="false" elementName="use_fder"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{70,30},{50,50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground2a" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-40,10},{-20,30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground3b" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{60,10},{80,30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Sine" isOver="true">
+      <component_list isModificationOver="true" declarationName="sine34" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="2" elementName="f"/>
+        <modifications expression="1" elementName="amplitude"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-100,-30},{-80,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Examples.Utilities.DirectInductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="directInductor3" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="1e-3" elementName="L"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{0,-30},{20,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Examples.Utilities.InverseInductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="inverseInductor3" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="2e-3" elementName="L"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{40,-30},{60,-10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SignalVoltage" isOver="true">
+      <component_list declarationName="voltage4" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-10},{-10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-50,-60}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground4a" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-40,-90},{-20,-70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Inductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="inductor4a" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="i">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="0" elementName="start"/>
+        </modifications>
+        <modifications expression="1e-3" elementName="L"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="{-30,-50}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.GeneralVoltageToCurrentAdaptor" isOver="true">
+      <component_list isModificationOver="true" declarationName="voltageToCurrent4a" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="false" elementName="use_pder"/>
+        <modifications expression="false" elementName="use_fder"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{10,-70},{-10,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Examples.Utilities.Conductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="conductor4" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="10" elementName="G"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{20,-70},{40,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.GeneralVoltageToCurrentAdaptor" isOver="true">
+      <component_list isModificationOver="true" declarationName="voltageToCurrent4b" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="false" elementName="use_pder"/>
+        <modifications expression="false" elementName="use_fder"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{50,-70},{70,-50}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Inductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="inductor4b" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="i">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="0" elementName="start"/>
+        </modifications>
+        <modifications expression="2e-3" elementName="L"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{80,-60}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="ground4b" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{60,-90},{80,-70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sine12.y" right="directCapacitor1.iDrive">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-79,80},{-2,80}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="directCapacitor1.v" right="inverseCapacitor1.v">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{21,88},{38,88}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="directCapacitor1.dv" right="inverseCapacitor1.dv">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{21,83},{38,83}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="directCapacitor1.i" right="inverseCapacitor1.i">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{22,72},{39,72}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sine12.y" right="current2.i">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-79,80},{-70, 80 } ,{-70,40},{-62,40} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="current2.n" right="capacitor2a.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,50},{-20,50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="capacitor2a.p" right="currentToVoltage2a.pin_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20, 50 } ,{-10,50},{-10,48},{-2,48} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="capacitor2a.n" right="currentToVoltage2a.pin_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20, 30 } ,{-12,30},{-12,32},{-2,32} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="currentToVoltage2a.p" right="resistor2. v1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{3,48},{18,48}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="currentToVoltage2a.f" right="resistor2. i1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{3,32},{19,32}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor2.v2" right="currentToVoltage2b.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{42,48},{57,48}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="resistor2.i2" right="currentToVoltage2b.f">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{41,32},{57,32}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="currentToVoltage2b.pin_p" right="capacitor2b.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{62, 48 } ,{70,48},{70,50},{80,50} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="current2.p" right="ground2a.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,30},{-30,30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ground2a.p" right="capacitor2a.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,30},{-20,30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="currentToVoltage2b.pin_n" right="ground3b.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{62,32},{70,32},{70,30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ground3b.p" right="capacitor2b.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{70,30},{80,30}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sine34.y" right="directInductor3.vDrive">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-79,-20},{-2,-20}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="directInductor3.v" right="inverseInductor3.v">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{22,-12},{39,-12}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="directInductor3.di" right="inverseInductor3.di">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{21,-23},{30.5,-23},{30.5,-23},{38,-23}}" elementName="points"/>
+          <modifications expression="{0,0, 127 }" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="directInductor3.i" right="inverseInductor3.i">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{21,-28},{38,-28}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="inductor4a.n" right="voltageToCurrent4a.pin_p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,-50},{-10,-50},{-10,-52},{-2,-52}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ground4a.p" right="voltageToCurrent4a.pin_n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,-70},{-10,-70},{-10,-68},{-2,-68}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltageToCurrent4b.pin_p" right="inductor4b.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{62,-52},{70,-52},{70,-50},{80,-50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltageToCurrent4b.pin_n" right="ground4b.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{62,-68},{70,-68},{70,-70}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ground4b.p" right="inductor4b.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{70,-70},{ 76,-70} ,{76,-70},{80,-70} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="sine34.y" right="voltage4.v">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-79,-20},{-70, -20 } ,{-70,-60},{-62,-60} }" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltageToCurrent4a.f" right="conductor4.i1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{3,-68},{18,-68}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltageToCurrent4a.p" right="conductor4.v1">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{3,-52},{19,-52}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="conductor4.v2" right="voltageToCurrent4b.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{41,-52},{57,-52}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="conductor4.i2" right="voltageToCurrent4b.f">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{42,-68},{57,-68}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="voltage4.p" right="inductor4a.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-50,-50},{-40,-50}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="ground4a.p" right="voltage4.n">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-30,-70},{-50,-70}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="1" elementName="StopTime"/>
+        <modifications expression="0.001" elementName="Interval"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This example demonstrates how to generate an input/output block (e.g. in form of anFMU - &lt;a href=\&quot;https://fmi-standard.org\&quot;>Functional Mock-up Unit&lt;/a>) from various Electrical components.&#xA;The goal is to export such an input/output block from Modelica and importit in another modeling environment. The essential issue is that beforeexporting it must be known in which way the component is utilized in thetarget environment. Depending on the target usage, different connector variablesneed to be in the interface with either input or output causality.Note, this example model can be used to test the FMU export/import of a Modelica tool.Just export the components marked in the icons as \&quot;toFMU\&quot; as FMUs and importthem back. The models should then still work and give the same results as apure Modelica model.&lt;/p>&lt;p>&lt;strong>Connecting two capacitors&lt;/strong>&lt;br>The first part (DirectCapacitor, InverseCapacitor)demonstrates how to export two capacitors and connect themtogether in a target system. This requires that one of the capacitors(here: DirectCapacitor)is defined to have states and the voltage andderivative of voltage are provided in the interface.The other capacitor (here: InverseCapacitor) requires current accordingto the provided input voltage and derivative of voltage.&lt;/p>&lt;p>&lt;strong>Connecting a resistance element between two capacitors&lt;/strong>&lt;br>The second part (Resistor2) demonstrates how to export a resistance elementthat needs only voltages for its resistance law and connect thisresistance law in a target system between two capacitors.&lt;/p>&lt;p>&lt;strong>Connecting two inductors&lt;/strong>&lt;br>The third part (DirectInductor, InverseInductor)demonstrates how to export two inductors and connect themtogether in a target system. This requires that one of the inductors(here: DirectInductor)is defined to have states and the current andderivative of current are provided in the interface.The other inductor (here: InverseInductor) requires voltage accordingto the provided input current and derivative of current.&lt;/p>&lt;p>&lt;strong>Connecting a conductance element between two inductors&lt;/strong>&lt;br>The fourth part (Conductor4) demonstrates how to export a conductance elementthat needs only currents for its conductance law and connect thisconductance law in a target system between two inductors.&lt;/p>&lt;p>Bear in mind that separating physical components and connecting them via adaptor signals requires to place appropriate&lt;a href=\&quot;modelica://Modelica.Electrical.Analog.Basic.Ground\&quot;>ground components&lt;/a> to define electric potential within the subcircuits.&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Examples.Utilities"/>
+  <classes classType="model" className="NonlinearResistor" description="&quot;Chua's resistor&quot;" isLongClassSpecifier="true" classNameEnd="NonlinearResistor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+      <component_list declarationName="Ga" description="&quot;Conductance in inner voltage range&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+      <component_list declarationName="Gb" description="&quot;Conductance in outer voltage range&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list declarationName="Ve" description="&quot;Inner voltage range limit&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="i" right="if (v &lt; -Ve) then Gb*(v + Ve) - Ga*Ve else if (v > Ve) then Gb*(v - Ve) + Ga*Ve else Ga*v"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Rectangle(extent={{-70,30},{70,-30}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid ) , Line(points={{-90,0},{-70,0}}, color={0,0,255}), Line(points={{70,0},{90,0}}, color={0,0,255}), Line(points={{-50,-60},{50,60}}, color={0,0,255}), Polygon( points={{50,60},{38,52},{44,46},{50,60}}, fillColor={0,0,255}, fillPattern=FillPattern.Solid, lineColor={0,0,255} ) , Text( extent={{-170,110},{150,70}}, textColor={0,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Rectangle(extent={{-70,30},{70,-30}}, lineColor={0,0,255}), Line(points={{-90,0},{-70,0}}, color={0,0,255}), Line(points={{70,0},{90,0}}, color={0,0,255}), Line(points={{-50,-60},{50,60}}, color={0,0,255}), Polygon( points={{50,60},{38,52},{44,46},{50,60}}, fillColor={0,0,255}, fillPattern=FillPattern.Solid, lineColor={0,0,255} ) , Text( extent={{-100,100},{100,70}}, textString=&quot;%name&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This is the only nonlinear component for Chua&amp;#39;&#xA;s circuit. It is a piecewise linear resistor with both an inner and an outer range, which includes the inner one. The slopes of both ranges are given by parameters. The resistance characteristic is continuous. For Chua&amp;#39;&#xA;s circuit both slopes have to be chosen to be negative.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

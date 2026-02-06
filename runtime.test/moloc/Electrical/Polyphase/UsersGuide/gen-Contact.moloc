@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.UsersGuide"/>
+  <classes classType="class" className="Contact" description="&quot;Contact&quot;" isLongClassSpecifier="true" classNameEnd="Contact" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Contact" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;info&quot;" elementName="preferredView"/>
+      <annotations expression="true" elementName="DocumentationClass"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;h4>Main authors&lt;/h4>&lt;p>&lt;strong>Dr. Christian Kral&lt;/strong>&lt;br>Electric Machines, Drives and Systems&lt;br>1060 Vienna, Austria&lt;br>email: &lt;a href=\&quot;mailto:dr.christian.kral@gmail.com\&quot;>dr.christian.kral@gmail.com&lt;/a>&lt;br>&lt;/p>&lt;p>&lt;strong>Anton Haumer&lt;/strong>&lt;br>&lt;a href=\&quot;https://www.haumer.at\&quot;>Technical Consulting &amp;amp; Electrical Engineering&lt;/a>&lt;br>&#xA;D-93049 Regensburg, Germany&lt;br>email: &lt;a href=\&quot;mailto:a.haumer@haumer.at\&quot;>a.haumer@haumer.at&lt;/a>&lt;br>&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

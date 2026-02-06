@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Examples"/>
+  <classes classType="model" className="HeatingMOSInverter" description="&quot;Heating MOS Inverter&quot;" isLongClassSpecifier="true" classNameEnd="HeatingMOSInverter" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Ground" isOver="true">
+      <component_list declarationName="G" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-80,-40},{-60,-20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.SineVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="Sin" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="5" elementName="V"/>
+        <modifications expression="1" elementName="f"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{-70,0}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Capacitor" isOver="true">
+      <component_list isModificationOver="true" declarationName="Capacitor1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0.00001" elementName="C"/>
+        <modifications isModificationOver="true" elementName="v">
+          <modifications expression="0" elementName="start"/>
+          <modifications expression="true" elementName="fixed"/>
+        </modifications>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{30,10}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Components.HeatCapacitor" isOver="true">
+      <component_list isModificationOver="true" declarationName="HeatCapacitor1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0.01" elementName="C"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{70,-60}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Components.ThermalConductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="TC1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0.01" elementName="G"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{0,-50},{20,-30}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Semiconductors.PMOS" isOver="true">
+      <component_list isModificationOver="true" declarationName="H_PMOS" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="true" elementName="useTemperatureDependency"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-40,40},{-20,60}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Semiconductors.NMOS" isOver="true">
+      <component_list isModificationOver="true" declarationName="H_NMOS" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="true" elementName="useTemperatureDependency"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-40,0},{-20,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Sources.RampVoltage" isOver="true">
+      <component_list isModificationOver="true" declarationName="V" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="5" elementName="V"/>
+        <modifications expression="1e-2" elementName="duration"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{50,50}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Components.ThermalConductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="TC2" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0.01" elementName="G"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{0,-90},{20,-70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Sources.FixedTemperature" isOver="true">
+      <component_list isModificationOver="true" declarationName="FixedTemperature1" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="300" elementName="T"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{90,-30}" elementName="origin"/>
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="180" elementName="rotation"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Components.ThermalConductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="TC3" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0.01" elementName="G"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{50,-40},{70,-20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection" isInitial="true">
+      <equations xsi:type="mOloc:SimpleEquation" left="HeatCapacitor1.T" right="293.15"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Sin.n" right="G.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,-10},{-70,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Capacitor1.n" right="G.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{30,0},{30,-20},{-70,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="H_PMOS.S" right="H_NMOS.D">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,44},{-20,16}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="H_NMOS.D" right="Capacitor1.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,16},{-20,20},{30,20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="H_NMOS.B" right="H_NMOS.S">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,10},{-20,4}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="H_NMOS.S" right="G.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,4},{-20,-20},{-70,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="H_PMOS.B" right="H_PMOS.D">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-20,50},{-20,56}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="V.p" right="H_PMOS.D">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,60},{-20,60},{-20,56}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="V.n" right="G.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,40},{50,-20},{-70,-20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="TC1.port_b" right="HeatCapacitor1.port">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,-40},{40, -40 } ,{40,-60},{60,-60} }" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="TC2.port_b" right="HeatCapacitor1.port">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{20,-80},{40, -80 } ,{40,-60},{60,-60} }" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="TC1.port_a" right="H_PMOS.heatPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-40},{-10,-40}, {-10,40},{-30,40} }" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="TC2.port_a" right="H_NMOS.heatPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-80},{-30,-80},{-30,0}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="TC3.port_b" right="FixedTemperature1.port">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{70,-30},{ 80,-30} }" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="TC3.port_a" right="HeatCapacitor1.port">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{50,-30},{40, -30 } ,{40,-60},{60,-60} }" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="Sin.p" right="H_NMOS.G">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,10},{-54,10},{-54,4},{-40,4}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="H_PMOS.G" right="Sin.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-40,44},{-48,44},{-48,44},{-54,44},{-54,10},{-70,10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{Text( extent={{-100,100},{-6,72}}, textString=&quot;Heating MOS Inverter&quot;, textColor={0,0,255} ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The heating MOS inverter shows a heat flow always if a transistor is leading.&lt;/p>&lt;p>Simulate until T=5 s. Plot in separate windows:&lt;br> Sin.p.v and Capacitor1.p.v&lt;br>HeatCapacitor1.port.T and H_PMOS.heatPort.T and H_NMOS.heatPort.T&lt;br>H_PMOS.heatPort.Q_flow and H_NMOS.heatPort.Q_flow&lt;/p>&lt;/html>&quot;" elementName="info"/>
+        <modifications expression="&quot;&lt;html>&lt;p>&lt;strong>Release Notes:&lt;/strong>&lt;/p>&lt;ul>&lt;li>&lt;em>Mai 6, 2004 &lt;/em> by Christoph Clauss&lt;br> realized&lt;br> &lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="5" elementName="StopTime"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

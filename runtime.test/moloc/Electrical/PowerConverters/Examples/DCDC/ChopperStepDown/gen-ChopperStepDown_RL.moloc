@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.Examples.DCDC.ChopperStepDown"/>
+  <classes classType="model" className="ChopperStepDown_RL" description="&quot;Step down chopper with R-L load&quot;" isLongClassSpecifier="true" classNameEnd="ChopperStepDown_RL" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="ExampleTemplates.ChopperStepDown" isOver="true">
+      <extendsModifications isModificationOver="true" elementName="signalPWM">
+        <modifications expression="false" elementName="useConstantDutyCycle"/>
+      </extendsModifications>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Example" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Inductance" parameterType="parameter" isOver="true">
+      <component_list expression="0.025" declarationName="LLoad" description="&quot;Load inductance&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Resistor" isOver="true">
+      <component_list isModificationOver="true" declarationName="loadResistor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="RLoad" elementName="R"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{40,40}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Basic.Inductor" isOver="true">
+      <component_list isModificationOver="true" declarationName="loadInductor" isAnnotation="true" isAnnotationOver="true">
+        <modifications isModificationOver="true" elementName="i">
+          <modifications expression="true" elementName="fixed"/>
+          <modifications expression="0" elementName="start"/>
+        </modifications>
+        <modifications expression="LLoad" elementName="L"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{40,10}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="PowerConverters.DCDC.Control.Voltage2DutyCycle" isOver="true">
+      <component_list isModificationOver="true" declarationName="adaptor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="false" elementName="reciprocal"/>
+        <modifications expression="false" elementName="useBipolarVoltage"/>
+        <modifications expression="Vsource" elementName="VLim"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+            <modifications expression="90" elementName="rotation"/>
+            <modifications expression="{-70,-60}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Sources.Ramp" isOver="true">
+      <component_list isModificationOver="true" declarationName="vRef" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="V0" elementName="height"/>
+        <modifications expression="0.05" elementName="duration"/>
+        <modifications expression="0" elementName="offset"/>
+        <modifications expression="0.025" elementName="startTime"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-90},{80,-70}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="loadResistor.p" right="capacitor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,50},{40,60}, {1.77636e-15,60},{1.77636e-15,10} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="loadInductor.n" right="currentSensor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,0},{40,-10},{30,-10}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="loadResistor.n" right="loadInductor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{40,30},{40,20}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="adaptor.dutyCycle" right="signalPWM.dutyCycle">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,-49},{-70,-40},{-42,-40}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="adaptor.v" right="vRef.y">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-70,-72},{-70,-80},{79,-80}}" elementName="points"/>
+          <modifications expression="{0,0,127}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="experiment">
+        <modifications expression="0.1" elementName="StopTime"/>
+        <modifications expression="1e-05" elementName="Interval"/>
+        <modifications expression="1e-06" elementName="Tolerance"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>This example demonstrates the switching on of an R-L load operated by a step down chopper.DC output voltage is equal to &lt;code>dutyCycle&lt;/code> times the input voltage.Plot current &lt;code>currentSensor.i&lt;/code>, averaged current &lt;code>meanCurrent.y&lt;/code>, total voltage &lt;code>voltageSensor.v&lt;/code> and voltage &lt;code>meanVoltage.v&lt;/code>. The waveform the average current is determined by the time constant &lt;code>L/R&lt;/code> of the load.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.QuasiStatic.Polyphase.Functions"/>
+  <classes classType="function" className="activePower" description="&quot;Calculate active power of complex input voltage and current&quot;" isLongClassSpecifier="true" classNameEnd="activePower" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.Function" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexVoltage" directionType="input" isOver="true">
+      <component_list subscripts="[:]" declarationName="v" description="&quot;QuasiStatic voltage phasors&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.ComplexCurrent" directionType="input" isOver="true">
+      <component_list subscripts="[size(v, 1)]" declarationName="i" description="&quot;QuasiStatic current phasors&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Power" directionType="output" isOver="true">
+      <component_list declarationName="p" description="&quot;Active power&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AlgorithmSection">
+      <statements xsi:type="mOloc:FunctionStatement" component="p" expression="sum(Modelica.ComplexMath.real({v[k]*Modelica.ComplexMath.conj(i[k]) for k in 1:size(v, 1) } ) )"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="true" elementName="Inline"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Calculates instantaneous power from polyphase voltages and currents.In quasi-static operation, instantaneous power equals active power;&#xA;&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

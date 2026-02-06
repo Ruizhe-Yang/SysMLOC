@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.UsersGuide"/>
+  <classes classType="class" className="References" description="&quot;References&quot;" isLongClassSpecifier="true" classNameEnd="References" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.References" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;info&quot;" elementName="preferredView"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;table border=\&quot;0\&quot; cellspacing=\&quot;0\&quot; cellpadding=\&quot;2\&quot;> &lt;tr> &lt;td>[&lt;a href=\&quot;https://ieeexplore.ieee.org/document/1447963\&quot;>Branin1967&lt;/a>]&lt;/td>&#xA;&lt;td>F. H. Branin Jr., &amp;quot;&#xA;Transient analysis of lossless transmission lines&amp;quot;&#xA;, &lt;em>Proceedings of the IEEE&lt;/em>, vol. 55, pp. 2012-2013, 1967&lt;/td> &lt;/tr> &lt;tr> &lt;td>[Conelly1992]&lt;/td> &lt;td>J.A. Conelly, &lt;em>Macromodelling with SPICE&lt;/em>, Englewood Cliffs: Prentice-Hall, 1992&lt;/td> &lt;/tr> &lt;tr> &lt;td>[&lt;a href=\&quot;https://www.springer.com/us/book/9783540151609\&quot;>Hoefer1985&lt;/a>]&lt;/td>&#xA;&lt;td>E. E. E. Hoefer, H. Nielinger, &lt;em>SPICE: Analyseprogramm f&amp;uuml;&#xA;r elektronische Schaltungen&lt;/em>, Springer-Verlag, Berlin, Heidelberg, New York, Tokyo, 1985&lt;/td> &lt;/tr> &lt;tr> &lt;td>[Johnson1991]&lt;/td> &lt;td>B. Johnson, T. Quarles, A. R. Newton, D. O. Pederson, A. Sangiovanni-Vincentelli, &lt;em>SPICE3 Version 3e User&amp;#39;&#xA;s Manual&lt;/em>, Department of Electrical Engineering and Computer Sciences, University of California, Berkeley p. 12, p. 106 - 107, April 1, 1991&lt;/td> &lt;/tr> &lt;tr> &lt;td>[Spiro1990]&lt;/td> &lt;td>H. Spiro, H, &lt;em>Simulation integrierter Schaltungen&lt;/em>, R. Oldenbourg Verlag M&amp;uuml;&#xA;nchen Wien, 1990&lt;/td> &lt;/tr> &lt;tr> &lt;td>[Vlach1983]&lt;/td> &lt;td>J. Vlach, K. Singal, &lt;em>Computer methods for circuit analysis and design&lt;/em>, Van Nostrand Reinhold, New York 1983&lt;/td> &lt;/tr>&lt;/table>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Utilities.ParameterRecords"/>
+  <classes classType="record" className="SM_PermanentMagnetData" description="&quot;Common parameters for synchronous machines with permanent magnet&quot;" isLongClassSpecifier="true" classNameEnd="SM_PermanentMagnetData" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="SM_ReluctanceRotorData" isOver="true">
+      <extendsModifications expression="0.3/(2*pi*fsNominal)" elementName="Lmd"/>
+      <extendsModifications expression="0.3/(2*pi* fsNominal )" elementName="Lmq"/>
+    </elements>
+    <elements xsi:type="mOloc:ImportClause" importName="Modelica.Constants.pi" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list expression="112.3" declarationName="VsOpenCircuit" description="&quot;Open circuit RMS voltage per phase @ fsNominal&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Losses.PermanentMagnetLossParameters" parameterType="parameter" isOver="true">
+      <component_list isModificationOver="true" declarationName="permanentMagnetLossParameters" description="&quot;Permanent magnet loss parameter record&quot;" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="0" elementName="PRef"/>
+        <modifications expression="100" elementName="IRef"/>
+        <modifications expression="2*pi*fsNominal/p" elementName="wRef"/>
+        <annotations isModificationOver="true" elementName="Dialog">
+          <modifications expression="&quot;Losses&quot;" elementName="tab"/>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;smpmData&quot;" elementName="defaultComponentName"/>
+      <annotations expression="&quot;parameter&quot;" elementName="defaultComponentPrefixes"/>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Basic parameters of synchronous machines with permanent magnet are predefined with default values.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Polyphase.Ideal"/>
+  <classes classType="model" className="IdealThyristor" description="&quot;Polyphase ideal thyristor&quot;" isLongClassSpecifier="true" classNameEnd="IdealThyristor" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Interfaces.TwoPlug" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Resistance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="Ron" description="&quot;Closed thyristor resistance&quot;">
+        <modifications expression="zeros(m)" elementName="min" isfinal="true"/>
+        <modifications expression="fill(1e-5, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Conductance" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="Goff" description="&quot;Opened thyristor conductance&quot;">
+        <modifications expression="zeros(m)" elementName="min" isfinal="true"/>
+        <modifications expression="fill(1e-5, m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="SI.Voltage" parameterType="parameter" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="Vknee" description="&quot;Threshold voltage&quot;">
+        <modifications expression="zeros(m)" elementName="min" isfinal="true"/>
+        <modifications expression="zeros(m)" elementName="start"/>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" isOver="true">
+      <component_list subscripts="[m]" expression="idealThyristor.off" declarationName="off" description="&quot;Alias of boolean thyristor off&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Polyphase.Interfaces.ConditionalHeatPort" isOver="true">
+      <extendsModifications expression="m" elementName="mh" isfinal="true"/>
+      <extendsModifications expression="fill( 293.15, m)" elementName="T" isfinal="true"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Blocks.Interfaces.BooleanInput" isOver="true">
+      <component_list subscripts="[m]" declarationName="fire" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{100,120}" elementName="origin"/>
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+          </modifications>
+          <modifications isModificationOver="true" elementName="iconTransformation">
+            <modifications expression="{{-20,-20},{20,20}}" elementName="extent"/>
+            <modifications expression="270" elementName="rotation"/>
+            <modifications expression="{100,118}" elementName="origin"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Modelica.Electrical.Analog.Ideal.IdealThyristor" isOver="true">
+      <component_list subscripts="[m]" isModificationOver="true" declarationName="idealThyristor" isAnnotation="true" isAnnotationOver="true">
+        <modifications expression="Ron" elementName="Ron" isfinal="true"/>
+        <modifications expression="Goff" elementName="Goff" isfinal="true"/>
+        <modifications expression="Vknee" elementName="Vknee" isfinal="true"/>
+        <modifications expression="useHeatPort" elementName="useHeatPort" isEach="true" isfinal="true"/>
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-10,-10},{10,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="plug_p.pin" right="idealThyristor.p">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{-100,0},{ -60,0} ,{-38,0},{-10,0} }" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealThyristor.n" right="plug_n.pin">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{10,0},{100,0}}" elementName="points"/>
+          <modifications expression="{0,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="fire" right="idealThyristor.fire">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{100,120},{100,80},{10,80},{10,12}}" elementName="points"/>
+          <modifications expression="{255,0,255}" elementName="color"/>
+        </annotations>
+      </equations>
+      <equations xsi:type="mOloc:ConnectEquation" isAnnotation="true" isAnnotationOver="true" left="idealThyristor.heatPort" right="heatPort">
+        <annotations isModificationOver="true" elementName="Line">
+          <modifications expression="{{0,-10},{0,-100}}" elementName="points"/>
+          <modifications expression="{191,0,0}" elementName="color"/>
+        </annotations>
+      </equations>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations expression="&quot;thyristor&quot;" elementName="defaultComponentName"/>
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="false" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100, -100 } ,{100,100} }" elementName="extent"/>
+        </modifications>
+        <modifications expression="{ Line(points={{-90,0},{40,0}}, color={0,0,255}), Polygon( points={{30,0},{-30,40},{-30,-40},{30,0}}, lineColor={0,0,255}, fillColor={255,255,255} ) , Line(points={{30,40},{30,-40}}, color={0,0,255}), Line(points={{40,0},{90,0}}, color={0,0,255}), Text( extent={{-150,-80},{150,-40}}, textString=&quot;m=%m&quot; ) , Text( extent={{-150,90},{150,50}}, textString=&quot;%name&quot;, textColor={0,0,255} ) , Line(points={{40,50},{60,30}}, color={0,0,255}), Line(points={{30,20},{58,48}}, color={0,0,255}), Line(points={{100,90},{100,100}}, color={0,0,255}) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Contains m ideal thyristors (Modelica.Electrical.Analog.Ideal.IdealThyristor).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

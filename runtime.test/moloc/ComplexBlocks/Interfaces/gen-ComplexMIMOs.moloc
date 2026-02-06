@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.ComplexBlocks.Interfaces"/>
+  <classes isPartial="true" classType="block" className="ComplexMIMOs" description="&quot;Multiple Input Multiple Output continuous control block with same number of inputs and outputs&quot;" isLongClassSpecifier="true" classNameEnd="ComplexMIMOs" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.ComplexBlocks.Icons.ComplexBlock" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Integer" parameterType="parameter" isOver="true">
+      <component_list expression="1" declarationName="n" description="&quot;Number of inputs (= number of outputs)&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="ComplexInput" isOver="true">
+      <component_list subscripts="[n]" declarationName="u" description="&quot;Connector of Complex input signals&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{-140,-20},{-100,20}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="ComplexOutput" isOver="true">
+      <component_list subscripts="[n]" declarationName="y" description="&quot;Connector of Complex output signals&quot;" isAnnotation="true" isAnnotationOver="true">
+        <annotations isModificationOver="true" elementName="Placement">
+          <modifications isModificationOver="true" elementName="transformation">
+            <modifications expression="{{100,-10},{120,10}}" elementName="extent"/>
+          </modifications>
+        </annotations>
+      </component_list>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Boolean" parameterType="parameter" isOver="true">
+      <component_list subscripts="[n]" expression="fill(false, n)" declarationName="useConjugateInput" description="&quot;If true, inputs are processed conjugate complex&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Complex" isProtected="true" isOver="true">
+      <component_list subscripts="[n]" expression="{if useConjugateInput[k] then Modelica.ComplexMath.conj(u[k]) else u[k] for k in 1:n }" declarationName="uInternal" description="&quot;Equals either u or conjugate complex input u if useComplexInput = true&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>Block has a continuous Complex input vector and a continuous Complex output signal vectorwhere the signal sizes of the input and output vector are identical.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Machines.Losses.DCMachines"/>
+  <classes classType="model" className="StrayLoad" description="&quot;Model of stray load losses dependent on current and speed&quot;" isLongClassSpecifier="true" classNameEnd="StrayLoad" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Electrical.Analog.Interfaces.OnePort" isOver="true"/>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Machines.Interfaces.FlangeSupport" isOver="true"/>
+    <elements xsi:type="mOloc:ComponentClause" typeSpecifier="Machines.Losses.StrayLoadParameters" parameterType="parameter" isOver="true">
+      <component_list declarationName="strayLoadParameters" description="&quot;Stray load loss parameters&quot;"/>
+    </elements>
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Thermal.HeatTransfer.Interfaces.PartialElementaryConditionalHeatPortWithoutT" isOver="true">
+      <extendsModifications expression="false" elementName="useHeatPort"/>
+    </elements>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="v" right="0"/>
+      <equations xsi:type="mOloc:IfEquation" condition="(strayLoadParameters.PRef &lt;= 0)">
+        <ifEquations xsi:type="mOloc:SimpleEquation" left="tau" right="0"/>
+        <elseEquations xsi:type="mOloc:SimpleEquation" left="tau" right="-strayLoadParameters.tauRef*(i/strayLoadParameters.IRef)^2* sign(w)*(abs(w)/strayLoadParameters.wRef)^strayLoadParameters.power_w"/>
+      </equations>
+      <equations xsi:type="mOloc:SimpleEquation" left="lossPower" right="-tau*w"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Icon">
+        <modifications expression="{Line(points={{-90,0},{90,0}}, color={0,0,255}), Rectangle( extent={{-70,30},{70,-30}}, lineColor={0,0,255}, pattern=LinePattern.Dot ) ,Text( extent={{-150,90},{150,50}}, textColor={0,0,255}, textString=&quot;%name&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;p>The stray load loss torque is&lt;/p>&lt;blockquote>&lt;pre>tau = PRef/wRef * (i/IRef)^2 * (w/wRef)^power_w&lt;/pre>&lt;/blockquote>&lt;p>where &lt;code>i&lt;/code> is the current of the machine and &lt;code>w&lt;/code> is the actual angular velocity.The dependency of the stray load torque on the angular velocity is modeled by the exponent &lt;code>power_w&lt;/code>.&lt;/p>&lt;p>The stray load losses are modeled such way that they do not cause a voltage drop in the electric circuit.Instead, the dissipated losses are considered through an equivalent braking torque at the shaft.&lt;/p>&lt;h4>See also&lt;/h4>&lt;p>&lt;a href=\&quot;modelica://Modelica.Electrical.Machines.Losses.StrayLoadParameters\&quot;>StrayLoad parameters&lt;/a>&#xA;&lt;/p>&lt;p>If it is desired to neglect stray load losses, set &lt;code>strayLoadParameters.PRef = 0&lt;/code> (this is the default).&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

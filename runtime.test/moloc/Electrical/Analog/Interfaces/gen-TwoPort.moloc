@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.Analog.Interfaces"/>
+  <classes isPartial="true" classType="model" className="TwoPort" description="&quot;Component with two electrical ports, including current&quot;" isLongClassSpecifier="true" classNameEnd="TwoPort" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="FourPin" isOver="true"/>
+    <elements xsi:type="mOloc:EquationSection">
+      <equations xsi:type="mOloc:SimpleEquation" left="0" right="p1.i + n1.i"/>
+      <equations xsi:type="mOloc:SimpleEquation" left="0" right="p2.i + n2.i"/>
+    </elements>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Diagram">
+        <modifications isModificationOver="true" elementName="coordinateSystem">
+          <modifications expression="true" elementName="preserveAspectRatio"/>
+          <modifications expression="{{-100,-100},{100,100}}" elementName="extent"/>
+          <modifications expression="{2,2}" elementName="grid"/>
+        </modifications>
+        <modifications expression="{ Polygon( points={{-124,103},{-114,100},{-124,97},{-124,103}}, lineColor={160,160,164}, fillColor={160,160,164}, fillPattern=FillPattern.Solid ) , Line(points={{-140,100},{-115,100}}, color={160,160,164} ) , Polygon( points={{130,-97},{140,-100},{130,-103},{130,-97}}, lineColor={160,160,164}, fillColor={160,160,164}, fillPattern=FillPattern.Solid ) , Line(points={{114,-100},{139,-100}}, color={160,160,164} ) , Text( extent={{113,-96},{129,-81}}, textColor={160,160,164}, textString=&quot;i2&quot; ) , Text( extent={{122,102},{139,117}}, textColor={160,160,164}, textString=&quot;i2&quot; ) , Polygon( points={{124,103},{114,100},{124,97},{124,103}}, lineColor={160,160,164}, fillPattern=FillPattern.HorizontalCylinder, fillColor={160,160,164} ) , Line(points={{115,100},{140,100}}, color={160,160,164}), Line(points={{-140,-100},{-115,-100}}, color={160,160,164} ) , Polygon( points={{-130,-97},{-140,-100},{-130,-103},{-130,-97}}, lineColor={160,160,164}, fillColor={160,160,164}, fillPattern=FillPattern.Solid ) , Text( extent={{-131,-97},{-114,-82}}, textColor={160,160,164}, textString=&quot;i1&quot; ) , Text( extent={{-140,103},{-123,118}}, textColor={160,160,164}, textString=&quot;i1&quot; ) }" elementName="graphics"/>
+      </annotations>
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;ul>&lt;li>&lt;em> 1998 &lt;/em> by Christoph Clauss&lt;br> initially implemented&lt;br> &lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="revisions"/>
+        <modifications expression="&quot;&lt;html>&lt;p>TwoPort is a partial model that consists of two ports. Like OnePort each port has two pins. It is assumed that the current flowing into the positive pin is identical to the current flowing out of pin n. This currents of each port are provided explicitly as currents i1 and i2, the voltages respectively as v1 and v2.&lt;/p>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>

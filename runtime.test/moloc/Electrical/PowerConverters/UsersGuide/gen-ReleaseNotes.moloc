@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mOloc:Stored_definition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mOloc="http://www.control.dut/moloc/MOloc">
+  <within withName="Modelica.Electrical.PowerConverters.UsersGuide"/>
+  <classes classType="class" className="ReleaseNotes" description="&quot;Release Notes&quot;" isLongClassSpecifier="true" classNameEnd="ReleaseNotes" isOver="true">
+    <elements xsi:type="mOloc:ExtendsClause" typeSpecifier="Modelica.Icons.ReleaseNotes" isOver="true"/>
+    <elements xsi:type="mOloc:AnnotationClause" isAnnotation="true" isAnnotationOver="true" isOver="true">
+      <annotations isModificationOver="true" elementName="Documentation">
+        <modifications expression="&quot;&lt;html>&lt;h5>Version 3.2.3, 2019-01-23&lt;/h5>&lt;ul>&lt;li>Added instantaneous power calculations of DC and AC interface partial models, see &lt;a href=\&quot;https://github.com/modelica/ModelicaStandardLibrary/issues/2198\&quot;>#2198&lt;/a>&lt;/li>&#xA;&lt;li>Replaced Modelica_Electrical_PowerConverters by Modelica.Electrical.PowerConverter, see &lt;a href=\&quot;https://github.com/modelica/ModelicaStandardLibrary/issues/2196\&quot;>#2196&lt;/a>&lt;/li>&#xA;&lt;li>Unified location of PowerConverter connectors in diagram layer, see &lt;a href=\&quot;https://github.com/modelica/ModelicaStandardLibrary/issues/2185\&quot;>#2185&lt;/a>&lt;/li>&#xA;&lt;li>Fixed broken hyper links&lt;/li>&lt;li>Replaced pin declaration by &lt;code>extends&lt;/code> according to &lt;a href=\&quot;https://github.com/modelica/ModelicaStandardLibrary/issues/2065\&quot;>#2065&lt;/a>&lt;/li>&#xA;&lt;/ul>&lt;h5>Version 1.2.0, 2014-04-06&lt;/h5>&lt;ul>&lt;li>Moved enabling signals from control to inverter models due to consistency reasons&lt;/li>&lt;li>Added partial models for enabling firing signals&lt;/li>&lt;/ul>&lt;h5>Version 1.1.0, 2014-03-24&lt;/h5>&lt;ul>&lt;li>Removed StepUp converter due to consistency reasons&lt;/li>&lt;/ul>&lt;h5>Version 1.0.0, 2014-03-24&lt;/h5>&lt;ul>&lt;li>First tagged version&lt;/li>&lt;/ul>&lt;/html>&quot;" elementName="info"/>
+      </annotations>
+    </elements>
+  </classes>
+</mOloc:Stored_definition>
