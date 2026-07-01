@@ -1,0 +1,154 @@
+// read-and-check-pnml.eol
+
+var pnmlPath = "E:/GitYang/SysMLOC/dut.control.pnml.runner/output/ERK-generated.pnml";
+
+var file = new Native("java.io.File")(pnmlPath);
+
+if (not file.exists()) {
+    throw "PNML file does not exist: " + file.getAbsolutePath();
+}
+
+("Reading PNML: " + file.getAbsolutePath()).println();
+
+
+// ========== 准备容器 ==========
+var nodeIds = new Native("java.util.HashSet")();
+var arcLines = new Native("java.util.ArrayList")();
+
+var placeCount = 0;
+var transitionCount = 0;
+var arcCount = 0;
+var netCount = 0;
+var pageCount = 0;
+
+
+// ========== 按行读取 PNML 文件 ==========
+var fis = new Native("java.io.FileInputStream")(file);
+var reader = new Native("java.io.BufferedReader")(
+    new Native("java.io.InputStreamReader")(fis, "UTF-8")
+);
+
+var line = reader.readLine();
+
+while (line.isDefined()) {
+
+    var t = line.trim();
+
+    if (t.startsWith("<net ")) {
+        netCount = netCount + 1;
+        ("Net: " + getAttr(t, "id")).println();
+    }
+
+    if (t.startsWith("<page ")) {
+        pageCount = pageCount + 1;
+        ("Page: " + getAttr(t, "id")).println();
+    }
+
+    if (t.startsWith("<place ")) {
+        var id = getAttr(t, "id");
+        nodeIds.add(id);
+        placeCount = placeCount + 1;
+
+        ("Place: " + id).println();
+    }
+
+    if (t.startsWith("<transition ")) {
+        var id = getAttr(t, "id");
+        nodeIds.add(id);
+        transitionCount = transitionCount + 1;
+
+        ("Transition: " + id).println();
+    }
+
+    if (t.startsWith("<arc ")) {
+        arcLines.add(t);
+        arcCount = arcCount + 1;
+    }
+
+    line = reader.readLine();
+}
+
+reader.close();
+
+
+// ========== 输出数量统计 ==========
+"".println();
+"========== Count ==========".println();
+("Net count: " + netCount).println();
+("Page count: " + pageCount).println();
+("Place count: " + placeCount).println();
+("Transition count: " + transitionCount).println();
+("Arc count: " + arcCount).println();
+
+
+// ========== 检查 Arc 的 source / target ==========
+"".println();
+"========== Arc Check ==========".println();
+
+var invalidArcCount = 0;
+
+var i = 0;
+
+while (i < arcLines.size()) {
+
+    var arcLine = arcLines.get(i);
+
+    var id = getAttr(arcLine, "id");
+    var source = getAttr(arcLine, "source");
+    var target = getAttr(arcLine, "target");
+
+    var sourceOk = nodeIds.contains(source);
+    var targetOk = nodeIds.contains(target);
+
+    if (sourceOk and targetOk) {
+        ("Arc OK: " + id + " : " + source + " -> " + target).println();
+    }
+    else {
+        invalidArcCount = invalidArcCount + 1;
+
+        ("Arc ERROR: " + id + " : " + source + " -> " + target).println();
+
+        if (not sourceOk) {
+            ("  Missing source: " + source).println();
+        }
+
+        if (not targetOk) {
+            ("  Missing target: " + target).println();
+        }
+    }
+
+    i = i + 1;
+}
+
+"".println();
+("Invalid arc count: " + invalidArcCount).println();
+
+if (invalidArcCount = 0) {
+    "PNML structure check passed.".println();
+}
+else {
+    "PNML structure check failed.".println();
+}
+
+
+// ========== 工具函数 ==========
+
+operation getAttr(line, attrName) {
+    var prefix = attrName + "=\"";
+
+    var start = line.indexOf(prefix);
+
+    if (start < 0) {
+        return "";
+    }
+
+    start = start + prefix.length();
+
+    var end = line.indexOf("\"", start);
+
+    if (end < 0) {
+        return "";
+    }
+
+    return line.substring(start, end);
+}

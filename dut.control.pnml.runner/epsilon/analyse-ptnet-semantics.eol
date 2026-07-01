@@ -1,0 +1,280 @@
+// analyse-ptnet-semantics.eol
+
+var pnmlPath = "E:/GitYang/SysMLOC/dut.control.pnml.runner/output/ERK-generated.pnml";
+
+var file = new Native("java.io.File")(pnmlPath);
+
+if (not file.exists()) {
+    throw "PNML file does not exist: " + file.getAbsolutePath();
+}
+
+("Reading PNML: " + file.getAbsolutePath()).println();
+
+
+// ========== 数据结构 ==========
+var nodeTypes = new Native("java.util.HashMap")();
+// key = node id, value = "place" or "transition"
+
+var initialMarkings = new Native("java.util.HashMap")();
+// key = place id, value = marking text
+
+var placeIds = new Native("java.util.ArrayList")();
+var transitionIds = new Native("java.util.ArrayList")();
+
+var arcs = new Native("java.util.ArrayList")();
+// 每个 arc 用 HashMap 保存 id/source/target
+
+var transitionPre = new Native("java.util.HashMap")();
+// key = transition id, value = HashSet(place id)
+
+var transitionPost = new Native("java.util.HashMap")();
+// key = transition id, value = HashSet(place id)
+
+
+// ========== 读取 PNML 文本 ==========
+var fis = new Native("java.io.FileInputStream")(file);
+var reader = new Native("java.io.BufferedReader")(
+    new Native("java.io.InputStreamReader")(fis, "UTF-8")
+);
+
+var currentPlaceId = "";
+var insideInitialMarking = false;
+
+var line = reader.readLine();
+
+while (line.isDefined()) {
+
+    var t = line.trim();
+
+    // ---------- place ----------
+    if (t.startsWith("<place ")) {
+        var pid = getAttr(t, "id");
+
+        currentPlaceId = pid;
+        nodeTypes.put(pid, "place");
+        initialMarkings.put(pid, "0");
+        placeIds.add(pid);
+    }
+
+    if (currentPlaceId <> "" and t.startsWith("<initialMarking")) {
+        insideInitialMarking = true;
+    }
+
+    if (currentPlaceId <> "" and insideInitialMarking and t.startsWith("<text>")) {
+        var marking = getTagText(t);
+        initialMarkings.put(currentPlaceId, marking);
+    }
+
+    if (currentPlaceId <> "" and t.startsWith("</initialMarking")) {
+        insideInitialMarking = false;
+    }
+
+    if (currentPlaceId <> "" and t.startsWith("</place")) {
+        currentPlaceId = "";
+        insideInitialMarking = false;
+    }
+
+
+    // ---------- transition ----------
+    if (t.startsWith("<transition ")) {
+        var tid = getAttr(t, "id");
+
+        nodeTypes.put(tid, "transition");
+        transitionIds.add(tid);
+
+        transitionPre.put(tid, new Native("java.util.HashSet")());
+        transitionPost.put(tid, new Native("java.util.HashSet")());
+    }
+
+
+    // ---------- arc ----------
+    if (t.startsWith("<arc ")) {
+        var arc = new Native("java.util.HashMap")();
+
+        arc.put("id", getAttr(t, "id"));
+        arc.put("source", getAttr(t, "source"));
+        arc.put("target", getAttr(t, "target"));
+
+        arcs.add(arc);
+    }
+
+    line = reader.readLine();
+}
+
+reader.close();
+
+
+// ========== 基本统计 ==========
+"".println();
+"========== Basic Count ==========".println();
+("Place count: " + placeIds.size()).println();
+("Transition count: " + transitionIds.size()).println();
+("Arc count: " + arcs.size()).println();
+
+
+// ========== 输出初始标识 ==========
+"".println();
+"========== Initial Marking ==========".println();
+
+var i = 0;
+
+while (i < placeIds.size()) {
+    var pid = placeIds.get(i);
+    ("Place " + pid + " = " + initialMarkings.get(pid)).println();
+    i = i + 1;
+}
+
+
+// ========== 检查 arc 类型，并构造 pre/post ==========
+"".println();
+"========== Arc Type Check ==========".println();
+
+var invalidArcCount = 0;
+
+i = 0;
+
+while (i < arcs.size()) {
+
+    var arc = arcs.get(i);
+
+    var aid = arc.get("id");
+    var source = arc.get("source");
+    var target = arc.get("target");
+
+    var sourceExists = nodeTypes.containsKey(source);
+    var targetExists = nodeTypes.containsKey(target);
+
+    if (not sourceExists or not targetExists) {
+        invalidArcCount = invalidArcCount + 1;
+
+        ("Arc ERROR: " + aid + " : " + source + " -> " + target).println();
+
+        if (not sourceExists) {
+            ("  Missing source: " + source).println();
+        }
+
+        if (not targetExists) {
+            ("  Missing target: " + target).println();
+        }
+    }
+    else {
+        var sourceType = nodeTypes.get(source);
+        var targetType = nodeTypes.get(target);
+
+        if (sourceType = "place" and targetType = "transition") {
+            transitionPre.get(target).add(source);
+            ("Arc OK P->T: " + aid + " : " + source + " -> " + target).println();
+        }
+        else if (sourceType = "transition" and targetType = "place") {
+            transitionPost.get(source).add(target);
+            ("Arc OK T->P: " + aid + " : " + source + " -> " + target).println();
+        }
+        else {
+            invalidArcCount = invalidArcCount + 1;
+
+            ("Arc TYPE ERROR: " + aid + " : " 
+                + source + "(" + sourceType + ") -> " 
+                + target + "(" + targetType + ")").println();
+        }
+    }
+
+    i = i + 1;
+}
+
+"".println();
+("Invalid arc count: " + invalidArcCount).println();
+
+if (invalidArcCount = 0) {
+    "Arc type check passed.".println();
+}
+else {
+    "Arc type check failed.".println();
+}
+
+
+// ========== 输出每个 transition 的 pre/post ==========
+"".println();
+"========== Transition Pre/Post ==========".println();
+
+i = 0;
+
+while (i < transitionIds.size()) {
+    var tid = transitionIds.get(i);
+
+    ("Transition " + tid).println();
+    ("  pre  = " + transitionPre.get(tid)).println();
+    ("  post = " + transitionPost.get(tid)).println();
+
+    i = i + 1;
+}
+
+
+// ========== 根据 initialMarking 判断哪些 transition 当前 enabled ==========
+"".println();
+"========== Enabled Transitions ==========".println();
+
+i = 0;
+
+while (i < transitionIds.size()) {
+
+    var tid = transitionIds.get(i);
+    var pre = transitionPre.get(tid);
+
+    var enabled = true;
+
+    var iter = pre.iterator();
+
+    while (iter.hasNext()) {
+        var pid = iter.next();
+
+        var markingText = initialMarkings.get(pid);
+        var marking = Native("java.lang.Integer").parseInt(markingText);
+
+        if (marking <= 0) {
+            enabled = false;
+        }
+    }
+
+    if (enabled) {
+        ("Enabled: " + tid).println();
+    }
+    else {
+        ("Not enabled: " + tid).println();
+    }
+
+    i = i + 1;
+}
+
+
+// ========== 工具函数 ==========
+
+operation getAttr(line, attrName) {
+    var prefix = attrName + "=\"";
+
+    var start = line.indexOf(prefix);
+
+    if (start < 0) {
+        return "";
+    }
+
+    start = start + prefix.length();
+
+    var end = line.indexOf("\"", start);
+
+    if (end < 0) {
+        return "";
+    }
+
+    return line.substring(start, end);
+}
+
+operation getTagText(line) {
+    var start = line.indexOf(">");
+    var end = line.lastIndexOf("<");
+
+    if (start < 0 or end <= start) {
+        return "";
+    }
+
+    return line.substring(start + 1, end).trim();
+}

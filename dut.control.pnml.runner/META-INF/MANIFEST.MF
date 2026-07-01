@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Runner
+Bundle-SymbolicName: dut.control.pnml.runner
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: dut.control.pnml.runner
+Bundle-RequiredExecutionEnvironment: JavaSE-21

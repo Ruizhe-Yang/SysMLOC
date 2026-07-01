@@ -1,0 +1,169 @@
+// create-test-pnml.eol
+var outputPath = "E:/GitYang/SysMLOC/dut.control.pnml.runner/output/ERK-generated.pnml";
+
+// 目标：生成一个与 ERK.pnml 结构一致的 PNML 文件
+
+var File = Native("java.io.File");
+var FileOutputStream = Native("java.io.FileOutputStream");
+var OutputStreamWriter = Native("java.io.OutputStreamWriter");
+var PrintWriter = Native("java.io.PrintWriter");
+
+var sb = new Native("java.lang.StringBuilder");
+
+// ========== PNML 根结构 ==========
+appendLine(sb, "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>");
+appendLine(sb, "<pnml xmlns=\"http://www.pnml.org/version-2009/grammar/pnml\">");
+appendLine(sb, "    <net id=\"ComposedModel\" type=\"http://www.pnml.org/version-2009/grammar/ptnet\">");
+appendLine(sb, "        <name>");
+appendLine(sb, "            <text>ComposedModel</text>");
+appendLine(sb, "        </name>");
+appendLine(sb, "        <page id=\"page0\">");
+
+
+// ========== Places ==========
+emitPlace(sb, "Raf1Star", "Raf1Star", "1", "375", "75", "-5", "35");
+emitPlace(sb, "RKIP", "RKIP", "1", "540", "75", "-5", "35");
+emitPlace(sb, "Raf1Star_RKIP", "Raf1Star_RKIP", "0", "450", "225", "101", "32");
+emitPlace(sb, "ERKPP", "ERKPP", "0", "210", "225", "-5", "35");
+emitPlace(sb, "MEKPP_ERK", "MEKPP_ERK", "0", "210", "405", "-5", "35");
+emitPlace(sb, "Raf1Star_RKIP_ERKPP", "Raf1Star_RKIP_ERKPP", "0", "450", "405", "146", "32");
+emitPlace(sb, "RKIPP_RP", "RKIPP_RP", "0", "660", "315", "-5", "35");
+emitPlace(sb, "MEKPP", "MEKPP", "1", "120", "600", "-5", "35");
+emitPlace(sb, "ERK", "ERK", "1", "330", "600", "-5", "35");
+emitPlace(sb, "RKIPP", "RKIPP", "0", "600", "510", "-5", "35");
+emitPlace(sb, "RP", "RP", "1", "750", "510", "-5", "35");
+
+
+// ========== Transitions ==========
+emitTransition(sb, "r1", "r1", "420", "150", "-5", "35");
+emitTransition(sb, "r2", "r2", "495", "150", "-5", "35");
+emitTransition(sb, "r3", "r3", "420", "315", "-5", "35");
+emitTransition(sb, "r4", "r4", "480", "315", "-5", "35");
+emitTransition(sb, "r6", "r6", "165", "510", "-5", "35");
+emitTransition(sb, "r7", "r7", "270", "510", "-5", "35");
+emitTransition(sb, "r9", "r9", "645", "405", "-5", "35");
+emitTransition(sb, "r10", "r10", "690", "405", "47", "31");
+emitTransition(sb, "r5", "r5", "450", "510", "-5", "35");
+emitTransition(sb, "r11", "r11", "660", "225", "-5", "35");
+emitTransition(sb, "r8", "r8", "210", "315", "0", "0");
+
+
+// ========== Arcs ==========
+emitArc(sb, "Raf1Star_to_r1", "Raf1Star", "r1", "", "");
+emitArc(sb, "RKIP_to_r1", "RKIP", "r1", "", "");
+emitArc(sb, "Raf1Star_RKIP_to_r2", "Raf1Star_RKIP", "r2", "", "");
+emitArc(sb, "Raf1Star_RKIP_to_r3", "Raf1Star_RKIP", "r3", "", "");
+emitArc(sb, "Raf1Star_RKIP_ERKPP_to_r4", "Raf1Star_RKIP_ERKPP", "r4", "", "");
+emitArc(sb, "Raf1Star_RKIP_ERKPP_to_r5", "Raf1Star_RKIP_ERKPP", "r5", "", "");
+emitArc(sb, "MEKPP_ERK_to_r7", "MEKPP_ERK", "r7", "", "");
+emitArc(sb, "MEKPP_to_r6", "MEKPP", "r6", "", "");
+emitArc(sb, "RKIPP_RP_to_r10", "RKIPP_RP", "r10", "", "");
+emitArc(sb, "RKIPP_RP_to_r11", "RKIPP_RP", "r11", "", "");
+emitArc(sb, "RKIPP_to_r9", "RKIPP", "r9", "", "");
+emitArc(sb, "RP_to_r9", "RP", "r9", "", "");
+emitArc(sb, "MEKPP_ERK_to_r8", "MEKPP_ERK", "r8", "", "");
+emitArc(sb, "ERK_to_r6", "ERK", "r6", "", "");
+
+emitArc(sb, "ERKPP_to_r3", "ERKPP", "r3", "360", "330");
+
+emitArc(sb, "r1_to_Raf1Star_RKIP", "r1", "Raf1Star_RKIP", "", "");
+emitArc(sb, "r3_to_Raf1Star_RKIP_ERKPP", "r3", "Raf1Star_RKIP_ERKPP", "", "");
+emitArc(sb, "r5_to_ERK", "r5", "ERK", "", "");
+emitArc(sb, "r5_to_RKIPP", "r5", "RKIPP", "", "");
+emitArc(sb, "r7_to_ERK", "r7", "ERK", "", "");
+emitArc(sb, "r7_to_MEKPP", "r7", "MEKPP", "", "");
+emitArc(sb, "r6_to_MEKPP_ERK", "r6", "MEKPP_ERK", "", "");
+emitArc(sb, "r10_to_RKIPP", "r10", "RKIPP", "", "");
+emitArc(sb, "r2_to_RKIP", "r2", "RKIP", "", "");
+emitArc(sb, "r2_to_Raf1Star", "r2", "Raf1Star", "", "");
+emitArc(sb, "r4_to_Raf1Star_RKIP", "r4", "Raf1Star_RKIP", "", "");
+
+emitArc(sb, "r5_to_Raf1Star", "r5", "Raf1Star", "390", "525");
+
+emitArc(sb, "r10_to_RP", "r10", "RP", "", "");
+emitArc(sb, "r9_to_RKIPP_RP", "r9", "RKIPP_RP", "", "");
+
+emitArc(sb, "r8_to_MEKPP", "r8", "MEKPP", "135", "330");
+
+emitArc(sb, "r8_to_ERKPP", "r8", "ERKPP", "", "");
+
+emitArc(sb, "r11_to_RP", "r11", "RP", "765", "240");
+emitArc(sb, "r11_to_RKIP", "r11", "RKIP", "675", "90");
+emitArc(sb, "r4_to_ERKPP", "r4", "ERKPP", "360", "240");
+
+
+// ========== 结束结构 ==========
+appendLine(sb, "        </page>");
+appendLine(sb, "    </net>");
+appendLine(sb, "</pnml>");
+
+
+// ========== 写出文件 ==========
+var file = new Native("java.io.File")(outputPath);
+var parent = file.getParentFile();
+
+if (parent.isDefined() and not parent.exists()) {
+    parent.mkdirs();
+}
+
+var fos = new Native("java.io.FileOutputStream")(file);
+var writer = new Native("java.io.OutputStreamWriter")(fos, "UTF-8");
+var out = new Native("java.io.PrintWriter")(writer);
+
+out.print(sb.toString());
+out.flush();
+out.close();
+
+("PNML generated: " + file.getAbsolutePath()).println();
+
+
+// ========== 工具函数 ==========
+
+operation appendLine(sb, line) {
+    sb.append(line);
+    sb.append("\n");
+}
+
+operation emitPlace(sb, id, name, marking, x, y, offsetX, offsetY) {
+    appendLine(sb, "            <place id=\"" + id + "\">");
+    appendLine(sb, "                <graphics>");
+    appendLine(sb, "                    <position x=\"" + x + "\" y=\"" + y + "\"/>");
+    appendLine(sb, "                </graphics>");
+    appendLine(sb, "                <name>");
+    appendLine(sb, "                    <graphics>");
+    appendLine(sb, "                        <offset x=\"" + offsetX + "\" y=\"" + offsetY + "\"/>");
+    appendLine(sb, "                    </graphics>");
+    appendLine(sb, "                    <text>" + name + "</text>");
+    appendLine(sb, "                </name>");
+    appendLine(sb, "                <initialMarking>");
+    appendLine(sb, "                    <text>" + marking + "</text>");
+    appendLine(sb, "                </initialMarking>");
+    appendLine(sb, "            </place>");
+}
+
+operation emitTransition(sb, id, name, x, y, offsetX, offsetY) {
+    appendLine(sb, "            <transition distribution=\"constant\" id=\"" + id + "\" value=\"1.0\">");
+    appendLine(sb, "                <name>");
+    appendLine(sb, "                    <graphics>");
+    appendLine(sb, "                        <offset x=\"" + offsetX + "\" y=\"" + offsetY + "\"/>");
+    appendLine(sb, "                    </graphics>");
+    appendLine(sb, "                    <text>" + name + "</text>");
+    appendLine(sb, "                </name>");
+    appendLine(sb, "                <graphics>");
+    appendLine(sb, "                    <position x=\"" + x + "\" y=\"" + y + "\"/>");
+    appendLine(sb, "                </graphics>");
+    appendLine(sb, "            </transition>");
+}
+
+operation emitArc(sb, id, source, target, x, y) {
+    if (x = "") {
+        appendLine(sb, "            <arc id=\"" + id + "\" source=\"" + source + "\" target=\"" + target + "\" type=\"normal\"/>");
+    }
+    else {
+        appendLine(sb, "            <arc id=\"" + id + "\" source=\"" + source + "\" target=\"" + target + "\" type=\"normal\">");
+        appendLine(sb, "                <graphics>");
+        appendLine(sb, "                    <position x=\"" + x + "\" y=\"" + y + "\"/>");
+        appendLine(sb, "                </graphics>");
+        appendLine(sb, "            </arc>");
+    }
+}

@@ -1,0 +1,244 @@
+// create-emf-pnml-fixed.eol
+// 适用于你当前上传的 pnmlcoremodel.ecore。
+// 作用：创建 PNML coremodel 的 EMF 模型对象，并保存为 EMF/XMI 模型文件。
+// 注意：pnmlcoremodel.ecore 只有 PNML 核心结构，没有 initialMarking / inscription。
+//      如果要创建真正 P/T Net 的 marking 和 arc weight，需要 ptnet.ecore。
+
+// 清空当前输出模型资源，避免多次运行时叠加 root
+PN.resource.contents.clear();
+
+// ========================================================
+// 1. 创建根对象 PetriNetDoc
+// ========================================================
+
+var doc = new PN!PetriNetDoc;
+PN.resource.contents.add(doc);
+
+// ========================================================
+// 2. 创建 PetriNet
+// ========================================================
+
+var net = new PN!PetriNet;
+setFeature(net, "id", "ComposedModel");
+setFeature(net, "type", getEnumLiteral("PNType", "PTNET"));
+setFeature(net, "name", makeName("ComposedModel", "", ""));
+
+getMany(doc, "nets").add(net);
+
+// ========================================================
+// 3. 创建 Page
+// ========================================================
+
+var page = new PN!Page;
+setFeature(page, "id", "page0");
+getMany(net, "pages").add(page);
+
+// ========================================================
+// 4. 创建 Places
+//    这里保留 ERK 示例中的 id、name、坐标。
+//    初始 marking 暂时不能设，因为 pnmlcoremodel.ecore 没有 Place.initialMarking。
+// ========================================================
+
+var Raf1Star = makePlace("Raf1Star", "Raf1Star", 375, 75, -5, 35);
+var RKIP = makePlace("RKIP", "RKIP", 540, 75, -5, 35);
+var Raf1Star_RKIP = makePlace("Raf1Star_RKIP", "Raf1Star_RKIP", 450, 225, 101, 32);
+var ERKPP = makePlace("ERKPP", "ERKPP", 210, 225, -5, 35);
+var MEKPP_ERK = makePlace("MEKPP_ERK", "MEKPP_ERK", 210, 405, -5, 35);
+var Raf1Star_RKIP_ERKPP = makePlace("Raf1Star_RKIP_ERKPP", "Raf1Star_RKIP_ERKPP", 450, 405, 146, 32);
+var RKIPP_RP = makePlace("RKIPP_RP", "RKIPP_RP", 660, 315, -5, 35);
+var MEKPP = makePlace("MEKPP", "MEKPP", 120, 600, -5, 35);
+var ERK = makePlace("ERK", "ERK", 330, 600, -5, 35);
+var RKIPP = makePlace("RKIPP", "RKIPP", 600, 510, -5, 35);
+var RP = makePlace("RP", "RP", 750, 510, -5, 35);
+
+addObject(page, Raf1Star);
+addObject(page, RKIP);
+addObject(page, Raf1Star_RKIP);
+addObject(page, ERKPP);
+addObject(page, MEKPP_ERK);
+addObject(page, Raf1Star_RKIP_ERKPP);
+addObject(page, RKIPP_RP);
+addObject(page, MEKPP);
+addObject(page, ERK);
+addObject(page, RKIPP);
+addObject(page, RP);
+
+// ========================================================
+// 5. 创建 Transitions
+//    pnmlcoremodel.ecore 没有 distribution/value 属性。
+// ========================================================
+
+var r1 = makeTransition("r1", "r1", 420, 150, -5, 35);
+var r2 = makeTransition("r2", "r2", 495, 150, -5, 35);
+var r3 = makeTransition("r3", "r3", 420, 315, -5, 35);
+var r4 = makeTransition("r4", "r4", 480, 315, -5, 35);
+var r6 = makeTransition("r6", "r6", 165, 510, -5, 35);
+var r7 = makeTransition("r7", "r7", 270, 510, -5, 35);
+var r9 = makeTransition("r9", "r9", 645, 405, -5, 35);
+var r10 = makeTransition("r10", "r10", 690, 405, 47, 31);
+var r5 = makeTransition("r5", "r5", 450, 510, -5, 35);
+var r11 = makeTransition("r11", "r11", 660, 225, -5, 35);
+var r8 = makeTransition("r8", "r8", 210, 315, 0, 0);
+
+addObject(page, r1);
+addObject(page, r2);
+addObject(page, r3);
+addObject(page, r4);
+addObject(page, r6);
+addObject(page, r7);
+addObject(page, r9);
+addObject(page, r10);
+addObject(page, r5);
+addObject(page, r11);
+addObject(page, r8);
+
+// ========================================================
+// 6. 创建 Arcs
+//    pnmlcoremodel.ecore 支持 source/target 和 arcgraphics。
+//    它没有 Arc.inscription，也没有 type="normal" 属性。
+// ========================================================
+
+addArc(page, "Raf1Star_to_r1", Raf1Star, r1, "", "");
+addArc(page, "RKIP_to_r1", RKIP, r1, "", "");
+addArc(page, "Raf1Star_RKIP_to_r2", Raf1Star_RKIP, r2, "", "");
+addArc(page, "Raf1Star_RKIP_to_r3", Raf1Star_RKIP, r3, "", "");
+addArc(page, "Raf1Star_RKIP_ERKPP_to_r4", Raf1Star_RKIP_ERKPP, r4, "", "");
+addArc(page, "Raf1Star_RKIP_ERKPP_to_r5", Raf1Star_RKIP_ERKPP, r5, "", "");
+addArc(page, "MEKPP_ERK_to_r7", MEKPP_ERK, r7, "", "");
+addArc(page, "MEKPP_to_r6", MEKPP, r6, "", "");
+addArc(page, "RKIPP_RP_to_r10", RKIPP_RP, r10, "", "");
+addArc(page, "RKIPP_RP_to_r11", RKIPP_RP, r11, "", "");
+addArc(page, "RKIPP_to_r9", RKIPP, r9, "", "");
+addArc(page, "RP_to_r9", RP, r9, "", "");
+addArc(page, "MEKPP_ERK_to_r8", MEKPP_ERK, r8, "", "");
+addArc(page, "ERK_to_r6", ERK, r6, "", "");
+addArc(page, "ERKPP_to_r3", ERKPP, r3, 360, 330);
+
+addArc(page, "r1_to_Raf1Star_RKIP", r1, Raf1Star_RKIP, "", "");
+addArc(page, "r3_to_Raf1Star_RKIP_ERKPP", r3, Raf1Star_RKIP_ERKPP, "", "");
+addArc(page, "r5_to_ERK", r5, ERK, "", "");
+addArc(page, "r5_to_RKIPP", r5, RKIPP, "", "");
+addArc(page, "r7_to_ERK", r7, ERK, "", "");
+addArc(page, "r7_to_MEKPP", r7, MEKPP, "", "");
+addArc(page, "r6_to_MEKPP_ERK", r6, MEKPP_ERK, "", "");
+addArc(page, "r10_to_RKIPP", r10, RKIPP, "", "");
+addArc(page, "r2_to_RKIP", r2, RKIP, "", "");
+addArc(page, "r2_to_Raf1Star", r2, Raf1Star, "", "");
+addArc(page, "r4_to_Raf1Star_RKIP", r4, Raf1Star_RKIP, "", "");
+addArc(page, "r5_to_Raf1Star", r5, Raf1Star, 390, 525);
+addArc(page, "r10_to_RP", r10, RP, "", "");
+addArc(page, "r9_to_RKIPP_RP", r9, RKIPP_RP, "", "");
+addArc(page, "r8_to_MEKPP", r8, MEKPP, 135, 330);
+addArc(page, "r8_to_ERKPP", r8, ERKPP, "", "");
+addArc(page, "r11_to_RP", r11, RP, 765, 240);
+addArc(page, "r11_to_RKIP", r11, RKIP, 675, 90);
+addArc(page, "r4_to_ERKPP", r4, ERKPP, 360, 240);
+
+"Created PNML coremodel EMF model in PN.resource. Enable Store on disposal to save it.".println();
+
+// ========================================================
+// 工具函数：统一用 EMF 反射访问，避免 generated/dynamic class 差异
+// ========================================================
+
+operation makePlace(id, label, x, y, offsetX, offsetY) {
+    var p = new PN!Place;
+    setFeature(p, "id", id);
+    setFeature(p, "name", makeName(label, offsetX, offsetY));
+    setNodePosition(p, x, y);
+    return p;
+}
+
+operation makeTransition(id, label, x, y, offsetX, offsetY) {
+    var t = new PN!Transition;
+    setFeature(t, "id", id);
+    setFeature(t, "name", makeName(label, offsetX, offsetY));
+    setNodePosition(t, x, y);
+    return t;
+}
+
+operation makeName(text, offsetX, offsetY) {
+    var n = new PN!Name;
+    setFeature(n, "text", text);
+
+    if (offsetX <> "" and offsetY <> "") {
+        var ag = new PN!AnnotationGraphics;
+        var off = new PN!Offset;
+        setFeature(off, "x", offsetX);
+        setFeature(off, "y", offsetY);
+        setFeature(ag, "offset", off);
+        setFeature(n, "annotationgraphics", ag);
+    }
+
+    return n;
+}
+
+operation setNodePosition(node, x, y) {
+    var g = new PN!NodeGraphics;
+    var pos = new PN!Position;
+
+    setFeature(pos, "x", x);
+    setFeature(pos, "y", y);
+    setFeature(g, "position", pos);
+    setFeature(node, "nodegraphics", g);
+}
+
+operation addObject(page, object) {
+    getMany(page, "objects").add(object);
+}
+
+operation addArc(page, id, source, target, x, y) {
+    var a = new PN!Arc;
+    setFeature(a, "id", id);
+    setFeature(a, "source", source);
+    setFeature(a, "target", target);
+
+    if (x <> "" and y <> "") {
+        var ag = new PN!ArcGraphics;
+        var pos = new PN!Position;
+        setFeature(pos, "x", x);
+        setFeature(pos, "y", y);
+        getMany(ag, "positions").add(pos);
+        setFeature(a, "arcgraphics", ag);
+    }
+
+    getMany(page, "objects").add(a);
+    return a;
+}
+
+operation setFeature(obj, featureName, value) {
+    var f = obj.eClass().getEStructuralFeature(featureName);
+
+    if (not f.isDefined()) {
+        throw "Feature not found: " + obj.eClass().getName() + "." + featureName;
+    }
+
+    obj.eSet(f, value);
+}
+
+operation getMany(obj, featureName) {
+    var f = obj.eClass().getEStructuralFeature(featureName);
+
+    if (not f.isDefined()) {
+        throw "Feature not found: " + obj.eClass().getName() + "." + featureName;
+    }
+
+    return obj.eGet(f);
+}
+
+operation getEnumLiteral(enumName, literalName) {
+    var tmp = new PN!PetriNetDoc;
+    var pkg = tmp.eClass().getEPackage();
+    var e = pkg.getEClassifier(enumName);
+
+    if (not e.isDefined()) {
+        throw "Enum not found: " + enumName;
+    }
+
+    var literal = e.getEEnumLiteral(literalName);
+
+    if (not literal.isDefined()) {
+        throw "Enum literal not found: " + enumName + "#" + literalName;
+    }
+
+    return literal.getInstance();
+}
