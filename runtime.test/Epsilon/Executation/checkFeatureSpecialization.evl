@@ -1,4 +1,4 @@
-import 'test01.eol';
+//import 'test01.eol';
 
 context SysMLOC!FeatureSpecialization{
 	constraint Check{
